@@ -272,7 +272,7 @@ Form {
 			enabled:										sampleSize.value > 0
 			anchors.right: 							parent.right
 			anchors.bottom: 						parent.bottom
-			text: 											qsTr("<b>Download Sample</b>")
+			text: 											qsTr("<b>Download Report</b>")
 			
 			onClicked:
 			{

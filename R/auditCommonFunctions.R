@@ -247,6 +247,7 @@
 
   if(!is.null(dataset) && options[["sampleSize"]] >= nrow(dataset)){
     selectionContainer$setError(gettextf("Your sample size is larger than your population size. Cannot take a sample larger than the population."))
+    return()
   }
 
   options[["materiality"]] <- ifelse(options[["selectionType"]] == "musSampling",
