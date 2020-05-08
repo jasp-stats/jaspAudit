@@ -2202,7 +2202,7 @@
   if(planningState[["sampleSize"]] == 0 || is.null(dataset))
     return()
 
-  if(options[["selectionType"]] == "recordSampling"){
+  if(units == "records" && algorithm == "interval"){
 
     interval <- ceiling(nrow(dataset) / 
                         planningState[["sampleSize"]])
@@ -2211,7 +2211,7 @@
       return()
     }
 
-  } else {
+  } else if (units == "mus" && algorithm == "interval"){
 
     interval <- ceiling(sum(dataset[, bookValues]) / 
                         planningState[["sampleSize"]])
