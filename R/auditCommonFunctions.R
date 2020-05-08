@@ -246,6 +246,7 @@
                                              jaspResults)
 
   if(!is.null(dataset) && options[["sampleSize"]] >= nrow(dataset)){
+    selectionContainer[["errorMessage"]] <- createJaspTable("Selection summary")
     selectionContainer$setError(gettextf("Your sample size is larger than your population size. Cannot take a sample larger than the population."))
     return()
   }
