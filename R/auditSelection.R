@@ -21,6 +21,6 @@
 auditSelection <- function(jaspResults, dataset, options, ...){
 
   # For the selection constituents, see auditCommonFunctions.R
-  .auditSelectionAnalysis(options,
-                         jaspResults)
+  .auditSelectionAnalysis(options, jaspResults)
+  
 }

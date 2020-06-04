@@ -51,6 +51,11 @@ Form
 					text: 							qsTr("Absolute")
 					checked: 						true
 					childrenOnSameRow: 	true
+					onCheckedChanged: 
+					{
+						if (!variableTypeAuditValues.checked)
+							variableTypeAuditValues.checked = true
+					}
 
 					DoubleField
 					{
@@ -61,7 +66,7 @@ Form
 						min: 							0
 						fieldWidth: 			90
 						decimals: 				2
-						label: 						euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)
+						label: 						"$"
 					}
 				}
 			}
@@ -180,7 +185,7 @@ Form
 
 	RadioButtonGroup {
 		id:						variableType 
-		title: 				qsTr("Annotation method")
+		title: 				qsTr("Annotation Method")
 		name:					"variableType"
 
 		RadioButton {
@@ -195,6 +200,11 @@ Form
 			name:				"variableTypeCorrect"
 			label: 			qsTr("Correct / Incorrect")	
 			enabled:		materialityRelative.checked
+			onCheckedChanged: 
+			{
+				if (useSummaryStatistics.checked)
+					useSummaryStatistics.checked = false
+			}
 
 			CheckBox {
 				id: 			useSummaryStatistics
@@ -234,7 +244,6 @@ Form
 			id: 		ir
 			title: 		qsTr("Inherent Risk")
 			name: 		"IR"
-			enabled:	!pasteVariables.checked
 
 			RadioButton { text: qsTr("High"); 		name: "High"; checked: true	}
 			RadioButton { text: qsTr("Medium");		name: "Medium"}
@@ -262,7 +271,6 @@ Form
 			id: 		cr
 			title: 		qsTr("Control Risk")
 			name: 		"CR"
-			enabled:	!pasteVariables.checked
 
 			RadioButton { text: qsTr("High"); 		name: "High"; 	checked: true	}
 			RadioButton { text: qsTr("Medium"); 	name: "Medium" 					}
@@ -290,7 +298,6 @@ Form
 			id: 		expectedErrors
 			name: 		"expectedErrors"
 			title: 		qsTr("Expected Errors")
-			enabled:	!pasteVariables.checked
 
 			RowLayout
 			{
@@ -308,7 +315,7 @@ Form
 					decimals: 		2
 					visible: 		expectedAbsolute.checked
 					fieldWidth: 	60
-					label: 			euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)
+					label: 			"$"
 				}
 			}
 

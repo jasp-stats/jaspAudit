@@ -61,6 +61,11 @@ Form
 					text: 							qsTr("Absolute")
 					checked: 						true
 					childrenOnSameRow: 	true
+					onCheckedChanged: 
+					{
+						if (!variableTypeAuditValues.checked)
+							variableTypeAuditValues.checked = true
+					}
 
 					DoubleField
 					{
@@ -71,7 +76,7 @@ Form
 						min: 							0
 						fieldWidth: 			90
 						decimals: 				2
-						label: 						euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)
+						label: 						"$"
 					}
 				}
 			}
@@ -190,7 +195,7 @@ Form
 
 	RadioButtonGroup {
 		id:						variableType 
-		title: 				qsTr("Annotation method")
+		title: 				qsTr("Annotation Method")
 		name:					"variableType"
 
 		RadioButton {
@@ -205,6 +210,11 @@ Form
 			name:				"variableTypeCorrect"
 			label: 			qsTr("Correct / Incorrect")	
 			enabled:		materialityRelative.checked
+			onCheckedChanged: 
+			{
+				if (useSummaryStatistics.checked)
+					useSummaryStatistics.checked = false
+			}
 
 			CheckBox {
 				id: 			useSummaryStatistics
@@ -248,6 +258,7 @@ Form
 			{
 				title: 	qsTr("Estimation Method")
 				name: 	"estimator"
+				visible: variableTypeAuditValues.checked
 
 				RadioButton
 				{
@@ -298,6 +309,13 @@ Form
 					id: regressionBound
 					enabled: !variableTypeCorrect.checked
 				}
+			}
+
+			RadioButtonGroup
+			{
+				title: 	qsTr("Estimation Method")
+				name: 	"estimator2"
+				visible: variableTypeCorrect.checked
 				
 				RadioButton 
 				{ 

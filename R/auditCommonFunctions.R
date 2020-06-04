@@ -19,146 +19,91 @@
 # reviewer in the Pull Request
 
 ################################################################################
-################## The audit workflow ##########################################
+################## The Audit Workflow ##########################################
 ################################################################################
 
-.auditWorkflow <- function(options, 
-                           jaspResults, 
-                           type){
+.auditWorkflow <- function(options, jaspResults, type){
 
-  ### PROCEDURE ###
-  .auditProcedureStage(options, 
-                        jaspResults)
+  ### PROCEDURE STAGE ###
+  .auditProcedureStage(options, jaspResults)
 
-  ### PLANNING ###
-  .auditPlanningStage(options, 
-                      jaspResults,
-                      type)
+  ### PLANNING STAGE ###
+  .auditPlanningStage(options, jaspResults, type)
 
-  ### SELECTION ###
-  if(!options[["samplingChecked"]] || 
-      jaspResults[["planningContainer"]]$getError()) 
-      return() # Stop if "To Selection" is not pressed
+  ready <- .auditReadyForNextStage(options, jaspResults, stage = "planning")
+  if(!ready) return() # Stop if "To Selection" is not pressed
 
-  .auditSelectionStage(options, 
-                       jaspResults)
+  ### SELECTION STAGE ###
+  .auditSelectionStage(options, jaspResults)
 
-  ### EXECUTION ###
-  .auditExecutionStage(options,
-                        jaspResults)
+  ### EXECUTION STAGE ###
+  .auditExecutionStage(options, jaspResults)
 
-  ### EVALUATION ###
-  if(!options[["evaluationChecked"]] || 
-      jaspResults[["planningContainer"]]$getError() || 
-      jaspResults[["selectionContainer"]]$getError()) 
-      return()  # Stop if "To Evaluation" is not pressed
+  ready <- .auditReadyForNextStage(options, jaspResults, stage = "execution")
+  if(!ready) return() # Stop if "To Evaluation" is not pressed
 
-  .auditEvaluationStage(options, 
-                        jaspResults, 
-                        type)
+  ### EVALUATION STAGE ###
+  .auditEvaluationStage(options, jaspResults, type)
 
-  ### CONCLUSION ###
-  .auditConclusionStage(options, 
-                        jaspResults)
-
-  ### BADGES ###
-  badgeReady <- options[["auditResult"]] != ""
-
-  .auditBadgeSection(options,
-                     type = "workflow",
-                     stateContainer = NULL,
-                     jaspResults, 
-                     badgeReady, 
-                     position = 6)
-
+  ### CONCLUSION STAGE ###
+  .auditConclusionStage(options, jaspResults)
 }
 
 ################################################################################
 ################## The Separate Audit Planning Analysis ########################
 ################################################################################
 
-.auditPlanningAnalysis <- function(options,
-                                   jaspResults,
-                                   type){
+.auditPlanningAnalysis <- function(options, jaspResults, type){
 
   # Deduct the nessecary values from the input options
-  planningOptions <- .auditPlanningOptions(options,
-                                           jaspResults,
-                                           rawData = FALSE)
+  planningOptions <- .auditInputOptions(options, dataset = NULL, jaspResults,
+                                        stage = "planning", rawData = FALSE)
   
   # Create the procedure paragraph
-  .auditExplanatoryTextProcedure(options, 
-                                 planningOptions, 
-                                 jaspResults, 
+  .auditExplanatoryTextProcedure(options, planningOptions, jaspResults, 
                                  positionInContainer = 1)
 
   # Create the audit risk model paragraph
-  .auditRiskModelParagraph(options, 
-                           jaspResults, 
-                           position = 2)
+  .auditRiskModelParagraph(options, jaspResults, position = 2)
 
   # Check if the options have valid values for running the analysis
-  ready <- .auditPlanningReady(options, 
-                               planningOptions)
+  ready <- .auditReadyForAnalysis(options, planningOptions, stage = "planning")
 
   # Create the container that holds the planning output
-  planningContainer <- .auditPlanningGetContainer(jaspResults, 
-                                                  position = 3)
+  planningContainer <- .auditAnalysisContainer(jaspResults, stage = "planning",
+                                               position = 3)
 
   # Perfrom early error checks
-  .auditPlanningErrorChecks(options, 
-                            planningOptions, 
-                            planningContainer, 
-                            ready)
+  .auditPlanningErrorChecks(options, planningOptions, planningContainer, ready)
 
   # Get the planning state if it exists, otherwise make one
-  planningState <- .auditPlanningState(options, 
-                                       planningOptions, 
-                                       planningContainer, 
-                                       ready, 
-                                       type)
+  planningState <- .auditPlanningState(options, planningOptions, planningContainer, 
+                                       ready, type)
 
   # Create explanatory text for the planning
-  .auditExplanatoryTextPlanning(options, 
-                                planningOptions, 
-                                planningState, 
-                                planningContainer, 
-                                ready, 
-                                type, 
+  .auditExplanatoryTextPlanning(options, planningOptions, planningState, 
+                                planningContainer, ready, type, 
                                 positionInContainer = 1)
 
   # --- TABLES
 
-  # Create a state to keep track of table numbers
-  .auditCreateTableNumber(jaspResults)
+  .auditCreateTableNumber(jaspResults) # Initialize table numbers
   
   # Create the summary table
-  .auditPlanningSummaryTable(options, 
-                             planningOptions, 
-                             planningState, 
-                             planningContainer,
-                             jaspResults, 
-                             ready, 
-                             type, 
+  .auditPlanningSummaryTable(options, planningOptions, planningState, 
+                             planningContainer, jaspResults, ready, type, 
                              positionInContainer = 2)
 
   if(type == "bayesian"){
 
     # Create the implicit sample table
-    .auditImplicitSampleTable(options, 
-                              planningState, 
-                              planningContainer, 
-                              jaspResults,
-                              ready, 
-                              positionInContainer = 3)
+    .auditImplicitSampleTable(options, planningState, planningContainer, 
+                              jaspResults, ready, positionInContainer = 3)
 
     # Cerate the prior and posterior statistics table
-    .auditPriorAndExpectedPosteriorStatisticsTable(options, 
-                                                  planningState, 
-                                                  planningContainer, 
-                                                  jaspResults,
-                                                  ready, 
-                                                  positionInContainer = 4)
+    .auditPriorAndExpectedPosteriorStatisticsTable(options, planningState, 
+                                                   planningContainer, jaspResults,
+                                                   ready, positionInContainer = 4)
 
   }
   
@@ -166,28 +111,18 @@
   
   # --- PLOTS
   
-  # Create a state to keep track of figure numbers
-  .auditCreateFigureNumber(jaspResults)
+  .auditCreateFigureNumber(jaspResults) # Initialize figure numbers
 
   # Create the sample size comparison plot
-  .sampleSizeComparisonPlot(options, 
-                            planningOptions, 
-                            planningState, 
-                            planningContainer, 
-                            jaspResults,
-                            ready, 
-                            type, 
+  .sampleSizeComparisonPlot(options, planningOptions, planningState, 
+                            planningContainer, jaspResults, ready, type, 
                             positionInContainer = 5)
 
   if(type == "frequentist"){
 
     # Create the implied sampling distribution plot
-    .samplingDistributionPlot(options, 
-                              planningOptions, 
-                              planningState, 
-                              planningContainer, 
-                              jaspResults,
-                              ready, 
+    .samplingDistributionPlot(options, planningOptions, planningState, 
+                              planningContainer, jaspResults, ready, 
                               positionInContainer = 7)
     
   }
@@ -195,27 +130,11 @@
   if(type == "bayesian"){
 
     # Create the prior and expected posterior plot
-    .auditPlanningPlotPrior(options, 
-                            planningOptions, 
-                            planningState, 
-                            planningContainer,
-                            jaspResults, 
-                            ready, 
+    .auditPlanningPlotPrior(options, planningOptions, planningState, 
+                            planningContainer, jaspResults, ready, 
                             positionInContainer = 7)
 
   }
-
-  # ---
-  
-  # --- BADGES
-
-  # Provide the analysis badges
-  .auditBadgeSection(options,
-                     type = "planning",
-                     stateContainer = NULL,
-                     jaspResults, 
-                     ready, 
-                     position = 9)
 
   # --- 
 }
@@ -224,111 +143,72 @@
 ################## The Separate Audit Selection Analysis #######################
 ################################################################################
 
-.auditSelectionAnalysis <- function(options,
-                                    jaspResults){
+.auditSelectionAnalysis <- function(options, jaspResults){
 
-  selectionContainer <- createJaspContainer(title = "")
-  selectionContainer$position <- 1
-  selectionContainer$dependOn(options = c("recordNumberVariable",
-                                          "monetaryVariable",
-                                          "additionalVariables",
-                                          "rankingVariable",
-                                          "selectionMethod",
-                                          "selectionType",
-                                          "seed",
-                                          "intervalStartingPoint",
-                                          "sampleSize"))
+  # Create a custom container for the selection analysis
+  selectionContainer <- .auditAnalysisContainer(jaspResults, stage = "selection",
+                                                position = 1)
 
-  jaspResults[["selectionContainer"]] <- selectionContainer
+  # Read in the relevant variables from the data set
+  dataset <- .auditReadDataset(options, jaspResults, stage = "selection")
 
-  # Read in data
-  dataset <- .auditReadDataSelectionAnalysis(options,
-                                             jaspResults)
-
-  if(!is.null(dataset) && options[["sampleSize"]] >= nrow(dataset)){
-    selectionContainer[["errorMessage"]] <- createJaspTable("Selection summary")
-    selectionContainer$setError(gettextf("Your sample size is larger than your population size. Cannot take a sample larger than the population."))
-    return()
-  }
+  # Check for errors due to incompatible options
+  error <- .auditErrorCheckInputOptions(options, dataset, selectionContainer, 
+                                        stage = "selection")
+  if(error) return() # Quit on errors
 
   options[["materiality"]] <- ifelse(options[["selectionType"]] == "musSampling",
                                      yes = "materialityAbsolute",
                                      no = "materialityRelative")
 
-  planningOptions <- list("valuta" = "$")
-  planningOptions[["populationSize"]] <- ifelse(is.null(dataset),
-                                                yes = 0,
-                                                no = nrow(dataset))
+  # Deduce relevant quantities from input options
+  selectionOptions <- .auditInputOptions(options, dataset, jaspResults,
+                                         stage = "selection")
 
-  if(options[["monetaryVariable"]] != "")
-    planningOptions[["populationValue"]] <- sum(dataset[, .v(options[["monetaryVariable"]])])
-
-  planningState <- list("sampleSize" = options[["sampleSize"]])
+  # Create a planning state
+  planningState <- .auditBackwardsState(options, stage = "selection")
 
   # Perform error checks
-  .auditProcedureErrorChecks(options,
-                            dataset)
+  .auditErrorCheckInputOptions(options, dataset, analysisContainer = NULL, 
+                               stage = "procedure")
 
   # Perform the sampling
-  selectionState <- .auditSampling(dataset,
-                                   options,
-                                   planningState,
-                                   selectionContainer)
+  selectionState <- .auditSampling(dataset, options, planningState, selectionContainer)
 
   # Add the sample indicator to the data
-  .auditAddSelectionIndicator(options,
-                              planningOptions,
-                              selectionState, 
-                              jaspResults)
+  .auditAddSelectionIndicator(options, selectionOptions, selectionState, jaspResults)
 
   # Create explanatory text for the selection
-  .auditExplanatoryTextSelection(options,
-                                 planningOptions,
-                                 planningState,
-                                 selectionState,
-                                 selectionContainer,
+  .auditExplanatoryTextSelection(options, selectionOptions, planningState,
+                                 selectionState, selectionContainer,
                                  positionInContainer = 1)
 
   # --- TABLES
 
-  # Create a state to keep track of table numbers
-  .auditCreateTableNumber(jaspResults)
-  .auditCreateFigureNumber(jaspResults)
+  .auditCreateTableNumber(jaspResults) # Initialize table numbers
 
   # Create a table containing information about the selection process
-  .auditSelectionSummaryTable(options,
-                              planningOptions,
-                              planningState,
-                              selectionState,
-                              selectionContainer,
-                              jaspResults,
+  .auditSelectionSummaryTable(options, selectionOptions, planningState,
+                              selectionState, selectionContainer, jaspResults,
                               positionInContainer = 2)
 
   # Create a table containing descriptive statistics of the sample
-  .auditSelectionDescriptivesTable(options,
-                                   selectionState,
-                                   selectionContainer,
-                                   jaspResults,
-                                   positionInContainer = 3)
+  .auditSelectionDescriptivesTable(options, selectionState, selectionContainer,
+                                   jaspResults, positionInContainer = 3)
 
   # Create a table displaying the selection
-  .auditSelectionSampleTable(options,
-                             selectionState,
-                             selectionContainer,
-                             jaspResults,
-                             positionInContainer = 4)
+  .auditSelectionSampleTable(options, selectionState, selectionContainer,
+                             jaspResults, positionInContainer = 4)
 
   # ---
 
   # --- PLOTS
 
+  .auditCreateFigureNumber(jaspResults) # Initialize figure numbers
+
   # Create a collection of plots comparing the population to the sample values
-  .auditSelectionHistograms(options,
-                            dataset,
-                            selectionState,
-                            selectionContainer,
-                            jaspResults,
-                            positionInContainer = 5)
+  .auditSelectionHistograms(options, dataset, selectionState, selectionContainer,
+                            jaspResults, positionInContainer = 5)
 
   # ---
 }
@@ -339,57 +219,50 @@
 
 .auditEvaluationAnalysis <- function(options, jaspResults, type){                         
 
-  # Create a custom evaluation container
-  evaluationContainer <- .auditCreateSeparateEvaluationContainer(jaspResults)
+  # Create an empty container for the evaluation analysis
+  evaluationContainer <- .auditAnalysisContainer(jaspResults, stage = "evaluation",
+                                                 position = 1)
 
-  # Read in data
-  dataset <- .auditReadDataEvaluationAnalysis(options, jaspResults)
+  # Read in the relevant variables from the data set
+  dataset <- .auditReadDataset(options, jaspResults, stage = "evaluation")
 
-  # Deduce evaluation options from input
-  evaluationOptions <- .auditEvaluationAnalysisOptions(options, dataset)
+    # Check for errors due to incompatible options
+  error <- .auditErrorCheckInputOptions(options, dataset, evaluationContainer, 
+                                        stage = "evaluation", type)
+  if(error) return()
 
-  # Create the evaluation state 
-  evaluationState <- .auditEvaluationAnalysisState(options,
-                                                   dataset,
-                                                   evaluationOptions,
-                                                   evaluationContainer,
-                                                   type)
+  # Deduce relevant quantities from input options
+  evaluationOptions <- .auditInputOptions(options, dataset, jaspResults,
+                                          stage = "evaluation")
+
+  # Create the evaluation state that holds the results
+  evaluationState <- .auditEvaluationAnalysisState(options, dataset, evaluationOptions,
+                                                   evaluationContainer, type)
 
   # Backwards create a planningstate and a selectionstate
-  planningState <- .auditBackwardsPlanningState(options, dataset, 
-                                                evaluationOptions, 
+  planningState <- .auditBackwardsPlanningState(options, dataset, evaluationOptions, 
                                                 type)
-  selectionState <- .auditBackwardsSelectionState()
+
+  selectionState <- .auditBackwardsState(options, stage = "evaluation")
 
   # Create explanatory text for the evaluation
-  .auditExplanatoryTextEvaluation(options,
-                                  evaluationOptions,
-                                  planningState,
-                                  selectionState,
-                                  evaluationContainer, 
-                                  type,
+  .auditExplanatoryTextEvaluation(options, evaluationOptions, planningState,
+                                  selectionState, evaluationContainer, type,
                                   positionInContainer = 1)
 
   # --- TABLES
 
-  .auditCreateTableNumber(jaspResults)
+  .auditCreateTableNumber(jaspResults) # Initialize table numbers
 
   # Create a table containing information about the evaluation process  
-  .auditEvaluationSummaryTable(options,
-                               evaluationOptions,
-                               evaluationState,
-                               evaluationContainer,
-                               jaspResults,
-                               type,
+  .auditEvaluationSummaryTable(options, evaluationOptions, evaluationState,
+                               evaluationContainer, jaspResults, type,
                                positionInContainer = 2)
 
   if(type == "bayesian"){
 
-    .auditPriorAndPosteriorStatisticsTable(options, 
-                                           evaluationOptions,
-                                           evaluationState, 
-                                           evaluationContainer, 
-                                           jaspResults,
+    .auditPriorAndPosteriorStatisticsTable(options, evaluationOptions, evaluationState, 
+                                           evaluationContainer, jaspResults,
                                            positionInContainer = 3)
 
   }
@@ -398,47 +271,367 @@
 
   # --- PLOTS
 
-  .auditCreateFigureNumber(jaspResults)
+  .auditCreateFigureNumber(jaspResults) # Initialize figure numbers
 
   if(type == "bayesian"){
 
     # Create a plot containing the prior and posterior distribution
-    .auditEvaluationPriorAndPosterior(options,
-                                      evaluationOptions,
-                                      planningState,
-                                      evaluationState,
-                                      evaluationContainer,
-                                      jaspResults,
+    .auditEvaluationPriorAndPosterior(options, evaluationOptions, planningState,
+                                      evaluationState, evaluationContainer, jaspResults,
                                       positionInContainer = 4)
 
   }
 
   # Create a plot containing evaluation information
-  .auditEvaluationInformationPlot(options,
-                                  evaluationOptions,
-                                  evaluationState,
-                                  evaluationContainer,
-                                  jaspResults,
-                                  type,
+  .auditEvaluationInformationPlot(options, evaluationOptions, evaluationState,
+                                  evaluationContainer, jaspResults, type,
                                   positionInContainer = 6)
 
   # Create a plot containing the correlation between the book and audit values
   if(options[["variableType"]] == "variableTypeAuditValues")
-    .auditCorrelationPlot(options,
-                          evaluationOptions, 
-                          dataset,
-                          evaluationContainer,
-                          jaspResults,
-                          positionInContainer = 8)
+    .auditCorrelationPlot(options, evaluationOptions, dataset, evaluationContainer,
+                          jaspResults, positionInContainer = 8)
 
   # ---                                             
 
 }
 
-.auditCreateSeparateEvaluationContainer <- function(jaspResults){
-  evaluationContainer <- createJaspContainer(title = "")
-  evaluationContainer$position <- 1
-  evaluationContainer$dependOn(options = c("recordNumberVariable",
+################################################################################
+################## Common functions for the figure and table numbers ###########
+################################################################################
+
+.auditCreateFigureNumber <- function(jaspResults){
+  # Initialize figure numbers
+  jaspResults[["figNumber"]] <- createJaspState(0)
+}
+
+.auditCreateTableNumber <- function(jaspResults){
+  # Initialize table numbers
+  jaspResults[["tabNumber"]] <- createJaspState(0)
+}
+
+.updateTabNumber <- function(jaspResults){
+  # Update table numbers + 1
+  currentNumber <- jaspResults[["tabNumber"]]$object
+  jaspResults[["tabNumber"]] <- createJaspState(currentNumber + 1)
+}
+
+.updateFigNumber <- function(jaspResults){
+  # Update figure numbers + 1
+  currentNumber <- jaspResults[["figNumber"]]$object
+  jaspResults[["figNumber"]] <- createJaspState(currentNumber + 1)
+}
+
+################################################################################
+################## Common functions for reading data ###########################
+################################################################################
+
+.auditReadVariableFromOptions <- function(options, varType){
+  if(varType == "recordNumber"){
+    # Read in the record ID's
+    recordNumberVariable <- options[["recordNumberVariable"]]
+    if(recordNumberVariable == "")
+      recordNumberVariable <- NULL
+    return(recordNumberVariable)
+  } else if(varType == "monetary"){
+    # Read in the book values
+    monetaryVariable <- options[["monetaryVariable"]]
+    if(monetaryVariable == "")
+      monetaryVariable <- NULL    
+    return(monetaryVariable)
+  } else if(varType == "auditResult"){
+    # Read in the audit result
+    auditResult <- options[["auditResult"]]
+    if(auditResult == "")
+      auditResult <- NULL
+    return(auditResult)
+  } else if(varType == "sampleCounter"){
+    # Read in the sample counter
+    sampleCounter <- options[["sampleCounter"]]
+    if(sampleCounter == "")
+      sampleCounter <- NULL
+    return(sampleCounter)
+  } else if(varType == "ranking"){
+    # Read in the ranking variable
+    rankingVariable <- options[["rankingVariable"]]
+    if(rankingVariable == "")
+      rankingVariable <- NULL
+    return(rankingVariable)
+  } else if(varType == "additional"){
+    # Read in additional variables
+    additionalVariables <- unlist(options[["additionalVariables"]])
+    return(additionalVariables)
+  }
+}
+
+.auditReadDataset <- function(options, jaspResults, stage){
+
+  if(stage == "procedure"){
+
+    recordNumberVariable  <- .auditReadVariableFromOptions(options, varType = "recordNumber")
+    monetaryVariable      <- .auditReadVariableFromOptions(options, varType = "monetary")
+
+    analysisOptions <- list()
+  
+    if(!is.null(recordNumberVariable)){
+      dataset <- .readDataSetToEnd(columns.as.numeric = recordNumberVariable)
+      analysisOptions[["populationSize"]] <- nrow(dataset)
+      analysisOptions[["uniqueN"]] <- length(unique(dataset[, .v(options[["recordNumberVariable"]])]))
+
+      if(!is.null(monetaryVariable)){
+        variables <- c(recordNumberVariable, monetaryVariable)
+        dataset <- .readDataSetToEnd(columns.as.numeric = variables)
+        monetaryColumn <- dataset[, .v(monetaryVariable)]
+        analysisOptions[["populationValue"]] <- sum(monetaryColumn)
+        analysisOptions[["absPopulationValue"]] <- sum(abs(monetaryColumn))
+        analysisOptions[["meanValue"]] <- mean(monetaryColumn)
+        analysisOptions[["sigmaValue"]] <- sd(monetaryColumn)
+        analysisOptions[["quantileValue"]] <- as.numeric(quantile(monetaryColumn, probs = c(0.25, 0.50, 0.75)))
+        analysisOptions[["ready"]] <- TRUE
+      } else {
+        analysisOptions[["populationValue"]] <- 0.01
+        analysisOptions[["ready"]] <- ifelse(options[["materiality"]] == "materialityRelative",
+                                              yes = TRUE, no = FALSE)
+    }
+  } else {
+      dataset <- NULL
+      analysisOptions[["populationSize"]] <- 0
+      analysisOptions[["uniqueN"]] <- 0
+      analysisOptions[["populationValue"]] <- 0.01
+      analysisOptions[["ready"]] <- FALSE
+  }
+
+  materiality <- ifelse(options[["materiality"]] == "materialityRelative", 
+                        yes = options[["materialityPercentage"]], 
+                        no = options[["materialityValue"]])
+
+  if(materiality == 0) analysisOptions[["ready"]] <- FALSE
+
+  jaspResults[["procedureOptions"]] <- createJaspState(analysisOptions)
+  jaspResults[["procedureOptions"]]$dependOn(c("recordNumberVariable", 
+                                               "monetaryVariable", 
+                                               "materiality",
+                                               "materialityPercentage",
+                                               "materialityValue"))
+  return(dataset)
+
+  } else if(stage == "selection"){
+    recordNumberVariable  <- .auditReadVariableFromOptions(options, varType = "recordNumber")
+    monetaryVariable      <- .auditReadVariableFromOptions(options, varType = "monetary")
+    rankingVariable       <- .auditReadVariableFromOptions(options, varType = "ranking")
+    additionalVariables   <- .auditReadVariableFromOptions(options, varType = "additional")
+    variables             <- c(recordNumberVariable, monetaryVariable, rankingVariable, additionalVariables)
+  } else if(stage == "evaluation"){
+    recordNumberVariable  <- .auditReadVariableFromOptions(options, varType = "recordNumber")
+    monetaryVariable      <- .auditReadVariableFromOptions(options, varType = "monetary")
+    auditResult           <- .auditReadVariableFromOptions(options, varType = "auditResult")
+    sampleCounter         <- .auditReadVariableFromOptions(options, varType = "sampleCounter")
+    variables             <- c(recordNumberVariable, monetaryVariable, auditResult, sampleCounter)
+  }
+
+  if(!is.null(variables)){
+    dataset <- .readDataSetToEnd(columns.as.numeric = variables)
+    if(stage == "evaluation" && !is.null(sampleCounter)) # Apply sample filter
+      dataset <- subset(dataset, dataset[, .v(options[["sampleCounter"]])] > 0)
+    return(dataset)
+  } else {
+    return(NULL)
+  }
+}
+
+.auditInputOptions <- function(options, dataset, jaspResults, stage, rawData = FALSE){
+
+  inputOptions <- list()
+
+  if(stage == "planning"){
+
+    inputOptions[["valuta"]] <- base::switch(options[["valuta"]], 
+                                             "euroValuta" = "\u20AC", 
+                                             "dollarValuta" = "\u0024", 
+                                             "otherValuta" = options[["otherValutaName"]])
+  
+    inputOptions[["confidence"]] <- options[["confidence"]]
+    inputOptions[["confidenceLabel"]] <- paste0(round(options[["confidence"]] * 100, 2), "%")
+
+    if(!rawData){
+
+      inputOptions[["populationSize"]] <- options[["populationSize"]]
+      inputOptions[["populationValue"]] <- ifelse(options[["populationValue"]] == 0, 
+                                                  yes = 0.01, 
+                                                  no = options[["populationValue"]])
+
+    } else {
+      
+      procedureOptions <- jaspResults[["procedureOptions"]]$object
+      inputOptions[["populationSize"]] <- procedureOptions[["populationSize"]]
+      inputOptions[["populationValue"]] <- procedureOptions[["populationValue"]]
+
+    }
+
+  inputOptions[["absRel"]] <- ifelse(options[["materiality"]] == "materialityRelative", 
+                                     yes = gettext("<b>percentage</b>"), 
+                                     no = gettext("<b>amount</b>"))
+
+  inputOptions[["materiality"]] <- ifelse(options[["materiality"]] == "materialityRelative",
+                                          yes = options[["materialityPercentage"]], 
+                                          no = options[["materialityValue"]] / inputOptions[["populationValue"]])
+
+  inputOptions[["materialityLabel"]] <- ifelse(options[["materiality"]] == "materialityRelative",
+                                               yes = paste0(round(inputOptions[["materiality"]] * 100, 2), "%"), 
+                                               no = paste(inputOptions[["valuta"]], format(options[["materialityValue"]], 
+                                                                  scientific = FALSE)))
+  
+  inputOptions[["expectedErrors"]] <- ifelse(options[["expectedErrors"]] == "expectedRelative", 
+                                             yes = options[["expectedPercentage"]], 
+                                             no = options[["expectedNumber"]] / inputOptions[["populationValue"]])
+
+  inputOptions[["expectedErrorsLabel"]] <- ifelse(options[["expectedErrors"]] == "expectedRelative", 
+                                                  yes = paste0(round(inputOptions[["expectedErrors"]] * 100, 2), "%"), 
+                                                  no = paste(inputOptions[["valuta"]], options[["expectedNumber"]]))
+  
+  inputOptions[["likelihood"]] <- base::switch(options[["planningModel"]], 
+                                               "Poisson" = "poisson", 
+                                               "binomial" = "binomial", 
+                                               "hypergeometric" = "hypergeometric")
+
+  } else if(stage == "selection"){
+
+    inputOptions[["valuta"]] <- "$" # Hard coded
+    inputOptions[["populationSize"]] <- ifelse(is.null(dataset),
+                                               yes = 0,
+                                               no = nrow(dataset))
+    if(options[["monetaryVariable"]] != "")
+      inputOptions[["populationValue"]] <- sum(dataset[, .v(options[["monetaryVariable"]])])
+
+  } else if(stage == "evaluation"){
+
+    confidence <- options[["confidence"]]
+    confidenceLabel <- paste0(round(options[["confidence"]] * 100, 2), "%")
+    populationSize <- options[["populationSize"]]
+    populationValue <- ifelse(options[["populationValue"]] == 0, 
+                              yes = 0.01, 
+                              no = options[["populationValue"]])
+    materiality <- ifelse(options[["materiality"]] == "materialityRelative",
+                              yes = options[["materialityPercentage"]], 
+                              no = options[["materialityValue"]] / 
+                                    populationValue)
+    materialityLabel <- ifelse(options[["materiality"]] == "materialityRelative",
+                              yes = paste0(round(materiality * 100, 2), "%"), 
+                              no = paste("$", format(options[["materialityValue"]], 
+                                                scientific = FALSE)))
+    expectedErrors <- ifelse(options[["expectedErrors"]] == "expectedRelative", 
+                            yes = options[["expectedPercentage"]], 
+                            no = options[["expectedNumber"]] / 
+                                  populationValue)
+    likelihood <- base::switch(options[["estimator"]],
+                                "betaBound" = "binomial",
+                                "gammaBound" = "poisson",
+                                "betabinomialBound" = "hypergeometric")
+
+    inputOptions[["materiality"]] <- materiality
+    inputOptions[["materialityLabel"]] <- materialityLabel
+    inputOptions[["populationSize"]] <- populationSize
+    inputOptions[["populationValue"]] <- populationValue
+    inputOptions[["valuta"]] <- "$"
+    inputOptions[["confidence"]] <- confidence
+    inputOptions[["confidenceLabel"]] <- confidenceLabel
+    inputOptions[["expectedErrors"]] <- expectedErrors
+    inputOptions[["likelihood"]] <- likelihood
+
+  }
+
+  return(inputOptions)
+
+}
+
+.auditBackwardsState <- function(options, stage){
+  if(stage == "selection"){
+    state <- list("sampleSize" = options[["sampleSize"]])
+  } else if(stage == "evaluation"){
+    state <- data.frame(count = 1)
+  }
+  return(state)
+}
+
+################################################################################
+################## Common functions for containers #############################
+################################################################################
+
+.auditAnalysisContainer <- function(jaspResults, stage, position = 1){
+
+  if(stage == "procedure"){
+
+    if(!is.null(jaspResults[["procedureContainer"]]))
+      return(jaspResults[["procedureContainer"]])
+
+    analysisContainer <- createJaspContainer(title = gettext("<u>Procedure</u>"))
+    analysisContainer$position <- position
+    analysisContainer$dependOn(options = c("explanatoryText", 
+                                           "confidence", 
+                                           "materiality", 
+                                           "materialityValue", 
+                                           "materialityPercentage", 
+                                           "valuta",
+                                           "otherValutaName",
+                                           "monetaryVariable",
+                                           "recordNumberVariable"))
+
+    jaspResults[["procedureContainer"]] <- analysisContainer
+
+  } else if(stage == "planning"){
+
+    if(!is.null(jaspResults[["planningContainer"]]))
+      return(jaspResults[["planningContainer"]])
+
+    analysisContainer <- createJaspContainer(title = gettext("<u>Planning</u>"))
+    analysisContainer$position <- position
+    analysisContainer$dependOn(options = c("IR", 
+                                           "irCustom",
+                                           "CR",  
+                                           "crCustom", 
+                                           "confidence",
+                                           "populationSize", 
+                                           "populationValue",
+                                           "materiality",
+                                           "materialityPercentage", 
+                                           "materialityValue",
+                                           "expectedPercentage",
+                                           "expectedErrors", 
+                                           "expectedNumber",
+                                           "recordNumberVariable",
+                                           "monetaryVariable",
+                                           "valuta",
+                                           "otherValutaName"))
+
+    jaspResults[["planningContainer"]] <- analysisContainer
+
+  } else if(stage == "selection"){
+
+    if(!is.null(jaspResults[["selectionContainer"]]))
+      return(jaspResults[["selectionContainer"]])
+
+    analysisContainer <- createJaspContainer(title = "")
+    analysisContainer$position <- position
+    analysisContainer$dependOn(options = c("recordNumberVariable",
+                                           "monetaryVariable",
+                                           "additionalVariables",
+                                           "rankingVariable",
+                                           "selectionMethod",
+                                           "selectionType",
+                                           "seed",
+                                           "intervalStartingPoint",
+                                           "sampleSize"))
+
+    jaspResults[["selectionContainer"]] <- analysisContainer
+
+  } else if(stage == "evaluation"){
+
+    if(!is.null(jaspResults[["evaluationContainer"]]))
+      return(jaspResults[["evaluationContainer"]])
+
+    analysisContainer <- createJaspContainer(title = "")
+    analysisContainer$position <- position
+    analysisContainer$dependOn(options = c("recordNumberVariable",
                                            "monetaryVariable",
                                            "auditResult",
                                            "sampleCounter",
@@ -454,251 +647,163 @@
                                            "materialityValue",
                                            "useSumStats",
                                            "nSumStats",
-                                           "kSumStats"))
+                                           "kSumStats",
+                                           "estimator",
+                                           "estimator2",
+                                           "areaUnderPosterior",
+                                           "stringerBoundLtaAdjustment"))
 
-  jaspResults[["evaluationContainer"]] <- evaluationContainer
-  return(evaluationContainer)
-}
+    jaspResults[["evaluationContainer"]] <- analysisContainer
 
-.auditBackwardsSelectionState <- function(){
-  selectionState <- data.frame(count = 1)
-  return(selectionState)
-}
-
-################################################################################
-################## Common functions for the figure and table numbers ###########
-################################################################################
-
-.auditCreateFigureNumber <- function(jaspResults){
-    jaspResults[["figNumber"]] <- createJaspState(0)
-}
-
-.auditCreateTableNumber <- function(jaspResults){
-    jaspResults[["tabNumber"]] <- createJaspState(0)
-}
-
-.updateTabNumber <- function(jaspResults){
-  currentNumber <- jaspResults[["tabNumber"]]$object
-  jaspResults[["tabNumber"]] <- createJaspState(currentNumber + 1)
-}
-
-.updateFigNumber <- function(jaspResults){
-  currentNumber <- jaspResults[["figNumber"]]$object
-  jaspResults[["figNumber"]] <- createJaspState(currentNumber + 1)
-}
-
-################################################################################
-################## Common functions for reading data ###########################
-################################################################################
-
-
-.auditReadVariableFromOptions <- function(options, type){
-  if(type == "recordNumber"){
-    recordNumberVariable <- options[["recordNumberVariable"]]
-    if(recordNumberVariable == "")
-      recordNumberVariable <- NULL
-    return(recordNumberVariable)
-  } else if(type == "monetary"){
-    monetaryVariable <- options[["monetaryVariable"]]
-    if(monetaryVariable == "")
-      monetaryVariable <- NULL    
-    return(monetaryVariable)
-  } else if(type == "auditResult"){
-    auditResult <- options[["auditResult"]]
-    if(auditResult == "")
-      auditResult <- NULL
-    return(auditResult)
-  } else if(type == "sampleCounter"){
-    sampleCounter <- options[["sampleCounter"]]
-    if(sampleCounter == "")
-      sampleCounter <- NULL
-    return(sampleCounter)
   }
+
+  return(analysisContainer)
+}
+
+################################################################################
+################## Common functions for error checks ###########################
+################################################################################
+
+.auditErrorCheckInputOptions <- function(options, dataset, analysisContainer, 
+                                         stage, type = NULL){
+
+  if(stage == "procedure"){
+      variables <- NULL
+      if(options[["recordNumberVariable"]] != "")
+        variables <- c(variables, options[["recordNumberVariable"]])
+      if(options[["monetaryVariable"]] != "")
+        variables <- c(variables, options[["monetaryVariable"]])
+      if (length(variables) == 0) return()
+      N <- nrow(dataset)
+      # Check for infinity, zero variance, and any missing observations
+      .hasErrors(dataset, type = c("infinity", "variance", "observations"),
+                  all.target = variables, message = "short", 
+                  observations.amount = paste0("< ", N),
+                  exitAnalysisIfErrors = TRUE)
+  } else if(stage == "selection"){
+    if(!is.null(dataset) && options[["sampleSize"]] >= nrow(dataset)){
+      # Error if the sample size is larger than the population size.
+      analysisContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
+      analysisContainer$setError(gettextf("Your sample size is larger than (or equal to) your population size. Cannot take a sample larger than the population."))
+      return(TRUE)
+    } else if(!is.null(dataset) && options[["sampleSize"]] == 1){
+      # Error if the sample size is 1.
+      analysisContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
+      analysisContainer$setError(gettextf("Your sample size must be larger than 1."))
+      return(TRUE)
+    } else {
+      # No error
+      return(FALSE)
+    }
+  } else if(stage == "evaluation"){
+    if(options[["variableType"]] == "variableTypeCorrect" && 
+        !options[["useSumStats"]] && 
+        options[["auditResult"]] != "" &&
+        !all(unique(dataset[, .v(options[["auditResult"]])]) %in% c(0, 1))){
+      # Error if the audit result does not contain only zero's and one's.
+      analysisContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation summary"))
+      analysisContainer$setError(gettextf("Your audit result does not contain only 0's (correct) and 1's (incorrect)."))
+      return(TRUE)
+    } else if(type == "frequentist" && 
+              options[["variableType"]] == "variableTypeCorrect" && 
+              options[["estimator2"]] == "hyperBound" && 
+              options[["populationSize"]] == 0){
+      # Error if the population size is not defined when the hypergeometric bound is used.
+      analysisContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation summary"))
+      analysisContainer$setError(gettextf("The hypergeometric confidence bound requires that you specify the population size."))
+      return(TRUE)
+    } else if((!options[["useSumStats"]] && !is.null(dataset) && options[["populationSize"]] < nrow(dataset)) || 
+              (options[["useSumStats"]] && options[["populationSize"]] < options[["nSumStats"]])){
+      # Error if the sample size is larger than the population size.
+      analysisContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation summary"))
+      analysisContainer$setError(gettextf("Your sample size is larger than (or equal to) your population size. Please adjust your population size accordingly."))
+      return(TRUE)
+    } else if(options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound") && 
+              (options[["populationValue"]] == 0 || options[["populationSize"]] == 0)){
+      # Error if the population size or the population value are zero when using direct, difference, ratio, or regression.
+      analysisContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation summary"))
+      analysisContainer$setError(gettextf("The direct, difference, ratio, and regression confidence bound require that you specify the population size and the population value."))
+      return(TRUE)
+    } else {
+      # No error
+      return(FALSE)
+    }
+  }
+}
+
+.auditReadyForNextStage <- function(options, jaspResults, stage){
+  if(stage == "planning"){
+    # Check whether the "To selection" button is pressed and no error occurred in the previous stage
+    ready <- options[["samplingChecked"]] && !jaspResults[["planningContainer"]]$getError()
+  } else if(stage == "selection"){
+    
+  } else if(stage == "execution"){
+    # Check whether the "To evaluation" button is pressed and no error occurred in the previous stage
+    ready <- options[["evaluationChecked"]] && !jaspResults[["planningContainer"]]$getError() && !jaspResults[["selectionContainer"]]$getError()
+  } else if(stage == "evaluation"){
+
+  }
+  return(ready)
+}
+
+.auditReadyForAnalysis <- function(options, planningOptions, stage){
+
+  if(stage == "planning"){
+    if(options[["materiality"]] == "materialityAbsolute"){
+      ready <- options[["materialityValue"]] != 0 && planningOptions[["populationSize"]] != 0 && 
+                planningOptions[["populationValue"]] != 0 && planningOptions[["populationValue"]] != 0.01
+    } else {
+      ready <- options[["materialityPercentage"]] != 0 && planningOptions[["populationSize"]] != 0
+    }
+  }
+
+  return(ready)
+
 }
 
 ################################################################################
 ################## Common functions for the procedure ##########################
 ################################################################################
 
-.auditProcedureStage <- function(options, 
-                                 jaspResults){
+.auditProcedureStage <- function(options, jaspResults){
 
   # Extract the record number and book value columns
-  dataset <- .auditReadDataProcedure(options, 
-                                     jaspResults)
-  # Error checks for infinity, zero variance, and missing values
-  .auditProcedureErrorChecks(options, 
-                             dataset)
+  dataset <- .auditReadDataset(options, jaspResults, stage = "procedure")
+  
+  # Check for errors due to incompatible options (variables)
+  .auditErrorCheckInputOptions(options, dataset, analysisContainer = NULL, 
+                              stage = "procedure")
+
   # Deduct the nessecary values from the input options
-  planningOptions <- .auditPlanningOptions(options,
-                                           jaspResults,
-                                           rawData = TRUE)
+  planningOptions <- .auditInputOptions(options, dataset, jaspResults,
+                                        stage = "planning", rawData = TRUE)
 
   # Create the procedure paragraph
-  .auditExplanatoryTextProcedure(options, 
-                                 planningOptions, 
-                                 jaspResults, 
+  .auditExplanatoryTextProcedure(options, planningOptions, jaspResults, 
                                  positionInContainer = 1)
 
   # --- TABLES
 
-  # Create state for the table numbers
-  .auditCreateTableNumber(jaspResults)
+  .auditCreateTableNumber(jaspResults) # Initialize table numbers
   
   # Create a table containing descriptive statistics for the book values
-  .auditBookValueDescriptiveTable(options, 
-                                  planningOptions,
-                                  jaspResults,
+  .auditBookValueDescriptiveTable(options, planningOptions, jaspResults,
                                   positionInContainer = 2)
 
   # ---  
   
   # --- PLOTS
 
-    # Create state for the figure numbers
-  .auditCreateFigureNumber(jaspResults)
+  .auditCreateFigureNumber(jaspResults) # Initialize figure numbers
 
   # Create a plot of the population book values (if the user wants it)
-  .auditBookValueDistributionPlot(dataset, 
-                                  options,
-                                  planningOptions, 
-                                  jaspResults, 
+  .auditBookValueDistributionPlot(dataset, options, planningOptions, jaspResults, 
                                   positionInContainer = 3)
 
   # ---
 
   # Create the audit risk model paragraph
-  .auditRiskModelParagraph(options, 
-                           jaspResults, 
-                           position = 2)
-}
-
-.auditReadDataProcedure <- function(options, 
-                                    jaspResults){
-
-  recordNumberVariable <- options[["recordNumberVariable"]]
-  if(recordNumberVariable == "") 
-    recordNumberVariable <- NULL 
-
-  monetaryVariable <- options[["monetaryVariable"]]
-  if(monetaryVariable == "")              
-    monetaryVariable <- NULL 
-
-  procedureOptions <- list()
-  
-  if(!is.null(recordNumberVariable)){
-
-    dataset <- .readDataSetToEnd(columns.as.numeric = recordNumberVariable)
-
-    procedureOptions[["populationSize"]] <- nrow(dataset)
-    procedureOptions[["uniqueN"]] <- length(unique(
-                                      dataset[, .v(options[["recordNumberVariable"]])]
-                                    ))
-
-    if(!is.null(monetaryVariable)){
-
-      variables <- c(recordNumberVariable, monetaryVariable)
-      dataset <- .readDataSetToEnd(columns.as.numeric = variables)
-
-      monetaryColumn <- dataset[, .v(monetaryVariable)]
-      
-      procedureOptions[["populationValue"]] <- sum(monetaryColumn)
-      procedureOptions[["absPopulationValue"]] <- sum(abs(monetaryColumn))
-      procedureOptions[["meanValue"]] <- mean(monetaryColumn)
-      procedureOptions[["sigmaValue"]] <- sd(monetaryColumn)
-      procedureOptions[["quantileValue"]] <- as.numeric(quantile(monetaryColumn, 
-                                                                 probs = c(0.25, 
-                                                                           0.50, 
-                                                                           0.75)))
-      procedureOptions[["ready"]] <- TRUE
-
-    } else {
-
-      procedureOptions[["populationValue"]] <- 0.01
-      procedureOptions[["ready"]] <- ifelse(options[["materiality"]] == "materialityRelative",
-                                            yes = TRUE,
-                                            no = FALSE)
-
-    }
-
-  } else {
-
-      dataset <- NULL
-      procedureOptions[["populationSize"]] <- 0
-      procedureOptions[["uniqueN"]] <- 0
-      procedureOptions[["populationValue"]] <- 0.01
-      procedureOptions[["ready"]] <- FALSE
-  }
-
-  materiality <- ifelse(options[["materiality"]] == "materialityRelative", 
-                        yes = options[["materialityPercentage"]], 
-                        no = options[["materialityValue"]])
-
-  if(materiality == 0)
-    procedureOptions[["ready"]] <- FALSE
-
-  jaspResults[["procedureOptions"]] <- createJaspState(procedureOptions)
-  jaspResults[["procedureOptions"]]$dependOn(c("recordNumberVariable", 
-                                               "monetaryVariable", 
-                                               "materiality",
-                                               "materialityPercentage",
-                                               "materialityValue"))
-  return(dataset)
-}
-
-.auditProcedureErrorChecks <- function(options, 
-                                       dataset){
-  
-  variables <- NULL
-
-  if(options[["recordNumberVariable"]] != "")
-    variables <- c(variables, options[["recordNumberVariable"]])
-
-  if(options[["monetaryVariable"]] != "")
-    variables <- c(variables, options[["monetaryVariable"]])
-  
-  if (length(variables) == 0)
-    return()
-
-  N <- nrow(dataset)
-
-  # Check for infinity, zero variance, and any missing observations
-  .hasErrors(dataset, 
-             type = c("infinity", 
-                      "variance", 
-                      "observations"),
-             all.target = variables, 
-             message = "short", 
-             observations.amount = paste0("< ", N),
-             exitAnalysisIfErrors = TRUE)
-}
-
-.auditProcedureGetContainer <- function(jaspResults,
-                                        position){
-
-  if(!is.null(jaspResults[["procedureContainer"]])){
-
-    return(jaspResults[["procedureContainer"]])
-
-  } else {
-                                         
-    procedureContainer <- createJaspContainer(title = gettext("<u>Procedure</u>"))
-    procedureContainer$position <- position
-
-    procedureContainer$dependOn(options = c("explanatoryText", 
-                                            "confidence", 
-                                            "materiality", 
-                                            "materialityValue", 
-                                            "materialityPercentage", 
-                                            "valuta",
-                                            "otherValutaName",
-                                            "monetaryVariable",
-                                            "recordNumberVariable"))
-
-    jaspResults[["procedureContainer"]] <- procedureContainer
-
-    return(procedureContainer)
-  }
+  .auditRiskModelParagraph(options, jaspResults, position = 2)
 }
 
 .auditExplanatoryTextProcedure <- function(options, 
@@ -708,8 +813,9 @@
 
   if(options[["explanatoryText"]]){
 
-    procedureContainer <- .auditProcedureGetContainer(jaspResults,
-                                                      position = 1)
+    procedureContainer <- .auditAnalysisContainer(jaspResults, 
+                                                  stage = "procedure",
+                                                  position = 1)
 
 
     procedureText <- gettextf("The objective of this substantive testing procedure is to determine with a specified confidence <b>(%1$s)</b> whether the %2$s of misstatement in the target population is lower than the specified materiality of <b>%3$s</b>.",
@@ -722,16 +828,13 @@
   }
 }
 
-.auditBookValueDescriptiveTable <- function(options, 
-                                            planningOptions,
-                                            jaspResults,
+.auditBookValueDescriptiveTable <- function(options, planningOptions, jaspResults,
                                             positionInContainer){
 
-  procedureContainer <- .auditProcedureGetContainer(jaspResults,
-                                                    position = 1)
+  procedureContainer <- .auditAnalysisContainer(jaspResults, stage = "procedure",
+                                                position = 1)
 
-  if(!options[["bookValueDescriptives"]] ||
-      options[["monetaryVariable"]] == "") 
+  if(!options[["bookValueDescriptives"]] || options[["monetaryVariable"]] == "") 
     return() 
 
   .updateTabNumber(jaspResults)
@@ -779,59 +882,37 @@
 
     procedureContainer[["bookValueDescriptives"]] <- descriptiveTable
 
-    if(options[["monetaryVariable"]] == "" || 
-        options[["recordNumberVariable"]] == "")
+    if(options[["monetaryVariable"]] == "" || options[["recordNumberVariable"]] == "")
       return()
 
     procedureOptions <- jaspResults[["procedureOptions"]]$object
     valuta <- planningOptions[["valuta"]]
 
-    row <- data.frame(populationSize = procedureOptions[["populationSize"]], 
-                      populationValue = paste(valuta, 
-                                              round(procedureOptions[["populationValue"]], 2)), 
-                      absValue = paste(valuta,
-                                        round(procedureOptions[["absPopulationValue"]], 2)),
-                      meanValue = paste(valuta, 
-                                        round(procedureOptions[["meanValue"]], 2)), 
-                      sigmaValue = paste(valuta, 
-                                        round(procedureOptions[["sigmaValue"]], 2)), 
-                      q1 = paste(valuta, 
-                                round(procedureOptions[["quantileValue"]][1], 2)), 
-                      q2 = paste(valuta, 
-                                round(procedureOptions[["quantileValue"]][2], 2)), 
-                      q3 = paste(valuta, 
-                                round(procedureOptions[["quantileValue"]][3], 2)))
+    row <- data.frame(populationSize    = procedureOptions[["populationSize"]], 
+                      populationValue   = paste(valuta, round(procedureOptions[["populationValue"]], 2)), 
+                      absValue          = paste(valuta, round(procedureOptions[["absPopulationValue"]], 2)),
+                      meanValue         = paste(valuta, round(procedureOptions[["meanValue"]], 2)), 
+                      sigmaValue        = paste(valuta, round(procedureOptions[["sigmaValue"]], 2)), 
+                      q1                = paste(valuta, round(procedureOptions[["quantileValue"]][1], 2)), 
+                      q2                = paste(valuta, round(procedureOptions[["quantileValue"]][2], 2)), 
+                      q3                = paste(valuta, round(procedureOptions[["quantileValue"]][3], 2)))
     
     descriptiveTable$addRows(row)
   }
 }
 
-.auditBarPlot <- function(column, 
-                          variableName, 
-                          valuta){
+.auditBarPlot <- function(column, variableName, valuta){
 
   h <- hist(column, plot = FALSE)
   yBreaks <- JASPgraphs::getPrettyAxisBreaks(c(0, h$counts), min.n = 4)
-  xBreaks <- JASPgraphs::getPrettyAxisBreaks(c(column, h$breaks), 
-                                            min.n = 4)
+  xBreaks <- JASPgraphs::getPrettyAxisBreaks(c(column, h$breaks), min.n = 4)
 
   p <- ggplot2::ggplot(data = data.frame(column), mapping = ggplot2::aes(x = column, y = ..count..)) + 
-        ggplot2::scale_x_continuous(name = gettextf("Book values (%1$s)", valuta),
-                                    breaks = xBreaks,
-                                    limits = range(xBreaks)) +
-        ggplot2::scale_y_continuous(name = gettext("Frequency"),
-                                    breaks = yBreaks,
-                                    limits = c(0, max(yBreaks))) + 
-        ggplot2::geom_histogram(
-                  binwidth = (h$breaks[2] - h$breaks[1]),
-                  fill = "grey",
-                  col = "black",
-                  size = .7,
-                  center = ((h$breaks[2] - h$breaks[1])/2))
-
-  p <- JASPgraphs::themeJasp(p,
-                             axisTickWidth = .7,
-                             bty = list(type = "n", ldwX = .7, lwdY = 1))
+        ggplot2::scale_x_continuous(name = gettextf("Book values (%1$s)", valuta), breaks = xBreaks, limits = range(xBreaks)) +
+        ggplot2::scale_y_continuous(name = gettext("Frequency"), breaks = yBreaks, limits = c(0, max(yBreaks))) + 
+        ggplot2::geom_histogram(binwidth = (h$breaks[2] - h$breaks[1]), fill = "grey", col = "black", size = .7, center = ((h$breaks[2] - h$breaks[1])/2))
+  p <- JASPgraphs::themeJasp(p, axisTickWidth = .7, bty = list(type = "n", ldwX = .7, lwdY = 1))
+  
   return(p)
 }
 
@@ -841,8 +922,9 @@
                                             jaspResults, 
                                             positionInContainer){
 
-  procedureContainer <- .auditProcedureGetContainer(jaspResults,
-                                                    position = 1)
+  procedureContainer <- .auditAnalysisContainer(jaspResults, 
+                                                stage = "procedure",
+                                                position = 1)
   
   if(!options[["bookValueDistribution"]] ||
       options[["monetaryVariable"]] == "") 
@@ -1070,17 +1152,19 @@
                                 type){
 
   # Deduct the nessecary values from the input options
-  planningOptions <- .auditPlanningOptions(options,
-                                           jaspResults,
-                                           rawData = TRUE)
+  planningOptions <- .auditInputOptions(options,
+                                        dataset = NULL,
+                                        jaspResults,
+                                        stage = "planning",
+                                        rawData = TRUE)
 
   # Check if the options have valid values for running the analysis
-  ready <- .auditPlanningReady(options, 
-                               planningOptions)
+  ready <- .auditReadyForAnalysis(options, planningOptions, stage = "planning")
 
   # Create the container that holds the planning output
-  planningContainer <- .auditPlanningGetContainer(jaspResults, 
-                                                  position = 3)
+  planningContainer <- .auditAnalysisContainer(jaspResults,
+                                               stage = "planning",
+                                               position = 3)
 
   # Perfrom early error checks
   .auditPlanningErrorChecks(options, 
@@ -1179,41 +1263,6 @@
   # ---
 }
 
-.auditPlanningGetContainer <- function(jaspResults, 
-                                       position){
-
-  if(!is.null(jaspResults[["planningContainer"]])){
-
-    return(jaspResults[["planningContainer"]])
-
-  } else {
-                                         
-    planningContainer <- createJaspContainer(title = gettext("<u>Planning</u>"))
-    planningContainer$position <- position
-    planningContainer$dependOn(options = c("IR", 
-                                           "irCustom",
-                                           "CR",  
-                                           "crCustom", 
-                                           "confidence",
-                                           "populationSize", 
-                                           "populationValue",
-                                           "materiality",
-                                           "materialityPercentage", 
-                                           "materialityValue",
-                                           "expectedPercentage",
-                                           "expectedErrors", 
-                                           "expectedNumber",
-                                           "recordNumberVariable",
-                                           "monetaryVariable",
-                                           "valuta",
-                                           "otherValutaName"))
-
-    jaspResults[["planningContainer"]] <- planningContainer
-
-    return(planningContainer)
-  }
-}
-
 .auditPlanningErrorChecks <- function(options, 
                                       planningOptions, 
                                       planningContainer, 
@@ -1232,97 +1281,6 @@
     if(expTMP > planningOptions[["materiality"]])
       planningContainer$setError(gettext("Analysis not possible: Your expected errors are higher than materiality."))
   }
-}
-
-.auditPlanningOptions <- function(options, 
-                                  jaspResults, 
-                                  rawData = FALSE){
-
-  valuta <- base::switch(options[["valuta"]], 
-                         "euroValuta" = "\u20AC", 
-                         "dollarValuta" = "\u0024", 
-                         "otherValuta" = options[["otherValutaName"]])
-  
-  confidence <- options[["confidence"]]
-  confidenceLabel <- paste0(round(confidence * 100, 2), "%")
-
-  if(!rawData){
-
-    populationSize <- options[["populationSize"]]
-    populationValue <- ifelse(options[["populationValue"]] == 0, 
-                              yes = 0.01, 
-                              no = options[["populationValue"]])
-
-  } else {
-    
-    procedureOptions <- jaspResults[["procedureOptions"]]$object
-    populationSize <- procedureOptions[["populationSize"]]
-    populationValue <- procedureOptions[["populationValue"]]
-
-  }
-
-  absRel <- ifelse(options[["materiality"]] == "materialityRelative", 
-                   yes = gettext("<b>percentage</b>"), 
-                   no = gettext("<b>amount</b>"))
-
-  materiality <- ifelse(options[["materiality"]] == "materialityRelative",
-                        yes = options[["materialityPercentage"]], 
-                        no = options[["materialityValue"]] / 
-                             populationValue)
-
-  materialityLabel <- ifelse(options[["materiality"]] == "materialityRelative",
-                             yes = paste0(round(materiality * 100, 2), "%"), 
-                             no = paste(valuta, 
-                                        format(options[["materialityValue"]], 
-                                               scientific = FALSE)))
-  
-  expectedErrors <- ifelse(options[["expectedErrors"]] == "expectedRelative", 
-                           yes = options[["expectedPercentage"]], 
-                           no = options[["expectedNumber"]] / 
-                                populationValue)
-
-  expectedErrorsLabel <- ifelse(options[["expectedErrors"]] == "expectedRelative", 
-                                yes = paste0(round(expectedErrors * 100, 2), "%"), 
-                                no = paste(valuta, options[["expectedNumber"]]))
-  
-  likelihood <- base::switch(options[["planningModel"]], 
-                             "Poisson" = "poisson", 
-                             "binomial" = "binomial", 
-                             "hypergeometric" = "hypergeometric")
-  
-  optionsList <- list("valuta" = valuta, 
-                      "confidence" = confidence, 
-                      "confidenceLabel" = confidenceLabel, 
-                      "absRel" = absRel, 
-                      "populationSize" = populationSize, 
-                      "populationValue" = populationValue, 
-                      "materiality" = materiality, 
-                      "materialityLabel" = materialityLabel, 
-                      "expectedErrors" = expectedErrors, 
-                      "expectedErrorsLabel" = expectedErrorsLabel,
-                      "likelihood" = likelihood)
-
-  return(optionsList)
-}
-
-.auditPlanningReady <- function(options, 
-                                planningOptions){
-
-  if(options[["materiality"]] == "materialityAbsolute"){
-
-    ready <- options[["materialityValue"]] != 0 && 
-              planningOptions[["populationSize"]] != 0 && 
-              planningOptions[["populationValue"]] != 0 && 
-              planningOptions[["populationValue"]] != 0.01
-
-  } else {
-
-    ready <- options[["materialityPercentage"]] != 0 && 
-              planningOptions[["populationSize"]] != 0
-
-  }
-
-  return(ready)
 }
 
 .auditPlanningState <- function(options, 
@@ -2101,9 +2059,11 @@
   dataset <- .auditAddSelectionColumns(options, jaspResults)
 
   # Import options and results from the planning stage 
-  planningOptions <- .auditPlanningOptions(options,
-                                           jaspResults,
-                                           rawData = TRUE)
+  planningOptions <- .auditInputOptions(options,
+                                        dataset,
+                                        jaspResults,
+                                        stage = "planning",
+                                        rawData = TRUE)
 
   planningContainer <- jaspResults[["planningContainer"]]
   planningState <- planningContainer[["planningState"]]$object
@@ -2153,41 +2113,10 @@
   # ---
 }
 
-.auditReadDataSelectionAnalysis <- function(options,
-                                            jaspResults){
-
-  recordNumberVariable <- options[["recordNumberVariable"]]
-  if(recordNumberVariable == "")
-    recordNumberVariable <- NULL
-
-  monetaryVariable <- options[["monetaryVariable"]]
-  if(monetaryVariable == "")
-    monetaryVariable <- NULL
-
-  rankingVariable <- options[["rankingVariable"]]
-  if(rankingVariable == "")
-    rankingVariable <- NULL
-
-  additionalVariables <- unlist(options[["additionalVariables"]])
-  variables <- c(recordNumberVariable, monetaryVariable, rankingVariable, additionalVariables)
-
-  if(!is.null(variables)){
-
-    dataset <- .readDataSetToEnd(columns.as.numeric = variables)
-    return(dataset)
-
-  } else {
-
-    return(NULL)
-
-  }
-}
-
 .auditAddSelectionColumns <- function(options, 
                                       jaspResults){
 
-  dataset <- .auditReadDataProcedure(options, 
-                                     jaspResults)
+  dataset <- .auditReadDataset(options, jaspResults, stage = "procedure")
   
   rankingVariable <- options[["rankingVariable"]]
   if(rankingVariable == "")
@@ -2826,9 +2755,11 @@
 
   if(options[["pasteVariables"]]){  
 
-    planningOptions <- .auditPlanningOptions(options,
-                                             jaspResults,
-                                             rawData = TRUE)
+    planningOptions <- .auditInputOptions(options,
+                                          dataset = NULL,
+                                          jaspResults,
+                                          stage = "planning",
+                                          rawData = TRUE)
     selectionState <- .auditSelectionState(dataset,
                                            options, 
                                            jaspResults[["planningState"]], 
@@ -2881,9 +2812,11 @@
     sample <- subset(dataset, dataset[, .v(options[["sampleFilter"]])] != 0)
 
   # Import options and results from the planning and selection stages 
-  planningOptions <- .auditPlanningOptions(options,
-                                           jaspResults,
-                                           rawData = TRUE)
+  planningOptions <- .auditInputOptions(options,
+                                        dataset,
+                                        jaspResults,
+                                        stage = "planning",
+                                        rawData = TRUE)
 
   planningContainer <- jaspResults[["planningContainer"]]
   planningState <- planningContainer[["planningState"]]$object
@@ -3018,25 +2951,6 @@
 
     return(dataset)
 
-  }
-}
-
-.auditReadDataEvaluationAnalysis <- function(options,
-                                             jaspResults){
-
-  recordNumberVariable  <- .auditReadVariableFromOptions(options, type = "recordNumber")
-  monetaryVariable      <- .auditReadVariableFromOptions(options, type = "monetary")
-  auditResult           <- .auditReadVariableFromOptions(options, type = "auditResult")
-  sampleCounter         <- .auditReadVariableFromOptions(options, type = "sampleCounter")
-  variables             <- c(recordNumberVariable, monetaryVariable, auditResult, sampleCounter)
-
-  if(!is.null(variables)){
-    dataset <- .readDataSetToEnd(columns.as.numeric = variables)
-    if(!is.null(sampleCounter)) # Apply sample filter
-      dataset <- subset(dataset, dataset[, .v(options[["sampleCounter"]])] > 0)
-    return(dataset)
-  } else {
-    return(NULL)
   }
 }
 
@@ -3379,46 +3293,6 @@
   }
 }
 
-.auditEvaluationAnalysisOptions <- function(options, dataset){
-
-  confidence <- options[["confidence"]]
-  confidenceLabel <- paste0(round(options[["confidence"]] * 100, 2), "%")
-  populationSize <- options[["populationSize"]]
-  populationValue <- ifelse(options[["populationValue"]] == 0, 
-                            yes = 0.01, 
-                            no = options[["populationValue"]])
-  materiality <- ifelse(options[["materiality"]] == "materialityRelative",
-                            yes = options[["materialityPercentage"]], 
-                            no = options[["materialityValue"]] / 
-                                  populationValue)
-  materialityLabel <- ifelse(options[["materiality"]] == "materialityRelative",
-                             yes = paste0(round(materiality * 100, 2), "%"), 
-                             no = paste("$", format(options[["materialityValue"]], 
-                                               scientific = FALSE)))
-  expectedErrors <- ifelse(options[["expectedErrors"]] == "expectedRelative", 
-                           yes = options[["expectedPercentage"]], 
-                           no = options[["expectedNumber"]] / 
-                                populationValue)
-  likelihood <- base::switch(options[["estimator"]],
-                              "betaBound" = "binomial",
-                              "gammaBound" = "poisson",
-                              "betabinomialBound" = "hypergeometric")
-
-  evaluationOptions <- list()
-  evaluationOptions[["materiality"]] <- materiality
-  evaluationOptions[["materialityLabel"]] <- materialityLabel
-  evaluationOptions[["populationSize"]] <- populationSize
-  evaluationOptions[["populationValue"]] <- populationValue
-  evaluationOptions[["valuta"]] <- "$"
-  evaluationOptions[["confidence"]] <- confidence
-  evaluationOptions[["confidenceLabel"]] <- confidenceLabel
-  evaluationOptions[["expectedErrors"]] <- expectedErrors
-  evaluationOptions[["likelihood"]] <- likelihood
-
-  return(evaluationOptions)
-
-}
-
 .auditEvaluationAnalysisState <- function(options,
                                           sample,
                                           planningOptions,
@@ -3496,13 +3370,17 @@
     # Select evaluation method
     if(options[["variableType"]] == "variableTypeCorrect"){
 
-      method <- base::switch(options[["estimator"]],
-                              "binomialBound" = "binomial",
-                              "poissonBound" = "poisson",
-                              "hyperBound" = "hypergeometric",
-                              "betaBound" = "binomial",
-                              "gammaBound" = "poisson",
-                              "betabinomialBound" = "hypergeometric")
+      if(type == "frequentist"){
+        method <- base::switch(options[["estimator2"]],
+                        "binomialBound" = "binomial",
+                        "poissonBound" = "poisson",
+                        "hyperBound" = "hypergeometric")
+      } else if(type == "bayesian"){
+        method <- base::switch(options[["estimator"]],
+                        "betaBound" = "binomial",
+                        "gammaBound" = "poisson",
+                        "betabinomialBound" = "hypergeometric")
+      }
 
       if(!options[["useSumStats"]]){
         nSumstats <- nrow(sample)
@@ -3586,7 +3464,8 @@
       return()
     }
 
-    if(options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
+    if(options[["variableType"]] == "variableTypeAuditValues" && 
+        options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
 
       result[["confBound"]] <- (planningOptions[["populationValue"]] - result[["lowerBound"]]) / 
                                planningOptions[["populationValue"]]
@@ -3743,7 +3622,13 @@
                                   title = gettextf("BF%1$s", "\u208B\u208A"),     
                                   type = 'string')
 
-  message <- base::switch(options[["estimator"]],
+  criterion <- ifelse(options[["variableType"]] == "variableTypeAuditValues",
+                      yes = options[["estimator"]],
+                      no = ifelse(type == "frequentist",
+                                  yes = options[["estimator2"]],
+                                  no = options[["estimator"]]))
+
+  message <- base::switch(criterion,
                           "poissonBound" = gettext("The confidence bound is calculated according to the <b>Poisson</b> distributon."),
                           "binomialBound" = gettext("The confidence bound is calculated according to the <b>binomial</b> distributon."),
                           "hyperBound" = gettext("The confidence bound is calculated according to the <b>hypergeometric</b> distribution."),
@@ -3758,7 +3643,8 @@
                           "coxAndSnellBound" = gettext("The credible bound is calculated according to the <b>Cox and Snell</b> method and requires the assumption that the population taints are uniformly distributed."))
 
   if(options[["estimator"]] == "stringerBound" &&
-      options[["stringerBoundLtaAdjustment"]])
+      options[["stringerBoundLtaAdjustment"]] && 
+      options[["variableType"]] == "variableTypeAuditValues")
   message <- gettext("The confidence bound is calculated according to the <b>Stringer</b> method with <b>LTA adjustment</b>.")
 
   evaluationTable$addFootnote(message)
@@ -3801,7 +3687,8 @@
 
   if(options[["mostLikelyError"]]){
 
-    if(options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
+    if(options[["variableType"]] == "variableTypeAuditValues" && 
+        options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
 
       mle <- (planningOptions[["populationValue"]] - evaluationState[["pointEstimate"]]) / 
               planningOptions[["populationValue"]]
@@ -3944,7 +3831,8 @@
     materiality <- evaluationState[["materiality"]]
     bound <- evaluationState[["confBound"]]
     
-    if(options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
+    if(options[["variableType"]] == "variableTypeAuditValues" && 
+        options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
 
       mle <- (planningOptions[["populationValue"]] - evaluationState[["pointEstimate"]]) / 
               planningOptions[["populationValue"]]
@@ -4139,7 +4027,7 @@
 
     evaluationContainer[["correlationPlot"]] <- correlationPlot
 
-    if(options[["auditResult"]] == ""|| 
+    if(options[["auditResult"]] == "" ||  
         evaluationContainer$getError()) 
       return()
 
@@ -4237,9 +4125,11 @@
   if(options[["explanatoryText"]]){
 
     # Import options and results from the planning and selection stages 
-    planningOptions <- .auditPlanningOptions(options,
-                                            jaspResults,
-                                            rawData = TRUE)
+    planningOptions <- .auditInputOptions(options,
+                                          dataset = NULL,
+                                          jaspResults,
+                                          stage = "planning",
+                                          rawData = TRUE)
 
     # Import result of analysis from jaspResults
     evaluationContainer <- jaspResults[["evaluationContainer"]]
@@ -4284,240 +4174,6 @@
     # Finsh conclusion
     jaspResults[["conclusionContainer"]] <- conclusionContainer
   }
-}
-
-################################################################################
-################## Common functions for the badges #############################
-################################################################################
-
-.auditBadgeSection <- function(options, 
-                               type,
-                               stateContainer = NULL,
-                               jaspResults, 
-                               ready, 
-                               position){
-
-  if(is.null(jaspResults[["badgeSection"]]) && 
-     ready && 
-     options[["reportBadges"]]){
-
-    if(!is.null(stateContainer) && stateContainer$getError())
-      return()
-
-    badgeSection <- createJaspContainer(title = gettext("<u>Report Badges</u>"))
-    badgeSection$position <- position
-    badgeSection$dependOn(options = c("values",
-                                      "confidence",
-                                      "explanatoryText",
-                                      "reportBadges",
-                                      "IR", 
-                                      "irCustom",
-                                      "CR",  
-                                      "crCustom", 
-                                      "confidence",
-                                      "populationSize", 
-                                      "populationValue",
-                                      "materiality",
-                                      "materialityPercentage", 
-                                      "materialityValue",
-                                      "expectedPercentage",
-                                      "expectedErrors", 
-                                      "expectedNumber",
-                                      "planningModel",
-                                      "bookValues", 
-                                      "auditValues", 
-                                      "estimator",
-                                      "digits",
-                                      "auditResult",
-                                      "stringerBoundLtaAdjustment"))
-
-    # Badge for annotation
-    annotatedBadge <- options[["explanatoryText"]]
-
-    if(annotatedBadge){
-      
-      badge <- .auditCreateBadge(type = "annotated")
-      annotationBadge <- createJaspPlot(plot = badge, 
-                          title = gettext("Badge: <i>Annotated</i>"), 
-                          width = 150, 
-                          height = 150)
-
-      annotationBadge$position <- 1
-      badgeSection[["annotationBadge"]] <- annotationBadge
-
-    }
-
-    if(type == "benfordsLaw"){
-
-      state <- .auditClassicalBenfordsLawGetResults(dataset, 
-                                                    options, 
-                                                    stateContainer,
-                                                    ready)
-
-      observed <- state[["N"]] * state[["percentages"]]
-      expected <- state[["N"]] * state[["inBenford"]]
-      chiSquare <- sum( (observed - expected)^2 / expected )
-      df <- state[["df"]]
-      p <- pchisq(q = chiSquare, df = df, lower.tail = FALSE)
-
-      approveBadge <- p >= (1 - options[["confidence"]])
-
-    } else if(type == "workflow"){
-
-      evaluationContainer <- jaspResults[["evaluationContainer"]]
-      evaluationState <- evaluationContainer[["evaluationState"]]$object
-
-      if(options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
-
-        bound <- (evaluationState[["popBookvalue"]] - evaluationState[["lowerBound"]]) / evaluationState[["popBookvalue"]]
-
-        if(bound < evaluationState[["materiality"]]){
-
-          conclusion <- "Approve population"
-
-        } else {
-
-          conclusion <- "Do not approve population"
-
-        }
-      } else {
-        conclusion <- evaluationState[["conclusion"]]
-      }
-
-      approveBadge <- conclusion == "Approve population"
-    }
-
-    if(type %in% c("benfordsLaw", "workflow")){
-
-      # Badge for result
-      if(approveBadge){
-        plotTitle <- gettext("Badge: <i>Approved</i>")
-        plotType <- "approved"
-      } else {
-        plotTitle <- gettext("Badge: <i>Not approved</i>")
-        plotType <- "not approved"
-      }
-
-      badge <- .auditCreateBadge(type = plotType)
-      resultBadge <- createJaspPlot(plot = badge, 
-                                    title = plotTitle, 
-                                    width = 150, 
-                                    height = 150)
-
-      resultBadge$position <- 2
-      badgeSection[["resultBadge"]] <- resultBadge
-
-    }
-
-    jaspResults[["badgeSection"]] <- badgeSection
-
-  }
-}
-
-.auditCreateBadge <- function(type){
-
-  center <- 1
-  radius <- 1
-  h <- radius
-  w <- sqrt(3)/2 * radius
-  m <- 1.02
-
-  if(type == "approved"){
-    fillA <- "#3CB371"
-  } else if(type == "not approved"){
-    fillA <- "#ff0000"
-  } else if(type == "annotated"){
-    fillA <- "#57A7E0"
-  }
-
-  hexd <- data.frame(x = 1 + c(rep(-sqrt(3)/2, 2), 0, rep(sqrt(3)/2, 2), 0), 
-                     y = 1 + c(0.5, -0.5, -1, -0.5, 0.5, 1))
-  hexd <- rbind(hexd, hexd[1, ])
-
-  plot <- ggplot2::ggplot() + 
-          ggplot2::geom_polygon(mapping = ggplot2::aes_(x = ~x, y = ~y), 
-                                data = hexd, size = 1.2, 
-                                color = "black", 
-                                fill = NA) + 
-          ggplot2::geom_polygon(mapping = ggplot2::aes_(x = ~x, y = ~y), 
-                                data = hexd,
-                                fill = fillA, 
-                                color = NA) + 
-          ggplot2::coord_fixed() +
-          ggplot2::scale_y_continuous(expand = c(0, 0), 
-                                      limits = c(center - h * m, center + h * m)) + 
-          ggplot2::scale_x_continuous(expand = c(0, 0), 
-                                      limits = c(center - w * m, center + w * m)) +
-          ggplot2::geom_text(data = data.frame(x = 1, y = 0.08, label = "JASP for Audit"), 
-                             mapping = ggplot2::aes(x = x, y = y, label = label), 
-                             size = 2, 
-                             color = "black",
-                             angle = 30, 
-                             hjust = 0)
-
-  if(type == "approved"){
-    plot <- plot + ggplot2::geom_segment(ggplot2::aes(x = 0.8, 
-                                                      xend = 1.6, 
-                                                      y = 0.6, 
-                                                      yend = 1.4), 
-                                        color = "black", 
-                                        size = 8) +
-                    ggplot2::geom_segment(ggplot2::aes(x = 0.9, 
-                                                       xend = 0.55, 
-                                                       y = 0.72, 
-                                                       yend = 1.07),
-                                          color = "black", 
-                                          size = 8)
-  } else if(type == "not approved"){
-    plot <- plot + ggplot2::geom_segment(ggplot2::aes(x = 0.6, 
-                                                      xend = 1.4, 
-                                                      y = 0.6, 
-                                                      yend = 1.4), 
-                                         color = "black", 
-                                         size = 8) +
-                    ggplot2::geom_segment(ggplot2::aes(x = 0.6, 
-                                                       xend = 1.4, 
-                                                       y = 1.4, 
-                                                       yend = 0.6), 
-                                          color = "black", 
-                                          size = 8)
-  } else if(type == "annotated"){
-    plot <- plot + ggplot2::geom_segment(ggplot2::aes(x = 1, 
-                                                      xend = 1, 
-                                                      y = 0.5, 
-                                                      yend = 1.1), 
-                                         color = "black", 
-                                         size = 7,
-                                         lineend = "round") +
-                    ggplot2::geom_segment(ggplot2::aes(x = 1, 
-                                                       xend = 1, 
-                                                       y = 1.5, 
-                                                       yend = 1.5), 
-                                          color = "black", 
-                                          size = 7,
-                                          lineend = "round")
-  }
-
-  myTheme <- ggplot2::theme(panel.background = ggplot2::element_rect(fill = "transparent", 
-                                                                     colour = NA), 
-                          plot.background = ggplot2::element_rect(fill = "transparent", 
-                                                                  colour = NA), 
-                          legend.key = ggplot2::element_rect(fill = "transparent", 
-                                                             colour = NA), 
-                          legend.background = ggplot2::element_rect(fill = "transparent", 
-                                                                    colour = NA),
-                          plot.margin = ggplot2::margin(b = -0.5, 
-                                                        l = 1.5, 
-                                                        r = 1.5, 
-                                                        unit = "lines"), 
-                          strip.text = ggplot2::element_blank(), 
-                          line = ggplot2::element_blank(), 
-                          text = ggplot2::element_blank(), 
-                          title = ggplot2::element_blank())
-  
-  plot <- plot + myTheme     
-
-  return(plot)
 }
 
 ################################################################################

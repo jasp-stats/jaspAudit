@@ -21,7 +21,6 @@
 auditClassicalPlanning <- function(jaspResults, dataset, options, ...){
 
   # For the planning constituents, see auditCommonFunctions.R
-  .auditPlanningAnalysis(options,
-                         jaspResults,
-                         type = "frequentist")
+  .auditPlanningAnalysis(options, jaspResults, type = "frequentist")
+  
 }
