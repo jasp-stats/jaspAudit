@@ -2,7 +2,7 @@ Package: Audit
 Type: Package
 Title: Audit Module for JASP
 Version: 0.1
-Date: 2020-04-21
+Date: 2020-06-03
 Author: Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille & Ruud Wetzels
 Website: www.github.com/koenderks/jfa
 Maintainer: Koen Derks <k.derks@nyenrode.nl>
