@@ -43,7 +43,7 @@
   if(!ready) return() # Stop if "To Evaluation" is not pressed
 
   ### EVALUATION STAGE ###
-  .auditEvaluationStage(options, jaspResults, type)
+  .auditEvaluationStage(options, jaspResults, type, workflow = TRUE)
 
   ### CONCLUSION STAGE ###
   .auditConclusionStage(options, jaspResults)
@@ -307,113 +307,116 @@
 ######### EVALUATION STAGE ##########
 #####################################
 
-.auditEvaluationStage <- function(options, 
-                                  jaspResults,
-                                  type){
+.auditEvaluationStage <- function(options, jaspResults, type, workflow){
 
-  # Create the container that holds the selection output
-  evaluationContainer <- .auditAnalysisContainer(jaspResults, stage = "evaluation-workflow", 
-                                                 position = 5)
-  # Read in additional variables
-  dataset <- .auditAddEvaluationColumns(options,
-                                        jaspResults)
-  
-  # See if analysis can be run
-  ready <- options[["auditResult"]] != ""
+  if(workflow){
 
-  # Extract only the sample
-  if(ready)
-    sample <- subset(dataset, dataset[, .v(options[["sampleFilter"]])] != 0)
-
-  # Import options and results from the planning and selection stages 
-  planningOptions <- .auditInputOptions(options,
-                                        dataset,
-                                        jaspResults,
-                                        stage = "planning",
-                                        rawData = TRUE)
-
-  planningContainer <- jaspResults[["planningContainer"]]
-  planningState <- planningContainer[["planningState"]]$object
-
-  selectionContainer <- jaspResults[["selectionContainer"]]
-  selectionState <- selectionContainer[["selectionState"]]$object
-
-  if(is.null(selectionState))
-    return()
+    # Create the container that holds the selection output
+    evaluationContainer <- .auditAnalysisContainer(jaspResults, stage = "evaluation-workflow", 
+                                                  position = 5)
+    # Read in additional variables
+    dataset <- .auditAddEvaluationColumns(options, jaspResults)
     
-  # Perform the evaluation
-  evaluationState <- .auditEvaluationState(options,
-                                           planningOptions,
-                                           sample,
-                                           evaluationContainer,
-                                           type)
+    # See if analysis can be run
+    ready <- options[["auditResult"]] != ""
 
-  # Create explanatory text for the evaluation
-  .auditExplanatoryTextEvaluation(options,
-                                  planningOptions,
-                                  planningState,
-                                  selectionState,
-                                  evaluationContainer, 
-                                  type,
-                                  positionInContainer = 1)
+    # Extract only the sample
+    if(ready)
+      sample <- subset(dataset, dataset[, .v(options[["sampleFilter"]])] != 0)
+
+    # Import options and results from the planning and selection stages 
+    evaluationOptions <- .auditInputOptions(options, dataset, jaspResults,
+                                          stage = "planning", rawData = TRUE)
+
+    planningContainer <- jaspResults[["planningContainer"]]
+    planningState <- planningContainer[["planningState"]]$object
+
+    selectionContainer <- jaspResults[["selectionContainer"]]
+    selectionState <- selectionContainer[["selectionState"]]$object
+
+    if(is.null(selectionState)) return()
+      
+    # Perform the evaluation
+    evaluationState <- .auditEvaluationState(options, evaluationOptions, sample,
+                                            evaluationContainer, type)
+
+    # Create explanatory text for the evaluation
+    .auditExplanatoryTextEvaluation(options,
+                                    evaluationOptions,
+                                    planningState,
+                                    selectionState,
+                                    evaluationContainer, 
+                                    type,
+                                    positionInContainer = 1)
+  } else if(!workflow){
+
+    .auditCreateTableNumber(jaspResults) # Initialize table numbers
+    .auditCreateFigureNumber(jaspResults) # Initialize figure numbers
+
+    # Create an empty container for the evaluation analysis
+    evaluationContainer <- .auditAnalysisContainer(jaspResults, stage = "evaluation",
+                                                  position = 1)
+
+    # Read in the relevant variables from the data set
+    sample <- .auditReadDataset(options, jaspResults, stage = "evaluation")
+
+      # Check for errors due to incompatible options
+    error <- .auditErrorCheckInputOptions(options, sample, evaluationContainer, 
+                                          stage = "evaluation", type)
+    if(error) return()
+
+    # Deduce relevant quantities from input options
+    evaluationOptions <- .auditInputOptions(options, sample, jaspResults,
+                                            stage = "evaluation")
+
+    # Create the evaluation state that holds the results
+    evaluationState <- .auditEvaluationAnalysisState(options, sample, evaluationOptions,
+                                                    evaluationContainer, type)
+
+    # Backwards create a planningstate and a selectionstate
+    planningState <- .auditBackwardsPlanningState(options, sample, evaluationOptions, 
+                                                  type)
+
+    selectionState <- .auditBackwardsState(options, stage = "evaluation")
+
+    # Create explanatory text for the evaluation
+    .auditExplanatoryTextEvaluation(options, evaluationOptions, planningState,
+                                    selectionState, evaluationContainer, type,
+                                    positionInContainer = 1)
+
+  }
 
   # --- TABLES
 
   # Create a table containing information about the evaluation process  
-  .auditEvaluationSummaryTable(options,
-                               planningOptions,
-                               evaluationState,
-                               evaluationContainer,
-                               jaspResults,
-                               type,
+  .auditEvaluationSummaryTable(options, evaluationOptions, evaluationState,
+                               evaluationContainer, jaspResults, type,
                                positionInContainer = 2)
 
   if(type == "bayesian"){
-
-    .auditPriorAndPosteriorStatisticsTable(options, 
-                                           planningOptions,
-                                           evaluationState, 
-                                           evaluationContainer, 
-                                           jaspResults,
-                                           positionInContainer = 3)
-
+    # Create a table containing information regarding the prior and posterior
+    .auditPriorAndPosteriorStatisticsTable(options, evaluationOptions, evaluationState, 
+                                           evaluationContainer, jaspResults, positionInContainer = 3)
   }
-
-  # ---
 
   # --- PLOTS
 
   if(type == "bayesian"){
-
     # Create a plot containing the prior and posterior distribution
-    .auditEvaluationPriorAndPosterior(options,
-                                      planningOptions,
-                                      planningState,
-                                      evaluationState,
-                                      evaluationContainer,
-                                      jaspResults,
+    .auditEvaluationPriorAndPosterior(options, evaluationOptions, planningState,
+                                      evaluationState, evaluationContainer, jaspResults,
                                       positionInContainer = 4)
-
   }
 
   # Create a plot containing evaluation information
-  .auditEvaluationInformationPlot(options,
-                                  planningOptions,
-                                  evaluationState,
-                                  evaluationContainer,
-                                  jaspResults,
-                                  type,
+  .auditEvaluationInformationPlot(options, evaluationOptions, evaluationState,
+                                  evaluationContainer, jaspResults, type,
                                   positionInContainer = 6)
 
   # Create a plot containing the correlation between the book and audit values
-  .auditCorrelationPlot(options,
-                        planningOptions,
-                        sample,
-                        evaluationContainer,
-                        jaspResults,
-                        positionInContainer = 8)
-
-  # ---
+  if(options[["variableType"]] == "variableTypeAuditValues")
+  .auditCorrelationPlot(options, evaluationOptions, sample, evaluationContainer,
+                        jaspResults, positionInContainer = 8)
 }
 
 #####################################
@@ -431,90 +434,7 @@
 }
 
 ################################################################################
-################## The Separate Audit Evaluation Analysis ######################
-################################################################################
-
-.auditEvaluationAnalysis <- function(options, jaspResults, type){                         
-
-  # Create an empty container for the evaluation analysis
-  evaluationContainer <- .auditAnalysisContainer(jaspResults, stage = "evaluation",
-                                                 position = 1)
-
-  # Read in the relevant variables from the data set
-  dataset <- .auditReadDataset(options, jaspResults, stage = "evaluation")
-
-    # Check for errors due to incompatible options
-  error <- .auditErrorCheckInputOptions(options, dataset, evaluationContainer, 
-                                        stage = "evaluation", type)
-  if(error) return()
-
-  # Deduce relevant quantities from input options
-  evaluationOptions <- .auditInputOptions(options, dataset, jaspResults,
-                                          stage = "evaluation")
-
-  # Create the evaluation state that holds the results
-  evaluationState <- .auditEvaluationAnalysisState(options, dataset, evaluationOptions,
-                                                   evaluationContainer, type)
-
-  # Backwards create a planningstate and a selectionstate
-  planningState <- .auditBackwardsPlanningState(options, dataset, evaluationOptions, 
-                                                type)
-
-  selectionState <- .auditBackwardsState(options, stage = "evaluation")
-
-  # Create explanatory text for the evaluation
-  .auditExplanatoryTextEvaluation(options, evaluationOptions, planningState,
-                                  selectionState, evaluationContainer, type,
-                                  positionInContainer = 1)
-
-  # --- TABLES
-
-  .auditCreateTableNumber(jaspResults) # Initialize table numbers
-
-  # Create a table containing information about the evaluation process  
-  .auditEvaluationSummaryTable(options, evaluationOptions, evaluationState,
-                               evaluationContainer, jaspResults, type,
-                               positionInContainer = 2)
-
-  if(type == "bayesian"){
-
-    .auditPriorAndPosteriorStatisticsTable(options, evaluationOptions, evaluationState, 
-                                           evaluationContainer, jaspResults,
-                                           positionInContainer = 3)
-
-  }
-
-  # ---
-
-  # --- PLOTS
-
-  .auditCreateFigureNumber(jaspResults) # Initialize figure numbers
-
-  if(type == "bayesian"){
-
-    # Create a plot containing the prior and posterior distribution
-    .auditEvaluationPriorAndPosterior(options, evaluationOptions, planningState,
-                                      evaluationState, evaluationContainer, jaspResults,
-                                      positionInContainer = 4)
-
-  }
-
-  # Create a plot containing evaluation information
-  .auditEvaluationInformationPlot(options, evaluationOptions, evaluationState,
-                                  evaluationContainer, jaspResults, type,
-                                  positionInContainer = 6)
-
-  # Create a plot containing the correlation between the book and audit values
-  if(options[["variableType"]] == "variableTypeAuditValues")
-    .auditCorrelationPlot(options, evaluationOptions, dataset, evaluationContainer,
-                          jaspResults, positionInContainer = 8)
-
-  # ---                                             
-
-}
-
-################################################################################
-################## Common functions for the figure and table numbers ###########
+################## Common functions for figure and table numbers ###############
 ################################################################################
 
 .auditCreateFigureNumber <- function(jaspResults){
@@ -540,7 +460,7 @@
 }
 
 ################################################################################
-################## Common functions for reading data ###########################
+################## Common functions for reading data and options ###############
 ################################################################################
 
 .auditReadVariableFromOptions <- function(options, varType){
@@ -3300,7 +3220,8 @@
                                         "evidenceRatio",
                                         "bayesFactor",
                                         "valuta",
-                                        "otherValutaName"))
+                                        "otherValutaName",
+                                        "mostLikelyError"))
 
   evaluationTable$addColumnInfo(name = 'materiality',   
                                 title = gettext("Materiality"),
@@ -3586,6 +3507,9 @@
   }
   
   evaluationTable$addRows(row)
+
+  if(planningOptions[["populationValue"]] == 0 || planningOptions[["populationValue"]] == 0.01)
+    evaluationTable$addFootnote(message = "You must specify the population value to see the maximum misstatement.", symbol = "  \u26A0", colNames = 'projm')
 }
 
 .auditEvaluationInformationPlot <- function(options,

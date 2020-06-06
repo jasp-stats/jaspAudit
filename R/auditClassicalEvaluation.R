@@ -21,6 +21,6 @@
 auditClassicalEvaluation <- function(jaspResults, dataset, options, ...){
 
   # For the evaluation constituents, see auditCommonFunctions.R
-  .auditEvaluationAnalysis(options, jaspResults, type = "frequentist")
+  .auditEvaluationStage(options, jaspResults, type = "frequentist", workflow = FALSE)
   
 }
