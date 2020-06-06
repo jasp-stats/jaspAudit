@@ -34,7 +34,7 @@
   if(!ready) return() # Stop if "To Selection" is not pressed
 
   ### SELECTION STAGE ###
-  .auditSelectionStage(options, jaspResults)
+  .auditSelectionStage(options, jaspResults, workflow = TRUE)
 
   ### EXECUTION STAGE ###
   .auditExecutionStage(options, jaspResults)
@@ -53,7 +53,9 @@
 ################## The Separate Stages of the Audit Workflow ###################
 ################################################################################
 
-### PROCEDURE STAGE ###
+#####################################
+######### PROCEDURE STAGE ###########
+#####################################
 
 .auditProcedureStage <- function(options, jaspResults){
 
@@ -93,7 +95,9 @@
 
 }
 
-### PLANNING STAGE ###
+#####################################
+######### PLANNING STAGE ############
+#####################################
 
 .auditPlanningStage <- function(options, jaspResults, type, workflow){
 
@@ -125,7 +129,7 @@
 
   # Create the container that holds the planning output
   planningContainer <- .auditAnalysisContainer(jaspResults, stage = "planning",
-                                              position = 3)
+                                               position = 3)
 
   # Perfrom early error checks
   .auditErrorCheckInputOptions(options, dataset = NULL, planningContainer, 
@@ -133,7 +137,7 @@
 
   # Get the planning state if it exists, otherwise make one
   planningState <- .auditPlanningState(options, planningOptions, planningContainer, 
-                                      ready, type)
+                                       ready, type)
 
   # Create explanatory text for the planning
   .auditExplanatoryText(options, planningOptions, planningContainer, planningState, 
@@ -165,86 +169,116 @@
     # Create the implied sampling distribution plot
     .samplingDistributionPlot(options, planningOptions, planningState, planningContainer, 
                               jaspResults, ready, positionInContainer = 7)
-  }
-
-  if(type == "bayesian"){
+  } else if(type == "bayesian"){
     # Create the prior and expected posterior plot
     .auditPlanningPlotPrior(options, planningOptions, planningState, planningContainer,
                             jaspResults, ready, positionInContainer = 7)
   }
 }
 
-### SELECTION STAGE ###
+#####################################
+######### SELECTION STAGE ###########
+#####################################
 
-.auditSelectionStage <- function(options, 
-                                 jaspResults){
+.auditSelectionStage <- function(options, jaspResults, workflow){
 
-  # Create the container that holds the selection output
-  selectionContainer <- .auditSelectionGetContainer(jaspResults, 
-                                                    position = 4)
-  # Read in additional variables
-  dataset <- .auditAddSelectionColumns(options, jaspResults)
+  if(workflow){
 
-  # Import options and results from the planning stage 
-  planningOptions <- .auditInputOptions(options,
-                                        dataset,
-                                        jaspResults,
-                                        stage = "planning",
-                                        rawData = TRUE)
+    # Create the container that holds the selection output
+    selectionContainer <- .auditAnalysisContainer(jaspResults, stage = "selection-workflow", 
+                                                  position = 4)
 
-  planningContainer <- jaspResults[["planningContainer"]]
-  planningState <- planningContainer[["planningState"]]$object
+    # Read in additional variables
+    dataset <- .auditAddSelectionColumns(options, jaspResults)
 
-  if(is.null(planningState))
-    return()
+    # Import options and results from the planning stage 
+    selectionOptions <- .auditInputOptions(options, dataset, jaspResults,
+                                          stage = "planning", rawData = TRUE)
 
-  # Perform the sampling
-  selectionState <- .auditSelectionState(dataset,
-                                         options, 
-                                         planningState, 
-                                         selectionContainer)
+    planningContainer   <- jaspResults[["planningContainer"]]
+    planningState       <- planningContainer[["planningState"]]$object
+
+    if(is.null(planningState)) return() # Quit if no planning was done
+
+    # Perform the sampling
+    selectionState <- .auditSelectionState(dataset, options, planningState, selectionContainer)
+
+  } else if(!workflow){
+
+    .auditCreateFigureNumber(jaspResults) # Initialize figure numbers
+    .auditCreateTableNumber(jaspResults) # Initialize table numbers
+
+    # Create a custom container for the selection analysis
+    selectionContainer <- .auditAnalysisContainer(jaspResults, stage = "selection",
+                                                  position = 1)
+
+    # Read in the relevant variables from the data set
+    dataset <- .auditReadDataset(options, jaspResults, stage = "selection")
+
+    # Check for errors due to incompatible options
+    error <- .auditErrorCheckInputOptions(options, dataset, selectionContainer, 
+                                          stage = "selection")
+    if(error) return() # Quit on errors
+
+    options[["materiality"]] <- ifelse(options[["selectionType"]] == "musSampling",
+                                      yes = "materialityAbsolute",
+                                      no = "materialityRelative")
+
+    # Deduce relevant quantities from input options
+    selectionOptions <- .auditInputOptions(options, dataset, jaspResults,
+                                          stage = "selection")
+
+    # Create a planning state
+    planningState <- .auditBackwardsState(options, stage = "selection")
+
+    # Perform error checks
+    .auditErrorCheckInputOptions(options, dataset, analysisContainer = NULL, 
+                                stage = "procedure")
+
+    # Perform the sampling
+    selectionState <- .auditSampling(dataset, options, planningState, selectionContainer)
+
+    # Add the sample indicator to the data
+    .auditAddSelectionIndicator(options, selectionOptions, selectionState, jaspResults)
+
+  }
 
   # Create explanatory text for the selection
-  .auditExplanatoryTextSelection(options, 
-                                 planningOptions,
-                                 planningState, 
-                                 selectionState,
-                                 selectionContainer, 
-                                 positionInContainer = 1)
+  .auditExplanatoryText(options, selectionOptions, selectionContainer, selectionState, 
+                      jaspResults, stage = "selection", positionInContainer = 1, prevState = planningState)
 
   # --- TABLES
 
   # Create a table containing information about the selection process
-  .auditSelectionSummaryTable(options, 
-                              planningOptions,
-                              planningState,
-                              selectionState,
-                              selectionContainer,
-                              jaspResults, 
+  .auditSelectionSummaryTable(options, selectionOptions, planningState,
+                              selectionState, selectionContainer, jaspResults,
                               positionInContainer = 2)
-  
-  # Create a table containing descriptive statistics of the sample
-  .auditSelectionDescriptivesTable(options, 
-                                   selectionState, 
-                                   selectionContainer,
-                                   jaspResults,
-                                   positionInContainer = 3)
-  
-  # Create a table displaying the selection
-  .auditSelectionSampleTable(options,
-                             selectionState,
-                             selectionContainer,
-                             jaspResults,
-                             positionInContainer = 4) 
 
-  # ---
+  # Create a table containing descriptive statistics of the sample
+  .auditSelectionDescriptivesTable(options, selectionState, selectionContainer,
+                                   jaspResults, positionInContainer = 3)
+
+  # Create a table displaying the selection
+  .auditSelectionSampleTable(options, selectionState, selectionContainer,
+                             jaspResults, positionInContainer = 4)
+
+  # --- PLOTS
+
+  if(!workflow){
+    # Create a collection of plots comparing the population to the sample values
+    .auditSelectionHistograms(options, dataset, selectionState, selectionContainer,
+                              jaspResults, positionInContainer = 5)
+  }
 }
 
-### EXECUTION STAGE ###
+#####################################
+######### EXECUTION STAGE ###########
+#####################################
 
 .auditExecutionStage <- function(options, jaspResults){
 
   if(options[["pasteVariables"]]){  
+    # Add the two computed colums to the data set
     planningOptions <- .auditInputOptions(options, dataset = NULL, jaspResults,
                                           stage = "planning", rawData = TRUE)
     selectionState <- .auditSelectionState(dataset, options, jaspResults[["planningState"]], 
@@ -269,7 +303,9 @@
   }
 }
 
-### EVALUATION STAGE ###
+#####################################
+######### EVALUATION STAGE ##########
+#####################################
 
 .auditEvaluationStage <- function(options, 
                                   jaspResults,
@@ -380,7 +416,9 @@
   # ---
 }
 
-### CONCLUSION STAGE ###
+#####################################
+######### CONCLUSION STAGE ##########
+#####################################
 
 .auditConclusionStage <- function(options, jaspResults){
 
@@ -390,80 +428,6 @@
   .auditExplanatoryText(options, stageOptions = NULL, stageContainer = NULL, stageState = NULL, 
                         jaspResults, stage = "conclusion", positionInContainer = 1)
 
-}
-
-################################################################################
-################## The Separate Audit Selection Analysis #######################
-################################################################################
-
-.auditSelectionAnalysis <- function(options, jaspResults){
-
-  # Create a custom container for the selection analysis
-  selectionContainer <- .auditAnalysisContainer(jaspResults, stage = "selection",
-                                                position = 1)
-
-  # Read in the relevant variables from the data set
-  dataset <- .auditReadDataset(options, jaspResults, stage = "selection")
-
-  # Check for errors due to incompatible options
-  error <- .auditErrorCheckInputOptions(options, dataset, selectionContainer, 
-                                        stage = "selection")
-  if(error) return() # Quit on errors
-
-  options[["materiality"]] <- ifelse(options[["selectionType"]] == "musSampling",
-                                     yes = "materialityAbsolute",
-                                     no = "materialityRelative")
-
-  # Deduce relevant quantities from input options
-  selectionOptions <- .auditInputOptions(options, dataset, jaspResults,
-                                         stage = "selection")
-
-  # Create a planning state
-  planningState <- .auditBackwardsState(options, stage = "selection")
-
-  # Perform error checks
-  .auditErrorCheckInputOptions(options, dataset, analysisContainer = NULL, 
-                               stage = "procedure")
-
-  # Perform the sampling
-  selectionState <- .auditSampling(dataset, options, planningState, selectionContainer)
-
-  # Add the sample indicator to the data
-  .auditAddSelectionIndicator(options, selectionOptions, selectionState, jaspResults)
-
-  # Create explanatory text for the selection
-  .auditExplanatoryTextSelection(options, selectionOptions, planningState,
-                                 selectionState, selectionContainer,
-                                 positionInContainer = 1)
-
-  # --- TABLES
-
-  .auditCreateTableNumber(jaspResults) # Initialize table numbers
-
-  # Create a table containing information about the selection process
-  .auditSelectionSummaryTable(options, selectionOptions, planningState,
-                              selectionState, selectionContainer, jaspResults,
-                              positionInContainer = 2)
-
-  # Create a table containing descriptive statistics of the sample
-  .auditSelectionDescriptivesTable(options, selectionState, selectionContainer,
-                                   jaspResults, positionInContainer = 3)
-
-  # Create a table displaying the selection
-  .auditSelectionSampleTable(options, selectionState, selectionContainer,
-                             jaspResults, positionInContainer = 4)
-
-  # ---
-
-  # --- PLOTS
-
-  .auditCreateFigureNumber(jaspResults) # Initialize figure numbers
-
-  # Create a collection of plots comparing the population to the sample values
-  .auditSelectionHistograms(options, dataset, selectionState, selectionContainer,
-                            jaspResults, positionInContainer = 5)
-
-  # ---
 }
 
 ################################################################################
@@ -877,6 +841,33 @@
 
     jaspResults[["selectionContainer"]] <- analysisContainer
 
+  } else if(stage == "selection-workflow"){
+
+    planningContainer <- jaspResults[["planningContainer"]]
+    planningState <- planningContainer[["planningState"]]$object
+
+    if(!is.null(jaspResults[["selectionContainer"]])){
+
+      return(jaspResults[["selectionContainer"]])
+
+    } else if(!is.null(planningState)){
+                                          
+      analysisContainer <- createJaspContainer(title = gettext("<u>Selection</u>"))
+      analysisContainer$position <- position
+      analysisContainer$dependOn(optionsFromObject = planningContainer,
+                                  options = c("samplingChecked",
+                                              "selectionMethod",
+                                              "selectionType",
+                                              "seed",
+                                              "intervalStartingPoint",
+                                              "additionalVariables",
+                                              "rankingVariable",
+                                              "valuta",
+                                              "otherValutaName"))
+
+      jaspResults[["selectionContainer"]] <- analysisContainer
+    }
+    
   } else if(stage == "evaluation"){
 
     if(!is.null(jaspResults[["evaluationContainer"]]))
@@ -942,6 +933,7 @@
                                          stage, type = NULL, ready = NULL, analysisOptions = NULL){
 
   if(stage == "procedure"){
+
       variables <- NULL
       if(options[["recordNumberVariable"]] != "")
         variables <- c(variables, options[["recordNumberVariable"]])
@@ -954,9 +946,11 @@
                   all.target = variables, message = "short", 
                   observations.amount = paste0("< ", N),
                   exitAnalysisIfErrors = TRUE)
+
   } else if(stage == "planning"){
       if(ready){
-        if(options[["materiality"]] == "materialityAbsolute" && options[["materialityValue"]] >= planningOptions[["populationValue"]]){
+        if(options[["materiality"]] == "materialityAbsolute" && options[["materialityValue"]] >= analysisOptions[["populationValue"]]){
+          # Error if the value of the performance materiality exceeds the total population value
           analysisContainer$setError(gettext("Analysis not possible: Your materiality is higher than the total value of the observations."))
           return(TRUE)
         }
@@ -964,13 +958,16 @@
                           yes = options[["expectedPercentage"]], 
                           no = options[["expectedNumber"]] / analysisOptions[["populationValue"]])
         if(expTMP > analysisOptions[["materiality"]]){
+          # Error if the expected errors exceed the performance materiality
           analysisContainer$setError(gettext("Analysis not possible: Your expected errors are higher than materiality."))
           return(TRUE)
         }
       }
-      # No error
+      # No error in the planning options
       return(FALSE)
+
   } else if(stage == "selection"){
+
     if(!is.null(dataset) && options[["sampleSize"]] >= nrow(dataset)){
       # Error if the sample size is larger than the population size.
       analysisContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
@@ -982,10 +979,12 @@
       analysisContainer$setError(gettextf("Your sample size must be larger than 1."))
       return(TRUE)
     } else {
-      # No error
+      # No error in the selection options
       return(FALSE)
     }
+
   } else if(stage == "evaluation"){
+
     if(options[["variableType"]] == "variableTypeCorrect" && 
         !options[["useSumStats"]] && 
         options[["auditResult"]] != "" &&
@@ -1015,7 +1014,7 @@
       analysisContainer$setError(gettextf("The direct, difference, ratio, and regression confidence bound require that you specify the population size and the population value."))
       return(TRUE)
     } else {
-      # No error
+      # No error in the evaluation options
       return(FALSE)
     }
   }
@@ -1056,9 +1055,10 @@
 ################################################################################
 
 .auditExplanatoryText <- function(options, stageOptions, stageContainer, stageState, 
-                                  jaspResults, stage, positionInContainer, type = NULL){
+                                  jaspResults, stage, positionInContainer, type = NULL, prevState = NULL){
 
   if(options[["explanatoryText"]]){
+
     if(stage == "procedure"){
 
       procedureContainer <- .auditAnalysisContainer(jaspResults, stage = "procedure",
@@ -1111,7 +1111,51 @@
         stageContainer[["planningParagraph"]]$dependOn(options = "explanatoryText")
       }
 
+    } else if(stage == "selection"){
+
+      samplingLabel <- base::switch(options[["selectionMethod"]], 
+                                    "randomSampling" = gettext("random"), 
+                                    "systematicSampling" = gettext("fixed interval"), 
+                                    "cellSampling" = gettext("cell"))
+
+      if(!is.null(stageState) && !is.null(stageState[["musFailed"]])){
+        # MUS has failed for some reason, fall back to record sampling
+
+        message <- gettextf("From the population of <b>%1$s</b> observations, <b>%2$s</b> observations were selected using a <b>%3$s record sampling</b> method. <br><b>Warning:</b> A monetary unit sampling method was tried but failed.",
+                            stageOptions[["populationSize"]],
+                            prevState[["sampleSize"]],
+                            samplingLabel)
+
+      } else {
+
+        samplingLabel <- base::switch(options[["selectionType"]], 
+                                      "recordSampling" = gettextf("%1$s record sampling", samplingLabel), 
+                                      "musSampling" = gettextf("%1$s monetary unit sampling", samplingLabel))
+
+        message <- gettextf("From the population of <b>%1$s</b> observations, <b>%2$s</b> observations were selected using a <b>%3$s</b> method.",
+                            stageOptions[["populationSize"]],
+                            prevState[["sampleSize"]],
+                            samplingLabel)
+
+      }
+
+      if(!is.null(stageState) && sum(stageState[["count"]]) > nrow(stageState)){
+
+        message <- gettextf("%1$s <b>Note:</b> The selected subset (%2$s) is smaller than the planned sample size (%3$s), as observations are selected multiple times due to their high value. These observations (%4$s) are counted multiple times in the evaluation.",
+                            message,
+                            nrow(stageState),
+                            prevState[["sampleSize"]],
+                            prevState[["sampleSize"]] - nrow(stageState))
+        
+      }
+
+
+      stageContainer[["samplingParagraph"]] <- createJaspHtml(message, "p")
+      stageContainer[["samplingParagraph"]]$position <- positionInContainer
+      stageContainer[["samplingParagraph"]]$dependOn(options = "explanatoryText")
+        
     } else if(stage == "conclusion"){
+
       # Import options and results from the planning and selection stages 
       planningOptions <- .auditInputOptions(options, dataset = NULL, jaspResults,
                                             stage = "planning", rawData = TRUE)
@@ -2177,90 +2221,6 @@
     jaspResults[["sampleIndicatorColumn"]]$setNominal(sampleIndicatorColumn)
 
   }  
-}
-
-.auditSelectionGetContainer <- function(jaspResults, 
-                                        position){
-
-  planningContainer <- jaspResults[["planningContainer"]]
-  planningState <- planningContainer[["planningState"]]$object
-
-  if(!is.null(jaspResults[["selectionContainer"]])){
-
-    return(jaspResults[["selectionContainer"]])
-
-  } else if(!is.null(planningState)){
-                                         
-    selectionContainer <- createJaspContainer(title = gettext("<u>Selection</u>"))
-    selectionContainer$position <- position
-    selectionContainer$dependOn(optionsFromObject = planningContainer,
-                                options = c("samplingChecked",
-                                            "selectionMethod",
-                                            "selectionType",
-                                            "seed",
-                                            "intervalStartingPoint",
-                                            "additionalVariables",
-                                            "rankingVariable",
-                                            "valuta",
-                                            "otherValutaName"))
-
-    jaspResults[["selectionContainer"]] <- selectionContainer
-
-    return(selectionContainer)
-  }
-}
-
-.auditExplanatoryTextSelection <- function(options, 
-                                           planningOptions,
-                                           planningState, 
-                                           selectionState,
-                                           selectionContainer, 
-                                           positionInContainer){
-
-  if(options[["explanatoryText"]]){
-
-    samplingLabel <- base::switch(options[["selectionMethod"]], 
-                                  "randomSampling" = gettext("random"), 
-                                  "systematicSampling" = gettext("fixed interval"), 
-                                  "cellSampling" = gettext("cell"))
-
-    if(!is.null(selectionState) && !is.null(selectionState[["musFailed"]])){
-      # MUS has failed for some reason, fall back to record sampling
-
-      message <- gettextf("From the population of <b>%1$s</b> observations, <b>%2$s</b> observations were selected using a <b>%3$s record sampling</b> method. <br><b>Warning:</b> A monetary unit sampling method was tried but failed.",
-                          planningOptions[["populationSize"]],
-                          planningState[["sampleSize"]],
-                          samplingLabel)
-
-    } else {
-
-    samplingLabel <- base::switch(options[["selectionType"]], 
-                                  "recordSampling" = gettextf("%1$s record sampling", samplingLabel), 
-                                  "musSampling" = gettextf("%1$s monetary unit sampling", samplingLabel))
-
-    message <- gettextf("From the population of <b>%1$s</b> observations, <b>%2$s</b> observations were selected using a <b>%3$s</b> method.",
-                        planningOptions[["populationSize"]],
-                        planningState[["sampleSize"]],
-                        samplingLabel)
-
-    }
-
-    if(!is.null(selectionState) &&
-        sum(selectionState[["count"]]) > nrow(selectionState)){
-
-      message <- gettextf("%1$s <b>Note:</b> The selected subset (%2$s) is smaller than the planned sample size (%3$s), as observations are selected multiple times due to their high value. These observations (%4$s) are counted multiple times in the evaluation.",
-                          message,
-                          nrow(selectionState),
-                          planningState[["sampleSize"]],
-                          planningState[["sampleSize"]] - nrow(selectionState))
-      
-    }
-
-
-    selectionContainer[["samplingParagraph"]] <- createJaspHtml(message, "p")
-    selectionContainer[["samplingParagraph"]]$position <- positionInContainer
-    selectionContainer[["samplingParagraph"]]$dependOn(options = "explanatoryText")
-  }
 }
 
 .auditSelectionState <- function(dataset,
