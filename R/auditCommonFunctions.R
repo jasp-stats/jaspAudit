@@ -28,7 +28,7 @@
   .auditProcedureStage(options, jaspResults)
 
   ### PLANNING STAGE ###
-  .auditPlanningStage(options, jaspResults, type)
+  .auditPlanningStage(options, jaspResults, type, workflow = TRUE)
 
   ready <- .auditReadyForNextStage(options, jaspResults, stage = "planning")
   if(!ready) return() # Stop if "To Selection" is not pressed
@@ -95,26 +95,45 @@
 
 ### PLANNING STAGE ###
 
-.auditPlanningStage <- function(options, jaspResults, type){
+.auditPlanningStage <- function(options, jaspResults, type, workflow){
 
-  # Deduct the nessecary values from the input options
-  planningOptions <- .auditInputOptions(options, dataset = NULL, jaspResults,
-                                        stage = "planning", rawData = TRUE)
+  if(workflow){
+
+    # Deduct the nessecary values from the input options
+    planningOptions <- .auditInputOptions(options, dataset = NULL, jaspResults,
+                                          stage = "planning", rawData = TRUE)
+
+  } else if(!workflow){
+
+    .auditCreateTableNumber(jaspResults) # Initialize table numbers
+    .auditCreateFigureNumber(jaspResults) # Initialize figure numbers
+
+    # Deduct the nessecary values from the input options
+    planningOptions <- .auditInputOptions(options, dataset = NULL, jaspResults,
+                                          stage = "planning", rawData = FALSE)
+    
+    # Create the procedure paragraph
+    .auditExplanatoryText(options, planningOptions, stageContainer = NULL, stageState = NULL, 
+                          jaspResults, stage = "procedure", positionInContainer = 1)
+
+    # Create the audit risk model paragraph
+    .auditRiskModelParagraph(options, jaspResults, position = 2)
+  }
 
   # Check if the options have valid values for running the analysis
   ready <- .auditReadyForAnalysis(options, planningOptions, stage = "planning")
 
   # Create the container that holds the planning output
   planningContainer <- .auditAnalysisContainer(jaspResults, stage = "planning",
-                                               position = 3)
+                                              position = 3)
 
   # Perfrom early error checks
   .auditErrorCheckInputOptions(options, dataset = NULL, planningContainer, 
-                               stage = "planning", type = NULL, ready, planningOptions)
+                              stage = "planning", type = NULL, ready, planningOptions)
 
   # Get the planning state if it exists, otherwise make one
   planningState <- .auditPlanningState(options, planningOptions, planningContainer, 
-                                       ready, type)
+                                      ready, type)
 
   # Create explanatory text for the planning
   .auditExplanatoryText(options, planningOptions, planningContainer, planningState, 
@@ -371,96 +390,6 @@
   .auditExplanatoryText(options, stageOptions = NULL, stageContainer = NULL, stageState = NULL, 
                         jaspResults, stage = "conclusion", positionInContainer = 1)
 
-}
-
-################################################################################
-################## The Separate Audit Planning Analysis ########################
-################################################################################
-
-.auditPlanningAnalysis <- function(options, jaspResults, type){
-
-  # Deduct the nessecary values from the input options
-  planningOptions <- .auditInputOptions(options, dataset = NULL, jaspResults,
-                                        stage = "planning", rawData = FALSE)
-  
-  # Create the procedure paragraph
-  .auditExplanatoryText(options, planningOptions, stageContainer = NULL, stageState = NULL, 
-                        jaspResults, stage = "procedure", positionInContainer = 1)
-
-  # Create the audit risk model paragraph
-  .auditRiskModelParagraph(options, jaspResults, position = 2)
-
-  # Check if the options have valid values for running the analysis
-  ready <- .auditReadyForAnalysis(options, planningOptions, stage = "planning")
-
-  # Create the container that holds the planning output
-  planningContainer <- .auditAnalysisContainer(jaspResults, stage = "planning",
-                                               position = 3)
-
-  # Perfrom early error checks
-  .auditErrorCheckInputOptions(options, dataset = NULL, planningContainer, 
-                              stage = "planning", type = NULL, ready, planningOptions)
-
-  # Get the planning state if it exists, otherwise make one
-  planningState <- .auditPlanningState(options, planningOptions, planningContainer, 
-                                       ready, type)
-
-  # Create explanatory text for the planning
-  .auditExplanatoryText(options, planningOptions, planningContainer, planningState, 
-                        jaspResults, stage = "planning", positionInContainer = 1, type)
-
-  # --- TABLES
-
-  .auditCreateTableNumber(jaspResults) # Initialize table numbers
-  
-  # Create the summary table
-  .auditPlanningSummaryTable(options, planningOptions, planningState, 
-                             planningContainer, jaspResults, ready, type, 
-                             positionInContainer = 2)
-
-  if(type == "bayesian"){
-
-    # Create the implicit sample table
-    .auditImplicitSampleTable(options, planningState, planningContainer, 
-                              jaspResults, ready, positionInContainer = 3)
-
-    # Cerate the prior and posterior statistics table
-    .auditPriorAndExpectedPosteriorStatisticsTable(options, planningState, 
-                                                   planningContainer, jaspResults,
-                                                   ready, positionInContainer = 4)
-
-  }
-  
-  # ---
-  
-  # --- PLOTS
-  
-  .auditCreateFigureNumber(jaspResults) # Initialize figure numbers
-
-  # Create the sample size comparison plot
-  .sampleSizeComparisonPlot(options, planningOptions, planningState, 
-                            planningContainer, jaspResults, ready, type, 
-                            positionInContainer = 5)
-
-  if(type == "frequentist"){
-
-    # Create the implied sampling distribution plot
-    .samplingDistributionPlot(options, planningOptions, planningState, 
-                              planningContainer, jaspResults, ready, 
-                              positionInContainer = 7)
-    
-  }
-
-  if(type == "bayesian"){
-
-    # Create the prior and expected posterior plot
-    .auditPlanningPlotPrior(options, planningOptions, planningState, 
-                            planningContainer, jaspResults, ready, 
-                            positionInContainer = 7)
-
-  }
-
-  # --- 
 }
 
 ################################################################################
