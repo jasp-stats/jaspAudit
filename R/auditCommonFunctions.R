@@ -3508,8 +3508,8 @@
   
   evaluationTable$addRows(row)
 
-  if(planningOptions[["populationValue"]] == 0 || planningOptions[["populationValue"]] == 0.01)
-    evaluationTable$addFootnote(message = "You must specify the population value to see the maximum misstatement.", symbol = "  \u26A0", colNames = 'projm')
+  if(options[["monetaryVariable"]] != "" && (planningOptions[["populationValue"]] == 0 || planningOptions[["populationValue"]] == 0.01))
+    evaluationTable$addFootnote(message = gettext("You must specify the population value to see the maximum misstatement."), symbol = "  \u26A0", colNames = 'projm')
 }
 
 .auditEvaluationInformationPlot <- function(options,

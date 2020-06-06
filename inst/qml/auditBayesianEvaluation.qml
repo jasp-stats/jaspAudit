@@ -32,7 +32,7 @@ Form
 	// Extra options
 	CheckBox {name: "priorAndPosteriorPlotExpectedPosterior"; checked: false; visible: false}
 
-		GridLayout
+	GridLayout
 	{
 		columns: 3
 
@@ -49,7 +49,8 @@ Form
 					id: 								materialityAbsolute
 					name: 							"materialityAbsolute"
 					text: 							qsTr("Absolute")
-					checked: 						true
+					checked: 						evaluationVariables.count > 0
+					enabled:						evaluationVariables.count > 0
 					childrenOnSameRow: 	true
 					onCheckedChanged: 
 					{
@@ -79,6 +80,7 @@ Form
 					name: 							"materialityRelative"
 					text: 							qsTr("Relative")
 					childrenOnSameRow: 	true
+					checked: 						evaluationVariables.count == 0
 
 					PercentField
 					{
@@ -143,6 +145,7 @@ Form
 
 		AvailableVariablesList
 		{
+			id: 		evaluationVariables
 			name: 	"evaluationVariables"
 		}
 
@@ -192,7 +195,8 @@ Form
 			id: 				variableTypeAuditValues
 			name:				"variableTypeAuditValues"
 			label: 			qsTr("Audit values")
-			checked:		true
+			checked:		evaluationVariables.count > 0
+			enabled:		evaluationVariables.count > 0
 		}
 
 		RadioButton {
@@ -200,6 +204,7 @@ Form
 			name:				"variableTypeCorrect"
 			label: 			qsTr("Correct / Incorrect")	
 			enabled:		materialityRelative.checked
+			checked: 		evaluationVariables.count == 0
 			onCheckedChanged: 
 			{
 				if (useSummaryStatistics.checked)
@@ -210,6 +215,7 @@ Form
 				id: 			useSummaryStatistics
 				name: 		"useSumStats"
 				label:		qsTr("Use summary statistics")
+				checked: 	evaluationVariables.count == 0
 
 				IntegerField
 				{
@@ -236,7 +242,7 @@ Form
 	}
 
 	Section {
-		title: 		qsTr("Prior Distribution")
+		title: 		qsTr("Prior Information")
 		columns: 3
 
 		RadioButtonGroup

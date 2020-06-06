@@ -60,12 +60,12 @@
 		{
 			"title":							"Evaluation",
 			"function":						"auditClassicalEvaluation",
-			"requiresData":				true
+			"requiresData":				false
 		},
 		{
 			"title":							"Bayesian Evaluation",
 			"function":						"auditBayesianEvaluation",
-			"requiresData":				true
+			"requiresData":				false
 		},
 		{
 			"title":    					"Other",

@@ -76,14 +76,14 @@ Description
 	{
 		title:			qsTr("Evaluation")
 		func:			"auditClassicalEvaluation"
-		requiresData:	true
+		requiresData:	false
 	}
 
 	Analysis
 	{
 		title:			qsTr("Bayesian Evaluation")
 		func:			"auditBayesianEvaluation"
-		requiresData:	true
+		requiresData:	false
 	}
 
 		GroupTitle
