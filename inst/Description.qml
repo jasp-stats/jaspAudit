@@ -74,6 +74,26 @@ Description
 
 	Analysis
 	{
+		title:			qsTr("Evaluation")
+		func:			"auditClassicalEvaluation"
+		requiresData:	false
+	}
+
+	Analysis
+	{
+		title:			qsTr("Bayesian Evaluation")
+		func:			"auditBayesianEvaluation"
+		requiresData:	false
+	}
+
+		GroupTitle
+	{
+		title:    		qsTr("Other")
+		icon:			"audit-estimation.svg"
+	}
+
+	Analysis
+	{
 		title:			qsTr("Benford's Law")
 		func:			"auditClassicalBenfordsLaw"
 		requiresData:	true
