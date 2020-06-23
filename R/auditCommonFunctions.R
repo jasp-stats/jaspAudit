@@ -892,7 +892,7 @@
         }
         if(.auditCalculateDetectionRisk(options) >= 1){
           # Error if the detection risk of the analysis is higher than one
-          analysisContainer$setError(gettext("The detection risk is higher than 100%%. Please re-specify your custom values for the Inherent risk and/or Control risk, or the confidence."))
+          analysisContainer$setError(gettext("The detection risk is higher than 100%. Please re-specify your custom values for the Inherent risk and/or Control risk, or the confidence."))
           return(TRUE)
         }
       }
@@ -971,7 +971,7 @@
     } else if(.auditCalculateDetectionRisk(options) >= 1){
       # Error if the detection risk of the analysis is higher than one
       analysisContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation summary"))
-      analysisContainer$setError(gettext("The detection risk is higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk, or the confidence."))
+      analysisContainer$setError(gettext("The detection risk is higher than 100%. Please re-specify your values for the Inherent risk and/or Control risk, or the confidence."))
       return(TRUE)
     } else {
       # No error in the evaluation options
@@ -1471,7 +1471,7 @@
   detectionRisk <- auditRisk / inherentRisk / controlRisk
 
   if(detectionRisk >= 1){
-    planningContainer$setError(gettextf("The detection risk is higher than 100%%. Please re-specify your custom values for the Inherent risk and/or Control risk."))  
+    planningContainer$setError(gettextf("The detection risk is higher than 100%. Please re-specify your custom values for the Inherent risk and/or Control risk."))  
     return()
   }
 
@@ -3598,7 +3598,7 @@
     
     if(options[["variableType"]] == "variableTypeAuditValues" && 
         options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
-
+      
       mle <- (planningOptions[["populationValue"]] - evaluationState[["pointEstimate"]]) / 
               planningOptions[["populationValue"]]
     
@@ -3685,7 +3685,16 @@
 
     yLimits <- c(0, 1.1 * max(values))
     yBreaks <- JASPgraphs::getPrettyAxisBreaks(seq(0, 1.1 * max(values), length.out = 100), 
-                                               min.n = 4)
+                                            min.n = 4)
+
+    if(mle < 0 || bound < 0){
+      # Here we adjust the axes if the mle turns out to be negative
+      yBreaks <- JASPgraphs::getPrettyAxisBreaks(seq(min(values), 1.1 * max(values), length.out = 100), 
+                                                min.n = 4)
+      x.labels <- format(JASPgraphs::getPrettyAxisBreaks(seq(min(values), 1.1 * max(values), length.out = 100), 
+                          min.n = 4), scientific = FALSE)
+      yLimits <- c(min(values), 1.1 * max(values))
+    }
 
     p <- ggplot2::ggplot(data = plotData, 
                         mapping = ggplot2::aes(x = x, y = y)) +
