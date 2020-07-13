@@ -360,6 +360,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
 
     benfordsLawTable <- createJaspTable(tableTitle)
     benfordsLawTable$position <- positionInContainer
+    columnTitle <- base::switch(options[["distribution"]], 
+                                "benford" = gettext("Benford's law"),
+                                "uniform" = gettext("Uniform distribution"))
 
     benfordsLawTable$dependOn(options = "summaryTable")
 
@@ -373,13 +376,13 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
                                   title = gettext('Percentage'), 
                                   type = 'string')
     benfordsLawTable$addColumnInfo(name = 'inBenford', 
-                                  title = gettext("Benford's law"), 
+                                  title = columnTitle, 
                                   type = 'string')
 
     benfordsLawContainer[["benfordsLawTable"]] <- benfordsLawTable
 
     if(options[["digits"]] == "first" || options[["digits"]] == "last"){
-      digits <- base::switch(options[["distribution"]], "benford" = 1:9, "uniform" = 0:9)
+      digits <- 1:9
     } else {
       digits <- 10:99
     }
@@ -393,8 +396,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
       row <- data.frame(digit = digits, 
                         count = rep(".", length(digits)),
                         percentage = rep(".", length(digits)),
-                        inBenford = paste0(round(inBenford * 100, 2), 
-                                            "%"))
+                        inBenford = paste0(round(inBenford * 100, 2), "%"))
       benfordsLawTable$addRows(row)
       return()
     } 
