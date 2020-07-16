@@ -1,7 +1,7 @@
 Package: jaspAudit
 Type: Package
 Title: Audit Module for JASP
-Version: 0.1
+Version: 0.3.1
 Date: 2020-06-03
 Author: Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille & Ruud Wetzels
 Website: www.github.com/koenderks/jfa
@@ -12,6 +12,7 @@ Encoding: UTF-8
 Imports:
   BAS,
   ggplot2,
+  ggrepel,
   jaspBase,
   jaspGraphs,
   jfa

@@ -21,6 +21,6 @@
 auditBayesianWorkflow <- function(jaspResults, dataset, options, ...){
 
   # For the workflow constituents, see auditCommonFunctions.R
-  .auditWorkflow(options, jaspResults, type = "bayesian")
+  .jfa.workflow.analysis(options, jaspResults)
    
 }
