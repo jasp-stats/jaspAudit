@@ -4,7 +4,7 @@ import JASP.Module 	1.0
 Description
 {
 	title :				qsTr("Audit")
-	name :				"Audit"
+	name :				"jaspAudit"
 	description:		qsTr("JASP for Audit (JfA) is an officially supported add-on module that is designed specifically with the auditor in mind. JfA helps the auditor in interpreting, explaining, and reporting the analyses and leaves a transparent audit trail.")
 	version:			"0.1"
 	author:				"Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille & Ruud Wetzels"

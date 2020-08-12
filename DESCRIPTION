@@ -1,4 +1,4 @@
-Package: Audit
+Package: jaspAudit
 Type: Package
 Title: Audit Module for JASP
 Version: 0.1
