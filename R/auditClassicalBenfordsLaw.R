@@ -470,7 +470,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
                     type = c(rep(gettext("Observed"), length(state[["digits"]])), 
                             rep(legendName, length(state[["digits"]]))))
 
-    yBreaks <- JASPgraphs::getPrettyAxisBreaks(c(0, d$y), min.n = 4)
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, d$y), min.n = 4)
 
     if(options[["digits"]] == "first" || options[["digits"]] == "last"){
       xBreaks <- state[["digits"]]
@@ -507,11 +507,11 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
                             stat = "identity", 
                             color = "black",
                             size = 1.2) +
-          JASPgraphs::geom_line(data = subset(d,d$type == gettext('Observed')), 
+          jaspGraphs::geom_line(data = subset(d,d$type == gettext('Observed')), 
                                 mapping = ggplot2::aes(x = x, y = y), 
                                 color = "dodgerblue", 
                                 size = lineSize) +
-          JASPgraphs::geom_point(data = subset(d,d$type == gettext('Observed')), 
+          jaspGraphs::geom_point(data = subset(d,d$type == gettext('Observed')), 
                                 mapping = ggplot2::aes(x = x, y = y), 
                                 fill = "dodgerblue", 
                                 size = pointSize, 
@@ -536,7 +536,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
                                                                           color = "black",
                                                                           alpha = 1)))
 
-    p <- JASPgraphs::themeJasp(p, legend.position = "top")
+    p <- jaspGraphs::themeJasp(p, legend.position = "top")
 
     benfordsLawPlot$plotObject <- p
 

@@ -1271,7 +1271,7 @@
             ggplot2::guides(shape = ggplot2::guide_legend(override.aes = list(size = c(4, 3, 2), shape = c(21, 21, 21), 
                                                           fill = c("red", "dodgerblue1", "orange"), stroke = 2, color = "black")), order = 1) 
 
-    p <- JASPgraphs::themeJasp(p, legend.position = "top") + 
+    p <- jaspGraphs::themeJasp(p, legend.position = "top") + 
           ggplot2::theme(legend.text = ggplot2::element_text(margin = ggplot2::margin(l = -10, r = 50)),
                           panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb", size = 0.5))
 
@@ -1292,14 +1292,14 @@
 .auditBarPlot <- function(column, variableName, valuta){
 
   h <- hist(column, plot = FALSE)
-  yBreaks <- JASPgraphs::getPrettyAxisBreaks(c(0, h$counts), min.n = 4)
-  xBreaks <- JASPgraphs::getPrettyAxisBreaks(c(column, h$breaks), min.n = 4)
+  yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, h$counts), min.n = 4)
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(column, h$breaks), min.n = 4)
 
   p <- ggplot2::ggplot(data = data.frame(column), mapping = ggplot2::aes(x = column, y = ..count..)) + 
         ggplot2::scale_x_continuous(name = gettextf("Book values (%1$s)", valuta), breaks = xBreaks, limits = range(xBreaks)) +
         ggplot2::scale_y_continuous(name = gettext("Frequency"), breaks = yBreaks, limits = c(0, max(yBreaks))) + 
         ggplot2::geom_histogram(binwidth = (h$breaks[2] - h$breaks[1]), fill = "grey", col = "black", size = .7, center = ((h$breaks[2] - h$breaks[1])/2))
-  p <- JASPgraphs::themeJasp(p, axisTickWidth = .7, bty = list(type = "n", ldwX = .7, lwdY = 1))
+  p <- jaspGraphs::themeJasp(p, axisTickWidth = .7, bty = list(type = "n", ldwX = .7, lwdY = 1))
 
   return(p)
 }
@@ -1511,13 +1511,13 @@
 
     if(isTryError(result)){
 
-      if(JASP:::.extractErrorMessage(result) == "Sample size could not be calculated, please increase the maxSize argument"){
+      if(jaspBase:::.extractErrorMessage(result) == "Sample size could not be calculated, please increase the maxSize argument"){
         planningContainer$setError(gettext("The resulting sample size exceeds 5000."))
         return()
       }
 
       planningContainer$setError(gettextf("An error occurred: %1$s", 
-                                          JASP:::.extractErrorMessage(result)))
+                                          jaspBase:::.extractErrorMessage(result)))
       return()
     }
 
@@ -1933,7 +1933,7 @@
       d$nature <- factor(x = d$nature, levels = levels(d$nature)[c(1, 2)])
     }
 
-    yBreaks <- JASPgraphs::getPrettyAxisBreaks(0:(ceiling(1.1 * max(n))), min.n = 4)
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(0:(ceiling(1.1 * max(n))), min.n = 4)
     yLimits <- c(0, ceiling(1.2 * max(n)))
 
     myTheme <- ggplot2::theme(axis.ticks.x = ggplot2::element_blank(), 
@@ -1970,7 +1970,7 @@
       ggplot2::scale_fill_manual(values=c("#7FE58B", "#FF6666"), 
                                  guide = ggplot2::guide_legend(reverse = TRUE))
 
-    p <- JASPgraphs::themeJasp(p, 
+    p <- jaspGraphs::themeJasp(p, 
                               sides = "", 
                               legend.position = "top") + myTheme
 
@@ -2078,8 +2078,8 @@
     dataLegend$type <- factor(x = dataLegend[["type"]], 
                               levels = levels(dataLegend[["type"]])[c(2,1)])
 
-    xTicks <- JASPgraphs::getPrettyAxisBreaks(c(0, xVals))
-    yTicks <- JASPgraphs::getPrettyAxisBreaks(c(0, dataErrorFree[["y"]]))
+    xTicks <- jaspGraphs::getPrettyAxisBreaks(c(0, xVals))
+    yTicks <- jaspGraphs::getPrettyAxisBreaks(c(0, dataErrorFree[["y"]]))
 
     myLegend <- ggplot2::guide_legend(override.aes=list(size = 12, 
                                                        shape = 22, 
@@ -2122,7 +2122,7 @@
           ggplot2::labs(fill = "") +
           ggplot2::guides(fill = myLegend)
     
-    p <- JASPgraphs::themeJasp(p, legend.position = "top") + myTheme
+    p <- jaspGraphs::themeJasp(p, legend.position = "top") + myTheme
 
     samplingDistribution$plotObject <- p
 
@@ -2241,7 +2241,7 @@
       if(isTryError(result)){
 
         selectionContainer$setError(gettextf("An error occurred: %1$s", 
-                                             JASP:::.extractErrorMessage(result)))
+                                             jaspBase:::.extractErrorMessage(result)))
         return()
 
       } else {
@@ -2652,8 +2652,8 @@
                           type = c(rep("Population", length(popData)), 
                                    rep("Sample", length(sampleData))))
   
-    xBreaks <- JASPgraphs::getPrettyAxisBreaks(popData, min.n = 4)
-    yBreaks <- JASPgraphs::getPrettyAxisBreaks(hist(popData, plot = FALSE, breaks = 50)$counts, min.n = 4)
+    xBreaks <- jaspGraphs::getPrettyAxisBreaks(popData, min.n = 4)
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(hist(popData, plot = FALSE, breaks = 50)$counts, min.n = 4)
 
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, fill = type)) +
             ggplot2::geom_histogram(bins = 50, col = "black", position = "identity") +
@@ -2662,7 +2662,7 @@
             ggplot2::scale_y_continuous(name = "Frequency", breaks = yBreaks, limits = c(min(yBreaks), max(yBreaks))) +
             ggplot2::scale_fill_manual(values = c("#0063B2FF", "#9CC3D5FF"))
 
-    p <- JASPgraphs::themeJasp(p, legend.position = "top")
+    p <- jaspGraphs::themeJasp(p, legend.position = "top")
 
     if(i == 1){
       plotHistograms[[variables[i]]] <- createJaspPlot(plot = p, title = "Book values", height = 300, width = 500)
@@ -2855,7 +2855,7 @@
     if(isTryError(result)){
 
       evaluationContainer$setError(paste0("An error occurred: ", 
-                                        JASP:::.extractErrorMessage(result)))
+                                        jaspBase:::.extractErrorMessage(result)))
       return()
     }
 
@@ -3220,7 +3220,7 @@
     if(isTryError(result)){
 
       evaluationContainer$setError(paste0("An error occurred: ", 
-                                        JASP:::.extractErrorMessage(result)))
+                                        jaspBase:::.extractErrorMessage(result)))
       return()
     }
 
@@ -3668,12 +3668,12 @@
 
     fillUp <- rev(c("#1380A1", boundColor, "#1380A1"))
 
-    yBreaks <- JASPgraphs::getPrettyAxisBreaks(c(0, values), min.n = 4)
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, values), min.n = 4)
     
     if(options[["variableType"]] == "variableTypeAuditValues" && 
         options[["materiality"]] == "materialityAbsolute"){
 
-      x.labels <- format(JASPgraphs::getPrettyAxisBreaks(
+      x.labels <- format(jaspGraphs::getPrettyAxisBreaks(
                           seq(0, 1.1 * max(values), length.out = 100), 
                           min.n = 4), 
                         scientific = FALSE)
@@ -3682,7 +3682,7 @@
     } else {
 
       x.labels <- paste0(round(
-                      JASPgraphs::getPrettyAxisBreaks(seq(0, 1.1 * max(values), length.out = 100), 
+                      jaspGraphs::getPrettyAxisBreaks(seq(0, 1.1 * max(values), length.out = 100), 
                       min.n = 4) * 100, 4), 
                     "%")
       values.labels <- paste0(round(values * 100, 2), "%")
@@ -3694,14 +3694,14 @@
     plotData$x <- factor(plotData$x, levels = plotData$x)
 
     yLimits <- c(0, 1.1 * max(values))
-    yBreaks <- JASPgraphs::getPrettyAxisBreaks(seq(0, 1.1 * max(values), length.out = 100), 
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(seq(0, 1.1 * max(values), length.out = 100), 
                                             min.n = 4)
 
     if(mle < 0 || bound < 0){
       # Here we adjust the axes if the mle turns out to be negative
-      yBreaks <- JASPgraphs::getPrettyAxisBreaks(seq(min(values), 1.1 * max(values), length.out = 100), 
+      yBreaks <- jaspGraphs::getPrettyAxisBreaks(seq(min(values), 1.1 * max(values), length.out = 100), 
                                                 min.n = 4)
-      x.labels <- format(JASPgraphs::getPrettyAxisBreaks(seq(min(values), 1.1 * max(values), length.out = 100), 
+      x.labels <- format(jaspGraphs::getPrettyAxisBreaks(seq(min(values), 1.1 * max(values), length.out = 100), 
                           min.n = 4), scientific = FALSE)
       yLimits <- c(min(values), 1.1 * max(values))
     }
@@ -3731,7 +3731,7 @@
                               axis.text.y = ggplot2::element_text(hjust = 0),
                               panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", size = 0.5))
 
-    p <- JASPgraphs::themeJasp(p, 
+    p <- jaspGraphs::themeJasp(p, 
                                sides = "") + myTheme
 
     evaluationInformation$plotObject <- p
@@ -3855,7 +3855,7 @@
         ggplot2::scale_y_continuous(name = gettextf("Audit values (%1$s)", planningOptions[["valuta"]]),
                             breaks = yticks,
                             labels = yLabs) + 
-        JASPgraphs::geom_point(size = 3, fill = cols)
+        jaspGraphs::geom_point(size = 3, fill = cols)
 
     p <- .auditCorrelationPlotAddLine(fit = fit[[bestModel]], 
                                       plot = p, 
@@ -3876,7 +3876,7 @@
     myTheme <- ggplot2::theme(panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", size = 0.5), 
                             panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb", size = 0.5))
     
-    p <- JASPgraphs::themeJasp(p) + myTheme
+    p <- jaspGraphs::themeJasp(p) + myTheme
 
     correlationPlot$plotObject <- p
 

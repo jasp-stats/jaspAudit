@@ -741,7 +741,7 @@
     
     }
 
-    xBreaks <- JASPgraphs::getPrettyAxisBreaks(xseq, min.n = 4)
+    xBreaks <- jaspGraphs::getPrettyAxisBreaks(xseq, min.n = 4)
     yBreaks <- c(0, 1.2 * max(plotData$y))
 
     if(!options[["priorPlotExpectedPosterior"]]){
@@ -989,7 +989,7 @@
                               axis.title.y = ggplot2::element_text(margin = ggplot2::margin(t = 0, r = -5, b = 0, l = 0)),
                               legend.key.size = ggplot2::unit(2.5, "line"))
   
-    p <- JASPgraphs::themeJasp(p, 
+    p <- jaspGraphs::themeJasp(p, 
                                legend.position = "top") + myTheme
 
     priorPlot$plotObject <- p
@@ -1229,7 +1229,7 @@
 
     }
 
-    xBreaks <- JASPgraphs::getPrettyAxisBreaks(xseq, min.n = 4)
+    xBreaks <- jaspGraphs::getPrettyAxisBreaks(xseq, min.n = 4)
     yBreaks <- c(0, 1.2 * max(plotData$y))
 
     # Adjust legend
@@ -1531,7 +1531,7 @@
       myTheme <- myTheme +  ggplot2::theme(legend.text = ggplot2::element_text(size = 12))
     } 
 
-    p <- JASPgraphs::themeJasp(p, 
+    p <- jaspGraphs::themeJasp(p, 
                                legend.position = "top") + myTheme
 
     priorAndPosteriorPlot$plotObject <- p

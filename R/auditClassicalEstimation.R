@@ -840,7 +840,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
         ggplot2::scale_y_continuous(name = gettext("Audit values"),
                             breaks = yticks,
                             labels = yLabs) + 
-        JASPgraphs::geom_point(size = 3, fill = cols)
+        jaspGraphs::geom_point(size = 3, fill = cols)
         
   p <- .auditCorrelationPlotAddLine(fit = fit[[bestModel]], 
                                   plot = p, 
@@ -852,7 +852,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                               label = paste0("italic(r) == ", co), size = 8, parse = TRUE, hjust = -0.5, vjust = 0.5)
   p <- p + ggplot2::theme(panel.grid.major.x = ggplot2::element_line(color="#cbcbcb"), panel.grid.major.y = ggplot2::element_line(color="#cbcbcb"))
   
-  p <- JASPgraphs::themeJasp(p)
+  p <- jaspGraphs::themeJasp(p)
 
   correlationPlot$plotObject <- p
 
