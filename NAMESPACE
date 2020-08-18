@@ -1,3 +1,4 @@
+import(jaspBase)
 export(auditClassicalWorkflow)
 export(auditBayesianWorkflow)
 export(auditClassicalPlanning)
