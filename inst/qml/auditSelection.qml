@@ -23,7 +23,7 @@ import JASP.Widgets 1.0
 
 Form {
 
-	usesJaspResults: 								true
+	
 
 	// Extra options 
 	CheckBox { name: "workflow"; checked: false; visible: false}

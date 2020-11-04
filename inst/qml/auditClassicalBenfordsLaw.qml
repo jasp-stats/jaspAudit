@@ -23,7 +23,7 @@ import JASP.Widgets 1.0
 
 Form {
 
-	usesJaspResults: true
+	
 	columns: 1
 
 	VariablesForm
