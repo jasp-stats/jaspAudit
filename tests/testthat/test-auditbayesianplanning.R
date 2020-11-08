@@ -1,180 +1,208 @@
 context("[Audit] Bayesian Planning")
 
-### TEST 1: PLAN USING BETA DISTRIBUTION
+### Test 1: Plan using the beta distribution
 
-options <- jaspTools::analysisOptions("auditBayesianPlanning")
-options$.meta <- list()
-options$CR <- "High"
-options$IR <- "High"
-options$decisionPlot <- TRUE
+options <- analysisOptions("auditBayesianPlanning")
+options$performanceMateriality <- TRUE
+options$materialityPercentage <- 0.05
+options$populationSize <- 1000
 options$expectedEvidenceRatio <- TRUE
 options$expectedBayesFactor <- TRUE
-options$expectedErrors <- "expectedRelative"
 options$implicitSampleTable <- TRUE
-options$materiality <- "materialityRelative"
-options$materialityPercentage <- 0.05
-options$planningModel <- "binomial"
-options$populationSize <- 1000
-options$priorPlot <- TRUE
-options$shadePrior <- "shadePriorCredibleRegion"
-options$priorPlotExpectedPosterior <- TRUE
 options$priorStatistics <- TRUE
+options$decisionPlot <- TRUE
+options$priorPlot <- TRUE
+options$priorPlotExpectedPosterior <- TRUE
+options$materiality <- "materialityRelative"
+options$expectedErrors <- "expectedRelative"
+options$IR <- "High"
+options$CR <- "High"
+options$planningModel <- "binomial"
 options$valuta <- "euroValuta"
+options$shadePrior <- "shadePriorCredibleRegion"
+options$.meta <- list()
 set.seed(1)
 dataset <- NULL
-results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
+results <- runAnalysis("auditBayesianPlanning", dataset, options)
 
 
-test_that("Test 1: Sample Size Comparison plot matches", {
-	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["data"]]
+test_that("Across Probability Distributions (Current: Beta) plot matches", {
+	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "Test 1: sample-size-comparison", dir="auditBayesianPlanning")
+	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-beta-", dir="auditBayesianPlanning")
 })
 
-test_that("Test 1: Implied Prior from Risk Assessments plot matches", {
+test_that("Across Expected Errors (Current: 0) plot matches 1", {
+	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-1", dir="auditBayesianPlanning")
+})
+
+test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
+	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorAndPosteriorStatistics"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.95, "beta(<unicode><unicode> = 1, <unicode><unicode> = 1)",
+			 0.05, 0.95, "NaN", 0.0526315789473684, "NaN", "Prior", 0.0495076098882269,
+			 "beta(<unicode><unicode> = 1, <unicode><unicode> = 59)", 0.951505474750577,
+			 0.0484945252494232, 0, 19.6208844164712, 0.0495076098882269,
+			 "Expected posterior", -0.900492390111773, "", 19.0301094950115,
+			 0.0510468686836034, "NaN", 372.796803912953, "", "Expected shift"
+			))
+})
+
+test_that("Implied Prior Distribution plot matches 1", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "Test 1: implied-prior-from-risk-assessments", dir="auditBayesianPlanning")
+	jaspTools::expect_equal_plots(testPlot, "implied-prior-distribution-1", dir="auditBayesianPlanning")
 })
 
-test_that("Test 1: <b>Table 3.</b> Prior and Expected Posterior Descriptive Statistics results match", {
-	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorStatistics"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list("Beta(<unicode><unicode> = 1, <unicode><unicode> = 1)", "95%",
-			 0.95, 0.05, 0.05, "Prior", "Beta(<unicode><unicode> = 1, <unicode><unicode> = 59)",
-			 "4.9508%", 0.05, 0.95, 19.62, "Expected posterior", "", "",
-			 0.05, 19, 372.8, "Expected shift"))
-})
-
-test_that("Test 1: <b>Table 2.</b> Implicit Sample results match", {
+test_that("<b>Table 2.</b> Implicit Sample results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_sampletable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(0, 0))
 })
 
-test_that("Test 1: <b>Table 1.</b> Planning Summary results match", {
+test_that("<b>Table 1.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("100%", "5%", "100%", 372.8, 19.62, 0, "5%", 58))
+		list("5%", 372.796803912953, 19.6208844164712, 0, "5%", 58))
 })
 
-### TEST 2: PLAN USING GAMMA DISTRIBUTION
+### Test 2: Plan using the gamma distribution
 
-options <- jaspTools::analysisOptions("auditBayesianPlanning")
-options$.meta <- list()
-options$CR <- "Medium"
-options$IR <- "High"
-options$decisionPlot <- TRUE
-options$expectedBayesFactor <- TRUE
-options$expectedErrors <- "expectedRelative"
-options$expectedEvidenceRatio <- TRUE
-options$implicitSampleTable <- TRUE
-options$materiality <- "materialityAbsolute"
+options <- analysisOptions("auditBayesianPlanning")
+options$performanceMateriality <- TRUE
 options$materialityValue <- 70161
-options$planningModel <- "Poisson"
 options$populationSize <- 3500
 options$populationValue <- 1400000
+options$priorConstructionMethod <- "arm"
+options$expectedEvidenceRatio <- TRUE
+options$expectedBayesFactor <- TRUE
+options$implicitSampleTable <- TRUE
+options$priorStatistics <- TRUE
+options$decisionPlot <- TRUE
 options$priorPlot <- TRUE
 options$priorPlotExpectedPosterior <- TRUE
-options$priorPlotLimit <- 0.5
-options$priorStatistics <- TRUE
-options$shadePrior <- "shadePriorCredibleRegion"
+options$materiality <- "materialityAbsolute"
+options$expectedErrors <- "expectedRelative"
+options$IR <- "High"
+options$CR <- "Medium"
+options$planningModel <- "Poisson"
 options$valuta <- "dollarValuta"
+options$shadePrior <- "shadePriorCredibleRegion"
+options$.meta <- list()
 set.seed(1)
 dataset <- NULL
-results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
+results <- runAnalysis("auditBayesianPlanning", dataset, options)
 
 
-test_that("Test 2: Sample Size Comparison plot matches", {
-	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["data"]]
+test_that("Across Probability Distributions (Current: Gamma) plot matches", {
+	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "Test 2: sample-size-comparison", dir="auditBayesianPlanning")
+	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-gamma-", dir="auditBayesianPlanning")
 })
 
-test_that("Test 2: Implied Prior from Risk Assessments plot matches", {
+test_that("Across Expected Errors (Current: 0) plot matches 2", {
+	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-2", dir="auditBayesianPlanning")
+})
+
+test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
+	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorAndPosteriorStatistics"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.299573227355399, "gamma(<unicode><unicode> = 1, <unicode><unicode> = 10)",
+			 0.394166449631336, 0.605833550368664, 0, 0.65061839079641, 0.299573227355399,
+			 "Prior", 0.0499288712258998, "gamma(<unicode><unicode> = 1, <unicode><unicode> = 60)",
+			 0.950555279943933, 0.0494447200560673, 0, 19.224606365777, 0.0499288712258998,
+			 "Expected posterior", -0.249644356129499, "", 2.41155806343484,
+			 0.0816143642523247, 0, 29.5482061954082, "", "Expected shift"
+			))
+})
+
+test_that("Implied Prior Distribution plot matches 2", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "Test 2: implied-prior-from-risk-assessments", dir="auditBayesianPlanning")
+	jaspTools::expect_equal_plots(testPlot, "implied-prior-distribution-2", dir="auditBayesianPlanning")
 })
 
-test_that("Test 2: <b>Table 3.</b> Prior and Expected Posterior Descriptive Statistics results match", {
-	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorStatistics"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list("Gamma(<unicode><unicode> = 1, <unicode><unicode> = 10)", "29.9573%",
-			 0.61, 0.39, 0.65, "Prior", "Gamma(<unicode><unicode> = 1, <unicode><unicode> = 60)",
-			 "4.9929%", 0.05, 0.95, 19.22, "Expected posterior", "", "",
-			 0.08, 2.44, 29.55, "Expected shift"))
-})
-
-test_that("Test 2: <b>Table 2.</b> Implicit Sample results match", {
+test_that("<b>Table 2.</b> Implicit Sample results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_sampletable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(0, 10))
 })
 
-test_that("Test 2: <b>Table 1.</b> Planning Summary results match", {
+test_that("<b>Table 1.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("60%", "8.33%", "100%", 29.55, 19.22, 0, "$ 70161", 50))
+		list("60%", "8.33%", "100%", 29.5482061954082, 19.224606365777, 0,
+			 "$ 70161", 50))
 })
 
-### TEST 3: PLAN USING BETA-BINOMIAL DISTRIBUTION
+### Test 3: Plan using the beta-binomial distribution
 
-options <- jaspTools::analysisOptions("auditBayesianPlanning")
-options$.meta <- list()
-options$CR <- "Medium"
-options$IR <- "High"
-options$decisionPlot <- TRUE
-options$expectedBayesFactor <- TRUE
-options$expectedErrors <- "expectedRelative"
+options <- analysisOptions("auditBayesianPlanning")
+options$performanceMateriality <- TRUE
+options$materialityValue <- 2000
+options$populationSize <- 3500
+options$populationValue <- 10000
 options$expectedEvidenceRatio <- TRUE
+options$expectedBayesFactor <- TRUE
 options$implicitSampleTable <- TRUE
-options$materiality <- "materialityRelative"
-options$materialityPercentage <- 0.1
-options$materialityValue <- 70161
-options$planningModel <- "hypergeometric"
-options$populationSize <- 200
-options$populationValue <- 1400000
+options$priorStatistics <- TRUE
+options$decisionPlot <- TRUE
 options$priorPlot <- TRUE
 options$priorPlotExpectedPosterior <- TRUE
-options$priorPlotLimit <- 0.5
-options$priorStatistics <- TRUE
-options$shadePrior <- "shadePriorCredibleRegion"
+options$materiality <- "materialityAbsolute"
+options$expectedErrors <- "expectedRelative"
+options$IR <- "High"
+options$CR <- "High"
+options$planningModel <- "hypergeometric"
 options$valuta <- "dollarValuta"
+options$shadePrior <- "shadePriorCredibleRegion"
+options$.meta <- list()
 set.seed(1)
 dataset <- NULL
-results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
+results <- runAnalysis("auditBayesianPlanning", dataset, options)
 
 
-test_that("Test 3: Sample Size Comparison plot matches", {
-	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["data"]]
+test_that("Across Probability Distributions (Current: Beta-binomial) plot matches", {
+	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "Test 3: sample-size-comparison", dir="auditBayesianPlanning")
+	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-beta-binomial-", dir="auditBayesianPlanning")
 })
 
-test_that("Test 3: Implied Prior from Risk Assessments plot matches", {
+test_that("Across Expected Errors (Current: 0) plot matches 3", {
+	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-3", dir="auditBayesianPlanning")
+})
+
+test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
+	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorAndPosteriorStatistics"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(9488, "beta-binomial(N = 9987, <unicode><unicode> = 1, <unicode><unicode> = 1)",
+			 0.20034040849018, 0.79965959150982, "NaN", 0.250532114686352,
+			 "NaN", "Prior", 1925, "beta-binomial(N = 9987, <unicode><unicode> = 1, <unicode><unicode> = 14)",
+			 0.95618100435991, 0.0438189956400898, 0, 21.8211529130783, 0.1925,
+			 "Expected posterior", -0.7563, "", 4.7727815450011, 0.0547970612812336,
+			 "NaN", 87.0992245461097, "", "Expected shift"))
+})
+
+test_that("Implied Prior Distribution plot matches 3", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "Test 3: implied-prior-from-risk-assessments", dir="auditBayesianPlanning")
+	jaspTools::expect_equal_plots(testPlot, "implied-prior-distribution-3", dir="auditBayesianPlanning")
 })
 
-test_that("Test 3: <b>Table 3.</b> Prior and Expected Posterior Descriptive Statistics results match", {
-	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorStatistics"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list("Beta-binomial(N = 177, <unicode><unicode> = 1, <unicode><unicode> = 5)",
-			 81, 0.54, 0.46, 0.86, "Prior", "Beta-binomial(N = 177, <unicode><unicode> = 1, <unicode><unicode> = 28)",
-			 19, 0.04, 0.96, 25.02, "Expected posterior", "", "", 0.07, 2.09,
-			 29.11, "Expected shift"))
-})
-
-test_that("Test 3: <b>Table 2.</b> Implicit Sample results match", {
+test_that("<b>Table 2.</b> Implicit Sample results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_sampletable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(0, 4))
+		list(0, 0))
 })
 
-test_that("Test 3: <b>Table 1.</b> Planning Summary results match", {
+test_that("<b>Table 1.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("60%", "8.33%", "100%", 29.11, 25.02, 0, "10%", 23))
+		list("5%", 87.0992245461097, 21.8211529130783, 0, "$ 2000", 13))
 })

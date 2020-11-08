@@ -2379,11 +2379,12 @@
 	sample[, 1:2] <- apply(X = sample[, 1:2], MARGIN = 2, as.numeric)
 
 	if(options[["monetaryVariable"]] != ""){
-		sample[, 3] <- as.numeric(sample[, 3])
-		sample[, 4] <- as.character(sample[, 4])
+		sample[, .v(options[["monetaryVariable"]])] <- as.numeric(sample[, .v(options[["monetaryVariable"]])])
+		sample[, .v(options[["recordNumberVariable"]])] <- as.character(sample[, .v(options[["recordNumberVariable"]])])
 	} else {
-		sample[, 3] <- as.character(sample[, 3])
-		colnames(sample)[3] <- .v(options[["recordNumberVariable"]])
+		if(ncol(sample) == 3)
+			colnames(sample)[3] <- .v(options[["recordNumberVariable"]])
+		sample[, .v(options[["recordNumberVariable"]])] <- as.character(sample[, .v(options[["recordNumberVariable"]])])
 	}
 	return(sample)
 }
