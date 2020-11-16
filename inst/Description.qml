@@ -13,12 +13,6 @@ Description
 	license				: "GPL (>= 2)"
 	icon				: "audit-module.svg"
 
-	Package 
-	{ 
-		name:			"jfa"
-		version:		"0.3.1" 
-	}
-
 	GroupTitle
 	{
 		title:			qsTr("Workflow")
