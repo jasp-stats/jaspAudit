@@ -90,7 +90,7 @@ Form
 		name: 									"sampleSize"
 		defaultValue: 							0
 		min: 									0
-		max: 									99999
+		max: 									dataSetModel.rowCount()
 		fieldWidth: 							60
 	}	
 

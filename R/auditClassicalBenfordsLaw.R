@@ -439,11 +439,11 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
 
 		p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
 			ggplot2::geom_point(alpha = 0) +
-			ggplot2::geom_bar(data = subset(d,d$type == legendName), mapping = ggplot2::aes(x = x, y = y), fill = "darkgray", 
+			ggplot2::geom_bar(data = subset(d, type == legendName), mapping = ggplot2::aes(x = x, y = y), fill = "darkgray", 
 								stat = "identity", color = "black", size = 1.2) +
-			jaspGraphs::geom_line(data = subset(d,d$type == gettext('Observed')), mapping = ggplot2::aes(x = x, y = y), 
+			jaspGraphs::geom_line(data = subset(d, type == gettext('Observed')), mapping = ggplot2::aes(x = x, y = y), 
 									color = "dodgerblue", size = lineSize) +
-			jaspGraphs::geom_point(data = subset(d,d$type == gettext('Observed')), mapping = ggplot2::aes(x = x, y = y), 
+			jaspGraphs::geom_point(data = subset(d, type == gettext('Observed')), mapping = ggplot2::aes(x = x, y = y), 
 									fill = "dodgerblue", size = pointSize, stroke = 1.5) +
 			ggplot2::scale_x_continuous(name = axisName, breaks = xBreaks, labels = xLabels,
 										limits = c(min(state[["digits"]]) - 0.5,  max(state[["digits"]]) + 0.5),) +

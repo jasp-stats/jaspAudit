@@ -52,15 +52,15 @@ Form {
 			values:
 			[
 					{ 
-						label: 			"First", 
+						label: 			qsTr("First"), 
 						value: 			"first" 
 					},
 					{ 
-						label: 			"First and second", 
+						label: 			qsTr("First and second"), 
 						value: 			"firstSecond"
 					},
 					{ 
-						label: 			"Last", 
+						label: 			qsTr("Last"), 
 						value: 			"last"
 					}
 			]
@@ -74,11 +74,11 @@ Form {
 			values:
 			[
 					{ 
-						label: 			"Benford's law", 
+						label: 			qsTr("Benford's law"), 
 						value: 			"benford"
 					},
 					{ 
-						label: 			"Uniform distribution", 
+						label: 			qsTr("Uniform distribution"), 
 						value: 			"uniform"
 					}
 			]

@@ -446,7 +446,7 @@
   	}
 
 	if(options[["explanatoryText"]]){
-		distribution 	<- base::switch(parentOptions[["likelihood"]], "poisson" = "gamma", "binomial" = "beta", "hypergeometric" = "beta-binomial")
+		distribution 	<- base::switch(parentOptions[["likelihood"]], "poisson" = gettext("gamma"), "binomial" = gettext("beta"), "hypergeometric" = gettext("beta-binomial"))
 		additionalText1 <- gettext("The expected errors (grey dot) receive the highest probability. The red dot represents the materiality.")
 		additionalText2 <- gettext("The expected posterior distribution has its upper confidence bound just below materiality.")
 

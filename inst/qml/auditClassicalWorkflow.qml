@@ -91,14 +91,14 @@ Form
 
 			GroupBox 
 			{
-				title: 								"Sampling Objectives"
+				title: 								qsTr("Sampling Objectives")
 				enabled: 							!pasteVariables.checked
 				columns:							2
 
 				CheckBox
 				{
 					id: 							performanceMateriality
-					text: 							"Test against a performance materiality"
+					text: 							qsTr("Test against a performance materiality")
 					name: 							"performanceMateriality"
 
 					RadioButtonGroup
@@ -166,7 +166,7 @@ Form
 				CheckBox
 				{
 					id: 							minimumPrecision
-					text: 							"Obtain a required minimum precision"
+					text: 							qsTr("Obtain a required minimum precision")
 					name: 							"minimumPrecision"
 				
 					PercentField
@@ -177,7 +177,7 @@ Form
 						defaultValue: 				2
 						min:						0.1
 						max:						100
-						label: 						"Relative"
+						label: 						qsTr("Relative")
 						visible: 					minimumPrecision.checked
 					}
 				}

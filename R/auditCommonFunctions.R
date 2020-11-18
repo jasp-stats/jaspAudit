@@ -67,7 +67,7 @@
 	# Check for errors due to incompatible options (variables)
 	.jfa.inputOptions.check(options, dataset, parentContainer = NULL, stage = "procedure")
 
-	# Deduct the nessecary values from the input options
+	# Deduce the necessary values from the input options
 	planningOptions <- .jfa.inputOptions.collect(options, dataset, jaspResults, stage = "planning",
 													rawData = TRUE)
 
@@ -104,7 +104,7 @@
 
 		.jfa.criticalTransactions.init(options, jaspResults)
 
-		# Deduct the nessecary values from the input options
+		# Deduce the necessary values from the input options
 		planningOptions <- .jfa.inputOptions.collect(options, dataset = NULL, jaspResults,
 														stage = "planning", rawData = TRUE)
 
@@ -113,7 +113,7 @@
 		.jfa.tableNumber.add(jaspResults)  # Initialize table numbers
 		.jfa.figureNumber.add(jaspResults) # Initialize figure numbers
 
-		# Deduct the nessecary values from the input options
+		# Deduce the necessary values from the input options
 		planningOptions <- .jfa.inputOptions.collect(options, dataset = NULL, jaspResults,
 														stage = "planning", rawData = FALSE)
 
@@ -340,7 +340,7 @@
 
 		# Remove the critical transactions if wanted
 		if(options[["flagCriticalTransactions"]] && options[["handleCriticalTransactions"]] == "remove")
-			sample <- subset(sample, sample[, .v(options[["monetaryVariable"]])] >= 0)
+			sample <- subset(sample, monetaryVariable >= 0)
 
 		# Check for errors due to incompatible options
 		error <- .jfa.inputOptions.check(options, sample, evaluationContainer, stage = "evaluation")
@@ -645,7 +645,11 @@
 		confidence <- options[["confidence"]]
 		confidenceLabel <- paste0(round(options[["confidence"]] * 100, 2), "%")
 		populationSize <- options[["populationSize"]]
-		populationValue <- ifelse(options[["populationValue"]] == 0, yes = 0.01, no = options[["populationValue"]])
+
+		populationValue <- options[["populationValue"]]
+		if(populationValue == 0)
+			populationValue <- 0.01
+
 		materiality <- ifelse(options[["materiality"]] == "materialityRelative",
 								yes = options[["materialityPercentage"]],
 								no = options[["materialityValue"]] / populationValue)
@@ -1124,7 +1128,7 @@
 
         distribution <- options[["planningModel"]]
         if(options[["bayesianAnalysis"]])
-          distribution <- base::switch(options[["planningModel"]], "Poisson" = "gamma", "binomial" = "beta", "hypergeometric" = "beta-binomial")
+          distribution <- base::switch(options[["planningModel"]], "Poisson" = gettext("gamma"), "binomial" = gettext("beta"), "hypergeometric" = gettext("beta-binomial"))
 
         if(options[["priorConstructionMethod"]] == "none"){
           stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("The most likely error in the sample is expected to be <b>%1$s</b>. The sample size that is required for %2$s, assuming the sample contains <b>%3$s</b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> distribution, the <i>a priori</i> assumption that every value of the misstatement is equally likely, and the expected errors. \n\nConsequently, if this sample is evaluated and the sum of (proportional) errors in the audited transactions is lower than (or equal to) <b>%6$s</b>, %7$s. %8$s",
@@ -1211,8 +1215,8 @@
 		if(options[["selectionType"]] == "musSampling"){
 			samplingVariableText <- gettext("Ist position (<i>...</i>)")
 			samplingUnitText <- base::switch(options[["valuta"]],
-											"euroValuta" = "Euros",
-											"dollarValuta" = "Dollars",
+											"euroValuta" = gettext("Euros"),
+											"dollarValuta" = gettext("Dollars"),
 											"otherValuta" = options[["otherValutaName"]])
 			if(options[["monetaryVariable"]] != "")
 				samplingVariableText <- gettextf("Ist position (<i>%1$s</i>)", options[["monetaryVariable"]])
