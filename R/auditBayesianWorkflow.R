@@ -19,8 +19,8 @@
 # reviewer in the Pull Request
 
 auditBayesianWorkflow <- function(jaspResults, dataset, options, ...){
-
+  
   # For the workflow constituents, see auditCommonFunctions.R
   .jfa.workflow.analysis(options, jaspResults)
-   
+  
 }

@@ -19,7 +19,7 @@
 # reviewer in the Pull Request
 
 auditSelection <- function(jaspResults, dataset, options, ...){
-
+  
   # For the selection constituents, see auditCommonFunctions.R
   .jfa.selection.stage(options, jaspResults, workflow = FALSE)
   
