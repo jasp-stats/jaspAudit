@@ -22,82 +22,6 @@
 ################## Common functions for Bayesian calculations ##################
 ################################################################################
 
-.jfa.hypothesisTest.calculation <- function(parentState, stage){
-  
-  # For calculation of the hypotheses the area under the prior/posterior 
-  # distribution below the performance materiality is regarded to be H- and 
-  # the area under the prior/posterior equal to and above materiality is 
-  # regarded to be H+. The Bayes factor is the shift from the prior to the 
-  # posterior in these probabilities.
-  
-  materiality <- parentState[["materiality"]]
-  N 			<- parentState[["N"]]
-  
-  if(stage == "planning"){
-    
-    likelihood 	<- parentState[["likelihood"]]
-    n 			<- parentState[["sampleSize"]]
-    k 			<- parentState[["expectedSampleError"]]
-    
-    alphaParameterPrior 	<- parentState[["prior"]]$aPrior
-    betaParameterPrior 		<- parentState[["prior"]]$bPrior
-    alphaParameterPosterior <- parentState[["prior"]]$aPrior + parentState[["expectedSampleError"]]
-    betaParameterPosterior 	<- base::switch(parentState[["likelihood"]],
-                                            "poisson" = parentState[["prior"]]$bPrior + parentState[["sampleSize"]],
-                                            "binomial" = parentState[["prior"]]$bPrior + parentState[["sampleSize"]] - parentState[["expectedSampleError"]],
-                                            "hypergeometric" = parentState[["prior"]]$bPrior + parentState[["sampleSize"]] - parentState[["expectedSampleError"]])
-    
-  } else if(stage == "evaluation"){
-    
-    likelihood 	<- parentState[["method"]]
-    n 			<- parentState[["n"]]
-    k 			<- parentState[["k"]]
-    
-    alphaParameterPrior 	<- 1 + parentState[["kPrior"]]
-    betaParameterPrior 		<- base::switch(parentState[["method"]],
-                                         "poisson" = parentState[["nPrior"]],
-                                         "binomial" = 1 + parentState[["nPrior"]] - parentState[["kPrior"]],
-                                         "hypergeometric" = 1 + parentState[["nPrior"]] - parentState[["kPrior"]])
-    alphaParameterPosterior <- 1 + parentState[["kPrior"]] + parentState[["t"]]
-    betaParameterPosterior 	<- base::switch(parentState[["method"]],
-                                            "poisson" = parentState[["nPrior"]] + parentState[["n"]],
-                                            "binomial" = 1 + parentState[["nPrior"]] - parentState[["kPrior"]] + parentState[["n"]] - parentState[["t"]],
-                                            "hypergeometric" = 1 + parentState[["nPrior"]] - parentState[["kPrior"]] + parentState[["n"]] - parentState[["t"]])
-    
-  }
-  
-  if(likelihood == "poisson"){
-    priorHmin 	<- pgamma(materiality, shape = alphaParameterPrior, rate = betaParameterPrior)
-    postHmin 	<- pgamma(materiality, shape = alphaParameterPosterior, rate = betaParameterPosterior)
-  } else if(likelihood == "binomial"){
-    priorHmin 	<- pbeta(materiality, shape1 = alphaParameterPrior, shape2 = betaParameterPrior)
-    postHmin 	<- pbeta(materiality, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)						
-  } else if(likelihood == "hypergeometric"){
-    tolerableErrors <- 0:floor(materiality * N)
-    priorHmin 	<- sum(jfa:::.dBetaBinom(x = tolerableErrors, N = N - n + k, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
-    postHmin 	<- sum(jfa:::.dBetaBinom(x = tolerableErrors, N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior))
-  }
-  
-  priorHplus 	<- 1 - priorHmin
-  postHplus 	<- 1 - postHmin
-  priorOdds 	<- priorHmin / priorHplus
-  postOdds 	<- postHmin / postHplus
-  bf 			<- postOdds / priorOdds
-  
-  if(bf == "NaN") # Happens when the prior is improper (e.g., Gamma(1, 0))
-    bf <- Inf
-  
-  result <- list(bf = bf, 
-                 priorOdds = priorOdds, 
-                 priorHmin = priorHmin, 
-                 priorHplus = priorHplus,
-                 postHmin = postHmin,
-                 postHplus = postHplus,
-                 postOdds = postOdds)
-  
-  return(result)
-}
-
 .jfa.credibleInterval.calculation <- function(options, parentState){
   
   # In calculation of the credible interval, we split the confidence from the
@@ -109,16 +33,13 @@
   lowerBoundConfidence 		<- (1 - parentState[["confidence"]]) / 2
   upperBoundConfidence 		<- parentState[["confidence"]] + (1 - parentState[["confidence"]]) / 2
   
-  likelihood 					<- parentState[["method"]]
-  N 							<- parentState[["N"]]
-  n 							<- parentState[["n"]]
-  k 							<- parentState[["k"]]
+  likelihood 				<- parentState[["method"]]
+  N 						<- parentState[["N"]]
+  n 						<- parentState[["n"]]
+  k 						<- parentState[["k"]]
   
-  alphaParameterPosterior 	<- 1 + parentState[["kPrior"]] + parentState[["t"]]
-  betaParameterPosterior 		<- base::switch(likelihood,
-                                           "poisson" = parentState[["nPrior"]] + parentState[["n"]],
-                                           "binomial" = 1 + parentState[["nPrior"]] - parentState[["kPrior"]] + parentState[["n"]] - parentState[["t"]],
-                                           "hypergeometric" = 1 + parentState[["nPrior"]] - parentState[["kPrior"]] + parentState[["n"]] - parentState[["t"]])
+  alphaParameterPosterior 	<- parentState[["posterior"]][["description"]]$alpha
+  betaParameterPosterior 	<- parentState[["posterior"]][["description"]]$beta
   
   if(likelihood == "poisson"){
     lowerBound <- qgamma(lowerBoundConfidence, shape = alphaParameterPosterior, rate = betaParameterPosterior)
@@ -187,17 +108,17 @@
   lowerBound <- pointEstimate - betaMax * stDev
   upperBound <- pointEstimate - betaMin * stDev
   
-  results 					<- list()
+  results 						<- list()
   results[["n"]] 				<- as.numeric(n)
   results[["k"]] 				<- as.numeric(k)
   results[["t"]] 				<- as.numeric(t)
-  results[["confidence"]] 	<- as.numeric(prevOptions[["confidence"]])
-  results[["method"]] 		<- "regression"
+  results[["confidence"]] 		<- as.numeric(prevOptions[["confidence"]])
+  results[["method"]] 			<- "regression"
   results[["popBookvalue"]] 	<- as.numeric(prevOptions[["populationValue"]])
   results[["pointEstimate"]] 	<- as.numeric(pointEstimate)
-  results[["lowerBound"]] 	<- as.numeric(lowerBound)
-  results[["upperBound"]] 	<- as.numeric(upperBound)
-  results[["materiality"]] 	<- as.numeric(prevOptions[["materiality"]])
+  results[["lowerBound"]] 		<- as.numeric(lowerBound)
+  results[["upperBound"]] 		<- as.numeric(upperBound)
+  results[["materiality"]] 		<- as.numeric(prevOptions[["materiality"]])
   
   return(results)
 }
@@ -253,8 +174,8 @@
     if(!ready || parentContainer$getError()) 
       return()
     
-    row <- data.frame(n = parentState[["prior"]]$nPrior, 
-                      k = parentState[["prior"]]$kPrior)
+    row <- data.frame(n = parentState[["prior"]][["description"]]$implicitn, 
+                      k = parentState[["prior"]][["description"]]$implicitk)
     
     table$addRows(row)
   }
@@ -298,13 +219,10 @@
     k 			<- parentState[["expectedSampleError"]]
     
     # Determine alpha and beta parameters of the prior and expected posterior distribution
-    alphaParameterPrior 	<- parentState[["prior"]]$aPrior
-    betaParameterPrior 		<- parentState[["prior"]]$bPrior
-    alphaParameterPosterior <- parentState[["prior"]]$aPrior + parentState[["expectedSampleError"]]
-    betaParameterPosterior 	<- base::switch(parentState[["likelihood"]],
-                                            "poisson" = parentState[["prior"]]$bPrior + parentState[["sampleSize"]],
-                                            "binomial" = parentState[["prior"]]$bPrior + parentState[["sampleSize"]] - parentState[["expectedSampleError"]],
-                                            "hypergeometric" = parentState[["prior"]]$bPrior + parentState[["sampleSize"]] - parentState[["expectedSampleError"]])
+    alphaParameterPrior 	<- parentState[["prior"]][["description"]]$alpha
+    betaParameterPrior 		<- parentState[["prior"]][["description"]]$beta
+    alphaParameterPosterior <- parentState[["expectedPosterior"]][["description"]]$alpha
+    betaParameterPosterior 	<- parentState[["expectedPosterior"]][["description"]]$beta
     
     xseq <- seq(0, options[["priorPlotLimit"]], 0.001)
     
@@ -454,9 +372,9 @@
                                              jaspResults[["figNumber"]]$object,
                                              distribution,
                                              "\u03B1",
-                                             parentState[["prior"]]$aPrior,
+                                             round(parentState[["prior"]][["description"]]$alpha, 3),
                                              "\u03B2",
-                                             parentState[["prior"]]$bPrior,
+                                             round(parentState[["prior"]][["description"]]$beta, 3),
                                              ifelse(options[["priorPlotAdditionalInfo"]], yes = additionalText1, no = ""),
                                              ifelse(options[["priorPlotExpectedPosterior"]], yes = additionalText2, no = "")), "p")
     
@@ -515,24 +433,18 @@
     
     
     # Determine alpha and beta parameters of the prior and posterior distribution
-    alphaParameterPrior 			<- prevState[["prior"]]$aPrior
-    betaParameterPrior 				<- prevState[["prior"]]$bPrior
+    alphaParameterPrior 			<- parentState[["prior"]][["description"]]$alpha
+    betaParameterPrior 				<- parentState[["prior"]][["description"]]$beta
     
-    alphaParameterExpectedPosterior <- prevState[["prior"]]$aPrior + prevState[["expectedSampleError"]]
-    betaParameterExpectedPosterior 	<- base::switch(prevState[["likelihood"]],
-                                                    "poisson" = prevState[["prior"]]$bPrior + prevState[["sampleSize"]],
-                                                    "binomial" = prevState[["prior"]]$bPrior + prevState[["sampleSize"]] - prevState[["expectedSampleError"]],
-                                                    "hypergeometric" = prevState[["prior"]]$bPrior + prevState[["sampleSize"]] - prevState[["expectedSampleError"]])
+    alphaParameterExpectedPosterior <- prevState[["expectedPosterior"]][["description"]]$alpha
+    betaParameterExpectedPosterior 	<- prevState[["expectedPosterior"]][["description"]]$beta
     
-    alphaParameterPosterior 		<- prevState[["prior"]]$aPrior + parentState[["t"]]
-    betaParameterPosterior 			<- base::switch(prevState[["likelihood"]],
-                                              "poisson" = prevState[["prior"]]$bPrior + n,
-                                              "binomial" = prevState[["prior"]]$bPrior + n - t,
-                                              "hypergeometric" = prevState[["prior"]]$bPrior + n - t)
+    alphaParameterPosterior 		<- parentState[["posterior"]][["description"]]$alpha
+    betaParameterPosterior 			<- parentState[["posterior"]][["description"]]$beta
     
     if(options[["separateKnownAndUnknownMisstatement"]] && options[["monetaryVariable"]] != ""){
       confBound 	<- parentState[["confBoundUnseen"]]
-      mle 		<- parentState[["mleUnseen"]]
+      mle 			<- parentState[["mleUnseen"]]
       precision 	<- parentState[["precisionUnseen"]]
     }
     
@@ -820,87 +732,49 @@
                                            "\u03B8 \u2265",
                                            round(parentState[["materiality"]], 3)))
     
-    N <- parentState[["N"]]
-    
-    if(stage == "planning"){
+    N 						<- parentState[["N"]]
+	prior 					<- parentState[["prior"]]
+
+	if(stage == "planning"){
       
-      likelihood 	<- parentState[["likelihood"]]
-      n 			<- parentState[["sampleSize"]]
-      k 			<- parentState[["expectedSampleError"]]
-      
-      alphaParameterPrior <- parentState[["prior"]]$aPrior
-      betaParameterPrior <- parentState[["prior"]]$bPrior
-      alphaParameterPosterior <- parentState[["prior"]]$aPrior + parentState[["expectedSampleError"]]
-      betaParameterPosterior <- base::switch(parentState[["likelihood"]],
-                                             "poisson" = parentState[["prior"]]$bPrior + parentState[["sampleSize"]],
-                                             "binomial" = parentState[["prior"]]$bPrior + parentState[["sampleSize"]] - parentState[["expectedSampleError"]],
-                                             "hypergeometric" = parentState[["prior"]]$bPrior + parentState[["sampleSize"]] - parentState[["expectedSampleError"]])
+      likelihood 			<- parentState[["likelihood"]]
+      n 					<- parentState[["sampleSize"]]
+      k 					<- parentState[["expectedSampleError"]]
+      posterior 			<- parentState[["expectedPosterior"]]
       
     } else if(stage == "evaluation"){
       
-      likelihood 	<- parentState[["method"]]
-      n 			<- parentState[["n"]]
-      k 			<- parentState[["k"]]
-      
-      alphaParameterPrior <- 1 + parentState[["kPrior"]]
-      betaParameterPrior <- base::switch(parentState[["method"]],
-                                         "poisson" = parentState[["nPrior"]],
-                                         "binomial" = 1 + parentState[["nPrior"]] - parentState[["kPrior"]],
-                                         "hypergeometric" = 1 + parentState[["nPrior"]] - parentState[["kPrior"]])
-      alphaParameterPosterior <- 1 + parentState[["kPrior"]] + parentState[["t"]]
-      betaParameterPosterior <- base::switch(parentState[["method"]],
-                                             "poisson" = parentState[["nPrior"]] + parentState[["n"]],
-                                             "binomial" = 1 + parentState[["nPrior"]] - parentState[["kPrior"]] + parentState[["n"]] - parentState[["t"]],
-                                             "hypergeometric" = 1 + parentState[["nPrior"]] - parentState[["kPrior"]] + parentState[["n"]] - parentState[["t"]])
+      likelihood 			<- parentState[["method"]]
+      n 					<- parentState[["n"]]
+      k 					<- parentState[["k"]]
+      posterior 			<- parentState[["posterior"]]
       
     }
+
+	alphaParameterPrior 	<- prior[["description"]]$alpha
+	betaParameterPrior 		<- prior[["description"]]$beta
+    modePrior 				<- prior[["statistics"]]$mode
+	boundPrior 				<- prior[["statistics"]]$ub
+    alphaParameterPosterior <- posterior[["description"]]$alpha
+    betaParameterPosterior 	<- posterior[["description"]]$beta
+    modePost 				<- posterior[["statistics"]]$mode
+	boundPost 				<- posterior[["statistics"]]$ub
     
     if(likelihood == "poisson"){
-      
-      modePrior 	<- (alphaParameterPrior - 1) / betaParameterPrior
-      boundPrior 	<- qgamma(options[["confidence"]],  shape = alphaParameterPrior, rate = betaParameterPrior)
       formPrior 	<- paste0("gamma(\u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
-      
-      modePost 	<- (alphaParameterPosterior - 1) / betaParameterPosterior
-      boundPost 	<- qgamma(options[["confidence"]], shape = alphaParameterPosterior, rate = betaParameterPosterior)
       formPost 	<- paste0("gamma(\u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")")
-      
     } else if(likelihood == "binomial"){
-      
-      modePrior 	<- (alphaParameterPrior - 1) / (alphaParameterPrior + betaParameterPrior - 2)
-      boundPrior 	<- qbeta(options[["confidence"]], shape1 = alphaParameterPrior, shape2 = betaParameterPrior)
       formPrior 	<- paste0("beta(\u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
-      
-      modePost 	<- (alphaParameterPosterior - 1) / (alphaParameterPosterior + betaParameterPosterior - 2)
-      boundPost 	<- qbeta(options[["confidence"]], shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
-      formPost 	<- paste0("beta(\u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")")
-      
+      formPost 	<- paste0("beta(\u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")") 
     } else if(likelihood == "hypergeometric"){
-      
-      modePrior 	<- (alphaParameterPrior - 1) / (alphaParameterPrior + betaParameterPrior - 2)
-      boundPrior 	<- jfa:::.qBetaBinom(options[["confidence"]], N = N - n + k, shape1 = alphaParameterPrior, shape2 = betaParameterPrior)
-      boundPrior 	<- boundPrior / N
       formPrior 	<- paste0("beta-binomial(N = ", N - n + k, ", \u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
-      
-      modePost 	<- (alphaParameterPosterior - 1) / (alphaParameterPosterior + betaParameterPosterior - 2)
-      boundPost 	<- jfa:::.qBetaBinom(options[["confidence"]], N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
-      boundPost 	<- boundPost / N
       formPost 	<- paste0("beta-binomial(N = ", N - n + k, ", \u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")")
-      
     }
     
     shiftInMode  	<- modePost - modePrior
     shiftInBound  	<- boundPost - boundPrior
-    precisionPrior  <- boundPrior - modePrior
-    precisionPost   <- boundPost - modePost
-    
-    if(likelihood == "hypergeometric"){
-      shiftInMode <- ceiling((modePost - modePrior) * N)
-      modePrior   <- ceiling(modePrior * N)
-      modePost    <- ceiling(modePost * N)
-      boundPrior  <- ceiling(boundPrior * N)
-      boundPost   <- ceiling(boundPost * N)
-    }
+    precisionPrior  <- prior[["statistics"]]$precision
+    precisionPost   <- posterior[["statistics"]]$precision
     
     rows <- data.frame(v = names,
                        form = c(formPrior, formPost, ""),
@@ -909,10 +783,12 @@
                        precision = c(precisionPrior, precisionPost, NA))
     
     if(options[["performanceMateriality"]]){
-      hypotheses <- .jfa.hypothesisTest.calculation(parentState, stage)
-      rows <- cbind(rows, hMin = c(hypotheses[["priorHmin"]], hypotheses[["postHmin"]], hypotheses[["postHmin"]] / hypotheses[["priorHmin"]]),
-                    hPlus = c(hypotheses[["priorHplus"]], hypotheses[["postHplus"]], hypotheses[["postHplus"]] / hypotheses[["priorHplus"]]),
-                    odds = c(hypotheses[["priorOdds"]], hypotheses[["postOdds"]], hypotheses[["bf"]]))
+	  priorHypotheses 	<- prior[["hypotheses"]]
+      postHypotheses 	<- posterior[["hypotheses"]]
+	  bf 				<- base::switch(stage, "planning" = postHypotheses[["expectedBf"]], "evaluation" = postHypotheses[["bf"]])
+      rows <- cbind(rows, hMin = c(priorHypotheses[["pHmin"]], postHypotheses[["pHmin"]], postHypotheses[["pHmin"]] / priorHypotheses[["pHmin"]]),
+                    hPlus = c(priorHypotheses[["pHplus"]], postHypotheses[["pHplus"]], postHypotheses[["pHplus"]] / priorHypotheses[["pHplus"]]),
+                    odds = c(priorHypotheses[["oddsHmin"]], postHypotheses[["oddsHmin"]], bf))
     }
     
     table$addRows(rows)

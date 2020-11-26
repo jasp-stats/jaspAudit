@@ -77,7 +77,7 @@ test_that("Implied Poisson Distribution of Errors plot matches", {
 test_that("<b>Table 2.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("100%", "5%", "100%", 5.78, "$ 70161", 231))
+		list("100%", "5%", "100%", 5.775, "$ 70161", 231))
 })
 
 test_that("<b>Table 1.</b> Descriptive Statistics for Ist Position results match", {

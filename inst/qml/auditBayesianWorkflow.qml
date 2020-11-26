@@ -1631,6 +1631,12 @@ Form
 
 					CheckBox
 					{
+						text: 						qsTr("Additional samples")
+						name: 						"additionalSamples"
+					}
+
+					CheckBox
+					{
 						text: 						qsTr("Description of prior and posterior distribution")
 						name: 						"priorAndPosteriorStatistics"
 					}

@@ -400,6 +400,7 @@ Form
 			text:								qsTr("<b>Export Data</b>")
 			enabled:							sampleSize.value > 0
 			onClicked: 							form.exportResults() // This should still be changed to data export
+			visible:							false // That is why this is false
 		}
 
 		Button

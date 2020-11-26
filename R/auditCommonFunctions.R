@@ -339,8 +339,8 @@
     sample <- .jfa.dataset.read(options, jaspResults, stage = "evaluation")
     
     # Remove the critical transactions if wanted
-    if(options[["flagCriticalTransactions"]] && options[["handleCriticalTransactions"]] == "remove")
-      sample <- subset(sample, monetaryVariable >= 0)
+    if(options[["flagCriticalTransactions"]] && options[["handleCriticalTransactions"]] == "remove" && options[["monetaryVariable"]] != "")
+      sample <- subset(sample, sample[, .v(options[["monetaryVariable"]])] >= 0)
     
     # Check for errors due to incompatible options
     error <- .jfa.inputOptions.check(options, sample, evaluationContainer, stage = "evaluation")
@@ -556,7 +556,7 @@
   }
   
   if(!is.null(variables)){
-    dataset <- .readDataSetToEnd(columns.as.factor = variables[1], columns.as.numeric = variables[-1])
+    dataset <- .readDataSetToEnd(columns.as.factor = recordNumberVariable, columns.as.numeric = variables[which(variables != recordNumberVariable)])
     dataset[, .v(recordNumberVariable)] <- as.character(dataset[, .v(recordNumberVariable)])
     if(stage == "evaluation" && !is.null(sampleCounter)) # Apply sample filter
       dataset <- subset(dataset, dataset[, .v(options[["sampleCounter"]])] > 0)
@@ -1712,7 +1712,7 @@
                       materiality = parentOptions[["materiality"]],
                       N = N,
                       expectedSampleError = 0,
-                      prior = list(aPrior = 1, bPrior = bPrior, nPrior = 0, kPrior = 0))
+                      prior = list(description = list(alpha = 1, beta = bPrior, implicitn = 0, implicitk = 0)))
     
     return(noResults)
   }
@@ -1844,20 +1844,20 @@
     message <- base::switch(options[["planningModel"]],
                             "Poisson" = gettextf("The required sample size is based on the <b>gamma</b> distribution <i>(%1$s = %2$s, %3$s = %4$s)</i>",
                                                  "\u03B1",
-                                                 parentState[["prior"]]$aPrior,
+                                                 round(parentState[["prior"]][["description"]]$alpha, 3),
                                                  "\u03B2",
-                                                 parentState[["prior"]]$bPrior),
+                                                 round(parentState[["prior"]][["description"]]$beta, 3)),
                             "binomial" = gettextf("The required sample size is based on the <b>beta</b> distribution <i>(%1$s = %2$s, %3$s = %4$s)</i>.",
                                                   "\u03B1",
-                                                  parentState[["prior"]]$aPrior,
+                                                  round(parentState[["prior"]][["description"]]$alpha, 3),
                                                   "\u03B2",
-                                                  parentState[["prior"]]$bPrior),
+                                                  round(parentState[["prior"]][["description"]]$beta, 3)),
                             "hypergeometric" = gettextf("The required sample size is based on the <b>beta-binomial</b> distribution <i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>.",
                                                         parentState[["N"]] - parentState[["sampleSize"]] + parentState[["expectedSampleError"]],
                                                         "\u03B1",
-                                                        parentState[["prior"]]$aPrior,
+                                                        round(parentState[["prior"]][["description"]]$alpha, 3),
                                                         "\u03B2",
-                                                        parentState[["prior"]]$bPrior))
+                                                        round(parentState[["prior"]][["description"]]$beta, 3)))
     
   }
   
@@ -1892,11 +1892,10 @@
   }
   
   if(options[["bayesianAnalysis"]] && options[["performanceMateriality"]] && (options[["expectedEvidenceRatio"]] || options[["expectedBayesFactor"]])){
-    hypotheses <- .jfa.hypothesisTest.calculation(parentState, stage = "planning")
     if(options[["expectedEvidenceRatio"]])
-      row <- cbind(row, expectedEvidenceRatio = hypotheses[["postOdds"]])
+      row <- cbind(row, expectedEvidenceRatio = parentState[["expectedPosterior"]][["hypotheses"]]$oddsHmin)
     if(options[["expectedBayesFactor"]])
-      row <- cbind(row, expectedBayesFactor = hypotheses[["bf"]])
+      row <- cbind(row, expectedBayesFactor = parentState[["expectedPosterior"]][["hypotheses"]]$expectedBf)
   }
   
   table$addRows(row)
@@ -2370,26 +2369,19 @@
     colnames(dataset) <- names
   }
   
-  sample <- jfa::sampling(population = dataset,
-                          sampleSize = prevState[["sampleSize"]],
-                          algorithm = algorithm,
-                          units = units,
-                          seed = options[["seed"]],
-                          ordered = FALSE,
-                          bookValues = bookValues,
-                          intervalStartingPoint = startingPointSeed)
+  sample <- jfa::selection(population = dataset,
+							sampleSize = prevState[["sampleSize"]],
+							algorithm = algorithm,
+							units = units,
+							seed = options[["seed"]],
+							ordered = FALSE,
+							bookValues = bookValues,
+							intervalStartingPoint = startingPointSeed)
   
   sample <- data.frame(sample[["sample"]])
   sample[, 1:2] <- apply(X = sample[, 1:2], MARGIN = 2, as.numeric)
+  sample[, .v(options[["recordNumberVariable"]])] <- as.character(sample[, .v(options[["recordNumberVariable"]])])
   
-  if(options[["monetaryVariable"]] != ""){
-    sample[, .v(options[["monetaryVariable"]])] <- as.numeric(sample[, .v(options[["monetaryVariable"]])])
-    sample[, .v(options[["recordNumberVariable"]])] <- as.character(sample[, .v(options[["recordNumberVariable"]])])
-  } else {
-    if(ncol(sample) == 3)
-      colnames(sample)[3] <- .v(options[["recordNumberVariable"]])
-    sample[, .v(options[["recordNumberVariable"]])] <- as.character(sample[, .v(options[["recordNumberVariable"]])])
-  }
   return(sample)
 }
 
@@ -2778,10 +2770,6 @@
       if(method == "stringer" && options[["stringerBoundLtaAdjustment"]])
         method <- "stringer-lta"
       
-      # Adjust the confidence since jfa only returns a confidence interval
-      if(method %in% c("direct", "difference", "quotient", "regression"))
-        confidence <- confidence + ((1 - confidence) / 2)
-      
       # Bayesian regression is not implemented in jfa R package (will become WASEM)
       if(options[["bayesianAnalysis"]] && method == "regression"){
         
@@ -2840,32 +2828,39 @@
     
     if(ready){
       
-      evaluationState <- evaluationContainer[["evaluationState"]]$object
-      
-      if(options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
-        
-        confidenceBound <- (planningOptions[["populationValue"]] - evaluationState[["lowerBound"]]) / planningOptions[["populationValue"]]
-        
-      } else {
-        
-        confidenceBound <- evaluationState[["confBound"]]
-        
-      }
-      
-      errorLabel <- round(evaluationState[["t"]], 2)
+      evaluationState 	<- evaluationContainer[["evaluationState"]]$object
+      errorLabel 		<- evaluationState[["k"]]
       
       if(options[["display"]] == "displayNumbers"){
-        boundLabel <- round(confidenceBound, 3)
-        mleLabel <- round(evaluationState[["mle"]], 3)
-        precisionLabel <- round(evaluationState[["precision"]], 3)
+		  if(options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
+		    boundLabel <- round(evaluationState[["upperBound"]] / planningOptions[["populationSize"]], 3)
+        	mleLabel <- round(evaluationState[["mle"]] / planningOptions[["populationSize"]], 3)
+        	precisionLabel <- round(evaluationState[["precision"]] / planningOptions[["populationSize"]], 3)
+		  } else {
+		    boundLabel <- round(evaluationState[["confBound"]], 3)
+        	mleLabel <- round(evaluationState[["mle"]], 3)
+        	precisionLabel <- round(evaluationState[["precision"]], 3)
+		  }
       } else if(options[["display"]] == "displayPercentages"){
-        boundLabel <- paste0(round(confidenceBound * 100, 3), "%")
-        mleLabel <- paste0(round(evaluationState[["mle"]] * 100, 3), "%")
-        precisionLabel <- paste0(round(evaluationState[["precision"]] * 100, 3), "%")
+		  if(options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
+        	boundLabel <- paste0(round(evaluationState[["upperBound"]] / planningOptions[["populationValue"]] * 100, 3), "%")
+        	mleLabel <- paste0(round(evaluationState[["mle"]] / planningOptions[["populationValue"]] * 100, 3), "%")
+        	precisionLabel <- paste0(round(evaluationState[["precision"]] / planningOptions[["populationValue"]] * 100, 3), "%")  
+		  } else {
+        	boundLabel <- paste0(round(evaluationState[["confBound"]] * 100, 3), "%")
+        	mleLabel <- paste0(round(evaluationState[["mle"]] * 100, 3), "%")
+        	precisionLabel <- paste0(round(evaluationState[["precision"]] * 100, 3), "%")  
+		  }
       } else if(options[["display"]] == "displayValues"){
-        boundLabel <- paste(planningOptions[["valuta"]], round(confidenceBound * planningOptions[["populationValue"]], 2))
-        mleLabel <- paste(planningOptions[["valuta"]], round(evaluationState[["mle"]] * planningOptions[["populationValue"]], 2))
-        precisionLabel <- paste(planningOptions[["valuta"]], round(evaluationState[["precision"]] * planningOptions[["populationValue"]], 2))
+		  if(options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
+        	boundLabel <- paste(planningOptions[["valuta"]], round(evaluationState[["upperBound"]], 2))
+        	mleLabel <- paste(planningOptions[["valuta"]], round(evaluationState[["mle"]], 2))
+        	precisionLabel <- paste(planningOptions[["valuta"]], round(evaluationState[["precision"]], 2))  
+		  } else {
+        	boundLabel <- paste(planningOptions[["valuta"]], round(evaluationState[["confBound"]] * planningOptions[["populationValue"]], 2))
+        	mleLabel <- paste(planningOptions[["valuta"]], round(evaluationState[["mle"]] * planningOptions[["populationValue"]], 2))
+        	precisionLabel <- paste(planningOptions[["valuta"]], round(evaluationState[["precision"]] * planningOptions[["populationValue"]], 2))  
+		  }
       }
       
     } else {
@@ -2998,7 +2993,7 @@
                                           planningOptions,
                                           evaluationContainer){
   
-  
+
   # Check whether there is enough data to perform an analysis
   if(!options[["performanceMateriality"]] && !options[["minimumPrecision"]]){
     return()
@@ -3100,8 +3095,7 @@
       result <- try({
         
         # call jfa evaluation
-        jfa::evaluation(sample = sample,
-                        confidence = confidence,
+        jfa::evaluation(confidence = confidence,
                         nSumstats = nSumstats,
                         kSumstats = kSumstats,
                         method = method,
@@ -3126,11 +3120,6 @@
       
       if(method == "stringer" && options[["stringerBoundLtaAdjustment"]])
         method <- "stringer-lta"
-      
-      # Adjust the confidence since jfa only returns a confidence interval
-      if(method %in% c("direct", "difference", "quotient", "regression")){
-        confidence <- confidence + ((1 - confidence) / 2)
-      }
       
       # Bayesian regression is not implemented in jfa R package
       if(options[["bayesianAnalysis"]] && method == "regression"){
@@ -3329,11 +3318,18 @@
                       upperBound = UpperBoundLabel)
     
   } else {
-    
-    boundLabel <- base::switch(options[["display"]],
-                               "displayNumbers" = round(parentState[["confBound"]], 3),
-                               "displayPercentages" = paste0(round(parentState[["confBound"]] * 100, 3), "%"),
-                               "displayValues" = paste(prevOptions[["valuta"]], round(parentState[["confBound"]] * prevOptions[["populationValue"]], 2)))
+
+	if(parentState[["method"]] %in% c("direct", "difference", "quotient", "regression")){
+		boundLabel <- base::switch(options[["display"]],
+								"displayNumbers" = round(parentState[["upperBound"]] / prevOptions[["populationSize"]], 3),
+								"displayPercentages" = paste0(round(parentState[["upperBound"]] / prevOptions[["populationValue"]] * 100, 3), "%"),
+								"displayValues" = paste(prevOptions[["valuta"]], round(parentState[["upperBound"]], 2)))
+	} else {
+		boundLabel <- base::switch(options[["display"]],
+								"displayNumbers" = round(parentState[["confBound"]], 3),
+								"displayPercentages" = paste0(round(parentState[["confBound"]] * 100, 3), "%"),
+								"displayValues" = paste(prevOptions[["valuta"]], round(parentState[["confBound"]] * prevOptions[["populationValue"]], 2)))
+	}   
     
     row <- data.frame(sampleSize = parentState[["n"]],
                       fullErrors = parentState[["k"]],
@@ -3359,27 +3355,40 @@
   }
   
   if(options[["mostLikelyError"]]){
-    mleLabel <- base::switch(options[["display"]],
-                             "displayNumbers" = round(parentState[["mle"]], 3),
-                             "displayPercentages" = paste0(round(parentState[["mle"]] * 100, 3), "%"),
-                             "displayValues" = paste(prevOptions[["valuta"]], round(parentState[["mle"]] * prevOptions[["populationValue"]], 2)))
+	  if(parentState[["method"]] %in% c("direct", "difference", "quotient", "regression")){
+		mleLabel <- base::switch(options[["display"]],
+								"displayNumbers" = round(parentState[["mle"]] /  prevOptions[["populationSize"]], 3),
+								"displayPercentages" = paste0(round(parentState[["mle"]] /  prevOptions[["populationValue"]] * 100, 3), "%"),
+								"displayValues" = paste(prevOptions[["valuta"]], round(parentState[["mle"]], 2)))
+	  } else {
+		mleLabel <- base::switch(options[["display"]],
+								"displayNumbers" = round(parentState[["mle"]], 3),
+								"displayPercentages" = paste0(round(parentState[["mle"]] * 100, 3), "%"),
+								"displayValues" = paste(prevOptions[["valuta"]], round(parentState[["mle"]] * prevOptions[["populationValue"]], 2)))
+	  }
     row <- cbind(row, mle = mleLabel)
   }
   
   if(options[["obtainedPrecision"]]){
-    precisionLabel <- base::switch(options[["display"]],
-                                   "displayNumbers" = round(parentState[["precision"]], 3),
-                                   "displayPercentages" = paste0(round(parentState[["precision"]] * 100, 3), "%"),
-                                   "displayValues" = paste(prevOptions[["valuta"]], round(parentState[["precision"]] * prevOptions[["populationValue"]], 2)))
+	if(parentState[["method"]] %in% c("direct", "difference", "quotient", "regression")){
+		precisionLabel <- base::switch(options[["display"]],
+									"displayNumbers" = round(parentState[["precision"]] /  prevOptions[["populationSize"]], 3),
+									"displayPercentages" = paste0(round(parentState[["precision"]] /  prevOptions[["populationValue"]] * 100, 3), "%"),
+									"displayValues" = paste(prevOptions[["valuta"]], round(parentState[["precision"]], 2)))
+	} else {
+		precisionLabel <- base::switch(options[["display"]],
+									"displayNumbers" = round(parentState[["precision"]], 3),
+									"displayPercentages" = paste0(round(parentState[["precision"]] * 100, 3), "%"),
+									"displayValues" = paste(prevOptions[["valuta"]], round(parentState[["precision"]] * prevOptions[["populationValue"]], 2)))
+	}   
     row <- cbind(row, precision = precisionLabel)
   }
   
   if(options[["bayesianAnalysis"]] && options[["performanceMateriality"]] && (options[["evidenceRatio"]] || options[["bayesFactor"]])){
-    hypotheses <- .jfa.hypothesisTest.calculation(parentState, stage = "evaluation")
     if(options[["evidenceRatio"]])
-      row <- cbind(row, evidenceRatio = hypotheses[["postOdds"]])
+      row <- cbind(row, evidenceRatio =parentState[["posterior"]][["hypotheses"]]$pHmin)
     if(options[["bayesFactor"]])
-      row <- cbind(row, bayesFactor = hypotheses[["bf"]])
+      row <- cbind(row, bayesFactor = parentState[["posterior"]][["hypotheses"]]$bf)
   }
   
   table$addRows(row)
@@ -3400,11 +3409,11 @@
   table$dependOn(options = c("evaluationAssumptionChecks"))
   
   table$addColumnInfo(name = 'type', 			title = "", type = 'string')
-  table$addColumnInfo(name = 'n', 			title = "n", type = 'integer')
+  table$addColumnInfo(name = 'n', 				title = "n", type = 'integer')
   table$addColumnInfo(name = 'correlation', 	title = gettext("Pearson's <i>r</i>"), type = 'number')
   table$addColumnInfo(name = 'lowerCI', 		title = gettext("Lower"), type = 'number', overtitle = overTitle)
   table$addColumnInfo(name = 'upperCI', 		title = gettext("Upper"), type = 'number', overtitle = overTitle)
-  table$addColumnInfo(name = 'pvalue', 		title = gettext("p"), type = 'pvalue')
+  table$addColumnInfo(name = 'pvalue', 			title = gettext("p"), type = 'pvalue')
   table$addColumnInfo(name = 'bayesfactor', 	title = gettextf("BF%1$s", "\u2081\u2080"), type = 'number')
   
   parentContainer[["assumptionTable"]] <- table
@@ -3467,20 +3476,22 @@
        parentContainer$getError())
       return()
     
-    materiality <- parentState[["materiality"]]
-    bound <- parentState[["confBound"]]
-    mle <- parentState[["mle"]]
-    precision <- parentState[["precision"]]
-    minPrecision <- options[["minimumPrecisionPercentage"]]
+    materiality 	<- parentState[["materiality"]]
+    minPrecision 	<- options[["minimumPrecisionPercentage"]]
     
-    if(options[["variableType"]] == "variableTypeAuditValues" &&
-       options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
-      mle <- (prevOptions[["populationValue"]] - parentState[["pointEstimate"]]) / prevOptions[["populationValue"]]
-    }
+    if(options[["variableType"]] == "variableTypeAuditValues" &&  options[["estimator"]] %in% c("directBound", "differenceBound", "ratioBound", "regressionBound")){
+      bound 		<- parentState[["upperBound"]] / prevOptions[["populationValue"]]
+	  mle 			<- parentState[["mle"]] / prevOptions[["populationValue"]]
+	  precision 	<- parentState[["precision"]] / prevOptions[["populationValue"]]
+    } else {
+	  bound 		<- parentState[["confBound"]]
+	  mle 			<- parentState[["mle"]]
+	  precision 	<- parentState[["precision"]]
+	}
     
-    objectiveColor <- "orange"
-    boundColor <- ifelse(bound < materiality, yes = rgb(0, 1, .7, 1), no = rgb(1, 0, 0, 1))
-    precisionColor <- ifelse(precision < minPrecision, yes = rgb(0, 1, .7, 1), no = rgb(1, 0, 0, 1))
+    objectiveColor 	<- "orange"
+    boundColor 		<- ifelse(bound < materiality, yes = rgb(0, 1, .7, 1), no = rgb(1, 0, 0, 1))
+    precisionColor 	<- ifelse(precision < minPrecision, yes = rgb(0, 1, .7, 1), no = rgb(1, 0, 0, 1))
     
     if(options[["performanceMateriality"]] && !options[["minimumPrecision"]]){
       label <- rev(c(gettext("Performance materiality"), gettext("Maximum error"), gettext("Most likely error")))
@@ -3664,10 +3675,16 @@
 ################################################################################
 
 .jfa.additionalSamples.table <- function(options, jaspResults, positionInContainer = 2){
-  
+
+  if(!options[["bayesianAnalysis"]] || !options[["additionalSamples"]])
+	return()
+
   prevContainer   	<- jaspResults[["evaluationContainer"]]
   prevState       	<- prevContainer[["evaluationState"]]$object
   parentContainer 	<- jaspResults[["conclusionContainer"]]
+
+  if(is.nan(prevState[["t"]]))
+	return()
   
   # Produce relevant terms conditional on the analysis result
   approveMateriality <- TRUE
@@ -3700,6 +3717,7 @@
                     jaspResults[["tabNumber"]]$object)
   table <- createJaspTable(title)
   table$position <- positionInContainer
+  table$dependOn(options = "additionalSamples")
   
   if(options[["bayesianAnalysis"]])
     table$addColumnInfo(name = 'prior', title = gettext("Prior distribution"), type = 'string')
@@ -3734,7 +3752,7 @@
   newK <- currentK + 0:2
   newN <- rep(NA, length(newK))
   if(options[["bayesianAnalysis"]]){
-    newPriors <- rep(prevState[["posteriorString"]], length(newK))
+    newPriors <- rep(prevState[["posterior"]]$posterior, length(newK))
     newPosteriors <- rep(NA, length(newK))
   }
   
@@ -3816,7 +3834,7 @@
                                            method = prevOptions[["likelihood"]],
                                            materiality = performanceMateriality,
                                            N = N,
-                                           prior = prior)[["posteriorString"]]
+                                           prior = prior)[["posterior"]]$posterior
     }
   }
   
@@ -3861,14 +3879,14 @@
     m_unseen <- parentOptions[["populationValue"]] - m_seen
     
     if(options[["expectedErrors"]] == "expectedAllPossible"){
-      a <- prior$aPrior + 0:n
-      b <- prior$bPrior + n - 0:n
+      a <- prior[["description"]]$alpha + 0:n
+      b <- prior[["description"]]$beta + n - 0:n
     } else if(options[["expectedErrors"]] == "expectedRelative"){
-      a <- prior$aPrior + 0:ceiling(n * (parentOptions[["expectedErrors"]] * 2))
-      b <- prior$bPrior + n - 0:ceiling(n * (parentOptions[["expectedErrors"]] * 2))
+      a <- prior[["description"]]$alpha + 0:ceiling(n * (parentOptions[["expectedErrors"]]))
+      b <- prior[["description"]]$beta + n - 0:ceiling(n * (parentOptions[["expectedErrors"]]))
     } else if(options[["expectedErrors"]] == "expectedAbsolute"){
-      a <- prior$aPrior + 0:ceiling(parentOptions[["expectedErrors"]] * 2)
-      b <- prior$bPrior + n - 0:ceiling(parentOptions[["expectedErrors"]] * 2)
+      a <- prior[["description"]]$alpha + 0:ceiling(parentOptions[["expectedErrors"]])
+      b <- prior[["description"]]$beta + n - 0:ceiling(parentOptions[["expectedErrors"]])
     }
     
     v95 <- qbeta(options[["confidence"]], a, b)
@@ -3890,19 +3908,29 @@
     }
   }
   
+  adjustedMateriality <- (parentOptions[["materiality"]] / (1 - (m_seen / parentOptions[["populationValue"]])))
   expErrors <- ceiling(n * (parentOptions[["expectedErrors"]] * 2))
+  alphaPosterior 	<- prior[["description"]]$alpha + expErrors
+  betaPosterior 	<- prior[["description"]]$beta + n - expErrors
+  expectedPosterior <- list(description = list(alpha = alphaPosterior, beta = betaPosterior),
+				 			statistics = list(mean = alphaPosterior / (alphaPosterior + betaPosterior), 
+							 				  mode = (alphaPosterior - 1) / (alphaPosterior + betaPosterior - 2), 
+											  ub = qbeta(options[["confidence"]], alphaPosterior, betaPosterior), 
+											  precision = qbeta(options[["confidence"]], alphaPosterior, betaPosterior) - ((alphaPosterior - 1) / (alphaPosterior + betaPosterior - 2))),
+							hypotheses = list(pHmin = pbeta(adjustedMateriality, alphaPosterior, betaPosterior), 
+											  pHplus = pbeta(adjustedMateriality, alphaPosterior, betaPosterior, lower.tail = F), 
+											  oddHmin = pbeta(adjustedMateriality, alphaPosterior, betaPosterior) / pbeta(adjustedMateriality, alphaPosterior, betaPosterior, lower.tail = F)))
+  
   
   result <- list(sampleSize = n,
                  confidence = options[["confidence"]],
                  materiality = parentOptions[["materiality"]],
-                 adjustedMateriality = (parentOptions[["materiality"]] / (1 - (m_seen / parentOptions[["populationValue"]]))),
+                 adjustedMateriality = adjustedMateriality,
                  N = parentOptions[["populationSize"]],
                  expectedSampleError = expErrors,
                  likelihood = "binomial",
-                 prior = list(aPrior = prior$aPrior,
-                              bPrior = prior$bPrior,
-                              nPrior = prior$nPrior,
-                              kPrior = prior$kPrior),
+                 prior = prior,
+				 expectedPosterior = expectedPosterior,
                  startingPoint = intervalStartingPoint)
   
   return(result)
@@ -3935,7 +3963,7 @@
     }
   }
   avgTaint <- totalTaint / n
-  posteriorMode <- (prior$aPrior + totalTaint - 1) / (prior$aPrior + totalTaint + prior$bPrior + n - totalTaint - 2)
+  posteriorMode <- (prior[["description"]]$alpha + totalTaint - 1) / (prior[["description"]]$alpha + totalTaint + prior[["description"]]$beta + n - totalTaint - 2)
   
   # Find out the total error in the critital transactions (if needed)
   if(options[["workflow"]] && options[["flagCriticalTransactions"]] && options[["handleCriticalTransactions"]] == "inspect"){
@@ -3955,7 +3983,7 @@
   
   Vs <- sum(overstatements)               # The total error in the sample (known error)
   Vt <- posteriorMode * unseen_value      # The total error in the unseen observations (unknown error)
-  Vt95 <- qbeta(options[["confidence"]], shape1 = prior$aPrior + totalTaint, shape2 = prior$bPrior + n - totalTaint) * unseen_value # The upper bound on the total error in the unseen observations
+  Vt95 <- qbeta(options[["confidence"]], shape1 = prior[["description"]]$alpha + totalTaint, shape2 = prior[["description"]]$beta + n - totalTaint) * unseen_value # The upper bound on the total error in the unseen observations
   
   # The inferred total error and upper bound for the population
   V <- Vk + Vs + Vt
@@ -3966,17 +3994,29 @@
   
   # The total obtained precision
   precisionAsFraction <- (V95 - V) / prevOptions[["populationValue"]]
+
+  adjustedMateriality <- (prevOptions[["materiality"]] / (1 - (sum(sample[, .v(options[["monetaryVariable"]])]) / prevOptions[["populationValue"]])))
+  alphaPosterior 	<- prior[["description"]]$alpha + totalTaint
+  betaPosterior 	<- prior[["description"]]$beta + n - totalTaint
+  posterior 		<- list(description = list(alpha = alphaPosterior, beta = betaPosterior),
+				 			statistics = list(mean = alphaPosterior / (alphaPosterior + betaPosterior), 
+							 				  mode = (alphaPosterior - 1) / (alphaPosterior + betaPosterior - 2), 
+											  ub = qbeta(options[["confidence"]], alphaPosterior, betaPosterior), 
+											  precision = qbeta(options[["confidence"]], alphaPosterior, betaPosterior) - ((alphaPosterior - 1) / (alphaPosterior + betaPosterior - 2))),
+							hypotheses = list(pHmin = pbeta(adjustedMateriality, alphaPosterior, betaPosterior), 
+											  pHplus = pbeta(adjustedMateriality, alphaPosterior, betaPosterior, lower.tail = F), 
+											  oddHmin = pbeta(adjustedMateriality, alphaPosterior, betaPosterior) / pbeta(adjustedMateriality, alphaPosterior, betaPosterior, lower.tail = F)))
   
   result <- list(confBound = V95AsFraction,
                  confBoundUnseen = Vt95 / unseen_value,
                  precision = precisionAsFraction,
-                 precisionUnseen = qbeta(options[["confidence"]], shape1 = prior$aPrior + totalTaint, shape2 = prior$bPrior + n - totalTaint) - posteriorMode,
+                 precisionUnseen = qbeta(options[["confidence"]], shape1 = prior[["description"]]$alpha + totalTaint, shape2 = prior[["description"]]$beta + n - totalTaint) - posteriorMode,
                  unseenValue = unseen_value,
                  k = k,
                  t = totalTaint,
                  n = n,
-                 kPrior = prior$kPrior,
-                 nPrior = prior$nPrior,
+                 prior = prior,
+				 posterior = posterior,
                  confidence = options[["confidence"]],
                  method = "binomial",
                  likelihood = "binomial",

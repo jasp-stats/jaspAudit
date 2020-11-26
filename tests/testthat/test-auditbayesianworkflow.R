@@ -72,7 +72,7 @@ test_that("Evaluation of Sampling Objectives plot matches", {
 test_that("<b>Table 9.</b> Evaluation Summary results match", {
 	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("<unicode><unicode><unicode>", "1.291%", 103775.336381896, 0,
+		list("<unicode><unicode><unicode>", "1.291%", 0.999990363891858, 0,
 			 "5%", "0%", 231, "0%"))
 })
 
@@ -87,9 +87,9 @@ test_that("<b>Table 10.</b> Descriptive Statistics for Prior and Posterior Distr
 	jaspTools::expect_equal_tables(table,
 		list("<unicode><unicode><unicode>", "gamma(<unicode><unicode> = 1, <unicode><unicode> = 0)",
 			 0, 1, "NaN", 0, "NaN", "Prior", 0.0129685379807532, "gamma(<unicode><unicode> = 1, <unicode><unicode> = 231)",
-			 0.999990363891858, 9.636108142419e-06, 0, 103775.336381896,
+			 0.999990363891858, 9.63610814238898e-06, 0, 103775.336382219,
 			 0.0129685379807532, "Posterior", "-<unicode><unicode><unicode>",
-			 "", "<unicode><unicode><unicode>", 9.636108142419e-06, "NaN",
+			 "", "<unicode><unicode><unicode>", 9.63610814238898e-06, "NaN",
 			 "<unicode><unicode><unicode>", "", "Shift"))
 })
 
@@ -109,10 +109,10 @@ test_that("<b>Table 4.</b> Descriptive Statistics for Prior and Expected Posteri
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorAndPosteriorStatistics"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list("<unicode><unicode><unicode>", "gamma(<unicode><unicode> = 1, <unicode><unicode> = 0)",
-			 0, 1, "NaN", 0, "NaN", "Prior", 0.0500093187270533, "gamma(<unicode><unicode> = 6.78, <unicode><unicode> = 231)",
-			 0.949939787304972, 0.0500602126950276, 0.025021645021645, 18.9759438916513,
-			 0.0249876737054083, "Expected posterior", "-<unicode><unicode><unicode>",
-			 "", "<unicode><unicode><unicode>", 0.0500602126950276, "NaN",
+			 0, 1, "NaN", 0, "NaN", "Prior", 0.0499807036221922, "gamma(<unicode><unicode> = 6.775, <unicode><unicode> = 231)",
+			 0.950123932551299, 0.0498760674487009, 0.025, 19.0496962000569,
+			 0.0249807036221922, "Expected posterior", "-<unicode><unicode><unicode>",
+			 "", "<unicode><unicode><unicode>", 0.0498760674487009, "NaN",
 			 "<unicode><unicode><unicode>", "", "Expected shift"))
 })
 
@@ -131,8 +131,8 @@ test_that("<b>Table 3.</b> Implicit Sample results match", {
 test_that("<b>Table 2.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("5%", "<unicode><unicode><unicode>", 18.9759438916513, 5.78, "$ 70161",
-			 231))
+		list("5%", "<unicode><unicode><unicode>", 19.0496962000569, 5.775,
+			 "$ 70161", 231))
 })
 
 test_that("<b>Table 1.</b> Descriptive Statistics for Ist Position results match", {
