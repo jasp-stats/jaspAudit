@@ -15,7 +15,7 @@ Imports:
   ggrepel,
   jaspBase,
   jaspGraphs,
-  jfa (== 3.1.0)
+  jfa (>= 0.5.0)
 Remotes:
   jasp-stats/jaspBase,
   jasp-stats/jaspGraphs
