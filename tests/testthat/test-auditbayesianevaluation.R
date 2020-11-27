@@ -42,7 +42,7 @@ test_that("Evaluation of Sampling Objectives plot matches", {
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
 	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(211.088638102458, "5.723%", 0.917423128074932, 1, "5%", "1.22%",
+		list(211.088638102458, "5.723%", 11.109928321182, 1, "5%", "1.22%",
 			 80, "1.25%"))
 })
 
@@ -102,7 +102,7 @@ test_that("Evaluation of Sampling Objectives plot matches", {
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
 	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(7.96650501882257e-10, 1.99162625430898e-10, 42, "40.035%", "20%",
+		list(7.96650501882257e-10, 1.99162625470564e-10, 42, "40.035%", "20%",
 			 "49.412%", 83, "50.602%", "61.115%"))
 })
 
@@ -172,7 +172,7 @@ test_that("Evaluation of Sampling Objectives plot matches", {
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
 	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(8282.04678073276, "$ 45726.69", 0.997716648170882, 5, "$ 70161",
+		list(8282.04678073276, "$ 45726.69", 436.952656812585, 5, "$ 70161",
 			 "$ 17796.63", 234, "$ 3"))
 })
 

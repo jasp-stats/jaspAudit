@@ -3386,7 +3386,7 @@
   
   if(options[["bayesianAnalysis"]] && options[["performanceMateriality"]] && (options[["evidenceRatio"]] || options[["bayesFactor"]])){
     if(options[["evidenceRatio"]])
-      row <- cbind(row, evidenceRatio =parentState[["posterior"]][["hypotheses"]]$pHmin)
+      row <- cbind(row, evidenceRatio =parentState[["posterior"]][["hypotheses"]]$oddsHmin)
     if(options[["bayesFactor"]])
       row <- cbind(row, bayesFactor = parentState[["posterior"]][["hypotheses"]]$bf)
   }
