@@ -304,7 +304,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   
   if(is.null(benfordsLawContainer[["benfordsLawTable"]])){
     
-    tableTitle <- gettextf("<b>Table %i.</b> Descriptive Statistics",
+    tableTitle <- gettextf("<b>Table %i.</b> Frequency Statistics",
                            jaspResults[["tabNumber"]]$object)
     
     benfordsLawTable <- createJaspTable(tableTitle)
@@ -493,9 +493,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   
   conclusion <- ifelse(approve, no = gettext("is rejected"), yes = gettext("is not rejected"))
   
-  pvalue <- round(state[["pvalue"]], 4)
-  if(pvalue < 0.01)
-    pvalue <- "< .01"
+  pvalue <- round(state[["pvalue"]], 3)
+  if(pvalue < 0.001)
+    pvalue <- "< .001"
   pvalue <- ifelse(approve, no = paste0(pvalue, " < \u03B1"), yes = paste0(pvalue, " >= \u03B1"))
   
   distribution <- base::switch(options[["distribution"]], "benford" = "Benford's law", "uniform" = "the uniform distribution")

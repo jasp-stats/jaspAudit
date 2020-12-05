@@ -61,7 +61,7 @@ Description
 	GroupTitle
 	{
 		title:			qsTr("Evaluation")
-		icon:			"audit-estimation.svg"
+		icon:			"audit-evaluation.svg"
 	}
 	Analysis
 	{
@@ -78,13 +78,24 @@ Description
 
 	GroupTitle
 	{
-		title:			qsTr("Other")
-		icon:			"audit-other.svg"
+		title:			qsTr("Digit Analysis")
+		icon:			"audit-number-analysis.svg"
 	}
 	Analysis
 	{
 		title:			qsTr("Benford's Law")
 		func:			"auditClassicalBenfordsLaw"
+	}
+	Analysis
+	{
+		title:			qsTr("Number Bunching")
+		func:			"auditClassicalNumberBunching"
+	}
+
+	GroupTitle
+	{
+		title:			qsTr("Other")
+		icon:			"audit-other.svg"
 	}
 	Analysis
 	{

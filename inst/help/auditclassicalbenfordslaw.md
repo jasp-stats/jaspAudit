@@ -60,7 +60,7 @@ This table is the default output for the Benford's Law analysis.
 Advanced output (tables)
 -------
 
-#### Descriptive statistics
+#### Frequency statistics
 Produces a table containing, for every digit, the count, observed percentage in the population, and expected percentage under Benford's law or the uniform distribution.
 
 #### Compare vs. Benford's Law
