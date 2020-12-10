@@ -1673,7 +1673,7 @@
     
     if(isTryError(result)){
       
-      if(jaspBase:::.extractErrorMessage(result) == "Sample size could not be calculated, please increase the maxSize argument"){
+      if(jaspBase:::.extractErrorMessage(result) == "Sample size could not be calculated, you may want to increase the maxSize argument."){
         parentContainer$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 5000. Adjust your sampling objectives or variables accordingly."))
         return()
       }
