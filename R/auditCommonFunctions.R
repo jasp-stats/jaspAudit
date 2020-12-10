@@ -1674,7 +1674,7 @@
     if(isTryError(result)){
       
       if(jaspBase:::.extractErrorMessage(result) == "Sample size could not be calculated, you may want to increase the maxSize argument."){
-        parentContainer$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 5000. Adjust your sampling objectives or variables accordingly."))
+        parentContainer$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
         return()
       }
       
@@ -2087,7 +2087,11 @@
         
         figure$plotObject <- plot
       } else {
-        figure$setError(gettextf("An error occurred in a call to the the jfa package: %1$s", jaspBase:::.extractErrorMessage(rightPlotError)))
+        if(jaspBase:::.extractErrorMessage(leftPlotError) == "Sample size could not be calculated, you may want to increase the maxSize argument."){
+          figure$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
+        } else {
+          figure$setError(gettextf("An error occurred in a call to the the jfa package: %1$s", jaspBase:::.extractErrorMessage(leftPlotError)))
+        }
       }
     }
     
@@ -2151,7 +2155,11 @@
         
         figure$plotObject <- plot
       } else {
-        figure$setError(gettextf("An error occurred in a call to the the jfa package: %1$s", jaspBase:::.extractErrorMessage(rightPlotError)))
+        if(jaspBase:::.extractErrorMessage(rightPlotError) == "Sample size could not be calculated, you may want to increase the maxSize argument."){
+          figure$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
+        } else {
+          figure$setError(gettextf("An error occurred in a call to the the jfa package: %1$s", jaspBase:::.extractErrorMessage(rightPlotError)))
+        }
       }
     }
     
