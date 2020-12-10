@@ -98,7 +98,7 @@ Form
 								decimals: 		2
 								defaultValue: 	0
 								name: 			"materialityPercentage"
-								fieldWidth: 	40
+								fieldWidth: 	50 * preferencesModel.uiScale
 							}
 						}
 					}
@@ -122,7 +122,7 @@ Form
 								name: 			"materialityValue"
 								defaultValue: 	0
 								min: 			0
-								fieldWidth: 	90
+								fieldWidth: 	90 * preferencesModel.uiScale
 								decimals: 		2
 								label: 			"€"
 							}
@@ -172,7 +172,7 @@ Form
 				id: 							populationSize
 				name: 							"populationSize"
 				text: 							qsTr("Size")
-				fieldWidth: 					80
+				fieldWidth: 					80 * preferencesModel.uiScale
 				defaultValue: 					0
 				min: 							0
 			}
@@ -183,7 +183,7 @@ Form
 				name: 							"populationValue"
 				text: 							qsTr("Value")
 				defaultValue: 					0
-				fieldWidth: 					80
+				fieldWidth: 					80 * preferencesModel.uiScale
 				min: 							0
 				decimals: 						2
 				onValueChanged:					
@@ -490,7 +490,7 @@ Form
 					decimals: 					2
 					defaultValue: 				0
 					visible: 					expectedRelative.checked
-					fieldWidth: 				40
+					fieldWidth: 				50 * preferencesModel.uiScale
 				}
 			}
 
@@ -512,7 +512,7 @@ Form
 					min: 						0
 					decimals: 					3
 					visible: 					expectedAbsolute.checked
-					fieldWidth: 				60
+					fieldWidth: 				60 * preferencesModel.uiScale
 					label: 						performanceMateriality.checked & materialityAbsolute.checked ? "€" : ""
 				}
 			}

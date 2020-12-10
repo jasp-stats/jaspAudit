@@ -91,7 +91,7 @@ Form
 		defaultValue: 							0
 		min: 									0
 		max: 									dataSetModel.rowCount()
-		fieldWidth: 							60
+		fieldWidth: 							60 * preferencesModel.uiScale
 	}	
 
 	GroupBox
@@ -225,7 +225,7 @@ Form
 			defaultValue: 						1
 			min: 								1
 			max: 								99999
-			fieldWidth: 						60
+			fieldWidth: 						60 * preferencesModel.uiScale
 		}
 	}
 
@@ -269,7 +269,7 @@ Form
 				{
 					id: 						otherValutaName
 					name: 						"otherValutaName"
-					fieldWidth: 				100
+					fieldWidth: 				100 * preferencesModel.uiScale
 					enabled: 					otherValuta.checked
 					visible: 					otherValuta.checked
 				}
@@ -381,7 +381,7 @@ Form
 				id:								sampleIndicatorColumn
 				name: 							"sampleIndicatorColumn"
 				text: 							qsTr("Column name: ")
-				fieldWidth: 					120
+				fieldWidth: 					120 * preferencesModel.uiScale
 				visible:    					addSampleIndicator.checked
 		}
 	}
