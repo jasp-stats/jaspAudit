@@ -2018,69 +2018,77 @@
       k <- numeric(length(likelihoods))
       
       startProgressbar(length(likelihoods))
+
+	  leftPlotError <- try({
       
-      for(i in 1:length(likelihoods)){
-        if(options[["bayesianAnalysis"]]){
-          names <- c("Beta", "Gamma", "Beta-binomial")
-          ir <- base::switch(options[["IR"]], "High" = 1, "Medium" = 0.60, "Low" = 0.36, "Custom" = options[["irCustom"]])
-          cr <- base::switch(options[["CR"]], "High" = 1, "Medium" = 0.60, "Low" = 0.36, "Custom" = options[["crCustom"]])
-          
-          # Create a prior distribution that incorporates the existing information
-          prior <- jfa::auditPrior(materiality = performanceMateriality,
-                                   confidence = confidence,
-                                   expectedError = parentOptions[["expectedErrors"]],
-                                   likelihood =  likelihoods[i],
-                                   N = N,
-                                   ir = ir,
-                                   cr = cr,
-                                   method = options[["priorConstructionMethod"]],
-                                   sampleN = options[["sampleN"]],
-                                   sampleK = options[["sampleK"]],
-                                   factor = options[["factor"]],
-                                   pHplus = 1 - options[["pHmin"]],
-                                   pHmin = options[["pHmin"]])
-        } else {
-          names <- c("Binomial", "Poisson", "Hypergeometric")
-          prior <- FALSE
-        }
-        result <- jfa::planning(materiality = performanceMateriality,
-                                confidence = confidence,
-                                expectedError = parentOptions[["expectedErrors"]],
-                                likelihood = likelihoods[i],
-                                minPrecision = minPrecision,
-                                N = N,
-                                increase = options[["sampleSizeIncrease"]],
-                                prior = prior)
-        n[i] <- result[["sampleSize"]]
-        k[i] <- result[["expectedSampleError"]]
-        progressbarTick()
-      }
+		for(i in 1:length(likelihoods)){
+			if(options[["bayesianAnalysis"]]){
+			names <- c("Beta", "Gamma", "Beta-binomial")
+			ir <- base::switch(options[["IR"]], "High" = 1, "Medium" = 0.60, "Low" = 0.36, "Custom" = options[["irCustom"]])
+			cr <- base::switch(options[["CR"]], "High" = 1, "Medium" = 0.60, "Low" = 0.36, "Custom" = options[["crCustom"]])
+			
+			# Create a prior distribution that incorporates the existing information
+			prior <- jfa::auditPrior(materiality = performanceMateriality,
+									confidence = confidence,
+									expectedError = parentOptions[["expectedErrors"]],
+									likelihood =  likelihoods[i],
+									N = N,
+									ir = ir,
+									cr = cr,
+									method = options[["priorConstructionMethod"]],
+									sampleN = options[["sampleN"]],
+									sampleK = options[["sampleK"]],
+									factor = options[["factor"]],
+									pHplus = 1 - options[["pHmin"]],
+									pHmin = options[["pHmin"]])
+			} else {
+			names <- c("Binomial", "Poisson", "Hypergeometric")
+			prior <- FALSE
+			}
+			result <- jfa::planning(materiality = performanceMateriality,
+									confidence = confidence,
+									expectedError = parentOptions[["expectedErrors"]],
+									likelihood = likelihoods[i],
+									minPrecision = minPrecision,
+									N = N,
+									increase = options[["sampleSizeIncrease"]],
+									prior = prior)
+			n[i] <- result[["sampleSize"]]
+			k[i] <- result[["expectedSampleError"]]
+			progressbarTick()
+		}
+	  })
+
+	  if(class(leftPlotError) != "try-error"){
       
-      dPlot <- data.frame(y = c(n, k), x = rep(names, 2), type = rep(c(gettext("Expected error-free"), gettext("Expected errors")), each = 3))
-      dPlot$x <- factor(x = dPlot$x, levels = levels(dPlot$x)[c(2, 3, 1)])
-      dPlot$type <- factor(x = dPlot$type, levels = levels(dPlot$type)[c(1, 2)])
-      
-      yBreaks <- jaspGraphs::getPrettyAxisBreaks(0:(ceiling(1.1 * max(n))), min.n = 4)
-      yLimits <- c(0, ceiling(1.2 * max(n)))
-      
-      jfaTheme <- ggplot2::theme(axis.ticks.x = ggplot2::element_blank(),
-                                 axis.ticks.y = ggplot2::element_blank(),
-                                 axis.text.y = ggplot2::element_text(hjust = 0),
-                                 panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", size = 0.5),
-                                 legend.text = ggplot2::element_text(margin = ggplot2::margin(l = 0, r = 30)))
-      
-      plot <- ggplot2::ggplot(data = dPlot, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
-        ggplot2::geom_bar(stat = "identity", col = "black", size = 1) +
-        ggplot2::scale_y_continuous(name = gettext("Required sample size (n)"), breaks = yBreaks, limits = yLimits) +
-        ggplot2::coord_flip() +
-        ggplot2::annotate("text", y = k, x = c(3, 2, 1), label = k, size = 6, vjust = 0.5, hjust = -0.25) +
-        ggplot2::annotate("text", y = n, x = c(3, 2, 1), label = n, size = 6, vjust = 0.5, hjust = -0.75) +
-        ggplot2::xlab("") +
-        ggplot2::labs(fill = "") +
-        ggplot2::scale_fill_manual(values=c("#7FE58B", "#FF6666"), guide = ggplot2::guide_legend(reverse = TRUE))
-      plot <- jaspGraphs::themeJasp(plot, sides = "", legend.position = "top") + jfaTheme
-      
-      figure$plotObject <- plot
+		dPlot <- data.frame(y = c(n, k), x = rep(names, 2), type = rep(c(gettext("Expected error-free"), gettext("Expected errors")), each = 3))
+		dPlot$x <- factor(x = dPlot$x, levels = levels(dPlot$x)[c(2, 3, 1)])
+		dPlot$type <- factor(x = dPlot$type, levels = levels(dPlot$type)[c(1, 2)])
+		
+		yBreaks <- jaspGraphs::getPrettyAxisBreaks(0:(ceiling(1.1 * max(n))), min.n = 4)
+		yLimits <- c(0, ceiling(1.2 * max(n)))
+		
+		jfaTheme <- ggplot2::theme(axis.ticks.x = ggplot2::element_blank(),
+									axis.ticks.y = ggplot2::element_blank(),
+									axis.text.y = ggplot2::element_text(hjust = 0),
+									panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", size = 0.5),
+									legend.text = ggplot2::element_text(margin = ggplot2::margin(l = 0, r = 30)))
+		
+		plot <- ggplot2::ggplot(data = dPlot, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
+			ggplot2::geom_bar(stat = "identity", col = "black", size = 1) +
+			ggplot2::scale_y_continuous(name = gettext("Required sample size (n)"), breaks = yBreaks, limits = yLimits) +
+			ggplot2::coord_flip() +
+			ggplot2::annotate("text", y = k, x = c(3, 2, 1), label = k, size = 6, vjust = 0.5, hjust = -0.25) +
+			ggplot2::annotate("text", y = n, x = c(3, 2, 1), label = n, size = 6, vjust = 0.5, hjust = -0.75) +
+			ggplot2::xlab("") +
+			ggplot2::labs(fill = "") +
+			ggplot2::scale_fill_manual(values=c("#7FE58B", "#FF6666"), guide = ggplot2::guide_legend(reverse = TRUE))
+		plot <- jaspGraphs::themeJasp(plot, sides = "", legend.position = "top") + jfaTheme
+		
+		figure$plotObject <- plot
+	  } else {
+		figure$setError(gettextf("An error occurred in a call to the the jfa package: %1$s", jaspBase:::.extractErrorMessage(rightPlotError)))
+	  }
     }
     
     if(is.null(collection[["comparisonErrors"]])){
@@ -2090,54 +2098,61 @@
                                width = 150, height = 200)
       collection[["comparisonErrors"]] <- figure
       
-      if(options[["bayesianAnalysis"]]){
-        
-        # Create a prior distribution that incorporates the existing information
-        prior <- jfa::auditPrior(materiality = performanceMateriality,
-                                 confidence = confidence,
-                                 expectedError = parentOptions[["expectedErrors"]],
-                                 likelihood = parentOptions[["likelihood"]],
-                                 N = N,
-                                 ir = ir,
-                                 cr = cr,
-                                 method = options[["priorConstructionMethod"]],
-                                 sampleN = options[["sampleN"]],
-                                 sampleK = options[["sampleK"]],
-                                 factor = options[["factor"]],
-                                 pHplus = 1 - options[["pHmin"]],
-                                 pHmin = options[["pHmin"]])
-      } else {
-        prior <- FALSE
-      }
+	  rightPlotError <- try({
+		if(options[["bayesianAnalysis"]]){
+			
+			# Create a prior distribution that incorporates the existing information
+			prior <- jfa::auditPrior(materiality = performanceMateriality,
+									confidence = confidence,
+									expectedError = parentOptions[["expectedErrors"]],
+									likelihood = parentOptions[["likelihood"]],
+									N = N,
+									ir = ir,
+									cr = cr,
+									method = options[["priorConstructionMethod"]],
+									sampleN = options[["sampleN"]],
+									sampleK = options[["sampleK"]],
+									factor = options[["factor"]],
+									pHplus = 1 - options[["pHmin"]],
+									pHmin = options[["pHmin"]])
+		} else {
+			prior <- FALSE
+		}
+		
+		n <- numeric(length(1:4))
+		for(i in 1:4){
+			result <- jfa::planning(materiality = performanceMateriality,
+									confidence = confidence,
+									likelihood = parentOptions[["likelihood"]],
+									expectedError = i - 1,
+									N = N,
+									minPrecision = minPrecision,
+									prior = prior,
+									increase = options[["sampleSizeIncrease"]])
+			n[i] <- result[["sampleSize"]]
+		}
+	  })
       
-      n <- numeric(length(1:4))
-      for(i in 1:4){
-        result <- jfa::planning(materiality = performanceMateriality,
-                                confidence = confidence,
-                                likelihood = parentOptions[["likelihood"]],
-                                expectedError = i - 1,
-                                N = N,
-                                minPrecision = minPrecision,
-                                prior = prior,
-                                increase = options[["sampleSizeIncrease"]])
-        n[i] <- result[["sampleSize"]]
-      }
-      
-      dPlot <- data.frame(x = c("0", "1", "2", "3"), y = c(2, 2, 2, 2))
-      dPlot$x <- factor(dPlot$x, levels = c("3", "2", "1", "0"))
-      
-      plot <- ggplot2::ggplot(data = dPlot, mapping = ggplot2::aes(x = x, y = y, fill = x)) +
-        ggplot2::geom_bar(stat = "identity", col = "black", size = 1) +
-        ggplot2::scale_y_continuous(name = "", breaks = NULL, limits = c(0, 2.3)) +
-        ggplot2::scale_x_discrete(name = "") +
-        ggplot2::scale_fill_manual(values = c("red", "darkorange1", "orange", "#7FE58B")) +
-        ggplot2::coord_flip() +
-        ggplot2::labs(fill = "") +
-        ggplot2::annotate("text", y = c(0.5, 0.5, 0.5, 0.5), x = c(4, 3, 2, 1),
-                          label = paste0("n = ", n), size = 6, vjust = 0.5, hjust = 0.2, fontface = "italic")
-      plot <- jaspGraphs::themeJasp(plot, sides = "", legend.position = "none") + jfaTheme
-      
-      figure$plotObject <- plot
+	  if(class(rightPlotError) != "try-error"){
+
+		dPlot <- data.frame(x = c("0", "1", "2", "3"), y = c(2, 2, 2, 2))
+		dPlot$x <- factor(dPlot$x, levels = c("3", "2", "1", "0"))
+		
+		plot <- ggplot2::ggplot(data = dPlot, mapping = ggplot2::aes(x = x, y = y, fill = x)) +
+			ggplot2::geom_bar(stat = "identity", col = "black", size = 1) +
+			ggplot2::scale_y_continuous(name = "", breaks = NULL, limits = c(0, 2.3)) +
+			ggplot2::scale_x_discrete(name = "") +
+			ggplot2::scale_fill_manual(values = c("red", "darkorange1", "orange", "#7FE58B")) +
+			ggplot2::coord_flip() +
+			ggplot2::labs(fill = "") +
+			ggplot2::annotate("text", y = c(0.5, 0.5, 0.5, 0.5), x = c(4, 3, 2, 1),
+							label = paste0("n = ", n), size = 6, vjust = 0.5, hjust = 0.2, fontface = "italic")
+		plot <- jaspGraphs::themeJasp(plot, sides = "", legend.position = "none") + jfaTheme
+		
+		figure$plotObject <- plot
+	  } else {
+		figure$setError(gettextf("An error occurred in a call to the the jfa package: %1$s", jaspBase:::.extractErrorMessage(rightPlotError)))
+	  }
     }
     
     if(options[["explanatoryText"]] && ready){
