@@ -953,11 +953,6 @@
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
       parentContainer$setError(gettext("Your sample size is larger than (or equal to) your population value. Cannot take a MUS sample larger than the population value."))
       return(TRUE)
-    } else if(!is.null(dataset) && options[["sampleSize"]] == 1){
-      # Error if the sample size is 1.
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
-      parentContainer$setError(gettext("Your sample size must be larger than 1."))
-      return(TRUE)
     } else if(options[["recordNumberVariable"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[, .v(options[["recordNumberVariable"]])]))){
       # Error if the transaction ID's are not unique
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
@@ -2376,7 +2371,7 @@
     interval <- base::switch(units, "records" = nrow(dataset) / prevState[["sampleSize"]],
                              "mus" = sum(dataset[, bookValues]) / prevState[["sampleSize"]])
     if(options[["seed"]] > interval){
-      parentContainer$setError(gettext("Your specified starting point lies outside the selection interval."))
+      parentContainer$setError(gettextf("Your specified starting point lies outside the selection interval (%1$s).", round(interval, 3)))
       return()
     }
   }
