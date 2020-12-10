@@ -10,7 +10,7 @@ Standard Options
 
 #### Variables
 
-**Record ID's:** A unique non-missing identifyer for every transaction in the population. The row number of the transactions may suffice.
+**Record ID's:** A unique non-missing identifier for every transaction in the population. The row number of the transactions may suffice.
 
 *Base effects on options*: Enables the option add selection counter to data.
 

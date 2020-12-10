@@ -101,7 +101,7 @@ Form
 								decimals: 		2
 								defaultValue: 	0
 								name: 			"materialityPercentage"
-								fieldWidth: 	40
+								fieldWidth: 	50 * preferencesModel.uiScale
 							}
 						}
 					}
@@ -125,7 +125,7 @@ Form
 								name: 			"materialityValue"
 								defaultValue: 	0
 								min: 			0
-								fieldWidth: 	90
+								fieldWidth: 	90 * preferencesModel.uiScale
 								decimals: 		2
 								label: 			euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)
 							}
@@ -156,6 +156,7 @@ Form
 					max:						100
 					label: 						qsTr("Relative")
 					visible: 					minimumPrecision.checked
+					fieldWidth: 				50 * preferencesModel.uiScale
 				}
 			}
 
@@ -175,7 +176,7 @@ Form
 				id: 							populationSize
 				name: 							"populationSize"
 				text: 							qsTr("Size")
-				fieldWidth: 					80
+				fieldWidth: 					80 * preferencesModel.uiScale
 				defaultValue: 					0
 				min: 							0
 			}
@@ -186,7 +187,7 @@ Form
 				name: 							"populationValue"
 				text: 							qsTr("Value")
 				defaultValue: 					0
-				fieldWidth: 					80
+				fieldWidth: 					80 * preferencesModel.uiScale
 				min: 							0
 				decimals: 						2
 				onValueChanged:					
@@ -338,7 +339,7 @@ Form
 					decimals: 					2
 					defaultValue: 				0
 					visible: 					expectedRelative.checked
-					fieldWidth: 				40
+					fieldWidth: 				50 * preferencesModel.uiScale
 					onValueChanged:				if(expectedRelative.checked & expectedPercentage.value > 0) 
 					{
 												irHigh.click()
@@ -365,7 +366,7 @@ Form
 					min: 						0
 					decimals: 					3
 					visible: 					expectedAbsolute.checked
-					fieldWidth: 				60
+					fieldWidth: 				80 * preferencesModel.uiScale
 					label: 						performanceMateriality.checked & materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
 					onValueChanged:				if(expectedAbsolute.checked & expectedNumber.value > 0) 
 					{
@@ -462,7 +463,7 @@ Form
 				{
 					id: 						otherValutaName
 					name: 						"otherValutaName"
-					fieldWidth: 				100
+					fieldWidth: 				100 * preferencesModel.uiScale
 					enabled: 					otherValuta.checked
 					visible: 					otherValuta.checked
 				}
