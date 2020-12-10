@@ -2059,7 +2059,7 @@
         }
       })
       
-      if(class(leftPlotError) != "try-error"){
+      if(!jaspBase::isTryError(leftPlotError)){
         
         dPlot <- data.frame(y = c(n, k), x = rep(names, 2), type = rep(c(gettext("Expected error-free"), gettext("Expected errors")), each = 3))
         dPlot$x <- factor(x = dPlot$x, levels = levels(dPlot$x)[c(2, 3, 1)])
@@ -2137,7 +2137,7 @@
         }
       })
       
-      if(class(rightPlotError) != "try-error"){
+      if(!jaspBase::isTryError(rightPlotError)){
         
         dPlot <- data.frame(x = c("0", "1", "2", "3"), y = c(2, 2, 2, 2))
         dPlot$x <- factor(dPlot$x, levels = c("3", "2", "1", "0"))
@@ -3558,7 +3558,7 @@
       
     })
     
-    if(class(plotError) != "try-error"){
+    if(!jaspBase::isTryError(plotError)){
       
       plot <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y)) +
         ggplot2::geom_bar(stat = "identity", col = "black", size = 1, fill = fill) +
