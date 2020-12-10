@@ -497,14 +497,14 @@
     
     if(!is.null(recordNumberVariable)){
       dataset <- .readDataSetToEnd(columns.as.factor = recordNumberVariable)
-      dataset[, .v(recordNumberVariable)] <- as.character(levels(dataset[, .v(recordNumberVariable)]))
+      dataset[, .v(recordNumberVariable)] <- as.character(dataset[, .v(recordNumberVariable)])
       
       analysisOptions[["populationSize"]] <- nrow(dataset)
       analysisOptions[["uniqueN"]] <- length(unique(dataset[, .v(options[["recordNumberVariable"]])]))
       
       if(!is.null(monetaryVariable)){
         dataset <- .readDataSetToEnd(columns.as.numeric = monetaryVariable, columns.as.factor = recordNumberVariable)
-        dataset[, .v(recordNumberVariable)] <- as.character(levels(dataset[, .v(recordNumberVariable)]))
+        dataset[, .v(recordNumberVariable)] <- as.character(dataset[, .v(recordNumberVariable)])
         
         monetaryColumn <- dataset[, .v(monetaryVariable)]
         analysisOptions[["populationValue"]] <- sum(monetaryColumn, na.rm = TRUE)
