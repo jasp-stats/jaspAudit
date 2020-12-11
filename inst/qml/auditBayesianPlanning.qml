@@ -202,7 +202,7 @@ Form
 
 	Section 
 	{
-		title: 									qsTr("A.     Prior Information")
+		title: 									qsTr("Prior Information")
 		columns: 								3
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
@@ -468,7 +468,7 @@ Form
 
 	Section
 	{
-		text: 									qsTr("B.     Advanced Options")
+		text: 									qsTr("Advanced Options")
 		columns:								4
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
@@ -581,7 +581,7 @@ Form
 
 	Section
 	{
-		title: 									qsTr("C.     Tables and Plots")
+		title: 									qsTr("Tables and Plots")
 		columns:								2
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 

@@ -117,7 +117,7 @@ Form
 
 	Section
 	{
-		title: 									qsTr("A.    Selection Methodology")
+		title: 									qsTr("Selection Methodology")
 		columns:								3
 
 		CheckBox
@@ -231,7 +231,7 @@ Form
 
 	Section
 	{
-		title:									qsTr("B     Advanced Options")
+		title:									qsTr("Advanced Options")
 		columns:								1
 
 		RadioButtonGroup
@@ -279,7 +279,7 @@ Form
 
 	Section
 	{
-		title: 									qsTr("C.    Tables")
+		title: 									qsTr("Tables")
 		columns:								1
 
 		GroupBox
