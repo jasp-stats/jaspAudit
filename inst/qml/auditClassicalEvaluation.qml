@@ -354,7 +354,7 @@ Form
 
 	Section
 	{
-		title: 									qsTr("A.     Critical Transactions")
+		title: 									qsTr("Critical Transactions")
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 		columns: 								1
 
@@ -404,7 +404,7 @@ Form
 
 	Section
 	{
-		text: 									qsTr("B.     Risk Assessments")
+		text: 									qsTr("Risk Assessments")
 		columns:								3
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
@@ -499,7 +499,7 @@ Form
 
 	Section
 	{
-		title: 									qsTr("C.     Advanced Options");
+		title: 									qsTr("Advanced Options");
 		columns: 								2
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
@@ -621,7 +621,7 @@ Form
 
 	Section
 	{
-		title: 									qsTr("D.     Tables and Plots")
+		title: 									qsTr("Tables and Plots")
 		columns:								2
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 

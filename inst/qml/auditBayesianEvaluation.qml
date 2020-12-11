@@ -347,7 +347,7 @@ Form
 
 	Section
 	{
-		title: 									qsTr("A.     Critical Transactions")
+		title: 									qsTr("Critical Transactions")
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 		columns: 								1
 
@@ -397,7 +397,7 @@ Form
 
 	Section 
 	{
-		title: 									qsTr("B.     Efficiency Techniques")
+		title: 									qsTr("Efficiency Techniques")
 		columns: 								1
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
@@ -435,7 +435,7 @@ Form
 
 	Section 
 	{
-		title: 									qsTr("C.     Prior Information")
+		title: 									qsTr("Prior Information")
 		columns: 								3
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
@@ -702,7 +702,7 @@ Form
 
 	Section
 	{
-		title: 									qsTr("D.     Advanced Options")
+		title: 									qsTr("Advanced Options")
 		columns: 								3
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
@@ -783,7 +783,7 @@ Form
 
 	Section
 	{
-		title: 									qsTr("E.     Tables and Plots")
+		title: 									qsTr("Tables and Plots")
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 		columns:								2
 

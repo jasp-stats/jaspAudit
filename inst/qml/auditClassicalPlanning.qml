@@ -215,7 +215,7 @@ Form
 
 	Section
 	{
-		text: 									qsTr("A.     Risk Assessments")
+		text: 									qsTr("Risk Assessments")
 		columns:								3
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
@@ -380,7 +380,7 @@ Form
 
 	Section
 	{
-		text:									qsTr("B.     Advanced Options")
+		text:									qsTr("Advanced Options")
 		columns:								4
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
@@ -493,7 +493,7 @@ Form
 
 	Section
 	{
-		title: 									qsTr("C.     Plots")
+		title: 									qsTr("Plots")
 		columns:								2
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
