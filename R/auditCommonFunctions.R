@@ -2304,6 +2304,29 @@
                                                                 "sampleIndicatorColumn"))
     jaspResults[["sampleIndicatorColumn"]]$setNominal(sampleIndicatorColumn)
   }
+  
+  # Export sample
+  if(options[["exportSample"]] && options[["file"]] != ""){
+    sampleExport <- data.frame(row = parentState[["rowNumber"]])
+    sampleExport <- cbind(sampleExport, count = parentState[["count"]])
+    sampleExport <- cbind(sampleExport, id = parentState[[.v(options[["recordNumberVariable"]])]])
+    colnames(sampleExport) <- c("Row number", decodeColNames(options[["sampleIndicatorColumn"]]), decodeColNames(options[["recordNumberVariable"]]))
+    if(options[["monetaryVariable"]] != ""){
+      sampleExport <- cbind(sampleExport, ist = parentState[[.v(options[["monetaryVariable"]])]])
+      colnames(sampleExport)[length(colnames(sampleExport))] <- decodeColNames(options[["monetaryVariable"]])
+    }
+    if(options[["rankingVariable"]] != ""){
+      sampleExport <- cbind(sampleExport, parentState[[.v(options[["rankingVariable"]])]])
+      colnames(sampleExport)[length(colnames(sampleExport))] <- decodeColNames(options[["rankingVariable"]])
+    }
+    if(length(unlist(options[["additionalVariables"]])) >= 1 && unlist(options[["additionalVariables"]]) != ""){
+      sampleExport <- cbind(sampleExport, parentState[[.v(unlist(options[["additionalVariables"]]))]])
+      colnames(sampleExport)[(length(colnames(sampleExport)) - length(unlist(options[["additionalVariables"]]))):length(colnames(sampleExport))] <- decodeColNames(unlist(options[["additionalVariables"]]))
+    }
+    sampleExport <- cbind(sampleExport, rep(NA, nrow(sampleExport)))
+    colnames(sampleExport)[length(colnames(sampleExport))] <- "Soll"
+    utils::write.csv(x = sampleExport, file = options[["file"]], row.names = FALSE, na = "", quote = FALSE)
+  }
 }
 
 .jfa.selection.state <- function(options, dataset, prevState, parentContainer){
