@@ -2325,7 +2325,7 @@
     }
     sampleExport <- cbind(sampleExport, rep(NA, nrow(sampleExport)))
     colnames(sampleExport)[length(colnames(sampleExport))] <- "Soll"
-    utils::write.csv2(x = sampleExport, file = options[["file"]], row.names = FALSE, na = "", dec = ",", sep = ";", quote = FALSE)
+    utils::write.csv(x = sampleExport, file = options[["file"]], row.names = FALSE, na = "", quote = FALSE)
   }
 }
 
