@@ -21,6 +21,6 @@
 auditClassicalPlanning <- function(jaspResults, dataset, options, ...){
   
   # For the planning constituents, see auditCommonFunctions.R
-  .jfa.planning.stage(options, jaspResults, workflow = FALSE)
+  .jfaPlanningStage(options, jaspResults, workflow = FALSE)
   
 }

@@ -22,7 +22,7 @@
 ################## Common functions for Bayesian calculations ##################
 ################################################################################
 
-.jfa.credibleInterval.calculation <- function(options, parentState){
+.jfaCredibleIntervalCalculation <- function(options, parentState){
   
   # In calculation of the credible interval, we split the confidence from the
   # original one-sided bound in two so that it becomes two-sided.
@@ -67,7 +67,7 @@
   return(results)
 }
 
-.jfa.bayesRegression.calculation <- function(options, sample, prevOptions){
+.jfaBayesianRegressionCalculation <- function(options, sample, prevOptions){
   
   # Bayesian Linear Regression Using the BAS package
   # This will be replaced by the WASEM technique.
@@ -123,7 +123,7 @@
   return(results)
 }
 
-.jfa.bayesCorrelation.calculation <- function(r, n){
+.jfaBayesianCorrelationCalculation <- function(r, n){
   
   # For the calculation of the Bayes factor for a correlation, we use the standard Bayesian test as described in:
   # Wetzels, R., & Wagenmakers, E. J. (2012). A default Bayesian hypothesis test for correlations and partial correlations. Psychonomic bulletin & review, 19(6), 1057-1064.
@@ -139,13 +139,13 @@
 ################## Common functions specific to the planning stage #############
 ################################################################################
 
-.jfa.implicitSample.table <- function(options, parentState, parentContainer, jaspResults, 
-                                      ready, positionInContainer){
+.jfaImplicitSampleTable <- function(options, parentState, parentContainer, jaspResults, 
+                                    ready, positionInContainer){
   
   if(!options[["implicitSampleTable"]]) 
     return()
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["sampletable"]])){
     
@@ -181,13 +181,13 @@
   }
 }
 
-.jfa.prior.plot <- function(options, parentOptions, parentState, parentContainer, jaspResults, 
-                            ready, positionInContainer){
+.jfaPriorPlot <- function(options, parentOptions, parentState, parentContainer, jaspResults, 
+                          ready, positionInContainer){
   
   if(!options[["priorPlot"]]) 
     return()
   
-  .jfa.figureNumber.update(jaspResults)
+  .jfaFigureNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["priorPlot"]])){
     
@@ -389,13 +389,13 @@
 ################## Common functions specific to the evaluation stage ###########
 ################################################################################
 
-.jfa.posterior.plot <- function(options, prevOptions, prevState, parentState, parentContainer, jaspResults,
-                                positionInContainer){
+.jfaPosteriorPlot <- function(options, prevOptions, prevState, parentState, parentContainer, jaspResults,
+                              positionInContainer){
   
   if(!options[["priorAndPosteriorPlot"]]) 
     return()
   
-  .jfa.figureNumber.update(jaspResults)
+  .jfaFigureNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["priorAndPosteriorPlot"]])){
     
@@ -543,7 +543,7 @@
                                                                                          fill = fill, stroke = 2, color = "black")))
         
         if(options[["areaUnderPosterior"]] == "displayCredibleInterval"){
-          ci <- .jfa.credibleInterval.calculation(options, parentState)
+          ci <- .jfaCredibleIntervalCalculation(options, parentState)
           functionLimits <- c(ci[["lowerBound"]], ci[["upperBound"]])
           if(options[["separateKnownAndUnknownMisstatement"]])
             functionLimits <- c(ci[["unseenLowerBound"]], ci[["unseenUpperBound"]])
@@ -652,15 +652,15 @@
 ################## Common functions not tied to a specific stage ###############
 ################################################################################
 
-.jfa.distributionStatistics.table <- function(options, parentOptions, parentState, parentContainer, jaspResults, 
-                                              ready = NULL, positionInContainer, stage){
+.jfaDistributionStatisticsTable <- function(options, parentOptions, parentState, parentContainer, jaspResults, 
+                                            ready = NULL, positionInContainer, stage){
   
   if(stage == "planning" && !options[["priorStatistics"]])
     return()
   if(stage == "evaluation" && !options[["priorAndPosteriorStatistics"]])
     return()
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["priorAndPosteriorStatistics"]])){
     
@@ -733,9 +733,9 @@
                                            round(parentState[["materiality"]], 3)))
     
     N 						<- parentState[["N"]]
-	prior 					<- parentState[["prior"]]
-
-	if(stage == "planning"){
+    prior 					<- parentState[["prior"]]
+    
+    if(stage == "planning"){
       
       likelihood 			<- parentState[["likelihood"]]
       n 					<- parentState[["sampleSize"]]
@@ -750,15 +750,15 @@
       posterior 			<- parentState[["posterior"]]
       
     }
-
-	alphaParameterPrior 	<- prior[["description"]]$alpha
-	betaParameterPrior 		<- prior[["description"]]$beta
+    
+    alphaParameterPrior 	<- prior[["description"]]$alpha
+    betaParameterPrior 		<- prior[["description"]]$beta
     modePrior 				<- prior[["statistics"]]$mode
-	boundPrior 				<- prior[["statistics"]]$ub
+    boundPrior 				<- prior[["statistics"]]$ub
     alphaParameterPosterior <- posterior[["description"]]$alpha
     betaParameterPosterior 	<- posterior[["description"]]$beta
     modePost 				<- posterior[["statistics"]]$mode
-	boundPost 				<- posterior[["statistics"]]$ub
+    boundPost 				<- posterior[["statistics"]]$ub
     
     if(likelihood == "poisson"){
       formPrior 	<- paste0("gamma(\u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
@@ -783,9 +783,9 @@
                        precision = c(precisionPrior, precisionPost, NA))
     
     if(options[["performanceMateriality"]]){
-	  priorHypotheses 	<- prior[["hypotheses"]]
+      priorHypotheses 	<- prior[["hypotheses"]]
       postHypotheses 	<- posterior[["hypotheses"]]
-	  bf 				<- base::switch(stage, "planning" = postHypotheses[["expectedBf"]], "evaluation" = postHypotheses[["bf"]])
+      bf 				<- base::switch(stage, "planning" = postHypotheses[["expectedBf"]], "evaluation" = postHypotheses[["bf"]])
       rows <- cbind(rows, hMin = c(priorHypotheses[["pHmin"]], postHypotheses[["pHmin"]], postHypotheses[["pHmin"]] / priorHypotheses[["pHmin"]]),
                     hPlus = c(priorHypotheses[["pHplus"]], postHypotheses[["pHplus"]], postHypotheses[["pHplus"]] / priorHypotheses[["pHplus"]]),
                     odds = c(priorHypotheses[["oddsHmin"]], postHypotheses[["oddsHmin"]], bf))

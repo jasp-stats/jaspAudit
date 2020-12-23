@@ -22,33 +22,33 @@
 ################## The Audit Workflow ##########################################
 ################################################################################
 
-.jfa.workflow.analysis <- function(options, jaspResults){
+.jfaWorkflowAnalysis <- function(options, jaspResults){
   
   ### PROCEDURE STAGE ###
-  .jfa.procedure.stage(options, jaspResults)
-  ready <- .jfa.readyForNextStage.check(options, jaspResults, stage = "procedure")
+  .jfaProcedureStage(options, jaspResults)
+  ready <- .jfaReadyForNextStageCheck(options, jaspResults, stage = "procedure")
   if(!ready) return() # Stop if not enough information is given to quantify the sampling objectives
   
   ### PLANNING STAGE ###
-  .jfa.planning.stage(options, jaspResults, workflow = TRUE)
+  .jfaPlanningStage(options, jaspResults, workflow = TRUE)
   
-  ready <- .jfa.readyForNextStage.check(options, jaspResults, stage = "planning")
+  ready <- .jfaReadyForNextStageCheck(options, jaspResults, stage = "planning")
   if(!ready) return() # Stop if "To Selection" is not pressed
   
   ### SELECTION STAGE ###
-  .jfa.selection.stage(options, jaspResults, workflow = TRUE)
+  .jfaSelectionStage(options, jaspResults, workflow = TRUE)
   
   ### EXECUTION STAGE ###
-  .jfa.execution.stage(options, jaspResults)
+  .jfaExecutionStage(options, jaspResults)
   
-  ready <- .jfa.readyForNextStage.check(options, jaspResults, stage = "execution")
+  ready <- .jfaReadyForNextStageCheck(options, jaspResults, stage = "execution")
   if(!ready) return() # Stop if "To Evaluation" is not pressed
   
   ### EVALUATION STAGE ###
-  .jfa.evaluation.stage(options, jaspResults, workflow = TRUE)
+  .jfaEvaluationStage(options, jaspResults, workflow = TRUE)
   
   ### CONCLUSION STAGE ###
-  .jfa.conclusion.stage(options, jaspResults)
+  .jfaConclusionStage(options, jaspResults)
 }
 
 ################################################################################
@@ -59,122 +59,121 @@
 ######### PROCEDURE STAGE ###########
 #####################################
 
-.jfa.procedure.stage <- function(options, jaspResults){
+.jfaProcedureStage <- function(options, jaspResults){
   
   # Extract the record number and book value columns
-  dataset <- .jfa.dataset.read(options, jaspResults, stage = "procedure")
+  dataset <- .jfaReadData(options, jaspResults, stage = "procedure")
   
   # Check for errors due to incompatible options (variables)
-  .jfa.inputOptions.check(options, dataset, parentContainer = NULL, stage = "procedure")
+  .jfaInputOptionsCheck(options, dataset, parentContainer = NULL, stage = "procedure")
   
   # Deduce the necessary values from the input options
-  planningOptions <- .jfa.inputOptions.collect(options, dataset, jaspResults, stage = "planning",
-                                               rawData = TRUE)
+  planningOptions <- .jfaInputOptionsGather(options, dataset, jaspResults, stage = "planning",
+                                            rawData = TRUE)
   
   # Create the procedure paragraph
-  .jfa.explanatoryText.add(options, planningOptions, stageContainer = NULL, stageState = NULL,
-                           jaspResults, stage = "procedure", positionInContainer = 1)
+  .jfaAddExplanatoryText(options, planningOptions, stageContainer = NULL, stageState = NULL,
+                         jaspResults, stage = "procedure", positionInContainer = 1)
   
   # Create the audit risk model paragraph
-  .jfa.auditRiskModel.add(options, jaspResults, position = 2)
+  .jfaAddAuditRiskModel(options, jaspResults, position = 2)
   
   # --- TABLES
   
-  .jfa.tableNumber.add(jaspResults) # Initialize table numbers
+  .jfaTableNumberInit(jaspResults) # Initialize table numbers
   
   # Create a table containing descriptive statistics for the book values
-  .jfa.bookvalueDescriptives.table(options, planningOptions, jaspResults, positionInContainer = 2)
+  .jfaBookvalueDescriptivesTable(options, planningOptions, jaspResults, positionInContainer = 2)
   
   # --- PLOTS
   
-  .jfa.figureNumber.add(jaspResults) # Initialize figure numbers
+  .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
   
   # Create a plot of the population book values (if the user wants it)
-  .jfa.bookvalueDescriptives.plot(options, dataset, jaspResults, positionInContainer = 3)
-  
+  .jfaBookvaluesDescriptivesPlot(options, dataset, jaspResults, positionInContainer = 3)
 }
 
 #####################################
 ######### PLANNING STAGE ############
 #####################################
 
-.jfa.planning.stage <- function(options, jaspResults, workflow){
+.jfaPlanningStage <- function(options, jaspResults, workflow){
   
   if(workflow){
     
-    .jfa.criticalTransactions.init(options, jaspResults)
+    .jfaCriticalTransactionsInit(options, jaspResults)
     
     # Deduce the necessary values from the input options
-    planningOptions <- .jfa.inputOptions.collect(options, dataset = NULL, jaspResults,
-                                                 stage = "planning", rawData = TRUE)
+    planningOptions <- .jfaInputOptionsGather(options, dataset = NULL, jaspResults,
+                                              stage = "planning", rawData = TRUE)
     
   } else if(!workflow){
     
-    .jfa.tableNumber.add(jaspResults)  # Initialize table numbers
-    .jfa.figureNumber.add(jaspResults) # Initialize figure numbers
+    .jfaTableNumberInit(jaspResults)  # Initialize table numbers
+    .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
     
     # Deduce the necessary values from the input options
-    planningOptions <- .jfa.inputOptions.collect(options, dataset = NULL, jaspResults,
-                                                 stage = "planning", rawData = FALSE)
+    planningOptions <- .jfaInputOptionsGather(options, dataset = NULL, jaspResults,
+                                              stage = "planning", rawData = FALSE)
     
     # Create the procedure paragraph
-    .jfa.explanatoryText.add(options, planningOptions, stageContainer = NULL, stageState = NULL,
-                             jaspResults, stage = "procedure", positionInContainer = 1)
+    .jfaAddExplanatoryText(options, planningOptions, stageContainer = NULL, stageState = NULL,
+                           jaspResults, stage = "procedure", positionInContainer = 1)
     
     # Create the audit risk model paragraph
-    .jfa.auditRiskModel.add(options, jaspResults, position = 2)
+    .jfaAddAuditRiskModel(options, jaspResults, position = 2)
   }
   
   # Check if the options have valid values for running the analysis
-  ready <- .jfa.ready.check(options, planningOptions, stage = "planning")
+  ready <- .jfaReadyCheck(options, planningOptions, stage = "planning")
   
   if(!(options[['performanceMateriality']] || options[["minimumPrecision"]]))
     return() # Stop if no sampling objective is selected
   
   # Create the container that holds the planning output
-  planningContainer <- .jfa.stageContainer.add(jaspResults, stage = "planning", position = 3)
+  planningContainer <- .jfaAddStageContainer(jaspResults, stage = "planning", position = 3)
   
   # Perfrom early error checks
-  .jfa.inputOptions.check(options, dataset = NULL, planningContainer, stage = "planning",
-                          ready, planningOptions)
+  .jfaInputOptionsCheck(options, dataset = NULL, planningContainer, stage = "planning",
+                        ready, planningOptions)
   
   # Get the planning state if it exists, otherwise make one
-  planningState <- .jfa.planning.state(options, planningOptions, planningContainer, ready, jaspResults)
+  planningState <- .jfaPlanningState(options, planningOptions, planningContainer, ready, jaspResults)
   
   # Create explanatory text for the planning
-  .jfa.explanatoryText.add(options, planningOptions, planningContainer, planningState, jaspResults,
-                           stage = "planning", positionInContainer = 1)
+  .jfaAddExplanatoryText(options, planningOptions, planningContainer, planningState, jaspResults,
+                         stage = "planning", positionInContainer = 1)
   
   # --- TABLES
   
   # Create the summary table
-  .jfa.planning.table(options, planningOptions, planningState, planningContainer, jaspResults,
-                      ready, positionInContainer = 2)
+  .jfaPlanningTable(options, planningOptions, planningState, planningContainer, jaspResults,
+                    ready, positionInContainer = 2)
   
   if(options[["bayesianAnalysis"]]){
     # Create the implicit sample table
-    .jfa.implicitSample.table(options, planningState, planningContainer, jaspResults,
-                              ready, positionInContainer = 3)
+    .jfaImplicitSampleTable(options, planningState, planningContainer, jaspResults,
+                            ready, positionInContainer = 3)
     
     # Cerate the prior and posterior statistics table
-    .jfa.distributionStatistics.table(options, planningOptions, planningState, planningContainer,
-                                      jaspResults, ready, positionInContainer = 4, stage = "planning")
+    .jfaDistributionStatisticsTable(options, planningOptions, planningState, planningContainer,
+                                    jaspResults, ready, positionInContainer = 4, stage = "planning")
   }
   
   # --- PLOTS
   
   # Create the sample size comparison plot
-  .jfa.sampleSize.plot(options, planningOptions, planningState, planningContainer, jaspResults,
-                       ready, positionInContainer = 5)
+  .jfaSampleSizePlot(options, planningOptions, planningState, planningContainer, jaspResults,
+                     ready, positionInContainer = 5)
   
   if(!options[["bayesianAnalysis"]]){
     # Create the implied distribution plot
-    .jfa.samplingDistribution.plot(options, planningOptions, planningState, planningContainer,
-                                   jaspResults, ready, positionInContainer = 7)
+    .jfaSamplingDistributionPlot(options, planningOptions, planningState, planningContainer,
+                                 jaspResults, ready, positionInContainer = 7)
   } else if(options[["bayesianAnalysis"]]){
     # Create the prior and expected posterior plot
-    .jfa.prior.plot(options, planningOptions, planningState, planningContainer,
-                    jaspResults, ready, positionInContainer = 7)
+    .jfaPriorPlot(options, planningOptions, planningState, planningContainer,
+                  jaspResults, ready, positionInContainer = 7)
   }
 }
 
@@ -182,92 +181,92 @@
 ######### SELECTION STAGE ###########
 #####################################
 
-.jfa.selection.stage <- function(options, jaspResults, workflow){
+.jfaSelectionStage <- function(options, jaspResults, workflow){
   
   if(workflow){
     
     # Create the container that holds the selection output
-    selectionContainer <- .jfa.stageContainer.add(jaspResults, stage = "selection-workflow", position = 4)
+    selectionContainer <- .jfaAddStageContainer(jaspResults, stage = "selection-workflow", position = 4)
     
     # Read in additional variables
-    dataset <- .jfa.selectionResult.add(options, jaspResults)
+    dataset <- .jfaAddSelectionResult(options, jaspResults)
     
     # Import options and results from the planning stage
-    selectionOptions <- .jfa.inputOptions.collect(options, dataset, jaspResults, stage = "planning", rawData = TRUE)
+    selectionOptions <- .jfaInputOptionsGather(options, dataset, jaspResults, stage = "planning", rawData = TRUE)
     
     planningContainer   <- jaspResults[["planningContainer"]]
     planningState       <- planningContainer[["planningState"]]$object
     
-    error <- .jfa.inputOptions.check(options, dataset, selectionContainer, stage = "selection-workflow")
+    error <- .jfaInputOptionsCheck(options, dataset, selectionContainer, stage = "selection-workflow")
     if(error) return() # Quit on errors
     
     if(is.null(planningState)) return() # Quit if no planning was done
     
     # Perform the sampling
-    selectionState <- .jfa.selection.state(options, dataset, planningState, selectionContainer)
+    selectionState <- .jfaSelectionState(options, dataset, planningState, selectionContainer)
     
   } else if(!workflow){
     
-    .jfa.figureNumber.add(jaspResults) # Initialize figure numbers
-    .jfa.tableNumber.add(jaspResults) # Initialize table numbers
+    .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
+    .jfaTableNumberInit(jaspResults) # Initialize table numbers
     
     # Create a custom container for the selection analysis
-    selectionContainer <- .jfa.stageContainer.add(jaspResults, stage = "selection", position = 1)
+    selectionContainer <- .jfaAddStageContainer(jaspResults, stage = "selection", position = 1)
     
     # Read in the relevant variables from the data set
-    dataset <- .jfa.dataset.read(options, jaspResults, stage = "selection")
+    dataset <- .jfaReadData(options, jaspResults, stage = "selection")
     
     # Deduce relevant quantities from input options
-    selectionOptions <- .jfa.inputOptions.collect(options, dataset, jaspResults, stage = "selection")
+    selectionOptions <- .jfaInputOptionsGather(options, dataset, jaspResults, stage = "selection")
     
     # Check for errors due to incompatible options
-    error <- .jfa.inputOptions.check(options, dataset, selectionContainer, stage = "selection", parentOptions = selectionOptions)
+    error <- .jfaInputOptionsCheck(options, dataset, selectionContainer, stage = "selection", parentOptions = selectionOptions)
     if(error) return() # Quit on errors
     
     options[["materiality"]] <- ifelse(options[["selectionType"]] == "musSampling", yes = "materialityAbsolute", no = "materialityRelative")
     
     # Create a planning state
-    planningState <- .jfa.previousStage.calculation(options, stage = "selection")
+    planningState <- .jfaGetPreviousStageFromOptions(options, stage = "selection")
     
     # Perform error checks
-    .jfa.inputOptions.check(options, dataset, parentContainer = NULL, stage = "procedure")
+    .jfaInputOptionsCheck(options, dataset, parentContainer = NULL, stage = "procedure")
     
     # Perform the sampling
-    selectionState <- .jfa.selection.calculation(options, dataset, planningState, selectionContainer)
+    selectionState <- .jfaSelectionCalculation(options, dataset, planningState, selectionContainer)
     
     # Add the sample indicator to the data
-    .jfa.selectionIndicator.add(options, selectionOptions, selectionState, jaspResults)
+    .jfaAddSelectionIndicator(options, selectionOptions, selectionState, jaspResults)
     
   }
   
   # Create explanatory text for the selection
-  .jfa.explanatoryText.add(options, selectionOptions, selectionContainer, selectionState, jaspResults, stage = "selection", positionInContainer = 1, prevState = planningState)
+  .jfaAddExplanatoryText(options, selectionOptions, selectionContainer, selectionState, jaspResults, stage = "selection", positionInContainer = 1, prevState = planningState)
   
   # --- TABLES
   
   # Create a table containing information about the selection process
-  .jfa.selection.table(options, dataset, selectionOptions, planningState, selectionState, selectionContainer, jaspResults, positionInContainer = 2)
+  .jfaSelectionTable(options, dataset, selectionOptions, planningState, selectionState, selectionContainer, jaspResults, positionInContainer = 2)
   
   # Create a table containing information about the monetary interval selection
-  .jfa.selectionInterval.table(options, dataset, selectionOptions, planningState, selectionContainer, selectionState, jaspResults, positionInContainer = 4)
+  .jfaSelectionIntervalTable(options, dataset, selectionOptions, planningState, selectionContainer, selectionState, jaspResults, positionInContainer = 4)
   
   # Create a table containing descriptive statistics of the sample
-  .jfa.selectionDescriptives.table(options, selectionState, selectionContainer, jaspResults, positionInContainer = 5)
+  .jfaSelectionDescriptivesTable(options, selectionState, selectionContainer, jaspResults, positionInContainer = 5)
   
   # Create a table displaying the selection
-  .jfa.selectionSample.table(options, selectionOptions, selectionState, selectionContainer, jaspResults, positionInContainer = 6)
+  .jfaSelectionSampleTable(options, selectionOptions, selectionState, selectionContainer, jaspResults, positionInContainer = 6)
 }
 
 #####################################
 ######### EXECUTION STAGE ###########
 #####################################
 
-.jfa.execution.stage <- function(options, jaspResults){
+.jfaExecutionStage <- function(options, jaspResults){
   
   if(options[["pasteVariables"]]){
     # Add the two computed colums to the data set
-    planningOptions <- .jfa.inputOptions.collect(options, dataset = NULL, jaspResults, stage = "planning", rawData = TRUE)
-    selectionState <- .jfa.selection.state(options, dataset, jaspResults[["planningState"]], jaspResults[["selectionContainer"]])
+    planningOptions <- .jfaInputOptionsGather(options, dataset = NULL, jaspResults, stage = "planning", rawData = TRUE)
+    selectionState <- .jfaSelectionState(options, dataset, jaspResults[["planningState"]], jaspResults[["selectionContainer"]])
     
     selectionState                <- data.frame(selectionState)
     dataset                       <- .readDataSetToEnd(columns.as.numeric = options[["recordNumberVariable"]])
@@ -285,7 +284,7 @@
     
     jaspResults[["sampleFilter"]]$setScale(sampleFilter)
     jaspResults[["variableName"]]$setScale(auditDataVariable)
-    
+ 
   }
 }
 
@@ -293,15 +292,15 @@
 ######### EVALUATION STAGE ##########
 #####################################
 
-.jfa.evaluation.stage <- function(options, jaspResults, workflow){
+.jfaEvaluationStage <- function(options, jaspResults, workflow){
   
   if(workflow){
     
     # Create the container that holds the selection output
-    evaluationContainer <- .jfa.stageContainer.add(jaspResults, stage = "evaluation-workflow", position = 5)
+    evaluationContainer <- .jfaAddStageContainer(jaspResults, stage = "evaluation-workflow", position = 5)
     
     # Read in additional variables
-    dataset <- .jfa.evaluationResult.add(options, jaspResults)
+    dataset <- .jfaAddEvaluationResult(options, jaspResults)
     
     # See if analysis can be run
     ready <- options[["auditResult"]] != ""
@@ -311,7 +310,7 @@
       sample <- subset(dataset, dataset[, .v(options[["sampleFilter"]])] != 0)
     
     # Import options and results from the planning and selection stages
-    evaluationOptions <- .jfa.inputOptions.collect(options, dataset, jaspResults, stage = "planning", rawData = TRUE)
+    evaluationOptions <- .jfaInputOptionsGather(options, dataset, jaspResults, stage = "planning", rawData = TRUE)
     
     planningContainer <- jaspResults[["planningContainer"]]
     planningState <- planningContainer[["planningState"]]$object
@@ -322,80 +321,80 @@
     if(is.null(selectionState)) return()
     
     # Perform the evaluation
-    evaluationState <- .jfa.evaluation.state(options, sample, evaluationOptions, evaluationContainer, selectionState)
+    evaluationState <- .jfaEvaluationState(options, sample, evaluationOptions, evaluationContainer, selectionState)
     
     # Create explanatory text for the evaluation
-    .jfa.explanatoryTextEvaluation.add(options, evaluationOptions, planningState, selectionState, evaluationContainer, positionInContainer = 1)
+    .jfaAddExplanatoryTextEvaluation(options, evaluationOptions, planningState, selectionState, evaluationContainer, positionInContainer = 1)
     
   } else if(!workflow){
     
-    .jfa.tableNumber.add(jaspResults) # Initialize table numbers
-    .jfa.figureNumber.add(jaspResults) # Initialize figure numbers
+    .jfaTableNumberInit(jaspResults) # Initialize table numbers
+    .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
     
     # Create an empty container for the evaluation analysis
-    evaluationContainer <- .jfa.stageContainer.add(jaspResults, stage = "evaluation", position = 1)
+    evaluationContainer <- .jfaAddStageContainer(jaspResults, stage = "evaluation", position = 1)
     
     # Read in the relevant variables from the data set
-    sample <- .jfa.dataset.read(options, jaspResults, stage = "evaluation")
+    sample <- .jfaReadData(options, jaspResults, stage = "evaluation")
     
     # Remove the critical transactions if wanted
     if(options[["flagCriticalTransactions"]] && options[["handleCriticalTransactions"]] == "remove" && options[["monetaryVariable"]] != "")
       sample <- subset(sample, sample[, .v(options[["monetaryVariable"]])] >= 0)
     
     # Check for errors due to incompatible options
-    error <- .jfa.inputOptions.check(options, sample, evaluationContainer, stage = "evaluation")
+    error <- .jfaInputOptionsCheck(options, sample, evaluationContainer, stage = "evaluation")
     if(error) return()
     
     # Deduce relevant quantities from input options
-    evaluationOptions <- .jfa.inputOptions.collect(options, sample, jaspResults,
-                                                   stage = "evaluation")
+    evaluationOptions <- .jfaInputOptionsGather(options, sample, jaspResults,
+                                                stage = "evaluation")
     
     # Create the evaluation state that holds the results
-    evaluationState <- .jfa.evaluationAnalysis.state(options, sample, evaluationOptions,
-                                                     evaluationContainer)
+    evaluationState <- .jfaEvaluationAnalysisState(options, sample, evaluationOptions,
+                                                   evaluationContainer)
     
     # Backwards create a planningstate and a selectionstate
-    planningState <- .jfa.previousStagePlanning.state(options, sample, evaluationOptions)
-    selectionState <- .jfa.previousStage.calculation(options, stage = "evaluation")
+    planningState <- .jfaGetPreviousPlanningStateFromOptions(options, sample, evaluationOptions)
+    selectionState <- .jfaGetPreviousStageFromOptions(options, stage = "evaluation")
     
     # Create explanatory text for the evaluation
-    .jfa.explanatoryTextEvaluation.add(options, evaluationOptions, planningState, selectionState, evaluationContainer, positionInContainer = 1)
+    .jfaAddExplanatoryTextEvaluation(options, evaluationOptions, planningState, selectionState, evaluationContainer, positionInContainer = 1)
     
   }
   
   # --- TABLES
   
   # Create a table containing information about the evaluation process
-  .jfa.evaluation.table(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, positionInContainer = 2)
+  .jfaEvaluationTable(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, positionInContainer = 2)
   
   if(options[["bayesianAnalysis"]]){
     # Create a table containing assumption checks
-    .jfa.assumptionCheck.table(options, sample, evaluationContainer, jaspResults, positionInContainer = 3)
+    .jfaAssumptionCheckTable(options, sample, evaluationContainer, jaspResults, positionInContainer = 3)
     
     # Create a table containing information regarding the prior and posterior
-    .jfa.distributionStatistics.table(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, ready = NULL, positionInContainer = 4, stage = "evaluation")
+    .jfaDistributionStatisticsTable(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, ready = NULL, positionInContainer = 4, stage = "evaluation")
   }
   
   # --- PLOTS
   
   if(options[["bayesianAnalysis"]]){
     # Create a plot containing the prior and posterior distribution
-    .jfa.posterior.plot(options, evaluationOptions, planningState, evaluationState, evaluationContainer, jaspResults, positionInContainer = 5)
+    .jfaPosteriorPlot(options, evaluationOptions, planningState, evaluationState, evaluationContainer, jaspResults, positionInContainer = 5)
   }
   
   # Create a plot containing evaluation information
-  .jfa.samplingObjectives.plot(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, positionInContainer = 7)
+  .jfaSamplingObjectivesPlot(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, positionInContainer = 7)
   
   # Create a plot containing the correlation between the book and audit values
   if(options[["variableType"]] == "variableTypeAuditValues")
-    .jfa.correlation.plot(options, sample, evaluationOptions, evaluationContainer, jaspResults, positionInContainer = 9)
+    .jfaCorrelationPlot(options, sample, evaluationOptions, evaluationContainer, jaspResults, positionInContainer = 9)
 }
 
 #####################################
 ######### CONCLUSION STAGE ##########
 #####################################
 
-.jfa.conclusion.stage <- function(options, jaspResults){
+.jfaConclusionStage <- function(options, jaspResults){
   
   if(!is.null(jaspResults[["conclusionContainer"]]) || options[["auditResult"]] == "")
     return()
@@ -410,32 +409,32 @@
   conclusionContainer$dependOn(options = "explanatoryText")
   jaspResults[["conclusionContainer"]] <- conclusionContainer
   
-  .jfa.explanatoryText.add(options, stageOptions = NULL, stageContainer = NULL, stageState = NULL, jaspResults, stage = "conclusion", positionInContainer = 1)
+  .jfaAddExplanatoryText(options, stageOptions = NULL, stageContainer = NULL, stageState = NULL, jaspResults, stage = "conclusion", positionInContainer = 1)
   
-  .jfa.additionalSamples.table(options, jaspResults, positionInContainer = 2)
+  .jfaAdditionalSamplesTable(options, jaspResults, positionInContainer = 2)
 }
 
 ################################################################################
 ################## Common functions for figure and table numbers ###############
 ################################################################################
 
-.jfa.figureNumber.add <- function(jaspResults){
+.jfaFigureNumberInit <- function(jaspResults){
   # Initialize figure numbers
   jaspResults[["figNumber"]] <- createJaspState(0)
 }
 
-.jfa.tableNumber.add <- function(jaspResults){
+.jfaTableNumberInit <- function(jaspResults){
   # Initialize table numbers
   jaspResults[["tabNumber"]] <- createJaspState(0)
 }
 
-.jfa.tableNumber.update <- function(jaspResults){
+.jfaTableNumberUpdate <- function(jaspResults){
   # Update table numbers + 1
   currentNumber <- jaspResults[["tabNumber"]]$object
   jaspResults[["tabNumber"]] <- createJaspState(currentNumber + 1)
 }
 
-.jfa.figureNumber.update <- function(jaspResults){
+.jfaFigureNumberUpdate <- function(jaspResults){
   # Update figure numbers + 1
   currentNumber <- jaspResults[["figNumber"]]$object
   jaspResults[["figNumber"]] <- createJaspState(currentNumber + 1)
@@ -445,7 +444,7 @@
 ################## Common functions for reading data and options ###############
 ################################################################################
 
-.jfa.variable.read <- function(options, varType){
+.jfaReadVariableFromOptions <- function(options, varType){
   if(varType == "recordNumber"){
     # Read in the transaction ID's
     recordNumberVariable <- options[["recordNumberVariable"]]
@@ -486,12 +485,12 @@
   }
 }
 
-.jfa.dataset.read <- function(options, jaspResults, stage){
+.jfaReadData <- function(options, jaspResults, stage){
   
   if(stage == "procedure"){
     
-    recordNumberVariable  <- .jfa.variable.read(options, varType = "recordNumber")
-    monetaryVariable      <- .jfa.variable.read(options, varType = "monetary")
+    recordNumberVariable  <- .jfaReadVariableFromOptions(options, varType = "recordNumber")
+    monetaryVariable      <- .jfaReadVariableFromOptions(options, varType = "monetary")
     
     analysisOptions <- list()
     
@@ -542,16 +541,16 @@
     return(dataset)
     
   } else if(stage == "selection"){
-    recordNumberVariable  <- .jfa.variable.read(options, varType = "recordNumber")
-    monetaryVariable      <- .jfa.variable.read(options, varType = "monetary")
-    rankingVariable       <- .jfa.variable.read(options, varType = "ranking")
-    additionalVariables   <- .jfa.variable.read(options, varType = "additional")
+    recordNumberVariable  <- .jfaReadVariableFromOptions(options, varType = "recordNumber")
+    monetaryVariable      <- .jfaReadVariableFromOptions(options, varType = "monetary")
+    rankingVariable       <- .jfaReadVariableFromOptions(options, varType = "ranking")
+    additionalVariables   <- .jfaReadVariableFromOptions(options, varType = "additional")
     variables             <- c(recordNumberVariable, monetaryVariable, rankingVariable, additionalVariables)
   } else if(stage == "evaluation"){
-    recordNumberVariable  <- .jfa.variable.read(options, varType = "recordNumber")
-    monetaryVariable      <- .jfa.variable.read(options, varType = "monetary")
-    auditResult           <- .jfa.variable.read(options, varType = "auditResult")
-    sampleCounter         <- .jfa.variable.read(options, varType = "sampleCounter")
+    recordNumberVariable  <- .jfaReadVariableFromOptions(options, varType = "recordNumber")
+    monetaryVariable      <- .jfaReadVariableFromOptions(options, varType = "monetary")
+    auditResult           <- .jfaReadVariableFromOptions(options, varType = "auditResult")
+    sampleCounter         <- .jfaReadVariableFromOptions(options, varType = "sampleCounter")
     variables             <- c(recordNumberVariable, monetaryVariable, auditResult, sampleCounter)
   }
   
@@ -566,7 +565,7 @@
   }
 }
 
-.jfa.inputOptions.collect <- function(options, dataset, jaspResults, stage, rawData = FALSE){
+.jfaInputOptionsGather <- function(options, dataset, jaspResults, stage, rawData = FALSE){
   
   inputOptions <- list()
   
@@ -679,7 +678,7 @@
   return(inputOptions)
 }
 
-.jfa.previousStage.calculation <- function(options, stage){
+.jfaGetPreviousStageFromOptions <- function(options, stage){
   if(stage == "selection"){
     state <- list("sampleSize" = options[["sampleSize"]])
   } else if(stage == "evaluation"){
@@ -692,7 +691,7 @@
 ################## Common functions for containers #############################
 ################################################################################
 
-.jfa.stageContainer.add <- function(jaspResults, stage, position = 1){
+.jfaAddStageContainer <- function(jaspResults, stage, position = 1){
   
   if(stage == "procedure"){
     
@@ -881,8 +880,8 @@
 ################## Common functions for error checks ###########################
 ################################################################################
 
-.jfa.inputOptions.check <- function(options, dataset, parentContainer, stage,
-                                    ready = NULL, parentOptions = NULL){
+.jfaInputOptionsCheck <- function(options, dataset, parentContainer, stage,
+                                  ready = NULL, parentOptions = NULL){
   
   if(stage == "procedure"){
     
@@ -917,7 +916,7 @@
         parentContainer$setError(gettext("Analysis not possible: Your expected errors are higher than materiality."))
         return(TRUE)
       }
-      if(.jfa.auditRiskModel.calculation(options) >= 1){
+      if(.jfaAuditRiskModelCalculation(options) >= 1){
         # Error if the detection risk of the analysis is higher than one
         parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify your custom values for the Inherent risk and/or Control risk, or the confidence."))
         return(TRUE)
@@ -1007,7 +1006,7 @@
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
       parentContainer$setError(gettext("Your must specify unique transaction ID's. The row numbers of the data set are sufficient."))
       return(TRUE)
-    } else if(.jfa.auditRiskModel.calculation(options) >= 1){
+    } else if(.jfaAuditRiskModelCalculation(options) >= 1){
       # Error if the detection risk of the analysis is higher than one
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation summary"))
       parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk, or the confidence."))
@@ -1019,7 +1018,7 @@
   }
 }
 
-.jfa.readyForNextStage.check <- function(options, jaspResults, stage){
+.jfaReadyForNextStageCheck <- function(options, jaspResults, stage){
   if(stage == "procedure"){
     # Check whether any of the two sampling objectives is selected
     ready <- ((options[["performanceMateriality"]] && ((options[["materiality"]] == "materialityRelative" && options[["materialityPercentage"]] != 0) || (options[["materiality"]] == "materialityAbsolute" && options[["materialityValue"]] != 0))) || (options[["minimumPrecision"]] && options[["minimumPrecisionPercentage"]] != 0))
@@ -1037,7 +1036,7 @@
   return(ready)
 }
 
-.jfa.ready.check <- function(options, parentOptions, stage){
+.jfaReadyCheck <- function(options, parentOptions, stage){
   
   if(stage == "planning"){
     if(!(options[["performanceMateriality"]] || options[["minimumPrecision"]])){
@@ -1070,15 +1069,15 @@
 ################## Common functions for the explanatory text ###################
 ################################################################################
 
-.jfa.explanatoryText.add <- function(options, stageOptions, stageContainer, stageState,
-                                     jaspResults, stage, positionInContainer, prevState = NULL){
+.jfaAddExplanatoryText <- function(options, stageOptions, stageContainer, stageState,
+                                   jaspResults, stage, positionInContainer, prevState = NULL){
   
   if(options[["explanatoryText"]]){
     
     if(stage == "procedure"){
       
-      procedureContainer <- .jfa.stageContainer.add(jaspResults, stage = "procedure",
-                                                    position = 1)
+      procedureContainer <- .jfaAddStageContainer(jaspResults, stage = "procedure",
+                                                  position = 1)
       
       if(!options[["performanceMateriality"]] && !options[["minimumPrecision"]]){
         procedureText <- gettextf("Select one or more sampling objectives from the top left corner to begin planning an audit sample.\n\n%1$s <b>Test against a performance materiality</b>\n\nEnable this objective if you want to <i>test</i> whether the total misstatement in the population exceeds a certain limit (i.e., the performance materiality) based on a sample. This approach allows you to plan a sample such that, when the sample meets your expectations, the maximum error is said to be below performance materiality. In the evaluation you will be able to quantify the evidence that your sample contains for or against the statement that the population misstatement does not exceed the performance materiality.\n\n%2$s <b>Obtain a required minimum precision</b>\n\nEnable this objective if you want to obtain a required minimum precision when <i>estimating</i> the total misstatement in the population based on a sample. This approach allows you to plan a sample such that, when the sample meets expectations, the accuracy of your estimate is below a tolerable percentage. In the evaluation you will be able to quantify the accuracy of your estimate of the population misstatement.", "\u25CF", "\u25CF")
@@ -1267,8 +1266,8 @@
     } else if(stage == "conclusion"){
       
       # Import options and results from the planning and selection stages
-      planningOptions <- .jfa.inputOptions.collect(options, dataset = NULL, jaspResults,
-                                                   stage = "planning", rawData = TRUE)
+      planningOptions <- .jfaInputOptionsGather(options, dataset = NULL, jaspResults,
+                                                stage = "planning", rawData = TRUE)
       
       # Import result of analysis from jaspResults
       evaluationContainer   <- jaspResults[["evaluationContainer"]]
@@ -1351,14 +1350,14 @@
 ################## Common functions for the procedure stage ####################
 ################################################################################
 
-.jfa.bookvalueDescriptives.table <- function(options, parentOptions, jaspResults, positionInContainer){
+.jfaBookvalueDescriptivesTable <- function(options, parentOptions, jaspResults, positionInContainer){
   
-  parentContainer <- .jfa.stageContainer.add(jaspResults, stage = "procedure", position = 1)
+  parentContainer <- .jfaAddStageContainer(jaspResults, stage = "procedure", position = 1)
   
   if(!options[["bookValueDescriptives"]] || options[["monetaryVariable"]] == "")
     return()
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["bookValueDescriptives"]])){
     
@@ -1403,14 +1402,14 @@
   }
 }
 
-.jfa.bookvalueDescriptives.plot <- function(options, dataset, jaspResults, positionInContainer){
+.jfaBookvaluesDescriptivesPlot <- function(options, dataset, jaspResults, positionInContainer){
   
-  parentContainer <- .jfa.stageContainer.add(jaspResults, stage = "procedure", position = 1)
+  parentContainer <- .jfaAddStageContainer(jaspResults, stage = "procedure", position = 1)
   
   if(!options[["bookValueDistribution"]] || options[["monetaryVariable"]] == "")
     return()
   
-  .jfa.figureNumber.update(jaspResults)
+  .jfaFigureNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["bookValueDistribution"]])){
     
@@ -1484,7 +1483,7 @@
 ################## Common functions for the Audit Risk Model ###################
 ################################################################################
 
-.jfa.auditRiskModel.calculation <- function(options){
+.jfaAuditRiskModelCalculation <- function(options){
   
   # Audit risk 		= Inherent risk x Control risk x Detection risk
   # Detection risk 	= Audit risk / (Inherent risk x Control risk)
@@ -1497,7 +1496,7 @@
   return(detectionRisk)
 }
 
-.jfa.auditRiskModel.add <- function(options, jaspResults, position){
+.jfaAddAuditRiskModel <- function(options, jaspResults, position){
   
   if(!is.null(jaspResults[["ARMcontainer"]]) || (!options[["performanceMateriality"]] && !options[["minimumPrecision"]]))
     return()
@@ -1576,7 +1575,7 @@
 ################## Common functions for the planning stage #####################
 ################################################################################
 
-.jfa.planning.state <- function(options, parentOptions, parentContainer, ready, jaspResults){
+.jfaPlanningState <- function(options, parentOptions, parentContainer, ready, jaspResults){
   
   if(!is.null(parentContainer[["planningState"]])){
     
@@ -1585,7 +1584,7 @@
   } else if(ready && !parentContainer$getError()){
     
     if(options[["workflow"]])
-      dataset <- .jfa.dataset.read(options, jaspResults, stage = "procedure")
+      dataset <- .jfaReadData(options, jaspResults, stage = "procedure")
     
     minPrecision <- NULL
     if(options[["minimumPrecision"]])
@@ -1649,7 +1648,7 @@
         
         if(options[["separateKnownAndUnknownMisstatement"]] && options[["monetaryVariable"]] != ""){
           
-          .jfa.separatedMisstatementPlanning.state(options, dataset, prior, parentOptions)
+          .jfaSeparatedMisstatementPlanningState(options, dataset, prior, parentOptions)
           
         } else {
           
@@ -1713,10 +1712,10 @@
   }
 }
 
-.jfa.planning.table <- function(options, parentOptions, parentState, parentContainer, jaspResults,
-                                ready, positionInContainer){
+.jfaPlanningTable <- function(options, parentOptions, parentState, parentContainer, jaspResults,
+                              ready, positionInContainer){
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(!is.null(parentContainer[["summaryTable"]]))
     return()
@@ -1901,12 +1900,12 @@
   }
 }
 
-.jfa.criticalTransactions.init <- function(options, jaspResults){
+.jfaCriticalTransactionsInit <- function(options, jaspResults){
   
   if(options[["recordNumberVariable"]] == "" || options[["monetaryVariable"]] == "" || options[["criticalTransactions"]] == "")
     return()
   
-  dataset <- .jfa.dataset.read(options, jaspResults, stage = "procedure")
+  dataset <- .jfaReadData(options, jaspResults, stage = "procedure")
   
   if(options[["flagCriticalTransactions"]]){
     criticalTransactions <- rep(0, nrow(dataset))
@@ -1922,13 +1921,13 @@
   jaspResults[["criticalTransactions"]]$setScale(criticalTransactions)
 }
 
-.jfa.criticalTransactions.add <- function(options, sample){
+.jfaAddCriticalTransactions <- function(options, sample){
   
   if(options[["workflow"]] && options[["flagCriticalTransactions"]] && options[["handleCriticalTransactions"]] == "inspect" && options[["criticalTransactions"]] != ""){
     
-    monetaryVariable <- .jfa.variable.read(options, varType = "monetary")
-    auditResult <- .jfa.variable.read(options, varType = "auditResult")
-    criticalVariable <- .jfa.variable.read(options, varType = "critical")
+    monetaryVariable <- .jfaReadVariableFromOptions(options, varType = "monetary")
+    auditResult <- .jfaReadVariableFromOptions(options, varType = "auditResult")
+    criticalVariable <- .jfaReadVariableFromOptions(options, varType = "critical")
     variables <- c(monetaryVariable, auditResult, criticalVariable)
     
     criticalTransactions <- .readDataSetToEnd(columns.as.numeric = variables)
@@ -1949,8 +1948,8 @@
   }
 }
 
-.jfa.sampleSize.plot <- function(options, parentOptions, parentState, parentContainer, jaspResults,
-                                 ready, positionInContainer){
+.jfaSampleSizePlot <- function(options, parentOptions, parentState, parentContainer, jaspResults,
+                               ready, positionInContainer){
   
   if(!options[["decisionPlot"]])
     return()
@@ -1964,7 +1963,7 @@
   if(!options[["priorConstructionMethod"]] %in% c("none", "arm", "sample", "factor"))
     return()
   
-  .jfa.figureNumber.update(jaspResults)
+  .jfaFigureNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["decisionPlot"]])){
     
@@ -1979,7 +1978,7 @@
     
     confidence <- options[["confidence"]]
     if(!options[["bayesianAnalysis"]])
-      confidence <- 1 - .jfa.auditRiskModel.calculation(options)
+      confidence <- 1 - .jfaAuditRiskModelCalculation(options)
     
     minPrecision <- NULL
     if(options[["minimumPrecision"]])
@@ -2170,13 +2169,13 @@
   }
 }
 
-.jfa.samplingDistribution.plot <- function(options, parentOptions, parentState, parentContainer, jaspResults,
-                                           ready, positionInContainer){
+.jfaSamplingDistributionPlot <- function(options, parentOptions, parentState, parentContainer, jaspResults,
+                                         ready, positionInContainer){
   
   if(!options[["samplingDistribution"]])
     return()
   
-  .jfa.figureNumber.update(jaspResults)
+  .jfaFigureNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["samplingDistribution"]])){
     
@@ -2260,12 +2259,12 @@
 ################## Common functions for the selection stage ####################
 ################################################################################
 
-.jfa.selectionResult.add <- function(options, jaspResults){
+.jfaAddSelectionResult <- function(options, jaspResults){
   
-  dataset <- .jfa.dataset.read(options, jaspResults, stage = "procedure")
+  dataset <- .jfaReadData(options, jaspResults, stage = "procedure")
   
-  rankingVariable <- .jfa.variable.read(options, varType = "ranking")
-  additionalVariables <- .jfa.variable.read(options, varType = "additional")
+  rankingVariable <- .jfaReadVariableFromOptions(options, varType = "ranking")
+  additionalVariables <- .jfaReadVariableFromOptions(options, varType = "additional")
   additionalVariables <- additionalVariables[!(additionalVariables%in%.unv(colnames(dataset)))]
   if(length(additionalVariables) == 0)
     additionalVariables <- NULL
@@ -2279,7 +2278,7 @@
   }
 }
 
-.jfa.selectionIndicator.add <- function(options, prevOptions, parentState, jaspResults){
+.jfaAddSelectionIndicator <- function(options, prevOptions, parentState, jaspResults){
   
   if(!options[["addSampleIndicator"]] || options[["sampleIndicatorColumn"]] == "")
     return()
@@ -2329,7 +2328,7 @@
   }
 }
 
-.jfa.selection.state <- function(options, dataset, prevState, parentContainer){
+.jfaSelectionState <- function(options, dataset, prevState, parentContainer){
   
   if(!is.null(parentContainer[["selectionState"]])){
     
@@ -2338,14 +2337,14 @@
   } else if(!is.null(prevState)){
     
     result <- try({
-      .jfa.selection.calculation(options, dataset, prevState, parentContainer)
+      .jfaSelectionCalculation(options, dataset, prevState, parentContainer)
     })
     
     if(isTryError(result)){
       if(options[["selectionType"]] == "musSampling"){
         # MUS has failed for some reason, fall back to record sampling
         result <- try({
-          .jfa.selection.calculation(options, dataset, prevState, parentContainer, unitsExtra = "records")
+          .jfaSelectionCalculation(options, dataset, prevState, parentContainer, unitsExtra = "records")
         })
       }
       if(isTryError(result)){
@@ -2362,7 +2361,7 @@
   }
 }
 
-.jfa.selection.calculation <- function(options, dataset, prevState, parentContainer, unitsExtra = NULL){
+.jfaSelectionCalculation <- function(options, dataset, prevState, parentContainer, unitsExtra = NULL){
   
   if(options[["recordNumberVariable"]] == "")
     return(NULL)
@@ -2426,10 +2425,10 @@
   return(sample)
 }
 
-.jfa.selection.table <- function(options, dataset, prevOptions, prevState, parentState, parentContainer,
-                                 jaspResults, positionInContainer){
+.jfaSelectionTable <- function(options, dataset, prevOptions, prevState, parentState, parentContainer,
+                               jaspResults, positionInContainer){
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(!is.null(parentContainer[["selectionInformationTable"]]))
     return()
@@ -2501,15 +2500,15 @@
   table$addRows(row)
 }
 
-.jfa.selectionInterval.table <- function(options, dataset, prevOptions, prevState, parentContainer,
-                                         parentState, jaspResults, positionInContainer){
+.jfaSelectionIntervalTable <- function(options, dataset, prevOptions, prevState, parentContainer,
+                                       parentState, jaspResults, positionInContainer){
   
   if(options[["recordNumberVariable"]] == "")
     return()
   
   if(options[["selectionType"]] == "musSampling" && options[["selectionMethod"]] != "randomSampling"){
     
-    .jfa.tableNumber.update(jaspResults)
+    .jfaTableNumberUpdate(jaspResults)
     
     if(!is.null(parentContainer[["stratumTable"]]))
       return()
@@ -2575,13 +2574,13 @@
   }
 }
 
-.jfa.selectionSample.table <- function(options, prevOptions, parentState, parentContainer, jaspResults,
-                                       positionInContainer){
+.jfaSelectionSampleTable <- function(options, prevOptions, parentState, parentContainer, jaspResults,
+                                     positionInContainer){
   
   if(!options[["displaySample"]])
     return()
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["selectionSampleTable"]])){
     
@@ -2594,10 +2593,10 @@
                                "samplingChecked",
                                "evaluationChecked"))
     
-    recordNumberVariable  <- .jfa.variable.read(options, varType = "recordNumber")
-    monetaryVariable      <- .jfa.variable.read(options, varType = "monetary")
-    rankingVariable       <- .jfa.variable.read(options, varType = "ranking")
-    additionalVariables   <- .jfa.variable.read(options, varType = "additional")
+    recordNumberVariable  <- .jfaReadVariableFromOptions(options, varType = "recordNumber")
+    monetaryVariable      <- .jfaReadVariableFromOptions(options, varType = "monetary")
+    rankingVariable       <- .jfaReadVariableFromOptions(options, varType = "ranking")
+    additionalVariables   <- .jfaReadVariableFromOptions(options, varType = "additional")
     columnNames           <- c("Row number", "Count", unique(c(recordNumberVariable, monetaryVariable, 
                                                                rankingVariable, additionalVariables)))
     
@@ -2628,20 +2627,20 @@
   }
 }
 
-.jfa.selectionDescriptives.table <- function(options, parentState, parentContainer, jaspResults,
-                                             positionInContainer){
+.jfaSelectionDescriptivesTable <- function(options, parentState, parentContainer, jaspResults,
+                                           positionInContainer){
   
   if(!options[["sampleDescriptives"]])
     return()
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["sampleDescriptivesTable"]])){
     
-    recordVariable 		<- .jfa.variable.read(options, varType = "record")
-    rankingVariable 	<- .jfa.variable.read(options, varType = "ranking")
-    monetaryVariable 	<- .jfa.variable.read(options, varType = "monetary")
-    additionalVariables <- .jfa.variable.read(options, varType = "additional")
+    recordVariable 		<- .jfaReadVariableFromOptions(options, varType = "record")
+    rankingVariable 	<- .jfaReadVariableFromOptions(options, varType = "ranking")
+    monetaryVariable 	<- .jfaReadVariableFromOptions(options, varType = "monetary")
+    additionalVariables <- .jfaReadVariableFromOptions(options, varType = "additional")
     variables 			<- unique(c(rankingVariable, monetaryVariable, additionalVariables))
     
     title <- gettextf("<b>Table %1$i.</b> Descriptive Statistics for Selected Transactions",
@@ -2702,9 +2701,9 @@
 ################## Common functions for the evaluation #########################
 ################################################################################
 
-.jfa.evaluationResult.add <- function(options, jaspResults){
+.jfaAddEvaluationResult <- function(options, jaspResults){
   
-  dataset <- .jfa.selectionResult.add(options, jaspResults)
+  dataset <- .jfaAddSelectionResult(options, jaspResults)
   
   sampleFilter 	<- options[["sampleFilter"]]
   auditResult 	<- options[["auditResult"]]
@@ -2720,7 +2719,7 @@
   }
 }
 
-.jfa.evaluation.state <- function(options, sample, prevOptions, parentContainer, prevState){
+.jfaEvaluationState <- function(options, sample, prevOptions, parentContainer, prevState){
   
   if(options[["auditResult"]] == "")
     return()
@@ -2732,7 +2731,7 @@
   } else {
     
     # Add critical transactions to the sample
-    sample <- .jfa.criticalTransactions.add(options, sample)
+    sample <- .jfaAddCriticalTransactions(options, sample)
     
     auditRisk <- 1 - options[["confidence"]]
     prior <- NULL
@@ -2768,8 +2767,8 @@
       
       if(options[["separateKnownAndUnknownMisstatement"]] && options[["monetaryVariable"]] != ""){
         
-        result <- .jfa.separatedMisstatementEvaluation.state(options, sample, prior, prevOptions,
-                                                             prevState, parentContainer)
+        result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior, prevOptions,
+                                                           prevState, parentContainer)
         
         return(result)
       }
@@ -2813,7 +2812,7 @@
       if(options[["bayesianAnalysis"]] && method == "regression"){
         
         result <- try({
-          .jfa.bayesRegression.calculation(options, sample, prevOptions)
+          .jfaBayesianRegressionCalculation(options, sample, prevOptions)
         })
         
       } else {
@@ -2853,8 +2852,8 @@
   }
 }
 
-.jfa.explanatoryTextEvaluation.add <- function(options, planningOptions, planningState, selectionState,
-                                               evaluationContainer, positionInContainer = 1){
+.jfaAddExplanatoryTextEvaluation <- function(options, planningOptions, planningState, selectionState,
+                                             evaluationContainer, positionInContainer = 1){
   
   if(options[["explanatoryText"]]){
     
@@ -2945,7 +2944,7 @@
   }
 }
 
-.jfa.previousStagePlanning.state <- function(options, dataset, evaluationOptions){
+.jfaGetPreviousPlanningStateFromOptions <- function(options, dataset, evaluationOptions){
   
   if(((options[["variableType"]] == "variableTypeAuditValues" && options[["recordNumberVariable"]] != "" && options[["monetaryVariable"]] != "" && options[["auditResult"]] != "") ||
       (options[["variableType"]] == "variableTypeCorrect" && options[["recordNumberVariable"]] != "" && options[["auditResult"]] != "") ||
@@ -2998,7 +2997,7 @@
       
       if(options[["separateKnownAndUnknownMisstatement"]] && options[["monetaryVariable"]] != "" && options[["auditResult"]] != ""){
         
-        result <- .jfa.separatedMisstatementPlanning.state(options, dataset, prior, evaluationOptions)
+        result <- .jfaSeparatedMisstatementPlanningState(options, dataset, prior, evaluationOptions)
         return(result)
       }
       
@@ -3027,10 +3026,10 @@
   }
 }
 
-.jfa.evaluationAnalysis.state <- function(options,
-                                          sample,
-                                          planningOptions,
-                                          evaluationContainer){
+.jfaEvaluationAnalysisState <- function(options,
+                                        sample,
+                                        planningOptions,
+                                        evaluationContainer){
   
   
   # Check whether there is enough data to perform an analysis
@@ -3165,7 +3164,7 @@
         
         result <- try({
           
-          .jfa.bayesRegression.calculation(options, sample, planningOptions)
+          .jfaBayesianRegressionCalculation(options, sample, planningOptions)
           
         })
         
@@ -3173,8 +3172,8 @@
         
         if(options[["separateKnownAndUnknownMisstatement"]] && options[["monetaryVariable"]] != "" && options[["auditResult"]] != ""){
           
-          result <- .jfa.separatedMisstatementEvaluation.state(options, sample, prior,
-                                                               planningOptions, selectionState, evaluationContainer)
+          result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior,
+                                                             planningOptions, selectionState, evaluationContainer)
           
           return(result)
         }
@@ -3228,10 +3227,10 @@
   }
 }
 
-.jfa.evaluation.table <- function(options, prevOptions, parentState, parentContainer, jaspResults,
-                                  positionInContainer){
+.jfaEvaluationTable <- function(options, prevOptions, parentState, parentContainer, jaspResults,
+                                positionInContainer){
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(!is.null(parentContainer[["evaluationTable"]]))
     return()
@@ -3269,7 +3268,7 @@
   
   if(!options[["bayesianAnalysis"]]){
     auditRisk 		<- 1 - options[["confidence"]]
-    detectionRisk 	<- .jfa.auditRiskModel.calculation(options)
+    detectionRisk 	<- .jfaAuditRiskModelCalculation(options)
     title <- gettextf("%1$s%% Upper bound", round((1 - detectionRisk) * 100, 2))
     table$addColumnInfo(name = 'bound', title = title, type = 'string')
   } else if(options[["bayesianAnalysis"]]){
@@ -3337,7 +3336,7 @@
   
   if(options[["bayesianAnalysis"]] && options[["areaUnderPosterior"]] == "displayCredibleInterval"){
     
-    credibleInterval 	<- .jfa.credibleInterval.calculation(options, parentState)
+    credibleInterval 	<- .jfaCredibleIntervalCalculation(options, parentState)
     lowerBound 			<- credibleInterval[["lowerBound"]]
     upperBound 			<- credibleInterval[["upperBound"]]
     
@@ -3433,13 +3432,13 @@
   table$addRows(row)
 }
 
-.jfa.assumptionCheck.table <- function(options, sample, parentContainer, jaspResults,
-                                       positionInContainer = 3){
+.jfaAssumptionCheckTable <- function(options, sample, parentContainer, jaspResults,
+                                     positionInContainer = 3){
   
   if(!options[["evaluationAssumptionChecks"]] || !options[["separateKnownAndUnknownMisstatement"]] || options[["monetaryVariable"]] == "")
     return()
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   title <- gettextf("<b>Table %1$i.</b> Assumption Checks", jaspResults[["tabNumber"]]$object)
   table <- createJaspTable(title)
@@ -3473,7 +3472,7 @@
   lCi   	<- as.numeric(test[["conf.int"]])[1]
   uCi   	<- as.numeric(test[["conf.int"]])[2]
   pval    <- test[["p.value"]]
-  bf10 	<- try({ 1 / .jfa.bayesCorrelation.calculation(r = est, n = nrow(sample))})
+  bf10 	<- try({ 1 / .jfaBayesianCorrelationCalculation(r = est, n = nrow(sample))})
   
   if(isTryError(bf10)){
     bf10 <- NA
@@ -3491,13 +3490,13 @@
   table$addRows(row)
 }
 
-.jfa.samplingObjectives.plot <- function(options, prevOptions, parentState, parentContainer, jaspResults,
-                                         positionInContainer = 3){
+.jfaSamplingObjectivesPlot <- function(options, prevOptions, parentState, parentContainer, jaspResults,
+                                       positionInContainer = 3){
   
   if(!options[["evaluationInformation"]])
     return()
   
-  .jfa.figureNumber.update(jaspResults)
+  .jfaFigureNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["evaluationInformation"]])){
     
@@ -3611,7 +3610,7 @@
   }
 }
 
-.jfa.correlationLine.add <- function(fit, plot = NULL, xMin, xMax, lwd) {
+.jfaAddCorrelationLineToPlot <- function(fit, plot = NULL, xMin, xMax, lwd) {
   # create function formula
   f <- vector("character", 0)
   for (i in seq_along(coef(fit))) {
@@ -3632,13 +3631,13 @@
   return(plot)
 }
 
-.jfa.correlation.plot <- function(options, sample, prevOptions, parentContainer, jaspResults,
-                                  positionInContainer){
+.jfaCorrelationPlot <- function(options, sample, prevOptions, parentContainer, jaspResults,
+                                positionInContainer){
   
   if(!options[["correlationPlot"]])
     return()
   
-  .jfa.figureNumber.update(jaspResults)
+  .jfaFigureNumberUpdate(jaspResults)
   
   if(is.null(parentContainer[["correlationPlot"]])){
     
@@ -3690,7 +3689,7 @@
                         size = 4, hjust = 0, vjust = -0.5, fontface = "italic")
     
     if(options[["correlationPlotShowCorrelation"]]){
-      plot <- .jfa.correlationLine.add(fit = fit[[bestModel]], plot = plot, xMin = minTicks, xMax = maxTicks, lwd = 1)
+      plot <- .jfaAddCorrelationLineToPlot(fit = fit[[bestModel]], plot = plot, xMin = minTicks, xMax = maxTicks, lwd = 1)
       plot <- plot + ggplot2::annotate("text", x = ticks[1], y = (ticks[length(ticks)] - ((ticks[length(ticks)] - ticks[length(ticks) - 1]) / 2)),
                                        label = paste0("italic(r) == ", corResult), size = 8, parse = TRUE, hjust = -0.5, vjust = 0.5)
     }
@@ -3722,7 +3721,7 @@
 ################## Common functions for the conclusion #########################
 ################################################################################
 
-.jfa.additionalSamples.table <- function(options, jaspResults, positionInContainer = 2){
+.jfaAdditionalSamplesTable <- function(options, jaspResults, positionInContainer = 2){
   
   if(!options[["bayesianAnalysis"]] || !options[["additionalSamples"]])
     return()
@@ -3759,7 +3758,7 @@
   if(options[["separateKnownAndUnknownMisstatement"]])
     return() # temporarily
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   title <- gettextf("<b>Table %i.</b> Suggested Sample Extension to Achieve Objectives",
                     jaspResults[["tabNumber"]]$object)
@@ -3781,7 +3780,7 @@
   if(parentContainer$getError())
     return()
   
-  prevOptions <- .jfa.inputOptions.collect(options, dataset = NULL, jaspResults, stage = "planning", rawData = TRUE)
+  prevOptions <- .jfaInputOptionsGather(options, dataset = NULL, jaspResults, stage = "planning", rawData = TRUE)
   
   minPrecision <- NULL
   if(options[["minimumPrecision"]])
@@ -3898,7 +3897,7 @@
 ################## Common functions for the separate misstatement methods ######
 ################################################################################
 
-.jfa.separatedMisstatementPlanning.state <- function(options, dataset, prior, parentOptions){
+.jfaSeparatedMisstatementPlanningState <- function(options, dataset, prior, parentOptions){
   
   # Plan a sample for the efficiency technique Separate known and unknown misstatement
   for(n in seq(5, nrow(dataset), by = options[["sampleSizeIncrease"]])){
@@ -3984,7 +3983,7 @@
   return(result)
 }
 
-.jfa.separatedMisstatementEvaluation.state <- function(options, sample, prior, prevOptions, prevState, parentContainer){
+.jfaSeparatedMisstatementEvaluationState <- function(options, sample, prior, prevOptions, prevState, parentContainer){
   
   k <- length(which(sample[, .v(options[["monetaryVariable"]])] != sample[, .v(options[["auditResult"]])]))
   if(options[["workflow"]]){

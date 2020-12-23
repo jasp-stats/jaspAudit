@@ -21,36 +21,36 @@
 auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   
   # Read in the data 
-  dataset <- .jfa.estimation.read(dataset, options)
+  dataset <- .jfaEstimationReadData(dataset, options)
   
   # Perform early error checks
-  .jfa.estimation.check(dataset, options)
+  .jfaEstimationDataCheck(dataset, options)
   
   # Ready for analysis
-  ready <- .jfa.estimationReady.check(options)
+  ready <- .jfaEstimationReadyCheck(options)
   
   # Create explanatory text
-  .jfa.estimationText.add(dataset, options, jaspResults, ready, position = 1)
+  .jfaEstimationAddText(dataset, options, jaspResults, ready, position = 1)
   
   # --- TABLES
   
   # Create results table
-  .jfa.estimation.table(dataset, options, jaspResults, ready, position = 2)
+  .jfaEstimationTable(dataset, options, jaspResults, ready, position = 2)
   
   # Required sample size table
-  .jfa.estimationSampleSize.table(dataset, options, jaspResults, ready, position = 3)
+  .jfaEstimationSampleSizeTable(dataset, options, jaspResults, ready, position = 3)
   
   # ---
   
   # --- PLOTS
   
   # Correlation plot
-  .jfa.estimationCorrelation.plot(dataset, options, jaspResults, ready, position = 4)
+  .jfaEstimationCorrelationPlot(dataset, options, jaspResults, ready, position = 4)
   
   # ---
 }
 
-.jfa.estimation.read <- function(dataset, options){
+.jfaEstimationReadData <- function(dataset, options){
   
   bookValues <- options[["bookValues"]]
   if(bookValues == "")  
@@ -67,7 +67,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   return(dataset)
 }
 
-.jfa.estimation.check <- function(dataset, options){
+.jfaEstimationDataCheck <- function(dataset, options){
   
   variables <- NULL
   
@@ -85,7 +85,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
              exitAnalysisIfErrors = TRUE)
 }
 
-.jfa.estimationReady.check <- function(options){
+.jfaEstimationReadyCheck <- function(options){
   
   if(options[["estimator"]] == "mpu"){
     
@@ -101,7 +101,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.estimation.table <- function(dataset, options, jaspResults, ready, position){
+.jfaEstimationTable <- function(dataset, options, jaspResults, ready, position){
   
   if(!is.null(jaspResults[["regressionTable"]])) 
     return()
@@ -284,7 +284,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   jaspResults[["result"]] <- createJaspState(result)
 }
 
-.jfa.estimationText.add <- function(dataset, options, jaspResults, ready, position){
+.jfaEstimationAddText <- function(dataset, options, jaspResults, ready, position){
   
   if(options[["explanatoryText"]] || !is.null(jaspResults[["calculationsContainer"]])){
     
@@ -684,7 +684,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.estimationSampleSize.table <- function(dataset, options, jaspResults, ready, position){
+.jfaEstimationSampleSizeTable <- function(dataset, options, jaspResults, ready, position){
   
   if(!is.null(jaspResults[["requiredSampleSizeTable"]]) || 
      !options[["requiredSampleSizeTable"]]) return()
@@ -748,7 +748,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   
 }
 
-.jfa.estimationCorrelation.plot <- function(dataset, options, jaspResults, ready, position){
+.jfaEstimationCorrelationPlot <- function(dataset, options, jaspResults, ready, position){
   
   if(!is.null(jaspResults[["correlationPlot"]]) || 
      !options[["correlationPlot"]] || 
@@ -806,11 +806,11 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                                 labels = yLabs) + 
     jaspGraphs::geom_point(size = 3, fill = cols)
   
-  p <- .jfa.correlationLine.add(fit = fit[[bestModel]], 
-                                plot = p, 
-                                xMin= xticks[1], 
-                                xMax = xticks[length(xticks)], 
-                                lwd = 1)
+  p <- .jfaAddCorrelationLineToPlot(fit = fit[[bestModel]], 
+                                    plot = p, 
+                                    xMin= xticks[1], 
+                                    xMax = xticks[length(xticks)], 
+                                    lwd = 1)
   p <- p + ggplot2::annotate("text", x = xticks[1], y = (yticks[length(yticks)] - ((yticks[length(yticks)] - yticks[length(yticks) - 1]) / 2)),
                              label = paste0("italic(r) == ", co), size = 8, parse = TRUE, hjust = -0.5, vjust = 0.5)
   p <- p + ggplot2::theme(panel.grid.major.x = ggplot2::element_line(color="#cbcbcb"), panel.grid.major.y = ggplot2::element_line(color="#cbcbcb"))

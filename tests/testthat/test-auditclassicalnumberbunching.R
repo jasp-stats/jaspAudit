@@ -21,7 +21,7 @@ test_that("<b>Table 2.</b> Assumption Checks results match", {
   jaspTools::expect_equal_tables(table,
                                  list(0.0235054850952473, "-", 1598, 1600, 0.34741538358077, 0.939891267447534,
                                       "Integer values", "Decimal values", -0.960281111669023, "-",
-                                      998, 1000, 0, -108.7191221832, "Average frequency", "Entropy"
+                                      998, 1000, 0, -108.7191221832, "Samples frequency", "Samples entropy"
                                  ))
 })
 
@@ -76,8 +76,8 @@ test_that("<b>Table 2.</b> Assumption Checks results match", {
   jaspTools::expect_equal_tables(table,
                                  list(-0.124707157162072, "-", 3233, 3235, 1.09474735289137e-12, -7.14657265617445,
                                       "Integer values", "Decimal values", -0.832179912262436, "-",
-                                      998, 1000, 7.94464781314267e-258, -47.4107110066442, "Average frequency",
-                                      "Entropy"))
+                                      998, 1000, 7.94464781314267e-258, -47.4107110066442, "Samples frequency",
+                                      "Samples entropy"))
 })
 
 test_that("Histogram of Individual Values plot matches", {

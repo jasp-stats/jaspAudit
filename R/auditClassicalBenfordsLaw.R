@@ -21,60 +21,56 @@
 auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   
   # Create the procedure paragraph
-  .jfa.benfordsLawProcedure.add(options, jaspResults, position = 1)
+  .jfaBenfordsLawAddProcedure(options, jaspResults, position = 1)
   
   # Read in the data 
-  dataset <- .jfa.benfordsLaw.read(dataset, options)
+  dataset <- .jfaBenfordsLawReadData(dataset, options)
   
   # Perform early error checks
-  .jfa.benfordsLaw.check(dataset, options)
+  .jfaBenfordsLawDataCheck(dataset, options)
   
   # Ready for analysis
-  ready <- .jfa.benfordsLawReady.check(options)
+  ready <- .jfaBenfordsLawReadyCheck(options)
   
-  benfordsLawContainer <- .jfa.benfordsLaw.stage(options, jaspResults, position = 2)
+  benfordsLawContainer <- jfaBenfordsLawStage(options, jaspResults, position = 2)
   
   # --- TABLES
   
-  .jfa.tableNumber.add(jaspResults) # Initialize table numbers
+  .jfaTableNumberInit(jaspResults) # Initialize table numbers
   
   # Create the goodness-of-fit table
-  .jfa.benfordsLaw.table(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 1)
+  jfaBenfordsLawTable(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 1)
   
   # Create the observed and predicted probabilities table                                  
-  .jfa.benfordsLawDescriptives.table(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 2)
+  .jfaBenfordsLawDescriptivesTable(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 2)
   
   # ---
   
   # --- PLOTS
   
-  .jfa.figureNumber.add(jaspResults) # Initialize figure numbers
+  .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
   
   # Create the observed and predicted probabilities plot
-  .jfa.benfordsLaw.plot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 3)
+  .jfaBenfordsLawPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 3)
   
   # ---
   
   # Create the conclusion paragraph
-  .jfa.benfordsLawConclusion.add(options, benfordsLawContainer, jaspResults, ready, position = 3)
+  .jfaBenfordsLawAddConclusion(options, benfordsLawContainer, jaspResults, ready, position = 3)
   
   # ---
 }
 
-.jfa.benfordsLaw.read <- function(dataset, 
-                                  options){
-  
+.jfaBenfordsLawReadData <- function(dataset, options){
   if (!is.null(dataset)) return(dataset)
-  
   values <- options[["values"]]
   if(values == "")  
     values <- NULL
-  
   dataset <- .readDataSetToEnd(columns.as.numeric = values, exclude.na.listwise = values)
   return(dataset)
 }
 
-.jfa.benfordsLawProcedure.add <- function(options, jaspResults, position){
+.jfaBenfordsLawAddProcedure <- function(options, jaspResults, position){
   
   if(options[["explanatoryText"]] && 
      is.null(jaspResults[["procedureContainer"]])){
@@ -110,7 +106,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.benfordsLaw.check <- function(dataset, options){
+.jfaBenfordsLawDataCheck <- function(dataset, options){
   
   values <- NULL
   if(options[["values"]] != "")
@@ -124,14 +120,14 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
              exitAnalysisIfErrors = TRUE)
 }
 
-.jfa.benfordsLawReady.check <- function(options){
+.jfaBenfordsLawReadyCheck <- function(options){
   
   ready <- options[["values"]] != "" 
   return(ready)
   
 }
 
-.jfa.benfordsLaw.stage <- function(options, jaspResults, position){
+jfaBenfordsLawStage <- function(options, jaspResults, position){
   
   containerTitle <- base::switch(options[["distribution"]],
                                  "benford" = gettext("<u>Assessing Benford's Law</u>"),
@@ -148,7 +144,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   return(benfordsLawContainer)
 }
 
-.jfa.benfordsLaw.state <- function(dataset, options, benfordsLawContainer, ready){
+.jfaBenfordsLawState <- function(dataset, options, benfordsLawContainer, ready){
   
   if(!is.null(benfordsLawContainer[["result"]])){
     
@@ -222,10 +218,10 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.benfordsLaw.table <- function(dataset, options, benfordsLawContainer, 
-                                   jaspResults, ready, positionInContainer){
+jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer, 
+                                jaspResults, ready, positionInContainer){
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(!is.null(benfordsLawContainer[["benfordsLawTestTable"]])) 
     return()
@@ -283,7 +279,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
     return()
   }
   
-  state <- .jfa.benfordsLaw.state(dataset, options, benfordsLawContainer, ready)
+  state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
   
   row <- data.frame(test = gettext("Chi-square"), 
                     measure = gettextf("X%1$s", "\u00B2"), 
@@ -294,13 +290,13 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   benfordsLawTestTable$addRows(row)
 }
 
-.jfa.benfordsLawDescriptives.table <- function(dataset, options, benfordsLawContainer, 
-                                               jaspResults, ready, positionInContainer){
+.jfaBenfordsLawDescriptivesTable <- function(dataset, options, benfordsLawContainer, 
+                                             jaspResults, ready, positionInContainer){
   
   if(!options[["summaryTable"]])
     return()
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(is.null(benfordsLawContainer[["benfordsLawTable"]])){
     
@@ -355,7 +351,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
       return()
     } 
     
-    state <- .jfa.benfordsLaw.state(dataset, options, benfordsLawContainer, ready)
+    state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
     
     percentagesLabel <- paste0(round(state[["percentages"]] * 100, 2), "%")
     inBenfordLabel <- paste0(round(state[["inBenford"]] * 100, 2), "%")
@@ -369,13 +365,13 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.benfordsLaw.plot <- function(dataset, options, benfordsLawContainer, 
-                                  jaspResults, ready, positionInContainer){
+.jfaBenfordsLawPlot <- function(dataset, options, benfordsLawContainer, 
+                                jaspResults, ready, positionInContainer){
   
   if(!options[["benfordsLawPlot"]])
     return()
   
-  .jfa.figureNumber.update(jaspResults)
+  .jfaFigureNumberUpdate(jaspResults)
   
   if(is.null(benfordsLawContainer[["benfordsLawPlot"]])){
     
@@ -399,7 +395,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
       lineSize      <- 1.2
     }
     
-    state <- .jfa.benfordsLaw.state(dataset, options, benfordsLawContainer, ready)
+    state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
     
     legendName <- base::switch(options[["distribution"]], "benford" = gettext("Benford's law"), "uniform" = gettext("Uniform distribution"))
     
@@ -471,8 +467,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.benfordsLawConclusion.add <- function(options, benfordsLawContainer, jaspResults,
-                                           ready, position){
+.jfaBenfordsLawAddConclusion <- function(options, benfordsLawContainer, jaspResults,
+                                         ready, position){
   
   if(!is.null(jaspResults[["conclusionContainer"]]) || !ready || !options[["explanatoryText"]])
     return()
@@ -487,7 +483,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   
   confidenceLabel <- paste0(round(options[["confidence"]] * 100, 2), "%")
   
-  state <- .jfa.benfordsLaw.state(dataset, options, benfordsLawContainer, ready)
+  state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
   
   approve <- state[["pvalue"]] >= (1 - options[["confidence"]])
   

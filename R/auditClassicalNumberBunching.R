@@ -24,56 +24,56 @@
 auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   
   # Create the procedure paragraph
-  .jfa.numberBunchingProcedure.add(options, jaspResults, position = 1)
+  .jfaNumberBunchingAddProcedure(options, jaspResults, position = 1)
   
   # Read in the data 
-  dataset <- .jfa.benfordsLaw.read(dataset, options)
+  dataset <- .jfaBenfordsLawReadData(dataset, options)
   
   # Perform early error checks
-  .jfa.benfordsLaw.check(dataset, options)
+  .jfaBenfordsLawDataCheck(dataset, options)
   
   # Ready for analysis
-  ready <- .jfa.benfordsLawReady.check(options)
+  ready <- .jfaBenfordsLawReadyCheck(options)
   
-  numberBunchingContainer <- .jfa.numberBunching.stage(options, jaspResults, position = 2)
+  numberBunchingContainer <- .jfaNumberBunchingStage(options, jaspResults, position = 2)
   
   # --- TABLES
   
-  .jfa.tableNumber.add(jaspResults) # Initialize table numbers
+  .jfaTableNumberInit(jaspResults) # Initialize table numbers
   
   # Create the goodness-of-fit table
-  .jfa.numberBunching.table(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 1)
+  .jfaNumberBunchingTable(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 1)
   
   # Create the correlation table
-  .jfa.numberBunchingCorrelation.table(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 2)
+  .jfaNumberBunchingCorrelationTable(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 2)
   
   # Create the observed counts table                                
-  .jfa.numberBunchingDescriptives.table(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 3)
+  .jfaNumberBunchingDescriptivesTable(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 3)
   
   # ---
   
   # --- PLOTS
   
-  .jfa.figureNumber.add(jaspResults) # Initialize figure numbers
+  .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
   
   # Create the observed versus expected average frequency plot
-  .jfa.numberBunchingFrequency.plot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 4)
+  .jfaNumberBunchingFrequencyPlot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 4)
   
   # Create the observed versus expected entropy plot
-  .jfa.numberBunchingEntropy.plot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 5)
+  .jfaNumberBunchingEntropyPlot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 5)
   
   # Create the frequency plot of individual values
-  .jfa.numberBunchingHistogram.plot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 6)
+  .jfaNumberBunchingHistorgramPlot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 6)
   
   # ---
   
   # Create the conclusion paragraph
-  .jfa.numberBunchingConclusion.add(options, numberBunchingContainer, jaspResults, ready, position = 3)
+  .jfaNumberBunchingAddConclusion(options, numberBunchingContainer, jaspResults, ready, position = 3)
   
   # ---
 }
 
-.jfa.numberBunchingProcedure.add <- function(options, jaspResults, position){
+.jfaNumberBunchingAddProcedure <- function(options, jaspResults, position){
   
   if(options[["explanatoryText"]] && is.null(jaspResults[["procedureContainer"]])){
     
@@ -91,7 +91,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.numberBunching.stage <- function(options, jaspResults, position){
+.jfaNumberBunchingStage <- function(options, jaspResults, position){
   
   numberBunchingContainer <- createJaspContainer(title = gettext("<u>Assessing number bunching</u>"))
   numberBunchingContainer$position <- position
@@ -102,9 +102,9 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   return(numberBunchingContainer)
 }
 
-.jfa.numberBunching.table <- function(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer){
+.jfaNumberBunchingTable <- function(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer){
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(!is.null(numberBunchingContainer[["numberBunchingTestTable"]])) 
     return()
@@ -133,7 +133,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     return()
   }
   
-  state <- .jfa.numberBunching.state(dataset, options, jaspResults, ready)
+  state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
   
   row <- data.frame(name = options[["values"]], 
                     N = state[["N"]], 
@@ -144,7 +144,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   table$addRows(row)    
 }
 
-.jfa.numberBunching.state <- function(dataset, options, jaspResults, ready){
+.jfaNumberBunchingState <- function(dataset, options, jaspResults, ready){
   
   if(!is.null(jaspResults[["state"]])){
     
@@ -163,8 +163,8 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
       decimals 	<- round(variable - integers, 2)
     }
     
-    avgFrequency 	<- .jfa.af(variable)
-    entropy 		<- .jfa.entropy(variable)
+    avgFrequency 	<- .jfaAverageFrequency(variable)
+    entropy 		<- .jfaEntropy(variable)
     
     bsAvgFreq 		<- numeric(options[["noSamples"]])
     bsEntropy 		<- numeric(options[["noSamples"]])
@@ -174,17 +174,17 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     
     for(i in 1:options[["noSamples"]]){
       sim 			<- integers + sample(decimals)
-      bsAvgFreq[i] 	<- .jfa.af(sim)
-      bsEntropy[i] 	<- .jfa.entropy(sim)
+      bsAvgFreq[i] 	<- .jfaAverageFrequency(sim)
+      bsEntropy[i] 	<- .jfaEntropy(sim)
       progressbarTick()
     }
-
+    
     state 							<- list()
     state[["N"]] 					<- length(variable)
     state[["avgFrequency"]] 		<- avgFrequency
     state[["entropy"]] 				<- entropy
     state[["pvalueAvgFrequency"]] 	<- ifelse(state[["avgFrequency"]] > median(bsAvgFreq), yes = mean(bsAvgFreq >= state[["avgFrequency"]]), no = mean(bsAvgFreq <= state[["avgFrequency"]]))
-	state[["pvalueEntropy"]] 		<- ifelse(state[["entropy"]] > median(bsEntropy), yes = mean(bsEntropy >= state[["entropy"]]), no = mean(bsEntropy <= state[["entropy"]]))
+    state[["pvalueEntropy"]] 		<- ifelse(state[["entropy"]] > median(bsEntropy), yes = mean(bsEntropy >= state[["entropy"]]), no = mean(bsEntropy <= state[["entropy"]]))
     state[["counts"]] 				<- as.numeric(table(factor(table(variable), levels = 1:9)))
     state[["proportions"]] 			<- state[["counts"]] / state[["N"]]
     state[["valueCor"]] 			<- cor.test(integers, decimals)
@@ -202,13 +202,13 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.numberBunchingCorrelation.table <- function(dataset, options, numberBunchingContainer, jaspResults, 
-                                                 ready, positionInContainer){
+.jfaNumberBunchingCorrelationTable <- function(dataset, options, numberBunchingContainer, jaspResults, 
+                                               ready, positionInContainer){
   
   if(!options[["correlationTable"]])
     return()
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(is.null(numberBunchingContainer[["correlationTable"]])){
     
@@ -230,13 +230,13 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     table$addColumnInfo(name = 'pvalue',	title = gettext("<i>p</i> value"), type = 'pvalue')
     
     table$addFootnote(gettext("The <i>p</i> value shown is for a two-sided test."))
-
+    
     numberBunchingContainer[["correlationTable"]] <- table
     
     if(!ready){   
-      row <- data.frame(var1 = c("Integer values", "Average frequency"), 
+      row <- data.frame(var1 = c("Integer values", "Samples frequency"), 
                         separator = c("-", "-"),
-                        var2 = c("Decimal values", "Entropy"),
+                        var2 = c("Decimal values", "Samples entropy"),
                         n = c(".", "."),
                         cor = c(".", "."),
                         t = c(".", "."),
@@ -246,11 +246,11 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
       return()
     } 
     
-    state <- .jfa.numberBunching.state(dataset, options, jaspResults, ready)
+    state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
     
-    row <- data.frame(var1 = c("Integer values", "Average frequency"), 
+    row <- data.frame(var1 = c("Integer values", "Samples frequency"), 
                       separator = c("-", "-"),
-                      var2 = c("Decimal values", "Entropy"),
+                      var2 = c("Decimal values", "Samples entropy"),
                       n = c(nrow(dataset), options[["noSamples"]]),
                       cor = c(state[["valueCor"]]$estimate, state[["simCor"]]$estimate),
                       t = c(state[["valueCor"]]$statistic, state[["simCor"]]$statistic),
@@ -261,13 +261,13 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
 }
 
 
-.jfa.numberBunchingDescriptives.table <- function(dataset, options, numberBunchingContainer, jaspResults, 
-                                                  ready, positionInContainer){
+.jfaNumberBunchingDescriptivesTable <- function(dataset, options, numberBunchingContainer, jaspResults, 
+                                                ready, positionInContainer){
   
   if(!options[["summaryTable"]])
     return()
   
-  .jfa.tableNumber.update(jaspResults)
+  .jfaTableNumberUpdate(jaspResults)
   
   if(is.null(numberBunchingContainer[["numberBunchingTable"]])){
     
@@ -295,7 +295,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
       return()
     } 
     
-    state <- .jfa.numberBunching.state(dataset, options, jaspResults, ready)
+    state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
     
     row <- data.frame(digit = digits, 
                       count = state[["counts"]], 
@@ -305,13 +305,13 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.numberBunchingFrequency.plot <- function(dataset, options, numberBunchingContainer, jaspResults, 
-                                              ready, positionInContainer){
+.jfaNumberBunchingFrequencyPlot <- function(dataset, options, numberBunchingContainer, jaspResults, 
+                                            ready, positionInContainer){
   
   if(!options[["numberBunchingPlotFrequency"]])
     return()
   
-  .jfa.figureNumber.update(jaspResults)
+  .jfaFigureNumberUpdate(jaspResults)
   
   if(is.null(numberBunchingContainer[["numberBunchingPlotFrequency"]])){
     
@@ -327,21 +327,21 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     if(!ready) 
       return()
     
-    state <- .jfa.numberBunching.state(dataset, options, jaspResults, ready)
+    state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
     
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(state[["bsAvgFreq"]], state[["avgFrequency"]]))
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsAvgFreq"]], plot = F)$counts + 100, 0))
-
-	if(state[["avgFrequency"]] > median(state[["bsAvgFreq"]])){
-		hjust <- -0.2
-		if(state[["avgFrequency"]] > max(state[["bsAvgFreq"]]))
-		  hjust <- 1.2
-	} else {
-		hjust <- 1.2
-		if(state[["avgFrequency"]] < min(state[["bsAvgFreq"]]))
-		  hjust <- -0.2
-	}
-
+    
+    if(state[["avgFrequency"]] > median(state[["bsAvgFreq"]])){
+      hjust <- -0.2
+      if(state[["avgFrequency"]] > max(state[["bsAvgFreq"]]))
+        hjust <- 1.2
+    } else {
+      hjust <- 1.2
+      if(state[["avgFrequency"]] < min(state[["bsAvgFreq"]]))
+        hjust <- -0.2
+    }
+    
     plotData <- data.frame(x = state[["bsAvgFreq"]])
     
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x)) +
@@ -367,13 +367,13 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.numberBunchingEntropy.plot <- function(dataset, options, numberBunchingContainer, jaspResults, 
-                                            ready, positionInContainer){
+.jfaNumberBunchingEntropyPlot <- function(dataset, options, numberBunchingContainer, jaspResults, 
+                                          ready, positionInContainer){
   
   if(!options[["numberBunchingPlotEntropy"]])
     return()
   
-  .jfa.figureNumber.update(jaspResults)
+  .jfaFigureNumberUpdate(jaspResults)
   
   if(is.null(numberBunchingContainer[["numberBunchingPlotEntropy"]])){
     
@@ -389,22 +389,22 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     if(!ready) 
       return()
     
-    state <- .jfa.numberBunching.state(dataset, options, jaspResults, ready)
+    state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
     
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(state[["bsEntropy"]], state[["entropy"]]))
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsEntropy"]], plot = F)$counts + 100, 0))
     
-	if(state[["entropy"]] > median(state[["bsEntropy"]])){
-		hjust <- -0.2
-		if(state[["entropy"]] > max(state[["bsEntropy"]]))
-		  hjust <- 1.2
-	} else {
-		hjust <- 1.2
-		if(state[["entropy"]] < min(state[["bsEntropy"]]))
-		  hjust <- -0.2
-	}
-
-
+    if(state[["entropy"]] > median(state[["bsEntropy"]])){
+      hjust <- -0.2
+      if(state[["entropy"]] > max(state[["bsEntropy"]]))
+        hjust <- 1.2
+    } else {
+      hjust <- 1.2
+      if(state[["entropy"]] < min(state[["bsEntropy"]]))
+        hjust <- -0.2
+    }
+    
+    
     plotData <- data.frame(x = state[["bsEntropy"]])
     
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x)) +
@@ -430,13 +430,13 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.numberBunchingHistogram.plot <- function(dataset, options, numberBunchingContainer, jaspResults, 
-                                              ready, positionInContainer){
+.jfaNumberBunchingHistorgramPlot <- function(dataset, options, numberBunchingContainer, jaspResults, 
+                                             ready, positionInContainer){
   
   if(!options[["numberBunchingHistogram"]])
     return()
   
-  .jfa.figureNumber.update(jaspResults)
+  .jfaFigureNumberUpdate(jaspResults)
   
   if(is.null(numberBunchingContainer[["numberBunchingHistogram"]])){
     
@@ -488,7 +488,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfa.numberBunchingConclusion.add <- function(options, numberBunchingContainer, jaspResults, ready, position){
+.jfaNumberBunchingAddConclusion <- function(options, numberBunchingContainer, jaspResults, ready, position){
   
   if(!is.null(jaspResults[["conclusionContainer"]]) || !ready || !options[["explanatoryText"]])
     return()
@@ -500,11 +500,11 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
                                            "shuffle",
                                            "explanatoryText",
                                            "noSamples",
-										   "seed"))
+                                           "seed"))
   
   confidenceLabel <- paste0(round(options[["confidence"]] * 100, 2), "%")
   
-  state <- .jfa.numberBunching.state(dataset = NULL, options, jaspResults, ready)
+  state <- .jfaNumberBunchingState(dataset = NULL, options, jaspResults, ready)
   
   approve <- state[["pvalueAvgFrequency"]] >= (1 - options[["confidence"]])
   
@@ -528,7 +528,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   jaspResults[["conclusionContainer"]] <- conclusionContainer
 }
 
-.jfa.entropy <- function(x){
+.jfaEntropy <- function(x){
   frequencies <- as.numeric(table(x))
   # Probailities instead of frequencies
   prob <- frequencies / length(x)
@@ -538,7 +538,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
 }
 
 #0.3 Average frequency function
-.jfa.af <- function(x){
+.jfaAverageFrequency <- function(x){
   tx <- table(x)
   af <- sum(tx^2)/sum(tx)
   return(af)
