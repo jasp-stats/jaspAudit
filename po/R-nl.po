@@ -1,0 +1,1825 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: R 3.6.1\n"
+"Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
+"POT-Creation-Date: 2020-12-30 10:06\n"
+"PO-Revision-Date: 2020-12-02 21:29+0000\n"
+"Last-Translator: JASP Stats <F.A.M.Meerhoff@uva.nl>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jasp-engine/"
+"nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
+"X-Generator: Weblate 4.4-dev\n"
+
+msgid "<u>Procedure</u>"
+msgstr "<u>Procedure</u>"
+
+msgid ""
+"Benford's law states that in many naturally occurring collections of "
+"numerical observations, the leading significant digit is likely to be small. "
+"The goal of this procedure is to determine to what extent the first leading "
+"digits in the data set follow Benford's law, and to test this relation with "
+"a type-I error of <b>%1$s</b>. Data that are not distributed according to "
+"Benford's law might need further investigation."
+msgstr ""
+"De wet van Benford houdt in dat in veel natuurlijk voorkomende verzamelingen "
+"van getallen het leidende significante nummer waarschijnlijk klein is. Het "
+"doel van deze procedure is om vast te stellen in hoeverre de eerste leidende "
+"nummers in de gegevens de wet van Benford volgen, en deze relatie te toetsen "
+"met <b>%1$s</b> betrouwbaarheid. Data die niet aan de wet van Benford "
+"voldoen moeten wellicht aan verdere verificatie onderworpen worden."
+
+msgid ""
+"Benford's law states that in many naturally occurring collections of "
+"numerical observations, the leading significant digit is likely to be small. "
+"The goal of this procedure is to determine to what extent the first two "
+"leading digits in the data set follow Benford's law, and to test this "
+"relation with a type-I error of <b>%1$s</b>. Data that are not distributed "
+"according to Benford's law might need further investigation."
+msgstr ""
+"De wet van Benford houdt in dat in veel natuurlijk voorkomende verzamelingen "
+"van getallen het leidende significante nummer waarschijnlijk klein is. Het "
+"doel van deze procedure is om vast te stellen in hoeverre de eertse twee "
+"leidende nummers in de gegevens de wet van Benford volgen, en deze relatie "
+"te toetsen met <b>%1$s</b> betrouwbaarheid. Gegevens die niet aan de wet van "
+"Benford voldoen moeten wellicht aan verdere verificatie onderworpen worden."
+
+msgid ""
+"Benford's law states that in many naturally occurring collections of "
+"numerical observations, the leading significant digit is likely to be small. "
+"The goal of this procedure is to determine to what extent the last digits in "
+"the data set follow Benford's law, and to test this relation with a type-I "
+"error of <b>%1$s</b>. Data that are not distributed according to Benford's "
+"law might need further investigation."
+msgstr ""
+"De wet van Benford houdt in dat in veel natuurlijk voorkomende verzamelingen "
+"van getallen het leidende significante nummer waarschijnlijk klein is. Het "
+"doel van deze procedure is om vast te stellen in hoeverre de laatste nummers "
+"in de gegevens de wet van Benford volgen, en deze relatie te toetsen met <b>"
+"%1$s</b> betrouwbaarheid. Gegevens die niet aan de wet van Benford voldoen "
+"moeten wellicht aan verdere verificatie onderworpen worden."
+
+msgid ""
+"The uniform distribution assigns equal probability to all possible digits "
+"that may occur. The goal of this procedure is to determine to what extent "
+"the first leading digits in the data set follow the uniform distribution, "
+"and to test this relation with a type-I error of <b>%1$s</b>. If the uniform "
+"distribution assumption is desirable, then violation of uniformity is cause "
+"for further investigation."
+msgstr ""
+"De uniforme verdeling kent gelijke kansen toe aan alle waarden die kunnen "
+"voorkomen. Het doel van deze procedure is om vast te stellen in hoeverre de "
+"eerste leidende nummers in de gegevens de uniforme verdeling volgen, en deze "
+"relatie te toetsen met <b>%1$s</b> betrouwbaarheid. Veronderstelde "
+"willekeurige data die niet aan de uniforme verdeling voldoen moeten wellicht "
+"aan verdere verificatie onderworpen worden."
+
+msgid ""
+"The uniform distribution assigns equal probability to all possible digits "
+"that may occur. The goal of this procedure is to determine to what extent "
+"the first two leading digits in the data set follow the uniform "
+"distribution, and to test this relation with a type-I error of <b>%1$s</b>. "
+"If the uniform distribution assumption is desirable, then violation of "
+"uniformity is cause for further investigation."
+msgstr ""
+"De uniforme verdeling kent gelijke kansen toe aan alle waarden die kunnen "
+"voorkomen. Het doel van deze procedure is om vast te stellen in hoeverre de "
+"eerste twee leidende nummers in de gegevens de uniforme verdeling volgen, en "
+"deze relatie te toetsen met <b>%1$s</b> betrouwbaarheid. Veronderstelde "
+"willekeurige gegevens die niet aan de uniforme verdeling voldoen moeten "
+"wellicht aan verdere verificatie onderworpen worden."
+
+msgid ""
+"The uniform distribution assigns equal probability to all possible digits "
+"that may occur. The goal of this procedure is to determine to what extent "
+"the last digits in the data set follow the uniform distribution, and to test "
+"this relation with a type-I error of <b>%1$s</b>. If the uniform "
+"distribution assumption is desirable, then violation of uniformity is cause "
+"for further investigation."
+msgstr ""
+"De uniforme verdeling kent gelijke kansen toe aan alle waarden die kunnen "
+"voorkomen. Het doel van deze procedure is om vast te stellen in hoeverre de "
+"laatste nummers in de populatie de uniforme verdeling volgen, en deze "
+"relatie te toetsen met <b>%1$s</b> betrouwbaarheid. Veronderstelde "
+"willekeurige data die niet aan de uniforme verdeling voldoen moeten wellicht "
+"aan verdere verificatie onderworpen worden."
+
+msgid "<u>Assessing Benford's Law</u>"
+msgstr "<u>Het Evalueren van de Wet van Benford</u>"
+
+msgid "<u>Assessing the Uniform Distribution</u>"
+msgstr "<u>Het Evalueren van de Uniforme Verdeling</u>"
+
+msgid "<b>Table %i.</b> Goodness-of-fit Test"
+msgstr "<b>Tabel %i.</b> Passingstoets"
+
+msgid "Statistic"
+msgstr "Statistiek"
+
+msgid "Value"
+msgstr "Waarde"
+
+msgid "df"
+msgstr "vg"
+
+msgid "<i>p</i> value"
+msgstr "<i>p</i> waarde"
+
+msgid "N"
+msgstr "N"
+
+msgid ""
+"The null hypothesis specifies that the first digits (1 - 9) in the data set "
+"are distributed according to %1$s."
+msgstr ""
+"De nulhypothese specificeert dat de verdeling van de eerste getallen (1 - 9) "
+"in de gegevens overeenstemmen met %1$s."
+
+msgid ""
+"The null hypothesis specifies that the first two digits (10 - 99) in the "
+"data set are distributed according to %1$s."
+msgstr ""
+"De nulhypothese specificeert dat de verdeling van de eerste twee getallen "
+"(10 - 99) in de gegevens overeenstemmen met %1$s."
+
+msgid ""
+"The null hypothesis specifies that the last digits (1 - 9) in the data set "
+"are distributed according to %1$s."
+msgstr ""
+"De nulhypothese specificeert dat de verdeling van de laaste getallen (1 - 9) "
+"in de gegevens overeenstemmen met %1$s."
+
+msgid "Chi-square"
+msgstr "Chi-kwadraat"
+
+msgid "X%1$s"
+msgstr "X%1$s"
+
+msgid "<b>Table %i.</b> Descriptive Statistics"
+msgstr "<b>Tabel %i.</b> Beschrijvende Statistieken"
+
+msgid "Benford's law"
+msgstr "Wet van Benford"
+
+msgid "Uniform distribution"
+msgstr "Uniforme verdeling"
+
+msgid "Leading digit"
+msgstr "Leidend cijfer"
+
+msgid "Leading digits"
+msgstr "Leidende cijfers"
+
+msgid "Last digit"
+msgstr "Laatste cijfer"
+
+msgid "Count"
+msgstr "Aantal"
+
+msgid "Percentage"
+msgstr "Percentage"
+
+msgid "Observed Percentages vs. Expected Percentages"
+msgstr "Geobserveerde Percentages vs. Verwachte Percentages"
+
+msgid "Observed"
+msgstr "Geobserveerd"
+
+msgid ""
+"<b>Figure %i:</b> The observed percentages of each digit in the data set "
+"compared to the expected percentage under %2$s. For data sets distributed "
+"according %2$s the blue dots will lie near the top of the grey bars."
+msgstr ""
+"<b>Figuur %i:</b> De geobserveerde percentages van ieder nummer in de "
+"gegevens vergeleken met het verwachte percentage onder %2$s. Hoe dichter de "
+"blauwe stippen rond de bovenkant van de grijze staven liggen, hoe meer de "
+"gegevens overeenstemmen met %2$s."
+
+msgid "<u>Conclusion</u>"
+msgstr "<u>Conclusies</u>"
+
+msgid "is rejected"
+msgstr "wordt verworpen"
+
+msgid "is not rejected"
+msgstr "wordt niet verworpen"
+
+msgid ""
+"The <i>p</i> value is %1$s and the null hypothesis that the first digits in "
+"the data set are distributed according to %2$s <b>%3$s</b>."
+msgstr ""
+"De <i>p</i> waarde is %1$s en de nulhypothese dat de eerste cijfers in de "
+"gegevens worden verdeeld volgens %2$s <b>%3$s</b>."
+
+msgid ""
+"The <i>p</i> value is %1$s and the null hypothesis that the first two digits "
+"in the data set are distributed according to %2$s <b>%3$s</b>."
+msgstr ""
+"De <i>p</i> waarde is %1$s en de nulhypothese dat de eerste twee cijfers in "
+"de gegevens worden verdeeld volgens %2$s <b>%3$s</b>."
+
+msgid ""
+"The <i>p</i> value is %1$s and the null hypothesis that the last digits in "
+"the data set are distributed according to %2$s <b>%3$s</b>."
+msgstr ""
+"De <i>p</i> waarde is %1$s en de nulhypothese dat de laatste cijfers in de "
+"gegevens worden verdeeld volgens %2$s <b>%3$s</b>."
+
+msgid "Direct estimator"
+msgstr "Directe schatter"
+
+msgid "Difference estimator"
+msgstr "Verschilschatter"
+
+msgid "Ratio estimator"
+msgstr "Ratioschatter"
+
+msgid "Regression estimator"
+msgstr "Regressieschatter"
+
+msgid "Estimate %1$s"
+msgstr "Schatting %1$s"
+
+msgid "Uncertainty"
+msgstr "Onzekerheid"
+
+msgid "Lower"
+msgstr "Onder"
+
+msgid "%1$s%% Confidence interval"
+msgstr "%1$s%% Betrouwbaarheidinterval"
+
+msgid "Upper"
+msgstr "Boven"
+
+msgid "Please specify the population size and your audit values."
+msgstr "Specificeer a.u.b. de populatiegrootte en uw auditwaarden."
+
+msgid ""
+"Please specify the population size, population value and your sample "
+"variables."
+msgstr ""
+"Specificeer a.u.b. de populatiegrootte, de populatiewaarde en uw variabelen."
+
+msgid ""
+"Displayed numbers may differ from exact outcomes due to rounding in the "
+"calculations."
+msgstr ""
+"Weergegeven nummers kunnen afwijken van exacte uitkomsten door het afronden "
+"van de berekeningen."
+
+msgid "<u>Calculations</u>"
+msgstr "<u>Berekeningen</u>"
+
+msgid ""
+"<i>The required information for the <b>direct</b> estimator consists of:</i>"
+msgstr ""
+"<i>De benodigde informatie voor de <b>directe</b> schatter bestaat uit:</i>"
+
+msgid "The population size <i>N</i>"
+msgstr "De populatiegrootte <i>N</i>"
+
+msgid "%1$s = %2$i"
+msgstr "%1$s = %2$i"
+
+msgid "The sample size <i>n</i>"
+msgstr "De steekproefgrootte <i>n</i>"
+
+msgid "The mean of the sample audit values %1$s"
+msgstr "Het gemiddelde van de steekproef auditwaardes %1$s"
+
+msgid "%1$s = %2$s"
+msgstr "%1$s = %2$s"
+
+msgid "The standard deviation of the sample audit values %1$s"
+msgstr "De standaardafwijking van de steekproef auditwaardes %1$s"
+
+msgid ""
+"The t-value <i>(df = n - 1)</i> corresponding to %1$s%% confidence %2$s%3$s"
+"%4$s"
+msgstr ""
+"De t-waarde <i>(vg = n - 1)</i> die overeenkomt met %1$s%% betrouwbaarheid "
+"%2$s%3$s%4$s"
+
+msgid ""
+"The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence %3$s"
+"%4$s%5$s%6$s"
+msgstr ""
+"De t-waarde <i>(vg = %1$s - 1)</i> die overeenkomt met %2$s%% "
+"betrouwbaarheid %3$s%4$s%5$s%6$s"
+
+msgid ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s"
+msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s"
+
+msgid "<i>This information allows for calculation of:</i>"
+msgstr "<i>Met deze informatie worden de volgende zaken berekend:</i>"
+
+msgid "The point estimate of the true population value %1$s"
+msgstr "De puntschatting van de ware populatiewaarde %1$s"
+
+msgid "The uncertainty of the estimator %1$s%2$s%3$s"
+msgstr "De onzekerheid van de schatter %1$s%2$s%3$s"
+
+msgid "The confidence interval around the point estimate %1$s"
+msgstr "Het betrouwbaarheidsinterval rond de puntschatting %1$s"
+
+msgid "%1$s = %2$s %3$s %4$s"
+msgstr "%1$s = %2$s %3$s %4$s"
+
+msgid ""
+"%1$s\n"
+"                           %2$s\n"
+"                           %3$s"
+msgstr ""
+"%1$s\n"
+"                           %2$s\n"
+"                           %3$s"
+
+msgid ""
+"<i>The required information for the <b>difference</b> estimator consists of:"
+"</i>"
+msgstr ""
+"<i>De benodigde informatie voor de <b>verschil</b> schatter bestaat uit:</i>"
+
+msgid "The sum of the population book values <i>B</i>"
+msgstr "De som van de populatie boekwaardes <i>B</i>"
+
+msgid "The mean of the sample errors %1$s"
+msgstr "Het gemiddelde van de steekproeffouten %1$s"
+
+msgid "The standard deviation of the sample errors %1$s"
+msgstr "De standaardafwijking van de steekproeffouten %1$s"
+
+msgid ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s"
+msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s"
+
+msgid ""
+"%1$s\n"
+"                            %2$s\n"
+"                            %3$s"
+msgstr ""
+"%1$s\n"
+"                            %2$s\n"
+"                            %3$s"
+
+msgid ""
+"<i>The required information for the <b>ratio</b> estimator consists of:</i>"
+msgstr ""
+"<i>De voor de <b>ratio</b> schatter benodigde informatie bestaat uit:</i>"
+
+msgid "The mean of the sample book values %1$s"
+msgstr "Het gemiddelde van de steekproef boekwaardes %1$s"
+
+msgid "The standard deviation of the sample book values %1$s"
+msgstr "De standaardafwijking van de steekproef boekwaardes %1$s"
+
+msgid ""
+"The correlation coefficient of the sample book values and audit values %1$s"
+msgstr ""
+"De correlatiecoëfficiënt van de steekproef boekwaardes en auditwaardes %1$s"
+
+msgid "The correctness ratio %1$s"
+msgstr "De juistheidsratio %1$s"
+
+msgid ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s\n"
+"                                %7$s\n"
+"                                %8$s\n"
+"                                %9$s\n"
+"                                %10$s"
+msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s\n"
+"                                %7$s\n"
+"                                %8$s\n"
+"                                %9$s\n"
+"                                %10$s"
+
+msgid ""
+"<i>The required information for the <b>regression</b> estimator consists of:"
+"</i>"
+msgstr ""
+"<i>De voor de <b>regressie</b>schatter benodigde informatie bestaat uit:</i>"
+
+msgid ""
+"The regression coefficient of the sample book values and audit values %1$s"
+msgstr ""
+"De regressiecoëfficiënt van de steekproefboekwaardes en auditwaardes %1$s"
+
+msgid ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s\n"
+"                                %7$s\n"
+"                                %8$s\n"
+"                                %9$s"
+msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s\n"
+"                                %7$s\n"
+"                                %8$s\n"
+"                                %9$s"
+
+msgid "Required Sample Size"
+msgstr "Vereiste steekproefgrootte"
+
+msgid "Estimator"
+msgstr "Schatter"
+
+msgid "Required <i>n</i>"
+msgstr "Benodigde <i>n</i>"
+
+msgid "Additional <i>n</i>"
+msgstr "Aanvullend <i>n</i>"
+
+msgid "Correlation Plot"
+msgstr "Spreidingsdiagram"
+
+msgid "Book values"
+msgstr "Boekwaardes"
+
+msgid "Audit values"
+msgstr "Auditwaarden"
+
+msgid ""
+"<b>Figure 1.</b> Scatter plot of the book values in the selection and their "
+"audit values. Red dots indicate observations that did not match their "
+"original book value. If these red dots lie in the bottom part of the graph, "
+"the book values are overstated. If these red dots lie in the upper part of "
+"the graph, they are understated. The value <i>r</i> is the Pearson "
+"correlation coefficient of the book values and the audit values, an "
+"indicator of the strength of the linear relationship between the two "
+"variables."
+msgstr ""
+"<b>Figuur 1.</b> Spreidingsgrafiek van de boekwaardes in de selectie en de "
+"bijbehorende auditwaardes. Rode stippen geven observaties aan die niet "
+"overeenkwamen met hun originele boekwaarde. Als deze rode stippen aan de "
+"onderkant van de grafiek liggen, zijn de boekwaardes overschat. Als deze "
+"rode stippen in het bovenste deel van de grafiek liggen, zijn ze onderschat. "
+"De waarde <i>r</i> is de Pearson correlatiecoëfficiënt van de boekwaardes en "
+"de auditwaardes, een indicator van de sterkte van de lineaire relatie tussen "
+"de twee variabelen."
+
+msgid "<b>percentage</b>"
+msgstr "<b>percentage</b>"
+
+msgid "<b>amount</b>"
+msgstr "<b>hoeveelheid</b>"
+
+msgid "<u>Planning</u>"
+msgstr "<u>Planning</u>"
+
+msgid "<u>Selection</u>"
+msgstr "<u>Selectie</u>"
+
+msgid "<u>Evaluation</u>"
+msgstr "<u>Evaluatie</u>"
+
+msgid ""
+"Analysis not possible: Your materiality is higher than, or equal to the "
+"total value of the observations."
+msgstr ""
+"Analyse niet mogelijk: De materialiteit is groter of gelijk aan de totale "
+"waarde van de observaties."
+
+msgid ""
+"Analysis not possible: Your expected errors are higher than materiality."
+msgstr ""
+"Analyse niet mogelijk: De verwachte fouten zijn groter dan de materialiteit."
+
+msgid ""
+"The detection risk is equal to or higher than 100%%. Please re-specify your "
+"custom values for the Inherent risk and/or Control risk, or the confidence."
+msgstr ""
+"Het detectie risico is hoger dan 100%%. Herspecificeer de aangepaste waarden "
+"voor het Inherente risico en/of het Intern Beheersingsrisico."
+
+msgid ""
+"You cannot incorporate this prior information into your analysis because you "
+"are not testing against a performance materiality."
+msgstr ""
+
+msgid ""
+"The prior distribution with equal prior probabilities cannot be constructed "
+"using the beta-binomial distribution. You can use the beta or the gamma "
+"distribution in this case."
+msgstr ""
+
+msgid ""
+"The gamma prior distribution with equal prior probabilities cannot be "
+"constructed when you expect errors in the sample. You can revert to the beta "
+"distribution in this case."
+msgstr ""
+
+msgid "Selection summary"
+msgstr "Selectie samenvatting"
+
+#, fuzzy
+msgid ""
+"Your sample size is larger than (or equal to) your population size. Cannot "
+"take a record sample larger than the population."
+msgstr ""
+"Uw steekproefgrootte is groter dan of gelijk aan de populatiegrootte. Kan "
+"geen steekproef nemen groter dan de populatie."
+
+#, fuzzy
+msgid ""
+"Your sample size is larger than (or equal to) your population value. Cannot "
+"take a MUS sample larger than the population value."
+msgstr ""
+"Uw steekproefgrootte is groter dan of gelijk aan de populatiegrootte. Kan "
+"geen steekproef nemen groter dan de populatie."
+
+#, fuzzy
+msgid ""
+"You must specify unique transaction ID's. The row numbers of the data set "
+"are sufficient."
+msgstr ""
+"U moet unieke transactie ID's specificeren. De rijnummers van de gegevens "
+"volstaan."
+
+msgid "Evaluation summary"
+msgstr "Evaluatie samenvatting"
+
+msgid ""
+"Your audit result does not contain only 0's (correct) and 1's (incorrect). "
+"Select the Soll values annotation method from the options or use the summary "
+"statistics to evaluate your sample."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The hypergeometric upper bound requires that you specify the population size."
+msgstr ""
+"Voor hypergeometrische betrouwbaarheidsgrenzen moet een populatie grootte "
+"gespecificeerd zijn."
+
+msgid ""
+"Your sample size is larger than (or equal to) your population size. Please "
+"adjust your population size accordingly."
+msgstr ""
+"Uw steekproefgrootte is groter dan of gelijk aan de populatiegrootte. Pas uw "
+"populatiegrootte dienovereenkomstig aan."
+
+#, fuzzy
+msgid ""
+"The direct, difference, ratio, and regression bounds require that you "
+"specify the population size and the population value."
+msgstr ""
+"De directe schatter, verschilschatter, ratioschatter, en regressieschatter "
+"vereisen dat u de populatiegrootte en de populatiewaarde specificeert."
+
+#, fuzzy
+msgid ""
+"Your must specify unique transaction ID's. The row numbers of the data set "
+"are sufficient."
+msgstr ""
+"U moet unieke transactie ID's specificeren. De rijnummers van de gegevens "
+"volstaan."
+
+msgid ""
+"The detection risk is equal to or higher than 100%%. Please re-specify your "
+"values for the Inherent risk and/or Control risk, or the confidence."
+msgstr ""
+"Het detectie risico is hoger dan 100%%. Herspecificeer de aangepaste waarden "
+"voor het Inherente risico en/of het Intern Beheersingsrisico."
+
+msgid ""
+"Select one or more sampling objectives from the top left corner to begin "
+"planning an audit sample.\n"
+"\n"
+"%1$s <b>Test against a performance materiality</b>\n"
+"\n"
+"Enable this objective if you want to <i>test</i> whether the total "
+"misstatement in the population exceeds a certain limit (i.e., the "
+"performance materiality) based on a sample. This approach allows you to plan "
+"a sample such that, when the sample meets your expectations, the maximum "
+"error is said to be below performance materiality. In the evaluation you "
+"will be able to quantify the evidence that your sample contains for or "
+"against the statement that the population misstatement does not exceed the "
+"performance materiality.\n"
+"\n"
+"%2$s <b>Obtain a required minimum precision</b>\n"
+"\n"
+"Enable this objective if you want to obtain a required minimum precision "
+"when <i>estimating</i> the total misstatement in the population based on a "
+"sample. This approach allows you to plan a sample such that, when the sample "
+"meets expectations, the accuracy of your estimate is below a tolerable "
+"percentage. In the evaluation you will be able to quantify the accuracy of "
+"your estimate of the population misstatement."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The objective of this sampling procedure is to determine with a confidence "
+"of <b>%1$s</b> whether the %2$s of misstatement in the population is lower "
+"than the performance materiality of <b>%3$s</b>."
+msgstr ""
+"Het doel van deze substantieve toetsprocedure is om met een gespecificeerde "
+"betrouwbaarheid <b>(%1$s)</b> vast te stellen of de %2$s van genoemde fouten "
+"in de doelpopulatie lager is dan de gespecificeerde materialiteit van <b>"
+"%3$s</b>."
+
+#, fuzzy
+msgid ""
+"The objective of this sampling procedure is to determine the misstatement in "
+"the population with a confidence of <b>%1$s</b> and a required minimum "
+"precision of <b>%2$s</b>."
+msgstr ""
+"Het doel van deze substantieve toetsprocedure is om met een gespecificeerde "
+"betrouwbaarheid <b>(%1$s)</b> vast te stellen of de %2$s van genoemde fouten "
+"in de doelpopulatie lager is dan de gespecificeerde materialiteit van <b>"
+"%3$s</b>."
+
+#, fuzzy
+msgid ""
+"The objective of this sampling procedure is to determine with a confidence "
+"of <b>%1$s</b> whether the %2$s of misstatement in the population is lower "
+"than the performance materiality of <b>%3$s</b> with a required minimum "
+"precision of <b>%4$s</b>."
+msgstr ""
+"Het doel van deze substantieve toetsprocedure is om met een gespecificeerde "
+"betrouwbaarheid <b>(%1$s)</b> vast te stellen of de %2$s van genoemde fouten "
+"in de doelpopulatie lager is dan de gespecificeerde materialiteit van <b>"
+"%3$s</b>."
+
+msgid "a performance materiality of <b>%1$s</b>"
+msgstr ""
+
+msgid ""
+"the maximum misstatement is determined to be below the performance "
+"materiality"
+msgstr ""
+
+msgid "a required minimum precision of <b>%1$s</b>"
+msgstr ""
+
+msgid "the misstatement is determined with the required minimum precision"
+msgstr ""
+
+msgid ""
+"a performance materiality of <b>%1$s</b> and a required minimum precision of "
+"<b>%2$s</b>"
+msgstr ""
+
+msgid ""
+"the maximum misstatement is determined with the required minimum precision "
+"to be below the performance materiality"
+msgstr ""
+
+msgid ""
+"Furthermore, the uncertainty regarding the misstatement will only be "
+"extrapolated over the unseen part of the population. This requires the "
+"additional <i>post-hoc</i> assumption that the sample taints are homogeneous."
+msgstr ""
+
+msgid "gamma"
+msgstr "gamma"
+
+msgid "beta"
+msgstr "beta"
+
+msgid "beta-binomial"
+msgstr "beta-binomiaal"
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, the <i>a priori</i> assumption that every value of the "
+"misstatement is equally likely, and the expected errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%6$s</b>, "
+"%7$s. %8$s"
+msgstr ""
+"De meest aannemelijke fout in de data was naar verwachting <b>%1$s</b>. De "
+"steekproefgrootte die nodig is voor een materialiteit van <b>%2$s</b>, ervan "
+"uitgaande dat de steekproef <b>%3$s</b> volledige fouten bevat, is <b>%4$s</"
+"b>. Deze steekproefgrootte is gebaseerd op de <b>%5$s</b> verdeling, het "
+"inherente risico <b>(%6$s)</b>, het controle risico <b>(%7$s)</b> en de "
+"verwachte fouten. Met als gevolg dat wanneer de som van fouten van de audit "
+"observaties beneden <b>%8$s</b> blijft, de maximale fout beneden "
+"materialiteit geschat wordt."
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, the <i>a priori</i> assessments of inherent risk <b>(%6$s)</b> "
+"and control risk <b>(%7$s)</b> from the Audit Risk Model, and the expected "
+"errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%8$s</b>, "
+"%9$s. %10$s"
+msgstr ""
+"De meest aannemelijke fout in de data was naar verwachting <b>%1$s</b>. De "
+"steekproefgrootte die nodig is voor een materialiteit van <b>%2$s</b>, ervan "
+"uitgaande dat de steekproef <b>%3$s</b> volledige fouten bevat, is <b>%4$s</"
+"b>. Deze steekproefgrootte is gebaseerd op de <b>%5$s</b> verdeling, het "
+"inherente risico <b>(%6$s)</b>, het controle risico <b>(%7$s)</b> en de "
+"verwachte fouten. Met als gevolg dat wanneer de som van fouten van de audit "
+"observaties beneden <b>%8$s</b> blijft, de maximale fout beneden "
+"materialiteit geschat wordt."
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, the <i>a priori</i> assumption that tolerable misstatement is "
+"equally likely to occur as intolerable misstatement, and the expected "
+"errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%6$s</b>, "
+"%7$s. %8$s"
+msgstr ""
+"De meest aannemelijke fout in de data was naar verwachting <b>%1$s</b>. De "
+"steekproefgrootte die nodig is voor een materialiteit van <b>%2$s</b>, ervan "
+"uitgaande dat de steekproef <b>%3$s</b> volledige fouten bevat, is <b>%4$s</"
+"b>. Deze steekproefgrootte is gebaseerd op de <b>%5$s</b> verdeling, het "
+"inherente risico <b>(%6$s)</b>, het controle risico <b>(%7$s)</b> en de "
+"verwachte fouten. Met als gevolg dat wanneer de som van fouten van de audit "
+"observaties beneden <b>%8$s</b> blijft, de maximale fout beneden "
+"materialiteit geschat wordt."
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, the <i>a priori</i> assumption that tolerable misstatement "
+"occurs with a probability <b>%6$s</b> of and intolerable misstatement occurs "
+"with a probability of <b>%7$s</b>, and the expected errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%8$s</b>, "
+"%9$s. %10$s"
+msgstr ""
+"De meest aannemelijke fout in de data was naar verwachting <b>%1$s</b>. De "
+"steekproefgrootte die nodig is voor een materialiteit van <b>%2$s</b>, ervan "
+"uitgaande dat de steekproef <b>%3$s</b> volledige fouten bevat, is <b>%4$s</"
+"b>. Deze steekproefgrootte is gebaseerd op de <b>%5$s</b> verdeling, het "
+"inherente risico <b>(%6$s)</b>, het controle risico <b>(%7$s)</b> en de "
+"verwachte fouten. Met als gevolg dat wanneer de som van fouten van de audit "
+"observaties beneden <b>%8$s</b> blijft, de maximale fout beneden "
+"materialiteit geschat wordt."
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, the <i>a priori</i> assumption that an earlier sample of <b>"
+"%6$s</b> transactions containing <b>%7$s</b> errors is seen, and the "
+"expected errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%8$s</b>, "
+"%9$s. %10$s"
+msgstr ""
+"De meest aannemelijke fout in de data was naar verwachting <b>%1$s</b>. De "
+"steekproefgrootte die nodig is voor een materialiteit van <b>%2$s</b>, ervan "
+"uitgaande dat de steekproef <b>%3$s</b> volledige fouten bevat, is <b>%4$s</"
+"b>. Deze steekproefgrootte is gebaseerd op de <b>%5$s</b> verdeling, het "
+"inherente risico <b>(%6$s)</b>, het controle risico <b>(%7$s)</b> en de "
+"verwachte fouten. Met als gevolg dat wanneer de som van fouten van de audit "
+"observaties beneden <b>%8$s</b> blijft, de maximale fout beneden "
+"materialiteit geschat wordt."
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, an <i>a priori</i> assumption that an earlier sample of <b>"
+"%6$s</b> transactions containing <b>%7$s</b> errors weighted by a factor <b>"
+"%8$s</b> is seen, and the expected errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%9$s</b>, "
+"%10$s. %11$s"
+msgstr ""
+"De meest aannemelijke fout in de data was naar verwachting <b>%1$s</b>. De "
+"steekproefgrootte die nodig is voor een materialiteit van <b>%2$s</b>, ervan "
+"uitgaande dat de steekproef <b>%3$s</b> volledige fouten bevat, is <b>%4$s</"
+"b>. Deze steekproefgrootte is gebaseerd op de <b>%5$s</b> verdeling, het "
+"inherente risico <b>(%6$s)</b>, het controle risico <b>(%7$s)</b> en de "
+"verwachte fouten. Met als gevolg dat wanneer de som van fouten van de audit "
+"observaties beneden <b>%8$s</b> blijft, de maximale fout beneden "
+"materialiteit geschat wordt."
+
+msgid "random"
+msgstr "willekeurig"
+
+msgid "fixed interval"
+msgstr "vast interval"
+
+msgid "cell"
+msgstr "cel"
+
+msgid "Ist position (<i>...</i>)"
+msgstr ""
+
+msgid "Euros"
+msgstr ""
+
+msgid "Dollars"
+msgstr ""
+
+msgid "Ist position (<i>%1$s</i>)"
+msgstr ""
+
+msgid "record variable (<i>...</i>)"
+msgstr ""
+
+msgid "record variable (<i>%1$s</i>)"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"From the population of <b>%1$s</b> %2$s transactions, <b>%3$s</b> sampling "
+"units (<i>%4$s</i>) are selected from the %5$s using a <b>%6$s record "
+"sampling</b> method. <br><b>Warning:</b> A monetary unit sampling method was "
+"tried but failed."
+msgstr ""
+"Van de populatie van <b>%1$s</b> observaties, waren <b>%2$s</b> observaties "
+"geselecteerd met <b>%3$s steekproef nemen</b> methode. <br><b>Waarschuwing:</"
+"b> Een munteenheid steekproef nemen is niet gelukt."
+
+msgid "%1$s record sampling"
+msgstr "%1$s record steekproef"
+
+msgid "%1$s monetary unit sampling"
+msgstr "%1$s munteenheid steekproef"
+
+#, fuzzy
+msgid ""
+"From the population of <b>%1$s</b> %2$s transactions, <b>%3$s</b> sampling "
+"units (<i>%4$s</i>) are selected from the %5$s using a <b>%6$s</b> method."
+msgstr ""
+"Van de populatie van <b>%1$s</b> observaties, waren <b>%2$s</b> observaties "
+"geselecteerd met de <b>%3$s</b> methode."
+
+#, fuzzy
+msgid ""
+"%1$s \n"
+"\n"
+"<b>Note:</b> The selected sample (%2$s) contains fewer transactions than the "
+"planned sample size (%3$s) because some transactions are selected more than "
+"once. The transactions containing these %4$s extra selected sampling units "
+"will be counted multiple times in the evaluation."
+msgstr ""
+"%1$s <b>Let op:</b> De geselecteerde subset (%2$s) is kleiner dan de "
+"geplande steekproefgrootte (%3$s), aangezien observaties meerdere keren "
+"geselecteerd zijn door hun hoge waarde. Deze observaties (%4$s) zijn "
+"meerdere keren geteld in de evaluatie."
+
+msgid "below"
+msgstr "onder"
+
+msgid "lower"
+msgstr "lager"
+
+msgid "above"
+msgstr "boven"
+
+msgid "higher"
+msgstr "hoger"
+
+msgid ""
+"<b>Objectives:</b> You have achieved your specified sampling objectives."
+msgstr ""
+
+msgid ""
+"<b>Objectives:</b> You have not achieved your specified sampling objectives. "
+"It is recommended to draw more samples from this population and to continue "
+"audit procedures."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The objective of this audit sampling procedure was to determine with %1$s "
+"confidence whether the misstatement in the population is lower than the "
+"specified performance materiality, in this case %2$s. For the current data, "
+"the %3$s upper bound on the misstatement is <b>%4$s</b> the performance "
+"materiality. \n"
+"\n"
+"The conclusion on the basis of these results is that, with at least %5$s "
+"confidence, the misstatement in the population is <b>%6$s</b> than the "
+"performance materiality. %7$s"
+msgstr ""
+"Het doel van deze substantieve test procedure was om te bepalen met <b>%1$s</"
+"b> zekerheid of de fout in de populatie lager is dan de materialiteit, in "
+"dit geval <b>%2$s</b>. Voor de huidige data is de <b>%3$s</b> "
+"zekerheidsgrens <b>%4$s</b> materialiteit. De conclusie op basis van deze "
+"resultaten is dat, met <b>%5$s</b> zekerheid, de populatie fout <b>%6$s</b> "
+"dan de materialiteit is."
+
+#, fuzzy
+msgid ""
+"The objective of this audit sampling procedure was to determine the "
+"misstatement in the population with %1$s confidence and a minimum precision "
+"of %2$s. For the current data, the obtained precision is <b>%3$s</b> than "
+"the required minimum precision. \n"
+"\n"
+"The conclusion on the basis of these results is that the total misstatement "
+"in the population has been determined with at least %4$s confidence and a "
+"precision of %5$s. %6$s"
+msgstr ""
+"Het doel van deze substantieve test procedure was om te bepalen met <b>%1$s</"
+"b> zekerheid of de fout in de populatie lager is dan de materialiteit, in "
+"dit geval <b>%2$s</b>. Voor de huidige data is de <b>%3$s</b> "
+"zekerheidsgrens <b>%4$s</b> materialiteit. De conclusie op basis van deze "
+"resultaten is dat, met <b>%5$s</b> zekerheid, de populatie fout <b>%6$s</b> "
+"dan de materialiteit is."
+
+#, fuzzy
+msgid ""
+"The objective of this audit sampling procedure was to determine with %1$s "
+"confidence, and a minimum precision of %2$s, whether the misstatement in the "
+"population is lower than the specified performance materiality, in this case "
+"%3$s. For the current data, the %4$s upper bound on the misstatement is <b>"
+"%5$s</b> the performance materiality and the obtained precision is <b>%6$s</"
+"b> than the required minimum precision. \n"
+"\n"
+"The conclusion on the basis of these results is that, with at least %7$s "
+"confidence and a precision of %8$s, the misstatement in the population is <b>"
+"%9$s</b> than the performance materiality. %10$s"
+msgstr ""
+"Het doel van deze substantieve test procedure was om te bepalen met <b>%1$s</"
+"b> zekerheid of de fout in de populatie lager is dan de materialiteit, in "
+"dit geval <b>%2$s</b>. Voor de huidige data is de <b>%3$s</b> "
+"zekerheidsgrens <b>%4$s</b> materialiteit. De conclusie op basis van deze "
+"resultaten is dat, met <b>%5$s</b> zekerheid, de populatie fout <b>%6$s</b> "
+"dan de materialiteit is."
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Descriptive Statistics for Ist Position"
+msgstr "<b>Tabel %i.</b> Beschrijvende Statistieken"
+
+msgid "Population size"
+msgstr "Populatiegrootte"
+
+msgid "Absolute value"
+msgstr "Absolute waarde"
+
+msgid "Mean"
+msgstr "Gemiddelde"
+
+msgid "Std. deviation"
+msgstr "Standaardafwijking"
+
+#, fuzzy
+msgid "1"
+msgstr "H1"
+
+msgid "Quartile"
+msgstr "Kwartiel"
+
+#, fuzzy
+msgid "2"
+msgstr "H2"
+
+msgid "3"
+msgstr ""
+
+#, fuzzy
+msgid "Distribution of Ist Values"
+msgstr "Histogrammen"
+
+#, fuzzy
+msgid "Ist (%1$s)"
+msgstr "%1$s (%2$s)"
+
+msgid "Frequency"
+msgstr "Frequentie"
+
+#, fuzzy
+msgid "Mean %1$s St.dev"
+msgstr "Gemiddelde %1$s sd"
+
+#, fuzzy
+msgid ""
+"<b>Figure %1$i.</b> The distribution of Ist values in the population. The "
+"red and blue dots respectively represent the mean and the values exactly one "
+"standard deviation from the mean. The orange dots represent the first, "
+"second (median) and third quartiles of the Ist values."
+msgstr ""
+"<b>Figuur %1$i.</b> De verdeling van boekwaardes in de populatie. De rode en "
+"blauwe stippen, respectievelijk, representeren het gemiddelde en de waarden "
+"precies een standaarddeviatie van het gemiddelde. De oranje stippen "
+"representeren het 25e, 50e (mediaan) en 75e percentiel van de boekwaardes."
+
+msgid "<u>Audit Risk Model</u>"
+msgstr "<u>Audit Risico Model</u>"
+
+msgid ""
+"Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x "
+"Detection risk (%4$s%%)"
+msgstr ""
+"Audit risico (%1$s%%) = Inherent risico (%2$s%%) x Controle risico (%3$s%%) "
+"x Detectie risico (%4$s%%)"
+
+#, fuzzy
+msgid ""
+"Prior to the sampling procedure, the inherent risk was determined to be <b>"
+"%1$s</b>. The internal control risk was determined to be <b>%2$s</b>. "
+"According to the Audit Risk Model, the required detection risk to maintain "
+"an audit risk of <b>%3$s</b> should be <b>%4$s</b>."
+msgstr ""
+"Voor de substantieve toetsfase is het inherente risico vastgesteld op <b>"
+"%1$s</b>. Het interne controle risico was vastgesteld op <b>%2$s</b>. "
+"Volgens het Audit Risico Model is het benodigde detectie risico om een audit "
+"risico van <b>%3$s</b> te behouden <b>%4$s</b>."
+
+#, fuzzy
+msgid ""
+"%1$s\n"
+"\n"
+"The translation of High, Medium and Low to probabilities is done according "
+"custom preferences</b>."
+msgstr ""
+"%1$s De vertaling van Hoog, Medium en Laag naar kansen is gedaan op basis "
+"van handmatig ingestelde voorkeuren</b>."
+
+msgid ""
+"%1$s\n"
+"\n"
+"The translation of High, Medium and Low to probabilities is done using "
+"default values. To learn more about the choice of these values and how to "
+"adjust these, see the help file of this analysis."
+msgstr ""
+
+msgid ""
+"The detection risk is equal to or higher than 100%%. Please re-specify your "
+"custom values for the Inherent risk and/or Control risk."
+msgstr ""
+"Het detectie risico is hoger dan 100%%. Herspecificeer de aangepaste waarden "
+"voor het Inherente risico en/of het Intern Beheersingsrisico."
+
+msgid ""
+"You cannot achieve your current sampling objectives with this population. "
+"The resulting sample size exceeds 10000. Adjust your sampling objectives or "
+"variables accordingly."
+msgstr ""
+"Met deze populatie kunt u uw huidige steekproefdoelstellingen niet halen. De "
+"resulterende steekproefgrootte is groter dan 5000. Pas uw steekproefdoelen "
+"of variabelen dienovereenkomstig aan."
+
+msgid "An error occurred: %1$s"
+msgstr "Foutmelding: %1$s"
+
+msgid ""
+"You cannot achieve your current sampling objectives with this population. "
+"The resulting sample size is larger than the number of transactions in the "
+"population. Adjust your sampling objectives or variables accordingly."
+msgstr ""
+"Met deze populatie kunt u uw huidige steekproefdoelstellingen niet halen. De "
+"resulterende steekproefgtrootte is groter dan het aantal transacties in de "
+"populatie. Pas uw steekproefdoelstellingen of variabelen dienovereenkomstig "
+"aan."
+
+msgid ""
+"You cannot achieve your current sampling objectives with this population. "
+"The resulting sample size is larger than the total value of the population. "
+"Adjust your sampling objectives or variables accordingly."
+msgstr ""
+"Met deze populatie kunt u uw huidige steekproefdoelstellingen niet halen. De "
+"resulterende steekproefgrootte is groter dan de totale waarde van de "
+"populatie. Pas uw steekproefdoelstellingen of variabelen dienovereenkomstig "
+"aan."
+
+msgid "<b>Table %1$i.</b> Planning Summary"
+msgstr "<b>Tabel %1$i.</b> Planningssamenvatting"
+
+#, fuzzy
+msgid "Performance materiality"
+msgstr "Prestatiestatistieken"
+
+#, fuzzy
+msgid "Required precision"
+msgstr "Vereiste steekproefgrootte"
+
+msgid "Inherent risk"
+msgstr "Inherent risico"
+
+msgid "Control risk"
+msgstr "Controle risico"
+
+msgid "Detection risk"
+msgstr "Detectie risico"
+
+#, fuzzy
+msgid "Audit risk"
+msgstr "Auditwaarden"
+
+msgid "Expected errors"
+msgstr "Verwachte fouten"
+
+msgid "Required sample size"
+msgstr "Vereiste steekproefgrootte"
+
+#, fuzzy
+msgid "Expected posterior odds"
+msgstr "Verwachte posterior"
+
+msgid "Expected %1$s"
+msgstr "Verwacht %1$s"
+
+msgid "The required sample size is based on the <b>Poisson</b> distribution."
+msgstr ""
+"De vereiste steekproefgrootte is gebaseerd op de <b>Poisson</b> verdeling."
+
+msgid "The required sample size is based on the <b>binomial</b> distribution."
+msgstr ""
+"De benodigde steekproefgrootte is gebaseerd op de <b>binomiaal</b> verdeling."
+
+msgid ""
+"The required sample size is based on the <b>hypergeometric</b> distribution."
+msgstr ""
+"De benodigde steekproefgrootte is gebaseerd op de <b>hypergeometrische</b> "
+"verdeling."
+
+msgid "The required sample size is based on the <b>gamma</b> distribution."
+msgstr ""
+"De vereiste steekproefgrootte is gebaseerd op de <b>gamma</b> verdeling."
+
+msgid "The required sample size is based on the <b>beta</b> distribution."
+msgstr ""
+"De vereiste steekproefgrootte is gebaseerd op de <b>beta</b> verdeling."
+
+msgid ""
+"The required sample size is based on the <b>beta-binomial</b> distribution "
+"(N = %1$s)."
+msgstr ""
+"De vereiste steekproefgrootte is gebaseerd op de <b>beta-binomiaal</b> "
+"verdeling (N = %1$s)."
+
+#, fuzzy
+msgid ""
+"Either the materiality (if applicable), the population size, or the "
+"population value is defined as zero."
+msgstr ""
+"De materialiteit, de populatiegrootte, óf de populatiewaarde is gedefinieerd "
+"als nul."
+
+#, fuzzy
+msgid "%1$s <b>Results could not be calculated.</b>"
+msgstr "F-statistiek kon niet worden berekend"
+
+msgid ""
+"The required sample size is based on the <b>Poisson</b> distribution "
+"<i>(%1$s = %2$s)</i>."
+msgstr ""
+"De vereiste steekproefgrootte is gebaseerd op de <b>Poisson</b> verdeling "
+"<i>(%1$s = %2$s)</i>."
+
+msgid ""
+"The required sample size is based on the <b>binomial</b> distribution <i>(p "
+"= %1$s)</i>"
+msgstr ""
+"De vereiste steekproefgrootte is gebaseerd op de <b>binomiaal</b> verdeling "
+"<i>(p = %1$s)</i>"
+
+msgid ""
+"The required sample size is based on the <b>hypergeometric</b> distribution "
+"<i>(N = %1$s, K = %2$s)</i>."
+msgstr ""
+"De benodigde steekproefgrootte is gebaseerd op de <b>hypergeometrische</b> "
+"verdeling <i>(N = %1$s, K = %2$s)</i>."
+
+msgid ""
+"The required sample size is based on the <b>gamma</b> distribution <i>(%1$s "
+"= %2$s, %3$s = %4$s)</i>"
+msgstr ""
+"De benodigde steekproefgrootte is gebaseerd op de <b>gamma</b> verdeling "
+"<i>(%1$s = %2$s, %3$s = %4$s)</i>"
+
+msgid ""
+"The required sample size is based on the <b>beta</b> distribution <i>(%1$s = "
+"%2$s, %3$s = %4$s)</i>."
+msgstr ""
+"De benodigde steekproefgrootte is gebaseerd op de <b>beta</b> verdeling "
+"<i>(%1$s = %2$s, %3$s = %4$s)</i>."
+
+msgid ""
+"The required sample size is based on the <b>beta-binomial</b> distribution "
+"<i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>."
+msgstr ""
+"De benodigde steekproefgrootte is gebaseerd op de <b>beta-binomiaal</b> "
+"verdeling <i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>."
+
+msgid ""
+"The value %1$s is automatically used as a starting point for the fixed "
+"interval selection."
+msgstr ""
+
+#, fuzzy
+msgid "%1$s"
+msgstr "X%1$s"
+
+#, fuzzy
+msgid "Comparison of Required Sample Sizes"
+msgstr "Vereiste steekproefgrootte"
+
+msgid "Across Probability Distributions (Current: %1$s)"
+msgstr ""
+
+msgid "Expected error-free"
+msgstr "Verwacht foutloos"
+
+#, fuzzy
+msgid "Required sample size (n)"
+msgstr "Vereiste steekproefgrootte"
+
+msgid "An error occurred in a call to the the jfa package: %1$s"
+msgstr "Er is een fout opgetreden bij het aanroepen van het jfa-package: %1$s"
+
+msgid "Across Expected Errors (Current: %1$s)"
+msgstr ""
+
+msgid ""
+"<b>Figure %1$i.</b> The first panel shows a comparison of the required "
+"sample sizes under different probability distributions. The bars represent "
+"the required sample sizes for the current expected errors in the sample. The "
+"number of expected errors in each bar is colored in red and the number of "
+"expected error-free transactions is colored in green. The second panel shows "
+"a comparison of the required sample sizes under different expected errors "
+"for the current probability distribution."
+msgstr ""
+
+#, fuzzy
+msgid "Implied %1$s Distribution of Errors"
+msgstr "Geïmpliceerde %1$s Steekproefverdeling"
+
+msgid "Errors"
+msgstr "Fouten"
+
+msgid "Probability"
+msgstr "Kansverdeling"
+
+#, fuzzy
+msgid ""
+"<b>Figure %1$i.</b> The implied <b>%2$s</b> distribution. The number of "
+"expected errors in the selection is colored in red and the number of "
+"expected error-free observations is colored in green. The total probability "
+"of the errors does not exceed the detection risk as specified through the "
+"audit risk model."
+msgstr ""
+"<b>Figuur %1$i.</b> De geïmpliceerde <b>%2$s</b> steekproefverdeling. Het "
+"aantal verwachte fouten in de selectie is rood gekleurd en het aantal "
+"foutvrije observaties groen. De totale kans van de fouten overschrijdt niet "
+"het detectie risico zoals gespecificeerd door het audit risicomodel."
+
+msgid ""
+"Your specified starting point lies outside the selection interval (%1$s)."
+msgstr "Uw gespecificeerde startpunt ligt buiten het selectie interval (%1$s)."
+
+msgid "<b>Table %1$i.</b> Selection Summary"
+msgstr "<b>Tabel %1$i.</b> Selectiesamenvatting"
+
+msgid "Selected sampling units"
+msgstr ""
+
+msgid "Selected transactions"
+msgstr ""
+
+msgid "Selection value"
+msgstr "Selectie waarde"
+
+msgid "%% of population value"
+msgstr "%% van de populatiewaarde"
+
+msgid "%% of total observations"
+msgstr "%% van totale observaties"
+
+#, fuzzy
+msgid "The sample is drawn with random number generator <i>seed %1$s</i>."
+msgstr "De steekproef is getrokken met <i>seed %1$s</i>."
+
+#, fuzzy
+msgid "Sampling unit %1$s is selected from each interval."
+msgstr "Eenheid %1$s is geselecteerd van ieder interval."
+
+msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
+msgstr ""
+
+#, fuzzy
+msgid "Transactions"
+msgstr "Iteraties"
+
+msgid "Total value"
+msgstr "Boekwaardes"
+
+#, fuzzy
+msgid "Selected units"
+msgstr "Verwacht aantal"
+
+#, fuzzy
+msgid "% of total value"
+msgstr "Boekwaardes"
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Selected Transactions"
+msgstr "<b>Tabel %1$i.</b> Geselecteerde Observaties"
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Descriptive Statistics for Selected Transactions"
+msgstr "<b>Tabel %i.</b> Beschrijvende Statistieken"
+
+msgid "Valid cases"
+msgstr "Geldige waarnemingen"
+
+msgid "Median"
+msgstr "Mediaan"
+
+msgid "Std. Deviation"
+msgstr "Standaardafwijking"
+
+msgid "Variance"
+msgstr "Variantie"
+
+msgid "Range"
+msgstr "Bereik"
+
+msgid "Minimum"
+msgstr "Minimum"
+
+msgid "Maximum"
+msgstr "Maximum"
+
+#, fuzzy
+msgid ""
+"The cumulative knowledge states that there is a %1$s probability that, when "
+"one would repeatedly sample from this population, the upper bound on the "
+"misstatement in the population is lower than <b>%2$s</b> with a precision of "
+"<b>%3$s</b>."
+msgstr ""
+"waarschijnlijkheid dat, indien men herhaaldelijk een steekproef neemt van "
+"deze populatie, de maxiamle fout is berekend en lager dan"
+
+msgid ""
+"The cumulative knowledge states that there is a %1$s probability that the "
+"misstatement in the population is lower than <b>%2$s</b> with a precision of "
+"<b>%3$s</b>."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The selection consisted of <b>%1$s</b> sampling units, of which a total of "
+"<b>%2$s</b> were misstated. The information from this sample combined with "
+"the prior information results in a most likely error in the population of <b>"
+"%3$s</b> and an %4$s upper bound of <b>%5$s</b>. %6$s"
+msgstr ""
+"De selectie bestond uit <b>%1$s</b> observaties, waarvan er van <b>%2$s</b> "
+"werd bevonden een fout te bevatten. De kennis van deze data, gecombineerd "
+"met risicobeoordelingen resulteren in een <b>%3$s</b> bovengrens van <b>"
+"%4$s</b>. De cumulatieve kennis stelt dat er een <b>%5$s</b> %6$s <b>%7$s</"
+"b> is."
+
+msgid "<b>Table %1$i.</b> Evaluation Summary"
+msgstr "<b>Tabel %1$i.</b> Evaluatiesamenvatting"
+
+msgid "Sample size"
+msgstr "Steekproefgrootte"
+
+msgid "Total tainting"
+msgstr "Totale tainting"
+
+msgid "Most likely error"
+msgstr "Meest waarschijnlijke fout"
+
+#, fuzzy
+msgid "%1$s%% Upper bound"
+msgstr "%s bovengrens"
+
+msgid "Obtained precision"
+msgstr ""
+
+msgid "Odds"
+msgstr ""
+
+msgid "BF%1$s"
+msgstr "BF%1$s"
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>Poisson</b> distributon."
+msgstr "De zekerheidsgrens is berekend volgens de <b>Poisson</b> verdeling."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>binomial</b> distributon."
+msgstr "De zekerheidsgrens is berekend volgens de <b>binomiaal</b> verdeling."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>hypergeometric</b> "
+"distribution."
+msgstr ""
+"De zekerheidsgrens is berekend volgens de <b>hypergeometrische</b> verdeling."
+
+#, fuzzy
+msgid "The upper bound is calculated according to the <b>Stringer</b> method."
+msgstr "De zekerheidsgrens is berekend volgens de <b>Stringer</b> methode."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>regression</b> method."
+msgstr "De zekerheidsgrens is berekend volgens de <b>regressie</b> methode."
+
+#, fuzzy
+msgid "The upper bound is calculated according to the <b>direct</b> method."
+msgstr "De zekerheidsgrens is berekend volgens de <b>directe</b> methode."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>difference</b> method."
+msgstr "De zekerheid grens is berekend volgens de <b>verschil</b> methode."
+
+#, fuzzy
+msgid "The upper bound is calculated according to the <b>ratio</b> method."
+msgstr "De zekerheidsgrens is berekend volgens de <b>ratio</b> methode."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>beta</b> distribution and "
+"requires the assumption that the sample taints are interchangeable."
+msgstr ""
+"De geloofwaardigheidsgrens is berekend volgens de <b>beta</b> verdeling en "
+"heeft de aanname dat de fout in individuele observaties uitwisselbaar is."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>gamma</b> distribution and "
+"requires the assumption that the sample taints are interchangeable."
+msgstr ""
+"De geloofwaardigheidsgrens is berekend volgens de <b>gamma</b> verdeling en "
+"heeft de aanname dat de fout in individuele observaties uitwisselbaar is."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>beta-binomial</b> "
+"distribution and requires the assumption that the sample taints are "
+"interchangeable."
+msgstr ""
+"De geloofwaardigheidsgrens is berekend volgens de <b>beta-binomiaal</b> "
+"verdelingen en heeft de aanname dat de fout in individuele observaties "
+"uitwisselbaar is."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>Cox and Snell</b> method "
+"and requires the assumption that the population taints are uniformly "
+"distributed."
+msgstr ""
+"De geloofwaardigheidsgrens is berekend volgens de <b>Cox en Snell</b> "
+"methode en heeft de aanname dat de populatie vervuilingen uniform zijn "
+"verdeeld."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>Stringer</b> method with "
+"<b>LTA adjustment</b>."
+msgstr ""
+"De zekerheidsgrens is berekend volgens de <b>Stringer</b> methode met <b>LTA "
+"adjustment</b>."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>beta</b> distribution. It "
+"requires the assumptions that the sample taints are interchangeable and that "
+"the sample taints are homogeneous."
+msgstr ""
+"De geloofwaardigheidsgrens is berekend volgens de <b>beta</b> verdeling en "
+"heeft de aanname dat de fout in individuele observaties uitwisselbaar is."
+
+msgid "The audit result column is empty."
+msgstr "De audit resultaten kolom is leeg."
+
+#, fuzzy
+msgid "%1$s <b>Results cound not be calculated.</b>"
+msgstr "F-statistiek kon niet worden berekend"
+
+msgid ""
+"Either the materiality, the population size, or the population value is "
+"defined as zero, or one of the required variables is missing."
+msgstr ""
+"De materialiteit, de populatiegrootte, of de populatiewaarde is nul, of een "
+"van deze variabelen ontbreekt."
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Assumption Checks"
+msgstr "<b>Tabel %1$i.</b> Evaluatiesamenvatting"
+
+#, fuzzy
+msgid "Pearson's <i>r</i>"
+msgstr "Pearson's r"
+
+msgid "p"
+msgstr "p"
+
+msgid "The sample taints are homogeneous"
+msgstr ""
+
+msgid "Evaluation of Sampling Objectives"
+msgstr ""
+
+msgid "Maximum error"
+msgstr "Maximale fout"
+
+msgid "An error occurred while creating this plot: %1$s"
+msgstr "Er is een fout opgetreden bij het maken van deze plot: %1$s"
+
+msgid ""
+"<b>Figure %1$i.</b> Evaluation information for the current annotated "
+"selection. The materiality is compared with the maximum misstatement and the "
+"most likely error. The most likely error (MLE) is an estimate of the true "
+"misstatement in the population. The maximum error is an estimate of the "
+"maximum error in the population."
+msgstr ""
+"<b>Figuur %1$i.</b> Evaluatie informatie voor de huidige geannoteerde "
+"selectie. De materialiteit wordt vergeleken met de maxiamale fout en de "
+"meest waarschijnlijke fout. De meest waarschijnlijke fout (MLE) is een "
+"schatting van de ware afwijking in de populatie. De maximale fout is een "
+"schatting van de maximale fouten in de populatie."
+
+msgid "Scatter Plot of Ist and Soll Values"
+msgstr ""
+
+#, fuzzy
+msgid "Ist value (%1$s)"
+msgstr "Audit waarden (%1$s)"
+
+#, fuzzy
+msgid "Soll value (%1$s)"
+msgstr "Boekwaardes (%1$s)"
+
+msgid "Ist = Soll"
+msgstr ""
+
+msgid ""
+"<b>Figure %1$i.</b> Scatter plot of the Ist values in the selection and "
+"their corresponding Soll values. Grey dots on the diagonal (dashed line) "
+"indicate matching Ist and Soll values. Red dots off the diagonal indicate "
+"transactions whose Soll value did not match their original Ist value. If "
+"these red dots lie below the diagonal, the transactions are overstated. If "
+"these red dots lie above the diagonal they are understated. %2$s"
+msgstr ""
+
+msgid "<b>Table %i.</b> Suggested Sample Extension to Achieve Objectives"
+msgstr ""
+
+#, fuzzy
+msgid "Prior distribution"
+msgstr "Posterior Verdeling"
+
+#, fuzzy
+msgid "Additional tolerable errors"
+msgstr "Extra pasmaten"
+
+#, fuzzy
+msgid "Additional sample size"
+msgstr "Impliciete steekproefgrootte"
+
+msgid "Posterior distribution"
+msgstr "Posterior verdeling"
+
+msgid "The sample sizes shown are a rough indication."
+msgstr ""
+
+msgid "<b>Table %i.</b> Implicit Sample"
+msgstr "<b>Tabel %i.</b> Impliciete Steekproef"
+
+msgid "Implicit sample size"
+msgstr "Impliciete steekproefgrootte"
+
+msgid "Implicit errors"
+msgstr "Impliciete fouten"
+
+msgid "The implicit sample is based on no existing information."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The implicit sample is derived from the ARM risk assessments: IR = <b>%1$s</"
+"b> and CR = <b>%2$s</b>."
+msgstr ""
+"De weergegeven steekproefgroottes zijn impliciete steekproefgroottes "
+"afgeleid van de ARM risico beoordelingen: IR = <b>%1$s</b> en CR = <b>%2$s</"
+"b>."
+
+msgid ""
+"The implicit sample is derived from equal prior probabilities: <i>p(H%1$s) = "
+"p(H%2$s) = 0.5</i>"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The implicit sample is derived from custom prior probabilities: <i>p(H%1$s) "
+"= %2$s, p(H%3$s) = %4$s</i>"
+msgstr ""
+"De benodigde steekproefgrootte is gebaseerd op de <b>gamma</b> verdeling "
+"<i>(%1$s = %2$s, %3$s = %4$s)</i>"
+
+msgid ""
+"The implicit sample is derived from an earlier sample of %1$s observations "
+"containing %2$s errors."
+msgstr ""
+
+msgid ""
+"The implicit sample is derived from an earlier sample of %1$s observations "
+"containing %2$s errors weighted by a factor <i>f = %3$s</i>."
+msgstr ""
+
+msgid "Implied Prior Distribution over Unknown Misstatement"
+msgstr ""
+
+#, fuzzy
+msgid "Implied Prior Distribution"
+msgstr "Posterior Verdeling"
+
+msgid "Prior"
+msgstr "Prior"
+
+msgid ""
+"Expected\n"
+"posterior"
+msgstr ""
+"Verwachte\n"
+"posterior"
+
+msgid "Density"
+msgstr "Dichtheid"
+
+#, fuzzy
+msgid "Population misstatement (%1$s)"
+msgstr "Kans op fout"
+
+msgid "Unseen population misstatement (%1$s)"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"%1$s%% Credible \n"
+"region for %2$s"
+msgstr "%1$s%% Prior geloofwaardigheidsregio"
+
+#, fuzzy
+msgid "%1$s%% Credible region for %2$s"
+msgstr "%1$s%% Prior geloofwaardigheidsregio"
+
+msgid "Support"
+msgstr "Ondersteuning"
+
+msgid ""
+"The expected errors (grey dot) receive the highest probability. The red dot "
+"represents the materiality."
+msgstr ""
+"De verwachtte fouten (grijze stip) krijgen de hoogste prioriteit. De rode "
+"stip representeert de materialiteit."
+
+#, fuzzy
+msgid ""
+"The expected posterior distribution has its upper confidence bound just "
+"below materiality."
+msgstr ""
+"De verwachte posterior kansverdeling heeft zijn bovenste "
+"geloofwaardigheidsgrens onder de materialiteit."
+
+msgid ""
+"<b>Figure %1$i.</b> The prior probability distribution <b>(%2$s)</b> on the "
+"misstatement in the population. The prior parameters <i>%3$s = %4$s, %5$s = "
+"%6$s</i> are derived from the assessments of the inherent and control risk, "
+"along with the expected errors. %7$s %8$s"
+msgstr ""
+"<b>Figuur %1$i.</b> De prior kansverdeling <b>(%2$s)</b> voor de afwijking "
+"in de populatie. De prior parameters <i>%3$s = %4$s, %5$s = %6$s</i> zijn "
+"afgeleid van de beoordelingen van inherente en controle risico, samen met de "
+"verwachte fouten %7$s %8$s"
+
+#, fuzzy
+msgid "Prior and Posterior Distribution over Unknown Misstatement"
+msgstr "Prior and posterior verdeling"
+
+msgid "Prior and Posterior Distribution"
+msgstr "Prior and posterior verdeling"
+
+msgid "Posterior"
+msgstr "Posterior"
+
+msgid "Population errors"
+msgstr "Populatiefouten"
+
+#, fuzzy
+msgid "Precision (%1$s)"
+msgstr "nauwkeurigheid: %s"
+
+#, fuzzy
+msgid "Most likely error (%1$s)"
+msgstr "Meest waarschijnlijke fout"
+
+#, fuzzy
+msgid "Upper bound (%1$s)"
+msgstr "Bovengrens"
+
+#, fuzzy
+msgid ""
+"The red dot represents the specified materiality. If the shaded area under "
+"the distribution surpasses this point, the estimate of the maximum "
+"misstatement exceeds the materiality."
+msgstr ""
+"De rode stip representeert de gespecificeerde materialiteit. Als het "
+"gekleurde gebied onder de distributie deze stip passeert, dan wordt de "
+"totale afwijking in de populatie boven de materialiteit geschat."
+
+msgid ""
+"<b>Figure %1$i.</b> The prior and posterior probability distribution "
+"<b>(%2$s)</b> on the misstatement in the population. %3$s"
+msgstr ""
+"<b>Figuur %1$i.</b> De prior en posterior kansverdeling <b>(%2$s)</b> voor "
+"de fout in de populatie. %3$s"
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> %2$s"
+msgstr "<b>Tabel %1$i.</b> Planningssamenvatting"
+
+msgid "Functional form"
+msgstr "Functionele vorm"
+
+msgid "Support %1$s"
+msgstr "ondersteuning %1$s"
+
+#, fuzzy
+msgid "Ratio %1$s"
+msgstr "Ratio"
+
+msgid "Mode"
+msgstr "Modus"
+
+msgid "Precision"
+msgstr "Nauwkeurigheid"
+
+msgid "Expected posterior"
+msgstr "Verwachte posterior"
+
+msgid "Expected shift"
+msgstr "Verwachte verschuiving"
+
+msgid "Shift"
+msgstr "Shift"
+
+msgid ""
+"%1$s: The population misstatement is lower than materiality (%2$s %3$s). "
+"%4$s: The population misstatement is equal to, or higher than, materiality "
+"(%5$s %6$s)."
+msgstr ""
+"%1$s: De populatie afwijking is lager dan de materialiteit(%2$s %3$s). %4$s: "
+"De populatie afwijking is gelijk aan, of hoger dan de materialiteit (%5$s "
+"%6$s)."

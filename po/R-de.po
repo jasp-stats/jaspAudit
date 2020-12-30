@@ -1,0 +1,1799 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: R 3.6.1\n"
+"Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
+"POT-Creation-Date: 2020-12-30 10:06\n"
+"PO-Revision-Date: 2020-12-03 09:42+0000\n"
+"Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/jasp-engine/"
+"de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
+"X-Generator: Weblate 4.4-dev\n"
+
+msgid "<u>Procedure</u>"
+msgstr "<u>Prozedur</u>"
+
+msgid ""
+"Benford's law states that in many naturally occurring collections of "
+"numerical observations, the leading significant digit is likely to be small. "
+"The goal of this procedure is to determine to what extent the first leading "
+"digits in the data set follow Benford's law, and to test this relation with "
+"a type-I error of <b>%1$s</b>. Data that are not distributed according to "
+"Benford's law might need further investigation."
+msgstr ""
+"Das Benfordsche Gesetz sagt, dass in vielen natürlich vorkommenden "
+"Sammlungen numerischer Beobachtungen die führende Ziffer wahrscheinlich "
+"klein ist. Das Ziel dieses Verfahrens ist festzustellen, inwiefern die "
+"führenden Ziffern im Datensatz dem Benfordschen Gesetz folgen, und diese "
+"Beziehung mit einem Typ-I-Fehler von <b>%1$s</b> zu testen. Daten, die nicht "
+"mit dem Benfordschen Gesetz übereinstimmen, müssen möglicherweise weiter "
+"untersucht werden."
+
+msgid ""
+"Benford's law states that in many naturally occurring collections of "
+"numerical observations, the leading significant digit is likely to be small. "
+"The goal of this procedure is to determine to what extent the first two "
+"leading digits in the data set follow Benford's law, and to test this "
+"relation with a type-I error of <b>%1$s</b>. Data that are not distributed "
+"according to Benford's law might need further investigation."
+msgstr ""
+"Das Benfordsche Gesetz sagt, dass in vielen natürlich auftretenden "
+"Sammlungen numerischer Beobachtungen die führende Ziffer wahrscheinlich "
+"klein ist. Das Ziel dieses Verfahrens ist festzustellen, inwiefern die "
+"ersten beiden führenden Ziffern im Datensatz dem Benfordschen Gesetz folgen, "
+"und diese Beziehung mit einem Typ-I-Fehler von <b>%1$s</b> zu testen. Daten, "
+"die nicht mit dem Benfordschen Gesetz übereinstimmen, müssen möglicherweise "
+"weiter untersucht werden."
+
+msgid ""
+"Benford's law states that in many naturally occurring collections of "
+"numerical observations, the leading significant digit is likely to be small. "
+"The goal of this procedure is to determine to what extent the last digits in "
+"the data set follow Benford's law, and to test this relation with a type-I "
+"error of <b>%1$s</b>. Data that are not distributed according to Benford's "
+"law might need further investigation."
+msgstr ""
+"Das Benfordsche Gesetz sagt, dass in vielen natürlich auftretenden "
+"Sammlungen numerischer Beobachtungen die führende Ziffer wahrscheinlich "
+"klein ist. Das Ziel dieses Verfahrens ist festzustellen, inwiefern die "
+"letzten Ziffern im Datensatz dem Benfordschen Gesetz folgen, und diese "
+"Beziehung mit einem Typ-I-Fehler von <b>%1$s</b> zu testen. Daten, die nicht "
+"nach dem Benfordschen Gesetz verteilt sind, müssen möglicherweise weiter "
+"untersucht werden."
+
+msgid ""
+"The uniform distribution assigns equal probability to all possible digits "
+"that may occur. The goal of this procedure is to determine to what extent "
+"the first leading digits in the data set follow the uniform distribution, "
+"and to test this relation with a type-I error of <b>%1$s</b>. If the uniform "
+"distribution assumption is desirable, then violation of uniformity is cause "
+"for further investigation."
+msgstr ""
+"Die Gleichverteilung weist allen möglichen Ziffern, die auftreten können, "
+"die gleiche Wahrscheinlichkeit zu. Ziel dieses Verfahrens ist es, "
+"festzustellen, inwieweit die ersten führenden Stellen im Datensatz der "
+"Gleichverteilung folgen, und diesen Zusammenhang mit einem Typ-I-Fehler von "
+"<b>%1$s</b> zu testen. Wenn die Annahme der Gleichverteilung wünschenswert "
+"ist, dann ist die Verletzung der Gleichverteilung Anlass für weitere "
+"Untersuchungen."
+
+msgid ""
+"The uniform distribution assigns equal probability to all possible digits "
+"that may occur. The goal of this procedure is to determine to what extent "
+"the first two leading digits in the data set follow the uniform "
+"distribution, and to test this relation with a type-I error of <b>%1$s</b>. "
+"If the uniform distribution assumption is desirable, then violation of "
+"uniformity is cause for further investigation."
+msgstr ""
+"Die Gleichverteilung weist allen möglichen Ziffern, die auftreten können, "
+"die gleiche Wahrscheinlichkeit zu. Ziel dieses Verfahrens ist es, "
+"festzustellen, inwieweit die ersten beiden führenden Stellen im Datensatz "
+"der Gleichverteilung folgen, und diesen Zusammenhang mit einem Typ-I-Fehler "
+"von <b>%1$s</b> zu testen. Wenn die Annahme der Gleichverteilung "
+"wünschenswert ist, dann ist die Verletzung der Gleichverteilung Anlass für "
+"weitere Untersuchungen."
+
+msgid ""
+"The uniform distribution assigns equal probability to all possible digits "
+"that may occur. The goal of this procedure is to determine to what extent "
+"the last digits in the data set follow the uniform distribution, and to test "
+"this relation with a type-I error of <b>%1$s</b>. If the uniform "
+"distribution assumption is desirable, then violation of uniformity is cause "
+"for further investigation."
+msgstr ""
+"Die Gleichverteilung weist allen möglichen Ziffern, die auftreten können, "
+"die gleiche Wahrscheinlichkeit zu. Ziel dieses Verfahrens ist es, "
+"festzustellen, inwieweit die letzten Ziffern im Datensatz der "
+"Gleichverteilung folgen, und diese Beziehung mit einem Typ-I-Fehler von <b>"
+"%1$s</b> zu testen. Wenn die Annahme der Gleichverteilung wünschenswert ist, "
+"dann ist die Verletzung der Gleichverteilung Anlass für weitere "
+"Untersuchungen."
+
+msgid "<u>Assessing Benford's Law</u>"
+msgstr "<u>Prüfung des Benfordschen Gesetzes</u>"
+
+msgid "<u>Assessing the Uniform Distribution</u>"
+msgstr "<u>Prüfung der Uniformen Verteilung</u>"
+
+msgid "<b>Table %i.</b> Goodness-of-fit Test"
+msgstr "<b>Tabelle %i.</b> Anpassungsgüte-Test"
+
+msgid "Statistic"
+msgstr "Statistik"
+
+msgid "Value"
+msgstr "Wert"
+
+msgid "df"
+msgstr "df"
+
+msgid "<i>p</i> value"
+msgstr "<i>p</i>-Wert"
+
+msgid "N"
+msgstr "N"
+
+msgid ""
+"The null hypothesis specifies that the first digits (1 - 9) in the data set "
+"are distributed according to %1$s."
+msgstr ""
+"Die Nullhypothese gibt an, dass die ersten Ziffern (1 - 9) im Datensatz "
+"gemäß %1$s verteilt sind."
+
+msgid ""
+"The null hypothesis specifies that the first two digits (10 - 99) in the "
+"data set are distributed according to %1$s."
+msgstr ""
+"Die Nullhypothese gibt an, dass die ersten beiden Ziffern (10 - 99) im "
+"Datensatz gemäß %1$s verteilt sind."
+
+msgid ""
+"The null hypothesis specifies that the last digits (1 - 9) in the data set "
+"are distributed according to %1$s."
+msgstr ""
+"Die Nullhypothese gibt an, dass die letzten Ziffern (1 - 9) im Datensatz "
+"gemäß %1$s verteilt sind."
+
+msgid "Chi-square"
+msgstr "Chi-Quadrat"
+
+msgid "X%1$s"
+msgstr "X%1$s"
+
+msgid "<b>Table %i.</b> Descriptive Statistics"
+msgstr "<b>Tabelle %i.</b> Deskriptive Statistiken"
+
+msgid "Benford's law"
+msgstr "Benfordsches Gesetz"
+
+msgid "Uniform distribution"
+msgstr "Uniforme Verteilung"
+
+msgid "Leading digit"
+msgstr "Führende Ziffer"
+
+msgid "Leading digits"
+msgstr "Führende Ziffern"
+
+msgid "Last digit"
+msgstr "Letzte Ziffer"
+
+msgid "Count"
+msgstr "Anzahl"
+
+msgid "Percentage"
+msgstr "Prozentzahl"
+
+msgid "Observed Percentages vs. Expected Percentages"
+msgstr "Beobachtete Prozentzahlen vs. Erwartete Prozentzahlen"
+
+msgid "Observed"
+msgstr "Beobachtet"
+
+msgid ""
+"<b>Figure %i:</b> The observed percentages of each digit in the data set "
+"compared to the expected percentage under %2$s. For data sets distributed "
+"according %2$s the blue dots will lie near the top of the grey bars."
+msgstr ""
+"<b>Abbildung %i:</b> Die beobachteten Prozentzahlen jeder Ziffer des "
+"Datensatzes im Vergleich zum erwarteten Prozentsatz unter %2$s. Bei "
+"Datensätzen, die nach %2$s verteilt sind, liegen die blauen Punkte in der "
+"Nähe des oberen Randes der grauen Balken."
+
+msgid "<u>Conclusion</u>"
+msgstr "<u>Schlussfolgerung</u>"
+
+msgid "is rejected"
+msgstr "ist verworfen"
+
+msgid "is not rejected"
+msgstr "ist nicht verworfen"
+
+msgid ""
+"The <i>p</i> value is %1$s and the null hypothesis that the first digits in "
+"the data set are distributed according to %2$s <b>%3$s</b>."
+msgstr ""
+"Der <i>p</i>-Wert ist %1$s und die Nullhypothese, dass die ersten Ziffern "
+"des Datensatzes gemäß %2$s <b>%3$s</b> verteilt sind."
+
+msgid ""
+"The <i>p</i> value is %1$s and the null hypothesis that the first two digits "
+"in the data set are distributed according to %2$s <b>%3$s</b>."
+msgstr ""
+"Der <i>p</i>-Wert ist %1$s und die Nullhypothese, dass die ersten beiden "
+"Stellen des Datensatzes gemäß %2$s <b>%3$s</b> verteilt sind."
+
+msgid ""
+"The <i>p</i> value is %1$s and the null hypothesis that the last digits in "
+"the data set are distributed according to %2$s <b>%3$s</b>."
+msgstr ""
+"Der <i>p</i>-Wert ist %1$s und die Nullhypothese, dass die letzten Ziffern "
+"des Datensatzes gemäß %2$s <b>%3$s</b> verteilt sind."
+
+msgid "Direct estimator"
+msgstr "Direkter Schätzer"
+
+msgid "Difference estimator"
+msgstr "Differenzschätzer"
+
+msgid "Ratio estimator"
+msgstr "Quotient-Schätzer"
+
+msgid "Regression estimator"
+msgstr "Regressionsschätzer"
+
+msgid "Estimate %1$s"
+msgstr "Schätzung %1$s"
+
+msgid "Uncertainty"
+msgstr "Unsicherheit"
+
+msgid "Lower"
+msgstr "Untere"
+
+msgid "%1$s%% Confidence interval"
+msgstr "%1$s%% Konfidenzintervall"
+
+msgid "Upper"
+msgstr "Obere"
+
+msgid "Please specify the population size and your audit values."
+msgstr "Bitte spezifiziere die Größe der Grundgesamtheit und deine Auditwerte."
+
+msgid ""
+"Please specify the population size, population value and your sample "
+"variables."
+msgstr ""
+"Bitte spezifiziere die Größe und Wert der Grundgesamtheit und deine "
+"Stichproben-Variablen."
+
+msgid ""
+"Displayed numbers may differ from exact outcomes due to rounding in the "
+"calculations."
+msgstr ""
+"Angezeigte Zahlen können wegen Rundungen in den Berechnungen von den exakten "
+"Ergebnissen abweichen."
+
+msgid "<u>Calculations</u>"
+msgstr "<u>Berechnungen</u>"
+
+msgid ""
+"<i>The required information for the <b>direct</b> estimator consists of:</i>"
+msgstr ""
+"<i>Die benötigte Information für den <b>direkten</b> Schätzer besteht aus:</"
+"i>"
+
+msgid "The population size <i>N</i>"
+msgstr "Die Größe der Grundgesamtheit <i>N</i>"
+
+msgid "%1$s = %2$i"
+msgstr "%1$s = %2$i"
+
+msgid "The sample size <i>n</i>"
+msgstr "Der Stichprobenumfang <i>n</i>"
+
+msgid "The mean of the sample audit values %1$s"
+msgstr "Der Mittelwert der Stichproben-Auditwerte %1$s"
+
+msgid "%1$s = %2$s"
+msgstr "%1$s = %2$s"
+
+msgid "The standard deviation of the sample audit values %1$s"
+msgstr "Die Standardabweichung der Stichproben-Auditwerte %1$s"
+
+msgid ""
+"The t-value <i>(df = n - 1)</i> corresponding to %1$s%% confidence %2$s%3$s"
+"%4$s"
+msgstr ""
+"Der t-Wert <i>(df = n - 1)</i> der übereinstimmt mit %1$s%% Konfidenz %2$s"
+"%3$s%4$s"
+
+msgid ""
+"The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence %3$s"
+"%4$s%5$s%6$s"
+msgstr ""
+"Der t-Wert <i>(df = %1$s - 1)</i> der übereinstimmt mit %2$s%% Konfidenz %3$s"
+"%4$s%5$s%6$s"
+
+msgid ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s"
+msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s"
+
+msgid "<i>This information allows for calculation of:</i>"
+msgstr "<i>Diese Information erlaubt die Berechnung von:</i>"
+
+msgid "The point estimate of the true population value %1$s"
+msgstr "Die Punktschätzung des wahren Werts der Grundgesamtheit %1$s"
+
+msgid "The uncertainty of the estimator %1$s%2$s%3$s"
+msgstr "Die Unsicherheit des Schätzers %1$s%2$s%3$s"
+
+msgid "The confidence interval around the point estimate %1$s"
+msgstr "Das Konfidenzintervall um die Punktschätzung %1$s"
+
+msgid "%1$s = %2$s %3$s %4$s"
+msgstr "%1$s = %2$s %3$s %4$s"
+
+msgid ""
+"%1$s\n"
+"                           %2$s\n"
+"                           %3$s"
+msgstr ""
+"%1$s\n"
+"                           %2$s\n"
+"                           %3$s"
+
+msgid ""
+"<i>The required information for the <b>difference</b> estimator consists of:"
+"</i>"
+msgstr ""
+"<i>Die benötigte Information für die <b>Differenz</b>-Schätzung besteht aus:"
+"</i>"
+
+msgid "The sum of the population book values <i>B</i>"
+msgstr "Die Summe der Buchwerte der Grundgesamtheit <i>B</i>"
+
+msgid "The mean of the sample errors %1$s"
+msgstr "Der Mittelwert der Stichproben-Fehler %1$s"
+
+msgid "The standard deviation of the sample errors %1$s"
+msgstr "Die Standardabweichung der Stichprobenfehler %1$s"
+
+msgid ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s"
+msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s"
+
+msgid ""
+"%1$s\n"
+"                            %2$s\n"
+"                            %3$s"
+msgstr ""
+"%1$s\n"
+"                            %2$s\n"
+"                            %3$s"
+
+msgid ""
+"<i>The required information for the <b>ratio</b> estimator consists of:</i>"
+msgstr ""
+"<i>Die benötigte Information des <b>Quotient</b>-Schätzers besteht aus:</i>"
+
+msgid "The mean of the sample book values %1$s"
+msgstr "Der Mittelwert der Stichproben-Buchwerte %1$s"
+
+msgid "The standard deviation of the sample book values %1$s"
+msgstr "Die Standardabweichung der Stichproben-Buchwerte %1$s"
+
+msgid ""
+"The correlation coefficient of the sample book values and audit values %1$s"
+msgstr ""
+"Der Korrelationskoeffizient der Stichproben-Buchwerte und Auditwerte %1$s"
+
+msgid "The correctness ratio %1$s"
+msgstr "Das Korrektheits-Verhältnis %1$s"
+
+msgid ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s\n"
+"                                %7$s\n"
+"                                %8$s\n"
+"                                %9$s\n"
+"                                %10$s"
+msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s\n"
+"                                %7$s\n"
+"                                %8$s\n"
+"                                %9$s\n"
+"                                %10$s"
+
+msgid ""
+"<i>The required information for the <b>regression</b> estimator consists of:"
+"</i>"
+msgstr ""
+"<i>Die benötigte Information für den <b>Regressions</b>-Schätzer besteht aus:"
+"</i>"
+
+msgid ""
+"The regression coefficient of the sample book values and audit values %1$s"
+msgstr ""
+"Der Regressionskoeffizient der Buchwerte-Stichprobe und Auditwerten %1$s"
+
+msgid ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s\n"
+"                                %7$s\n"
+"                                %8$s\n"
+"                                %9$s"
+msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s\n"
+"                                %7$s\n"
+"                                %8$s\n"
+"                                %9$s"
+
+msgid "Required Sample Size"
+msgstr "Benötigter Stichprobenumfang"
+
+msgid "Estimator"
+msgstr "Schätzer"
+
+msgid "Required <i>n</i>"
+msgstr "Benötigtes <i>n</i>"
+
+msgid "Additional <i>n</i>"
+msgstr "Zusätzliches <i>n</i>"
+
+msgid "Correlation Plot"
+msgstr "Streudiagramm"
+
+msgid "Book values"
+msgstr "Buchwerte"
+
+msgid "Audit values"
+msgstr "Auditwerte"
+
+msgid ""
+"<b>Figure 1.</b> Scatter plot of the book values in the selection and their "
+"audit values. Red dots indicate observations that did not match their "
+"original book value. If these red dots lie in the bottom part of the graph, "
+"the book values are overstated. If these red dots lie in the upper part of "
+"the graph, they are understated. The value <i>r</i> is the Pearson "
+"correlation coefficient of the book values and the audit values, an "
+"indicator of the strength of the linear relationship between the two "
+"variables."
+msgstr ""
+"<b>Abbildung 1.</b> Streudiagramm der Buchwerte in der Auswahl und deren "
+"Auditwerte. Rote Punkte heben Beobachtungen hervor, die nicht ihrem "
+"ursprünglichen Buchwert übereinstimmen. Wenn diese roten Punkte im unteren "
+"Teil des Grafen liegen, sind die Buchwerte übertrieben. Wenn diese roten "
+"Punkte im oberen Teil des Grafen liegen, sind sie unterschätzt. Der Wert "
+"<i>r</i> ist der Pearson-Korrelationskoeffizient der Buchwerte und der "
+"Auditwerte, ein Indikator der Stärke der linearen Beziehung zwischen den "
+"beiden Variablen."
+
+msgid "<b>percentage</b>"
+msgstr "<b>Prozentzahl</b>"
+
+msgid "<b>amount</b>"
+msgstr "<b>Anzahl</b>"
+
+msgid "<u>Planning</u>"
+msgstr "<u>Planung</u>"
+
+msgid "<u>Selection</u>"
+msgstr "<u>Auswahl</u>"
+
+msgid "<u>Evaluation</u>"
+msgstr "<u>Evaluation</u>"
+
+msgid ""
+"Analysis not possible: Your materiality is higher than, or equal to the "
+"total value of the observations."
+msgstr ""
+"Analyse nicht möglich: Die Wesentlichkeit ist größer als, oder gleich dem "
+"Gesamtwert der Beobachtungen."
+
+msgid ""
+"Analysis not possible: Your expected errors are higher than materiality."
+msgstr ""
+"Analyse nicht möglich: Die erwarteten Fehler sind größer als die "
+"Wesentlichkeit."
+
+msgid ""
+"The detection risk is equal to or higher than 100%%. Please re-specify your "
+"custom values for the Inherent risk and/or Control risk, or the confidence."
+msgstr ""
+"Das Detektionsrisiko ist höher als, oder gleich 100%%. Bitte korrigiere "
+"deine benutzerdefinierten Werte für das inhärente Risiko und/oder das "
+"Kontrollrisiko, oder die Konfidenz."
+
+msgid ""
+"You cannot incorporate this prior information into your analysis because you "
+"are not testing against a performance materiality."
+msgstr ""
+
+msgid ""
+"The prior distribution with equal prior probabilities cannot be constructed "
+"using the beta-binomial distribution. You can use the beta or the gamma "
+"distribution in this case."
+msgstr ""
+
+msgid ""
+"The gamma prior distribution with equal prior probabilities cannot be "
+"constructed when you expect errors in the sample. You can revert to the beta "
+"distribution in this case."
+msgstr ""
+
+msgid "Selection summary"
+msgstr "Auswahl-Zusammenfassung"
+
+#, fuzzy
+msgid ""
+"Your sample size is larger than (or equal to) your population size. Cannot "
+"take a record sample larger than the population."
+msgstr ""
+"Der Stichprobenumfang ist größer (oder gleich) der Größe der "
+"Grundgesamtheit. Es kann keine Stichprobe gezogen werden, die größer als die "
+"Grundgesamtheit ist."
+
+#, fuzzy
+msgid ""
+"Your sample size is larger than (or equal to) your population value. Cannot "
+"take a MUS sample larger than the population value."
+msgstr ""
+"Der Stichprobenumfang ist größer (oder gleich) der Größe der "
+"Grundgesamtheit. Es kann keine Stichprobe gezogen werden, die größer als die "
+"Grundgesamtheit ist."
+
+#, fuzzy
+msgid ""
+"You must specify unique transaction ID's. The row numbers of the data set "
+"are sufficient."
+msgstr ""
+"Es müssen eindeutige Fall-IDs angegeben werden. Die Zeilennummern des "
+"Datensatzes sind ausreichend."
+
+msgid "Evaluation summary"
+msgstr "Evaluations-Zusammenfassung"
+
+msgid ""
+"Your audit result does not contain only 0's (correct) and 1's (incorrect). "
+"Select the Soll values annotation method from the options or use the summary "
+"statistics to evaluate your sample."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The hypergeometric upper bound requires that you specify the population size."
+msgstr ""
+"Für die hypergeometrische Konfidenzgrenze müssen Sie die Größe der "
+"Population angeben."
+
+msgid ""
+"Your sample size is larger than (or equal to) your population size. Please "
+"adjust your population size accordingly."
+msgstr ""
+"Der Stichprobenumfang ist größer (oder gleich) der Größe der "
+"Grundgesamtheit. Bitte passe die Größe der Grundgesamtheit entsprechend an."
+
+#, fuzzy
+msgid ""
+"The direct, difference, ratio, and regression bounds require that you "
+"specify the population size and the population value."
+msgstr ""
+"Für die direkte Vertrauensgrenze und ebenso für die Vertrauensgrenzen der "
+"Differenz, des Verhältnisses und der Regression müssen Sie die Größe der "
+"Population und den Populationswert angeben."
+
+#, fuzzy
+msgid ""
+"Your must specify unique transaction ID's. The row numbers of the data set "
+"are sufficient."
+msgstr ""
+"Es müssen eindeutige Fall-IDs angegeben werden. Die Zeilennummern des "
+"Datensatzes sind ausreichend."
+
+msgid ""
+"The detection risk is equal to or higher than 100%%. Please re-specify your "
+"values for the Inherent risk and/or Control risk, or the confidence."
+msgstr ""
+"Das Detektionsrisiko ist höher als, oder gleich 100%%. Bitte korrigiere "
+"deine benutzerdefinierten Werte für das inhärente Risiko und/oder das "
+"Kontrollrisiko, oder die Konfidenz."
+
+msgid ""
+"Select one or more sampling objectives from the top left corner to begin "
+"planning an audit sample.\n"
+"\n"
+"%1$s <b>Test against a performance materiality</b>\n"
+"\n"
+"Enable this objective if you want to <i>test</i> whether the total "
+"misstatement in the population exceeds a certain limit (i.e., the "
+"performance materiality) based on a sample. This approach allows you to plan "
+"a sample such that, when the sample meets your expectations, the maximum "
+"error is said to be below performance materiality. In the evaluation you "
+"will be able to quantify the evidence that your sample contains for or "
+"against the statement that the population misstatement does not exceed the "
+"performance materiality.\n"
+"\n"
+"%2$s <b>Obtain a required minimum precision</b>\n"
+"\n"
+"Enable this objective if you want to obtain a required minimum precision "
+"when <i>estimating</i> the total misstatement in the population based on a "
+"sample. This approach allows you to plan a sample such that, when the sample "
+"meets expectations, the accuracy of your estimate is below a tolerable "
+"percentage. In the evaluation you will be able to quantify the accuracy of "
+"your estimate of the population misstatement."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The objective of this sampling procedure is to determine with a confidence "
+"of <b>%1$s</b> whether the %2$s of misstatement in the population is lower "
+"than the performance materiality of <b>%3$s</b>."
+msgstr ""
+"Das Ziel dieses substantiellen Testverfahrens besteht darin, mit einer "
+"festgelegten Sicherheit <b>(%1$s)</b> festzustellen, ob die %2$s falscher "
+"Angaben in der Zielpopulation niedriger sind als die angegebene Materialität "
+"von <b>%3$s</b>."
+
+#, fuzzy
+msgid ""
+"The objective of this sampling procedure is to determine the misstatement in "
+"the population with a confidence of <b>%1$s</b> and a required minimum "
+"precision of <b>%2$s</b>."
+msgstr ""
+"Das Ziel dieses substantiellen Testverfahrens besteht darin, mit einer "
+"festgelegten Sicherheit <b>(%1$s)</b> festzustellen, ob die %2$s falscher "
+"Angaben in der Zielpopulation niedriger sind als die angegebene Materialität "
+"von <b>%3$s</b>."
+
+#, fuzzy
+msgid ""
+"The objective of this sampling procedure is to determine with a confidence "
+"of <b>%1$s</b> whether the %2$s of misstatement in the population is lower "
+"than the performance materiality of <b>%3$s</b> with a required minimum "
+"precision of <b>%4$s</b>."
+msgstr ""
+"Das Ziel dieses substantiellen Testverfahrens besteht darin, mit einer "
+"festgelegten Sicherheit <b>(%1$s)</b> festzustellen, ob die %2$s falscher "
+"Angaben in der Zielpopulation niedriger sind als die angegebene Materialität "
+"von <b>%3$s</b>."
+
+msgid "a performance materiality of <b>%1$s</b>"
+msgstr ""
+
+msgid ""
+"the maximum misstatement is determined to be below the performance "
+"materiality"
+msgstr ""
+
+msgid "a required minimum precision of <b>%1$s</b>"
+msgstr ""
+
+msgid "the misstatement is determined with the required minimum precision"
+msgstr ""
+
+msgid ""
+"a performance materiality of <b>%1$s</b> and a required minimum precision of "
+"<b>%2$s</b>"
+msgstr ""
+
+msgid ""
+"the maximum misstatement is determined with the required minimum precision "
+"to be below the performance materiality"
+msgstr ""
+
+msgid ""
+"Furthermore, the uncertainty regarding the misstatement will only be "
+"extrapolated over the unseen part of the population. This requires the "
+"additional <i>post-hoc</i> assumption that the sample taints are homogeneous."
+msgstr ""
+
+msgid "gamma"
+msgstr "Gamma"
+
+msgid "beta"
+msgstr "Beta"
+
+msgid "beta-binomial"
+msgstr "Beta-Binomial"
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, the <i>a priori</i> assumption that every value of the "
+"misstatement is equally likely, and the expected errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%6$s</b>, "
+"%7$s. %8$s"
+msgstr ""
+"Der wahrscheinlichste Fehler in den Daten wurde mit <b>%1$s</b> erwartet. "
+"Die Stichprobengröße, die für eine Wesentlichkeit von <b>%2$s</b> "
+"erforderlich ist, unter der Annahme, dass die Stichprobe <b>%3$s</b> ganze "
+"Fehler enthält, beträgt <b>%4$s</b>. Diese Stichprobengröße basiert auf der "
+"<b>%5$s</b> Verteilung, dem inhärenten Risiko <b>(%6$s)</b>, dem "
+"Kontrollrisiko <b>(%7$s)</b> und den erwarteten Fehlern. Wenn also die Summe "
+"der Fehler aus den geprüften Beobachtungen unter <b>%8$s</b> bleibt, wird "
+"die maximale Falschangabe als unter der Wesentlichkeit liegend eingeschätzt."
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, the <i>a priori</i> assessments of inherent risk <b>(%6$s)</b> "
+"and control risk <b>(%7$s)</b> from the Audit Risk Model, and the expected "
+"errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%8$s</b>, "
+"%9$s. %10$s"
+msgstr ""
+"Der wahrscheinlichste Fehler in den Daten wurde mit <b>%1$s</b> erwartet. "
+"Die Stichprobengröße, die für eine Wesentlichkeit von <b>%2$s</b> "
+"erforderlich ist, unter der Annahme, dass die Stichprobe <b>%3$s</b> ganze "
+"Fehler enthält, beträgt <b>%4$s</b>. Diese Stichprobengröße basiert auf der "
+"<b>%5$s</b> Verteilung, dem inhärenten Risiko <b>(%6$s)</b>, dem "
+"Kontrollrisiko <b>(%7$s)</b> und den erwarteten Fehlern. Wenn also die Summe "
+"der Fehler aus den geprüften Beobachtungen unter <b>%8$s</b> bleibt, wird "
+"die maximale Falschangabe als unter der Wesentlichkeit liegend eingeschätzt."
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, the <i>a priori</i> assumption that tolerable misstatement is "
+"equally likely to occur as intolerable misstatement, and the expected "
+"errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%6$s</b>, "
+"%7$s. %8$s"
+msgstr ""
+"Der wahrscheinlichste Fehler in den Daten wurde mit <b>%1$s</b> erwartet. "
+"Die Stichprobengröße, die für eine Wesentlichkeit von <b>%2$s</b> "
+"erforderlich ist, unter der Annahme, dass die Stichprobe <b>%3$s</b> ganze "
+"Fehler enthält, beträgt <b>%4$s</b>. Diese Stichprobengröße basiert auf der "
+"<b>%5$s</b> Verteilung, dem inhärenten Risiko <b>(%6$s)</b>, dem "
+"Kontrollrisiko <b>(%7$s)</b> und den erwarteten Fehlern. Wenn also die Summe "
+"der Fehler aus den geprüften Beobachtungen unter <b>%8$s</b> bleibt, wird "
+"die maximale Falschangabe als unter der Wesentlichkeit liegend eingeschätzt."
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, the <i>a priori</i> assumption that tolerable misstatement "
+"occurs with a probability <b>%6$s</b> of and intolerable misstatement occurs "
+"with a probability of <b>%7$s</b>, and the expected errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%8$s</b>, "
+"%9$s. %10$s"
+msgstr ""
+"Der wahrscheinlichste Fehler in den Daten wurde mit <b>%1$s</b> erwartet. "
+"Die Stichprobengröße, die für eine Wesentlichkeit von <b>%2$s</b> "
+"erforderlich ist, unter der Annahme, dass die Stichprobe <b>%3$s</b> ganze "
+"Fehler enthält, beträgt <b>%4$s</b>. Diese Stichprobengröße basiert auf der "
+"<b>%5$s</b> Verteilung, dem inhärenten Risiko <b>(%6$s)</b>, dem "
+"Kontrollrisiko <b>(%7$s)</b> und den erwarteten Fehlern. Wenn also die Summe "
+"der Fehler aus den geprüften Beobachtungen unter <b>%8$s</b> bleibt, wird "
+"die maximale Falschangabe als unter der Wesentlichkeit liegend eingeschätzt."
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, the <i>a priori</i> assumption that an earlier sample of <b>"
+"%6$s</b> transactions containing <b>%7$s</b> errors is seen, and the "
+"expected errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%8$s</b>, "
+"%9$s. %10$s"
+msgstr ""
+"Der wahrscheinlichste Fehler in den Daten wurde mit <b>%1$s</b> erwartet. "
+"Die Stichprobengröße, die für eine Wesentlichkeit von <b>%2$s</b> "
+"erforderlich ist, unter der Annahme, dass die Stichprobe <b>%3$s</b> ganze "
+"Fehler enthält, beträgt <b>%4$s</b>. Diese Stichprobengröße basiert auf der "
+"<b>%5$s</b> Verteilung, dem inhärenten Risiko <b>(%6$s)</b>, dem "
+"Kontrollrisiko <b>(%7$s)</b> und den erwarteten Fehlern. Wenn also die Summe "
+"der Fehler aus den geprüften Beobachtungen unter <b>%8$s</b> bleibt, wird "
+"die maximale Falschangabe als unter der Wesentlichkeit liegend eingeschätzt."
+
+#, fuzzy
+msgid ""
+"The most likely error in the sample is expected to be <b>%1$s</b>. The "
+"sample size that is required for %2$s, assuming the sample contains <b>%3$s</"
+"b> full errors, is <b>%4$s</b>. This sample size is based on the <b>%5$s</b> "
+"distribution, an <i>a priori</i> assumption that an earlier sample of <b>"
+"%6$s</b> transactions containing <b>%7$s</b> errors weighted by a factor <b>"
+"%8$s</b> is seen, and the expected errors. \n"
+"\n"
+"Consequently, if this sample is evaluated and the sum of (proportional) "
+"errors in the audited transactions is lower than (or equal to) <b>%9$s</b>, "
+"%10$s. %11$s"
+msgstr ""
+"Der wahrscheinlichste Fehler in den Daten wurde mit <b>%1$s</b> erwartet. "
+"Die Stichprobengröße, die für eine Wesentlichkeit von <b>%2$s</b> "
+"erforderlich ist, unter der Annahme, dass die Stichprobe <b>%3$s</b> ganze "
+"Fehler enthält, beträgt <b>%4$s</b>. Diese Stichprobengröße basiert auf der "
+"<b>%5$s</b> Verteilung, dem inhärenten Risiko <b>(%6$s)</b>, dem "
+"Kontrollrisiko <b>(%7$s)</b> und den erwarteten Fehlern. Wenn also die Summe "
+"der Fehler aus den geprüften Beobachtungen unter <b>%8$s</b> bleibt, wird "
+"die maximale Falschangabe als unter der Wesentlichkeit liegend eingeschätzt."
+
+msgid "random"
+msgstr "zufällig"
+
+msgid "fixed interval"
+msgstr "festes Intervall"
+
+msgid "cell"
+msgstr "Zelle"
+
+msgid "Ist position (<i>...</i>)"
+msgstr ""
+
+msgid "Euros"
+msgstr ""
+
+msgid "Dollars"
+msgstr ""
+
+msgid "Ist position (<i>%1$s</i>)"
+msgstr ""
+
+msgid "record variable (<i>...</i>)"
+msgstr ""
+
+msgid "record variable (<i>%1$s</i>)"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"From the population of <b>%1$s</b> %2$s transactions, <b>%3$s</b> sampling "
+"units (<i>%4$s</i>) are selected from the %5$s using a <b>%6$s record "
+"sampling</b> method. <br><b>Warning:</b> A monetary unit sampling method was "
+"tried but failed."
+msgstr ""
+"Aus der Grundgesamtheit von <b>%1$s</b> Beobachtungen wurden <b>%2$s</b> "
+"Beobachtungen mit Hilfe einer <b>%3$s Stichprobe</b>-Methode ausgewählt. "
+"<br><b>Warnung:</b> Eine Monetäre-Einheiten-Stichprobenmethode wurde "
+"versucht, aber ist gescheitert."
+
+msgid "%1$s record sampling"
+msgstr "%1$s aufgezeichnete Stichprobenziehung"
+
+msgid "%1$s monetary unit sampling"
+msgstr "%1$s monetäre Stichprobenziehung"
+
+#, fuzzy
+msgid ""
+"From the population of <b>%1$s</b> %2$s transactions, <b>%3$s</b> sampling "
+"units (<i>%4$s</i>) are selected from the %5$s using a <b>%6$s</b> method."
+msgstr ""
+"Aus der Grundgesamtheit von <b>%1$s</b> Beobachtungen wurden <b>%2$s</b> "
+"Beobachtungen mit einer <b>%3$s</b>-Methode ausgewählt."
+
+#, fuzzy
+msgid ""
+"%1$s \n"
+"\n"
+"<b>Note:</b> The selected sample (%2$s) contains fewer transactions than the "
+"planned sample size (%3$s) because some transactions are selected more than "
+"once. The transactions containing these %4$s extra selected sampling units "
+"will be counted multiple times in the evaluation."
+msgstr ""
+"%1$s <b>Beachte:</b> Die ausgewählte Teilmenge (%2$s) ist kleiner als die "
+"geplante Stichprobengröße (%3$s), da Beobachtungen wegen ihres hohen Werts "
+"mehrmals gezogen wurden. Diese Beobachtungen (%4$s) werden in der Evaluation "
+"mehrmals gezählt."
+
+msgid "below"
+msgstr "unter"
+
+msgid "lower"
+msgstr "niedriger"
+
+msgid "above"
+msgstr "über"
+
+msgid "higher"
+msgstr "höher"
+
+msgid ""
+"<b>Objectives:</b> You have achieved your specified sampling objectives."
+msgstr ""
+
+msgid ""
+"<b>Objectives:</b> You have not achieved your specified sampling objectives. "
+"It is recommended to draw more samples from this population and to continue "
+"audit procedures."
+msgstr ""
+
+msgid ""
+"The objective of this audit sampling procedure was to determine with %1$s "
+"confidence whether the misstatement in the population is lower than the "
+"specified performance materiality, in this case %2$s. For the current data, "
+"the %3$s upper bound on the misstatement is <b>%4$s</b> the performance "
+"materiality. \n"
+"\n"
+"The conclusion on the basis of these results is that, with at least %5$s "
+"confidence, the misstatement in the population is <b>%6$s</b> than the "
+"performance materiality. %7$s"
+msgstr ""
+
+msgid ""
+"The objective of this audit sampling procedure was to determine the "
+"misstatement in the population with %1$s confidence and a minimum precision "
+"of %2$s. For the current data, the obtained precision is <b>%3$s</b> than "
+"the required minimum precision. \n"
+"\n"
+"The conclusion on the basis of these results is that the total misstatement "
+"in the population has been determined with at least %4$s confidence and a "
+"precision of %5$s. %6$s"
+msgstr ""
+
+msgid ""
+"The objective of this audit sampling procedure was to determine with %1$s "
+"confidence, and a minimum precision of %2$s, whether the misstatement in the "
+"population is lower than the specified performance materiality, in this case "
+"%3$s. For the current data, the %4$s upper bound on the misstatement is <b>"
+"%5$s</b> the performance materiality and the obtained precision is <b>%6$s</"
+"b> than the required minimum precision. \n"
+"\n"
+"The conclusion on the basis of these results is that, with at least %7$s "
+"confidence and a precision of %8$s, the misstatement in the population is <b>"
+"%9$s</b> than the performance materiality. %10$s"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Descriptive Statistics for Ist Position"
+msgstr "<b>Tabelle %i.</b> Deskriptive Statistiken"
+
+msgid "Population size"
+msgstr "Größe der Grundgesamtheit"
+
+msgid "Absolute value"
+msgstr "Absolutwert"
+
+msgid "Mean"
+msgstr "Mittelwert"
+
+msgid "Std. deviation"
+msgstr "Standardabweichung"
+
+#, fuzzy
+msgid "1"
+msgstr "H1"
+
+msgid "Quartile"
+msgstr "Quartil"
+
+#, fuzzy
+msgid "2"
+msgstr "H2"
+
+msgid "3"
+msgstr ""
+
+#, fuzzy
+msgid "Distribution of Ist Values"
+msgstr "Verteilungsabbildungen"
+
+#, fuzzy
+msgid "Ist (%1$s)"
+msgstr "%1$s (%2$s)"
+
+msgid "Frequency"
+msgstr "Häufigkeit"
+
+#, fuzzy
+msgid "Mean %1$s St.dev"
+msgstr "Mittelwert %1$s sd"
+
+#, fuzzy
+msgid ""
+"<b>Figure %1$i.</b> The distribution of Ist values in the population. The "
+"red and blue dots respectively represent the mean and the values exactly one "
+"standard deviation from the mean. The orange dots represent the first, "
+"second (median) and third quartiles of the Ist values."
+msgstr ""
+"<b>Abbildung %1$i.</b> Die Verteilung der Buchwerte in der Grundgesamtheit. "
+"Die roten und blauen Punkte stellen jeweils den Mittelwert und die Werte "
+"genau eine Standardabweichung vom Mittelwert dar. Die orangefarbenen Punkte "
+"stellen das 25., 50. (Median) und 75. Perzentil der Buchwerte dar."
+
+msgid "<u>Audit Risk Model</u>"
+msgstr "<u>Auditisiko-Modell</u>"
+
+msgid ""
+"Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x "
+"Detection risk (%4$s%%)"
+msgstr ""
+"Auditrisiko (%1$s%%) = Inhärentes Risiko (%2$s%%) x Kontrollrisiko (%3$s%%) "
+"x Detektionsrisiko (%4$s%%)"
+
+msgid ""
+"Prior to the sampling procedure, the inherent risk was determined to be <b>"
+"%1$s</b>. The internal control risk was determined to be <b>%2$s</b>. "
+"According to the Audit Risk Model, the required detection risk to maintain "
+"an audit risk of <b>%3$s</b> should be <b>%4$s</b>."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"%1$s\n"
+"\n"
+"The translation of High, Medium and Low to probabilities is done according "
+"custom preferences</b>."
+msgstr ""
+"%1$s Die Übersetzung von Hoch, Mittel und Niedrig in Wahrscheinlichkeiten "
+"wurde nach <b>Benutzereinstellungen</b> vorgenommen."
+
+msgid ""
+"%1$s\n"
+"\n"
+"The translation of High, Medium and Low to probabilities is done using "
+"default values. To learn more about the choice of these values and how to "
+"adjust these, see the help file of this analysis."
+msgstr ""
+
+msgid ""
+"The detection risk is equal to or higher than 100%%. Please re-specify your "
+"custom values for the Inherent risk and/or Control risk."
+msgstr ""
+"Das Detektionsrisiko ist gleich oder höher als 100%%. Bitte korrigiere deine "
+"benutzerdefinierten Werte für das inhärente Risiko und/oder das "
+"Kontrollrisiko."
+
+msgid ""
+"You cannot achieve your current sampling objectives with this population. "
+"The resulting sample size exceeds 10000. Adjust your sampling objectives or "
+"variables accordingly."
+msgstr ""
+"Mit dieser Population können Sie Ihre aktuellen Stichprobenziele nicht "
+"erreichen.Die resultierende Stichprobengröße ist größer als 10000.Passen Sie "
+"Ihre Stichprobenziele oder -variablen entsprechend an."
+
+msgid "An error occurred: %1$s"
+msgstr "Es ist ein Fehler aufgetreten: %1$s"
+
+msgid ""
+"You cannot achieve your current sampling objectives with this population. "
+"The resulting sample size is larger than the number of transactions in the "
+"population. Adjust your sampling objectives or variables accordingly."
+msgstr ""
+"Mit dieser Population können Sie Ihre aktuellen Stichprobenziele nicht "
+"erreichen. Die resultierende Stichprobengröße ist größer als die Anzahl der "
+"Transaktionen in der Grundgesamtheit. Passen Sie Ihre Stichprobenziele oder -"
+"variablen entsprechend an."
+
+msgid ""
+"You cannot achieve your current sampling objectives with this population. "
+"The resulting sample size is larger than the total value of the population. "
+"Adjust your sampling objectives or variables accordingly."
+msgstr ""
+"Mit dieser Population können Sie Ihre aktuellen Stichprobenziele nicht "
+"erreichen. Die resultierende Stichprobengröße ist größer als der Gesamtwert "
+"der Bevölkerung. Passen Sie Ihre Stichprobenziele oder -variablen "
+"entsprechend an."
+
+msgid "<b>Table %1$i.</b> Planning Summary"
+msgstr "<b>Tabelle %1$i.</b> Planungs-Zusammenfassung"
+
+#, fuzzy
+msgid "Performance materiality"
+msgstr "Performanz-Metriken"
+
+#, fuzzy
+msgid "Required precision"
+msgstr "Benötigte Stichprobengröße"
+
+msgid "Inherent risk"
+msgstr "Inhärentes Risiko"
+
+msgid "Control risk"
+msgstr "Kontrollrisiko"
+
+msgid "Detection risk"
+msgstr "Detektionsrisiko"
+
+#, fuzzy
+msgid "Audit risk"
+msgstr "Auditwerte"
+
+msgid "Expected errors"
+msgstr "Erwartete Fehler"
+
+msgid "Required sample size"
+msgstr "Benötigte Stichprobengröße"
+
+#, fuzzy
+msgid "Expected posterior odds"
+msgstr "Erwarteter Posterior"
+
+msgid "Expected %1$s"
+msgstr "Erwartet %1$s"
+
+msgid "The required sample size is based on the <b>Poisson</b> distribution."
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Poisson</b>-Verteilung."
+
+msgid "The required sample size is based on the <b>binomial</b> distribution."
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Binomial</b>-Verteilung."
+
+msgid ""
+"The required sample size is based on the <b>hypergeometric</b> distribution."
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Hypergeometrischen</b> "
+"Verteilung."
+
+msgid "The required sample size is based on the <b>gamma</b> distribution."
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Gamma</b>-Verteilung."
+
+msgid "The required sample size is based on the <b>beta</b> distribution."
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Beta</b>-Verteilung."
+
+msgid ""
+"The required sample size is based on the <b>beta-binomial</b> distribution "
+"(N = %1$s)."
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Beta-Binomial</b>-"
+"Verteilung (N = %1$s)."
+
+#, fuzzy
+msgid ""
+"Either the materiality (if applicable), the population size, or the "
+"population value is defined as zero."
+msgstr ""
+"Entweder ist die Wesentlichkeit, die Größe oder der Wert der Grundgesamtheit "
+"als Null definiert."
+
+#, fuzzy
+msgid "%1$s <b>Results could not be calculated.</b>"
+msgstr "F-Statistik konnte nicht berechnet werden"
+
+msgid ""
+"The required sample size is based on the <b>Poisson</b> distribution "
+"<i>(%1$s = %2$s)</i>."
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Poisson</b>-Verteilung "
+"<i>(%1$s = %2$s)</i>."
+
+msgid ""
+"The required sample size is based on the <b>binomial</b> distribution <i>(p "
+"= %1$s)</i>"
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Binomial</b>-Verteilung "
+"<i>(p = %1$s)</i>"
+
+msgid ""
+"The required sample size is based on the <b>hypergeometric</b> distribution "
+"<i>(N = %1$s, K = %2$s)</i>."
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Hypergeometrischen</b> "
+"Verteilung <i>(N = %1$s, K = %2$s)</i>."
+
+msgid ""
+"The required sample size is based on the <b>gamma</b> distribution <i>(%1$s "
+"= %2$s, %3$s = %4$s)</i>"
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Gamma</b>-Verteilung "
+"<i>(%1$s = %2$s, %3$s = %4$s)</i>"
+
+msgid ""
+"The required sample size is based on the <b>beta</b> distribution <i>(%1$s = "
+"%2$s, %3$s = %4$s)</i>."
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Beta</b>-Verteilung "
+"<i>(%1$s = %2$s, %3$s = %4$s)</i>."
+
+msgid ""
+"The required sample size is based on the <b>beta-binomial</b> distribution "
+"<i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>."
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Beta-Binomial</b>- "
+"Verteilung <i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>."
+
+msgid ""
+"The value %1$s is automatically used as a starting point for the fixed "
+"interval selection."
+msgstr ""
+
+#, fuzzy
+msgid "%1$s"
+msgstr "X%1$s"
+
+#, fuzzy
+msgid "Comparison of Required Sample Sizes"
+msgstr "Benötigter Stichprobenumfang"
+
+msgid "Across Probability Distributions (Current: %1$s)"
+msgstr ""
+
+msgid "Expected error-free"
+msgstr "Erwartet fehlerlos"
+
+#, fuzzy
+msgid "Required sample size (n)"
+msgstr "Benötigte Stichprobengröße"
+
+msgid "An error occurred in a call to the the jfa package: %1$s"
+msgstr "Er ist ein Fehler aufgetreten bei einem Anruf des jfa pacakge: %1$s"
+
+msgid "Across Expected Errors (Current: %1$s)"
+msgstr ""
+
+msgid ""
+"<b>Figure %1$i.</b> The first panel shows a comparison of the required "
+"sample sizes under different probability distributions. The bars represent "
+"the required sample sizes for the current expected errors in the sample. The "
+"number of expected errors in each bar is colored in red and the number of "
+"expected error-free transactions is colored in green. The second panel shows "
+"a comparison of the required sample sizes under different expected errors "
+"for the current probability distribution."
+msgstr ""
+
+#, fuzzy
+msgid "Implied %1$s Distribution of Errors"
+msgstr "Implizierte %1$s Stichprobenverteilung"
+
+msgid "Errors"
+msgstr "Fehler"
+
+msgid "Probability"
+msgstr "Wahrscheinlichkeit"
+
+#, fuzzy
+msgid ""
+"<b>Figure %1$i.</b> The implied <b>%2$s</b> distribution. The number of "
+"expected errors in the selection is colored in red and the number of "
+"expected error-free observations is colored in green. The total probability "
+"of the errors does not exceed the detection risk as specified through the "
+"audit risk model."
+msgstr ""
+"<b>Abbildung %1$i.</b> Die implizierte <b>%2$s</b> Stichprobenverteilung. "
+"Die Anzahl der erwarteten Fehler in der Auswahl ist rot und die Anzahl der "
+"erwarteten fehlerfreien Beobachtungen ist grün eingefärbt. Die "
+"Gesamtwahrscheinlichkeit der Fehler übersteigt nicht das Detektionsrisiko, "
+"wie es durch das Auditrisikomodell angegeben ist."
+
+msgid ""
+"Your specified starting point lies outside the selection interval (%1$s)."
+msgstr ""
+"Dein spezifizierter Startpunkt liegt außerhalb des Auswahlintervalls (%1$s)."
+
+msgid "<b>Table %1$i.</b> Selection Summary"
+msgstr "<b>Tabel %1$i.</b> Auswahl-Zusammenfassung"
+
+msgid "Selected sampling units"
+msgstr ""
+
+msgid "Selected transactions"
+msgstr ""
+
+msgid "Selection value"
+msgstr "Stichprobenwert"
+
+msgid "%% of population value"
+msgstr "%% des Werts der Grundgesamtheit"
+
+msgid "%% of total observations"
+msgstr "%% der gesamten Beobachtungen"
+
+#, fuzzy
+msgid "The sample is drawn with random number generator <i>seed %1$s</i>."
+msgstr "Die Stichprobe wurde gezogen mit <i>Startwert %1$s</i>."
+
+#, fuzzy
+msgid "Sampling unit %1$s is selected from each interval."
+msgstr "Einheit %1$s ist von jedem Intervall ausgewählt."
+
+msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
+msgstr ""
+
+#, fuzzy
+msgid "Transactions"
+msgstr "Iterationen"
+
+msgid "Total value"
+msgstr "Gesamtwert"
+
+#, fuzzy
+msgid "Selected units"
+msgstr "Erwartete Anzahl"
+
+#, fuzzy
+msgid "% of total value"
+msgstr "Gesamtwert"
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Selected Transactions"
+msgstr "<b>Tabelle %1$i.</b> Ausgewählte Beobachtungen"
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Descriptive Statistics for Selected Transactions"
+msgstr "<b>Tabelle %i.</b> Deskriptive Statistiken"
+
+msgid "Valid cases"
+msgstr "Gültige Fälle"
+
+msgid "Median"
+msgstr "Median"
+
+msgid "Std. Deviation"
+msgstr "Standardabweichung"
+
+msgid "Variance"
+msgstr "Varianz"
+
+msgid "Range"
+msgstr "Wertebereich"
+
+msgid "Minimum"
+msgstr "Minimum"
+
+msgid "Maximum"
+msgstr "Maximum"
+
+#, fuzzy
+msgid ""
+"The cumulative knowledge states that there is a %1$s probability that, when "
+"one would repeatedly sample from this population, the upper bound on the "
+"misstatement in the population is lower than <b>%2$s</b> with a precision of "
+"<b>%3$s</b>."
+msgstr ""
+"Wahrscheinlichkeit, dass, wenn man wiederholt Stichproben aus dieser "
+"Grundgesamtheit ziehen würde, die maximale Falschangabe niedriger berechnet "
+"wird als"
+
+msgid ""
+"The cumulative knowledge states that there is a %1$s probability that the "
+"misstatement in the population is lower than <b>%2$s</b> with a precision of "
+"<b>%3$s</b>."
+msgstr ""
+
+msgid ""
+"The selection consisted of <b>%1$s</b> sampling units, of which a total of "
+"<b>%2$s</b> were misstated. The information from this sample combined with "
+"the prior information results in a most likely error in the population of <b>"
+"%3$s</b> and an %4$s upper bound of <b>%5$s</b>. %6$s"
+msgstr ""
+
+msgid "<b>Table %1$i.</b> Evaluation Summary"
+msgstr "<b>Tabelle %1$i.</b> Evaluations-Zusammenfassung"
+
+msgid "Sample size"
+msgstr "Stichprobenumfang"
+
+msgid "Total tainting"
+msgstr "Totale Verunreinigung"
+
+msgid "Most likely error"
+msgstr "Wahrscheinlichster Fehler"
+
+#, fuzzy
+msgid "%1$s%% Upper bound"
+msgstr "%s obere Grenze"
+
+msgid "Obtained precision"
+msgstr ""
+
+msgid "Odds"
+msgstr ""
+
+msgid "BF%1$s"
+msgstr "BF%1$s"
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>Poisson</b> distributon."
+msgstr "Die Konfidenzgrenze ist gemäß der <b>Poisson</b>-Verteilung berechnet."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>binomial</b> distributon."
+msgstr ""
+"Die Konfidenzgrenze wird gemäß der <b>Binomial</b>-Verteilung berechnet."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>hypergeometric</b> "
+"distribution."
+msgstr ""
+"Die Konfidenzgrenze ist gemäß der <b>hypergeometrischen</b> Verteilung "
+"berechnet."
+
+#, fuzzy
+msgid "The upper bound is calculated according to the <b>Stringer</b> method."
+msgstr "Die Konfidenzgrenze ist gemäß der <b>Stringer</b>-Methode berechnet."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>regression</b> method."
+msgstr "Die Konfidenzgrenze ist gemäß der <b>Regression</b>-Methode berechnet."
+
+#, fuzzy
+msgid "The upper bound is calculated according to the <b>direct</b> method."
+msgstr "Die Konfidenzgrenze ist gemäß der <b>Direkt</b>-Methode berechnet."
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>difference</b> method."
+msgstr "Die Konfidenzgrenze ist gemäß der <b>Differenz</b>-Methode berechnet."
+
+#, fuzzy
+msgid "The upper bound is calculated according to the <b>ratio</b> method."
+msgstr "Die Konfidenzgrenze ist gemäß der <b>Quotient</b>-Methode berechnet."
+
+msgid ""
+"The upper bound is calculated according to the <b>beta</b> distribution and "
+"requires the assumption that the sample taints are interchangeable."
+msgstr ""
+
+msgid ""
+"The upper bound is calculated according to the <b>gamma</b> distribution and "
+"requires the assumption that the sample taints are interchangeable."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>beta-binomial</b> "
+"distribution and requires the assumption that the sample taints are "
+"interchangeable."
+msgstr ""
+"Die Konfidenzgrenze wird gemäß der <b>Binomial</b>-Verteilung berechnet."
+
+msgid ""
+"The upper bound is calculated according to the <b>Cox and Snell</b> method "
+"and requires the assumption that the population taints are uniformly "
+"distributed."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The upper bound is calculated according to the <b>Stringer</b> method with "
+"<b>LTA adjustment</b>."
+msgstr ""
+"Die Konfidenzgrenze ist nach der <b>Stringer</b>-Methode mit <b>LTA-"
+"Anpassung</b> berechnet."
+
+msgid ""
+"The upper bound is calculated according to the <b>beta</b> distribution. It "
+"requires the assumptions that the sample taints are interchangeable and that "
+"the sample taints are homogeneous."
+msgstr ""
+
+msgid "The audit result column is empty."
+msgstr "Die Auditergebnis-Spalte ist leer."
+
+#, fuzzy
+msgid "%1$s <b>Results cound not be calculated.</b>"
+msgstr "F-Statistik konnte nicht berechnet werden"
+
+msgid ""
+"Either the materiality, the population size, or the population value is "
+"defined as zero, or one of the required variables is missing."
+msgstr ""
+"Entweder ist die Wesentlichkeit, die Größe oder der Wert der Grundgesamtheit "
+"als Null definiert, oder eine der benötigten Variablen fehlt."
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Assumption Checks"
+msgstr "<b>Tabelle %1$i.</b> Evaluations-Zusammenfassung"
+
+#, fuzzy
+msgid "Pearson's <i>r</i>"
+msgstr "Pearsons r"
+
+msgid "p"
+msgstr "p"
+
+msgid "The sample taints are homogeneous"
+msgstr ""
+
+msgid "Evaluation of Sampling Objectives"
+msgstr ""
+
+msgid "Maximum error"
+msgstr "Maximaler Fehler"
+
+msgid "An error occurred while creating this plot: %1$s"
+msgstr "Beim Erstellen dieses Diagramms ist ein Fehler aufgetreten: %1$s"
+
+msgid ""
+"<b>Figure %1$i.</b> Evaluation information for the current annotated "
+"selection. The materiality is compared with the maximum misstatement and the "
+"most likely error. The most likely error (MLE) is an estimate of the true "
+"misstatement in the population. The maximum error is an estimate of the "
+"maximum error in the population."
+msgstr ""
+"<b>Abbildung %1$i.</b> Evaluations-Informationen für die aktuelle annotierte "
+"Auswahl. Die Wesentlichkeit wird mit der maximalen Falschangabe und dem "
+"wahrscheinlichsten Fehler verglichen. Der wahrscheinlichste Fehler (MLE) ist "
+"eine Schätzung der wahren Falschangabe in der Grundgesamtheit. Der maximale "
+"Fehler ist eine Schätzung des maximalen Fehlers in der Grundgesamtheit."
+
+msgid "Scatter Plot of Ist and Soll Values"
+msgstr ""
+
+#, fuzzy
+msgid "Ist value (%1$s)"
+msgstr "Auditwerte (%1$s)"
+
+#, fuzzy
+msgid "Soll value (%1$s)"
+msgstr "Buchwerte (%1$s)"
+
+msgid "Ist = Soll"
+msgstr ""
+
+msgid ""
+"<b>Figure %1$i.</b> Scatter plot of the Ist values in the selection and "
+"their corresponding Soll values. Grey dots on the diagonal (dashed line) "
+"indicate matching Ist and Soll values. Red dots off the diagonal indicate "
+"transactions whose Soll value did not match their original Ist value. If "
+"these red dots lie below the diagonal, the transactions are overstated. If "
+"these red dots lie above the diagonal they are understated. %2$s"
+msgstr ""
+
+msgid "<b>Table %i.</b> Suggested Sample Extension to Achieve Objectives"
+msgstr ""
+
+#, fuzzy
+msgid "Prior distribution"
+msgstr "Prior-Verteilung"
+
+#, fuzzy
+msgid "Additional tolerable errors"
+msgstr "Weitere Anpassungsmetriken"
+
+#, fuzzy
+msgid "Additional sample size"
+msgstr "Implizierter Stichprobenumfang"
+
+msgid "Posterior distribution"
+msgstr "Posteriorverteilung"
+
+msgid "The sample sizes shown are a rough indication."
+msgstr ""
+
+msgid "<b>Table %i.</b> Implicit Sample"
+msgstr "<b>Tabelle %i.</b> Implizierte Stichprobe"
+
+msgid "Implicit sample size"
+msgstr "Implizierter Stichprobenumfang"
+
+msgid "Implicit errors"
+msgstr "Implizite Fehler"
+
+msgid "The implicit sample is based on no existing information."
+msgstr ""
+
+msgid ""
+"The implicit sample is derived from the ARM risk assessments: IR = <b>%1$s</"
+"b> and CR = <b>%2$s</b>."
+msgstr ""
+
+msgid ""
+"The implicit sample is derived from equal prior probabilities: <i>p(H%1$s) = "
+"p(H%2$s) = 0.5</i>"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The implicit sample is derived from custom prior probabilities: <i>p(H%1$s) "
+"= %2$s, p(H%3$s) = %4$s</i>"
+msgstr ""
+"Der benötigte Stichprobenumfang basiert auf der <b>Gamma</b>-Verteilung "
+"<i>(%1$s = %2$s, %3$s = %4$s)</i>"
+
+msgid ""
+"The implicit sample is derived from an earlier sample of %1$s observations "
+"containing %2$s errors."
+msgstr ""
+
+msgid ""
+"The implicit sample is derived from an earlier sample of %1$s observations "
+"containing %2$s errors weighted by a factor <i>f = %3$s</i>."
+msgstr ""
+
+msgid "Implied Prior Distribution over Unknown Misstatement"
+msgstr ""
+
+#, fuzzy
+msgid "Implied Prior Distribution"
+msgstr "Prior-Verteilung"
+
+msgid "Prior"
+msgstr "Prior"
+
+msgid ""
+"Expected\n"
+"posterior"
+msgstr ""
+"Erwarteter\n"
+"Posterior"
+
+msgid "Density"
+msgstr "Dichte"
+
+#, fuzzy
+msgid "Population misstatement (%1$s)"
+msgstr "Wahrscheinlichkeit Falschangabe"
+
+msgid "Unseen population misstatement (%1$s)"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"%1$s%% Credible \n"
+"region for %2$s"
+msgstr "%1$s%% Prior Glaubwürdigkeitsbereich"
+
+#, fuzzy
+msgid "%1$s%% Credible region for %2$s"
+msgstr "%1$s%% Prior Glaubwürdigkeitsbereich"
+
+msgid "Support"
+msgstr "Träger"
+
+msgid ""
+"The expected errors (grey dot) receive the highest probability. The red dot "
+"represents the materiality."
+msgstr ""
+"Die erwarteten Fehler (grauer Punkt) erhalten die höchste "
+"Wahrscheinlichkeit. Der rote Punkt stellt die Wesentlichkeit dar."
+
+#, fuzzy
+msgid ""
+"The expected posterior distribution has its upper confidence bound just "
+"below materiality."
+msgstr ""
+"Das erwartete Posterior hat seine obere Konfidenzgrenze unterhalb der "
+"Wesentlichkeit."
+
+msgid ""
+"<b>Figure %1$i.</b> The prior probability distribution <b>(%2$s)</b> on the "
+"misstatement in the population. The prior parameters <i>%3$s = %4$s, %5$s = "
+"%6$s</i> are derived from the assessments of the inherent and control risk, "
+"along with the expected errors. %7$s %8$s"
+msgstr ""
+"<b>Abbildung %1$i.</b> Die Prior-Wahrscheinlichkeitsverteilung <b>(%2$s)</b> "
+"über die Falschangabe in der Grundgesamtheit. Die Prior-Parameter <i>%3$s = "
+"%4$s, %5$s = %6$s</i> werden aus den Bewertungen des inhärenten Risikos und "
+"des Kontrollrisikos abgeleitet, zusammen mit den erwarteten Fehlern. %7$s "
+"%8$s"
+
+#, fuzzy
+msgid "Prior and Posterior Distribution over Unknown Misstatement"
+msgstr "Prior- und Posterior-Verteilung"
+
+msgid "Prior and Posterior Distribution"
+msgstr "Prior- und Posterior-Verteilung"
+
+msgid "Posterior"
+msgstr "Posterior"
+
+msgid "Population errors"
+msgstr "Fehler in der Grundgesamtheit"
+
+#, fuzzy
+msgid "Precision (%1$s)"
+msgstr "Präzision: %s"
+
+#, fuzzy
+msgid "Most likely error (%1$s)"
+msgstr "Wahrscheinlichster Fehler"
+
+#, fuzzy
+msgid "Upper bound (%1$s)"
+msgstr "Obere Grenze"
+
+#, fuzzy
+msgid ""
+"The red dot represents the specified materiality. If the shaded area under "
+"the distribution surpasses this point, the estimate of the maximum "
+"misstatement exceeds the materiality."
+msgstr ""
+"Der rote Punkt steht für die angegebene Wesentlichkeit. Wenn die "
+"glaubwürdige Bereich unter der Verteilung diesen Punkt überschreitet, "
+"übersteigt die Schätzung der maximalen Falschangabe die Wesentlichkeit."
+
+msgid ""
+"<b>Figure %1$i.</b> The prior and posterior probability distribution "
+"<b>(%2$s)</b> on the misstatement in the population. %3$s"
+msgstr ""
+"<b>Abbildung %1$i.</b> Die Prior- und Posterior-"
+"Wahrscheinlichkeitsverteilung <b>(%2$s)</b> über die Falschangabe in der "
+"Grundgesamtheit. %3$s"
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> %2$s"
+msgstr "<b>Tabelle %1$i.</b> Planungs-Zusammenfassung"
+
+msgid "Functional form"
+msgstr "Form der Funktion"
+
+msgid "Support %1$s"
+msgstr "Träger %1$s"
+
+#, fuzzy
+msgid "Ratio %1$s"
+msgstr "Verhältnis"
+
+msgid "Mode"
+msgstr "Modus"
+
+msgid "Precision"
+msgstr "Genauigkeit"
+
+msgid "Expected posterior"
+msgstr "Erwarteter Posterior"
+
+msgid "Expected shift"
+msgstr "Erwartete Verschiebung"
+
+msgid "Shift"
+msgstr "Verschiebung"
+
+msgid ""
+"%1$s: The population misstatement is lower than materiality (%2$s %3$s). "
+"%4$s: The population misstatement is equal to, or higher than, materiality "
+"(%5$s %6$s)."
+msgstr ""
+"%1$s: Die Falschangabe der Grundgesamtheit ist niedriger als die "
+"Wesentlichkeit (%2$s %3$s). %4$s: Die Falschangabe der Grundgesamtheit ist "
+"gleich oder höher als die Wesentlichkeit (%5$s %6$s)."
