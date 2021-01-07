@@ -211,19 +211,13 @@ Form
 			width: 									parent.width 
 		}
 
-		Item
+		Label
 		{
-			Layout.preferredHeight: 				variableSelectionTitle.height
-			Layout.fillWidth: 						true
-
-			Label
-			{
-				id: 								variableSelectionTitle
-				anchors.horizontalCenter: 			parent.horizontalCenter
-				text: 								qsTr("<b>Variable Definitions</b>")
-				font:								jaspTheme.fontLabel
-				enabled:							!pasteVariables.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0))
-			}
+			id: 									variableSelectionTitle
+			anchors.horizontalCenter: 				parent.horizontalCenter
+			text: 									qsTr("<b>Variable Definitions</b>")
+			font:									jaspTheme.fontLabel
+			enabled:								!pasteVariables.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0))
 		}
 
 		VariablesForm
@@ -1129,7 +1123,7 @@ Form
 					name: 							"sampleDescriptives"	
 				}
 
-				GridLayout
+				RowLayout
 				{
 					Layout.leftMargin: 				20 * preferencesModel.uiScale
 
