@@ -215,7 +215,6 @@ Form
 				indexDefaultValue: 				0
 				label: 							qsTr("Prior information:")
 				Layout.columnSpan: 				2
-				enabled:						!pasteVariables.checked
 				values: 
 				[
 					{ label: qsTr("None"), 							value: "none"},

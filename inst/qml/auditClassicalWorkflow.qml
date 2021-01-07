@@ -233,19 +233,13 @@ Form
 			width: 									parent.width 
 		}
 
-		Item
+		Label
 		{
-			Layout.preferredHeight: 				variableSelectionTitle.height
-			Layout.fillWidth: 						true
-
-			Label
-			{
-				id: 								variableSelectionTitle
-				anchors.horizontalCenter: 			parent.horizontalCenter
-				text: 								qsTr("<b>Variable Definitions</b>")
-				font:								jaspTheme.fontLabel
-				enabled:							!pasteVariables.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0))
-			}
+			id: 									variableSelectionTitle
+			anchors.horizontalCenter: 				parent.horizontalCenter
+			text: 									qsTr("<b>Variable Definitions</b>")
+			font:									jaspTheme.fontLabel
+			enabled:								!pasteVariables.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0))
 		}
 
 		VariablesForm
@@ -349,6 +343,7 @@ Form
 			Divider
 			{
 				width:								parent.width
+				visible: 							flagCriticalTransactions.checked
 			}
 
 			Label
@@ -913,7 +908,7 @@ Form
 					name: 							"sampleDescriptives"	
 				}
 
-				GridLayout
+				RowLayout
 				{
 					Layout.leftMargin: 				20 * preferencesModel.uiScale
 
@@ -1041,17 +1036,11 @@ Form
 		enabled: 									executionChecked.checked
 		columns: 									1
 
-		Item
+		Label
 		{
-			Layout.preferredHeight: 				selectHowToAnalyseObservations.height
-			Layout.fillWidth: 						true
-
-			Label
-			{
-				id: 								selectHowToAnalyseObservations
-				anchors.horizontalCenter: 			parent.horizontalCenter
-				text: 								qsTr("<b>How would you like to evaluate your transactions?</b>")
-			}
+			id: 									selectHowToAnalyseObservations
+			anchors.horizontalCenter: 				parent.horizontalCenter
+			text: 									qsTr("<b>How would you like to evaluate your transactions?</b>")
 		}
 
 		Item
@@ -1173,18 +1162,12 @@ Form
 			}
 		}
 
-		Item
+		Label
 		{
-			Layout.preferredHeight: 				performAuditText.height
-			Layout.fillWidth: 						true
-
-			Label
-			{
-				id: 								performAuditText
-				anchors.horizontalCenter: 			parent.horizontalCenter
-				text: 								variableTypeAuditValues.checked ? qsTr("<b>Annotate your selected transactions with their Soll values.</b>") : qsTr("<b>Annotate your selected transactions with a 0 (correct) or a 1 (incorrect).</b>")
-				visible: 							pasteVariables.checked
-			}
+			id: 									performAuditText
+			anchors.horizontalCenter: 				parent.horizontalCenter
+			text: 									variableTypeAuditValues.checked ? qsTr("<b>Annotate your selected transactions with their Soll values.</b>") : qsTr("<b>Annotate your selected transactions with a 0 (correct) or a 1 (incorrect).</b>")
+			visible: 								pasteVariables.checked
 		}
 
 		Section
