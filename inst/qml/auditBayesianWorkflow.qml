@@ -1251,17 +1251,11 @@ Form
 		enabled: 									executionChecked.checked
 		columns: 									1	
 
-		Item
+		Label
 		{
-			Layout.preferredHeight: 				selectHowToAnalyseObservations.height
-			Layout.fillWidth: 						true
-
-			Label
-			{
-				id: 								selectHowToAnalyseObservations
-				anchors.horizontalCenter: 			parent.horizontalCenter
-				text: 								qsTr("<b>How would you like to evaluate your transactions?</b>")
-			}
+			id: 									selectHowToAnalyseObservations
+			anchors.horizontalCenter: 				parent.horizontalCenter
+			text: 									qsTr("<b>How would you like to evaluate your transactions?</b>")
 		}
 
 		Item
@@ -1382,18 +1376,12 @@ Form
 			}
 		}
 
-		Item 
+		Label
 		{
-			Layout.preferredHeight: 				performAuditText.height
-			Layout.fillWidth: 						true
-
-			Label
-			{
-				id: 								performAuditText
-				anchors.horizontalCenter: 			parent.horizontalCenter
-				text: 								variableTypeAuditValues.checked ? qsTr("<b>Annotate your selected transactions with their Soll values.</b>") : qsTr("<b>Annotate your selected transactions with a 0 (correct) or a 1 (misstated).</b>")
-				visible: 							pasteVariables.checked
-			}
+			id: 									performAuditText
+			anchors.horizontalCenter: 				parent.horizontalCenter
+			text: 									variableTypeAuditValues.checked ? qsTr("<b>Annotate your selected transactions with their Soll values.</b>") : qsTr("<b>Annotate your selected transactions with a 0 (correct) or a 1 (misstated).</b>")
+			visible: 								pasteVariables.checked
 		}
 
 		Section
