@@ -413,7 +413,7 @@ Form
 					id: 						separateKnownAndUnknownMisstatement
 					text: 						qsTr("Separate known and unknown misstatement")
 					name: 						"separateKnownAndUnknownMisstatement"
-					onCheckedChanged: 			if(checked) beta.click()
+					onCheckedChanged: 			if(checked) betaBound.click()
 					enabled:					populationSize.value > 0 & populationValue.value > 0 & recordNumberVariable.count > 0 & monetaryVariable.count > 0 & auditResult.count > 0
 				}
 
