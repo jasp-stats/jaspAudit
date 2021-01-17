@@ -11,10 +11,10 @@ Default input options
 -------
 
 #### Variable
-Here you can provide a variable containing the numbers that will be analyzed.
+Here you can provide a variable containing the numbers that will be analyzed for repeated values.
 
 #### Shuffle
-This option allows you to select whether to shuffle the first two decimal numbers in the simulation runs, or only the second decimal number.
+This option allows you to select whether to shuffle the first two decimal numbers in the simulation runs, or only the second decimal number. Using different decimal numbers to shuffle you can make sure that there is no correlation between the integer portions of the number and the decimal portions, an assumption of this procedure.
 
 ----
 
@@ -36,11 +36,11 @@ Default output
 -------
 
 #### Number Bunching Test
-This table is the default output for the number bunching analysis. It reports the average frequency in the data and the entropy of the data, two metrics that are much alike. Average frequency and entropy are highly correlated, but the average frequency is more interpretable. For example, an average frequency of 2.5 means that, on average, observations contain a value that appears 2.5 times in the data. 
+This table is the default output for the number bunching analysis. It reports the average frequency in the number in the data set alongside the entropy of these numbers. Average frequency and entropy are highly correlated, but the average frequency is often more interpretable. For example, an average frequency of 2.5 means that, on average, your observations contain a value that appears 2.5 times in the data set. 
 
 - N: The number of observations in the data.
-- Frequency: The average frequency with which numbers are repeated in the data. The formula for the average frequency is *AF = &#8721; f&#7522;&#178; / &#8721; f&#7522;* where f&#7522; is the frequency of each distinct value *i* in the data.
-- Entropy: The entropy is the average level of 'information' inherent in the variable's possible outcomes. The entropy is calculated as *E= - &#8721; (p&#7522; &#215; log(p&#7522;))* where p&#7522; is the proportion of observations with each value (so *p&#7522; = f&#7522; / N*).
+- Frequency: The average frequency with which numbers are repeated in the data. The formula for the average frequency is *AF = &#8721; f&#7522;&#178; / &#8721; f&#7522;* where f&#7522; is the frequency of each unique value *i* in the data set.
+- Entropy: The entropy is the average level of information inherent in the variable's outcomes. The entropy is calculated as *S = - &#8721; (p&#7522; &#215; log(p&#7522;))* where p&#7522; is the proportion of observations with each value (so *p&#7522; = f&#7522; / N*).
 
 ----
 
@@ -50,8 +50,8 @@ Advanced output (tables)
 #### Assumption checks
 This table shows the correlation between the integer portions of the numbers and their decimal counterparts. To meet the required assumptions for this procedure, this correlation must be non-existent. This table also displays the correlation between the samples of the two simulation runs (average frequency and entropy).
 
-#### Frequency statistics
-Produces a table containing, for every digit, the count and observed percentage in the population.
+#### Frequency table
+Produces a table containing the count and the percentage for every unique value in the data set.
 
 ----
 

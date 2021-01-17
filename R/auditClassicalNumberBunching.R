@@ -81,7 +81,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     procedureContainer$position <- position
     
     confidenceLabel <- paste0(round((1 - options[["confidence"]]) * 100, 2), "%")
-    procedureText 	<- gettextf("This procedure analyzes the frequency with which values get repeated within a data set to statistically identify whether the data were likely tampered with. Unlike Benford's law, and its generalizations, the number bunching approach examines the entire number at once, not only the first or last digit.\n\nTo determine whether the data show an excessive amount of bunching, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested with a type-I error of <b>%1$s</b>. To quantify what is exected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.", confidenceLabel)
+    procedureText 	<- gettextf("This procedure analyzes the frequency with which values get repeated within a data set to statistically identify whether the data were likely tampered with. Unlike Benford's law, and its generalizations, the number bunching approach examines the entire number at once, not only the first or last digit.\n\nTo determine whether the data show an excessive amount of bunching, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested with a type-I error of <b>%1$s</b>. To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.", confidenceLabel)
     
     procedureContainer[["procedureParagraph"]] <- createJaspHtml(procedureText, "p")
     procedureContainer[["procedureParagraph"]]$position <- 1
@@ -123,7 +123,9 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   table$addColumnInfo(name = 'entropy', title = gettext('<i>S</i>'), 		type = 'number', overtitle = gettext('Entropy'))
   table$addColumnInfo(name = 'pvalue2', title = gettext("<i>p</i> value"), 	type = 'pvalue', overtitle = gettext('Entropy'))					  
   
-  table$addFootnote(gettextf("Both <i>p</i> values are one-sided and are computed on the basis of %1$s simulation runs.", options[["noSamples"]]))
+  table$addFootnote(gettextf("Both <i>p</i> values are one-sided and are computed on the basis of %1$s samples.", 
+  							  options[["noSamples"]], 
+							  switch(options[["shuffle"]], "lastTwo" = "first two decimals", "last" = "second decimal", "all" = "all decimals")))
   
   numberBunchingContainer[["numberBunchingTestTable"]] <- table
   
@@ -156,12 +158,15 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     
     if(options[["shuffle"]] == "last"){
       variable 	<- variable * 10
-      integers 	<- floor(variable)
+      integers 	<- ifelse(variable > 0, yes = floor(variable), no = ceiling(variable))
       decimals 	<- round(variable - integers, 1)
     } else if(options[["shuffle"]] == "lastTwo"){
-      integers 	<- floor(variable)
+      integers 	<- ifelse(variable > 0, yes = floor(variable), no = ceiling(variable))
       decimals 	<- round(variable - integers, 2)
-    }
+    } else if(options[["shuffle"]] == "all"){
+	  integers 	<- ifelse(variable > 0, yes = floor(variable), no = ceiling(variable))
+	  decimals <- variable - integers
+	}
     
     avgFrequency 	<- .jfaAverageFrequency(variable)
     entropy 		<- .jfaEntropy(variable)
@@ -173,7 +178,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     set.seed(options[["seed"]])
     
     for(i in 1:options[["noSamples"]]){
-      sim 			<- integers + sample(decimals)
+      sim 			<- ifelse(integers > 0, yes = integers + sample(decimals), no = integers - sample(decimals))
       bsAvgFreq[i] 	<- .jfaAverageFrequency(sim)
       bsEntropy[i] 	<- .jfaEntropy(sim)
       progressbarTick()
@@ -229,7 +234,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     table$addColumnInfo(name = 'df', 		title = gettext('df'), 			   type = 'integer')
     table$addColumnInfo(name = 'pvalue',	title = gettext("<i>p</i> value"), type = 'pvalue')
     
-    table$addFootnote(gettext("The <i>p</i> value shown is for a two-sided test."))
+    table$addFootnote(gettext("The displayed <i>p</i> value is for a two-sided test against H\u2080: <i>r = 0</i>."))
     
     numberBunchingContainer[["correlationTable"]] <- table
     
@@ -271,7 +276,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   
   if(is.null(numberBunchingContainer[["numberBunchingTable"]])){
     
-    tableTitle <- gettextf("<b>Table %i.</b> Frequency Statistics",
+    tableTitle <- gettextf("<b>Table %i.</b> Frequencies",
                            jaspResults[["tabNumber"]]$object)
     
     table <- createJaspTable(tableTitle)
@@ -279,27 +284,25 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     
     table$dependOn(options = c("summaryTable", "values"))
     
-    table$addColumnInfo(name = 'digit', title = gettext("First digit"), type = 'integer')
-    table$addColumnInfo(name = 'count', title = gettext('Count'), type = 'integer')
+    table$addColumnInfo(name = 'values', title = gettext("Value"), type = 'integer')
+    table$addColumnInfo(name = 'counts', title = gettext('Count'), type = 'integer')
     table$addColumnInfo(name = 'percentage', title = gettext('Percentage'), type = 'string')
     
     numberBunchingContainer[["numberBunchingTable"]] <- table
     
-    digits <- 1:9
-    
-    if(!ready){   
-      row <- data.frame(digit = digits, 
-                        count = rep(".", length(digits)),
-                        percentage = rep(".", length(digits)))
-      table$addRows(row)
+    if(!ready)
       return()
-    } 
     
-    state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
+    variable   <- dataset[, options[["values"]]]
+    tab        <- table(variable)
+    values     <- as.numeric(names(tab))
+    counts     <- as.numeric(tab)
+    percentage <- paste0(round(counts / length(variable) * 100, 2), "%")
     
-    row <- data.frame(digit = digits, 
-                      count = state[["counts"]], 
-                      percentage = paste0(round(state[["proportions"]] * 100, 2), "%"))
+    row <- data.frame(values = values, 
+                      counts = counts, 
+                      percentage = percentage)
+    row <- row[order(-row$counts, row$values),]
     
     table$addRows(row)
   }

@@ -48,16 +48,20 @@ Form {
 		{
 			name: 						"shuffle"
 			indexDefaultValue: 			0
-			label: 						qsTr("Shuffle:")
+			label: 						qsTr("Shuffle decimal numbers")
 			values:
 			[
 					{ 
-						label: 			qsTr("First two decimal numbers"), 
+						label: 			qsTr("First and second"), 
 						value: 			"lastTwo"
 					},
 					{ 
-						label: 			qsTr("Second decimal number"), 
+						label: 			qsTr("Second"), 
 						value: 			"last"
+					},
+					{ 
+						label: 			qsTr("All"), 
+						value: 			"all"
 					}
 			]
 		}
@@ -78,7 +82,7 @@ Form {
 
 		GroupBox 
 		{
-			title: 						qsTr("Bootstrap Options")
+			title: 						qsTr("Sampling Options")
 
 			IntegerField
 			{
@@ -139,7 +143,7 @@ Form {
 
 			CheckBox
 			{
-				text: 					qsTr("Frequency statistics")
+				text: 					qsTr("Frequency table")
 				name: 					"summaryTable"
 			}
 		}
