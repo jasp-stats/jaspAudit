@@ -1,4 +1,4 @@
-Number Bunching
+Repeated Value Analysis
 ==========================
 
 This analysis analyzes the frequency with which values get repeated within a dataset (called “number-bunching”) to statistically identify whether the data were likely tampered with. Unlike Benford’s law this approach examines the entire number at once, not only the first or last digit (Simonsohn, 2019). 
@@ -35,8 +35,8 @@ When checked, enables explanatory text in the analysis to help you interpret the
 Default output
 -------
 
-#### Number Bunching Test
-This table is the default output for the number bunching analysis. It reports the average frequency in the number in the data set alongside the entropy of these numbers. Average frequency and entropy are highly correlated, but the average frequency is often more interpretable. For example, an average frequency of 2.5 means that, on average, your observations contain a value that appears 2.5 times in the data set. 
+#### Repeated Values Test
+This table is the default output for the repeated value analysis. It reports the average frequency in the number in the data set alongside the entropy of these numbers. Average frequency and entropy are highly correlated, but the average frequency is often more interpretable. For example, an average frequency of 2.5 means that, on average, your observations contain a value that appears 2.5 times in the data set. 
 
 - N: The number of observations in the data.
 - Frequency: The average frequency with which numbers are repeated in the data. The formula for the average frequency is *AF = &#8721; f&#7522;&#178; / &#8721; f&#7522;* where f&#7522; is the frequency of each unique value *i* in the data set.

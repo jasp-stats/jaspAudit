@@ -41,14 +41,14 @@ Form {
 			name: 						"values"
 			title: 						qsTr("Variable")
 			singleVariable:				true
-			allowedColumns:				["ordinal", "scale"]
+			allowedColumns:				["scale"]
 		}
 
 		DropDown 
 		{
 			name: 						"shuffle"
 			indexDefaultValue: 			0
-			label: 						qsTr("Shuffle decimal numbers")
+			label: 						qsTr("Shuffle decimal digits")
 			values:
 			[
 					{ 

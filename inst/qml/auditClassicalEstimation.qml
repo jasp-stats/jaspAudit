@@ -23,9 +23,11 @@ import JASP.Widgets 						1.0
 
 Form {
 
+	columns:								1
+
 	GridLayout
 	{
-		columns: 							2
+		columns: 							3
 
 		GroupBox
 		{
@@ -67,6 +69,28 @@ Form {
 				defaultValue: 				95
 			}
 		}
+
+		GroupBox
+		{
+			title: 							qsTr("Explanatory Text")
+
+			RowLayout
+			{
+				CheckBox
+				{
+					id: 					explanatoryText
+					text:	 				qsTr("Enable")
+					name: 					"explanatoryText"
+					checked: 				true
+				}
+
+				HelpButton
+				{
+					helpPage:				"Audit/explanatoryText"
+					toolTip: 				qsTr("Click to learn more about the explanatory text.")
+				}
+			}
+		}
 	}
 
 	Divider { }
@@ -99,70 +123,20 @@ Form {
 			singleVariable: 				true
 			allowedColumns: 				["scale"]
 		}
-	}
 
-	Section
-	{
-		text: 								qsTr("Advanced Options")
-
-		GridLayout
+		DropDown 
 		{
-			columns: 						3
-
-			RadioButtonGroup
-			{
-				id: 						ir
-				title: 						qsTr("Estimator")
-				name: 						"estimator"
-
-				RadioButton
-				{
-					id:						mpu
-					text: 					qsTr("Direct")
-					name: 					"mpu"
-				}
-
-				RadioButton
-				{
-					text: 					qsTr("Difference")
-					name: 					"difference"
-				}
-
-				RadioButton
-				{
-					text:	 				qsTr("Ratio")
-					name: 					"ratio"
-				}
-
-				RadioButton
-				{
-					text:	 				qsTr("Regression")
-					name: 					"regression"
-					checked:				true
-				}
-			}
-
-			GroupBox
-			{
-				title: 						qsTr("Explanatory Text")
-
-				RowLayout
-				{
-					CheckBox
-					{
-						id: 				explanatoryText
-						text:	 			qsTr("Enable")
-						name: 				"explanatoryText"
-						checked: 			true
-					}
-
-					HelpButton
-					{
-						helpPage:			"Audit/explanatoryText"
-						toolTip: 			qsTr("Click to learn more about the explanatory text.")
-					}
-				}
-			}
+			id: 							estimator
+			name: 							"estimator"
+			indexDefaultValue: 				3
+			label: 							qsTr("Estimation method")
+			values: 
+			[
+				{ label: qsTr("Direct estimator"), 		value: "mpu"},
+				{ label: qsTr("Difference estimator"), 	value: "difference"},
+				{ label: qsTr("Ratio estimator"), 		value: "ratio"},
+				{ label: qsTr("Regression estimator"), 	value: "regression"}
+			]
 		}
 	}
 

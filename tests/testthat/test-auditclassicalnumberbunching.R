@@ -1,4 +1,4 @@
-context("[Audit] Classical Number Bunching")
+context("[Audit] Classical Repeated Values")
 
 # The test here are taken directly from http://datacolada.org/77
 
@@ -425,7 +425,7 @@ test_that("<b>Table 3.</b> Frequencies results match", {
 			 1, "0.06%", 88.46, 1, "0.06%", 89.44, 1, "0.06%", 99.48))
 })
 
-test_that("<b>Table 1.</b> Number Bunching Test results match", {
+test_that("<b>Table 1.</b> Repeated Values Test results match", {
   table <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingTestTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
                                  list(1600, 1.5225, 7.06576917368312, "Variable", 0.002, 0.002))
@@ -1057,7 +1057,7 @@ test_that("<b>Table 3.</b> Frequencies results match", {
 			 99.27, 1, "0.03%", 108.59))
 })
 
-test_that("<b>Table 1.</b> Number Bunching Test results match", {
+test_that("<b>Table 1.</b> Repeated Values Test results match", {
   table <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingTestTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
                                  list(3235, 2.57341576506955, 7.38007620473818, "Variable", 0, 0))

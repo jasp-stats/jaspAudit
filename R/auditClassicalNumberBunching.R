@@ -81,7 +81,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     procedureContainer$position <- position
     
     confidenceLabel <- paste0(round((1 - options[["confidence"]]) * 100, 2), "%")
-    procedureText 	<- gettextf("This procedure analyzes the frequency with which values get repeated within a data set to statistically identify whether the data were likely tampered with. Unlike Benford's law, and its generalizations, the number bunching approach examines the entire number at once, not only the first or last digit.\n\nTo determine whether the data show an excessive amount of bunching, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested with a type-I error of <b>%1$s</b>. To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.", confidenceLabel)
+    procedureText 	<- gettextf("This procedure analyzes the frequency with which values get repeated within a data set to statistically identify whether the data were likely tampered with. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit.\n\nTo determine whether the data show an excessive amount of repeated values, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested with a type-I error of <b>%1$s</b>. To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.", confidenceLabel)
     
     procedureContainer[["procedureParagraph"]] <- createJaspHtml(procedureText, "p")
     procedureContainer[["procedureParagraph"]]$position <- 1
@@ -93,7 +93,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
 
 .jfaNumberBunchingStage <- function(options, jaspResults, position){
   
-  numberBunchingContainer <- createJaspContainer(title = gettext("<u>Assessing number bunching</u>"))
+  numberBunchingContainer <- createJaspContainer(title = gettext("<u>Assessing repeated values</u>"))
   numberBunchingContainer$position <- position
   numberBunchingContainer$dependOn(options = c("values"))
   
@@ -109,7 +109,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   if(!is.null(numberBunchingContainer[["numberBunchingTestTable"]])) 
     return()
   
-  tableTitle <- gettextf("<b>Table %i.</b> Number Bunching Test", 
+  tableTitle <- gettextf("<b>Table %i.</b> Repeated Values Test", 
                          jaspResults[["tabNumber"]]$object)
   
   table <- createJaspTable(tableTitle)

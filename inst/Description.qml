@@ -88,7 +88,7 @@ Description
 	}
 	Analysis
 	{
-		title:			qsTr("Number Bunching")
+		title:			qsTr("Repeated Values")
 		func:			"auditClassicalNumberBunching"
 	}
 
@@ -99,7 +99,7 @@ Description
 	}
 	Analysis
 	{
-		title:			qsTr("Estimation")
+		title:			qsTr("True Value Estimation")
 		func:			"auditClassicalEstimation"
 	}
 }
