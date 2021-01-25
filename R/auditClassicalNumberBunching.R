@@ -511,12 +511,12 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   
   approve <- state[["pvalueAvgFrequency"]] >= (1 - options[["confidence"]])
   
-  conclusion <- ifelse(approve, no = gettext("is rejected"), yes = gettext("is not rejected"))
+  conclusion <- if(approve) gettext("is rejected") else gettext("is not rejected")
   
   pvalue <- round(state[["pvalueAvgFrequency"]], 3)
   if(pvalue < 0.001)
     pvalue <- "< .001"
-  pvalue <- ifelse(approve, no = paste0(pvalue, " < \u03B1"), yes = paste0(pvalue, " >= \u03B1"))
+  pvalue <- if(approve) gettextf("%1$s < \u03B1", pvalue) else gettextf("%1$s >= \u03B1", pvalue)
   
   conclusionText <- gettextf("The <i>p</i> value is %1$s and the null hypothesis that the data do not contain an unexpected amount of repeated values <b>%2$s</b>.", pvalue, conclusion)
   
@@ -534,9 +534,10 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
 .jfaEntropy <- function(x){
   frequencies <- as.numeric(table(x))
   # Probailities instead of frequencies
-  prob <- frequencies / length(x)
+  prob <- frequencies / sum(frequencies)
+  logProb <- log(prob)
   # Compute sum(p*log(p))
-  entropy <- -sum(prob*t(log(prob)))
+  entropy <- -sum(ifelse(!is.infinite(logProb), prob*logProb, 0))
   return(entropy) 
 }
 
