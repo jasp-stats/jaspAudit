@@ -21,6 +21,6 @@
 auditBayesianEvaluation <- function(jaspResults, dataset, options, ...){
   
   # For the evaluation constituents, see auditCommonFunctions.R
-  .jfa.evaluation.stage(options, jaspResults, workflow = FALSE)
+  .jfaEvaluationStage(options, jaspResults, workflow = FALSE)
   
 }

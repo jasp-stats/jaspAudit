@@ -27,12 +27,12 @@ Form {
 
 	VariablesForm
 	{
-		id: 							variablesFormBenfordsLaw
+		id: 							variablesFormNumberBunching
 		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
 
 		AvailableVariablesList	
 		{ 
-			name: 						"variablesFormBenfordsLaw" 
+			name: 						"variablesFormNumberBunching" 
 		}
 
 		AssignedVariablesList
@@ -41,45 +41,27 @@ Form {
 			name: 						"values"
 			title: 						qsTr("Variable")
 			singleVariable:				true
-			allowedColumns:				["ordinal", "scale"]
+			allowedColumns:				["scale"]
 		}
 
 		DropDown 
 		{
-			name: 						"digits"
+			name: 						"shuffle"
 			indexDefaultValue: 			0
-			label: 						qsTr("Check digits")
+			label: 						qsTr("Shuffle decimal digits")
 			values:
 			[
-					{ 
-						label: 			qsTr("First"), 
-						value: 			"first" 
-					},
 					{ 
 						label: 			qsTr("First and second"), 
-						value: 			"firstSecond"
+						value: 			"lastTwo"
 					},
 					{ 
-						label: 			qsTr("Last"), 
+						label: 			qsTr("Second"), 
 						value: 			"last"
-					}
-			]
-		}
-
-		DropDown 
-		{
-			name: 						"distribution"
-			indexDefaultValue: 			0
-			label: 						qsTr("Compare to")
-			values:
-			[
-					{ 
-						label: 			qsTr("Benford's law"), 
-						value: 			"benford"
 					},
 					{ 
-						label: 			qsTr("Uniform distribution"), 
-						value: 			"uniform"
+						label: 			qsTr("All"), 
+						value: 			"all"
 					}
 			]
 		}
@@ -96,6 +78,30 @@ Form {
 			label: 						qsTr("Confidence")
 			decimals: 					2
 			defaultValue: 				95
+		}
+
+		GroupBox 
+		{
+			title: 						qsTr("Sampling Options")
+
+			IntegerField
+			{
+				name: 						"noSamples"
+				label: 						qsTr("Number of samples")
+				min: 						100
+				defaultValue: 				500
+				max: 						500000
+				fieldWidth:					70
+			}
+
+			IntegerField
+			{
+				name: 						"seed"
+				label: 						qsTr("Seed")
+				min: 						1
+				defaultValue: 				1
+				max: 						500000
+			}
 		}
 
 		GroupBox 
@@ -130,9 +136,15 @@ Form {
 
 			CheckBox
 			{
-				text: 					qsTr("Frequency statistics")
-				name: 					"summaryTable"
+				text: 					qsTr("Assumption checks")
+				name: 					"correlationTable"
 				checked: 				true
+			}
+
+			CheckBox
+			{
+				text: 					qsTr("Frequency table")
+				name: 					"summaryTable"
 			}
 		}
 
@@ -142,20 +154,42 @@ Form {
 
 			CheckBox
 			{
-				text: 					qsTr("Compare to expected distribution")
-				name: 					"benfordsLawPlot"
+				text: 					qsTr("Observed vs. expected average frequency")
+				name: 					"numberBunchingPlotFrequency"
+			}
+
+			CheckBox
+			{
+				text: 					qsTr("Observed vs. expected entropy")
+				name: 					"numberBunchingPlotEntropy"
+			}
+
+			CheckBox
+			{
+				text: 					qsTr("Histogram of individual values")
+				name: 					"numberBunchingHistogram"
+
+				IntegerField
+				{
+					name: 				"noHeads"
+					label: 				qsTr("Label")
+					afterLabel:			qsTr("with highest occurrence")
+					min: 				0
+					defaultValue:		0
+					max:				20
+				}
 			}
 		}
 	}
 
 	Item 
 	{
-		Layout.preferredHeight: 		downloadReportBenfordsLaw.height
+		Layout.preferredHeight: 		downloadReportNumberBunching.height
 		Layout.fillWidth: 				true
 
 		Button 
 		{
-			id: 						downloadReportBenfordsLaw
+			id: 						downloadReportNumberBunching
 			enabled: 					values.count > 0
 			anchors.right:				parent.right
 			anchors.bottom:				parent.bottom

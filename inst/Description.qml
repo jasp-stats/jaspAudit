@@ -61,7 +61,7 @@ Description
 	GroupTitle
 	{
 		title:			qsTr("Evaluation")
-		icon:			"audit-estimation.svg"
+		icon:			"audit-evaluation.svg"
 	}
 	Analysis
 	{
@@ -78,8 +78,8 @@ Description
 
 	GroupTitle
 	{
-		title:			qsTr("Other")
-		icon:			"audit-other.svg"
+		title:			qsTr("Digit Analysis")
+		icon:			"audit-number-analysis.svg"
 	}
 	Analysis
 	{
@@ -88,7 +88,18 @@ Description
 	}
 	Analysis
 	{
-		title:			qsTr("Estimation")
+		title:			qsTr("Repeated Values")
+		func:			"auditClassicalNumberBunching"
+	}
+
+	GroupTitle
+	{
+		title:			qsTr("Other")
+		icon:			"audit-other.svg"
+	}
+	Analysis
+	{
+		title:			qsTr("True Value Estimation")
 		func:			"auditClassicalEstimation"
 	}
 }
