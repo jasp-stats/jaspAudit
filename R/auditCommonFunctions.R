@@ -3449,11 +3449,12 @@
   table$addColumnInfo(name = 'type', 			title = "", type = 'string')
   table$addColumnInfo(name = 'n', 				title = "n", type = 'integer')
   table$addColumnInfo(name = 'correlation', 	title = gettext("Pearson's <i>r</i>"), type = 'number')
-  table$addColumnInfo(name = 'lowerCI', 		title = gettext("Lower"), type = 'number', overtitle = overTitle)
-  table$addColumnInfo(name = 'upperCI', 		title = gettext("Upper"), type = 'number', overtitle = overTitle)
-  table$addColumnInfo(name = 'pvalue', 			title = gettext("p"), type = 'pvalue')
-  table$addColumnInfo(name = 'bayesfactor', 	title = gettextf("BF%1$s", "\u2081\u2080"), type = 'number')
+  table$addColumnInfo(name = 'upperCI', 		title = gettextf("%1$s%% Upper bound", options[["evaluationAssumptionChecksConfidence"]] * 100), type = 'number')
+  table$addColumnInfo(name = 'pvalue', 			title = gettext("p-value"), type = 'pvalue')
+  table$addColumnInfo(name = 'bayesfactor', 	title = gettextf("BF%1$s", "\u208B\u2080"), type = 'number')
   
+  table$addFootnote(gettext("The null hypotheses H\u2080: \u03C1 \u2265 0 is tested against the alternative hypothesis H\u208B: \u03C1 < 0"))
+
   parentContainer[["assumptionTable"]] <- table
   
   if(options[["auditResult"]] == ""){
@@ -3462,30 +3463,39 @@
     return()
   }
   
+  # Extract Ist values and taints
   ist 	<- sample[, .v(options[["monetaryVariable"]])]
   soll 	<- sample[, .v(options[["auditResult"]])]
-  taint 	<- (ist - soll) / ist # Select all taints
-  
-  test 	<- cor.test(ist, taint, alternative = "two.sided", method = "pearson",
-                    conf.level = options[["evaluationAssumptionChecksConfidence"]])
-  est  	<- test[["estimate"]]
-  lCi   	<- as.numeric(test[["conf.int"]])[1]
-  uCi   	<- as.numeric(test[["conf.int"]])[2]
-  pval    <- test[["p.value"]]
-  bf10 	<- try({ 1 / .jfaBayesianCorrelationCalculation(r = est, n = nrow(sample))})
-  
-  if(isTryError(bf10)){
-    bf10 <- NA
-    table$addFootnote("An error occurred while calculating the Bayes factor", symbol = "<b>Warning.</b>")
+  taint <- (ist - soll) / ist 
+
+  # Select only the non-zero taints for the correlation
+  ist   <- ist[taint != 0]
+  taint <- taint[taint != 0]
+
+  if(length(taint) == 0){
+    table$addFootnote(gettext("There were no misstatements found in the sample."))
+	row <- list(type = gettext("The sample taints are homogeneous"), n = length(taint))
+	table$addRows(row)
+	return()	  
   }
   
+  p <- try({
+    test <- stats::cor.test(x = ist, y = taint, alternative = "less", method = "pearson",
+                            conf.level = options[["evaluationAssumptionChecksConfidence"]])
+	btest <- bstats::bcor.test(x = ist, y = taint, alternative = "less", method = "pearson")
+  })
+
+  if(isTryError(p)){
+    table$addFootnote(gettext("An error occurred while calculating the correlation."), symbol = "<b>Warning.</b>")
+	return()
+  }
+
   row <- list(type = gettext("The sample taints are homogeneous"),
               n = length(taint),
-              correlation = est,
-              lowerCI = lCi,
-              upperCI = uCi,
-              pvalue = pval,
-              bayesfactor = bf10)
+              correlation = test[["estimate"]],
+              upperCI = as.numeric(test[["conf.int"]])[2],
+              pvalue = test[["p.value"]],
+              bayesfactor = btest[["less"]]$bf)
   
   table$addRows(row)
 }
