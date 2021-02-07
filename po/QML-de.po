@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-01-31 10:41+0000\n"
+"PO-Revision-Date: 2021-02-08 10:50+0000\n"
 "Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/de/>\n"
@@ -662,11 +662,11 @@ msgstr "Tabellen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Implicit sample induced by prior distribution"
-msgstr ""
+msgstr "Implizite Stichprobe induziert durch Prior-Verteilung"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Description of prior and expected posterior distribution"
-msgstr ""
+msgstr "Beschreibung der Prior- und erwarteten Posterior-Verteilung"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Plots"
@@ -674,11 +674,11 @@ msgstr "Abbildungen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Compare required sample sizes"
-msgstr ""
+msgstr "Erforderliche Stichprobengrößen vergleichen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Implied prior distribution"
-msgstr ""
+msgstr "Implizierte Prior-Verteilung"
 
 msgctxt "auditBayesianPlanning|"
 msgid "x-axis limit"
@@ -686,11 +686,11 @@ msgstr "Grenze x-Achse"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Expected posterior distribution"
-msgstr ""
+msgstr "Erwartete Posterior-Verteilung"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Display additional information"
-msgstr ""
+msgstr "Zusätzliche Informationen anzeigen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Shade"
@@ -716,10 +716,9 @@ msgctxt "auditBayesianWorkflow|"
 msgid "1. Planning"
 msgstr "1. Planung"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Sampling Objectives"
-msgstr "Ziel der Stichprobenziehung"
+msgstr "Ziele der Stichprobenziehung"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Test against a performance materiality"
@@ -737,15 +736,13 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about the performance materiality."
 msgstr ""
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Obtain a required minimum precision"
-msgstr "Erhalten Sie eine erforderliche Mindestgenauigkeit"
+msgstr "Erziele eine erforderliche Mindestgenauigkeit"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about the precision."
-msgstr "Klicken Sie hier, um mehr über die Präzision zu erfahren."
+msgstr "Klicke, um mehr über die Präzision zu erfahren."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Audit Risk"
