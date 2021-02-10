@@ -41,7 +41,7 @@ Form {
 			name: 						"values"
 			title: 						qsTr("Variable")
 			singleVariable:				true
-			allowedColumns:				["ordinal", "scale"]
+			allowedColumns:				["scale"]
 		}
 
 		DropDown 
