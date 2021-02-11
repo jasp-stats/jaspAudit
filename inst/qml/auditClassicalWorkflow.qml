@@ -310,6 +310,7 @@ Form
 
 					CheckBox
 					{
+						id:							flagNegativeValues
 						name:						"flagNegativeValues"
 						text:						qsTr("Negative Ist values")
 						enabled:					monetaryVariable.count > 0
@@ -358,14 +359,14 @@ Form
 				id:									criticalTransactionTable
 				name:								"criticalTransactionTable"
 				Layout.fillWidth: 					true
-				modelType:							"FilteredDataEntryModel"
+				modelType:							JASP.FilteredDataEntryModel
 				source:     						["recordNumberVariable", "monetaryVariable"]
-				itemType:							"integer"
+				itemType:							JASP.Integer
 				colName: 							""
-				visible:							flagCriticalTransactions.checked	
+				visible:							flagCriticalTransactions.checked
 				extraCol: 							criticalTransactions.value
-				filter:								criticalTransactions.value + " > 0"		
-				implicitHeight: 					200	
+				filter:								criticalTransactions.value + " > 0"
+				implicitHeight: 					200
 			}
 		}
 
@@ -1182,10 +1183,9 @@ Form
 				id:									performAuditTable
 				name:								"performAudit"
 				Layout.fillWidth: 					true
-				modelType:							"FilteredDataEntryModel"
+				modelType:							JASP.FilteredDataEntryModel
 				source:     						["recordNumberVariable", "monetaryVariable", "additionalVariables"]
 				colName:							"Filter"
-				itemType:							"double"
 				decimals:							3
 			}
 		}
