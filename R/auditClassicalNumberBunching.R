@@ -509,14 +509,11 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   
   state <- .jfaNumberBunchingState(dataset = NULL, options, jaspResults, ready)
   
-  approve <- state[["pvalueAvgFrequency"]] >= (1 - options[["confidence"]])
-  
-  conclusion <- if(approve) gettext("is rejected") else gettext("is not rejected")
-  
-  pvalue <- round(state[["pvalueAvgFrequency"]], 3)
-  if(pvalue < 0.001)
-    pvalue <- "< .001"
-  pvalue <- if(approve) gettextf("%1$s < \u03B1", pvalue) else gettextf("%1$s >= \u03B1", pvalue)
+  rejectnull <- state[["pvalueAvgFrequency"]] < (1 - options[["confidence"]])
+  conclusion <- if(rejectnull) gettext("is rejected") else gettext("is not rejected")
+
+  pvalue <- format.pval(state[["pvalueAvgFrequency"]], eps = 0.001)
+  pvalue <- if(rejectnull) gettextf("%1$s < \u03B1", pvalue) else gettextf("%1$s >= \u03B1", pvalue)
   
   conclusionText <- gettextf("The <i>p</i> value is %1$s and the null hypothesis that the data do not contain an unexpected amount of repeated values <b>%2$s</b>.", pvalue, conclusion)
   

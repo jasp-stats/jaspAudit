@@ -123,18 +123,6 @@
   return(results)
 }
 
-.jfaBayesianCorrelationCalculation <- function(r, n){
-  
-  # For the calculation of the Bayes factor for a correlation, we use the standard Bayesian test as described in:
-  # Wetzels, R., & Wagenmakers, E. J. (2012). A default Bayesian hypothesis test for correlations and partial correlations. Psychonomic bulletin & review, 19(6), 1057-1064.
-  
-  int <- function(r, n, g){
-    (1+g)^((n-2)/2)*(1+(1-r^2)*g)^(-(n-1)/2) * g^(-3/2)*exp(-n/(2*g))
-  }
-  bf10 <- sqrt((n/2))/gamma(1/2)*integrate(int, lower = 0, upper = Inf, r = r, n = n)$value
-  return(1 / bf10)
-}
-
 ################################################################################
 ################## Common functions specific to the planning stage #############
 ################################################################################
@@ -597,7 +585,7 @@
     if(options[["priorAndPosteriorPlotIndicateStatistics"]]){
       
       if(likelihood == "hypergeometric"){
-        confBound <- ceiling(confBound *N)
+        confBound <- ceiling(confBound * N)
         mle <- ceiling(mle * N)
       }
       
@@ -688,7 +676,7 @@
     
     if(options[["performanceMateriality"]]){                                               
       table$addColumnInfo(name = 'hMin', 	title = gettextf("Support %1$s", "H\u208B"), type = 'number')
-      table$addColumnInfo(name = 'hPlus', title = gettextf("Support %1$s", "H\u208A"), type = 'number')
+      table$addColumnInfo(name = 'hPlus', 	title = gettextf("Support %1$s", "H\u208A"), type = 'number')
       table$addColumnInfo(name = 'odds', 	title = gettextf("Ratio %1$s", "<sup>H\u208B</sup>&frasl;<sub>H\u208A</sub>"), type = 'number')
     }
     
