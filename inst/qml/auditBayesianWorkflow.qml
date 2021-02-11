@@ -20,6 +20,7 @@ import QtQuick										2.8
 import QtQuick.Layouts								1.3
 import JASP.Controls								1.0
 import JASP.Widgets									1.0
+import JASP											1.0
 
 // --------------------------------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------  BEGIN WORKFLOW  -------------------------------------------------------------------------
@@ -336,14 +337,14 @@ Form
 				id:									criticalTransactionTable
 				name:								"criticalTransactionTable"
 				Layout.fillWidth: 					true
-				modelType:							"FilteredDataEntryModel"
+				modelType:							JASP.FilteredDataEntryModel
 				source:     						["recordNumberVariable", "monetaryVariable"]
-				itemType:							"integer"
+				itemType:							JASP.Integer
 				colName: 							""
-				visible:							flagCriticalTransactions.checked	
+				visible:							flagCriticalTransactions.checked
 				extraCol: 							criticalTransactions.value
-				filter:								criticalTransactions.value + " > 0"		
-				implicitHeight: 					200	
+				filter:								criticalTransactions.value + " > 0"
+				implicitHeight: 					200
 			}
 		}
 
@@ -1396,10 +1397,9 @@ Form
 				id:									performAuditTable
 				name:								"performAudit"
 				Layout.fillWidth: 					true
-				modelType:							"FilteredDataEntryModel"
+				modelType:							JASP.FilteredDataEntryModel
 				source:     						["recordNumberVariable", "monetaryVariable", "additionalVariables"]
 				colName:    						"Filter"
-				itemType:							"double"
 				decimals:							3
 			}
 		}
