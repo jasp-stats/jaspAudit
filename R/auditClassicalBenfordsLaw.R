@@ -485,14 +485,11 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   
   state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
   
-  approve <- state[["pvalue"]] >= (1 - options[["confidence"]])
+  rejectnull <- state[["pvalue"]] < (1 - options[["confidence"]])
+  conclusion <- if(rejectnull) gettext("is rejected") else gettext("is not rejected")
   
-  conclusion <- ifelse(approve, no = gettext("is rejected"), yes = gettext("is not rejected"))
-  
-  pvalue <- round(state[["pvalue"]], 3)
-  if(pvalue < 0.001)
-    pvalue <- "< .001"
-  pvalue <- ifelse(approve, no = paste0(pvalue, " < \u03B1"), yes = paste0(pvalue, " >= \u03B1"))
+  pvalue <- format.pval(state[["pvalue"]], eps = 0.001)
+  pvalue <- if(rejectnull) gettextf("%1$s < \u03B1", pvalue) else gettextf("%1$s >= \u03B1", pvalue)
   
   distribution <- base::switch(options[["distribution"]], "benford" = "Benford's law", "uniform" = "the uniform distribution")
   
