@@ -1532,6 +1532,7 @@ Form
 				{
 					text: 							qsTr("One-sided upper bound")
 					name: 							"displayCredibleBound"
+					checked:						true
 				}
 
 				RadioButton
