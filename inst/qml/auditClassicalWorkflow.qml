@@ -23,6 +23,7 @@ import QtQuick										2.8
 import QtQuick.Layouts								1.3
 import JASP.Controls								1.0
 import JASP.Widgets									1.0
+import JASP											1.0
 
 // --------------------------------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------  BEGIN WORKFLOW  -------------------------------------------------------------------------
@@ -1376,7 +1377,7 @@ Form
 
 				RadioButton
 				{
-					text: 							qsTr("Values")
+					text: 							qsTr("Extrapolated amounts")
 					name: 							"displayValues"
 					enabled:						monetaryVariable.count > 0
 				}	
