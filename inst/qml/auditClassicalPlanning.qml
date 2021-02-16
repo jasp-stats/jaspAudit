@@ -416,7 +416,7 @@ Form
 
 		GroupBox
 		{
-			title: 								qsTr("Calculation Settings")
+			title: 								qsTr("Calculation Preferences")
 
 			IntegerField 
 			{

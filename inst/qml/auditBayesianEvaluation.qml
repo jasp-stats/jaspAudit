@@ -715,6 +715,7 @@ Form
 				id: 							betaBound
 				name: 							"betaBound"
 				text: 							qsTr("Beta")
+				checked: 						true
 			}
 
 			RadioButton

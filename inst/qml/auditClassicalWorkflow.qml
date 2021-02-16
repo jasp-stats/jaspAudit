@@ -574,7 +574,7 @@ Form
 
 			GroupBox
 			{
-				title: 								qsTr("Calculation Settings")
+				title: 								qsTr("Calculation Preferences")
 				enabled:							!pasteVariables.checked
 
 				IntegerField 
@@ -1233,8 +1233,8 @@ Form
 													if(variableTypeCorrect.checked)
 													{
 														if (poisson.checked) 				poissonBound.click()
-														if (binomial.checked) 			binomialBound.click()
-														if (hypergeometric.checked) hyperBound.click()
+														if (binomial.checked) 				binomialBound.click()
+														if (hypergeometric.checked) 		hyperBound.click()
 													}
 				}
 			}

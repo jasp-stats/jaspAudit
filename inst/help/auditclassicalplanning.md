@@ -116,8 +116,8 @@ The statistical probability distribution that is used for calculating the requir
 
 *Base effects on options*: None.
 
-#### Calculation settings
-The calculation settings allow you to control the additional rules by which the sample size is calculated.
+#### Calculation preferences
+The calculation preferences allow you to control the additional rules by which the sample size is calculated.
 
 **Step size:** The step size alows you to limit the possible sample sizes to a multiple of its value. For example, a step size of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
 

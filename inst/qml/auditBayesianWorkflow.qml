@@ -702,7 +702,7 @@ Form
 
 			GroupBox
 			{
-				title: 								qsTr("Calculation Settings")
+				title: 								qsTr("Calculation Preferences")
 				enabled:							!pasteVariables.checked
 
 				IntegerField 
@@ -1439,7 +1439,7 @@ Form
 													executeAuditSection.expanded = false
 													evaluationChecked.checked = true
 													if (beta.checked) 						betaBound.click()
-													if (betaBinomial.checked) 		betabinomialBound.click()
+													if (betaBinomial.checked) 				betabinomialBound.click()
 													if (gamma.checked) 						gammaBound.click()
 													if (recordSampling.checked & variableTypeAuditValues.checked)	regressionBound.click()
 				}

@@ -223,7 +223,7 @@ Form
 	VariablesForm
 	{
 		preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
-		enabled:								!useSummaryStatistics.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0))
+		enabled:								!useSummaryStatistics.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
 		AvailableVariablesList
 		{
@@ -572,6 +572,7 @@ Form
 				text: 							qsTr("Binomial")
 				id: 							binomialBound
 				enabled: 						variableTypeCorrect.checked
+				checked:						true
 			}
 			
 			RadioButton 
