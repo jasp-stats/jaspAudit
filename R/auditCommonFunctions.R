@@ -284,7 +284,7 @@
     
     jaspResults[["sampleFilter"]]$setScale(sampleFilter)
     jaspResults[["variableName"]]$setScale(auditDataVariable)
- 
+    
   }
 }
 
@@ -868,7 +868,8 @@
                                      "performAudit",
                                      "stringerBoundLtaAdjustment",
                                      "areaUnderPosterior",
-                                     "display"))
+                                     "display",
+                                     "additionalSamples"))
       
       jaspResults[["evaluationContainer"]] <- container
     }
@@ -2740,6 +2741,10 @@
     if(options[["performanceMateriality"]])
       materiality <- prevOptions[["materiality"]]
     
+    minPrecision <- NULL
+    if(options[["minimumPrecision"]])
+      minPrecision <- options[["minimumPrecisionPercentage"]]
+    
     if(options[["priorConstructionMethod"]] == "arm"){
       ir <- base::switch(options[["IR"]], "High" = 1, "Medium" = 0.60, "Low" = 0.36, "Custom" = options[["irCustom"]])
       cr <- base::switch(options[["CR"]], "High" = 1, "Medium" = 0.60, "Low" = 0.36, "Custom" = options[["crCustom"]])
@@ -2789,7 +2794,8 @@
                         method = method,
                         materiality = materiality,
                         N = prevOptions[["populationSize"]],
-                        prior = prior)
+                        prior = prior,
+                        minPrecision = minPrecision)
       })
       
     } else if(options[["variableType"]] == "variableTypeAuditValues"){
@@ -2828,7 +2834,8 @@
                           materiality = materiality,
                           N = prevOptions[["populationSize"]],
                           populationBookValue = prevOptions[["populationValue"]],
-                          prior = prior)
+                          prior = prior, 
+                          minPrecision = minPrecision)
         })
       }
     }
@@ -3138,6 +3145,7 @@
                         kSumstats = kSumstats,
                         method = method,
                         materiality = planningOptions[["materiality"]],
+                        minPrecision = minPrecision,
                         N = planningOptions[["populationSize"]],
                         prior = prior)
         
@@ -3454,7 +3462,7 @@
   table$addColumnInfo(name = 'bayesfactor', 	title = gettextf("BF%1$s", "\u208B\u2080"), type = 'number')
   
   table$addFootnote(gettext("The null hypotheses H\u2080: \u03C1 \u2265 0 is tested against the alternative hypothesis H\u208B: \u03C1 < 0"))
-
+  
   parentContainer[["assumptionTable"]] <- table
   
   if(options[["auditResult"]] == ""){
@@ -3467,29 +3475,29 @@
   ist 	<- sample[, .v(options[["monetaryVariable"]])]
   soll 	<- sample[, .v(options[["auditResult"]])]
   taint <- (ist - soll) / ist 
-
+  
   # Select only the non-zero taints for the correlation
   ist   <- ist[taint != 0]
   taint <- taint[taint != 0]
-
+  
   if(length(taint) == 0){
     table$addFootnote(gettext("There were no misstatements found in the sample."))
-	row <- list(type = gettext("The sample taints are homogeneous"), n = length(taint))
-	table$addRows(row)
-	return()	  
+    row <- list(type = gettext("The sample taints are homogeneous"), n = length(taint))
+    table$addRows(row)
+    return()	  
   }
   
   p <- try({
     test <- stats::cor.test(x = ist, y = taint, alternative = "less", method = "pearson",
                             conf.level = options[["evaluationAssumptionChecksConfidence"]])
-	btest <- bstats::bcor.test(x = ist, y = taint, alternative = "less", method = "pearson")
+    btest <- bstats::bcor.test(x = ist, y = taint, alternative = "less", method = "pearson")
   })
-
+  
   if(isTryError(p)){
     table$addFootnote(gettext("An error occurred while calculating the correlation."), symbol = "<b>Warning.</b>")
-	return()
+    return()
   }
-
+  
   row <- list(type = gettext("The sample taints are homogeneous"),
               n = length(taint),
               correlation = test[["estimate"]],
@@ -3890,6 +3898,7 @@
                                            kSumstats = newK[i],
                                            method = prevOptions[["likelihood"]],
                                            materiality = performanceMateriality,
+                                           minPrecision = minPrecision,
                                            N = N,
                                            prior = prior)[["posterior"]]$posterior
     }
