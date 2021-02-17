@@ -849,6 +849,7 @@ Form
 				{
 					text: 						qsTr("Additional samples for sampling objectives")
 					name: 						"additionalSamples"
+					enabled:					!separateKnownAndUnknownMisstatement.checked
 				}
 
 				CheckBox

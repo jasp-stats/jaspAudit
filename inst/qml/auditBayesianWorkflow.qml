@@ -1618,6 +1618,7 @@ Form
 					{
 						text: 						qsTr("Additional samples for sampling objectives")
 						name: 						"additionalSamples"
+						visible:					!separateKnownAndUnknownMisstatement.checked
 					}
 
 					CheckBox

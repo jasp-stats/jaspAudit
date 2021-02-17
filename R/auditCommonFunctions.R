@@ -3885,7 +3885,7 @@
     } else if(options[["bayesianAnalysis"]]){
       
       # Incorporate the information from the prior and the sample into a new sample size
-      newN[i] <- jfa::planning(confidence = prevOptions[["confidence"]],,
+      newN[i] <- jfa::planning(confidence = prevOptions[["confidence"]],
                                materiality = performanceMateriality,
                                minPrecision = minPrecision,
                                expectedError = newK[i],
