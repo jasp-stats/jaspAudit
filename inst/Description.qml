@@ -20,7 +20,8 @@ Description
 	}
 	Analysis
 	{
-		title:			qsTr("Sampling Workflow")
+		menu:			qsTr("Sampling Workflow")
+		title:			qsTr("Classical Sampling Workflow")
 		func:			"auditClassicalWorkflow"
 	}
 	Analysis
@@ -36,7 +37,8 @@ Description
 	}
 	Analysis
 	{
-		title:			qsTr("Planning")
+		menu:			qsTr("Planning")
+		title:			qsTr("Classical Planning")
 		func:			"auditClassicalPlanning"
 		requiresData:	false
 	}
@@ -65,7 +67,8 @@ Description
 	}
 	Analysis
 	{
-		title:			qsTr("Evaluation")
+		menu:			qsTr("Evaluation")
+		title:			qsTr("Classical Evaluation")
 		func:			"auditClassicalEvaluation"
 		requiresData:	false
 	}
@@ -88,7 +91,8 @@ Description
 	}
 	Analysis
 	{
-		title:			qsTr("Repeated Values")
+		menu:			qsTr("Repeated Values")
+		title:			qsTr("Repeated Values Analysis")
 		func:			"auditClassicalNumberBunching"
 	}
 
