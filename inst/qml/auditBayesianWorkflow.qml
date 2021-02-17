@@ -1616,8 +1616,15 @@ Form
 
 					CheckBox
 					{
-						text: 						qsTr("Additional samples")
+						text: 						qsTr("Additional samples for sampling objectives")
 						name: 						"additionalSamples"
+					}
+
+					CheckBox
+					{
+						text: 						qsTr("Post-hoc corrections to population value")
+						name: 						"correctionsTable"
+						visible:					minimumPrecision.checked & monetaryVariable.count > 0
 					}
 
 					CheckBox

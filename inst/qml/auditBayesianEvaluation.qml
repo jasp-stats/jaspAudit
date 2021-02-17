@@ -58,6 +58,19 @@ Form
 		visible:								false
 	}
 
+	RadioButtonGroup
+	{
+		name: 									"valuta"
+		visible:								false
+
+		RadioButton 	
+		{ 
+			text: 								qsTr("Dollar ($)")
+			name: 								"dollarValuta"
+			checked: 							true
+		}
+	}
+
 	// Start analysis
 	GridLayout
 	{
@@ -236,15 +249,6 @@ Form
 
 		AssignedVariablesList
 		{
-			id: 								auditResult
-			name: 								"auditResult"
-			title: 								variableTypeAuditValues.checked ? qsTr("Soll Position") : qsTr("Audit Result")
-			singleVariable: 					true
-			allowedColumns: 					["nominal", "scale"]
-		}
-
-		AssignedVariablesList
-		{
 			id: 								monetaryVariable
 			name: 								"monetaryVariable"
 			title: 								variableTypeAuditValues.checked ? qsTr("Ist Position <i>(required)</i>") : qsTr("Ist Position")
@@ -255,11 +259,20 @@ Form
 
 		AssignedVariablesList
 		{
+			id: 								auditResult
+			name: 								"auditResult"
+			title: 								variableTypeAuditValues.checked ? qsTr("Soll Position") : qsTr("Audit Result")
+			singleVariable: 					true
+			allowedColumns: 					["nominal", "scale"]
+		}
+
+		AssignedVariablesList
+		{
 			id: 								sampleCounter
 			name: 								"sampleCounter"
 			title: 								qsTr("Selection Counter <i>(optional)</i>")
 			singleVariable: 					true
-			allowedColumns: 					["nominal", "scale"]
+			allowedColumns: 					["nominal", "ordinal", "scale"]
 		}
 	}
 
@@ -836,10 +849,23 @@ Form
 
 				CheckBox
 				{
+					text: 						qsTr("Additional samples for sampling objectives")
+					name: 						"additionalSamples"
+				}
+
+				CheckBox
+				{
+					text: 						qsTr("Post-hoc corrections to population value")
+					name: 						"correctionsTable"
+					enabled:					minimumPrecision.checked & monetaryVariable.count > 0
+				}
+
+				CheckBox
+				{
 					text: 						qsTr("Evaluate post-hoc assumptions")
 					name: 						"evaluationAssumptionChecks"
 					checked: 					separateKnownAndUnknownMisstatement.checked
-					visible: 					separateKnownAndUnknownMisstatement.checked
+					enabled: 					separateKnownAndUnknownMisstatement.checked
 
 					CIField 
 					{ 

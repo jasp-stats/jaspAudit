@@ -63,6 +63,26 @@ Form
 		}
 	}
 
+	IntegerField 
+	{
+		name: 									"sampleSizeIncrease"
+		defaultValue: 							1
+		visible:								false
+	}
+
+	RadioButtonGroup
+	{
+		name: 									"valuta"
+		visible:								false
+
+		RadioButton 	
+		{ 
+			text: 								qsTr("Dollar ($)")
+			name: 								"dollarValuta"
+			checked: 							true
+		}
+	}
+
 	// Start analysis
 	GridLayout
 	{
@@ -242,15 +262,6 @@ Form
 
 		AssignedVariablesList
 		{
-			id: 								auditResult
-			name: 								"auditResult"
-			title: 								variableTypeAuditValues.checked ? qsTr("Soll Position") : qsTr("Audit Result")
-			singleVariable: 					true
-			allowedColumns: 					["nominal", "scale"]
-		}
-
-		AssignedVariablesList
-		{
 			id: 								monetaryVariable
 			name: 								"monetaryVariable"
 			title: 								variableTypeAuditValues.checked ? qsTr("Ist Position <i>(required)</i>") : qsTr("Ist Position")
@@ -261,11 +272,20 @@ Form
 
 		AssignedVariablesList
 		{
+			id: 								auditResult
+			name: 								"auditResult"
+			title: 								variableTypeAuditValues.checked ? qsTr("Soll Position") : qsTr("Audit Result")
+			singleVariable: 					true
+			allowedColumns: 					["nominal", "scale"]
+		}
+
+		AssignedVariablesList
+		{
 			id: 								sampleCounter
 			name: 								"sampleCounter"
 			title: 								qsTr("Selection Counter <i>(optional)</i>")
 			singleVariable: 					true
-			allowedColumns: 					["nominal", "scale"]
+			allowedColumns: 					["nominal", "ordinal", "scale"]
 		}
 	}
 
@@ -644,6 +664,24 @@ Form
 					text: 						qsTr("Obtained precision")
 					name: 						"obtainedPrecision"
 					checked: 					minimumPrecision.checked
+				}
+			}
+
+			GroupBox
+			{
+				title: 							qsTr("Tables")
+
+				CheckBox
+				{
+					text: 						qsTr("Additional samples for sampling objectives")
+					name: 						"additionalSamples"
+				}
+
+				CheckBox
+				{
+					text: 						qsTr("Post-hoc corrections to population value")
+					name: 						"correctionsTable"
+					enabled:					minimumPrecision.checked & monetaryVariable.count > 0
 				}
 			}
 		}

@@ -109,7 +109,7 @@ Form {
 		{
 			id: 							bookValues
 			name: 							"bookValues"
-			title: 							qsTr("Book values")
+			title: 							qsTr("Ist Position")
 			singleVariable:					true
 			allowedColumns:					["scale"]
 			enabled: 						!mpu.checked
@@ -119,7 +119,7 @@ Form {
 		{
 			id: 							auditValues
 			name: 							"auditValues"
-			title: 							qsTr("Audit values")
+			title: 							qsTr("Soll Position")
 			singleVariable: 				true
 			allowedColumns: 				["scale"]
 		}
