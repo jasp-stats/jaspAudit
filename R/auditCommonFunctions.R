@@ -3937,7 +3937,7 @@
   table$addColumnInfo(name = 'correction', title = gettext("Correction"), type = 'string')
   
   message <- if(!options[["performanceMateriality"]] && options[["minimumPrecision"]]) " minus the required precision" else ""
-  table$addFootnote(gettextf("The correction to achieve no misstatements is the upper bound minus%1$s.", message))
+  table$addFootnote(gettextf("The correction to achieve no misstatements is the upper bound%1$s.", message))
   
   parentContainer[["correctionsTable"]] <- table
   
