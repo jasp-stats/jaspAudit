@@ -1086,31 +1086,31 @@
       if(!options[["performanceMateriality"]] && !options[["minimumPrecision"]]){
         procedureText <- gettextf("Select one or more sampling objectives from the top left corner to begin planning an audit sample.\n\n%1$s <b>Test against a performance materiality</b>\n\nEnable this objective if you want to <i>test</i> whether the total misstatement in the population exceeds a certain limit (i.e., the performance materiality) based on a sample. This approach allows you to plan a sample such that, when the sample meets your expectations, the maximum error is said to be below performance materiality. In the evaluation you will be able to quantify the evidence that your sample contains for or against the statement that the population misstatement does not exceed the performance materiality.\n\n%2$s <b>Obtain a required minimum precision</b>\n\nEnable this objective if you want to obtain a required minimum precision when <i>estimating</i> the total misstatement in the population based on a sample. This approach allows you to plan a sample such that, when the sample meets expectations, the accuracy of your estimate is below a tolerable percentage. In the evaluation you will be able to quantify the accuracy of your estimate of the population misstatement.", "\u25CF", "\u25CF")
       } else if(options[["performanceMateriality"]] && !options[["minimumPrecision"]]){
-        procedureText <- gettextf("The objective of this sampling procedure is to test with a confidence of <b>%1$s</b> whether the %2$s of misstatement in the population is lower than the performance materiality of <b>%3$s</b>.",
+        procedureText <- gettextf("The objective of this sampling procedure is to show with <b>%1$s</b> confidence that the %2$s of misstatement in the population is lower than the performance materiality of <b>%3$s</b>.",
                                   stageOptions[["confidenceLabel"]],
                                   stageOptions[["absRel"]],
                                   stageOptions[["materialityLabel"]])
       } else if(!options[["performanceMateriality"]] && options[["minimumPrecision"]]){
-        procedureText <- gettextf("The objective of this sampling procedure is to estimate the misstatement in the population with a confidence of <b>%1$s</b> and a minimum precision of <b>%2$s</b>.\n\nThe quantity of interest is the misstatement \u03B8 in the population. Misstatement is defined as the difference between an item's <i>Ist</i> (recorded) position and its <i>Soll</i> (true) position.",
+        procedureText <- gettextf("The objective of this sampling procedure is to estimate the misstatement in the population with <b>%1$s</b> confidence and a minimum precision of <b>%2$s</b>.\n\nThe quantity of interest is the misstatement \u03B8 in the population. Misstatement is defined as the difference between a transaction's <i>Ist</i> (recorded) position and its <i>Soll</i> (true) position.",
                                   stageOptions[["confidenceLabel"]],
                                   stageOptions[["minimumPrecisionLabel"]])
       } else if(options[["performanceMateriality"]] && options[["minimumPrecision"]]){
-        procedureText <- gettextf("The objective of this sampling procedure is to test with a confidence of <b>%1$s</b> whether the %2$s of misstatement in the population is lower than the performance materiality of <b>%3$s</b> and to estimate the misstatement with a minimum precision of <b>%4$s</b>.",
+        procedureText <- gettextf("The objective of this sampling procedure is to show with <b>%1$s</b> confidence and a precision of <b>%3$s</b> that the %2$s of misstatement in the population is lower than the performance materiality of <b>%4$s</b>.",
                                   stageOptions[["confidenceLabel"]],
                                   stageOptions[["absRel"]],
-                                  stageOptions[["materialityLabel"]],
-                                  stageOptions[["minimumPrecisionLabel"]])
+                                  stageOptions[["minimumPrecisionLabel"]],
+                                  stageOptions[["materialityLabel"]])
       }
       
       if(options[["performanceMateriality"]])
-        procedureText <- gettextf("%1$s\n\nThe quantity of interest is the misstatement (\u03B8) in the population. Misstatement is defined as the difference between an item's <i>Ist</i> (recorded) position and its <i>Soll</i> (true) position. When testing this quantity against a given performance materiality (\u03B8*), two statistical hypotheses about \u03B8 are formulated:\n
+        procedureText <- gettextf("%1$s\n\nThe quantity of interest is the misstatement (\u03B8) in the population. Misstatement is defined as the difference between a transaction's <i>Ist</i> (recorded) position and its <i>Soll</i> (true) position. When testing the population misstatement against a given performance materiality (\u03B8*), two statistical hypotheses about \u03B8 are formulated:\n
 		  							The (null) hypothesis of intolerable misstatement <i>H\u208A: \u03B8 \u2265 \u03B8*</i>,
 									The (alternative) hypothesis of tolerable misstatement <i>H\u208B: \u03B8 < \u03B8*</i>.\n
 									The audit risk (\u03B1) is the risk of incorrectly rejecting the hypothesis <i>H\u208A: \u03B8 \u2265 \u03B8*</i>. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce \u03B1 to an appropriately low level.", 
                                   procedureText)
       
       if(options[["bayesianAnalysis"]])
-        procedureText <- gettextf("%1$s\n\nIn a Bayesian analysis, the parameter \u03B8 is first assigned a prior probability distribution that incorporates the existing information about its possible values. A description and figure of the current prior distribution can be found under the <i>Tables and Plots</i> section. You can select a method to incorporate existing information in the <i>Prior Information</i> section of the interface.", 
+        procedureText <- gettextf("%1$s\n\nIn a Bayesian analysis, the parameter \u03B8 is first assigned a prior probability distribution that incorporates the existing information about its possible values. A description and figure of the current prior distribution can be found under the <i>Tables and Plots</i> section. You can incorporate existing information using the options under the <i>Prior Information</i> section.", 
                                   procedureText)
       
       procedureContainer[["procedureParagraph"]] <- createJaspHtml(procedureText, "p")
@@ -1132,7 +1132,7 @@
         }
         
         separateMisstatementMessage <- ifelse(options[["separateKnownAndUnknownMisstatement"]],
-                                              yes = gettext("\n\nFurthermore, the uncertainty regarding the misstatement will only be extrapolated over the unseen part of the population. This requires the additional <i>post-hoc</i> assumption that the sample taints are homogeneous."),
+                                              yes = gettext("\n\nFurthermore, the uncertainty regarding \u03B8 will only be extrapolated over the unseen part of the population. This requires the additional assumption that the population taints are homogeneous."),
                                               no = "")
         
         distribution <- options[["planningModel"]]
@@ -1142,7 +1142,7 @@
         introMessage <- gettext("The purpose of the planning stage is to find a sample size so that, given a certain number of expected misstatements, the sample provides sufficient information to achieve the specified sampling objectives.\n\n")
         
         if(options[["priorConstructionMethod"]] == "none"){
-          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) errors in the audited transactions is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s",
+          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s",
                                                                            introMessage,
                                                                            stageOptions[["expectedErrorsLabel"]],
                                                                            samplingObjectivesMessage,
@@ -1153,7 +1153,7 @@
                                                                            samplingObjectivesMessage2,
                                                                            separateMisstatementMessage), "p")
         } else if(options[["priorConstructionMethod"]] == "arm"){
-          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assessments of inherent risk <b>(%7$s)</b> and control risk <b>(%8$s)</b> from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) errors in the audited transactions is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s",
+          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assessments of inherent risk <b>(%7$s)</b> and control risk <b>(%8$s)</b> from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s",
                                                                            introMessage,
                                                                            stageOptions[["expectedErrorsLabel"]],
                                                                            samplingObjectivesMessage,
@@ -1166,7 +1166,7 @@
                                                                            samplingObjectivesMessage2,
                                                                            separateMisstatementMessage), "p")
         } else if (options[["priorConstructionMethod"]] == "median"){
-          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) errors in the audited transactions is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s",
+          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s",
                                                                            introMessage,
                                                                            stageOptions[["expectedErrorsLabel"]],
                                                                            samplingObjectivesMessage,
@@ -1177,7 +1177,7 @@
                                                                            samplingObjectivesMessage2,
                                                                            separateMisstatementMessage), "p")
         } else if (options[["priorConstructionMethod"]] == "hypotheses"){
-          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that tolerable misstatement occurs with a probability <b>%7$s</b> of and intolerable misstatement occurs with a probability of <b>%8$s</b>, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) errors in the audited transactions is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s",
+          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that tolerable misstatement occurs with a probability <b>%7$s</b> of and intolerable misstatement occurs with a probability of <b>%8$s</b>, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s",
                                                                            introMessage,
                                                                            stageOptions[["expectedErrorsLabel"]],
                                                                            samplingObjectivesMessage,
@@ -1190,7 +1190,7 @@
                                                                            samplingObjectivesMessage2,
                                                                            separateMisstatementMessage), "p")
         } else if (options[["priorConstructionMethod"]] == "sample"){
-          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that an earlier sample of <b>%7$s</b> transactions containing <b>%8$s</b> errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) errors in the audited transactions is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s",
+          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that an earlier sample of <b>%7$s</b> transactions containing <b>%8$s</b> errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s",
                                                                            introMessage,
                                                                            stageOptions[["expectedErrorsLabel"]],
                                                                            samplingObjectivesMessage,
@@ -1203,7 +1203,7 @@
                                                                            samplingObjectivesMessage2,
                                                                            separateMisstatementMessage), "p")
         } else if (options[["priorConstructionMethod"]] == "factor"){
-          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, an <i>a priori</i> assumption that an earlier sample of <b>%7$s</b> transactions containing <b>%8$s</b> errors weighted by a factor <b>%9$s</b> is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) errors in the audited transactions is lower than (or equal to) <b>%10$s</b>, %11$s. %12$s",
+          stageContainer[["planningParagraph"]] <- createJaspHtml(gettextf("%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, an <i>a priori</i> assumption that an earlier sample of <b>%7$s</b> transactions containing <b>%8$s</b> errors weighted by a factor <b>%9$s</b> is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%10$s</b>, %11$s. %12$s",
                                                                            introMessage,
                                                                            stageOptions[["expectedErrorsLabel"]],
                                                                            samplingObjectivesMessage,
@@ -1575,7 +1575,7 @@
       message <- gettextf("%1$s\n\nThe translation of High, Medium and Low to probabilities is done according custom preferences</b>.",
                           message)
     } else {
-      message <- gettextf("%1$s\n\nThe translation of High, Medium and Low to probabilities is done using default values. To learn more about the choice of these values and how to adjust these, see the help file of this analysis or navigate to the <i>Risk Assessments</i> section of the interface.",
+      message <- gettextf("%1$s\n\nThe translation of High, Medium and Low to probabilities is done using default values. To learn more about the choice of these values and how to adjust these, see the help file of this analysis or navigate to the <i>Risk Assessments</i> section.",
                           message)
     }
     
@@ -3921,7 +3921,7 @@
   prevState       	<- prevContainer[["evaluationState"]]$object
   parentContainer 	<- jaspResults[["conclusionContainer"]]
   
-  if(!options[["correctionsTable"]] || !options[["minimumPrecision"]] || is.null(prevState) || !is.null(parentContainer[["correctionsTable"]]))
+  if(!options[["correctionsTable"]] || is.null(prevState) || !is.null(parentContainer[["correctionsTable"]]))
     return()
   
   .jfaTableNumberUpdate(jaspResults)
@@ -3934,8 +3934,9 @@
   
   table$addColumnInfo(name = 'name', title = "", type = 'string')
   table$addColumnInfo(name = 'correction', title = gettext("Correction"), type = 'string')
-  
-  table$addFootnote(gettext("The correction to achieve the required precision is the upper bound minus the required precision."))
+
+  message <- if(!options[["performanceMateriality"]] && options[["minimumPrecision"]]) " minus the required precision" else ""
+  table$addFootnote(gettextf("The correction to achieve no misstatements is the upper bound minus%1$s.", message))
   
   parentContainer[["correctionsTable"]] <- table
   
@@ -3949,8 +3950,17 @@
   if(options[["monetaryVariable"]] != "")
     N <- ceiling(prevOptions[["populationValue"]])
   
-  name <- gettextf("%1$s%% Precision", round(options[["minimumPrecisionPercentage"]] * 100, 2))
-  correction <- prevState[["confBound"]] - options[["minimumPrecisionPercentage"]]
+  if(!options[["performanceMateriality"]] && options[["minimumPrecision"]]){
+	  name <- gettextf("No misstatements with %1$s%% precision", round(options[["minimumPrecisionPercentage"]] * 100, 2))
+	  correction <- prevState[["confBound"]] - options[["minimumPrecisionPercentage"]]
+  } else if(options[["performanceMateriality"]] && !options[["minimumPrecision"]]){
+	  name <- gettextf("No misstatements with %1$s%% confidence", round(options[["confidence"]] * 100, 2))
+	  correction <- prevState[["confBound"]] 
+  } else if(options[["performanceMateriality"]] && options[["minimumPrecision"]]){
+	  name <- gettextf("No misstatements with %1$s%% confidence and %2$s%% precision", round(options[["confidence"]] * 100, 2), round(options[["minimumPrecisionPercentage"]] * 100, 2))	
+	  correction <- prevState[["confBound"]] 	  
+  }
+  
   correction <- base::switch(options[["display"]],
                              "displayNumbers" = round(correction, 3),
                              "displayPercentages" = paste0(round(correction * 100, 3), "%"),
@@ -3974,9 +3984,12 @@
     bottomStratum <- subset(dataset, dataset[, .v(options[["monetaryVariable"]])] <= interval)
     
     m_seen <- sum(topStratum[, .v(options[["monetaryVariable"]])])
-    set.seed(rnorm(1) + options[["sampleSizeIncrease"]] + parentOptions[["populationValue"]])
+
+	# We choose a pseudo-random seed to get the impression of a random starting point
+	# It is unlikely that two populations or users have the same seed
+    set.seed(rnorm(1) + options[["sampleSizeIncrease"]] + parentOptions[["populationValue"]] + interval)
+
     intervalStartingPoint <- sample(1:(interval - 1), size = 1)
-    
     intervalSelection <- intervalStartingPoint + 0:(n - 1) * interval
     index <- NULL
     for(i in 1:n){

@@ -198,17 +198,40 @@ Form
 			}
 		}
 
-		GroupBox
+		ColumnLayout
 		{
-			id: 								auditRisk
-			title: 								qsTr("Audit Risk")
-
-			PercentField
+			GroupBox
 			{
-				name: 							"confidence"
-				label: 							qsTr("Confidence")
-				decimals: 						2
-				defaultValue: 					95
+				id: 							auditRisk
+				title: 							qsTr("Audit Risk")
+
+				PercentField
+				{
+					name: 						"confidence"
+					label: 						qsTr("Confidence")
+					decimals: 					2
+					defaultValue: 				95
+				}
+			}
+
+			GroupBox
+			{
+				title: 							qsTr("Explanatory Text")
+				columns: 						2
+
+				CheckBox
+				{
+					id: 						explanatoryText
+					text: 						qsTr("Enable")
+					name: 						"explanatoryText"
+					checked: 					true
+				}
+
+				HelpButton
+				{
+					helpPage:					"Audit/explanatoryText"
+					toolTip: 					qsTr("Show explanatory text at each step of the analysis")
+				}
 			}
 		}
 	}
@@ -381,7 +404,7 @@ Form
 	Section
 	{
 		text:									qsTr("Advanced Options")
-		columns:								4
+		columns:								3
 		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
 		RadioButtonGroup
@@ -467,26 +490,6 @@ Form
 					enabled: 					otherValuta.checked
 					visible: 					otherValuta.checked
 				}
-			}
-		}
-
-		GroupBox
-		{
-			title: 								qsTr("Explanatory Text")
-			columns: 							2
-
-			CheckBox
-			{
-				id: 							explanatoryText
-				text: 							qsTr("Enable")
-				name: 							"explanatoryText"
-				checked: 						true
-			}
-
-			HelpButton
-			{
-				helpPage:						"Audit/explanatoryText"
-				toolTip: 						qsTr("Show explanatory text at each step of the analysis")
 			}
 		}
 	}

@@ -379,7 +379,7 @@ Form
 				Label
 				{
 					Layout.leftMargin: 				30 * preferencesModel.uiScale
-					text: 							qsTr("<i>Requires additional assumption: The sample taints are homogeneous</i>")
+					text: 							qsTr("<i>Requires additional assumption: The population taints are homogeneous</i>")
 				}
 			}
 		}
@@ -1624,7 +1624,7 @@ Form
 					{
 						text: 						qsTr("Post-hoc corrections to population value")
 						name: 						"correctionsTable"
-						visible:					minimumPrecision.checked & monetaryVariable.count > 0
+						visible:					monetaryVariable.count > 0
 					}
 
 					CheckBox

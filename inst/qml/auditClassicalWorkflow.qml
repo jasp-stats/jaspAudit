@@ -1424,7 +1424,7 @@ Form
 					{
 						text: 						qsTr("Post-hoc corrections to population value")
 						name: 						"correctionsTable"
-						visible:					minimumPrecision.checked & monetaryVariable.count > 0
+						visible:					monetaryVariable.count > 0
 					}
 				}
 			}

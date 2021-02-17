@@ -1,7 +1,5 @@
-Estimation
+True Value Estimation
 ==========================
-
-*Note*: This analysis will change significantly in the next version of JASP. It will be revamped into a full-fledged evaluation analysis, allowing for more than just estimation. 
 
 Estimation is applied when the auditor has collected a sample of the population, and wants to estimate the total error is the population on the basis of their sample.
 

@@ -220,17 +220,43 @@ Form
 			}
 		}
 
-		GroupBox
+		ColumnLayout
 		{
-			id: 								auditRisk
-			title: 								qsTr("Audit Risk")
-
-			PercentField
+			GroupBox
 			{
-				name: 							"confidence"
-				label: 							qsTr("Confidence")
-				decimals: 						2
-				defaultValue: 					95
+				id: 							auditRisk
+				title: 							qsTr("Audit Risk")
+
+				PercentField
+				{
+					name: 						"confidence"
+					label: 						qsTr("Confidence")
+					decimals: 					2
+					defaultValue: 				95
+				}
+			}
+
+			GroupBox
+			{
+				title: 							qsTr("Explanatory Text")
+
+				RowLayout
+				{
+
+					CheckBox
+					{
+						id: 					explanatoryText
+						text:	 				qsTr("Enable")
+						name: 					"explanatoryText"
+						checked: 				true
+					}
+
+					HelpButton
+					{
+						helpPage:				"Audit/explanatoryText"
+						toolTip: 				qsTr("Click to learn more about the explanatory text.")
+					}
+				}
 			}
 		}
 	}
@@ -289,88 +315,59 @@ Form
 		}
 	}
 
-	GridLayout
+	RadioButtonGroup 
 	{
-		columns:								2
+		id:										variableType 
+		title: 									qsTr("Annotation Method")
+		name:									"variableType"
 
-		RadioButtonGroup 
+		RadioButton 
 		{
-			id:									variableType 
-			title: 								qsTr("Annotation Method")
-			name:								"variableType"
-
-			RadioButton 
-			{
-				id: 							variableTypeAuditValues
-				name:							"variableTypeAuditValues"
-				label: 							qsTr("Soll values")
-				checked:						mainWindow.dataAvailable
-				enabled:						mainWindow.dataAvailable
-				onCheckedChanged: 				if(checked) useSummaryStatistics.checked = false
-			}
-
-			RadioButton 
-			{
-				id: 							variableTypeCorrect
-				name:							"variableTypeCorrect"
-				label: 							qsTr("Correct / Incorrect")	
-				checked: 						!mainWindow.dataAvailable
-
-				CheckBox 
-				{
-					id: 						useSummaryStatistics
-					name: 						"useSumStats"
-					label:						qsTr("Use summary statistics")
-					checked: 					!mainWindow.dataAvailable
-
-					IntegerField
-					{
-						id: 					nSumStats
-						name: 					"nSumStats"
-						text: 					qsTr("Number of seen transactions")
-						defaultValue: 			0
-						min: 					0
-						visible:				useSummaryStatistics.checked
-					}
-
-					IntegerField
-					{
-						id: 					kSumStats
-						name: 					"kSumStats"
-						text: 					qsTr("Number of found errors")
-						defaultValue: 			0
-						min: 					0
-						visible:				useSummaryStatistics.checked
-						max:					nSumStats.value
-					}
-				}
-			}
+			id: 								variableTypeAuditValues
+			name:								"variableTypeAuditValues"
+			label: 								qsTr("Soll values")
+			checked:							mainWindow.dataAvailable
+			enabled:							mainWindow.dataAvailable
+			onCheckedChanged: 					if(checked) useSummaryStatistics.checked = false
 		}
 
-		GroupBox
+		RadioButton 
 		{
-			title: 								qsTr("Explanatory Text")
+			id: 								variableTypeCorrect
+			name:								"variableTypeCorrect"
+			label: 								qsTr("Correct / Incorrect")	
+			checked: 							!mainWindow.dataAvailable
 
-			RowLayout
+			CheckBox 
 			{
+				id: 							useSummaryStatistics
+				name: 							"useSumStats"
+				label:							qsTr("Use summary statistics")
+				checked: 						!mainWindow.dataAvailable
 
-				CheckBox
+				IntegerField
 				{
-					id: 						explanatoryText
-					text:	 					qsTr("Enable")
-					name: 						"explanatoryText"
-					checked: 					true
+					id: 						nSumStats
+					name: 						"nSumStats"
+					text: 						qsTr("Number of seen transactions")
+					defaultValue: 				0
+					min: 						0
+					visible:					useSummaryStatistics.checked
 				}
 
-				HelpButton
+				IntegerField
 				{
-					helpPage:					"Audit/explanatoryText"
-					toolTip: 					qsTr("Click to learn more about the explanatory text.")
+					id: 						kSumStats
+					name: 						"kSumStats"
+					text: 						qsTr("Number of found errors")
+					defaultValue: 				0
+					min: 						0
+					visible:					useSummaryStatistics.checked
+					max:						nSumStats.value
 				}
 			}
 		}
 	}
-
 
 	Section
 	{
@@ -681,7 +678,7 @@ Form
 				{
 					text: 						qsTr("Post-hoc corrections to population value")
 					name: 						"correctionsTable"
-					enabled:					minimumPrecision.checked & monetaryVariable.count > 0
+					enabled:					monetaryVariable.count > 0
 				}
 			}
 		}
