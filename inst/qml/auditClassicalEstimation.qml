@@ -129,7 +129,7 @@ Form {
 			id: 							estimator
 			name: 							"estimator"
 			indexDefaultValue: 				3
-			label: 							qsTr("Estimation method")
+			label: 							qsTr("Estimation Method")
 			values: 
 			[
 				{ label: qsTr("Direct estimator"), 		value: "mpu"},

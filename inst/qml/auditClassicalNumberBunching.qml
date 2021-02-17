@@ -48,7 +48,7 @@ Form {
 		{
 			name: 						"shuffle"
 			indexDefaultValue: 			0
-			label: 						qsTr("Shuffle decimal digits")
+			label: 						qsTr("Shuffle Decimal Digits")
 			values:
 			[
 					{ 

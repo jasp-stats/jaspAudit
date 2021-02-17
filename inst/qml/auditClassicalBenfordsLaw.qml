@@ -48,7 +48,7 @@ Form {
 		{
 			name: 						"digits"
 			indexDefaultValue: 			0
-			label: 						qsTr("Check digits")
+			label: 						qsTr("Check Digits")
 			values:
 			[
 					{ 
@@ -70,7 +70,7 @@ Form {
 		{
 			name: 						"distribution"
 			indexDefaultValue: 			0
-			label: 						qsTr("Compare to")
+			label: 						qsTr("Compare To")
 			values:
 			[
 					{ 
