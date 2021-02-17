@@ -3934,7 +3934,7 @@
   
   table$addColumnInfo(name = 'name', title = "", type = 'string')
   table$addColumnInfo(name = 'correction', title = gettext("Correction"), type = 'string')
-
+  
   message <- if(!options[["performanceMateriality"]] && options[["minimumPrecision"]]) " minus the required precision" else ""
   table$addFootnote(gettextf("The correction to achieve no misstatements is the upper bound minus%1$s.", message))
   
@@ -3951,14 +3951,14 @@
     N <- ceiling(prevOptions[["populationValue"]])
   
   if(!options[["performanceMateriality"]] && options[["minimumPrecision"]]){
-	  name <- gettextf("No misstatements with %1$s%% precision", round(options[["minimumPrecisionPercentage"]] * 100, 2))
-	  correction <- prevState[["confBound"]] - options[["minimumPrecisionPercentage"]]
+    name <- gettextf("No misstatements with %1$s%% precision", round(options[["minimumPrecisionPercentage"]] * 100, 2))
+    correction <- prevState[["confBound"]] - options[["minimumPrecisionPercentage"]]
   } else if(options[["performanceMateriality"]] && !options[["minimumPrecision"]]){
-	  name <- gettextf("No misstatements with %1$s%% confidence", round(options[["confidence"]] * 100, 2))
-	  correction <- prevState[["confBound"]] 
+    name <- gettextf("No misstatements with %1$s%% confidence", round(options[["confidence"]] * 100, 2))
+    correction <- prevState[["confBound"]] 
   } else if(options[["performanceMateriality"]] && options[["minimumPrecision"]]){
-	  name <- gettextf("No misstatements with %1$s%% confidence and %2$s%% precision", round(options[["confidence"]] * 100, 2), round(options[["minimumPrecisionPercentage"]] * 100, 2))	
-	  correction <- prevState[["confBound"]] 	  
+    name <- gettextf("No misstatements with %1$s%% confidence and %2$s%% precision", round(options[["confidence"]] * 100, 2), round(options[["minimumPrecisionPercentage"]] * 100, 2))	
+    correction <- prevState[["confBound"]] 	  
   }
   
   correction <- base::switch(options[["display"]],
@@ -3984,11 +3984,11 @@
     bottomStratum <- subset(dataset, dataset[, .v(options[["monetaryVariable"]])] <= interval)
     
     m_seen <- sum(topStratum[, .v(options[["monetaryVariable"]])])
-
-	# We choose a pseudo-random seed to get the impression of a random starting point
-	# It is unlikely that two populations or users have the same seed
+    
+    # We choose a pseudo-random seed to get the impression of a random starting point
+    # It is unlikely that two populations or users have the same seed
     set.seed(rnorm(1) + options[["sampleSizeIncrease"]] + parentOptions[["populationValue"]] + interval)
-
+    
     intervalStartingPoint <- sample(1:(interval - 1), size = 1)
     intervalSelection <- intervalStartingPoint + 0:(n - 1) * interval
     index <- NULL
