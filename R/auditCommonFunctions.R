@@ -1106,8 +1106,9 @@
         procedureText <- gettextf("%1$s\n\nThe quantity of interest is the misstatement (\u03B8) in the population. Misstatement is defined as the difference between a transaction's <i>Ist</i> (recorded) position and its <i>Soll</i> (true) position. When testing the population misstatement against a given performance materiality (\u03B8*), two statistical hypotheses about \u03B8 are formulated:\n
 		  							The (null) hypothesis of intolerable misstatement <i>H\u208A: \u03B8 \u2265 \u03B8*</i>,
 									The (alternative) hypothesis of tolerable misstatement <i>H\u208B: \u03B8 < \u03B8*</i>.\n
-									The audit risk (\u03B1) is the risk of incorrectly rejecting the hypothesis <i>H\u208A: \u03B8 \u2265 \u03B8*</i>. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce \u03B1 to an appropriately low level.", 
-                                  procedureText)
+									The audit risk (\u03B1) is the risk of incorrectly rejecting the hypothesis <i>H\u208A: \u03B8 \u2265 \u03B8*</i>. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce \u03B1 to an appropriately low level (< %2$s%%).", 
+                                  procedureText,
+                                  round((1 - options[["confidence"]]) * 100, 2))
       
       if(options[["bayesianAnalysis"]])
         procedureText <- gettextf("%1$s\n\nIn a Bayesian analysis, the parameter \u03B8 is first assigned a prior probability distribution that incorporates the existing information about its possible values. A description and figure of the current prior distribution can be found under the <i>Tables and Plots</i> section. You can incorporate existing information using the options under the <i>Prior Information</i> section.", 
@@ -1565,7 +1566,7 @@
     auditRiskLabel 			<- paste0(round(auditRisk * 100, 2), "%")
     dectectionRiskLabel 	<- paste0(round(detectionRisk * 100, 2), "%")
     
-    message <- gettextf("The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk and control risk. Prior to the sampling procedure, the inherent risk was determined to be <b>%1$s</b>. The internal control risk was determined to be <b>%2$s</b>. According to the Audit Risk Model, the required detection risk to maintain an audit risk of <b>%3$s</b> should be <b>%4$s</b>.",
+    message <- gettextf("The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk and control risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be <b>%1$s</b>. The internal control risk was determined to be <b>%2$s</b>. According to the Audit Risk Model, the required detection risk to maintain an audit risk of <b>%3$s</b> should be <b>%4$s</b>.",
                         irLabel,
                         crLabel,
                         auditRiskLabel,
