@@ -63,6 +63,26 @@ Form
 		}
 	}
 
+	IntegerField 
+	{
+		name: 									"sampleSizeIncrease"
+		defaultValue: 							1
+		visible:								false
+	}
+
+	RadioButtonGroup
+	{
+		name: 									"valuta"
+		visible:								false
+
+		RadioButton 	
+		{ 
+			text: 								qsTr("Dollar ($)")
+			name: 								"dollarValuta"
+			checked: 							true
+		}
+	}
+
 	// Start analysis
 	GridLayout
 	{
@@ -200,17 +220,43 @@ Form
 			}
 		}
 
-		GroupBox
+		ColumnLayout
 		{
-			id: 								auditRisk
-			title: 								qsTr("Audit Risk")
-
-			PercentField
+			GroupBox
 			{
-				name: 							"confidence"
-				label: 							qsTr("Confidence")
-				decimals: 						2
-				defaultValue: 					95
+				id: 							auditRisk
+				title: 							qsTr("Audit Risk")
+
+				PercentField
+				{
+					name: 						"confidence"
+					label: 						qsTr("Confidence")
+					decimals: 					2
+					defaultValue: 				95
+				}
+			}
+
+			GroupBox
+			{
+				title: 							qsTr("Explanatory Text")
+
+				RowLayout
+				{
+
+					CheckBox
+					{
+						id: 					explanatoryText
+						text:	 				qsTr("Enable")
+						name: 					"explanatoryText"
+						checked: 				true
+					}
+
+					HelpButton
+					{
+						helpPage:				"Audit/explanatoryText"
+						toolTip: 				qsTr("Click to learn more about the explanatory text.")
+					}
+				}
 			}
 		}
 	}
@@ -223,7 +269,7 @@ Form
 	VariablesForm
 	{
 		preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
-		enabled:								!useSummaryStatistics.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0))
+		enabled:								!useSummaryStatistics.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
 
 		AvailableVariablesList
 		{
@@ -242,15 +288,6 @@ Form
 
 		AssignedVariablesList
 		{
-			id: 								auditResult
-			name: 								"auditResult"
-			title: 								variableTypeAuditValues.checked ? qsTr("Soll Position") : qsTr("Audit Result")
-			singleVariable: 					true
-			allowedColumns: 					["nominal", "scale"]
-		}
-
-		AssignedVariablesList
-		{
 			id: 								monetaryVariable
 			name: 								"monetaryVariable"
 			title: 								variableTypeAuditValues.checked ? qsTr("Ist Position <i>(required)</i>") : qsTr("Ist Position")
@@ -261,96 +298,76 @@ Form
 
 		AssignedVariablesList
 		{
+			id: 								auditResult
+			name: 								"auditResult"
+			title: 								variableTypeAuditValues.checked ? qsTr("Soll Position") : qsTr("Audit Result")
+			singleVariable: 					true
+			allowedColumns: 					["nominal", "scale"]
+		}
+
+		AssignedVariablesList
+		{
 			id: 								sampleCounter
 			name: 								"sampleCounter"
 			title: 								qsTr("Selection Counter <i>(optional)</i>")
 			singleVariable: 					true
-			allowedColumns: 					["nominal", "scale"]
+			allowedColumns: 					["nominal", "ordinal", "scale"]
 		}
 	}
 
-	GridLayout
+	RadioButtonGroup 
 	{
-		columns:								2
+		id:										variableType 
+		title: 									qsTr("Annotation Method")
+		name:									"variableType"
 
-		RadioButtonGroup 
+		RadioButton 
 		{
-			id:									variableType 
-			title: 								qsTr("Annotation Method")
-			name:								"variableType"
+			id: 								variableTypeAuditValues
+			name:								"variableTypeAuditValues"
+			label: 								qsTr("Soll values")
+			checked:							mainWindow.dataAvailable
+			enabled:							mainWindow.dataAvailable
+			onCheckedChanged: 					if(checked) useSummaryStatistics.checked = false
+		}
 
-			RadioButton 
-			{
-				id: 							variableTypeAuditValues
-				name:							"variableTypeAuditValues"
-				label: 							qsTr("Soll values")
-				checked:						mainWindow.dataAvailable
-				enabled:						mainWindow.dataAvailable
-				onCheckedChanged: 				if(checked) useSummaryStatistics.checked = false
-			}
+		RadioButton 
+		{
+			id: 								variableTypeCorrect
+			name:								"variableTypeCorrect"
+			label: 								qsTr("Correct / Incorrect")	
+			checked: 							!mainWindow.dataAvailable
 
-			RadioButton 
+			CheckBox 
 			{
-				id: 							variableTypeCorrect
-				name:							"variableTypeCorrect"
-				label: 							qsTr("Correct / Incorrect")	
+				id: 							useSummaryStatistics
+				name: 							"useSumStats"
+				label:							qsTr("Use summary statistics")
 				checked: 						!mainWindow.dataAvailable
 
-				CheckBox 
+				IntegerField
 				{
-					id: 						useSummaryStatistics
-					name: 						"useSumStats"
-					label:						qsTr("Use summary statistics")
-					checked: 					!mainWindow.dataAvailable
-
-					IntegerField
-					{
-						id: 					nSumStats
-						name: 					"nSumStats"
-						text: 					qsTr("Number of seen transactions")
-						defaultValue: 			0
-						min: 					0
-						visible:				useSummaryStatistics.checked
-					}
-
-					IntegerField
-					{
-						id: 					kSumStats
-						name: 					"kSumStats"
-						text: 					qsTr("Number of found errors")
-						defaultValue: 			0
-						min: 					0
-						visible:				useSummaryStatistics.checked
-						max:					nSumStats.value
-					}
-				}
-			}
-		}
-
-		GroupBox
-		{
-			title: 								qsTr("Explanatory Text")
-
-			RowLayout
-			{
-
-				CheckBox
-				{
-					id: 						explanatoryText
-					text:	 					qsTr("Enable")
-					name: 						"explanatoryText"
-					checked: 					true
+					id: 						nSumStats
+					name: 						"nSumStats"
+					text: 						qsTr("Number of seen transactions")
+					defaultValue: 				0
+					min: 						0
+					visible:					useSummaryStatistics.checked
 				}
 
-				HelpButton
+				IntegerField
 				{
-					helpPage:					"Audit/explanatoryText"
-					toolTip: 					qsTr("Click to learn more about the explanatory text.")
+					id: 						kSumStats
+					name: 						"kSumStats"
+					text: 						qsTr("Number of found errors")
+					defaultValue: 				0
+					min: 						0
+					visible:					useSummaryStatistics.checked
+					max:						nSumStats.value
 				}
 			}
 		}
 	}
-
 
 	Section
 	{
@@ -572,6 +589,7 @@ Form
 				text: 							qsTr("Binomial")
 				id: 							binomialBound
 				enabled: 						variableTypeCorrect.checked
+				checked:						true
 			}
 			
 			RadioButton 
@@ -643,6 +661,24 @@ Form
 					text: 						qsTr("Obtained precision")
 					name: 						"obtainedPrecision"
 					checked: 					minimumPrecision.checked
+				}
+			}
+
+			GroupBox
+			{
+				title: 							qsTr("Tables")
+
+				CheckBox
+				{
+					text: 						qsTr("Additional samples for sampling objectives")
+					name: 						"additionalSamples"
+				}
+
+				CheckBox
+				{
+					text: 						qsTr("Post-hoc corrections to population value")
+					name: 						"correctionsTable"
+					enabled:					monetaryVariable.count > 0
 				}
 			}
 		}

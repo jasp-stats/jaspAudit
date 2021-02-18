@@ -379,7 +379,7 @@ Form
 				Label
 				{
 					Layout.leftMargin: 				30 * preferencesModel.uiScale
-					text: 							qsTr("<i>Requires additional assumption: The sample taints are homogeneous</i>")
+					text: 							qsTr("<i>Requires additional assumption: The population taints are homogeneous</i>")
 				}
 			}
 		}
@@ -702,7 +702,7 @@ Form
 
 			GroupBox
 			{
-				title: 								qsTr("Calculation Settings")
+				title: 								qsTr("Calculation Preferences")
 				enabled:							!pasteVariables.checked
 
 				IntegerField 
@@ -1439,7 +1439,7 @@ Form
 													executeAuditSection.expanded = false
 													evaluationChecked.checked = true
 													if (beta.checked) 						betaBound.click()
-													if (betaBinomial.checked) 		betabinomialBound.click()
+													if (betaBinomial.checked) 				betabinomialBound.click()
 													if (gamma.checked) 						gammaBound.click()
 													if (recordSampling.checked & variableTypeAuditValues.checked)	regressionBound.click()
 				}
@@ -1616,8 +1616,16 @@ Form
 
 					CheckBox
 					{
-						text: 						qsTr("Additional samples")
+						text: 						qsTr("Additional samples for sampling objectives")
 						name: 						"additionalSamples"
+						visible:					!separateKnownAndUnknownMisstatement.checked
+					}
+
+					CheckBox
+					{
+						text: 						qsTr("Post-hoc corrections to population value")
+						name: 						"correctionsTable"
+						visible:					monetaryVariable.count > 0
 					}
 
 					CheckBox

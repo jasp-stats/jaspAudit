@@ -28,6 +28,7 @@ Form {
 	GridLayout
 	{
 		columns: 							3
+		columnSpacing:						75 * preferencesModel.uiScale	
 
 		GroupBox
 		{
@@ -109,7 +110,7 @@ Form {
 		{
 			id: 							bookValues
 			name: 							"bookValues"
-			title: 							qsTr("Book values")
+			title: 							qsTr("Ist Position")
 			singleVariable:					true
 			allowedColumns:					["scale"]
 			enabled: 						!mpu.checked
@@ -119,63 +120,83 @@ Form {
 		{
 			id: 							auditValues
 			name: 							"auditValues"
-			title: 							qsTr("Audit values")
+			title: 							qsTr("Soll Position")
 			singleVariable: 				true
 			allowedColumns: 				["scale"]
 		}
-
-		DropDown 
-		{
-			id: 							estimator
-			name: 							"estimator"
-			indexDefaultValue: 				3
-			label: 							qsTr("Estimation method")
-			values: 
-			[
-				{ label: qsTr("Direct estimator"), 		value: "mpu"},
-				{ label: qsTr("Difference estimator"), 	value: "difference"},
-				{ label: qsTr("Ratio estimator"), 		value: "ratio"},
-				{ label: qsTr("Regression estimator"), 	value: "regression"}
-			]
-		}
 	}
 
-	Section 
+	GridLayout
 	{
-		title: 								qsTr("Tables and Plots")
+		columns: 							2
+		columnSpacing:						150 * preferencesModel.uiScale
 
-		GroupBox
+		RadioButtonGroup
 		{
-			title: 							qsTr("Tables")
+			name:					"estimator"
+			title: 					qsTr("Estimation Method")
 
-			CheckBox
+			RadioButton
 			{
-				id: 						requiredSampleSize
-				text:	 					qsTr("Required sample size")
-				name: 						"requiredSampleSizeTable"
+				name:				"mpu"
+				text:				qsTr("Direct estimator")
+			}
 
-				DoubleField
-				{
-					name: 					"requiredUncertainty"
-					visible: 				requiredSampleSize.checked
-					text: 					qsTr("for an uncertainty of:")
-					defaultValue: 			100000
-					fieldWidth: 			100 * preferencesModel.uiScale
-					min: 					0
-					decimals: 				2
-				}
+			RadioButton
+			{
+				name:				"difference"
+				text:				qsTr("Difference estimator")
+			}
+
+			RadioButton
+			{
+				name:				"ratio"
+				text:				qsTr("Ratio estimator")
+			}
+
+			RadioButton
+			{
+				name:				"ratio"
+				text:				qsTr("Regression estimator")
+				checked:			true
 			}
 		}
 
-		GroupBox
+		ColumnLayout
 		{
-			title: 							qsTr("Plots")
-
-			CheckBox
+			GroupBox
 			{
-				text: 						qsTr("Correlation plot")
-				name: 						"correlationPlot"
-				enabled: 					!mpu.checked
+				title: 							qsTr("Tables")
+
+				CheckBox
+				{
+					id: 						requiredSampleSize
+					text:	 					qsTr("Required sample size")
+					name: 						"requiredSampleSizeTable"
+
+					DoubleField
+					{
+						name: 					"requiredUncertainty"
+						visible: 				requiredSampleSize.checked
+						text: 					qsTr("for an uncertainty of:")
+						defaultValue: 			100000
+						fieldWidth: 			100 * preferencesModel.uiScale
+						min: 					0
+						decimals: 				2
+					}
+				}
+			}
+
+			GroupBox
+			{
+				title: 							qsTr("Plots")
+
+				CheckBox
+				{
+					text: 						qsTr("Correlation plot")
+					name: 						"correlationPlot"
+					enabled: 					!mpu.checked
+				}
 			}
 		}
 	}

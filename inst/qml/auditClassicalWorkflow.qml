@@ -574,7 +574,7 @@ Form
 
 			GroupBox
 			{
-				title: 								qsTr("Calculation Settings")
+				title: 								qsTr("Calculation Preferences")
 				enabled:							!pasteVariables.checked
 
 				IntegerField 
@@ -1233,8 +1233,8 @@ Form
 													if(variableTypeCorrect.checked)
 													{
 														if (poisson.checked) 				poissonBound.click()
-														if (binomial.checked) 			binomialBound.click()
-														if (hypergeometric.checked) hyperBound.click()
+														if (binomial.checked) 				binomialBound.click()
+														if (hypergeometric.checked) 		hyperBound.click()
 													}
 				}
 			}
@@ -1389,22 +1389,43 @@ Form
 			title: 									qsTr("B.     Tables and Plots")
 			columns:								2
 
-			GroupBox
+			ColumnLayout
 			{
-				title: 								qsTr("Statistics")
-
-				CheckBox
+				GroupBox
 				{
-					text: 							qsTr("Most likely error (MLE)")
-					name: 							"mostLikelyError"
-					checked: 						true
+					title: 							qsTr("Statistics")
+
+					CheckBox
+					{
+						text: 						qsTr("Most likely error (MLE)")
+						name: 						"mostLikelyError"
+						checked: 					true
+					}
+
+					CheckBox
+					{
+						text: 						qsTr("Obtained precision")
+						name: 						"obtainedPrecision"
+						checked: 					minimumPrecision.checked
+					}
 				}
 
-				CheckBox
+				GroupBox
 				{
-					text: 							qsTr("Obtained precision")
-					name: 							"obtainedPrecision"
-					checked: 						minimumPrecision.checked
+					title: 							qsTr("Tables")
+
+					CheckBox
+					{
+						text: 						qsTr("Additional samples for sampling objectives")
+						name: 						"additionalSamples"
+					}
+
+					CheckBox
+					{
+						text: 						qsTr("Post-hoc corrections to population value")
+						name: 						"correctionsTable"
+						visible:					monetaryVariable.count > 0
+					}
 				}
 			}
 

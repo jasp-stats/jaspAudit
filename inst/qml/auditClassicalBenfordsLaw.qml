@@ -25,6 +25,50 @@ Form {
 	
 	columns: 1
 
+	GridLayout
+	{
+		columns: 						2
+		columnSpacing:					150 * preferencesModel.uiScale		
+
+		GroupBox
+		{
+			id: 						auditRisk
+			title: 						qsTr("Audit Risk")
+
+			PercentField
+			{
+				name: 					"confidence"
+				label: 					qsTr("Confidence")
+				decimals: 				2
+				defaultValue: 			95
+			}
+		}
+
+		GroupBox
+		{
+			title: 						qsTr("Explanatory Text")
+
+			RowLayout
+			{
+				CheckBox
+				{
+					id: 				explanatoryText
+					text:	 			qsTr("Enable")
+					name: 				"explanatoryText"
+					checked: 			true
+				}
+
+				HelpButton
+				{
+					helpPage:			"Audit/explanatoryText"
+					toolTip: 			qsTr("Click to learn more about the explanatory text.")
+				}
+			}
+		}
+	}
+
+	Divider { }
+
 	VariablesForm
 	{
 		id: 							variablesFormBenfordsLaw
@@ -43,107 +87,85 @@ Form {
 			singleVariable:				true
 			allowedColumns:				["scale"]
 		}
-
-		DropDown 
-		{
-			name: 						"digits"
-			indexDefaultValue: 			0
-			label: 						qsTr("Check digits")
-			values:
-			[
-					{ 
-						label: 			qsTr("First"), 
-						value: 			"first" 
-					},
-					{ 
-						label: 			qsTr("First and second"), 
-						value: 			"firstSecond"
-					},
-					{ 
-						label: 			qsTr("Last"), 
-						value: 			"last"
-					}
-			]
-		}
-
-		DropDown 
-		{
-			name: 						"distribution"
-			indexDefaultValue: 			0
-			label: 						qsTr("Compare to")
-			values:
-			[
-					{ 
-						label: 			qsTr("Benford's law"), 
-						value: 			"benford"
-					},
-					{ 
-						label: 			qsTr("Uniform distribution"), 
-						value: 			"uniform"
-					}
-			]
-		}
 	}
 
-	Section 
+	GridLayout
 	{
-		text: 							qsTr("Advanced Options")
-		columns:						3
-
-		PercentField
-		{
-			name: 						"confidence"
-			label: 						qsTr("Confidence")
-			decimals: 					2
-			defaultValue: 				95
-		}
-
-		GroupBox 
-		{
-			title: 						qsTr("Explanatory Text")
-			columns:					2
-
-			CheckBox 
-			{
-				id: 					explanatoryText
-				text:	 				qsTr("Enable")
-				name: 					"explanatoryText"
-				checked: 				true
-			}
-
-			HelpButton 
-			{ 
-				helpPage:				"Audit/explanatoryText"
-				toolTip: 				qsTr("Click to learn more about the explanatory text.")
-			}
-		}
-	}
-
-	Section 
-	{
-		title: 							qsTr("Tables and Plots")
 		columns: 						2
+		columnSpacing:					150 * preferencesModel.uiScale	
 
-		GroupBox
+		ColumnLayout
 		{
-			title: 						qsTr("Tables")
 
-			CheckBox
+			RadioButtonGroup
 			{
-				text: 					qsTr("Frequency statistics")
-				name: 					"summaryTable"
-				checked: 				true
+				name:					"distribution"
+				title: 					qsTr("Reference Distribution")
+
+				RadioButton
+				{
+					name:				"benford"
+					text:				qsTr("Benford's Law")
+					checked:			true
+				}
+
+				RadioButton
+				{
+					name:				"uniform"
+					text:				qsTr("Uniform distribution")
+				}
+			}
+
+			RadioButtonGroup
+			{
+				name:					"digits"
+				title: 					qsTr("Check Digits")
+
+				RadioButton
+				{
+					name:				"first"
+					text:				qsTr("First digit")
+					checked:			true
+				}
+
+				RadioButton
+				{
+					name:				"firstSecond"
+					text:				qsTr("First and second digits")
+				}
+
+				RadioButton
+				{
+					name:				"last"
+					text:				qsTr("Last digit")
+				}
 			}
 		}
 
-		GroupBox
+		ColumnLayout 
 		{
-			title: 						qsTr("Plots")
 
-			CheckBox
+			GroupBox
 			{
-				text: 					qsTr("Compare to expected distribution")
-				name: 					"benfordsLawPlot"
+				title: 					qsTr("Tables")
+
+				CheckBox
+				{
+					text: 				qsTr("Frequency statistics")
+					name: 				"summaryTable"
+					checked: 			true
+				}
+			}
+
+			GroupBox
+			{
+				title: 					qsTr("Plots")
+
+				CheckBox
+				{
+					text: 				qsTr("Compare to reference distribution")
+					name: 				"benfordsLawPlot"
+				}
 			}
 		}
 	}

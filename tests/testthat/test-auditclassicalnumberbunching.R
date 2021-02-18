@@ -7,9 +7,9 @@ context("[Audit] Classical Repeated Values")
 options <- analysisOptions("auditClassicalNumberBunching")
 options$values <- "Variable"
 options$noSamples <- 1000
+options$shuffle <- "lastTwo"
 options$summaryTable <- TRUE
-options$numberBunchingPlotFrequency <- TRUE
-options$numberBunchingPlotEntropy <- TRUE
+options$numberBunchingSimulationPlots <- TRUE
 options$numberBunchingHistogram <- TRUE
 options$noHeads <- 13
 set.seed(1)
@@ -436,9 +436,9 @@ test_that("<b>Table 1.</b> Repeated Values Test results match", {
 options <- analysisOptions("auditClassicalNumberBunching")
 options$values <- "Variable"
 options$noSamples <- 1000
+options$shuffle <- "lastTwo"
 options$summaryTable <- TRUE
-options$numberBunchingPlotFrequency <- TRUE
-options$numberBunchingPlotEntropy <- TRUE
+options$numberBunchingSimulationPlots <- TRUE
 options$numberBunchingHistogram <- TRUE
 options$noHeads <- 13
 set.seed(1)

@@ -56,11 +56,8 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   
   .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
   
-  # Create the observed versus expected average frequency plot
-  .jfaNumberBunchingFrequencyPlot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 4)
-  
-  # Create the observed versus expected entropy plot
-  .jfaNumberBunchingEntropyPlot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 5)
+  # Create the observed versus expected plots
+  .jfaNumberBunchingSimulationPlots(dataset, options, numberBunchingContainer, jaspResults, ready)
   
   # Create the frequency plot of individual values
   .jfaNumberBunchingHistorgramPlot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 6)
@@ -114,35 +111,42 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   
   table <- createJaspTable(tableTitle)
   table$position <- positionInContainer
-  table$dependOn(options = c("noSamples", "shuffle", "seed", "values"))
+  table$dependOn(options = c("noSamples", "shuffle", "seed", "values", "avgFrequency", "entropy"))
   
   table$addColumnInfo(name = 'name', 	title = '', 						type = 'string')
-  table$addColumnInfo(name = 'N', 		title = gettext("N"), 				type = 'integer')					  
-  table$addColumnInfo(name = 'avgFreq', title = gettext('Average'), 		type = 'number', overtitle = gettext('Frequency'))
-  table$addColumnInfo(name = 'pvalue1', title = gettext("<i>p</i> value"), 	type = 'pvalue', overtitle = gettext('Frequency'))
-  table$addColumnInfo(name = 'entropy', title = gettext('<i>S</i>'), 		type = 'number', overtitle = gettext('Entropy'))
-  table$addColumnInfo(name = 'pvalue2', title = gettext("<i>p</i> value"), 	type = 'pvalue', overtitle = gettext('Entropy'))					  
+  table$addColumnInfo(name = 'N', 		title = gettext("N"), 				type = 'integer')
+  if(options[["avgFrequency"]]){					  
+    table$addColumnInfo(name = 'avgFreq', title = gettext('Average'), 		type = 'number', overtitle = gettext('Frequency'))
+    table$addColumnInfo(name = 'pvalue1', title = gettext("<i>p</i> value"), 	type = 'pvalue', overtitle = gettext('Frequency'))
+  }
+  if(options[["entropy"]]){
+    table$addColumnInfo(name = 'entropy', title = gettext('<i>S</i>'), 		type = 'number', overtitle = gettext('Entropy'))
+    table$addColumnInfo(name = 'pvalue2', title = gettext("<i>p</i> value"), 	type = 'pvalue', overtitle = gettext('Entropy'))
+  }					  
   
   table$addFootnote(gettextf("Both <i>p</i> values are one-sided and are computed on the basis of %1$s samples.", 
-  							  options[["noSamples"]], 
-							  switch(options[["shuffle"]], "lastTwo" = "first two decimals", "last" = "second decimal", "all" = "all decimals")))
+                             options[["noSamples"]], 
+                             switch(options[["shuffle"]], "lastTwo" = "first two decimals", "last" = "second decimal", "all" = "all decimals")))
   
   numberBunchingContainer[["numberBunchingTestTable"]] <- table
   
   if(!ready){
-    row <- data.frame(name = ".", N = ".", avgFreq = ".", pvalue1 = ".", entropy = ".", pvalue2 = ".")
+    row <- data.frame(name = ".", N = ".")
+    if(options[["avgFrequency"]])
+      row <- cbind(row, avgFreq = ".", pvalue1 = ".")
+    if(options[["entropy"]])
+      row <- cbind(row, entropy = ".", pvalue2 = ".")
     table$addRows(row)
     return()
   }
   
   state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
   
-  row <- data.frame(name = options[["values"]], 
-                    N = state[["N"]], 
-                    avgFreq = state[["avgFrequency"]],
-                    pvalue1 = state[["pvalueAvgFrequency"]],
-                    entropy = state[["entropy"]],
-                    pvalue2 = state[["pvalueEntropy"]])
+  row <- data.frame(name = options[["values"]], N = state[["N"]])
+  if(options[["avgFrequency"]])
+    row <- cbind(row, avgFreq = state[["avgFrequency"]], pvalue1 = state[["pvalueAvgFrequency"]])
+  if(options[["entropy"]])
+    row <- cbind(row, entropy = state[["entropy"]], pvalue2 = state[["pvalueEntropy"]])
   table$addRows(row)    
 }
 
@@ -164,9 +168,9 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
       integers 	<- ifelse(variable > 0, yes = floor(variable), no = ceiling(variable))
       decimals 	<- round(variable - integers, 2)
     } else if(options[["shuffle"]] == "all"){
-	  integers 	<- ifelse(variable > 0, yes = floor(variable), no = ceiling(variable))
-	  decimals <- variable - integers
-	}
+      integers 	<- ifelse(variable > 0, yes = floor(variable), no = ceiling(variable))
+      decimals <- variable - integers
+    }
     
     avgFrequency 	<- .jfaAverageFrequency(variable)
     entropy 		<- .jfaEntropy(variable)
@@ -223,7 +227,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     table <- createJaspTable(tableTitle)
     table$position <- positionInContainer
     
-    table$dependOn(options = c("correlationTable", "values", "noSamples", "seed", "shuffle"))
+    table$dependOn(options = c("correlationTable", "values", "noSamples", "seed", "shuffle", "avgFrequency", "entropy"))
     
     table$addColumnInfo(name = 'var1', 		title = "", 					   type = 'string')
     table$addColumnInfo(name = 'separator', title = "", 					   type = 'separator')
@@ -238,33 +242,43 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     
     numberBunchingContainer[["correlationTable"]] <- table
     
-    if(!ready){   
-      row <- data.frame(var1 = c("Integer values", "Samples frequency"), 
-                        separator = c("-", "-"),
-                        var2 = c("Decimal values", "Samples entropy"),
-                        n = c(".", "."),
-                        cor = c(".", "."),
-                        t = c(".", "."),
-                        df = c(".", "."),
-                        pvalue = c(".", "."))
+    if(!ready){ 
+      if(options[["avgFrequency"]] && options[["entropy"]]){
+        row <- data.frame(var1 = c("Integer values", "Samples frequency"), separator = c("-", "-"),
+                          var2 = c("Decimal values", "Samples entropy"), n = c(".", "."),
+                          cor = c(".", "."), t = c(".", "."), df = c(".", "."), pvalue = c(".", "."))
+      } else {
+        row <- data.frame(var1 = "Integer values", separator = "-", var2 = "Decimal values",
+                          n = ".", cor = ".", t = ".", df = ".", pvalue = ".")
+      }
       table$addRows(row)
       return()
     } 
     
     state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
     
-    row <- data.frame(var1 = c("Integer values", "Samples frequency"), 
-                      separator = c("-", "-"),
-                      var2 = c("Decimal values", "Samples entropy"),
-                      n = c(nrow(dataset), options[["noSamples"]]),
-                      cor = c(state[["valueCor"]]$estimate, state[["simCor"]]$estimate),
-                      t = c(state[["valueCor"]]$statistic, state[["simCor"]]$statistic),
-                      df = c(state[["valueCor"]]$parameter, state[["simCor"]]$parameter),
-                      pvalue = c(state[["valueCor"]]$p.value, state[["simCor"]]$p.value))
+    if(options[["avgFrequency"]] && options[["entropy"]]){
+      row <- data.frame(var1 = c("Integer values", "Samples frequency"), 
+                        separator = c("-", "-"),
+                        var2 = c("Decimal values", "Samples entropy"),
+                        n = c(nrow(dataset), options[["noSamples"]]),
+                        cor = c(state[["valueCor"]]$estimate, state[["simCor"]]$estimate),
+                        t = c(state[["valueCor"]]$statistic, state[["simCor"]]$statistic),
+                        df = c(state[["valueCor"]]$parameter, state[["simCor"]]$parameter),
+                        pvalue = c(state[["valueCor"]]$p.value, state[["simCor"]]$p.value))
+    } else {
+      row <- data.frame(var1 = "Integer values", 
+                        separator = "-",
+                        var2 = "Decimal values",
+                        n = nrow(dataset),
+                        cor = state[["valueCor"]]$estimate,
+                        t = state[["valueCor"]]$statistic,
+                        df = state[["valueCor"]]$parameter,
+                        pvalue = state[["valueCor"]]$p.value)		
+    }
     table$addRows(row)
   }
 }
-
 
 .jfaNumberBunchingDescriptivesTable <- function(dataset, options, numberBunchingContainer, jaspResults, 
                                                 ready, positionInContainer){
@@ -308,10 +322,22 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   }
 }
 
+.jfaNumberBunchingSimulationPlots <- function(dataset, options, numberBunchingContainer, jaspResults, ready){
+  
+  # Create the observed versus expected average frequency plot
+  if(options[["avgFrequency"]])
+    .jfaNumberBunchingFrequencyPlot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 4)
+  
+  # Create the observed versus expected entropy plot
+  if(options[["entropy"]])
+    .jfaNumberBunchingEntropyPlot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 5)
+  
+}
+
 .jfaNumberBunchingFrequencyPlot <- function(dataset, options, numberBunchingContainer, jaspResults, 
                                             ready, positionInContainer){
   
-  if(!options[["numberBunchingPlotFrequency"]])
+  if(!options[["numberBunchingSimulationPlots"]])
     return()
   
   .jfaFigureNumberUpdate(jaspResults)
@@ -323,7 +349,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
                            width = 600, height = 400)
     
     plot$position <- positionInContainer
-    plot$dependOn(options = c("numberBunchingPlotFrequency", "noSamples", "seed", "shuffle"))
+    plot$dependOn(options = c("numberBunchingSimulationPlots", "noSamples", "seed", "shuffle", "avgFrequency"))
     
     numberBunchingContainer[["numberBunchingPlotFrequency"]] <- plot
     
@@ -373,7 +399,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
 .jfaNumberBunchingEntropyPlot <- function(dataset, options, numberBunchingContainer, jaspResults, 
                                           ready, positionInContainer){
   
-  if(!options[["numberBunchingPlotEntropy"]])
+  if(!options[["numberBunchingSimulationPlots"]])
     return()
   
   .jfaFigureNumberUpdate(jaspResults)
@@ -385,7 +411,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
                            width = 600, height = 400)
     
     plot$position <- positionInContainer
-    plot$dependOn(options = c("numberBunchingPlotEntropy", "noSamples", "seed", "shuffle"))
+    plot$dependOn(options = c("numberBunchingSimulationPlots", "noSamples", "seed", "shuffle", "entropy"))
     
     numberBunchingContainer[["numberBunchingPlotEntropy"]] <- plot
     
@@ -511,7 +537,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   
   rejectnull <- state[["pvalueAvgFrequency"]] < (1 - options[["confidence"]])
   conclusion <- if(rejectnull) gettext("is rejected") else gettext("is not rejected")
-
+  
   pvalue <- format.pval(state[["pvalueAvgFrequency"]], eps = 0.001)
   pvalue <- if(rejectnull) gettextf("%1$s < \u03B1", pvalue) else gettextf("%1$s >= \u03B1", pvalue)
   

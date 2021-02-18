@@ -25,6 +25,50 @@ Form {
 	
 	columns: 1
 
+	GridLayout
+	{
+		columns: 						2
+		columnSpacing:					150 * preferencesModel.uiScale		
+
+		GroupBox
+		{
+			id: 						auditRisk
+			title: 						qsTr("Audit Risk")
+
+			PercentField
+			{
+				name: 					"confidence"
+				label: 					qsTr("Confidence")
+				decimals: 				2
+				defaultValue: 			95
+			}
+		}
+
+		GroupBox
+		{
+			title: 						qsTr("Explanatory Text")
+
+			RowLayout
+			{
+				CheckBox
+				{
+					id: 				explanatoryText
+					text:	 			qsTr("Enable")
+					name: 				"explanatoryText"
+					checked: 			true
+				}
+
+				HelpButton
+				{
+					helpPage:			"Audit/explanatoryText"
+					toolTip: 			qsTr("Click to learn more about the explanatory text.")
+				}
+			}
+		}
+	}
+
+	Divider { }
+
 	VariablesForm
 	{
 		id: 							variablesFormNumberBunching
@@ -43,140 +87,131 @@ Form {
 			singleVariable:				true
 			allowedColumns:				["scale"]
 		}
-
-		DropDown 
-		{
-			name: 						"shuffle"
-			indexDefaultValue: 			0
-			label: 						qsTr("Shuffle decimal digits")
-			values:
-			[
-					{ 
-						label: 			qsTr("First and second"), 
-						value: 			"lastTwo"
-					},
-					{ 
-						label: 			qsTr("Second"), 
-						value: 			"last"
-					},
-					{ 
-						label: 			qsTr("All"), 
-						value: 			"all"
-					}
-			]
-		}
 	}
 
-	Section 
+
+	GridLayout 
 	{
-		text: 							qsTr("Advanced Options")
-		columns:						3
+		columns:						2
+		columnSpacing:					100 * preferencesModel.uiScale		
 
-		PercentField
+		ColumnLayout
 		{
-			name: 						"confidence"
-			label: 						qsTr("Confidence")
-			decimals: 					2
-			defaultValue: 				95
-		}
 
-		GroupBox 
-		{
-			title: 						qsTr("Sampling Options")
-
-			IntegerField
+			GroupBox
 			{
-				name: 						"noSamples"
-				label: 						qsTr("Number of samples")
-				min: 						100
-				defaultValue: 				500
-				max: 						500000
-				fieldWidth:					70
+				title:					qsTr("Tests")
+
+				CheckBox
+				{
+					name:				"avgFrequency"
+					text:				qsTr("Average frequency")
+					checked:			true
+				}
+
+				CheckBox
+				{
+					name:				"entropy"
+					text:				qsTr("Entropy")
+					checked:			true
+				}
 			}
 
-			IntegerField
+			RadioButtonGroup
 			{
-				name: 						"seed"
-				label: 						qsTr("Seed")
-				min: 						1
-				defaultValue: 				1
-				max: 						500000
-			}
-		}
+				name:					"shuffle"
+				title: 					qsTr("Shuffle Decimal Digits")
 
-		GroupBox 
-		{
-			title: 						qsTr("Explanatory Text")
-			columns:					2
+				RadioButton
+				{
+					name:				"lastTwo"
+					text:				qsTr("First and second digit")
+					checked:			true
+				}
 
-			CheckBox 
-			{
-				id: 					explanatoryText
-				text:	 				qsTr("Enable")
-				name: 					"explanatoryText"
-				checked: 				true
-			}
+				RadioButton
+				{
+					name:				"last"
+					text:				qsTr("Second digit")
+				}
 
-			HelpButton 
-			{ 
-				helpPage:				"Audit/explanatoryText"
-				toolTip: 				qsTr("Click to learn more about the explanatory text.")
-			}
-		}
-	}
-
-	Section 
-	{
-		title: 							qsTr("Tables and Plots")
-		columns: 						2
-
-		GroupBox
-		{
-			title: 						qsTr("Tables")
-
-			CheckBox
-			{
-				text: 					qsTr("Assumption checks")
-				name: 					"correlationTable"
-				checked: 				true
+				RadioButton
+				{
+					name:				"all"
+					text:				qsTr("All digits")
+				}
 			}
 
-			CheckBox
+			GroupBox 
 			{
-				text: 					qsTr("Frequency table")
-				name: 					"summaryTable"
-			}
-		}
-
-		GroupBox
-		{
-			title: 						qsTr("Plots")
-
-			CheckBox
-			{
-				text: 					qsTr("Observed vs. expected average frequency")
-				name: 					"numberBunchingPlotFrequency"
-			}
-
-			CheckBox
-			{
-				text: 					qsTr("Observed vs. expected entropy")
-				name: 					"numberBunchingPlotEntropy"
-			}
-
-			CheckBox
-			{
-				text: 					qsTr("Histogram of individual values")
-				name: 					"numberBunchingHistogram"
+				title: 					qsTr("Bootstrap Options")
 
 				IntegerField
 				{
-					name: 				"noHeads"
-					label: 				qsTr("Label")
-					afterLabel:			qsTr("with highest occurrence")
-					min: 				0
-					defaultValue:		0
-					max:				20
+					name: 					"noSamples"
+					label: 					qsTr("Number of samples")
+					min: 					100
+					defaultValue: 			500
+					max: 					500000
+					fieldWidth:				70
+				}
+
+				IntegerField
+				{
+					name: 					"seed"
+					label: 					qsTr("Seed")
+					min: 					1
+					defaultValue: 			1
+					max: 					500000
+					fieldWidth:				70
+				}
+			}			
+		}
+
+		ColumnLayout
+		{
+			GroupBox
+			{
+				title: 						qsTr("Tables")
+
+				CheckBox
+				{
+					text: 					qsTr("Assumption checks")
+					name: 					"correlationTable"
+					checked: 				true
+				}
+
+				CheckBox
+				{
+					text: 					qsTr("Frequency table")
+					name: 					"summaryTable"
+				}
+			}
+
+			GroupBox
+			{
+				title: 						qsTr("Plots")
+
+				CheckBox
+				{
+					text: 					qsTr("Observed vs. expected values")
+					name: 					"numberBunchingSimulationPlots"
+				}
+
+				CheckBox
+				{
+					text: 					qsTr("Histogram of individual values")
+					name: 					"numberBunchingHistogram"
+
+					IntegerField
+					{
+						name: 				"noHeads"
+						label: 				qsTr("Label")
+						afterLabel:			qsTr("with highest occurrence")
+						min: 				0
+						defaultValue:		0
+						max:				20
+					}
 				}
 			}
 		}

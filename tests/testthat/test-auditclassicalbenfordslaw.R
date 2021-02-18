@@ -1,8 +1,9 @@
 context("[Audit] Classical Benford's Law")
 
 options <- jaspTools::analysisOptions("auditClassicalBenfordsLaw")
-options$.meta <- list(values = list(containsColumn = TRUE))
 options$benfordsLawPlot <- TRUE
+options$digits <- "first"
+options$distribution <- "benford"
 options$values <- "value"
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalBenfordsLaw", "sinoForest.csv", options)
