@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-02-08 10:50+0000\n"
+"PO-Revision-Date: 2021-02-19 16:50+0000\n"
 "Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/de/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.5\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1966,11 +1966,11 @@ msgstr "Abbildungen"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Compare required sample sizes"
-msgstr ""
+msgstr "Erforderliche Stichprobengrößen vergleichen"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Implied distribution of errors"
-msgstr ""
+msgstr "Implizierte Fehlerverteilung"
 
 msgctxt "auditClassicalPlanning|"
 msgid "<b>Download Report</b>"
@@ -2051,36 +2051,32 @@ msgstr "Soll-Position <i>(benötigt)</i>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Ist Position <i>(optional)</i>"
-msgstr ""
+msgstr "Ist-Position <i>(optional)</i>"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "A.     Critical Transactions"
-msgstr "A.     Kritische Transaktionen"
+msgstr "A.  Kritische Transaktionen"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Select critical transactions"
-msgstr "Wähle kritische Transaktionen"
+msgstr "Kritische Transaktionen auswählen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Column name critical transactions: "
-msgstr ""
+msgstr "Spaltenname kritische Transaktionen: "
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Negative Ist values"
 msgstr "Negative Ist-Werte"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "How to handle critical transactions"
-msgstr ""
+msgstr "Umgang mit kritischen Transaktionen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Inspect"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Remove"
 msgstr "Löschen"
@@ -2119,15 +2115,15 @@ msgstr "Kontrollrisiko"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Expected Errors in Sample"
-msgstr ""
+msgstr "Erwartete Fehler in der Stichprobe"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "C.     Advanced Options"
-msgstr ""
+msgstr "C. Weitere Optionen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Probability Distribution"
-msgstr ""
+msgstr "Wahrscheinlichkeitsverteilung"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Binomial"
@@ -2143,7 +2139,7 @@ msgstr "Hypergeometrisch"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Calculation Settings"
-msgstr ""
+msgstr "Berechnungseinstellungen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Step size"
@@ -2167,7 +2163,7 @@ msgstr "Andere"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "D.     Tables and Plots"
-msgstr ""
+msgstr "D. Tabellen und Diagramme"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Tables"
@@ -2175,7 +2171,7 @@ msgstr "Tabellen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Descriptive statistics for Ist values"
-msgstr ""
+msgstr "Deskriptive Statistiken für Ist-Werte"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Plots"
@@ -2183,15 +2179,15 @@ msgstr "Abbildungen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Distribution of Ist values"
-msgstr ""
+msgstr "Verteilung der Ist-Werte"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Compare required sample sizes"
-msgstr ""
+msgstr "Erforderliche Stichprobengrößen vergleichen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Implied distribution of errors"
-msgstr ""
+msgstr "Implizierte Fehlerverteilung"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Download Report</b>"
@@ -2211,7 +2207,7 @@ msgstr "2. Auswahl"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Add custom variables to sample"
-msgstr ""
+msgstr "Benutzerdefinierte Variablen zur Stichprobe hinzufügen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Ranking Variable <i>(optional)</i>"
@@ -2221,10 +2217,9 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Additional Variables <i>(optional)</i>"
 msgstr "Weitere Variablen <i>(optional)</i>"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "A.     Selection Methodology"
-msgstr "Auswahlmethode"
+msgstr "A. Auswahl-Methodik"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Randomly organize transactions before selection"
@@ -2288,17 +2283,15 @@ msgstr "Startwert für Zufallszahlen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "B.     Tables"
-msgstr ""
+msgstr "B. Tabellen"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Display selected transactions"
 msgstr "Ausgewählte Transaktionen anzeigen"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Descriptive statistics of selected transactions"
-msgstr "Beschreibende Statistik ausgewählter Transaktionen"
+msgstr "Deskriptive Statistik ausgewählter Transaktionen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Mean"
@@ -2348,7 +2341,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "<b>How would you like to evaluate your transactions?</b>"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Soll values"
 msgstr "Soll-Werte"
@@ -2608,17 +2600,14 @@ msgctxt "auditSelection|"
 msgid "Currency"
 msgstr "Währung"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Euro (€)"
 msgstr "Euro (€)"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Dollar ($)"
 msgstr "Dollar ($)"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Other"
 msgstr "Andere"
