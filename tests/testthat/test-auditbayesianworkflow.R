@@ -13,6 +13,7 @@ options$implicitSampleTable <- TRUE
 options$priorStatistics <- TRUE
 options$bookValueDistribution <- TRUE
 options$decisionPlot <- TRUE
+options$priorConstructionMethod <- "none"
 options$priorPlot <- TRUE
 options$priorPlotExpectedPosterior <- TRUE
 options$samplingChecked <- TRUE
