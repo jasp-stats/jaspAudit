@@ -457,9 +457,10 @@ Form
 				id: 							priorConstructionMethod
 				name: 							"priorConstructionMethod"
 				indexDefaultValue: 				0
+				startValue:						"none"
 				label: 							qsTr("Prior information:")
 				Layout.columnSpan: 				2
-				values: 
+				values: 						performanceMateriality.checked ? 
 				[
 					{ label: qsTr("None"), 							value: "none"},
 					{ label: qsTr("Audit Risk Model"), 				value: "arm"},
@@ -467,7 +468,12 @@ Form
 					{ label: qsTr("Custom prior probabilities"), 	value: "hypotheses"},
 					{ label: qsTr("Earlier sample"), 				value: "sample"},
 					{ label: qsTr("Weighted earlier sample"), 		value: "factor"}
-				]
+				] : 
+				[
+					{ label: qsTr("None"), 							value: "none"},
+					{ label: qsTr("Earlier sample"), 				value: "sample"},
+					{ label: qsTr("Weighted earlier sample"), 		value: "factor"}
+				] 
 			}
 
 			HelpButton
@@ -530,7 +536,7 @@ Form
 
 		GroupBox
 		{
-			visible: 							[1].includes(priorConstructionMethod.currentIndex)
+			visible: 							["arm"].includes(priorConstructionMethod.currentValue)
 			Layout.columnSpan: 					3
 			columns: 							3
 
@@ -623,7 +629,7 @@ Form
 
 		GroupBox
 		{
-			visible: 							[2].includes(priorConstructionMethod.currentIndex)
+			visible: 							["median"].includes(priorConstructionMethod.currentValue)
 			Layout.columnSpan: 					3
 			columns: 							1
 			enabled:							false
@@ -645,7 +651,7 @@ Form
 
 		GroupBox
 		{
-			visible: 							[3].includes(priorConstructionMethod.currentIndex)
+			visible: 							["hypotheses"].includes(priorConstructionMethod.currentValue)
 			Layout.columnSpan: 					3
 			columns: 							1
 
@@ -674,7 +680,7 @@ Form
 
 		GroupBox
 		{
-			visible: 							[4, 5].includes(priorConstructionMethod.currentIndex)
+			visible: 							["sample", "factor"].includes(priorConstructionMethod.currentValue)
 			Layout.columnSpan: 					3
 			columns: 							1
 
@@ -705,7 +711,7 @@ Form
 				decimals: 						2
 				min: 							0
 				max: 							1
-				visible: 						[5].includes(priorConstructionMethod.currentIndex)
+				visible: 						["factor"].includes(priorConstructionMethod.currentValue)
 			}
 		}	
 	}
