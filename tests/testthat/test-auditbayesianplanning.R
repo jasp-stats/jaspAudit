@@ -6,6 +6,7 @@ options <- analysisOptions("auditBayesianPlanning")
 options$performanceMateriality <- TRUE
 options$materialityPercentage <- 0.05
 options$populationSize <- 1000
+options$priorConstructionMethod <- "none"
 options$expectedEvidenceRatio <- TRUE
 options$expectedBayesFactor <- TRUE
 options$implicitSampleTable <- TRUE
@@ -146,6 +147,7 @@ options$performanceMateriality <- TRUE
 options$materialityValue <- 2000
 options$populationSize <- 3500
 options$populationValue <- 10000
+options$priorConstructionMethod <- "none"
 options$expectedEvidenceRatio <- TRUE
 options$expectedBayesFactor <- TRUE
 options$implicitSampleTable <- TRUE

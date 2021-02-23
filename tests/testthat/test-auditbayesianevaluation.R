@@ -7,6 +7,7 @@ options$performanceMateriality <- TRUE
 options$materialityPercentage <- 0.05
 options$populationSize <- 3500
 options$populationValue <- 1200000
+options$priorConstructionMethod <- "none"
 options$useSumStats <- TRUE
 options$nSumStats <- 80
 options$kSumStats <- 1
@@ -69,6 +70,7 @@ options <- analysisOptions("auditBayesianEvaluation")
 options$performanceMateriality <- TRUE
 options$materialityPercentage <- 0.2
 options$populationSize <- 2000
+options$priorConstructionMethod <- "none"
 options$recordNumberVariable <- "ID"
 options$auditResult <- "TARGET_Adjusted"
 options$evidenceRatio <- TRUE
@@ -130,6 +132,7 @@ options$performanceMateriality <- TRUE
 options$materialityValue <- 70161
 options$populationSize <- 3500
 options$populationValue <- 1400000
+options$priorConstructionMethod <- "none"
 options$recordNumberVariable <- "ID"
 options$auditResult <- "auditValue"
 options$monetaryVariable <- "bookValue"
