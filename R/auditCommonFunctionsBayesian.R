@@ -354,7 +354,7 @@
   if(options[["explanatoryText"]]){
     distribution 	<- base::switch(parentOptions[["likelihood"]], "poisson" = gettext("gamma"), "binomial" = gettext("beta"), "hypergeometric" = gettext("beta-binomial"))
     additionalText1 <- gettext("The expected errors are visualized by the grey dot. The red dot represents the performance materiality.")
-    additionalText2 <- gettextf("The expected posterior distribution is calculated so that its %1$s\U1D57\U02B0 percentile lies below the performance materiality.", round(options[["confidence"]] * 100, 2))
+	additionalText2 <- gettextf("The expected posterior distribution is calculated so that its %1$s percentile lies below the performance materiality.", round(options[["confidence"]] * 100, 2))
     
     figureCaption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> The prior probability distribution <b>(%2$s)</b> on the misstatement (\u03B8) in the population. The prior parameters <i>%3$s = %4$s, %5$s = %6$s</i> are derived from the assessments of the inherent and control risk, along with the expected errors. %7$s %8$s",  
                                              jaspResults[["figNumber"]]$object,
