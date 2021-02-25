@@ -20,4 +20,6 @@ Imports:
   utils
 Remotes:
   jasp-stats/jaspBase,
-  jasp-stats/jaspGraphs
+  jasp-stats/jaspGraphs,
+  alexanderlynl/bstats,
+  koenderks/jfa
