@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-02-24 17:45\n"
-"PO-Revision-Date: 2021-01-17 20:32+0000\n"
-"Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
+"PO-Revision-Date: 2021-02-27 16:50+0000\n"
+"Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
 "Language: de\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.5\n"
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Prozedur</u>"
@@ -552,7 +552,7 @@ msgid "<i>S</i>"
 msgstr "<i>p</i>-Wert"
 
 msgid "Entropy"
-msgstr ""
+msgstr "Entropie"
 
 msgid ""
 "Both <i>p</i> values are one-sided and are computed on the basis of %1$s "
@@ -564,13 +564,13 @@ msgid "<b>Table %i.</b> Assumption Checks"
 msgstr "<b>Tabelle %1$i.</b> Evaluations-Zusammenfassung"
 
 msgid "n"
-msgstr ""
+msgstr "n"
 
 msgid "r"
-msgstr ""
+msgstr "r"
 
 msgid "t"
-msgstr ""
+msgstr "t"
 
 msgid ""
 "The displayed <i>p</i> value is for a two-sided test against H₀: <i>r = 0</"
@@ -805,16 +805,15 @@ msgid ""
 "(recorded) position and its <i>Soll</i> (true) position."
 msgstr ""
 
-#, fuzzy
 msgid ""
 "The objective of this sampling procedure is to show with <b>%1$s</b> "
 "confidence and a precision of <b>%3$s</b> that the %2$s of misstatement in "
 "the population is lower than the performance materiality of <b>%4$s</b>."
 msgstr ""
-"Das Ziel dieses substantiellen Testverfahrens besteht darin, mit einer "
-"festgelegten Sicherheit <b>(%1$s)</b> festzustellen, ob die %2$s falscher "
-"Angaben in der Zielpopulation niedriger sind als die angegebene Materialität "
-"von <b>%3$s</b>."
+"Ziel dieses Stichprobenverfahrens ist es, mit einer Konfidenz von <b>%1$s</"
+"b> und einer Genauigkeit von <b>%3$s</b> zu zeigen, dass die %2$s der "
+"Falschangabe in der Grundgesamtheit geringer sind als die Performance-"
+"Materialität von <b>%4$s</b>."
 
 msgid ""
 "%1$s\n"
@@ -1095,7 +1094,6 @@ msgid ""
 "%7$s"
 msgstr ""
 
-#, fuzzy
 msgid ""
 "%1$s\n"
 "\n"
@@ -1106,10 +1104,10 @@ msgid ""
 msgstr ""
 "%1$s\n"
 "\n"
-" <b>Beachte:</b> Die ausgewählte Teilmenge (%2$s) ist kleiner als die "
-"geplante Stichprobengröße (%3$s), da Beobachtungen wegen ihres hohen Werts "
-"mehrmals gezogen wurden. Diese Beobachtungen (%4$s) werden in der Evaluation "
-"mehrmals gezählt."
+"<i>Hinweis:</i> Die gewählte Stichprobe (%2$s) enthält weniger Transaktionen "
+"als der geplante Stichprobenumfang (%3$s), da einige Transaktionen mehrfach "
+"ausgewählt werden. Die Transaktionen, die diese %4$s zusätzlich ausgewählten "
+"Stichprobeneinheiten enthalten, werden in der Evaluation mehrfach gezählt."
 
 msgid "below"
 msgstr "unter"
@@ -1183,43 +1181,37 @@ msgstr "Mittelwert"
 msgid "Std. deviation"
 msgstr "Standardabweichung"
 
-#, fuzzy
 msgid "1"
-msgstr "H1"
+msgstr "1"
 
 msgid "Quartile"
 msgstr "Quartil"
 
-#, fuzzy
 msgid "2"
-msgstr "H2"
+msgstr "2"
 
 msgid "3"
-msgstr ""
+msgstr "3"
 
-#, fuzzy
 msgid "Distribution of Ist Values"
-msgstr "Verteilungsabbildungen"
+msgstr "Verteilung der Ist-Werte"
 
-#, fuzzy
 msgid "Ist (%1$s)"
-msgstr "%1$s (%2$s)"
+msgstr "Ist (%1$s)"
 
-#, fuzzy
 msgid "Mean %1$s St.dev"
-msgstr "Mittelwert %1$s sd"
+msgstr "Mittelwert %1$s Std.Abw"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The distribution of Ist values in the population. The "
 "red and blue dots respectively represent the mean and the values exactly one "
 "standard deviation from the mean. The orange dots represent the first, "
 "second (median) and third quartiles of the Ist values."
 msgstr ""
-"<b>Abbildung %1$i.</b> Die Verteilung der Buchwerte in der Grundgesamtheit. "
-"Die roten und blauen Punkte stellen jeweils den Mittelwert und die Werte "
-"genau eine Standardabweichung vom Mittelwert dar. Die orangefarbenen Punkte "
-"stellen das 25., 50. (Median) und 75. Perzentil der Buchwerte dar."
+"<b>Abbildung %1$i.</b> Die Verteilung der Ist-Werte in der Grundgesamtheit. "
+"Die roten und blauen Punkte stellen jeweils den Mittelwert und die Werte mit "
+"genau einer Standardabweichung vom Mittelwert dar. Die orangen Punkte "
+"stellen das erste, zweite (Median) und dritte Quartil der Ist-Werte dar."
 
 msgid "<u>Audit Risk Model</u>"
 msgstr "<u>Auditisiko-Modell</u>"
@@ -1309,9 +1301,8 @@ msgstr "<b>Tabelle %1$i.</b> Planungs-Zusammenfassung"
 msgid "Performance materiality"
 msgstr "Performanz-Metriken"
 
-#, fuzzy
 msgid "Required precision"
-msgstr "Benötigte Stichprobengröße"
+msgstr "Erforderliche Präzision"
 
 msgid "Inherent risk"
 msgstr "Inhärentes Risiko"
@@ -1712,9 +1703,8 @@ msgstr "<b>Tabelle %1$i.</b> Evaluations-Zusammenfassung"
 msgid "Pearson's <i>r</i>"
 msgstr "Pearson's <i>r</i>"
 
-#, fuzzy
 msgid "p-value"
-msgstr "Wert"
+msgstr "p-Wert"
 
 msgid ""
 "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis "
@@ -1727,9 +1717,8 @@ msgstr ""
 msgid "There were no misstatements found in the sample."
 msgstr ""
 
-#, fuzzy
 msgid "An error occurred while calculating the correlation."
-msgstr "Beim Erstellen dieses Diagramms ist ein Fehler aufgetreten: %1$s"
+msgstr "Bei der Berechnung der Korrelation ist ein Fehler aufgetreten."
 
 msgid "Evaluation of Sampling Objectives"
 msgstr ""
