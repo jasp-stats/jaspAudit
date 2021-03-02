@@ -438,7 +438,7 @@ Form
 			Label
 			{
 				Layout.leftMargin: 				30 * preferencesModel.uiScale
-				text: 							qsTr("<i>Requires additional assumption: The sample taints are homogeneous</i>")
+				text: 							qsTr("<i>Requires additional assumption: The population taints are homogeneous</i>")
 				enabled:						populationSize.value > 0 & populationValue.value > 0 & recordNumberVariable.count > 0 & monetaryVariable.count > 0 & auditResult.count > 0
 			}
 		}
