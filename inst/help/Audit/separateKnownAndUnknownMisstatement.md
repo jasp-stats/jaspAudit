@@ -9,4 +9,4 @@ This technique will often result in a smaller sample size than is required if th
 
 #### Cautionary note
 
-This technique requires the assumption that the sample taints are homogeneously distributed. You will need to verify this in a post-hoc assumption check (available in the evaluation stage) that tests the correlation between the size of the taints and the size of the transaction. If this correlation does not exist, the use of this efficiency technique is justified. If this correlation is present, you cannot use this technique and will need to evaluate your sample using a different method.
+This technique requires the assumption that the population taints are homogeneously distributed. You will need to verify this in a post-hoc assumption check (available in the evaluation stage) that tests the correlation between the size of the taints and the size of the transaction. If this correlation does not exist, the use of this efficiency technique is justified. If this correlation is present, you cannot use this technique and will need to evaluate your sample using a different method.

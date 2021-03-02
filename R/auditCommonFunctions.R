@@ -3333,7 +3333,7 @@
     message <- gettext("The upper bound is calculated according to the <b>Stringer</b> method with <b>LTA adjustment</b>.")
   
   if(options[["separateKnownAndUnknownMisstatement"]] && options[["monetaryVariable"]] != "")
-    message <- gettext("The upper bound is calculated according to the <b>beta</b> distribution. It requires the assumptions that the sample taints are interchangeable and that the sample taints are homogeneous.")
+    message <- gettext("The upper bound is calculated according to the <b>beta</b> distribution. It requires the assumptions that the sample taints are interchangeable and that the population taints are homogeneous.")
   
   table$addFootnote(message)
   
@@ -3480,7 +3480,7 @@
   parentContainer[["assumptionTable"]] <- table
   
   if(options[["auditResult"]] == ""){
-    row <- list(type = gettext("The sample taints are homogeneous"))
+    row <- list(type = gettext("The population taints are homogeneous"))
     table$addRows(row)
     return()
   }
@@ -3496,7 +3496,7 @@
   
   if(length(taint) == 0){
     table$addFootnote(gettext("There were no misstatements found in the sample."))
-    row <- list(type = gettext("The sample taints are homogeneous"), n = length(taint))
+    row <- list(type = gettext("The population taints are homogeneous"), n = length(taint))
     table$addRows(row)
     return()	  
   }
@@ -3512,7 +3512,7 @@
     return()
   }
   
-  row <- list(type = gettext("The sample taints are homogeneous"),
+  row <- list(type = gettext("The population taints are homogeneous"),
               n = length(taint),
               correlation = test[["estimate"]],
               upperCI = as.numeric(test[["conf.int"]])[2],
@@ -3988,7 +3988,7 @@
     
     # We choose a pseudo-random seed to get the impression of a random starting point
     # It is unlikely that two populations or users have the same seed
-    set.seed(rnorm(1) + options[["sampleSizeIncrease"]] + parentOptions[["populationValue"]] + interval)
+    set.seed(rnorm(1) + options[["sampleSizeIncrease"]] + parentOptions[["populationValue"]])
     
     intervalStartingPoint <- sample(1:(interval - 1), size = 1)
     intervalSelection <- intervalStartingPoint + 0:(n - 1) * interval
