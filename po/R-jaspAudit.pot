@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.15\n"
-"POT-Creation-Date: 2021-02-24 17:45\n"
+"POT-Creation-Date: 2021-03-03 12:24\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -880,7 +880,7 @@ msgstr ""
 msgid "The upper bound is calculated according to the <b>Stringer</b> method with <b>LTA adjustment</b>."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>beta</b> distribution. It requires the assumptions that the sample taints are interchangeable and that the sample taints are homogeneous."
+msgid "The upper bound is calculated according to the <b>beta</b> distribution. It requires the assumptions that the sample taints are interchangeable and that the population taints are homogeneous."
 msgstr ""
 
 msgid "The audit result column is empty."
@@ -904,7 +904,7 @@ msgstr ""
 msgid "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis H₋: ρ < 0"
 msgstr ""
 
-msgid "The sample taints are homogeneous"
+msgid "The population taints are homogeneous"
 msgstr ""
 
 msgid "There were no misstatements found in the sample."
