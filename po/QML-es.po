@@ -244,11 +244,6 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Click to learn more about this efficiency technique."
 msgstr ""
 
-msgctxt "auditBayesianEvaluation|"
-msgid ""
-"<i>Requires additional assumption: The sample taints are homogeneous</i>"
-msgstr ""
-
 #, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior Information"
@@ -3342,6 +3337,11 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Post-hoc corrections to population value"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid ""
+"<i>Requires additional assumption: The population taints are homogeneous</i>"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
