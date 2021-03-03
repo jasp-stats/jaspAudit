@@ -6,7 +6,7 @@ JASP for Audit is an officially supported add-on module for JASP that is designe
 
 ## Manual
 
-For an introduction to JASP for Audit, please download the [manual](man/manual.pdf).
+For an introduction to JASP for Audit, please download the [manual](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
 
 ## Core Functionality
 
