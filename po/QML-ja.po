@@ -2762,10 +2762,6 @@ msgid "Calculation Preferences"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid ""
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Extrapolated amounts"
 msgstr ""
 
@@ -2775,4 +2771,8 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Post-hoc corrections to population value"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid ""
 msgstr ""
