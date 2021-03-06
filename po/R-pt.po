@@ -1288,7 +1288,7 @@ msgstr ""
 
 #, fuzzy
 msgid "%1$s%% Upper bound"
-msgstr "Limite superior"
+msgstr "limite superior:"
 
 msgid "Obtained precision"
 msgstr ""
@@ -1591,7 +1591,7 @@ msgstr ""
 
 #, fuzzy
 msgid "Upper bound (%1$s)"
-msgstr "Limite superior"
+msgstr "limite superior:"
 
 msgid ""
 "The red dot represents the specified materiality. If the shaded area under "
@@ -1615,7 +1615,7 @@ msgstr ""
 
 #, fuzzy
 msgid "Ratio %1$s"
-msgstr "Para %1"
+msgstr "para %1"
 
 #, fuzzy
 msgid "Mode"

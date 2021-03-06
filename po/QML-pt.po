@@ -2514,10 +2514,6 @@ msgid "<b>How would you like to evaluate your transactions?</b>"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid ""
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Soll values"
 msgstr ""
 
@@ -2816,4 +2812,8 @@ msgstr ""
 
 msgctxt "auditSelection|"
 msgid "<b>Download Report</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid ""
 msgstr ""
