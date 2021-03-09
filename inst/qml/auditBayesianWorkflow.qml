@@ -1406,7 +1406,8 @@ Form
 				modelType:							JASP.FilteredDataEntryModel
 				source:     						["recordNumberVariable", "monetaryVariable", "additionalVariables"]
 				colName:    						"Filter"
-				decimals:							3
+				initialValuesSource: 				"monetaryVariable"
+				defaultValue:						0
 			}
 		}
 
