@@ -1,6 +1,8 @@
 The Bayesian Audit Sampling Workflow
 ==========================
 
+For a global introduction to this analysis, please download the manual at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
+
 The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population, and give on opinion on whether the population as a whole contains errors that are material (lower than the set materiality). When the auditor has access to the raw population data, they can use the *Bayesian audit workflow* to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgment. They can then sample these transactions from the population, inspect these observations, and produce a statement about the totalerror in the population. The workflow guides the auditor through the audit process, making the correct choices of calculations along the way. The *Bayesian audit workflow* may use the risk assessments from the *audit risk model* to incorporate this prior information into a prior probability distribution, which is updated using information from the sample to form a posterior probability distribution. Inferences about the population error are made using the posterior distribution.
 
 ----

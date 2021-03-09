@@ -1,6 +1,8 @@
 Bayesian Evaluation of an Audit Sample
 ==========================
 
+For a global introduction to this analysis, please download the manual at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
+
 The Bayesian evaluation analysis allows the auditor to evaluate an audit sample and infer a statistical conclusion about the total misstatement in the population while incorporating prior knowledge that is available. 
 
 ----

@@ -1,6 +1,8 @@
 Planning of an Audit Sample
 ==========================
 
+For a global introduction to this analysis, please download the manual at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
+
 The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population, and give on opinion on whether the population as a whole contains errors that are material (lower than the set materiality). Sometimes an auditor needs to calculate the required sample size beforehand, without having access to the raw population data. In this case, the auditor can use the *planning* analysis together with the population's summary statistics (total size and value) to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgement. The frequentist *planning* analysis may use the risk assessments from the *audit risk model* to adjust the required risks of finding material errors.
 
 *Note:* When you have access to the raw population data you may want to use the *audit workflow*, an analysis that guides you through the audit process.

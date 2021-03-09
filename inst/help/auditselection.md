@@ -1,6 +1,8 @@
 Selection of an Audit Sample
 ==========================
 
+For a global introduction to this analysis, please download the manual at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
+
 The selection analysis allows the auditor to select a number of required transactions from a population using a combination of sampling techniques (record sampling versus monetary unit sampling) and sampling methods (random sampling, cell sampling, fixed interval sampling).
 
 ----
