@@ -1,9 +1,11 @@
 Selection of an Audit Sample
 ==========================
 
-For a global introduction to this analysis, please download the manual at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
-
 The selection analysis allows the auditor to select a number of required transactions from a population using a combination of sampling techniques (record sampling versus monetary unit sampling) and sampling methods (random sampling, cell sampling, fixed interval sampling).
+
+#### Manual
+
+For a global introduction to this analysis, please download the manual for the Audit module at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
 
 ----
 
@@ -112,4 +114,4 @@ References
 
 AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
 
-Derks, K (2020). jfa: Bayesian and Classical Audit Sampling. R package version 0.3.1.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.1.

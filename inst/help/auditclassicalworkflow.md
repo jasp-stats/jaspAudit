@@ -1,9 +1,11 @@
 The Audit Sampling Workflow
 ==========================
 
-For a global introduction to this analysis, please download the manual at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
-
 The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population, and give on opinion on whether the population as a whole contains errors that are material (lower than the set materiality). When the auditor has access to the raw population data, they can use the *audit workflow* to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgment. She can then sample these transactions from the population, inspect these observations, and produce a statement about the total error in the population. The workflow guides the auditor through the audit process, making the correct choices of calculations along the way. The frequentist *audit workflow* may use the risk assessments from the *audit risk model* to adjust the required risk of finding material errors.
+
+#### Manual
+
+For a global introduction to this analysis, please download the manual for the Audit module at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
 
 Workflow
 -----------
@@ -22,7 +24,7 @@ When the auditor has information that indicates a low-risk profile on the popula
 
 *AR = IR x CR x DR*
 
-The auditor assesses inherent risk and internal control risk generally on a 3-point scale to determine the appropriate detection risk. Using the ARM and zero errors the sample size depends on the risk factor *R*, which is a function of the detection risk. 
+The auditor assesses inherent risk and internal control risk generally on a 3-point scale to determine the appropriate detection risk. Using the ARM and zero errors the sample size depends on the risk factor *R* and the performance materiality. The risk factor *R* is a function of the detection risk (Stewart 2012). 
 
 *R = -ln(DR)*
 
@@ -38,13 +40,13 @@ The risk factor *R* can be adjusted using the assessments of the inherent risk a
 | :---: | :---: | :---: |
 | R | 3 | 2 | 1 |
 
-These values of *R* are used to select default percentages for IR and CR. JASP for Audit handles the following default values for IR and CR:
+These values of *R* are used to set default percentages for IR and CR. The Audit module handles the following default values for IR and CR:
 
 - High: 100%
 - Medium: 60%
 - Low: 36%
 
-You can manually adjust the value of IR and CR by selecting the Custom option under the corresponding risk assessment.
+You can manually adjust the value of IR and CR by selecting the Custom option under the corresponding risk assessment, thus adjusting the risk factor *R*.
 
 ----
 
@@ -209,12 +211,14 @@ R Packages
 References
 -------
 
-AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certied Public Accountants.
+AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
 
-Derks, K (2020). jfa: Bayesian and Classical Audit Sampling. R package version 0.1.0.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.1.
 
 Interdepartementaal Overlegorgaan Departementale Accountantsdiensten (2007). <i>Handboek Auditing Rijksoverheid 2007</i>, established by the Interdepartementaal Overlegorgaan Departementale Accountantsdiensten (IODAD) on March 28, 2006, and May 29, 2007.
 
 Leslie, D. A., Teitlebaum, A. D., Anderson, R. J. (1979). <i>Dollar-unit Sampling: A Practical Guide for Auditors</i>. Toronto: Copp Clark Pitman.
+
+Stewart, T. (2012). <i>Technical notes on the AICPA audit guide Audit Sampling</i>. American Institute of Certified Public Accountants, New York.
 
 Stringer, K.W. (1963) Practical aspects of statistical sampling in auditing. <i>Proceedings of Business and Economic Statistics Section</i>, American Statistical Association.

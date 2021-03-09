@@ -1,11 +1,13 @@
 Bayesian Planning of an Audit Sample
 ==========================
 
-For a global introduction to this analysis, please download the manual at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
-
 The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population, and give on opinion on whether the population as a whole contains errors that are material (lower than the set materiality). Sometimes an auditor needs to calculate the required sample size beforehand, without having access to the raw population data. In this case, the auditor can use the *Bayesian planning* analysis together with the population's summary statistics (total size and value) to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgement. The *Bayesian planning* analysis may use the risk assessments from the *audit risk model* to incorporate this prior information into a prior probability distribution, which is updated using information from the data to form a posterior probability distribution. Inferences about the population error are made using the posterior distribution.
 
 *Note:* When you have access to the raw population data you may want to use the *Bayesian audit workflow*, an analysis that guides you through the audit process.
+
+#### Manual
+
+For a global introduction to this analysis, please download the manual for the Audit module at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
 
 ----
 
@@ -172,7 +174,7 @@ R Packages
 References
 -------
 
-Derks, K (2020). jfa: Bayesian and Classical Audit Sampling. R package version 0.3.1.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.1.
 
 Dyer, D., & Pierce, R. L. (1993). On the choice of the prior distribution in hypergeometric sampling. <i>Communications in Statistics-Theory and Methods</i>, 22(8), 2125-2146.
 

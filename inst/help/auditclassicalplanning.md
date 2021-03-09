@@ -1,11 +1,13 @@
 Planning of an Audit Sample
 ==========================
 
-For a global introduction to this analysis, please download the manual at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
-
 The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population, and give on opinion on whether the population as a whole contains errors that are material (lower than the set materiality). Sometimes an auditor needs to calculate the required sample size beforehand, without having access to the raw population data. In this case, the auditor can use the *planning* analysis together with the population's summary statistics (total size and value) to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgement. The frequentist *planning* analysis may use the risk assessments from the *audit risk model* to adjust the required risks of finding material errors.
 
 *Note:* When you have access to the raw population data you may want to use the *audit workflow*, an analysis that guides you through the audit process.
+
+#### Manual
+
+For a global introduction to this analysis, please download the manual for the Audit module at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
 
 ----
 
@@ -15,7 +17,7 @@ When the auditor has information that indicates a low-risk profile on the popula
 
 *AR = IR x CR x DR*
 
-The auditor assesses inherent risk and internal control risk generally on a 3-point scale to determine the appropriate detection risk. Using the ARM and zero errors the sample size depends on the risk factor *R*, which is a function of the detection risk. 
+The auditor assesses inherent risk and internal control risk generally on a 3-point scale to determine the appropriate detection risk. Using the ARM and zero errors the sample size depends on the risk factor *R* and the performance materiality. The risk factor *R* is a function of the detection risk (Stewart 2012). 
 
 *R = -ln(DR)*
 
@@ -31,13 +33,13 @@ The risk factor *R* can be adjusted using the assessments of the inherent risk a
 | :---: | :---: | :---: |
 | R | 3 | 2 | 1 |
 
-These values of *R* are used to select default percentages for IR and CR. JASP for Audit handles the following default values for IR and CR:
+These values of *R* are used to set default percentages for IR and CR. The Audit module handles the following default values for IR and CR:
 
 - High: 100%
 - Medium: 60%
 - Low: 36%
 
-You can manually adjust the value of IR and CR by selecting the Custom option under the corresponding risk assessment.
+You can manually adjust the value of IR and CR by selecting the Custom option under the corresponding risk assessment, thus adjusting the risk factor *R*.
 
 ----
 
@@ -161,3 +163,5 @@ References
 AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
 
 Derks, K (2020). jfa: Bayesian and Classical Audit Sampling. R package version 0.3.1.
+
+Stewart, T. (2012). <i>Technical notes on the AICPA audit guide Audit Sampling</i>. American Institute of Certified Public Accountants, New York.
