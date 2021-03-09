@@ -1,4 +1,4 @@
-context("[Audit] Classical Benford's Law")
+context("[Audit] Benford's Law")
 
 options <- jaspTools::analysisOptions("auditClassicalBenfordsLaw")
 options$values <- "value"
