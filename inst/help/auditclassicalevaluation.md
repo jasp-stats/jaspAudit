@@ -5,7 +5,7 @@ The evaluation analysis allows the auditor to evaluate an audit sample and infer
 
 #### Manual
 
-For a global introduction to this analysis, please download the manual for the Audit module at https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf.
+For a global introduction to this analysis, please download the manual for the Audit module [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
 
 ----
 

@@ -195,6 +195,17 @@ jfaBenfordsLawStage <- function(options, jaspResults, position){
     df <- length(digits) - 1
     pvalue <- pchisq(q = chiSquare, df = df, lower.tail = FALSE)
     
+    # compute Bayes factor
+    lbeta.xa <- sum(lgamma(1 + observed)) - lgamma(sum(1 + observed)) # Prior with 1 count for each digit
+    lbeta.a  <- sum(lgamma(rep(1, length(digits)))) - lgamma(sum(rep(1, length(digits))))
+    
+    # in this case, counts*log(thetas) should be zero, omit to avoid numerical issue with log(0)
+    if (any(rowSums(cbind(inBenford, observed)) == 0)) {
+      logBF10 <- (lbeta.xa-lbeta.a)
+    } else {
+      logBF10 <- (lbeta.xa-lbeta.a) + (0 - sum(observed * log(inBenford)))
+    }
+    
     result <- list(digits = digits,
                    counts = counts, 
                    percentages = percentages,
@@ -204,7 +215,8 @@ jfaBenfordsLawStage <- function(options, jaspResults, position){
                    expected = expected,
                    chiSquare = chiSquare,
                    df = df,
-                   pvalue = pvalue)
+                   pvalue = pvalue,
+                   logBF10 = logBF10)
     
     benfordsLawContainer[["result"]] <- createJaspState(result)
     benfordsLawContainer[["result"]]$dependOn(options = c("values", 
@@ -231,25 +243,31 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   
   benfordsLawTestTable <- createJaspTable(tableTitle)
   benfordsLawTestTable$position <- positionInContainer
+  benfordsLawTestTable$dependOn(options = "bayesFactorType")
+  
+  bfTitle <- switch(options[["bayesFactorType"]], 
+                    "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
+                    "BF01" = gettextf("BF%1$s", "\u2080\u2081"),
+                    "logBF10" = gettextf("Log(BF%1$s)", "\u2081\u2080"))
   
   benfordsLawTestTable$addColumnInfo(name = 'test', 
                                      title = gettext(''), 
                                      type = 'string')
-  benfordsLawTestTable$addColumnInfo(name = 'measure', 
-                                     title = gettext('Statistic'), 
-                                     type = 'string')
+  benfordsLawTestTable$addColumnInfo(name = 'N', 
+                                     title = gettext("n"), 
+                                     type = 'integer')
   benfordsLawTestTable$addColumnInfo(name = 'value',  
-                                     title = gettext('Value'), 
+                                     title = gettextf('X%1$s', '\u00B2'), 
                                      type = 'string')
   benfordsLawTestTable$addColumnInfo(name = 'df',  
                                      title = gettext('df'), 
                                      type = 'integer')
   benfordsLawTestTable$addColumnInfo(name = 'pvalue', 
-                                     title = gettext("<i>p</i> value"), 
+                                     title = gettext("p"), 
                                      type = 'pvalue')
-  benfordsLawTestTable$addColumnInfo(name = 'N', 
-                                     title = gettext("N"), 
-                                     type = 'integer')
+  benfordsLawTestTable$addColumnInfo(name = 'bf', 
+                                     title = bfTitle, 
+                                     type = 'number')
   
   distribution <- base::switch(options[["distribution"]],
                                "benford" = "Benford's law",
@@ -261,6 +279,9 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
                           "last" = gettextf("The null hypothesis specifies that the last digits (1 - 9) in the data set are distributed according to %1$s." ,distribution))
   benfordsLawTestTable$addFootnote(message)
   
+  message <- gettextf("The Bayes factor is computed using a <i>Dirichlet(%1$s,...,%2$s%3$s)</i> prior with <i>%2$s = 1</i>.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first") "\u2089" else "\u2089\u2089")
+  benfordsLawTestTable$addFootnote(message, colName = "bf")
+  
   benfordsLawContainer[["benfordsLawTestTable"]] <- benfordsLawTestTable
   
   df <- ifelse(options[["digits"]] == "first" || options[["digits"]] == "last", 
@@ -268,25 +289,24 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
                no = 89)
   
   if(!ready){
-    
-    row <- data.frame(test = gettext("Chi-square"), 
-                      measure = gettextf("X%1$s", "\u00B2"), 
-                      df = df, 
-                      value = ".", 
-                      pvalue = ".",
-                      N = ".")
+    row <- data.frame(test = ".", N = ".", value = ".", df = df, pvalue = ".", bf = ".")
     benfordsLawTestTable$addRows(row)
     return()
   }
   
   state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
   
-  row <- data.frame(test = gettext("Chi-square"), 
-                    measure = gettextf("X%1$s", "\u00B2"), 
-                    df = state[["df"]], 
+  bf <- switch(options[["bayesFactorType"]],
+               "BF10" = exp(state[["logBF10"]]),
+               "BF01" = 1 / exp(state[["logBF10"]]),
+               "logBF10" = state[["logBF10"]])
+  
+  row <- data.frame(test = options[["values"]], 
+                    N = state[["N"]],
                     value = round(state[["chiSquare"]], 3), 
+                    df = state[["df"]], 
                     pvalue = state[["pvalue"]],
-                    N = state[["N"]])
+                    bf = bf)
   benfordsLawTestTable$addRows(row)
 }
 
@@ -497,7 +517,8 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
                                  "first" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion),
                                  "firstSecond" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion),
                                  "last" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion))
-  
+  conclusionText <- gettextf("%1$s The Bayes factor incidates that the data are <b>%2$s times</b> more likely to occur under the null hypothesis than under the alternative hypothesis.", conclusionText, format(1 / exp(state[["logBF10"]]), digits = 3))
+
   conclusionContainer[["conclusionParagraph"]] <- createJaspHtml(conclusionText, "p")
   conclusionContainer[["conclusionParagraph"]]$position <- 1
   conclusionContainer$dependOn(options = c("explanatoryText", 

@@ -38,7 +38,7 @@ Default output
 #### Repeated Values Test
 This table is the default output for the repeated value analysis. It reports the average frequency in the number in the data set alongside the entropy of these numbers. Average frequency and entropy are highly correlated, but the average frequency is often more interpretable. For example, an average frequency of 2.5 means that, on average, your observations contain a value that appears 2.5 times in the data set. 
 
-- N: The number of observations in the data.
+- n: The number of observations in the data.
 - Frequency: The average frequency with which numbers are repeated in the data. The formula for the average frequency is *AF = &#8721; f&#7522;&#178; / &#8721; f&#7522;* where f&#7522; is the frequency of each unique value *i* in the data set.
 - Entropy: The entropy is the average level of information inherent in the variable's outcomes. The entropy is calculated as *S = - &#8721; (p&#7522; &#215; log(p&#7522;))* where p&#7522; is the proportion of observations with each value (so *p&#7522; = f&#7522; / N*).
 
