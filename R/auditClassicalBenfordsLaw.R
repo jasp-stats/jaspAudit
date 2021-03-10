@@ -517,7 +517,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
                                  "first" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion),
                                  "firstSecond" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion),
                                  "last" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion))
-  conclusionText <- gettextf("%1$s The Bayes factor incidates that the data are <b>%2$s times</b> more likely to occur under the null hypothesis than under the alternative hypothesis.", conclusionText, format(1 / exp(state[["logBF10"]]), digits = 3))
+  conclusionText <- gettextf("%1$s The Bayes factor indicates that the data are <b>%2$s times</b> more likely to occur under the null hypothesis than under the alternative hypothesis.", conclusionText, format(1 / exp(state[["logBF10"]]), digits = 3))
 
   conclusionContainer[["conclusionParagraph"]] <- createJaspHtml(conclusionText, "p")
   conclusionContainer[["conclusionParagraph"]]$position <- 1
