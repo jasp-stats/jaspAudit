@@ -114,14 +114,14 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   table$dependOn(options = c("noSamples", "shuffle", "seed", "values", "avgFrequency", "entropy"))
   
   table$addColumnInfo(name = 'name', 	title = '', 					type = 'string')
-  table$addColumnInfo(name = 'N', 		title = gettext("n"), 			type = 'integer')
+  table$addColumnInfo(name = 'N', 		title = "n", 					type = 'integer')
   if(options[["avgFrequency"]]){					  
     table$addColumnInfo(name = 'avgFreq', title = gettext('Average'), 	type = 'number', overtitle = gettext('Frequency'))
-    table$addColumnInfo(name = 'pvalue1', title = gettext("p"), 		type = 'pvalue', overtitle = gettext('Frequency'))
+    table$addColumnInfo(name = 'pvalue1', title = "p", 					type = 'pvalue', overtitle = gettext('Frequency'))
   }
   if(options[["entropy"]]){
-    table$addColumnInfo(name = 'entropy', title = gettext('S'), 		type = 'number', overtitle = gettext('Entropy'))
-    table$addColumnInfo(name = 'pvalue2', title = gettext("p"), 		type = 'pvalue', overtitle = gettext('Entropy'))
+    table$addColumnInfo(name = 'entropy', title = 'S', 					type = 'number', overtitle = gettext('Entropy'))
+    table$addColumnInfo(name = 'pvalue2', title = "p", 					type = 'pvalue', overtitle = gettext('Entropy'))
   }					  
   
   table$addFootnote(gettextf("The displayed <i>p</i> value is one-sided and is computed on the basis of %1$s samples.", options[["noSamples"]]))
@@ -230,11 +230,11 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     table$addColumnInfo(name = 'var1', 		title = "", 			type = 'string')
     table$addColumnInfo(name = 'separator', title = "", 			type = 'separator')
     table$addColumnInfo(name = 'var2', 		title = "", 			type = 'string')
-    table$addColumnInfo(name = 'n', 		title = gettext("n"), 	type = 'integer')
-    table$addColumnInfo(name = 'cor', 		title = gettext('r'), 	type = 'number')
-    table$addColumnInfo(name = 't', 		title = gettext('t'), 	type = 'number')
-    table$addColumnInfo(name = 'df', 		title = gettext('df'), 	type = 'integer')
-    table$addColumnInfo(name = 'pvalue',	title = gettext("p"), 	type = 'pvalue')
+    table$addColumnInfo(name = 'n', 		title = "n", 			type = 'integer')
+    table$addColumnInfo(name = 'cor', 		title = 'r', 			type = 'number')
+    table$addColumnInfo(name = 't', 		title = 't', 			type = 'number')
+    table$addColumnInfo(name = 'df', 		title = gettext('df'),	type = 'integer')
+    table$addColumnInfo(name = 'pvalue',	title = "p", 			type = 'pvalue')
     
     table$addFootnote(gettext("The displayed <i>p</i> value is for a two-sided test against H\u2080: <i>r = 0</i>."))
     

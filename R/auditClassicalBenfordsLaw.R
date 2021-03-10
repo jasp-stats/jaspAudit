@@ -251,19 +251,19 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
                     "logBF10" = gettextf("Log(BF%1$s)", "\u2081\u2080"))
   
   benfordsLawTestTable$addColumnInfo(name = 'test', 
-                                     title = gettext(''), 
+                                     title = '', 
                                      type = 'string')
   benfordsLawTestTable$addColumnInfo(name = 'N', 
-                                     title = gettext("n"), 
+                                     title = "n", 
                                      type = 'integer')
   benfordsLawTestTable$addColumnInfo(name = 'value',  
-                                     title = gettextf('X%1$s', '\u00B2'), 
+                                     title = 'X\u00B2', 
                                      type = 'string')
   benfordsLawTestTable$addColumnInfo(name = 'df',  
                                      title = gettext('df'), 
                                      type = 'integer')
   benfordsLawTestTable$addColumnInfo(name = 'pvalue', 
-                                     title = gettext("p"), 
+                                     title = 'p', 
                                      type = 'pvalue')
   benfordsLawTestTable$addColumnInfo(name = 'bf', 
                                      title = bfTitle, 
