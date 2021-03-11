@@ -140,6 +140,31 @@ Form {
 					text:				qsTr("Last digit")
 				}
 			}
+
+			RadioButtonGroup
+			{
+				name:					"bayesFactorType"
+				title:					"Bayes Factor"
+
+				RadioButton
+				{
+					name:				"BF10"
+					text:				qsTr("BF\u2081\u2080")
+					checked:			true
+				}
+
+				RadioButton
+				{
+					name:				"BF01"
+					text:				qsTr("BF\u2080\u2081")
+				}
+
+				RadioButton
+				{
+					name:				"logBF10"
+					text:				qsTr("Log(BF\u2081\u2080)")
+				}
+			}
 		}
 
 		ColumnLayout 

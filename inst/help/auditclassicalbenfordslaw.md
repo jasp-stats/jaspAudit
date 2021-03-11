@@ -49,11 +49,11 @@ Default output
 #### Goodness-of-fit table
 This table is the default output for the Benford's Law analysis.
 
-- Statistic: Notation for the test statistics of the chi-square test.
-- Value: The value of the chi-square test statistic.
-- df: Degrees of freedom associated with the chi-square test.
-- *p* value: The *p* value associated with the chi-square test.
-- N: The total number of digit (combinations) that are tested against the distribution.
+- n: The total number of observations in the data set.
+- X<sup>2</sup>: The value of the Chi-squared test statistic.
+- df: Degrees of freedom associated with the Chi-squared test.
+- p: The *p* value associated with the Chi-squared test.
+- BF: The Bayes factor resulting from a non-informative prior.
 
 ----
 

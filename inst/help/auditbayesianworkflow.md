@@ -3,6 +3,10 @@ The Bayesian Audit Sampling Workflow
 
 The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population, and give on opinion on whether the population as a whole contains errors that are material (lower than the set materiality). When the auditor has access to the raw population data, they can use the *Bayesian audit workflow* to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgment. They can then sample these transactions from the population, inspect these observations, and produce a statement about the totalerror in the population. The workflow guides the auditor through the audit process, making the correct choices of calculations along the way. The *Bayesian audit workflow* may use the risk assessments from the *audit risk model* to incorporate this prior information into a prior probability distribution, which is updated using information from the sample to form a posterior probability distribution. Inferences about the population error are made using the posterior distribution.
 
+#### Manual
+
+For a global introduction to this analysis, please download the manual for the Audit module [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
+
 ----
 
 Workflow
@@ -216,7 +220,7 @@ References
 
 Cox, D. R., & Snell, E. J. (1979). On sampling and the estimation of rare errors. <i>Biometrika</i>, 66(1), 125-132.
 
-Derks, K (2020). jfa: Bayesian and Classical Audit Sampling. R package version 0.1.0.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.1.
 
 Dyer, D., & Pierce, R. L. (1993). On the choice of the prior distribution in hypergeometric sampling. <i>Communications in Statistics-Theory and Methods</i>, 22(8), 2125-2146.
 

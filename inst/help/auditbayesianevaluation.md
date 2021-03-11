@@ -3,6 +3,10 @@ Bayesian Evaluation of an Audit Sample
 
 The Bayesian evaluation analysis allows the auditor to evaluate an audit sample and infer a statistical conclusion about the total misstatement in the population while incorporating prior knowledge that is available. 
 
+#### Manual
+
+For a global introduction to this analysis, please download the manual for the Audit module [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
+
 ----
 
 Default input options
@@ -135,8 +139,8 @@ R Packages
 References
 -------
 
-AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certied Public Accountants.
+AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
 
-Derks, K (2020). jfa: Bayesian and Classical Audit Sampling. R package version 0.1.0.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.1.
 
 Interdepartementaal Overlegorgaan Departementale Accountantsdiensten (2007). <i>Handboek Auditing Rijksoverheid 2007</i>, established by the Interdepartementaal Overlegorgaan Departementale Accountantsdiensten (IODAD) on March 28, 2006, and May 29, 2007.

@@ -5,6 +5,10 @@ The task of an auditor is to make a judgment regarding the fairness of the prese
 
 *Note:* When you have access to the raw population data you may want to use the *Bayesian audit workflow*, an analysis that guides you through the audit process.
 
+#### Manual
+
+For a global introduction to this analysis, please download the manual for the Audit module [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
+
 ----
 
 Standard Options
@@ -170,7 +174,7 @@ R Packages
 References
 -------
 
-Derks, K (2020). jfa: Bayesian and Classical Audit Sampling. R package version 0.3.1.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.1.
 
 Dyer, D., & Pierce, R. L. (1993). On the choice of the prior distribution in hypergeometric sampling. <i>Communications in Statistics-Theory and Methods</i>, 22(8), 2125-2146.
 

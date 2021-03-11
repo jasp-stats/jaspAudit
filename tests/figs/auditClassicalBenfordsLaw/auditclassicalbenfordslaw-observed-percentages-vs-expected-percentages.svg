@@ -99,5 +99,5 @@
 <rect x='399.37' y='29.65' width='21.42' height='21.42' style='stroke-width: 2.83; fill: #A9A9A9;' clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)' />
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)'><text x='263.94' y='46.22' style='font-size: 17.00px; font-family: Liberation Sans;' textLength='73.69px' lengthAdjust='spacingAndGlyphs'>Observed</text></g>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)'><text x='427.74' y='46.22' style='font-size: 17.00px; font-family: Liberation Sans;' textLength='101.52px' lengthAdjust='spacingAndGlyphs'>Benford's law</text></g>
-<g clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)'><text x='146.27' y='11.70' style='font-size: 17.00px; font-family: Liberation Sans;' textLength='510.17px' lengthAdjust='spacingAndGlyphs'>auditClassicalBenfordsLaw-observed-percentages-vs-benford-s-law</text></g>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8NTc2LjAwfDAuMDA=)'><text x='113.66' y='11.70' style='font-size: 17.00px; font-family: Liberation Sans;' textLength='575.39px' lengthAdjust='spacingAndGlyphs'>auditClassicalBenfordsLaw-observed-percentages-vs-expected-percentages</text></g>
 </svg>
