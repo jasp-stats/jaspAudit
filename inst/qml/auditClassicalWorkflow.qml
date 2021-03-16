@@ -274,9 +274,12 @@ Form
 				allowAnalysisOwnComputedColumns: 	false
 				onCountChanged:								
 				{
+					if (initialized)
+					{
 													monetaryVariable.count > 0 ? poisson.click() : binomial.click()
 													monetaryVariable.count > 0 ? musSampling.click() : recordSampling.click() 
 													monetaryVariable.count > 0 ? variableTypeAuditValues.click() : variableTypeCorrect.click()
+					}
 				}
 			}
 		}
