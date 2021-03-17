@@ -17,7 +17,7 @@ Default input options
 -------
 
 #### Variable
-Here you can provide the variable that contains the digits that should be tested against Benford's law or the uniform distribution.
+Here you can provide the variable that contains the digits that should be tested against Benford's law or the uniform distribution. The value 0 will be omitted from the data.
 
 #### Check digits
 This option allows you to specify which digits you want to test against Benford's law or the uniform distribution. Possible options are:
@@ -25,7 +25,7 @@ This option allows you to specify which digits you want to test against Benford'
 - First and second: Checks the first and second digit of the transactions against the specified distribution.
 - Last: Checks only the last digit of the transactions against the specified distribution.
 
-#### Compare to
+#### Reference distribution
 This option allows you to specify which distribution you want to test the digits against. Possible options are:
 - Benford's law (default): Test the digits against Benford's law.
 - Uniform distribution: Test the digits against the uniform distribution.
@@ -63,7 +63,7 @@ Advanced output (tables)
 #### Frequency statistics
 Produces a table containing, for every digit, the count, observed percentage in the population, and expected percentage under Benford's law or the uniform distribution.
 
-#### Compare vs. Benford's Law
+#### Compare to reference distribution
 Produces a plot that shows the observed distribution of digits in the population, compared to the expected distribution under the Benford's law or the uniform distribution. 
 
 ----

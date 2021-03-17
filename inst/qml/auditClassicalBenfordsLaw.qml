@@ -105,7 +105,7 @@ Form {
 				RadioButton
 				{
 					name:				"benford"
-					text:				qsTr("Benford's Law")
+					text:				qsTr("Benford's law")
 					checked:			true
 				}
 

@@ -152,8 +152,9 @@ jfaBenfordsLawStage <- function(options, jaspResults, position){
     
   } else if(ready){
     
-    totalObs <- nrow(dataset)
     obs <- dataset[[.v(options[["values"]])]]
+	obs <- obs[obs != 0] # 0.0000 crashes the analysis since it is not a valid count
+	totalObs <- length(obs)
     
     if(options[["digits"]] == "first"){
       leadingDigits <- table(as.numeric(substring(format(abs(obs), scientific = TRUE), 1, 1)))
