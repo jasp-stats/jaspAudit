@@ -90,6 +90,8 @@ The assessments of the inherent risk and control risk (Audit Risk Model) can be 
 #### Expected errors in sample
 The expected errors are the tolerable errors that can be found in the sample while still achieving the specified sampling objectives. A sample size is calculated so that, when the number of expected errors is found in the sample, the desired confidence is retained.
 
+*Note:* It is advised to set this value conservatively to minimize the probability of the observed errors exceeding the expected errors, which would imply that insufficient work has been done.
+
 *Base effects on options*: Disables the assessments of inherent and control risk. Selects high inherent risk and high control risk.
 
 **Absolute:** Enter your expected errors as a monetary value (e.g., $1.000 in a total balance of $1.000.000).
