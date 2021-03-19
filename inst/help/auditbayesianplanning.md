@@ -84,6 +84,8 @@ When both risk assessments are set to High (100%) the audit risk model is not us
 #### Expected errors in sample
 The expected errors are the tolerable errors that can be found in the sample while still achieving the specified sampling objectives. A sample size is calculated so that, when the number of expected errors is found in the sample, the desired confidence is retained.
 
+*Note:* It is advised to set this value conservatively to minimize the probability of the observed errors exceeding the expected errors, which would imply that insufficient work has been done.
+
 *Base effects on options*: Disables the custom prior probabilities option.
 
 **Absolute:** Enter your expected errors as a monetary value (e.g., $1.000 in a total balance of $1.000.000).
