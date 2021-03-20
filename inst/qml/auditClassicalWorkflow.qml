@@ -1192,6 +1192,7 @@ Form
 				colName:							"Filter"
 				initialValuesSource: 				"monetaryVariable"
 				defaultValue:						0
+				decimals:							10
 			}
 		}
 
