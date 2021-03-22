@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-03-16 17:02+0000\n"
+"PO-Revision-Date: 2021-03-23 19:29+0000\n"
 "Last-Translator: Paulina Elizabeth Robalino <paulina.e.robalino@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/es/>\n"
@@ -254,10 +254,9 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Prior Information"
 msgstr "Informacion previa"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior information:"
-msgstr "Informacion previa"
+msgstr "Informacion previa:"
 
 #, fuzzy
 msgctxt "auditBayesianEvaluation|"
@@ -381,10 +380,9 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Area Under Posterior"
 msgstr "Área debajo de la parte posterior"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "One-sided upper bound"
-msgstr "límite superior:"
+msgstr "Límite superior unilateral"
 
 #, fuzzy
 msgctxt "auditBayesianEvaluation|"
@@ -584,10 +582,9 @@ msgctxt "auditBayesianPlanning|"
 msgid "Prior Information"
 msgstr "Informacion previa"
 
-#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Prior information:"
-msgstr "Informacion previa"
+msgstr "Informacion previa:"
 
 #, fuzzy
 msgctxt "auditBayesianPlanning|"
@@ -741,10 +738,9 @@ msgctxt "auditBayesianPlanning|"
 msgid "Enable"
 msgstr "Habilitar"
 
-#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Show explanatory text at each step of the analysis"
-msgstr "Mostrar texto explicativo en cada paso del análisis."
+msgstr "Mostrar texto explicativo en cada paso del análisis"
 
 #, fuzzy
 msgctxt "auditBayesianPlanning|"
@@ -892,10 +888,9 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Enable"
 msgstr "Habilitar"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Show explanatory text at each step of the analysis"
-msgstr "Mostrar texto explicativo en cada paso del análisis."
+msgstr "Mostrar texto explicativo en cada paso del análisis"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -973,10 +968,9 @@ msgctxt "auditBayesianWorkflow|"
 msgid "C.     Prior Information"
 msgstr "Informacion previa"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior information:"
-msgstr "Informacion previa"
+msgstr "Informacion previa:"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1292,10 +1286,9 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Random sampling"
 msgstr "Muestreo aleatorio"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about random sampling."
-msgstr "Seleccionar observaciones por muestreo aleatorio"
+msgstr "Seleccionar observaciones por muestreo aleatorio."
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1312,10 +1305,10 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Fixed interval sampling"
 msgstr "Muestreo de intervalo fijo"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about fixed interval sampling."
-msgstr "Seleccionar observaciones mediante muestreo de intervalo fijo"
+msgstr ""
+"Haga clic para obtener más información sobre el muestreo de intervalo fijo."
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1508,10 +1501,9 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Area Under Posterior"
 msgstr "Área debajo de la parte posterior"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "One-sided upper bound"
-msgstr "límite superior:"
+msgstr "Límite superior unilateral"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1963,7 +1955,6 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Binomial"
 msgstr "Binomio"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Poisson"
 msgstr "Poisson"
@@ -2151,7 +2142,6 @@ msgctxt "auditClassicalPlanning|"
 msgid "Binomial"
 msgstr "Binomio"
 
-#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Poisson"
 msgstr "Poisson"
@@ -2396,7 +2386,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Binomial"
 msgstr "Binomio"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Poisson"
 msgstr "Poisson"
@@ -2857,10 +2846,9 @@ msgctxt "auditSelection|"
 msgid "Additional Variables <i>(optional)</i>"
 msgstr "Variables adicionales <i> (opcional) </i>"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Number of sampling units to select"
-msgstr "Número de muestras: "
+msgstr "Número de unidades de muestreo para seleccionar"
 
 #, fuzzy
 msgctxt "auditSelection|"
@@ -3043,10 +3031,9 @@ msgctxt "auditSelection|"
 msgid "e.g. Count"
 msgstr "Contar"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Save as: "
-msgstr "Guardar como"
+msgstr "Guardar como "
 
 msgctxt "auditSelection|"
 msgid "<b>Synchronize: On</b>"
