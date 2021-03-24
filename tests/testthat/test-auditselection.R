@@ -10,6 +10,7 @@ options$displaySample <- TRUE
 options$addSampleIndicator <- FALSE
 options$selectionType <- "musSampling"
 options$selectionMethod <- "systematicSampling"
+options$typeSeed <- "seedManual"
 options$valuta <- "euroValuta"
 options$.meta <- list(additionalVariables = list(containsColumn = TRUE), monetaryVariable = list(
     containsColumn = TRUE), rankingVariable = list(containsColumn = TRUE), 
@@ -126,6 +127,7 @@ options$displaySample <- TRUE
 options$addSampleIndicator <- FALSE
 options$selectionType <- "recordSampling"
 options$selectionMethod <- "randomSampling"
+options$typeSeed <- "seedManual"
 options$.meta <- list(additionalVariables = list(containsColumn = TRUE), monetaryVariable = list(
     containsColumn = TRUE), rankingVariable = list(containsColumn = TRUE), 
     recordNumberVariable = list(containsColumn = TRUE), sampleIndicatorColumn = list(
@@ -209,6 +211,7 @@ options$addSampleIndicator <- FALSE
 options$selectionType <- "musSampling"
 options$selectionMethod <- "randomSampling"
 options$valuta <- "euroValuta"
+options$typeSeed <- "seedManual"
 options$.meta <- list(additionalVariables = list(containsColumn = TRUE), monetaryVariable = list(
     containsColumn = TRUE), rankingVariable = list(containsColumn = TRUE), 
     recordNumberVariable = list(containsColumn = TRUE), sampleIndicatorColumn = list(
