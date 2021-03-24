@@ -1096,17 +1096,36 @@ Form
 				}
 			}
 
-			IntegerField
+			RadioButtonGroup
 			{
-				id: 								seed
-				text: 								systematicSampling.checked ? qsTr("Starting point") : qsTr("Seed")
-				name: 								"seed"
-				defaultValue: 						1
-				min: 								1
-				max: 								99999
-				fieldWidth: 						60 * preferencesModel.uiScale
+				name: 								"typeSeed"
+				title: 								systematicSampling.checked ? qsTr("Starting Point") : qsTr("Seed")
 				enabled: 							!separateKnownAndUnknownMisstatement.checked & !pasteVariables.checked
 				visible:							!separateKnownAndUnknownMisstatement.checked
+
+				RadioButton
+				{
+					name:							"seedManual"
+					text:							qsTr("Manual")
+					checked:						true
+					childrenOnSameRow:				true
+					
+
+					IntegerField
+					{
+						name: 						"seed"
+						defaultValue: 				1
+						min: 						1
+						max: 						99999
+						fieldWidth: 				60 * preferencesModel.uiScale
+					}
+				}
+
+				RadioButton
+				{
+					name:							"seedRandom"
+					text:							qsTr("Random")
+				}
 			}
 		}
 

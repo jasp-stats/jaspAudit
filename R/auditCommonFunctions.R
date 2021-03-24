@@ -768,6 +768,7 @@
                                    "selectionMethod",
                                    "selectionType",
                                    "seed",
+                                   "typeSeed",
                                    "intervalStartingPoint",
                                    "sampleSize",
                                    "valuta",
@@ -791,6 +792,7 @@
                                      "selectionMethod",
                                      "selectionType",
                                      "seed",
+                                     "typeSeed",
                                      "intervalStartingPoint",
                                      "additionalVariables",
                                      "rankingVariable",
@@ -2311,6 +2313,7 @@
                                                                 "selectionMethod",
                                                                 "selectionType",
                                                                 "seed",
+                                                                "typeSeed",
                                                                 "intervalStartingPoint",
                                                                 "sampleSize",
                                                                 "addSampleIndicator",
@@ -2403,18 +2406,23 @@
   if(prevState[["sampleSize"]] == 0 || is.null(dataset))
     return()
   
-  if(algorithm == "interval"){
-    interval <- base::switch(units, "records" = nrow(dataset) / prevState[["sampleSize"]],
-                             "mus" = sum(dataset[, bookValues]) / prevState[["sampleSize"]])
-    if(options[["seed"]] > interval){
-      parentContainer$setError(gettextf("Your specified starting point lies outside the selection interval (%1$s).", round(interval, 3)))
-      return()
+  interval <- base::switch(units, "records" = nrow(dataset) / prevState[["sampleSize"]],
+                           "mus" = sum(dataset[, bookValues]) / prevState[["sampleSize"]])
+  
+  if (!is.null(prevState[["startingPoint"]])) {
+    startingPointSeed <- prevState[["startingPoint"]]
+  } else {
+    if (options[["typeSeed"]] == "seedManual") {
+      startingPointSeed <- options[["seed"]]
+    } else {
+      startingPointSeed <- sample(x = 1:floor(interval), size = 1)
     }
+    parentContainer[["startingPoint"]] <- createJaspState(startingPointSeed)
   }
   
-  startingPointSeed <- options[["seed"]]
-  if(!is.null(prevState[["startingPoint"]])){
-    startingPointSeed <- prevState[["startingPoint"]]
+  if(algorithm == "interval" && startingPointSeed > interval){
+    parentContainer$setError(gettextf("Your specified starting point lies outside the selection interval (%1$s).", round(interval, 3)))
+    return()
   }
   
   if(options[["shufflePopulationBeforeSampling"]]){
@@ -2427,7 +2435,7 @@
                            sampleSize = prevState[["sampleSize"]],
                            algorithm = algorithm,
                            units = units,
-                           seed = options[["seed"]],
+                           seed = startingPointSeed,
                            ordered = FALSE,
                            bookValues = bookValues,
                            intervalStartingPoint = startingPointSeed)
@@ -2452,8 +2460,6 @@
   table <- createJaspTable(title)
   table$position <- positionInContainer
   table$dependOn(options = c("bookValueDescriptives",
-                             "sampleDescriptives",
-                             "displaySample",
                              "samplingChecked",
                              "evaluationChecked"))
   
@@ -2468,12 +2474,15 @@
   if(options[["selectionMethod"]] != "randomSampling")
     table$addColumnInfo(name = "interval", 		title ="Interval", type = "string")
   
-  if(options[["selectionMethod"]] != "systematicSampling"){
-    message <- gettextf("The sample is drawn with random number generator <i>seed %1$s</i>.", options[["seed"]])
+  if(!is.null(prevState[["startingPoint"]])) {
+    startingPointSeed <- prevState[["startingPoint"]]
   } else {
-    startingPointSeed <- options[["seed"]]
-    if(!is.null(prevState[["startingPoint"]]))
-      startingPointSeed <- prevState[["startingPoint"]]
+    startingPointSeed <- parentContainer[["startingPoint"]]$object
+  }
+  
+  if(options[["selectionMethod"]] != "systematicSampling"){
+    message <- gettextf("The sample is drawn with random number generator <i>seed %1$s</i>.", startingPointSeed)
+  } else {
     message <- gettextf("Sampling unit %1$s is selected from each interval.", startingPointSeed)
   }
   table$addFootnote(message)
