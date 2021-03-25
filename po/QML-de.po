@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-03-25 11:29+0000\n"
+"Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.5.2-dev\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -244,10 +250,9 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Click to learn more about the prior information."
 msgstr ""
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Expected Errors in Sample"
-msgstr "Erwartete Fehler in der Stichprobe"
+msgstr "Erwartete Fehler in Stichprobe"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Inherent Risk"
@@ -291,7 +296,7 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Weighting factor"
-msgstr ""
+msgstr "Gewichtungsfaktor"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Advanced Options"
@@ -1011,7 +1016,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "x-axis limit"
 msgstr "x-Achse Grenze"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Expected posterior distribution"
 msgstr "Erwartete Posterior-Verteilung"
@@ -2350,19 +2354,19 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Show Results As"
-msgstr ""
+msgstr "Ergebnisse anzeigen als"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Numbers"
-msgstr ""
+msgstr "Zahlen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Percentages"
-msgstr ""
+msgstr "Prozentwerte"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "B.     Tables and Plots"
-msgstr ""
+msgstr "B. Tabellen und Diagramme"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Statistics"
@@ -2382,26 +2386,24 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Scatter plot of Ist and Soll values"
-msgstr ""
+msgstr "Streudiagramm von Ist- und Soll-Werten"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Display correlation"
-msgstr ""
+msgstr "Korrelation anzeigen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Display transaction ID's"
-msgstr ""
+msgstr "Transaktions-IDs anzeigen"
 
 msgctxt "auditSelection|"
 msgid "Record ID's"
 msgstr "Eintrag-IDs"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Ist Position"
 msgstr "Ist-Position"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Ist Position <i>(optional)</i>"
 msgstr "Ist-Position <i>(optional)</i>"
@@ -2418,7 +2420,6 @@ msgctxt "auditSelection|"
 msgid "Number of sampling units to select"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Explanatory Text"
 msgstr "Erklärungstext"
@@ -2427,7 +2428,6 @@ msgctxt "auditSelection|"
 msgid "Enable"
 msgstr "Aktivieren"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Erklärungstext bei jedem Schritt der Analyse anzeigen"
@@ -2438,7 +2438,7 @@ msgstr "Auswahlmethode"
 
 msgctxt "auditSelection|"
 msgid "Randomly organize transactions before selection"
-msgstr ""
+msgstr "Transaktionen vor der Auswahl zufällig anordnen"
 
 msgctxt "auditSelection|"
 msgid "Sampling Units"
@@ -2500,7 +2500,6 @@ msgctxt "auditSelection|"
 msgid "Advanced Options"
 msgstr "Weitere Optionen"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Currency"
 msgstr "Währung"
@@ -2599,21 +2598,20 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Digit Analysis"
-msgstr ""
+msgstr "Ziffernanalyse"
 
 msgctxt "Description|"
 msgid "Repeated Values"
-msgstr ""
+msgstr "Wiederholte Werte"
 
 msgctxt "Description|"
 msgid "Repeated Values Analysis"
-msgstr ""
+msgstr "Analyse wiederholter Werte"
 
 msgctxt "Description|"
 msgid "True Value Estimation"
-msgstr ""
+msgstr "Schätzung des wahren Wertes"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Dollar ($)"
 msgstr "Dollar ($)"
@@ -2624,11 +2622,11 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Post-hoc corrections to population value"
-msgstr ""
+msgstr "Post-hoc-Korrekturen des Populationswertes"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Calculation Preferences"
-msgstr ""
+msgstr "Berechnungsvorgaben"
 
 msgctxt "auditBayesianWorkflow|"
 msgid ""
@@ -2645,83 +2643,76 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Post-hoc corrections to population value"
-msgstr ""
+msgstr "Post-hoc-Korrekturen des Populationswertes"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Audit Risk"
 msgstr "Auditrisiko"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Reference Distribution"
-msgstr ""
+msgstr "Referenzverteilung"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Benford's Law"
 msgstr "Benfordsches Gesetz"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Check Digits"
-msgstr ""
+msgstr "Überprüfen von Ziffern"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First digit"
-msgstr ""
+msgstr "Erste Ziffer"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First and second digits"
-msgstr ""
+msgstr "Erste und zweite Ziffer"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Last digit"
-msgstr ""
+msgstr "Letzte Ziffer"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Frequency statistics"
-msgstr ""
+msgstr "Häufigkeitsstatistiken"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Compare to reference distribution"
-msgstr ""
+msgstr "Vergleich mit Referenzverteilung"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Ist Position"
 msgstr "Ist-Position"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Soll Position"
 msgstr "Soll-Position"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Estimation Method"
 msgstr "Schätzmethode"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Direct estimator"
-msgstr ""
+msgstr "Direkter Schätzer"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Difference estimator"
-msgstr ""
+msgstr "Differenz-Schätzer"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Ratio estimator"
-msgstr ""
+msgstr "Quotient-Schätzer"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Regression estimator"
-msgstr ""
+msgstr "Regressionsschätzer"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Dollar ($)"
 msgstr "Dollar ($)"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Tables"
 msgstr "Tabellen"
@@ -2732,128 +2723,119 @@ msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Post-hoc corrections to population value"
-msgstr ""
+msgstr "Post-hoc-Korrekturen des Populationswertes"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Audit Risk"
 msgstr "Auditrisiko"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
 msgstr "Konfidenz"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory Text"
 msgstr "Erklärungstext"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Enable"
 msgstr "Aktivieren"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Click to learn more about the explanatory text."
-msgstr "Klicken Sie hier, um mehr über den erläuternden Text zu erfahren."
+msgstr "Klicke hier, um mehr über den erläuternden Text zu erfahren."
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Variable"
 msgstr "Variable"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tests"
-msgstr ""
+msgstr "Tests"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Average frequency"
-msgstr ""
+msgstr "Mittlere Häufigkeit"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Entropy"
-msgstr ""
+msgstr "Entropie"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Shuffle Decimal Digits"
-msgstr ""
+msgstr "Dezimalziffern mischen"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "First and second digit"
-msgstr ""
+msgstr "Erste und zweite Ziffer"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Second digit"
-msgstr ""
+msgstr "Zweite Ziffer"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "All digits"
-msgstr ""
+msgstr "Alle Ziffern"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Bootstrap Options"
-msgstr ""
+msgstr "Bootstrap-Optionen"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Number of samples"
-msgstr ""
+msgstr "Stichprobenumfang"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Seed"
 msgstr "Startwert für Zufallszahlen"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Assumption checks"
-msgstr ""
+msgstr "Annahmeprüfungen"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Frequency table"
-msgstr ""
+msgstr "Häufigkeitstabelle"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Plots"
 msgstr "Abbildungen"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Observed vs. expected values"
-msgstr ""
+msgstr "Beobachtete vs. erwartete Werte"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Histogram of individual values"
-msgstr ""
+msgstr "Histogramm der Einzelwerte"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Label"
-msgstr ""
+msgstr "Bezeichnung"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "with highest occurrence"
-msgstr ""
+msgstr "mit höchstem Auftreten"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>Bericht herunterladen</b>"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Calculation Preferences"
-msgstr ""
+msgstr "Berechnungsvorgaben"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Calculation Preferences"
-msgstr ""
+msgstr "Berechnungsvorgaben"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Extrapolated amounts"
-msgstr ""
+msgstr "Hochgerechnete Beträge"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Additional samples for sampling objectives"
@@ -2861,7 +2843,7 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Post-hoc corrections to population value"
-msgstr ""
+msgstr "Post-hoc-Korrekturen des Populationswertes"
 
 msgctxt "auditBayesianEvaluation|"
 msgid ""
