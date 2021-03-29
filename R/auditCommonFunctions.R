@@ -2476,8 +2476,10 @@
   
   if(!is.null(prevState[["startingPoint"]])) {
     startingPointSeed <- prevState[["startingPoint"]]
-  } else {
+  } else if (!is.null(parentContainer[["startingPoint"]])) {
     startingPointSeed <- parentContainer[["startingPoint"]]$object
+  } else {
+	startingPointSeed <- options[["seed"]]
   }
   
   if(options[["selectionMethod"]] != "systematicSampling"){
