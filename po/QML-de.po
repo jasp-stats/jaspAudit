@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-03-25 11:29+0000\n"
+"PO-Revision-Date: 2021-04-11 14:26+0000\n"
 "Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/de/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5.2-dev\n"
+"X-Generator: Weblate 4.6-dev\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -220,7 +220,7 @@ msgstr "Prior-Information"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior information:"
-msgstr ""
+msgstr "Prior-Information:"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "None"
@@ -232,23 +232,23 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Equal prior probabilities"
-msgstr ""
+msgstr "Gleiche Prior-Wahrscheinlichkeiten"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Custom prior probabilities"
-msgstr ""
+msgstr "Benutzerdefinierte Prior-Wahrscheinlichkeiten"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Earlier sample"
-msgstr ""
+msgstr "Vorherige Stichprobe"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Weighted earlier sample"
-msgstr ""
+msgstr "Gewichtete vorherige Stichprobe"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Click to learn more about the prior information."
-msgstr ""
+msgstr "Klicken hier, um mehr über die Prior-Informationen zu erfahren."
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Expected Errors in Sample"
@@ -280,19 +280,19 @@ msgstr "Kontrollrisiko"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior probability of tolerable misstatement: p(H₋) = "
-msgstr ""
+msgstr "Prior-Wahrscheinlichkeit der tolerierbaren Falschangabe: p(H₋) = "
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior probability of intolerable misstatement: p(H₊) = "
-msgstr ""
+msgstr "Prior-Wahrscheinlichkeit einer untolerierbaren Falschangabe: p(H₊) = "
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Number of earlier seen transactions"
-msgstr ""
+msgstr "Anzahl zuvor beobachteter Transaktionen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Number of earlier seen errors"
-msgstr ""
+msgstr "Anzahl zuvor beobachteter Fehler"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Weighting factor"
@@ -302,7 +302,6 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Advanced Options"
 msgstr "Weitere Optionen"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Probability Distribution"
 msgstr "Wahrscheinlichkeitsverteilung"
@@ -325,27 +324,27 @@ msgstr "Fläche Unter Posterior"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "One-sided upper bound"
-msgstr ""
+msgstr "Einseitige obere Grenze"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Two-sided interval"
-msgstr ""
+msgstr "Zweiseitiges Intervall"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Show Results As"
-msgstr ""
+msgstr "Ergebnisse anzeigen als"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Numbers"
-msgstr ""
+msgstr "Zahlen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Percentages"
-msgstr ""
+msgstr "Prozentwerte"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Extrapolated amounts"
-msgstr ""
+msgstr "Hochgerechnete Beträge"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Tables and Plots"
@@ -361,7 +360,7 @@ msgstr "Wahrscheinlichster Fehler (MLE)"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Obtained precision"
-msgstr ""
+msgstr "Erreichte Präzision"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Posterior odds"
@@ -377,13 +376,12 @@ msgstr "Tabellen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Description of prior and posterior distribution"
-msgstr ""
+msgstr "Beschreibung der Prior- und Posterior-Verteilung"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Evaluate post-hoc assumptions"
-msgstr ""
+msgstr "Post-hoc-Annahmen auswerten"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Confidence interval"
 msgstr "Konfidenzintervall"
@@ -398,17 +396,16 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Scatter plot of Ist and Soll values"
-msgstr ""
+msgstr "Streudiagramm der Ist- und Soll-Werte"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Display correlation"
-msgstr ""
+msgstr "Korrelation anzeigen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Display transaction ID's"
-msgstr ""
+msgstr "Transaktions-IDs anzeigen"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior and posterior distribution"
 msgstr "Prior- und Posterior-Verteilung"
@@ -419,9 +416,8 @@ msgstr "Grenze x-Achse"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Display inferential statistics"
-msgstr ""
+msgstr "Inferenzstatistiken anzeigen"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Display additional information"
 msgstr "Zusätzliche Informationen anzeigen"
@@ -463,15 +459,13 @@ msgctxt "auditBayesianPlanning|"
 msgid "Click to learn more about the performance materiality."
 msgstr ""
 
-#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Obtain a required minimum precision"
-msgstr "Erhalten Sie eine erforderliche Mindestgenauigkeit"
+msgstr "Erziele eine erforderliche Mindestgenauigkeit"
 
-#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Click to learn more about the precision."
-msgstr "Klicken Sie hier, um mehr über die Präzision zu erfahren."
+msgstr "Klicke hier, um mehr über die Präzision zu erfahren."
 
 msgctxt "auditBayesianPlanning|"
 msgid "Population"
@@ -499,7 +493,7 @@ msgstr "Prior-Information"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior information:"
-msgstr ""
+msgstr "Prior-Information:"
 
 msgctxt "auditBayesianPlanning|"
 msgid "None"
@@ -507,32 +501,31 @@ msgstr "Keine"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Audit Risk Model"
-msgstr ""
+msgstr "Audit-Risiko-Modell"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Equal prior probabilities"
-msgstr ""
+msgstr "Gleiche Prior-Wahrscheinlichkeiten"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Custom prior probabilities"
-msgstr ""
+msgstr "Benutzerdefinierte Prior-Wahrscheinlichkeiten"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Earlier sample"
-msgstr ""
+msgstr "Vorherige Stichprobe"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Weighted earlier sample"
-msgstr ""
+msgstr "Gewichtete vorherige Stichprobe"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Click to learn more about the prior information."
-msgstr ""
+msgstr "Klicken hier, um mehr über die Prior-Informationen zu erfahren."
 
-#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Expected Errors in Sample"
-msgstr "Erwartete Fehler in der Stichprobe"
+msgstr "Erwartete Fehler in Stichprobe"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Inherent Risk"
@@ -560,29 +553,28 @@ msgstr "Kontrollrisiko"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior probability of tolerable misstatement: p(H₋) = "
-msgstr ""
+msgstr "Prior-Wahrscheinlichkeit der tolerierbaren Falschangabe: p(H₋) = "
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior probability of intolerable misstatement: p(H₊) = "
-msgstr ""
+msgstr "Prior-Wahrscheinlichkeit einer untolerierbaren Falschangabe: p(H₊) = "
 
 msgctxt "auditBayesianPlanning|"
 msgid "Number of earlier seen transactions"
-msgstr ""
+msgstr "Anzahl zuvor beobachteter Transaktionen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Number of earlier seen errors"
-msgstr ""
+msgstr "Anzahl zuvor beobachteter Fehler"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Weighting factor"
-msgstr ""
+msgstr "Gewichtungsfaktor"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Advanced Options"
 msgstr "Weitere Optionen"
 
-#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Probability Distribution"
 msgstr "Wahrscheinlichkeitsverteilung"
@@ -693,7 +685,7 @@ msgstr "Kredibilitätsregion"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Hypothesis regions"
-msgstr ""
+msgstr "Hypothesenregionen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "<b>Download Report</b>"
@@ -757,60 +749,51 @@ msgstr "Erklärungstext bei jedem Schritt der Analyse anzeigen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Variable Definitions</b>"
-msgstr ""
+msgstr "<b>Variablendefinitionen</b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Transaction ID's"
-msgstr "Transaktions-ID's"
+msgstr "Transaktions-IDs"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Ist Position <i>(required)</i>"
-msgstr "Soll-Position <i>(benötigt)</i>"
+msgstr "Ist-Position <i>(benötigt)</i>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Ist Position <i>(optional)</i>"
 msgstr "Ist-Position <i>(optional)</i>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "A.     Critical Transactions"
-msgstr "A.     Kritische Transaktionen"
+msgstr "A. Kritische Transaktionen"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Select critical transactions"
-msgstr "Wähle kritische Transaktionen"
+msgstr "Kritische Transaktionen auswählen"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Column name critical transactions: "
-msgstr "Spaltenname kritische Transaktionen: "
+msgstr "Spaltenname kritischer Transaktionen: "
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Negative Ist values"
 msgstr "Negative Ist-Werte"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "How to handle critical transactions"
 msgstr "Umgang mit kritischen Transaktionen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Inspect"
-msgstr ""
+msgstr "Überprüfen"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Remove"
 msgstr "Löschen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Critical Transaction List</b>"
-msgstr ""
+msgstr "<b>Liste kritischer Transaktionen</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "B.     Efficiency Techniques"
@@ -830,11 +813,11 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "C.     Prior Information"
-msgstr ""
+msgstr "C.Prior-Informationen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior information:"
-msgstr ""
+msgstr "Prior-Information:"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "None"
@@ -842,36 +825,35 @@ msgstr "Keine"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Audit Risk Model"
-msgstr ""
+msgstr "Audit-Risiko-Modell"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Equal prior probabilities"
-msgstr ""
+msgstr "Gleiche Prior-Wahrscheinlichkeiten"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Custom prior probabilities"
-msgstr ""
+msgstr "Benutzerdefinierte Prior-Wahrscheinlichkeiten"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Earlier sample"
-msgstr ""
+msgstr "Vorherige Stichprobe"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Weighted earlier sample"
-msgstr ""
+msgstr "Gewichtete vorherige Stichprobe"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about the prior information."
-msgstr ""
+msgstr "Klicken hier, um mehr über die Prior-Informationen zu erfahren."
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Expected Errors in Sample"
-msgstr "Erwartete Fehler in der Stichprobe"
+msgstr "Erwartete Fehler in Stichprobe"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "All possible"
-msgstr ""
+msgstr "Alles möglich"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Inherent Risk"
@@ -899,29 +881,28 @@ msgstr "Kontrollrisiko"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior probability of tolerable misstatement: p(H₋) = "
-msgstr ""
+msgstr "Prior-Wahrscheinlichkeit der tolerierbaren Falschangabe: p(H₋) = "
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior probability of intolerable misstatement: p(H₊) = "
-msgstr ""
+msgstr "Prior-Wahrscheinlichkeit einer untolerierbaren Falschangabe: p(H₊) = "
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Number of earlier seen transactions"
-msgstr ""
+msgstr "Anzahl zuvor beobachteter Transaktionen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Number of earlier seen errors"
-msgstr ""
+msgstr "Anzahl zuvor beobachteter Fehler"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Weighting factor"
-msgstr ""
+msgstr "Gewichtungsfaktor"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "D.     Advanced Options"
-msgstr ""
+msgstr "D. Weitere Optionen"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Probability Distribution"
 msgstr "Wahrscheinlichkeitsverteilung"
@@ -960,7 +941,7 @@ msgstr "Andere"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "E.     Tables and Plots"
-msgstr ""
+msgstr "E. Tabellen und Diagramme"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Statistics"
@@ -978,17 +959,14 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Descriptive statistics for Ist values"
 msgstr "Deskriptive Statistiken für Ist-Werte"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Implicit sample induced by prior distribution"
 msgstr "Implizite Stichprobe induziert durch Prior-Verteilung"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Description of prior and expected posterior distribution"
 msgstr "Beschreibung der Prior- und erwarteten Posterior-Verteilung"
@@ -997,17 +975,14 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Plots"
 msgstr "Abbildungen"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Distribution of Ist values"
 msgstr "Verteilung der Ist-Werte"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Compare required sample sizes"
 msgstr "Erforderliche Stichprobengrößen vergleichen"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Implied prior distribution"
 msgstr "Implizierte Prior-Verteilung"
@@ -1020,14 +995,13 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Expected posterior distribution"
 msgstr "Erwartete Posterior-Verteilung"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Display additional information"
 msgstr "Zusätzliche Informationen anzeigen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Shade area"
-msgstr ""
+msgstr "Fläche schattieren"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Credible region"
@@ -1035,7 +1009,7 @@ msgstr "Kredibilitätsregion"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Hypothesis regions"
-msgstr ""
+msgstr "Hypothesenregionen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Download Report</b>"
@@ -1053,7 +1027,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "2. Selection"
 msgstr "2. Auswahl"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Add custom variables to sample"
 msgstr "Benutzerdefinierte Variablen zur Stichprobe hinzufügen"
@@ -1066,14 +1039,13 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Additional Variables <i>(optional)</i>"
 msgstr "Weitere Variablen <i>(optional)</i>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "A.     Selection Methodology"
-msgstr "Auswahlmethode"
+msgstr "A. Auswahl-Methodik"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Randomly organize transactions before selection"
-msgstr ""
+msgstr "Transaktionen vor der Auswahl zufällig anordnen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Sampling Units"
@@ -1131,20 +1103,17 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Seed"
 msgstr "Startwert für Zufallszahlen"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "B.     Tables"
 msgstr "B. Tabellen"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Display selected transactions"
 msgstr "Ausgewählte Transaktionen anzeigen"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Descriptive statistics of selected transactions"
-msgstr "Beschreibende Statistik ausgewählter Transaktionen"
+msgstr "Deskriptive Statistiken ausgewählter Transaktionen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Mean"
