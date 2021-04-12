@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-04-11 14:26+0000\n"
+"PO-Revision-Date: 2021-04-13 09:34+0000\n"
 "Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/de/>\n"
@@ -1161,16 +1161,15 @@ msgstr "3. Durchführung"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>How would you like to evaluate your transactions?</b>"
-msgstr ""
+msgstr "<b>Wie möchtest Du deine Transaktionen auswerten?</b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Soll values"
 msgstr "Soll-Werte"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Adds a column to specify the Soll values of the transactions."
-msgstr ""
+msgstr "Fügt eine Spalte hinzu, um die Soll-Werte der Transaktionen anzugeben."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Correct / Incorrect"
@@ -1180,6 +1179,8 @@ msgctxt "auditBayesianWorkflow|"
 msgid ""
 "Adds a column to specify the transactions as correct (0) or misstated (1)"
 msgstr ""
+"Fügt eine Spalte hinzu, um die Transaktionen als korrekt (0) oder falsch "
+"angegeben (1) zu spezifizieren"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Column name selection result: "
@@ -1187,7 +1188,7 @@ msgstr "Spaltenname Auswahlergebnis: "
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Column name Soll values: "
-msgstr ""
+msgstr "Spaltenname Soll-Werte: "
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Column name audit result: "
@@ -1199,17 +1200,19 @@ msgstr "<b>Variablen einfüllen</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected transactions with their Soll values.</b>"
-msgstr ""
+msgstr "<b>Annotiere die ausgewählten Transaktionen mit ihren Sollwerten.</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid ""
 "<b>Annotate your selected transactions with a 0 (correct) or a 1 (misstated)."
 "</b>"
 msgstr ""
+"<b>Annotiere die ausgewählten Transaktionen mit einer 0 (korrekt) oder einer "
+"1 (falsch angegeben).</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "A.     Data Entry"
-msgstr ""
+msgstr "A. Dateneingabe"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Evaluation</b>"
@@ -1225,7 +1228,7 @@ msgstr "4. Evaluation"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Soll Values"
-msgstr ""
+msgstr "Soll-Werte"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Audit Result"
@@ -1233,7 +1236,7 @@ msgstr "Auditergebnis"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "A.     Advanced Options"
-msgstr ""
+msgstr "A. Weitere Optionen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Estimation Method"
@@ -1249,23 +1252,23 @@ msgstr "Fläche unter Posterior"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "One-sided upper bound"
-msgstr ""
+msgstr "Einseitige obere Grenze"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Two-sided interval"
-msgstr ""
+msgstr "Zweiseitiges Intervall"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Show Results As"
-msgstr ""
+msgstr "Ergebnisse anzeigen als"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Numbers"
-msgstr ""
+msgstr "Zahlen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Percentages"
-msgstr ""
+msgstr "Prozentwerte"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Extrapolated amounts"
