@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-03-03 12:24\n"
-"PO-Revision-Date: 2021-02-27 16:50+0000\n"
+"PO-Revision-Date: 2021-04-10 17:27+0000\n"
 "Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 4.5\n"
+"X-Generator: Weblate 4.6-dev\n"
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Prozedur</u>"
@@ -164,9 +164,8 @@ msgstr "Chi-Quadrat"
 msgid "X%1$s"
 msgstr "X%1$s"
 
-#, fuzzy
 msgid "<b>Table %i.</b> Frequency Statistics"
-msgstr "<b>Tabelle %i.</b> Deskriptive Statistiken"
+msgstr "<b>Tabelle %i.</b> Häufigkeitsstatistiken"
 
 msgid "Benford's law"
 msgstr "Benfordsches Gesetz"
@@ -214,13 +213,11 @@ msgstr "ist verworfen"
 msgid "is not rejected"
 msgstr "ist nicht verworfen"
 
-#, fuzzy
 msgid "%1$s < α"
-msgstr "X%1$s"
+msgstr "%1$s < α"
 
-#, fuzzy
 msgid "%1$s >= α"
-msgstr "%1$s = %2$i"
+msgstr "%1$s >= α"
 
 msgid ""
 "The <i>p</i> value is %1$s and the null hypothesis that the first digits in "
@@ -532,24 +529,33 @@ msgid ""
 "what is expected, this test requires the assumption that the integer "
 "portions of the numbers are not associated with their decimal portions."
 msgstr ""
+"Dieses Verfahren analysiert die Häufigkeit, mit der sich Werte innerhalb "
+"eines Datensatzes wiederholen, um statistisch festzustellen, ob die Daten "
+"wahrscheinlich manipuliert wurden. Im Gegensatz zum Benfordschen Gesetz und "
+"seinen Verallgemeinerungen wird bei diesem Ansatz die gesamte Zahl auf "
+"einmal untersucht, nicht nur die erste oder letzte Ziffer.\n"
+"\n"
+"Um festzustellen, ob die Daten eine übermäßige Menge an wiederholten Werten "
+"aufweisen, wird die Nullhypothese, dass die Daten keine unerwartete Menge an "
+"wiederholten Werten enthalten, mit einem Typ-I-Fehler von <b>%1$s</b> "
+"getestet. Um die Erwartung zu quantifizieren, erfordert dieser Test die "
+"Annahme, dass die ganzzahligen Anteile der Zahlen nicht mit ihren dezimalen "
+"Anteilen verbunden sind."
 
-#, fuzzy
 msgid "<u>Assessing repeated values</u>"
-msgstr "<u>Prüfung des Benfordschen Gesetzes</u>"
+msgstr "<u>Prüfung wiederholter Werte</u>"
 
-#, fuzzy
 msgid "<b>Table %i.</b> Repeated Values Test"
-msgstr "<b>Tabelle %i.</b> Anpassungsgüte-Test"
+msgstr "<b>Tabelle %i.</b> Test wiederholter Werte"
 
 msgid "Average"
-msgstr ""
+msgstr "Mittelwert"
 
 msgid "Frequency"
 msgstr "Häufigkeit"
 
-#, fuzzy
 msgid "<i>S</i>"
-msgstr "<i>p</i>-Wert"
+msgstr "<i>S</i>"
 
 msgid "Entropy"
 msgstr "Entropie"
@@ -558,10 +564,11 @@ msgid ""
 "Both <i>p</i> values are one-sided and are computed on the basis of %1$s "
 "samples."
 msgstr ""
+"Beide <i>p</i>-Werte sind einseitig und werden auf der Basis von %1$s "
+"Stichproben berechnet."
 
-#, fuzzy
 msgid "<b>Table %i.</b> Assumption Checks"
-msgstr "<b>Tabelle %1$i.</b> Evaluations-Zusammenfassung"
+msgstr "<b>Tabelle %i.</b> Annahmeprüfungen"
 
 msgid "n"
 msgstr "n"
@@ -576,49 +583,50 @@ msgid ""
 "The displayed <i>p</i> value is for a two-sided test against H₀: <i>r = 0</"
 "i>."
 msgstr ""
+"Der angezeigte <i>p</i>-Wert ist für einen zweiseitigen Test gegen H₀: <i>r "
+"= 0</i>."
 
-#, fuzzy
 msgid "<b>Table %i.</b> Frequencies"
-msgstr "<b>Tabelle %1$i.</b> Planungs-Zusammenfassung"
+msgstr "<b>Tabelle %i.</b> Häufigkeiten"
 
-#, fuzzy
 msgid "Observed vs. Expected Average Frequency"
-msgstr "Beobachtete Prozentzahlen vs. Erwartete Prozentzahlen"
+msgstr "Beobachtete vs. erwartete durchschnittliche Häufigkeit"
 
-#, fuzzy
 msgid "Average frequency"
-msgstr "Häufigkeit"
+msgstr "Mittlere Häufigkeit"
 
 msgid "Simulated frequency"
-msgstr ""
+msgstr "Simulierte Häufigkeit"
 
 msgid ""
 "<b>Figure %i:</b> The expected average frequencies of values versus the "
 "observed average frequency in the data set."
 msgstr ""
+"<b>Abbildung %i:</b> Die erwarteten durchschnittlichen Werte-Häufigkeiten "
+"gegenüber der beobachteten durchschnittlichen Häufigkeit im Datensatz."
 
-#, fuzzy
 msgid "Observed vs. Expected Entropy"
-msgstr "Beobachtete Prozentzahlen vs. Erwartete Prozentzahlen"
+msgstr "Beobachtete vs. erwartete Entropie"
 
 msgid ""
 "<b>Figure %i:</b> The expected entropy of values versus the observed entropy "
 "in the data set."
 msgstr ""
+"<b>Abbildung %i:</b> Die erwartete Entropie der Werte gegenüber der "
+"beobachteten Entropie im Datensatz."
 
 msgid "Histogram of Individual Values"
-msgstr ""
+msgstr "Histogramm der Einzelwerte"
 
 msgid "<b>Figure %i:</b> Histogram of the individual values in the data set."
-msgstr ""
+msgstr "<b>Abbildung %i:</b> Histogramm der Einzelwerte im Datensatz."
 
-#, fuzzy
 msgid ""
 "The <i>p</i> value is %1$s and the null hypothesis that the data do not "
 "contain an unexpected amount of repeated values <b>%2$s</b>."
 msgstr ""
-"Der <i>p</i>-Wert ist %1$s und die Nullhypothese, dass die letzten Ziffern "
-"des Datensatzes gemäß %2$s <b>%3$s</b> verteilt sind."
+"Der <i>p</i>-Wert ist %1$s und die Nullhypothese, dass die Daten keine "
+"unerwartete Menge an wiederholten Werten enthalten <b>%2$s</b>."
 
 msgid "<b>percentage</b>"
 msgstr "<b>Prozentzahl</b>"
@@ -682,30 +690,27 @@ msgstr ""
 msgid "Selection summary"
 msgstr "Auswahl-Zusammenfassung"
 
-#, fuzzy
 msgid ""
 "Your sample size is larger than (or equal to) your population size. Cannot "
 "take a record sample larger than the population."
 msgstr ""
-"Der Stichprobenumfang ist größer (oder gleich) der Größe der "
-"Grundgesamtheit. Es kann keine Stichprobe gezogen werden, die größer als die "
-"Grundgesamtheit ist."
+"Der Stichprobenumfang ist größer (oder gleich) als die Größe der "
+"Grundgesamtheit. Man kann keine Datensatzstichprobe nehmen, die größer als "
+"die Grundgesamtheit ist."
 
-#, fuzzy
 msgid ""
 "Your sample size is larger than (or equal to) your population value. Cannot "
 "take a MUS sample larger than the population value."
 msgstr ""
-"Der Stichprobenumfang ist größer (oder gleich) der Größe der "
-"Grundgesamtheit. Es kann keine Stichprobe gezogen werden, die größer als die "
-"Grundgesamtheit ist."
+"Der Stichprobenumfang ist größer (oder gleich) als der Wert in der "
+"Grundgesamtheit. Man kann keine MUS-Stichprobe nehmen, die größer ist als "
+"der Grundgesamtheitswert."
 
-#, fuzzy
 msgid ""
 "You must specify unique transaction ID's. The row numbers of the data set "
 "are sufficient."
 msgstr ""
-"Es müssen eindeutige Fall-IDs angegeben werden. Die Zeilennummern des "
+"Es müssen eindeutige Transaktions-IDs angeben werden. Die Zeilennummern des "
 "Datensatzes sind ausreichend."
 
 msgid "Evaluation summary"
@@ -720,12 +725,11 @@ msgstr ""
 "Wähle die Annotationsmethode der Sollwerte aus den Optionen aus, oder "
 "verwende die Zusammenfassungsstatistiken, um die Stichprobe zu überprüfen."
 
-#, fuzzy
 msgid ""
 "The hypergeometric upper bound requires that you specify the population size."
 msgstr ""
-"Für die hypergeometrische Konfidenzgrenze müssen Sie die Größe der "
-"Population angeben."
+"Die hypergeometrische Obergrenze erfordert die Angabe der Größe der "
+"Grundgesamtheit."
 
 msgid ""
 "Your sample size is larger than (or equal to) your population size. Please "
@@ -734,22 +738,19 @@ msgstr ""
 "Der Stichprobenumfang ist größer (oder gleich) der Größe der "
 "Grundgesamtheit. Bitte passe die Größe der Grundgesamtheit entsprechend an."
 
-#, fuzzy
 msgid ""
 "The direct, difference, ratio, and regression bounds require that you "
 "specify the population size and the population value."
 msgstr ""
-"Für die direkte Vertrauensgrenze und ebenso für die Vertrauensgrenzen der "
-"Differenz, des Verhältnisses und der Regression müssen Sie die Größe der "
-"Population und den Populationswert angeben."
+"Die direkten, Differenz-, Verhältnis- und Regressions-Grenzen erfordern, die "
+"Größe und den Wert der Grundgesamtheit anzugeben."
 
-#, fuzzy
 msgid ""
 "Your must specify unique transaction ID's. The row numbers of the data set "
 "are sufficient."
 msgstr ""
-"Es müssen eindeutige Fall-IDs angegeben werden. Die Zeilennummern des "
-"Datensatzes sind ausreichend."
+"Es müssen eindeutige Transaktions-IDs angegeben werden. Die Zeilennummern "
+"des Datensatzes sind ausreichend."
 
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify your "
