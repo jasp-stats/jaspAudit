@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-03-03 12:24\n"
-"PO-Revision-Date: 2021-04-10 17:27+0000\n"
+"PO-Revision-Date: 2021-04-13 09:34+0000\n"
 "Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -1579,6 +1579,14 @@ msgid ""
 "most likely error in the population of <b>%4$s</b> and an %5$s upper bound "
 "of <b>%6$s</b>. %7$s"
 msgstr ""
+"Der Zweck der Auswertungsphase ist es, anhand einer Stichprobe auf die "
+"Falschangabe θ in der Grundgesamtheit zu schließen.\n"
+"\n"
+"Die Stichprobe bestand aus <b>%1$s</b> Stichprobeneinheiten, von denen "
+"insgesamt <b>%2$s</b> falsch angegeben wurden. Die Informationen aus dieser "
+"Stichprobe %3$s ergeben einen wahrscheinlichsten Fehler in der "
+"Grundgesamtheit von <b>%4$s</b> und eine %5$s Obergrenze von <b>%6$s</b>. "
+"%7$s"
 
 msgid "<b>Table %1$i.</b> Evaluation Summary"
 msgstr "<b>Tabelle %1$i.</b> Evaluations-Zusammenfassung"
@@ -1592,9 +1600,8 @@ msgstr "Totale Verunreinigung"
 msgid "Most likely error"
 msgstr "Wahrscheinlichster Fehler"
 
-#, fuzzy
 msgid "%1$s%% Upper bound"
-msgstr "%s obere Grenze"
+msgstr "%1$s%% obere Grenze"
 
 msgid "Obtained precision"
 msgstr ""
@@ -1605,46 +1612,37 @@ msgstr ""
 msgid "BF%1$s"
 msgstr "BF%1$s"
 
-#, fuzzy
 msgid ""
 "The upper bound is calculated according to the <b>Poisson</b> distributon."
-msgstr "Die Konfidenzgrenze ist gemäß der <b>Poisson</b>-Verteilung berechnet."
+msgstr "Die obere Grenze wird nach der <b>Poisson</b>-Verteilung berechnet."
 
-#, fuzzy
 msgid ""
 "The upper bound is calculated according to the <b>binomial</b> distributon."
-msgstr ""
-"Die Konfidenzgrenze wird gemäß der <b>Binomial</b>-Verteilung berechnet."
+msgstr "Die obere Grenze wird nach der <b>Binomial</b>-Verteilung berechnet."
 
-#, fuzzy
 msgid ""
 "The upper bound is calculated according to the <b>hypergeometric</b> "
 "distribution."
 msgstr ""
-"Die Konfidenzgrenze ist gemäß der <b>hypergeometrischen</b> Verteilung "
+"Die obere Grenze wird nach der <b>hypergeometrischen</b> Verteilung "
 "berechnet."
 
-#, fuzzy
 msgid "The upper bound is calculated according to the <b>Stringer</b> method."
-msgstr "Die Konfidenzgrenze ist gemäß der <b>Stringer</b>-Methode berechnet."
+msgstr "Die obere Schranke wird nach der Methode von <b>Stringer</b> berechnet."
 
-#, fuzzy
 msgid ""
 "The upper bound is calculated according to the <b>regression</b> method."
-msgstr "Die Konfidenzgrenze ist gemäß der <b>Regression</b>-Methode berechnet."
+msgstr "Die obere Grenze wird nach der Methode <b>Regression</b> berechnet."
 
-#, fuzzy
 msgid "The upper bound is calculated according to the <b>direct</b> method."
-msgstr "Die Konfidenzgrenze ist gemäß der <b>Direkt</b>-Methode berechnet."
+msgstr "Die obere Grenze wird nach der Methode <b>direct</b> berechnet."
 
-#, fuzzy
 msgid ""
 "The upper bound is calculated according to the <b>difference</b> method."
-msgstr "Die Konfidenzgrenze ist gemäß der <b>Differenz</b>-Methode berechnet."
+msgstr "Die obere Grenze wird nach dem <b>Differenz</b>-Verfahren berechnet."
 
-#, fuzzy
 msgid "The upper bound is calculated according to the <b>ratio</b> method."
-msgstr "Die Konfidenzgrenze ist gemäß der <b>Quotient</b>-Methode berechnet."
+msgstr "Die obere Grenze wird nach der Methode <b>Quotient</b> berechnet."
 
 msgid ""
 "The upper bound is calculated according to the <b>beta</b> distribution and "
@@ -1670,12 +1668,11 @@ msgid ""
 "distributed."
 msgstr ""
 
-#, fuzzy
 msgid ""
 "The upper bound is calculated according to the <b>Stringer</b> method with "
 "<b>LTA adjustment</b>."
 msgstr ""
-"Die Konfidenzgrenze ist nach der <b>Stringer</b>-Methode mit <b>LTA-"
+"Die obere Grenze wird nach dem <b>Stringer</b>-Verfahren mit <b>LTA-"
 "Anpassung</b> berechnet."
 
 #, fuzzy
@@ -1699,9 +1696,8 @@ msgstr ""
 "Entweder ist die Wesentlichkeit, die Größe oder der Wert der Grundgesamtheit "
 "als Null definiert, oder eine der benötigten Variablen fehlt."
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Assumption Checks"
-msgstr "<b>Tabelle %1$i.</b> Evaluations-Zusammenfassung"
+msgstr "<b>Tabelle %1$i.</b> Annahmeprüfungen"
 
 msgid "Pearson's <i>r</i>"
 msgstr "Pearson's <i>r</i>"
@@ -1713,12 +1709,14 @@ msgid ""
 "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis "
 "H₋: ρ < 0"
 msgstr ""
+"Die Nullhypothese H₀: ρ ≥ 0 wird gegen die Alternativhypothese H₋: ρ < 0 "
+"getestet"
 
 msgid "The population taints are homogeneous"
 msgstr ""
 
 msgid "There were no misstatements found in the sample."
-msgstr ""
+msgstr "In der Stichprobe wurden keine falschen Angaben gefunden."
 
 msgid "An error occurred while calculating the correlation."
 msgstr "Bei der Berechnung der Korrelation ist ein Fehler aufgetreten."
@@ -1746,18 +1744,16 @@ msgstr ""
 "Fehler ist eine Schätzung des maximalen Fehlers in der Grundgesamtheit."
 
 msgid "Scatter Plot of Ist and Soll Values"
-msgstr ""
+msgstr "Streudiagramm von Ist- und Soll-Werten"
 
-#, fuzzy
 msgid "Ist value (%1$s)"
-msgstr "Auditwerte (%1$s)"
+msgstr "Ist-Wert (%1$s)"
 
-#, fuzzy
 msgid "Soll value (%1$s)"
-msgstr "Buchwerte (%1$s)"
+msgstr "Soll-Wert (%1$s)"
 
 msgid "Ist = Soll"
-msgstr ""
+msgstr "Ist = Soll"
 
 msgid ""
 "<b>Figure %1$i.</b> Scatter plot of the Ist values in the selection and "
