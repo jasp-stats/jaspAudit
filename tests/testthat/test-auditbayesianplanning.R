@@ -184,11 +184,11 @@ test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posteri
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorAndPosteriorStatistics"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(9500, "beta-binomial(N = 9987, <unicode><unicode> = 1, <unicode><unicode> = 1)",
-			 0.200079992000814, 0.799920007999186, 523, 0.250125000000022,
-			 0.8977, "Prior", 1927, "beta-binomial(N = 9987, <unicode><unicode> = 1, <unicode><unicode> = 14)",
+			 0.200079992000814, 0.799920007999186, 4, 0.250125000000022,
+			 0.9496, "Prior", 1927, "beta-binomial(N = 9987, <unicode><unicode> = 1, <unicode><unicode> = 14)",
 			 0.955981093321683, 0.0440189066783169, 0, 21.7175110755894,
 			 0.1927, "Expected posterior", -7573, "", 4.77799445992478, 0.0550291357112318,
-			 -523, 86.8266309868567, "", "Expected shift"))
+			 -4, 86.8266309868567, "", "Expected shift"))
 })
 
 test_that("Implied Prior Distribution plot matches 3", {
