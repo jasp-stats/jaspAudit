@@ -451,8 +451,8 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     
     plotData <- data.frame(x = c(0, 0), y = c(0, 1), type = c(gettext("Observed"), legendName))
     plotData$type <- base::switch(options[["distribution"]],
-                                  "benford" = factor(x = plotData$type, levels = levels(plotData$type)[c(1,2)]),
-                                  "uniform" = factor(x = plotData$type, levels = levels(plotData$type)[c(2,1)]))
+                                  "benford" = factor(x = plotData$type, levels = levels(factor(plotData$type))[c(1,2)]),
+                                  "uniform" = factor(x = plotData$type, levels = levels(factor(plotData$type))[c(2,1)]))
     
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
       ggplot2::geom_point(alpha = 0) +
