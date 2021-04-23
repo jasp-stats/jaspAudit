@@ -481,7 +481,7 @@
                           "shadePosteriorHypotheses" 		= data.frame(x = c(0, 0), y = c(0, 0), l = c("1", "2")))
     
     dPlot <- rbind(dPrior, dPost)
-    dPlot$type <- factor(x = dPlot$type, levels = levels(factor(dPlot$type))[c(1,2)])
+    dPlot$type <- factor(x = dPlot$type, levels = levels(factor(dPlot$type))[c(2, 1)])
     
     if(options[["priorAndPosteriorPlotExpectedPosterior"]]){
       dPlot <- rbind(dPlot, dPoste)
