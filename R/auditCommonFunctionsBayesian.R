@@ -267,7 +267,7 @@
     
     if(options[["priorPlotExpectedPosterior"]]){  
       dPlot <- rbind(dPlot, dPost)
-      dPlot$type <- factor(dPlot$type, levels = levels(dPlot$type)[c(1,2)])
+      dPlot$type <- factor(dPlot$type, levels = levels(factor(dPlot$type))[c(2, 1)])
       scaleValues <- c(scaleValues, "dotted")
       guide <- ggplot2::guide_legend(nrow = 1, byrow = FALSE, title = "", order = 1)
     }
@@ -481,11 +481,11 @@
                           "shadePosteriorHypotheses" 		= data.frame(x = c(0, 0), y = c(0, 0), l = c("1", "2")))
     
     dPlot <- rbind(dPrior, dPost)
-    dPlot$type <- factor(x = dPlot$type, levels = levels(dPlot$type)[c(1,2)])
+    dPlot$type <- factor(x = dPlot$type, levels = levels(factor(dPlot$type))[c(1,2)])
     
     if(options[["priorAndPosteriorPlotExpectedPosterior"]]){
       dPlot <- rbind(dPlot, dPoste)
-      dPlot$type <- factor(x = dPlot$type, levels = levels(dPlot$type)[c(1, 2, 3)])
+      dPlot$type <- factor(x = dPlot$type, levels = levels(factor(dPlot$type))[c(1, 2, 3)])
     }
     
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(xseq, min.n = 4)
