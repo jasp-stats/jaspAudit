@@ -73,7 +73,7 @@ test_that("Evaluation of Sampling Objectives plot matches", {
 test_that("<b>Table 9.</b> Evaluation Summary results match", {
 	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("<unicode><unicode><unicode>", "1.291%", 103775.336382219, 0,
+		list("<unicode><unicode><unicode>", "1.297%", 103775.336382219, 0,
 			 "5%", "0%", 231, "0%"))
 })
 
