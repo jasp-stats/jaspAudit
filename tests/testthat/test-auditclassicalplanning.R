@@ -1,6 +1,6 @@
 context("[Audit] Classical Planning")
 
-options <- analysisOptions("auditClassicalPlanning")
+options <- jaspTools::analysisOptions("auditClassicalPlanning")
 options$performanceMateriality <- TRUE
 options$materialityPercentage <- 0.05
 options$populationSize <- 1000
@@ -14,7 +14,7 @@ options$expectedErrors <- "expectedRelative"
 options$planningModel <- "binomial"
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditClassicalPlanning", dataset, options)
+results <- jaspTools::runAnalysis("auditClassicalPlanning", dataset, options)
 
 # Test 1: Plan using binomial distribution
 
