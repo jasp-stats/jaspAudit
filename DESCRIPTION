@@ -16,6 +16,7 @@ Imports:
   ggrepel,
   jaspBase,
   jaspGraphs,
+  jfa,
   utils
 Remotes:
   jasp-stats/jaspBase,
