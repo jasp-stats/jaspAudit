@@ -1861,7 +1861,7 @@
                                                   "\u03B2",
                                                   round(parentState[["prior"]][["description"]]$beta, 3)),
                             "hypergeometric" = gettextf("The required sample size is based on the <b>beta-binomial</b> distribution <i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>.",
-                                                        parentState[["N"]] - parentState[["sampleSize"]] + parentState[["expectedSampleError"]],
+                                                        parentState[["N"]],
                                                         "\u03B1",
                                                         round(parentState[["prior"]][["description"]]$alpha, 3),
                                                         "\u03B2",

@@ -48,8 +48,8 @@
     lowerBound <- qbeta(lowerBoundConfidence, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
     upperBound <- qbeta(upperBoundConfidence, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)                                        
   } else if(likelihood == "hypergeometric"){
-    lowerBound <- jfa:::.qBetaBinom(lowerBoundConfidence, N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)	/ N						
-    upperBound <- jfa:::.qBetaBinom(upperBoundConfidence, N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior) / N                             
+    lowerBound <- jfa:::.qBetaBinom(lowerBoundConfidence, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)	/ N						
+    upperBound <- jfa:::.qBetaBinom(upperBoundConfidence, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior) / N                             
   } else if(likelihood == "regression"){
     lowerBound <- (parentState[["popBookvalue"]] - parentState[["lowerBound"]]) / parentState[["popBookvalue"]]
     upperBound <- (parentState[["popBookvalue"]] - parentState[["upperBound"]]) / parentState[["popBookvalue"]]
@@ -244,14 +244,14 @@
       popK 	<- ceiling(materiality * N)
       epopK	<- base::switch(options[["expectedErrors"]], "expectedRelative" = ceiling(options[["expectedPercentage"]] * N), "expectedAbsolute" = ceiling(options[["expectedNumber"]] / parentOptions[["populationValue"]] * N))
       xseq 	<- 0:ceiling(options[["priorPlotLimit"]] * N)
-      dPrior 	<- data.frame(x = xseq, 		y = jfa:::.dBetaBinom(xseq, N = N - n + k, shape1 = alphaParameterPrior, shape2 = betaParameterPrior), type = rep(gettext("Prior"), length(xseq)))
-      dPost 	<- data.frame(x = xseq, 		y = jfa:::.dBetaBinom(xseq, N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior), type = rep(gettext("Expected\nposterior"), length(xseq)))
-      mPrior 	<- data.frame(x = popK, 		y = jfa:::.dBetaBinom(popK, N = N - n + k, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
-      ePrior 	<- data.frame(x = epopK, 		y = jfa:::.dBetaBinom(epopK, N = N - n + k, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
+      dPrior 	<- data.frame(x = xseq, 		y = jfa:::.dBetaBinom(xseq, N = N - n, shape1 = alphaParameterPrior, shape2 = betaParameterPrior), type = rep(gettext("Prior"), length(xseq)))
+      dPost 	<- data.frame(x = xseq, 		y = jfa:::.dBetaBinom(xseq, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior), type = rep(gettext("Expected\nposterior"), length(xseq)))
+      mPrior 	<- data.frame(x = popK, 		y = jfa:::.dBetaBinom(popK, N = N - n, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
+      ePrior 	<- data.frame(x = epopK, 		y = jfa:::.dBetaBinom(epopK, N = N - n, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
       
       # Calculate upper bounds for beta-binomial prior and posterior
-      bPrior 	<- jfa:::.qBetaBinom(confidence, N = N - n + k, shape1 = alphaParameterPrior, shape2 = betaParameterPrior) 
-      bPost 	<- jfa:::.qBetaBinom(confidence, N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
+      bPrior 	<- jfa:::.qBetaBinom(confidence, N = N - n, shape1 = alphaParameterPrior, shape2 = betaParameterPrior) 
+      bPost 	<- jfa:::.qBetaBinom(confidence, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
     }
     
     extra <- base::switch(options[["shadePrior"]],
@@ -309,7 +309,7 @@
             plot <- plot + ggplot2::stat_function(fun = dgamma, args = list(shape = alphaParameterPrior, rate = betaParameterPrior), xlim = c(0, bPrior), geom = "area", fill = shade)
           if(likelihood == "hypergeometric"){
             xseq <- xseq[1:(bPrior + 1)]
-            bars <- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n + k, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
+            bars <- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
             plot <- plot + ggplot2::geom_bar(data = bars, stat = "identity", fill = shade)
           }
         } else if(options[["shadePrior"]] == "shadePriorHypotheses"){
@@ -322,10 +322,10 @@
           if(likelihood == "hypergeometric"){
             nseq 	<- (N * materiality + 1)
             xseq1 	<- xseq[1:nseq]
-            bars1 	<- data.frame(x = xseq1, y = jfa:::.dBetaBinom(xseq1, N = N - n + k, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
+            bars1 	<- data.frame(x = xseq1, y = jfa:::.dBetaBinom(xseq1, N = N - n, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
             plot 	<- plot + ggplot2::geom_bar(data = bars1, stat = "identity", fill = shade[1])
             xseq2 	<- xseq[(nseq + 1)]:N
-            bars2 	<- data.frame(x = xseq2, y = jfa:::.dBetaBinom(xseq2, N = N - n + k, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
+            bars2 	<- data.frame(x = xseq2, y = jfa:::.dBetaBinom(xseq2, N = N - n, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
             plot 	<- plot + ggplot2::geom_bar(data = bars2, stat = "identity", fill = shade[2])
           }
         }
@@ -466,14 +466,14 @@
       
       # Create data to show beta-binomial prior and posterior and materiality
       xseq 	<- 0:ceiling(options[["priorAndPosteriorPlotLimit"]] * N)
-      dPrior 	<- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n + k, shape1 = alphaParameterPrior, shape2 = betaParameterPrior), type = rep(gettext("Prior"), length(xseq)))
-      dPoste 	<- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n + k, shape1 = alphaParameterExpectedPosterior, shape2 = betaParameterExpectedPosterior), type = rep(gettext("Expected\nposterior"), length(xseq)))
-      dPost 	<- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior), type = rep(gettext("Posterior"), length(xseq)))
-      mPost 	<- data.frame(x = ceiling(materiality * N), y = jfa:::.dBetaBinom(ceiling(materiality * N), N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior))
+      dPrior 	<- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n, shape1 = alphaParameterPrior, shape2 = betaParameterPrior), type = rep(gettext("Prior"), length(xseq)))
+      dPoste 	<- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n, shape1 = alphaParameterExpectedPosterior, shape2 = betaParameterExpectedPosterior), type = rep(gettext("Expected\nposterior"), length(xseq)))
+      dPost 	<- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior), type = rep(gettext("Posterior"), length(xseq)))
+      mPost 	<- data.frame(x = ceiling(materiality * N), y = jfa:::.dBetaBinom(ceiling(materiality * N), N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior))
       
       # Calculate upper bound and mle for beta-binomial posterior
-      bPost 	<- jfa:::.dBetaBinom(ceiling(confBound * N), N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
-      ePost 	<- jfa:::.dBetaBinom(ceiling(mle * N), N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
+      bPost 	<- jfa:::.dBetaBinom(ceiling(confBound * N), N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
+      ePost 	<- jfa:::.dBetaBinom(ceiling(mle * N), N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
     }
     
     extra <- base::switch(options[["shadePosterior"]],
@@ -564,15 +564,15 @@
         } else if(likelihood == "hypergeometric"){
           if(options[["shadePosterior"]] == "shadePosteriorCredibleRegion"){
             xseq <- xseq[(ceiling(functionLimits[1] * N) + 1):(ceiling(functionLimits[2] * N) + 1)]
-            barData <- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior))
+            barData <- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior))
             plot <- plot + ggplot2::geom_bar(data = barData, stat = "identity", fill = fill)
           } else if(options[["shadePosterior"]] == "shadePosteriorHypotheses"){
             nseq <- (N * materiality + 1)
             xseq1 <- xseq[1:nseq]
-            bars1 <- data.frame(x = xseq1, y = jfa:::.dBetaBinom(xseq1, N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior))
+            bars1 <- data.frame(x = xseq1, y = jfa:::.dBetaBinom(xseq1, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior))
             plot <- plot + ggplot2::geom_bar(data = bars1, stat = "identity", fill = fill[1])
             xseq2 <- xseq[(nseq + 1):N]
-            bars2 <- data.frame(x = xseq2, y = jfa:::.dBetaBinom(x = xseq2, N = N - n + k, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior))
+            bars2 <- data.frame(x = xseq2, y = jfa:::.dBetaBinom(x = xseq2, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior))
             plot <- plot + ggplot2::geom_bar(data = bars2, stat = "identity", fill = fill[2])
           }
         }
@@ -756,8 +756,8 @@
       formPrior 	<- paste0("beta(\u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
       formPost 	<- paste0("beta(\u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")") 
     } else if(likelihood == "hypergeometric"){
-      formPrior 	<- paste0("beta-binomial(N = ", N - n + k, ", \u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
-      formPost 	<- paste0("beta-binomial(N = ", N - n + k, ", \u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")")
+      formPrior 	<- paste0("beta-binomial(N = ", N, ", \u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
+      formPost 	<- paste0("beta-binomial(N = ", N - n, ", \u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")")
     }
     
     shiftInMode  	<- modePost - modePrior
