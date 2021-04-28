@@ -1,6 +1,6 @@
 context("[Audit] Classical Workflow")
 
-options <- analysisOptions("auditClassicalWorkflow")
+options <- jaspTools::analysisOptions("auditClassicalWorkflow")
 options$performanceMateriality <- TRUE
 options$materialityValue <- 70161
 options$recordNumberVariable <- "ID"
@@ -41,7 +41,7 @@ options$criticalTransactions <- "Critical"
 options$sampleFilter <- "SelectionResult"
 options$variableName <- "AuditResult"
 set.seed(1)
-results <- runAnalysis("auditClassicalWorkflow", "test-workflow.csv", options)
+results <- jaspTools::runAnalysis("auditClassicalWorkflow", "test-workflow.csv", options)
 
 
 test_that("Evaluation of Sampling Objectives plot matches", {

@@ -4,7 +4,7 @@ context("[Audit] Classical Repeated Values")
 
 ### TEST 1: Study 2
 
-options <- analysisOptions("auditClassicalNumberBunching")
+options <- jaspTools::analysisOptions("auditClassicalNumberBunching")
 options$values <- "Variable"
 options$noSamples <- 1000
 options$shuffle <- "lastTwo"
@@ -13,7 +13,7 @@ options$numberBunchingSimulationPlots <- TRUE
 options$numberBunchingHistogram <- TRUE
 options$noHeads <- 13
 set.seed(1)
-results <- runAnalysis("auditClassicalNumberBunching", "numberBunching1.csv", options)
+results <- jaspTools::runAnalysis("auditClassicalNumberBunching", "numberBunching1.csv", options)
 
 
 test_that("<b>Table 2.</b> Assumption Checks results match", {
@@ -433,7 +433,7 @@ test_that("<b>Table 1.</b> Repeated Values Test results match", {
 
 ### TEST 2: Study 3
 
-options <- analysisOptions("auditClassicalNumberBunching")
+options <- jaspTools::analysisOptions("auditClassicalNumberBunching")
 options$values <- "Variable"
 options$noSamples <- 1000
 options$shuffle <- "lastTwo"
@@ -442,7 +442,7 @@ options$numberBunchingSimulationPlots <- TRUE
 options$numberBunchingHistogram <- TRUE
 options$noHeads <- 13
 set.seed(1)
-results <- runAnalysis("auditClassicalNumberBunching", "numberBunching2.csv", options)
+results <- jaspTools::runAnalysis("auditClassicalNumberBunching", "numberBunching2.csv", options)
 
 
 test_that("<b>Table 2.</b> Assumption Checks results match", {

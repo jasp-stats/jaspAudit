@@ -1,6 +1,6 @@
 context("[Audit] Bayesian Workflow")
 
-options <- analysisOptions("auditBayesianWorkflow")
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
 options$performanceMateriality <- TRUE
 options$materialityValue <- 70161
 options$recordNumberVariable <- "ID"
@@ -55,7 +55,7 @@ options$criticalTransactions <- "Critical"
 options$sampleFilter <- "SelectionResult"
 options$variableName <- "AuditResult"
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "test-workflow.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "test-workflow.csv", options)
 
 
 test_that("Scatter Plot of Ist and Soll Values matches", {

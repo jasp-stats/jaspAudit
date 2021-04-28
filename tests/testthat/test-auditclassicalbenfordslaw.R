@@ -1,13 +1,13 @@
 context("[Audit] Benford's Law")
 
-options <- analysisOptions("auditClassicalBenfordsLaw")
+options <- jaspTools::analysisOptions("auditClassicalBenfordsLaw")
 options$values <- "value"
 options$benfordsLawPlot <- TRUE
 options$distribution <- "benford"
 options$digits <- "first"
 options$bayesFactorType <- "BF10"
 set.seed(1)
-results <- runAnalysis("auditClassicalBenfordsLaw", "sinoForest.csv", options)
+results <- jaspTools::runAnalysis("auditClassicalBenfordsLaw", "sinoForest.csv", options)
 
 
 test_that("Observed Percentages vs. Expected Percentages plot matches", {

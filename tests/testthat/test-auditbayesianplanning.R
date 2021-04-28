@@ -2,7 +2,7 @@ context("[Audit] Bayesian Planning")
 
 ### Test 1: Plan using the beta distribution
 
-options <- analysisOptions("auditBayesianPlanning")
+options <- jaspTools::analysisOptions("auditBayesianPlanning")
 options$performanceMateriality <- TRUE
 options$materialityPercentage <- 0.05
 options$populationSize <- 1000
@@ -24,7 +24,7 @@ options$shadePrior <- "shadePriorCredibleRegion"
 options$.meta <- list()
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditBayesianPlanning", dataset, options)
+results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
 
 
 test_that("Across Probability Distributions (Current: Beta) plot matches", {
@@ -71,7 +71,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
 
 ### Test 2: Plan using the gamma distribution
 
-options <- analysisOptions("auditBayesianPlanning")
+options <- jaspTools::analysisOptions("auditBayesianPlanning")
 options$performanceMateriality <- TRUE
 options$materialityValue <- 70161
 options$populationSize <- 3500
@@ -94,7 +94,7 @@ options$shadePrior <- "shadePriorCredibleRegion"
 options$.meta <- list()
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditBayesianPlanning", dataset, options)
+results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
 
 
 test_that("Across Probability Distributions (Current: Gamma) plot matches", {
@@ -142,7 +142,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
 
 ### Test 3: Plan using the beta-binomial distribution
 
-options <- analysisOptions("auditBayesianPlanning")
+options <- jaspTools::analysisOptions("auditBayesianPlanning")
 options$performanceMateriality <- TRUE
 options$materialityValue <- 2000
 options$populationSize <- 3500
@@ -165,7 +165,7 @@ options$shadePrior <- "shadePriorCredibleRegion"
 options$.meta <- list()
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditBayesianPlanning", dataset, options)
+results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
 
 
 test_that("Across Probability Distributions (Current: Beta-binomial) plot matches", {
