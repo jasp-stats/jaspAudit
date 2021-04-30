@@ -1,6 +1,6 @@
 context("[Audit] Classical Planning")
 
-options <- analysisOptions("auditClassicalPlanning")
+options <- jaspTools::analysisOptions("auditClassicalPlanning")
 options$performanceMateriality <- TRUE
 options$materialityPercentage <- 0.05
 options$populationSize <- 1000
@@ -14,7 +14,7 @@ options$expectedErrors <- "expectedRelative"
 options$planningModel <- "binomial"
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditClassicalPlanning", dataset, options)
+results <- jaspTools::runAnalysis("auditClassicalPlanning", dataset, options)
 
 # Test 1: Plan using binomial distribution
 
@@ -44,7 +44,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
 
 ### Test 2: Plan using Poisson distribution
 
-options <- analysisOptions("auditClassicalPlanning")
+options <- jaspTools::analysisOptions("auditClassicalPlanning")
 options$performanceMateriality <- TRUE
 options$materialityValue <- 70161
 options$populationSize <- 3500
@@ -60,7 +60,7 @@ options$planningModel <- "Poisson"
 options$valuta <- "euroValuta"
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditClassicalPlanning", dataset, options)
+results <- jaspTools::runAnalysis("auditClassicalPlanning", dataset, options)
 
 
 test_that("Across Probability Distributions (Current: Poisson) plot matches", {
@@ -90,7 +90,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
 
 ### Test 3: Plan using hypergeometric distribution
 
-options <- analysisOptions("auditClassicalPlanning")
+options <- jaspTools::analysisOptions("auditClassicalPlanning")
 options$performanceMateriality <- TRUE
 options$materialityValue <- 70161
 options$populationSize <- 3500
@@ -106,7 +106,7 @@ options$planningModel <- "hypergeometric"
 options$valuta <- "euroValuta"
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditClassicalPlanning", dataset, options)
+results <- jaspTools::runAnalysis("auditClassicalPlanning", dataset, options)
 
 
 test_that("Across Probability Distributions (Current: Hypergeometric) plot matches", {

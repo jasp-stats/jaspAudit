@@ -2,7 +2,7 @@ context("[Audit] Selection")
 
 ### TEST 1: TAKING A MONETARY UNIT SAMPLE OF SIZE n = 200
 
-options <- analysisOptions("auditSelection")
+options <- jaspTools::analysisOptions("auditSelection")
 options$recordNumberVariable <- "ID"
 options$monetaryVariable <- "bookValue"
 options$sampleSize <- 200
@@ -17,7 +17,7 @@ options$.meta <- list(additionalVariables = list(containsColumn = TRUE), monetar
         containsColumn = TRUE))
 options$sampleIndicatorColumn <- ""
 set.seed(1)
-results <- runAnalysis("auditSelection", "BuildIt_Monetary.csv", options)
+results <- jaspTools::runAnalysis("auditSelection", "BuildIt_Monetary.csv", options)
 
 
 test_that("<b>Table 3.</b> Selected Transactions results match", {
@@ -119,7 +119,7 @@ test_that("<b>Table 2.</b> Information about Monetary Interval Selection results
 
 ### Test 2: Taking a record sample of n = 200 using ID only
 
-options <- analysisOptions("auditSelection")
+options <- jaspTools::analysisOptions("auditSelection")
 options$recordNumberVariable <- "ID"
 options$sampleSize <- 200
 options$displaySample <- TRUE
@@ -132,7 +132,7 @@ options$.meta <- list(additionalVariables = list(containsColumn = TRUE), monetar
         containsColumn = TRUE))
 options$sampleIndicatorColumn <- ""
 set.seed(1)
-results <- runAnalysis("auditSelection", "BuildIt_Monetary.csv", options)
+results <- jaspTools::runAnalysis("auditSelection", "BuildIt_Monetary.csv", options)
 
 
 test_that("<b>Table 2.</b> Selected Transactions results match", {
@@ -199,7 +199,7 @@ test_that("<b>Table 1.</b> Selection Summary results match", {
 
 ### Test 3: Selection using auditRattle.csv data set
 
-options <- analysisOptions("auditSelection")
+options <- jaspTools::analysisOptions("auditSelection")
 options$recordNumberVariable <- "ID"
 options$monetaryVariable <- "Deductions"
 options$sampleSize <- 40
@@ -216,7 +216,7 @@ options$.meta <- list(additionalVariables = list(containsColumn = TRUE), monetar
 options$plotHistograms <- TRUE
 options$sampleIndicatorColumn <- ""
 set.seed(1)
-results <- runAnalysis("auditSelection", "auditRattle.csv", options)
+results <- jaspTools::runAnalysis("auditSelection", "auditRattle.csv", options)
 
 
 test_that("<b>Table 2.</b> Descriptive Statistics for Selected Transactions results match", {

@@ -2,7 +2,7 @@ context("[Audit] Bayesian Evaluation")
 
 ### Test 1: Evaluation using summary statistics
 
-options <- analysisOptions("auditBayesianEvaluation")
+options <- jaspTools::analysisOptions("auditBayesianEvaluation")
 options$performanceMateriality <- TRUE
 options$materialityPercentage <- 0.05
 options$populationSize <- 3500
@@ -31,7 +31,7 @@ options$.meta <- list(auditResult = list(containsColumn = TRUE), monetaryVariabl
     sampleCounter = list(containsColumn = TRUE))
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditBayesianEvaluation", dataset, options)
+results <- jaspTools::runAnalysis("auditBayesianEvaluation", dataset, options)
 
 
 test_that("Evaluation of Sampling Objectives plot matches", {
@@ -66,7 +66,7 @@ test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distri
 
 ### Test 2: Evaluation using correct / incorrect
 
-options <- analysisOptions("auditBayesianEvaluation")
+options <- jaspTools::analysisOptions("auditBayesianEvaluation")
 options$performanceMateriality <- TRUE
 options$materialityPercentage <- 0.2
 options$populationSize <- 2000
@@ -92,7 +92,7 @@ options$.meta <- list(auditResult = list(containsColumn = TRUE), monetaryVariabl
     containsColumn = TRUE), recordNumberVariable = list(containsColumn = TRUE), 
     sampleCounter = list(containsColumn = TRUE))
 set.seed(1)
-results <- runAnalysis("auditBayesianEvaluation", "auditRattle.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianEvaluation", "auditRattle.csv", options)
 
 
 test_that("Evaluation of Sampling Objectives plot matches", {
@@ -127,7 +127,7 @@ test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distri
 
 ### Test 3: Evaluation using soll values
 
-options <- analysisOptions("auditBayesianEvaluation")
+options <- jaspTools::analysisOptions("auditBayesianEvaluation")
 options$performanceMateriality <- TRUE
 options$materialityValue <- 70161
 options$populationSize <- 3500
@@ -157,7 +157,7 @@ options$.meta <- list(auditResult = list(containsColumn = TRUE), monetaryVariabl
     containsColumn = TRUE), recordNumberVariable = list(containsColumn = TRUE), 
     sampleCounter = list(containsColumn = TRUE))
 set.seed(1)
-results <- runAnalysis("auditBayesianEvaluation", "test-auditClassicalWorkflow.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianEvaluation", "test-auditClassicalWorkflow.csv", options)
 
 
 test_that("Scatter Plot of Ist and Soll Values matches", {

@@ -1,6 +1,6 @@
 context("[Audit] Bayesian Workflow")
 
-options <- analysisOptions("auditBayesianWorkflow")
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
 options$performanceMateriality <- TRUE
 options$materialityValue <- 70161
 options$recordNumberVariable <- "ID"
@@ -55,7 +55,7 @@ options$criticalTransactions <- "Critical"
 options$sampleFilter <- "SelectionResult"
 options$variableName <- "AuditResult"
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "test-workflow.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "test-workflow.csv", options)
 
 
 test_that("Scatter Plot of Ist and Soll Values matches", {
@@ -73,7 +73,7 @@ test_that("Evaluation of Sampling Objectives plot matches", {
 test_that("<b>Table 9.</b> Evaluation Summary results match", {
 	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("<unicode><unicode><unicode>", "1.291%", 103775.336382219, 0,
+		list("<unicode><unicode><unicode>", "1.297%", 103775.336382219, 0,
 			 "5%", "0%", 231, "0%"))
 })
 

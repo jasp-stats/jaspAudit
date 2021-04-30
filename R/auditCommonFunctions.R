@@ -1861,7 +1861,7 @@
                                                   "\u03B2",
                                                   round(parentState[["prior"]][["description"]]$beta, 3)),
                             "hypergeometric" = gettextf("The required sample size is based on the <b>beta-binomial</b> distribution <i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>.",
-                                                        parentState[["N"]] - parentState[["sampleSize"]] + parentState[["expectedSampleError"]],
+                                                        parentState[["N"]],
                                                         "\u03B1",
                                                         round(parentState[["prior"]][["description"]]$alpha, 3),
                                                         "\u03B2",
@@ -1978,7 +1978,7 @@
     return()
   
   .jfaFigureNumberUpdate(jaspResults)
-  
+
   if(is.null(parentContainer[["decisionPlot"]])){
     
     collection <- createJaspContainer(gettext("Comparison of Required Sample Sizes"))
@@ -2070,8 +2070,8 @@
       if(!jaspBase::isTryError(leftPlotError)){
         
         dPlot <- data.frame(y = c(n, k), x = rep(names, 2), type = rep(c(gettext("Expected error-free"), gettext("Expected errors")), each = 3))
-        dPlot$x <- factor(x = dPlot$x, levels = levels(dPlot$x)[c(2, 3, 1)])
-        dPlot$type <- factor(x = dPlot$type, levels = levels(dPlot$type)[c(1, 2)])
+        dPlot$x <- factor(x = dPlot$x, levels = levels(factor(dPlot$x))[c(2, 3, 1)])
+        dPlot$type <- factor(x = dPlot$type, levels = levels(factor(dPlot$type))[c(1, 2)])
         
         yBreaks <- jaspGraphs::getPrettyAxisBreaks(0:(ceiling(1.1 * max(n))), min.n = 4)
         yLimits <- c(0, ceiling(1.2 * max(n)))
@@ -2228,7 +2228,7 @@
     dataErrorFree 	<- data.frame(x = xVals, y = dErrorFree)
     dataError 		<- data.frame(x = 0:parentState[["expectedSampleError"]], y = dError)
     dataLegend 		<- data.frame(x = c(0, 0), y = c(0, 0), type = c(gettext("Expected error-free"), gettext("Expected errors")))
-    dataLegend$type <- factor(x = dataLegend[["type"]], levels = levels(dataLegend[["type"]])[c(2,1)])
+    dataLegend$type <- factor(x = dataLegend[["type"]], levels = levels(factor(dataLegend[["type"]]))[c(2,1)])
     
     xTicks <- jaspGraphs::getPrettyAxisBreaks(c(0, xVals))
     yTicks <- jaspGraphs::getPrettyAxisBreaks(c(0, dataErrorFree[["y"]]))

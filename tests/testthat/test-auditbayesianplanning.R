@@ -2,7 +2,7 @@ context("[Audit] Bayesian Planning")
 
 ### Test 1: Plan using the beta distribution
 
-options <- analysisOptions("auditBayesianPlanning")
+options <- jaspTools::analysisOptions("auditBayesianPlanning")
 options$performanceMateriality <- TRUE
 options$materialityPercentage <- 0.05
 options$populationSize <- 1000
@@ -24,7 +24,7 @@ options$shadePrior <- "shadePriorCredibleRegion"
 options$.meta <- list()
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditBayesianPlanning", dataset, options)
+results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
 
 
 test_that("Across Probability Distributions (Current: Beta) plot matches", {
@@ -71,7 +71,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
 
 ### Test 2: Plan using the gamma distribution
 
-options <- analysisOptions("auditBayesianPlanning")
+options <- jaspTools::analysisOptions("auditBayesianPlanning")
 options$performanceMateriality <- TRUE
 options$materialityValue <- 70161
 options$populationSize <- 3500
@@ -94,7 +94,7 @@ options$shadePrior <- "shadePriorCredibleRegion"
 options$.meta <- list()
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditBayesianPlanning", dataset, options)
+results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
 
 
 test_that("Across Probability Distributions (Current: Gamma) plot matches", {
@@ -142,7 +142,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
 
 ### Test 3: Plan using the beta-binomial distribution
 
-options <- analysisOptions("auditBayesianPlanning")
+options <- jaspTools::analysisOptions("auditBayesianPlanning")
 options$performanceMateriality <- TRUE
 options$materialityValue <- 2000
 options$populationSize <- 3500
@@ -165,7 +165,7 @@ options$shadePrior <- "shadePriorCredibleRegion"
 options$.meta <- list()
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditBayesianPlanning", dataset, options)
+results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
 
 
 test_that("Across Probability Distributions (Current: Beta-binomial) plot matches", {
@@ -183,12 +183,12 @@ test_that("Across Expected Errors (Current: 0) plot matches 3", {
 test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorAndPosteriorStatistics"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(9500, "beta-binomial(N = 9987, <unicode><unicode> = 1, <unicode><unicode> = 1)",
-			 0.200079992000814, 0.799920007999186, 523, 0.250125000000022,
-			 0.8977, "Prior", 1927, "beta-binomial(N = 9987, <unicode><unicode> = 1, <unicode><unicode> = 14)",
-			 0.955981093321683, 0.0440189066783169, 0, 21.7175110755894,
-			 0.1927, "Expected posterior", -7573, "", 4.77799445992478, 0.0550291357112318,
-			 -523, 86.8266309868567, "", "Expected shift"))
+		list(9501, "beta-binomial(N = 10000, <unicode><unicode> = 1, <unicode><unicode> = 1)",
+			 0.200079992000814, 0.799920007999186, "", 0.250125000000022,
+			 "", "Prior", 1926, "beta-binomial(N = 9987, <unicode><unicode> = 1, <unicode><unicode> = 14)",
+			 0.956181004359911, 0.0438189956400888, 0, 21.8211529130788,
+			 1926, "Expected posterior", -7575, "", 4.77899361549366, 0.054779221924567,
+			 "", 87.2409911567292, "", "Expected shift"))
 })
 
 test_that("Implied Prior Distribution plot matches 3", {
@@ -206,5 +206,5 @@ test_that("<b>Table 2.</b> Implicit Sample results match", {
 test_that("<b>Table 1.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("5%", 86.8266309868567, 21.7175110755894, 0, "$ 2000", 13))
+		list("5%", 87.2409911567292, 21.8211529130788, 0, "$ 2000", 13))
 })

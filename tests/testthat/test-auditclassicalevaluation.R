@@ -2,7 +2,7 @@ context("[Audit] Classical Evaluation")
 
 ### Test 1: Evaluation using summary statistics
 
-options <- analysisOptions("auditClassicalEvaluation")
+options <- jaspTools::analysisOptions("auditClassicalEvaluation")
 options$performanceMateriality <- TRUE
 options$materialityPercentage <- 0.05
 options$populationSize <- 3500
@@ -24,7 +24,7 @@ options$.meta <- list(auditResult = list(containsColumn = TRUE), monetaryVariabl
     sampleCounter = list(containsColumn = TRUE))
 set.seed(1)
 dataset <- NULL
-results <- runAnalysis("auditClassicalEvaluation", dataset, options)
+results <- jaspTools::runAnalysis("auditClassicalEvaluation", dataset, options)
 
 
 test_that("Evaluation of Sampling Objectives plot matches", {
@@ -41,7 +41,7 @@ test_that("<b>Table 1.</b> Evaluation Summary results match", {
 
 ### Test 2: Evaluation using correct / incorrect
 
-options <- analysisOptions("auditClassicalEvaluation")
+options <- jaspTools::analysisOptions("auditClassicalEvaluation")
 options$performanceMateriality <- TRUE
 options$materialityPercentage <- 0.2
 options$populationSize <- 2000
@@ -61,7 +61,7 @@ options$.meta <- list(auditResult = list(containsColumn = TRUE), monetaryVariabl
     containsColumn = TRUE), recordNumberVariable = list(containsColumn = TRUE), 
     sampleCounter = list(containsColumn = TRUE))
 set.seed(1)
-results <- runAnalysis("auditClassicalEvaluation", "auditRattle.csv", options)
+results <- jaspTools::runAnalysis("auditClassicalEvaluation", "auditRattle.csv", options)
 
 
 test_that("Evaluation of Sampling Objectives plot matches", {
@@ -78,7 +78,7 @@ test_that("<b>Table 1.</b> Evaluation Summary results match", {
 
 ### Test 3: Evaluation using soll values
 
-options <- analysisOptions("auditClassicalEvaluation")
+options <- jaspTools::analysisOptions("auditClassicalEvaluation")
 options$performanceMateriality <- TRUE
 options$materialityValue <- 70161
 options$populationSize <- 3500
@@ -101,7 +101,7 @@ options$.meta <- list(auditResult = list(containsColumn = TRUE), monetaryVariabl
     containsColumn = TRUE), recordNumberVariable = list(containsColumn = TRUE), 
     sampleCounter = list(containsColumn = TRUE))
 set.seed(1)
-results <- runAnalysis("auditClassicalEvaluation", "test-auditClassicalWorkflow.csv", options)
+results <- jaspTools::runAnalysis("auditClassicalEvaluation", "test-auditClassicalWorkflow.csv", options)
 
 
 test_that("Scatter Plot of Ist and Soll Values matches", {
