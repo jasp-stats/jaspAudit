@@ -2612,11 +2612,6 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Reference Distribution"
 msgstr ""
 
-#, fuzzy
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Benford's Law"
-msgstr "Wet van Benford"
-
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Check Digits"
 msgstr ""
@@ -2824,6 +2819,22 @@ msgstr ""
 msgctxt "auditBayesianEvaluation|"
 msgid ""
 "<i>Requires additional assumption: The population taints are homogeneous</i>"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Benford's law"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "BF₁₀"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "BF₀₁"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Log(BF₁₀)"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"

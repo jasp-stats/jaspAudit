@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-04-07 04:26+0000\n"
-"Last-Translator: Paulina Elizabeth Robalino <paulina.e.robalino@gmail.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-qml/es/>\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.6-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -497,9 +491,10 @@ msgctxt "auditBayesianPlanning|"
 msgid "Sampling Objectives"
 msgstr "Unidades de muestreo"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Test against a performance materiality"
-msgstr ""
+msgstr "Prueba contra una materialidad de desempeño"
 
 #, fuzzy
 msgctxt "auditBayesianPlanning|"
@@ -511,17 +506,20 @@ msgctxt "auditBayesianPlanning|"
 msgid "Absolute"
 msgstr "Absoluto"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Click to learn more about the performance materiality."
-msgstr ""
+msgstr "Hace click para aprender mas sobre la materialidad de desempeño"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Obtain a required minimum precision"
-msgstr ""
+msgstr "Obtenga una precisión mínima requerida"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Click to learn more about the precision."
-msgstr ""
+msgstr "Hace click para obtener más información sobre precisión."
 
 #, fuzzy
 msgctxt "auditBayesianPlanning|"
@@ -813,9 +811,10 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Sampling Objectives"
 msgstr "Unidades de muestreo"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Test against a performance materiality"
-msgstr ""
+msgstr "Prueba contra una materialidad de desempeño"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -827,17 +826,20 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Absolute"
 msgstr "Absoluto"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about the performance materiality."
-msgstr ""
+msgstr "Hace click para aprender mas sobre la materialidad de desempeño"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Obtain a required minimum precision"
-msgstr ""
+msgstr "Obtenga una precisión mínima requerida"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about the precision."
-msgstr ""
+msgstr "Hace click para obtener más información sobre precisión."
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -887,9 +889,10 @@ msgctxt "auditBayesianWorkflow|"
 msgid "A.     Critical Transactions"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Select critical transactions"
-msgstr ""
+msgstr "Seleccionar transacciones críticas"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -901,9 +904,10 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Negative Ist values"
 msgstr "Valor de prueba"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "How to handle critical transactions"
-msgstr ""
+msgstr "Cómo manejar transacciones críticas"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Inspect"
@@ -922,17 +926,19 @@ msgctxt "auditBayesianWorkflow|"
 msgid "B.     Efficiency Techniques"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Efficiency Techniques"
-msgstr ""
+msgstr "Técnicas de eficiencia"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Separate known and unknown misstatement"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about this efficiency technique."
-msgstr ""
+msgstr "Hace click para saber mas sobre esta técnica de eficiencia."
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1598,9 +1604,10 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Enable"
 msgstr "Habilitar"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Click to learn more about the explanatory text."
-msgstr ""
+msgstr "Hace click para obtener más información sobre el texto explicativo."
 
 #, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
@@ -1652,9 +1659,10 @@ msgctxt "auditClassicalEstimation|"
 msgid "Enable"
 msgstr "Habilitar"
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Click to learn more about the explanatory text."
-msgstr ""
+msgstr "Hace click para obtener más información sobre el texto explicativo."
 
 #, fuzzy
 msgctxt "auditClassicalEstimation|"
@@ -1691,9 +1699,10 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Sampling Objectives"
 msgstr "Unidades de muestreo"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Test against a performance materiality"
-msgstr ""
+msgstr "Prueba contra una materialidad de desempeño"
 
 #, fuzzy
 msgctxt "auditClassicalEvaluation|"
@@ -1705,17 +1714,20 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Absolute"
 msgstr "Absoluto"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Click to learn more about the performance materiality."
-msgstr ""
+msgstr "Hace click para aprender mas sobre la materialidad de desempeño"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Obtain a required minimum precision"
-msgstr ""
+msgstr "Obtenga una precisión mínima requerida"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Click to learn more about the precision."
-msgstr ""
+msgstr "Hace click para obtener más información sobre precisión."
 
 #, fuzzy
 msgctxt "auditClassicalEvaluation|"
@@ -1812,30 +1824,35 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Enable"
 msgstr "Habilitar"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Click to learn more about the explanatory text."
-msgstr ""
+msgstr "Hace click para obtener más información sobre el texto explicativo."
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Critical Transactions"
-msgstr ""
+msgstr "Transacciones críticas"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Select critical transactions"
-msgstr ""
+msgstr "Seleccionar transacciones críticas"
 
 #, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Negative Ist values"
 msgstr "Valor de prueba"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "How to handle critical transactions"
-msgstr ""
+msgstr "Cómo manejar transacciones críticas"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Keep"
-msgstr ""
+msgstr "Mantener"
 
 #, fuzzy
 msgctxt "auditClassicalEvaluation|"
@@ -2008,9 +2025,10 @@ msgctxt "auditClassicalPlanning|"
 msgid "Sampling Objectives"
 msgstr "Unidades de muestreo"
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Test against a performance materiality"
-msgstr ""
+msgstr "Prueba contra una materialidad de desempeño"
 
 #, fuzzy
 msgctxt "auditClassicalPlanning|"
@@ -2022,17 +2040,20 @@ msgctxt "auditClassicalPlanning|"
 msgid "Absolute"
 msgstr "Absoluto"
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Click to learn more about the performance materiality."
-msgstr ""
+msgstr "Hace click para aprender mas sobre la materialidad de desempeño"
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Obtain a required minimum precision"
-msgstr ""
+msgstr "Obtenga una precisión mínima requerida"
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Click to learn more about the precision."
-msgstr ""
+msgstr "Hace click para obtener más información sobre precisión."
 
 #, fuzzy
 msgctxt "auditClassicalPlanning|"
@@ -2197,9 +2218,10 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Sampling Objectives"
 msgstr "Unidades de muestreo"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Test against a performance materiality"
-msgstr ""
+msgstr "Prueba contra una materialidad de desempeño"
 
 #, fuzzy
 msgctxt "auditClassicalWorkflow|"
@@ -2211,17 +2233,20 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Absolute"
 msgstr "Absoluto"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about the performance materiality."
-msgstr ""
+msgstr "Hace click para aprender mas sobre la materialidad de desempeño"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Obtain a required minimum precision"
-msgstr ""
+msgstr "Obtenga una precisión mínima requerida"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about the precision."
-msgstr ""
+msgstr "Hace click para obtener más información sobre precisión."
 
 #, fuzzy
 msgctxt "auditClassicalWorkflow|"
@@ -2272,9 +2297,10 @@ msgctxt "auditClassicalWorkflow|"
 msgid "A.     Critical Transactions"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Select critical transactions"
-msgstr ""
+msgstr "Seleccionar transacciones críticas"
 
 #, fuzzy
 msgctxt "auditClassicalWorkflow|"
@@ -2286,9 +2312,10 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Negative Ist values"
 msgstr "Valor de prueba"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "How to handle critical transactions"
-msgstr ""
+msgstr "Cómo manejar transacciones críticas"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Inspect"
@@ -3090,11 +3117,6 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Reference Distribution"
 msgstr ""
 
-#, fuzzy
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Benford's Law"
-msgstr "Ley de Benford"
-
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Check Digits"
 msgstr ""
@@ -3192,9 +3214,10 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Enable"
 msgstr "Habilitar"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Click to learn more about the explanatory text."
-msgstr ""
+msgstr "Hace click para obtener más información sobre el texto explicativo."
 
 #, fuzzy
 msgctxt "auditClassicalNumberBunching|"
@@ -3305,6 +3328,22 @@ msgstr ""
 msgctxt "auditBayesianEvaluation|"
 msgid ""
 "<i>Requires additional assumption: The population taints are homogeneous</i>"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Benford's law"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "BF₁₀"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "BF₀₁"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Log(BF₁₀)"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"

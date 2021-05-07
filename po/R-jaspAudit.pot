@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.15\n"
-"POT-Creation-Date: 2021-03-03 12:24\n"
+"POT-Creation-Date: 2021-05-07 13:27\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,19 +40,13 @@ msgstr ""
 msgid "<b>Table %i.</b> Goodness-of-fit Test"
 msgstr ""
 
-msgid "Statistic"
+msgid "BF%1$s"
 msgstr ""
 
-msgid "Value"
+msgid "Log(BF%1$s)"
 msgstr ""
 
 msgid "df"
-msgstr ""
-
-msgid "<i>p</i> value"
-msgstr ""
-
-msgid "N"
 msgstr ""
 
 msgid "The null hypothesis specifies that the first digits (1 - 9) in the data set are distributed according to %1$s."
@@ -64,10 +58,7 @@ msgstr ""
 msgid "The null hypothesis specifies that the last digits (1 - 9) in the data set are distributed according to %1$s."
 msgstr ""
 
-msgid "Chi-square"
-msgstr ""
-
-msgid "X%1$s"
+msgid "The Bayes factor is computed using a <i>Dirichlet(%1$s,...,%2$s%3$s)</i> prior with <i>%2$s = 1</i>."
 msgstr ""
 
 msgid "<b>Table %i.</b> Frequency Statistics"
@@ -125,6 +116,9 @@ msgid "The <i>p</i> value is %1$s and the null hypothesis that the first two dig
 msgstr ""
 
 msgid "The <i>p</i> value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s <b>%3$s</b>."
+msgstr ""
+
+msgid "%1$s The Bayes factor indicates that the data are <b>%2$s times</b> more likely to occur under the null hypothesis than under the alternative hypothesis."
 msgstr ""
 
 msgid "Direct estimator"
@@ -298,31 +292,22 @@ msgstr ""
 msgid "Frequency"
 msgstr ""
 
-msgid "<i>S</i>"
-msgstr ""
-
 msgid "Entropy"
 msgstr ""
 
-msgid "Both <i>p</i> values are one-sided and are computed on the basis of %1$s samples."
+msgid "The displayed <i>p</i> value is one-sided and is computed on the basis of %1$s samples."
 msgstr ""
 
 msgid "<b>Table %i.</b> Assumption Checks"
-msgstr ""
-
-msgid "n"
-msgstr ""
-
-msgid "r"
-msgstr ""
-
-msgid "t"
 msgstr ""
 
 msgid "The displayed <i>p</i> value is for a two-sided test against H₀: <i>r = 0</i>."
 msgstr ""
 
 msgid "<b>Table %i.</b> Frequencies"
+msgstr ""
+
+msgid "Value"
 msgstr ""
 
 msgid "Observed vs. Expected Average Frequency"
@@ -836,9 +821,6 @@ msgid "Obtained precision"
 msgstr ""
 
 msgid "Odds"
-msgstr ""
-
-msgid "BF%1$s"
 msgstr ""
 
 msgid "The upper bound is calculated according to the <b>Poisson</b> distributon."

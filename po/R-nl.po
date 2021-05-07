@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-03-03 12:24\n"
+"POT-Creation-Date: 2021-05-07 13:27\n"
 "PO-Revision-Date: 2021-02-03 07:41+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -117,20 +117,15 @@ msgstr "<u>Het Evalueren van de Uniforme Verdeling</u>"
 msgid "<b>Table %i.</b> Goodness-of-fit Test"
 msgstr "<b>Tabel %i.</b> Passingstoets"
 
-msgid "Statistic"
-msgstr "Statistiek"
+msgid "BF%1$s"
+msgstr "BF%1$s"
 
-msgid "Value"
-msgstr "Waarde"
+#, fuzzy
+msgid "Log(BF%1$s)"
+msgstr "BF%1$s"
 
 msgid "df"
 msgstr "vg"
-
-msgid "<i>p</i> value"
-msgstr "<i>p</i> waarde"
-
-msgid "N"
-msgstr "N"
 
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
@@ -153,11 +148,10 @@ msgstr ""
 "De nulhypothese specificeert dat de verdeling van de laatste cijfers (1 - 9) "
 "in de gegevens overeenstemt met %1$s."
 
-msgid "Chi-square"
-msgstr "Chi-kwadraat"
-
-msgid "X%1$s"
-msgstr "X%1$s"
+msgid ""
+"The Bayes factor is computed using a <i>Dirichlet(%1$s,...,%2$s%3$s)</i> "
+"prior with <i>%2$s = 1</i>."
+msgstr ""
 
 #, fuzzy
 msgid "<b>Table %i.</b> Frequency Statistics"
@@ -237,6 +231,12 @@ msgid ""
 msgstr ""
 "De <i>p</i> waarde is %1$s en de nulhypothese dat de laatste cijfers in de "
 "gegevens worden verdeeld volgens %2$s <b>%3$s</b>."
+
+msgid ""
+"%1$s The Bayes factor indicates that the data are <b>%2$s times</b> more "
+"likely to occur under the null hypothesis than under the alternative "
+"hypothesis."
+msgstr ""
 
 msgid "Direct estimator"
 msgstr "Directe schatter"
@@ -538,30 +538,17 @@ msgstr ""
 msgid "Frequency"
 msgstr "Frequentie"
 
-#, fuzzy
-msgid "<i>S</i>"
-msgstr "<i>p</i> waarde"
-
 msgid "Entropy"
 msgstr ""
 
 msgid ""
-"Both <i>p</i> values are one-sided and are computed on the basis of %1$s "
-"samples."
+"The displayed <i>p</i> value is one-sided and is computed on the basis of "
+"%1$s samples."
 msgstr ""
 
 #, fuzzy
 msgid "<b>Table %i.</b> Assumption Checks"
 msgstr "<b>Tabel %1$i.</b> Evaluatiesamenvatting"
-
-msgid "n"
-msgstr ""
-
-msgid "r"
-msgstr ""
-
-msgid "t"
-msgstr ""
 
 msgid ""
 "The displayed <i>p</i> value is for a two-sided test against H₀: <i>r = 0</"
@@ -571,6 +558,9 @@ msgstr ""
 #, fuzzy
 msgid "<b>Table %i.</b> Frequencies"
 msgstr "<b>Tabel %1$i.</b> Planningssamenvatting"
+
+msgid "Value"
+msgstr "Waarde"
 
 #, fuzzy
 msgid "Observed vs. Expected Average Frequency"
@@ -1637,9 +1627,6 @@ msgstr ""
 msgid "Odds"
 msgstr ""
 
-msgid "BF%1$s"
-msgstr "BF%1$s"
-
 #, fuzzy
 msgid ""
 "The upper bound is calculated according to the <b>Poisson</b> distributon."
@@ -2053,6 +2040,25 @@ msgstr ""
 "%1$s: De populatie afwijking is lager dan de materialiteit(%2$s %3$s). %4$s: "
 "De populatie afwijking is gelijk aan, of hoger dan de materialiteit (%5$s "
 "%6$s)."
+
+#~ msgid "Statistic"
+#~ msgstr "Statistiek"
+
+#~ msgid "<i>p</i> value"
+#~ msgstr "<i>p</i> waarde"
+
+#~ msgid "N"
+#~ msgstr "N"
+
+#~ msgid "Chi-square"
+#~ msgstr "Chi-kwadraat"
+
+#~ msgid "X%1$s"
+#~ msgstr "X%1$s"
+
+#, fuzzy
+#~ msgid "<i>S</i>"
+#~ msgstr "<i>p</i> waarde"
 
 #, fuzzy
 #~ msgid ""

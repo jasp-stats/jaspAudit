@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-03-03 12:24\n"
+"POT-Creation-Date: 2021-05-07 13:27\n"
 "PO-Revision-Date: 2021-04-13 09:34+0000\n"
 "Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -122,20 +122,15 @@ msgstr "<u>Prüfung der Uniformen Verteilung</u>"
 msgid "<b>Table %i.</b> Goodness-of-fit Test"
 msgstr "<b>Tabelle %i.</b> Anpassungsgüte-Test"
 
-msgid "Statistic"
-msgstr "Statistik"
+msgid "BF%1$s"
+msgstr "BF%1$s"
 
-msgid "Value"
-msgstr "Wert"
+#, fuzzy
+msgid "Log(BF%1$s)"
+msgstr "BF%1$s"
 
 msgid "df"
 msgstr "df"
-
-msgid "<i>p</i> value"
-msgstr "<i>p</i>-Wert"
-
-msgid "N"
-msgstr "N"
 
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
@@ -158,11 +153,10 @@ msgstr ""
 "Die Nullhypothese gibt an, dass die letzten Ziffern (1 - 9) im Datensatz "
 "gemäß %1$s verteilt sind."
 
-msgid "Chi-square"
-msgstr "Chi-Quadrat"
-
-msgid "X%1$s"
-msgstr "X%1$s"
+msgid ""
+"The Bayes factor is computed using a <i>Dirichlet(%1$s,...,%2$s%3$s)</i> "
+"prior with <i>%2$s = 1</i>."
+msgstr ""
 
 msgid "<b>Table %i.</b> Frequency Statistics"
 msgstr "<b>Tabelle %i.</b> Häufigkeitsstatistiken"
@@ -239,6 +233,12 @@ msgid ""
 msgstr ""
 "Der <i>p</i>-Wert ist %1$s und die Nullhypothese, dass die letzten Ziffern "
 "des Datensatzes gemäß %2$s <b>%3$s</b> verteilt sind."
+
+msgid ""
+"%1$s The Bayes factor indicates that the data are <b>%2$s times</b> more "
+"likely to occur under the null hypothesis than under the alternative "
+"hypothesis."
+msgstr ""
 
 msgid "Direct estimator"
 msgstr "Direkter Schätzer"
@@ -554,30 +554,19 @@ msgstr "Mittelwert"
 msgid "Frequency"
 msgstr "Häufigkeit"
 
-msgid "<i>S</i>"
-msgstr "<i>S</i>"
-
 msgid "Entropy"
 msgstr "Entropie"
 
+#, fuzzy
 msgid ""
-"Both <i>p</i> values are one-sided and are computed on the basis of %1$s "
-"samples."
+"The displayed <i>p</i> value is one-sided and is computed on the basis of "
+"%1$s samples."
 msgstr ""
 "Beide <i>p</i>-Werte sind einseitig und werden auf der Basis von %1$s "
 "Stichproben berechnet."
 
 msgid "<b>Table %i.</b> Assumption Checks"
 msgstr "<b>Tabelle %i.</b> Annahmeprüfungen"
-
-msgid "n"
-msgstr "n"
-
-msgid "r"
-msgstr "r"
-
-msgid "t"
-msgstr "t"
 
 msgid ""
 "The displayed <i>p</i> value is for a two-sided test against H₀: <i>r = 0</"
@@ -588,6 +577,9 @@ msgstr ""
 
 msgid "<b>Table %i.</b> Frequencies"
 msgstr "<b>Tabelle %i.</b> Häufigkeiten"
+
+msgid "Value"
+msgstr "Wert"
 
 msgid "Observed vs. Expected Average Frequency"
 msgstr "Beobachtete vs. erwartete durchschnittliche Häufigkeit"
@@ -1609,9 +1601,6 @@ msgstr ""
 msgid "Odds"
 msgstr ""
 
-msgid "BF%1$s"
-msgstr "BF%1$s"
-
 msgid ""
 "The upper bound is calculated according to the <b>Poisson</b> distributon."
 msgstr "Die obere Grenze wird nach der <b>Poisson</b>-Verteilung berechnet."
@@ -1628,7 +1617,8 @@ msgstr ""
 "berechnet."
 
 msgid "The upper bound is calculated according to the <b>Stringer</b> method."
-msgstr "Die obere Schranke wird nach der Methode von <b>Stringer</b> berechnet."
+msgstr ""
+"Die obere Schranke wird nach der Methode von <b>Stringer</b> berechnet."
 
 msgid ""
 "The upper bound is calculated according to the <b>regression</b> method."
@@ -1997,6 +1987,33 @@ msgstr ""
 "%1$s: Die Falschangabe der Grundgesamtheit ist niedriger als die "
 "Wesentlichkeit (%2$s %3$s). %4$s: Die Falschangabe der Grundgesamtheit ist "
 "gleich oder höher als die Wesentlichkeit (%5$s %6$s)."
+
+#~ msgid "Statistic"
+#~ msgstr "Statistik"
+
+#~ msgid "<i>p</i> value"
+#~ msgstr "<i>p</i>-Wert"
+
+#~ msgid "N"
+#~ msgstr "N"
+
+#~ msgid "Chi-square"
+#~ msgstr "Chi-Quadrat"
+
+#~ msgid "X%1$s"
+#~ msgstr "X%1$s"
+
+#~ msgid "<i>S</i>"
+#~ msgstr "<i>S</i>"
+
+#~ msgid "n"
+#~ msgstr "n"
+
+#~ msgid "r"
+#~ msgstr "r"
+
+#~ msgid "t"
+#~ msgstr "t"
 
 #, fuzzy
 #~ msgid ""

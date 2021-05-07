@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-03-03 12:24\n"
+"POT-Creation-Date: 2021-05-07 13:27\n"
 "PO-Revision-Date: 2021-05-03 20:32+0000\n"
 "Last-Translator: Alex França <alex.tonante@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -131,25 +131,15 @@ msgstr "<u>Avaliando a Distribuição Uniforme</u>"
 msgid "<b>Table %i.</b> Goodness-of-fit Test"
 msgstr "<b>Tabela %i.</b> Teste de aderência"
 
-#, fuzzy
-msgid "Statistic"
-msgstr "Estatísticas"
+msgid "BF%1$s"
+msgstr ""
 
-#, fuzzy
-msgid "Value"
-msgstr "Valor"
+msgid "Log(BF%1$s)"
+msgstr ""
 
 #, fuzzy
 msgid "df"
 msgstr "gl"
-
-#, fuzzy
-msgid "<i>p</i> value"
-msgstr "<i>p</i> valor"
-
-#, fuzzy
-msgid "N"
-msgstr "N"
 
 #, fuzzy
 msgid ""
@@ -175,13 +165,10 @@ msgstr ""
 "A hipótese nula especifica que os últimos dígitos (1 - 9) no conjunto de "
 "dados são distribuídos de acordo com %1$s."
 
-#, fuzzy
-msgid "Chi-square"
-msgstr "Qui-quadrado"
-
-#, fuzzy
-msgid "X%1$s"
-msgstr "X%1$s"
+msgid ""
+"The Bayes factor is computed using a <i>Dirichlet(%1$s,...,%2$s%3$s)</i> "
+"prior with <i>%2$s = 1</i>."
+msgstr ""
 
 #, fuzzy
 msgid "<b>Table %i.</b> Frequency Statistics"
@@ -279,6 +266,12 @@ msgstr ""
 "O valor <i> p </i> é% 1 $ s e a hipótese nula de que os últimos dígitos no "
 "conjunto de dados são distribuídos de acordo com% 2 $ s <b>% 3 $ s </b>."
 
+msgid ""
+"%1$s The Bayes factor indicates that the data are <b>%2$s times</b> more "
+"likely to occur under the null hypothesis than under the alternative "
+"hypothesis."
+msgstr ""
+
 #, fuzzy
 msgid "Direct estimator"
 msgstr "Estimador direto"
@@ -374,16 +367,16 @@ msgid ""
 "The t-value <i>(df = n - 1)</i> corresponding to %1$s%% confidence %2$s%3$s"
 "%4$s"
 msgstr ""
-"O valor t <i> (df = n - 1) </i> correspondente a% 1 $ s %% "
-"confiança%2$s%3$s%4$s"
+"O valor t <i> (df = n - 1) </i> correspondente a% 1 $ s %% confiança%2$s%3$s"
+"%4$s"
 
 #, fuzzy
 msgid ""
 "The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence %3$s"
 "%4$s%5$s%6$s"
 msgstr ""
-"O valor t <i> (df =% 1 $ s - 1) </i> correspondente a %2$s %% "
-"confiança%3$s%4$s%5$s%6$s"
+"O valor t <i> (df =% 1 $ s - 1) </i> correspondente a %2$s %% confiança%3$s"
+"%4$s%5$s%6$s"
 
 #, fuzzy
 msgid ""
@@ -434,8 +427,8 @@ msgid ""
 "<i>The required information for the <b>difference</b> estimator consists of:"
 "</i>"
 msgstr ""
-"<i>The required information for the <b>difference</b> estimator consists "
-"of:</i>"
+"<i>The required information for the <b>difference</b> estimator consists of:"
+"</i>"
 
 #, fuzzy
 msgid "The sum of the population book values <i>B</i>"
@@ -652,34 +645,20 @@ msgid "Frequency"
 msgstr "Fequência"
 
 #, fuzzy
-msgid "<i>S</i>"
-msgstr "<i>S</i>"
-
-#, fuzzy
 msgid "Entropy"
 msgstr "Entropia"
 
 #, fuzzy
 msgid ""
-"Both <i>p</i> values are one-sided and are computed on the basis of %1$s "
-"samples."
+"The displayed <i>p</i> value is one-sided and is computed on the basis of "
+"%1$s samples."
 msgstr ""
-"Ambos os valores <i> p </i> são unilaterais e são calculados com base em% 1 $"
-" s amostras."
+"Ambos os valores <i> p </i> são unilaterais e são calculados com base em% 1 "
+"$ s amostras."
 
 #, fuzzy
 msgid "<b>Table %i.</b> Assumption Checks"
 msgstr "Verificar pressupostos"
-
-msgid "n"
-msgstr ""
-
-msgid "r"
-msgstr ""
-
-#, fuzzy
-msgid "t"
-msgstr "t"
 
 msgid ""
 "The displayed <i>p</i> value is for a two-sided test against H₀: <i>r = 0</"
@@ -688,6 +667,10 @@ msgstr ""
 
 msgid "<b>Table %i.</b> Frequencies"
 msgstr ""
+
+#, fuzzy
+msgid "Value"
+msgstr "Valor"
 
 msgid "Observed vs. Expected Average Frequency"
 msgstr ""
@@ -1514,9 +1497,6 @@ msgstr ""
 msgid "Odds"
 msgstr ""
 
-msgid "BF%1$s"
-msgstr ""
-
 msgid ""
 "The upper bound is calculated according to the <b>Poisson</b> distributon."
 msgstr ""
@@ -1860,3 +1840,31 @@ msgid ""
 "%4$s: The population misstatement is equal to, or higher than, materiality "
 "(%5$s %6$s)."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Statistic"
+#~ msgstr "Estatísticas"
+
+#, fuzzy
+#~ msgid "<i>p</i> value"
+#~ msgstr "<i>p</i> valor"
+
+#, fuzzy
+#~ msgid "N"
+#~ msgstr "N"
+
+#, fuzzy
+#~ msgid "Chi-square"
+#~ msgstr "Qui-quadrado"
+
+#, fuzzy
+#~ msgid "X%1$s"
+#~ msgstr "X%1$s"
+
+#, fuzzy
+#~ msgid "<i>S</i>"
+#~ msgstr "<i>S</i>"
+
+#, fuzzy
+#~ msgid "t"
+#~ msgstr "t"

@@ -1411,10 +1411,6 @@ msgid "Reference Distribution"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
-msgid "Benford's Law"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
 msgid "Uniform distribution"
 msgstr ""
 
@@ -2431,10 +2427,6 @@ msgid "<b>How would you like to evaluate your transactions?</b>"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid ""
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Soll values"
 msgstr ""
 
@@ -2775,4 +2767,24 @@ msgstr ""
 
 msgctxt "auditSelection|"
 msgid "<b>Download Report</b>"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Benford's law"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "BF₁₀"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "BF₀₁"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Log(BF₁₀)"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid ""
 msgstr ""
