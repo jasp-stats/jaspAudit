@@ -1,4 +1,4 @@
-context("[Audit] Classical Repeated Values")
+context("[Audit] Repeated Values")
 
 # The test here are taken directly from http://datacolada.org/77
 
