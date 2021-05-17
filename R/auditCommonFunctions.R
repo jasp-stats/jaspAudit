@@ -930,16 +930,16 @@
         parentContainer$setError(gettext("You cannot incorporate this prior information into your analysis because you are not testing against a performance materiality."))
         return(TRUE)
       }
-      if(options[["priorConstructionMethod"]] %in% c("median", "hypotheses") && options[["planningModel"]] == "hypergeometric"){
-        # Error if equal prior probabilities are chosen with a beta-binomial distribution
-        parentContainer$setError(gettext("The prior distribution with equal prior probabilities cannot be constructed using the beta-binomial distribution. You can use the beta or the gamma distribution in this case."))
-        return(TRUE)
-      }
-      if(options[["priorConstructionMethod"]] %in% c("median", "hypotheses") && expTMP != 0 && options[["planningModel"]] == "Poisson"){
-        # Error if equal prior probabilities are chosen in combination with a gamma prior and expected errors != 0
-        parentContainer$setError(gettext("The gamma prior distribution with equal prior probabilities cannot be constructed when you expect errors in the sample. You can revert to the beta distribution in this case."))
-        return(TRUE)
-      }
+    #   if(options[["priorConstructionMethod"]] %in% c("median", "hypotheses") && options[["planningModel"]] == "hypergeometric"){
+    #     # Error if equal prior probabilities are chosen with a beta-binomial distribution
+    #     parentContainer$setError(gettext("The prior distribution with equal prior probabilities cannot be constructed using the beta-binomial distribution. You can use the beta or the gamma distribution in this case."))
+    #     return(TRUE)
+    #   }
+    #   if(options[["priorConstructionMethod"]] %in% c("median", "hypotheses") && expTMP != 0 && options[["planningModel"]] == "Poisson"){
+    #     # Error if equal prior probabilities are chosen in combination with a gamma prior and expected errors != 0
+    #     parentContainer$setError(gettext("The gamma prior distribution with equal prior probabilities cannot be constructed when you expect errors in the sample. You can revert to the beta distribution in this case."))
+    #     return(TRUE)
+    #   }
     }
     # No error in the planning options
     return(FALSE)
