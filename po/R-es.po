@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-05-07 13:27\n"
-"PO-Revision-Date: 2021-03-06 09:51+0000\n"
+"PO-Revision-Date: 2021-05-18 17:33+0000\n"
 "Last-Translator: Paulina Elizabeth Robalino <paulina.e.robalino@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "es/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5.1\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 msgid "<u>Procedure</u>"
 msgstr ""
@@ -419,7 +419,7 @@ msgid "Average"
 msgstr ""
 
 msgid "Frequency"
-msgstr ""
+msgstr "Frecuencia"
 
 msgid "Entropy"
 msgstr ""
@@ -1194,22 +1194,22 @@ msgid "Valid cases"
 msgstr ""
 
 msgid "Median"
-msgstr ""
+msgstr "Mediana"
 
 msgid "Std. Deviation"
-msgstr ""
+msgstr "Desviación estándar"
 
 msgid "Variance"
-msgstr ""
+msgstr "Varianza"
 
 msgid "Range"
-msgstr ""
+msgstr "Rango"
 
 msgid "Minimum"
-msgstr ""
+msgstr "Mínimo"
 
 msgid "Maximum"
-msgstr ""
+msgstr "Máximo"
 
 msgid ""
 "These results imply that there is a %1$s probability that, when one would "
@@ -1480,7 +1480,7 @@ msgid ""
 msgstr ""
 
 msgid "Density"
-msgstr ""
+msgstr "Densidad"
 
 msgid "Population misstatement (%1$s)"
 msgstr ""
@@ -1561,7 +1561,7 @@ msgid "Ratio %1$s"
 msgstr ""
 
 msgid "Mode"
-msgstr ""
+msgstr "Moda"
 
 msgid "Precision"
 msgstr ""
