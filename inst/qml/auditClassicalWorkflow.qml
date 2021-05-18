@@ -1058,7 +1058,7 @@ Form
 				id: 								variableType
 				name: 								"variableType"
 				title: 								qsTr("")
-				Layout.alignment: 					Qt.AlignHCenter
+				anchors.horizontalCenter: 			parent.horizontalCenter
 				enabled:							!pasteVariables.checked
 
 				RowLayout
