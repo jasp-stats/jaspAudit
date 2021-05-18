@@ -215,7 +215,7 @@ Form
 		Label
 		{
 			id: 									variableSelectionTitle
-			anchors.horizontalCenter: 				parent.horizontalCenter
+			Layout.alignment: 						Qt.AlignHCenter
 			text: 									qsTr("<b>Variable Definitions</b>")
 			font:									jaspTheme.fontLabel
 			enabled:								!pasteVariables.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0))
@@ -330,7 +330,7 @@ Form
 
 			Label
 			{
-				anchors.horizontalCenter: 			parent.horizontalCenter
+				Layout.alignment: 					Qt.AlignHCenter
 				text: 								qsTr("<b>Critical Transaction List</b>")
 				visible:							flagCriticalTransactions.checked
 			}
@@ -1264,7 +1264,7 @@ Form
 		Label
 		{
 			id: 									selectHowToAnalyseObservations
-			anchors.horizontalCenter: 				parent.horizontalCenter
+			Layout.alignment: 						Qt.AlignHCenter
 			text: 									qsTr("<b>How would you like to evaluate your transactions?</b>")
 		}
 
@@ -1278,7 +1278,7 @@ Form
 				id: 								variableType
 				name: 								"variableType"
 				title: 								""
-				anchors.horizontalCenter: 			parent.horizontalCenter
+				Layout.alignment: 					Qt.AlignHCenter
 				enabled:							!pasteVariables.checked
 
 				RowLayout
@@ -1389,7 +1389,7 @@ Form
 		Label
 		{
 			id: 									performAuditText
-			anchors.horizontalCenter: 				parent.horizontalCenter
+			Layout.alignment: 						Qt.AlignHCenter
 			text: 									variableTypeAuditValues.checked ? qsTr("<b>Annotate your selected transactions with their Soll values.</b>") : qsTr("<b>Annotate your selected transactions with a 0 (correct) or a 1 (misstated).</b>")
 			visible: 								pasteVariables.checked
 		}
