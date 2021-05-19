@@ -113,7 +113,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
     values <- c(values, options[["values"]])
   
   .hasErrors(dataset, 
-             type=c("infinity", "variance", "observations"),
+             type=c("infinity", "observations"),
              all.target = values, 
              message = "short", 
              observations.amount= "< 2",
