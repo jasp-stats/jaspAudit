@@ -498,14 +498,14 @@
     analysisOptions <- list()
     
     if(!is.null(recordNumberVariable)){
-      dataset <- .readDataSetToEnd(columns.as.factor = recordNumberVariable)
+      dataset <- .readDataSetToEnd(columns.as.factor = recordNumberVariable, exclude.na.listwise = recordNumberVariable)
       dataset[, .v(recordNumberVariable)] <- as.character(dataset[, .v(recordNumberVariable)])
       
       analysisOptions[["populationSize"]] <- nrow(dataset)
       analysisOptions[["uniqueN"]] <- length(unique(dataset[, .v(options[["recordNumberVariable"]])]))
       
       if(!is.null(monetaryVariable)){
-        dataset <- .readDataSetToEnd(columns.as.numeric = monetaryVariable, columns.as.factor = recordNumberVariable)
+        dataset <- .readDataSetToEnd(columns.as.numeric = monetaryVariable, columns.as.factor = recordNumberVariable, exclude.na.listwise = c(monetaryVariable, recordNumberVariable))
         dataset[, .v(recordNumberVariable)] <- as.character(dataset[, .v(recordNumberVariable)])
         
         monetaryColumn <- dataset[, .v(monetaryVariable)]
@@ -558,7 +558,7 @@
   }
   
   if(!is.null(variables)){
-    dataset <- .readDataSetToEnd(columns.as.factor = recordNumberVariable, columns.as.numeric = variables[which(variables != recordNumberVariable)])
+    dataset <- .readDataSetToEnd(columns.as.factor = recordNumberVariable, columns.as.numeric = variables[which(variables != recordNumberVariable)], exclude.na.listwise = variables)
     dataset[, .v(recordNumberVariable)] <- as.character(dataset[, .v(recordNumberVariable)])
     if(stage == "evaluation" && !is.null(sampleCounter) && !is.null(recordNumberVariable) && !is.null(auditResult)) # Apply sample filter only when required variables are given
       dataset <- subset(dataset, dataset[, .v(options[["sampleCounter"]])] > 0)
@@ -898,7 +898,7 @@
       return()
     
     # Check for infinity, zero variance, and any missing observations
-    .hasErrors(dataset, type = c("infinity", "variance", "observations"),
+    .hasErrors(dataset, type = c("infinity", "observations"),
                all.target = variables, message = "short",
                observations.amount = paste0("< ", nrow(dataset)),
                exitAnalysisIfErrors = TRUE)
@@ -956,7 +956,7 @@
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
       parentContainer$setError(gettext("Your sample size is larger than (or equal to) your population value. Cannot take a MUS sample larger than the population value."))
       return(TRUE)
-    } else if(options[["recordNumberVariable"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[, .v(options[["recordNumberVariable"]])]))){
+    } else if(options[["recordNumberVariable"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[, options[["recordNumberVariable"]]]))){
       # Error if the transaction ID's are not unique
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
       parentContainer$setError(gettext("You must specify unique transaction ID's. The row numbers of the data set are sufficient."))
@@ -3762,7 +3762,7 @@
   prevState       	<- prevContainer[["evaluationState"]]$object
   parentContainer 	<- jaspResults[["conclusionContainer"]]
   
-  if(is.null(prevState) || is.nan(prevState[["t"]]) || !is.null(parentContainer[["extraSampleTable"]]))
+  if(is.null(prevState) || is.nan(prevState[["t"]]) || !is.null(parentContainer[["extraSampleTable"]]) || prevState[["t"]] < 0)
     return()
   
   # Produce relevant terms conditional on the analysis result

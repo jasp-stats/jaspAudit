@@ -212,7 +212,7 @@
     alphaParameterPosterior <- parentState[["expectedPosterior"]][["description"]]$alpha
     betaParameterPosterior 	<- parentState[["expectedPosterior"]][["description"]]$beta
     
-    xseq <- seq(0, options[["priorPlotLimit"]], 0.001)
+    xseq <- seq(0, options[["priorPlotLimit"]], length.out = 1000)
     
     if(likelihood == "binomial"){
       
@@ -436,7 +436,7 @@
       precision 	<- parentState[["precisionUnseen"]]
     }
     
-    xseq <- seq(0, options[["priorAndPosteriorPlotLimit"]], 0.001)
+    xseq <- seq(0, options[["priorAndPosteriorPlotLimit"]], length.out = 1000)
     
     if(likelihood == "binomial"){
       
