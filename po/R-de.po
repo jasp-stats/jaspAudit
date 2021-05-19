@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-03-03 12:24\n"
-"PO-Revision-Date: 2021-05-12 10:32+0000\n"
+"PO-Revision-Date: 2021-05-19 18:33+0000\n"
 "Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -1884,16 +1884,17 @@ msgid "The sample sizes shown are a rough indication."
 msgstr "Die angegebenen Stichprobengrößen sind eine grobe Orientierung."
 
 msgid "<b>Table %i.</b> Post-Hoc Corrections to Population Value"
-msgstr ""
+msgstr "<b>Tabelle %i.</b> Post-Hoc-Korrekturen am Wert der Grundgesamtheit"
 
 msgid "Correction"
 msgstr "Korrektur"
 
 msgid "The correction to achieve no misstatements is the upper bound%1$s."
 msgstr ""
+"Die Korrektur, um keine Falschangaben zu erreichen, ist die obere Grenze%1$s."
 
 msgid "No misstatements with %1$s%% precision"
-msgstr ""
+msgstr "Keine Falschangaben mit %1$s%% Genauigkeit"
 
 msgid "No misstatements with %1$s%% confidence"
 msgstr "Keine Falschangaben mit %1$s%% Konfidenz"
