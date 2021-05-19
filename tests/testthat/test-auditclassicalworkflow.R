@@ -8,7 +8,7 @@ options$monetaryVariable <- "bookValue"
 options$expectedPercentage <- 0.025
 options$bookValueDescriptives <- TRUE
 options$bookValueDistribution <- TRUE
-options$decisionPlot <- TRUE
+#options$decisionPlot <- TRUE
 options$samplingDistribution <- TRUE
 options$samplingChecked <- TRUE
 options$displaySample <- TRUE
@@ -56,17 +56,17 @@ test_that("<b>Table 7.</b> Evaluation Summary results match", {
 		list("1.288%", 0, "5%", "0%", 231, "0%"))
 })
 
-test_that("Across Probability Distributions (Current: Poisson) plot matches", {
-	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-poisson-", dir="auditClassicalWorkflow")
-})
+# test_that("Across Probability Distributions (Current: Poisson) plot matches", {
+# 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
+# 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-poisson-", dir="auditClassicalWorkflow")
+# })
 
-test_that("Across Expected Errors (Current: 5.78) plot matches", {
-	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-5-78-", dir="auditClassicalWorkflow")
-})
+# test_that("Across Expected Errors (Current: 5.78) plot matches", {
+# 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
+# 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-5-78-", dir="auditClassicalWorkflow")
+# })
 
 test_that("Implied Poisson Distribution of Errors plot matches", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_samplingDistribution"]][["data"]]

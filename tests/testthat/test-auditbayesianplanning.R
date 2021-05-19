@@ -81,7 +81,7 @@ options$expectedEvidenceRatio <- TRUE
 options$expectedBayesFactor <- TRUE
 options$implicitSampleTable <- TRUE
 options$priorStatistics <- TRUE
-options$decisionPlot <- TRUE
+#options$decisionPlot <- TRUE
 options$priorPlot <- TRUE
 options$priorPlotExpectedPosterior <- TRUE
 options$materiality <- "materialityAbsolute"
@@ -97,17 +97,17 @@ dataset <- NULL
 results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
 
 
-test_that("Across Probability Distributions (Current: Gamma) plot matches", {
-	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-gamma-", dir="auditBayesianPlanning")
-})
+# test_that("Across Probability Distributions (Current: Gamma) plot matches", {
+# 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
+# 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-gamma-", dir="auditBayesianPlanning")
+# })
 
-test_that("Across Expected Errors (Current: 0) plot matches 2", {
-	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-2", dir="auditBayesianPlanning")
-})
+# test_that("Across Expected Errors (Current: 0) plot matches 2", {
+# 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
+# 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-2", dir="auditBayesianPlanning")
+# })
 
 test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorAndPosteriorStatistics"]][["data"]]
@@ -152,7 +152,7 @@ options$expectedEvidenceRatio <- TRUE
 options$expectedBayesFactor <- TRUE
 options$implicitSampleTable <- TRUE
 options$priorStatistics <- TRUE
-options$decisionPlot <- TRUE
+#options$decisionPlot <- TRUE
 options$priorPlot <- TRUE
 options$priorPlotExpectedPosterior <- TRUE
 options$materiality <- "materialityAbsolute"
@@ -168,17 +168,17 @@ dataset <- NULL
 results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
 
 
-test_that("Across Probability Distributions (Current: Beta-binomial) plot matches", {
-	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-beta-binomial-", dir="auditBayesianPlanning")
-})
+# test_that("Across Probability Distributions (Current: Beta-binomial) plot matches", {
+# 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
+# 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-beta-binomial-", dir="auditBayesianPlanning")
+# })
 
-test_that("Across Expected Errors (Current: 0) plot matches 3", {
-	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-3", dir="auditBayesianPlanning")
-})
+# test_that("Across Expected Errors (Current: 0) plot matches 3", {
+# 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
+# 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-3", dir="auditBayesianPlanning")
+# })
 
 test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorAndPosteriorStatistics"]][["data"]]

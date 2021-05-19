@@ -12,7 +12,7 @@ options$bookValueDescriptives <- TRUE
 options$implicitSampleTable <- TRUE
 options$priorStatistics <- TRUE
 options$bookValueDistribution <- TRUE
-options$decisionPlot <- TRUE
+#options$decisionPlot <- TRUE
 options$priorConstructionMethod <- "none"
 options$priorPlot <- TRUE
 options$priorPlotExpectedPosterior <- TRUE
@@ -94,17 +94,17 @@ test_that("<b>Table 10.</b> Descriptive Statistics for Prior and Posterior Distr
 			 "<unicode><unicode><unicode>", "", "Shift"))
 })
 
-test_that("Across Probability Distributions (Current: Gamma) plot matches", {
-	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-gamma-", dir="auditBayesianWorkflow")
-})
+# test_that("Across Probability Distributions (Current: Gamma) plot matches", {
+# 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
+# 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-gamma-", dir="auditBayesianWorkflow")
+# })
 
-test_that("Across Expected Errors (Current: 5.78) plot matches", {
-	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-5-78-", dir="auditBayesianWorkflow")
-})
+# test_that("Across Expected Errors (Current: 5.78) plot matches", {
+# 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
+# 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-5-78-", dir="auditBayesianWorkflow")
+# })
 
 test_that("<b>Table 4.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorAndPosteriorStatistics"]][["data"]]
