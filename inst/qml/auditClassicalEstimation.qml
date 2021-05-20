@@ -157,7 +157,7 @@ Form {
 
 			RadioButton
 			{
-				name:				"ratio"
+				name:				"regression"
 				text:				qsTr("Regression estimator")
 				checked:			true
 			}

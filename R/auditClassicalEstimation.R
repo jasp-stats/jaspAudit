@@ -124,17 +124,17 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   
   regressionTable$addColumnInfo(name = 'estimate', 
                                 title = gettextf('Estimate %1$s', "W&#770"), 
-                                type = 'string')
+                                type = 'number')
   regressionTable$addColumnInfo(name = 'uncertainty', 
                                 title = gettext('Uncertainty'), 
-                                type = 'string')
+                                type = 'number')
   regressionTable$addColumnInfo(name = 'lower',  
                                 title = gettext('Lower'), 
-                                type = 'string', 
+                                type = 'number', 
                                 overtitle = gettextf("%1$s%% Confidence interval", round(options[["confidence"]] * 100, 2)))
   regressionTable$addColumnInfo(name = 'upper', 
                                 title = gettext('Upper'), 
-                                type = 'string', 
+                                type = 'number', 
                                 overtitle = gettextf("%1$s%% Confidence interval", round(options[["confidence"]] * 100, 2)))
   
   jaspResults[["regressionTable"]] <- regressionTable
