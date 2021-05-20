@@ -30,22 +30,22 @@ Form
 	columns: 			1
 
 	// Extra options
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 									"workflow"
 		checked: 								false
-		visible: 								false 
+		visible: 								false
 	}
 
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 									"bayesianAnalysis"
 		checked: 								false
-		visible: 								false 
+		visible: 								false
 	}
 
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 									"separateKnownAndUnknownMisstatement"
 		checked: 								false
 		visible: 								false
@@ -63,7 +63,7 @@ Form
 		}
 	}
 
-	IntegerField 
+	IntegerField
 	{
 		name: 									"sampleSizeIncrease"
 		defaultValue: 							1
@@ -75,8 +75,8 @@ Form
 		name: 									"valuta"
 		visible:								false
 
-		RadioButton 	
-		{ 
+		RadioButton
+		{
 			text: 								qsTr("Dollar ($)")
 			name: 								"dollarValuta"
 			checked: 							true
@@ -88,7 +88,7 @@ Form
 	{
 		columns: 								3
 
-		GroupBox 
+		GroupBox
 		{
 			title: 								qsTr("Sampling Objectives")
 			columns:							2
@@ -167,7 +167,7 @@ Form
 				id: 							minimumPrecision
 				text: 							qsTr("Obtain a required minimum precision")
 				name: 							"minimumPrecision"
-			
+
 				PercentField
 				{
 					id: 						minimumPrecisionPercentage
@@ -212,10 +212,10 @@ Form
 				fieldWidth: 					80 * preferencesModel.uiScale
 				min: 							0
 				decimals: 						2
-				onValueChanged:					
+				onValueChanged:
 				{
-												if(populationValue.value == 0) displayPercentages.click()
-												if(populationValue.value == 0) stringerBound.click()
+					if(populationValue.value == 0) displayPercentages.click()
+					if(populationValue.value == 0) stringerBound.click()
 				}
 			}
 		}
@@ -261,9 +261,9 @@ Form
 		}
 	}
 
-	Divider 
-	{ 
-		width: 									parent.width 
+	Divider
+	{
+		width: 									parent.width
 	}
 
 	VariablesForm
@@ -315,13 +315,13 @@ Form
 		}
 	}
 
-	RadioButtonGroup 
+	RadioButtonGroup
 	{
-		id:										variableType 
+		id:										variableType
 		title: 									qsTr("Annotation Method")
 		name:									"variableType"
 
-		RadioButton 
+		RadioButton
 		{
 			id: 								variableTypeAuditValues
 			name:								"variableTypeAuditValues"
@@ -331,14 +331,14 @@ Form
 			onCheckedChanged: 					if(checked) useSummaryStatistics.checked = false
 		}
 
-		RadioButton 
+		RadioButton
 		{
 			id: 								variableTypeCorrect
 			name:								"variableTypeCorrect"
-			label: 								qsTr("Correct / Incorrect")	
+			label: 								qsTr("Correct / Incorrect")
 			checked: 							!mainWindow.dataAvailable
 
-			CheckBox 
+			CheckBox
 			{
 				id: 							useSummaryStatistics
 				name: 							"useSumStats"
@@ -403,15 +403,15 @@ Form
 				name: 							"handleCriticalTransactions"
 				enabled:						flagCriticalTransactions.checked
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Keep")
 					name: 						"inspect"
-					checked: 					true	
+					checked: 					true
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Remove")
 					name: 						"remove"
 				}
@@ -432,21 +432,21 @@ Form
 			name: 								"IR"
 			enabled:							performanceMateriality.checked
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				text: 							qsTr("High")
 				name: 							"High"
-				checked: 						true	
+				checked: 						true
 			}
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				text: 							qsTr("Medium")
 				name: 							"Medium"
 			}
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				text: 							qsTr("Low")
 				name: 							"Low"
 			}
@@ -476,21 +476,21 @@ Form
 			name: 								"CR"
 			enabled:							performanceMateriality.checked
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				text: 							qsTr("High")
 				name: 							"High"
-				checked: 						true	
+				checked: 						true
 			}
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				text: 							qsTr("Medium")
 				name: 							"Medium"
 			}
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				text: 							qsTr("Low")
 				name: 							"Low"
 			}
@@ -544,32 +544,32 @@ Form
 				}
 			}
 
-			RadioButton 
-			{ 
-				name: 							"directBound"		
-				text: 							qsTr("Direct estimator") 			
-				id: 							directBound		
+			RadioButton
+			{
+				name: 							"directBound"
+				text: 							qsTr("Direct estimator")
+				id: 							directBound
 				enabled: 						!variableTypeCorrect.checked && populationValue.value != 0
 			}
 			
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				name: 							"differenceBound"
 				text: 							qsTr("Difference estimator")
 				id: 							differenceBound
 				enabled: 						!variableTypeCorrect.checked && populationValue.value != 0
 			}
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				name: 							"ratioBound"
 				text: 							qsTr("Ratio estimator")
 				id: 							ratioBound
 				enabled: 						!variableTypeCorrect.checked  && populationValue.value != 0
 			}
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				name: 							"regressionBound"
 				text: 							qsTr("Regression estimator")
 				id: 							regressionBound
@@ -583,8 +583,8 @@ Form
 			name: 								"estimator2"
 			visible: 							variableTypeCorrect.checked
 			
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				name: 							"binomialBound"
 				text: 							qsTr("Binomial")
 				id: 							binomialBound
@@ -592,20 +592,20 @@ Form
 				checked:						true
 			}
 			
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				name: 							"poissonBound"
 				text: 							qsTr("Poisson")
 				id: 							poissonBound
 				enabled: 						variableTypeCorrect.checked
 			}
 			
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				name: 							"hyperBound"
 				text: 							qsTr("Hypergeometric")
 				id: 							hyperBound
-				enabled: 						variableTypeCorrect.checked 
+				enabled: 						variableTypeCorrect.checked
 			}
 		}
 
@@ -633,7 +633,7 @@ Form
 				text: 							qsTr("Extrapolated amounts")
 				name: 							"displayValues"
 				enabled:						populationValue.value != 0
-			}	
+			}
 		}
 	}
 

@@ -28,7 +28,7 @@ Form {
 	GridLayout
 	{
 		columns: 							3
-		columnSpacing:						75 * preferencesModel.uiScale	
+		columnSpacing:						75 * preferencesModel.uiScale
 
 		GroupBox
 		{
@@ -101,9 +101,9 @@ Form {
 		id: 								variablesFormEstimation
 		preferredHeight: 					jaspTheme.smallDefaultVariablesFormHeight
 
-		AvailableVariablesList	
-		{ 
-			name: 							"variablesFormEstimation" 
+		AvailableVariablesList
+		{
+			name: 							"variablesFormEstimation"
 		}
 
 		AssignedVariablesList

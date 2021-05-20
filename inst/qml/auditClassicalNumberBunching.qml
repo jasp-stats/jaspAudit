@@ -28,7 +28,7 @@ Form {
 	GridLayout
 	{
 		columns: 						2
-		columnSpacing:					150 * preferencesModel.uiScale		
+		columnSpacing:					150 * preferencesModel.uiScale
 
 		GroupBox
 		{
@@ -74,9 +74,9 @@ Form {
 		id: 							variablesFormNumberBunching
 		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
 
-		AvailableVariablesList	
-		{ 
-			name: 						"variablesFormNumberBunching" 
+		AvailableVariablesList
+		{
+			name: 						"variablesFormNumberBunching"
 		}
 
 		AssignedVariablesList
@@ -90,10 +90,10 @@ Form {
 	}
 
 
-	GridLayout 
+	GridLayout
 	{
 		columns:						2
-		columnSpacing:					100 * preferencesModel.uiScale		
+		columnSpacing:					100 * preferencesModel.uiScale
 
 		ColumnLayout
 		{
@@ -142,7 +142,7 @@ Form {
 				}
 			}
 
-			GroupBox 
+			GroupBox
 			{
 				title: 					qsTr("Bootstrap Options")
 
@@ -165,7 +165,7 @@ Form {
 					max: 					500000
 					fieldWidth:				70
 				}
-			}			
+			}
 		}
 
 		ColumnLayout
@@ -217,12 +217,12 @@ Form {
 		}
 	}
 
-	Item 
+	Item
 	{
 		Layout.preferredHeight: 		downloadReportNumberBunching.height
 		Layout.fillWidth: 				true
 
-		Button 
+		Button
 		{
 			id: 						downloadReportNumberBunching
 			enabled: 					values.count > 0

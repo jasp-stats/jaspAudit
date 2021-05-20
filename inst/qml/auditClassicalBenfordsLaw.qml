@@ -28,7 +28,7 @@ Form {
 	GridLayout
 	{
 		columns: 						2
-		columnSpacing:					150 * preferencesModel.uiScale		
+		columnSpacing:					150 * preferencesModel.uiScale
 
 		GroupBox
 		{
@@ -74,9 +74,9 @@ Form {
 		id: 							variablesFormBenfordsLaw
 		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
 
-		AvailableVariablesList	
-		{ 
-			name: 						"variablesFormBenfordsLaw" 
+		AvailableVariablesList
+		{
+			name: 						"variablesFormBenfordsLaw"
 		}
 
 		AssignedVariablesList
@@ -92,7 +92,7 @@ Form {
 	GridLayout
 	{
 		columns: 						2
-		columnSpacing:					150 * preferencesModel.uiScale	
+		columnSpacing:					150 * preferencesModel.uiScale
 
 		ColumnLayout
 		{
@@ -167,7 +167,7 @@ Form {
 			}
 		}
 
-		ColumnLayout 
+		ColumnLayout
 		{
 
 			GroupBox
@@ -195,12 +195,12 @@ Form {
 		}
 	}
 
-	Item 
+	Item
 	{
 		Layout.preferredHeight: 		downloadReportBenfordsLaw.height
 		Layout.fillWidth: 				true
 
-		Button 
+		Button
 		{
 			id: 						downloadReportBenfordsLaw
 			enabled: 					values.count > 0
