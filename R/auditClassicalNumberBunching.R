@@ -30,7 +30,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   dataset <- .jfaBenfordsLawReadData(dataset, options)
   
   # Perform early error checks
-  .jfaBenfordsLawDataCheck(dataset, options)
+  .jfaNumberBunchingDataCheck(dataset, options)
   
   # Ready for analysis
   ready <- .jfaBenfordsLawReadyCheck(options)
@@ -68,6 +68,33 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
   .jfaNumberBunchingAddConclusion(options, numberBunchingContainer, jaspResults, ready, position = 3)
   
   # ---
+}
+
+.jfaNumberBunchingDataCheck <- function(dataset, options){
+  
+  values <- NULL
+  if(options[["values"]] != "")
+    values <- c(values, options[["values"]])
+  
+  .hasErrors(dataset, 
+             type=c("infinity", "observations"),
+             all.target = values, 
+             message = "short", 
+             observations.amount= "< 2",
+             exitAnalysisIfErrors = TRUE)
+  
+  # To-do: make a faster way to find these decimals
+  decimalVec <- NULL
+  for (i in 1:length(dataset[[options[["values"]]]])) {
+    decimal <- nchar(strsplit(as.character(dataset[[options[["values"]]]][i]), "\\.")[[1]][2])
+    if(is.na(decimal)) 
+      decimal <- 0
+    decimalVec[i] <- decimal
+  }
+  print(decimalVec)
+  
+  if (options[["values"]] != "" && length(which(decimalVec > 0)) < 3)
+    jaspBase:::.quitAnalysis("The data must contain at least two values with decimals.")
 }
 
 .jfaNumberBunchingAddProcedure <- function(options, jaspResults, position){
@@ -356,6 +383,11 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
     
     state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
     
+    if (length(unique(state[["bsAvgFreq"]])) == 1) {
+      plot$setError("The distribution of samples cannot be plotted because all samples have the same value.")
+      return()
+    }
+    
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(state[["bsAvgFreq"]], state[["avgFrequency"]]))
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsAvgFreq"]], plot = F)$counts + 100, 0))
     
@@ -417,6 +449,11 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...){
       return()
     
     state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
+    
+    if (length(unique(state[["bsEntropy"]])) == 1) {
+      plot$setError("The distribution of samples cannot be plotted because all samples have the same value.")
+      return()
+    }
     
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(state[["bsEntropy"]], state[["entropy"]]))
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsEntropy"]], plot = F)$counts + 100, 0))
