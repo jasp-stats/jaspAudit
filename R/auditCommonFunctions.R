@@ -2407,7 +2407,7 @@
     interval <- base::switch(units, "records" = nrow(dataset) / prevState[["sampleSize"]],
                              "mus" = sum(dataset[, bookValues]) / prevState[["sampleSize"]])
     if(options[["seed"]] > interval){
-      parentContainer$setError(gettextf("Your specified starting point lies outside the selection interval (%1$s).", round(interval, 3)))
+      parentContainer$setError(gettextf("Starting point is outside the range of the selection interval of 1 to %1$s. Please choose a starting point < %1$s.", round(interval, 3)))
       return()
     }
   }
