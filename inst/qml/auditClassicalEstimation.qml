@@ -138,6 +138,7 @@ Form {
 
 			RadioButton
 			{
+				id:					mpu
 				name:				"mpu"
 				text:				qsTr("Direct estimator")
 			}
