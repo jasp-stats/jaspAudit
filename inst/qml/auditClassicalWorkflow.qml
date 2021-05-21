@@ -504,7 +504,7 @@ Form
 						defaultValue: 				0
 						visible: 					expectedRelative.checked
 						fieldWidth: 				50 * preferencesModel.uiScale
-						onValueChanged:				if(expectedRelative.checked & expectedPercentage.value > 0)
+						onValueChanged:				if (expectedRelative.checked & expectedPercentage.value > 0)
 													{
 														irHigh.click()
 														crHigh.click()
@@ -532,7 +532,7 @@ Form
 						visible: 					expectedAbsolute.checked
 						fieldWidth: 				60 * preferencesModel.uiScale
 						label: 						performanceMateriality.checked & materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
-						onValueChanged:				if(expectedAbsolute.checked & expectedNumber.value > 0)
+						onValueChanged:				if (expectedAbsolute.checked & expectedNumber.value > 0)
 													{
 														irHigh.click()
 														crHigh.click()
@@ -1237,7 +1237,7 @@ Form
 						stringerBound.click()
 					if (recordSampling.checked & variableTypeAuditValues.checked)
 						regressionBound.click()
-					if(variableTypeCorrect.checked)
+					if (variableTypeCorrect.checked)
 					{
 						if (poisson.checked) 				poissonBound.click()
 						if (binomial.checked) 				binomialBound.click()

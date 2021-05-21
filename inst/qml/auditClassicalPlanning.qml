@@ -194,8 +194,8 @@ Form
 				decimals: 						2
 				onValueChanged:
 				{
-					if(populationValue.value > 0) poisson.click()
-					if(populationValue.value == 0) binomial.click()
+					if (populationValue.value > 0) poisson.click()
+					if (populationValue.value == 0) binomial.click()
 				}
 			}
 		}
@@ -367,7 +367,7 @@ Form
 					defaultValue: 				0
 					visible: 					expectedRelative.checked
 					fieldWidth: 				50 * preferencesModel.uiScale
-					onValueChanged:				if(expectedRelative.checked & expectedPercentage.value > 0)
+					onValueChanged:				if (expectedRelative.checked & expectedPercentage.value > 0)
 												{
 													irHigh.click()
 													crHigh.click()
@@ -395,7 +395,7 @@ Form
 					visible: 					expectedAbsolute.checked
 					fieldWidth: 				80 * preferencesModel.uiScale
 					label: 						performanceMateriality.checked & materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
-					onValueChanged:				if(expectedAbsolute.checked & expectedNumber.value > 0)
+					onValueChanged:				if (expectedAbsolute.checked & expectedNumber.value > 0)
 												{
 													irHigh.click()
 													crHigh.click()

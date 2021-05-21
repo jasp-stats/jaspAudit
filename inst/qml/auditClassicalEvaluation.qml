@@ -140,7 +140,7 @@ Form
 							name: 				"materialityAbsolute"
 							text: 				qsTr("Absolute")
 							childrenOnSameRow: 	true
-							onCheckedChanged:	if(checked & mainWindow.dataAvailable) variableTypeAuditValues.click()
+							onCheckedChanged:	if (checked & mainWindow.dataAvailable) variableTypeAuditValues.click()
 
 							DoubleField
 							{
@@ -216,8 +216,8 @@ Form
 				decimals: 						2
 				onValueChanged:
 				{
-					if(populationValue.value == 0) displayPercentages.click()
-					if(populationValue.value == 0) stringerBound.click()
+					if (populationValue.value == 0) displayPercentages.click()
+					if (populationValue.value == 0) stringerBound.click()
 				}
 			}
 		}
@@ -332,7 +332,7 @@ Form
 			label: 								qsTr("Soll values")
 			checked:							mainWindow.dataAvailable
 			enabled:							mainWindow.dataAvailable
-			onCheckedChanged: 					if(checked) useSummaryStatistics.checked = false
+			onCheckedChanged: 					if (checked) useSummaryStatistics.checked = false
 		}
 
 		RadioButton

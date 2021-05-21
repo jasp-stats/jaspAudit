@@ -378,7 +378,7 @@ Form
 			name: 								"addSampleIndicator"
 			text: 								qsTr("Export sample to file")
 			enabled: 							recordNumberVariable.count > 0 & sampleSize.value > 0
-			onCheckedChanged:					if(!checked) exportSample.checked = false
+			onCheckedChanged:					if (!checked) exportSample.checked = false
 
 			ComputedColumnField
 			{

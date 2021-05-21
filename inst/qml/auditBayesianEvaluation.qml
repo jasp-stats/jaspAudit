@@ -128,7 +128,7 @@ Form
 							name: 				"materialityAbsolute"
 							text: 				qsTr("Absolute")
 							childrenOnSameRow: 	true
-							onCheckedChanged:	if(checked & mainWindow.dataAvailable) variableTypeAuditValues.click()
+							onCheckedChanged:	if (checked & mainWindow.dataAvailable) variableTypeAuditValues.click()
 
 							DoubleField
 							{
@@ -203,8 +203,8 @@ Form
 				decimals: 						2
 				onValueChanged:
 				{
-					if(populationValue.value == 0) displayPercentages.click()
-					if(populationValue.value == 0) separateKnownAndUnknownMisstatement.checked = false
+					if (populationValue.value == 0) displayPercentages.click()
+					if (populationValue.value == 0) separateKnownAndUnknownMisstatement.checked = false
 				}
 			}
 		}
@@ -319,7 +319,7 @@ Form
 			label: 								qsTr("Soll values")
 			checked:							mainWindow.dataAvailable
 			enabled:							mainWindow.dataAvailable
-			onCheckedChanged: 					if(checked) useSummaryStatistics.checked = false
+			onCheckedChanged: 					if (checked) useSummaryStatistics.checked = false
 		}
 
 		RadioButton
@@ -428,7 +428,7 @@ Form
 					id: 						separateKnownAndUnknownMisstatement
 					text: 						qsTr("Separate known and unknown misstatement")
 					name: 						"separateKnownAndUnknownMisstatement"
-					onCheckedChanged: 			if(checked) betaBound.click()
+					onCheckedChanged: 			if (checked) betaBound.click()
 					enabled:					populationSize.value > 0 & populationValue.value > 0 & recordNumberVariable.count > 0 & monetaryVariable.count > 0 & auditResult.count > 0
 				}
 

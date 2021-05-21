@@ -371,7 +371,7 @@ Form
 						id: 						separateKnownAndUnknownMisstatement
 						text: 						qsTr("Separate known and unknown misstatement")
 						name: 						"separateKnownAndUnknownMisstatement"
-						onCheckedChanged: 			if(checked) beta.click()
+						onCheckedChanged: 			if (checked) beta.click()
 					}
 
 					HelpButton

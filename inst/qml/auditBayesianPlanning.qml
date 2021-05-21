@@ -181,8 +181,8 @@ Form
 				decimals: 						2
 				onValueChanged:
 				{
-					if(populationValue.value > 0) gamma.click()
-					if(populationValue.value == 0) beta.click()
+					if (populationValue.value > 0) gamma.click()
+					if (populationValue.value == 0) beta.click()
 				}
 			}
 		}

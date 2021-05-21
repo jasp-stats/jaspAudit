@@ -18,7 +18,7 @@
 # When making changes to this file always mention @koenderks as a 
 # reviewer in the Pull Request
 
-auditBayesianEvaluation <- function(jaspResults, dataset, options, ...){
+auditBayesianEvaluation <- function(jaspResults, dataset, options, ...) {
   
   # For the evaluation constituents, see auditCommonFunctions.R
   .jfaEvaluationStage(options, jaspResults, workflow = FALSE)

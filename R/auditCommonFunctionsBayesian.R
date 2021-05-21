@@ -22,7 +22,7 @@
 ################## Common functions for Bayesian calculations ##################
 ################################################################################
 
-.jfaCredibleIntervalCalculation <- function(options, parentState){
+.jfaCredibleIntervalCalculation <- function(options, parentState) {
   
   # In calculation of the credible interval, we split the confidence from the
   # original one-sided bound in two so that it becomes two-sided.
@@ -41,21 +41,21 @@
   alphaParameterPosterior 	<- parentState[["posterior"]][["description"]]$alpha
   betaParameterPosterior 	<- parentState[["posterior"]][["description"]]$beta
   
-  if(likelihood == "poisson"){
+  if (likelihood == "poisson") {
     lowerBound <- qgamma(lowerBoundConfidence, shape = alphaParameterPosterior, rate = betaParameterPosterior)
     upperBound <- qgamma(upperBoundConfidence, shape = alphaParameterPosterior, rate = betaParameterPosterior)
-  } else if(likelihood == "binomial"){
+  } else if (likelihood == "binomial") {
     lowerBound <- qbeta(lowerBoundConfidence, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
     upperBound <- qbeta(upperBoundConfidence, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)                                        
-  } else if(likelihood == "hypergeometric"){
+  } else if (likelihood == "hypergeometric") {
     lowerBound <- jfa:::.qBetaBinom(lowerBoundConfidence, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)	/ N						
     upperBound <- jfa:::.qBetaBinom(upperBoundConfidence, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior) / N                             
-  } else if(likelihood == "regression"){
+  } else if (likelihood == "regression") {
     lowerBound <- (parentState[["popBookvalue"]] - parentState[["lowerBound"]]) / parentState[["popBookvalue"]]
     upperBound <- (parentState[["popBookvalue"]] - parentState[["upperBound"]]) / parentState[["popBookvalue"]]
   }
   
-  if(options[["separateKnownAndUnknownMisstatement"]] && options[["monetaryVariable"]] != ""){
+  if (options[["separateKnownAndUnknownMisstatement"]] && options[["monetaryVariable"]] != "") {
     totalLowerBound <- (parentState[["mle"]] + lowerBound * parentState[["unseenValue"]]) / parentState[["populationValue"]]
     totalUpperBound <- (parentState[["mle"]] + upperBound * parentState[["unseenValue"]]) / parentState[["populationValue"]]
     results <- list(lowerBound = totalLowerBound, upperBound = totalUpperBound,
@@ -67,7 +67,7 @@
   return(results)
 }
 
-.jfaBayesianRegressionCalculation <- function(options, sample, prevOptions){
+.jfaBayesianRegressionCalculation <- function(options, sample, prevOptions) {
   
   # Bayesian Linear Regression Using the BAS package
   # This will be replaced by the WASEM technique.
@@ -77,11 +77,11 @@
   colnames(sample) <- c("ist", "soll")
   formula <- soll ~ ist
   
-  if(all(sample[,1] == sample[,2])){
+  if (all(sample[,1] == sample[,2])) {
     betas <- c(1, 1, 1)
   } else {	
     basResult <- BAS::bas.lm(formula, data = sample)
-    if(options[["areaUnderPosterior"]] == "displayCredibleBound"){
+    if (options[["areaUnderPosterior"]] == "displayCredibleBound") {
       basSummary <- BAS:::confint.coef.bas(coef(basResult), level = prevOptions[["confidence"]] - (1 - prevOptions[["confidence"]]))
     } else {
       basSummary <- BAS:::confint.coef.bas(coef(basResult), level = prevOptions[["confidence"]])
@@ -128,14 +128,14 @@
 ################################################################################
 
 .jfaImplicitSampleTable <- function(options, parentState, parentContainer, jaspResults, 
-                                    ready, positionInContainer){
+                                    ready, positionInContainer) {
   
-  if(!options[["implicitSampleTable"]]) 
+  if (!options[["implicitSampleTable"]]) 
     return()
   
   .jfaTableNumberUpdate(jaspResults)
   
-  if(is.null(parentContainer[["sampletable"]])){
+  if (is.null(parentContainer[["sampletable"]])) {
     
     tableTitle <- gettextf("<b>Table %i.</b> Implicit Sample", jaspResults[["tabNumber"]]$object)
     
@@ -159,7 +159,7 @@
     
     parentContainer[["sampletable"]] <- table
     
-    if(!ready || parentContainer$getError()) 
+    if (!ready || parentContainer$getError()) 
       return()
     
     row <- data.frame(n = parentState[["prior"]][["description"]]$implicitn, 
@@ -170,14 +170,14 @@
 }
 
 .jfaPriorPlot <- function(options, parentOptions, parentState, parentContainer, jaspResults, 
-                          ready, positionInContainer){
+                          ready, positionInContainer) {
   
-  if(!options[["priorPlot"]]) 
+  if (!options[["priorPlot"]]) 
     return()
   
   .jfaFigureNumberUpdate(jaspResults)
   
-  if(is.null(parentContainer[["priorPlot"]])){
+  if (is.null(parentContainer[["priorPlot"]])) {
     
     title <- ifelse(options[["separateKnownAndUnknownMisstatement"]],
                     yes = gettext("Implied Prior Distribution over Unknown Misstatement"),
@@ -195,7 +195,7 @@
     
     parentContainer[["priorPlot"]] <- figure
     
-    if(!ready || parentContainer$getError()) 
+    if (!ready || parentContainer$getError()) 
       return()
     
     likelihood 	<- parentState[["likelihood"]]
@@ -214,7 +214,7 @@
     
     xseq <- seq(0, options[["priorPlotLimit"]], length.out = 1000)
     
-    if(likelihood == "binomial"){
+    if (likelihood == "binomial") {
       
       # Create data to show beta prior and expected posterior, materiality, and expected errors
       dPrior 	<- data.frame(x = xseq, 		y = dbeta(xseq, shape1 = alphaParameterPrior, shape2 = betaParameterPrior), type = rep(gettext("Prior"), length(xseq)))
@@ -226,7 +226,7 @@
       bPrior 	<- qbeta(confidence, shape1 = alphaParameterPrior, shape2 = betaParameterPrior)
       bPost 	<- qbeta(confidence, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
       
-    } else if(likelihood == "poisson"){
+    } else if (likelihood == "poisson") {
       
       # Create data to show gamma prior and expected posterior, materiality, and expected errors
       dPrior 	<- data.frame(x = xseq, 		y = dgamma(xseq, shape = alphaParameterPrior, rate = betaParameterPrior), type = rep(gettext("Prior"), length(xseq)))
@@ -238,7 +238,7 @@
       bPrior 	<- qgamma(confidence, shape = alphaParameterPrior, rate = betaParameterPrior)
       bPost 	<- qgamma(confidence, shape = alphaParameterPosterior, rate = betaParameterPosterior)
       
-    } else if(likelihood == "hypergeometric"){
+    } else if (likelihood == "hypergeometric") {
       
       # Create data to show beta-binomial prior and expected posterior, materiality, and expected errors
       popK 	<- ceiling(materiality * N)
@@ -265,7 +265,7 @@
     guide <- FALSE
     scaleValues <- "dashed"
     
-    if(options[["priorPlotExpectedPosterior"]]){  
+    if (options[["priorPlotExpectedPosterior"]]) {  
       dPlot <- rbind(dPlot, dPost)
       dPlot$type <- factor(dPlot$type, levels = levels(factor(dPlot$type))[c(2, 1)])
       scaleValues <- c(scaleValues, "dotted")
@@ -280,46 +280,46 @@
       ggplot2::scale_linetype_manual(values = scaleValues, guide = guide) +
       ggplot2::scale_y_continuous(name = gettext("Density"), breaks = yBreaks, labels = c("", ""), limits = range(yBreaks))
     
-    if(likelihood == "hypergeometric"){
+    if (likelihood == "hypergeometric") {
       plot <- plot + ggplot2::scale_x_continuous(name = gettextf("Population misstatement (%1$s)", "\u03B8"), breaks = xBreaks, limits = range(xBreaks), labels = xBreaks)
     } else {
       title <- ifelse(options[["separateKnownAndUnknownMisstatement"]], yes = gettextf("Unseen population misstatement (%1$s)", "\u03B8"), no = gettextf("Population misstatement (%1$s)", "\u03B8"))
       plot <- plot + ggplot2::scale_x_continuous(name = title, breaks = xBreaks, limits = range(xBreaks), labels = paste0(xBreaks * 100, "%"))
     }
     
-    if(options[["priorPlotAdditionalInfo"]]){
-      if(options[["shadePrior"]] != "shadePriorNone"){ 
+    if (options[["priorPlotAdditionalInfo"]]) {
+      if (options[["shadePrior"]] != "shadePriorNone") { 
         plot <- plot + ggplot2::geom_point(data = extra, mapping = ggplot2::aes(x = x, y = y, shape = l), size = 0, color = shade)
         
-        if(options[["shadePrior"]] == "shadePriorCredibleRegion"){
-          if(options[["priorPlotExpectedPosterior"]]){
+        if (options[["shadePrior"]] == "shadePriorCredibleRegion") {
+          if (options[["priorPlotExpectedPosterior"]]) {
             plot <- plot + ggplot2::scale_shape_manual(name = "", values = 21, labels = gettextf("%1$s%% Credible \nregion for %2$s", round(confidence * 100, 2), "\u03B8"))
           } else {
             plot <- plot + ggplot2::scale_shape_manual(name = "", values = 21, labels = gettextf("%1$s%% Credible region for %2$s", round(confidence * 100, 2), "\u03B8"))
           }
-        } else if(options[["shadePrior"]] == "shadePriorHypotheses"){
+        } else if (options[["shadePrior"]] == "shadePriorHypotheses") {
           plot <- plot + ggplot2::scale_shape_manual(name = "", values = c(21, 21), labels = c(bquote(paste(.(gettext("Support")), ~H[{"-"}])), bquote(paste(.(gettext("Support")), ~H[{"+"}]))))
         }
         plot <- plot + ggplot2::guides(shape = ggplot2::guide_legend(override.aes = list(size = 15, shape = 22, fill = shade, stroke = 2, color = "black")))
         
-        if(options[["shadePrior"]] == "shadePriorCredibleRegion"){
-          if(likelihood == "binomial")
+        if (options[["shadePrior"]] == "shadePriorCredibleRegion") {
+          if (likelihood == "binomial")
             plot <- plot + ggplot2::stat_function(fun = dbeta, args = list(shape1 = alphaParameterPrior, shape2 = betaParameterPrior), xlim = c(0, bPrior), geom = "area", fill = shade)
-          if(likelihood == "poisson")
+          if (likelihood == "poisson")
             plot <- plot + ggplot2::stat_function(fun = dgamma, args = list(shape = alphaParameterPrior, rate = betaParameterPrior), xlim = c(0, bPrior), geom = "area", fill = shade)
-          if(likelihood == "hypergeometric"){
+          if (likelihood == "hypergeometric") {
             xseq <- xseq[1:(bPrior + 1)]
             bars <- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
             plot <- plot + ggplot2::geom_bar(data = bars, stat = "identity", fill = shade)
           }
-        } else if(options[["shadePrior"]] == "shadePriorHypotheses"){
-          if(likelihood == "binomial")
+        } else if (options[["shadePrior"]] == "shadePriorHypotheses") {
+          if (likelihood == "binomial")
             plot <- plot + ggplot2::stat_function(fun = dbeta, args = list(shape1 = alphaParameterPrior, shape2 = betaParameterPrior), xlim = c(0, materiality), geom = "area", fill = shade[1]) +
               ggplot2::stat_function(fun = dbeta, args = list(shape1 = alphaParameterPrior, shape2 = betaParameterPrior), xlim = c(materiality, 1), geom = "area", fill = shade[2])
-          if(likelihood == "poisson")
+          if (likelihood == "poisson")
             plot <- plot + ggplot2::stat_function(fun = dgamma, args = list(shape = alphaParameterPrior, rate = betaParameterPrior), xlim = c(0, materiality), geom = "area", fill = shade[1]) +
               ggplot2::stat_function(fun = dgamma, args = list(shape = alphaParameterPrior, rate = betaParameterPrior), xlim = c(materiality, 1), geom = "area", fill = shade[2])
-          if(likelihood == "hypergeometric"){
+          if (likelihood == "hypergeometric") {
             nseq 	<- (N * materiality + 1)
             xseq1 	<- xseq[1:nseq]
             bars1 	<- data.frame(x = xseq1, y = jfa:::.dBetaBinom(xseq1, N = N - n, shape1 = alphaParameterPrior, shape2 = betaParameterPrior))
@@ -332,11 +332,11 @@
       } 
     }
     
-    if(options[["priorPlotAdditionalInfo"]])
+    if (options[["priorPlotAdditionalInfo"]])
       plot <- plot + ggplot2::geom_point(mapping = ggplot2::aes(x = x, y = y), data = mPrior, size = 3, shape = 21, stroke = 2, color = "black", fill = rgb(0.9, 0, 0, 1)) +
       ggplot2::geom_point(mapping = ggplot2::aes(x = x, y = y), data = ePrior, size = 3, shape = 21, stroke = 2, color = "black", fill = "grey")
     
-    if(options[["priorPlotAdditionalInfo"]] && options[["priorPlotExpectedPosterior"]])
+    if (options[["priorPlotAdditionalInfo"]] && options[["priorPlotExpectedPosterior"]])
       plot <- plot + ggplot2::geom_segment(x = 0, xend = bPost, y = max(dPlot$y) * 1.1, yend = max(dPlot$y) * 1.1, 
                                            linetype = 1, size = 1, arrow = ggplot2::arrow(length = ggplot2::unit(0.03, "npc"), angle = 90)) +
       ggplot2::geom_segment(x = bPost, xend = 0, y = max(dPlot$y) * 1.1, yend = max(dPlot$y) * 1.1, 
@@ -351,10 +351,10 @@
     figure$plotObject <- plot
   }
   
-  if(options[["explanatoryText"]]){
+  if (options[["explanatoryText"]]) {
     distribution 	<- base::switch(parentOptions[["likelihood"]], "poisson" = gettext("gamma"), "binomial" = gettext("beta"), "hypergeometric" = gettext("beta-binomial"))
     additionalText1 <- gettext("The expected errors are visualized by the grey dot. The red dot represents the performance materiality.")
-	additionalText2 <- gettextf("The expected posterior distribution is calculated so that its %1$s percentile lies below the performance materiality.", round(options[["confidence"]] * 100, 2))
+    additionalText2 <- gettextf("The expected posterior distribution is calculated so that its %1$s percentile lies below the performance materiality.", round(options[["confidence"]] * 100, 2))
     
     figureCaption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> The prior probability distribution <b>(%2$s)</b> on the misstatement (\u03B8) in the population. The prior parameters <i>%3$s = %4$s, %5$s = %6$s</i> are derived from the assessments of the inherent and control risk, along with the expected errors. %7$s %8$s",  
                                              jaspResults[["figNumber"]]$object,
@@ -378,14 +378,14 @@
 ################################################################################
 
 .jfaPosteriorPlot <- function(options, prevOptions, prevState, parentState, parentContainer, jaspResults,
-                              positionInContainer){
+                              positionInContainer) {
   
-  if(!options[["priorAndPosteriorPlot"]]) 
+  if (!options[["priorAndPosteriorPlot"]]) 
     return()
   
   .jfaFigureNumberUpdate(jaspResults)
   
-  if(is.null(parentContainer[["priorAndPosteriorPlot"]])){
+  if (is.null(parentContainer[["priorAndPosteriorPlot"]])) {
     
     title <- ifelse(options[["separateKnownAndUnknownMisstatement"]],
                     yes = gettext("Prior and Posterior Distribution over Unknown Misstatement"),
@@ -402,7 +402,7 @@
     
     parentContainer[["priorAndPosteriorPlot"]] <- figure
     
-    if(is.null(parentState) || parentContainer$getError()) 
+    if (is.null(parentState) || parentContainer$getError()) 
       return()
     
     likelihood 	<- parentState[["method"]]
@@ -430,7 +430,7 @@
     alphaParameterPosterior 		<- parentState[["posterior"]][["description"]]$alpha
     betaParameterPosterior 			<- parentState[["posterior"]][["description"]]$beta
     
-    if(options[["separateKnownAndUnknownMisstatement"]] && options[["monetaryVariable"]] != ""){
+    if (options[["separateKnownAndUnknownMisstatement"]] && options[["monetaryVariable"]] != "") {
       confBound 	<- parentState[["confBoundUnseen"]]
       mle 			<- parentState[["mleUnseen"]]
       precision 	<- parentState[["precisionUnseen"]]
@@ -438,7 +438,7 @@
     
     xseq <- seq(0, options[["priorAndPosteriorPlotLimit"]], length.out = 1000)
     
-    if(likelihood == "binomial"){
+    if (likelihood == "binomial") {
       
       # Create data to show beta prior and posterior and materiality
       dPrior 	<- data.frame(x = xseq, y = dbeta(xseq, shape1 = alphaParameterPrior, shape2 = betaParameterPrior), type = rep(gettext("Prior"), length(xseq)))
@@ -450,7 +450,7 @@
       bPost 	<- dbeta(confBound, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
       ePost 	<- dbeta(mle, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior)
       
-    } else if(likelihood == "poisson"){
+    } else if (likelihood == "poisson") {
       
       # Create data to show gamma prior and posterior and materiality
       dPrior 	<- data.frame(x = xseq, y = dgamma(xseq, shape = alphaParameterPrior, rate = betaParameterPrior), type = rep(gettext("Prior"), length(xseq)))
@@ -462,7 +462,7 @@
       bPost 	<- dgamma(confBound, shape = alphaParameterPosterior, rate = betaParameterPosterior)
       ePost 	<- dgamma(mle, shape = alphaParameterPosterior, rate = betaParameterPosterior)
       
-    } else if(likelihood == "hypergeometric"){
+    } else if (likelihood == "hypergeometric") {
       
       # Create data to show beta-binomial prior and posterior and materiality
       xseq 	<- 0:ceiling(options[["priorAndPosteriorPlotLimit"]] * N)
@@ -483,7 +483,7 @@
     dPlot <- rbind(dPrior, dPost)
     dPlot$type <- factor(x = dPlot$type, levels = levels(factor(dPlot$type))[c(2, 1)])
     
-    if(options[["priorAndPosteriorPlotExpectedPosterior"]]){
+    if (options[["priorAndPosteriorPlotExpectedPosterior"]]) {
       dPlot <- rbind(dPlot, dPoste)
       dPlot$type <- factor(x = dPlot$type, levels = levels(factor(dPlot$type))[c(1, 2, 3)])
     }
@@ -492,7 +492,7 @@
     yBreaks <- c(0, 1.2 * max(dPlot$y))
     
     linetypes <- c("dashed", "solid")
-    if(options[["priorAndPosteriorPlotExpectedPosterior"]])
+    if (options[["priorAndPosteriorPlotExpectedPosterior"]])
       linetypes <- c(linetypes, "dotted")
     
     guide <- ggplot2::guide_legend(nrow = 1, byrow = FALSE, title = "", order = 1)
@@ -502,7 +502,7 @@
       ggplot2::scale_linetype_manual(values = linetypes, guide = guide) +
       ggplot2::scale_y_continuous(name = gettext("Density"), breaks = yBreaks, labels = c("", ""), limits = c(0, max(yBreaks)))
     
-    if(likelihood == "hypergeometric"){
+    if (likelihood == "hypergeometric") {
       plot <- plot + ggplot2::scale_x_continuous(name = gettext("Population errors"), breaks = xBreaks, limits = range(xBreaks), labels = xBreaks)
     } else {
       title <- ifelse(options[["separateKnownAndUnknownMisstatement"]], 
@@ -511,8 +511,8 @@
       plot <- plot + ggplot2::scale_x_continuous(name = title, breaks = xBreaks, limits = range(xBreaks), labels = paste0(xBreaks * 100, "%"))
     }
     
-    if(options[["priorAndPosteriorPlotAdditionalInfo"]]){
-      if(options[["shadePosterior"]] != "shadePosteriorNone"){
+    if (options[["priorAndPosteriorPlotAdditionalInfo"]]) {
+      if (options[["shadePosterior"]] != "shadePosteriorNone") {
         
         fill <- base::switch(options[["shadePosterior"]],
                              "shadePosteriorCredibleRegion" = rgb(0.37, 0.42, 0.69, 0.5), # Darkpurple
@@ -520,9 +520,9 @@
         
         plot <- plot + ggplot2::geom_point(data = extra, mapping = ggplot2::aes(x = x, y = y, shape = l), size = 0, color = fill)
         
-        if(options[["shadePosterior"]] == "shadePosteriorCredibleRegion"){
+        if (options[["shadePosterior"]] == "shadePosteriorCredibleRegion") {
           plot <- plot + ggplot2::scale_shape_manual(name = "", values = 21, labels = gettextf("%1$s%% Credible \nregion for %2$s", round(confidence * 100, 2), "\u03B8"))
-        } else if(options[["shadePosterior"]] == "shadePosteriorHypotheses"){
+        } else if (options[["shadePosterior"]] == "shadePosteriorHypotheses") {
           plot <- plot + ggplot2::scale_shape_manual(name = "", values = c(21, 21), labels = c(bquote(paste(.(gettext("Support")), ~H[{"-"}])), 
                                                                                                bquote(paste(.(gettext("Support")), ~H[{"+"}]))))
         }
@@ -530,43 +530,43 @@
         plot <- plot + ggplot2::guides(shape = ggplot2::guide_legend(override.aes = list(size = 15, shape = 22, 
                                                                                          fill = fill, stroke = 2, color = "black")))
         
-        if(options[["areaUnderPosterior"]] == "displayCredibleInterval"){
+        if (options[["areaUnderPosterior"]] == "displayCredibleInterval") {
           ci <- .jfaCredibleIntervalCalculation(options, parentState)
           functionLimits <- c(ci[["lowerBound"]], ci[["upperBound"]])
-          if(options[["separateKnownAndUnknownMisstatement"]])
+          if (options[["separateKnownAndUnknownMisstatement"]])
             functionLimits <- c(ci[["unseenLowerBound"]], ci[["unseenUpperBound"]])
-        } else if(options[["areaUnderPosterior"]] == "displayCredibleBound"){
+        } else if (options[["areaUnderPosterior"]] == "displayCredibleBound") {
           functionLimits <- c(0, confBound)
-          if(options[["separateKnownAndUnknownMisstatement"]])
+          if (options[["separateKnownAndUnknownMisstatement"]])
             functionLimits <- c(0, parentState[["confBoundUnseen"]])
         }                                                                  
         
-        if(likelihood == "binomial"){
-          if(options[["shadePosterior"]] == "shadePosteriorCredibleRegion"){
+        if (likelihood == "binomial") {
+          if (options[["shadePosterior"]] == "shadePosteriorCredibleRegion") {
             plot <- plot + ggplot2::stat_function(fun = dbeta, args = list(shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior),
                                                   xlim = functionLimits, geom = "area", fill = fill)
-          } else if(options[["shadePosterior"]] == "shadePosteriorHypotheses"){
+          } else if (options[["shadePosterior"]] == "shadePosteriorHypotheses") {
             plot <- plot + ggplot2::stat_function(fun = dbeta, args = list(shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior),
                                                   xlim = c(0, materiality), geom = "area", fill = fill[1]) + 
               ggplot2::stat_function(fun = dbeta, args = list(shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior),
                                      xlim = c(materiality, 1), geom = "area", fill = fill[2])
           }
-        } else if(likelihood == "poisson"){
-          if(options[["shadePosterior"]] == "shadePosteriorCredibleRegion"){
+        } else if (likelihood == "poisson") {
+          if (options[["shadePosterior"]] == "shadePosteriorCredibleRegion") {
             plot <- plot + ggplot2::stat_function(fun = dgamma, args = list(shape = alphaParameterPosterior, rate = betaParameterPosterior),
                                                   xlim = functionLimits, geom = "area", fill = fill)
-          } else if(options[["shadePosterior"]] == "shadePosteriorHypotheses"){
+          } else if (options[["shadePosterior"]] == "shadePosteriorHypotheses") {
             plot <- plot + ggplot2::stat_function(fun = dgamma, args = list(shape = alphaParameterPosterior, rate = betaParameterPosterior),
                                                   xlim = c(0, materiality), geom = "area", fill = fill[1]) +
               ggplot2::stat_function(fun = dgamma, args = list(shape = alphaParameterPosterior, rate = betaParameterPosterior),
                                      xlim = c(materiality, 1), geom = "area", fill = fill[2]) 
           }
-        } else if(likelihood == "hypergeometric"){
-          if(options[["shadePosterior"]] == "shadePosteriorCredibleRegion"){
+        } else if (likelihood == "hypergeometric") {
+          if (options[["shadePosterior"]] == "shadePosteriorCredibleRegion") {
             xseq <- xseq[(ceiling(functionLimits[1] * N) + 1):(ceiling(functionLimits[2] * N) + 1)]
             barData <- data.frame(x = xseq, y = jfa:::.dBetaBinom(xseq, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior))
             plot <- plot + ggplot2::geom_bar(data = barData, stat = "identity", fill = fill)
-          } else if(options[["shadePosterior"]] == "shadePosteriorHypotheses"){
+          } else if (options[["shadePosterior"]] == "shadePosteriorHypotheses") {
             nseq <- (N * materiality + 1)
             xseq1 <- xseq[1:nseq]
             bars1 <- data.frame(x = xseq1, y = jfa:::.dBetaBinom(xseq1, N = N - n, shape1 = alphaParameterPosterior, shape2 = betaParameterPosterior))
@@ -578,13 +578,13 @@
         }
       }
       
-      if(options[["performanceMateriality"]])
+      if (options[["performanceMateriality"]])
         plot <- plot + ggplot2::geom_point(mapping = ggplot2::aes(x = x, y = y), data = mPost, size = 3, shape = 21, stroke = 2, color = "black", fill = rgb(0.9, 0, 0, 1))
     }
     
-    if(options[["priorAndPosteriorPlotIndicateStatistics"]]){
+    if (options[["priorAndPosteriorPlotIndicateStatistics"]]) {
       
-      if(likelihood == "hypergeometric"){
+      if (likelihood == "hypergeometric") {
         confBound <- ceiling(confBound * N)
         mle <- ceiling(mle * N)
       }
@@ -611,7 +611,7 @@
                                legend.key.size = ggplot2::unit(3, "line"),
                                legend.position = "top")
     
-    if(options[["priorAndPosteriorPlotAdditionalInfo"]] && options[["priorAndPosteriorPlotExpectedPosterior"]] && options[["shadePosterior"]] == "shadePosteriorHypotheses")
+    if (options[["priorAndPosteriorPlotAdditionalInfo"]] && options[["priorAndPosteriorPlotExpectedPosterior"]] && options[["shadePosterior"]] == "shadePosteriorHypotheses")
       jfaTheme <- jfaTheme +  ggplot2::theme(legend.text = ggplot2::element_text(size = 12))
     
     plot <- jaspGraphs::themeJasp(plot) + jfaTheme
@@ -619,7 +619,7 @@
     figure$plotObject <- plot
   }
   
-  if(options[["explanatoryText"]]){
+  if (options[["explanatoryText"]]) {
     distribution <- base::switch(parentState[["method"]], "poisson" = gettext("gamma"), "binomial" = gettext("beta"), "hypergeometric" = gettext("beta-binomial"))
     additionalText <- gettext("The red dot represents the specified materiality. If the shaded area under the distribution surpasses this point, the estimate of the maximum misstatement exceeds the materiality.")
     figureCaption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> The prior and posterior probability distribution <b>(%2$s)</b> on the misstatement in the population. %3$s",
@@ -641,16 +641,16 @@
 ################################################################################
 
 .jfaDistributionStatisticsTable <- function(options, parentOptions, parentState, parentContainer, jaspResults, 
-                                            ready = NULL, positionInContainer, stage){
+                                            ready = NULL, positionInContainer, stage) {
   
-  if(stage == "planning" && !options[["priorStatistics"]])
+  if (stage == "planning" && !options[["priorStatistics"]])
     return()
-  if(stage == "evaluation" && !options[["priorAndPosteriorStatistics"]])
+  if (stage == "evaluation" && !options[["priorAndPosteriorStatistics"]])
     return()
   
   .jfaTableNumberUpdate(jaspResults)
   
-  if(is.null(parentContainer[["priorAndPosteriorStatistics"]])){
+  if (is.null(parentContainer[["priorAndPosteriorStatistics"]])) {
     
     title <- base::switch(stage, 
                           "planning" = "Descriptive Statistics for Prior and Expected Posterior Distribution",
@@ -663,18 +663,18 @@
     table <- createJaspTable(tableTitle)
     table$position <- positionInContainer
     
-    if(stage == "planning")
+    if (stage == "planning")
       table$dependOn(options = c("priorStatistics", 
                                  "planningModel",
                                  "implicitSampleTable",
                                  "bookValueDescriptives"))
-    if(stage == "evaluation")
+    if (stage == "evaluation")
       table$dependOn(options = "priorAndPosteriorStatistics")
     
     table$addColumnInfo(name = 'v', 		title = "", type = 'string')
     table$addColumnInfo(name = 'form', 		title = gettext("Functional form"), type = 'string')
     
-    if(options[["performanceMateriality"]]){                                               
+    if (options[["performanceMateriality"]]) {                                               
       table$addColumnInfo(name = 'hMin', 	title = gettextf("Support %1$s", "H\u208B"), type = 'number')
       table$addColumnInfo(name = 'hPlus', 	title = gettextf("Support %1$s", "H\u208A"), type = 'number')
       table$addColumnInfo(name = 'odds', 	title = gettextf("Ratio %1$s", "<sup>H\u208B</sup>&frasl;<sub>H\u208A</sub>"), type = 'number')
@@ -690,21 +690,21 @@
                           "planning" = c(gettext("Prior"), gettext("Expected posterior"), gettext("Expected shift")),
                           "evaluation" = c(gettext("Prior"), gettext("Posterior"), gettext("Shift")))
     
-    if(stage == "planning"){
+    if (stage == "planning") {
       
-      if(!ready || parentContainer$getError()) {
+      if (!ready || parentContainer$getError()) {
         row <- data.frame(v = names)
         table$addRows(row)
         return()
       }
       
-    } else if(stage == "evaluation"){
+    } else if (stage == "evaluation") {
       
-      if(!(options[["performanceMateriality"]] || options[["minimumPrecision"]]) || 
-         ((options[["auditResult"]] == "" || options[["recordNumberVariable"]] == "") && !options[["useSumStats"]]) ||
-         (options[["useSumStats"]] && options[["nSumStats"]] == 0) ||
-         (parentOptions[["materiality"]] == 0 && options[["performanceMateriality"]]) ||
-         parentContainer$getError()) {
+      if (!(options[["performanceMateriality"]] || options[["minimumPrecision"]]) || 
+          ((options[["auditResult"]] == "" || options[["recordNumberVariable"]] == "") && !options[["useSumStats"]]) ||
+          (options[["useSumStats"]] && options[["nSumStats"]] == 0) ||
+          (parentOptions[["materiality"]] == 0 && options[["performanceMateriality"]]) ||
+          parentContainer$getError()) {
         
         row <- data.frame(v = names)
         table$addRows(row)
@@ -712,7 +712,7 @@
       }
     }
     
-    if(options[["performanceMateriality"]])
+    if (options[["performanceMateriality"]])
       table$addFootnote(message = gettextf("%1$s: The population misstatement is lower than materiality (%2$s %3$s). %4$s: The population misstatement is equal to, or higher than, materiality (%5$s %6$s).",
                                            "H\u208B",
                                            "\u03B8 <",
@@ -724,14 +724,14 @@
     N 						<- parentState[["N"]]
     prior 					<- parentState[["prior"]]
     
-    if(stage == "planning"){
+    if (stage == "planning") {
       
       likelihood 			<- parentState[["likelihood"]]
       n 					<- parentState[["sampleSize"]]
       k 					<- parentState[["expectedSampleError"]]
       posterior 			<- parentState[["expectedPosterior"]]
       
-    } else if(stage == "evaluation"){
+    } else if (stage == "evaluation") {
       
       likelihood 			<- parentState[["method"]]
       n 					<- parentState[["n"]]
@@ -749,13 +749,13 @@
     modePost 				<- posterior[["statistics"]]$mode
     boundPost 				<- posterior[["statistics"]]$ub
     
-    if(likelihood == "poisson"){
+    if (likelihood == "poisson") {
       formPrior 	<- paste0("gamma(\u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
       formPost 	<- paste0("gamma(\u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")")
-    } else if(likelihood == "binomial"){
+    } else if (likelihood == "binomial") {
       formPrior 	<- paste0("beta(\u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
       formPost 	<- paste0("beta(\u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")") 
-    } else if(likelihood == "hypergeometric"){
+    } else if (likelihood == "hypergeometric") {
       formPrior 	<- paste0("beta-binomial(N = ", N, ", \u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
       formPost 	<- paste0("beta-binomial(N = ", N - n, ", \u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")")
     }
@@ -771,7 +771,7 @@
                        bound = c(boundPrior, boundPost, shiftInBound),
                        precision = c(precisionPrior, precisionPost, NA))
     
-    if(options[["performanceMateriality"]]){
+    if (options[["performanceMateriality"]]) {
       priorHypotheses 	<- prior[["hypotheses"]]
       postHypotheses 	<- posterior[["hypotheses"]]
       bf 				<- base::switch(stage, "planning" = postHypotheses[["expectedBf"]], "evaluation" = postHypotheses[["bf"]])
