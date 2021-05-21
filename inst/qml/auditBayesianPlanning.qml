@@ -88,6 +88,8 @@ Form
 								visible: 		materialityRelative.checked
 								decimals: 		2
 								defaultValue: 	0
+								min:			0
+								max:			99
 								name: 			"materialityPercentage"
 								fieldWidth: 	50 * preferencesModel.uiScale
 							}
@@ -140,8 +142,8 @@ Form
 					name: 						"minimumPrecisionPercentage"
 					decimals: 					2
 					defaultValue: 				2
-					min:						0.5
-					max:						100
+					min:						0.1
+					max:						99.9
 					label: 						qsTr("Relative")
 					visible: 					minimumPrecision.checked
 				}
@@ -198,6 +200,8 @@ Form
 					label: 						qsTr("Confidence")
 					decimals: 					2
 					defaultValue: 				95
+					min:						0.1
+					max:						99.9
 				}
 			}
 

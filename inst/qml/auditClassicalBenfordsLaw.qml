@@ -41,6 +41,8 @@ Form {
 				label: 					qsTr("Confidence")
 				decimals: 				2
 				defaultValue: 			95
+				min:					0.1
+				max:					99.9
 			}
 		}
 

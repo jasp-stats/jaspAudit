@@ -917,7 +917,7 @@
         expTMP <- expTMP / parentOptions[["populationValue"]]
       if(expTMP >= parentOptions[["materiality"]] && expTMP < 1 && !options[["minimumPrecision"]]){
         # Error if the expected errors exceed the performance materiality
-        parentContainer$setError(gettext("Analysis not possible: Your expected errors are higher than materiality."))
+        parentContainer$setError(gettext("Analysis not possible: Your expected errors are higher than the performance materiality."))
         return(TRUE)
       }
       if(.jfaAuditRiskModelCalculation(options) >= 1){
@@ -930,16 +930,6 @@
         parentContainer$setError(gettext("You cannot incorporate this prior information into your analysis because you are not testing against a performance materiality."))
         return(TRUE)
       }
-    #   if(options[["priorConstructionMethod"]] %in% c("median", "hypotheses") && options[["planningModel"]] == "hypergeometric"){
-    #     # Error if equal prior probabilities are chosen with a beta-binomial distribution
-    #     parentContainer$setError(gettext("The prior distribution with equal prior probabilities cannot be constructed using the beta-binomial distribution. You can use the beta or the gamma distribution in this case."))
-    #     return(TRUE)
-    #   }
-    #   if(options[["priorConstructionMethod"]] %in% c("median", "hypotheses") && expTMP != 0 && options[["planningModel"]] == "Poisson"){
-    #     # Error if equal prior probabilities are chosen in combination with a gamma prior and expected errors != 0
-    #     parentContainer$setError(gettext("The gamma prior distribution with equal prior probabilities cannot be constructed when you expect errors in the sample. You can revert to the beta distribution in this case."))
-    #     return(TRUE)
-    #   }
     }
     # No error in the planning options
     return(FALSE)
@@ -1681,7 +1671,7 @@
     
     if(isTryError(result)){
       
-      if(jaspBase:::.extractErrorMessage(result) == "Sample size could not be calculated, you may want to increase the maxSize argument."){
+      if(jaspBase:::.extractErrorMessage(result) == "Sample size could not be calculated, you may want to increase the 'maxSize' argument."){
         parentContainer$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
         return()
       }
@@ -2095,7 +2085,7 @@
         
         figure$plotObject <- plot
       } else {
-        if(jaspBase:::.extractErrorMessage(leftPlotError) == "Sample size could not be calculated, you may want to increase the maxSize argument."){
+        if(jaspBase:::.extractErrorMessage(leftPlotError) == "Sample size could not be calculated, you may want to increase the 'maxSize' argument."){
           figure$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
         } else {
           figure$setError(gettextf("An error occurred in a call to the the jfa package: %1$s", jaspBase:::.extractErrorMessage(leftPlotError)))
@@ -2163,7 +2153,7 @@
         
         figure$plotObject <- plot
       } else {
-        if(jaspBase:::.extractErrorMessage(rightPlotError) == "Sample size could not be calculated, you may want to increase the maxSize argument."){
+        if(jaspBase:::.extractErrorMessage(rightPlotError) == "Sample size could not be calculated, you may want to increase the 'maxSize' argument."){
           figure$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
         } else {
           figure$setError(gettextf("An error occurred in a call to the the jfa package: %1$s", jaspBase:::.extractErrorMessage(rightPlotError)))
