@@ -9,7 +9,12 @@ The task of an auditor is to make a judgment regarding the fairness of the prese
 
 For a global introduction to this analysis, please download the manual for the Audit module [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
 
+<img src="%HELP_FOLDER%/img/workflowPlanning.png" />
+
 ----
+
+Useful information
+-------
 
 #### The Audit Risk Model
 

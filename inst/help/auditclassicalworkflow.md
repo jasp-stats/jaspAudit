@@ -7,16 +7,23 @@ The task of an auditor is to make a judgment regarding the fairness of the prese
 
 For a global introduction to this analysis, please download the manual for the Audit module [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
 
+----
+
 Workflow
 -----------
 
 The audit workflow consists of four separate stages, each with their own purpose for the analysis:
-- Planning: Calculate the required sample size for your desired materiality and confidence.
-- Selection: Sample the required observations from your population.
-- Execution: Annotate your selection with your assessment of the fairness of the selected observations.
+- Planning: Calculate the minimum sample size to achieve your sampling objectives with the specified confidence.
+- Selection: Select the required sampling units from the population.
+- Execution: Annotate the selection with your assessment of the fairness of the selected items.
 - Evaluation: Make a population statement based on your annotated selection.
 
+<img src="%HELP_FOLDER%/img/workflow.png" />
+
 ----
+
+Useful information
+-------
 
 #### The Audit Risk Model
 
@@ -47,6 +54,12 @@ These values of *R* are used to set default percentages for IR and CR. The Audit
 - Low: 36%
 
 You can manually adjust the value of IR and CR by selecting the Custom option under the corresponding risk assessment, thus adjusting the risk factor *R*.
+
+#### Taints
+
+Audited items can be evaluated while incorporating the magnitude of the misstatement by calculating their taints. The taint of an item *i* is the proportional difference between that item's book value (*y*) and the item's audit (true) value (*x*). Positive taints are associated with overstatements, while negative taints occur when items are understated.
+
+<img src="%HELP_FOLDER%/img/taints.png" />
 
 ----
 

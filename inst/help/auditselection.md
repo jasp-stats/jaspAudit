@@ -7,6 +7,8 @@ The selection analysis allows the auditor to select a number of required transac
 
 For a global introduction to this analysis, please download the manual for the Audit module [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
 
+<img src="%HELP_FOLDER%/img/workflowSelection.png" />
+
 ----
 
 Standard Options

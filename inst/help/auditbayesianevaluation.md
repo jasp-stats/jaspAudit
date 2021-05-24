@@ -7,6 +7,19 @@ The Bayesian evaluation analysis allows the auditor to evaluate an audit sample 
 
 For a global introduction to this analysis, please download the manual for the Audit module [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
 
+<img src="%HELP_FOLDER%/img/workflowEvaluation.png" />
+
+----
+
+Useful information
+-------
+
+#### Taints
+
+Audited items can be evaluated while incorporating the magnitude of the misstatement by calculating their taints. The taint of an item *i* is the proportional difference between that item's book value (*y*) and the item's audit (true) value (*x*). Positive taints are associated with overstatements, while negative taints occur when items are understated.
+
+<img src="%HELP_FOLDER%/img/taints.png" />
+
 ----
 
 Default input options

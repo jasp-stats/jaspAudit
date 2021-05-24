@@ -1,7 +1,7 @@
 The Bayesian Audit Sampling Workflow
 ==========================
 
-The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population, and give on opinion on whether the population as a whole contains errors that are material (lower than the set materiality). When the auditor has access to the raw population data, they can use the *Bayesian audit workflow* to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgment. They can then sample these transactions from the population, inspect these observations, and produce a statement about the totalerror in the population. The workflow guides the auditor through the audit process, making the correct choices of calculations along the way. The *Bayesian audit workflow* may use the risk assessments from the *audit risk model* to incorporate this prior information into a prior probability distribution, which is updated using information from the sample to form a posterior probability distribution. Inferences about the population error are made using the posterior distribution.
+The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population, and give on opinion on whether the population as a whole contains errors that are material (lower than the set materiality). When the auditor has access to the raw population data, they can use the *Bayesian audit workflow* to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgment. They can then sample these transactions from the population, inspect these observations, and produce a statement about the totalerror in the population. The workflow guides the auditor through the audit process, making the correct choices of calculations along the way. For example, the *Bayesian audit workflow* may use the risk assessments from the *audit risk model* to translate this prior information into a prior probability distribution, which is updated using information from the sample to form a posterior probability distribution. Inferences about the population error are made using the posterior distribution.
 
 #### Manual
 
@@ -13,10 +13,23 @@ Workflow
 -----------
 
 The Bayesian audit workflow consists of four separate stages, each with their own purpose for the analysis:
-- Planning: Calculate the required sample size for your desired materiality and confidence.
-- Selection: Sample the required observations from your population.
-- Execution: Annotate your selection with your assessment of the fairness of the selected observations.
+- Planning: Calculate the minimum sample size to achieve your sampling objectives with the specified confidence.
+- Selection: Select the required sampling units from the population.
+- Execution: Annotate the selection with your assessment of the fairness of the selected items.
 - Evaluation: Make a population statement based on your annotated selection.
+
+<img src="%HELP_FOLDER%/img/workflow.png" />
+
+----
+
+Useful information
+-------
+
+#### Taints
+
+Audited items can be evaluated while incorporating the magnitude of the misstatement by calculating their taints. The taint of an item *i* is the proportional difference between that item's book value (*y*) and the item's audit (true) value (*x*). Positive taints are associated with overstatements, while negative taints occur when items are understated.
+
+<img src="%HELP_FOLDER%/img/taints.png" />
 
 ----
 
