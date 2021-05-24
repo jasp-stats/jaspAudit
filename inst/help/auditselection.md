@@ -114,4 +114,4 @@ References
 
 AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
 
-Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.1.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.3.
