@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-05-26 08:34+0000\n"
+"PO-Revision-Date: 2021-05-27 12:34+0000\n"
 "Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/de/>\n"
@@ -1287,7 +1287,7 @@ msgstr "Erreichte Genauigkeit"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Posterior odds"
-msgstr ""
+msgstr "Posterior-Chancen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Bayes factor (BF₋₊)"
