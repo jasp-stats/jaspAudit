@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-05-27 12:34+0000\n"
+"PO-Revision-Date: 2021-05-28 17:34+0000\n"
 "Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/de/>\n"
@@ -364,7 +364,7 @@ msgstr "Erreichte Präzision"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Posterior odds"
-msgstr ""
+msgstr "A-posteriori Chancen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Bayes factor (BF₋₊)"
@@ -632,7 +632,7 @@ msgstr "Statistiken"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Expected posterior odds"
-msgstr ""
+msgstr "Erwartete a-posteriori Chancen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Expected Bayes factor (BF₋₊)"
@@ -948,7 +948,7 @@ msgstr "Statistiken"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Expected posterior odds"
-msgstr ""
+msgstr "Erwartete a-posteriori Chancen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Expected Bayes factor (BF₋₊)"
