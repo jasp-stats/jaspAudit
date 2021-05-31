@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-05-07 13:27\n"
-"PO-Revision-Date: 2021-05-27 12:32+0000\n"
+"PO-Revision-Date: 2021-06-01 15:32+0000\n"
 "Last-Translator: Paulina Elizabeth Robalino <paulina.e.robalino@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "es/>\n"
@@ -86,7 +86,7 @@ msgid "Log(BF%1$s)"
 msgstr ""
 
 msgid "df"
-msgstr ""
+msgstr "gl"
 
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
@@ -136,7 +136,7 @@ msgid "Observed Percentages vs. Expected Percentages"
 msgstr ""
 
 msgid "Observed"
-msgstr ""
+msgstr "Observado"
 
 msgid ""
 "<b>Figure %i:</b> The observed percentages of each digit in the data set "
@@ -199,13 +199,13 @@ msgid "Uncertainty"
 msgstr ""
 
 msgid "Lower"
-msgstr ""
+msgstr "Inferior"
 
 msgid "%1$s%% Confidence interval"
 msgstr ""
 
 msgid "Upper"
-msgstr ""
+msgstr "Superior"
 
 msgid "Please specify the population size and your audit values."
 msgstr ""
@@ -441,7 +441,7 @@ msgid "<b>Table %i.</b> Frequencies"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "Valor"
 
 msgid "Observed vs. Expected Average Frequency"
 msgstr ""
@@ -905,7 +905,7 @@ msgid "Mean"
 msgstr "Media"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "Desviación estándar"
 
 msgid "1"
 msgstr ""
@@ -1131,7 +1131,7 @@ msgid "Errors"
 msgstr ""
 
 msgid "Probability"
-msgstr ""
+msgstr "Probabilidad"
 
 msgid ""
 "<b>Figure %1$i.</b> The implied <b>%2$s</b> distribution. The number of "
@@ -1401,7 +1401,7 @@ msgid "Additional sample size"
 msgstr ""
 
 msgid "Posterior distribution"
-msgstr ""
+msgstr "Distribución posterior"
 
 msgid ""
 "The sample sizes shown are based on Wald's sequential sampling technique."
@@ -1472,7 +1472,7 @@ msgid "Implied Prior Distribution"
 msgstr ""
 
 msgid "Prior"
-msgstr ""
+msgstr "Anterior"
 
 msgid ""
 "Expected\n"
@@ -1523,7 +1523,7 @@ msgid "Prior and Posterior Distribution"
 msgstr ""
 
 msgid "Posterior"
-msgstr ""
+msgstr "Posterior"
 
 msgid "Population errors"
 msgstr ""
