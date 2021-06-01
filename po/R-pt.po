@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-05-07 13:27\n"
-"PO-Revision-Date: 2021-05-23 12:32+0000\n"
+"PO-Revision-Date: 2021-06-01 15:32+0000\n"
 "Last-Translator: Alex França <alex.tonante@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-r/pt/>\n"
@@ -637,7 +637,6 @@ msgstr "<b> Tabela % i. </b> Teste de valores repetidos"
 msgid "Average"
 msgstr "Média"
 
-#, fuzzy
 msgid "Frequency"
 msgstr "Fequência"
 
@@ -1427,25 +1426,20 @@ msgid "Valid cases"
 msgstr ""
 
 msgid "Median"
-msgstr ""
+msgstr "Mediana"
 
-#, fuzzy
 msgid "Std. Deviation"
 msgstr "Desvio Padrão"
 
-#, fuzzy
 msgid "Variance"
 msgstr "Variância"
 
-#, fuzzy
 msgid "Range"
 msgstr "Amplitude total"
 
-#, fuzzy
 msgid "Minimum"
 msgstr "Mínimo"
 
-#, fuzzy
 msgid "Maximum"
 msgstr "Máximo"
 
@@ -1810,7 +1804,6 @@ msgstr ""
 msgid "Ratio %1$s"
 msgstr "para %1"
 
-#, fuzzy
 msgid "Mode"
 msgstr "Moda"
 
