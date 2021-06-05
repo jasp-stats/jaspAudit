@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-06-05 08:19+0000\n"
+"Last-Translator: Erwin Villuendas <erwinvilluendas@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7-dev\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -255,7 +261,7 @@ msgstr "Mínimos cuadrados ponderados"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Click to learn more about the prior information."
-msgstr ""
+msgstr "Haga clic para saber más sobre la información previa."
 
 #, fuzzy
 msgctxt "auditBayesianEvaluation|"
@@ -391,7 +397,7 @@ msgstr "Error más probable (MLE)"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Obtained precision"
-msgstr ""
+msgstr "Precisión obtenida"
 
 #, fuzzy
 msgctxt "auditBayesianEvaluation|"
@@ -415,7 +421,7 @@ msgstr "Distribución previa y posterior"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Evaluate post-hoc assumptions"
-msgstr ""
+msgstr "Evaluar supuestos post-hoc"
 
 #, fuzzy
 msgctxt "auditBayesianEvaluation|"
@@ -587,7 +593,7 @@ msgstr "Mínimos cuadrados ponderados"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Click to learn more about the prior information."
-msgstr ""
+msgstr "Haga clic para saber más sobre la información previa."
 
 #, fuzzy
 msgctxt "auditBayesianPlanning|"
@@ -911,7 +917,7 @@ msgstr "Cómo manejar transacciones críticas"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Inspect"
-msgstr ""
+msgstr "Inspeccionar"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -981,7 +987,7 @@ msgstr "Mínimos cuadrados ponderados"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about the prior information."
-msgstr ""
+msgstr "Haga clic para saber más sobre la información previa."
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1242,7 +1248,7 @@ msgstr "Muestreo de unidades monetarias"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about monetary unit sampling."
-msgstr ""
+msgstr "Haga clic para saber más sobre muestreo de unidades monetarias."
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1251,7 +1257,7 @@ msgstr "Registro de muestreo"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about record sampling."
-msgstr ""
+msgstr "Haga clic para saber más sobre muestreo de registros."
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1519,7 +1525,7 @@ msgstr "Error más probable (MLE)"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Obtained precision"
-msgstr ""
+msgstr "Precisión obtenida"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1538,7 +1544,7 @@ msgstr "Distribución previa y posterior"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Evaluate post-hoc assumptions"
-msgstr ""
+msgstr "Evaluar supuestos post-hoc"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1861,7 +1867,7 @@ msgstr "Eliminar"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Risk Assessments"
-msgstr ""
+msgstr "Evaluaciones de Riesgo"
 
 #, fuzzy
 msgctxt "auditClassicalEvaluation|"
@@ -1989,7 +1995,7 @@ msgstr "Error más probable (MLE)"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Obtained precision"
-msgstr ""
+msgstr "Precisión obtenida"
 
 #, fuzzy
 msgctxt "auditClassicalEvaluation|"
@@ -2082,7 +2088,7 @@ msgstr "Confianza"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Risk Assessments"
-msgstr ""
+msgstr "Evaluaciones de Riesgo"
 
 #, fuzzy
 msgctxt "auditClassicalPlanning|"
@@ -2319,7 +2325,7 @@ msgstr "Cómo manejar transacciones críticas"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Inspect"
-msgstr ""
+msgstr "Inspeccionar"
 
 #, fuzzy
 msgctxt "auditClassicalWorkflow|"
@@ -2495,7 +2501,7 @@ msgstr "Método de selección"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Randomly organize transactions before selection"
-msgstr ""
+msgstr "Organice aleatoriamente las transacciones antes de la selección"
 
 #, fuzzy
 msgctxt "auditClassicalWorkflow|"
@@ -2509,7 +2515,7 @@ msgstr "Muestreo de unidades monetarias"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about monetary unit sampling."
-msgstr ""
+msgstr "Haga clic para saber más sobre muestreo de unidades monetarias."
 
 #, fuzzy
 msgctxt "auditClassicalWorkflow|"
@@ -2518,7 +2524,7 @@ msgstr "Registro de muestreo"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about record sampling."
-msgstr ""
+msgstr "Haga clic para saber más sobre muestreo de registros."
 
 #, fuzzy
 msgctxt "auditClassicalWorkflow|"
@@ -2796,7 +2802,7 @@ msgstr "Error más probable (MLE)"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Obtained precision"
-msgstr ""
+msgstr "Precisión obtenida"
 
 #, fuzzy
 msgctxt "auditClassicalWorkflow|"
@@ -2868,7 +2874,7 @@ msgstr "Método de selección"
 
 msgctxt "auditSelection|"
 msgid "Randomly organize transactions before selection"
-msgstr ""
+msgstr "Organice aleatoriamente las transacciones antes de la selección"
 
 #, fuzzy
 msgctxt "auditSelection|"
@@ -2882,7 +2888,7 @@ msgstr "Muestreo de unidades monetarias"
 
 msgctxt "auditSelection|"
 msgid "Click to learn more about monetary unit sampling."
-msgstr ""
+msgstr "Haga clic para saber más sobre muestreo de unidades monetarias."
 
 #, fuzzy
 msgctxt "auditSelection|"
@@ -2891,7 +2897,7 @@ msgstr "Registro de muestreo"
 
 msgctxt "auditSelection|"
 msgid "Click to learn more about record sampling."
-msgstr ""
+msgstr "Haga clic para saber más sobre muestreo de registros."
 
 #, fuzzy
 msgctxt "auditSelection|"
@@ -3056,7 +3062,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Digit Analysis"
-msgstr ""
+msgstr "Análisis de Dígitos"
 
 msgctxt "Description|"
 msgid "Repeated Values"
@@ -3068,9 +3074,8 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "True Value Estimation"
-msgstr ""
+msgstr "Estimación del Valor Real"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Dollar ($)"
 msgstr "Dólar ($)"
