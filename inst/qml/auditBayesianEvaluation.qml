@@ -30,28 +30,28 @@ Form
 	columns: 			1
 
 	// Extra options
-		CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 									"workflow"
 		checked: 								false
-		visible: 								false 
+		visible: 								false
 	}
 
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 									"bayesianAnalysis"
 		checked: 								true
-		visible: 								false 
+		visible: 								false
 	}
 
-	CheckBox 
+	CheckBox
 	{
 		name: 									"priorAndPosteriorPlotExpectedPosterior"
 		checked: 								false
 		visible: 								false
 	}
 
-	IntegerField 
+	IntegerField
 	{
 		name: 									"sampleSizeIncrease"
 		defaultValue: 							1
@@ -63,8 +63,8 @@ Form
 		name: 									"valuta"
 		visible:								false
 
-		RadioButton 	
-		{ 
+		RadioButton
+		{
 			text: 								qsTr("Dollar ($)")
 			name: 								"dollarValuta"
 			checked: 							true
@@ -76,7 +76,7 @@ Form
 	{
 		columns: 								3
 
-		GroupBox 
+		GroupBox
 		{
 			title: 								qsTr("Sampling Objectives")
 			columns:							2
@@ -110,6 +110,8 @@ Form
 								visible: 		materialityRelative.checked
 								decimals: 		2
 								defaultValue: 	0
+								min:			0
+								max:			99
 								name: 			"materialityPercentage"
 								fieldWidth: 	50 * preferencesModel.uiScale
 							}
@@ -126,7 +128,7 @@ Form
 							name: 				"materialityAbsolute"
 							text: 				qsTr("Absolute")
 							childrenOnSameRow: 	true
-							onCheckedChanged:	if(checked & mainWindow.dataAvailable) variableTypeAuditValues.click()
+							onCheckedChanged:	if (checked & mainWindow.dataAvailable) variableTypeAuditValues.click()
 
 							DoubleField
 							{
@@ -155,14 +157,14 @@ Form
 				id: 							minimumPrecision
 				text: 							qsTr("Obtain a required minimum precision")
 				name: 							"minimumPrecision"
-			
+
 				PercentField
 				{
 					id: 						minimumPrecisionPercentage
 					name: 						"minimumPrecisionPercentage"
 					decimals: 					2
 					defaultValue: 				2
-					min:						0.5
+					min:						0.1
 					max:						99.9
 					label: 						qsTr("Relative")
 					visible: 					minimumPrecision.checked
@@ -199,10 +201,10 @@ Form
 				fieldWidth: 					80 * preferencesModel.uiScale
 				min: 							0
 				decimals: 						2
-				onValueChanged:					
+				onValueChanged:
 				{
-												if(populationValue.value == 0) displayPercentages.click()
-												if(populationValue.value == 0) separateKnownAndUnknownMisstatement.checked = false
+					if (populationValue.value == 0) displayPercentages.click()
+					if (populationValue.value == 0) separateKnownAndUnknownMisstatement.checked = false
 				}
 			}
 		}
@@ -220,6 +222,8 @@ Form
 					label: 						qsTr("Confidence")
 					decimals: 					2
 					defaultValue: 				95
+					min:						0.1
+					max:						99.9
 				}
 			}
 
@@ -248,9 +252,9 @@ Form
 		}
 	}
 
-	Divider 
-	{ 
-		width: 									parent.width 
+	Divider
+	{
+		width: 									parent.width
 	}
 
 	VariablesForm
@@ -302,30 +306,30 @@ Form
 		}
 	}
 
-	RadioButtonGroup 
+	RadioButtonGroup
 	{
-		id:										variableType 
+		id:										variableType
 		title: 									qsTr("Annotation Method")
 		name:									"variableType"
 
-		RadioButton 
+		RadioButton
 		{
 			id: 								variableTypeAuditValues
 			name:								"variableTypeAuditValues"
 			label: 								qsTr("Soll values")
 			checked:							mainWindow.dataAvailable
 			enabled:							mainWindow.dataAvailable
-			onCheckedChanged: 					if(checked) useSummaryStatistics.checked = false
+			onCheckedChanged: 					if (checked) useSummaryStatistics.checked = false
 		}
 
-		RadioButton 
+		RadioButton
 		{
 			id: 								variableTypeCorrect
 			name:								"variableTypeCorrect"
-			label: 								qsTr("Correct / Incorrect")	
+			label: 								qsTr("Correct / Incorrect")
 			checked: 							!mainWindow.dataAvailable
 
-			CheckBox 
+			CheckBox
 			{
 				id: 							useSummaryStatistics
 				name: 							"useSumStats"
@@ -390,15 +394,15 @@ Form
 				name: 							"handleCriticalTransactions"
 				enabled:						flagCriticalTransactions.checked
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Keep")
 					name: 						"inspect"
-					checked: 					true	
+					checked: 					true
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Remove")
 					name: 						"remove"
 				}
@@ -406,7 +410,7 @@ Form
 		}
 	}
 
-	Section 
+	Section
 	{
 		title: 									qsTr("Efficiency Techniques")
 		columns: 								1
@@ -424,7 +428,7 @@ Form
 					id: 						separateKnownAndUnknownMisstatement
 					text: 						qsTr("Separate known and unknown misstatement")
 					name: 						"separateKnownAndUnknownMisstatement"
-					onCheckedChanged: 			if(checked) betaBound.click()
+					onCheckedChanged: 			if (checked) betaBound.click()
 					enabled:					populationSize.value > 0 & populationValue.value > 0 & recordNumberVariable.count > 0 & monetaryVariable.count > 0 & auditResult.count > 0
 				}
 
@@ -444,7 +448,7 @@ Form
 		}
 	}
 
-	Section 
+	Section
 	{
 		title: 									qsTr("Prior Information")
 		columns: 								3
@@ -452,7 +456,7 @@ Form
 
 		RowLayout
 		{
-			DropDown 
+			DropDown
 			{
 				id: 							priorConstructionMethod
 				name: 							"priorConstructionMethod"
@@ -460,20 +464,20 @@ Form
 				startValue:						"none"
 				label: 							qsTr("Prior information:")
 				Layout.columnSpan: 				2
-				values: 						performanceMateriality.checked ? 
-				[
-					{ label: qsTr("None"), 							value: "none"},
-					{ label: qsTr("Audit Risk Model"), 				value: "arm"},
-					{ label: qsTr("Equal prior probabilities"), 	value: "median"},
-					{ label: qsTr("Custom prior probabilities"), 	value: "hypotheses"},
-					{ label: qsTr("Earlier sample"), 				value: "sample"},
-					{ label: qsTr("Weighted earlier sample"), 		value: "factor"}
-				] : 
-				[
-					{ label: qsTr("None"), 							value: "none"},
-					{ label: qsTr("Earlier sample"), 				value: "sample"},
-					{ label: qsTr("Weighted earlier sample"), 		value: "factor"}
-				] 
+				values: 						performanceMateriality.checked ?
+													[
+														{ label: qsTr("None"), 							value: "none"},
+														{ label: qsTr("Audit Risk Model"), 				value: "arm"},
+														{ label: qsTr("Equal prior probabilities"), 	value: "median"},
+														{ label: qsTr("Custom prior probabilities"), 	value: "hypotheses"},
+														{ label: qsTr("Earlier sample"), 				value: "sample"},
+														{ label: qsTr("Weighted earlier sample"), 		value: "factor"}
+													] :
+													[
+														{ label: qsTr("None"), 							value: "none"},
+														{ label: qsTr("Earlier sample"), 				value: "sample"},
+														{ label: qsTr("Weighted earlier sample"), 		value: "factor"}
+													]
 			}
 
 			HelpButton
@@ -491,8 +495,8 @@ Form
 
 			RowLayout
 			{
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					id: 						expectedRelative
 					name: 						"expectedRelative"
 					text: 						qsTr("Relative")
@@ -512,8 +516,8 @@ Form
 
 			RowLayout
 			{
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					id: 						expectedAbsolute
 					name: 						"expectedAbsolute"
 					text: 						qsTr("Absolute")
@@ -546,21 +550,21 @@ Form
 				title: 							qsTr("Inherent Risk")
 				name: 							"IR"
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("High")
 					name: 						"High"
-					checked: 					true	
+					checked: 					true
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Medium")
 					name: 						"Medium"
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Low")
 					name: 						"Low"
 				}
@@ -589,21 +593,21 @@ Form
 				title: 							qsTr("Control Risk")
 				name: 							"CR"
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("High")
 					name: 						"High"
-					checked: 					true	
+					checked: 					true
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Medium")
 					name: 						"Medium"
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Low")
 					name: 						"Low"
 				}
@@ -700,7 +704,7 @@ Form
 				defaultValue: 					0
 				decimals: 						2
 				min: 							0
-				max:							sampleN.value											
+				max:							sampleN.value
 			}
 
 			DoubleField
@@ -713,7 +717,7 @@ Form
 				max: 							1
 				visible: 						["factor"].includes(priorConstructionMethod.currentValue)
 			}
-		}	
+		}
 	}
 
 	Section
@@ -768,7 +772,7 @@ Form
 			{
 				text: 							qsTr("Two-sided interval")
 				name: 							"displayCredibleInterval"
-			}	
+			}
 		}
 
 		RadioButtonGroup
@@ -795,7 +799,7 @@ Form
 				text: 							qsTr("Extrapolated amounts")
 				name: 							"displayValues"
 				enabled:						populationValue.value != 0
-			}	
+			}
 		}
 	}
 
@@ -872,10 +876,10 @@ Form
 					checked: 					separateKnownAndUnknownMisstatement.checked
 					enabled: 					separateKnownAndUnknownMisstatement.checked
 
-					CIField 
-					{ 
+					CIField
+					{
 						name: 					"evaluationAssumptionChecksConfidence"
-						label: 					qsTr("Confidence interval") 
+						label: 					qsTr("Confidence interval")
 					}
 				}
 			}
@@ -938,7 +942,7 @@ Form
 					name: 						"priorAndPosteriorPlotAdditionalInfo"
 					checked: 					true
 
-					RadioButtonGroup 
+					RadioButtonGroup
 					{
 						title: 					qsTr("Shade")
 						name: 					"shadePosterior"

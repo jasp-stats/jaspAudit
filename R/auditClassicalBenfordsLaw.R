@@ -18,7 +18,7 @@
 # When making changes to this file always mention @koenderks as a 
 # reviewer in the Pull Request
 
-auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
+auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   
   # Create the procedure paragraph
   .jfaBenfordsLawAddProcedure(options, jaspResults, position = 1)
@@ -61,33 +61,33 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   # ---
 }
 
-.jfaBenfordsLawReadData <- function(dataset, options){
+.jfaBenfordsLawReadData <- function(dataset, options) {
   if (!is.null(dataset)) return(dataset)
   values <- options[["values"]]
-  if(values == "")  
+  if (values == "")  
     values <- NULL
   dataset <- .readDataSetToEnd(columns.as.numeric = values, exclude.na.listwise = values)
   return(dataset)
 }
 
-.jfaBenfordsLawAddProcedure <- function(options, jaspResults, position){
+.jfaBenfordsLawAddProcedure <- function(options, jaspResults, position) {
   
-  if(options[["explanatoryText"]] && 
-     is.null(jaspResults[["procedureContainer"]])){
+  if (options[["explanatoryText"]] && 
+     is.null(jaspResults[["procedureContainer"]])) {
     
     procedureContainer <- createJaspContainer(title = gettext("<u>Procedure</u>"))
     procedureContainer$position <- position
     
     confidenceLabel <- paste0(round((1 - options[["confidence"]]) * 100, 2), "%")
     
-    if(options[["distribution"]] == "benford"){
+    if (options[["distribution"]] == "benford") {
       
       procedureText <- base::switch(options[["digits"]],
                                     "first" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first leading digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel),
                                     "firstSecond" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel),
                                     "last" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the last digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel))
       
-    } else if (options[["distribution"]] == "uniform"){
+    } else if (options[["distribution"]] == "uniform") {
       
       procedureText <- base::switch(options[["digits"]],
                                     "first" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of <b>%1$s</b>. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel),
@@ -106,28 +106,28 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfaBenfordsLawDataCheck <- function(dataset, options){
+.jfaBenfordsLawDataCheck <- function(dataset, options) {
   
   values <- NULL
-  if(options[["values"]] != "")
+  if (options[["values"]] != "")
     values <- c(values, options[["values"]])
   
   .hasErrors(dataset, 
-             type=c("infinity", "variance", "observations"),
+             type=c("infinity", "observations"),
              all.target = values, 
              message = "short", 
              observations.amount= "< 2",
              exitAnalysisIfErrors = TRUE)
 }
 
-.jfaBenfordsLawReadyCheck <- function(options){
+.jfaBenfordsLawReadyCheck <- function(options) {
   
   ready <- options[["values"]] != "" 
   return(ready)
   
 }
 
-jfaBenfordsLawStage <- function(options, jaspResults, position){
+jfaBenfordsLawStage <- function(options, jaspResults, position) {
   
   containerTitle <- base::switch(options[["distribution"]],
                                  "benford" = gettext("<u>Assessing Benford's Law</u>"),
@@ -144,25 +144,25 @@ jfaBenfordsLawStage <- function(options, jaspResults, position){
   return(benfordsLawContainer)
 }
 
-.jfaBenfordsLawState <- function(dataset, options, benfordsLawContainer, ready){
+.jfaBenfordsLawState <- function(dataset, options, benfordsLawContainer, ready) {
   
-  if(!is.null(benfordsLawContainer[["result"]])){
+  if (!is.null(benfordsLawContainer[["result"]])) {
     
     return(benfordsLawContainer[["result"]]$object)
     
-  } else if(ready){
+  } else if (ready) {
     
     obs <- dataset[[.v(options[["values"]])]]
 	obs <- obs[obs != 0] # 0.0000 crashes the analysis since it is not a valid count
 	totalObs <- length(obs)
     
-    if(options[["digits"]] == "first"){
+    if (options[["digits"]] == "first") {
       leadingDigits <- table(as.numeric(substring(format(abs(obs), scientific = TRUE), 1, 1)))
       digits <- 1:9
-    } else if(options[["digits"]] == "firstSecond"){
+    } else if (options[["digits"]] == "firstSecond") {
       leadingDigits <- table(as.numeric(substring(format(abs(obs), scientific = TRUE), 1, 3)) * 10)
       digits <- 10:99
-    } else if(options[["digits"]] == "last"){
+    } else if (options[["digits"]] == "last") {
       stringedObs <- as.character(abs(obs))
       leadingDigits <- table(as.numeric(substring(stringedObs, nchar(stringedObs), nchar(stringedObs))))
       digits <- 1:9
@@ -173,19 +173,19 @@ jfaBenfordsLawStage <- function(options, jaspResults, position){
     
     includedNumbers <- as.numeric(names(leadingDigits))
     
-    if(options[["digits"]] == "first" || options[["digits"]] == "last"){
+    if (options[["digits"]] == "first" || options[["digits"]] == "last") {
       counts[includedNumbers] <- as.numeric(leadingDigits)
-    } else if(options[["digits"]] == "firstSecond"){
+    } else if (options[["digits"]] == "firstSecond") {
       counts[includedNumbers - 9] <- as.numeric(leadingDigits)
     }
     
     percentages <- counts / totalObs
     percentagesLabel <- paste0(round(percentages * 100, 2), "%")
     
-    if(options[["distribution"]] == "benford"){
+    if (options[["distribution"]] == "benford") {
       inBenford <- log10(1 + 1 / digits) # Benfords law: log_10(1 + 1 / d)
       inBenfordLabel <- paste0(round(inBenford * 100, 2), "%")
-    } else if(options[["distribution"]] == "uniform"){
+    } else if (options[["distribution"]] == "uniform") {
       inBenford <- rep(1 / length(digits), length(digits))
       inBenfordLabel <- paste0(round(inBenford * 100, 2), "%")
     }
@@ -232,11 +232,11 @@ jfaBenfordsLawStage <- function(options, jaspResults, position){
 }
 
 jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer, 
-                                jaspResults, ready, positionInContainer){
+                                jaspResults, ready, positionInContainer) {
   
   .jfaTableNumberUpdate(jaspResults)
   
-  if(!is.null(benfordsLawContainer[["benfordsLawTestTable"]])) 
+  if (!is.null(benfordsLawContainer[["benfordsLawTestTable"]])) 
     return()
   
   tableTitle <- gettextf("<b>Table %i.</b> Goodness-of-fit Test", 
@@ -289,7 +289,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
                yes = 8,
                no = 89)
   
-  if(!ready){
+  if (!ready) {
     row <- data.frame(test = ".", N = ".", value = ".", df = df, pvalue = ".", bf = ".")
     benfordsLawTestTable$addRows(row)
     return()
@@ -312,14 +312,14 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
 }
 
 .jfaBenfordsLawDescriptivesTable <- function(dataset, options, benfordsLawContainer, 
-                                             jaspResults, ready, positionInContainer){
+                                             jaspResults, ready, positionInContainer) {
   
-  if(!options[["summaryTable"]])
+  if (!options[["summaryTable"]])
     return()
   
   .jfaTableNumberUpdate(jaspResults)
   
-  if(is.null(benfordsLawContainer[["benfordsLawTable"]])){
+  if (is.null(benfordsLawContainer[["benfordsLawTable"]])) {
     
     tableTitle <- gettextf("<b>Table %i.</b> Frequency Statistics",
                            jaspResults[["tabNumber"]]$object)
@@ -352,13 +352,13 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     
     benfordsLawContainer[["benfordsLawTable"]] <- benfordsLawTable
     
-    if(options[["digits"]] == "first" || options[["digits"]] == "last"){
+    if (options[["digits"]] == "first" || options[["digits"]] == "last") {
       digits <- 1:9
     } else {
       digits <- 10:99
     }
     
-    if(!ready){
+    if (!ready) {
       
       inBenford <- base::switch(options[["distribution"]],
                                 "benford" = log10(1 + 1 / digits),
@@ -387,14 +387,14 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
 }
 
 .jfaBenfordsLawPlot <- function(dataset, options, benfordsLawContainer, 
-                                jaspResults, ready, positionInContainer){
+                                jaspResults, ready, positionInContainer) {
   
-  if(!options[["benfordsLawPlot"]])
+  if (!options[["benfordsLawPlot"]])
     return()
   
   .jfaFigureNumberUpdate(jaspResults)
   
-  if(is.null(benfordsLawContainer[["benfordsLawPlot"]])){
+  if (is.null(benfordsLawContainer[["benfordsLawPlot"]])) {
     
     benfordsLawPlot <- createJaspPlot(plot = NULL, 
                                       title = gettext("Observed Percentages vs. Expected Percentages"), 
@@ -405,13 +405,13 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     
     benfordsLawContainer[["benfordsLawPlot"]] <- benfordsLawPlot
     
-    if(!ready) 
+    if (!ready) 
       return()
     
-    if(options[["digits"]] == "first" || options[["digits"]] == "last"){
+    if (options[["digits"]] == "first" || options[["digits"]] == "last") {
       pointSize     <- 5
       lineSize      <- 1.5
-    } else if(options[["digits"]] == "firstSecond"){
+    } else if (options[["digits"]] == "firstSecond") {
       pointSize     <- 2
       lineSize      <- 1.2
     }
@@ -427,7 +427,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, d$y), min.n = 4)
     
-    if(options[["digits"]] == "first" || options[["digits"]] == "last"){
+    if (options[["digits"]] == "first" || options[["digits"]] == "last") {
       xBreaks <- state[["digits"]]
       xLabels <- state[["digits"]]
     } else {
@@ -477,7 +477,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     benfordsLawPlot$plotObject <- p
   }
   
-  if(options[["explanatoryText"]]){
+  if (options[["explanatoryText"]]) {
     
     distribution <- base::switch(options[["distribution"]], "benford" = "Benford's law", "uniform" = "the uniform distribution")
     benfordsLawPlotText <- createJaspHtml(gettextf("<b>Figure %i:</b> The observed percentages of each digit in the data set compared to the expected percentage under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars.", jaspResults[["figNumber"]]$object, distribution), "p")
@@ -489,9 +489,9 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
 }
 
 .jfaBenfordsLawAddConclusion <- function(options, benfordsLawContainer, jaspResults,
-                                         ready, position){
+                                         ready, position) {
   
-  if(!is.null(jaspResults[["conclusionContainer"]]) || !ready || !options[["explanatoryText"]])
+  if (!is.null(jaspResults[["conclusionContainer"]]) || !ready || !options[["explanatoryText"]])
     return()
   
   conclusionContainer <- createJaspContainer(title= gettext("<u>Conclusion</u>"))
@@ -507,10 +507,10 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
   
   rejectnull <- state[["pvalue"]] < (1 - options[["confidence"]])
-  conclusion <- if(rejectnull) gettext("is rejected") else gettext("is not rejected")
+  conclusion <- if (rejectnull) gettext("is rejected") else gettext("is not rejected")
   
   pvalue <- format.pval(state[["pvalue"]], eps = 0.001)
-  pvalue <- if(rejectnull) gettextf("%1$s < \u03B1", pvalue) else gettextf("%1$s >= \u03B1", pvalue)
+  pvalue <- if (rejectnull) gettextf("%1$s < \u03B1", pvalue) else gettextf("%1$s >= \u03B1", pvalue)
   
   distribution <- base::switch(options[["distribution"]], "benford" = "Benford's law", "uniform" = "the uniform distribution")
   

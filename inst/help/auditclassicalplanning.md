@@ -9,7 +9,12 @@ The task of an auditor is to make a judgment regarding the fairness of the prese
 
 For a global introduction to this analysis, please download the manual for the Audit module [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
 
+<img src="%HELP_FOLDER%/img/workflowPlanning.png" />
+
 ----
+
+Useful information
+-------
 
 #### The Audit Risk Model
 
@@ -164,6 +169,6 @@ References
 
 AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
 
-Derks, K (2020). jfa: Bayesian and Classical Audit Sampling. R package version 0.3.1.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.5.
 
 Stewart, T. (2012). <i>Technical notes on the AICPA audit guide Audit Sampling</i>. American Institute of Certified Public Accountants, New York.

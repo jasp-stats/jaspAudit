@@ -27,22 +27,22 @@ Form
 	columns:									1
 
 	// Extra options
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 									"workflow"
 		checked: 								false
 		visible: 								false
 	}
 
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 									"bayesianAnalysis"
 		checked: 								false
-		visible: 								false 
+		visible: 								false
 	}
 
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 									"separateKnownAndUnknownMisstatement"
 		checked: 								false
 		visible: 								false
@@ -65,7 +65,7 @@ Form
 	{
 		columns: 								3
 
-		GroupBox 
+		GroupBox
 		{
 			title: 								qsTr("Sampling Objectives")
 			columns:							2
@@ -100,6 +100,8 @@ Form
 								visible: 		materialityRelative.checked
 								decimals: 		2
 								defaultValue: 	0
+								min:			0
+								max:			99
 								name: 			"materialityPercentage"
 								fieldWidth: 	50 * preferencesModel.uiScale
 							}
@@ -145,15 +147,15 @@ Form
 				id: 							minimumPrecision
 				text: 							qsTr("Obtain a required minimum precision")
 				name: 							"minimumPrecision"
-			
+
 				PercentField
 				{
 					id: 						minimumPrecisionPercentage
 					name: 						"minimumPrecisionPercentage"
 					decimals: 					2
 					defaultValue: 				2
-					min:						0.5
-					max:						100
+					min:						0.1
+					max:						99.9
 					label: 						qsTr("Relative")
 					visible: 					minimumPrecision.checked
 					fieldWidth: 				50 * preferencesModel.uiScale
@@ -190,10 +192,10 @@ Form
 				fieldWidth: 					80 * preferencesModel.uiScale
 				min: 							0
 				decimals: 						2
-				onValueChanged:					
+				onValueChanged:
 				{
-												if(populationValue.value > 0) poisson.click()
-												if(populationValue.value == 0) binomial.click()
+					if (populationValue.value > 0) poisson.click()
+					if (populationValue.value == 0) binomial.click()
 				}
 			}
 		}
@@ -211,6 +213,8 @@ Form
 					label: 						qsTr("Confidence")
 					decimals: 					2
 					defaultValue: 				95
+					min:						0.1
+					max:						99.9
 				}
 			}
 
@@ -249,23 +253,23 @@ Form
 			name: 								"IR"
 			enabled:							performanceMateriality.checked
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				id:								irHigh
 				text: 							qsTr("High")
 				name: 							"High"
-				checked: 						true	
+				checked: 						true
 			}
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				text: 							qsTr("Medium")
 				name: 							"Medium"
 				enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
 			}
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				text: 							qsTr("Low")
 				name: 							"Low"
 				enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
@@ -297,23 +301,23 @@ Form
 			name: 								"CR"
 			enabled:							performanceMateriality.checked
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				id:								crHigh
 				text: 							qsTr("High")
 				name: 							"High"
-				checked: 						true	
+				checked: 						true
 			}
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				text: 							qsTr("Medium")
 				name: 							"Medium"
 				enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
 			}
 
-			RadioButton 
-			{ 
+			RadioButton
+			{
 				text: 							qsTr("Low")
 				name: 							"Low"
 				enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
@@ -346,8 +350,8 @@ Form
 
 			RowLayout
 			{
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					id: 						expectedRelative
 					name: 						"expectedRelative"
 					text: 						qsTr("Relative")
@@ -363,18 +367,18 @@ Form
 					defaultValue: 				0
 					visible: 					expectedRelative.checked
 					fieldWidth: 				50 * preferencesModel.uiScale
-					onValueChanged:				if(expectedRelative.checked & expectedPercentage.value > 0) 
-					{
-												irHigh.click()
-												crHigh.click()
-					}
+					onValueChanged:				if (expectedRelative.checked & expectedPercentage.value > 0)
+												{
+													irHigh.click()
+													crHigh.click()
+												}
 				}
 			}
 
 			RowLayout
 			{
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					id: 						expectedAbsolute
 					name: 						"expectedAbsolute"
 					text: 						qsTr("Absolute")
@@ -391,11 +395,11 @@ Form
 					visible: 					expectedAbsolute.checked
 					fieldWidth: 				80 * preferencesModel.uiScale
 					label: 						performanceMateriality.checked & materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
-					onValueChanged:				if(expectedAbsolute.checked & expectedNumber.value > 0) 
-					{
-												irHigh.click()
-												crHigh.click()
-					}
+					onValueChanged:				if (expectedAbsolute.checked & expectedNumber.value > 0)
+												{
+													irHigh.click()
+													crHigh.click()
+												}
 				}
 			}
 		}
@@ -415,20 +419,20 @@ Form
 
 			RadioButton
 			{
-				id: 							binomial									
+				id: 							binomial
 				text: 							qsTr("Binomial")
 				name: 							"binomial"
 				checked: 						true
 			}
 
-			RadioButton 
+			RadioButton
 			{
 				id: 							poisson
 				text: 							qsTr("Poisson")
 				name: 							"Poisson"
 			}
 
-			RadioButton 
+			RadioButton
 			{
 				id: 							hypergeometric
 				text: 							qsTr("Hypergeometric")
@@ -441,7 +445,7 @@ Form
 		{
 			title: 								qsTr("Calculation Preferences")
 
-			IntegerField 
+			IntegerField
 			{
 				name: 							"sampleSizeIncrease"
 				text: 							qsTr("Step size")
@@ -458,28 +462,28 @@ Form
 			name: 								"valuta"
 			enabled:							materialityAbsolute.checked | populationValue.value > 0
 
-			RadioButton 	
-			{ 
+			RadioButton
+			{
 				id: 							euroValuta
 				text: 							qsTr("Euro (€)")
 				name: 							"euroValuta"
 				checked: 						true
 			}
 
-			RadioButton 	
-			{ 
-				id: 							dollarValuta	
+			RadioButton
+			{
+				id: 							dollarValuta
 				text: 							qsTr("Dollar ($)")
 				name: 							"dollarValuta"
 			}
 
 			RowLayout
 			{
-				RadioButton	
-				{ 
+				RadioButton
+				{
 					id: 						otherValuta
 					text:						qsTr("Other")
-					name: 						"otherValuta"	
+					name: 						"otherValuta"
 				}
 
 				TextField

@@ -18,7 +18,7 @@
 # When making changes to this file always mention @koenderks as a 
 # reviewer in the Pull Request
 
-auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
+auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   
   # Read in the data 
   dataset <- .jfaEstimationReadData(dataset, options)
@@ -50,14 +50,14 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   # ---
 }
 
-.jfaEstimationReadData <- function(dataset, options){
+.jfaEstimationReadData <- function(dataset, options) {
   
   bookValues <- options[["bookValues"]]
-  if(bookValues == "")  
+  if (bookValues == "")  
     bookValues <- NULL
   
   auditValues <- options[["auditValues"]]
-  if(auditValues == "")  
+  if (auditValues == "")  
     auditValues <- NULL
   
   variables <- c(bookValues, auditValues)
@@ -67,14 +67,14 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   return(dataset)
 }
 
-.jfaEstimationDataCheck <- function(dataset, options){
+.jfaEstimationDataCheck <- function(dataset, options) {
   
   variables <- NULL
   
-  if(options[["bookValues"]] != "")
+  if (options[["bookValues"]] != "")
     variables <- c(variables, options[["bookValues"]])
   
-  if(options[["auditValues"]] != "")
+  if (options[["auditValues"]] != "")
     variables <- c(variables, options[["auditValues"]])
   
   .hasErrors(dataset, 
@@ -85,9 +85,9 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
              exitAnalysisIfErrors = TRUE)
 }
 
-.jfaEstimationReadyCheck <- function(options){
+.jfaEstimationReadyCheck <- function(options) {
   
-  if(options[["estimator"]] == "mpu"){
+  if (options[["estimator"]] == "mpu") {
     
     ready <- options[["auditValues"]] != "" && 
       options[["populationSize"]] != 0
@@ -101,9 +101,9 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfaEstimationTable <- function(dataset, options, jaspResults, ready, position){
+.jfaEstimationTable <- function(dataset, options, jaspResults, ready, position) {
   
-  if(!is.null(jaspResults[["regressionTable"]])) 
+  if (!is.null(jaspResults[["regressionTable"]])) 
     return()
   
   title <- base::switch(options[["estimator"]],
@@ -124,24 +124,24 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   
   regressionTable$addColumnInfo(name = 'estimate', 
                                 title = gettextf('Estimate %1$s', "W&#770"), 
-                                type = 'string')
+                                type = 'number')
   regressionTable$addColumnInfo(name = 'uncertainty', 
                                 title = gettext('Uncertainty'), 
-                                type = 'string')
+                                type = 'number')
   regressionTable$addColumnInfo(name = 'lower',  
                                 title = gettext('Lower'), 
-                                type = 'string', 
+                                type = 'number', 
                                 overtitle = gettextf("%1$s%% Confidence interval", round(options[["confidence"]] * 100, 2)))
   regressionTable$addColumnInfo(name = 'upper', 
                                 title = gettext('Upper'), 
-                                type = 'string', 
+                                type = 'number', 
                                 overtitle = gettextf("%1$s%% Confidence interval", round(options[["confidence"]] * 100, 2)))
   
   jaspResults[["regressionTable"]] <- regressionTable
   
-  if(!ready){
+  if (!ready) {
     
-    if(options[["estimator"]] == "mpu"){
+    if (options[["estimator"]] == "mpu") {
       
       regressionTable$addFootnote(gettext("Please specify the population size and your audit values."))
       
@@ -161,7 +161,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   N                 <- options[["populationSize"]]
   n                 <- nrow(dataset)
   
-  if(options[["estimator"]] == "mpu"){
+  if (options[["estimator"]] == "mpu") {
     
     meanW           <- round(mean(dataset[, .v(options[["auditValues"]])]), 2)
     sW              <- round(sd(dataset[, .v(options[["auditValues"]])]), 2)
@@ -189,7 +189,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
     
     result <- list(sW = sW)
     
-  } else if(options[["estimator"]] == "difference"){
+  } else if (options[["estimator"]] == "difference") {
     
     B               <- round(options[["populationValue"]], 2)
     
@@ -214,7 +214,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
     
     result <- list(sE = sE)
     
-  } else if(options[["estimator"]] == "ratio"){
+  } else if (options[["estimator"]] == "ratio") {
     
     B             <- round(options[["populationValue"]], 2)
     meanB         <- round(mean(dataset[, .v(options[["bookValues"]])]), 2)
@@ -241,7 +241,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
     
     result <- list(s = s)
     
-  } else if(options[["estimator"]] == "regression"){
+  } else if (options[["estimator"]] == "regression") {
     
     B             <- round(options[["populationValue"]], 2)
     meanB         <- round(mean(dataset[, .v(options[["bookValues"]])]), 2)
@@ -284,44 +284,44 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   jaspResults[["result"]] <- createJaspState(result)
 }
 
-.jfaEstimationAddText <- function(dataset, options, jaspResults, ready, position){
+.jfaEstimationAddText <- function(dataset, options, jaspResults, ready, position) {
   
-  if(options[["explanatoryText"]] || !is.null(jaspResults[["calculationsContainer"]])){
+  if (options[["explanatoryText"]] || !is.null(jaspResults[["calculationsContainer"]])) {
     
     calculationsContainer <- createJaspContainer(title= gettext("<u>Calculations</u>"))
     calculationsContainer$position <- 1
     calculationsContainer$dependOn(options = c("explanatoryText", "bookValues", "auditValues", "populationValue", "populationSize", "confidence", "estimator"))
     
-    if(options[["estimator"]] == "mpu"){
+    if (options[["estimator"]] == "mpu") {
       
       calculationsContainer[["intro"]] <- createJaspHtml(gettext("<i>The required information for the <b>direct</b> estimator consists of:</i>"), "p")
       
       calc1 <- gettext("The population size <i>N</i>")
-      if(options[["populationSize"]] != 0){
+      if (options[["populationSize"]] != 0) {
         N <- options[["populationSize"]]
         calc1 <- gettextf("%1$s = %2$i", calc1, N)
       }
       
       calc2 <- gettext("The sample size <i>n</i>")
-      if(options[["auditValues"]] != ""){
+      if (options[["auditValues"]] != "") {
         n <- nrow(dataset)
         calc2 <- gettextf("%1$s = %2$i", calc2, n)
       }
       
       calc3 <- gettextf("The mean of the sample audit values %1$s", "<i>w&#772</i>")
-      if(options[["auditValues"]] != ""){
+      if (options[["auditValues"]] != "") {
         meanW <- round(mean(dataset[, .v(options[["auditValues"]])]), 2)
         calc3 <- gettextf("%1$s = %2$s", calc3, meanW)
       } 
       
       calc4 <- gettextf("The standard deviation of the sample audit values %1$s", "<i>s<sub>w</sub></i>")
-      if(options[["auditValues"]] != ""){
+      if (options[["auditValues"]] != "") {
         sW <- round(sd(dataset[, .v(options[["auditValues"]])]), 2)
         calc4 <- gettextf("%1$s = %2$s", calc4, sW)
       } 
       
       calc5 <- gettextf("The t-value <i>(df = n - 1)</i> corresponding to %1$s%% confidence %2$s%3$s%4$s", round(options[["confidence"]] * 100), "<i>t<sub>", round(1 - options[["confidence"]], 2), "/2</sub></i>")
-      if(options[["auditValues"]] != ""){
+      if (options[["auditValues"]] != "") {
         calc5 <- gettextf("The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence %3$s%4$s%5$s%6$s",
                           n, round(options[["confidence"]] * 100), "<i>t<sub>", round(1 - options[["confidence"]], 2), "/2</sub></i> = ",
                           round(qt(p = (1 - (1 - options[["confidence"]])/2), df = n - 1), 3))
@@ -337,7 +337,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
       calculationsContainer[["intro2"]] <- createJaspHtml(gettext("<i>This information allows for calculation of:</i>"), "p")
       
       pointEstimate <- gettextf("The point estimate of the true population value %1$s", "<i>W&#770 = N \u00D7 w&#772</i>")
-      if(ready){
+      if (ready) {
         W <- round(N * meanW, 2)
         pointEstimate <- gettextf("%1$s = %2$s", pointEstimate, W)
       }
@@ -346,13 +346,13 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                               "<i>U = t<sub>",
                               round(1 - options[["confidence"]], 2),
                               "/2</sub> \u00D7 s<sub>w</sub> \u00D7 <sup>N</sup>&frasl;<sub>\u221A n</sub> \u00D7 \u221A (<sup>N - n</sup>&frasl;<sub>N - 1</sub>)</i>")
-      if(ready){
+      if (ready) {
         U <- round(qt(p = (1 - (1 - options[["confidence"]])/2), df = n - 1) * sW * (N / sqrt(n)) * sqrt((N-n)/(N-1)), 2)
         uncertainty <- gettextf("%1$s = %2$s", uncertainty, U)
       }
       
       confidenceInterval <- gettextf("The confidence interval around the point estimate %1$s", "<i>W&#770 \u00B1 U</i>")
-      if(ready)
+      if (ready)
         confidenceInterval <- gettextf("%1$s = %2$s %3$s %4$s", confidenceInterval, W, " \u00B1 ", U)
       
       results <- gettextf("%1$s
@@ -363,36 +363,36 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                           confidenceInterval)
       calculationsContainer[["results"]] <- createJaspHtml(results, "p")
       
-    } else if(options[["estimator"]] == "difference"){
+    } else if (options[["estimator"]] == "difference") {
       
       calculationsContainer[["intro"]] <- createJaspHtml(gettext("<i>The required information for the <b>difference</b> estimator consists of:</i>"), "p")
       
       calc1 <- gettext("The population size <i>N</i>")
-      if(options[["populationSize"]] != 0){
+      if (options[["populationSize"]] != 0) {
         N <- options[["populationSize"]]
         calc1 <- gettextf("%1$s = %2$s", calc1, N)
       }
       
       calc2 <- gettext("The sample size <i>n</i>")
-      if(options[["auditValues"]] != "" || options[["bookValues"]] != ""){
+      if (options[["auditValues"]] != "" || options[["bookValues"]] != "") {
         n <- nrow(dataset)
         calc2 <- gettextf("%1$s = %2$s", calc2, n)
       }
       
       calc3 <- gettext("The sum of the population book values <i>B</i>")
-      if(options[["populationValue"]] != 0){
+      if (options[["populationValue"]] != 0) {
         B <- round(options[["populationValue"]], 2)
         calc3 <- gettextf("%1$s = %2$s", calc3, B)
       } 
       
       calc4 <- gettextf("The mean of the sample errors %1$s", "<i>e&#772</i>")
-      if(ready){
+      if (ready) {
         meanE <- round(mean(dataset[, .v(options[["bookValues"]])] - dataset[, .v(options[["auditValues"]])]), 2)
         calc4 <- gettextf("%1$s = %2$s", calc4, meanE)
       } 
       
       calc5 <- gettextf("The standard deviation of the sample errors %1$s", "<i>s<sub>e</sub></i>")
-      if(ready){
+      if (ready) {
         sE <- round(sd(dataset[, .v(options[["bookValues"]])] - dataset[, .v(options[["auditValues"]])]), 2)
         calc5 <- gettextf("%1$s = %2$s", calc5, sE)
       } 
@@ -402,7 +402,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                         "<i>t<sub>",
                         round(1 - options[["confidence"]], 2),
                         "/2</sub></i>")
-      if(options[["auditValues"]] != ""){
+      if (options[["auditValues"]] != "") {
         calc6 <- gettextf("The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence %3$s%4$s%5$s%6$s",
                           n,
                           round(options[["confidence"]] * 100),
@@ -424,7 +424,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
       calculationsContainer[["intro2"]] <- createJaspHtml(gettext("<i>This information allows for calculation of:</i>"), "p")
       
       pointEstimate <- gettextf("The point estimate of the true population value %1$s", "<i>W&#770 = B - N \u00D7 e&#772</i>")
-      if(ready){
+      if (ready) {
         W <- round(B - N * meanE, 2)
         pointEstimate <- gettextf("%1$s = %2$s", pointEstimate, W)
       }
@@ -433,13 +433,13 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                               "<i>U = t<sub>",
                               round(1 - options[["confidence"]], 2),
                               "/2</sub> \u00D7 s<sub>e</sub> \u00D7 <sup>N</sup>&frasl;<sub>\u221A n</sub> \u00D7 \u221A (<sup>N - n</sup>&frasl;<sub>N - 1</sub>)</i>")
-      if(ready){
+      if (ready) {
         U <- round(qt(p = (1 - (1 - options[["confidence"]])/2), df = n - 1) * sE * (N / sqrt(n)) * sqrt((N-n)/(N-1)), 2)
         uncertainty <- gettextf("%1$s = %2$s", uncertainty, U)
       }
       
       confidenceInterval <- gettextf("The confidence interval around the point estimate %1$s", "<i>W&#770 \u00B1 U")
-      if(ready)
+      if (ready)
         confidenceInterval <- gettextf("%1$s = %2$s %3$s %4$s", confidenceInterval, W, " \u00B1 ", U)
       
       results <- gettextf("%1$s
@@ -450,60 +450,60 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                           confidenceInterval)
       calculationsContainer[["results"]] <- createJaspHtml(results, "p")
       
-    } else if(options[["estimator"]] == "ratio"){
+    } else if (options[["estimator"]] == "ratio") {
       
       calculationsContainer[["intro"]] <- createJaspHtml(gettext("<i>The required information for the <b>ratio</b> estimator consists of:</i>"), "p")
       
       calc1 <- gettext("The population size <i>N</i>")
-      if(options[["populationSize"]] != 0){
+      if (options[["populationSize"]] != 0) {
         N <- options[["populationSize"]]
         calc1 <- gettextf("%1$s = %2$s", calc1, N)
       }
       
       calc2 <- gettext("The sample size <i>n</i>")
-      if(options[["auditValues"]] != "" || options[["bookValues"]] != ""){
+      if (options[["auditValues"]] != "" || options[["bookValues"]] != "") {
         n <- nrow(dataset)
         calc2 <- gettextf("%1$s = %2$s", calc2, n)
       }
       
       calc3 <- gettext("The sum of the population book values <i>B</i>")
-      if(options[["populationValue"]] != 0){
+      if (options[["populationValue"]] != 0) {
         B <- round(options[["populationValue"]], 2)
         calc3 <- gettextf("%1$s = %2$s", calc3, B)
       } 
       
       calc4 <- gettextf("The mean of the sample book values %1$s", "<i>b&#772</i>")
-      if(options[["bookValues"]] != ""){
+      if (options[["bookValues"]] != "") {
         meanB <- round(mean(dataset[, .v(options[["bookValues"]])]), 2)
         calc4 <- gettextf("%1$s = %2$s", calc4, meanB)
       } 
       
       calc5 <- gettextf("The standard deviation of the sample book values %1$s", "<i>s<sub>b</sub></i>")
-      if(options[["bookValues"]] != ""){
+      if (options[["bookValues"]] != "") {
         sB <- round(sd(dataset[, .v(options[["bookValues"]])]), 2)
         calc5 <- gettextf("%1$s = %2$s", calc5, sB)
       } 
       
       calc6 <- gettextf("The mean of the sample audit values %1$s", "<i>w&#772</i>")
-      if(options[["auditValues"]] != ""){
+      if (options[["auditValues"]] != "") {
         meanW <- round(mean(dataset[, .v(options[["auditValues"]])]), 2)
         calc6 <- gettextf("%1$s = %2$s", calc6, meanW)
       } 
       
       calc7 <- gettextf("The standard deviation of the sample audit values %1$s", "<i>s<sub>w</sub></i>")
-      if(options[["auditValues"]] != ""){
+      if (options[["auditValues"]] != "") {
         sW <- round(sd(dataset[, .v(options[["auditValues"]])]), 2)
         calc7 <- gettextf("%1$s = %2$s", calc7, sW)
       } 
       
       calc8 <- gettextf("The correlation coefficient of the sample book values and audit values %1$s", "<i>r<sub>bw</sub></i>")
-      if(ready){
+      if (ready) {
         r <- round(cor(dataset[, .v(options[["bookValues"]])], dataset[, .v(options[["auditValues"]])]), 2)
         calc8 <- gettextf("%1$s = %2$s", calc8, r)
       } 
       
       calc9 <- gettextf("The correctness ratio %1$s", "<i>q<sub>bw</sub></i>")
-      if(ready){
+      if (ready) {
         q <- round(meanW / meanB, 4)
         calc9 <- gettextf("%1$s = %2$s", calc9, q)
       } 
@@ -513,7 +513,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                          "<i>t<sub>",
                          round(1 - options[["confidence"]], 2),
                          "/2</sub></i>")
-      if(options[["auditValues"]] != ""){
+      if (options[["auditValues"]] != "") {
         calc10 <- gettextf("The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence %3$s%4$s%5$s%6$s",
                            n, 
                            round(options[["confidence"]] * 100),
@@ -540,7 +540,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
       calculationsContainer[["intro2"]] <- createJaspHtml(gettext("<i>This information allows for calculation of:</i>"), "p")
       
       pointEstimate <- gettextf("The point estimate of the true population value %1$s", "<i>W&#770 = q<sub>bw</sub> \u00D7 B</i>")
-      if(ready){
+      if (ready) {
         W <- round(q * B, 2)
         pointEstimate <- gettextf("%1$s = %2$s", pointEstimate, W)
       }
@@ -549,13 +549,13 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                               "<i>U = t<sub>",
                               round(1 - options[["confidence"]], 2),
                               "/2</sub> \u00D7 \u221A(s<sub>w</sub><sup>2</sup> - 2 \u00D7 q<sub>bw</sub> \u00D7 r<sub>bw</sub> \u00D7 s<sub>b</sub> \u00D7 s<sub>w</sub> + q<sub>bw</sub><sup>2</sup> \u00D7 s<sub>b</sub><sup>2</sup>) \u00D7 <sup>N</sup>&frasl;<sub>\u221A n</sub> \u00D7 \u221A (<sup>N - n</sup>&frasl;<sub>N - 1</sub>)</i>")
-      if(ready){
+      if (ready) {
         U <- round(qt(p = (1 - (1 - options[["confidence"]])/2), df = n - 1) * sqrt( sW^2 - 2*q*r*sB*sW + q^2 * sB^2 ) * (N / sqrt(n)) * sqrt((N-n)/(N-1)), 2)
         uncertainty <- gettextf("%1$s = %2$s", uncertainty, U)
       }
       
       confidenceInterval <- gettextf("The confidence interval around the point estimate %1$s", "<i>W&#770 \u00B1 U")
-      if(ready)
+      if (ready)
         confidenceInterval <- gettextf("%1$s = %2$s %3$s %4$s", confidenceInterval, W, " \u00B1 ", U)
       
       results <- gettextf("%1$s
@@ -564,54 +564,54 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                           pointEstimate, uncertainty, confidenceInterval)
       calculationsContainer[["results"]] <- createJaspHtml(results, "p")
       
-    } else if(options[["estimator"]] == "regression"){
+    } else if (options[["estimator"]] == "regression") {
       
       calculationsContainer[["intro"]] <- createJaspHtml(gettext("<i>The required information for the <b>regression</b> estimator consists of:</i>"), "p")
       
       calc1 <- gettext("The population size <i>N</i>")
-      if(options[["populationSize"]] != 0){
+      if (options[["populationSize"]] != 0) {
         N <- options[["populationSize"]]
         calc1 <- gettextf("%1$s = %2$s", calc1, N)
       }
       
       calc2 <- gettext("The sample size <i>n</i>")
-      if(options[["auditValues"]] != "" || options[["bookValues"]] != ""){
+      if (options[["auditValues"]] != "" || options[["bookValues"]] != "") {
         n <- nrow(dataset)
         calc2 <- gettextf("%1$s = %2$s", calc2, n)
       }
       
       calc3 <- gettext("The sum of the population book values <i>B</i>")
-      if(options[["populationValue"]] != 0){
+      if (options[["populationValue"]] != 0) {
         B <- round(options[["populationValue"]], 2)
         calc3 <- gettextf("%1$s = %2$s", calc3, B)
       } 
       
       calc4 <- gettextf("The mean of the sample book values %1$s", "<i>b&#772</i>")
-      if(options[["bookValues"]] != ""){
+      if (options[["bookValues"]] != "") {
         meanB <- round(mean(dataset[, .v(options[["bookValues"]])]), 2)
         calc4 <- gettextf("%1$s = %2$s", calc4, meanB)
       } 
       
       calc5 <- gettextf("The mean of the sample audit values %1$s", "<i>w&#772</i>")
-      if(options[["auditValues"]] != ""){
+      if (options[["auditValues"]] != "") {
         meanW <- round(mean(dataset[, .v(options[["auditValues"]])]), 2)
         calc5 <- gettextf("%1$s = %2$s", calc5, meanW)
       } 
       
       calc6 <- gettextf("The standard deviation of the sample audit values %1$s", "<i>s<sub>w</sub></i>")
-      if(options[["auditValues"]] != ""){
+      if (options[["auditValues"]] != "") {
         sW <- round(sd(dataset[, .v(options[["auditValues"]])]), 2)
         calc6 <- gettextf("%1$s = %2$s", calc6, sW)
       } 
       
       calc7 <- gettextf("The correlation coefficient of the sample book values and audit values %1$s", "<i>r<sub>bw</sub></i>")
-      if(ready){
+      if (ready) {
         r <- round(cor(dataset[, .v(options[["bookValues"]])], dataset[, .v(options[["auditValues"]])]), 2)
         calc7 <- gettextf("%1$s = %2$s", calc7, r)
       } 
       
       calc8 <- gettextf("The regression coefficient of the sample book values and audit values %1$s", "<i>b<sub>1</sub></i>")
-      if(ready){
+      if (ready) {
         b1 <- round((sum(dataset[, .v(options[["bookValues"]])] * dataset[, .v(options[["auditValues"]])]) - n * meanB * meanW) / (sum(dataset[, .v(options[["bookValues"]])]^2) - (sum(dataset[, .v(options[["bookValues"]])])^2) / n), 2)
         calc8 <- gettextf("%1$s = %2$s", calc8, b1)
       } 
@@ -621,7 +621,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                         "<i>t<sub>",
                         round(1 - options[["confidence"]], 2),
                         "/2</sub></i>")
-      if(options[["auditValues"]] != ""){
+      if (options[["auditValues"]] != "") {
         calc9 <- gettextf("The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence %3$s%4$s%5$s%6$s",
                           n,
                           round(options[["confidence"]] * 100, 2),
@@ -647,7 +647,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
       calculationsContainer[["intro2"]] <- createJaspHtml(gettext("<i>This information allows for calculation of:</i>"), "p")
       
       pointEstimate <- gettextf("The point estimate of the true population value %1$s", "<i>W&#770 = N \u00D7 w&#772 + b<sub>1</sub> x (B - N \u00D7 b&#772)</i>")
-      if(ready){
+      if (ready) {
         W <- round(N * meanW + b1 * (B - N * meanB), 2)
         pointEstimate <- gettextf("%1$s = %2$s", pointEstimate, W)
       }
@@ -656,13 +656,13 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
                               "<i>U = t<sub>",
                               round(1 - options[["confidence"]], 2),
                               "/2</sub> \u00D7 s<sub>w</sub> \u00D7 \u221A(1 - r<sub>bw</sub><sup>2</sup>) \u00D7 <sup>N</sup>&frasl;<sub>\u221A n</sub> \u00D7 \u221A (<sup>N - n</sup>&frasl;<sub>N - 1</sub>)</i>")
-      if(ready){
+      if (ready) {
         U <- round(qt(p = (1 - (1 - options[["confidence"]])/2), df = n - 1) * sW * sqrt(1 - r^2) * (N / sqrt(n)) * sqrt((N-n)/(N-1)), 2)
         uncertainty <- gettextf("%1$s = %2$s", uncertainty, U)
       }
       
       confidenceInterval <- gettextf("The confidence interval around the point estimate %1$s", "<i>W&#770 \u00B1 U")
-      if(ready)
+      if (ready)
         confidenceInterval <- gettextf("%1$s = %2$s %3$s %4$s", confidenceInterval, W, " \u00B1 ", U)
       
       results <- gettextf("%1$s
@@ -684,9 +684,9 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   }
 }
 
-.jfaEstimationSampleSizeTable <- function(dataset, options, jaspResults, ready, position){
+.jfaEstimationSampleSizeTable <- function(dataset, options, jaspResults, ready, position) {
   
-  if(!is.null(jaspResults[["requiredSampleSizeTable"]]) || 
+  if (!is.null(jaspResults[["requiredSampleSizeTable"]]) || 
      !options[["requiredSampleSizeTable"]]) return()
   
   title <- base::switch(options[["estimator"]],
@@ -725,32 +725,32 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   
   jaspResults[["requiredSampleSizeTable"]]  <- requiredSampleSizeTable
   
-  if(!ready) return()
+  if (!ready) return()
   
   result <- jaspResults[["result"]]$object
   
-  if(options[["estimator"]] == "mpu"){
+  if (options[["estimator"]] == "mpu") {
     gamma <- E^2 / (qt(p = (1 - (1 - options[["confidence"]])/2), df = nrow(dataset) - 1)^2 * options[["populationSize"]] * result[["sW"]]^2)
-  } else if(options[["estimator"]] == "difference"){
+  } else if (options[["estimator"]] == "difference") {
     gamma <- E^2 / (qt(p = (1 - (1 - options[["confidence"]])/2), df = nrow(dataset) - 1)^2 * options[["populationSize"]] * result[["sE"]]^2)
-  } else if(options[["estimator"]] == "ratio"){
+  } else if (options[["estimator"]] == "ratio") {
     gamma <- E^2 / (qt(p = (1 - (1 - options[["confidence"]])/2), df = nrow(dataset) - 1)^2 * options[["populationSize"]] * result[["s"]]^2)
-  } else if(options[["estimator"]] == "regression"){
+  } else if (options[["estimator"]] == "regression") {
     gamma <- E^2 / (qt(p = (1 - (1 - options[["confidence"]])/2), df = nrow(dataset) - 1)^2 * options[["populationSize"]] * result[["sW"]]^2 * (1 - result[["r"]]^2))
   }
   n2 <- ceiling(options[["populationSize"]] / (1 + gamma))
   
   requiredSampleSizeTable[["n"]] <- n2
   nExtra <- n2 - nrow(dataset)
-  if(nExtra < 1)
+  if (nExtra < 1)
     nExtra <- 0
   requiredSampleSizeTable[["nextra"]] <- nExtra
   
 }
 
-.jfaEstimationCorrelationPlot <- function(dataset, options, jaspResults, ready, position){
+.jfaEstimationCorrelationPlot <- function(dataset, options, jaspResults, ready, position) {
   
-  if(!is.null(jaspResults[["correlationPlot"]]) || 
+  if (!is.null(jaspResults[["correlationPlot"]]) || 
      !options[["correlationPlot"]] || 
      options[["estimator"]] == "mpu") return()
   
@@ -766,7 +766,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   
   jaspResults[["correlationPlot"]] <- correlationPlot
   
-  if(!ready) return()
+  if (!ready) return()
   
   d <- data.frame(xx= dataset[,.v(options[["bookValues"]])], yy= dataset[,.v(options[["auditValues"]])])
   co <- cor(d$xx, d$yy, method = "pearson")
@@ -819,7 +819,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...){
   
   correlationPlot$plotObject <- p
   
-  if(options[["explanatoryText"]]){
+  if (options[["explanatoryText"]]) {
     figure1 <- createJaspHtml(gettext("<b>Figure 1.</b> Scatter plot of the book values in the selection and their audit values. Red dots indicate observations that did not match their original book value. If these red dots lie in the bottom part of the graph, the book values are overstated. If these red dots lie in the upper part of the graph, they are understated. The value <i>r</i> is the Pearson correlation coefficient of the book values and the audit values, an indicator of the strength of the linear relationship between the two variables."), "p")
     figure1$position <- position + 1
     figure1$dependOn(optionsFromObject = correlationPlot)

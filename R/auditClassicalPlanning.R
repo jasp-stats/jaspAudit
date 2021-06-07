@@ -18,7 +18,7 @@
 # When making changes to this file always mention @koenderks as a 
 # reviewer in the Pull Request
 
-auditClassicalPlanning <- function(jaspResults, dataset, options, ...){
+auditClassicalPlanning <- function(jaspResults, dataset, options, ...) {
   
   # For the planning constituents, see auditCommonFunctions.R
   .jfaPlanningStage(options, jaspResults, workflow = FALSE)

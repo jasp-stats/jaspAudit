@@ -27,8 +27,8 @@ Form
 	columns:									2
 
 	// Extra options
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name:									"workflow"
 		checked:								false
 		visible:								false
@@ -61,7 +61,7 @@ Form
 			singleVariable:						true
 			allowedColumns:						["scale"]
 			allowAnalysisOwnComputedColumns:	false
-			onCountChanged:						monetaryVariable.count > 0 ? musSampling.click() : recordSampling.click() 
+			onCountChanged:						monetaryVariable.count > 0 ? musSampling.click() : recordSampling.click()
 		}
 
 		AssignedVariablesList
@@ -92,7 +92,7 @@ Form
 		min: 									0
 		max: 									dataSetModel.rowCount()
 		fieldWidth: 							60 * preferencesModel.uiScale
-	}	
+	}
 
 	GroupBox
 	{
@@ -128,10 +128,10 @@ Form
 			Layout.columnSpan:					3
 		}
 
-		Divider 
-		{ 
-			width: 								parent.width 
-		} 
+		Divider
+		{
+			width: 								parent.width
+		}
 
 		RadioButtonGroup
 		{
@@ -241,28 +241,28 @@ Form
 			name: 								"valuta"
 			enabled:							monetaryVariable.count > 0
 
-			RadioButton 	
-			{ 
+			RadioButton
+			{
 				id: 							euroValuta
 				text: 							qsTr("Euro (€)")
 				name: 							"euroValuta"
 				checked: 						true
 			}
 
-			RadioButton 	
-			{ 
-				id: 							dollarValuta	
+			RadioButton
+			{
+				id: 							dollarValuta
 				text: 							qsTr("Dollar ($)")
 				name: 							"dollarValuta"
 			}
 
 			RowLayout
 			{
-				RadioButton	
-				{ 
+				RadioButton
+				{
 					id: 						otherValuta
 					text:						qsTr("Other")
-					name: 						"otherValuta"	
+					name: 						"otherValuta"
 				}
 
 				TextField
@@ -287,17 +287,17 @@ Form
 			id: 								samplingTables
 			title: 								qsTr("Tables")
 
-			CheckBox 
-			{ 
+			CheckBox
+			{
 				text: 							qsTr("Display selected transactions")
-				name: 							"displaySample"							
+				name: 							"displaySample"
 			}
 
-			CheckBox 
-			{ 
+			CheckBox
+			{
 				id: 							sampleDescriptives
 				text: 							qsTr("Descriptive statistics of selected transactions")
-				name: 							"sampleDescriptives"	
+				name: 							"sampleDescriptives"
 			}
 
 			RowLayout
@@ -308,35 +308,35 @@ Form
 				{
 					spacing: 					5 * preferencesModel.uiScale
 
-					CheckBox 
-					{ 
+					CheckBox
+					{
 						text: 					qsTr("Mean")
 						name: 					"mean"
 						enabled: 				sampleDescriptives.checked
-						checked: 				true	
+						checked: 				true
 					}
 					
-					CheckBox 
-					{ 
-						text: 					qsTr("Median")			
+					CheckBox
+					{
+						text: 					qsTr("Median")
 						name: 					"median"
 						enabled: 				sampleDescriptives.checked
-						checked: 				true	
+						checked: 				true
 					}
 					
-					CheckBox 
-					{ 
-						text: 					qsTr("Std. deviation")	
+					CheckBox
+					{
+						text: 					qsTr("Std. deviation")
 						name: 					"sd"
 						enabled: 				sampleDescriptives.checked
-						checked: 				true	
+						checked: 				true
 					}
 					
-					CheckBox 
-					{ 
-						text: 					qsTr("Variance") 			
+					CheckBox
+					{
+						text: 					qsTr("Variance")
 						name: 					"var"
-						enabled: 				sampleDescriptives.checked					
+						enabled: 				sampleDescriptives.checked
 					}
 				}
 
@@ -344,62 +344,62 @@ Form
 				{
 					spacing: 					5 * preferencesModel.uiScale
 
-					CheckBox 
-					{ 
-						text: 					qsTr("Minimum")	
-						name: 					"min"	
-						enabled: 				sampleDescriptives.checked	
+					CheckBox
+					{
+						text: 					qsTr("Minimum")
+						name: 					"min"
+						enabled: 				sampleDescriptives.checked
 					}
 					
-					CheckBox 
-					{ 
+					CheckBox
+					{
 						text: 					qsTr("Maximum")
-						name: 					"max"	
-						enabled: 				sampleDescriptives.checked	
+						name: 					"max"
+						enabled: 				sampleDescriptives.checked
 					}
 					
-					CheckBox 
-					{ 
+					CheckBox
+					{
 						text: 					qsTr("Range")
 						name: 					"range"
-						enabled: 				sampleDescriptives.checked	
+						enabled: 				sampleDescriptives.checked
 					}
 				}
 			}
 		}
 	}
 
-	GroupBox 
+	GroupBox
 	{
 
-		CheckBox 
-		{ 
-			id: 								addSampleIndicator  
+		CheckBox
+		{
+			id: 								addSampleIndicator
 			name: 								"addSampleIndicator"
 			text: 								qsTr("Export sample to file")
 			enabled: 							recordNumberVariable.count > 0 & sampleSize.value > 0
-			onCheckedChanged:					if(!checked) exportSample.checked = false
+			onCheckedChanged:					if (!checked) exportSample.checked = false
 
-			ComputedColumnField 
-			{ 
-					id:							sampleIndicatorColumn
-					name: 						"sampleIndicatorColumn"
-					text: 						qsTr("Column name selection result: ")
-					placeholderText: 			qsTr("e.g. Count")
-					fieldWidth: 				120 * preferencesModel.uiScale
-					visible:					addSampleIndicator.checked
+			ComputedColumnField
+			{
+				id:							sampleIndicatorColumn
+				name: 						"sampleIndicatorColumn"
+				text: 						qsTr("Column name selection result: ")
+				placeholderText: 			qsTr("e.g. Count")
+				fieldWidth: 				120 * preferencesModel.uiScale
+				visible:					addSampleIndicator.checked
 			}
 
-				FileSelector
-				{
-					id:							file
-					name:						"file"
-					label:  					qsTr("Save as: ")
-					filter:						"*.csv"
-					save:						true
-					fieldWidth:					180 * preferencesModel.uiScale 
-					visible:					addSampleIndicator.checked
-				}
+			FileSelector
+			{
+				id:							file
+				name:						"file"
+				label:  					qsTr("Save as: ")
+				filter:						"*.csv"
+				save:						true
+				fieldWidth:					180 * preferencesModel.uiScale
+				visible:					addSampleIndicator.checked
+			}
 		}
 
 		RowLayout
@@ -421,7 +421,7 @@ Form
 				id:								exportSample
 				name:							"exportSample"
 				visible:						false
-			}	
+			}
 		}
 	}
 

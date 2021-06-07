@@ -7,6 +7,19 @@ The Bayesian evaluation analysis allows the auditor to evaluate an audit sample 
 
 For a global introduction to this analysis, please download the manual for the Audit module [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
 
+<img src="%HELP_FOLDER%/img/workflowEvaluation.png" />
+
+----
+
+Useful information
+-------
+
+#### Taints
+
+Audited items can be evaluated while incorporating the magnitude of the misstatement by calculating their taints. The taint of an item *i* is the proportional difference between that item's book value (*y*) and the item's audit (true) value (*x*). Positive taints are associated with overstatements, while negative taints occur when items are understated.
+
+<img src="%HELP_FOLDER%/img/taints.png" />
+
 ----
 
 Default input options
@@ -141,6 +154,6 @@ References
 
 AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
 
-Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.1.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.5.
 
 Interdepartementaal Overlegorgaan Departementale Accountantsdiensten (2007). <i>Handboek Auditing Rijksoverheid 2007</i>, established by the Interdepartementaal Overlegorgaan Departementale Accountantsdiensten (IODAD) on March 28, 2006, and May 29, 2007.

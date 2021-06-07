@@ -18,7 +18,7 @@
 # When making changes to this file always mention @koenderks as a 
 # reviewer in the Pull Request
 
-auditBayesianWorkflow <- function(jaspResults, dataset, options, ...){
+auditBayesianWorkflow <- function(jaspResults, dataset, options, ...) {
   
   # For the workflow constituents, see auditCommonFunctions.R
   .jfaWorkflowAnalysis(options, jaspResults)

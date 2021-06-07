@@ -7,6 +7,8 @@ The selection analysis allows the auditor to select a number of required transac
 
 For a global introduction to this analysis, please download the manual for the Audit module [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
 
+<img src="%HELP_FOLDER%/img/workflowSelection.png" />
+
 ----
 
 Standard Options
@@ -114,4 +116,4 @@ References
 
 AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
 
-Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.1.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.5.

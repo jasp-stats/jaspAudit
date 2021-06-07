@@ -35,32 +35,32 @@ Form
 	columns: 			1
 
 	// Extra options
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 										"workflow"
 		checked: 									true
-		visible: 									false 
+		visible: 									false
 	}
 
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 										"bayesianAnalysis"
 		checked: 									false
-		visible: 									false 
+		visible: 									false
 	}
 
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 										"separateKnownAndUnknownMisstatement"
 		checked: 									false
 		visible: 									false
 	}
 
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 										"useSumStats"
 		checked: 									false
-		visible: 									false 
+		visible: 									false
 	}
 
 	RadioButtonGroup
@@ -90,7 +90,7 @@ Form
 		{
 			columns: 								3
 
-			GroupBox 
+			GroupBox
 			{
 				title: 								qsTr("Sampling Objectives")
 				enabled: 							!pasteVariables.checked
@@ -125,6 +125,8 @@ Form
 									visible: 		materialityRelative.checked
 									decimals: 		2
 									defaultValue: 	0
+									min:			0
+									max:			99
 									name: 			"materialityPercentage"
 									fieldWidth: 	50 * preferencesModel.uiScale
 								}
@@ -169,7 +171,7 @@ Form
 					id: 							minimumPrecision
 					text: 							qsTr("Obtain a required minimum precision")
 					name: 							"minimumPrecision"
-				
+
 					PercentField
 					{
 						id: 						minimumPrecisionPercentage
@@ -177,7 +179,7 @@ Form
 						decimals: 					2
 						defaultValue: 				2
 						min:						0.1
-						max:						100
+						max:						99.9
 						label: 						qsTr("Relative")
 						fieldWidth:					50 * preferencesModel.uiScale
 						visible: 					minimumPrecision.checked
@@ -203,8 +205,8 @@ Form
 					label: 							qsTr("Confidence")
 					decimals: 						2
 					defaultValue: 					95
-					min: 							1
-					max: 							99
+					min:							0.1
+					max:							99.9
 				}
 			}
 
@@ -226,12 +228,12 @@ Form
 					helpPage:						"Audit/explanatoryText"
 					toolTip: 						qsTr("Show explanatory text at each step of the analysis")
 				}
-			}				
+			}
 		}
 
-		Divider 
-		{ 
-			width: 									parent.width 
+		Divider
+		{
+			width: 									parent.width
 		}
 
 		Label
@@ -249,9 +251,9 @@ Form
 			preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
 			enabled:								!pasteVariables.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0))
 
-			AvailableVariablesList	
-			{ 
-				name: 								"variablesFormPlanning" 
+			AvailableVariablesList
+			{
+				name: 								"variablesFormPlanning"
 			}
 
 			AssignedVariablesList
@@ -272,13 +274,13 @@ Form
 				singleVariable: 					true
 				allowedColumns: 					["scale"]
 				allowAnalysisOwnComputedColumns: 	false
-				onCountChanged:								
+				onCountChanged:
 				{
 					if (initialized)
 					{
-													monetaryVariable.count > 0 ? poisson.click() : binomial.click()
-													monetaryVariable.count > 0 ? musSampling.click() : recordSampling.click() 
-													monetaryVariable.count > 0 ? variableTypeAuditValues.click() : variableTypeCorrect.click()
+						monetaryVariable.count > 0 ? poisson.click() : binomial.click()
+						monetaryVariable.count > 0 ? musSampling.click() : recordSampling.click()
+						monetaryVariable.count > 0 ? variableTypeAuditValues.click() : variableTypeCorrect.click()
 					}
 				}
 			}
@@ -329,16 +331,16 @@ Form
 					name: 							"handleCriticalTransactions"
 					enabled:						flagCriticalTransactions.checked
 
-					RadioButton 
-					{ 
+					RadioButton
+					{
 						id:							inspectCriticalTransactions
 						text: 						qsTr("Inspect")
 						name: 						"inspect"
-						checked: 					true	
+						checked: 					true
 					}
 
-					RadioButton 
-					{ 
+					RadioButton
+					{
 						text: 						qsTr("Remove")
 						name: 						"remove"
 					}
@@ -387,23 +389,23 @@ Form
 				name: 								"IR"
 				enabled:							!pasteVariables.checked & performanceMateriality.checked
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					id:								irHigh
 					text: 							qsTr("High")
 					name: 							"High"
-					checked: 						true	
+					checked: 						true
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 							qsTr("Medium")
 					name: 							"Medium"
 					enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 							qsTr("Low")
 					name: 							"Low"
 					enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
@@ -435,23 +437,23 @@ Form
 				name: 								"CR"
 				enabled:							!pasteVariables.checked & performanceMateriality.checked
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					id:								crHigh
 					text: 							qsTr("High")
 					name: 							"High"
-					checked: 						true	
+					checked: 						true
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 							qsTr("Medium")
 					name: 							"Medium"
 					enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 							qsTr("Low")
 					name: 							"Low"
 					enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
@@ -485,8 +487,8 @@ Form
 
 				RowLayout
 				{
-					RadioButton 
-					{ 
+					RadioButton
+					{
 						id: 						expectedRelative
 						name: 						"expectedRelative"
 						text: 						qsTr("Relative")
@@ -502,18 +504,18 @@ Form
 						defaultValue: 				0
 						visible: 					expectedRelative.checked
 						fieldWidth: 				50 * preferencesModel.uiScale
-						onValueChanged:				if(expectedRelative.checked & expectedPercentage.value > 0) 
-						{
-													irHigh.click()
-													crHigh.click()
-						}
+						onValueChanged:				if (expectedRelative.checked & expectedPercentage.value > 0)
+													{
+														irHigh.click()
+														crHigh.click()
+													}
 					}
 				}
 
 				RowLayout
 				{
-					RadioButton 
-					{ 
+					RadioButton
+					{
 						id: 						expectedAbsolute
 						name: 						"expectedAbsolute"
 						text: 						qsTr("Absolute")
@@ -530,11 +532,11 @@ Form
 						visible: 					expectedAbsolute.checked
 						fieldWidth: 				60 * preferencesModel.uiScale
 						label: 						performanceMateriality.checked & materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
-						onValueChanged:				if(expectedAbsolute.checked & expectedNumber.value > 0) 
-						{
-													irHigh.click()
-													crHigh.click()
-						}
+						onValueChanged:				if (expectedAbsolute.checked & expectedNumber.value > 0)
+													{
+														irHigh.click()
+														crHigh.click()
+													}
 					}
 				}
 			}
@@ -555,7 +557,7 @@ Form
 
 				RadioButton
 				{
-					id: 							binomial									
+					id: 							binomial
 					text: 							qsTr("Binomial")
 					name: 							"binomial"
 					checked: 						true
@@ -580,7 +582,7 @@ Form
 				title: 								qsTr("Calculation Preferences")
 				enabled:							!pasteVariables.checked
 
-				IntegerField 
+				IntegerField
 				{
 					name: 							"sampleSizeIncrease"
 					text: 							qsTr("Step size")
@@ -598,28 +600,28 @@ Form
 				name: 								"valuta"
 				enabled:							monetaryVariable.count > 0 | materialityAbsolute.checked
 
-				RadioButton 	
-				{ 
+				RadioButton
+				{
 					id: 							euroValuta
 					text: 							qsTr("Euro (€)")
 					name: 							"euroValuta"
 					checked: 						true
 				}
 
-				RadioButton 	
-				{ 
-					id: 							dollarValuta	
+				RadioButton
+				{
+					id: 							dollarValuta
 					text: 							qsTr("Dollar ($)")
 					name: 							"dollarValuta"
 				}
 
 				RowLayout
 				{
-					RadioButton	
-					{ 
+					RadioButton
+					{
 						id: 						otherValuta
 						text:						qsTr("Other")
-						name: 						"otherValuta"	
+						name: 						"otherValuta"
 					}
 
 					TextField
@@ -629,7 +631,7 @@ Form
 						fieldWidth: 				100 * preferencesModel.uiScale
 						enabled: 					otherValuta.checked
 						visible: 					otherValuta.checked
-					}	
+					}
 				}
 			}
 		}
@@ -691,9 +693,9 @@ Form
 				anchors.rightMargin:				jaspTheme.generalAnchorMargin
 				text:								qsTr("<b>Download Report</b>")
 				enabled:							((materialityRelative.checked ?
-													materialityPercentage.value != "0" & recordNumberVariable.count > 0 :
-													materialityValue.value 		!= "0" & recordNumberVariable.count > 0 & monetaryVariable.count > 0) |
-													(minimumPrecision.checked & minimumPrecisionPercentage.value != "0" & recordNumberVariable.count > 0))
+														  materialityPercentage.value != "0" & recordNumberVariable.count > 0 :
+														  materialityValue.value 		!= "0" & recordNumberVariable.count > 0 & monetaryVariable.count > 0) |
+													 (minimumPrecision.checked & minimumPrecisionPercentage.value != "0" & recordNumberVariable.count > 0))
 				onClicked:							form.exportResults()
 			}
 
@@ -713,9 +715,9 @@ Form
 				anchors.right: 						parent.right
 				text: 								qsTr("<b>To Selection</b>")
 				enabled: 							!samplingChecked.checked & ((materialityRelative.checked ?
-													materialityPercentage.value > 0 & recordNumberVariable.count > 0 :
-													materialityValue.value > 0 & recordNumberVariable.count > 0 & monetaryVariable.count > 0) |
-													(minimumPrecision.checked & minimumPrecisionPercentage.value > 0 & recordNumberVariable.count > 0))
+																					 materialityPercentage.value > 0 & recordNumberVariable.count > 0 :
+																					 materialityValue.value > 0 & recordNumberVariable.count > 0 & monetaryVariable.count > 0) |
+																				(minimumPrecision.checked & minimumPrecisionPercentage.value > 0 & recordNumberVariable.count > 0))
 				onClicked:							samplingChecked.checked	= true
 			}
 		}
@@ -733,7 +735,7 @@ Form
 		expanded: 									samplingChecked.checked & !executionChecked.checked
 		columns: 									1
 
-		CheckBox 
+		CheckBox
 		{
 			id: 									customSampleConstruction
 			name: 									"customSampleConstruction"
@@ -786,10 +788,10 @@ Form
 				Layout.columnSpan:					3
 			}
 
-			Divider 
-			{ 
-				width: 								parent.width 
-			} 
+			Divider
+			{
+				width: 								parent.width
+			}
 
 			RadioButtonGroup
 			{
@@ -900,17 +902,17 @@ Form
 				id: 								samplingTables
 				title: 								qsTr("Tables")
 
-				CheckBox 
-				{ 
+				CheckBox
+				{
 					text: 							qsTr("Display selected transactions")
-					name: 							"displaySample"									
+					name: 							"displaySample"
 				}
 
-				CheckBox 
-				{ 
+				CheckBox
+				{
 					id: 							sampleDescriptives
 					text: 							qsTr("Descriptive statistics of selected transactions")
-					name: 							"sampleDescriptives"	
+					name: 							"sampleDescriptives"
 				}
 
 				RowLayout
@@ -921,35 +923,35 @@ Form
 					{
 						spacing: 					5 * preferencesModel.uiScale
 
-						CheckBox 
-						{ 
+						CheckBox
+						{
 							text: 					qsTr("Mean")
 							name: 					"mean"
 							enabled: 				sampleDescriptives.checked
-							checked: 				true	
+							checked: 				true
 						}
 						
-						CheckBox 
-						{ 
-							text: 					qsTr("Median")			
+						CheckBox
+						{
+							text: 					qsTr("Median")
 							name: 					"median"
 							enabled: 				sampleDescriptives.checked
-							checked: 				true	
+							checked: 				true
 						}
 						
-						CheckBox 
-						{ 
-							text: 					qsTr("Std. deviation")	
+						CheckBox
+						{
+							text: 					qsTr("Std. deviation")
 							name: 					"sd"
 							enabled: 				sampleDescriptives.checked
-							checked: 				true	
+							checked: 				true
 						}
 						
-						CheckBox 
-						{ 
-							text: 					qsTr("Variance") 			
+						CheckBox
+						{
+							text: 					qsTr("Variance")
 							name: 					"var"
-							enabled: 				sampleDescriptives.checked					
+							enabled: 				sampleDescriptives.checked
 						}
 					}
 
@@ -957,25 +959,25 @@ Form
 					{
 						spacing: 					5 * preferencesModel.uiScale
 
-						CheckBox 
-						{ 
-							text: 					qsTr("Minimum")	
-							name: 					"min"	
-							enabled: 				sampleDescriptives.checked	
+						CheckBox
+						{
+							text: 					qsTr("Minimum")
+							name: 					"min"
+							enabled: 				sampleDescriptives.checked
 						}
 						
-						CheckBox 
-						{ 
+						CheckBox
+						{
 							text: 					qsTr("Maximum")
-							name: 					"max"	
-							enabled: 				sampleDescriptives.checked	
+							name: 					"max"
+							enabled: 				sampleDescriptives.checked
 						}
 						
-						CheckBox 
-						{ 
+						CheckBox
+						{
 							text: 					qsTr("Range")
 							name: 					"range"
-							enabled: 				sampleDescriptives.checked	
+							enabled: 				sampleDescriptives.checked
 						}
 					}
 				}
@@ -999,9 +1001,9 @@ Form
 			{
 				id:									downloadReportSelection
 				enabled:							((materialityRelative.checked ?
-													materialityPercentage.value != "0" & recordNumberVariable.count > 0 :
-													materialityValue.value 		!= "0" & recordNumberVariable.count > 0 & monetaryVariable.count > 0) |
-													(minimumPrecision.checked & minimumPrecisionPercentage.value != "0" & recordNumberVariable.count > 0))
+														  materialityPercentage.value != "0" & recordNumberVariable.count > 0 :
+														  materialityValue.value 		!= "0" & recordNumberVariable.count > 0 & monetaryVariable.count > 0) |
+													 (minimumPrecision.checked & minimumPrecisionPercentage.value != "0" & recordNumberVariable.count > 0))
 				anchors.right:						toExecution.left
 				anchors.rightMargin:				jaspTheme.generalAnchorMargin
 				text:								qsTr("<b>Download Report</b>")
@@ -1076,10 +1078,10 @@ Form
 							enabled: 				monetaryVariable.count > 0
 						}
 
-						HelpButton 
-						{ 
+						HelpButton
+						{
 							toolTip: 				qsTr("Adds a column to specify the Soll values of the transactions.")
-							helpPage: 				"?" 
+							helpPage: 				"?"
 						}
 					}
 
@@ -1094,19 +1096,19 @@ Form
 							enabled: 				true
 						}
 
-						HelpButton 
-						{ 
+						HelpButton
+						{
 							toolTip:				qsTr("Adds a column to specify the transactions as correct (0) or misstated (1).")
-							helpPage: 				"?" 
+							helpPage: 				"?"
 						}
 					}
 				}
 			}
 		}
 
-		Divider 
-		{ 
-			width: 									parent.width 
+		Divider
+		{
+			width: 									parent.width
 		}
 
 		RowLayout
@@ -1158,10 +1160,10 @@ Form
 					enabled: 						sampleFilter.value != "" & variableName.value != "" & !pasteVariables.checked
 					onClicked:
 					{
-													pasteVariables.checked 		= true
-													performAuditTable.colName   = variableName.value
-													performAuditTable.extraCol	= sampleFilter.value
-													flagCriticalTransactions.checked & inspectCriticalTransactions.checked ? performAuditTable.filter 	= sampleFilter.value + " > 0" + " | " + criticalTransactions.value + " > 0" : performAuditTable.filter 	= sampleFilter.value + " > 0"
+						pasteVariables.checked 		= true
+						performAuditTable.colName   = variableName.value
+						performAuditTable.extraCol	= sampleFilter.value
+						flagCriticalTransactions.checked & inspectCriticalTransactions.checked ? performAuditTable.filter 	= sampleFilter.value + " > 0" + " | " + criticalTransactions.value + " > 0" : performAuditTable.filter 	= sampleFilter.value + " > 0"
 					}
 				}
 			}
@@ -1228,19 +1230,19 @@ Form
 
 				onClicked:
 				{
-													executionPhase.expanded 		= false
-													executeAuditSection.expanded	= false
-													evaluationChecked.checked 		= true
-													if (musSampling.checked & variableTypeAuditValues.checked)
-														stringerBound.click()
-													if (recordSampling.checked & variableTypeAuditValues.checked)
-														regressionBound.click()
-													if(variableTypeCorrect.checked)
-													{
-														if (poisson.checked) 				poissonBound.click()
-														if (binomial.checked) 				binomialBound.click()
-														if (hypergeometric.checked) 		hyperBound.click()
-													}
+					executionPhase.expanded 		= false
+					executeAuditSection.expanded	= false
+					evaluationChecked.checked 		= true
+					if (musSampling.checked & variableTypeAuditValues.checked)
+						stringerBound.click()
+					if (recordSampling.checked & variableTypeAuditValues.checked)
+						regressionBound.click()
+					if (variableTypeCorrect.checked)
+					{
+						if (poisson.checked) 				poissonBound.click()
+						if (binomial.checked) 				binomialBound.click()
+						if (hypergeometric.checked) 		hyperBound.click()
+					}
 				}
 			}
 		}
@@ -1385,7 +1387,7 @@ Form
 					text: 							qsTr("Extrapolated amounts")
 					name: 							"displayValues"
 					enabled:						monetaryVariable.count > 0
-				}	
+				}
 			}
 		}
 
@@ -1478,8 +1480,8 @@ Form
 				enabled: 							auditResult.count > 0
 				onClicked:
 				{
-													evaluationPhase.expanded = false
-													form.exportResults()
+					evaluationPhase.expanded = false
+					form.exportResults()
 				}
 			}
 		}

@@ -28,7 +28,7 @@ Form {
 	GridLayout
 	{
 		columns: 							3
-		columnSpacing:						75 * preferencesModel.uiScale	
+		columnSpacing:						75 * preferencesModel.uiScale
 
 		GroupBox
 		{
@@ -68,6 +68,8 @@ Form {
 				label: 						qsTr("Confidence")
 				decimals: 					2
 				defaultValue: 				95
+				min:						0.1
+				max:						99.9
 			}
 		}
 
@@ -101,9 +103,9 @@ Form {
 		id: 								variablesFormEstimation
 		preferredHeight: 					jaspTheme.smallDefaultVariablesFormHeight
 
-		AvailableVariablesList	
-		{ 
-			name: 							"variablesFormEstimation" 
+		AvailableVariablesList
+		{
+			name: 							"variablesFormEstimation"
 		}
 
 		AssignedVariablesList
@@ -138,6 +140,7 @@ Form {
 
 			RadioButton
 			{
+				id:					mpu
 				name:				"mpu"
 				text:				qsTr("Direct estimator")
 			}
@@ -156,7 +159,7 @@ Form {
 
 			RadioButton
 			{
-				name:				"ratio"
+				name:				"regression"
 				text:				qsTr("Regression estimator")
 				checked:			true
 			}

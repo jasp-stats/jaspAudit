@@ -27,22 +27,22 @@ Form
 	columns:									1
 
 	// Extra options
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 									"workflow"
 		checked: 								false
 		visible: 								false
 	}
 
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 									"bayesianAnalysis"
 		checked: 								true
-		visible: 								false 
+		visible: 								false
 	}
 
-	CheckBox 
-	{ 
+	CheckBox
+	{
 		name: 									"separateKnownAndUnknownMisstatement"
 		checked: 								false
 		visible: 								false
@@ -53,7 +53,7 @@ Form
 	{
 		columns: 								3
 
-		GroupBox 
+		GroupBox
 		{
 			title: 								qsTr("Sampling Objectives")
 			columns:							2
@@ -88,6 +88,8 @@ Form
 								visible: 		materialityRelative.checked
 								decimals: 		2
 								defaultValue: 	0
+								min:			0
+								max:			99
 								name: 			"materialityPercentage"
 								fieldWidth: 	50 * preferencesModel.uiScale
 							}
@@ -133,15 +135,15 @@ Form
 				id: 							minimumPrecision
 				text: 							qsTr("Obtain a required minimum precision")
 				name: 							"minimumPrecision"
-			
+
 				PercentField
 				{
 					id: 						minimumPrecisionPercentage
 					name: 						"minimumPrecisionPercentage"
 					decimals: 					2
 					defaultValue: 				2
-					min:						0.5
-					max:						100
+					min:						0.1
+					max:						99.9
 					label: 						qsTr("Relative")
 					visible: 					minimumPrecision.checked
 				}
@@ -177,10 +179,10 @@ Form
 				fieldWidth: 					80 * preferencesModel.uiScale
 				min: 							0
 				decimals: 						2
-				onValueChanged:					
+				onValueChanged:
 				{
-												if(populationValue.value > 0) gamma.click()
-												if(populationValue.value == 0) beta.click()
+					if (populationValue.value > 0) gamma.click()
+					if (populationValue.value == 0) beta.click()
 				}
 			}
 		}
@@ -198,6 +200,8 @@ Form
 					label: 						qsTr("Confidence")
 					decimals: 					2
 					defaultValue: 				95
+					min:						0.1
+					max:						99.9
 				}
 			}
 
@@ -223,7 +227,7 @@ Form
 		}
 	}
 
-	Section 
+	Section
 	{
 		title: 									qsTr("Prior Information")
 		columns: 								3
@@ -231,7 +235,7 @@ Form
 
 		RowLayout
 		{
-			DropDown 
+			DropDown
 			{
 				id: 							priorConstructionMethod
 				name: 							"priorConstructionMethod"
@@ -239,20 +243,20 @@ Form
 				startValue:						"none"
 				label: 							qsTr("Prior information:")
 				Layout.columnSpan: 				2
-				values: 						performanceMateriality.checked ? 
-				[
-					{ label: qsTr("None"), 							value: "none"},
-					{ label: qsTr("Audit Risk Model"), 				value: "arm"},
-					{ label: qsTr("Equal prior probabilities"), 	value: "median"},
-					{ label: qsTr("Custom prior probabilities"), 	value: "hypotheses"},
-					{ label: qsTr("Earlier sample"), 				value: "sample"},
-					{ label: qsTr("Weighted earlier sample"), 		value: "factor"}
-				] : 
-				[
-					{ label: qsTr("None"), 							value: "none"},
-					{ label: qsTr("Earlier sample"), 				value: "sample"},
-					{ label: qsTr("Weighted earlier sample"), 		value: "factor"}
-				] 
+				values: 						performanceMateriality.checked ?
+													[
+														{ label: qsTr("None"), 							value: "none"},
+														{ label: qsTr("Audit Risk Model"), 				value: "arm"},
+														{ label: qsTr("Equal prior probabilities"), 	value: "median"},
+														{ label: qsTr("Custom prior probabilities"), 	value: "hypotheses"},
+														{ label: qsTr("Earlier sample"), 				value: "sample"},
+														{ label: qsTr("Weighted earlier sample"), 		value: "factor"}
+													] :
+													[
+														{ label: qsTr("None"), 							value: "none"},
+														{ label: qsTr("Earlier sample"), 				value: "sample"},
+														{ label: qsTr("Weighted earlier sample"), 		value: "factor"}
+													]
 			}
 
 			HelpButton
@@ -270,8 +274,8 @@ Form
 
 			RowLayout
 			{
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					id: 						expectedRelative
 					name: 						"expectedRelative"
 					text: 						qsTr("Relative")
@@ -291,8 +295,8 @@ Form
 
 			RowLayout
 			{
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					id: 						expectedAbsolute
 					name: 						"expectedAbsolute"
 					text: 						qsTr("Absolute")
@@ -324,21 +328,21 @@ Form
 				title: 							qsTr("Inherent Risk")
 				name: 							"IR"
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("High")
 					name: 						"High"
-					checked: 					true	
+					checked: 					true
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Medium")
 					name: 						"Medium"
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Low")
 					name: 						"Low"
 				}
@@ -367,21 +371,21 @@ Form
 				title: 							qsTr("Control Risk")
 				name: 							"CR"
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("High")
 					name: 						"High"
-					checked: 					true	
+					checked: 					true
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Medium")
 					name: 						"Medium"
 				}
 
-				RadioButton 
-				{ 
+				RadioButton
+				{
 					text: 						qsTr("Low")
 					name: 						"Low"
 				}
@@ -491,7 +495,7 @@ Form
 				max: 							1
 				visible: 						["factor"].includes(priorConstructionMethod.currentValue)
 			}
-		}	
+		}
 	}
 
 	Section
@@ -534,7 +538,7 @@ Form
 		{
 			title: 								qsTr("Calculation Preferences")
 
-			IntegerField 
+			IntegerField
 			{
 				name: 							"sampleSizeIncrease"
 				text: 							qsTr("Step size")
@@ -551,28 +555,28 @@ Form
 			name: 								"valuta"
 			enabled:							materialityAbsolute.checked | populationValue.value > 0
 
-			RadioButton 	
-			{ 
+			RadioButton
+			{
 				id: 							euroValuta
 				text: 							qsTr("Euro (€)")
 				name: 							"euroValuta"
 				checked: 						true
 			}
 
-			RadioButton 	
-			{ 
-				id: 							dollarValuta	
+			RadioButton
+			{
+				id: 							dollarValuta
 				text: 							qsTr("Dollar ($)")
 				name: 							"dollarValuta"
 			}
 
 			RowLayout
 			{
-				RadioButton	
-				{ 
+				RadioButton
+				{
 					id: 						otherValuta
 					text:						qsTr("Other")
-					name: 						"otherValuta"	
+					name: 						"otherValuta"
 				}
 
 				TextField
@@ -584,7 +588,7 @@ Form
 					visible: 					otherValuta.checked
 				}
 			}
-		}	
+		}
 	}
 
 	Section
@@ -668,7 +672,7 @@ Form
 					name: 						"priorPlotAdditionalInfo"
 					checked: 					true
 
-					RadioButtonGroup 
+					RadioButtonGroup
 					{
 						title: 					qsTr("Shade")
 						name: 					"shadePrior"

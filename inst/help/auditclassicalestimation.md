@@ -68,7 +68,7 @@ Produces a scatter plot comparing book values of the selection against their aud
 R Packages
 -------
 
-- jfa
+- base R
 
 ----
 
