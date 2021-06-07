@@ -178,7 +178,7 @@ R Packages
 References
 -------
 
-Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.3.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.5.
 
 Dyer, D., & Pierce, R. L. (1993). On the choice of the prior distribution in hypergeometric sampling. <i>Communications in Statistics-Theory and Methods</i>, 22(8), 2125-2146.
 

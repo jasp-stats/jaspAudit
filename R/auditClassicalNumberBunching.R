@@ -91,7 +91,6 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
       decimal <- 0
     decimalVec[i] <- decimal
   }
-  print(decimalVec)
   
   if (options[["values"]] != "" && length(which(decimalVec > 0)) < 3)
     jaspBase:::.quitAnalysis("The data must contain at least two values with decimals.")

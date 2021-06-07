@@ -128,7 +128,7 @@ References
 
 AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
 
-Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.3.
+Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.5.
 
 Interdepartementaal Overlegorgaan Departementale Accountantsdiensten (2007). <i>Handboek Auditing Rijksoverheid 2007</i>, established by the Interdepartementaal Overlegorgaan Departementale Accountantsdiensten (IODAD) on March 28, 2006, and May 29, 2007.
 
