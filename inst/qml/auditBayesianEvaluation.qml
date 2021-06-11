@@ -128,7 +128,7 @@ Form
 							name: 				"materialityAbsolute"
 							text: 				qsTr("Absolute")
 							childrenOnSameRow: 	true
-							onCheckedChanged:	if (checked & mainWindow.dataAvailable) variableTypeAuditValues.click()
+							onCheckedChanged:	if (checked && mainWindow.dataAvailable) variableTypeAuditValues.click()
 
 							DoubleField
 							{
@@ -260,7 +260,7 @@ Form
 	VariablesForm
 	{
 		preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
-		enabled:								!useSummaryStatistics.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								!useSummaryStatistics.checked && ((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 
 		AvailableVariablesList
 		{
@@ -363,7 +363,7 @@ Form
 	Section
 	{
 		title: 									qsTr("Critical Transactions")
-		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 		columns: 								1
 
 		GridLayout
@@ -414,12 +414,12 @@ Form
 	{
 		title: 									qsTr("Efficiency Techniques")
 		columns: 								1
-		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 
 		GroupBox
 		{
 			title: 								qsTr("Efficiency Techniques")
-			enabled:							recordNumberVariable.count > 0 & monetaryVariable.count > 0
+			enabled:							recordNumberVariable.count > 0 && monetaryVariable.count > 0
 
 			RowLayout
 			{
@@ -429,7 +429,7 @@ Form
 					text: 						qsTr("Separate known and unknown misstatement")
 					name: 						"separateKnownAndUnknownMisstatement"
 					onCheckedChanged: 			if (checked) betaBound.click()
-					enabled:					populationSize.value > 0 & populationValue.value > 0 & recordNumberVariable.count > 0 & monetaryVariable.count > 0 & auditResult.count > 0
+					enabled:					populationSize.value > 0 && populationValue.value > 0 && recordNumberVariable.count > 0 && monetaryVariable.count > 0 && auditResult.count > 0
 				}
 
 				HelpButton
@@ -443,7 +443,7 @@ Form
 			{
 				Layout.leftMargin: 				30 * preferencesModel.uiScale
 				text: 							qsTr("<i>Requires additional assumption: The population taints are homogeneous</i>")
-				enabled:						populationSize.value > 0 & populationValue.value > 0 & recordNumberVariable.count > 0 & monetaryVariable.count > 0 & auditResult.count > 0
+				enabled:						populationSize.value > 0 && populationValue.value > 0 && recordNumberVariable.count > 0 && monetaryVariable.count > 0 && auditResult.count > 0
 			}
 		}
 	}
@@ -452,7 +452,7 @@ Form
 	{
 		title: 									qsTr("Prior Information")
 		columns: 								3
-		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 
 		RowLayout
 		{
@@ -533,7 +533,7 @@ Form
 					decimals: 					3
 					visible: 					expectedAbsolute.checked
 					fieldWidth: 				60 * preferencesModel.uiScale
-					label: 						performanceMateriality.checked & materialityAbsolute.checked ? "€" : ""
+					label: 						performanceMateriality.checked && materialityAbsolute.checked ? "€" : ""
 				}
 			}
 		}
@@ -724,7 +724,7 @@ Form
 	{
 		title: 									qsTr("Advanced Options")
 		columns: 								3
-		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 
 		RadioButtonGroup
 		{
@@ -752,7 +752,7 @@ Form
 				id: 							betabinomialBound
 				name: 							"betabinomialBound"
 				text: 							qsTr("Beta-binomial")
-				enabled: 						variableTypeCorrect.checked & !separateKnownAndUnknownMisstatement.checked
+				enabled: 						variableTypeCorrect.checked && !separateKnownAndUnknownMisstatement.checked
 			}
 		}
 
@@ -806,7 +806,7 @@ Form
 	Section
 	{
 		title: 									qsTr("Tables and Plots")
-		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 		columns:								2
 
 		ColumnLayout
@@ -981,7 +981,7 @@ Form
 		{
 			id: 								toInterpretation
 			anchors.right:						parent.right
-			enabled:							((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+			enabled:							((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 			text:								qsTr("<b>Download Report</b>")
 			onClicked:							form.exportResults()
 		}

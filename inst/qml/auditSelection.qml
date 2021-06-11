@@ -377,7 +377,7 @@ Form
 			id: 								addSampleIndicator
 			name: 								"addSampleIndicator"
 			text: 								qsTr("Export sample to file")
-			enabled: 							recordNumberVariable.count > 0 & sampleSize.value > 0
+			enabled: 							recordNumberVariable.count > 0 && sampleSize.value > 0
 			onCheckedChanged:					if (!checked) exportSample.checked = false
 
 			ComputedColumnField
@@ -413,7 +413,7 @@ Form
 				control.textColor: 				exportSample.checked ? "white" : "black"
 				implicitHeight:					20 * preferencesModel.uiScale
 				onClicked: 						exportSample.click()
-				enabled:						recordNumberVariable.count > 0 & sampleSize.value > 0 & addSampleIndicator.checked & sampleIndicatorColumn.value != "" & file.value != ""
+				enabled:						recordNumberVariable.count > 0 && sampleSize.value > 0 && addSampleIndicator.checked && sampleIndicatorColumn.value != "" && file.value != ""
 				visible:						addSampleIndicator.checked
 			}
 			CheckBox
