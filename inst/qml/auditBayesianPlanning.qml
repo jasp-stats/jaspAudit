@@ -80,7 +80,7 @@ Form
 							text: 				qsTr("Relative")
 							checked:			true
 							childrenOnSameRow: 	true
-							onCheckedChanged:	if (checked & populationValue.value == 0) beta.click()
+							onCheckedChanged:	if (checked && populationValue.value == 0) beta.click()
 
 							PercentField
 							{
@@ -231,7 +231,7 @@ Form
 	{
 		title: 									qsTr("Prior Information")
 		columns: 								3
-		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 
 		RowLayout
 		{
@@ -311,7 +311,7 @@ Form
 					decimals: 					3
 					visible: 					expectedAbsolute.checked
 					fieldWidth: 				80 * preferencesModel.uiScale
-					label: 						performanceMateriality.checked & materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
+					label: 						performanceMateriality.checked && materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
 				}
 			}
 		}
@@ -502,7 +502,7 @@ Form
 	{
 		text: 									qsTr("Advanced Options")
 		columns:								3
-		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 
 		RadioButtonGroup
 		{
@@ -595,7 +595,7 @@ Form
 	{
 		title: 									qsTr("Tables and Plots")
 		columns:								2
-		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 
 		ColumnLayout
 		{
@@ -644,7 +644,7 @@ Form
 			{
 				text: 							qsTr("Compare required sample sizes")
 				name: 							"decisionPlot"
-				enabled:						!["median", "hypotheses"].includes(priorConstructionMethod.currentValue) & performanceMateriality.checked
+				enabled:						!["median", "hypotheses"].includes(priorConstructionMethod.currentValue) && performanceMateriality.checked
 			}
 
 			CheckBox
@@ -710,7 +710,7 @@ Form
 		Button
 		{
 			id: 								downloadReportPlanning
-			enabled: 							((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+			enabled: 							((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 			anchors.right: 						parent.right
 			anchors.bottom: 					parent.bottom
 			text: 								qsTr("<b>Download Report</b>")

@@ -220,14 +220,14 @@ Form
 			Layout.alignment: 						Qt.AlignHCenter
 			text: 									qsTr("<b>Variable Definitions</b>")
 			font:									jaspTheme.fontLabel
-			enabled:								!pasteVariables.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0))
+			enabled:								!pasteVariables.checked && ((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0))
 		}
 
 		VariablesForm
 		{
 			id: 			 						variablesFormPlanning
 			preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
-			enabled:		 						!pasteVariables.checked & ((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0))
+			enabled:		 						!pasteVariables.checked && ((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0))
 
 			AvailableVariablesList
 			{
@@ -248,7 +248,7 @@ Form
 			{
 				id: 								monetaryVariable
 				name: 								"monetaryVariable"
-				title: 								performanceMateriality.checked & materialityAbsolute.checked ? qsTr("Ist Position <i>(required)</i>") : qsTr("Ist Position <i>(optional)</i>")
+				title: 								performanceMateriality.checked && materialityAbsolute.checked ? qsTr("Ist Position <i>(required)</i>") : qsTr("Ist Position <i>(optional)</i>")
 				singleVariable: 					true
 				allowedColumns: 					["scale"]
 				allowAnalysisOwnComputedColumns: 	false
@@ -267,7 +267,7 @@ Form
 		Section
 		{
 			title: 									qsTr("A.     Critical Transactions")
-			enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & monetaryVariable.count > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & recordNumberVariable.count > 0
+			enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && monetaryVariable.count > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && recordNumberVariable.count > 0
 			columns: 								1
 
 			GridLayout
@@ -357,12 +357,12 @@ Form
 		{
 			title: 									qsTr("B.     Efficiency Techniques")
 			columns: 								1
-			enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & monetaryVariable.count > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & recordNumberVariable.count > 0
+			enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && monetaryVariable.count > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && recordNumberVariable.count > 0
 
 			GroupBox
 			{
 				title: 								qsTr("Efficiency Techniques")
-				enabled:							!pasteVariables.checked & recordNumberVariable.count > 0 & monetaryVariable.count > 0
+				enabled:							!pasteVariables.checked && recordNumberVariable.count > 0 && monetaryVariable.count > 0
 
 				RowLayout
 				{
@@ -393,7 +393,7 @@ Form
 		{
 			title: 									qsTr("C.     Prior Information")
 			columns: 								3
-			enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & monetaryVariable.count > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & recordNumberVariable.count > 0
+			enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && monetaryVariable.count > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && recordNumberVariable.count > 0
 
 			RowLayout
 			{
@@ -475,7 +475,7 @@ Form
 						decimals: 					3
 						visible: 					expectedAbsolute.checked
 						fieldWidth: 				60 * preferencesModel.uiScale
-						label: 						performanceMateriality.checked & materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
+						label: 						performanceMateriality.checked && materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
 					}
 				}
 
@@ -484,7 +484,7 @@ Form
 					id: 							expectedAllPossible
 					name: 							"expectedAllPossible"
 					text: 							qsTr("All possible")
-					enabled:						separateKnownAndUnknownMisstatement.checked & !performanceMateriality.checked
+					enabled:						separateKnownAndUnknownMisstatement.checked && !performanceMateriality.checked
 				}
 			}
 
@@ -677,7 +677,7 @@ Form
 		{
 			text: 									qsTr("D.     Advanced Options")
 			columns: 								3
-			enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & monetaryVariable.count > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & recordNumberVariable.count > 0
+			enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && monetaryVariable.count > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && recordNumberVariable.count > 0
 
 			RadioButtonGroup
 			{
@@ -774,7 +774,7 @@ Form
 		{
 			title: 									qsTr("E.     Tables and Plots")
 			columns: 								2
-			enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & monetaryVariable.count > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & recordNumberVariable.count > 0
+			enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && monetaryVariable.count > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && recordNumberVariable.count > 0
 
 			ColumnLayout
 			{
@@ -837,7 +837,7 @@ Form
 				{
 					text: 							qsTr("Compare required sample sizes")
 					name: 							"decisionPlot"
-					enabled:						!separateKnownAndUnknownMisstatement.checked & !["median", "hypotheses"].includes(priorConstructionMethod.currentValue) & performanceMateriality.checked
+					enabled:						!separateKnownAndUnknownMisstatement.checked && !["median", "hypotheses"].includes(priorConstructionMethod.currentValue) && performanceMateriality.checked
 				}
 
 				CheckBox
@@ -909,9 +909,9 @@ Form
 				anchors.rightMargin:				jaspTheme.generalAnchorMargin
 				text:								qsTr("<b>Download Report</b>")
 				enabled:							((materialityRelative.checked ?
-														  materialityPercentage.value != "0" & recordNumberVariable.count > 0 :
-														  materialityValue.value 		!= "0" & recordNumberVariable.count > 0 & monetaryVariable.count > 0) |
-													 (minimumPrecision.checked & minimumPrecisionPercentage.value != "0" & recordNumberVariable.count > 0))
+														  materialityPercentage.value != "0" && recordNumberVariable.count > 0 :
+														  materialityValue.value 		!= "0" && recordNumberVariable.count > 0 && monetaryVariable.count > 0) |
+													 (minimumPrecision.checked && minimumPrecisionPercentage.value != "0" && recordNumberVariable.count > 0))
 				onClicked: 							form.exportResults()
 			}
 
@@ -930,10 +930,10 @@ Form
 				id: 								toSampling
 				anchors.right: 						parent.right
 				text: 								qsTr("<b>To Selection</b>")
-				enabled: 							!samplingChecked.checked & ((materialityRelative.checked ?
-																					 materialityPercentage.value > 0 & recordNumberVariable.count > 0 :
-																					 materialityValue.value > 0 & recordNumberVariable.count > 0 & monetaryVariable.count > 0) |
-																				(minimumPrecision.checked & minimumPrecisionPercentage.value > 0 & recordNumberVariable.count > 0))
+				enabled: 							!samplingChecked.checked && ((materialityRelative.checked ?
+																					 materialityPercentage.value > 0 && recordNumberVariable.count > 0 :
+																					 materialityValue.value > 0 && recordNumberVariable.count > 0 && monetaryVariable.count > 0) |
+																				(minimumPrecision.checked && minimumPrecisionPercentage.value > 0 && recordNumberVariable.count > 0))
 				onClicked:							samplingChecked.checked	= true
 			}
 		}
@@ -948,7 +948,7 @@ Form
 		id: 										samplingPhase
 		text: 										samplingPhase.expanded ? qsTr("<b>2. Selection</b>") : qsTr("2. Selection")
 		enabled: 									samplingChecked.checked
-		expanded: 									samplingChecked.checked & !executionChecked.checked
+		expanded: 									samplingChecked.checked && !executionChecked.checked
 		columns: 									1
 
 		CheckBox
@@ -963,7 +963,7 @@ Form
 		{
 			id: 									variablesFormSampling
 			preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
-			enabled: 								!pasteVariables.checked & customSampleConstruction.checked
+			enabled: 								!pasteVariables.checked && customSampleConstruction.checked
 
 			AvailableVariablesList
 			{
@@ -993,7 +993,7 @@ Form
 		{
 			title: 									qsTr("A.     Selection Methodology")
 			columns: 								3
-			expanded: 								samplingChecked.checked & !executionChecked.checked
+			expanded: 								samplingChecked.checked && !executionChecked.checked
 
 			CheckBox
 			{
@@ -1001,7 +1001,7 @@ Form
 				text:								qsTr("Randomly organize transactions before selection")
 				checked:							false
 				Layout.columnSpan:					3
-				enabled:							!pasteVariables.checked & !separateKnownAndUnknownMisstatement.checked
+				enabled:							!pasteVariables.checked && !separateKnownAndUnknownMisstatement.checked
 			}
 
 			Divider
@@ -1107,7 +1107,7 @@ Form
 				min: 								1
 				max: 								99999
 				fieldWidth: 						60 * preferencesModel.uiScale
-				enabled: 							!separateKnownAndUnknownMisstatement.checked & !pasteVariables.checked
+				enabled: 							!separateKnownAndUnknownMisstatement.checked && !pasteVariables.checked
 				visible:							!separateKnownAndUnknownMisstatement.checked
 			}
 		}
@@ -1221,9 +1221,9 @@ Form
 			{
 				id:									downloadReportSelection
 				enabled:							((materialityRelative.checked ?
-														  materialityPercentage.value != "0" & recordNumberVariable.count > 0 :
-														  materialityValue.value 		!= "0" & recordNumberVariable.count > 0 & monetaryVariable.count > 0) |
-													 (minimumPrecision.checked & minimumPrecisionPercentage.value != "0" & recordNumberVariable.count > 0))
+														  materialityPercentage.value != "0" && recordNumberVariable.count > 0 :
+														  materialityValue.value 		!= "0" && recordNumberVariable.count > 0 && monetaryVariable.count > 0) |
+													 (minimumPrecision.checked && minimumPrecisionPercentage.value != "0" && recordNumberVariable.count > 0))
 				anchors.right:						toExecution.left
 				anchors.rightMargin:				jaspTheme.generalAnchorMargin
 				text:								qsTr("<b>Download Report</b>")
@@ -1259,7 +1259,7 @@ Form
 	{
 		id: 										executionPhase
 		text: 										executionPhase.expanded ? qsTr("<b>3. Execution</b>") : qsTr("3. Execution")
-		expanded: 									executionChecked.checked & !evaluationChecked.checked
+		expanded: 									executionChecked.checked && !evaluationChecked.checked
 		enabled: 									executionChecked.checked
 		columns: 									1
 
@@ -1295,7 +1295,7 @@ Form
 							text: 					qsTr("Soll values")
 							name: 					"variableTypeAuditValues"
 							checked: 				false
-							enabled: 				monetaryVariable.count > 0 & !betaBinomial.checked
+							enabled: 				monetaryVariable.count > 0 && !betaBinomial.checked
 						}
 
 						HelpButton
@@ -1376,13 +1376,13 @@ Form
 				{
 					id: 							pasteButton
 					text: 							qsTr("<b>Fill Variables</b>")
-					enabled: 						sampleFilter.value != "" & variableName.value != "" & !pasteVariables.checked
+					enabled: 						sampleFilter.value != "" && variableName.value != "" && !pasteVariables.checked
 					onClicked:
 					{
 						pasteVariables.checked 		= true
 						performAuditTable.colName   = variableName.value
 						performAuditTable.extraCol	= sampleFilter.value
-						flagCriticalTransactions.checked & inspectCriticalTransactions.checked ? performAuditTable.filter 	= sampleFilter.value + " > 0" + " | " + criticalTransactions.value + " > 0" : performAuditTable.filter 	= sampleFilter.value + " > 0"
+						flagCriticalTransactions.checked && inspectCriticalTransactions.checked ? performAuditTable.filter 	= sampleFilter.value + " > 0" + " | " + criticalTransactions.value + " > 0" : performAuditTable.filter 	= sampleFilter.value + " > 0"
 					}
 				}
 			}
@@ -1454,7 +1454,7 @@ Form
 					if (beta.checked) 						betaBound.click()
 					if (betaBinomial.checked) 				betabinomialBound.click()
 					if (gamma.checked) 						gammaBound.click()
-					if (recordSampling.checked & variableTypeAuditValues.checked)	regressionBound.click()
+					if (recordSampling.checked && variableTypeAuditValues.checked)	regressionBound.click()
 				}
 			}
 		}
@@ -1508,7 +1508,7 @@ Form
 					id: 							betaBound
 					name: 							"betaBound"
 					text: 							qsTr("Beta")
-					visible: 						!regressionBound.visible & beta.checked
+					visible: 						!regressionBound.visible && beta.checked
 				}
 
 				RadioButton
@@ -1516,7 +1516,7 @@ Form
 					id: 							gammaBound
 					name: 							"gammaBound"
 					text: 							qsTr("Gamma")
-					visible: 						!regressionBound.visible & gamma.checked
+					visible: 						!regressionBound.visible && gamma.checked
 				}
 
 				RadioButton
@@ -1524,7 +1524,7 @@ Form
 					id: 							betabinomialBound
 					name: 							"betabinomialBound"
 					text: 							qsTr("Beta-binomial")
-					visible: 						!regressionBound.visible & betaBinomial.checked
+					visible: 						!regressionBound.visible && betaBinomial.checked
 				}
 
 				RadioButton
@@ -1532,7 +1532,7 @@ Form
 					id: 							regressionBound
 					name: 							"regressionBound"
 					text: 							qsTr("Regression")
-					visible: 						recordSampling.checked & variableTypeAuditValues.checked & evaluationChecked.checked
+					visible: 						recordSampling.checked && variableTypeAuditValues.checked && evaluationChecked.checked
 				}
 			}
 
@@ -1611,14 +1611,14 @@ Form
 					{
 						text: 						qsTr("Posterior odds")
 						name: 						"evidenceRatio"
-						visible: 					!regressionBound.visible & performanceMateriality.checked
+						visible: 					!regressionBound.visible && performanceMateriality.checked
 					}
 
 					CheckBox
 					{
 						text: 						qsTr("Bayes factor (BF\u208B\u208A)")
 						name: 						"bayesFactor"
-						visible: 					!regressionBound.visible & performanceMateriality.checked
+						visible: 					!regressionBound.visible && performanceMateriality.checked
 					}
 				}
 

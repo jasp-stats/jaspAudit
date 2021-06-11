@@ -92,7 +92,7 @@ Form
 							text: 				qsTr("Relative")
 							checked:			true
 							childrenOnSameRow: 	true
-							onCheckedChanged:	if (checked & populationValue.value == 0) binomial.click()
+							onCheckedChanged:	if (checked && populationValue.value == 0) binomial.click()
 
 							PercentField
 							{
@@ -244,7 +244,7 @@ Form
 	{
 		text: 									qsTr("Risk Assessments")
 		columns:								3
-		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 
 		RadioButtonGroup
 		{
@@ -265,14 +265,14 @@ Form
 			{
 				text: 							qsTr("Medium")
 				name: 							"Medium"
-				enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
+				enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
 			}
 
 			RadioButton
 			{
 				text: 							qsTr("Low")
 				name: 							"Low"
-				enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
+				enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
 			}
 
 			RadioButton
@@ -281,7 +281,7 @@ Form
 				text:	 						qsTr("Custom")
 				name: 							"Custom"
 				childrenOnSameRow: 				true
-				enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
+				enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
 
 				PercentField
 				{
@@ -313,14 +313,14 @@ Form
 			{
 				text: 							qsTr("Medium")
 				name: 							"Medium"
-				enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
+				enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
 			}
 
 			RadioButton
 			{
 				text: 							qsTr("Low")
 				name: 							"Low"
-				enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
+				enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
 			}
 
 			RadioButton
@@ -329,7 +329,7 @@ Form
 				text:	 						qsTr("Custom")
 				name: 							"Custom"
 				childrenOnSameRow: 				true
-				enabled:						(expectedRelative.checked & expectedPercentage.value == 0) | (expectedAbsolute.checked & expectedNumber.value == 0)
+				enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
 
 				PercentField
 				{
@@ -367,7 +367,7 @@ Form
 					defaultValue: 				0
 					visible: 					expectedRelative.checked
 					fieldWidth: 				50 * preferencesModel.uiScale
-					onValueChanged:				if (expectedRelative.checked & expectedPercentage.value > 0)
+					onValueChanged:				if (expectedRelative.checked && expectedPercentage.value > 0)
 												{
 													irHigh.click()
 													crHigh.click()
@@ -394,8 +394,8 @@ Form
 					decimals: 					3
 					visible: 					expectedAbsolute.checked
 					fieldWidth: 				80 * preferencesModel.uiScale
-					label: 						performanceMateriality.checked & materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
-					onValueChanged:				if (expectedAbsolute.checked & expectedNumber.value > 0)
+					label: 						performanceMateriality.checked && materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
+					onValueChanged:				if (expectedAbsolute.checked && expectedNumber.value > 0)
 												{
 													irHigh.click()
 													crHigh.click()
@@ -409,7 +409,7 @@ Form
 	{
 		text:									qsTr("Advanced Options")
 		columns:								3
-		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 
 		RadioButtonGroup
 		{
@@ -502,7 +502,7 @@ Form
 	{
 		title: 									qsTr("Plots")
 		columns:								2
-		enabled:								((performanceMateriality.checked & ((materialityRelative.checked & materialityPercentage.value > 0) | (materialityAbsolute.checked & materialityValue.value > 0 & populationValue.value > 0))) | (minimumPrecision.checked & minimumPrecisionPercentage.value > 0)) & populationSize.value > 0
+		enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && populationValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && populationSize.value > 0
 
 		GroupBox
 		{
@@ -531,7 +531,7 @@ Form
 		Button
 		{
 			id: 								downloadReportPlanning
-			enabled: 							materialityRelative.checked ? (populationSize.value != 0 & materialityPercentage.value != 0) : (populationSize.value != 0 & materialityValue.value != 0 & populationValue.value != 0)
+			enabled: 							materialityRelative.checked ? (populationSize.value != 0 && materialityPercentage.value != 0) : (populationSize.value != 0 && materialityValue.value != 0 && populationValue.value != 0)
 			anchors.right: 						parent.right
 			anchors.bottom: 					parent.bottom
 			text: 								qsTr("<b>Download Report</b>")
