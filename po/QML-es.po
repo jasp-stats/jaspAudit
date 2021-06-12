@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-06-05 08:19+0000\n"
-"Last-Translator: Erwin Villuendas <erwinvilluendas@gmail.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-qml/es/>\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1232,9 +1226,10 @@ msgctxt "auditBayesianWorkflow|"
 msgid "A.     Selection Methodology"
 msgstr "Método de selección"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Randomly organize transactions before selection"
-msgstr ""
+msgstr "Organice aleatoriamente las transacciones antes de la selección"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
