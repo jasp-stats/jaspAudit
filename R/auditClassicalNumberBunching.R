@@ -72,15 +72,14 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
 
 .jfaNumberBunchingDataCheck <- function(dataset, options) {
   
-  values <- NULL
-  if (options[["values"]] != "")
-    values <- c(values, options[["values"]])
+  if(options[["values"]] == "")
+    return()
   
   .hasErrors(dataset, 
-             type=c("infinity", "observations"),
-             all.target = values, 
+             type = c("infinity", "observations"),
+             all.target = options[["values"]], 
              message = "short", 
-             observations.amount= "< 2",
+             observations.amount = "< 2",
              exitAnalysisIfErrors = TRUE)
   
   # To-do: make a faster way to find these decimals

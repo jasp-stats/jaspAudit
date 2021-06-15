@@ -108,13 +108,12 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
 .jfaBenfordsLawDataCheck <- function(dataset, options) {
   
-  values <- NULL
-  if (options[["values"]] != "")
-    values <- c(values, options[["values"]])
+  if(options[["values"]] == "")
+    return()
   
   .hasErrors(dataset, 
              type=c("infinity", "observations"),
-             all.target = values, 
+             all.target = options[["values"]], 
              message = "short", 
              observations.amount= "< 2",
              exitAnalysisIfErrors = TRUE)
