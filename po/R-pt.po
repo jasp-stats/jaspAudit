@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-05-07 13:27\n"
-"PO-Revision-Date: 2021-06-01 15:32+0000\n"
+"PO-Revision-Date: 2021-06-15 09:20+0000\n"
 "Last-Translator: Alex França <alex.tonante@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-r/pt/>\n"
@@ -205,7 +205,6 @@ msgstr "Porcentagem"
 msgid "Observed Percentages vs. Expected Percentages"
 msgstr "Porcentagens observadas vs. porcentagens esperadas"
 
-#, fuzzy
 msgid "Observed"
 msgstr "Observado"
 
@@ -664,7 +663,6 @@ msgstr ""
 msgid "<b>Table %i.</b> Frequencies"
 msgstr ""
 
-#, fuzzy
 msgid "Value"
 msgstr "Valor"
 
@@ -1711,7 +1709,6 @@ msgstr ""
 msgid "Implied Prior Distribution"
 msgstr ""
 
-#, fuzzy
 msgid "Prior"
 msgstr "Anterior"
 
@@ -1763,9 +1760,8 @@ msgstr ""
 msgid "Prior and Posterior Distribution"
 msgstr ""
 
-#, fuzzy
 msgid "Posterior"
-msgstr "RÂ² Posterior"
+msgstr "Posterior"
 
 msgid "Population errors"
 msgstr ""
