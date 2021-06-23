@@ -47,7 +47,7 @@ results <- jaspTools::runAnalysis("auditClassicalWorkflow", "test-workflow.csv",
 test_that("Evaluation of Sampling Objectives plot matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationInformation"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives", dir="auditClassicalWorkflow")
+	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives")
 })
 
 test_that("<b>Table 7.</b> Evaluation Summary results match", {
@@ -59,19 +59,19 @@ test_that("<b>Table 7.</b> Evaluation Summary results match", {
 # test_that("Across Probability Distributions (Current: Poisson) plot matches", {
 # 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
 # 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-poisson-", dir="auditClassicalWorkflow")
+# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-poisson-")
 # })
 
 # test_that("Across Expected Errors (Current: 5.78) plot matches", {
 # 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
 # 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-5-78-", dir="auditClassicalWorkflow")
+# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-5-78-")
 # })
 
 test_that("Implied Poisson Distribution of Errors plot matches", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_samplingDistribution"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "implied-poisson-distribution-of-errors", dir="auditClassicalWorkflow")
+	jaspTools::expect_equal_plots(testPlot, "implied-poisson-distribution-of-errors")
 })
 
 test_that("<b>Table 2.</b> Planning Summary results match", {
@@ -90,7 +90,7 @@ test_that("<b>Table 1.</b> Descriptive Statistics for Ist Position results match
 test_that("Distribution of Ist Values plot matches", {
 	plotName <- results[["results"]][["procedureContainer"]][["collection"]][["procedureContainer_bookValueDistribution"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "distribution-of-ist-values", dir="auditClassicalWorkflow")
+	jaspTools::expect_equal_plots(testPlot, "distribution-of-ist-values")
 })
 
 test_that("<b>Table 5.</b> Descriptive Statistics for Selected Transactions results match", {

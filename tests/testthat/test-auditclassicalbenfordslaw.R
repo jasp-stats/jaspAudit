@@ -13,7 +13,7 @@ results <- jaspTools::runAnalysis("auditClassicalBenfordsLaw", "sinoForest.csv",
 test_that("Observed Percentages vs. Expected Percentages plot matches", {
 	plotName <- results[["results"]][["benfordsLawContainer"]][["collection"]][["benfordsLawContainer_benfordsLawPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "observed-percentages-vs-expected-percentages", dir="auditClassicalBenfordsLaw")
+	jaspTools::expect_equal_plots(testPlot, "observed-percentages-vs-expected-percentages")
 })
 
 test_that("<b>Table 2.</b> Frequency Statistics results match", {

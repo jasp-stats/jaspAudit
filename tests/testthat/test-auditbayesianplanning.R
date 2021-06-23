@@ -30,13 +30,13 @@ results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
 test_that("Across Probability Distributions (Current: Beta) plot matches", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-beta-", dir="auditBayesianPlanning")
+	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-beta-")
 })
 
 test_that("Across Expected Errors (Current: 0) plot matches 1", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-1", dir="auditBayesianPlanning")
+	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-1")
 })
 
 test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
@@ -54,7 +54,7 @@ test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posteri
 test_that("Implied Prior Distribution plot matches 1", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "implied-prior-distribution-1", dir="auditBayesianPlanning")
+	jaspTools::expect_equal_plots(testPlot, "implied-prior-distribution-1")
 })
 
 test_that("<b>Table 2.</b> Implicit Sample results match", {
@@ -100,13 +100,13 @@ results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
 # test_that("Across Probability Distributions (Current: Gamma) plot matches", {
 # 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
 # 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-gamma-", dir="auditBayesianPlanning")
+# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-gamma-")
 # })
 
 # test_that("Across Expected Errors (Current: 0) plot matches 2", {
 # 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
 # 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-2", dir="auditBayesianPlanning")
+# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-2")
 # })
 
 test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
@@ -124,7 +124,7 @@ test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posteri
 test_that("Implied Prior Distribution plot matches 2", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "implied-prior-distribution-2", dir="auditBayesianPlanning")
+	jaspTools::expect_equal_plots(testPlot, "implied-prior-distribution-2")
 })
 
 test_that("<b>Table 2.</b> Implicit Sample results match", {
@@ -171,13 +171,13 @@ results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
 # test_that("Across Probability Distributions (Current: Beta-binomial) plot matches", {
 # 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
 # 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-beta-binomial-", dir="auditBayesianPlanning")
+# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-beta-binomial-")
 # })
 
 # test_that("Across Expected Errors (Current: 0) plot matches 3", {
 # 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
 # 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-3", dir="auditBayesianPlanning")
+# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-3")
 # })
 
 test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
@@ -194,7 +194,7 @@ test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posteri
 test_that("Implied Prior Distribution plot matches 3", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "implied-prior-distribution-3", dir="auditBayesianPlanning")
+	jaspTools::expect_equal_plots(testPlot, "implied-prior-distribution-3")
 })
 
 test_that("<b>Table 2.</b> Implicit Sample results match", {

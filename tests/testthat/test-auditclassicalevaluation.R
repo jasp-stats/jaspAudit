@@ -30,7 +30,7 @@ results <- jaspTools::runAnalysis("auditClassicalEvaluation", dataset, options)
 test_that("Evaluation of Sampling Objectives plot matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationInformation"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-1", dir="auditClassicalEvaluation")
+	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-1")
 })
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
@@ -67,7 +67,7 @@ results <- jaspTools::runAnalysis("auditClassicalEvaluation", "auditRattle.csv",
 test_that("Evaluation of Sampling Objectives plot matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationInformation"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-2", dir="auditClassicalEvaluation")
+	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-2")
 })
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
@@ -107,13 +107,13 @@ results <- jaspTools::runAnalysis("auditClassicalEvaluation", "test-auditClassic
 test_that("Scatter Plot of Ist and Soll Values matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_correlationPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "scatter-plot-of-ist-and-soll-values", dir="auditClassicalEvaluation")
+	jaspTools::expect_equal_plots(testPlot, "scatter-plot-of-ist-and-soll-values")
 })
 
 test_that("Evaluation of Sampling Objectives plot matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationInformation"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-3", dir="auditClassicalEvaluation")
+	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-3")
 })
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
