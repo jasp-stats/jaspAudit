@@ -37,7 +37,7 @@ results <- jaspTools::runAnalysis("auditBayesianEvaluation", dataset, options)
 test_that("Evaluation of Sampling Objectives plot matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationInformation"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives", dir="auditBayesianEvaluation")
+	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives")
 })
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
@@ -50,7 +50,7 @@ test_that("<b>Table 1.</b> Evaluation Summary results match", {
 test_that("Prior and Posterior Distribution plot matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_priorAndPosteriorPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution", dir="auditBayesianEvaluation")
+	jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution")
 })
 
 test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distribution results match", {
@@ -98,7 +98,7 @@ results <- jaspTools::runAnalysis("auditBayesianEvaluation", "auditRattle.csv", 
 test_that("Evaluation of Sampling Objectives plot matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationInformation"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-2", dir="auditBayesianEvaluation")
+	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-2")
 })
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
@@ -111,7 +111,7 @@ test_that("<b>Table 1.</b> Evaluation Summary results match", {
 test_that("Prior and Posterior Distribution plot matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_priorAndPosteriorPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-2", dir="auditBayesianEvaluation")
+	jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-2")
 })
 
 test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distribution results match", {
@@ -163,13 +163,13 @@ results <- jaspTools::runAnalysis("auditBayesianEvaluation", "test-auditClassica
 test_that("Scatter Plot of Ist and Soll Values matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_correlationPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "scatter-plot-of-ist-and-soll-values", dir="auditBayesianEvaluation")
+	jaspTools::expect_equal_plots(testPlot, "scatter-plot-of-ist-and-soll-values")
 })
 
 test_that("Evaluation of Sampling Objectives plot matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationInformation"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-3", dir="auditBayesianEvaluation")
+	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-3")
 })
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
@@ -182,7 +182,7 @@ test_that("<b>Table 1.</b> Evaluation Summary results match", {
 test_that("Prior and Posterior Distribution plot matches", {
 	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_priorAndPosteriorPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-3", dir="auditBayesianEvaluation")
+	jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-3")
 })
 
 test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distribution results match", {

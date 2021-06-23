@@ -28,19 +28,19 @@ test_that("<b>Table 2.</b> Assumption Checks results match", {
 test_that("Histogram of Individual Values plot matches", {
   plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingHistogram"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "histogram-of-individual-values", dir="auditClassicalNumberBunching")
+  jaspTools::expect_equal_plots(testPlot, "histogram-of-individual-values")
 })
 
 test_that("Observed vs. Expected Entropy plot matches", {
   plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotEntropy"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-entropy", dir="auditClassicalNumberBunching")
+  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-entropy")
 })
 
 test_that("Observed vs. Expected Average Frequency plot matches", {
   plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotFrequency"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-average-frequency", dir="auditClassicalNumberBunching")
+  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-average-frequency")
 })
 
 test_that("<b>Table 3.</b> Frequencies results match", {
@@ -457,19 +457,19 @@ test_that("<b>Table 2.</b> Assumption Checks results match", {
 test_that("Histogram of Individual Values plot matches", {
   plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingHistogram"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "histogram-of-individual-values-2", dir="auditClassicalNumberBunching")
+  jaspTools::expect_equal_plots(testPlot, "histogram-of-individual-values-2")
 })
 
 test_that("Observed vs. Expected Entropy plot matches", {
   plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotEntropy"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-entropy-2", dir="auditClassicalNumberBunching")
+  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-entropy-2")
 })
 
 test_that("Observed vs. Expected Average Frequency plot matches", {
   plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotFrequency"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-average-frequency-2", dir="auditClassicalNumberBunching")
+  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-average-frequency-2")
 })
 
 test_that("<b>Table 3.</b> Frequencies results match", {

@@ -21,19 +21,19 @@ results <- jaspTools::runAnalysis("auditClassicalPlanning", dataset, options)
 test_that("Across Probability Distributions (Current: Binomial) plot matches", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-binomial-", dir="auditClassicalPlanning")
+	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-binomial-")
 })
 
 test_that("Across Expected Errors 1 (Current: 0) plot matches", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-1", dir="auditClassicalPlanning")
+	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-1")
 })
 
 test_that("Implied Binomial Distribution of Errors plot matches", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_samplingDistribution"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "implied-binomial-distribution-of-errors", dir="auditClassicalPlanning")
+	jaspTools::expect_equal_plots(testPlot, "implied-binomial-distribution-of-errors")
 })
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
@@ -66,19 +66,19 @@ results <- jaspTools::runAnalysis("auditClassicalPlanning", dataset, options)
 # test_that("Across Probability Distributions (Current: Poisson) plot matches", {
 # 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
 # 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-poisson-", dir="auditClassicalPlanning")
+# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-poisson-")
 # })
 
 # test_that("Across Expected Errors (Current: 0) plot matches 2", {
 # 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
 # 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-2", dir="auditClassicalPlanning")
+# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-2")
 # })
 
 test_that("Implied Poisson Distribution of Errors plot matches", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_samplingDistribution"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "implied-poisson-distribution-of-errors", dir="auditClassicalPlanning")
+	jaspTools::expect_equal_plots(testPlot, "implied-poisson-distribution-of-errors")
 })
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
@@ -112,19 +112,19 @@ results <- jaspTools::runAnalysis("auditClassicalPlanning", dataset, options)
 # test_that("Across Probability Distributions (Current: Hypergeometric) plot matches", {
 # 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonDistributions"]][["data"]]
 # 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-hypergeometric-", dir="auditClassicalPlanning")
+# 	jaspTools::expect_equal_plots(testPlot, "across-probability-distributions-current-hypergeometric-")
 # })
 
 # test_that("Across Expected Errors (Current: 0) plot matches 3", {
 # 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_decisionPlot"]][["collection"]][["planningContainer_decisionPlot_comparisonErrors"]][["data"]]
 # 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-3", dir="auditClassicalPlanning")
+# 	jaspTools::expect_equal_plots(testPlot, "across-expected-errors-current-0-3")
 # })
 
 test_that("Implied Hypergeometric Distribution of Errors plot matches", {
 	plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_samplingDistribution"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "implied-hypergeometric-distribution-of-errors", dir="auditClassicalPlanning")
+	jaspTools::expect_equal_plots(testPlot, "implied-hypergeometric-distribution-of-errors")
 })
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
