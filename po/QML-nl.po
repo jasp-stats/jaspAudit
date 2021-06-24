@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-06-25 10:34+0000\n"
+"Last-Translator: Frans Meerhoff <Frans.Meerhoff@gmail.com>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-qml/"
+"nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7.1-dev\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -192,7 +198,6 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Keep"
 msgstr "Behouden"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Remove"
 msgstr "Verwijder"
@@ -329,12 +334,10 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Show Results As"
 msgstr "Toon Resultaten Als"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Numbers"
 msgstr "Nummers"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Percentages"
 msgstr "Percentages"
@@ -379,7 +382,6 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Evaluate post-hoc assumptions"
 msgstr "Evalueer post-hoc aannames"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Confidence interval"
 msgstr "Betrouwbaarheidsinterval"
@@ -785,7 +787,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Inspect"
 msgstr "Inspecteer"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Remove"
 msgstr "Verwijder"
@@ -1266,7 +1267,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Numbers"
 msgstr "Nummers"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Percentages"
 msgstr "Percentages"
@@ -1303,7 +1303,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Evaluate post-hoc assumptions"
 msgstr "Evalueer post-hoc aannames"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Confidence interval"
 msgstr "Betrouwbaarheidsinterval"
@@ -1556,7 +1555,6 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Keep"
 msgstr "Behouden"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Remove"
 msgstr "Verwijder"
@@ -1645,7 +1643,6 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Numbers"
 msgstr "Nummers"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Percentages"
 msgstr "Percentages"
@@ -1938,7 +1935,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Inspect"
 msgstr "Inspecteer"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Remove"
 msgstr "Verwijder"
@@ -2312,7 +2308,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Numbers"
 msgstr "Nummers"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Percentages"
 msgstr "Percentages"
@@ -2459,12 +2454,10 @@ msgctxt "auditSelection|"
 msgid "Currency"
 msgstr "Valuta"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Euro (€)"
 msgstr "Euro (€)"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Dollar ($)"
 msgstr "Dollar ($)"
@@ -2544,15 +2537,15 @@ msgstr "<b>Download Verslag</b>"
 
 msgctxt "Description|"
 msgid "Classical Sampling Workflow"
-msgstr ""
+msgstr "Klassieke Steekproef Workflow"
 
 msgctxt "Description|"
 msgid "Classical Planning"
-msgstr ""
+msgstr "Klassieke Planning"
 
 msgctxt "Description|"
 msgid "Classical Evaluation"
-msgstr ""
+msgstr "Klassieke Evaluatie"
 
 msgctxt "Description|"
 msgid "Digit Analysis"
@@ -2570,7 +2563,6 @@ msgctxt "Description|"
 msgid "True Value Estimation"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Dollar ($)"
 msgstr "Dollar ($)"
@@ -2614,19 +2606,19 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Check Digits"
-msgstr ""
+msgstr "Controleer Cijfers"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First digit"
-msgstr ""
+msgstr "Eerste cijfer"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First and second digits"
-msgstr ""
+msgstr "Eerste en tweede cijfers"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Last digit"
-msgstr ""
+msgstr "Laatste cijfer"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Frequency statistics"
@@ -2671,12 +2663,10 @@ msgctxt "auditClassicalEstimation|"
 msgid "Regression estimator"
 msgstr "Regressieschatter"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Dollar ($)"
 msgstr "Dollar ($)"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Tables"
 msgstr "Tabellen"
@@ -2693,7 +2683,6 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Audit Risk"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
 msgstr "Betrouwbaarheid"
@@ -2702,7 +2691,6 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory Text"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Enable"
 msgstr "Activeer"
@@ -2711,14 +2699,13 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Click to learn more about the explanatory text."
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Variable"
 msgstr "Variabele"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tests"
-msgstr ""
+msgstr "Toetsen"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Average frequency"
@@ -2734,15 +2721,15 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "First and second digit"
-msgstr ""
+msgstr "Eerste en tweede cijfer"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Second digit"
-msgstr ""
+msgstr "Tweede cijfer"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "All digits"
-msgstr ""
+msgstr "Alle cijfers"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Bootstrap Options"
@@ -2752,12 +2739,10 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Number of samples"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Seed"
 msgstr "Toevalsgenerator beginwaarde"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tables"
 msgstr "Tabellen"
@@ -2770,7 +2755,6 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Frequency table"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Plots"
 msgstr "Grafieken"
@@ -2785,7 +2769,7 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "with highest occurrence"
@@ -2823,19 +2807,19 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Benford's law"
-msgstr ""
+msgstr "De wet van Benford"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₁₀"
-msgstr ""
+msgstr "BF₁₀"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₀₁"
-msgstr ""
+msgstr "BF₀₁"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Log(BF₁₀)"
-msgstr ""
+msgstr "Log(BF₁₀)"
 
 msgctxt "auditClassicalWorkflow|"
 msgid ""
