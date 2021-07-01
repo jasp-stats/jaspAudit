@@ -3,7 +3,7 @@ Repeated Value Analysis
 
 This analysis analyzes the frequency with which values get repeated within a dataset (called “number-bunching”) to statistically identify whether the data were likely tampered with. Unlike Benford’s law this approach examines the entire number at once, not only the first or last digit (Simonsohn, 2019). 
 
-To determine whether the data show an excessive amount of bunching, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested with a type-I error of 5%. To quantify what is exected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.
+To determine whether the data show an excessive amount of bunching, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested. To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.
 
 ----
 
