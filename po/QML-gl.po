@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-07-09 23:34+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/gl/>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.8-dev\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
 "X-Qt-Contexts: true\n"
@@ -306,7 +312,7 @@ msgstr "<b>4. Avaliación</b>"
 
 msgctxt "auditSelection|"
 msgid "Std. deviation"
-msgstr "Desviación típica"
+msgstr "Desviación padrón"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Column name audit result: "
@@ -795,7 +801,7 @@ msgstr "Área debaixo posterior"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "One-sided upper bound"
-msgstr ""
+msgstr "Límite superior dunha cola"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Two-sided interval"
@@ -1693,10 +1699,9 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Median"
 msgstr "Mediana"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Std. deviation"
-msgstr "Desviación típica"
+msgstr "Desviación padrón"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1829,7 +1834,7 @@ msgstr "Regresión"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "One-sided upper bound"
-msgstr ""
+msgstr "Límite superior dunha cola"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Two-sided interval"
@@ -1929,7 +1934,7 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Check Digits"
-msgstr ""
+msgstr "Comproba os Díxitos"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First digit"
@@ -2419,7 +2424,6 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Tables"
 msgstr "Táboas"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Assumption checks"
 msgstr "Comprobacións de supostos"
@@ -2890,10 +2894,9 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Median"
 msgstr "Mediana"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Std. deviation"
-msgstr "Desviación típica"
+msgstr "Desviación padrón"
 
 #, fuzzy
 msgctxt "auditClassicalWorkflow|"
