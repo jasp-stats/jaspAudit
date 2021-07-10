@@ -71,7 +71,7 @@ Produces a plot that shows the observed distribution of digits in the population
 R Packages
 -------
 
-- base R
+- digitTests
 
 ----
 
