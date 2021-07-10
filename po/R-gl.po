@@ -7,17 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-06-29 13:08\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: gl_ES\n"
+"PO-Revision-Date: 2021-07-10 00:42+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-r/gl/>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.8-dev\n"
 "X-Virgin-Header: remove this line if you change anything in the header.\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
-"X-Generator: Poedit 2.3\n"
 
 msgid "<u>Procedure</u>"
 msgstr ""
@@ -224,9 +226,8 @@ msgstr "Coeficiente de incerteza"
 msgid "Lower"
 msgstr "Inferior"
 
-#, fuzzy
 msgid "%1$s%% Confidence interval"
-msgstr "Intervalo de confianza"
+msgstr "Intervalo co %1$s%% de Confianza"
 
 msgid "Upper"
 msgstr "Superior"
@@ -322,7 +323,7 @@ msgid "The mean of the sample errors %1$s"
 msgstr ""
 
 msgid "The standard deviation of the sample errors %1$s"
-msgstr ""
+msgstr "A desviación padrón dos erros mostrais %1$s"
 
 msgid ""
 "%1$s\n"
@@ -447,7 +448,6 @@ msgstr ""
 msgid "Average"
 msgstr "Media"
 
-#, fuzzy
 msgid "Frequency"
 msgstr "Frecuencias"
 
@@ -460,9 +460,8 @@ msgid ""
 "%1$s samples."
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %i.</b> Assumption Checks"
-msgstr "Comprobacións de supostos"
+msgstr "<b>Táboa %i.</b> Comprobacións de Supostos"
 
 msgid ""
 "The displayed <i>p</i> value is for a two-sided test against H₀: <i>r = 0</"
@@ -582,6 +581,7 @@ msgstr ""
 msgid ""
 "The hypergeometric upper bound requires that you specify the population size."
 msgstr ""
+"O límite superior hiperxeométrico esixe que indiques o tamaño da poboación."
 
 msgid ""
 "Your sample size is larger than (or equal to) your population size. Please "
@@ -814,9 +814,8 @@ msgstr ""
 msgid "random"
 msgstr "Aleatorio"
 
-#, fuzzy
 msgid "fixed interval"
-msgstr "Intervalo de confianza"
+msgstr "intervalo fixo"
 
 msgid "cell"
 msgstr ""
@@ -949,14 +948,13 @@ msgid "Mean"
 msgstr "Media"
 
 msgid "Std. deviation"
-msgstr "Desviación típica"
+msgstr "Desviación padrón"
 
 msgid "1"
 msgstr ""
 
-#, fuzzy
 msgid "Quartile"
-msgstr "Cuartís"
+msgstr "Cuartiles"
 
 msgid "2"
 msgstr ""
@@ -980,6 +978,11 @@ msgid ""
 "standard deviation from the mean. The orange dots represent the first, "
 "second (median) and third quartiles of the Ist values."
 msgstr ""
+"<b>Figura %1$i.</b> A distribución dos valores Ist values na poboación. Os "
+"puntos vermellos e azuis representan respectivamente a media, e os valores "
+"separados exactamente unha desviación padrón da media. Os puntos laranxas "
+"representan o primeiro, segundo (mediana) e terceiro cuartiles dos valores "
+"Ist ."
 
 #, fuzzy
 msgid "<u>Audit Risk Model</u>"
@@ -1047,9 +1050,8 @@ msgstr ""
 msgid "<b>Table %1$i.</b> Planning Summary"
 msgstr ""
 
-#, fuzzy
 msgid "Performance materiality"
-msgstr "Métricas do comportamento"
+msgstr "Relevancia do Comportamento"
 
 #, fuzzy
 msgid "Required precision"
@@ -1268,9 +1270,8 @@ msgstr "código de R válido"
 msgid "Median"
 msgstr "Mediana"
 
-#, fuzzy
 msgid "Std. Deviation"
-msgstr "Desviación típica"
+msgstr "Desviación Padrón"
 
 msgid "Variance"
 msgstr "Varianza"
@@ -1318,9 +1319,8 @@ msgstr ""
 msgid "Most likely error"
 msgstr "Erro máis probable (MLE)"
 
-#, fuzzy
 msgid "%1$s%% Upper bound"
-msgstr "Límite superior:"
+msgstr "Límite superior do %1$s%%"
 
 #, fuzzy
 msgid "Obtained precision"
@@ -1332,65 +1332,81 @@ msgstr "Posibilidades"
 msgid ""
 "The upper bound is calculated according to the <b>Poisson</b> distributon."
 msgstr ""
+"O límite superior calcúlase de acordo coa distribución de <b>Poisson</b>."
 
 msgid ""
 "The upper bound is calculated according to the <b>binomial</b> distributon."
-msgstr ""
+msgstr "O límite superior calcúlase de acordo coa distribución <b>Binomial</b>."
 
 msgid ""
 "The upper bound is calculated according to the <b>hypergeometric</b> "
 "distribution."
 msgstr ""
+"O límite superior calcúlase de acordo coa distribución "
+"<b>Hiperxeométrica</b>."
 
 msgid "The upper bound is calculated according to the <b>Stringer</b> method."
-msgstr ""
+msgstr "O límite superior calcúlase de acordo co método de <b>Stringer</b>."
 
 msgid ""
 "The upper bound is calculated according to the <b>regression</b> method."
-msgstr ""
+msgstr "O límite superior calcúlase de acordo co método de <b>regresión</b>."
 
 msgid "The upper bound is calculated according to the <b>direct</b> method."
-msgstr ""
+msgstr "O límite superior calcúlase de acordo co método <b>directo</b>."
 
 msgid ""
 "The upper bound is calculated according to the <b>difference</b> method."
-msgstr ""
+msgstr "O límite superior calcúlase de acordo co método da <b>diferenza</b>."
 
 msgid "The upper bound is calculated according to the <b>ratio</b> method."
-msgstr ""
+msgstr "O límite superior calcúlase de acordo co método do <b>cociente</b>."
 
 msgid ""
 "The upper bound is calculated according to the <b>beta</b> distribution and "
 "requires the assumption that the sample taints are interchangeable."
 msgstr ""
+"O límite superior calcúlase de acordo coa distribución <b>Beta</b>, e esixe "
+"o suposto de que as manchas mostrais son intercambiables."
 
 msgid ""
 "The upper bound is calculated according to the <b>gamma</b> distribution and "
 "requires the assumption that the sample taints are interchangeable."
 msgstr ""
+"O límite superior calcúlase de acordo coa distribución <b>Gamma</b>, e esixe "
+"o suposto de que as manchas mostrais son intercambiables."
 
 msgid ""
 "The upper bound is calculated according to the <b>beta-binomial</b> "
 "distribution and requires the assumption that the sample taints are "
 "interchangeable."
 msgstr ""
+"O límite superior calcúlase de acordo coa distribución <b>Binomial-Beta</b>, "
+"e esixe o suposto de que as manchas mostrais son intercambiables."
 
 msgid ""
 "The upper bound is calculated according to the <b>Cox and Snell</b> method "
 "and requires the assumption that the population taints are uniformly "
 "distributed."
 msgstr ""
+"O límite superior calcúlase de acordo co método de <b>Cox e Snell</b>, e "
+"esixe o suposto de que as manchas poboacionais se distribúen uniformemente."
 
 msgid ""
 "The upper bound is calculated according to the <b>Stringer</b> method with "
 "<b>LTA adjustment</b>."
 msgstr ""
+"O límite superior calcúlase de acordo co método de <b>Stringer</b> co "
+"<b>axuste LTA</b>."
 
 msgid ""
 "The upper bound is calculated according to the <b>beta</b> distribution. It "
 "requires the assumptions that the sample taints are interchangeable and that "
 "the population taints are homogeneous."
 msgstr ""
+"O límite superior calcúlase de acordo coa distribución <b>Beta</b>. Esixe os "
+"supostos de que as manchas mostrais son intercambiables e de que as manchas "
+"poboacionais son homoxéneas."
 
 msgid "The audit result column is empty."
 msgstr ""
@@ -1403,17 +1419,15 @@ msgid ""
 "defined as zero, or one of the required variables is missing."
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Assumption Checks"
-msgstr "Comprobacións de supostos"
+msgstr "<b>Táboa %1$i.</b> Comprobacións de Supostos"
 
 #, fuzzy
 msgid "Pearson's <i>r</i>"
 msgstr "R de Pearson"
 
-#, fuzzy
 msgid "p-value"
-msgstr "Valores p"
+msgstr "Valor p"
 
 msgid ""
 "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis "
@@ -1503,7 +1517,7 @@ msgid "Correction"
 msgstr "Corrección"
 
 msgid "The correction to achieve no misstatements is the upper bound%1$s."
-msgstr ""
+msgstr "A corrección para non acadar inexactitudes é o límite superior %1$s."
 
 msgid "No misstatements with %1$s%% precision"
 msgstr ""
@@ -1595,11 +1609,15 @@ msgid ""
 "The expected errors are visualized by the grey dot. The red dot represents "
 "the performance materiality."
 msgstr ""
+"Os erros agardados represéntanse co punto gris. O punto vermello representa "
+"a relevancia do comportamento."
 
 msgid ""
 "The expected posterior distribution is calculated so that its %1$s "
 "percentile lies below the performance materiality."
 msgstr ""
+"A distribución posterior agardada calcúlase de xeito que o seu percentil %1$"
+"s está por debaixo da relevancia do seu comportamento."
 
 msgid ""
 "<b>Figure %1$i.</b> The prior probability distribution <b>(%2$s)</b> on the "
@@ -1616,9 +1634,8 @@ msgstr "Distribución previa e posterior"
 msgid "Prior and Posterior Distribution"
 msgstr "Distribución previa e posterior"
 
-#, fuzzy
 msgid "Posterior"
-msgstr "R² posterior"
+msgstr "Posterior"
 
 #, fuzzy
 msgid "Population errors"
@@ -1632,9 +1649,8 @@ msgstr "Precisión"
 msgid "Most likely error (%1$s)"
 msgstr "Erro máis probable (MLE)"
 
-#, fuzzy
 msgid "Upper bound (%1$s)"
-msgstr "Límite superior:"
+msgstr "Límite superior (%1$s)"
 
 msgid ""
 "The red dot represents the specified materiality. If the shaded area under "
