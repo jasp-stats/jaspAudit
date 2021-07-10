@@ -84,14 +84,14 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       
       procedureText <- base::switch(options[["digits"]],
                                     "first" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first leading digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel),
-                                    "firstSecond" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel),
+                                    "firstsecond" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel),
                                     "last" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the last digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel))
       
     } else if (options[["distribution"]] == "uniform") {
       
       procedureText <- base::switch(options[["digits"]],
                                     "first" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of <b>%1$s</b>. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel),
-                                    "firstSecond" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of <b>%1$s</b>. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel),
+                                    "firstsecond" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of <b>%1$s</b>. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel),
                                     "last" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the last digits in the data set follow the uniform distribution, and to test this relation with a type-I error of <b>%1$s</b>. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel))
       
     }
@@ -150,73 +150,21 @@ jfaBenfordsLawStage <- function(options, jaspResults, position) {
     return(benfordsLawContainer[["result"]]$object)
     
   } else if (ready) {
-    
-    obs <- dataset[[.v(options[["values"]])]]
-	obs <- obs[obs != 0] # 0.0000 crashes the analysis since it is not a valid count
-	totalObs <- length(obs)
-    
-    if (options[["digits"]] == "first") {
-      leadingDigits <- table(as.numeric(substring(format(abs(obs), scientific = TRUE), 1, 1)))
-      digits <- 1:9
-    } else if (options[["digits"]] == "firstSecond") {
-      leadingDigits <- table(as.numeric(substring(format(abs(obs), scientific = TRUE), 1, 3)) * 10)
-      digits <- 10:99
-    } else if (options[["digits"]] == "last") {
-      stringedObs <- as.character(abs(obs))
-      leadingDigits <- table(as.numeric(substring(stringedObs, nchar(stringedObs), nchar(stringedObs))))
-      digits <- 1:9
-    }
-    
-    counts <- rep(0, length(digits))
-    percentages <- rep(0, length(digits))
-    
-    includedNumbers <- as.numeric(names(leadingDigits))
-    
-    if (options[["digits"]] == "first" || options[["digits"]] == "last") {
-      counts[includedNumbers] <- as.numeric(leadingDigits)
-    } else if (options[["digits"]] == "firstSecond") {
-      counts[includedNumbers - 9] <- as.numeric(leadingDigits)
-    }
-    
-    percentages <- counts / totalObs
-    percentagesLabel <- paste0(round(percentages * 100, 2), "%")
-    
-    if (options[["distribution"]] == "benford") {
-      inBenford <- log10(1 + 1 / digits) # Benfords law: log_10(1 + 1 / d)
-      inBenfordLabel <- paste0(round(inBenford * 100, 2), "%")
-    } else if (options[["distribution"]] == "uniform") {
-      inBenford <- rep(1 / length(digits), length(digits))
-      inBenfordLabel <- paste0(round(inBenford * 100, 2), "%")
-    }
-    
-    observed <- totalObs * percentages
-    expected <- totalObs * inBenford
-    chiSquare <- sum( (observed - expected)^2 / expected )
-    df <- length(digits) - 1
-    pvalue <- pchisq(q = chiSquare, df = df, lower.tail = FALSE)
-    
-    # compute Bayes factor
-    lbeta.xa <- sum(lgamma(1 + observed)) - lgamma(sum(1 + observed)) # Prior with 1 count for each digit
-    lbeta.a  <- sum(lgamma(rep(1, length(digits)))) - lgamma(sum(rep(1, length(digits))))
-    
-    # in this case, counts*log(thetas) should be zero, omit to avoid numerical issue with log(0)
-    if (any(rowSums(cbind(inBenford, observed)) == 0)) {
-      logBF10 <- (lbeta.xa-lbeta.a)
-    } else {
-      logBF10 <- (lbeta.xa-lbeta.a) + (0 - sum(observed * log(inBenford)))
-    }
-    
-    result <- list(digits = digits,
-                   counts = counts, 
-                   percentages = percentages,
-                   inBenford = inBenford,
-                   N = totalObs,
-                   observed = observed,
-                   expected = expected,
-                   chiSquare = chiSquare,
-                   df = df,
-                   pvalue = pvalue,
-                   logBF10 = logBF10)
+
+    test <- digitTests::distr.test(dataset[[options[["values"]]]], check = options[["digits"]], reference = options[["distribution"]])
+    btest <- digitTests::distr.btest(dataset[[options[["values"]]]], check = options[["digits"]], reference = options[["distribution"]], 
+                                     alpha = NULL, BF10 = TRUE, log = TRUE)
+
+    result <- list(digits = as.numeric(test$digits),
+                   percentages = as.numeric(test$observed) / as.numeric(test$n),
+                   inBenford = as.numeric(test$expected) / as.numeric(test$n),
+                   N = as.numeric(test$n),
+                   observed = as.numeric(test$observed),
+                   expected = as.numeric(test$expected),
+                   chiSquare = as.numeric(test$statistic),
+                   df = as.numeric(test$parameter),
+                   pvalue = as.numeric(test$p.value),
+                   logBF10 = as.numeric(btest$bf))
     
     benfordsLawContainer[["result"]] <- createJaspState(result)
     benfordsLawContainer[["result"]]$dependOn(options = c("values", 
@@ -275,7 +223,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   
   message <- base::switch(options[["digits"]],
                           "first" = gettextf("The null hypothesis specifies that the first digits (1 - 9) in the data set are distributed according to %1$s.", distribution),
-                          "firstSecond" = gettextf("The null hypothesis specifies that the first two digits (10 - 99) in the data set are distributed according to %1$s.", distribution),
+                          "firstsecond" = gettextf("The null hypothesis specifies that the first two digits (10 - 99) in the data set are distributed according to %1$s.", distribution),
                           "last" = gettextf("The null hypothesis specifies that the last digits (1 - 9) in the data set are distributed according to %1$s." ,distribution))
   benfordsLawTestTable$addFootnote(message)
   
@@ -333,7 +281,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     
     whichDigit <- base::switch(options[["digits"]],
                                "first" = gettext('Leading digit'),
-                               "firstSecond" = gettext('Leading digits'),
+                               "firstsecond" = gettext('Leading digits'),
                                "last" = gettext('Last digit'))
     
     benfordsLawTable$addColumnInfo(name = 'digit', 
@@ -377,7 +325,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     inBenfordLabel <- paste0(round(state[["inBenford"]] * 100, 2), "%")
     
     row <- data.frame(digit = state[["digits"]], 
-                      count = state[["counts"]], 
+                      count = state[["observed"]], 
                       percentage = percentagesLabel, 
                       inBenford = inBenfordLabel)
     
@@ -410,7 +358,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     if (options[["digits"]] == "first" || options[["digits"]] == "last") {
       pointSize     <- 5
       lineSize      <- 1.5
-    } else if (options[["digits"]] == "firstSecond") {
+    } else if (options[["digits"]] == "firstsecond") {
       pointSize     <- 2
       lineSize      <- 1.2
     }
@@ -445,7 +393,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     
     axisName <- base::switch(options[["digits"]],
                              "first" = gettext("Leading digit"),
-                             "firstSecond" = gettext("Leading digits"),
+                             "firstsecond" = gettext("Leading digits"),
                              "last" = gettext("Last digit"))
     
     plotData <- data.frame(x = c(0, 0), y = c(0, 1), type = c(gettext("Observed"), legendName))
@@ -515,7 +463,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   
   conclusionText <- base::switch(options[["digits"]],
                                  "first" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion),
-                                 "firstSecond" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion),
+                                 "firstsecond" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion),
                                  "last" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion))
   conclusionText <- gettextf("%1$s The Bayes factor indicates that the data are <b>%2$s times</b> more likely to occur under the null hypothesis than under the alternative hypothesis.", conclusionText, format(1 / exp(state[["logBF10"]]), digits = 3))
 
