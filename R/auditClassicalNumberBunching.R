@@ -362,7 +362,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     }
     
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(state[["bsAvgFreq"]], state[["avgFrequency"]]))
-    yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsAvgFreq"]], plot = F)$counts + 100, 0))
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsAvgFreq"]], plot = F)$counts + 50, 0))
     
     if (state[["avgFrequency"]] > median(state[["bsAvgFreq"]])) {
       hjust <- 1.2
@@ -425,14 +425,13 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     }
     
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(state[["bsEntropy"]], state[["entropy"]]))
-    yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsEntropy"]], plot = F)$counts + 100, 0))
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsEntropy"]], plot = F)$counts + 50, 0))
     
     if (state[["entropy"]] > median(state[["bsEntropy"]])) {
       hjust <- 1.2
     } else {
       hjust <- -0.2
     }
-    
     
     plotData <- data.frame(x = state[["bsEntropy"]])
     
@@ -552,21 +551,4 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
                                            "distribution"))
   
   jaspResults[["conclusionContainer"]] <- conclusionContainer
-}
-
-.jfaEntropy <- function(x) {
-  frequencies <- as.numeric(table(x))
-  # Probailities instead of frequencies
-  prob <- frequencies / sum(frequencies)
-  logProb <- log(prob)
-  # Compute sum(p*log(p))
-  entropy <- -sum(ifelse(!is.infinite(logProb), prob*logProb, 0))
-  return(entropy) 
-}
-
-#0.3 Average frequency function
-.jfaAverageFrequency <- function(x) {
-  tx <- table(x)
-  af <- sum(tx^2)/sum(tx)
-  return(af)
 }
