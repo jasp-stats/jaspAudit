@@ -227,7 +227,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
                           "last" = gettextf("The null hypothesis specifies that the last digits (1 - 9) in the data set are distributed according to %1$s." ,distribution))
   benfordsLawTestTable$addFootnote(message)
   
-  message <- gettextf("The Bayes factor is computed using a <i>Dirichlet(%1$s,...,%2$s%3$s)</i> prior with <i>%2$s = 1</i>.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first") "\u2089" else "\u2089\u2089")
+  message <- gettextf("The Bayes factor is computed using a <i>Dirichlet(%1$s,...,%2$s%3$s)</i> prior with <i>%2$s = 1</i>.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089")
   benfordsLawTestTable$addFootnote(message, colName = "bf")
   
   benfordsLawContainer[["benfordsLawTestTable"]] <- benfordsLawTestTable
