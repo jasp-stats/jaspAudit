@@ -181,48 +181,23 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     
   } else if (ready) {
     
-    variable 	<- dataset[, options[["values"]]]
-    
-    if (options[["shuffle"]] == "last") {
-      variable 	<- variable * 10
-      integers 	<- ifelse(variable > 0, yes = floor(variable), no = ceiling(variable))
-      decimals 	<- round(variable - integers, 1)
-    } else if (options[["shuffle"]] == "lastTwo") {
-      integers 	<- ifelse(variable > 0, yes = floor(variable), no = ceiling(variable))
-      decimals 	<- round(variable - integers, 2)
-    } else if (options[["shuffle"]] == "all") {
-      integers 	<- ifelse(variable > 0, yes = floor(variable), no = ceiling(variable))
-      decimals <- variable - integers
-    }
-    
-    avgFrequency 	<- .jfaAverageFrequency(variable)
-    entropy 		<- .jfaEntropy(variable)
-    
-    bsAvgFreq 		<- numeric(options[["noSamples"]])
-    bsEntropy 		<- numeric(options[["noSamples"]])
-    
-    startProgressbar(options[["noSamples"]])
     set.seed(options[["seed"]])
+
+    test_af <- digitTests::rv.test(x = dataset[[options[["values"]]]], check = options[["shuffle"]], method = "af", samples = options[["noSamples"]])
+    test_e <- digitTests::rv.test(x = dataset[[options[["values"]]]], check = options[["shuffle"]], method = "entropy", samples = options[["noSamples"]])
     
-    for (i in 1:options[["noSamples"]]) {
-      sim 			<- ifelse(integers > 0, yes = integers + sample(decimals), no = integers - sample(decimals))
-      bsAvgFreq[i] 	<- .jfaAverageFrequency(sim)
-      bsEntropy[i] 	<- .jfaEntropy(sim)
-      progressbarTick()
-    }
-    
-    state 							<- list()
-    state[["N"]] 					<- length(variable)
-    state[["avgFrequency"]] 		<- avgFrequency
-    state[["entropy"]] 				<- entropy
-    state[["pvalueAvgFrequency"]] 	<- ifelse(state[["avgFrequency"]] > median(bsAvgFreq), yes = mean(bsAvgFreq >= state[["avgFrequency"]]), no = mean(bsAvgFreq <= state[["avgFrequency"]]))
-    state[["pvalueEntropy"]] 		<- ifelse(state[["entropy"]] > median(bsEntropy), yes = mean(bsEntropy >= state[["entropy"]]), no = mean(bsEntropy <= state[["entropy"]]))
-    state[["counts"]] 				<- as.numeric(table(factor(table(variable), levels = 1:9)))
-    state[["proportions"]] 			<- state[["counts"]] / state[["N"]]
-    state[["valueCor"]] 			<- cor.test(integers, decimals)
-    state[["simCor"]] 				<- cor.test(bsAvgFreq, bsEntropy)
-    state[["bsAvgFreq"]] 			<- bsAvgFreq
-    state[["bsEntropy"]] 			<- bsEntropy
+    state                           <- list()
+    state[["N"]]                    <- as.numeric(test_af$n)
+    state[["avgFrequency"]]         <- as.numeric(test_af$statistic)
+    state[["entropy"]]              <- as.numeric(test_e$statistic)
+    state[["pvalueAvgFrequency"]]   <- as.numeric(test_af$p.value)
+    state[["pvalueEntropy"]]        <- as.numeric(test_e$p.value)
+    state[["counts"]]               <- as.numeric(test_af$frequencies)
+    state[["proportions"]]          <- state[["counts"]] / state[["N"]]
+    state[["valueCor"]]             <- test_af$cor.test
+    state[["bsAvgFreq"]]            <- as.numeric(test_af$samples)
+    state[["bsEntropy"]]            <- as.numeric(test_e$samples)
+    state[["simCor"]]               <- cor.test(state[["bsAvgFreq"]], state[["bsEntropy"]])
     
     jaspResults[["state"]] <- createJaspState(state)
     jaspResults[["state"]]$dependOn(options = c("noSamples", "shuffle", "seed", "values"))
@@ -390,13 +365,9 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsAvgFreq"]], plot = F)$counts + 100, 0))
     
     if (state[["avgFrequency"]] > median(state[["bsAvgFreq"]])) {
-      hjust <- -0.2
-      if (state[["avgFrequency"]] > max(state[["bsAvgFreq"]]))
-        hjust <- 1.2
-    } else {
       hjust <- 1.2
-      if (state[["avgFrequency"]] < min(state[["bsAvgFreq"]]))
-        hjust <- -0.2
+    } else {
+      hjust <- -0.2
     }
     
     plotData <- data.frame(x = state[["bsAvgFreq"]])
@@ -457,13 +428,9 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsEntropy"]], plot = F)$counts + 100, 0))
     
     if (state[["entropy"]] > median(state[["bsEntropy"]])) {
-      hjust <- -0.2
-      if (state[["entropy"]] > max(state[["bsEntropy"]]))
-        hjust <- 1.2
-    } else {
       hjust <- 1.2
-      if (state[["entropy"]] < min(state[["bsEntropy"]]))
-        hjust <- -0.2
+    } else {
+      hjust <- -0.2
     }
     
     

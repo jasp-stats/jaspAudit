@@ -1042,7 +1042,7 @@
 <line x1='610.41' y1='484.99' x2='610.41' y2='42.82' style='stroke-width: 2.13; stroke: #1E90FF; stroke-dasharray: 11.38,11.38; stroke-linecap: butt;' />
 <line x1='610.41' y1='484.99' x2='610.41' y2='42.82' style='stroke-width: 2.13; stroke: #1E90FF; stroke-dasharray: 11.38,11.38; stroke-linecap: butt;' />
 <line x1='610.41' y1='484.99' x2='610.41' y2='42.82' style='stroke-width: 2.13; stroke: #1E90FF; stroke-dasharray: 11.38,11.38; stroke-linecap: butt;' />
-<text x='627.68' y='74.23' style='font-size: 19.92px; fill: #1E90FF; font-family: sans;' textLength='86.38px' lengthAdjust='spacingAndGlyphs'>Observed</text>
+<text x='593.13' y='74.23' text-anchor='end' style='font-size: 19.92px; fill: #1E90FF; font-family: sans;' textLength='86.38px' lengthAdjust='spacingAndGlyphs'>Observed</text>
 <line x1='105.97' y1='507.09' x2='691.09' y2='507.09' style='stroke-width: 0.64; stroke-linecap: butt;' />
 <line x1='77.06' y1='485.30' x2='77.06' y2='42.50' style='stroke-width: 0.64; stroke-linecap: butt;' />
 <rect x='77.06' y='20.71' width='642.94' height='486.39' style='stroke-width: 0.00; stroke: none;' />
