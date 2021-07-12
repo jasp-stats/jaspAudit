@@ -7,7 +7,7 @@ context("[Audit] Repeated Values")
 options <- jaspTools::analysisOptions("auditClassicalNumberBunching")
 options$values <- "Variable"
 options$noSamples <- 1000
-options$shuffle <- "lastTwo"
+options$shuffle <- "lasttwo"
 options$summaryTable <- TRUE
 options$numberBunchingSimulationPlots <- TRUE
 options$numberBunchingHistogram <- TRUE
@@ -17,30 +17,30 @@ results <- jaspTools::runAnalysis("auditClassicalNumberBunching", "numberBunchin
 
 
 test_that("<b>Table 2.</b> Assumption Checks results match", {
-  table <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_correlationTable"]][["data"]]
-  jaspTools::expect_equal_tables(table,
-                                 list(0.0235054850952473, "-", 1598, 1600, 0.34741538358077, 0.939891267447534,
-                                      "Integer values", "Decimal values", -0.960281111669023, "-",
-                                      998, 1000, 0, -108.7191221832, "Samples frequency", "Samples entropy"
-                                 ))
+	table <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_correlationTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.0235054850952473, 1598, 1600, 0.34741538358077, "-", 0.939891267447534,
+			 "Integer values", "Decimal values", -0.0293282797315549, 998,
+			 1000, 0.354196085854687, "-", -0.926912458944072, "Samples frequency",
+			 "Samples entropy"))
 })
 
 test_that("Histogram of Individual Values plot matches", {
-  plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingHistogram"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "histogram-of-individual-values")
+	plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingHistogram"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "histogram-of-individual-values")
 })
 
 test_that("Observed vs. Expected Entropy plot matches", {
-  plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotEntropy"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-entropy")
+	plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotEntropy"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-entropy")
 })
 
 test_that("Observed vs. Expected Average Frequency plot matches", {
-  plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotFrequency"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-average-frequency")
+	plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotFrequency"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-average-frequency")
 })
 
 test_that("<b>Table 3.</b> Frequencies results match", {
@@ -426,9 +426,9 @@ test_that("<b>Table 3.</b> Frequencies results match", {
 })
 
 test_that("<b>Table 1.</b> Repeated Values Test results match", {
-  table <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingTestTable"]][["data"]]
-  jaspTools::expect_equal_tables(table,
-                                 list(1600, 1.5225, 7.06576917368312, "Variable", 0.002, 0.002))
+	table <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingTestTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(1600, 1.5225, 7.06576917368312, "Variable", 0.002, 0.005))
 })
 
 ### TEST 2: Study 3
@@ -436,7 +436,7 @@ test_that("<b>Table 1.</b> Repeated Values Test results match", {
 options <- jaspTools::analysisOptions("auditClassicalNumberBunching")
 options$values <- "Variable"
 options$noSamples <- 1000
-options$shuffle <- "lastTwo"
+options$shuffle <- "lasttwo"
 options$summaryTable <- TRUE
 options$numberBunchingSimulationPlots <- TRUE
 options$numberBunchingHistogram <- TRUE
@@ -446,30 +446,30 @@ results <- jaspTools::runAnalysis("auditClassicalNumberBunching", "numberBunchin
 
 
 test_that("<b>Table 2.</b> Assumption Checks results match", {
-  table <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_correlationTable"]][["data"]]
-  jaspTools::expect_equal_tables(table,
-                                 list(-0.124707157162072, "-", 3233, 3235, 1.09474735289137e-12, -7.14657265617445,
-                                      "Integer values", "Decimal values", -0.832179912262436, "-",
-                                      998, 1000, 7.94464781314267e-258, -47.4107110066442, "Samples frequency",
-                                      "Samples entropy"))
+	table <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_correlationTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(-0.124707157162072, 3233, 3235, 1.09474735289136e-12, "-", -7.14657265617446,
+			 "Integer values", "Decimal values", -0.0239084290942401, 998,
+			 1000, 0.450121037352463, "-", -0.755510443482817, "Samples frequency",
+			 "Samples entropy"))
 })
 
 test_that("Histogram of Individual Values plot matches", {
-  plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingHistogram"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "histogram-of-individual-values-2")
+	plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingHistogram"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "histogram-of-individual-values-2")
 })
 
 test_that("Observed vs. Expected Entropy plot matches", {
-  plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotEntropy"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-entropy-2")
+	plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotEntropy"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-entropy-2")
 })
 
 test_that("Observed vs. Expected Average Frequency plot matches", {
-  plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotFrequency"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-average-frequency-2")
+	plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingPlotFrequency"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "observed-vs-expected-average-frequency-2")
 })
 
 test_that("<b>Table 3.</b> Frequencies results match", {
@@ -1058,7 +1058,7 @@ test_that("<b>Table 3.</b> Frequencies results match", {
 })
 
 test_that("<b>Table 1.</b> Repeated Values Test results match", {
-  table <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingTestTable"]][["data"]]
-  jaspTools::expect_equal_tables(table,
-                                 list(3235, 2.57341576506955, 7.38007620473818, "Variable", 0, 0))
+	table <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingTestTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(3235, 2.57341576506955, 7.38007620473818, "Variable", 0, 0))
 })

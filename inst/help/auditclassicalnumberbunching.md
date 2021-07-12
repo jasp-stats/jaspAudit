@@ -72,7 +72,7 @@ Produces a histogram with a single bin for each observed value.
 R Packages
 -------
 
-- base R
+- digitTests
 
 ----
 

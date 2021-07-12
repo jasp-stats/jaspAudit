@@ -126,15 +126,15 @@ Form {
 
 				RadioButton
 				{
-					name:				"lastTwo"
-					text:				qsTr("First and second digit")
-					checked:			true
+					name:				"last"
+					text:				qsTr("Last digit")
 				}
 
 				RadioButton
 				{
-					name:				"last"
-					text:				qsTr("Second digit")
+					name:				"lasttwo"
+					text:				qsTr("Last two digits")
+					checked:			true
 				}
 
 				RadioButton
