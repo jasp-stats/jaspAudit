@@ -10,7 +10,10 @@ For an introduction to JASP for Audit, please download the [manual](https://gith
 
 ## Core Functionality
 
-The functionality of the Audit module heavily mirrors that of the `jfa` R package. For complete documentation of this package, see the [package manual](https://cran.r-project.org/package=jfa/jfa.pdf) or visit the [website](https://koenderks.github.io/jfa/).
+The functionality of the Audit module heavily mirrors that of two R packages:
+
+- For the sampling analyses, the Audit module uses the [`jfa`](https://cran.r-project.org/package=jfa) R package [[package website](https://koenderks.github.io/jfa/)].
+- For the digit analyses, the Audit module uses the [`digitTests`](https://cran.r-project.org/package=digitTests) R package [[package website](https://koenderks.github.io/digitTests/)].
 
 ## Module Structure
 
