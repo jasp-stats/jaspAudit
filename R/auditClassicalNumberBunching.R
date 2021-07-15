@@ -183,8 +183,8 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     
     set.seed(options[["seed"]])
 
-    test_af <- digitTests::rv.test(x = dataset[[options[["values"]]]], check = options[["shuffle"]], method = "af", samples = options[["noSamples"]])
-    test_e <- digitTests::rv.test(x = dataset[[options[["values"]]]], check = options[["shuffle"]], method = "entropy", samples = options[["noSamples"]])
+    test_af <- digitTests::rv.test(x = dataset[[options[["values"]]]], check = options[["shuffle"]], method = "af", B = options[["noSamples"]])
+    test_e <- digitTests::rv.test(x = dataset[[options[["values"]]]], check = options[["shuffle"]], method = "entropy", B = options[["noSamples"]])
     
     state                           <- list()
     state[["N"]]                    <- as.numeric(test_af$n)
@@ -364,12 +364,6 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(state[["bsAvgFreq"]], state[["avgFrequency"]]))
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsAvgFreq"]], plot = F)$counts + 50, 0))
     
-    if (state[["avgFrequency"]] > median(state[["bsAvgFreq"]])) {
-      hjust <- 1.2
-    } else {
-      hjust <- -0.2
-    }
-    
     plotData <- data.frame(x = state[["bsAvgFreq"]])
     
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x)) +
@@ -378,7 +372,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
       ggplot2::geom_histogram(fill = "darkgray", color = "black", size = 1, breaks = hist(state[["bsAvgFreq"]], plot = F)$breaks) +
       ggplot2::geom_segment(x = state[["avgFrequency"]], xend = state[["avgFrequency"]], y = 0, yend = max(yBreaks), 
                             linetype = "dashed", size = 1, color = "dodgerblue") +
-      ggplot2::annotate(geom = "text", x = state[["avgFrequency"]], y = yBreaks[length(yBreaks)-1] + (yBreaks[2]/3*2), label = "Observed", color = "dodgerblue", size = 7, hjust = hjust)
+      ggplot2::annotate(geom = "text", x = state[["avgFrequency"]], y = yBreaks[length(yBreaks)-1] + (yBreaks[2]/3*2), label = "Observed", color = "dodgerblue", size = 7, hjust = 1.2)
     
     p <- jaspGraphs::themeJasp(p, legend.position = "none")
     
@@ -427,12 +421,6 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(state[["bsEntropy"]], state[["entropy"]]))
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(hist(state[["bsEntropy"]], plot = F)$counts + 50, 0))
     
-    if (state[["entropy"]] > median(state[["bsEntropy"]])) {
-      hjust <- 1.2
-    } else {
-      hjust <- -0.2
-    }
-    
     plotData <- data.frame(x = state[["bsEntropy"]])
     
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x)) +
@@ -441,7 +429,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
       ggplot2::geom_histogram(fill = "darkgray", color = "black", size = 1, breaks = hist(state[["bsEntropy"]], plot = F)$breaks) +
       ggplot2::geom_segment(x = state[["entropy"]], xend = state[["entropy"]], y = 0, yend = max(yBreaks), 
                             linetype = "dashed", size = 1, color = "dodgerblue") +
-      ggplot2::annotate(geom = "text", x = state[["entropy"]], y = yBreaks[length(yBreaks)-1] + (yBreaks[2]/3*2), label = "Observed", color = "dodgerblue", size = 7, hjust = hjust)
+      ggplot2::annotate(geom = "text", x = state[["entropy"]], y = yBreaks[length(yBreaks)-1] + (yBreaks[2]/3*2), label = "Observed", color = "dodgerblue", size = 7, hjust = -0.2)
     
     p <- jaspGraphs::themeJasp(p, legend.position = "none")
     
