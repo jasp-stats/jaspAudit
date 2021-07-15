@@ -1316,31 +1316,26 @@
                                   no = gettext("\n\n<b>Objectives:</b> You have not achieved your initial sampling objectives. It is recommended to draw more samples from this population and continue audit procedures."))
       
       if (options[["performanceMateriality"]] && !options[["minimumPrecision"]]) {
-        message <- gettextf("The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %3$s upper bound on the misstatement is <b>%4$s</b> the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is <b>%6$s</b> than the performance materiality. %7$s",
+        message <- gettextf("The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound on the misstatement is <b>%3$s</b> the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is <b>%4$s</b> than the performance materiality. %5$s",
                             planningOptions[["confidenceLabel"]],
                             planningOptions[["materialityLabel"]],
-                            planningOptions[["confidenceLabel"]],
                             aboveBelowMateriality,
-                            planningOptions[["confidenceLabel"]],
                             lowerHigherMateriality,
                             additionalMessage)
       } else if (!options[["performanceMateriality"]] && options[["minimumPrecision"]]) {
-        message <- gettextf("The objective of this audit sampling procedure was to determine the misstatement in the population with %1$s confidence and a minimum precision of %2$s. For the current data, the obtained precision is <b>%3$s</b> than the required minimum precision. \n\nThe conclusion on the basis of these results is that the misstatement in the population has been determined with at least %4$s confidence and a precision of %5$s. %6$s",
+        message <- gettextf("The objective of this audit sampling procedure was to determine the misstatement in the population with %1$s confidence and a minimum precision of %2$s. For the current data, the obtained precision is <b>%3$s</b> than the required minimum precision. \n\nThe conclusion on the basis of these results is that the misstatement in the population has been determined with at least %1$s confidence and a precision of %4$s. %5$s",
                             planningOptions[["confidenceLabel"]],
                             paste0(options[["minimumPrecisionPercentage"]] * 100, "%"),
                             lowerHigherPrecision,
-                            planningOptions[["confidenceLabel"]],
                             paste0(round(evaluationState[["precision"]] * 100, 3), "%"),
                             additionalMessage)
       } else if (options[["performanceMateriality"]] && options[["minimumPrecision"]]) {
-        message <- gettextf("The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %4$s upper bound on the misstatement is <b>%5$s</b> the performance materiality and the obtained precision is <b>%6$s</b> than the required minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %8$s, the misstatement in the population is <b>%9$s</b> than the performance materiality. %10$s",
+        message <- gettextf("The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound on the misstatement is <b>%4$s</b> the performance materiality and the obtained precision is <b>%5$s</b> than the required minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is <b>%7$s</b> than the performance materiality. %8$s",
                             planningOptions[["confidenceLabel"]],
                             paste0(options[["minimumPrecisionPercentage"]] * 100, "%"),
                             planningOptions[["materialityLabel"]],
-                            planningOptions[["confidenceLabel"]],
                             aboveBelowMateriality,
                             lowerHigherPrecision,
-                            planningOptions[["confidenceLabel"]],
                             paste0(round(evaluationState[["precision"]] * 100, 3), "%"),
                             lowerHigherMateriality,
                             additionalMessage)

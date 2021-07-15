@@ -57,11 +57,12 @@ test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distri
 	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_priorAndPosteriorStatistics"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(0.95, "beta(<unicode><unicode> = 1, <unicode><unicode> = 1)",
-			 0.05, 0.95, "NaN", 0.0526315789473684, "NaN", "Prior", 0.0572299998232917,
-			 "beta(<unicode><unicode> = 2, <unicode><unicode> = 80)", 0.917423128074932,
-			 0.0825768719250681, 0.0125, 11.109928321182, 0.0447299998232917,
-			 "Posterior", -0.892770000176708, "", 18.3484625614986, 0.0869230230790191,
-			 "NaN", 211.088638102458, "", "Shift"))
+			 0.05, 0.95, 0.5, 0.5, "NaN", 0.0526315789473684, "NaN", "Prior",
+			 0.0572299998232917, "beta(<unicode><unicode> = 2, <unicode><unicode> = 80)",
+			 0.917423128074932, 0.0825768719250681, 0.024390243902439, 0.0206338067351869,
+			 0.0125, 11.109928321182, 0.0447299998232917, "Posterior", -0.892770000176708,
+			 "", 18.3484625614986, 0.0869230230790191, -0.475609756097561,
+			 -0.479366193264813, "NaN", 211.088638102458, "", "Shift"))
 })
 
 ### Test 2: Evaluation using correct / incorrect
@@ -118,11 +119,13 @@ test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distri
 	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_priorAndPosteriorStatistics"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(0.95, "beta(<unicode><unicode> = 1, <unicode><unicode> = 1)",
-			 0.2, 0.8, "NaN", 0.25, "NaN", "Prior", 0.594552348305879, "beta(<unicode><unicode> = 43, <unicode><unicode> = 42)",
-			 1.99162625430898e-10, 0.999999999800837, 0.506024096385542,
+			 0.2, 0.8, 0.5, 0.5, "NaN", 0.25, "NaN", "Prior", 0.594552348305879,
+			 "beta(<unicode><unicode> = 43, <unicode><unicode> = 42)", 1.99162625430898e-10,
+			 0.999999999800837, 0.505882352941176, 0.505928705388406, 0.506024096385542,
 			 1.99162625470564e-10, 0.0885282519203364, "Posterior", -0.355447651694121,
-			 "", 9.95813127154492e-10, 1.24999999975105, "NaN", 7.96650501882257e-10,
-			 "", "Shift"))
+			 "", 9.95813127154492e-10, 1.24999999975105, 0.00588235294117645,
+			 0.0059287053884064, "NaN", 7.96650501882257e-10, "", "Shift"
+			))
 })
 
 ### Test 3: Evaluation using soll values
@@ -189,10 +192,11 @@ test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distri
 	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_priorAndPosteriorStatistics"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(0.95, "beta(<unicode><unicode> = 1, <unicode><unicode> = 1)",
-			 0.050115, 0.949885, "NaN", 0.0527590181969396, "NaN", "Prior",
-			 0.0326619222940764, "beta(<unicode><unicode> = 4, <unicode><unicode> = 232)",
-			 0.997716648170882, 0.00228335182911776, 0.0128205272476822,
-			 436.952656812585, 0.0198413950463942, "Posterior", -0.917338077705924,
-			 "", 19.9085433137959, 0.0024038192298202, "NaN", 8282.04678073276,
+			 0.050115, 0.949885, 0.5, 0.5, "NaN", 0.0527590181969396, "NaN",
+			 "Prior", 0.0326619222940764, "beta(<unicode><unicode> = 4, <unicode><unicode> = 232)",
+			 0.997716648170882, 0.00228335182911776, 0.0169491668472781,
+			 0.0156034818108654, 0.0128205272476822, 436.952656812585, 0.0198413950463942,
+			 "Posterior", -0.917338077705924, "", 19.9085433137959, 0.0024038192298202,
+			 -0.483050833152722, -0.484396518189135, "NaN", 8282.04678073276,
 			 "", "Shift"))
 })
