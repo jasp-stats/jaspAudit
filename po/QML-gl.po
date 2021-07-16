@@ -1,5 +1,10 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-07-16 21:19+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/gl/>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -502,7 +507,7 @@ msgstr "Obxectivos da Mostraxe"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Test against a performance materiality"
-msgstr "Proba contra unha materialidade"
+msgstr "Proba fronte a unha materialidade"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Relative"
@@ -880,7 +885,7 @@ msgstr "Obxectivos da Mostraxe"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Test against a performance materiality"
-msgstr "Proba contra unha materialidade"
+msgstr "Proba fronte a unha materialidade"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Relative"
@@ -1140,7 +1145,7 @@ msgstr "Obxectivos da Mostraxe"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Test against a performance materiality"
-msgstr "Proba contra unha materialidade"
+msgstr "Proba fronte a unha materialidade"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Relative"
@@ -1881,7 +1886,7 @@ msgstr "Obxectivos da Mostraxe"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Test against a performance materiality"
-msgstr "Proba contra unha materialidade"
+msgstr "Proba fronte a unha materialidade"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Relative"
@@ -2229,7 +2234,7 @@ msgstr "Obxectivos da Mostraxe"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Test against a performance materiality"
-msgstr "Proba contra unha materialidade"
+msgstr "Proba fronte a unha materialidade"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Relative"
@@ -2373,7 +2378,7 @@ msgstr "<b>Descargar Informe</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Test against a performance materiality"
-msgstr "Proba contra unha materialidade"
+msgstr "Proba fronte a unha materialidade"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about the performance materiality."
