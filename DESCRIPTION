@@ -12,6 +12,7 @@ Encoding: UTF-8
 Imports:
   BAS,
   bstats,
+  digitTests (>= 0.1.0),
   ggplot2,
   ggrepel,
   jaspBase,
@@ -22,4 +23,5 @@ Remotes:
   jasp-stats/jaspBase,
   jasp-stats/jaspGraphs,
   alexanderlynl/bstats,
+  koenderks/digitTests,
   koenderks/jfa

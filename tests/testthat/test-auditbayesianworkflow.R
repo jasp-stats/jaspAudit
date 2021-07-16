@@ -87,11 +87,13 @@ test_that("<b>Table 10.</b> Descriptive Statistics for Prior and Posterior Distr
 	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_priorAndPosteriorStatistics"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list("<unicode><unicode><unicode>", "gamma(<unicode><unicode> = 1, <unicode><unicode> = 0)",
-			 0, 1, "NaN", 0, "NaN", "Prior", 0.0129685379807532, "gamma(<unicode><unicode> = 1, <unicode><unicode> = 231)",
-			 0.999990363891858, 9.63610814238898e-06, 0, 103775.336382219,
-			 0.0129685379807532, "Posterior", "-<unicode><unicode><unicode>",
-			 "", "<unicode><unicode><unicode>", 9.63610814238898e-06, "NaN",
-			 "<unicode><unicode><unicode>", "", "Shift"))
+			 0, 1, "<unicode><unicode><unicode>", "<unicode><unicode><unicode>",
+			 "NaN", 0, "NaN", "Prior", 0.0129685379807532, "gamma(<unicode><unicode> = 1, <unicode><unicode> = 231)",
+			 0.999990363891858, 9.63610814238898e-06, 0.00432900432900433,
+			 0.00300063714528115, 0, 103775.336382219, 0.0129685379807532,
+			 "Posterior", "-<unicode><unicode><unicode>", "", "<unicode><unicode><unicode>",
+			 9.63610814238898e-06, "-<unicode><unicode><unicode>", "-<unicode><unicode><unicode>",
+			 "NaN", "<unicode><unicode><unicode>", "", "Shift"))
 })
 
 # test_that("Across Probability Distributions (Current: Gamma) plot matches", {
@@ -110,11 +112,14 @@ test_that("<b>Table 4.</b> Descriptive Statistics for Prior and Expected Posteri
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_priorAndPosteriorStatistics"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list("<unicode><unicode><unicode>", "gamma(<unicode><unicode> = 1, <unicode><unicode> = 0)",
-			 0, 1, "NaN", 0, "NaN", "Prior", 0.0499807036221922, "gamma(<unicode><unicode> = 6.775, <unicode><unicode> = 231)",
-			 0.950123932551299, 0.0498760674487009, 0.025, 19.0496962000569,
-			 0.0249807036221922, "Expected posterior", "-<unicode><unicode><unicode>",
-			 "", "<unicode><unicode><unicode>", 0.0498760674487009, "NaN",
-			 "<unicode><unicode><unicode>", "", "Expected shift"))
+			 0, 1, "<unicode><unicode><unicode>", "<unicode><unicode><unicode>",
+			 "NaN", 0, "NaN", "Prior", 0.0499807036221922, "gamma(<unicode><unicode> = 6.775, <unicode><unicode> = 231)",
+			 0.950123932551299, 0.0498760674487009, 0.0293290043290043, 0.0278993110296578,
+			 0.025, 19.0496962000569, 0.0249807036221922, "Expected posterior",
+			 "-<unicode><unicode><unicode>", "", "<unicode><unicode><unicode>",
+			 0.0498760674487009, "-<unicode><unicode><unicode>", "-<unicode><unicode><unicode>",
+			 "NaN", "<unicode><unicode><unicode>", "", "Expected shift"
+			))
 })
 
 test_that("Implied Prior Distribution plot matches", {

@@ -132,7 +132,7 @@ Form {
 
 				RadioButton
 				{
-					name:				"firstSecond"
+					name:				"firsttwo"
 					text:				qsTr("First and second digits")
 				}
 
