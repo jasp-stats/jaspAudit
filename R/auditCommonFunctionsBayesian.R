@@ -656,32 +656,28 @@
                           "planning" = "Descriptive Statistics for Prior and Expected Posterior Distribution",
                           "evaluation" = "Descriptive Statistics for Prior and Posterior Distribution")
     
-    tableTitle <- gettextf("<b>Table %1$i.</b> %2$s",
-                           jaspResults[["tabNumber"]]$object,
-                           title)
-    
+    tableTitle <- gettextf("<b>Table %1$i.</b> %2$s", jaspResults[["tabNumber"]]$object, title)
     table <- createJaspTable(tableTitle)
     table$position <- positionInContainer
     
     if (stage == "planning")
-      table$dependOn(options = c("priorStatistics", 
-                                 "planningModel",
-                                 "implicitSampleTable",
-                                 "bookValueDescriptives"))
+      table$dependOn(options = c("priorStatistics", "planningModel", "implicitSampleTable", "bookValueDescriptives"))
     if (stage == "evaluation")
       table$dependOn(options = "priorAndPosteriorStatistics")
     
-    table$addColumnInfo(name = 'v', 		title = "", type = 'string')
-    table$addColumnInfo(name = 'form', 		title = gettext("Functional form"), type = 'string')
+    table$addColumnInfo(name = 'v', title = "", type = 'string')
+    table$addColumnInfo(name = 'form', title = gettext("Functional form"), type = 'string')
     
-    if (options[["performanceMateriality"]]) {                                               
-      table$addColumnInfo(name = 'hMin', 	title = gettextf("Support %1$s", "H\u208B"), type = 'number')
-      table$addColumnInfo(name = 'hPlus', 	title = gettextf("Support %1$s", "H\u208A"), type = 'number')
-      table$addColumnInfo(name = 'odds', 	title = gettextf("Ratio %1$s", "<sup>H\u208B</sup>&frasl;<sub>H\u208A</sub>"), type = 'number')
+    if (options[["performanceMateriality"]]) {
+      table$addColumnInfo(name = 'hMin', title = gettextf("Support %1$s", "H\u208B"), type = 'number')
+      table$addColumnInfo(name = 'hPlus', title = gettextf("Support %1$s", "H\u208A"), type = 'number')
+      table$addColumnInfo(name = 'odds', title = gettextf("Ratio %1$s", "<sup>H\u208B</sup>&frasl;<sub>H\u208A</sub>"), type = 'number')
     }
     
-    table$addColumnInfo(name = 'mode', 		title = gettext("Mode"), type = 'number')
-    table$addColumnInfo(name = 'bound',		title = gettextf("%1$s%% Upper bound", round(options[["confidence"]] * 100, 2)), type = 'number')
+    table$addColumnInfo(name = 'mean', title = gettext("Mean"), type = 'number')
+    table$addColumnInfo(name = 'median', title = gettext("Median"), type = 'number')
+    table$addColumnInfo(name = 'mode', title = gettext("Mode"), type = 'number')
+    table$addColumnInfo(name = 'bound', title = gettextf("%1$s%% Upper bound", round(options[["confidence"]] * 100, 2)), type = 'number')
     table$addColumnInfo(name = 'precision', title = gettext("Precision"), type = 'number')
     
     parentContainer[["priorAndPosteriorStatistics"]] <- table
@@ -721,63 +717,37 @@
                                            "\u03B8 \u2265",
                                            round(parentState[["materiality"]], 3)))
     
-    N 						<- parentState[["N"]]
-    prior 					<- parentState[["prior"]]
-    
-    if (stage == "planning") {
-      
-      likelihood 			<- parentState[["likelihood"]]
-      n 					<- parentState[["sampleSize"]]
-      k 					<- parentState[["expectedSampleError"]]
-      posterior 			<- parentState[["expectedPosterior"]]
-      
-    } else if (stage == "evaluation") {
-      
-      likelihood 			<- parentState[["method"]]
-      n 					<- parentState[["n"]]
-      k 					<- parentState[["k"]]
-      posterior 			<- parentState[["posterior"]]
-      
-    }
-    
-    alphaParameterPrior 	<- prior[["description"]]$alpha
-    betaParameterPrior 		<- prior[["description"]]$beta
-    modePrior 				<- prior[["statistics"]]$mode
-    boundPrior 				<- prior[["statistics"]]$ub
-    alphaParameterPosterior <- posterior[["description"]]$alpha
-    betaParameterPosterior 	<- posterior[["description"]]$beta
-    modePost 				<- posterior[["statistics"]]$mode
-    boundPost 				<- posterior[["statistics"]]$ub
+    N          <- parentState[["N"]]
+    prior      <- parentState[["prior"]]
+    likelihood <- switch(stage, "planning" = parentState[["likelihood"]], "evaluation" = parentState[["method"]])
+    n          <- switch(stage, "planning" = parentState[["sampleSize"]], "evaluation" = parentState[["n"]])
+    k          <- switch(stage, "planning" = parentState[["expectedSampleError"]], "evaluation" = parentState[["k"]])
+    posterior  <- switch(stage, "planning" = parentState[["expectedPosterior"]], "evaluation" = parentState[["posterior"]])
     
     if (likelihood == "poisson") {
-      formPrior 	<- paste0("gamma(\u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
-      formPost 	<- paste0("gamma(\u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")")
+      formPrior <- paste0("gamma(\u03B1 = ", round(prior[["description"]]$alpha, 3), ", \u03B2 = ", round(prior[["description"]]$beta, 3), ")")
+      formPost  <- paste0("gamma(\u03B1 = ", round(posterior[["description"]]$alpha, 3), ", \u03B2 = ", round(posterior[["description"]]$beta, 3), ")")
     } else if (likelihood == "binomial") {
-      formPrior 	<- paste0("beta(\u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
-      formPost 	<- paste0("beta(\u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")") 
+      formPrior <- paste0("beta(\u03B1 = ", round(prior[["description"]]$alpha, 3), ", \u03B2 = ", round(prior[["description"]]$beta, 3), ")")
+      formPost  <- paste0("beta(\u03B1 = ", round(posterior[["description"]]$alpha, 3), ", \u03B2 = ", round(posterior[["description"]]$beta, 3), ")") 
     } else if (likelihood == "hypergeometric") {
-      formPrior 	<- paste0("beta-binomial(N = ", N, ", \u03B1 = ", round(alphaParameterPrior, 3), ", \u03B2 = ", round(betaParameterPrior, 3), ")")
-      formPost 	<- paste0("beta-binomial(N = ", N - n, ", \u03B1 = ", round(alphaParameterPosterior, 3), ", \u03B2 = ", round(betaParameterPosterior, 3), ")")
+      formPrior <- paste0("beta-binomial(N = ", N, ", \u03B1 = ", round(prior[["description"]]$alpha, 3), ", \u03B2 = ", round(prior[["description"]]$beta, 3), ")")
+      formPost  <- paste0("beta-binomial(N = ", N - n, ", \u03B1 = ", round(posterior[["description"]]$alpha, 3), ", \u03B2 = ", round(posterior[["description"]]$beta, 3), ")")
     }
-    
-    shiftInMode  	<- modePost - modePrior
-    shiftInBound  	<- boundPost - boundPrior
-    precisionPrior  <- prior[["statistics"]]$precision
-    precisionPost   <- posterior[["statistics"]]$precision
     
     rows <- data.frame(v = names,
                        form = c(formPrior, formPost, ""),
-                       mode = c(modePrior, modePost, shiftInMode),
-                       bound = c(boundPrior, boundPost, shiftInBound),
-                       precision = c(precisionPrior, precisionPost, NA))
+                       mean = c(prior[["statistics"]]$mean, posterior[["statistics"]]$mean, posterior[["statistics"]]$mean - prior[["statistics"]]$mean),
+                       median = c(prior[["statistics"]]$median, posterior[["statistics"]]$median, posterior[["statistics"]]$median - prior[["statistics"]]$median),
+                       mode = c(prior[["statistics"]]$mode, posterior[["statistics"]]$mode, posterior[["statistics"]]$mode - prior[["statistics"]]$mode),
+                       bound = c(prior[["statistics"]]$ub, posterior[["statistics"]]$ub, posterior[["statistics"]]$ub - prior[["statistics"]]$ub),
+                       precision = c(prior[["statistics"]]$precision, posterior[["statistics"]]$precision, NA))
     
     if (options[["performanceMateriality"]]) {
-      priorHypotheses 	<- prior[["hypotheses"]]
-      postHypotheses 	<- posterior[["hypotheses"]]
-      bf 				<- base::switch(stage, "planning" = postHypotheses[["expectedBf"]], "evaluation" = postHypotheses[["bf"]])
-      rows <- cbind(rows, hMin = c(priorHypotheses[["pHmin"]], postHypotheses[["pHmin"]], postHypotheses[["pHmin"]] / priorHypotheses[["pHmin"]]),
-                    hPlus = c(priorHypotheses[["pHplus"]], postHypotheses[["pHplus"]], postHypotheses[["pHplus"]] / priorHypotheses[["pHplus"]]),
-                    odds = c(priorHypotheses[["oddsHmin"]], postHypotheses[["oddsHmin"]], bf))
+      bf <- base::switch(stage, "planning" = posterior[["hypotheses"]][["expectedBf"]], "evaluation" = posterior[["hypotheses"]][["bf"]])
+      rows <- cbind(rows, hMin = c(prior[["hypotheses"]][["pHmin"]], posterior[["hypotheses"]][["pHmin"]], posterior[["hypotheses"]][["pHmin"]] / prior[["hypotheses"]][["pHmin"]]),
+                    hPlus = c(prior[["hypotheses"]][["pHplus"]], posterior[["hypotheses"]][["pHplus"]], posterior[["hypotheses"]][["pHplus"]] / prior[["hypotheses"]][["pHplus"]]),
+                    odds = c(prior[["hypotheses"]][["oddsHmin"]], posterior[["hypotheses"]][["oddsHmin"]], bf))
     }
     
     table$addRows(rows)
