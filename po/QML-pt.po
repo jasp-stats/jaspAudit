@@ -2201,14 +2201,6 @@ msgid "Shuffle Decimal Digits"
 msgstr "Randomizar dígitos decimais"
 
 msgctxt "auditClassicalNumberBunching|"
-msgid "First and second digit"
-msgstr "Primeiro e segundo dígito"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Second digit"
-msgstr "Segundo dígito"
-
-msgctxt "auditClassicalNumberBunching|"
 msgid "All digits"
 msgstr "Todos os dígitos"
 
@@ -2794,6 +2786,14 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Log(BF₁₀)"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Last digit"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Last two digits"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"

@@ -1871,14 +1871,6 @@ msgid "Shuffle Decimal Digits"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
-msgid "First and second digit"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Second digit"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
 msgid "All digits"
 msgstr ""
 
@@ -2783,6 +2775,14 @@ msgstr ""
 
 msgctxt "auditSelection|"
 msgid "<b>Download Report</b>"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Last digit"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Last two digits"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
