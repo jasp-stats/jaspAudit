@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
 "POT-Creation-Date: 2021-07-31 03:38\n"
-"PO-Revision-Date: 2021-04-20 13:29+0000\n"
-"Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"r/ja/>\n"
+"PO-Revision-Date: 2021-08-26 18:32+0000\n"
+"Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-r/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"X-Generator: Weblate 4.8.1-dev\n"
 
 msgid "<u>Procedure</u>"
 msgstr "<u>手順</u>"
@@ -440,7 +440,6 @@ msgstr "<b>表 %i.</b> 適合度検定"
 msgid "Average"
 msgstr ""
 
-#, fuzzy
 msgid "Frequency"
 msgstr "頻度"
 
@@ -705,10 +704,10 @@ msgid ""
 msgstr ""
 
 msgid "gamma"
-msgstr ""
+msgstr "ガンマ"
 
 msgid "beta"
-msgstr ""
+msgstr "ベータ"
 
 msgid "beta-binomial"
 msgstr ""
@@ -1355,9 +1354,8 @@ msgstr ""
 msgid "Pearson's <i>r</i>"
 msgstr ""
 
-#, fuzzy
 msgid "p-value"
-msgstr "値"
+msgstr "p値"
 
 msgid ""
 "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis "
@@ -1546,7 +1544,7 @@ msgid "Prior and Posterior Distribution"
 msgstr ""
 
 msgid "Posterior"
-msgstr ""
+msgstr "事後分布"
 
 msgid "Population errors"
 msgstr ""
