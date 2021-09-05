@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-09-05 10:34+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.8.1-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -30,11 +36,11 @@ msgstr "Arbeitsablauf"
 
 msgctxt "Description|"
 msgid "Sampling Workflow"
-msgstr "Stichprobenziehung"
+msgstr "Stichproben-Arbeitsablauf"
 
 msgctxt "Description|"
 msgid "Bayesian Sampling Workflow"
-msgstr "Bayesianische Stichprobenziehung"
+msgstr "Bayesscher Stichproben-Arbeitsablauf"
 
 msgctxt "Description|"
 msgid "Planning"
@@ -66,7 +72,7 @@ msgstr "Benfordsches Gesetz"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Sampling Objectives"
-msgstr "Ziel der Stichprobenziehung"
+msgstr "Ziele der Stichprobenziehung"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Test against a performance materiality"
@@ -1050,15 +1056,15 @@ msgstr "Monetary-Unit Sampling"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about monetary unit sampling."
-msgstr "Klicke hier, um mehr über Monetary-Unit Sampling zu erfahren."
+msgstr "Hier klicken, um mehr über Monetary-Unit Sampling zu erfahren."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Record sampling"
-msgstr "Eintrags-Stichprobe"
+msgstr "Record-Sampling"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about record sampling."
-msgstr "Klicken Sie hier, um mehr über Stichprobenziehung zu erfahren."
+msgstr "Hier klicken, um mehr über Record-Sampling zu erfahren."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Selection Method"
@@ -1066,28 +1072,27 @@ msgstr "Auswahlmethode"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Random sampling"
-msgstr "Zufälliges Ziehen"
+msgstr "Zufallsstichprobe"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about random sampling."
-msgstr "Klicken Sie hier, um mehr über Zufallsstichproben zu erfahren."
+msgstr "Hier klicken, um mehr über Zufallsstichproben zu erfahren."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Cell sampling"
-msgstr "Zellen-Ziehen"
+msgstr "Zellen-Stichprobe"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about cell sampling."
-msgstr ""
+msgstr "Hier klicken, um mehr über Zellen-Stichproben zu erfahren."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Fixed interval sampling"
-msgstr "Festes-Intervall-Ziehen"
+msgstr "Festes-Intervall-Stichprobe"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about fixed interval sampling."
-msgstr ""
-"Klicken Sie hier, um mehr über systematische Stichprobenziehung zu erfahren."
+msgstr "Hier klicken, um mehr über Festes-Intervall-Stichproben zu erfahren."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Starting point"
@@ -2082,15 +2087,15 @@ msgstr "Monetary-Unit Sampling"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about monetary unit sampling."
-msgstr "Klicke hier, um mehr über Monetary-Unit Sampling zu erfahren."
+msgstr "Hier klicken, um mehr über Monetary-Unit Sampling zu erfahren."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Record sampling"
-msgstr "Einträge Ziehen"
+msgstr "Record Sampling"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about record sampling."
-msgstr "Klicken Sie hier, um mehr über Stichprobenziehung zu erfahren."
+msgstr "Hier klicken, um mehr über Record Sampling zu erfahren."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Selection Method"
@@ -2098,28 +2103,27 @@ msgstr "Auswahlmethode"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Random sampling"
-msgstr "Zufälliges Ziehen"
+msgstr "Zufallsstichprobe"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about random sampling."
-msgstr "Klicken Sie hier, um mehr über Zufallsstichproben zu erfahren."
+msgstr "Hier klicken, um mehr über Zufallsstichproben zu erfahren."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Cell sampling"
-msgstr "Zellen-Ziehen"
+msgstr "Zellen-Stichprobe"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about cell sampling."
-msgstr ""
+msgstr "Hier klicken, um mehr über Zellen-Stichproben zu erfahren."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Fixed interval sampling"
-msgstr "Festes-Intervall-Ziehen"
+msgstr "Festes-Intervall-Stichprobe"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about fixed interval sampling."
-msgstr ""
-"Klicken Sie hier, um mehr über systematische Stichprobenziehung zu erfahren."
+msgstr "Hier klicken, um mehr über Festes-Intervall-Stichproben zu erfahren."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Starting point"
@@ -2390,15 +2394,15 @@ msgstr "Monetary-Unit Sampling"
 
 msgctxt "auditSelection|"
 msgid "Click to learn more about monetary unit sampling."
-msgstr "Klicke hier, um mehr über Monetary-Unit Sampling zu erfahren."
+msgstr "Hier klicken, um mehr über Monetary-Unit Sampling zu erfahren."
 
 msgctxt "auditSelection|"
 msgid "Record sampling"
-msgstr "Eintrag-Stichprobe"
+msgstr "Record Sampling"
 
 msgctxt "auditSelection|"
 msgid "Click to learn more about record sampling."
-msgstr "Klicken Sie hier, um mehr über Stichprobenziehung zu erfahren."
+msgstr "Hier klicken, um mehr über Record Sampling zu erfahren."
 
 msgctxt "auditSelection|"
 msgid "Selection Method"
@@ -2406,11 +2410,11 @@ msgstr "Auswahlmethode"
 
 msgctxt "auditSelection|"
 msgid "Random sampling"
-msgstr "Zufällige Stichprobe"
+msgstr "Zufallsstichprobe"
 
 msgctxt "auditSelection|"
 msgid "Click to learn more about random sampling."
-msgstr "Klicken Sie hier, um mehr über Zufallsstichproben zu erfahren."
+msgstr "Hier klicken, um mehr über Zufallsstichproben zu erfahren."
 
 msgctxt "auditSelection|"
 msgid "Cell sampling"
@@ -2418,7 +2422,7 @@ msgstr "Zellen-Stichprobe"
 
 msgctxt "auditSelection|"
 msgid "Click to learn more about cell sampling."
-msgstr ""
+msgstr "Hier klicken, um mehr über Zellen-Stichproben zu erfahren."
 
 msgctxt "auditSelection|"
 msgid "Fixed interval sampling"
@@ -2426,8 +2430,7 @@ msgstr "Festes-Intervall-Stichprobe"
 
 msgctxt "auditSelection|"
 msgid "Click to learn more about fixed interval sampling."
-msgstr ""
-"Klicken Sie hier, um mehr über systematische Stichprobenziehung zu erfahren."
+msgstr "Hier klicken, um mehr über Festes-Intervall-Stichproben zu erfahren."
 
 msgctxt "auditSelection|"
 msgid "Starting point"
@@ -2527,7 +2530,7 @@ msgstr "<b>Bericht herunterladen</b>"
 
 msgctxt "Description|"
 msgid "Classical Sampling Workflow"
-msgstr "Klassischer Stichproben-Workflow"
+msgstr "Klassischer Stichproben-Arbeitsablauf"
 
 msgctxt "Description|"
 msgid "Classical Planning"
