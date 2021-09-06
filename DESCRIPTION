@@ -2,11 +2,11 @@ Package: jaspAudit
 Type: Package
 Title: Audit Module for JASP
 Version: 0.15
-Date: 2020-06-03
-Author: Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille & Ruud Wetzels
-Website: www.github.com/koenderks/jfa
+Date: 2021-09-03
+Author: Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille, and Ruud Wetzels
+Website: https://github.com/jasp-stats/jaspAudit
 Maintainer: Koen Derks <k.derks@nyenrode.nl>
-Description: JASP for Audit (JfA) is an officially supported add-on module that is designed specifically with the auditor in mind. JfA helps the auditor in interpreting, explaining, and reporting the analyses and leaves a transparent audit trail.
+Description: Evaluate misstatement in audit samples
 License: GPL (>= 2)
 Encoding: UTF-8
 Imports:
@@ -17,11 +17,10 @@ Imports:
   ggrepel,
   jaspBase,
   jaspGraphs,
-  jfa (>= 0.5.7),
+  jfa (== 0.5.7),
   utils
 Remotes:
   jasp-stats/jaspBase,
   jasp-stats/jaspGraphs,
   alexanderlynl/bstats,
-  koenderks/digitTests,
-  koenderks/jfa
+  koenderks/digitTests
