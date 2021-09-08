@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-09-08 12:11+0000\n"
+"Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-qml/"
+"nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.8.1-dev\n"
 "X-Language: nl\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -384,7 +390,6 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Plots"
 msgstr "Grafieken"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Evaluate sampling objectives"
 msgstr "Evalueer de steekproefdoelstellingen"
@@ -2189,7 +2194,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "<b>How would you like to evaluate your transactions?</b>"
 msgstr "<b>Hoe wilt u uw transacties evalueren?</b>"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Soll values"
 msgstr "Soll waardes"
@@ -2370,7 +2374,6 @@ msgctxt "auditSelection|"
 msgid "Enable"
 msgstr "Activeer"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Geef toelichtende tekst weer bij iedere stap van de analyse"
@@ -2443,7 +2446,6 @@ msgctxt "auditSelection|"
 msgid "Advanced Options"
 msgstr "Geavanceerde opties"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Currency"
 msgstr "Valuta"
@@ -2456,7 +2458,6 @@ msgctxt "auditSelection|"
 msgid "Dollar ($)"
 msgstr "Dollar ($)"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Other"
 msgstr "Anders"
@@ -2543,19 +2544,19 @@ msgstr "Klassieke Evaluatie"
 
 msgctxt "Description|"
 msgid "Digit Analysis"
-msgstr ""
+msgstr "Cijferanalyse"
 
 msgctxt "Description|"
 msgid "Repeated Values"
-msgstr ""
+msgstr "Herhaalde Waardes"
 
 msgctxt "Description|"
 msgid "Repeated Values Analysis"
-msgstr ""
+msgstr "Herhaalde Waardes Analyse"
 
 msgctxt "Description|"
 msgid "True Value Estimation"
-msgstr ""
+msgstr "Ware Waarde Schatting"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Dollar ($)"
@@ -2563,40 +2564,41 @@ msgstr "Dollar ($)"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Additional samples for sampling objectives"
-msgstr ""
+msgstr "Extra steekproef voor steekproefdoelstellingen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Post-hoc corrections to population value"
-msgstr ""
+msgstr "Post-hoc correcties voor populatie waarde"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Calculation Preferences"
-msgstr ""
+msgstr "Berekeningsvoorkeuren"
 
 msgctxt "auditBayesianWorkflow|"
 msgid ""
 "<i>Requires additional assumption: The population taints are homogeneous</i>"
 msgstr ""
+"<i>Vereist extra veronderstelling: De populatie taints zijn homogeen</i>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Calculation Preferences"
-msgstr ""
+msgstr "Berekeningsvoorkeuren"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Additional samples for sampling objectives"
-msgstr ""
+msgstr "Extra steekproef voor steekproefdoelstellingen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Post-hoc corrections to population value"
-msgstr ""
+msgstr "Post-hoc correcties voor populatie waarde"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Audit Risk"
-msgstr ""
+msgstr "Audit Risico"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Reference Distribution"
-msgstr ""
+msgstr "Referentieverdeling"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Check Digits"
@@ -2616,43 +2618,36 @@ msgstr "Laatste cijfer"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Frequency statistics"
-msgstr ""
+msgstr "Frequentie statistieken"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Compare to reference distribution"
-msgstr ""
+msgstr "Vergelijk met referentieverdeling"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Ist Position"
 msgstr "Ist Positie"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Soll Position"
 msgstr "Soll Positie"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Estimation Method"
 msgstr "Schattingsmethode"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Direct estimator"
 msgstr "Directe schatter"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Difference estimator"
 msgstr "Verschilschatter"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Ratio estimator"
 msgstr "Ratioschatter"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Regression estimator"
 msgstr "Regressieschatter"
@@ -2667,15 +2662,15 @@ msgstr "Tabellen"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Additional samples for sampling objectives"
-msgstr ""
+msgstr "Extra steekproef voor steekproefdoelstellingen"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Post-hoc corrections to population value"
-msgstr ""
+msgstr "Post-hoc correcties voor populatie waarde"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Audit Risk"
-msgstr ""
+msgstr "Audit Risico"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
@@ -2683,7 +2678,7 @@ msgstr "Betrouwbaarheid"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory Text"
-msgstr ""
+msgstr "Toelichtende Tekst"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Enable"
@@ -2691,7 +2686,7 @@ msgstr "Activeer"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Click to learn more about the explanatory text."
-msgstr ""
+msgstr "Klik om meer te leren over de verklarende tekst."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Variable"
@@ -2703,15 +2698,15 @@ msgstr "Toetsen"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Average frequency"
-msgstr ""
+msgstr "Gemiddelde frequentie"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Entropy"
-msgstr ""
+msgstr "Entropie"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Shuffle Decimal Digits"
-msgstr ""
+msgstr "Shuffle Decimale Cijfers"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "All digits"
@@ -2719,11 +2714,11 @@ msgstr "Alle cijfers"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Bootstrap Options"
-msgstr ""
+msgstr "Bootstrap opties"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Number of samples"
-msgstr ""
+msgstr "Steekproefgrootte"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Seed"
@@ -2735,11 +2730,11 @@ msgstr "Tabellen"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Assumption checks"
-msgstr ""
+msgstr "Verificatie van aannames"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Frequency table"
-msgstr ""
+msgstr "Frequentietabel"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Plots"
@@ -2747,11 +2742,11 @@ msgstr "Grafieken"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Observed vs. expected values"
-msgstr ""
+msgstr "Waargenomen vs. verwachte waarden"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Histogram of individual values"
-msgstr ""
+msgstr "Histogram van individuele waarden"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Label"
@@ -2759,37 +2754,37 @@ msgstr "Label"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "with highest occurrence"
-msgstr ""
+msgstr "met hoogste voorkomen"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>Download Verslag</b>"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Calculation Preferences"
-msgstr ""
+msgstr "Berekeningsvoorkeuren"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Calculation Preferences"
-msgstr ""
+msgstr "Berekeningsvoorkeuren"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Extrapolated amounts"
 msgstr "Geëxtrapoleerde bedragen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Additional samples for sampling objectives"
-msgstr ""
+msgstr "Extra steekproef voor steekproefdoelstellingen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Post-hoc corrections to population value"
-msgstr ""
+msgstr "Post-hoc correcties voor populatie waarde"
 
 msgctxt "auditBayesianEvaluation|"
 msgid ""
 "<i>Requires additional assumption: The population taints are homogeneous</i>"
 msgstr ""
+"<i>Vereist extra veronderstelling: De populatie taints zijn homogeen</i>"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Benford's law"
@@ -2807,14 +2802,13 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Log(BF₁₀)"
 msgstr "Log(BF₁₀)"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last digit"
 msgstr "Laatste cijfer"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last two digits"
-msgstr ""
+msgstr "Laatste twee cijfers"
 
 msgctxt "auditClassicalWorkflow|"
 msgid ""
