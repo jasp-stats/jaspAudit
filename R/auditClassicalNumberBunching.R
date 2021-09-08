@@ -236,7 +236,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     table$addColumnInfo(name = 'df', 		title = gettext('df'),	type = 'integer')
     table$addColumnInfo(name = 'pvalue',	title = "p", 			type = 'pvalue')
     
-    table$addFootnote(gettext("The displayed <i>p</i> value is for a two-sided test against H\u2080: <i>r = 0</i>."))
+    table$addFootnote(gettextf("The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r = 0</i>.", "\u2080"))
     
     numberBunchingContainer[["correlationTable"]] <- table
     
@@ -288,7 +288,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
   
   if (is.null(numberBunchingContainer[["numberBunchingTable"]])) {
     
-    tableTitle <- gettextf("<b>Table %i.</b> Frequencies",
+    tableTitle <- gettextf("<b>Table %i.</b> Frequency Table",
                            jaspResults[["tabNumber"]]$object)
     
     table <- createJaspTable(tableTitle)
@@ -372,9 +372,9 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
       ggplot2::geom_histogram(fill = "darkgray", color = "black", size = 1, breaks = hist(state[["bsAvgFreq"]], plot = F)$breaks) +
       ggplot2::geom_segment(x = state[["avgFrequency"]], xend = state[["avgFrequency"]], y = 0, yend = max(yBreaks), 
                             linetype = "dashed", size = 1, color = "dodgerblue") +
-      ggplot2::annotate(geom = "text", x = state[["avgFrequency"]], y = yBreaks[length(yBreaks)-1] + (yBreaks[2]/3*2), label = "Observed", color = "dodgerblue", size = 7, hjust = 1.2)
-    
-    p <- jaspGraphs::themeJasp(p, legend.position = "none")
+      ggplot2::annotate(geom = "text", x = state[["avgFrequency"]], y = yBreaks[length(yBreaks)-1] + (yBreaks[2]/3*2), label = "Observed", color = "dodgerblue", size = 7, hjust = 1.2) +
+	  jaspGraphs::geom_rangeframe() + 
+	  jaspGraphs::themeJaspRaw(legend.position = "none")
     
     plot$plotObject <- p
   }
@@ -429,17 +429,15 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
       ggplot2::geom_histogram(fill = "darkgray", color = "black", size = 1, breaks = hist(state[["bsEntropy"]], plot = F)$breaks) +
       ggplot2::geom_segment(x = state[["entropy"]], xend = state[["entropy"]], y = 0, yend = max(yBreaks), 
                             linetype = "dashed", size = 1, color = "dodgerblue") +
-      ggplot2::annotate(geom = "text", x = state[["entropy"]], y = yBreaks[length(yBreaks)-1] + (yBreaks[2]/3*2), label = "Observed", color = "dodgerblue", size = 7, hjust = -0.2)
-    
-    p <- jaspGraphs::themeJasp(p, legend.position = "none")
+      ggplot2::annotate(geom = "text", x = state[["entropy"]], y = yBreaks[length(yBreaks)-1] + (yBreaks[2]/3*2), label = "Observed", color = "dodgerblue", size = 7, hjust = -0.2) +
+	  jaspGraphs::geom_rangeframe() + 
+	  jaspGraphs::themeJaspRaw(legend.position = "none")
     
     plot$plotObject <- p
   }
   
   if (options[["explanatoryText"]]) {
-    
     plotText <- createJaspHtml(gettextf("<b>Figure %i:</b> The expected entropy of values versus the observed entropy in the data set.", jaspResults[["figNumber"]]$object), "p")
-    
     plotText$position <- positionInContainer + 1
     plotText$dependOn(optionsFromObject = numberBunchingContainer[["numberBunchingPlotEntropy"]])
     numberBunchingContainer[["numberBunchingPlotEntropyText"]] <- plotText
@@ -478,7 +476,9 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y)) +
       ggplot2::scale_x_continuous(name = options[["values"]], limits = range(xBreaks), breaks = xBreaks) +
       ggplot2::scale_y_continuous(name = gettext("Frequency"), limits = range(yBreaks), breaks = yBreaks) +
-      ggplot2::geom_bar(fill = "black", color = "black", size = 0.2, stat = "identity")
+      ggplot2::geom_bar(fill = "black", color = "black", size = 0.2, stat = "identity") +
+	  jaspGraphs::geom_rangeframe() + 
+	  jaspGraphs::themeJaspRaw(legend.position = "none")
     
     if (options[["noHeads"]] != 0) {
       maxx <- plotData$x[order(-plotData$y)][1:options[["noHeads"]]]
@@ -487,17 +487,11 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
       p <- p + ggrepel::geom_text_repel(ggplot2::aes(label = x, x = x, y = y), data = maxData, vjust = 1, size = 5)
     }
     
-    jfaTheme <- ggplot2::theme(panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb", size = 0.5))
-    
-    p <- jaspGraphs::themeJasp(p, legend.position = "none") + jfaTheme
-    
     plot$plotObject <- p
   }
   
   if (options[["explanatoryText"]]) {
-    
     plotText <- createJaspHtml(gettextf("<b>Figure %i:</b> Histogram of the individual values in the data set.", jaspResults[["figNumber"]]$object), "p")
-    
     plotText$position <- positionInContainer + 1
     plotText$dependOn(optionsFromObject = numberBunchingContainer[["numberBunchingHistogram"]])
     numberBunchingContainer[["numberBunchingHistogramText"]] <- plotText

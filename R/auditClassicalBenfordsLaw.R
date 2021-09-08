@@ -14,9 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-
+#
 # When making changes to this file always mention @koenderks as a 
-# reviewer in the Pull Request
+# reviewer in the pull Request.
 
 auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   
@@ -268,7 +268,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   
   if (is.null(benfordsLawContainer[["benfordsLawTable"]])) {
     
-    tableTitle <- gettextf("<b>Table %i.</b> Frequency Statistics",
+    tableTitle <- gettextf("<b>Table %i.</b> Frequency Table",
                            jaspResults[["tabNumber"]]$object)
     
     benfordsLawTable <- createJaspTable(tableTitle)
@@ -284,18 +284,10 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
                                "firsttwo" = gettext('Leading digits'),
                                "last" = gettext('Last digit'))
     
-    benfordsLawTable$addColumnInfo(name = 'digit', 
-                                   title = whichDigit, 
-                                   type = 'integer')
-    benfordsLawTable$addColumnInfo(name = 'count', 
-                                   title = gettext('Count'), 
-                                   type = 'integer')
-    benfordsLawTable$addColumnInfo(name = 'percentage',  
-                                   title = gettext('Percentage'), 
-                                   type = 'string')
-    benfordsLawTable$addColumnInfo(name = 'inBenford', 
-                                   title = columnTitle, 
-                                   type = 'string')
+    benfordsLawTable$addColumnInfo(name = 'digit',      title = whichDigit,            type = 'integer')
+    benfordsLawTable$addColumnInfo(name = 'count',      title = gettext('Count'),      type = 'integer')
+    benfordsLawTable$addColumnInfo(name = 'percentage', title = gettext('Percentage'), type = 'string')
+    benfordsLawTable$addColumnInfo(name = 'inBenford',  title = columnTitle,           type = 'string')
     
     benfordsLawContainer[["benfordsLawTable"]] <- benfordsLawTable
     
@@ -344,7 +336,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   if (is.null(benfordsLawContainer[["benfordsLawPlot"]])) {
     
     benfordsLawPlot <- createJaspPlot(plot = NULL, 
-                                      title = gettext("Observed Percentages vs. Expected Percentages"), 
+                                      title = gettext("Observed vs. Expected Percentages"), 
                                       width = 600, height = 400)
     
     benfordsLawPlot$position <- positionInContainer
@@ -414,12 +406,11 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
       ggplot2::scale_y_continuous(name = "", breaks = yBreaks, labels = paste0(round(yBreaks * 100, 2), "%"),
                                   limits = c(0, max(yBreaks))) +
       ggplot2::labs(fill = "") +
-      ggplot2::theme(legend.text = ggplot2::element_text(margin = ggplot2::margin(l = -5, r = 50)),
-                     panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb", size = 0.5)) +
+      ggplot2::theme(legend.text = ggplot2::element_text(margin = ggplot2::margin(l = -5, r = 50))) +
       ggplot2::guides(fill = ggplot2::guide_legend(reverse = TRUE, override.aes = list(size = c(7, 10), shape = c(21, 22), 
-                                                                                       fill = c("dodgerblue", "darkgray"), stroke = 2, color = "black", alpha = 1)))
-    
-    p <- jaspGraphs::themeJasp(p, legend.position = "top")
+                                                                                       fill = c("dodgerblue", "darkgray"), stroke = 2, color = "black", alpha = 1))) +
+      jaspGraphs::geom_rangeframe() + 
+	  jaspGraphs::themeJaspRaw(legend.position = "top")
     
     benfordsLawPlot$plotObject <- p
   }

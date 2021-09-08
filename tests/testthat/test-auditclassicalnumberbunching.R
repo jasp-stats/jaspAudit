@@ -6,6 +6,7 @@ context("[Audit] Repeated Values")
 
 options <- jaspTools::analysisOptions("auditClassicalNumberBunching")
 options$values <- "Variable"
+options$entropy <- TRUE
 options$noSamples <- 1000
 options$shuffle <- "lasttwo"
 options$summaryTable <- TRUE
@@ -436,6 +437,7 @@ test_that("<b>Table 1.</b> Repeated Values Test results match", {
 options <- jaspTools::analysisOptions("auditClassicalNumberBunching")
 options$values <- "Variable"
 options$noSamples <- 1000
+options$entropy <- TRUE
 options$shuffle <- "lasttwo"
 options$summaryTable <- TRUE
 options$numberBunchingSimulationPlots <- TRUE

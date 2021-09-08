@@ -14,13 +14,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-
+#
 # When making changes to this file always mention @koenderks as a 
-# reviewer in the Pull Request
+# reviewer in the pull Request.
 
 auditBayesianWorkflow <- function(jaspResults, dataset, options, ...) {
-  
   # For the workflow constituents, see auditCommonFunctions.R
   .jfaWorkflowAnalysis(options, jaspResults)
-  
 }

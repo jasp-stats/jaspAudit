@@ -14,9 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-
+#
 # When making changes to this file always mention @koenderks as a 
-# reviewer in the Pull Request
+# reviewer in the pull Request.
 
 auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   
@@ -163,8 +163,8 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   
   if (options[["estimator"]] == "mpu") {
     
-    meanW           <- round(mean(dataset[, .v(options[["auditValues"]])]), 2)
-    sW              <- round(sd(dataset[, .v(options[["auditValues"]])]), 2)
+    meanW           <- round(mean(dataset[[options[["auditValues"]]]]), 2)
+    sW              <- round(sd(dataset[[options[["auditValues"]]]]), 2)
     
     pointEstimate   <- round(N * meanW, 2)
     lowerCI         <- round(pointEstimate - 
@@ -193,11 +193,11 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     
     B               <- round(options[["populationValue"]], 2)
     
-    meanE           <- round(mean(dataset[, .v(options[["bookValues"]])] - 
-                                    dataset[, .v(options[["auditValues"]])]), 2)
+    meanE           <- round(mean(dataset[[options[["bookValues"]]]] - 
+                                    dataset[[options[["auditValues"]]]]), 2)
     
-    sE              <- round(sd(dataset[, .v(options[["bookValues"]])] - 
-                                  dataset[, .v(options[["auditValues"]])]), 2)
+    sE              <- round(sd(dataset[[options[["bookValues"]]]] - 
+                                  dataset[[options[["auditValues"]]]]), 2)
     
     pointEstimate   <- round(B - N * meanE, 2)
     
@@ -217,12 +217,12 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   } else if (options[["estimator"]] == "ratio") {
     
     B             <- round(options[["populationValue"]], 2)
-    meanB         <- round(mean(dataset[, .v(options[["bookValues"]])]), 2)
-    sB            <- round(sd(dataset[, .v(options[["bookValues"]])]), 2)
-    meanW         <- round(mean(dataset[, .v(options[["auditValues"]])]), 2)
-    sW            <- round(sd(dataset[, .v(options[["auditValues"]])]), 2)
-    r             <- round(cor(dataset[, .v(options[["bookValues"]])], 
-                               dataset[, .v(options[["auditValues"]])]), 2)
+    meanB         <- round(mean(dataset[[options[["bookValues"]]]]), 2)
+    sB            <- round(sd(dataset[[options[["bookValues"]]]]), 2)
+    meanW         <- round(mean(dataset[[options[["auditValues"]]]]), 2)
+    sW            <- round(sd(dataset[[options[["auditValues"]]]]), 2)
+    r             <- round(cor(dataset[[options[["bookValues"]]]], 
+                               dataset[[options[["auditValues"]]]]), 2)
     
     q             <- round(meanW / meanB, 4)
     s             <- sqrt( sW^2 - 2 * q * r * sB * sW + q^2 * sB^2 )
@@ -244,17 +244,17 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   } else if (options[["estimator"]] == "regression") {
     
     B             <- round(options[["populationValue"]], 2)
-    meanB         <- round(mean(dataset[, .v(options[["bookValues"]])]), 2)
-    meanW         <- round(mean(dataset[, .v(options[["auditValues"]])]), 2)
-    sW            <- round(sd(dataset[, .v(options[["auditValues"]])]), 2)
-    r             <- round(cor(dataset[, .v(options[["bookValues"]])], 
-                               dataset[, .v(options[["auditValues"]])]), 2)
+    meanB         <- round(mean(dataset[[options[["bookValues"]]]]), 2)
+    meanW         <- round(mean(dataset[[options[["auditValues"]]]]), 2)
+    sW            <- round(sd(dataset[[options[["auditValues"]]]]), 2)
+    r             <- round(cor(dataset[[options[["bookValues"]]]], 
+                               dataset[[options[["auditValues"]]]]), 2)
     
-    b1            <- round((sum(dataset[, .v(options[["bookValues"]])] * 
-                                  dataset[, .v(options[["auditValues"]])]) - 
+    b1            <- round((sum(dataset[[options[["bookValues"]]]] * 
+                                  dataset[[options[["auditValues"]]]]) - 
                               n*meanB*meanW) / 
-                             (sum(dataset[, .v(options[["bookValues"]])]^2) - 
-                                (sum(dataset[, .v(options[["bookValues"]])])^2) / 
+                             (sum(dataset[[options[["bookValues"]]]]^2) - 
+                                (sum(dataset[[options[["bookValues"]]]])^2) / 
                                 n), 2)
     s             <- sW * sqrt(1 - r^2)
     
@@ -310,13 +310,13 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
       
       calc3 <- gettextf("The mean of the sample audit values %1$s", "<i>w&#772</i>")
       if (options[["auditValues"]] != "") {
-        meanW <- round(mean(dataset[, .v(options[["auditValues"]])]), 2)
+        meanW <- round(mean(dataset[[options[["auditValues"]]]]), 2)
         calc3 <- gettextf("%1$s = %2$s", calc3, meanW)
       } 
       
       calc4 <- gettextf("The standard deviation of the sample audit values %1$s", "<i>s<sub>w</sub></i>")
       if (options[["auditValues"]] != "") {
-        sW <- round(sd(dataset[, .v(options[["auditValues"]])]), 2)
+        sW <- round(sd(dataset[[options[["auditValues"]]]]), 2)
         calc4 <- gettextf("%1$s = %2$s", calc4, sW)
       } 
       
@@ -387,13 +387,13 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
       
       calc4 <- gettextf("The mean of the sample errors %1$s", "<i>e&#772</i>")
       if (ready) {
-        meanE <- round(mean(dataset[, .v(options[["bookValues"]])] - dataset[, .v(options[["auditValues"]])]), 2)
+        meanE <- round(mean(dataset[[options[["bookValues"]]]] - dataset[[options[["auditValues"]]]]), 2)
         calc4 <- gettextf("%1$s = %2$s", calc4, meanE)
       } 
       
       calc5 <- gettextf("The standard deviation of the sample errors %1$s", "<i>s<sub>e</sub></i>")
       if (ready) {
-        sE <- round(sd(dataset[, .v(options[["bookValues"]])] - dataset[, .v(options[["auditValues"]])]), 2)
+        sE <- round(sd(dataset[[options[["bookValues"]]]] - dataset[[options[["auditValues"]]]]), 2)
         calc5 <- gettextf("%1$s = %2$s", calc5, sE)
       } 
       
@@ -474,31 +474,31 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
       
       calc4 <- gettextf("The mean of the sample book values %1$s", "<i>b&#772</i>")
       if (options[["bookValues"]] != "") {
-        meanB <- round(mean(dataset[, .v(options[["bookValues"]])]), 2)
+        meanB <- round(mean(dataset[[options[["bookValues"]]]]), 2)
         calc4 <- gettextf("%1$s = %2$s", calc4, meanB)
       } 
       
       calc5 <- gettextf("The standard deviation of the sample book values %1$s", "<i>s<sub>b</sub></i>")
       if (options[["bookValues"]] != "") {
-        sB <- round(sd(dataset[, .v(options[["bookValues"]])]), 2)
+        sB <- round(sd(dataset[[options[["bookValues"]]]]), 2)
         calc5 <- gettextf("%1$s = %2$s", calc5, sB)
       } 
       
       calc6 <- gettextf("The mean of the sample audit values %1$s", "<i>w&#772</i>")
       if (options[["auditValues"]] != "") {
-        meanW <- round(mean(dataset[, .v(options[["auditValues"]])]), 2)
+        meanW <- round(mean(dataset[[options[["auditValues"]]]]), 2)
         calc6 <- gettextf("%1$s = %2$s", calc6, meanW)
       } 
       
       calc7 <- gettextf("The standard deviation of the sample audit values %1$s", "<i>s<sub>w</sub></i>")
       if (options[["auditValues"]] != "") {
-        sW <- round(sd(dataset[, .v(options[["auditValues"]])]), 2)
+        sW <- round(sd(dataset[[options[["auditValues"]]]]), 2)
         calc7 <- gettextf("%1$s = %2$s", calc7, sW)
       } 
       
       calc8 <- gettextf("The correlation coefficient of the sample book values and audit values %1$s", "<i>r<sub>bw</sub></i>")
       if (ready) {
-        r <- round(cor(dataset[, .v(options[["bookValues"]])], dataset[, .v(options[["auditValues"]])]), 2)
+        r <- round(cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]]), 2)
         calc8 <- gettextf("%1$s = %2$s", calc8, r)
       } 
       
@@ -588,31 +588,31 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
       
       calc4 <- gettextf("The mean of the sample book values %1$s", "<i>b&#772</i>")
       if (options[["bookValues"]] != "") {
-        meanB <- round(mean(dataset[, .v(options[["bookValues"]])]), 2)
+        meanB <- round(mean(dataset[[options[["bookValues"]]]]), 2)
         calc4 <- gettextf("%1$s = %2$s", calc4, meanB)
       } 
       
       calc5 <- gettextf("The mean of the sample audit values %1$s", "<i>w&#772</i>")
       if (options[["auditValues"]] != "") {
-        meanW <- round(mean(dataset[, .v(options[["auditValues"]])]), 2)
+        meanW <- round(mean(dataset[[options[["auditValues"]]]]), 2)
         calc5 <- gettextf("%1$s = %2$s", calc5, meanW)
       } 
       
       calc6 <- gettextf("The standard deviation of the sample audit values %1$s", "<i>s<sub>w</sub></i>")
       if (options[["auditValues"]] != "") {
-        sW <- round(sd(dataset[, .v(options[["auditValues"]])]), 2)
+        sW <- round(sd(dataset[[options[["auditValues"]]]]), 2)
         calc6 <- gettextf("%1$s = %2$s", calc6, sW)
       } 
       
       calc7 <- gettextf("The correlation coefficient of the sample book values and audit values %1$s", "<i>r<sub>bw</sub></i>")
       if (ready) {
-        r <- round(cor(dataset[, .v(options[["bookValues"]])], dataset[, .v(options[["auditValues"]])]), 2)
+        r <- round(cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]]), 2)
         calc7 <- gettextf("%1$s = %2$s", calc7, r)
       } 
       
       calc8 <- gettextf("The regression coefficient of the sample book values and audit values %1$s", "<i>b<sub>1</sub></i>")
       if (ready) {
-        b1 <- round((sum(dataset[, .v(options[["bookValues"]])] * dataset[, .v(options[["auditValues"]])]) - n * meanB * meanW) / (sum(dataset[, .v(options[["bookValues"]])]^2) - (sum(dataset[, .v(options[["bookValues"]])])^2) / n), 2)
+        b1 <- round((sum(dataset[[options[["bookValues"]]]] * dataset[[options[["auditValues"]]]]) - n * meanB * meanW) / (sum(dataset[[options[["bookValues"]]]]^2) - (sum(dataset[[options[["bookValues"]]]])^2) / n), 2)
         calc8 <- gettextf("%1$s = %2$s", calc8, b1)
       } 
       
@@ -768,7 +768,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   
   if (!ready) return()
   
-  d <- data.frame(xx= dataset[,.v(options[["bookValues"]])], yy= dataset[,.v(options[["auditValues"]])])
+  d <- data.frame(xx= dataset[[options[["bookValues"]]]], yy= dataset[[options[["auditValues"]]]])
   co <- cor(d$xx, d$yy, method = "pearson")
   d <- na.omit(d)
   d <- ceiling(d)
@@ -798,10 +798,10 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   cols[which(d$xx != d$yy)] <- "red"
   
   p <- ggplot2::ggplot(data = d, mapping = ggplot2::aes(x = xx, y = yy)) +
-    ggplot2::scale_x_continuous(name = gettext("Book values"),
+    ggplot2::scale_x_continuous(name = gettext("Book value"),
                                 breaks = xticks,
                                 labels = xLabs) +
-    ggplot2::scale_y_continuous(name = gettext("Audit values"),
+    ggplot2::scale_y_continuous(name = gettext("Audit value"),
                                 breaks = yticks,
                                 labels = yLabs) + 
     jaspGraphs::geom_point(size = 3, fill = cols)
@@ -813,9 +813,9 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
                                     lwd = 1)
   p <- p + ggplot2::annotate("text", x = xticks[1], y = (yticks[length(yticks)] - ((yticks[length(yticks)] - yticks[length(yticks) - 1]) / 2)),
                              label = paste0("italic(r) == ", co), size = 8, parse = TRUE, hjust = -0.5, vjust = 0.5)
-  p <- p + ggplot2::theme(panel.grid.major.x = ggplot2::element_line(color="#cbcbcb"), panel.grid.major.y = ggplot2::element_line(color="#cbcbcb"))
-  
-  p <- jaspGraphs::themeJasp(p)
+  p <- p + ggplot2::theme(panel.grid.major.x = ggplot2::element_line(color="#cbcbcb"), panel.grid.major.y = ggplot2::element_line(color="#cbcbcb")) +
+           jaspGraphs::geom_rangeframe() + 
+	       jaspGraphs::themeJaspRaw(legend.position = "none")
   
   correlationPlot$plotObject <- p
   

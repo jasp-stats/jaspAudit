@@ -1,26 +1,27 @@
 Package: jaspAudit
 Type: Package
 Title: Audit Module for JASP
-Version: 0.15
-Date: 2021-09-03
+Version: 0.15.1
+Date: 2021-09-13
 Author: Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille, and Ruud Wetzels
 Website: https://github.com/jasp-stats/jaspAudit
 Maintainer: Koen Derks <k.derks@nyenrode.nl>
-Description: Evaluate misstatement in audit samples
+Description: Analyse and evaluate misstatement in audit samples
 License: GPL (>= 2)
 Encoding: UTF-8
 Imports:
-  BAS,
   bstats,
   digitTests (>= 0.1.0),
+  extraDistr,
   ggplot2,
   ggrepel,
   jaspBase,
   jaspGraphs,
-  jfa (== 0.5.7),
+  jfa (>= 0.6.0),
   utils
 Remotes:
   jasp-stats/jaspBase,
   jasp-stats/jaspGraphs,
   alexanderlynl/bstats,
-  koenderks/digitTests
+  koenderks/digitTests,
+  koenderks/jfa

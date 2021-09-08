@@ -22,194 +22,162 @@ import JASP.Controls					1.0
 import JASP.Widgets						1.0
 
 Form {
-	
-	columns: 1
+    columns: 							2
 
-	GridLayout
-	{
-		columns: 						2
-		columnSpacing:					150 * preferencesModel.uiScale
+    VariablesForm
+    {
+        id: 							variablesFormBenfordsLaw
+        preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
 
-		GroupBox
-		{
-			id: 						auditRisk
-			title: 						qsTr("Audit Risk")
+        AvailableVariablesList
+        {
+            name: 						"variablesFormBenfordsLaw"
+        }
 
-			PercentField
-			{
-				name: 					"confidence"
-				label: 					qsTr("Confidence")
-				decimals: 				2
-				defaultValue: 			95
-				min:					0.1
-				max:					99.9
-			}
-		}
+        AssignedVariablesList
+        {
+            id: 						values
+            name: 						"values"
+            title: 						qsTr("Variable")
+            singleVariable:				true
+            allowedColumns:				["scale"]
+        }
+    }
 
-		GroupBox
-		{
-			title: 						qsTr("Explanatory Text")
+    RadioButtonGroup
+    {
+        name:							"distribution"
+        title: 							qsTr("Reference")
 
-			RowLayout
-			{
-				CheckBox
-				{
-					id: 				explanatoryText
-					text:	 			qsTr("Enable")
-					name: 				"explanatoryText"
-					checked: 			true
-				}
+        RadioButton
+        {
+            name:						"benford"
+            text:						qsTr("Benford's law")
+            checked:					true
+        }
 
-				HelpButton
-				{
-					helpPage:			"Audit/explanatoryText"
-					toolTip: 			qsTr("Click to learn more about the explanatory text.")
-				}
-			}
-		}
-	}
+        RadioButton
+        {
+            name:						"uniform"
+            text:						qsTr("Uniform distribution")
+        }
+    }
 
-	Divider { }
+    Group
+    {
+        title: 							qsTr("Display")
 
-	VariablesForm
-	{
-		id: 							variablesFormBenfordsLaw
-		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
+        Row
+        {
+            CheckBox
+            {
+                id: 					explanatoryText
+                text: 					qsTr("Explanatory text")
+                name: 					"explanatoryText"
+                checked: 				true
 
-		AvailableVariablesList
-		{
-			name: 						"variablesFormBenfordsLaw"
-		}
+                CIField
+                {
+                    name: 				"confidence"
+                    label: 				qsTr("Confidence")
+                }
+            }
 
-		AssignedVariablesList
-		{
-			id: 						values
-			name: 						"values"
-			title: 						qsTr("Variable")
-			singleVariable:				true
-			allowedColumns:				["scale"]
-		}
-	}
+            HelpButton
+            {
+                helpPage:				"Audit/explanatoryText"
+                toolTip: 				qsTr("Show explanatory text at each step of the analysis")
+            }
+        }
+    }
 
-	GridLayout
-	{
-		columns: 						2
-		columnSpacing:					150 * preferencesModel.uiScale
+    RadioButtonGroup
+    {
+        name:							"digits"
+        title: 							qsTr("Digits")
 
-		ColumnLayout
-		{
+        RadioButton
+        {
+            name:						"first"
+            text:						qsTr("First")
+            checked:					true
+        }
 
-			RadioButtonGroup
-			{
-				name:					"distribution"
-				title: 					qsTr("Reference Distribution")
+        RadioButton
+        {
+            name:						"firsttwo"
+            text:						qsTr("First and second")
+        }
 
-				RadioButton
-				{
-					name:				"benford"
-					text:				qsTr("Benford's law")
-					checked:			true
-				}
+        RadioButton
+        {
+            name:						"last"
+            text:						qsTr("Last")
+        }
+    }
 
-				RadioButton
-				{
-					name:				"uniform"
-					text:				qsTr("Uniform distribution")
-				}
-			}
+    Group
+    {
+        title: 							qsTr("Tables")
 
-			RadioButtonGroup
-			{
-				name:					"digits"
-				title: 					qsTr("Check Digits")
+        CheckBox
+        {
+            text: 						qsTr("Frequency table")
+            name: 						"summaryTable"
+            checked: 					true
+        }
+    }
 
-				RadioButton
-				{
-					name:				"first"
-					text:				qsTr("First digit")
-					checked:			true
-				}
+    RadioButtonGroup
+    {
+        name:							"bayesFactorType"
+        title:							"Bayes Factor"
 
-				RadioButton
-				{
-					name:				"firsttwo"
-					text:				qsTr("First and second digits")
-				}
+        RadioButton
+        {
+            name:						"BF10"
+            text:						qsTr("BF\u2081\u2080")
+            checked:					true
+        }
 
-				RadioButton
-				{
-					name:				"last"
-					text:				qsTr("Last digit")
-				}
-			}
+        RadioButton
+        {
+            name:						"BF01"
+            text:						qsTr("BF\u2080\u2081")
+        }
 
-			RadioButtonGroup
-			{
-				name:					"bayesFactorType"
-				title:					"Bayes Factor"
+        RadioButton
+        {
+            name:						"logBF10"
+            text:						qsTr("Log(BF\u2081\u2080)")
+        }
+    }
 
-				RadioButton
-				{
-					name:				"BF10"
-					text:				qsTr("BF\u2081\u2080")
-					checked:			true
-				}
+    Group
+    {
+        title: 							qsTr("Plots")
 
-				RadioButton
-				{
-					name:				"BF01"
-					text:				qsTr("BF\u2080\u2081")
-				}
+        CheckBox
+        {
+            text: 						qsTr("Observed vs. expected")
+            name: 						"benfordsLawPlot"
+        }
+    }
 
-				RadioButton
-				{
-					name:				"logBF10"
-					text:				qsTr("Log(BF\u2081\u2080)")
-				}
-			}
-		}
+    Item
+    {
+        Layout.preferredHeight: 		download.height
+        Layout.fillWidth: 				true
+        Layout.columnSpan:				2
 
-		ColumnLayout
-		{
-
-			GroupBox
-			{
-				title: 					qsTr("Tables")
-
-				CheckBox
-				{
-					text: 				qsTr("Frequency statistics")
-					name: 				"summaryTable"
-					checked: 			true
-				}
-			}
-
-			GroupBox
-			{
-				title: 					qsTr("Plots")
-
-				CheckBox
-				{
-					text: 				qsTr("Compare to reference distribution")
-					name: 				"benfordsLawPlot"
-				}
-			}
-		}
-	}
-
-	Item
-	{
-		Layout.preferredHeight: 		downloadReportBenfordsLaw.height
-		Layout.fillWidth: 				true
-
-		Button
-		{
-			id: 						downloadReportBenfordsLaw
-			enabled: 					values.count > 0
-			anchors.right:				parent.right
-			anchors.bottom:				parent.bottom
-			text: 						qsTr("<b>Download Report</b>")
-			onClicked: 					form.exportResults()
-		}
-	}
+        Button
+        {
+            id: 						download
+            enabled: 					values.count > 0
+            anchors.right:				parent.right
+            anchors.bottom:				parent.bottom
+            text: 						qsTr("<b>Download Report</b>")
+            onClicked: 					form.exportResults()
+        }
+    }
 }

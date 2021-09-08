@@ -1,79 +1,57 @@
 True Value Estimation
-==========================
+===
 
-Estimation is applied when the auditor has collected a sample of the population, and wants to estimate the total error is the population on the basis of their sample.
+The estimation analysis allows the user to estimate the true value of a population on the basis of a sample.
 
-----
+### Input
+---
 
-Default input options
--------
+#### Assignment Box
+- Item ID: A unique non-missing identifier for every item in the population. The row number of the items is sufficient.
+- Book Value: The variable that contains the book values of the items in the population.
+- Audit Value: The variable that contains the audit (true) values, or the binary classification of correct (0) or incorrect (1).
+
+#### Confidence
+The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to have an audit risk of 5%, this equals 95% confidence.
 
 #### Population
-Here you can provide the summary statistics about the population.
+- No. items: The total number of items (rows) in the population.
+- No. units: The total number of units in the population. Note that the units can be items (rows) or monetary units (values) depending on the audit question.
 
-- Size: The total number of observations in the total population.
-- Value: The total value of the population in monetary units.
+#### Method
+- Direct estimator: This method uses only the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
+- Difference estimator: This method uses the difference between the book values and the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
+- Ratio estimator: This method uses the ratio of correctness between the book values and the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
+- Regression estimator: This method uses the linear relation between the book values and the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
 
-#### Audit Risk
-The audit risk determines the risk that the auditor is willing to take to give an incorrect judgment with regards to the fairness of the transactions in the population. The audit risk is the inverse of the confidence of the analysis (audit risk = 1 - confidence).
+#### Display
+- Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
 
-- Confidence: The confidence level for your required statistical statement.
+#### Tables
+- Required sample size: Produces a table that shows, for a given uncertainty, the required sample size.
 
-----
+#### Plots
+- Scatter plot: Produces a scatter plot comparing book values of the selection against their audit values. Observations that are in error are colored in red.
 
-Advanced input options
--------
+### Output
+---
 
-#### Estimator
-Choose which estimator to use for computation of the results.
-
-- Direct estimator
-- Difference estimator
-- Ratio estimator
-- Regression estimator (default)
-
-#### Explanatory text
-Enables explanatory text throughout the workflow to help you interpret the statistical results and procedure.
-
-----
-
-Default output
--------
-
-#### Estimation table
-This table is the default output for the estimation analysis.
-
-- Estimate: The point estimate of the total error in the population.
+#### Estimation Table
+- Estimate W: The point estimate of the total error in the population.
 - Uncertainty: The uncertainty associated with the confidence interval.
-- Confidence interval: The confidence interval associated with the estimate.
+- x-% confidence interval: The confidence interval associated with the estimate.
 
-----
+#### Required Sample Size
+- Estimator: The used method.
+- Uncertainty: The difference between the most likely value and the bounds.
+- Required n: Required sample size.
+- Additional n: Additional sample size.
 
-Advanced output (tables)
--------
+### References
+---
+- AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
+- Touw, P., & Hoogduin, L. (2011). Statistiek voor audit en controlling.
 
-#### Required sample size
-Produces a table that shows, for a given uncertainty, the required sample size.
-
-----
-
-Advanced output (plots)
--------
-
-#### Correlation plot
-Produces a scatter plot comparing book values of the selection against their audit values. Observations that are in error are colored in red.
-
-----
-
-R Packages
--------
-
-- base R
-
-----
-
-References
--------
-
-AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certied 
-Public Accountants.
+### R Packages
+---
+- Base R
