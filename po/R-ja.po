@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
 "POT-Creation-Date: 2021-07-31 03:38\n"
-"PO-Revision-Date: 2021-09-14 08:36+0000\n"
+"PO-Revision-Date: 2021-09-15 17:34+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-r/ja/>\n"
@@ -146,7 +146,7 @@ msgid "Percentage"
 msgstr "パーセンテージ"
 
 msgid "Observed Percentages vs. Expected Percentages"
-msgstr "観測されたパーセンテージと期待されたパーセンテージとの比較"
+msgstr "観測されたパーセンテージ vs. 期待されたパーセンテージ"
 
 msgid "Observed"
 msgstr ""
@@ -467,9 +467,8 @@ msgstr "<b>表 %i.</b> 記述統計"
 msgid "Value"
 msgstr "値"
 
-#, fuzzy
 msgid "Observed vs. Expected Average Frequency"
-msgstr "観測されたパーセンテージと期待されたパーセンテージとの比較"
+msgstr "観測されたパーセンテージ vs. 期待されたパーセンテージ"
 
 #, fuzzy
 msgid "Average frequency"
@@ -483,9 +482,8 @@ msgid ""
 "observed average frequency in the data set."
 msgstr ""
 
-#, fuzzy
 msgid "Observed vs. Expected Entropy"
-msgstr "観測されたパーセンテージと期待されたパーセンテージとの比較"
+msgstr "観測されたパーセンテージ vs. 期待されたパーセンテージ"
 
 msgid ""
 "<b>Figure %i:</b> The expected entropy of values versus the observed entropy "
