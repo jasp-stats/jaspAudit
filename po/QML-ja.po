@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-09-08 12:11+0000\n"
-"Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"qml/ja/>\n"
+"PO-Revision-Date: 2021-09-15 17:35+0000\n"
+"Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.8.1-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 "X-Language: ja\n"
 "X-Qt-Contexts: true\n"
 
@@ -114,7 +114,7 @@ msgstr "監査リスク"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Confidence"
-msgstr "コンフィデンス"
+msgstr "信頼度"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Transaction ID's"
@@ -482,7 +482,7 @@ msgstr "監査リスク"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Confidence"
-msgstr "コンフィデンス"
+msgstr "信頼度"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior Information"
@@ -730,7 +730,7 @@ msgstr "監査リスク"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Confidence"
-msgstr "コンフィデンス"
+msgstr "信頼度"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Explanatory Text"
@@ -1338,7 +1338,7 @@ msgstr "一様分布"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Confidence"
-msgstr "コンフィデンス"
+msgstr "信頼度"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Explanatory Text"
@@ -1382,7 +1382,7 @@ msgstr "監査リスク"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Confidence"
-msgstr "コンフィデンス"
+msgstr "信頼度"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Explanatory Text"
@@ -1466,7 +1466,7 @@ msgstr "監査リスク"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Confidence"
-msgstr "コンフィデンス"
+msgstr "信頼度"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Transaction ID's"
@@ -1730,7 +1730,7 @@ msgstr "監査リスク"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Confidence"
-msgstr "コンフィデンス"
+msgstr "信頼度"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Risk Assessments"
@@ -1874,7 +1874,7 @@ msgstr "監査リスク"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Confidence"
-msgstr "コンフィデンス"
+msgstr "信頼度"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Explanatory Text"
@@ -2548,7 +2548,7 @@ msgstr "繰り返し値分析"
 
 msgctxt "Description|"
 msgid "True Value Estimation"
-msgstr "真の値の推定"
+msgstr "真値の推定"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Dollar ($)"
@@ -2670,7 +2670,7 @@ msgstr "監査リスク"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
-msgstr "コンフィデンス"
+msgstr "信頼度"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory Text"
