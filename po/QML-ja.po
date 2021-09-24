@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-09-15 17:35+0000\n"
-"Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"qml/ja/>\n"
+"PO-Revision-Date: 2021-09-24 01:34+0000\n"
+"Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -642,7 +642,7 @@ msgstr "表"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Implicit sample induced by prior distribution"
-msgstr "事前分布によって誘発された暗黙のサンプル"
+msgstr "事前分布によって誘発された暗黙のサンプル(implicit sample)"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Description of prior and expected posterior distribution"
@@ -658,7 +658,7 @@ msgstr "必要なサンプルサイズの比較"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Implied prior distribution"
-msgstr "暗黙の事前分布"
+msgstr "暗黙の(implied)事前分布"
 
 msgctxt "auditBayesianPlanning|"
 msgid "x-axis limit"
@@ -962,7 +962,7 @@ msgstr "Ist値の記述的統計量"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Implicit sample induced by prior distribution"
-msgstr "事前分布によって誘発された暗黙のサンプル"
+msgstr "事前分布によって誘発された暗黙のサンプル(implicit sample)"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Description of prior and expected posterior distribution"
@@ -982,7 +982,7 @@ msgstr "必要なサンプルサイズの比較"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Implied prior distribution"
-msgstr "暗黙の事前分布"
+msgstr "暗黙の(implied)事前分布"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "x-axis limit"
@@ -1826,7 +1826,7 @@ msgstr "必要なサンプルサイズの比較"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Implied distribution of errors"
-msgstr "誤差の暗黙の分布"
+msgstr "誤差の暗黙の(implied)分布"
 
 msgctxt "auditClassicalPlanning|"
 msgid "<b>Download Report</b>"
@@ -2034,7 +2034,7 @@ msgstr "必要なサンプルサイズの比較"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Implied distribution of errors"
-msgstr "誤差の暗黙の分布"
+msgstr "誤差の暗黙の(implied)分布"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Download Report</b>"
@@ -2524,15 +2524,15 @@ msgstr "<b>レポートのダウンロード</b>"
 
 msgctxt "Description|"
 msgid "Classical Sampling Workflow"
-msgstr "古典的なサンプリングワークフロー"
+msgstr "伝統的なサンプリングワークフロー"
 
 msgctxt "Description|"
 msgid "Classical Planning"
-msgstr "古典的な計画"
+msgstr "伝統的な計画"
 
 msgctxt "Description|"
 msgid "Classical Evaluation"
-msgstr "古典的評価"
+msgstr "伝統的評価"
 
 msgctxt "Description|"
 msgid "Digit Analysis"
