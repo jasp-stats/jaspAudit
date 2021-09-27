@@ -23,16 +23,20 @@ results <- jaspTools::runAnalysis("auditClassicalEvaluation", dataset, options)
 
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list("5%", "1.075%", 93, 0.0499757952426165, "3.279%", "1.075%", "4.354%",
-			 1))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      "5%", "1.075%", 93, 0.0499757952426165, "3.279%", "1.075%", "4.354%",
+      1
+    )
+  )
 })
 
 test_that("Evaluation of Sampling Objectives plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-1")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-1")
 })
 
 ### Test 2: Evaluation using correct / incorrect
@@ -55,16 +59,20 @@ results <- jaspTools::runAnalysis("auditClassicalEvaluation", "auditRattle.csv",
 
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list("20%", "50.602%", 83, 0.999999952510011, "14.848%", "50.602%",
-			 "65.451%", 42))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      "20%", "50.602%", 83, 0.999999952510011, "14.848%", "50.602%",
+      "65.451%", 42
+    )
+  )
 })
 
 test_that("Evaluation of Sampling Objectives plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-2")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-2")
 })
 
 ### Test 3: Evaluation using soll values
@@ -91,20 +99,24 @@ results <- jaspTools::runAnalysis("auditClassicalEvaluation", "test-auditClassic
 
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(70161, 15384.6326972187, 234, 22689.2669334712, 3, 38073.8996306899,
-			 5))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      70161, 15384.6326972187, 234, 22689.2669334712, 3, 38073.8996306899,
+      5
+    )
+  )
 })
 
 test_that("Evaluation of Sampling Objectives plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-3")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-3")
 })
 
 test_that("Scatter Plot of Book and Audit Values matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotScatter"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "scatter-plot-of-book-and-audit-values")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotScatter"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "scatter-plot-of-book-and-audit-values")
 })
