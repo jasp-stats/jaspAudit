@@ -124,7 +124,7 @@
 
     if (method != "hypergeometric") { # Gamma and beta priors
 
-      title <- ifelse(options[["separateMisstatement"]], yes = gettextf("Unseen population misstatement %1$s", "\u03B8"), no = gettextf("Population misstatement %1$s", "\u03B8"))
+      title <- if (options[["separateMisstatement"]]) gettextf("Unseen population misstatement %1$s", "\u03B8") else gettextf("Population misstatement %1$s", "\u03B8")
       dataPrior <- data.frame(x = c(0, 1), type = factor(gettext("Prior")))
       dataPosterior <- data.frame(x = c(0, 1), type = factor(gettext("Posterior")))
 

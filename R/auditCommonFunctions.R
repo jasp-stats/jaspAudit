@@ -776,10 +776,7 @@
         parentContainer$setError(gettext("Analysis not possible: The materiality is higher than, or equal to the total value of the observations."))
         return(TRUE)
       }
-      expTMP <- ifelse(options[["expected_type"]] == "expected_rel",
-        yes = options[["expected_rel_val"]],
-        no = options[["expected_abs_val"]]
-      )
+      expTMP <- if (options[["expected_type"]] == "expected_rel") options[["expected_rel_val"]] else options[["expected_abs_val"]]
       if (options[["materiality_type"]] == "materiality_abs") {
         expTMP <- expTMP / parentOptions[["N.units"]]
       }
@@ -957,10 +954,7 @@
           samplingObjectivesMessage2 <- gettextf("the sample provides sufficient information to conclude that the misstatement %1$s is below the performance materiality %1$s* with the minimum precision", "\u03B8")
         }
 
-        separateMisstatementMessage <- ifelse(options[["separateMisstatement"]],
-          yes = gettext("\n\nFurthermore, the uncertainty regarding \u03B8 will only be extrapolated over the unseen part of the population. This requires the additional assumption that the population taints are homogeneous."),
-          no = ""
-        )
+        separateMisstatementMessage <- if(options[["separateMisstatement"]]) gettext("\n\nFurthermore, the uncertainty regarding \u03B8 will only be extrapolated over the unseen part of the population. This requires the additional assumption that the population taints are homogeneous.") else ""
 
         distribution <- options[["likelihood"]]
         if (options[["bayesian"]]) {
@@ -1072,9 +1066,9 @@
       message <- gettextf(
         "The purpose of the selection stage is to statistically select a number of sampling units from the population. Sampling units can be individual items (rows) or individual monetary units. The sampling units are selected from the population according to the selection method. To learn more about the current selection method, look under the <i>Method</i> section.\n\nFrom the population of <b>%1$s</b> %2$s items, <b>%3$s</b> sampling units (<i>%4$s</i>) are selected from the %5$s using a <b>%6$s</b> method.%7$s",
         stageOptions[["N.items"]],
-        ifelse(options[["randomize"]], yes = gettext("randomized"), no = "non-randomized"),
+        if (options[["randomize"]]) gettext("randomized") else gettext("non-randomized"),
         if (options[["workflow"]]) prevState[["n"]] else options[["n"]],
-        if (options[["units"]] == "items") "items" else "monetary units",
+        if (options[["units"]] == "items") gettext("items") else gettext("monetary units"),
         label_var,
         label_method,
         warningMessage
@@ -1140,10 +1134,7 @@
         }
       }
 
-      additionalMessage <- ifelse(approveMateriality && approvePrecision,
-        yes = gettext("\n\n<b>Objectives:</b> You have achieved your initial sampling objectives."),
-        no = gettext("\n\n<b>Objectives:</b> You have not achieved your initial sampling objectives. It is recommended to draw more samples from this population and continue audit procedures.")
-      )
+      additionalMessage <- if (approveMateriality && approvePrecision) gettext("\n\n<b>Objectives:</b> You have achieved your initial sampling objectives.") else gettext("\n\n<b>Objectives:</b> You have not achieved your initial sampling objectives. It is recommended to draw more samples from this population and continue audit procedures.")
 
       if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
         message <- gettextf(
@@ -3063,8 +3054,8 @@
       }
 
       objectiveColor <- "orange"
-      boundColor <- ifelse(bound < materiality, yes = rgb(0, 1, .7, 1), no = rgb(1, 0, 0, 1))
-      precisionColor <- ifelse(precision < min_precision, yes = rgb(0, 1, .7, 1), no = rgb(1, 0, 0, 1))
+      boundColor <- if (bound < materiality) rgb(0, 1, .7, 1) else rgb(1, 0, 0, 1)
+      precisionColor <- if (precision < min_precision) rgb(0, 1, .7, 1) else rgb(1, 0, 0, 1)
 
       if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
         label <- rev(c(gettext("Performance materiality"), gettext("Upper bound"), gettext("Most likely error")))
@@ -3255,7 +3246,7 @@
     figureCaption <- createJaspHtml(gettextf(
       "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and their corresponding audit values. Grey dots on the diagonal (dashed line) indicate matching book and audit values. Red dots off the diagonal indicate items whose audit value did not match their original book value. If these red dots lie below the diagonal, the items are overstated. If these red dots lie above the diagonal they are understated. %2$s",
       jaspResults[["figNumber"]]$object,
-      ifelse(options[["plotScatterCorrelation"]], yes = "The value <i>r</i> is the Pearson correlation coefficient of the book values and the audit values, an indicator of the strength of the linear relationship (solid line) between the two.", no = "")
+      if (options[["plotScatterCorrelation"]]) "The value <i>r</i> is the Pearson correlation coefficient of the book values and the audit values, an indicator of the strength of the linear relationship (solid line) between the two." else ""
     ), "p")
 
     figureCaption$position <- positionInContainer + 1

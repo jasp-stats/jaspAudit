@@ -117,76 +117,76 @@ Form {
         }
     }
 
-	Group
-	{
-		Group
-		{
-			title: 						qsTr("Tables")
+    Group
+    {
+        Group
+        {
+            title: 						qsTr("Tables")
 
-			CheckBox
-			{
-				text: 					qsTr("Assumption checks")
-				name: 					"correlationTable"
-				checked: 				true
-			}
+            CheckBox
+            {
+                text: 					qsTr("Assumption checks")
+                name: 					"correlationTable"
+                checked: 				true
+            }
 
-			CheckBox
-			{
-				text: 					qsTr("Frequency table")
-				name: 					"summaryTable"
-			}
-		}
+            CheckBox
+            {
+                text: 					qsTr("Frequency table")
+                name: 					"summaryTable"
+            }
+        }
 
-		Group
-		{
-			title: 						qsTr("Plots")
+        Group
+        {
+            title: 						qsTr("Plots")
 
-			CheckBox
-			{
-				text: 					qsTr("Observed vs. expected")
-				name: 					"numberBunchingSimulationPlots"
-			}
+            CheckBox
+            {
+                text: 					qsTr("Observed vs. expected")
+                name: 					"numberBunchingSimulationPlots"
+            }
 
-			CheckBox
-			{
-				text: 					qsTr("Histogram")
-				name: 					"numberBunchingHistogram"
+            CheckBox
+            {
+                text: 					qsTr("Histogram")
+                name: 					"numberBunchingHistogram"
 
-				IntegerField
-				{
-					name: 				"noHeads"
-					label: 				qsTr("Label")
-					afterLabel:			qsTr("with highest occurrence")
-					min: 				0
-					defaultValue:		0
-					max:				20
-				}
-			}
-		}
-	}
+                IntegerField
+                {
+                    name: 				"noHeads"
+                    label: 				qsTr("Label")
+                    afterLabel:			qsTr("with highest occurrence")
+                    min: 				0
+                    defaultValue:		0
+                    max:				20
+                }
+            }
+        }
+    }
 
     Section
     {
         title:							qsTr("Advanced Options")
         columns:						2
 
-		IntegerField
-		{
-			name: 						"noSamples"
-			label: 						qsTr("Number of samples")
-			min: 						100
-			defaultValue: 				500
-			max: 						500000
-			fieldWidth:					70
-		}
+        IntegerField
+        {
+            name: 						"noSamples"
+            label: 						qsTr("Number of samples")
+            min: 						100
+            defaultValue: 				500
+            max: 						500000
+            fieldWidth:					70
+        }
 
-		IntegerField
-		{
-			name: 						"seed"
-			label: 						qsTr("Seed")
-			defaultValue: 				1
-		}
-	}
+        IntegerField
+        {
+            name: 						"seed"
+            label: 						qsTr("Seed")
+            defaultValue: 				1
+        }
+    }
 
     Item
     {

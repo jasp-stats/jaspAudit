@@ -192,12 +192,12 @@ Form
             }
         }
 
-		CIField
-		{
-			name: 									"conf_level"
-			label: 									qsTr("Confidence")
-			enabled:								!pasteVariables.checked
-		}
+        CIField
+        {
+            name: 									"conf_level"
+            label: 									qsTr("Confidence")
+            enabled:								!pasteVariables.checked
+        }
 
         Divider { }
 
@@ -465,7 +465,7 @@ Form
 
                         RadioButton
                         {
-							id:						inspect
+                            id:						inspect
                             text: 					qsTr("Keep")
                             name: 					"inspect"
                             checked: 				true
@@ -506,14 +506,14 @@ Form
                 }
             }
 
-			IntegerField
-			{
-				name: 								"by"
-				text: 								qsTr("Increment")
-				min: 								1
-				defaultValue: 						1
-				enabled:							!pasteVariables.checked
-			}
+            IntegerField
+            {
+                name: 								"by"
+                text: 								qsTr("Increment")
+                min: 								1
+                defaultValue: 						1
+                enabled:							!pasteVariables.checked
+            }
         }
 
         Item

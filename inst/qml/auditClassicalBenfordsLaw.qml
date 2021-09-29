@@ -13,7 +13,7 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-// When making changes to this file always mention @koenderks as a 
+// When making changes to this file always mention @koenderks as a
 // reviewer in the Pull Request
 
 import QtQuick							2.8
@@ -22,7 +22,7 @@ import JASP.Controls					1.0
 import JASP.Widgets						1.0
 
 Form {
-    columns: 							2
+    columns:							2
 
     VariablesForm
     {
@@ -155,29 +155,29 @@ Form {
 
     Group
     {
-        title: 							qsTr("Plots")
+        title:							qsTr("Plots")
 
         CheckBox
         {
-            text: 						qsTr("Observed vs. expected")
-            name: 						"benfordsLawPlot"
+            text:						qsTr("Observed vs. expected")
+            name:						"benfordsLawPlot"
         }
     }
 
     Item
     {
-        Layout.preferredHeight: 		download.height
-        Layout.fillWidth: 				true
+        Layout.preferredHeight:			download.height
+        Layout.fillWidth:				true
         Layout.columnSpan:				2
 
         Button
         {
-            id: 						download
+            id:							download
             enabled: 					values.count > 0
             anchors.right:				parent.right
             anchors.bottom:				parent.bottom
-            text: 						qsTr("<b>Download Report</b>")
-            onClicked: 					form.exportResults()
+            text:						qsTr("<b>Download Report</b>")
+            onClicked:					form.exportResults()
         }
     }
 }

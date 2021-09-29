@@ -8,6 +8,7 @@ options$values <- "bookValue"
 options$n <- 200
 options$tableSample <- TRUE
 options$export_sample <- FALSE
+options$file <- ""
 options$units <- "values"
 options$sampling_method <- "interval"
 options$name_indicator <- ""
@@ -127,6 +128,7 @@ options$values <- "bookValue"
 options$n <- 200
 options$tableSample <- TRUE
 options$export_sample <- FALSE
+options$file <- ""
 options$units <- "items"
 options$sampling_method <- "random"
 options$name_indicator <- ""
@@ -234,6 +236,7 @@ options$n <- 40
 options$tableDescriptives <- TRUE
 options$tableSample <- TRUE
 options$export_sample <- FALSE
+options$file <- ""
 options$units <- "values"
 options$sampling_method <- "random"
 options$name_indicator <- ""

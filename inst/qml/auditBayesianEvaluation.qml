@@ -184,11 +184,11 @@ Form
             }
         }
 
-		CIField
-		{
-			name: 								"conf_level"
-			label: 								qsTr("Confidence")
-		}
+        CIField
+        {
+            name: 								"conf_level"
+            label: 								qsTr("Confidence")
+        }
     }
 
     Divider { }
@@ -540,8 +540,8 @@ Form
                         startValue:					"high"
                         label: 						qsTr("Inherent risk")
                         values: 					[
-                            { label: qsTr("High"),	value: "high"},
-                            { label: qsTr("Medium"), value: "medium"},
+                            { label: qsTr("High"),      value: "high"},
+                            { label: qsTr("Medium"),    value: "medium"},
                             { label: qsTr("Low"), 		value: "low"},
                             { label: qsTr("Manual"), 	value: "custom"}
                         ]
@@ -696,7 +696,7 @@ Form
             {
                 text: 							qsTr("Extrapolated amounts")
                 name: 							"amount"
-                enabled:						n_units.value != 0
+                enabled:						n_units.value > 0
             }
         }
 
@@ -711,7 +711,7 @@ Form
                     id: 						separate
                     text: 						qsTr("Assume homogeneous taints")
                     name: 						"separateMisstatement"
-					enabled:					id.count > 0 && values.count > 0 && auditResult.count > 0 && n_items.value > 0 && n_units.value > 0 && binomial.checked
+                    enabled:					id.count > 0 && values.count > 0 && auditResult.count > 0 && n_items.value > 0 && n_units.value > 0 && binomial.checked
                 }
 
                 HelpButton

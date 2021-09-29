@@ -203,11 +203,11 @@ Form
             }
         }
 
-		CIField
-		{
-			name: 								"conf_level"
-			label: 								qsTr("Confidence")
-		}
+        CIField
+        {
+            name: 								"conf_level"
+            label: 								qsTr("Confidence")
+        }
     }
 
     Divider { }

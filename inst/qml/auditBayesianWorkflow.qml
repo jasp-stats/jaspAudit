@@ -170,12 +170,12 @@ Form
             }
         }
 
-		CIField
-		{
-			name: 									"conf_level"
-			label: 									qsTr("Confidence")
-			enabled:								!pasteVariables.checked
-		}
+        CIField
+        {
+            name: 									"conf_level"
+            label: 									qsTr("Confidence")
+            enabled:								!pasteVariables.checked
+        }
 
         Divider { }
 
@@ -224,7 +224,7 @@ Form
             id: 									expected
             name: 									"expected_type"
             title: 									qsTr("Expected Errors in Sample")
-			enabled:								!pasteVariables.checked
+            enabled:								!pasteVariables.checked
 
             RadioButton
             {
@@ -397,14 +397,14 @@ Form
             RadioButtonGroup
             {
                 name: 								"prior_method"
-				enabled:							!pasteVariables.checked
+                enabled:							!pasteVariables.checked
 
-				RadioButton
-				{
-					name: 							"default"
-					label:							qsTr("Default")
-					checked:						true
-				}
+                RadioButton
+                {
+                    name: 							"default"
+                    label:							qsTr("Default")
+                    checked:						true
+                }
 
                 RadioButton
                 {
@@ -566,7 +566,7 @@ Form
 
                         RadioButton
                         {
-							id:						inspect
+                            id:						inspect
                             text: 					qsTr("Keep")
                             name: 					"inspect"
                             checked: 				true
@@ -607,14 +607,14 @@ Form
                 }
             }
 
-			IntegerField
-			{
-				name: 								"by"
-				text: 								qsTr("Increment")
-				min: 								1
-				defaultValue: 						1
-				enabled:							!pasteVariables.checked
-			}
+            IntegerField
+            {
+                name: 								"by"
+                text: 								qsTr("Increment")
+                min: 								1
+                defaultValue: 						1
+                enabled:							!pasteVariables.checked
+            }
 
             Group
             {
@@ -627,7 +627,7 @@ Form
                         id: 						separate
                         text: 						qsTr("Assume homogeneous taints")
                         name: 						"separateMisstatement"
-						enabled:					!pasteVariables.checked && id.count > 0 && values.count > 0 && lik_binomial.checked
+                        enabled:					!pasteVariables.checked && id.count > 0 && values.count > 0 && lik_binomial.checked
                     }
 
                     HelpButton
@@ -734,7 +734,7 @@ Form
                 text: 								qsTr("Items")
                 name: 								"items"
                 checked: 							true
-				enabled:							!separate.checked
+                enabled:							!separate.checked
             }
 
             HelpButton
@@ -804,7 +804,7 @@ Form
                                 defaultValue: 		1
                                 min: 				1
                                 visible:			interval.checked
-								enabled:			!separate.checked
+                                enabled:			!separate.checked
                             }
                         }
 
@@ -822,7 +822,7 @@ Form
                             id: 					cell
                             text: 					qsTr("Cell sampling")
                             name: 					"cell"
-							enabled:				!separate.checked
+                            enabled:				!separate.checked
 
                             IntegerField
                             {
@@ -850,7 +850,7 @@ Form
                             id: 					random
                             text: 					qsTr("Random sampling")
                             name: 					"random"
-							enabled:				!separate.checked
+                            enabled:				!separate.checked
 
                             IntegerField
                             {

@@ -171,11 +171,11 @@ Form
             }
         }
 
-		CIField
-		{
-			name: 								"conf_level"
-			label: 								qsTr("Confidence")
-		}
+        CIField
+        {
+            name: 								"conf_level"
+            label: 								qsTr("Confidence")
+        }
     }
 
     Divider { }
@@ -492,13 +492,13 @@ Form
             }
         }
 
-		IntegerField
-		{
-			name: 								"by"
-			text: 								qsTr("Increment")
-			min: 								1
-			defaultValue: 						1
-		}
+        IntegerField
+        {
+            name: 								"by"
+            text: 								qsTr("Increment")
+            min: 								1
+            defaultValue: 						1
+        }
     }
 
     Item

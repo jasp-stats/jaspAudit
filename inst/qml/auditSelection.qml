@@ -271,38 +271,37 @@ Form
     {
         title: 									qsTr("Export")
 
-		Group
-		{
-			enabled: 							id.count > 0 && nobs.value > 0
+        Group
+        {
+            enabled: 							id.count > 0 && nobs.value > 0
 
-			ComputedColumnField
-			{
-				id:								name_indicator
-				name: 							"name_indicator"
-				text: 							qsTr("Column name selection result")
-				placeholderText: 				qsTr("e.g. Selected")
-				fieldWidth: 					120 * preferencesModel.uiScale
-			}
+            ComputedColumnField
+            {
+                id:								name_indicator
+                name: 							"name_indicator"
+                text: 							qsTr("Column name selection result")
+                placeholderText: 				qsTr("e.g. selected")
+                fieldWidth: 					120 * preferencesModel.uiScale
+            }
 
-			CheckBox
-			{
-				id: 							export_sample
-				name: 							"export_sample"
-				text: 							qsTr("Export sample to file")
-				onCheckedChanged:				if (!checked) exportSample.checked = false
-				enabled:						name_indicator.value != ""
+            FileSelector
+            {
+                id:                             file
+                name:                           "file"
+                label:                          qsTr("Save as")
+                placeholderText: 				qsTr("e.g. sample.csv")
+                filter:                         "*.csv"
+                save:                           true
+                fieldWidth:                     180 * preferencesModel.uiScale
+            }
 
-				FileSelector
-				{
-					id:							file
-					name:						"file"
-					label:  					qsTr("Save as")
-					filter:						"*.csv"
-					save:						true
-					fieldWidth:					180 * preferencesModel.uiScale
-				}
-			}
-		}
+            CheckBox
+            {
+                name: 							"export_sample"
+                text: 							qsTr("Export sample to file")
+                enabled:						name_indicator.value != "" && file.value != ""
+            }
+        }
     }
 
     Item

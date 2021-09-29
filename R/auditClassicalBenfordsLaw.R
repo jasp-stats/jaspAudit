@@ -252,10 +252,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
 
   benfordsLawContainer[["benfordsLawTestTable"]] <- benfordsLawTestTable
 
-  df <- ifelse(options[["digits"]] == "first" || options[["digits"]] == "last",
-    yes = 8,
-    no = 89
-  )
+  df <- if (options[["digits"]] == "first" || options[["digits"]] == "last") 8 else 89
 
   if (!ready) {
     row <- data.frame(test = ".", N = ".", value = ".", df = df, pvalue = ".", bf = ".")
