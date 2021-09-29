@@ -24,299 +24,299 @@ import JASP.Widgets 							1.0
 Form 
 {
 
-    columns:									2
+	columns:									2
 
-    // Extra options
-    CheckBox
-    {
-        name:									"workflow"
-        checked:								false
-        visible:								false
-    }
+	// Extra options
+	CheckBox
+	{
+		name:									"workflow"
+		checked:								false
+		visible:								false
+	}
 
-    VariablesForm
-    {
-        id:										variablesFormSampling
+	VariablesForm
+	{
+		id:										variablesFormSampling
 
-        AvailableVariablesList
-        {
-            name:								"variablesFormSampling"
-        }
+		AvailableVariablesList
+		{
+			name:								"variablesFormSampling"
+		}
 
-        AssignedVariablesList
-        {
-            id:									id
-            name:								"id"
-            title:								qsTr("Item ID")
-            singleVariable:						true
-            allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
-            allowAnalysisOwnComputedColumns:	false
-        }
+		AssignedVariablesList
+		{
+			id:									id
+			name:								"id"
+			title:								qsTr("Item ID")
+			singleVariable:						true
+			allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
+			allowAnalysisOwnComputedColumns:	false
+		}
 
-        AssignedVariablesList
-        {
-            id:									values
-            name:								"values"
-            title:								qsTr("Book Value")
-            singleVariable:						true
-            allowedColumns:						["scale"]
-            allowAnalysisOwnComputedColumns:	false
-            onCountChanged:						values.count == 0 ? rows_sampling.click() : values_sampling.click()
-        }
+		AssignedVariablesList
+		{
+			id:									values
+			name:								"values"
+			title:								qsTr("Book Value")
+			singleVariable:						true
+			allowedColumns:						["scale"]
+			allowAnalysisOwnComputedColumns:	false
+			onCountChanged:						values.count == 0 ? rows_sampling.click() : values_sampling.click()
+		}
 
-        AssignedVariablesList
-        {
-            name:								"rank"
-            title: 								qsTr("Ranking Variable")
-            singleVariable:						true
-            allowedColumns:						["scale"]
-            allowAnalysisOwnComputedColumns: 	false
-        }
+		AssignedVariablesList
+		{
+			name:								"rank"
+			title: 								qsTr("Ranking Variable")
+			singleVariable:						true
+			allowedColumns:						["scale"]
+			allowAnalysisOwnComputedColumns: 	false
+		}
 
-        AssignedVariablesList
-        {
-            name:								"variables"
-            title: 								qsTr("Additional Variables")
-            Layout.preferredHeight: 			140 * preferencesModel.uiScale
-            allowedColumns: 					["scale", "ordinal", "nominal"]
-            allowAnalysisOwnComputedColumns: 	false
-        }
-    }
+		AssignedVariablesList
+		{
+			name:								"variables"
+			title: 								qsTr("Additional Variables")
+			Layout.preferredHeight: 			140 * preferencesModel.uiScale
+			allowedColumns: 					["scale", "ordinal", "nominal"]
+			allowAnalysisOwnComputedColumns: 	false
+		}
+	}
 
-    IntegerField
-    {
-        id:										nobs
-        text: 									qsTr("Sample size")
-        name: 									"n"
-        defaultValue: 							0
-        min: 									0
-        fieldWidth: 							60 * preferencesModel.uiScale
-    }
+	IntegerField
+	{
+		id:										nobs
+		text: 									qsTr("Sample size")
+		name: 									"n"
+		defaultValue: 							0
+		min: 									0
+		fieldWidth: 							60 * preferencesModel.uiScale
+	}
 
-    Group
-    {
-        title: 									qsTr("Display")
-        columns: 2
+	Group
+	{
+		title: 									qsTr("Display")
+		columns: 2
 
-        CheckBox
-        {
-            id: 								explanatoryText
-            text: 								qsTr("Explanatory Text")
-            name: 								"explanatoryText"
-            checked: 							true
-        }
+		CheckBox
+		{
+			id: 								explanatoryText
+			text: 								qsTr("Explanatory Text")
+			name: 								"explanatoryText"
+			checked: 							true
+		}
 
-        HelpButton
-        {
-            helpPage:							"Audit/explanatoryText"
-            toolTip: 							qsTr("Show explanatory text at each step of the analysis")
-        }
-    }
+		HelpButton
+		{
+			helpPage:							"Audit/explanatoryText"
+			toolTip: 							qsTr("Show explanatory text at each step of the analysis")
+		}
+	}
 
-    RadioButtonGroup
-    {
-        id: 									units
-        title:									qsTr("Sampling Units")
-        name: 									"units"
-        columns:								2
+	RadioButtonGroup
+	{
+		id: 									units
+		title:									qsTr("Sampling Units")
+		name: 									"units"
+		columns:								2
 
-        RadioButton
-        {
-            id: 								rows_sampling
-            text: 								qsTr("Items")
-            name: 								"items"
-            checked: 							true
-        }
+		RadioButton
+		{
+			id: 								rows_sampling
+			text: 								qsTr("Items")
+			name: 								"items"
+			checked: 							true
+		}
 
-        HelpButton
-        {
-            toolTip: 							qsTr("Click to learn more about record sampling.")
-            helpPage:							"Audit/recordSampling"
-        }
+		HelpButton
+		{
+			toolTip: 							qsTr("Click to learn more about record sampling.")
+			helpPage:							"Audit/recordSampling"
+		}
 
-        RadioButton
-        {
-            id: 								values_sampling
-            text: 								qsTr("Monetary units")
-            name: 								"values"
-            enabled: 							values.count > 0
-        }
+		RadioButton
+		{
+			id: 								values_sampling
+			text: 								qsTr("Monetary units")
+			name: 								"values"
+			enabled: 							values.count > 0
+		}
 
-        HelpButton
-        {
-            helpPage:							"Audit/monetaryUnitSampling"
-            toolTip: 							qsTr("Click to learn more about monetary unit sampling.")
-        }
-    }
+		HelpButton
+		{
+			helpPage:							"Audit/monetaryUnitSampling"
+			toolTip: 							qsTr("Click to learn more about monetary unit sampling.")
+		}
+	}
 
-    Group
-    {
-        title: 									qsTr("Tables")
+	Group
+	{
+		title: 									qsTr("Tables")
 
-        CheckBox
-        {
-            text: 								qsTr("Descriptive statistics")
-            name: 								"tableDescriptives"
-        }
+		CheckBox
+		{
+			text: 								qsTr("Descriptive statistics")
+			name: 								"tableDescriptives"
+		}
 
-        CheckBox
-        {
-            text: 								qsTr("Raw sample")
-            name: 								"tableSample"
-        }
-    }
+		CheckBox
+		{
+			text: 								qsTr("Raw sample")
+			name: 								"tableSample"
+		}
+	}
 
-    Group
-    {
-        RadioButtonGroup
-        {
-            id: 								method
-            title:								qsTr("Method")
-            name: 								"sampling_method"
+	Group
+	{
+		RadioButtonGroup
+		{
+			id: 								method
+			title:								qsTr("Method")
+			name: 								"sampling_method"
 
-            Group
-            {
+			Group
+			{
 
-                Row
-                {
-                    RadioButton
-                    {
-                        id: 					interval
-                        text: 					qsTr("Fixed interval sampling")
-                        name: 					"interval"
-                        checked: 				true
+				Row
+				{
+					RadioButton
+					{
+						id: 					interval
+						text: 					qsTr("Fixed interval sampling")
+						name: 					"interval"
+						checked: 				true
 
-                        IntegerField
-                        {
-                            id: 				start
-                            text: 				qsTr("Starting point")
-                            name: 				"start"
-                            defaultValue: 		1
-                            min: 				1
-                            visible:			interval.checked
-                        }
-                    }
+						IntegerField
+						{
+							id: 				start
+							text: 				qsTr("Starting point")
+							name: 				"start"
+							defaultValue: 		1
+							min: 				1
+							visible:			interval.checked
+						}
+					}
 
-                    HelpButton
-                    {
-                        toolTip: 				qsTr("Click to learn more about fixed interval sampling.")
-                        helpPage:				"Audit/fixedIntervalSampling"
-                    }
-                }
+					HelpButton
+					{
+						toolTip: 				qsTr("Click to learn more about fixed interval sampling.")
+						helpPage:				"Audit/fixedIntervalSampling"
+					}
+				}
 
-                Row
-                {
-                    RadioButton
-                    {
-                        id: 					cell
-                        text: 					qsTr("Cell sampling")
-                        name: 					"cell"
+				Row
+				{
+					RadioButton
+					{
+						id: 					cell
+						text: 					qsTr("Cell sampling")
+						name: 					"cell"
 
-                        IntegerField
-                        {
-                            id: 				seed_cell
-                            text: 				qsTr("Seed")
-                            name: 				"seed_cell"
-                            defaultValue: 		1
-                            min: 				1
-                            max: 				99999
-                            visible:			cell.checked
-                        }
-                    }
+						IntegerField
+						{
+							id: 				seed_cell
+							text: 				qsTr("Seed")
+							name: 				"seed_cell"
+							defaultValue: 		1
+							min: 				1
+							max: 				99999
+							visible:			cell.checked
+						}
+					}
 
-                    HelpButton
-                    {
-                        toolTip: 				qsTr("Click to learn more about cell sampling.")
-                        helpPage:				"Audit/cellSampling"
-                    }
-                }
+					HelpButton
+					{
+						toolTip: 				qsTr("Click to learn more about cell sampling.")
+						helpPage:				"Audit/cellSampling"
+					}
+				}
 
-                Row
-                {
-                    RadioButton
-                    {
-                        id: 					random
-                        text: 					qsTr("Random sampling")
-                        name: 					"random"
+				Row
+				{
+					RadioButton
+					{
+						id: 					random
+						text: 					qsTr("Random sampling")
+						name: 					"random"
 
-                        IntegerField
-                        {
-                            id: 				seed_random
-                            text: 				qsTr("Seed")
-                            name: 				"seed_random"
-                            defaultValue: 		1
-                            min: 				1
-                            max: 				99999
-                            visible:			random.checked
-                        }
-                    }
+						IntegerField
+						{
+							id: 				seed_random
+							text: 				qsTr("Seed")
+							name: 				"seed_random"
+							defaultValue: 		1
+							min: 				1
+							max: 				99999
+							visible:			random.checked
+						}
+					}
 
-                    HelpButton
-                    {
-                        toolTip: 				qsTr("Click to learn more about random sampling.")
-                        helpPage:				"Audit/randomSampling"
-                    }
-                }
-            }
-        }
+					HelpButton
+					{
+						toolTip: 				qsTr("Click to learn more about random sampling.")
+						helpPage:				"Audit/randomSampling"
+					}
+				}
+			}
+		}
 
-        CheckBox
-        {
-            name:								"randomize"
-            text:								qsTr("Randomize items")
-        }
-    }
+		CheckBox
+		{
+			name:								"randomize"
+			text:								qsTr("Randomize items")
+		}
+	}
 
-    Section
-    {
-        title: 									qsTr("Export")
+	Section
+	{
+		title: 									qsTr("Export")
 
-        Group
-        {
-            enabled: 							id.count > 0 && nobs.value > 0
+		Group
+		{
+			enabled: 							id.count > 0 && nobs.value > 0
 
-            ComputedColumnField
-            {
-                id:								name_indicator
-                name: 							"name_indicator"
-                text: 							qsTr("Column name selection result")
-                placeholderText: 				qsTr("e.g. selected")
-                fieldWidth: 					120 * preferencesModel.uiScale
-            }
+			ComputedColumnField
+			{
+				id:								name_indicator
+				name: 							"name_indicator"
+				text: 							qsTr("Column name selection result")
+				placeholderText: 				qsTr("e.g. selected")
+				fieldWidth: 					120 * preferencesModel.uiScale
+			}
 
-            FileSelector
-            {
-                id:                             file
-                name:                           "file"
-                label:                          qsTr("Save as")
-                placeholderText: 				qsTr("e.g. sample.csv")
-                filter:                         "*.csv"
-                save:                           true
-                fieldWidth:                     180 * preferencesModel.uiScale
-            }
+			FileSelector
+			{
+				id:                             file
+				name:                           "file"
+				label:                          qsTr("Save as")
+				placeholderText: 				qsTr("e.g. sample.csv")
+				filter:                         "*.csv"
+				save:                           true
+				fieldWidth:                     180 * preferencesModel.uiScale
+			}
 
-            CheckBox
-            {
-                name: 							"export_sample"
-                text: 							qsTr("Export sample to file")
-                enabled:						name_indicator.value != "" && file.value != ""
-            }
-        }
-    }
+			CheckBox
+			{
+				name: 							"export_sample"
+				text: 							qsTr("Export sample to file")
+				enabled:						name_indicator.value != "" && file.value != ""
+			}
+		}
+	}
 
-    Item
-    {
-        Layout.preferredHeight: 				download.height
-        Layout.fillWidth: 						true
-        Layout.columnSpan:						2
+	Item
+	{
+		Layout.preferredHeight: 				download.height
+		Layout.fillWidth: 						true
+		Layout.columnSpan:						2
 
-        Button
-        {
-            id: 								download
-            anchors.right: 						parent.right
-            anchors.bottom: 					parent.bottom
-            text: 								qsTr("<b>Download Report</b>")
-            onClicked: 							form.exportResults()
-        }
-    }
+		Button
+		{
+			id: 								download
+			anchors.right: 						parent.right
+			anchors.bottom: 					parent.bottom
+			text: 								qsTr("<b>Download Report</b>")
+			onClicked: 							form.exportResults()
+		}
+	}
 }

@@ -22,162 +22,162 @@ import JASP.Controls					1.0
 import JASP.Widgets						1.0
 
 Form {
-    columns:							2
+	columns:							2
 
-    VariablesForm
-    {
-        id: 							variablesFormBenfordsLaw
-        preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
+	VariablesForm
+	{
+		id: 							variablesFormBenfordsLaw
+		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
 
-        AvailableVariablesList
-        {
-            name: 						"variablesFormBenfordsLaw"
-        }
+		AvailableVariablesList
+		{
+			name: 						"variablesFormBenfordsLaw"
+		}
 
-        AssignedVariablesList
-        {
-            id: 						values
-            name: 						"values"
-            title: 						qsTr("Variable")
-            singleVariable:				true
-            allowedColumns:				["scale"]
-        }
-    }
+		AssignedVariablesList
+		{
+			id: 						values
+			name: 						"values"
+			title: 						qsTr("Variable")
+			singleVariable:				true
+			allowedColumns:				["scale"]
+		}
+	}
 
-    RadioButtonGroup
-    {
-        name:							"distribution"
-        title: 							qsTr("Reference")
+	RadioButtonGroup
+	{
+		name:							"distribution"
+		title: 							qsTr("Reference")
 
-        RadioButton
-        {
-            name:						"benford"
-            text:						qsTr("Benford's law")
-            checked:					true
-        }
+		RadioButton
+		{
+			name:						"benford"
+			text:						qsTr("Benford's law")
+			checked:					true
+		}
 
-        RadioButton
-        {
-            name:						"uniform"
-            text:						qsTr("Uniform distribution")
-        }
-    }
+		RadioButton
+		{
+			name:						"uniform"
+			text:						qsTr("Uniform distribution")
+		}
+	}
 
-    Group
-    {
-        title: 							qsTr("Display")
+	Group
+	{
+		title: 							qsTr("Display")
 
-        Row
-        {
-            CheckBox
-            {
-                id: 					explanatoryText
-                text: 					qsTr("Explanatory text")
-                name: 					"explanatoryText"
-                checked: 				true
+		Row
+		{
+			CheckBox
+			{
+				id: 					explanatoryText
+				text: 					qsTr("Explanatory text")
+				name: 					"explanatoryText"
+				checked: 				true
 
-                CIField
-                {
-                    name: 				"confidence"
-                    label: 				qsTr("Confidence")
-                }
-            }
+				CIField
+				{
+					name: 				"confidence"
+					label: 				qsTr("Confidence")
+				}
+			}
 
-            HelpButton
-            {
-                helpPage:				"Audit/explanatoryText"
-                toolTip: 				qsTr("Show explanatory text at each step of the analysis")
-            }
-        }
-    }
+			HelpButton
+			{
+				helpPage:				"Audit/explanatoryText"
+				toolTip: 				qsTr("Show explanatory text at each step of the analysis")
+			}
+		}
+	}
 
-    RadioButtonGroup
-    {
-        name:							"digits"
-        title: 							qsTr("Digits")
+	RadioButtonGroup
+	{
+		name:							"digits"
+		title: 							qsTr("Digits")
 
-        RadioButton
-        {
-            name:						"first"
-            text:						qsTr("First")
-            checked:					true
-        }
+		RadioButton
+		{
+			name:						"first"
+			text:						qsTr("First")
+			checked:					true
+		}
 
-        RadioButton
-        {
-            name:						"firsttwo"
-            text:						qsTr("First and second")
-        }
+		RadioButton
+		{
+			name:						"firsttwo"
+			text:						qsTr("First and second")
+		}
 
-        RadioButton
-        {
-            name:						"last"
-            text:						qsTr("Last")
-        }
-    }
+		RadioButton
+		{
+			name:						"last"
+			text:						qsTr("Last")
+		}
+	}
 
-    Group
-    {
-        title: 							qsTr("Tables")
+	Group
+	{
+		title: 							qsTr("Tables")
 
-        CheckBox
-        {
-            text: 						qsTr("Frequency table")
-            name: 						"summaryTable"
-            checked: 					true
-        }
-    }
+		CheckBox
+		{
+			text: 						qsTr("Frequency table")
+			name: 						"summaryTable"
+			checked: 					true
+		}
+	}
 
-    RadioButtonGroup
-    {
-        name:							"bayesFactorType"
-        title:							"Bayes Factor"
+	RadioButtonGroup
+	{
+		name:							"bayesFactorType"
+		title:							"Bayes Factor"
 
-        RadioButton
-        {
-            name:						"BF10"
-            text:						qsTr("BF\u2081\u2080")
-            checked:					true
-        }
+		RadioButton
+		{
+			name:						"BF10"
+			text:						qsTr("BF\u2081\u2080")
+			checked:					true
+		}
 
-        RadioButton
-        {
-            name:						"BF01"
-            text:						qsTr("BF\u2080\u2081")
-        }
+		RadioButton
+		{
+			name:						"BF01"
+			text:						qsTr("BF\u2080\u2081")
+		}
 
-        RadioButton
-        {
-            name:						"logBF10"
-            text:						qsTr("Log(BF\u2081\u2080)")
-        }
-    }
+		RadioButton
+		{
+			name:						"logBF10"
+			text:						qsTr("Log(BF\u2081\u2080)")
+		}
+	}
 
-    Group
-    {
-        title:							qsTr("Plots")
+	Group
+	{
+		title:							qsTr("Plots")
 
-        CheckBox
-        {
-            text:						qsTr("Observed vs. expected")
-            name:						"benfordsLawPlot"
-        }
-    }
+		CheckBox
+		{
+			text:						qsTr("Observed vs. expected")
+			name:						"benfordsLawPlot"
+		}
+	}
 
-    Item
-    {
-        Layout.preferredHeight:			download.height
-        Layout.fillWidth:				true
-        Layout.columnSpan:				2
+	Item
+	{
+		Layout.preferredHeight:			download.height
+		Layout.fillWidth:				true
+		Layout.columnSpan:				2
 
-        Button
-        {
-            id:							download
-            enabled: 					values.count > 0
-            anchors.right:				parent.right
-            anchors.bottom:				parent.bottom
-            text:						qsTr("<b>Download Report</b>")
-            onClicked:					form.exportResults()
-        }
-    }
+		Button
+		{
+			id:							download
+			enabled: 					values.count > 0
+			anchors.right:				parent.right
+			anchors.bottom:				parent.bottom
+			text:						qsTr("<b>Download Report</b>")
+			onClicked:					form.exportResults()
+		}
+	}
 }

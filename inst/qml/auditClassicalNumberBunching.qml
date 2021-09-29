@@ -23,185 +23,185 @@ import JASP.Widgets						1.0
 
 Form {
 
-    columns: 							2
+	columns: 							2
 
-    VariablesForm
-    {
-        id: 							variablesFormNumberBunching
-        preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
+	VariablesForm
+	{
+		id: 							variablesFormNumberBunching
+		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
 
-        AvailableVariablesList
-        {
-            name: 						"variablesFormNumberBunching"
-        }
+		AvailableVariablesList
+		{
+			name: 						"variablesFormNumberBunching"
+		}
 
-        AssignedVariablesList
-        {
-            id: 						values
-            name: 						"values"
-            title: 						qsTr("Variable")
-            singleVariable:				true
-            allowedColumns:				["scale"]
-        }
-    }
+		AssignedVariablesList
+		{
+			id: 						values
+			name: 						"values"
+			title: 						qsTr("Variable")
+			singleVariable:				true
+			allowedColumns:				["scale"]
+		}
+	}
 
-    Group
-    {
-        title:							qsTr("Tests")
+	Group
+	{
+		title:							qsTr("Tests")
 
-        CheckBox
-        {
-            name:						"avgFrequency"
-            text:						qsTr("Average frequency")
-            checked:					true
-        }
+		CheckBox
+		{
+			name:						"avgFrequency"
+			text:						qsTr("Average frequency")
+			checked:					true
+		}
 
-        CheckBox
-        {
-            name:						"entropy"
-            text:						qsTr("Entropy")
-        }
-    }
+		CheckBox
+		{
+			name:						"entropy"
+			text:						qsTr("Entropy")
+		}
+	}
 
-    Group
-    {
-        title: 							qsTr("Display")
-        columns: 						2
+	Group
+	{
+		title: 							qsTr("Display")
+		columns: 						2
 
-        Row
-        {
-            CheckBox
-            {
-                id: 					explanatoryText
-                text: 					qsTr("Explanatory text")
-                name: 					"explanatoryText"
-                checked: 				true
+		Row
+		{
+			CheckBox
+			{
+				id: 					explanatoryText
+				text: 					qsTr("Explanatory text")
+				name: 					"explanatoryText"
+				checked: 				true
 
-                CIField
-                {
-                    name: 				"confidence"
-                    label: 				qsTr("Confidence")
-                }
-            }
+				CIField
+				{
+					name: 				"confidence"
+					label: 				qsTr("Confidence")
+				}
+			}
 
-            HelpButton
-            {
-                helpPage:				"Audit/explanatoryText"
-                toolTip: 				qsTr("Show explanatory text at each step of the analysis")
-            }
-        }
-    }
+			HelpButton
+			{
+				helpPage:				"Audit/explanatoryText"
+				toolTip: 				qsTr("Show explanatory text at each step of the analysis")
+			}
+		}
+	}
 
-    RadioButtonGroup
-    {
-        name:							"shuffle"
-        title: 							qsTr("Shuffle Decimal Digits")
+	RadioButtonGroup
+	{
+		name:							"shuffle"
+		title: 							qsTr("Shuffle Decimal Digits")
 
-        RadioButton
-        {
-            name:						"last"
-            text:						qsTr("Last")
-        }
+		RadioButton
+		{
+			name:						"last"
+			text:						qsTr("Last")
+		}
 
-        RadioButton
-        {
-            name:						"lasttwo"
-            text:						qsTr("Last two")
-            checked:					true
-        }
+		RadioButton
+		{
+			name:						"lasttwo"
+			text:						qsTr("Last two")
+			checked:					true
+		}
 
-        RadioButton
-        {
-            name:						"all"
-            text:						qsTr("All")
-        }
-    }
+		RadioButton
+		{
+			name:						"all"
+			text:						qsTr("All")
+		}
+	}
 
-    Group
-    {
-        Group
-        {
-            title: 						qsTr("Tables")
+	Group
+	{
+		Group
+		{
+			title: 						qsTr("Tables")
 
-            CheckBox
-            {
-                text: 					qsTr("Assumption checks")
-                name: 					"correlationTable"
-                checked: 				true
-            }
+			CheckBox
+			{
+				text: 					qsTr("Assumption checks")
+				name: 					"correlationTable"
+				checked: 				true
+			}
 
-            CheckBox
-            {
-                text: 					qsTr("Frequency table")
-                name: 					"summaryTable"
-            }
-        }
+			CheckBox
+			{
+				text: 					qsTr("Frequency table")
+				name: 					"summaryTable"
+			}
+		}
 
-        Group
-        {
-            title: 						qsTr("Plots")
+		Group
+		{
+			title: 						qsTr("Plots")
 
-            CheckBox
-            {
-                text: 					qsTr("Observed vs. expected")
-                name: 					"numberBunchingSimulationPlots"
-            }
+			CheckBox
+			{
+				text: 					qsTr("Observed vs. expected")
+				name: 					"numberBunchingSimulationPlots"
+			}
 
-            CheckBox
-            {
-                text: 					qsTr("Histogram")
-                name: 					"numberBunchingHistogram"
+			CheckBox
+			{
+				text: 					qsTr("Histogram")
+				name: 					"numberBunchingHistogram"
 
-                IntegerField
-                {
-                    name: 				"noHeads"
-                    label: 				qsTr("Label")
-                    afterLabel:			qsTr("with highest occurrence")
-                    min: 				0
-                    defaultValue:		0
-                    max:				20
-                }
-            }
-        }
-    }
+				IntegerField
+				{
+					name: 				"noHeads"
+					label: 				qsTr("Label")
+					afterLabel:			qsTr("with highest occurrence")
+					min: 				0
+					defaultValue:		0
+					max:				20
+				}
+			}
+		}
+	}
 
-    Section
-    {
-        title:							qsTr("Advanced Options")
-        columns:						2
+	Section
+	{
+		title:							qsTr("Advanced Options")
+		columns:						2
 
-        IntegerField
-        {
-            name: 						"noSamples"
-            label: 						qsTr("Number of samples")
-            min: 						100
-            defaultValue: 				500
-            max: 						500000
-            fieldWidth:					70
-        }
+		IntegerField
+		{
+			name: 						"noSamples"
+			label: 						qsTr("Number of samples")
+			min: 						100
+			defaultValue: 				500
+			max: 						500000
+			fieldWidth:					70
+		}
 
-        IntegerField
-        {
-            name: 						"seed"
-            label: 						qsTr("Seed")
-            defaultValue: 				1
-        }
-    }
+		IntegerField
+		{
+			name: 						"seed"
+			label: 						qsTr("Seed")
+			defaultValue: 				1
+		}
+	}
 
-    Item
-    {
-        Layout.preferredHeight: 		download.height
-        Layout.fillWidth: 				true
-        Layout.columnSpan:				2
+	Item
+	{
+		Layout.preferredHeight: 		download.height
+		Layout.fillWidth: 				true
+		Layout.columnSpan:				2
 
-        Button
-        {
-            id: 						download
-            enabled: 					values.count > 0
-            anchors.right:				parent.right
-            anchors.bottom:				parent.bottom
-            text: 						qsTr("<b>Download Report</b>")
-            onClicked: 					form.exportResults()
-        }
-    }
+		Button
+		{
+			id: 						download
+			enabled: 					values.count > 0
+			anchors.right:				parent.right
+			anchors.bottom:				parent.bottom
+			text: 						qsTr("<b>Download Report</b>")
+			onClicked: 					form.exportResults()
+		}
+	}
 }
