@@ -1,138 +1,148 @@
 Bayesiaanse Evaluatie
-==========================
+===
 
-De evaluatie analyse stelt de auditor in staat een steekproef te evalueren en een statistische conclusie te trekken over de totale fout in de populatie. 
+De Bayesiaanse evaluatie-analyse stelt de gebruiker in staat om op basis van een steekproef conclusies te trekken over de totale fout in de populatie.
 
-----
+<img src="%HELP_FOLDER%/img/workflowEvaluation.png" />
 
-Standaard invoeropties
--------
+Zie de handleiding van de Audit module (download [hier](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) voor meer gedetailleerde informatie over deze analyse.
 
-#### Populatiematerialiteit
-De populatiematerialiteit is de maximaal toelaatbare fout in de populatie. Dit kan een absolute waarde zijn of een waarde die de materialiteit aangeeft als een percentage van de totale waarde van de populatie.
+### Invoer
+---
 
-- Absoluut: Voer uw populatiematerialiteit in als geldwaarde.
-- Relatief: Voer uw populatiematerialiteit in als een percentage van de totale waarde.
+#### Steekproef Doelstellingen
+- Uitvoeringsmaterialiteit: ook wel de bovengrens voor de fout, het maximaal toelaatbare afwijkingspercentage of de maximaal toelaatbare afwijking genoemd, de uitvoeringsmaterialiteit is de bovengrens van de toelaatbare afwijking in de te testen populatie. Door te toetsen aan een uitvoeringsmaterialiteit bent u in staat een steekproef te plannen om bewijs te verzamelen voor of tegen de stelling dat de populatie als geheel geen afwijkingen bevat die als materieel worden beschouwd (d.w.z groter zijn dan de uitvoeringsmaterialiteit). U moet deze doelstelling inschakelen als u met een steekproef uit de populatie wilt weten of de populatie een afwijking boven of onder een bepaalde limiet (de prestatiematerialiteit) bevat. Een lagere uitvoeringsmaterialiteit zal resulteren in een hogere steekproefomvang. Omgekeerd zal een hogere uitvoeringsmaterialiteit resulteren in een lagere steekproefomvang.
+- Minimale precisie: de precisie is het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout. Door deze steekproefdoelstelling in te schakelen, kunt u een steekproef plannen zodat het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de afwijking tot een minimumpercentage wordt teruggebracht. U moet deze doelstelling inschakelen als u geïnteresseerd bent in het maken van een schatting van de populatieafwijking met een bepaalde nauwkeurigheid. Een lagere minimaal vereiste precisie zal resulteren in een hogere steekproefomvang. Omgekeerd zal een hogere minimale precisie resulteren in een vereiste steekproefomvang.
 
 #### Populatie
-Hier kunt u de samenvattende statistieken over de populatie verstrekken.
+- Aantal items: Het totale aantal items (rijen) in de populatie.
+- Aantal eenheden: Het totale aantal eenheden in de populatie. Let op dat de eenheden items (rijen) of monetaire eenheden (waarden) kunnen zijn, afhankelijk van het controlevraagstuk.
 
-- Grootte: Het totale aantal waarnemingen in de populatie.
-- Waarde: De totale waarde van de populatie in geldeenheden.
+#### Betrouwbaarheid
+Het gebruikte betrouwbaarheidsniveau. Het betrouwbaarheidsniveau is het complement van het auditrisico: het risico dat de gebruiker bereid is te nemen om een ​​onjuist oordeel over de populatie te geven. Als u bijvoorbeeld een controlerisico van 5% wilt hebben, staat dit gelijk aan 95% betrouwbaarheid.
 
-#### Auditrisico
-Het auditrisico bepaalt het risico dat de auditor bereid is te nemen om een onjuist oordeel te geven over de eerlijkheid van de transacties in de populatie. Het auditrisico is het omgekeerde van de betrouwbaarheid van de analyse (auditrisico = 1 - betrouwbaarheid).
+#### Opdrachtbox
+- Item-ID: een unieke niet-ontbrekende identifier voor elk item in de populatie. Het rijnummer van de items is voldoende.
+- Boekwaarden: de variabele die de boekwaarden van de items in de populatie bevat.
+- Auditresultaat / waarden: De variabele die de audit (true) waarden bevat, of de binaire classificatie van correct (0) of incorrect (1).
+- Selectieteller: De variabele die aangeeft hoe vaak elke waarneming moet worden geëvalueerd.
 
-- betrouwbaarheid: Het betrouwbaarheidsniveau van uw vereiste statistische verklaring.
+#### Gegevens
+- Raw: gebruik onbewerkte gegevens.
+- Overzichtsstatistieken: gebruik overzichtsstatistieken.
 
-#### Annotatie methode
-Voor de evaluatie fase heeft de auditor zijn of haar steekproef geannoteerd. Dit kan op twee manieren: evaluatie met werkelijke waardes of door te bepalen of de transacties correct of incorrect zijn.
+#### Kansverdeling
+- Gamma: De gammaverdeling gaat samen met de Poisson-verdeling. De Poisson-verdeling gaat uit van een oneindige populatieomvang en wordt daarom over het algemeen gebruikt wanneer de populatieomvang groot is. Het is een verdeling waarmee het percentage afwijkingen (*\u03B8*) modelleerd als functie van de waargenomen steekproefomvang (*n*) en de som van de gevonden proportionele fouten (*t*). Omdat de gammaverdeling deelfouten mogelijk maakt, wordt deze over het algemeen gebruikt bij het plannen van een steekproef in munteenheden (Stewart, 2013).
+- Beta: de bètaverdeling gaat samen met de binominaalverdeling. De binominaalverdeling gaat uit van een oneindige populatieomvang en wordt daarom over het algemeen gebruikt wanneer de populatieomvang groot is. Het is een verdeling waarmee het percentage afwijkingen (*\u03B8*) wordt gemodelleerd als functie van het waargenomen aantal fouten (*k*) en het aantal correcte transacties (*n - k*). Omdat de binominaalverdeling strikt genomen geen rekening houdt met gedeeltelijke fouten, wordt deze over het algemeen gebruikt wanneer u geen steekproef in een munteenheid plant. De betaverdeling is echter geschikt voor gedeeltelijke fouten en kan ook worden gebruikt voor steekproeven op monetaire eenheden (de Swart, Wille & Majoor, 2013).
+- Beta-binomiaal: De beta-binomiaalverdeling gaat samen met de hypergeometrische verdeling (Dyer & Pierce, 1993). De hypergeometrische verdeling gaat uit van een eindige populatieomvang en wordt daarom over het algemeen gebruikt wanneer de populatieomvang klein is. Het is een verdeling waarmee het aantal fouten (*K*) in de populatie wordt gemodelleerd als functie van de populatieomvang (*N*), het aantal geobserveerde gevonden fouten (*k*) en het aantal correcte transacties (*N*).
 
-- Auditwaarden: indien geselecteerd kunt u de selectie annoteren met de werkelijke waardes van de waarnemingen. Indien een transactie volledig correct is, vul dan exact dezelfde waarde in als vermeld is in de boekwaarde van de transactie. Deze benadering wordt aanbevolen wanneer de transacties een geldwaarde hebben.
-- Correct / Incorrect: indien geselecteerd kunt u de selectie annoteren met een indicator of de waarnemingen correct (0) of incorrect (1) zijn. Deze aanpak wordt aanbevolen wanneer uw transacties geen geldwaarde hebben.
-  - Gebruik samenvattende statistieken: Indien geselecteerd kan de auditor alleen de steekproefomvang en de gevonden fouten gebruiken om een conclusie te trekken.
+#### Gebied onder Posterior
+- Eenzijdige bovengrens: Geeft een (bovenste) schatting van de afwijking in de populatie.
+- Tweezijdig interval: Geeft een (bovenste en onderste) schatting van de afwijking in de populatie.
 
-----
+#### Weergave
+- Verklarende tekst: indien ingeschakeld, wordt verklarende tekst in de analyse ingeschakeld om de procedure en de statistische resultaten te helpen interpreteren.
 
-Geavanceerde invoeropties
--------
+#### Tabellen
+- Prior en posterior: Produceert een tabel waarin de eerdere en verwachte posterieure distributie worden samengevat door middel van verschillende statistieken, zoals hun functionele vorm, hun prior en posterior kansen, en de verschuiving daartussen.
+- Correcties op populatie: Produceert een tabel die de vereiste correcties op de populatiewaarde bevat om de steekproefdoelstellingen te bereiken.
+- Aannamecontroles: Produceert een tabel die de correlatie weergeeft tussen de boekwaarden in de steekproef en hun taints.
+  - Betrouwbaarheidsinterval: Breedte van het betrouwbaarheidsinterval voor de correlatie.
 
-#### Inherent risico and controle risico
-De beoordelingen van het inherente risico en het controlerisico (audit risico model) kunnen hier worden verstrekt om het vereiste bewijs uit de steekproef te verminderen. Ze worden toegewezen aan kansen volgens standaarden, maar kunnen ook worden toegewezen op basis van aangepaste voorkeuren.
+#### Figuren
+- Prior en posterior: Produceert een plot die de prior verdeling en de posterieure distributie toont na observatie van het beoogde monster.
+  - Extra info: Produceert stippen op de materialiteit.
+- Posterior predictive: Produceert een plot van de voorspellingen van de posterieure verdeling.
+- Steekproefdoelstellingen: Produceert een staafdiagram waarin de materialiteit, de maximale afwijking en de meest waarschijnlijke fout (MLE) worden vergeleken.
+- Spreidingsplot: Produceert een spreidingsplot die boekwaarden van de selectie vergelijkt met hun controlewaarden. Waarnemingen die fout zijn, zijn rood gekleurd.
+  - Correlatie weergeven: Voegt de correlatie tussen de boekwaarden en de controlewaarden toe aan de plot.
+  - Item-ID's weergeven: voegt de item-ID's toe aan de plot.
 
-- Hoog: 100%
-- Middel: 60%
-- Laag: 50%
-- Aangepast
+#### Prior
+- Standaard: deze optie neemt geen informatie op in de statistische analyse en gaat daarom uit van een verwaarloosbare en conservatieve eerdere verdeling.
+- Handmatig: geef de parameters van de prior verdeling op.
+- Eerdere steekproef: Maak een eerdere verdeling op basis van een eerdere steekproef.
+  - Grootte: eerdere steekproefomvang.
+  - Fouten: eerder gevonden fouten.
+- Onpartijdig: maak een voorafgaande verdeling die onpartijdig is met betrekking tot de geteste hypothesen.
+- Risicobeoordelingen: Vertaal informatie uit het auditrisicomodel naar een eerdere verspreiding.
+  - Inherent risico: Een categorie of waarschijnlijkheid voor het inherente risico. Inherent risico wordt gedefinieerd als het risico op een afwijking van materieel belang als gevolg van een fout of weglating in een financieel overzicht als gevolg van een andere factor dan een falen van de interne beheersing.
+  - Beheersingsrisico: Een categorie of waarschijnlijkheid voor het internecontrolerisico. Het interne beheersingsrisico wordt gedefinieerd als het risico van een afwijking van materieel belang in de financiële overzichten die voortvloeit uit het ontbreken of falen van de relevante interne beheersingsmaatregelen van de gecontroleerde.
 
-Wanneer beide risicobeoordelingen zijn ingesteld op Hoog (100%), wordt het audit risico model niet gebruikt om het detectierisico aan te passen.
+#### Verwachte fouten in steekproef
+De verwachte fouten zijn de toelaatbare fouten die in de steekproef kunnen worden gevonden terwijl de gespecificeerde steekproefdoelstellingen nog steeds worden bereikt. Er wordt een steekproefomvang berekend zodat, wanneer het aantal verwachte fouten in de steekproef wordt gevonden, het gewenste vertrouwen behouden blijft.
 
-#### Verwachte fouten
-De verwachte fouten zijn de tolereerbare fouten die in de steekproef kunnen worden gevonden. Een steekproefomvang wordt berekend zodat, wanneer het aantal verwachte fouten in de steekproef wordt gevonden, de gewenste betrouwbaarheid behouden blijft.
+*Opmerking:* Het wordt aangeraden om deze waarde conservatief in te stellen om de kans te minimaliseren dat de waargenomen fouten de verwachte fouten overschrijden, wat zou betekenen dat er onvoldoende werk is verricht.
 
-- Absoluut: Voer uw verwachte fouten in als geldwaarde (bijvoorbeeld € 1.000 op een totaal saldo van € 1.000.000).
-- Relatief: Voer uw verwachte fouten in als percentage ten opzichte van de totale grootte van de selectie.
+- Relatief: voer uw verwachte fouten in als een percentage ten opzichte van de totale grootte van de selectie.
+- Absoluut: Voer uw verwachte fouten in als de som van (proportionele) fouten.
 
-#### Toelichtende tekst
-Deze optie maakt verklarende tekst door de hele workflow mogelijk om u te helpen de statistische resultaten en procedure te interpreteren.
+#### Kritieke items
+- Negatieve boekwaarden: Isoleert negatieve boekwaarden van de populatie.
+  - Bewaren: houdt negatieve boekwaarden die moeten worden geïnspecteerd in het monster.
+  - Verwijderen: verwijdert negatieve boekwaarden.
 
-#### Schattingsmethode
-De schattingsmethode bepaalt hoe de resultaten van uw steekproef worden geëxtrapoleerd naar de populatie.
+#### Tabellen opmaken
+- Cijfers: geef tabeluitvoer weer als getallen.
+- Percentages: geef de tabeluitvoer weer als percentages.
+- Geëxtrapoleerde bedragen: geef tabeluitvoer weer als geldwaarden.
 
-- Beta: Gebruikt de beta posterior kansverdeling om de steekproef te evalueren.
-- Gamma: Gebruikt de gamma posterior kansverdeling om de steekproef te evalueren.
-- Beta-binomial: Gebruikt de beta-binomiaal posterior kansverdeling om de steekproef te evalueren.
+#### Veronderstel homogene taints
+Als u op dit vakje klikt, kunt u de bekende en onbekende afwijking in de populatie scheiden om efficiënter te werken. Let op dat hiervoor de aanname vereist is dat de taints in de steekproef representatief zijn voor de taints in het onzichtbare deel van de populatie.
 
-----
+### Uitgang
+---
 
-Standaard resultaten
--------
+#### Evaluatieoverzicht
+- Materialiteit: indien aanwezig, de uitvoeringsmaterialiteit.
+- Min. precisie: indien aanwezig, de minimale precisie.
+- Steekproefomvang: De steekproefomvang (aantal eenheden).
+- Fouten: het aantal foutieve elementen in de selectie.
+- Taint: De som van de proportionele fouten. Gecontroleerde items kunnen worden geëvalueerd terwijl de omvang van de afwijking wordt meegenomen door hun taint te berekenen. De taint van een item *i* is het proportionele verschil tussen de boekwaarde van dat item (*y*) en de controlewaarde (true) van het item (*x*). Positieve taint worden geassocieerd met te hoge bedragen, terwijl negatieve taints optreden wanneer items worden onderschat.
+<img src="%HELP_FOLDER%/img/taints.png" />
+- Meest waarschijnlijke fout: De meest waarschijnlijke fout in de populatie.
+- x-% Betrouwbaarheidsgrens: Bovengrens van de afwijking in de populatie.
+- Precisie: verschil tussen bovengrens en meest waarschijnlijke fout.
+- BF-+: De Bayes-factor voor de test.
 
-#### Evaluatie samenvatting
-Deze tabel is het standaard resultaat voor de evaluatiefase.
+#### Prior en posterieur
+- Functionele vorm: De functionele vorm van de distributie.
+- Ondersteuning H-: Totale kans in het bereik van H- onder de verdeling. Wordt alleen weergegeven bij toetsing aan een uitvoeringsmaterialiteit.
+- Ondersteuning H+: Totale kans in het bereik van H+ onder de verdeling. Wordt alleen weergegeven bij toetsing aan een uitvoeringsmaterialiteit.
+- Verhouding H- / H+: Kansen in het voordeel van H- onder de verdeling. Wordt alleen weergegeven bij toetsing aan een uitvoeringsmaterialiteit.
+- Gemiddelde: gemiddelde van de verdeling.
+- Mediaan: Mediaan van de verdeling.
+- Mode: Mode van de distributie.
+- Bovengrens: x-% percentiel van de verdeling.
+- Precisie: verschil tussen de bovengrens en de wijze van verdeling.
 
-- Materialiteit: De materialiteit van de populatie.
-- Steekproefgrootte: Het aantal geevalueerde transacties.
-- Fouten: Het aantal foutieve elementen in de selectie.
-- Total taining: De som van de proportionele fouten.
-- x-% betrouwbaarheidsgrens: De schatting van de maximale afwijking in percentages.
-- Maximale afwijking: De schatting van de verwachte maximale afwijking in geldwaarden.
+#### Correcties voor de bevolking
+- Correctie: Het van de populatie af te trekken bedrag of percentage.
 
-----
+#### Aannamecontroles
+- n: steekproefomvang.
+- Pearsons r: Pearson-correlatiecoëfficiënt.
+- x-% bovengrens: bovengrens voor correlatiecoëfficiënt.
+- p: p-waarde voor de test.
+- BF-0: Bayes-factor voor de test.
 
-Geavanceerde resultaten (statistieken)
--------
+#### Figuren
+- Prior en posterior: Produceert een plot die de prior verdeling en de posterieure distributie toont na observatie van het beoogde monster.
+  - Extra info: Produceert stippen op de materialiteit.
+- Posterior predictive: Produceert een plot van de voorspellingen van de posterieure verdeling.
+- Steekproefdoelstellingen: Produceert een staafdiagram waarin de materialiteit, de maximale afwijking en de meest waarschijnlijke fout (MLE) worden vergeleken.
+- Spreidingsplot: Produceert een spreidingsplot die boekwaarden van de selectie vergelijkt met hun controlewaarden. Waarnemingen die fout zijn, zijn rood gekleurd.
+  - Correlatie weergeven: Voegt de correlatie tussen de boekwaarden en de controlewaarden toe aan de plot.
+  - Item-ID's weergeven: voegt de item-ID's toe aan de plot.
 
-#### Meest waarschijnlijke fout (MLE)
-Voegt een cel toe aan de samenvattingstabel met een schatting van de werkelijke fout in de populatie.
+### Referenties
+---
+- AICPA (2017). <i>Auditgids: controlesteekproeven</i>. American Institute of Certified Public Accountants.
+- Derks, K (2021). jfa: Bayesiaanse en klassieke auditsteekproeven. R-pakket versie 0.6.0.
+- Dyer, D., & Pierce, R.L. (1993). Over de keuze van de voorafgaande verdeling bij hypergeometrische steekproeven. <i>Communicatie in statistiek-theorie en methoden</i>, 22(8), 2125-2146.
+- Stewart, TR (2013). Een Bayesiaans audit assurance-model met toepassing op het component materialiteitsprobleem bij groepsaudits (proefschrift).
+- de Swart, J., Wille, J., & Majoor, B. (2013). Het 'Push-Left'-Principe als Motor van Data Analytics in de Accountantcontrole [Het 'Push-Left'-Principe als aanjager van Data Analytics in Financial Audit]. <i>Maandblad voor Accountancy en Bedrijfseconomie</i>, 87, 425-432.
 
-#### Evidentieratio
-Toont de posterior kansen (na het zien van een steekproef) ten gunste van de nulhypothese van een aanvaardbare afwijking.
-
-#### Bayes factor
-Toont de hoeveelheid bewijs (na het zien van een steekproef) ten gunste van de nulhypothese van een aanvaardbare afwijking.
-
-----
-
-Geavanceerde resultaten (tabellen)
--------
-
-#### Prior en posterior beschrijvingen
-Produceert een tabel waarin de prior en posterior kansverdelingen worden samengevat door middel van verschillende statistieken, zoals hun functionele vorm, hun prior en posterior kansen en kansen, en de verschuiving daartussen.
-
-----
-
-Geavanceerde resultaten (grafieken)
--------
-
-#### Evaluatie informatie
-Produceert een staafdiagram waarin de materialiteit, maximale afwijking en meest waarschijnlijke fout (MLE) worden vergeleken.
-
-#### Correlatiediagram
-Produceert een spreidingsplot waarbij boekwaarden van de selectie worden vergeleken met hun werkelijke waarden. Waarnemingen die niet overeen komen, worden rood weergegeven.
-
-#### Prior en posterior
-Produceert een plot die de prior kansverdeling distributie toont naast de posterior kansverdeling op basis van de steekproef.
-
- x-as limiet: Wijzig de limiet voor de x-as in de grafiek.
-- Verwachte posterior: Voegt het verwachte posterior kansverdeling toe aan de grafiek. De verwachte posterior kansverdeling heeft zijn bovenste geloofwaardigheidsgrens onder de materialiteit.
-- Aanvullende info: Voegt een rode stip toe in de grafiek voor de materialiteit en een grijze stip voor de verwachte fouten.
-- Markeer: Selecteer welk gebied onder de posterior kansverdeling wordt weergegeven in kleur.
-
-----
-
-R Paketten
--------
-
+### R-pakketten
+---
 - jfa
-
-----
-
-Referenties
--------
-
-AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certied Public Accountants.
-
-Derks, K (2020). jfa: Bayesian and Classical Audit Sampling. R package version 0.1.0.
-
-Interdepartementaal Overlegorgaan Departementale Accountantsdiensten (2007). <i>Handboek Auditing Rijksoverheid 2007</i>, established by the Interdepartementaal Overlegorgaan Departementale Accountantsdiensten (IODAD) on March 28, 2006, and May 29, 2007.

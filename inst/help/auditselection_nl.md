@@ -1,84 +1,85 @@
 Selectie
-==========================
+===
 
-Met de selectieanalyse kan de auditor transacties uit een populatie selecteren met een combinatie van selectie technieken (record sampling versus monetary unit sampling (MUS)) en selectie methoden (willekeurige selectie, cel selectie, vast intereval selectie).
+De selectieanalyse stelt de gebruiker in staat om een ​​aantal steekproefeenheden uit een populatie te selecteren met behulp van een combinatie van steekproeftechnieken (recordsteekproef versus geldeenheidsteekproef) en steekproefmethoden (willekeurige steekproef, celsteekproef, vaste intervalsteekproef) die standaard zijn in een audit context.
 
-----
+<img src="%HELP_FOLDER%/img/workflowSelection.png" />
 
-Standaard invoeropties
--------
+Zie de handleiding van de Audit module (download [hier](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) voor meer gedetailleerde informatie over deze analyse.
+
+### Invoer
+---
+
+#### Opdrachtbox
+- Item-ID: een unieke niet-ontbrekende identifier voor elk item in de populatie. Het rijnummer van de items is voldoende.
+- Boekwaarden: de variabele die de boekwaarden van de items in de populatie bevat.
+- Rangschikkingsvariabele: indien opgegeven, wordt de populatie eerst gerangschikt in oplopende volgorde met betrekking tot de waarden van deze variabele.
+- Aanvullende variabelen: alle andere variabelen die in de steekproef moeten worden opgenomen.
 
 #### Steekproefgrootte
-Het benodigde aantal steekproefelementen dat geselecteerd wordt uit de populatie.
+Het vereiste aantal steekproefeenheden dat uit de populatie moet worden geselecteerd. Houd er rekening mee dat de steekproefeenheden worden bepaald door de optie *eenheden*. Als er geen boekwaarden worden opgegeven, zijn de steekproefeenheden standaard items (rijen). Wanneer boekwaarden worden verstrekt, zijn de ideale steekproefeenheden om te gebruiken monetaire eenheden.
 
-#### Voeg selectie uitkomst toe aan data
-Wanneer ingeschakeld voegt de analyse het resultaat van de selectieanalyse in een nieuwe kolom toe aan de data. De nieuwe kolom geeft weer hoe vaak elke transactie in de steekproef is opgenomen.
+#### Bemonsteringseenheden
+- Items: voert selectie uit met behulp van de items in de populatie als steekproefeenheden.
+- Monetaire eenheden: voert een selectie uit waarbij de monetaire eenheden in de populatie als steekproefeenheden worden gebruikt. Deze methode heeft de voorkeur als u meer items met een hoge waarde in de steekproef wilt opnemen.
 
-----
+#### Methode
+- Steekproef met vast interval: voert selectie uit door de populatie in gelijke intervallen te verdelen en in elk interval een vaste eenheid te selecteren. Elk item met een waarde groter dan het interval wordt altijd in de steekproef opgenomen.
+  - Startpunt: Selecteert welke bemonsteringseenheid wordt geselecteerd uit elk interval.
+- Celbemonstering: voert selectie uit door de populatie in gelijke intervallen te verdelen en in elk interval een variabele eenheid te selecteren. Elk item met een waarde groter dan tweemaal het interval wordt altijd in de steekproef opgenomen.
+  - Seed: Selecteert de seed voor de generator van willekeurige getallen om resultaten te reproduceren.
+- Willekeurige steekproef: Voert willekeurige selectie uit waarbij elke steekproefeenheid een gelijke kans heeft om geselecteerd te worden.
+  - Seed: Selecteert de seed voor de generator van willekeurige getallen om resultaten te reproduceren.
 
-Geavanceerde invoeropties
--------
+#### Items willekeurig maken
+Randomiseert de items in de populatie voordat de selectie wordt uitgevoerd.
 
-#### Steekproefeenheden
-Bij statistische steekproeven krijgt elke steekproefeenheid een kans om in de selectie te worden opgenomen. De steekproefeenheden bepalen welke eenheden (individuele monetaire eenheden versus individuele transacties) een kans krijgen.
+#### Weergave
+- Verklarende tekst: indien ingeschakeld, wordt verklarende tekst in de analyse ingeschakeld om de procedure en de statistische resultaten te helpen interpreteren.
 
-- Monetaire eenheid steekproeven: Wijst selectiekansen toe op het niveau van individuele steekproefeenheden. Deze methode heeft de voorkeur wanneer u alleen overwaarderingen onderzoekt.
-- Record steekproeven: Wijst selectiekansen toe op het niveau van individuele transacties. Deze methode heeft de voorkeur wanneer u naar overwaarderingen en onderwaarderingen kijkt, of wanneer u geen geldeenheden in uw populatie heeft.
+#### Kolomnaam Selectie Resultaat
+Wanneer een naam is opgegeven, wordt het resultaat van de selectieanalyse in een nieuwe kolom aan de gegevens toegevoegd. De nieuwe kolom geeft weer hoe vaak elke transactie in de steekproef is opgenomen.
 
-#### Selectiemethode
-De selectiemethode bepaalt hoe transacties worden geselecteerd uit de populatie. Verschillende selectiemethoden hebben verschillende eigenschappen en kunnen resulteren in verschillende transacties in uw selectie.
+#### Tabellen
+- Beschrijvende statistiek: Produceert een tabel met beschrijvende informatie over numerieke variabelen in de selectie. Statistieken die zijn opgenomen zijn het gemiddelde, de mediaan, de standaarddeviatie, de variantie, het minimum, het maximum en het bereik.
+- Ruwe steekproef: produceert een tabel met de geselecteerde transacties samen met eventuele aanvullende waarnemingen in het veld met aanvullende variabelen.
 
-- Aslecte steekproeven: Voert een willekeurige selectie uit waarbij elke steekproefeenheid een gelijke kans krijgt.
-- Cel steekproeven: Voert intervalselectie uit met een willekeurig startpunt in elke cel. Elke transactie die groter is dan tweemaal het interval, wordt meerdere keren geselecteerd.
-- Vast interval steekproeven: Voert intervalselectie uit waarbij de eerste waarneming van elk interval wordt geselecteerd. Elke waarneming die groter is dan het interval, wordt meerdere keren geselecteerd.
+### Uitgang
+---
 
-#### Toevalsgenerator
-Willekeurige nummergenerator om resultaten reproduceerbaar te maken. Dit beïnvloedt welke steekproeven uit de populatie worden getrokken in aselecte steekproeven en cel steekproeven. Bij steekproefselectie met een vast interval is de toevalsgenerator uitgeschakeld omdat de eerste eenheid uit elk interval wordt geselecteerd.
+#### Selectie Samenvatting
+- Aantal eenheden: Het aantal geselecteerde steekproefeenheden uit de populatie.
+- Aantal items: Het aantal geselecteerde items uit de populatie.
+- Selectiewaarde: De totale waarde van de geselecteerde items. Alleen weergegeven wanneer steekproeven op munteenheid worden gebruikt.
+- % van populatieomvang / waarde: Het geselecteerde deel van de totale omvang of waarde van de populatie.
 
-----
+#### Informatie over monetaire intervalselectie
+- Items: Het aantal items in de populatie.
+- Waarde: De waarde van de items in de populatie.
+- Geselecteerde items: het aantal items in de steekproef.
+- Geselecteerde eenheden: Het aantal geselecteerde eenheden uit de populatie.
+- Selectiewaarde: De waarde van de items in de steekproef.
+- % van totale waarde: het geselecteerde aandeel van de totale waarde van de items in vergelijking met de items in de populatie.
 
-Standaard resultaten
--------
+#### Beschrijvende statistieken
+- Geldig: aantal geldige gevallen.
+- Gemiddelde: rekenkundig gemiddelde van de gegevenspunten.
+- Mediaan: Mediaan van de gegevenspunten.
+- Soa. deviatie: Standaarddeviatie van de gegevenspunten.
+- Variantie: Variantie van de datapunten.
+- Bereik: bereik van de datapunten.
+- Minimum: Minimum van de datapunten.
+- Maximum: Maximum van de datapunten.
 
-#### Selectie samenvatting
-Deze tabel is het standaard resultaat voor de selectiefase.
+#### Ruw monster
+- Rij: het rijnummer van het item.
+- Geselecteerd: het aantal keren (een eenheid in) dat het item is geselecteerd.
 
-- Selectie grootte: Het aantal geselecteerde transacties.
-- % van totale waarnemingen: De relatieve grootte van de geselecteerde transacties.
-- % van de populatiewaarde: De relatieve waarde van de geselecteerde transacties.
-- Interval: De grootte van het interval dat gebruikt is in de selectie methode.
+### Referenties
+---
+- AICPA (2017). <i>Auditgids: controlesteekproeven</i>. American Institute of Certified Public Accountants.
+- Derks, K (2021). jfa: Bayesiaanse en klassieke auditsteekproeven. R-pakket versie 0.6.0.
 
-----
-
-Geavanceerde resultaten (tabellen)
--------
-
-#### Geef geselecteerde observaties weer
-Produceert een tabel met de geselecteerde waarnemingen samen met eventuele aanvullende waarnemingen die in het overeenkomstige veld zijn opgegeven.
-
-#### Selectie samenvatting
-Produceert een tabel met beschrijvende informatie over numerieke variabelen in de steekproef.
-
-----
-
-Geavanceerde resultaten (plots)
--------
-
-#### Populatie en steekproef histogrammen
-Produceert een overlappend histogram dat de verdeling van waarden van elke variabele in de populatie vergelijkt met de waarden in de steekproef.
-
-----
-
-R Packages
--------
-
+### R-pakketten
+---
 - jfa
-
-----
-
-References
--------
-
-AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-
-Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.5.1.

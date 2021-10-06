@@ -13,7 +13,7 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-// When making changes to this file always mention @koenderks as a 
+// When making changes to this file always mention @koenderks as a
 // reviewer in the Pull Request
 
 import QtQuick							2.8
@@ -22,54 +22,7 @@ import JASP.Controls					1.0
 import JASP.Widgets						1.0
 
 Form {
-	
-	columns: 1
-
-	GridLayout
-	{
-		columns: 						2
-		columnSpacing:					150 * preferencesModel.uiScale
-
-		GroupBox
-		{
-			id: 						auditRisk
-			title: 						qsTr("Audit Risk")
-
-			PercentField
-			{
-				name: 					"confidence"
-				label: 					qsTr("Confidence")
-				decimals: 				2
-				defaultValue: 			95
-				min:					0.1
-				max:					99.9
-			}
-		}
-
-		GroupBox
-		{
-			title: 						qsTr("Explanatory Text")
-
-			RowLayout
-			{
-				CheckBox
-				{
-					id: 				explanatoryText
-					text:	 			qsTr("Enable")
-					name: 				"explanatoryText"
-					checked: 			true
-				}
-
-				HelpButton
-				{
-					helpPage:			"Audit/explanatoryText"
-					toolTip: 			qsTr("Click to learn more about the explanatory text.")
-				}
-			}
-		}
-	}
-
-	Divider { }
+	columns:							2
 
 	VariablesForm
 	{
@@ -91,125 +44,140 @@ Form {
 		}
 	}
 
-	GridLayout
+	RadioButtonGroup
 	{
-		columns: 						2
-		columnSpacing:					150 * preferencesModel.uiScale
+		name:							"distribution"
+		title: 							qsTr("Reference")
 
-		ColumnLayout
+		RadioButton
 		{
-
-			RadioButtonGroup
-			{
-				name:					"distribution"
-				title: 					qsTr("Reference Distribution")
-
-				RadioButton
-				{
-					name:				"benford"
-					text:				qsTr("Benford's law")
-					checked:			true
-				}
-
-				RadioButton
-				{
-					name:				"uniform"
-					text:				qsTr("Uniform distribution")
-				}
-			}
-
-			RadioButtonGroup
-			{
-				name:					"digits"
-				title: 					qsTr("Check Digits")
-
-				RadioButton
-				{
-					name:				"first"
-					text:				qsTr("First digit")
-					checked:			true
-				}
-
-				RadioButton
-				{
-					name:				"firsttwo"
-					text:				qsTr("First and second digits")
-				}
-
-				RadioButton
-				{
-					name:				"last"
-					text:				qsTr("Last digit")
-				}
-			}
-
-			RadioButtonGroup
-			{
-				name:					"bayesFactorType"
-				title:					"Bayes Factor"
-
-				RadioButton
-				{
-					name:				"BF10"
-					text:				qsTr("BF\u2081\u2080")
-					checked:			true
-				}
-
-				RadioButton
-				{
-					name:				"BF01"
-					text:				qsTr("BF\u2080\u2081")
-				}
-
-				RadioButton
-				{
-					name:				"logBF10"
-					text:				qsTr("Log(BF\u2081\u2080)")
-				}
-			}
+			name:						"benford"
+			text:						qsTr("Benford's law")
+			checked:					true
 		}
 
-		ColumnLayout
+		RadioButton
 		{
+			name:						"uniform"
+			text:						qsTr("Uniform distribution")
+		}
+	}
 
-			GroupBox
+	Group
+	{
+		title: 							qsTr("Display")
+
+		Row
+		{
+			CheckBox
 			{
-				title: 					qsTr("Tables")
+				id: 					explanatoryText
+				text: 					qsTr("Explanatory text")
+				name: 					"explanatoryText"
+				checked: 				true
 
-				CheckBox
+				CIField
 				{
-					text: 				qsTr("Frequency statistics")
-					name: 				"summaryTable"
-					checked: 			true
+					name: 				"confidence"
+					label: 				qsTr("Confidence")
 				}
 			}
 
-			GroupBox
+			HelpButton
 			{
-				title: 					qsTr("Plots")
-
-				CheckBox
-				{
-					text: 				qsTr("Compare to reference distribution")
-					name: 				"benfordsLawPlot"
-				}
+				helpPage:				"Audit/explanatoryText"
+				toolTip: 				qsTr("Show explanatory text at each step of the analysis")
 			}
+		}
+	}
+
+	RadioButtonGroup
+	{
+		name:							"digits"
+		title: 							qsTr("Digits")
+
+		RadioButton
+		{
+			name:						"first"
+			text:						qsTr("First")
+			checked:					true
+		}
+
+		RadioButton
+		{
+			name:						"firsttwo"
+			text:						qsTr("First and second")
+		}
+
+		RadioButton
+		{
+			name:						"last"
+			text:						qsTr("Last")
+		}
+	}
+
+	Group
+	{
+		title: 							qsTr("Tables")
+
+		CheckBox
+		{
+			text: 						qsTr("Frequency table")
+			name: 						"summaryTable"
+			checked: 					true
+		}
+	}
+
+	RadioButtonGroup
+	{
+		name:							"bayesFactorType"
+		title:							"Bayes Factor"
+
+		RadioButton
+		{
+			name:						"BF10"
+			text:						qsTr("BF\u2081\u2080")
+			checked:					true
+		}
+
+		RadioButton
+		{
+			name:						"BF01"
+			text:						qsTr("BF\u2080\u2081")
+		}
+
+		RadioButton
+		{
+			name:						"logBF10"
+			text:						qsTr("Log(BF\u2081\u2080)")
+		}
+	}
+
+	Group
+	{
+		title:							qsTr("Plots")
+
+		CheckBox
+		{
+			text:						qsTr("Observed vs. expected")
+			name:						"benfordsLawPlot"
 		}
 	}
 
 	Item
 	{
-		Layout.preferredHeight: 		downloadReportBenfordsLaw.height
-		Layout.fillWidth: 				true
+		Layout.preferredHeight:			download.height
+		Layout.fillWidth:				true
+		Layout.columnSpan:				2
 
 		Button
 		{
-			id: 						downloadReportBenfordsLaw
+			id:							download
 			enabled: 					values.count > 0
 			anchors.right:				parent.right
 			anchors.bottom:				parent.bottom
-			text: 						qsTr("<b>Download Report</b>")
-			onClicked: 					form.exportResults()
+			text:						qsTr("<b>Download Report</b>")
+			onClicked:					form.exportResults()
 		}
 	}
 }

@@ -1,81 +1,57 @@
-Schatting
-==========================
+Waarde Schatting
+===
 
-*Opmerking*: Deze analyse zal aanzienlijk veranderen in de volgende versie van JASP. Het zal worden omgevormd tot een volwaardige evaluatieanalyse, die meer mogelijk maakt dan alleen schatting op basis van betrouwbaarheidsintervallen.
+De schattingsanalyse stelt de gebruiker in staat om de werkelijke waarde van een populatie te schatten op basis van een steekproef.
 
-Schatting wordt toegepast wanneer de auditor een steekproef van de populatie heeft verzameld en de totale fout de populatie wil schatten op basis van deze steekproef.
+### Invoer
+---
 
-----
+#### Opdrachtbox
+- Item-ID: een unieke niet-ontbrekende identifier voor elk item in de populatie. Het rijnummer van de items is voldoende.
+- Boekwaarde: De variabele die de boekwaarden van de items in de populatie bevat.
+- Auditwaarde: de variabele die de audit (true) waarden bevat, of de binaire classificatie van correct (0) of incorrect (1).
 
-Standaard invoeropties
--------
+#### Betrouwbaarheid
+Het gebruikte betrouwbaarheidsniveau. Het betrouwbaarheidsniveau is het complement van het auditrisico: het risico dat de gebruiker bereid is te nemen om een ​​onjuist oordeel over de populatie te geven. Als u bijvoorbeeld een controlerisico van 5% wilt hebben, staat dit gelijk aan 95% betrouwbaarheid.
 
 #### Populatie
-Hier kunt u de samenvattende statistieken over de populatie verstrekken.
+- Aantal items: Het totale aantal items (rijen) in de populatie.
+- Aantal eenheden: Het totale aantal eenheden in de populatie. Let op dat de eenheden items (rijen) of monetaire eenheden (waarden) kunnen zijn, afhankelijk van het controlevraagstuk.
 
-- Grootte: Het totale aantal waarnemingen in de populatie.
-- Waarde: De totale waarde van de populatie in geldeenheden.
+#### Methode
+- Directe schatter: Deze methode gebruikt alleen de controlewaarden om de afwijking te schatten (Touw en Hoogduin, 2011).
+- Verschilschatter: Deze methode gebruikt het verschil tussen de boekwaarden en de controlewaarden om de afwijking in te schatten (Touw en Hoogduin, 2011).
+- Ratio schatter: Deze methode gebruikt de verhouding van correctheid tussen de boekwaarden en de controlewaarden om de afwijking te schatten (Touw en Hoogduin, 2011).
+- Regressieschatter: Deze methode gebruikt de lineaire relatie tussen de boekwaarden en de controlewaarden om de afwijking te schatten (Touw en Hoogduin, 2011).
 
-#### Auditrisico
-Het auditrisico bepaalt het risico dat de auditor bereid is te nemen om een onjuist oordeel te geven over de eerlijkheid van de transacties in de populatie. Het auditrisico is het omgekeerde van de betrouwbaarheid van de analyse (auditrisico = 1 - betrouwbaarheid).
+#### Weergave
+- Verklarende tekst: indien ingeschakeld, wordt verklarende tekst in de analyse ingeschakeld om de procedure en de statistische resultaten te helpen interpreteren.
 
-- betrouwbaarheid: Het betrouwbaarheidsniveau van uw vereiste statistische verklaring.
+#### Tabellen
+- Vereiste steekproefomvang: Produceert een tabel die, voor een gegeven onzekerheid, de vereiste steekproefomvang laat zien.
 
-----
+#### Figuren
+- Spreidingsplot: Produceert een spreidingsplot die boekwaarden van de selectie vergelijkt met hun controlewaarden. Waarnemingen die fout zijn, zijn rood gekleurd.
 
-Geavanceerde invoeropties
--------
-
-#### Schatter
-Kies welke schatter u wilt gebruiken voor de berekening van de resultaten.
-
-- Directe schatter
-- Verschilschatter
-- Ratio schatter
-- Regressieschatter (standaard)
-
-#### Toelichtende tekst
-Deze optie maakt verklarende tekst door de hele workflow mogelijk om u te helpen de statistische resultaten en procedure te interpreteren.
-
-----
-
-Standaard resultaten
--------
+### Uitgang
+---
 
 #### Schattingstabel
-Deze tabel is het standaard resultaat voor de schattingsanalyse.
+- Schatting W: De puntschatting van de totale fout in de populatie.
+- Onzekerheid: De onzekerheid die samenhangt met het betrouwbaarheidsinterval.
+- x-% betrouwbaarheidsinterval: het betrouwbaarheidsinterval dat bij de schatting hoort.
 
-- Schatting: De puntschatting van de totale fout in de populatie.
-- Onzekerheid: De onzekerheid van de schatting.
-- Betrouwbaarheidsinterval: De boven- en ondergrens van het betrouwbaarheidsinterval dat bij de schatting hoort.
+#### Vereiste steekproefgrootte
+- Estimator: De gebruikte methode.
+- Onzekerheid: het verschil tussen de meest waarschijnlijke waarde en de grenzen.
+- Vereist n: Vereiste steekproefomvang.
+- Extra n: Extra steekproefomvang.
 
-----
+### Referenties
+---
+- AICPA (2017). <i>Auditgids: controlesteekproeven</i>. American Institute of Certified Public Accountants.
+- Touw, P., & Hoogduin, L. (2011). Statistiek voor audit en controlling.
 
-Geavanceerde resultaten (tabellen)
--------
-
-#### Benodigde steekproefgrootte
-Produceert een tabel die voor een gegeven onzekerheid (in geldeenheden) de vereiste steekproefomvang laat zien.
-
-----
-
-Geavanceerde resultaten (grafieken)
--------
-
-#### Correlatiediagram
-Produceert een spreidingsplot waarbij boekwaarden van de selectie worden vergeleken met hun werkelijke waarden. Waarnemingen die niet overeen komen, worden rood weergegeven.
-
-----
-
-R Paketten
--------
-
-- jfa
-
-----
-
-Referenties
--------
-
-AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certied 
-Public Accountants.
+### R-pakketten
+---
+- Basis R

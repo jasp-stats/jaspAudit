@@ -15,12 +15,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# When making changes to this file always mention @koenderks as a 
+# When making changes to this file always mention @koenderks as a
 # reviewer in the Pull Request
 
 auditSelection <- function(jaspResults, dataset, options, ...) {
-  
+
   # For the selection constituents, see auditCommonFunctions.R
   .jfaSelectionStage(options, jaspResults, workflow = FALSE)
-  
 }

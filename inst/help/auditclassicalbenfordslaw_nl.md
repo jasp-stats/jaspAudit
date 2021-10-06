@@ -1,67 +1,57 @@
 Wet van Benford
-==========================
+===
 
-De wet van Benford stelt dat de verdeling van eerste getallen in een populatie van nature een bepaalde kansverdeling heeft. Het controleren of de verdeling van de eerste getallen in de populatie voldoet aan de wet van Benford kan aanvullend bewijs dat de gegevens in de populatie verdere inspectie vereisen.
+De wet van Benford stelt dat de verdeling van de eerste cijfers in een populatie van nature een bepaalde verdeling volgt. Bij audits kan het beoordelen of een verdeling van cijfers in de populatie in overeenstemming is met de wet van Benford aanvullend bewijs leveren dat de transacties in de populatie mogelijk nader onderzoek behoeven.
 
-* Opmerking:* Het niet naleven van de wet van Benford duidt niet noodzakelijkerwijs op fraude. Een analyse van de wet van Benford kan daarom alleen worden gebruikt om inzicht in te krijgen in of een populatie nadere inspectie nodig heeft.
+*Opmerking:* Niet-conformiteit met de wet van Benford duidt niet noodzakelijk op fraude. Een analyse van de wet van Benford mag daarom alleen worden gebruikt om inzicht te krijgen of een populatie nader onderzoek nodig heeft.
 
-----
+### Invoer
+---
 
-Standaard invoeropties
--------
+#### Opdrachtbox
+- Variabele: In dit vak wordt de variabele geselecteerd waarvan de cijfers moeten worden getoetst aan de referentieverdeling. De waarde nul (0) wordt weggelaten uit de gegevens.
 
-#### Variabele
-Hier kunt u de variabele opgeven die de leidende getallen bevat waarop de wet van Benford moet worden getest.
+#### Verwijzing
+- Wet van Benford: toets de cijfers aan de wet van Benford.
+- Uniforme verdeling: toets de cijfers aan de uniforme verdeling.
 
-#### Controleer getallen
-Met deze optie kunt u aangeven of u de wet van Benford wilt testen op de eerste cijfers 1 - 9 of op de eerste en tweede cijfers 10 - 99.
+#### Cijfers
+- Eerste: controleert alleen het eerste cijfer van de items ten opzichte van de opgegeven verdeling.
+- Eerste en tweede: Controleert het eerste en tweede cijfer van de items tegen de opgegeven verdeling.
+- Laatste: controleert alleen het laatste cijfer van de items ten opzichte van de opgegeven distributie.
 
-----
+#### Bayes-factor
+- BF10 : Bayes-factor om bewijs te kwantificeren voor de alternatieve hypothese ten opzichte van de nulhypothese.
+- BF01 : Bayes-factor om bewijs voor de nulhypothese te kwantificeren ten opzichte van de alternatieve hypothese.
+- Log (BF10) : Natuurlijke logaritme van BF10.
 
-Geavanceerde invoeropties
--------
+#### Weergave
+- Verklarende tekst: indien ingeschakeld, wordt verklarende tekst in de analyse ingeschakeld om de procedure en de statistische resultaten te helpen interpreteren.
+  - Betrouwbaarheid: Het betrouwbaarheidsniveau dat in de verklarende tekst wordt gebruikt.
 
-#### Auditrisico
-Het auditrisico bepaalt het risico dat de auditor bereid is te nemen om een onjuist oordeel te geven over de eerlijkheid van de transacties in de populatie. Het auditrisico is het omgekeerde van de betrouwbaarheid van de analyse (auditrisico = 1 - betrouwbaarheid).
+### Uitgang
+---
 
-#### Toelichtende tekst
-Deze optie maakt verklarende tekst door de hele workflow mogelijk om u te helpen de statistische resultaten en procedure te interpreteren.
+#### Goodness-of-fit tafel
+- n: Het totaal aantal waarnemingen in de dataset.
+- X<sup>2</sup>: de waarde van de chi-kwadraat-teststatistiek.
+- df: vrijheidsgraden geassocieerd met de Chi-kwadraattoets.
+- p: de *p*-waarde die is gekoppeld aan de Chi-kwadraattoets.
+- BF: De Bayes-factor als gevolg van een niet-informatieve prior.
 
-----
+#### Frequentietabel
+- Voorloop / Laatste cijfer: Het cijfer waarvoor de informatie in de rij geldt.
+- Telling: De waargenomen tellingen van de cijfers.
+- Percentage: Het waargenomen percentage van het totaal aantal waarnemingen.
+- Wet van Benford / Uniforme verdeling: Het verwachte percentage van het totale aantal waarnemingen.
 
-Standaard resultaten
--------
+#### Figuren
+- Waargenomen vs. verwacht: Produceert een grafiek die de waargenomen verdeling van cijfers in de populatie laat zien in vergelijking met de verwachte verdeling volgens de wet van Benford of de uniforme verdeling.
 
-#### Goodness-of-fit Toets
-Deze tabel is het standaard resultaat voor de analyse van de wet van Benford.
+### Referenties
+---
+- Derks, K (2021). digitTests: Tests voor het detecteren van onregelmatige cijferpatronen. R-pakket versie 0.1.0.
 
-- Statistiek: Notatie van de teststatistiek van de chi-kwadraat toets.
-- Waarde: De waarde van de chi-kwadraat teststatistiek.
-- df: Vrijheidsgraden geassocieerd met de chi-kwadraat toets.
-- *p* waarde: De *p* waarde die is geassocieerd met de chi-kwadraat toets.
-
-----
-
-Geavanceerde resultaten (tabellen)
--------
-
-#### Beschrijvende statistieken
-Produceert een tabel met voor elk leidend cijfer het waargenomen aantal, het waargenomen percentage, en het verwachte percentage onder de wet van Benford.
-
-#### Vergelijk met de wet van Benford
-Produceert een grafiek met de waargenomen verdeling van leidende cijfers in de populatie, vergeleken met de verwachte verdeling onder de wet van Benford.
-
-----
-
-R Pakketten
--------
-
-- base R
-
-----
-
-Referenties
--------
-
-AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certied 
-Public Accountants.
+### R-pakketten
+---
+- cijfertoetsen

@@ -31,8 +31,8 @@ import JASP											1.0
 
 Form
 {
-	
-	columns: 			1
+
+	columns: 										2
 
 	// Extra options
 	CheckBox
@@ -44,28 +44,34 @@ Form
 
 	CheckBox
 	{
-		name: 										"bayesianAnalysis"
+		name: 										"bayesian"
 		checked: 									false
 		visible: 									false
 	}
 
 	CheckBox
 	{
-		name: 										"separateKnownAndUnknownMisstatement"
-		checked: 									false
-		visible: 									false
-	}
-
-	CheckBox
-	{
-		name: 										"useSumStats"
+		name: 										"separateMisstatement"
 		checked: 									false
 		visible: 									false
 	}
 
 	RadioButtonGroup
 	{
-		name: 										"priorConstructionMethod"
+		name:										"dataType"
+		visible:									false
+
+		RadioButton
+		{
+			id:										data
+			name: 									"data"
+			checked: 								true
+		}
+	}
+
+	RadioButtonGroup
+	{
+		name: 										"prior_method"
 		visible: 									false
 
 		RadioButton
@@ -84,172 +90,122 @@ Form
 		id: 										planningPhase
 		text: 										planningPhase.expanded ? qsTr("<b>1. Planning</b>") : qsTr("1. Planning")
 		expanded: 									!samplingChecked.checked
-		columns: 									1
+		columns: 									2
 
-		GridLayout
+		Group
 		{
-			columns: 								3
+			title: 									qsTr("Sampling Objectives")
+			columns:								2
+			enabled:								!pasteVariables.checked
 
-			GroupBox
+			CheckBox
 			{
-				title: 								qsTr("Sampling Objectives")
-				enabled: 							!pasteVariables.checked
-				columns:							2
+				id: 								materiality_test
+				text: 								qsTr("Performance materiality")
+				name: 								"materiality_test"
 
-				CheckBox
+				RadioButtonGroup
 				{
-					id: 							performanceMateriality
-					text: 							qsTr("Test against a performance materiality")
-					name: 							"performanceMateriality"
+					id: 							materiality_type
+					name: 							"materiality_type"
 
-					RadioButtonGroup
+					Row
 					{
-						id: 						materiality
-						name: 						"materiality"
+						visible: 					materiality_test.checked
 
-						RowLayout
+						RadioButton
 						{
-							visible: 				performanceMateriality.checked
-							
-							RadioButton
+							id: 					materiality_rel
+							name: 					"materiality_rel"
+							text: 					qsTr("Relative")
+							checked:				true
+							childrenOnSameRow: 		true
+
+							PercentField
 							{
-								id: 				materialityRelative
-								name: 				"materialityRelative"
-								text: 				qsTr("Relative")
-								checked:			true
-								childrenOnSameRow: 	true
-
-								PercentField
-								{
-									id: 			materialityPercentage
-									visible: 		materialityRelative.checked
-									decimals: 		2
-									defaultValue: 	0
-									min:			0
-									max:			99
-									name: 			"materialityPercentage"
-									fieldWidth: 	50 * preferencesModel.uiScale
-								}
-							}
-						}
-
-						RowLayout
-						{
-							visible: 				performanceMateriality.checked
-							
-							RadioButton
-							{
-								id: 				materialityAbsolute
-								name: 				"materialityAbsolute"
-								text: 				qsTr("Absolute")
-								childrenOnSameRow: 	true
-
-								DoubleField
-								{
-									id: 			materialityValue
-									visible: 		materialityAbsolute.checked
-									name: 			"materialityValue"
-									defaultValue: 	0
-									min: 			0
-									fieldWidth: 	90 * preferencesModel.uiScale
-									decimals: 		2
-									label: 			euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)
-								}
+								id: 				materiality_rel_val
+								visible: 			materiality_rel.checked
+								decimals: 			2
+								defaultValue: 		0
+								min:				0
+								max:				99
+								name: 				"materiality_rel_val"
 							}
 						}
 					}
-				}
 
-				HelpButton
-				{
-					toolTip: 						qsTr("Click to learn more about the performance materiality.")
-					helpPage:						"Audit/performanceMateriality"
-				}
-
-				CheckBox
-				{
-					id: 							minimumPrecision
-					text: 							qsTr("Obtain a required minimum precision")
-					name: 							"minimumPrecision"
-
-					PercentField
+					Row
 					{
-						id: 						minimumPrecisionPercentage
-						name: 						"minimumPrecisionPercentage"
-						decimals: 					2
-						defaultValue: 				2
-						min:						0.1
-						max:						99.9
-						label: 						qsTr("Relative")
-						fieldWidth:					50 * preferencesModel.uiScale
-						visible: 					minimumPrecision.checked
-					}
-				}
+						visible: 					materiality_test.checked
 
-				HelpButton
-				{
-					toolTip: 						qsTr("Click to learn more about the precision.")
-					helpPage:						"Audit/minimumPrecision"
+						RadioButton
+						{
+							id: 					materiality_abs
+							name: 					"materiality_abs"
+							text: 					qsTr("Absolute")
+							childrenOnSameRow: 		true
+
+							DoubleField
+							{
+								id: 				materiality_abs_val
+								visible: 			materiality_abs.checked
+								name: 				"materiality_abs_val"
+								defaultValue: 		0
+								min: 				0
+								fieldWidth: 		90 * preferencesModel.uiScale
+								decimals: 			2
+							}
+						}
+					}
 				}
 			}
-			
-			GroupBox
+
+			HelpButton
 			{
-				id: 								auditRisk
-				title: 								qsTr("Audit Risk")
-				enabled: 							!pasteVariables.checked
+				toolTip: 							qsTr("Click to learn more about performance materiality.")
+				helpPage:							"Audit/performanceMateriality"
+			}
+
+			CheckBox
+			{
+				id: 								min_precision_test
+				text: 								qsTr("Minimum precision")
+				name: 								"min_precision_test"
 
 				PercentField
 				{
-					name: 							"confidence"
-					label: 							qsTr("Confidence")
+					id: 							min_precision_rel_val
+					name: 							"min_precision_rel_val"
 					decimals: 						2
-					defaultValue: 					95
+					defaultValue: 					2
 					min:							0.1
 					max:							99.9
+					label: 							qsTr("Relative")
+					visible: 						min_precision_test.checked
 				}
 			}
 
-			GroupBox
+			HelpButton
 			{
-				title: 								qsTr("Explanatory Text")
-				columns: 							2
-
-				CheckBox
-				{
-					id: 							explanatoryText
-					text: 							qsTr("Enable")
-					name: 							"explanatoryText"
-					checked: 						true
-				}
-
-				HelpButton
-				{
-					helpPage:						"Audit/explanatoryText"
-					toolTip: 						qsTr("Show explanatory text at each step of the analysis")
-				}
+				toolTip: 							qsTr("Click to learn more about the precision.")
+				helpPage:							"Audit/minimumPrecision"
 			}
 		}
 
-		Divider
+		CIField
 		{
-			width: 									parent.width
+			name: 									"conf_level"
+			label: 									qsTr("Confidence")
+			enabled:								!pasteVariables.checked
 		}
 
-		Label
-		{
-			id: 									variableSelectionTitle
-			Layout.alignment: 						Qt.AlignHCenter
-			text: 									qsTr("<b>Variable Definitions</b>")
-			font:									jaspTheme.fontLabel
-			enabled:								!pasteVariables.checked && ((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0))
-		}
+		Divider { }
 
 		VariablesForm
 		{
 			id: 									variablesFormPlanning
 			preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
-			enabled:								!pasteVariables.checked && ((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0))
+			enabled:								!pasteVariables.checked
 
 			AvailableVariablesList
 			{
@@ -258,9 +214,9 @@ Form
 
 			AssignedVariablesList
 			{
-				id: 								recordNumberVariable
-				name: 								"recordNumberVariable"
-				title: 								qsTr("Transaction ID's")
+				id: 								id
+				name: 								"id"
+				title: 								qsTr("Item ID")
 				singleVariable:						true
 				allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
 				allowAnalysisOwnComputedColumns: 	false
@@ -268,9 +224,9 @@ Form
 
 			AssignedVariablesList
 			{
-				id: 								monetaryVariable
-				name: 								"monetaryVariable"
-				title: 								materialityAbsolute.checked ? qsTr("Ist Position <i>(required)</i>") : qsTr("Ist Position <i>(optional)</i>")
+				id: 								values
+				name: 								"values"
+				title: 								qsTr("Book Value")
 				singleVariable: 					true
 				allowedColumns: 					["scale"]
 				allowAnalysisOwnComputedColumns: 	false
@@ -278,405 +234,285 @@ Form
 				{
 					if (initialized)
 					{
-						monetaryVariable.count > 0 ? poisson.click() : binomial.click()
-						monetaryVariable.count > 0 ? musSampling.click() : recordSampling.click()
-						monetaryVariable.count > 0 ? variableTypeAuditValues.click() : variableTypeCorrect.click()
+						values.count > 0 ? values_sampling.click() : rows_sampling.click()
+						values.count > 0 ? continuous.click() : binary.click()
 					}
 				}
 			}
 		}
 
+		Group
+		{
+			title: 									qsTr("Audit Risk Model")
+			enabled:								materiality_test.checked && !pasteVariables.checked
+
+			Group
+			{
+				columns:							2
+
+				DropDown
+				{
+					id: 						ir
+					name: 						"ir"
+					indexDefaultValue: 	 		0
+					startValue:					"high"
+					label: 						qsTr("Inherent risk")
+					values: 					[
+						{ label: qsTr("High"),	value: "high"},
+						{ label: qsTr("Medium"), value: "medium"},
+						{ label: qsTr("Low"), 		value: "low"},
+						{ label: qsTr("Manual"), 	value: "custom"}
+					]
+				}
+
+				PercentField
+				{
+					name: 							"irCustom"
+					defaultValue: 					ir.value == "high" ? 100 : (ir.value == 'medium' ? 60 : (ir.value == "low" ? 36 : 100))
+					min: 							25
+					enabled: 						ir.value == "custom"
+				}
+
+				DropDown
+				{
+					id: 							cr
+					name: 							"cr"
+					indexDefaultValue:				0
+					startValue:						"high"
+					label: 							qsTr("Control risk")
+					values: 						[
+						{ label: qsTr("High"),		value: "high"},
+						{ label: qsTr("Medium"), 	value: "medium"},
+						{ label: qsTr("Low"), 		value: "low"},
+						{ label: qsTr("Manual"), 	value: "custom"}
+					]
+				}
+
+				PercentField
+				{
+					name: 							"crCustom"
+					defaultValue:					cr.value == "high" ? 100 : (cr.value == 'medium' ? 60 : (cr.value == "low" ? 36 : 100))
+					min: 							25
+					enabled: 						cr.value == "custom"
+				}
+			}
+		}
+
+		Group
+		{
+			title: 									qsTr("Display")
+			columns: 								2
+
+			CheckBox
+			{
+				id: 								explanatoryText
+				text: 								qsTr("Explanatory text")
+				name: 								"explanatoryText"
+				checked: 							true
+			}
+
+			HelpButton
+			{
+				helpPage:							"Audit/explanatoryText"
+				toolTip: 							qsTr("Show explanatory text at each step of the analysis")
+			}
+		}
+
+		RadioButtonGroup
+		{
+			id: 									expected
+			name: 									"expected_type"
+			title: 									qsTr("Expected Errors in Sample")
+			enabled:								ir.value == 'high' && cr.value == 'high' && !pasteVariables.checked
+
+			RadioButton
+			{
+				id: 								expected_rel
+				name: 								"expected_rel"
+				text: 								qsTr("Relative")
+				checked: 							true
+				childrenOnSameRow: 					true
+
+				PercentField
+				{
+					id:								expected_rel_val
+					name: 							"expected_rel_val"
+					enabled: 						expected_rel.checked
+					decimals: 						2
+					defaultValue: 					0
+					visible: 						expected_rel.checked
+				}
+			}
+
+			RadioButton
+			{
+				id: 								expected_abs
+				name: 								"expected_abs"
+				text: 								qsTr("Absolute")
+				childrenOnSameRow: 					true
+
+				DoubleField
+				{
+					id:								expected_abs_val
+					name: 							"expected_abs_val"
+					enabled: 						expected_abs.checked
+					defaultValue: 					0
+					min: 							0
+					decimals: 						2
+					visible: 						expected_abs.checked
+				}
+			}
+		}
+
+		Group
+		{
+			title: 									qsTr("Tables")
+
+			CheckBox
+			{
+				text: 								qsTr("Descriptive statistics")
+				name: 								"tableBookDist"
+				enabled:							values.count > 0
+			}
+		}
+
+		RadioButtonGroup
+		{
+			title: 									qsTr("Probability Distribution")
+			name: 									"likelihood"
+			enabled:								!pasteVariables.checked
+
+			RadioButton
+			{
+				id: 								lik_poisson
+				text: 								qsTr("Poisson")
+				name: 								"poisson"
+				checked: 							true
+			}
+
+			RadioButton
+			{
+				id: 								lik_binomial
+				text: 								qsTr("Binomial")
+				name: 								"binomial"
+			}
+
+			RadioButton
+			{
+				id: 								lik_hypergeometric
+				text: 								qsTr("Hypergeometric")
+				name: 								"hypergeometric"
+				enabled:							id.count > 0
+			}
+		}
+
+		Group
+		{
+			title: 									qsTr("Plots")
+
+			CheckBox
+			{
+				name: 								"plotBookDist"
+				text: 								qsTr("Distribution of book values")
+				enabled: 							values.count > 0
+			}
+
+			CheckBox
+			{
+				text: 								qsTr("Compare sample sizes")
+				name: 								"plotSampleSizes"
+				enabled:							materiality_test.checked
+			}
+
+			CheckBox
+			{
+				text: 								qsTr("Assumed error distribution")
+				name: 								"plotErrorDist"
+			}
+		}
+
 		Section
 		{
-			title: 									qsTr("A.     Critical Transactions")
-			enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && monetaryVariable.count > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && recordNumberVariable.count > 0
-			columns: 								1
+			title:									qsTr("Advanced Options")
+			columns:								3
 
-			GridLayout
+			Group
 			{
-				columns: 							2
-				enabled: 							!pasteVariables.checked
+				name:								"critical_items"
+				title:								qsTr("Critical Items")
+				enabled:							data.checked && values.count > 0 && !pasteVariables.checked
 
 				CheckBox
 				{
-					id: 							flagCriticalTransactions
-					name:							"flagCriticalTransactions"
-					text:							qsTr("Select critical transactions")
-					enabled:						monetaryVariable.count > 0
-					checked:						monetaryVariable.count > 0
+					id: 							critical_negative
+					name:							"critical_negative"
+					text:							qsTr("Negative book values")
+					enabled:						values.count > 0
+					checked:						true
 
 					ComputedColumnField
 					{
-						id: 						criticalTransactions
-						name: 						"criticalTransactions"
-						text: 						qsTr("Column name critical transactions: ")
+						id: 						critical_name
+						name: 						"critical_name"
+						text: 						qsTr("Column name")
 						fieldWidth: 				120 * preferencesModel.uiScale
-						value: 						"Critical"
+						value: 						"critical"
 					}
 
-					CheckBox
+					RadioButtonGroup
 					{
-						id:							flagNegativeValues
-						name:						"flagNegativeValues"
-						text:						qsTr("Negative Ist values")
-						enabled:					monetaryVariable.count > 0
-						checked:					true
-					}
+						name: 						"critical_action"
 
-				}
+						RadioButton
+						{
+							id:						inspect
+							text: 					qsTr("Keep")
+							name: 					"inspect"
+							checked: 				true
+						}
 
-				RadioButtonGroup
-				{
-					title: 							qsTr("How to handle critical transactions")
-					name: 							"handleCriticalTransactions"
-					enabled:						flagCriticalTransactions.checked
-
-					RadioButton
-					{
-						id:							inspectCriticalTransactions
-						text: 						qsTr("Inspect")
-						name: 						"inspect"
-						checked: 					true
-					}
-
-					RadioButton
-					{
-						text: 						qsTr("Remove")
-						name: 						"remove"
+						RadioButton
+						{
+							text: 					qsTr("Remove")
+							name: 					"remove"
+						}
 					}
 				}
 			}
-
-			Divider
-			{
-				width:								parent.width
-				visible: 							flagCriticalTransactions.checked
-			}
-
-			Label
-			{
-				Layout.alignment: 					Qt.AlignHCenter
-				text: 								qsTr("<b>Critical Transaction List</b>")
-				visible:							flagCriticalTransactions.checked
-			}
-
-			TableView
-			{
-				id:									criticalTransactionTable
-				name:								"criticalTransactionTable"
-				Layout.fillWidth: 					true
-				modelType:							JASP.FilteredDataEntryModel
-				source:     						["recordNumberVariable", "monetaryVariable"]
-				itemType:							JASP.Integer
-				colName: 							""
-				visible:							flagCriticalTransactions.checked
-				extraCol: 							criticalTransactions.value
-				filter:								criticalTransactions.value + " > 0"
-				implicitHeight: 					200
-			}
-		}
-
-		Section
-		{
-			text: 									qsTr("B.     Risk Assessments")
-			columns:								3
-			enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && monetaryVariable.count > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && recordNumberVariable.count > 0
 
 			RadioButtonGroup
 			{
-				id: 								ir
-				title: 								qsTr("Inherent Risk")
-				name: 								"IR"
-				enabled:							!pasteVariables.checked && performanceMateriality.checked
+				name: 								"display"
+				title:								qsTr("Format Tables")
 
 				RadioButton
 				{
-					id:								irHigh
-					text: 							qsTr("High")
-					name: 							"High"
+					text: 							qsTr("Numbers")
+					name: 							"number"
 					checked: 						true
 				}
 
 				RadioButton
 				{
-					text: 							qsTr("Medium")
-					name: 							"Medium"
-					enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
+					text: 							qsTr("Percentages")
+					name: 							"percent"
 				}
 
 				RadioButton
 				{
-					text: 							qsTr("Low")
-					name: 							"Low"
-					enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
-				}
-
-				RadioButton
-				{
-					id: 							irCustom
-					text:	 						qsTr("Custom")
-					name: 							"Custom"
-					childrenOnSameRow: 				true
-					enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
-
-					PercentField
-					{
-						name: 						"irCustom"
-						visible: 					irCustom.checked
-						decimals: 					2
-						defaultValue: 				100
-						min: 						25
-					}
+					text: 							qsTr("Extrapolated amounts")
+					name: 							"amount"
+					enabled:						values.count > 0
 				}
 			}
 
-			RadioButtonGroup
+			IntegerField
 			{
-				id: 								cr
-				title: 								qsTr("Control Risk")
-				name: 								"CR"
-				enabled:							!pasteVariables.checked && performanceMateriality.checked
-
-				RadioButton
-				{
-					id:								crHigh
-					text: 							qsTr("High")
-					name: 							"High"
-					checked: 						true
-				}
-
-				RadioButton
-				{
-					text: 							qsTr("Medium")
-					name: 							"Medium"
-					enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
-				}
-
-				RadioButton
-				{
-					text: 							qsTr("Low")
-					name: 							"Low"
-					enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
-				}
-
-				RadioButton
-				{
-					id: 							crCustom
-					text:	 						qsTr("Custom")
-					name: 							"Custom"
-					childrenOnSameRow: 				true
-					enabled:						(expectedRelative.checked && expectedPercentage.value == 0) | (expectedAbsolute.checked && expectedNumber.value == 0)
-
-					PercentField
-					{
-						name: 						"crCustom"
-						visible: 					crCustom.checked
-						decimals: 					2
-						defaultValue: 				100
-						min:						25
-					}
-				}
-			}
-
-			RadioButtonGroup
-			{
-				id: 								expectedErrors
-				name: 								"expectedErrors"
-				title: 								qsTr("Expected Errors in Sample")
+				name: 								"by"
+				text: 								qsTr("Increment")
+				min: 								1
+				defaultValue: 						1
 				enabled:							!pasteVariables.checked
-
-				RowLayout
-				{
-					RadioButton
-					{
-						id: 						expectedRelative
-						name: 						"expectedRelative"
-						text: 						qsTr("Relative")
-						checked: 					true
-					}
-
-					PercentField
-					{
-						id:							expectedPercentage
-						name: 						"expectedPercentage"
-						enabled: 					expectedRelative.checked
-						decimals: 					2
-						defaultValue: 				0
-						visible: 					expectedRelative.checked
-						fieldWidth: 				50 * preferencesModel.uiScale
-						onValueChanged:				if (expectedRelative.checked && expectedPercentage.value > 0)
-													{
-														irHigh.click()
-														crHigh.click()
-													}
-					}
-				}
-
-				RowLayout
-				{
-					RadioButton
-					{
-						id: 						expectedAbsolute
-						name: 						"expectedAbsolute"
-						text: 						qsTr("Absolute")
-					}
-
-					DoubleField
-					{
-						id:							expectedNumber
-						name: 						"expectedNumber"
-						enabled: 					expectedAbsolute.checked
-						defaultValue: 				0
-						min: 						0
-						decimals: 					3
-						visible: 					expectedAbsolute.checked
-						fieldWidth: 				60 * preferencesModel.uiScale
-						label: 						performanceMateriality.checked && materialityAbsolute.checked ? (euroValuta.checked ? "€" : (dollarValuta.checked ? "$" : otherValutaName.value)) : ""
-						onValueChanged:				if (expectedAbsolute.checked && expectedNumber.value > 0)
-													{
-														irHigh.click()
-														crHigh.click()
-													}
-					}
-				}
-			}
-		}
-
-		Section
-		{
-			text:									qsTr("C.     Advanced Options")
-			columns:								3
-			enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && monetaryVariable.count > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && recordNumberVariable.count > 0
-
-			RadioButtonGroup
-			{
-				id: 								planningModel
-				title: 								qsTr("Probability Distribution")
-				name: 								"planningModel"
-				enabled:							!pasteVariables.checked
-
-				RadioButton
-				{
-					id: 							binomial
-					text: 							qsTr("Binomial")
-					name: 							"binomial"
-					checked: 						true
-				}
-
-				RadioButton {
-					id: 							poisson
-					text: 							qsTr("Poisson")
-					name: 							"Poisson"
-				}
-
-				RadioButton {
-					id: 							hypergeometric
-					text: 							qsTr("Hypergeometric")
-					name: 							"hypergeometric"
-					enabled:						performanceMateriality.checked
-				}
-			}
-
-			GroupBox
-			{
-				title: 								qsTr("Calculation Preferences")
-				enabled:							!pasteVariables.checked
-
-				IntegerField
-				{
-					name: 							"sampleSizeIncrease"
-					text: 							qsTr("Step size")
-					fieldWidth:						50 * preferencesModel.uiScale
-					min: 							1
-					max:							20
-					defaultValue: 					1
-				}
-			}
-
-			RadioButtonGroup
-			{
-				id: 								valuta
-				title: 								qsTr("Currency")
-				name: 								"valuta"
-				enabled:							monetaryVariable.count > 0 | materialityAbsolute.checked
-
-				RadioButton
-				{
-					id: 							euroValuta
-					text: 							qsTr("Euro (€)")
-					name: 							"euroValuta"
-					checked: 						true
-				}
-
-				RadioButton
-				{
-					id: 							dollarValuta
-					text: 							qsTr("Dollar ($)")
-					name: 							"dollarValuta"
-				}
-
-				RowLayout
-				{
-					RadioButton
-					{
-						id: 						otherValuta
-						text:						qsTr("Other")
-						name: 						"otherValuta"
-					}
-
-					TextField
-					{
-						id: 						otherValutaName
-						name: 						"otherValutaName"
-						fieldWidth: 				100 * preferencesModel.uiScale
-						enabled: 					otherValuta.checked
-						visible: 					otherValuta.checked
-					}
-				}
-			}
-		}
-
-		Section
-		{
-			title:									qsTr("D.     Tables and Plots")
-			columns:								2
-			enabled:								((performanceMateriality.checked && ((materialityRelative.checked && materialityPercentage.value > 0) | (materialityAbsolute.checked && materialityValue.value > 0 && monetaryVariable.count > 0))) | (minimumPrecision.checked && minimumPrecisionPercentage.value > 0)) && recordNumberVariable.count > 0
-
-			GroupBox
-			{
-				title: 								qsTr("Tables")
-
-				CheckBox
-				{
-					text: 							qsTr("Descriptive statistics for Ist values")
-					name: 							"bookValueDescriptives"
-					enabled:						monetaryVariable.count > 0
-				}
-			}
-
-			GroupBox
-			{
-				title: 								qsTr("Plots")
-
-				CheckBox
-				{
-					name: 							"bookValueDistribution"
-					text: 							qsTr("Distribution of Ist values")
-					enabled: 						monetaryVariable.count > 0
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Compare required sample sizes");
-					name: 							"decisionPlot"
-					enabled:						performanceMateriality.checked
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Implied distribution of errors")
-					name: 							"samplingDistribution"
-				}
 			}
 		}
 
@@ -685,17 +521,13 @@ Form
 			Layout.preferredHeight: 				toSampling.height
 			Layout.fillWidth: 						true
 			enabled:								!pasteVariables.checked
+			Layout.columnSpan: 						2
 
 			Button
 			{
-				id:									downloadReportPlanning;
 				anchors.right:						toSampling.left
 				anchors.rightMargin:				jaspTheme.generalAnchorMargin
 				text:								qsTr("<b>Download Report</b>")
-				enabled:							((materialityRelative.checked ?
-														  materialityPercentage.value != "0" && recordNumberVariable.count > 0 :
-														  materialityValue.value 		!= "0" && recordNumberVariable.count > 0 && monetaryVariable.count > 0) |
-													 (minimumPrecision.checked && minimumPrecisionPercentage.value != "0" && recordNumberVariable.count > 0))
 				onClicked:							form.exportResults()
 			}
 
@@ -714,10 +546,10 @@ Form
 				id: 								toSampling
 				anchors.right: 						parent.right
 				text: 								qsTr("<b>To Selection</b>")
-				enabled: 							!samplingChecked.checked && ((materialityRelative.checked ?
-																					 materialityPercentage.value > 0 && recordNumberVariable.count > 0 :
-																					 materialityValue.value > 0 && recordNumberVariable.count > 0 && monetaryVariable.count > 0) |
-																				(minimumPrecision.checked && minimumPrecisionPercentage.value > 0 && recordNumberVariable.count > 0))
+				enabled: 							!samplingChecked.checked && ((materiality_rel.checked ?
+																					  materiality_rel_val.value > 0 && id.count > 0 :
+																					  materiality_abs_val.value > 0 && id.count > 0 && values.count > 0) |
+																				 (min_precision_test.checked && min_precision_rel_val.value > 0 && id.count > 0))
 				onClicked:							samplingChecked.checked	= true
 			}
 		}
@@ -733,21 +565,13 @@ Form
 		text: 										samplingPhase.expanded ? qsTr("<b>2. Selection</b>") : qsTr("2. Selection")
 		enabled: 									samplingChecked.checked
 		expanded: 									samplingChecked.checked && !executionChecked.checked
-		columns: 									1
-
-		CheckBox
-		{
-			id: 									customSampleConstruction
-			name: 									"customSampleConstruction"
-			text:									qsTr("Add custom variables to sample")
-			enabled:								!pasteVariables.checked
-		}
+		columns: 									2
 
 		VariablesForm
 		{
 			id: 									variablesFormSampling
 			preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
-			enabled: 								!pasteVariables.checked && customSampleConstruction.checked
+			enabled: 								!pasteVariables.checked
 
 			AvailableVariablesList
 			{
@@ -756,8 +580,8 @@ Form
 
 			AssignedVariablesList
 			{
-				name: 								"rankingVariable"
-				title: 								qsTr("Ranking Variable <i>(optional)</i>")
+				name: 								"rank"
+				title: 								qsTr("Ranking Variable")
 				singleVariable:						true
 				allowedColumns:						["scale"]
 				allowAnalysisOwnComputedColumns: 	false
@@ -765,222 +589,168 @@ Form
 
 			AssignedVariablesList
 			{
-				name:								"additionalVariables"
-				title: 								qsTr("Additional Variables <i>(optional)</i>")
+				name:								"variables"
+				title: 								qsTr("Additional Variables")
 				Layout.preferredHeight: 			140 * preferencesModel.uiScale
 				allowedColumns: 					["scale", "ordinal", "nominal"]
 				allowAnalysisOwnComputedColumns: 	false
 			}
 		}
 
-		Section
+		RadioButtonGroup
 		{
-			title: 									qsTr("A.     Selection Methodology")
-			columns:								3
-			expanded: 								samplingChecked.checked && !executionChecked.checked
+			id: 									units
+			title:									qsTr("Sampling Units")
+			name: 									"units"
+			columns:								2
+			enabled:								!pasteVariables.checked
 
-			CheckBox
+			RadioButton
 			{
-				name:								"shufflePopulationBeforeSampling"
-				text:								qsTr("Randomly organize transactions before selection")
-				checked:							false
-				enabled:							!pasteVariables.checked
-				Layout.columnSpan:					3
+				id: 								rows_sampling
+				text: 								qsTr("Items")
+				name: 								"items"
+				checked: 							true
 			}
 
-			Divider
+			HelpButton
 			{
-				width: 								parent.width
+				toolTip: 							qsTr("Click to learn more about record sampling.")
+				helpPage:							"Audit/recordSampling"
 			}
 
-			RadioButtonGroup
+			RadioButton
 			{
-				id: 								selectionType
-				title:								qsTr("Sampling Units")
-				name: 								"selectionType"
-				columns: 							2
-				enabled:							!pasteVariables.checked
-
-				RadioButton
-				{
-					id: 							musSampling
-					text: 							qsTr("Monetary unit sampling")
-					name: 							"musSampling"
-					enabled: 						monetaryVariable.count > 0
-				}
-
-				HelpButton
-				{
-					helpPage:						"Audit/monetaryUnitSampling"
-					toolTip: 						qsTr("Click to learn more about monetary unit sampling.")
-				}
-
-				RadioButton
-				{
-					id: 							recordSampling
-					text: 							qsTr("Record sampling")
-					name: 							"recordSampling"
-					checked: 						true
-				}
-
-				HelpButton
-				{
-					toolTip: 						qsTr("Click to learn more about record sampling.")
-					helpPage:						"Audit/recordSampling"
-				}
+				id: 								values_sampling
+				text: 								qsTr("Monetary units")
+				name: 								"values"
+				enabled: 							values.count > 0
 			}
 
-			RadioButtonGroup
+			HelpButton
 			{
-				id: 								selectionMethod
-				title:								qsTr("Selection Method")
-				name: 								"selectionMethod"
-				columns: 							2
-				enabled:							!pasteVariables.checked
-
-				RadioButton
-				{
-					id: 							randomSampling
-					text: 							qsTr("Random sampling")
-					name: 							"randomSampling"
-				}
-
-				HelpButton
-				{
-					toolTip: 						qsTr("Click to learn more about random sampling.")
-					helpPage:						"Audit/randomSampling"
-				}
-
-				RadioButton
-				{
-					id: 							cellSampling
-					text: 							qsTr("Cell sampling")
-					name: 							"cellSampling"
-				}
-
-				HelpButton
-				{
-					toolTip: 						qsTr("Click to learn more about cell sampling.")
-					helpPage:						"Audit/cellSampling"
-				}
-
-				RadioButton
-				{
-					id: 							systematicSampling
-					text: 							qsTr("Fixed interval sampling")
-					name: 							"systematicSampling"
-					checked: 						true
-				}
-
-				HelpButton
-				{
-					toolTip: 						qsTr("Click to learn more about fixed interval sampling.")
-					helpPage:						"Audit/fixedIntervalSampling"
-				}
-			}
-
-			IntegerField
-			{
-				id: 								seed
-				text: 								systematicSampling.checked ? qsTr("Starting point") : qsTr("Seed")
-				name: 								"seed"
-				defaultValue: 						1
-				min: 								1
-				max: 								99999
-				fieldWidth: 						60 * preferencesModel.uiScale
-				enabled: 							!pasteVariables.checked
+				helpPage:							"Audit/monetaryUnitSampling"
+				toolTip: 							qsTr("Click to learn more about monetary unit sampling.")
 			}
 		}
 
-		Section
+		Group
 		{
-			title: 									qsTr("B.     Tables")
-			columns:								1
+			title: 									qsTr("Tables")
 
-			GroupBox
+			CheckBox
 			{
-				id: 								samplingTables
-				title: 								qsTr("Tables")
+				text: 								qsTr("Descriptive statistics")
+				name: 								"tableDescriptives"
+			}
 
-				CheckBox
+			CheckBox
+			{
+				text: 								qsTr("Raw sample")
+				name: 								"tableSample"
+			}
+		}
+
+		Group
+		{
+			RadioButtonGroup
+			{
+				id: 								method
+				title:								qsTr("Method")
+				name: 								"sampling_method"
+				enabled:							!pasteVariables.checked
+
+				Group
 				{
-					text: 							qsTr("Display selected transactions")
-					name: 							"displaySample"
-				}
 
-				CheckBox
-				{
-					id: 							sampleDescriptives
-					text: 							qsTr("Descriptive statistics of selected transactions")
-					name: 							"sampleDescriptives"
-				}
-
-				RowLayout
-				{
-					Layout.leftMargin: 				20 * preferencesModel.uiScale
-
-					ColumnLayout
+					Row
 					{
-						spacing: 					5 * preferencesModel.uiScale
+						RadioButton
+						{
+							id: 					interval
+							text: 					qsTr("Fixed interval sampling")
+							name: 					"interval"
+							checked: 				true
 
-						CheckBox
-						{
-							text: 					qsTr("Mean")
-							name: 					"mean"
-							enabled: 				sampleDescriptives.checked
-							checked: 				true
+							IntegerField
+							{
+								id: 				start
+								text: 				qsTr("Starting point")
+								name: 				"start"
+								defaultValue: 		1
+								min: 				1
+								visible:			interval.checked
+							}
 						}
-						
-						CheckBox
+
+						HelpButton
 						{
-							text: 					qsTr("Median")
-							name: 					"median"
-							enabled: 				sampleDescriptives.checked
-							checked: 				true
-						}
-						
-						CheckBox
-						{
-							text: 					qsTr("Std. deviation")
-							name: 					"sd"
-							enabled: 				sampleDescriptives.checked
-							checked: 				true
-						}
-						
-						CheckBox
-						{
-							text: 					qsTr("Variance")
-							name: 					"var"
-							enabled: 				sampleDescriptives.checked
+							toolTip: 				qsTr("Click to learn more about fixed interval sampling.")
+							helpPage:				"Audit/fixedIntervalSampling"
 						}
 					}
 
-					ColumnLayout
+					Row
 					{
-						spacing: 					5 * preferencesModel.uiScale
+						RadioButton
+						{
+							id: 					cell
+							text: 					qsTr("Cell sampling")
+							name: 					"cell"
 
-						CheckBox
-						{
-							text: 					qsTr("Minimum")
-							name: 					"min"
-							enabled: 				sampleDescriptives.checked
+							IntegerField
+							{
+								id: 				seed_cell
+								text: 				qsTr("Seed")
+								name: 				"seed_cell"
+								defaultValue: 		1
+								min: 				1
+								max: 				99999
+								visible:			cell.checked
+							}
 						}
-						
-						CheckBox
+
+						HelpButton
 						{
-							text: 					qsTr("Maximum")
-							name: 					"max"
-							enabled: 				sampleDescriptives.checked
+							toolTip: 				qsTr("Click to learn more about cell sampling.")
+							helpPage:				"Audit/cellSampling"
 						}
-						
-						CheckBox
+					}
+
+					Row
+					{
+						RadioButton
 						{
-							text: 					qsTr("Range")
-							name: 					"range"
-							enabled: 				sampleDescriptives.checked
+							id: 					random
+							text: 					qsTr("Random sampling")
+							name: 					"random"
+
+							IntegerField
+							{
+								id: 				seed_random
+								text: 				qsTr("Seed")
+								name: 				"seed_random"
+								defaultValue: 		1
+								min: 				1
+								max: 				99999
+								visible:			random.checked
+							}
+						}
+
+						HelpButton
+						{
+							toolTip: 				qsTr("Click to learn more about random sampling.")
+							helpPage:				"Audit/randomSampling"
 						}
 					}
 				}
+			}
+
+			CheckBox
+			{
+				name:								"randomize"
+				text:								qsTr("Randomize items")
+				enabled:							!pasteVariables.checked
 			}
 		}
 
@@ -989,6 +759,7 @@ Form
 			Layout.preferredHeight: 				toExecution.height
 			Layout.fillWidth: 						true
 			enabled:								!pasteVariables.checked
+			Layout.columnSpan:						2
 
 			Button
 			{
@@ -999,11 +770,10 @@ Form
 
 			Button
 			{
-				id:									downloadReportSelection
-				enabled:							((materialityRelative.checked ?
-														  materialityPercentage.value != "0" && recordNumberVariable.count > 0 :
-														  materialityValue.value 		!= "0" && recordNumberVariable.count > 0 && monetaryVariable.count > 0) |
-													 (minimumPrecision.checked && minimumPrecisionPercentage.value != "0" && recordNumberVariable.count > 0))
+				enabled:							((materiality_rel.checked ?
+														  materiality_rel_val.value != "0" && id.count > 0 :
+														  materiality_abs_val.value 		!= "0" && id.count > 0 && values.count > 0) |
+													 (min_precision_test.checked && min_precision_rel_val.value != "0" && id.count > 0))
 				anchors.right:						toExecution.left
 				anchors.rightMargin:				jaspTheme.generalAnchorMargin
 				text:								qsTr("<b>Download Report</b>")
@@ -1041,148 +811,117 @@ Form
 		text: 										executionPhase.expanded ? qsTr("<b>3. Execution</b>") : qsTr("3. Execution")
 		expanded: 									executionChecked.checked && !evaluationChecked.checked
 		enabled: 									executionChecked.checked
-		columns: 									1
+		columns: 									2
 
-		Label
+		RadioButtonGroup
 		{
-			id: 									selectHowToAnalyseObservations
-			Layout.alignment: 						Qt.AlignHCenter
-			text: 									qsTr("<b>How would you like to evaluate your transactions?</b>")
+			id: 									annotation
+			name: 									"annotation"
+			title: 									qsTr("Annotation")
+			enabled:								!pasteVariables.checked
+			columns:								2
+
+			RadioButton
+			{
+				id: 								continuous
+				text: 								qsTr("Audit value")
+				name: 								"continuous"
+				enabled: 							values.count > 0
+			}
+
+			HelpButton
+			{
+				toolTip: 							qsTr("Adds a column to specify the audit values of the items.")
+				helpPage: 							"?"
+			}
+
+			RadioButton
+			{
+				id: 								binary
+				text: 								qsTr("Correct / Incorrect")
+				name: 								"binary"
+				checked: 							true
+				enabled: 							true
+			}
+
+			HelpButton
+			{
+				toolTip:							qsTr("Adds a column to specify the items as correct (0) or misstated (1).")
+				helpPage: 							"?"
+			}
+		}
+
+		Group
+		{
+			id: 									names
+			enabled:								!pasteVariables.checked
+
+			ComputedColumnField
+			{
+				id: 								indicator_col
+				name: 								"indicator_col"
+				text: 								qsTr("Column name selection result")
+				fieldWidth: 						120 * preferencesModel.uiScale
+				value:								"selected"
+			}
+
+			ComputedColumnField
+			{
+				id: 								variable_col
+				name: 								"variable_col"
+				text: 								qsTr("Column name audit result")
+				fieldWidth: 						120 * preferencesModel.uiScale
+				value: 								"auditResult"
+			}
 		}
 
 		Item
 		{
-			Layout.preferredHeight: 				variableType.height
+			Layout.preferredHeight:					names.height
+			Layout.columnSpan:						2
 			Layout.fillWidth:						true
 
-			RadioButtonGroup
+			CheckBox
 			{
-				id: 								variableType
-				name: 								"variableType"
-				title: 								qsTr("")
-				anchors.horizontalCenter: 			parent.horizontalCenter
-				enabled:							!pasteVariables.checked
-
-				RowLayout
-				{
-					spacing: 						200 * preferencesModel.uiScale
-
-					RowLayout
-					{
-						RadioButton
-						{
-							id: 					variableTypeAuditValues
-							text: 					qsTr("Soll values")
-							name: 					"variableTypeAuditValues"
-							checked: 				false
-							enabled: 				monetaryVariable.count > 0
-						}
-
-						HelpButton
-						{
-							toolTip: 				qsTr("Adds a column to specify the Soll values of the transactions.")
-							helpPage: 				"?"
-						}
-					}
-
-					RowLayout
-					{
-						RadioButton
-						{
-							id: 					variableTypeCorrect
-							text: 					qsTr("Correct / Incorrect")
-							name: 					"variableTypeCorrect"
-							checked: 				true
-							enabled: 				true
-						}
-
-						HelpButton
-						{
-							toolTip:				qsTr("Adds a column to specify the transactions as correct (0) or misstated (1).")
-							helpPage: 				"?"
-						}
-					}
-				}
-			}
-		}
-
-		Divider
-		{
-			width: 									parent.width
-		}
-
-		RowLayout
-		{
-
-			GroupBox
-			{
-				id: 								groupBoxVariableNames
-				enabled:							!pasteVariables.checked
-
-				ComputedColumnField
-				{
-					id: 							sampleFilter
-					name: 							"sampleFilter"
-					text: 							qsTr("Column name selection result: ")
-					fieldWidth: 					120 * preferencesModel.uiScale
-					value:							"SelectionResult"
-				}
-
-				ComputedColumnField
-				{
-					id: 							variableName
-					name: 							"variableName"
-					text: 							variableTypeAuditValues.checked ? qsTr("Column name Soll values: ") : qsTr("Column name audit result: ")
-					fieldWidth: 					120 * preferencesModel.uiScale
-					value: 							"AuditResult"
-				}
+				id: 								pasteVariables
+				anchors.right: 						pasteButton.left
+				width: 								height
+				visible: 							false
+				name: 								"pasteVariables"
+				checked: 							false
 			}
 
-			Item
+			Button
 			{
-				Layout.preferredHeight:				groupBoxVariableNames.height
-				Layout.fillWidth: 					true
-
-				CheckBox
+				id: 								pasteButton
+				text: 								qsTr("<b>Fill Variables</b>")
+				enabled: 							indicator_col.value != "" && variable_col.value != "" && !pasteVariables.checked
+				anchors.right:						parent.right
+				onClicked:
 				{
-					id: 							pasteVariables
-					anchors.right: 					pasteButton.left
-					width: 							height
-					visible: 						false
-					name: 							"pasteVariables"
-					checked: 						false
-				}
-
-				Button
-				{
-					id: 							pasteButton
-					text: 							qsTr("<b>Fill Variables</b>")
-					enabled: 						sampleFilter.value != "" && variableName.value != "" && !pasteVariables.checked
-					onClicked:
-					{
-						pasteVariables.checked 		= true
-						performAuditTable.colName   = variableName.value
-						performAuditTable.extraCol	= sampleFilter.value
-						flagCriticalTransactions.checked && inspectCriticalTransactions.checked ? performAuditTable.filter 	= sampleFilter.value + " > 0" + " | " + criticalTransactions.value + " > 0" : performAuditTable.filter 	= sampleFilter.value + " > 0"
-					}
+					pasteVariables.checked 		= true
+					performAuditTable.colName   = variable_col.value
+					performAuditTable.extraCol	= indicator_col.value
+					critical_negative.checked && inspect.checked ? performAuditTable.filter = indicator_col.value + " > 0" + " | " + critical_name.value + " > 0" : performAuditTable.filter = indicator_col.value + " > 0"
 				}
 			}
-		}
-
-		Label
-		{
-			id: 									performAuditText
-			Layout.alignment: 						Qt.AlignHCenter
-			text: 									variableTypeAuditValues.checked ? qsTr("<b>Annotate your selected transactions with their Soll values.</b>") : qsTr("<b>Annotate your selected transactions with a 0 (correct) or a 1 (incorrect).</b>")
-			visible: 								pasteVariables.checked
 		}
 
 		Section
 		{
 			id:										executeAuditSection
-			title:									qsTr("A.     Data Entry")
+			title:									qsTr("Data Entry")
 			expanded:								pasteVariables.checked
 			enabled:								pasteVariables.checked
+			columns:								1
+
+			Label
+			{
+				id: 								performAuditText
+				Layout.alignment: 					Qt.AlignHCenter
+				text: 								continuous.checked ? qsTr("<b>Annotate your selected items with their audit (true) values.</b>") : qsTr("<b>Annotate your selected items as correct (0) or incorrect (1).</b>")
+				visible: 							pasteVariables.checked
+			}
 
 			TableView
 			{
@@ -1190,9 +929,9 @@ Form
 				name:								"performAudit"
 				Layout.fillWidth: 					true
 				modelType:							JASP.FilteredDataEntryModel
-				source:     						["recordNumberVariable", "monetaryVariable", "additionalVariables"]
+				source:     						["id", "values", "variables"]
 				colName:							"Filter"
-				initialValuesSource: 				"monetaryVariable"
+				initialValuesSource: 				"values"
 				defaultValue:						0
 				decimals:							10
 			}
@@ -1203,6 +942,7 @@ Form
 			Layout.preferredHeight: 				toEvaluation.height
 			Layout.fillWidth: 						true
 			enabled:								!evaluationChecked.checked
+			Layout.columnSpan:						2
 
 			Button
 			{
@@ -1233,15 +973,15 @@ Form
 					executionPhase.expanded 		= false
 					executeAuditSection.expanded	= false
 					evaluationChecked.checked 		= true
-					if (musSampling.checked && variableTypeAuditValues.checked)
-						stringerBound.click()
-					if (recordSampling.checked && variableTypeAuditValues.checked)
-						regressionBound.click()
-					if (variableTypeCorrect.checked)
+					if (values_sampling.checked && continuous.checked)
+						stringer.click()
+					if (rows_sampling.checked && continuous.checked)
+						regression.click()
+					if (binary.checked)
 					{
-						if (poisson.checked) 				poissonBound.click()
-						if (binomial.checked) 				binomialBound.click()
-						if (hypergeometric.checked) 		hyperBound.click()
+						if (lik_poisson.checked) 				poisson.click()
+						if (lik_binomial.checked) 				binomial.click()
+						if (lik_hypergeometric.checked) 		hypergeometric.click()
 					}
 				}
 			}
@@ -1258,7 +998,7 @@ Form
 		text: 										evaluationPhase.expanded ? qsTr("<b>4. Evaluation</b>") : qsTr("4. Evaluation")
 		expanded: 									evaluationChecked.checked
 		enabled: 									evaluationChecked.checked
-		columns: 									1
+		columns: 									2
 
 		VariablesForm
 		{
@@ -1273,211 +1013,155 @@ Form
 			AssignedVariablesList
 			{
 				id: 								auditResult
-				name: 								"auditResult"
-				title: 								variableTypeAuditValues.checked ? qsTr("Soll Values") : qsTr("Audit Result")
+				name: 								"values.audit"
+				title: 								continuous.checked ? qsTr("Audit Value") : qsTr("Audit Result")
 				singleVariable: 					true
 				allowedColumns: 					["nominal" ,"scale"]
 			}
 		}
 
-		Section
+		RadioButtonGroup
 		{
-			title: 									qsTr("A.     Advanced Options");
-			columns: 								2
+			title: 									qsTr("Method")
+			name: 									"method"
 
-			RadioButtonGroup
+			RadioButton
 			{
-				title: 								qsTr("Evaluation Method")
-				name: 								"estimator"
+				id:									poisson
+				name: 								"poisson"
+				text: 								qsTr("Poisson")
+				checked:							true
+			}
 
-				RadioButton
+			RadioButton
+			{
+				id:									binomial
+				name: 								"binomial"
+				text: 								qsTr("Binomial")
+			}
+
+			RadioButton
+			{
+				id:									hypergeometric
+				name: 								"hypergeometric"
+				text: 								qsTr("Hypergeometric")
+				enabled:							id.count > 0
+			}
+
+			RadioButton
+			{
+				id: 								stringer
+				name: 								"stringer"
+				text: 								qsTr("Stringer")
+				enabled: 							values.count > 0 && auditResult.count > 0
+
+				CheckBox
 				{
-					id: 							stringerBound
-					name: 							"stringerBound"
-					text: 							qsTr("Stringer bound")
-					visible: 						musSampling.checked && variableTypeAuditValues.checked
-
-					CheckBox
-					{
-						id: 						stringerBoundLtaAdjustment
-						name: 						"stringerBoundLtaAdjustment"
-						text: 						qsTr("LTA adjustment")
-						visible:					musSampling.checked && variableTypeAuditValues.checked
-						checked: 					flagCriticalTransactions.checked && flagNegativeValues.checked
-					}
-				}
-
-				RadioButton
-				{
-					id: 							directBound
-					name: 							"directBound"
-					text: 							qsTr("Direct estimator")
-					visible: 						recordSampling.checked && variableTypeAuditValues.checked && evaluationChecked.checked
-				}
-
-				RadioButton
-				{
-					id: 							differenceBound
-					name: 							"differenceBound"
-					text: 							qsTr("Difference estimator")
-					visible: 						directBound.visible
-				}
-
-				RadioButton
-				{
-					id: 							ratioBound
-					name: 							"ratioBound"
-					text: 							qsTr("Ratio estimator")
-					visible: 						directBound.visible
-				}
-
-				RadioButton
-				{
-					id: 							regressionBound
-					name: 							"regressionBound"
-					text: 							qsTr("Regression estimator")
-					visible: 						directBound.visible
-				}
-
-				RadioButton
-				{
-					id: 							binomialBound
-					name: 							"binomialBound"
-					text: 							qsTr("Binomial")
-					visible: 						variableTypeCorrect.checked && binomial.checked
-				}
-
-				RadioButton
-				{
-					id: 							poissonBound
-					name: 							"poissonBound"
-					text: 							qsTr("Poisson")
-					visible: 						variableTypeCorrect.checked && poisson.checked
-				}
-
-				RadioButton
-				{
-					id: 							hyperBound
-					name: 							"hyperBound"
-					text: 							qsTr("Hypergeometric")
-					visible: 						variableTypeCorrect.checked && hypergeometric.checked
+					name: 							"lta"
+					text: 							qsTr("LTA adjustment")
+					checked: 						true
 				}
 			}
 
-			RadioButtonGroup
+			RadioButton
 			{
-				title: 								qsTr("Show Results As")
-				name: 								"display"
+				id:									mpu
+				name: 								"mpu"
+				text: 								qsTr("Mean-per-unit estimator")
+				enabled: 							values.count > 0
+			}
 
-				RadioButton
-				{
-					text: 							qsTr("Numbers")
-					name: 							"displayNumbers"
-				}
+			RadioButton
+			{
+				id:									direct
+				name: 								"direct"
+				text: 								qsTr("Direct estimator")
+				enabled: 							values.count > 0
+			}
 
-				RadioButton
-				{
-					text: 							qsTr("Percentages")
-					name: 							"displayPercentages"
-					checked: 						true
-				}
+			RadioButton
+			{
+				id:									difference
+				name: 								"difference"
+				text: 								qsTr("Difference estimator")
+				enabled: 							values.count > 0
+			}
 
-				RadioButton
-				{
-					text: 							qsTr("Extrapolated amounts")
-					name: 							"displayValues"
-					enabled:						monetaryVariable.count > 0
-				}
+			RadioButton
+			{
+				id:									quotient
+				name: 								"quotient"
+				text: 								qsTr("Ratio estimator")
+				enabled: 							values.count > 0
+			}
+
+			RadioButton
+			{
+				id:									regression
+				name: 								"regression"
+				text: 								qsTr("Regression estimator")
+				enabled: 							values.count > 0
 			}
 		}
 
-		Section
+		Group
 		{
-			title: 									qsTr("B.     Tables and Plots")
-			columns:								2
 
-			ColumnLayout
+			Group
 			{
-				GroupBox
+				title: 								qsTr("Tables")
+
+				CheckBox
 				{
-					title: 							qsTr("Statistics")
-
-					CheckBox
-					{
-						text: 						qsTr("Most likely error (MLE)")
-						name: 						"mostLikelyError"
-						checked: 					true
-					}
-
-					CheckBox
-					{
-						text: 						qsTr("Obtained precision")
-						name: 						"obtainedPrecision"
-						checked: 					minimumPrecision.checked
-					}
-				}
-
-				GroupBox
-				{
-					title: 							qsTr("Tables")
-
-					CheckBox
-					{
-						text: 						qsTr("Additional samples for sampling objectives")
-						name: 						"additionalSamples"
-					}
-
-					CheckBox
-					{
-						text: 						qsTr("Post-hoc corrections to population value")
-						name: 						"correctionsTable"
-						visible:					monetaryVariable.count > 0
-					}
+					text: 							qsTr("Corrections to population")
+					name: 							"tableCorrections"
+					enabled:						values.count > 0
 				}
 			}
 
-			GroupBox
+			Group
 			{
 				title: 								qsTr("Plots")
 
 				CheckBox
 				{
-					text: 							qsTr("Evaluate sampling objectives")
-					name: 							"evaluationInformation"
+					text: 							qsTr("Sampling objectives")
+					name: 							"plotObjectives"
 				}
 
 				CheckBox
 				{
-					text: 							qsTr("Scatter plot of Ist and Soll values")
-					name: 							"correlationPlot"
-					enabled: 						variableTypeAuditValues.checked
+					text: 							qsTr("Scatter plot")
+					name: 							"plotScatter"
+					enabled: 						continuous.checked
 
 					CheckBox
 					{
 						text: 						qsTr("Display correlation")
-						name:						"correlationPlotShowCorrelation"
+						name:						"plotScatterCorrelation"
 					}
 
 					CheckBox
 					{
-						text: 						qsTr("Display transaction ID's")
-						name:						"correlationPlotShowIds"
+						text: 						qsTr("Display item ID's")
+						name:						"plotScatterId"
 					}
 				}
 			}
+
 		}
 
 		Item
 		{
 			Layout.preferredHeight: 				toInterpretation.height
 			Layout.fillWidth: 						true
+			Layout.columnSpan:						2
 
 			Button
 			{
 				id: 								toInterpretation
 				anchors.right:						parent.right
 				text:								qsTr("<b>Download Report</b>")
-				enabled: 							auditResult.count > 0
 				onClicked:
 				{
 					evaluationPhase.expanded = false

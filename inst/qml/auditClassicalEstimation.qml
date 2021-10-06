@@ -23,80 +23,7 @@ import JASP.Widgets 						1.0
 
 Form {
 
-	columns:								1
-
-	GridLayout
-	{
-		columns: 							3
-		columnSpacing:						75 * preferencesModel.uiScale
-
-		GroupBox
-		{
-			title: 							qsTr("Population")
-
-			IntegerField
-			{
-				id: 						populationSize
-				name: 						"populationSize"
-				text: 						qsTr("Size")
-				fieldWidth: 				100 * preferencesModel.uiScale
-				defaultValue: 				0
-				min: 						0
-			}
-
-			DoubleField
-			{
-				id: 						populationValue
-				name: 						"populationValue"
-				text: 						qsTr("Value")
-				defaultValue: 				0
-				fieldWidth: 				100 * preferencesModel.uiScale
-				min: 						0
-				decimals: 					2
-				enabled:					!mpu.checked
-			}
-		}
-
-		GroupBox
-		{
-			id: 							auditRisk
-			title: 							qsTr("Audit Risk")
-
-			PercentField
-			{
-				name: 						"confidence"
-				label: 						qsTr("Confidence")
-				decimals: 					2
-				defaultValue: 				95
-				min:						0.1
-				max:						99.9
-			}
-		}
-
-		GroupBox
-		{
-			title: 							qsTr("Explanatory Text")
-
-			RowLayout
-			{
-				CheckBox
-				{
-					id: 					explanatoryText
-					text:	 				qsTr("Enable")
-					name: 					"explanatoryText"
-					checked: 				true
-				}
-
-				HelpButton
-				{
-					helpPage:				"Audit/explanatoryText"
-					toolTip: 				qsTr("Click to learn more about the explanatory text.")
-				}
-			}
-		}
-	}
-
-	Divider { }
+	columns:								2
 
 	VariablesForm
 	{
@@ -112,7 +39,7 @@ Form {
 		{
 			id: 							bookValues
 			name: 							"bookValues"
-			title: 							qsTr("Ist Position")
+			title: 							qsTr("Book Values")
 			singleVariable:					true
 			allowedColumns:					["scale"]
 			enabled: 						!mpu.checked
@@ -122,96 +49,141 @@ Form {
 		{
 			id: 							auditValues
 			name: 							"auditValues"
-			title: 							qsTr("Soll Position")
+			title: 							qsTr("Audit Values")
 			singleVariable: 				true
 			allowedColumns: 				["scale"]
 		}
 	}
 
-	GridLayout
+	CIField
 	{
+		name: 								"confidence"
+		label: 								qsTr("Confidence")
+	}
+
+	Group
+	{
+		title: 								qsTr("Display")
 		columns: 							2
-		columnSpacing:						150 * preferencesModel.uiScale
 
-		RadioButtonGroup
+		CheckBox
 		{
-			name:					"estimator"
-			title: 					qsTr("Estimation Method")
-
-			RadioButton
-			{
-				id:					mpu
-				name:				"mpu"
-				text:				qsTr("Direct estimator")
-			}
-
-			RadioButton
-			{
-				name:				"difference"
-				text:				qsTr("Difference estimator")
-			}
-
-			RadioButton
-			{
-				name:				"ratio"
-				text:				qsTr("Ratio estimator")
-			}
-
-			RadioButton
-			{
-				name:				"regression"
-				text:				qsTr("Regression estimator")
-				checked:			true
-			}
+			id: 							explanatoryText
+			text: 							qsTr("Explanatory text")
+			name: 							"explanatoryText"
+			checked: 						true
 		}
 
-		ColumnLayout
+		HelpButton
 		{
-			GroupBox
+			helpPage:						"Audit/explanatoryText"
+			toolTip: 						qsTr("Show explanatory text at each step of the analysis")
+		}
+	}
+
+	Group
+	{
+		title: 								qsTr("Population")
+
+		IntegerField
+		{
+			id: 							populationSize
+			name: 							"populationSize"
+			text: 							qsTr("No. items")
+			fieldWidth: 					100 * preferencesModel.uiScale
+			defaultValue: 					0
+			min: 							0
+		}
+
+		DoubleField
+		{
+			id: 							populationValue
+			name: 							"populationValue"
+			text: 							qsTr("No. units")
+			defaultValue: 					0
+			fieldWidth: 					100 * preferencesModel.uiScale
+			min: 							0
+			decimals: 						2
+			enabled:						!mpu.checked
+		}
+	}
+
+	Group
+	{
+		title: 								qsTr("Tables")
+
+		CheckBox
+		{
+			id: 							requiredSampleSize
+			text:	 						qsTr("Required sample size")
+			name: 							"requiredSampleSizeTable"
+
+			DoubleField
 			{
-				title: 							qsTr("Tables")
-
-				CheckBox
-				{
-					id: 						requiredSampleSize
-					text:	 					qsTr("Required sample size")
-					name: 						"requiredSampleSizeTable"
-
-					DoubleField
-					{
-						name: 					"requiredUncertainty"
-						visible: 				requiredSampleSize.checked
-						text: 					qsTr("for an uncertainty of:")
-						defaultValue: 			100000
-						fieldWidth: 			100 * preferencesModel.uiScale
-						min: 					0
-						decimals: 				2
-					}
-				}
+				name: 						"requiredUncertainty"
+				visible: 					requiredSampleSize.checked
+				text: 						qsTr("for an uncertainty of:")
+				defaultValue: 				100000
+				fieldWidth: 				100 * preferencesModel.uiScale
+				min: 						0
+				decimals: 					2
 			}
+		}
+	}
 
-			GroupBox
-			{
-				title: 							qsTr("Plots")
+	RadioButtonGroup
+	{
+		name:								"estimator"
+		title: 								qsTr("Method")
 
-				CheckBox
-				{
-					text: 						qsTr("Correlation plot")
-					name: 						"correlationPlot"
-					enabled: 					!mpu.checked
-				}
-			}
+		RadioButton
+		{
+			id:								mpu
+			name:							"mpu"
+			text:							qsTr("Direct estimator")
+		}
+
+		RadioButton
+		{
+			name:							"difference"
+			text:							qsTr("Difference estimator")
+		}
+
+		RadioButton
+		{
+			name:							"ratio"
+			text:							qsTr("Ratio estimator")
+		}
+
+		RadioButton
+		{
+			name:							"regression"
+			text:							qsTr("Regression estimator")
+			checked:						true
+		}
+	}
+
+	Group
+	{
+		title: 								qsTr("Plots")
+
+		CheckBox
+		{
+			text: 							qsTr("Scatter plot")
+			name: 							"correlationPlot"
+			enabled: 						!mpu.checked
 		}
 	}
 
 	Item
 	{
-		Layout.preferredHeight: 			downloadReportEstimation.height
+		Layout.preferredHeight: 			download.height
 		Layout.fillWidth: 					true
+		Layout.columnSpan:					2
 
 		Button
 		{
-			id: 							downloadReportEstimation
+			id: 							download
 			enabled: 						populationSize.value != 0 && populationValue.value != 0 && auditValues.count > 0 && bookValues.count > 0
 			anchors.right: 					parent.right
 			anchors.bottom: 				parent.bottom

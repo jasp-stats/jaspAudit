@@ -14,13 +14,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-
-# When making changes to this file always mention @koenderks as a 
-# reviewer in the Pull Request
+#
+# When making changes to this file always mention @koenderks as a
+# reviewer in the pull Request.
 
 auditBayesianEvaluation <- function(jaspResults, dataset, options, ...) {
-  
   # For the evaluation constituents, see auditCommonFunctions.R
   .jfaEvaluationStage(options, jaspResults, workflow = FALSE)
-  
 }
