@@ -288,15 +288,15 @@
     }
 
     object <- if (stage == "planning") parentState[["prior"]] else parentState[["posterior"]]
+	likelihood <- if (stage == "planning") parentState[["likelihood"]] else parentState[["method"]]
     x <- 0:size
     y <- predict(object, n = size)
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, x))
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, y))
     plotData <- data.frame(x = x, y = y)
-
     plot <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y)) +
       ggplot2::geom_bar(stat = "identity", color = "black", fill = "lightgray") +
-      ggplot2::scale_x_continuous(name = if (parentState[["likelihood"]] == "poisson") gettext("Predicted samples before an error") else gettext("Predicted errors"), limits = c(-1, max(xBreaks)), breaks = xBreaks) +
+      ggplot2::scale_x_continuous(name = if (likelihood == "poisson") gettext("Predicted samples before an error") else gettext("Predicted errors"), limits = c(-1, max(xBreaks)), breaks = xBreaks) +
       ggplot2::scale_y_continuous(name = gettext("Probability"), limits = c(0, max(yBreaks)), breaks = yBreaks) +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "none")
