@@ -548,6 +548,9 @@
     return(dataset)
   } else if (stage == "selection") {
     id <- .jfaReadVariableFromOptions(options, type = "id")
+    if (is.null(id)) {
+      return(NULL)
+    }
     values <- .jfaReadVariableFromOptions(options, type = "values")
     rank <- .jfaReadVariableFromOptions(options, type = "rank")
     vars <- .jfaReadVariableFromOptions(options, type = "additional")
@@ -2128,11 +2131,8 @@
 }
 
 .jfaSelectionCalculation <- function(options, dataset, prevState, parentContainer, unitsExtra = NULL) {
-  if (options[["id"]] == "") {
-    return(NULL)
-  }
 
-  if (prevState[["n"]] == 0 || is.null(dataset)) {
+  if (options[["id"]] == "" || prevState[["n"]] == 0 || is.null(dataset)) {
     return()
   }
 
@@ -2147,7 +2147,7 @@
   }
 
   if (options[["sampling_method"]] == "interval") {
-    interval <- if (units == "rows") nrow(dataset) / prevState[["n"]] else sum(dataset[[options[["values"]]]]) / prevState[["n"]]
+    interval <- if (units == "items") length(dataset[[options[["id"]]]]) / prevState[["n"]] else sum(dataset[[options[["values"]]]]) / prevState[["n"]]
     if (options[["start"]] > interval) {
       parentContainer$setError(gettextf("Starting point is outside the range of the selection interval of 1 to %1$s. Please choose a starting point < %1$s.", round(interval, 3)))
       return()
