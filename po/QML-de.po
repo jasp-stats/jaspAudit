@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-09 09:44+0000\n"
+"PO-Revision-Date: 2021-10-09 12:55+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/de/>\n"
@@ -1140,7 +1140,7 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Book Value"
-msgstr ""
+msgstr "Buchwert"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Selection Counter"
@@ -1148,11 +1148,11 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Data"
-msgstr ""
+msgstr "Daten"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Raw"
-msgstr ""
+msgstr "Roh"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Summary statistics"
@@ -1160,53 +1160,51 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Sample size"
-msgstr ""
+msgstr "Stichprobenumfang"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Number of errors"
-msgstr ""
+msgstr "Fehleranzahl"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Display"
-msgstr ""
+msgstr "Anzeigen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Erklärungstext"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Erklärungstext bei jedem Schritt der Analyse anzeigen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior and posterior"
-msgstr ""
+msgstr "Prior und Posterior"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Corrections to population"
-msgstr ""
+msgstr "Korrekturen der Grundgesamtheit"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Assumption checks"
 msgstr "Annahmeprüfungen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Additional info"
-msgstr ""
+msgstr "Weitere Infos"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Posterior predictive"
-msgstr ""
+msgstr "Posterior-prädiktiv"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Sampling objectives"
-msgstr ""
+msgstr "Stichprobenziele"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Scatter plot"
-msgstr ""
+msgstr "Streudiagramm"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Display item ID's"
@@ -1214,27 +1212,27 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior"
-msgstr ""
+msgstr "Prior"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Default"
-msgstr ""
+msgstr "Standardeinstellung"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Manual"
-msgstr ""
+msgstr "Manuell"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "α"
-msgstr ""
+msgstr "α"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "β"
-msgstr ""
+msgstr "β"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Errors"
-msgstr ""
+msgstr "Fehler"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Impartial"
@@ -1242,17 +1240,16 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Risk assessments"
-msgstr ""
+msgstr "Risikobewertungen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Inherent risk"
-msgstr ""
+msgstr "Inhärentes Risiko"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Control risk"
-msgstr ""
+msgstr "Kontrollrisiko"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "All possible"
 msgstr "Alles möglich"
@@ -1263,7 +1260,7 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Negative book values"
-msgstr ""
+msgstr "Negative Buchwerte"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Format Tables"
@@ -1271,19 +1268,19 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Assume homogeneous taints"
-msgstr ""
+msgstr "Homogene Taintings annehmen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Click to learn more about this assumption"
-msgstr ""
+msgstr "Klicken, um mehr über diese Annahme zu erfahren"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Performance materiality"
-msgstr ""
+msgstr "Toleranzwesentlichkeit"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Click to learn more about performance materiality."
-msgstr ""
+msgstr "Klicken, um mehr über Toleranzwesentlichkeit zu erfahren."
 
 msgctxt "auditBayesianPlanning|"
 msgid "Minimum precision"
@@ -1295,55 +1292,55 @@ msgstr ""
 
 msgctxt "auditBayesianPlanning|"
 msgid "Display"
-msgstr ""
+msgstr "Anzeigen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Erklärungstext"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Equivalent prior sample"
-msgstr ""
+msgstr "Äquivalente Prior-Stichprobe"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior and posterior"
-msgstr ""
+msgstr "Prior und Posterior"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Additional info"
-msgstr ""
+msgstr "Weitere Infos"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior predictive"
-msgstr ""
+msgstr "Prior-prädiktiv"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Compare sample sizes"
-msgstr ""
+msgstr "Stichprobenumfänge vergleichen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior"
-msgstr ""
+msgstr "Prior"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Default"
-msgstr ""
+msgstr "Standardeinstellung"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Manual"
-msgstr ""
+msgstr "Manuell"
 
 msgctxt "auditBayesianPlanning|"
 msgid "α"
-msgstr ""
+msgstr "α"
 
 msgctxt "auditBayesianPlanning|"
 msgid "β"
-msgstr ""
+msgstr "β"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Errors"
-msgstr ""
+msgstr "Fehler"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Impartial"
@@ -1351,26 +1348,24 @@ msgstr ""
 
 msgctxt "auditBayesianPlanning|"
 msgid "Risk assessments"
-msgstr ""
+msgstr "Risikobewertungen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Inherent risk"
-msgstr ""
+msgstr "Inhärentes Risiko"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Control risk"
-msgstr ""
+msgstr "Kontrollrisiko"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Format Tables"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Numbers"
 msgstr "Zahlen"
 
-#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Percentages"
 msgstr "Prozentwerte"
@@ -1381,11 +1376,11 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Performance materiality"
-msgstr ""
+msgstr "Toleranzwesentlichkeit"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about performance materiality."
-msgstr ""
+msgstr "Klicken, um mehr über Toleranzwesentlichkeit zu erfahren."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Minimum precision"
@@ -1397,63 +1392,63 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Book Value"
-msgstr ""
+msgstr "Buchwert"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Display"
-msgstr ""
+msgstr "Anzeigen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Erklärungstext"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Descriptive statistics"
-msgstr ""
+msgstr "Deskriptive Statistiken"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Equivalent prior sample"
-msgstr ""
+msgstr "Äquivalente Prior-Stichprobe"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior and posterior"
-msgstr ""
+msgstr "Prior und Posterior"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Additional info"
-msgstr ""
+msgstr "Weitere Infos"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior predictive"
-msgstr ""
+msgstr "Prior-prädiktiv"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Compare sample sizes"
-msgstr ""
+msgstr "Stichprobenumfänge vergleichen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Distribution of book values"
-msgstr ""
+msgstr "Verteilung der Buchwerte"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior"
-msgstr ""
+msgstr "Prior"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Default"
-msgstr ""
+msgstr "Standardeinstellung"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Manual"
-msgstr ""
+msgstr "Manuell"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "α"
-msgstr ""
+msgstr "α"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "β"
-msgstr ""
+msgstr "β"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1462,7 +1457,7 @@ msgstr "Größe"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Errors"
-msgstr ""
+msgstr "Fehler"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Impartial"
@@ -1470,17 +1465,16 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Risk assessments"
-msgstr ""
+msgstr "Risikobewertungen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Inherent risk"
-msgstr ""
+msgstr "Inhärentes Risiko"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Control risk"
-msgstr ""
+msgstr "Kontrollrisiko"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Advanced Options"
 msgstr "Weitere Optionen"
@@ -1491,13 +1485,12 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Negative book values"
-msgstr ""
+msgstr "Negative Buchwerte"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Column name"
-msgstr ""
+msgstr "Spaltenname"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Keep"
 msgstr "Behalten"
@@ -1512,11 +1505,11 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Assume homogeneous taints"
-msgstr ""
+msgstr "Homogene Taintings annehmen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about this assumption"
-msgstr ""
+msgstr "Klicken, um mehr über diese Annahme zu erfahren"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Ranking Variable"
@@ -1524,7 +1517,7 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Additional Variables"
-msgstr ""
+msgstr "Weitere Variablen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Items"
@@ -1597,15 +1590,15 @@ msgstr "Annahmeprüfungen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Posterior predictive"
-msgstr ""
+msgstr "Posterior-prädiktiv"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Sampling objectives"
-msgstr ""
+msgstr "Stichprobenziele"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Scatter plot"
-msgstr ""
+msgstr "Streudiagramm"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Display item ID's"
