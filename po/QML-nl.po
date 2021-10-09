@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-09 12:56+0000\n"
+"PO-Revision-Date: 2021-10-11 15:03+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-qml/"
 "nl/>\n"
@@ -84,7 +84,7 @@ msgstr "Absoluut"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Click to learn more about the precision."
-msgstr "Klik om meer te leren over de precisie."
+msgstr "Klik om meer te leren over de nauwkeurigheid."
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Population"
@@ -208,7 +208,7 @@ msgstr "Absoluut"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Click to learn more about the precision."
-msgstr "Klik om meer te leren over de precisie."
+msgstr "Klik om meer te leren over de nauwkeurigheid."
 
 msgctxt "auditBayesianPlanning|"
 msgid "Population"
@@ -300,7 +300,7 @@ msgstr "Absoluut"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about the precision."
-msgstr "Klik om meer te leren over de precisie."
+msgstr "Klik om meer te leren over de nauwkeurigheid."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Confidence"
@@ -532,7 +532,7 @@ msgstr "Tabellen"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Required sample size"
-msgstr "Benodigde steekproefgrootte"
+msgstr "Vereiste steekproefomvang"
 
 msgctxt "auditClassicalEstimation|"
 msgid "for an uncertainty of:"
@@ -560,7 +560,7 @@ msgstr "Absoluut"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Click to learn more about the precision."
-msgstr "Klik om meer te leren over de precisie."
+msgstr "Klik om meer te leren over de nauwkeurigheid."
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Population"
@@ -668,7 +668,7 @@ msgstr "Absoluut"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Click to learn more about the precision."
-msgstr "Klik om meer te leren over de precisie."
+msgstr "Klik om meer te leren over de nauwkeurigheid."
 
 msgctxt "auditClassicalPlanning|"
 msgid "Population"
@@ -748,7 +748,7 @@ msgstr "Absoluut"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about the precision."
-msgstr "Klik om meer te leren over de precisie."
+msgstr "Klik om meer te leren over de nauwkeurigheid."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Confidence"
@@ -1120,19 +1120,19 @@ msgstr "Uitvoeringsmaterialiteit"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Click to learn more about performance materiality."
-msgstr "Klik voor meer informatie over uitvoeringsmaterialiteit."
+msgstr "Klik voor meer informatie over de uitvoeringsmaterialiteit."
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Minimum precision"
-msgstr "Minimale precisie"
+msgstr "Minimale nauwkeurigheid"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "No. items"
-msgstr "No. items"
+msgstr "Aantal posten"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "No. units"
-msgstr "No. eenheden"
+msgstr "Aantal eenheden"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Item ID"
@@ -1160,7 +1160,7 @@ msgstr "Samenvattende statistieken"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Sample size"
-msgstr "Steekproefgrootte"
+msgstr "Steekproefomvang"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Number of errors"
@@ -1186,7 +1186,6 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Corrections to population"
 msgstr "Correcties op populatie"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Assumption checks"
 msgstr "Verificatie van aannames"
@@ -1257,7 +1256,7 @@ msgstr "Alle mogelijke"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Critical Items"
-msgstr "Kritieke Items"
+msgstr "Kritieke Posten"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Negative book values"
@@ -1285,11 +1284,11 @@ msgstr "Klik voor meer informatie over uitvoeringsmaterialiteit."
 
 msgctxt "auditBayesianPlanning|"
 msgid "Minimum precision"
-msgstr "Minimale precisie"
+msgstr "Minimale nauwkeurigheid"
 
 msgctxt "auditBayesianPlanning|"
 msgid "No. units"
-msgstr "No. eenheden"
+msgstr "Aantal eenheden"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Display"
@@ -1317,7 +1316,7 @@ msgstr "Prior predictive"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Compare sample sizes"
-msgstr "Vergelijk steekproefgroottes"
+msgstr "Vergelijk steekproefomvang"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior"
@@ -1367,7 +1366,6 @@ msgctxt "auditBayesianPlanning|"
 msgid "Numbers"
 msgstr "Nummers"
 
-#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Percentages"
 msgstr "Percentages"
@@ -1386,7 +1384,7 @@ msgstr "Klik voor meer informatie over de uitvoeringsmaterialiteit."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Minimum precision"
-msgstr "Minimale precisie"
+msgstr "Minimale nauwkeurigheid"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Item ID"
@@ -1426,7 +1424,7 @@ msgstr "Prior predictive"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Compare sample sizes"
-msgstr "Vergelijk steekproefgroottes"
+msgstr "Vergelijk steekproefomvang"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Distribution of book values"
@@ -1452,7 +1450,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "β"
 msgstr "β"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Size"
 msgstr "Grootte"
@@ -1483,7 +1480,7 @@ msgstr "Geavanceerde Opties"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Critical Items"
-msgstr "Kritieke Items"
+msgstr "Kritieke Posten"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Negative book values"
@@ -1524,7 +1521,7 @@ msgstr "Aanvullende Variabelen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Items"
-msgstr "Items"
+msgstr "Posten"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Monetary units"
@@ -1540,7 +1537,7 @@ msgstr "Methode"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Randomize items"
-msgstr "Hussel items"
+msgstr "Hussel posten"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Annotation"
@@ -1552,12 +1549,13 @@ msgstr "Auditwaarde"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Adds a column to specify the audit values of the items."
-msgstr "Voegt een kolom toe om de auditwaardes van de items op te geven."
+msgstr "Voegt een kolom toe om de auditwaardes van de posten op te geven."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Adds a column to specify the items as correct (0) or misstated (1)."
 msgstr ""
-"Voegt een kolom toe om de items op te geven als correct (0) of incorrect (1)."
+"Voegt een kolom toe om de posten op te geven als correct (0) of incorrect "
+"(1)."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Column name selection result"
@@ -1573,12 +1571,12 @@ msgstr "Gegevensinvoer"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
-msgstr "<b>Annoteer uw geselecteerde items met hun audit (ware) waarden.</b>"
+msgstr "<b>Annoteer uw geselecteerde posten met hun audit (ware) waarden.</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
 msgstr ""
-"<b> Annoteer uw geselecteerde items als correct (0) of incorrect (1). </b>"
+"<b> Annoteer uw geselecteerde posten als correct (0) of incorrect (1). </b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Audit Value"
@@ -1673,11 +1671,11 @@ msgstr "Geef toelichtende tekst weer bij iedere stap van de analyse"
 
 msgctxt "auditClassicalEstimation|"
 msgid "No. items"
-msgstr "No. items"
+msgstr "Aantal posten"
 
 msgctxt "auditClassicalEstimation|"
 msgid "No. units"
-msgstr "No. eenheden"
+msgstr "Aantal eenheden"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Method"
@@ -1697,15 +1695,15 @@ msgstr "Klik voor meer informatie over de uitvoeringsmaterialiteit."
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Minimum precision"
-msgstr "Minimale precisie"
+msgstr "Minimale nauwkeurigheid"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "No. items"
-msgstr "No. items"
+msgstr "Aantal posten"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "No. units"
-msgstr "No. eenheden"
+msgstr "Aantal eenheden"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Item ID"
@@ -1733,7 +1731,7 @@ msgstr "Samenvattende statistieken"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Sample size"
-msgstr "Steekproefgrootte"
+msgstr "Steekproefomvang"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Number of errors"
@@ -1799,7 +1797,7 @@ msgstr "Item ID's weergeven"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Critical Items"
-msgstr "Kritieke Items"
+msgstr "Kritieke Posten"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Negative book values"
@@ -1856,11 +1854,11 @@ msgstr "Klik voor meer informatie over de uitvoeringsmaterialiteit."
 
 msgctxt "auditClassicalPlanning|"
 msgid "Minimum precision"
-msgstr "Minimale precisie"
+msgstr "Minimale nauwkeurigheid"
 
 msgctxt "auditClassicalPlanning|"
 msgid "No. units"
-msgstr "No. eenheden"
+msgstr "Aantal eenheden"
 
 #, fuzzy
 msgctxt "auditClassicalPlanning|"
@@ -1889,7 +1887,7 @@ msgstr "Toelichtende tekst"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Compare sample sizes"
-msgstr "Vergelijk steekproefgroottes"
+msgstr "Vergelijk steekproefomvang"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Assumed error distribution"
@@ -1923,7 +1921,7 @@ msgstr "Klik voor meer informatie over uitvoeringsmaterialiteit."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Minimum precision"
-msgstr "Minimale precisie"
+msgstr "Minimale nauwkeurigheid"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Item ID"
@@ -1968,7 +1966,7 @@ msgstr "Verdeling van boekwaarden"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Compare sample sizes"
-msgstr "Vergelijk steekproefgroottes"
+msgstr "Vergelijk steekproefomvang"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Assumed error distribution"
@@ -1980,7 +1978,7 @@ msgstr "Geavanceerde Opties"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Critical Items"
-msgstr "Kritieke Items"
+msgstr "Kritieke Posten"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Negative book values"
@@ -2013,7 +2011,7 @@ msgstr "Aanvullende Variabelen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Items"
-msgstr "Items"
+msgstr "Posten"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Monetary units"
@@ -2029,7 +2027,7 @@ msgstr "Methode"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Randomize items"
-msgstr "Hussel items"
+msgstr "Hussel posten"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Annotation"
@@ -2041,12 +2039,13 @@ msgstr "Auditwaarde"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Adds a column to specify the audit values of the items."
-msgstr "Voegt een kolom toe om de auditwaardes van de items op te geven."
+msgstr "Voegt een kolom toe om de auditwaardes van de posten op te geven."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Adds a column to specify the items as correct (0) or misstated (1)."
 msgstr ""
-"Voegt een kolom toe om de items op te geven als correct (0) of incorrect (1)."
+"Voegt een kolom toe om de posten op te geven als correct (0) of incorrect "
+"(1)."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Column name selection result"
@@ -2062,12 +2061,13 @@ msgstr "Gegevensinvoer"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
-msgstr "<b>Annoteer uw geselecteerde items met hun audit (ware) waardes.</b>"
+msgstr ""
+"<b>Annoteer uw geselecteerde posten met hun audit (werkelijke) waardes.</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
 msgstr ""
-"<b> Annoteer uw geselecteerde items als correct (0) of incorrect (1). </b>"
+"<b> Annoteer uw geselecteerde posten als correct (0) of incorrect (1). </b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Audit Value"
@@ -2115,7 +2115,7 @@ msgstr "Aanvullende Variabelen"
 
 msgctxt "auditSelection|"
 msgid "Sample size"
-msgstr "Steekproefgrootte"
+msgstr "Steekproefomvang"
 
 msgctxt "auditSelection|"
 msgid "Display"
@@ -2123,7 +2123,7 @@ msgstr "Weergave"
 
 msgctxt "auditSelection|"
 msgid "Items"
-msgstr "Items"
+msgstr "Posten"
 
 msgctxt "auditSelection|"
 msgid "Monetary units"
@@ -2143,7 +2143,7 @@ msgstr "Methode"
 
 msgctxt "auditSelection|"
 msgid "Randomize items"
-msgstr "Hussel items"
+msgstr "Hussel posten"
 
 msgctxt "auditSelection|"
 msgid "Export"
