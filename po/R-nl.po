@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-10-09 03:29\n"
-"PO-Revision-Date: 2021-09-14 08:36+0000\n"
-"Last-Translator: JASP Stats <b.boutin@uva.nl>\n"
+"PO-Revision-Date: 2021-10-11 15:38+0000\n"
+"Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
 "Language: nl\n"
@@ -154,9 +154,8 @@ msgstr ""
 "De Bayes factor is berekend met behulp van een <i>Dirichlet(%1$s,...,%2$s"
 "%3$s)</i> prior met <i>%2$s = 1</i>."
 
-#, fuzzy
 msgid "<b>Table %i.</b> Frequency Table"
-msgstr "<b>Tabel %i.</b> Frequenties"
+msgstr "<b>Tabel %i.</b> Frequentietabel"
 
 msgid "Benford's law"
 msgstr "Wet van Benford"
@@ -179,9 +178,8 @@ msgstr "Aantal"
 msgid "Percentage"
 msgstr "Percentage"
 
-#, fuzzy
 msgid "Observed vs. Expected Percentages"
-msgstr "Geobserveerde Percentages vs. Verwachte Percentages"
+msgstr "Geobserveerde vs. Verwachte Percentages"
 
 msgid "Observed"
 msgstr "Geobserveerd"
@@ -298,7 +296,7 @@ msgid "%1$s = %2$i"
 msgstr "%1$s = %2$i"
 
 msgid "The sample size <i>n</i>"
-msgstr "De steekproefgrootte <i>n</i>"
+msgstr "De steekproefomvang <i>n</i>"
 
 msgid "The mean of the sample audit values %1$s"
 msgstr "Het gemiddelde van de steekproef auditwaardes %1$s"
@@ -474,7 +472,7 @@ msgstr ""
 "                                %9$s"
 
 msgid "Required Sample Size"
-msgstr "Vereiste steekproefgrootte"
+msgstr "Vereiste Steekproefomvang"
 
 msgid "Estimator"
 msgstr "Schatter"
@@ -488,13 +486,11 @@ msgstr "Aanvullend <i>n</i>"
 msgid "Correlation Plot"
 msgstr "Spreidingsdiagram"
 
-#, fuzzy
 msgid "Book value"
 msgstr "Boekwaardes"
 
-#, fuzzy
 msgid "Audit value"
-msgstr "Auditwaarden"
+msgstr "Auditwaardes"
 
 msgid ""
 "<b>Figure 1.</b> Scatter plot of the book values in the selection and their "
@@ -565,13 +561,12 @@ msgstr ""
 msgid "<b>Table %i.</b> Assumption Checks"
 msgstr "<b>Tabel %i.</b> Aannamecontroles"
 
-#, fuzzy
 msgid ""
 "The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r = "
 "0</i>."
 msgstr ""
-"De weergegeven <i>p</i> waarde is voor een tweezijdige toets tegen H₀: <i>r "
-"= 0</i>."
+"De weergegeven <i>p</i> waarde is voor een tweezijdige toets tegen H%1$s: "
+"<i>r = 0</i>."
 
 msgid "Value"
 msgstr "Waarde"
@@ -630,7 +625,6 @@ msgstr "<u>Selectie</u>"
 msgid "<u>Evaluation</u>"
 msgstr "<u>Evaluatie</u>"
 
-#, fuzzy
 msgid ""
 "Analysis not possible: The materiality is higher than, or equal to the total "
 "value of the observations."
@@ -638,21 +632,20 @@ msgstr ""
 "Analyse niet mogelijk: De materialiteit is groter of gelijk aan de totale "
 "waarde van de observaties."
 
-#, fuzzy
 msgid ""
 "Analysis not possible: The expected errors are higher than the performance "
 "materiality."
 msgstr ""
-"Analyse niet mogelijk: De verwachte fouten zijn groter dan de "
+"Analyse niet mogelijk: De verwachte fouten zijn hoger dan de "
 "uitvoeringsmaterialiteit."
 
-#, fuzzy
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify the "
 "custom values for the Inherent risk and/or Control risk, or the confidence."
 msgstr ""
-"Het detectie risico is hoger dan 100%%. Herspecificeer de aangepaste waarden "
-"voor het Inherente risico en/of het Intern Beheersingsrisico."
+"Het detectie risico is groter of gelijk aan 100%%. Herspecificeer de "
+"aangepaste waarden voor het Inherente risico en/of het Intern "
+"Beheersingsrisico, of de betrouwbaarheid."
 
 msgid ""
 "You cannot incorporate this prior information into your analysis because you "
@@ -674,12 +667,12 @@ msgstr ""
 msgid "Evaluation summary"
 msgstr "Evaluatie samenvatting"
 
-#, fuzzy
 msgid ""
 "The hypergeometric upper bound requires that you specify the number of units "
 "in the population."
 msgstr ""
-"De hypergeometrische bovengrens vereist dat u de populatiegrootte opgeeft."
+"De hypergeometrische bovengrens vereist dat u het aantal eenheden in de "
+"populatie opgeeft."
 
 msgid ""
 "The direct, difference, ratio, and regression bounds require that you "
@@ -702,7 +695,6 @@ msgstr ""
 "Het detectie risico is hoger dan 100%%. Herspecificeer de aangepaste waarden "
 "voor het Inherente risico en/of het Intern Beheersingsrisico."
 
-#, fuzzy
 msgid ""
 "Select one or both sampling objectives to begin planning an audit sample.\n"
 "\n"
@@ -726,7 +718,7 @@ msgid ""
 "percentage. In the evaluation you will be able to quantify the accuracy of "
 "your estimate of the population misstatement."
 msgstr ""
-"Selecteer een of meer steekproefdoelstellingen in de linkerbovenhoek om te "
+"Selecteer een of beide steekproefdoelstellingen in de linkerbovenhoek om te "
 "beginnen met het plannen van een steekproef.\n"
 "\n"
 "%1$s <b>Toets tegen een uitvoeringsmaterialiteit</b>\n"
@@ -740,9 +732,9 @@ msgstr ""
 "bevat voor of tegen de bewering dat de fout in de populatie de "
 "uitvoeringsmaterialiteit niet overschrijdt.\n"
 "\n"
-"%2$s <b>Verkrijg een vereiste minimale precisie</b>\n"
+"%2$s <b>Verkrijg een minimale nauwkeurigheid</b>\n"
 "\n"
-"Schakel deze doelstelling in als u een vereiste minimale precisie wilt "
+"Schakel deze doelstelling in als u een minimale nauwkeurigheid wilt "
 "verkrijgen bij het <i>schatten</i> van de totale fout in de populatie op "
 "basis van een steekproef. Met deze aanpak kunt u een steekproef zodanig "
 "plannen dat, wanneer de steekproef aan de verwachtingen voldoet, de "
@@ -759,7 +751,6 @@ msgstr ""
 "van <b>%1$s</b> vast te stellen of het %2$s fouten in de populatie lager is "
 "dan de uitvoeringsmaterialiteit van <b>%3$s</b>."
 
-#, fuzzy
 msgid ""
 "The objective of this sampling procedure is to estimate the misstatement in "
 "the population with <b>%1$s</b> confidence and a minimum precision of <b>"
@@ -769,13 +760,13 @@ msgid ""
 "Misstatement is defined as the difference between an item's booked "
 "(recorded) value and its audited (true) value."
 msgstr ""
-"Het doel van deze steekproefprocedure is de fouten in de populatie te "
-"schatten met een betrouwbaarheid van <b>%1$s</b> en een nauwkeurigheid van "
-"ten minste <b>%2$s</b>.\n"
+"Het doel van deze steekproefprocedure is de fout in de populatie te schatten "
+"met een betrouwbaarheid van <b>%1$s</b> en een minimale nauwkeurigheid van "
+"<b>%2$s</b>.\n"
 "\n"
 "De grootheid die van belang is, is de fout θ in de populatie. Een fout wordt "
-"gedefinieerd als het verschil tussen de <i>Ist</i> (geboekte) positie van "
-"een transactie en de <i>Soll</i> (werkelijke) positie."
+"gedefinieerd als het verschil tussen de geboekte (opgeschreven) waarde van "
+"een post en de audit (werkelijke) waarde."
 
 msgid ""
 "The objective of this sampling procedure is to show with <b>%1$s</b> "
@@ -783,11 +774,10 @@ msgid ""
 "the population is lower than the performance materiality of <b>%4$s</b>."
 msgstr ""
 "Het doel van deze substantieve toetsprocedure is om met een betrouwbaarheid "
-"van <b>%1$s</b> en een minimale zekerheid van <b>%3$s</b> vast te stellen of "
-"het %2$s fouten in de populatie lager is dan de uitvoeringsmaterialiteit van "
-"<b>%4$s</b>."
+"van <b>%1$s</b> en een minimale nauwkeurigheid van <b>%3$s</b> vast te "
+"stellen of het %2$s fouten in de populatie lager is dan de "
+"uitvoeringsmaterialiteit van <b>%4$s</b>."
 
-#, fuzzy
 msgid ""
 "%1$s\n"
 "\n"
@@ -813,8 +803,8 @@ msgstr ""
 "wordt gedefinieerd als het verschil tussen de <i>Ist</i> (geregistreerde) "
 "positie en de <i>Soll</i> (werkelijke) positie van een transactie. Bij het "
 "toetsen van de fout in de populatie aan een bepaalde "
-"uitvoeringsmaterialiteit, %2$s*, worden twee statistische hypothesen over "
-"%2$s geformuleerd:\n"
+"uitvoeringsmaterialiteit, %2$s*, worden twee statistische hypothesen over %2$"
+"s geformuleerd:\n"
 "\n"
 "                                  De (nul)hypothese van ontoelaatbare fout "
 "<i>%3$s</i>,\n"
@@ -827,7 +817,6 @@ msgstr ""
 "steekproef genoeg zijn om %5$s tot een passend laag niveau (< %6$s%%) terug "
 "te brengen."
 
-#, fuzzy
 msgid ""
 "%1$s\n"
 "\n"
@@ -841,11 +830,10 @@ msgstr ""
 "%1$s\n"
 "\n"
 "In een Bayesiaanse analyse wordt aan de parameter %2$s eerst een prior "
-"waarschijnlijkheidsverdeling toegekend waarin de bestaande informatie over "
-"de mogelijke waarden is verwerkt. Een beschrijving en een figuur van de "
-"huidige prior verdeling vindt u in de sectie <i>Tabellen en grafieken</i>. U "
-"kunt bestaande informatie opnemen met behulp van de opties in de sectie "
-"<i>Prior Informatie</i>."
+"kansverdeling toegekend waarin de bestaande informatie over de mogelijke "
+"waarden is verwerkt. Een beschrijving en een figuur van de huidige prior "
+"verdeling vindt u in de sectie <i>Tabellen</i>. U kunt bestaande informatie "
+"opnemen met behulp van de opties in de sectie <i>Prior</i>."
 
 msgid "a performance materiality of <b>%1$s</b>"
 msgstr "een uitvoeringsmaterialiteit van <b>%1$s</b>"
@@ -857,33 +845,29 @@ msgstr ""
 "de steekproef voldoende informatie verschaft om te concluderen dat de fout "
 "%1$s onder de uitvoeringsmaterialiteits %1$s* ligt"
 
-#, fuzzy
 msgid "a minimum precision of <b>%1$s</b>"
-msgstr "een vereiste minimale precisie van <b>%1$s</b>"
+msgstr "een minimale nauwkeurigheid van <b>%1$s</b>"
 
-#, fuzzy
 msgid ""
 "the sample provides sufficient information to estimate the misstatement %1$s "
 "with the minimum precision"
 msgstr ""
-"de steekproef voldoende informatie verschaft om de fout %1$s met de vereiste "
+"verschaft de steekproef voldoende informatie om de fout %1$s met de minimale "
 "nauwkeurigheid te schatten"
 
-#, fuzzy
 msgid ""
 "a performance materiality of <b>%1$s</b> and a minimum precision of <b>%2$s</"
 "b>"
 msgstr ""
-"een uitvoeringsmaterialiteit van <b>%1$s</b> en een vereiste minimale "
-"precisie van <b>%2$s</b>"
+"een uitvoeringsmaterialiteit van <b>%1$s</b> en een minimale nauwkeurigheid "
+"van <b>%2$s</b>"
 
-#, fuzzy
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
 "%1$s is below the performance materiality %1$s* with the minimum precision"
 msgstr ""
-"de steekproef voldoende informatie verschaft om te concluderen dat de fout "
-"%1$s onder de uitvoeringsmaterialiteit %1$s* ligt met de vereiste minimale "
+"verschaft de steekproef voldoende informatie om te concluderen dat de fout "
+"%1$s onder de uitvoeringsmaterialiteit %1$s* ligt met de minimale "
 "nauwkeurigheid"
 
 msgid ""
@@ -914,7 +898,6 @@ msgstr ""
 "informatie verschaft om de gespecificeerde steekproefdoelstellingen te "
 "bereiken."
 
-#, fuzzy
 msgid ""
 "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</"
 "b>. The minimum sample size that is required for %3$s, assuming the sample "
@@ -926,18 +909,17 @@ msgid ""
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) <b>%7$s</b>, %8$s. %9$s"
 msgstr ""
-"%1$sDe meest waarschijnlijke fout in de steekproef is naar verwachting <b>"
-"%2$s</b>. De minimale steekproefgrootte die nodig is voor %3$s, ervan "
+"%1$sDe meest waarschijnlijke fout in de steekproef is naar verwachting "
+"<b>%2$s</b>. De minimale steekproefomvang die nodig is voor %3$s, ervan "
 "uitgaande dat de steekproef <b>%4$s</b> volledige fouten bevat, is <b>%5$s</"
-"b>. Deze steekproefgrootte is gebaseerd op de <b>%6$s</b> verdeling, de <i>a "
+"b>. Deze steekproefomvang is gebaseerd op de <b>%6$s</b> verdeling, de <i>a "
 "priori</i> aanname dat elke waarde van de fout even waarschijnlijk is, en "
 "het aantal verwachte fouten.\n"
 "\n"
 "Als de beoogde steekproef wordt geëvalueerd en de som van de (proportionele) "
-"fouten in de gecontroleerde transacties lager is dan (of gelijk is aan) <b>"
-"%7$s</b>, %8$s. %9$s"
+"fouten in de gecontroleerde posten lager is dan (of gelijk is aan) <b>%7$s</"
+"b>, %8$s. %9$s"
 
-#, fuzzy
 msgid ""
 "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</"
 "b>. The minimum sample size that is required for %3$s, assuming the sample "
@@ -950,19 +932,18 @@ msgid ""
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) <b>%9$s</b>, %10$s. %11$s"
 msgstr ""
-"%1$sDe meest waarschijnlijke fout in de steekproef is naar verwachting <b>"
-"%2$s</b>. De minimale steekproefgrootte die nodig is voor %3$s, ervan "
+"%1$sDe meest waarschijnlijke fout in de steekproef is naar verwachting "
+"<b>%2$s</b>. De minimale steekproefomvang die nodig is voor %3$s, ervan "
 "uitgaande dat de steekproef <b>%4$s</b> volledige fouten bevat, is <b>%5$s</"
-"b>. Deze steekproefgrootte is gebaseerd op de <b>%6$s</b> verdeling, de <i>a "
+"b>. Deze steekproefomvang is gebaseerd op de <b>%6$s</b> verdeling, de <i>a "
 "priori</i> beoordelingen van het inherente risico <b>(%7$s)</b> en het "
-"controlerisico <b>(%8$s)</b> van het audit risico model, en de verwachte "
-"fouten.\n"
+"interne beheersingsrisico <b>(%8$s)</b> van het audit risico model, en de "
+"verwachte fouten.\n"
 "\n"
 "Indien de beoogde steekproef wordt geëvalueerd en de som van de "
-"(proportionele) fouten in de gecontroleerde transacties lager is dan (of "
-"gelijk is aan) <b>%9$s</b>, %10$s. %11$s"
+"(proportionele) fouten in de gecontroleerde posten lager is dan (of gelijk "
+"is aan) <b>%9$s</b>, %10$s. %11$s"
 
-#, fuzzy
 msgid ""
 "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</"
 "b>. The minimum sample size that is required for %3$s, assuming the sample "
@@ -975,18 +956,17 @@ msgid ""
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) <b>%7$s</b>, %8$s. %9$s"
 msgstr ""
-"%1$sDe meest waarschijnlijke fout in de steekproef is naar verwachting <b>"
-"%2$s</b>. De minimale steekproefgrootte die nodig is voor %3$s, ervan "
+"%1$sDe meest waarschijnlijke fout in de steekproef is naar verwachting "
+"<b>%2$s</b>. De minimale steekproefomvang die nodig is voor %3$s, ervan "
 "uitgaande dat de steekproef <b>%4$s</b> volledige fouten bevat, is <b>%5$s</"
-"b>. Deze steekproefgrootte is gebaseerd op de <b>%6$s</b> verdeling, de <i>a "
-"priori</i> aanname dat toelaatbare fouten evenveel kans hebben als "
-"ontoelaatbare fouten, en de verwachte fouten.\n"
+"b>. Deze steekproefomvang is gebaseerd op de <b>%6$s</b> verdeling, de <i>a "
+"priori</i> aanname dat een toelaatbare fout evenveel kans heeft als een "
+"ontoelaatbare fout, en de verwachte fouten.\n"
 "\n"
 "Als de beoogde steekproef wordt geëvalueerd en de som van de (proportionele) "
-"foutenin de gecontroleerde transacties lager is dan (of gelijk is aan) <b>"
-"%7$s</b>, %8$s. %9$s"
+"foutenin de gecontroleerde posten lager is dan (of gelijk is aan) <b>%7$s</"
+"b>, %8$s. %9$s"
 
-#, fuzzy
 msgid ""
 "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</"
 "b>. The minimum sample size that is required for %3$s, assuming the sample "
@@ -999,18 +979,17 @@ msgid ""
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) <b>%9$s</b>, %10$s. %11$s"
 msgstr ""
-"%1$sDe meest waarschijnlijke fout in de steekproef is naar verwachting <b>"
-"%2$s</b>. De minimale steekproefgrootte die nodig is voor %3$s, ervan "
+"%1$sDe meest waarschijnlijke fout in de steekproef is naar verwachting "
+"<b>%2$s</b>. De minimale steekproefomvang die nodig is voor %3$s, ervan "
 "uitgaande dat de steekproef <b>%4$s</b> volledige fouten bevat, is <b>%5$s</"
-"b>. Deze steekproefgrootte is gebaseerd op de <b>%6$s</b> verdeling, de <i>a "
+"b>. Deze steekproefomvang is gebaseerd op de <b>%6$s</b> verdeling, de <i>a "
 "priori</i> aanname dat een eerdere steekproef van <b>%7$s</b> transacties "
 "met <b>%8$s</b> fouten is gezien, en de verwachte fouten.\n"
 "\n"
 "Als de voorgenomen steekproef wordt geëvalueerd en de som van de "
-"(proportionele) fouten in de gecontroleerde transacties lager is dan (of "
-"gelijk is aan) <b>%9$s</b>, %10$s. %11$s"
+"(proportionele) fouten in de gecontroleerde posten lager is dan (of gelijk "
+"is aan) <b>%9$s</b>, %10$s. %11$s"
 
-#, fuzzy
 msgid ""
 "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</"
 "b>. The minimum sample size that is required for %3$s, assuming the sample "
@@ -1022,16 +1001,16 @@ msgid ""
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) <b>%7$s</b>, %8$s. %9$s"
 msgstr ""
-"%1$sDe meest waarschijnlijke fout in de steekproef is naar verwachting <b>"
-"%2$s</b>. De minimale steekproefgrootte die nodig is voor %3$s, ervan "
+"%1$sDe meest waarschijnlijke fout in de steekproef is naar verwachting "
+"<b>%2$s</b>. De minimale steekproefomvang die nodig is voor %3$s, ervan "
 "uitgaande dat de steekproef <b>%4$s</b> volledige fouten bevat, is <b>%5$s</"
-"b>. Deze steekproefgrootte is gebaseerd op de <b>%6$s</b> verdeling, de <i>a "
+"b>. Deze steekproefomvang is gebaseerd op de <b>%6$s</b> verdeling, de <i>a "
 "priori</i> aanname dat elke waarde van de fout even waarschijnlijk is, en "
 "het aantal verwachte fouten.\n"
 "\n"
 "Als de beoogde steekproef wordt geëvalueerd en de som van de (proportionele) "
-"fouten in de gecontroleerde transacties lager is dan (of gelijk is aan) <b>"
-"%7$s</b>, %8$s. %9$s"
+"fouten in de gecontroleerde posten lager is dan (of gelijk is aan) <b>%7$s</"
+"b>, %8$s. %9$s"
 
 msgid "random"
 msgstr "aselect"
@@ -1042,21 +1021,17 @@ msgstr "vast interval"
 msgid "cell"
 msgstr "cel"
 
-#, fuzzy
 msgid "book values (<i>%1$s</i>)"
-msgstr "recordvariabele (<i>%1$s</i>)"
+msgstr "boekwaarden (<i>%1$s</i>)"
 
-#, fuzzy
 msgid "book values (<i>...</i>)"
-msgstr "recordvariabele (<i>...</i>)"
+msgstr "boekwaarden (<i>...</i>)"
 
-#, fuzzy
 msgid "ID variable (<i>%1$s</i>)"
-msgstr "recordvariabele (<i>%1$s</i>)"
+msgstr "ID variabele (<i>%1$s</i>)"
 
-#, fuzzy
 msgid "ID variable (<i>...</i>)"
-msgstr "recordvariabele (<i>...</i>)"
+msgstr "ID variabele (<i>...</i>)"
 
 msgid ""
 "<br><b>Warning:</b> A monetary unit sampling method was tried but failed."
@@ -1070,7 +1045,6 @@ msgstr "%1$s record steekproef"
 msgid "%1$s monetary unit sampling"
 msgstr "%1$s munteenheid steekproef"
 
-#, fuzzy
 msgid ""
 "The purpose of the selection stage is to statistically select a number of "
 "sampling units from the population. Sampling units can be individual items "
@@ -1082,18 +1056,16 @@ msgid ""
 "(<i>%4$s</i>) are selected from the %5$s using a <b>%6$s</b> method.%7$s"
 msgstr ""
 "Het doel van de selectiefase is om op een statistische manier een aantal "
-"steekproefeenheden uit de populatie te selecteren, zodat de kans op selectie "
-"bekend is. Steekproefeenheden kunnen individuele transacties (records) of "
-"individuele monetaire eenheden zijn. De steekproefeenheden krijgen een "
-"individuele selectiekans toegewezen volgens de selectiemethode. Voor meer "
-"informatie over de huidige selectiemethode gaat u naar het gedeelte "
-"<i>Selectiemethode</i>.\n"
+"steekproefeenheden uit de populatie te selecteren. Steekproefeenheden kunnen "
+"individuele posten (rijen) of individuele monetaire eenheden zijn. De "
+"steekproefeenheden worden geselecteerd uit de populatie volgens de selectie "
+"methode. Voor meer informatie over de huidige selectiemethode gaat u naar de "
+"<i>Methode</i> sectie.\n"
 "\n"
-"Uit de populatie van <b>%1$s</b> %2$s transacties zijn <b>%3$s</b> "
-"steekproefeenheden (<i>%4$s</i>) geselecteerd uit de %5$s met behulp van een "
-"<b>%6$s</b>-methode.%7$s"
+"Uit de populatie van <b>%1$s</b> %2$s posten zijn <b>%3$s</b> "
+"steekproefeenheden (<i>%4$s</i>) geselecteerd uit de %5$s door middel van "
+"een <b>%6$s</b>-methode.%7$s"
 
-#, fuzzy
 msgid ""
 "%1$s\n"
 "\n"
@@ -1104,11 +1076,10 @@ msgid ""
 msgstr ""
 "%1$s\n"
 "\n"
-"<i>Opmerking:</i> De geselecteerde steekproef (%2$s) bevat minder "
-"transacties dan de geplande steekproefomvang (%3$s) omdat sommige "
-"transacties meerdere keren geselecteerd zijn. De transacties die deze %4$s "
-"extra geselecteerde steekproefeenheden bevatten, worden bij de evaluatie "
-"meerdere malen geteld."
+"<i>Opmerking:</i> De geselecteerde steekproef (%2$s) bevat minder posten dan "
+"de geplande steekproefomvang (%3$s) omdat sommige posten meerdere keren "
+"geselecteerd zijn. De posten die deze %4$s extra geselecteerde "
+"steekproefeenheden bevatten, worden bij de evaluatie meerdere malen geteld."
 
 msgid "below"
 msgstr "onder"
@@ -1154,7 +1125,6 @@ msgstr ""
 "De conclusie op basis van deze resultaten is dat de fout in de populatie <b>"
 "%4$s</b> groter is dan de uitvoeringsmaterialiteit. %5$s"
 
-#, fuzzy
 msgid ""
 "The objective of this audit sampling procedure was to determine the "
 "misstatement in the population with %1$s confidence and a minimum precision "
@@ -1166,15 +1136,14 @@ msgid ""
 "of %4$s. %5$s"
 msgstr ""
 "Het doel van deze steekproefprocedure was de fout in de populatie te bepalen "
-"met %1$s betrouwbaarheid en een minimum nauwkeurigheid van %2$s. Voor de "
-"huidige gegevens is de verkregen precisie <b>%3$s</b> dan de vereiste "
-"minimum nauwkeurigheid.\n"
+"met %1$s betrouwbaarheid en een minimale nauwkeurigheid van %2$s. Voor de "
+"huidige gegevens is de verkregen precisie <b>%3$s</b> dan de minimale "
+"nauwkeurigheid.\n"
 "\n"
 "De conclusie op basis van deze resultaten is dat de fout in de populatie is "
-"vastgesteld met ten minste %1$s betrouwbaarheid en een nauwkeurigheid van "
-"%4$s. %5$s"
+"vastgesteld met ten minste %1$s betrouwbaarheid en een nauwkeurigheid van %4$"
+"s. %5$s"
 
-#, fuzzy
 msgid ""
 "The objective of this audit sampling procedure was to determine with %1$s "
 "confidence, and a minimum precision of %2$s, whether the misstatement in the "
@@ -1187,20 +1156,19 @@ msgid ""
 "%6$s, the misstatement in the population is <b>%7$s</b> than the performance "
 "materiality. %8$s"
 msgstr ""
-"Het doel van deze steekproefprocedure was om met een betrouwbaarheid van "
-"%1$s en een minimale nauwkeurigheid van %2$s te bepalen of de fout in de "
+"Het doel van deze steekproefprocedure was om met een betrouwbaarheid van %1$"
+"s en een minimale nauwkeurigheid van %2$s te bepalen of de fout in de "
 "populatie lager is dan de gespecificeerde uitvoeringsmaterialiteit, in dit "
-"geval %3$s. Voor de huidige gegevens is de %1$s bovengrens van de fout <b>"
-"%4$s</b> de uitvoeringsmaterialiteit en de verkregen precisie <b>%5$s</b> "
-"dan de vereiste minimum nauwkeurigheid.\n"
+"geval %3$s. Voor de huidige gegevens is de %1$s bovengrens van de fout "
+"<b>%4$s</b> de uitvoeringsmaterialiteit en de verkregen nauwkeurigheid "
+"<b>%5$s</b> dan de vereiste minimum nauwkeurigheid.\n"
 "\n"
-"De conclusie op basis van deze resultaten is dat, met een precisie van %6$s, "
-"de fout in de populatie <b>%7$s</b> groter is dan de "
+"De conclusie op basis van deze resultaten is dat, met een nauwkeurigheid van "
+"%6$s, de fout in de populatie <b>%7$s</b> groter is dan de "
 "uitvoeringsmaterialiteit. %8$s"
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
-msgstr "<b>Tabel %1$i.</b> Beschrijvende Statistieken voor Ist Positie"
+msgstr "<b>Tabel %1$i.</b> Beschrijvende Statistieken voor Boekwaardes"
 
 msgid "Population size"
 msgstr "Populatiegrootte"
@@ -1226,26 +1194,23 @@ msgstr "2"
 msgid "3"
 msgstr "3"
 
-#, fuzzy
 msgid "Distribution of Book Values"
-msgstr "Verdeling van Ist Waarden"
+msgstr "Verdeling van Boekwaarden"
 
-#, fuzzy
 msgid "Mean ± St.dev"
 msgstr "Gemiddelde %1$s St.dev"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The distribution of book values in the population. The "
 "red and blue dots respectively represent the mean and the values exactly one "
 "standard deviation from the mean. The orange dots represent the first, "
 "second (median) and third quartiles of the book values."
 msgstr ""
-"<b>Figuur %1$i.</b> De verdeling van de Ist-waarden in de populatie. De rode "
+"<b>Figuur %1$i.</b> De verdeling van de boekwaarden in de populatie. De rode "
 "en blauwe stippen vertegenwoordigen respectievelijk het gemiddelde en de "
 "waarden precies één standaardafwijking van het gemiddelde. De oranje stippen "
-"vertegenwoordigen het eerste, tweede (mediaan) en derde kwartiel van de Ist-"
-"waarden."
+"vertegenwoordigen het eerste, tweede (mediaan) en derde kwartiel van de "
+"boekwaarden."
 
 msgid "<u>Audit Risk Model</u>"
 msgstr "<u>Audit Risico Model</u>"
@@ -1288,7 +1253,6 @@ msgstr ""
 "De vertaling van Hoog, Gemiddeld en Laag naar kansen wordt gedaan volgens "
 "aangepaste voorkeuren</b>."
 
-#, fuzzy
 msgid ""
 "%1$s\n"
 "\n"
@@ -1301,8 +1265,8 @@ msgstr ""
 "\n"
 "De vertaling van Hoog, Gemiddeld en Laag naar kansen gebeurt met behulp van "
 "standaardwaarden. Zie het Help-bestand van deze analyse of navigeer naar de "
-"sectie <i>Risicobeoordelingen</i> voor meer informatie over de keuze van "
-"deze waarden en hoe u deze kunt aanpassen."
+"sectie <i>Audit Risico Model</i> voor meer informatie over de keuze van deze "
+"waarden en hoe u deze kunt aanpassen."
 
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify your "
@@ -1317,8 +1281,8 @@ msgid ""
 "variables accordingly."
 msgstr ""
 "Met deze populatie kunt u uw huidige steekproefdoelstellingen niet halen. De "
-"resulterende steekproefgrootte is groter dan 5000. Pas uw steekproefdoelen "
-"of variabelen dienovereenkomstig aan."
+"resulterende steekproefomvang is groter dan 5000. Pas uw steekproefdoelen of "
+"variabelen dienovereenkomstig aan."
 
 msgid "An error occurred: %1$s"
 msgstr "Foutmelding: %1$s"
@@ -1329,9 +1293,8 @@ msgstr "<b>Tabel %1$i.</b> Planningssamenvatting"
 msgid "Performance materiality"
 msgstr "Uitvoeringsmaterialiteit"
 
-#, fuzzy
 msgid "Min. precision"
-msgstr "Verkregen precisie"
+msgstr "Min. nauwkeurigheid"
 
 msgid "Inherent risk"
 msgstr "Inherent risico"
@@ -1345,111 +1308,93 @@ msgstr "Detectie risico"
 msgid "Audit risk"
 msgstr "Controlerisico"
 
-#, fuzzy
 msgid "Tolerable errors"
-msgstr "Aanvullende toelaatbare fouten"
+msgstr "Toelaatbare fouten"
 
-#, fuzzy
 msgid "Minimum sample size"
-msgstr "Impliciete steekproefgrootte"
+msgstr "Minimale steekproefomvang"
 
-#, fuzzy
 msgid "The minimum sample size is based on the Poisson distribution."
-msgstr ""
-"De vereiste steekproefgrootte is gebaseerd op de <b>Poisson</b> verdeling."
+msgstr "De minimale steekproefomvang is gebaseerd op de Poisson verdeling."
 
-#, fuzzy
 msgid "The minimum sample size is based on the binomial distribution."
-msgstr ""
-"De benodigde steekproefgrootte is gebaseerd op de <b>binomiaal</b> verdeling."
+msgstr "De minimale steekproefomvang is gebaseerd op de binomiaalverdeling."
 
-#, fuzzy
 msgid "The minimum sample size is based on the hypergeometric distribution."
 msgstr ""
-"De benodigde steekproefgrootte is gebaseerd op de <b>hypergeometrische</b> "
-"verdeling."
+"De minimale steekproefomvang is gebaseerd op de hypergeometrische verdeling."
 
-#, fuzzy
 msgid "The minimum sample size is based on the gamma distribution."
-msgstr ""
-"De vereiste steekproefgrootte is gebaseerd op de <b>gamma</b> verdeling."
+msgstr "De minimale steekproefomvang is gebaseerd op de gamma verdeling."
 
-#, fuzzy
 msgid "The minimum sample size is based on the beta distribution."
-msgstr ""
-"De vereiste steekproefgrootte is gebaseerd op de <b>beta</b> verdeling."
+msgstr "De minimale steekproefomvang is gebaseerd op de beta verdeling."
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the beta-binomial distribution (N = "
 "%1$s)."
 msgstr ""
-"De vereiste steekproefgrootte is gebaseerd op de <b>beta-binomiaal</b> "
-"verdeling (N = %1$s)."
+"De minimale steekproefomvang is gebaseerd op de beta-binomiaalverdeling (N = "
+"%1$s)."
 
-#, fuzzy
 msgid ""
 "Either the materiality (if applicable) or the number of units in the "
 "population is defined as zero."
 msgstr ""
-"De materialiteit (indien van toepassing), de omvang van de populatie of de "
-"waarde van de populatie is gedefinieerd als nul."
+"De materialiteit (indien van toepassing) of het aantal eenheden in de "
+"populatie is gedefinieerd als nul."
 
 msgid "%1$s <b>Results could not be calculated.</b>"
 msgstr "%1$s <b>Resultaten konden niet worden berekend. </b>"
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the Poisson distribution <i>(%1$s = "
 "%2$s)</i>."
 msgstr ""
-"De vereiste steekproefgrootte is gebaseerd op de <b>Poisson</b> verdeling "
-"<i>(%1$s = %2$s)</i>."
+"De minimale steekproefomvang is gebaseerd op de Poisson verdeling <i>(%1$s = "
+"%2$s)</i>."
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the binomial distribution <i>(p = %1$s)</"
 "i>"
 msgstr ""
-"De vereiste steekproefgrootte is gebaseerd op de <b>binomiaal</b> verdeling "
-"<i>(p = %1$s)</i>"
+"De minimale steekproefomvang is gebaseerd op de binomiaalverdeling <i>(p = "
+"%1$s)</i>"
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the hypergeometric distribution <i>(N = "
 "%1$s, K = %2$s)</i>."
 msgstr ""
-"De benodigde steekproefgrootte is gebaseerd op de <b>hypergeometrische</b> "
-"verdeling <i>(N = %1$s, K = %2$s)</i>."
+"De minimale steekproefomvang is gebaseerd op de hypergeometrische verdeling "
+"<i>(N = %1$s, K = %2$s)</i>."
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the gamma distribution <i>(%1$s = %2$s, "
 "%3$s = %4$s)</i>"
 msgstr ""
-"De benodigde steekproefgrootte is gebaseerd op de <b>gamma</b> verdeling "
-"<i>(%1$s = %2$s, %3$s = %4$s)</i>"
+"De minimale steekproefomvang is gebaseerd op de gamma verdeling <i>(%1$s = "
+"%2$s, %3$s = %4$s)</i>"
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the beta distribution <i>(%1$s = %2$s, "
 "%3$s = %4$s)</i>."
 msgstr ""
-"De benodigde steekproefgrootte is gebaseerd op de <b>beta</b> verdeling "
-"<i>(%1$s = %2$s, %3$s = %4$s)</i>."
+"De minimale steekproefomvang is gebaseerd op de beta verdeling <i>(%1$s = %2$"
+"s, %3$s = %4$s)</i>."
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the beta-binomial distribution <i>(N = "
 "%1$s, %2$s = %3$s, %4$s = %5$s)</i>."
 msgstr ""
-"De benodigde steekproefgrootte is gebaseerd op de <b>beta-binomiaal</b> "
-"verdeling <i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>."
+"De minimale steekproefomvang is gebaseerd op de beta-binomiaalverdeling <i>("
+"N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>."
 
 msgid ""
 "The minimum sample size (%1$s) is larger than the number of units in the "
 "population (%2$s)."
 msgstr ""
+"De minimale steekproefomvang (%1$s) is groter dan het aantal eenheden in de "
+"populatie (%2$s)."
 
 msgid ""
 "The value %1$s is automatically used as a starting point for the fixed "
@@ -1461,9 +1406,8 @@ msgstr ""
 msgid "%1$s"
 msgstr "%1$s"
 
-#, fuzzy
 msgid "Minimum Sample Sizes"
-msgstr "Vereiste steekproefgrootte"
+msgstr "Minimale Steekproefomvang"
 
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr "Over Kansverdelingen (Huidig: %1$s)"
@@ -1474,14 +1418,12 @@ msgstr "Verwacht foutloos"
 msgid "Expected errors"
 msgstr "Verwachte fouten"
 
-#, fuzzy
 msgid "An error occurred in a call to the jfa package: %1$s"
-msgstr "Er is een fout opgetreden bij het aanroepen van het jfa-package: %1$s"
+msgstr "Er is een fout opgetreden bij het aanroepen van het jfa pakket: %1$s"
 
 msgid "Across Expected Errors (Current: %1$s)"
 msgstr "Over Verwachte Fouten (Huidig: %1$s)"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The first panel shows a comparison of the minimum sample "
 "sizes under different probability distributions. The bars represent the "
@@ -1491,21 +1433,19 @@ msgid ""
 "comparison of the minimum sample sizes under different expected errors for "
 "the current probability distribution."
 msgstr ""
-"<b>Figuur %1$i.</b> Het eerste paneel toont een vergelijking van de vereiste "
-"steekproefgrootte bij verschillende kansverdelingen. De staven geven de "
-"vereiste steekproefomvang voor de huidige verwachte fouten in de steekproef "
+"<b>Figuur %1$i.</b> Het eerste paneel toont een vergelijking van de minimale "
+"steekproefomvang bij verschillende kansverdelingen. De staven geven de "
+"minimale steekproefomvang voor de huidige verwachte fouten in de steekproef "
 "weer. Het aantal verwachte fouten in elke staaf is rood gekleurd en het "
-"aantal verwachte foutloze transacties is groen gekleurd. Het tweede paneel "
-"toont een vergelijking van de vereiste steekproefomvang bij verschillende "
+"aantal verwachte foutloze posten is groen gekleurd. Het tweede paneel toont "
+"een vergelijking van de vereiste steekproefomvang bij verschillende "
 "verwachte fouten voor de huidige kansverdeling."
 
-#, fuzzy
 msgid "Assumed %1$s Distribution of Errors"
-msgstr "Impliciete %1$s Verdeling van Fouten"
+msgstr "Veronderstelde %1$s Foutverdeling"
 
-#, fuzzy
 msgid "Expected"
-msgstr "Verwacht %1$s"
+msgstr "Verwacht"
 
 msgid "Errors"
 msgstr "Fouten"
@@ -1513,16 +1453,14 @@ msgstr "Fouten"
 msgid "Probability"
 msgstr "Kansverdeling"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The assumed %2$s distribution. The number of expected "
 "errors in the selection is colored in red. The total probability of the "
 "errors does not exceed the detection risk as specified through the audit "
 "risk model."
 msgstr ""
-"<b>Figuur %1$i.</b> De impliciete <b>%2$s</b>-verdeling. Het aantal "
-"verwachte fouten in de selectie is in rood gekleurd en het aantal verwachte "
-"foutloze transacties is in groen gekleurd. De totale kans van de fouten is "
+"<b>Figuur %1$i.</b> De impliciete %2$s foutverdeling. Het aantal verwachte "
+"fouten in de selectie is in rood gekleurd. De totale kans van de fouten is "
 "niet groter dan het detectierisico zoals gespecificeerd via het Audit Risico "
 "Model."
 
@@ -1537,10 +1475,10 @@ msgid "<b>Table %1$i.</b> Selection Summary"
 msgstr "<b>Tabel %1$i.</b> Selectiesamenvatting"
 
 msgid "No. units"
-msgstr ""
+msgstr "No. eenheden"
 
 msgid "No. items"
-msgstr ""
+msgstr "No. items"
 
 msgid "Selection value"
 msgstr "Selectie waarde"
@@ -1548,21 +1486,19 @@ msgstr "Selectie waarde"
 msgid "%% of population value"
 msgstr "%% van de populatiewaarde"
 
-#, fuzzy
 msgid "%% of population size"
-msgstr "%% van de populatiewaarde"
+msgstr "%% van de populatieomvang"
 
-#, fuzzy
 msgid "Unit %1$s is selected from each of the intervals of size %2$s."
-msgstr "Steekproefeenheid %1$s is geselecteerd uit elk interval."
+msgstr ""
+"Steekproefeenheid %1$s is geselecteerd uit elk van de intervallen ter "
+"grootte van %2$s."
 
-#, fuzzy
 msgid "The sample is drawn with <i>seed %1$s</i> and intervals of size %2$s."
 msgstr ""
 "De steekproef is getrokken met de willekeurige getallengenerator <i>seed "
-"%1$s</i>."
+"%1$s</i> en intervallen ter grootte van %2$s."
 
-#, fuzzy
 msgid "The sample is drawn with <i>seed %1$s</i>."
 msgstr ""
 "De steekproef is getrokken met de willekeurige getallengenerator <i>seed "
@@ -1572,11 +1508,10 @@ msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
 msgstr "<b>Tabel %1$i.</b> Informatie over Monetaire Interval Selectie"
 
 msgid "Items"
-msgstr ""
+msgstr "Items"
 
-#, fuzzy
 msgid "Selected items"
-msgstr "Geselecteerde eenheden"
+msgstr "Geselecteerde posten"
 
 msgid "Selected units"
 msgstr "Geselecteerde eenheden"
@@ -1588,14 +1523,14 @@ msgid ""
 "The top stratum consists of all items with a book value larger than %1$s "
 "interval."
 msgstr ""
+"De bovenste stratum bestaat uit alle items met een boekwaarde groter dan %1$"
+"s interval."
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Raw Sample"
-msgstr "<b>Tabel %i.</b> Impliciete Steekproef"
+msgstr "<b>Tabel %i.</b> Ruwe Steekproef"
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Sample"
-msgstr "<b>Tabel %1$i.</b> Beschrijvende Statistieken voor Ist Positie"
+msgstr "<b>Tabel %1$i.</b> Beschrijvende Statistieken voor Steekproef"
 
 msgid "Valid cases"
 msgstr "Geldige waarnemingen"
@@ -1622,14 +1557,14 @@ msgid ""
 msgstr ""
 "Deze resultaten impliceren dat er een %1$s waarschijnlijkheid is dat, "
 "wanneer men herhaaldelijk uit deze populatie zou bemonsteren, de bovengrens "
-"van θ lager is dan <b>%2$s</b> met een precisie van <b>%3$s</b>."
+"van θ lager is dan <b>%2$s</b> met een nauwkeurigheid van <b>%3$s</b>."
 
 msgid ""
 "These results imply that there is a %1$s probability that θ is below <b>"
 "%2$s</b> with a precision of <b>%3$s</b>."
 msgstr ""
-"Deze resultaten impliceren dat er een %1$s kans is dat θ lager is dan <b>"
-"%2$s</b> met een precisie van <b>%3$s</b>."
+"Deze resultaten impliceren dat er een %1$s kans is dat θ lager is dan "
+"<b>%2$s</b> met een nauwkeurigheid van <b>%3$s</b>."
 
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "
@@ -1652,10 +1587,10 @@ msgid "<b>Table %1$i.</b> Evaluation Summary"
 msgstr "<b>Tabel %1$i.</b> Evaluatiesamenvatting"
 
 msgid "Sample size"
-msgstr "Steekproefgrootte"
+msgstr "Steekproefomvang"
 
 msgid "Taint"
-msgstr ""
+msgstr "Taint"
 
 msgid "Most likely error"
 msgstr "Meest waarschijnlijke fout"
@@ -1663,68 +1598,55 @@ msgstr "Meest waarschijnlijke fout"
 msgid "%1$s%% Upper bound"
 msgstr "%1$s%% Bovengrens"
 
-#, fuzzy
 msgid "%1$s%% Credible interval"
-msgstr "%1$s%% Betrouwbaarheidinterval"
+msgstr "%1$s%% Geloofwaardigheidsinterval"
 
 msgid "Precision"
 msgstr "Nauwkeurigheid"
 
-#, fuzzy
 msgid "The results are computed using the Poisson distribution."
-msgstr ""
-"De vereiste steekproefgrootte is gebaseerd op de <b>Poisson</b> verdeling."
+msgstr "De resultaten zijn berekend door middel van de Poisson verdeling."
 
-#, fuzzy
 msgid "The results are computed using the binomial distribution."
-msgstr ""
-"De benodigde steekproefgrootte is gebaseerd op de <b>binomiaal</b> verdeling."
+msgstr "De resultaten zijn berekend door middel van de binomiaalverdeling."
 
-#, fuzzy
 msgid "The results are computed using the hypergeometric distribution."
 msgstr ""
-"De benodigde steekproefgrootte is gebaseerd op de <b>hypergeometrische</b> "
-"verdeling."
+"De resultaten zijn berekend door middel van de hypergeometrische verdeling."
 
-#, fuzzy
 msgid "The results are computed using the Stringer method."
-msgstr "De bovengrens is berekend volgens de <b>Stringer</b> methode."
+msgstr "De resultaten zijn berekend door middel van de Stringer methode."
 
 msgid "The results are computed using the regression estimator."
-msgstr ""
+msgstr "De resultaten zijn berekend door middel van de regressieschatter."
 
 msgid "The results are computed using the direct estimator."
-msgstr ""
+msgstr "De resultaten zijn berekend door middel van de directe schatter."
 
 msgid "The results are computed using the difference estimator."
-msgstr ""
+msgstr "De resultaten zijn berekend door middel van de verschil schatter."
 
 msgid "The results are computed using the ratio estimator."
-msgstr ""
+msgstr "De resultaten zijn berekend door middel van de quotient schatter."
 
 msgid "The results are computed using the mean-per-unit estimator"
 msgstr ""
+"De resultaten zijn berekend door middel van de gemiddelde-per-eenheid "
+"schatter"
 
-#, fuzzy
 msgid "The results are computed using the beta distribution."
-msgstr ""
-"De vereiste steekproefgrootte is gebaseerd op de <b>beta</b> verdeling."
+msgstr "De resultaten zijn berekend door middel van de betaverdeling."
 
-#, fuzzy
 msgid "The results are computed using the gamma distribution."
-msgstr ""
-"De vereiste steekproefgrootte is gebaseerd op de <b>gamma</b> verdeling."
+msgstr "De resultaten zijn berekend door middel van de gammaverdeling."
 
-#, fuzzy
 msgid "The results are computed using the beta-binomial distribution."
-msgstr ""
-"De benodigde steekproefgrootte is gebaseerd op de <b>binomiaal</b> verdeling."
+msgstr "De resultaten zijn berekend door middel van de beta-binomiaalverdeling."
 
-#, fuzzy
 msgid "The results are computed using the Stringer method with LTA adjustment."
 msgstr ""
-"De bovengrens is berekend volgens de <b>Stringer</b> methode met <b>LTA-"
-"aanpassing</b>."
+"De resultaten zijn berekend door middel van de Stringer methode met LTA "
+"aanpassing."
 
 #, fuzzy
 msgid ""
@@ -1750,9 +1672,8 @@ msgstr ""
 msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr "<b>Tabel %1$i.</b> Aanname Controles"
 
-#, fuzzy
 msgid "Pearson's r"
-msgstr "Pearson's <i>r</i>"
+msgstr "Pearson's r"
 
 msgid ""
 "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis "
@@ -1761,9 +1682,8 @@ msgstr ""
 "De nulhypothese H₀: ρ ≥ 0 wordt getoetst tegen de alternatieve hypothese H₋: "
 "ρ < 0"
 
-#, fuzzy
 msgid "Book values - Taints"
-msgstr "Boekwaardes"
+msgstr "Boekwaardes - Taints"
 
 msgid "There were no misstatements found in the sample."
 msgstr "In de steekproef werden geen fouten aangetroffen."
@@ -1774,25 +1694,23 @@ msgstr "Er is een fout opgetreden bij het berekenen van de correlatie."
 msgid "Evaluation of Sampling Objectives"
 msgstr "Evaluatie van de Steekproefdoelstellingen"
 
-#, fuzzy
 msgid "An error occurred while creating this plot: The results contain NAs"
-msgstr "Er is een fout opgetreden bij het maken van deze plot: %1$s"
+msgstr ""
+"Er is een fout opgetreden bij het maken van deze grafiek: De resultaten "
+"bevatten NA's"
 
-#, fuzzy
 msgid "Upper bound"
-msgstr "%1$s%% Bovengrens"
+msgstr "Bovengrens"
 
-#, fuzzy
 msgid "Minimum precision"
-msgstr "Verkregen precisie"
+msgstr "Minimale nauwkeurigheid"
 
 msgid "Obtained precision"
-msgstr "Verkregen precisie"
+msgstr "Verkregen nauwkeurigheid"
 
 msgid "An error occurred while creating this plot: %1$s"
 msgstr "Er is een fout opgetreden bij het maken van deze plot: %1$s"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> Evaluation information for the current annotated "
 "selection. The materiality is compared with the maximum misstatement and the "
@@ -1803,22 +1721,18 @@ msgstr ""
 "<b>Figuur %1$i.</b> Evaluatie informatie voor de huidige geannoteerde "
 "selectie. De materialiteit wordt vergeleken met de maxiamale fout en de "
 "meest waarschijnlijke fout. De meest waarschijnlijke fout (MLE) is een "
-"schatting van de ware afwijking in de populatie. De maximale fout is een "
-"schatting van de maximale fouten in de populatie."
+"schatting van de ware fout in de populatie. De bovengrens is een schatting "
+"van de maximale fout in de populatie."
 
-#, fuzzy
 msgid "Scatter Plot of Book and Audit Values"
-msgstr "Spreidingsplot van Ist- en Soll-Waarden"
+msgstr "Spreidingsdiagram van Boek en Auditwaarden"
 
-#, fuzzy
 msgid "Book value (%1$s)"
-msgstr "Soll waarde (%1$s)"
+msgstr "Boekwaarde (%1$s)"
 
-#, fuzzy
 msgid "Audit value (%1$s)"
-msgstr "Ist waarde (%1$s)"
+msgstr "Auditwaarde (%1$s)"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
 "their corresponding audit values. Grey dots on the diagonal (dashed line) "
@@ -1827,13 +1741,13 @@ msgid ""
 "red dots lie below the diagonal, the items are overstated. If these red dots "
 "lie above the diagonal they are understated. %2$s"
 msgstr ""
-"<b>Figuur %1$i.</b> Spreidingsdiagram van de Ist-waarden in de selectie en "
-"hun overeenkomstige Soll-waarden. Grijze stippen op de diagonaal "
-"(stippellijn) geven overeenkomende Ist- en Soll-waarden aan. Rode stippen "
-"buiten de diagonaal wijzen op transacties waarvan de Soll-waarde niet "
-"overeenstemt met de oorspronkelijke Ist-waarde. Als deze rode stippen onder "
-"de diagonaal staan, zijn de transacties overgewaardeerd. Liggen deze rode "
-"stippen boven de diagonaal, dan zijn ze ondergewaardeerd. %2$s"
+"<b>Figuur %1$i.</b> Spreidingsdiagram van de boekwaarden in de selectie en "
+"hun overeenkomstige auditwaarden. Grijze stippen op de diagonaal "
+"(stippellijn) geven overeenkomende boek- en auditwaarden aan. Rode stippen "
+"buiten de diagonaal wijzen op transacties waarvan de auditwaarde niet "
+"overeenkomt met de oorspronkelijke boekwaarde. Als deze rode stippen onder "
+"de diagonaal staan, zijn de posten overgewaardeerd. Liggen deze rode stippen "
+"boven de diagonaal, dan zijn ze ondergewaardeerd. %2$s"
 
 #, fuzzy
 msgid "<b>Table %i.</b> Corrections to Population"
@@ -1854,27 +1768,22 @@ msgstr "Geen fouten met %1$s%% betrouwbaarheid"
 msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
 msgstr "Geen fouten met %1$s%% betrouwbaarheid en %2$s%% nauwkeurigheid"
 
-#, fuzzy
 msgid "<b>Table %i.</b> Equivalent Prior Sample"
-msgstr "<b>Tabel %i.</b> Impliciete Steekproef"
+msgstr "<b>Tabel %i.</b> Gelijkwaardige Voorafgaande Steekproef"
 
-#, fuzzy
 msgid "Equivalent sample size"
-msgstr "Vereiste steekproefgrootte"
+msgstr "Gelijkwaardige steekproefomvang"
 
 #, fuzzy
 msgid "Equivalent errors"
 msgstr "Verwachte fouten"
 
-#, fuzzy
 msgid "The implicit sample is based on minimal prior information."
-msgstr "De impliciete steekproef is gebaseerd op geen bestaande informatie."
+msgstr "De impliciete steekproef is gebaseerd op minimale prior informatie."
 
-#, fuzzy
 msgid "The implicit sample is derived from the prior parameters %1$s, %2$s."
 msgstr ""
-"De impliciete steekproef is afgeleid van gelijke prior kansen: <i>p(H%1$s) = "
-"p(H%2$s) = 0.5</i>"
+"De impliciete steekproef is afgeleid van de prior parameters %1$s, %2$s."
 
 msgid ""
 "The implicit sample is derived from the ARM risk assessments: IR = <b>%1$s</"
@@ -1897,18 +1806,15 @@ msgstr ""
 "De impliciete steekproef is afgeleid van een eerdere steekproef van %1$s "
 "waarnemingen met %2$s fouten."
 
-#, fuzzy
 msgid "Prior and Expected Posterior Distribution"
-msgstr "Prior and posterior verdeling"
+msgstr "Prior and Verwachte Posterior Verdeling"
 
 msgid "Prior and Posterior Distribution"
 msgstr "Prior and posterior verdeling"
 
-#, fuzzy
 msgid "Unseen population misstatement %1$s"
 msgstr "Ongeziene fout in de populatie (%1$s)"
 
-#, fuzzy
 msgid "Population misstatement %1$s"
 msgstr "Fout in de populatie (%1$s)"
 
@@ -1924,15 +1830,13 @@ msgstr "Dichtheid"
 msgid "Population errors"
 msgstr "Populatiefouten"
 
-#, fuzzy
 msgid ""
 "The expected posterior distribution is calculated so that its %1$sth "
 "percentile lies below the performance materiality (gray dot)."
 msgstr ""
-"De verwachte posterior verdeling wordt zo berekend dat het %1$s-percentiel "
-"onder de uitvoeringsmaterialiteit ligt."
+"De verwachte posterior verdeling is berekend zodat het %1$e percentiel onder "
+"de uitvoeringsmaterialiteit ligt (grijze stip)."
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on "
 "the population misstatement θ. The prior parameters <i>%3$s = %4$s, %5$s = "
@@ -1940,14 +1844,11 @@ msgid ""
 msgstr ""
 "<b>Figuur %1$i.</b> De prior kansverdeling <b>(%2$s)</b> over de fout (θ) in "
 "de populatie. De prior parameters <i>%3$s = %4$s, %5$s = %6$s</i> zijn "
-"afgeleid van de beoordelingen van het inherente risico en interne "
+"afgeleid van de inschattingen van het inherente risico en interne "
 "beheersingsriciso, samen met de verwachte fouten. %7$s %8$s"
 
-#, fuzzy
 msgid "The gray dots represent the performance materiality."
-msgstr ""
-"De verwachte fouten worden gevisualiseerd door de grijze stip. De rode stip "
-"vertegenwoordigt de uitvoeringsmaterialiteit."
+msgstr "De grijze stippen geven de uitvoeringsmaterialiteit weer."
 
 #, fuzzy
 msgid ""
@@ -1957,25 +1858,24 @@ msgstr ""
 "<b>Figuur %1$i.</b> De prior en posterior kansverdeling <b>(%2$s)</b> voor "
 "de fout in de populatie. %3$s"
 
-#, fuzzy
 msgid "Prior Predictive Distribution"
-msgstr "Prior verdeling"
+msgstr "Prior Predictive Verdeling"
 
-#, fuzzy
 msgid "Posterior Predictive Distribution"
-msgstr "Posterior verdeling"
+msgstr "Posterior Predictive Verdeling"
 
 msgid "Predicted samples before an error"
-msgstr ""
+msgstr "Voorspelde steken voor een fout"
 
-#, fuzzy
 msgid "Predicted errors"
-msgstr "Verwachte fouten"
+msgstr "Voorspelde fouten"
 
 msgid ""
 "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays "
 "the predictions of the %2$s distribution for %4$s <i>n</i> = %5$s."
 msgstr ""
+"<b>Figuur %1$i.</b> De %2$s predictive verdeling is %3$s en toont de "
+"voorspellingen van de %2$s verdeling voor %4$s <i>n</i> = %5$s."
 
 #, fuzzy
 msgid "Descriptive Statistics for Prior and Expected Posterior Distribution"
@@ -2003,9 +1903,8 @@ msgstr "Modus"
 msgid "Shift"
 msgstr "Shift"
 
-#, fuzzy
 msgid "%1$s %2$s vs. %3$s %2$s."
-msgstr "%1$s = %2$s %3$s %4$s"
+msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "<b>Table %i.</b> Frequency Statistics"
 #~ msgstr "<b>Tabel %i.</b> Frequentie Statistieken"
