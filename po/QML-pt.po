@@ -25,16 +25,8 @@ msgid "Relative"
 msgstr "Relativo"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Audit Risk"
-msgstr "Risco Audit"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Confidence"
 msgstr "Confiança"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Inherent Risk"
-msgstr "Risco inerente"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "High"
@@ -49,18 +41,6 @@ msgid "Low"
 msgstr "Baixo"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Explanatory Text"
-msgstr "Texto Explicativo"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Enable"
-msgstr "Habilitar"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Control Risk"
-msgstr "Risco de controle"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Beta"
 msgstr "Beta"
 
@@ -69,32 +49,12 @@ msgid "Beta-binomial"
 msgstr "Beta-binomial"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Currency"
-msgstr "Moeda"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Dollar ($)"
-msgstr "Dollar ($)"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Other"
-msgstr "Outra"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Statistics"
-msgstr "Estatísticas"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Tables"
 msgstr "Tabelas"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Plots"
 msgstr "Diagramas"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "x-axis limit"
-msgstr "limite do eixo x"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Download Report</b>"
@@ -113,28 +73,8 @@ msgid "2. Selection"
 msgstr "2. Seleção"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Ranking Variable <i>(optional)</i>"
-msgstr "Variável de classificação <i>(opcional)</i>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Additional Variables <i>(optional)</i>"
-msgstr "Variáveis Adicionais <i>(opcional)</i>"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Sampling Units"
 msgstr "Unidades de Amostragem"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Monetary unit sampling"
-msgstr "Amostragem de unidade monetária"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Record sampling"
-msgstr "Amostragem de registro"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Selection Method"
-msgstr "Método de Seleção"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Random sampling"
@@ -151,34 +91,6 @@ msgstr "Amostragem de intervalo fixo"
 msgctxt "auditBayesianWorkflow|"
 msgid "Seed"
 msgstr "Seed"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Mean"
-msgstr "Média"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Median"
-msgstr "Mediana"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Std. deviation"
-msgstr "Desvio padrão"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Variance"
-msgstr "Variância"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Minimum"
-msgstr "Mínimo"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Maximum"
-msgstr "Máximo"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Range"
-msgstr "Faixa"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Reset Workflow</b>"
@@ -221,20 +133,8 @@ msgid "Audit Result"
 msgstr "Auditar Resultado"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Estimation Method"
-msgstr "Método de Estimação"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Regression"
-msgstr "Regressão"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Area Under Posterior"
 msgstr "Área sob a parte posterior"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Most likely error (MLE)"
-msgstr "Erro mais provável (MLE)"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Absolute"
@@ -253,24 +153,12 @@ msgid "Size"
 msgstr "Tamanho"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Value"
-msgstr "Valor"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Audit Risk"
-msgstr "Risco de auditoria"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Confidence"
 msgstr "Confiança"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Advanced Options"
 msgstr "Opções Avançadas"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Inherent Risk"
-msgstr "Risco inerente"
 
 msgctxt "auditBayesianPlanning|"
 msgid "High"
@@ -285,18 +173,6 @@ msgid "Low"
 msgstr "Baixo"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Explanatory Text"
-msgstr "Texto Explicativo"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Enable"
-msgstr "Habilitar"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Control Risk"
-msgstr "Risco de Controle"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Beta"
 msgstr "Beta"
 
@@ -305,36 +181,12 @@ msgid "Beta-binomial"
 msgstr "Beta-binomial"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Currency"
-msgstr "Moeda"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Dollar ($)"
-msgstr "Dollar ($)"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Other"
-msgstr "Outra"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Tables and Plots"
-msgstr "Tabelas e Diagramas"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Statistics"
-msgstr "Estatísticas"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Tables"
 msgstr "Tabelas"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Plots"
 msgstr "Diagramas"
-
-msgctxt "auditBayesianPlanning|"
-msgid "x-axis limit"
-msgstr "limite do eixo x"
 
 msgctxt "auditBayesianPlanning|"
 msgid "<b>Download Report</b>"
@@ -357,16 +209,8 @@ msgid "Relative"
 msgstr "Relativo"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Audit Risk"
-msgstr "Risco de Auditoria"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Confidence"
 msgstr "Confiança"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Inherent Risk"
-msgstr "Risco inerente"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "High"
@@ -381,18 +225,6 @@ msgid "Low"
 msgstr "Baixo"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Explanatory Text"
-msgstr "Texto Explanatório"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Enable"
-msgstr "Permitir"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Control Risk"
-msgstr "Risco de Controle"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Poisson"
 msgstr "Poisson"
 
@@ -403,18 +235,6 @@ msgstr "Binomial"
 msgctxt "auditClassicalWorkflow|"
 msgid "Hypergeometric"
 msgstr "Hipergeométrico"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Currency"
-msgstr "Moeda"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Dollar ($)"
-msgstr "Dollar ($)"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Other"
-msgstr "Outro"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Tables"
@@ -441,28 +261,8 @@ msgid "2. Selection"
 msgstr "2. Seleção"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Ranking Variable <i>(optional)</i>"
-msgstr "Variável de classificação<i>(opcional)</i>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Additional Variables <i>(optional)</i>"
-msgstr "Variáveis Adicionais<i>(opcional)</i>"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Sampling Units"
 msgstr "Unidades de Amostragem"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Monetary unit sampling"
-msgstr "Amostragem de unidade monetária"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Record sampling"
-msgstr "Registro de amostragem"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Selection Method"
-msgstr "Método de Seleção"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Random sampling"
@@ -479,34 +279,6 @@ msgstr "Amostragem de intervalo fixo"
 msgctxt "auditClassicalWorkflow|"
 msgid "Seed"
 msgstr "Seed"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Mean"
-msgstr "Média"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Median"
-msgstr "Mediana"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Std. deviation"
-msgstr "Desvio Padrão"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Variance"
-msgstr "Variância"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Minimum"
-msgstr "Mínimo"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Maximum"
-msgstr "Máximo"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Range"
-msgstr "Distância"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Reset Workflow</b>"
@@ -552,14 +324,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "LTA adjustment"
 msgstr "Ajuste de LTA"
 
-msgctxt "auditClassicalWorkflow|"
-msgid "Statistics"
-msgstr "Estatísticas"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Most likely error (MLE)"
-msgstr "Erro mais provável (EMP)"
-
 msgctxt "auditClassicalPlanning|"
 msgid "Absolute"
 msgstr "Absoluto"
@@ -573,28 +337,12 @@ msgid "Population"
 msgstr "População"
 
 msgctxt "auditClassicalPlanning|"
-msgid "Size"
-msgstr "Tamanho"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Value"
-msgstr "Valor"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Audit Risk"
-msgstr "Risco de auditoria"
-
-msgctxt "auditClassicalPlanning|"
 msgid "Confidence"
 msgstr "Confiança"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Advanced Options"
 msgstr "Opções avançadas"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Inherent Risk"
-msgstr "Risco inerente"
 
 msgctxt "auditClassicalPlanning|"
 msgid "High"
@@ -609,18 +357,6 @@ msgid "Low"
 msgstr "Baixo"
 
 msgctxt "auditClassicalPlanning|"
-msgid "Explanatory Text"
-msgstr "Texto Explanatório"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Enable"
-msgstr "Habilitar"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Control Risk"
-msgstr "Risco de Controle"
-
-msgctxt "auditClassicalPlanning|"
 msgid "Poisson"
 msgstr "Poisson"
 
@@ -631,18 +367,6 @@ msgstr "Binomial"
 msgctxt "auditClassicalPlanning|"
 msgid "Hypergeometric"
 msgstr "Hipergeométrico"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Currency"
-msgstr "Moeda"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Dollar ($)"
-msgstr "Dollar ($)"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Other"
-msgstr "Outro"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Plots"
@@ -657,28 +381,8 @@ msgid "Population"
 msgstr "População"
 
 msgctxt "auditClassicalEstimation|"
-msgid "Size"
-msgstr "Tamanho"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Value"
-msgstr "Valor"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Audit Risk"
-msgstr "Risco de auditoria"
-
-msgctxt "auditClassicalEstimation|"
 msgid "Confidence"
 msgstr "Confiança"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Explanatory Text"
-msgstr "Texto Explicativo"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Enable"
-msgstr "Habilitar"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Tables"
@@ -697,52 +401,16 @@ msgid "Plots"
 msgstr "Diagramas"
 
 msgctxt "auditClassicalEstimation|"
-msgid "Correlation plot"
-msgstr "Gráfico de correlação"
-
-msgctxt "auditClassicalEstimation|"
 msgid "<b>Download Report</b>"
 msgstr "<b>Baixar relatório</b>"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Custom"
-msgstr "Personalizada"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Gamma"
-msgstr "Gamma"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Shade"
-msgstr "Sombra"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Credible region"
-msgstr "Região credível"
-
-msgctxt "auditBayesianPlanning|"
-msgid "None"
-msgstr "Nenhum"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Custom"
-msgstr "Personalizada"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Gamma"
 msgstr "Gamma"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Shade"
-msgstr "Sombra"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Credible region"
-msgstr "Região credível"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "None"
-msgstr "Nenhum"
+msgid "Gamma"
+msgstr "Gamma"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Variable"
@@ -751,14 +419,6 @@ msgstr "Variável"
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Confidence"
 msgstr "Confiança"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Explanatory Text"
-msgstr "Texto Explicativo"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Enable"
-msgstr "Habilitar"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Tables"
@@ -772,14 +432,6 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "<b>Download Report</b>"
 msgstr "<b>Baixar Relatório</b>"
 
-msgctxt "auditClassicalPlanning|"
-msgid "Custom"
-msgstr "Personalizar"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Custom"
-msgstr "Personalizar"
-
 msgctxt "auditBayesianPlanning|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Mostrar texto explicativo em cada etapa da análise"
@@ -795,22 +447,6 @@ msgstr "Mostrar texto explicativo em cada etapa da análise"
 msgctxt "auditClassicalWorkflow|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Mostrar texto explicativo em cada etapa da análise"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Column name selection result: "
-msgstr "Nome da coluna seleção do resultado "
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Column name audit result: "
-msgstr "Nome da coluna resultado da auditoria "
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Column name selection result: "
-msgstr "Nome da coluna seleção do resultado "
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Column name audit result: "
-msgstr "Nome da coluna resultado da auditoria "
 
 msgctxt "Description|"
 msgid "Audit"
@@ -837,20 +473,12 @@ msgid "Sampling Workflow"
 msgstr "Fluxo de Trabalho de Amostragem"
 
 msgctxt "Description|"
-msgid "Classical Sampling Workflow"
-msgstr "Fluxo de Trabalho de Amostragem Clássica"
-
-msgctxt "Description|"
 msgid "Bayesian Sampling Workflow"
 msgstr "Fluxo de Trabalho de Amostragem Bayesiana"
 
 msgctxt "Description|"
 msgid "Planning"
 msgstr "Planejamento"
-
-msgctxt "Description|"
-msgid "Classical Planning"
-msgstr "Planejamento Clássico"
 
 msgctxt "Description|"
 msgid "Bayesian Planning"
@@ -863,10 +491,6 @@ msgstr "Seleção"
 msgctxt "Description|"
 msgid "Evaluation"
 msgstr "Avaliação"
-
-msgctxt "Description|"
-msgid "Classical Evaluation"
-msgstr "Avaliação Clássica"
 
 msgctxt "Description|"
 msgid "Bayesian Evaluation"
@@ -897,16 +521,8 @@ msgid "True Value Estimation"
 msgstr "Estimativa de valor verdadeiro"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Dollar ($)"
-msgstr "Dollar ($)"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Sampling Objectives"
 msgstr "Objetivos de Amostragem"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Test against a performance materiality"
-msgstr "Teste contra uma materialidade de desempenho"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Relative"
@@ -915,14 +531,6 @@ msgstr "Relativo"
 msgctxt "auditBayesianEvaluation|"
 msgid "Absolute"
 msgstr "Absoluto"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Click to learn more about the performance materiality."
-msgstr "Clique para saber mais sobre a materialidade da performance."
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Obtain a required minimum precision"
-msgstr "Obtenha uma precisão mínima exigida"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Click to learn more about the precision."
@@ -937,92 +545,12 @@ msgid "Size"
 msgstr "Tamanho"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Value"
-msgstr "Valor"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Audit Risk"
-msgstr "Risco de auditoria"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Confidence"
 msgstr "Confiança"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Explanatory Text"
-msgstr "Texto Explicativo"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Enable"
-msgstr "Habilitar"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Click to learn more about the explanatory text."
-msgstr "Clique para saber mais sobre o texto explicativo."
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Transaction ID's"
-msgstr "IDs de transação"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Ist Position <i>(required)</i>"
-msgstr "Primeira posição <i>(obrigatória)</i>"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Ist Position"
-msgstr "Primeira Posição"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Soll Position"
-msgstr "Posição Soll"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Audit Result"
 msgstr "Resultado da Auditoria"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Selection Counter <i>(optional)</i>"
-msgstr "Contador de Seleção <i>(opcional)</i>"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Annotation Method"
-msgstr "Método de Anotação"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Soll values"
-msgstr "Valores Soll"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Correct / Incorrect"
-msgstr "Correto incorreto"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Use summary statistics"
-msgstr "Use estatísticas de resumo"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Number of seen transactions"
-msgstr "Número de transações vistas"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Number of found errors"
-msgstr "Número de erros encontrados"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Critical Transactions"
-msgstr "Transações Críticas"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Select critical transactions"
-msgstr "Selecione transações críticas"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Negative Ist values"
-msgstr "Valores negativos primeiros"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "How to handle critical transactions"
-msgstr "Como lidar com transações críticas"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Keep"
@@ -1033,66 +561,12 @@ msgid "Remove"
 msgstr "Remover"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Efficiency Techniques"
-msgstr "Técnicas de Eficiência"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Separate known and unknown misstatement"
-msgstr "Separar distorções conhecidas e desconhecidas"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Click to learn more about this efficiency technique."
-msgstr "Clique para saber mais sobre esta técnica de eficiência."
-
-msgctxt "auditBayesianEvaluation|"
-msgid ""
-"<i>Requires additional assumption: The population taints are homogeneous</i>"
-msgstr ""
-"<i>Requer suposição adicional: as impurezas da população são homogêneas</i>"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Prior Information"
-msgstr "Informação Prévia"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Prior information:"
-msgstr "Informação anterior:"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "None"
-msgstr "Nenhum"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Audit Risk Model"
-msgstr "Modelo de Risco de Auditoria"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Equal prior probabilities"
-msgstr "Probabilidades anteriores iguais"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Custom prior probabilities"
-msgstr "Probabilidades anteriores personalizadas"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Earlier sample"
 msgstr "Amostra anterior"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Weighted earlier sample"
-msgstr "Amostra anterior ponderada"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Click to learn more about the prior information."
-msgstr "Clique para saber mais sobre as informações anteriores."
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Expected Errors in Sample"
 msgstr "Erros esperados na amostra"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Inherent Risk"
-msgstr "Risco inerente"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "High"
@@ -1105,34 +579,6 @@ msgstr "Médio"
 msgctxt "auditBayesianEvaluation|"
 msgid "Low"
 msgstr "Baixo"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Custom"
-msgstr "Personalizado"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Control Risk"
-msgstr "Controle de Risco"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Prior probability of tolerable misstatement: p(H₋) = "
-msgstr "Probabilidade anterior de distorção tolerável: p(H₋) = "
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Prior probability of intolerable misstatement: p(H₊) = "
-msgstr "Probabilidade anterior de distorção intolerável: p(H₊) = "
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Number of earlier seen transactions"
-msgstr "Número de transações vistas anteriormente"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Number of earlier seen errors"
-msgstr "Número de erros vistos anteriormente"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Weighting factor"
-msgstr "Fator de ponderação"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Advanced Options"
@@ -1167,10 +613,6 @@ msgid "Two-sided interval"
 msgstr "Intervalo bilateral"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Show Results As"
-msgstr "Mostrar resultados como"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Numbers"
 msgstr "Números"
 
@@ -1183,48 +625,8 @@ msgid "Extrapolated amounts"
 msgstr "Quantidades extrapoladas"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Tables and Plots"
-msgstr "Tabelas e plotagens"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Statistics"
-msgstr "Estatísticas"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Most likely error (MLE)"
-msgstr "Erro mais provável (MLE)"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Obtained precision"
-msgstr "Precisão obtida"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Posterior odds"
-msgstr "Probabilidades posteriores"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Bayes factor (BF₋₊)"
-msgstr "Fator de Bayes (BF₋₊)"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Tables"
 msgstr "Tabelas"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Description of prior and posterior distribution"
-msgstr "Descrição da distribuição anterior e posterior"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Additional samples for sampling objectives"
-msgstr "Amostras adicionais para objetivos de amostragem"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Post-hoc corrections to population value"
-msgstr "Correções post-hoc para o valor da população"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Evaluate post-hoc assumptions"
-msgstr "Avalie as suposições post-hoc"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Confidence interval"
@@ -1235,48 +637,8 @@ msgid "Plots"
 msgstr "Diagramas"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Evaluate sampling objectives"
-msgstr "Avalie os objetivos de amostragem"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Scatter plot of Ist and Soll values"
-msgstr "Gráfico de dispersão dos primeiros valores e Soll"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Display correlation"
 msgstr "Correlação de exibição"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Display transaction ID's"
-msgstr "Exibir IDs de transação"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Prior and posterior distribution"
-msgstr "Distribuição anterior e posterior"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "x-axis limit"
-msgstr "limite do eixo x"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Display inferential statistics"
-msgstr "Exibir estatísticas inferenciais"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Display additional information"
-msgstr "Exibir informações adicionais"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Shade"
-msgstr "Sombra"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Credible region"
-msgstr "Região credível"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Support regions"
-msgstr "Regiões de suporte"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "<b>Download Report</b>"
@@ -1287,250 +649,36 @@ msgid "Sampling Objectives"
 msgstr "Objetivos de Amostragem"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Test against a performance materiality"
-msgstr "Teste contra uma materialidade de desempenho"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Click to learn more about the performance materiality."
-msgstr "Clique para saber mais sobre a materialidade da performance."
-
-msgctxt "auditBayesianPlanning|"
-msgid "Obtain a required minimum precision"
-msgstr "Obtenha uma precisão mínima exigida"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Click to learn more about the precision."
 msgstr "Clique para saber mais sobre a precisão."
 
 msgctxt "auditBayesianPlanning|"
-msgid "Prior Information"
-msgstr "Informação Prévia"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Prior information:"
-msgstr "Informação anterior:"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Audit Risk Model"
-msgstr "Modelo de Risco de Auditoria"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Equal prior probabilities"
-msgstr "Probabilidades anteriores iguais"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Custom prior probabilities"
-msgstr "Probabilidades anteriores personalizadas"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Earlier sample"
 msgstr "Amostra anterior"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Weighted earlier sample"
-msgstr "Amostra anterior ponderada"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Click to learn more about the prior information."
-msgstr "Clique para saber mais sobre as informações anteriores."
 
 msgctxt "auditBayesianPlanning|"
 msgid "Expected Errors in Sample"
 msgstr "Erros esperados na amostra"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Prior probability of tolerable misstatement: p(H₋) = "
-msgstr "Probabilidade anterior de distorção tolerável: p(H₋) = "
-
-msgctxt "auditBayesianPlanning|"
-msgid "Prior probability of intolerable misstatement: p(H₊) = "
-msgstr "Probabilidade anterior de distorção intolerável: p(H₊) = "
-
-msgctxt "auditBayesianPlanning|"
-msgid "Number of earlier seen transactions"
-msgstr "Número de transações vistas anteriormente"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Number of earlier seen errors"
-msgstr "Número de erros vistos anteriormente"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Weighting factor"
-msgstr "Fator de ponderação"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Probability Distribution"
 msgstr "Distribuição de probabilidade"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Calculation Preferences"
-msgstr "Preferências de cálculo"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Step size"
-msgstr "Tamanho do passo"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Euro (€)"
-msgstr "Euro (€)"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Expected posterior odds"
-msgstr "Probabilidades posteriores esperadas"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Expected Bayes factor (BF₋₊)"
-msgstr "Fator Bayes esperado (BF₋₊)"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Implicit sample induced by prior distribution"
-msgstr "Amostra implícita induzida por distribuição anterior"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Description of prior and expected posterior distribution"
-msgstr "Descrição da distribuição anterior e posterior esperada"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Compare required sample sizes"
-msgstr "Compare os tamanhos de amostra necessários"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Implied prior distribution"
-msgstr "Distribuição anterior implícita"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Expected posterior distribution"
-msgstr "Distribuição posterior esperada"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Display additional information"
-msgstr "Exibir informações adicionais"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Hypothesis regions"
-msgstr "Regiões de hipótese"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Sampling Objectives"
 msgstr "Objetivos de Amostragem"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Test against a performance materiality"
-msgstr "Teste contra uma materialidade de desempenho"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Click to learn more about the performance materiality."
-msgstr "Clique para saber mais sobre a materialidade da performance."
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Obtain a required minimum precision"
-msgstr "Obter uma precisão mínima exigida"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about the precision."
 msgstr "Clique para saber mais sobre a precisão."
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>Variable Definitions</b>"
-msgstr "<b>Definições de Variáveis</b>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Transaction ID's"
-msgstr "IDs de transação"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Ist Position <i>(required)</i>"
-msgstr "Primeira Posição <i>(obrigatória)</i>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Ist Position <i>(optional)</i>"
-msgstr "Primeira Posição <i>(opcional)</i>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "A.     Critical Transactions"
-msgstr "A.     Transações Críticas"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Select critical transactions"
-msgstr "Selecione transações críticas"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Column name critical transactions: "
-msgstr "Transações críticas de nome de coluna: "
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Negative Ist values"
-msgstr "Valores negativos primeiro"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "How to handle critical transactions"
-msgstr "Como lidar com transações críticas"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Inspect"
-msgstr "Inspecionar"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Remove"
 msgstr "Remover"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "<b>Critical Transaction List</b>"
-msgstr "<b>Lista de transações críticas</b>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "B.     Efficiency Techniques"
-msgstr "B.     Técnicas de eficiência"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Efficiency Techniques"
-msgstr "Técnicas de Eficiência"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Separate known and unknown misstatement"
-msgstr "Separe distorções conhecidas e desconhecidas"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Click to learn more about this efficiency technique."
-msgstr "Clique para saber mais sobre esta técnica de eficiência."
-
-msgctxt "auditBayesianWorkflow|"
-msgid ""
-"<i>Requires additional assumption: The population taints are homogeneous</i>"
-msgstr ""
-"<i>Requer suposição adicional: as impurezas da população são homogêneas</i>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "C.     Prior Information"
-msgstr "C.     Informação Prévia"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Prior information:"
-msgstr "Informação Prévia:"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Audit Risk Model"
-msgstr "Modelo de Risco de Auditoria"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Equal prior probabilities"
-msgstr "Probabilidades anteriores iguais"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Custom prior probabilities"
-msgstr "Probabilidades anteriores personalizadas"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Earlier sample"
 msgstr "Amostra anterior"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Weighted earlier sample"
-msgstr "Amostra anterior ponderada"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Click to learn more about the prior information."
-msgstr "Clique para saber mais sobre as informações anteriores."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Expected Errors in Sample"
@@ -1541,108 +689,8 @@ msgid "All possible"
 msgstr "Tudo possível"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Prior probability of tolerable misstatement: p(H₋) = "
-msgstr "Probabilidade anterior de distorção tolerável: p(H₋) = "
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Prior probability of intolerable misstatement: p(H₊) = "
-msgstr "Probabilidade anterior de distorção intolerável: p(H₊) = "
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Number of earlier seen transactions"
-msgstr "Número de transações vistas anteriormente"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Number of earlier seen errors"
-msgstr "Número de erros vistos anteriormente"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Weighting factor"
-msgstr "Fator de ponderação"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "D.     Advanced Options"
-msgstr "D.     Opções avançadas"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Probability Distribution"
 msgstr "Distribuição de probabilidade"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Calculation Preferences"
-msgstr "Preferências de cálculo"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Step size"
-msgstr "Tamanho do passo"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Euro (€)"
-msgstr "Euro (€)"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "E.     Tables and Plots"
-msgstr "E.     Tabelas e plotagens"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Expected posterior odds"
-msgstr "Probabilidades posteriores esperadas"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Expected Bayes factor (BF₋₊)"
-msgstr "Fator Bayes esperado (BF₋₊)"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Descriptive statistics for Ist values"
-msgstr "Estatísticas descritivas para os primeiros valores"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Implicit sample induced by prior distribution"
-msgstr "Amostra implícita induzida por distribuição anterior"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Description of prior and expected posterior distribution"
-msgstr "Descrição da distribuição anterior e posterior esperada"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Distribution of Ist values"
-msgstr "Distribuição dos primeiros valores"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Compare required sample sizes"
-msgstr "Compare os tamanhos de amostra necessários"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Implied prior distribution"
-msgstr "Distribuição anterior implícita"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Expected posterior distribution"
-msgstr "Distribuição posterior esperada"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Display additional information"
-msgstr "Exibir informações adicionais"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Shade area"
-msgstr "Área da sombra"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Hypothesis regions"
-msgstr "Regiões de hipótese"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Add custom variables to sample"
-msgstr "Adicionar variáveis personalizadas à amostra"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "A.     Selection Methodology"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Randomly organize transactions before selection"
-msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about monetary unit sampling."
@@ -1669,71 +717,12 @@ msgid "Starting point"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
-msgid "B.     Tables"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Display selected transactions"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Descriptive statistics of selected transactions"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>How would you like to evaluate your transactions?</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Soll values"
-msgstr "Valores Soll"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Adds a column to specify the Soll values of the transactions."
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid ""
-"Adds a column to specify the transactions as correct (0) or misstated (1)"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Column name Soll values: "
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>Annotate your selected transactions with their Soll values.</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid ""
-"<b>Annotate your selected transactions with a 0 (correct) or a 1 (misstated)."
-"</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "A.     Data Entry"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Soll Values"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "A.     Advanced Options"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
 msgid "One-sided upper bound"
 msgstr "Limite superior unilateral"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Two-sided interval"
 msgstr "Intervalo bilateral"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Show Results As"
-msgstr "Mostrar resultados como"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Numbers"
@@ -1748,120 +737,16 @@ msgid "Extrapolated amounts"
 msgstr "Quantidades extrapoladas"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "B.     Tables and Plots"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Obtained precision"
-msgstr "Precisão obtida"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Posterior odds"
-msgstr "Probabilidades posteriores"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Bayes factor (BF₋₊)"
-msgstr "Fator de Bayes (BF₋₊)"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Additional samples for sampling objectives"
-msgstr "Amostras adicionais para objetivos de amostragem"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Post-hoc corrections to population value"
-msgstr "Correções post-hoc para o valor da população"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Description of prior and posterior distribution"
-msgstr "Descrição da distribuição anterior e posterior"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Evaluate post-hoc assumptions"
-msgstr "Avalie as suposições post-hoc"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Confidence interval"
 msgstr "Intervalo de Confiança"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Evaluate sampling objectives"
-msgstr "Avalie os objetivos de amostragem"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Scatter plot of Ist and Soll values"
-msgstr "Gráfico de dispersão dos primeiros valores e Soll"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Display correlation"
 msgstr "Correlação de exibição"
 
-msgctxt "auditBayesianWorkflow|"
-msgid "Display transaction ID's"
-msgstr "Exibir IDs de transação"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Prior and posterior distribution"
-msgstr "Distribuição anterior e posterior"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Display inferential statistics"
-msgstr "Exibir estatísticas inferenciais"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Audit Risk"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Click to learn more about the explanatory text."
-msgstr "Clique para saber mais sobre o texto explicativo."
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Reference Distribution"
-msgstr ""
-
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Uniform distribution"
 msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Check Digits"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "First digit"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "First and second digits"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Last digit"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Frequency statistics"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Compare to reference distribution"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Click to learn more about the explanatory text."
-msgstr "Clique para saber mais sobre o texto explicativo."
-
-msgctxt "auditClassicalEstimation|"
-msgid "Ist Position"
-msgstr "Primeira Posição"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Soll Position"
-msgstr "Posição Soll"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Estimation Method"
-msgstr "Método de Estimação"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Direct estimator"
@@ -1880,16 +765,8 @@ msgid "Regression estimator"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Dollar ($)"
-msgstr "Dollar ($)"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Sampling Objectives"
 msgstr "Objetivos de Amostragem"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Test against a performance materiality"
-msgstr "Teste contra uma materialidade de desempenho"
 
 #, fuzzy
 msgctxt "auditClassicalEvaluation|"
@@ -1901,14 +778,6 @@ msgid "Absolute"
 msgstr "Absoluto"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Click to learn more about the performance materiality."
-msgstr "Clique para saber mais sobre a materialidade da performance."
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Obtain a required minimum precision"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Click to learn more about the precision."
 msgstr "Clique para saber mais sobre a precisão."
 
@@ -1917,96 +786,12 @@ msgid "Population"
 msgstr "População"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Size"
-msgstr "Tamanho"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Value"
-msgstr "Valor"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Audit Risk"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Confidence"
 msgstr "Confiança"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Explanatory Text"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Enable"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Click to learn more about the explanatory text."
-msgstr "Clique para saber mais sobre o texto explicativo."
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Transaction ID's"
-msgstr "IDs de transação"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Ist Position <i>(required)</i>"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Ist Position"
-msgstr "Primeira Posição"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Soll Position"
-msgstr "Posição Soll"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Audit Result"
 msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Selection Counter <i>(optional)</i>"
-msgstr "Contador de Seleção <i>(opcional)</i>"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Annotation Method"
-msgstr "Método de Anotação"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Soll values"
-msgstr "Valores Soll"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Correct / Incorrect"
-msgstr "Correto / Incorreto"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Use summary statistics"
-msgstr "Use estatísticas de resumo"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Number of seen transactions"
-msgstr "Número de transações vistas"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Number of found errors"
-msgstr "Número de erros encontrados"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Critical Transactions"
-msgstr "Transações Críticas"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Select critical transactions"
-msgstr "Selecione transações críticas"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Negative Ist values"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "How to handle critical transactions"
-msgstr "Como lidar com transações críticas"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Keep"
@@ -2015,14 +800,6 @@ msgstr "Manter"
 msgctxt "auditClassicalEvaluation|"
 msgid "Remove"
 msgstr "Remover"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Risk Assessments"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Inherent Risk"
-msgstr "Risco inerente"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "High"
@@ -2037,24 +814,8 @@ msgid "Low"
 msgstr "Baixo"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Custom"
-msgstr "Personalizar"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Control Risk"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Advanced Options"
 msgstr "Opções avançadas"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Evaluation Method"
-msgstr "Método de avaliação"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Stringer bound"
-msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
 msgid "LTA adjustment"
@@ -2077,10 +838,6 @@ msgid "Regression estimator"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Probability Distribution"
-msgstr "Distribuição de probabilidade"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Binomial"
 msgstr "Binomial"
 
@@ -2091,10 +848,6 @@ msgstr "Poisson"
 msgctxt "auditClassicalEvaluation|"
 msgid "Hypergeometric"
 msgstr "Hipergeométrico"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Show Results As"
-msgstr "Mostrar resultados como"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Numbers"
@@ -2109,76 +862,24 @@ msgid "Extrapolated amounts"
 msgstr "Quantidades extrapoladas"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Tables and Plots"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Statistics"
-msgstr "Estatísticas"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Most likely error (MLE)"
-msgstr "Erro mais provável (MLE)"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Obtained precision"
-msgstr "Precisão obtida"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Tables"
 msgstr "Tabelas"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Additional samples for sampling objectives"
-msgstr "Amostras adicionais para objetivos de amostragem"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Post-hoc corrections to population value"
-msgstr "Correções post-hoc para o valor da população"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Plots"
 msgstr "Diagramas"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Evaluate sampling objectives"
-msgstr "Avalie os objetivos de amostragem"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Scatter plot of Ist and Soll values"
-msgstr "Gráfico de dispersão dos primeiros valores e Soll"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Display correlation"
 msgstr "Correlação de exibição"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Display transaction ID's"
-msgstr "Exibir IDs de transação"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "<b>Download Report</b>"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
-msgid "Audit Risk"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
 msgstr "Confiança"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Explanatory Text"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Enable"
-msgstr "Habilitar"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Click to learn more about the explanatory text."
-msgstr "Clique para saber mais sobre o texto explicativo."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Variable"
@@ -2199,14 +900,6 @@ msgstr "Entropia"
 msgctxt "auditClassicalNumberBunching|"
 msgid "Shuffle Decimal Digits"
 msgstr "Randomizar dígitos decimais"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "All digits"
-msgstr "Todos os dígitos"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Bootstrap Options"
-msgstr "Opções de Bootstrap"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Number of samples"
@@ -2233,14 +926,6 @@ msgid "Plots"
 msgstr "Diagramas"
 
 msgctxt "auditClassicalNumberBunching|"
-msgid "Observed vs. expected values"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Histogram of individual values"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
 msgid "Label"
 msgstr "Rótulo"
 
@@ -2257,24 +942,8 @@ msgid "Sampling Objectives"
 msgstr "Objetivos de Amostragem"
 
 msgctxt "auditClassicalPlanning|"
-msgid "Test against a performance materiality"
-msgstr "Teste contra uma materialidade de desempenho"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Click to learn more about the performance materiality."
-msgstr "Clique para saber mais sobre a materialidade da performance."
-
-msgctxt "auditClassicalPlanning|"
-msgid "Obtain a required minimum precision"
-msgstr ""
-
-msgctxt "auditClassicalPlanning|"
 msgid "Click to learn more about the precision."
 msgstr "Clique para saber mais sobre a precisão."
-
-msgctxt "auditClassicalPlanning|"
-msgid "Risk Assessments"
-msgstr ""
 
 msgctxt "auditClassicalPlanning|"
 msgid "Expected Errors in Sample"
@@ -2283,154 +952,26 @@ msgstr "Erros esperados na amostra"
 msgctxt "auditClassicalPlanning|"
 msgid "Probability Distribution"
 msgstr "Distribuição de probabilidade"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Calculation Preferences"
-msgstr "Preferências de cálculo"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Step size"
-msgstr "Tamanho do passo"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Euro (€)"
-msgstr "Euro (€)"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Compare required sample sizes"
-msgstr "Compare os tamanhos de amostra necessários"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Implied distribution of errors"
-msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Sampling Objectives"
 msgstr "Objetivos de Amostragem"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Test against a performance materiality"
-msgstr "Teste contra uma materialidade de desempenho"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Click to learn more about the performance materiality."
-msgstr "Clique para saber mais sobre a materialidade da performance."
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Obtain a required minimum precision"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about the precision."
 msgstr "Clique para saber mais sobre a precisão."
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Variable Definitions</b>"
-msgstr "<b>Definições de Variáveis</b>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Transaction ID's"
-msgstr "IDs de transação"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Ist Position <i>(required)</i>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Ist Position <i>(optional)</i>"
-msgstr "Primeira Posição <i>(opcional)</i>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "A.     Critical Transactions"
-msgstr "A.     Transações Críticas"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Select critical transactions"
-msgstr "Selecione transações críticas"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Column name critical transactions: "
-msgstr "Transações críticas de nome de coluna: "
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Negative Ist values"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "How to handle critical transactions"
-msgstr "Como lidar com transações críticas"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Inspect"
-msgstr "Inspecionar"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Remove"
 msgstr "Remover"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "<b>Critical Transaction List</b>"
-msgstr "<b>Lista de transações críticas</b>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "B.     Risk Assessments"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Expected Errors in Sample"
 msgstr "Erros esperados na amostra"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "C.     Advanced Options"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Probability Distribution"
 msgstr "Distribuição de probabilidade"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Calculation Preferences"
-msgstr "Preferências de cálculo"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Step size"
-msgstr "Tamanho do passo"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Euro (€)"
-msgstr "Euro (€)"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "D.     Tables and Plots"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Descriptive statistics for Ist values"
-msgstr "Estatísticas descritivas para os primeiros valores"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Distribution of Ist values"
-msgstr "Distribuição dos primeiros valores"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Compare required sample sizes"
-msgstr "Compare os tamanhos de amostra necessários"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Implied distribution of errors"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Add custom variables to sample"
-msgstr "Adicionar variáveis personalizadas à amostra"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "A.     Selection Methodology"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Randomly organize transactions before selection"
-msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about monetary unit sampling."
@@ -2457,70 +998,6 @@ msgid "Starting point"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "B.     Tables"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Display selected transactions"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Descriptive statistics of selected transactions"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>How would you like to evaluate your transactions?</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Soll values"
-msgstr "Valores Soll"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Adds a column to specify the Soll values of the transactions."
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid ""
-"Adds a column to specify the transactions as correct (0) or misstated (1)."
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Column name Soll values: "
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Annotate your selected transactions with their Soll values.</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid ""
-"<b>Annotate your selected transactions with a 0 (correct) or a 1 (incorrect)."
-"</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "A.     Data Entry"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Soll Values"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "A.     Advanced Options"
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalWorkflow|"
-msgid "Evaluation Method"
-msgstr "Método de avaliação"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Stringer bound"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Direct estimator"
 msgstr ""
 
@@ -2537,10 +1014,6 @@ msgid "Regression estimator"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Show Results As"
-msgstr "Mostrar resultados como"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Numbers"
 msgstr "Números"
 
@@ -2553,67 +1026,11 @@ msgid "Extrapolated amounts"
 msgstr "Quantidades extrapoladas"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "B.     Tables and Plots"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Obtained precision"
-msgstr "Precisão obtida"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Additional samples for sampling objectives"
-msgstr "Amostras adicionais para objetivos de amostragem"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Post-hoc corrections to population value"
-msgstr "Correções post-hoc para o valor da população"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Evaluate sampling objectives"
-msgstr "Avalie os objetivos de amostragem"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Scatter plot of Ist and Soll values"
-msgstr "Gráfico de dispersão dos primeiros valores e Soll"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Display correlation"
 msgstr "Correlação de exibição"
 
-msgctxt "auditClassicalWorkflow|"
-msgid "Display transaction ID's"
-msgstr "Exibir IDs de transação"
-
-msgctxt "auditSelection|"
-msgid "Record ID's"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Ist Position"
-msgstr "Primeira Posição"
-
-msgctxt "auditSelection|"
-msgid "Ist Position <i>(optional)</i>"
-msgstr "Primeira Posição <i>(opcional)</i>"
-
-msgctxt "auditSelection|"
-msgid "Ranking Variable <i>(optional)</i>"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Additional Variables <i>(optional)</i>"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Number of sampling units to select"
-msgstr ""
-
 msgctxt "auditSelection|"
 msgid "Explanatory Text"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Enable"
 msgstr ""
 
 msgctxt "auditSelection|"
@@ -2621,36 +1038,16 @@ msgid "Show explanatory text at each step of the analysis"
 msgstr "Mostrar texto explicativo em cada etapa da análise"
 
 msgctxt "auditSelection|"
-msgid "Selection Methodology"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Randomly organize transactions before selection"
-msgstr ""
-
-msgctxt "auditSelection|"
 msgid "Sampling Units"
 msgstr "Unidades de Amostragem"
-
-msgctxt "auditSelection|"
-msgid "Monetary unit sampling"
-msgstr "Amostragem de unidade monetária"
 
 msgctxt "auditSelection|"
 msgid "Click to learn more about monetary unit sampling."
 msgstr ""
 
 msgctxt "auditSelection|"
-msgid "Record sampling"
-msgstr ""
-
-msgctxt "auditSelection|"
 msgid "Click to learn more about record sampling."
 msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Selection Method"
-msgstr "Método de Seleção"
 
 msgctxt "auditSelection|"
 msgid "Random sampling"
@@ -2685,87 +1082,11 @@ msgid "Seed"
 msgstr "Seed"
 
 msgctxt "auditSelection|"
-msgid "Advanced Options"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Currency"
-msgstr "Moeda"
-
-msgctxt "auditSelection|"
-msgid "Euro (€)"
-msgstr "Euro (€)"
-
-msgctxt "auditSelection|"
-msgid "Dollar ($)"
-msgstr "Dollar ($)"
-
-msgctxt "auditSelection|"
-msgid "Other"
-msgstr ""
-
-msgctxt "auditSelection|"
 msgid "Tables"
 msgstr "Tabelas"
 
 msgctxt "auditSelection|"
-msgid "Display selected transactions"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Descriptive statistics of selected transactions"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Mean"
-msgstr "Média"
-
-msgctxt "auditSelection|"
-msgid "Median"
-msgstr "Mediana"
-
-msgctxt "auditSelection|"
-msgid "Std. deviation"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Variance"
-msgstr "Variância"
-
-msgctxt "auditSelection|"
-msgid "Minimum"
-msgstr "Mínimo"
-
-msgctxt "auditSelection|"
-msgid "Maximum"
-msgstr "Máximo"
-
-msgctxt "auditSelection|"
-msgid "Range"
-msgstr ""
-
-msgctxt "auditSelection|"
 msgid "Export sample to file"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Column name selection result: "
-msgstr "Nome da coluna seleção do resultado "
-
-msgctxt "auditSelection|"
-msgid "e.g. Count"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Save as: "
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "<b>Synchronize: On</b>"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "<b>Synchronize: Off</b>"
 msgstr ""
 
 msgctxt "auditSelection|"
@@ -2788,14 +1109,1049 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Log(BF₁₀)"
 msgstr ""
 
-msgctxt "auditClassicalNumberBunching|"
-msgid "Last digit"
+msgctxt "auditBayesianEvaluation|"
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "No. items"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "No. units"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Item ID"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Selection Counter"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Data"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Raw"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Summary statistics"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Sample size"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Number of errors"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Explanatory text"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianEvaluation|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr "Mostrar texto explicativo em cada etapa da análise"
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Prior and posterior"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Corrections to population"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Assumption checks"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Additional info"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Posterior predictive"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Sampling objectives"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Scatter plot"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Display item ID's"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Prior"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Default"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "α"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "β"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Errors"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Impartial"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Risk assessments"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Control risk"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianEvaluation|"
+msgid "All possible"
+msgstr "Tudo possível"
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Critical Items"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Negative book values"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Format Tables"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Assume homogeneous taints"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Click to learn more about this assumption"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "No. units"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Explanatory text"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Equivalent prior sample"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Prior and posterior"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Additional info"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Prior predictive"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Compare sample sizes"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Prior"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Default"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "α"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "β"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Errors"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Impartial"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Risk assessments"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Control risk"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Format Tables"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianPlanning|"
+msgid "Numbers"
+msgstr "Números"
+
+msgctxt "auditBayesianPlanning|"
+msgid "Percentages"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Increment"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Item ID"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Explanatory text"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Descriptive statistics"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Equivalent prior sample"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Prior and posterior"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Additional info"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Prior predictive"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Compare sample sizes"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Distribution of book values"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Prior"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Default"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "α"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "β"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianWorkflow|"
+msgid "Size"
+msgstr "Tamanho"
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Errors"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Impartial"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Risk assessments"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Control risk"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Advanced Options"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Critical Items"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Negative book values"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Column name"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianWorkflow|"
+msgid "Keep"
+msgstr "Manter"
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Format Tables"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Increment"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Assume homogeneous taints"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Click to learn more about this assumption"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Ranking Variable"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Additional Variables"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Items"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Monetary units"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Raw sample"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Randomize items"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Annotation"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Audit value"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Adds a column to specify the audit values of the items."
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Adds a column to specify the items as correct (0) or misstated (1)."
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Column name selection result"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Column name audit result"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Data Entry"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Annotate your selected items with their audit (true) values.</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Audit Value"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Corrections to population"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Assumption checks"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Posterior predictive"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Sampling objectives"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Scatter plot"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Display item ID's"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Reference"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Explanatory text"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr "Mostrar texto explicativo em cada etapa da análise"
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Digits"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "First"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "First and second"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Last"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Frequency table"
+msgstr "Tabela de frequências"
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Observed vs. expected"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Book Values"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Audit Values"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Explanatory text"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalEstimation|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr "Mostrar texto explicativo em cada etapa da análise"
+
+msgctxt "auditClassicalEstimation|"
+msgid "No. items"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "No. units"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Scatter plot"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "No. items"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "No. units"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Item ID"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Selection Counter"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Data"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Raw"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Summary statistics"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Sample size"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Number of errors"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Explanatory text"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalEvaluation|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr "Mostrar texto explicativo em cada etapa da análise"
+
+#, fuzzy
+msgctxt "auditClassicalEvaluation|"
+msgid "Audit Risk Model"
+msgstr "Modelo de Risco de Auditoria"
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Control risk"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Corrections to population"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Stringer"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Mean-per-unit estimator"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Sampling objectives"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Scatter plot"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Display item ID's"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Critical Items"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Negative book values"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Format Tables"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
-msgid "Last two digits"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Explanatory text"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalNumberBunching|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr "Mostrar texto explicativo em cada etapa da análise"
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Last"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Last two"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "All"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Observed vs. expected"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Histogram"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Advanced Options"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "No. units"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalPlanning|"
+msgid "Audit Risk Model"
+msgstr "Modelo de Risco de Auditoria"
+
+msgctxt "auditClassicalPlanning|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Control risk"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Explanatory text"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Compare sample sizes"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Assumed error distribution"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Format Tables"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalPlanning|"
+msgid "Numbers"
+msgstr "Números"
+
+msgctxt "auditClassicalPlanning|"
+msgid "Percentages"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Increment"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid ""
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Item ID"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Book Value"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalWorkflow|"
+msgid "Audit Risk Model"
+msgstr "Modelo de Risco de Auditoria"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Control risk"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Explanatory text"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Descriptive statistics"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Distribution of book values"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Compare sample sizes"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Assumed error distribution"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Advanced Options"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Critical Items"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Negative book values"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Column name"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalWorkflow|"
+msgid "Keep"
+msgstr "Manter"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Format Tables"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Increment"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Ranking Variable"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Additional Variables"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Items"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Monetary units"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Raw sample"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Randomize items"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Annotation"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Audit value"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Adds a column to specify the audit values of the items."
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Adds a column to specify the items as correct (0) or misstated (1)."
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Column name selection result"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Column name audit result"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Data Entry"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Annotate your selected items with their audit (true) values.</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Audit Value"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Stringer"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Mean-per-unit estimator"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Corrections to population"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Sampling objectives"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Scatter plot"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Display item ID's"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Item ID"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Ranking Variable"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Additional Variables"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Sample size"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Items"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Monetary units"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Descriptive statistics"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Raw sample"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Randomize items"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Export"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Column name selection result"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "e.g. selected"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Save as"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "e.g. sample.csv"
 msgstr ""

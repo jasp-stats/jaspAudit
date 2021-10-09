@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: jaspAudit 0.15\n"
-"POT-Creation-Date: 2021-07-31 03:38\n"
+"Project-Id-Version: jaspAudit 0.16.0\n"
+"POT-Creation-Date: 2021-10-09 03:29\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "The Bayes factor is computed using a <i>Dirichlet(%1$s,...,%2$s%3$s)</i> prior with <i>%2$s = 1</i>."
 msgstr ""
 
-msgid "<b>Table %i.</b> Frequency Statistics"
+msgid "<b>Table %i.</b> Frequency Table"
 msgstr ""
 
 msgid "Benford's law"
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Percentage"
 msgstr ""
 
-msgid "Observed Percentages vs. Expected Percentages"
+msgid "Observed vs. Expected Percentages"
 msgstr ""
 
 msgid "Observed"
@@ -268,10 +268,10 @@ msgstr ""
 msgid "Correlation Plot"
 msgstr ""
 
-msgid "Book values"
+msgid "Book value"
 msgstr ""
 
-msgid "Audit values"
+msgid "Audit value"
 msgstr ""
 
 msgid "<b>Figure 1.</b> Scatter plot of the book values in the selection and their audit values. Red dots indicate observations that did not match their original book value. If these red dots lie in the bottom part of the graph, the book values are overstated. If these red dots lie in the upper part of the graph, they are understated. The value <i>r</i> is the Pearson correlation coefficient of the book values and the audit values, an indicator of the strength of the linear relationship between the two variables."
@@ -301,10 +301,7 @@ msgstr ""
 msgid "<b>Table %i.</b> Assumption Checks"
 msgstr ""
 
-msgid "The displayed <i>p</i> value is for a two-sided test against H₀: <i>r = 0</i>."
-msgstr ""
-
-msgid "<b>Table %i.</b> Frequencies"
+msgid "The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r = 0</i>."
 msgstr ""
 
 msgid "Value"
@@ -352,13 +349,13 @@ msgstr ""
 msgid "<u>Evaluation</u>"
 msgstr ""
 
-msgid "Analysis not possible: Your materiality is higher than, or equal to the total value of the observations."
+msgid "Analysis not possible: The materiality is higher than, or equal to the total value of the observations."
 msgstr ""
 
-msgid "Analysis not possible: Your expected errors are higher than the performance materiality."
+msgid "Analysis not possible: The expected errors are higher than the performance materiality."
 msgstr ""
 
-msgid "The detection risk is equal to or higher than 100%%. Please re-specify your custom values for the Inherent risk and/or Control risk, or the confidence."
+msgid "The detection risk is equal to or higher than 100%%. Please re-specify the custom values for the Inherent risk and/or Control risk, or the confidence."
 msgstr ""
 
 msgid "You cannot incorporate this prior information into your analysis because you are not testing against a performance materiality."
@@ -367,25 +364,13 @@ msgstr ""
 msgid "Selection summary"
 msgstr ""
 
-msgid "Your sample size is larger than (or equal to) your population size. Cannot take a record sample larger than the population."
-msgstr ""
-
-msgid "Your sample size is larger than (or equal to) your population value. Cannot take a MUS sample larger than the population value."
-msgstr ""
-
 msgid "You must specify unique transaction ID's. The row numbers of the data set are sufficient."
 msgstr ""
 
 msgid "Evaluation summary"
 msgstr ""
 
-msgid "Your audit result does not contain only 0's (correct) and 1's (incorrect). Select the Soll values annotation method from the options or use the summary statistics to evaluate your sample."
-msgstr ""
-
-msgid "The hypergeometric upper bound requires that you specify the population size."
-msgstr ""
-
-msgid "Your sample size is larger than (or equal to) your population size. Please adjust your population size accordingly."
+msgid "The hypergeometric upper bound requires that you specify the number of units in the population."
 msgstr ""
 
 msgid "The direct, difference, ratio, and regression bounds require that you specify the population size and the population value."
@@ -397,22 +382,22 @@ msgstr ""
 msgid "The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk, or the confidence."
 msgstr ""
 
-msgid "Select one or more sampling objectives from the top left corner to begin planning an audit sample.\n\n%1$s <b>Test against a performance materiality</b>\n\nEnable this objective if you want to <i>test</i> whether the total misstatement in the population exceeds a certain limit (i.e., the performance materiality) based on a sample. This approach allows you to plan a sample such that, when the sample meets your expectations, the maximum error is said to be below performance materiality. In the evaluation you will be able to quantify the evidence that your sample contains for or against the statement that the population misstatement does not exceed the performance materiality.\n\n%2$s <b>Obtain a required minimum precision</b>\n\nEnable this objective if you want to obtain a required minimum precision when <i>estimating</i> the total misstatement in the population based on a sample. This approach allows you to plan a sample such that, when the sample meets expectations, the accuracy of your estimate is below a tolerable percentage. In the evaluation you will be able to quantify the accuracy of your estimate of the population misstatement."
+msgid "Select one or both sampling objectives to begin planning an audit sample.\n\n%1$s <b>Test against a performance materiality</b>\n\nEnable this objective if you want to <i>test</i> whether the total misstatement in the population exceeds a certain limit (i.e., the performance materiality) based on a sample. This approach allows you to plan a sample such that, when the sample meets your expectations, the maximum error is said to be below performance materiality. In the evaluation you will be able to quantify the evidence that your sample contains for or against the statement that the population misstatement does not exceed the performance materiality.\n\n%2$s <b>Obtain a minimum precision</b>\n\nEnable this objective if you want to obtain a minimum precision when <i>estimating</i> the total misstatement in the population based on a sample. This approach allows you to plan a sample such that, when the sample meets expectations, the accuracy of your estimate is below a tolerable percentage. In the evaluation you will be able to quantify the accuracy of your estimate of the population misstatement."
 msgstr ""
 
 msgid "The objective of this sampling procedure is to show with <b>%1$s</b> confidence that the %2$s of misstatement in the population is lower than the performance materiality of <b>%3$s</b>."
 msgstr ""
 
-msgid "The objective of this sampling procedure is to estimate the misstatement in the population with <b>%1$s</b> confidence and a minimum precision of <b>%2$s</b>.\n\nThe quantity of interest is the misstatement θ in the population. Misstatement is defined as the difference between a transaction's <i>Ist</i> (recorded) position and its <i>Soll</i> (true) position."
+msgid "The objective of this sampling procedure is to estimate the misstatement in the population with <b>%1$s</b> confidence and a minimum precision of <b>%2$s</b>.\n\nThe quantity of interest is the misstatement θ in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audited (true) value."
 msgstr ""
 
 msgid "The objective of this sampling procedure is to show with <b>%1$s</b> confidence and a precision of <b>%3$s</b> that the %2$s of misstatement in the population is lower than the performance materiality of <b>%4$s</b>."
 msgstr ""
 
-msgid "%1$s\n\nThe quantity of interest is the misstatement (%2$s) in the population. Misstatement is defined as the difference between a transaction's <i>Ist</i> (recorded) position and its <i>Soll</i> (true) position. When testing the population misstatement against a given performance materiality, %2$s*, two statistical hypotheses about %2$s are formulated:\n\n                                  The (null) hypothesis of intolerable misstatement <i>%3$s</i>,\n                                  The (alternative) hypothesis of tolerable misstatement <i>%4$s</i>.\n\n                                  The audit risk (%5$s) is the risk of incorrectly rejecting the hypothesis <i>%3$s</i>. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (< %6$s%%)."
+msgid "%1$s\n\nThe quantity of interest is the misstatement (%2$s) in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, %2$s*, two statistical hypotheses about %2$s are formulated:\n\n                                  The (null) hypothesis of intolerable misstatement <i>%3$s</i>,\n                                  The (alternative) hypothesis of tolerable misstatement <i>%4$s</i>.\n\n                                  The audit risk (%5$s) is the risk of incorrectly rejecting the hypothesis <i>%3$s</i>. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (< %6$s%%)."
 msgstr ""
 
-msgid "%1$s\n\nIn a Bayesian analysis, the parameter %2$s is first assigned a prior probability distribution that incorporates the existing information about its possible values. A description and figure of the current prior distribution can be found under the <i>Tables and Plots</i> section. You can incorporate existing information using the options under the <i>Prior Information</i> section."
+msgid "%1$s\n\nIn a Bayesian analysis, the parameter %2$s is first assigned a prior probability distribution that incorporates the existing information about its possible values. A description and figure of the current prior distribution can be found under the <i>Tables</i> section. You can incorporate existing information using the options under the <i>Prior</i> section."
 msgstr ""
 
 msgid "a performance materiality of <b>%1$s</b>"
@@ -421,16 +406,16 @@ msgstr ""
 msgid "the sample provides sufficient information to conclude that the misstatement %1$s is below the performance materiality %1$s*"
 msgstr ""
 
-msgid "a required minimum precision of <b>%1$s</b>"
+msgid "a minimum precision of <b>%1$s</b>"
 msgstr ""
 
-msgid "the sample provides sufficient information to estimate the misstatement %1$s with the required precision"
+msgid "the sample provides sufficient information to estimate the misstatement %1$s with the minimum precision"
 msgstr ""
 
-msgid "a performance materiality of <b>%1$s</b> and a required minimum precision of <b>%2$s</b>"
+msgid "a performance materiality of <b>%1$s</b> and a minimum precision of <b>%2$s</b>"
 msgstr ""
 
-msgid "the sample provides sufficient information to conclude that the misstatement %1$s is below the performance materiality %1$s* with the required minimum precision"
+msgid "the sample provides sufficient information to conclude that the misstatement %1$s is below the performance materiality %1$s* with the minimum precision"
 msgstr ""
 
 msgid "Furthermore, the uncertainty regarding θ will only be extrapolated over the unseen part of the population. This requires the additional assumption that the population taints are homogeneous."
@@ -448,22 +433,19 @@ msgstr ""
 msgid "The purpose of the planning stage is to find a minimum sample size so that, given a certain number of expected misstatements, the sample provides sufficient information to achieve the specified sampling objectives."
 msgstr ""
 
-msgid "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s"
+msgid "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s"
 msgstr ""
 
-msgid "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assessments of inherent risk <b>(%7$s)</b> and control risk <b>(%8$s)</b> from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s"
+msgid "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assessments of inherent risk <b>(%7$s)</b> and control risk <b>(%8$s)</b> from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s"
 msgstr ""
 
-msgid "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s"
+msgid "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s"
 msgstr ""
 
-msgid "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that tolerable misstatement occurs with a probability <b>%7$s</b> of and intolerable misstatement occurs with a probability of <b>%8$s</b>, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s"
+msgid "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that an earlier sample of <b>%7$s</b> transactions containing <b>%8$s</b> errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s"
 msgstr ""
 
-msgid "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that an earlier sample of <b>%7$s</b> transactions containing <b>%8$s</b> errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s"
-msgstr ""
-
-msgid "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, an <i>a priori</i> assumption that an earlier sample of <b>%7$s</b> transactions containing <b>%8$s</b> errors weighted by a factor <b>%9$s</b> is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited transactions is lower than (or equal to) <b>%10$s</b>, %11$s. %12$s"
+msgid "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the manually specified prior distribution, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s"
 msgstr ""
 
 msgid "random"
@@ -475,22 +457,16 @@ msgstr ""
 msgid "cell"
 msgstr ""
 
-msgid "Ist position (<i>...</i>)"
+msgid "book values (<i>%1$s</i>)"
 msgstr ""
 
-msgid "Euros"
+msgid "book values (<i>...</i>)"
 msgstr ""
 
-msgid "Dollars"
+msgid "ID variable (<i>%1$s</i>)"
 msgstr ""
 
-msgid "Ist position (<i>%1$s</i>)"
-msgstr ""
-
-msgid "record variable (<i>...</i>)"
-msgstr ""
-
-msgid "record variable (<i>%1$s</i>)"
+msgid "ID variable (<i>...</i>)"
 msgstr ""
 
 msgid "<br><b>Warning:</b> A monetary unit sampling method was tried but failed."
@@ -502,10 +478,10 @@ msgstr ""
 msgid "%1$s monetary unit sampling"
 msgstr ""
 
-msgid "The purpose of the selection stage is to statistically select a number of sampling units from the population such that their inclusion probabilities are known. Sampling units can be individual transactions (records) or individual monetary units. The sampling units are assigned an individual inclusion probability according to the selection method. To learn more about the current selection method, navigate to the <i>Selection Methodology</i> section.\n\nFrom the population of <b>%1$s</b> %2$s transactions, <b>%3$s</b> sampling units (<i>%4$s</i>) are selected from the %5$s using a <b>%6$s</b> method.%7$s"
+msgid "The purpose of the selection stage is to statistically select a number of sampling units from the population. Sampling units can be individual items (rows) or individual monetary units. The sampling units are selected from the population according to the selection method. To learn more about the current selection method, look under the <i>Method</i> section.\n\nFrom the population of <b>%1$s</b> %2$s items, <b>%3$s</b> sampling units (<i>%4$s</i>) are selected from the %5$s using a <b>%6$s</b> method.%7$s"
 msgstr ""
 
-msgid "%1$s\n\n<i>Note:</i> The selected sample (%2$s) contains fewer transactions than the planned sample size (%3$s) because some transactions are selected more than once. The transactions containing these %4$s extra selected sampling units will be counted multiple times in the evaluation."
+msgid "%1$s\n\n<i>Note:</i> The selected sample (%2$s) contains fewer items than the planned sample size (%3$s) because some items are selected more than once. The items containing these %4$s extra selected sampling units will be counted multiple times in the evaluation."
 msgstr ""
 
 msgid "below"
@@ -529,13 +505,13 @@ msgstr ""
 msgid "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound on the misstatement is <b>%3$s</b> the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is <b>%4$s</b> than the performance materiality. %5$s"
 msgstr ""
 
-msgid "The objective of this audit sampling procedure was to determine the misstatement in the population with %1$s confidence and a minimum precision of %2$s. For the current data, the obtained precision is <b>%3$s</b> than the required minimum precision. \n\nThe conclusion on the basis of these results is that the misstatement in the population has been determined with at least %1$s confidence and a precision of %4$s. %5$s"
+msgid "The objective of this audit sampling procedure was to determine the misstatement in the population with %1$s confidence and a minimum precision of %2$s. For the current data, the obtained precision is <b>%3$s</b> than the minimum precision. \n\nThe conclusion on the basis of these results is that the misstatement in the population has been determined with at least %1$s confidence and a precision of %4$s. %5$s"
 msgstr ""
 
-msgid "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound on the misstatement is <b>%4$s</b> the performance materiality and the obtained precision is <b>%5$s</b> than the required minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is <b>%7$s</b> than the performance materiality. %8$s"
+msgid "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound on the misstatement is <b>%4$s</b> the performance materiality and the obtained precision is <b>%5$s</b> than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is <b>%7$s</b> than the performance materiality. %8$s"
 msgstr ""
 
-msgid "<b>Table %1$i.</b> Descriptive Statistics for Ist Position"
+msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
 msgstr ""
 
 msgid "Population size"
@@ -562,16 +538,13 @@ msgstr ""
 msgid "3"
 msgstr ""
 
-msgid "Distribution of Ist Values"
+msgid "Distribution of Book Values"
 msgstr ""
 
-msgid "Ist (%1$s)"
+msgid "Mean ± St.dev"
 msgstr ""
 
-msgid "Mean %1$s St.dev"
-msgstr ""
-
-msgid "<b>Figure %1$i.</b> The distribution of Ist values in the population. The red and blue dots respectively represent the mean and the values exactly one standard deviation from the mean. The orange dots represent the first, second (median) and third quartiles of the Ist values."
+msgid "<b>Figure %1$i.</b> The distribution of book values in the population. The red and blue dots respectively represent the mean and the values exactly one standard deviation from the mean. The orange dots represent the first, second (median) and third quartiles of the book values."
 msgstr ""
 
 msgid "<u>Audit Risk Model</u>"
@@ -586,7 +559,7 @@ msgstr ""
 msgid "%1$s\n\nThe translation of High, Medium and Low to probabilities is done according custom preferences</b>."
 msgstr ""
 
-msgid "%1$s\n\nThe translation of High, Medium and Low to probabilities is done using default values. To learn more about the choice of these values and how to adjust these, see the help file of this analysis or navigate to the <i>Risk Assessments</i> section."
+msgid "%1$s\n\nThe translation of High, Medium and Low to probabilities is done using default values. To learn more about the choice of these values and how to adjust these, see the help file of this analysis or look under the <i>Audit Risk Model</i> section."
 msgstr ""
 
 msgid "The detection risk is equal to or higher than 100%%. Please re-specify your custom values for the Inherent risk and/or Control risk."
@@ -598,19 +571,13 @@ msgstr ""
 msgid "An error occurred: %1$s"
 msgstr ""
 
-msgid "You cannot achieve your current sampling objectives with this population. The resulting sample size is larger than the number of transactions in the population. Adjust your sampling objectives or variables accordingly."
-msgstr ""
-
-msgid "You cannot achieve your current sampling objectives with this population. The resulting sample size is larger than the total value of the population. Adjust your sampling objectives or variables accordingly."
-msgstr ""
-
 msgid "<b>Table %1$i.</b> Planning Summary"
 msgstr ""
 
 msgid "Performance materiality"
 msgstr ""
 
-msgid "Required precision"
+msgid "Min. precision"
 msgstr ""
 
 msgid "Inherent risk"
@@ -625,58 +592,55 @@ msgstr ""
 msgid "Audit risk"
 msgstr ""
 
-msgid "Expected errors"
+msgid "Tolerable errors"
 msgstr ""
 
-msgid "Required sample size"
+msgid "Minimum sample size"
 msgstr ""
 
-msgid "Expected posterior odds"
+msgid "The minimum sample size is based on the Poisson distribution."
 msgstr ""
 
-msgid "Expected %1$s"
+msgid "The minimum sample size is based on the binomial distribution."
 msgstr ""
 
-msgid "The required sample size is based on the <b>Poisson</b> distribution."
+msgid "The minimum sample size is based on the hypergeometric distribution."
 msgstr ""
 
-msgid "The required sample size is based on the <b>binomial</b> distribution."
+msgid "The minimum sample size is based on the gamma distribution."
 msgstr ""
 
-msgid "The required sample size is based on the <b>hypergeometric</b> distribution."
+msgid "The minimum sample size is based on the beta distribution."
 msgstr ""
 
-msgid "The required sample size is based on the <b>gamma</b> distribution."
+msgid "The minimum sample size is based on the beta-binomial distribution (N = %1$s)."
 msgstr ""
 
-msgid "The required sample size is based on the <b>beta</b> distribution."
-msgstr ""
-
-msgid "The required sample size is based on the <b>beta-binomial</b> distribution (N = %1$s)."
-msgstr ""
-
-msgid "Either the materiality (if applicable), the population size, or the population value is defined as zero."
+msgid "Either the materiality (if applicable) or the number of units in the population is defined as zero."
 msgstr ""
 
 msgid "%1$s <b>Results could not be calculated.</b>"
 msgstr ""
 
-msgid "The required sample size is based on the <b>Poisson</b> distribution <i>(%1$s = %2$s)</i>."
+msgid "The minimum sample size is based on the Poisson distribution <i>(%1$s = %2$s)</i>."
 msgstr ""
 
-msgid "The required sample size is based on the <b>binomial</b> distribution <i>(p = %1$s)</i>"
+msgid "The minimum sample size is based on the binomial distribution <i>(p = %1$s)</i>"
 msgstr ""
 
-msgid "The required sample size is based on the <b>hypergeometric</b> distribution <i>(N = %1$s, K = %2$s)</i>."
+msgid "The minimum sample size is based on the hypergeometric distribution <i>(N = %1$s, K = %2$s)</i>."
 msgstr ""
 
-msgid "The required sample size is based on the <b>gamma</b> distribution <i>(%1$s = %2$s, %3$s = %4$s)</i>"
+msgid "The minimum sample size is based on the gamma distribution <i>(%1$s = %2$s, %3$s = %4$s)</i>"
 msgstr ""
 
-msgid "The required sample size is based on the <b>beta</b> distribution <i>(%1$s = %2$s, %3$s = %4$s)</i>."
+msgid "The minimum sample size is based on the beta distribution <i>(%1$s = %2$s, %3$s = %4$s)</i>."
 msgstr ""
 
-msgid "The required sample size is based on the <b>beta-binomial</b> distribution <i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>."
+msgid "The minimum sample size is based on the beta-binomial distribution <i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>."
+msgstr ""
+
+msgid "The minimum sample size (%1$s) is larger than the number of units in the population (%2$s)."
 msgstr ""
 
 msgid "The value %1$s is automatically used as a starting point for the fixed interval selection."
@@ -685,7 +649,7 @@ msgstr ""
 msgid "%1$s"
 msgstr ""
 
-msgid "Comparison of Required Sample Sizes"
+msgid "Minimum Sample Sizes"
 msgstr ""
 
 msgid "Across Probability Distributions (Current: %1$s)"
@@ -694,19 +658,22 @@ msgstr ""
 msgid "Expected error-free"
 msgstr ""
 
-msgid "Required sample size (n)"
+msgid "Expected errors"
 msgstr ""
 
-msgid "An error occurred in a call to the the jfa package: %1$s"
+msgid "An error occurred in a call to the jfa package: %1$s"
 msgstr ""
 
 msgid "Across Expected Errors (Current: %1$s)"
 msgstr ""
 
-msgid "<b>Figure %1$i.</b> The first panel shows a comparison of the required sample sizes under different probability distributions. The bars represent the required sample sizes for the current expected errors in the sample. The number of expected errors in each bar is colored in red and the number of expected error-free transactions is colored in green. The second panel shows a comparison of the required sample sizes under different expected errors for the current probability distribution."
+msgid "<b>Figure %1$i.</b> The first panel shows a comparison of the minimum sample sizes under different probability distributions. The bars represent the minimum sample sizes for the current expected errors in the sample. The number of expected errors in each bar is colored in red and the number of expected error-free items is colored in green. The second panel shows a comparison of the minimum sample sizes under different expected errors for the current probability distribution."
 msgstr ""
 
-msgid "Implied %1$s Distribution of Errors"
+msgid "Assumed %1$s Distribution of Errors"
+msgstr ""
+
+msgid "Expected"
 msgstr ""
 
 msgid "Errors"
@@ -715,7 +682,7 @@ msgstr ""
 msgid "Probability"
 msgstr ""
 
-msgid "<b>Figure %1$i.</b> The implied <b>%2$s</b> distribution. The number of expected errors in the selection is colored in red and the number of expected error-free observations is colored in green. The total probability of the errors does not exceed the detection risk as specified through the audit risk model."
+msgid "<b>Figure %1$i.</b> The assumed %2$s distribution. The number of expected errors in the selection is colored in red. The total probability of the errors does not exceed the detection risk as specified through the audit risk model."
 msgstr ""
 
 msgid "Starting point is outside the range of the selection interval of 1 to %1$s. Please choose a starting point < %1$s."
@@ -724,10 +691,10 @@ msgstr ""
 msgid "<b>Table %1$i.</b> Selection Summary"
 msgstr ""
 
-msgid "Selected sampling units"
+msgid "No. units"
 msgstr ""
 
-msgid "Selected transactions"
+msgid "No. items"
 msgstr ""
 
 msgid "Selection value"
@@ -736,22 +703,25 @@ msgstr ""
 msgid "%% of population value"
 msgstr ""
 
-msgid "%% of total observations"
+msgid "%% of population size"
 msgstr ""
 
-msgid "The sample is drawn with random number generator <i>seed %1$s</i>."
+msgid "Unit %1$s is selected from each of the intervals of size %2$s."
 msgstr ""
 
-msgid "Sampling unit %1$s is selected from each interval."
+msgid "The sample is drawn with <i>seed %1$s</i> and intervals of size %2$s."
+msgstr ""
+
+msgid "The sample is drawn with <i>seed %1$s</i>."
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
 msgstr ""
 
-msgid "Transactions"
+msgid "Items"
 msgstr ""
 
-msgid "Total value"
+msgid "Selected items"
 msgstr ""
 
 msgid "Selected units"
@@ -760,19 +730,19 @@ msgstr ""
 msgid "% of total value"
 msgstr ""
 
-msgid "<b>Table %1$i.</b> Selected Transactions"
+msgid "The top stratum consists of all items with a book value larger than %1$s interval."
 msgstr ""
 
-msgid "<b>Table %1$i.</b> Descriptive Statistics for Selected Transactions"
+msgid "<b>Table %1$i.</b> Raw Sample"
+msgstr ""
+
+msgid "<b>Table %1$i.</b> Descriptive Statistics for Sample"
 msgstr ""
 
 msgid "Valid cases"
 msgstr ""
 
 msgid "Median"
-msgstr ""
-
-msgid "Std. Deviation"
 msgstr ""
 
 msgid "Variance"
@@ -802,7 +772,7 @@ msgstr ""
 msgid "Sample size"
 msgstr ""
 
-msgid "Total tainting"
+msgid "Taint"
 msgstr ""
 
 msgid "Most likely error"
@@ -811,52 +781,52 @@ msgstr ""
 msgid "%1$s%% Upper bound"
 msgstr ""
 
-msgid "Obtained precision"
+msgid "%1$s%% Credible interval"
 msgstr ""
 
-msgid "Odds"
+msgid "Precision"
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>Poisson</b> distributon."
+msgid "The results are computed using the Poisson distribution."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>binomial</b> distributon."
+msgid "The results are computed using the binomial distribution."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>hypergeometric</b> distribution."
+msgid "The results are computed using the hypergeometric distribution."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>Stringer</b> method."
+msgid "The results are computed using the Stringer method."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>regression</b> method."
+msgid "The results are computed using the regression estimator."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>direct</b> method."
+msgid "The results are computed using the direct estimator."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>difference</b> method."
+msgid "The results are computed using the difference estimator."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>ratio</b> method."
+msgid "The results are computed using the ratio estimator."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>beta</b> distribution and requires the assumption that the sample taints are interchangeable."
+msgid "The results are computed using the mean-per-unit estimator"
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>gamma</b> distribution and requires the assumption that the sample taints are interchangeable."
+msgid "The results are computed using the beta distribution."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>beta-binomial</b> distribution and requires the assumption that the sample taints are interchangeable."
+msgid "The results are computed using the gamma distribution."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>Cox and Snell</b> method and requires the assumption that the population taints are uniformly distributed."
+msgid "The results are computed using the beta-binomial distribution."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>Stringer</b> method with <b>LTA adjustment</b>."
+msgid "The results are computed using the Stringer method with LTA adjustment."
 msgstr ""
 
-msgid "The upper bound is calculated according to the <b>beta</b> distribution. It requires the assumptions that the sample taints are interchangeable and that the population taints are homogeneous."
+msgid "The results are computed using the beta distribution and require the assumption that the population taints are homogeneous."
 msgstr ""
 
 msgid "The audit result column is empty."
@@ -871,16 +841,13 @@ msgstr ""
 msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr ""
 
-msgid "Pearson's <i>r</i>"
-msgstr ""
-
-msgid "p-value"
+msgid "Pearson's r"
 msgstr ""
 
 msgid "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis H₋: ρ < 0"
 msgstr ""
 
-msgid "The population taints are homogeneous"
+msgid "Book values - Taints"
 msgstr ""
 
 msgid "There were no misstatements found in the sample."
@@ -892,52 +859,37 @@ msgstr ""
 msgid "Evaluation of Sampling Objectives"
 msgstr ""
 
-msgid "Maximum error"
+msgid "An error occurred while creating this plot: The results contain NAs"
+msgstr ""
+
+msgid "Upper bound"
+msgstr ""
+
+msgid "Minimum precision"
+msgstr ""
+
+msgid "Obtained precision"
 msgstr ""
 
 msgid "An error occurred while creating this plot: %1$s"
 msgstr ""
 
-msgid "<b>Figure %1$i.</b> Evaluation information for the current annotated selection. The materiality is compared with the maximum misstatement and the most likely error. The most likely error (MLE) is an estimate of the true misstatement in the population. The maximum error is an estimate of the maximum error in the population."
+msgid "<b>Figure %1$i.</b> Evaluation information for the current annotated selection. The materiality is compared with the maximum misstatement and the most likely error. The most likely error (MLE) is an estimate of the true misstatement in the population. The upper bound is an estimate of the maximum error in the population."
 msgstr ""
 
-msgid "Scatter Plot of Ist and Soll Values"
+msgid "Scatter Plot of Book and Audit Values"
 msgstr ""
 
-msgid "Ist value (%1$s)"
+msgid "Book value (%1$s)"
 msgstr ""
 
-msgid "Soll value (%1$s)"
+msgid "Audit value (%1$s)"
 msgstr ""
 
-msgid "Ist = Soll"
+msgid "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and their corresponding audit values. Grey dots on the diagonal (dashed line) indicate matching book and audit values. Red dots off the diagonal indicate items whose audit value did not match their original book value. If these red dots lie below the diagonal, the items are overstated. If these red dots lie above the diagonal they are understated. %2$s"
 msgstr ""
 
-msgid "<b>Figure %1$i.</b> Scatter plot of the Ist values in the selection and their corresponding Soll values. Grey dots on the diagonal (dashed line) indicate matching Ist and Soll values. Red dots off the diagonal indicate transactions whose Soll value did not match their original Ist value. If these red dots lie below the diagonal, the transactions are overstated. If these red dots lie above the diagonal they are understated. %2$s"
-msgstr ""
-
-msgid "<b>Table %i.</b> Suggested Extension to Achieve Sampling Objectives"
-msgstr ""
-
-msgid "Prior distribution"
-msgstr ""
-
-msgid "Additional tolerable errors"
-msgstr ""
-
-msgid "Additional sample size"
-msgstr ""
-
-msgid "Posterior distribution"
-msgstr ""
-
-msgid "The sample sizes shown are based on Wald's sequential sampling technique."
-msgstr ""
-
-msgid "The sample sizes shown are a rough indication."
-msgstr ""
-
-msgid "<b>Table %i.</b> Post-Hoc Corrections to Population Value"
+msgid "<b>Table %i.</b> Corrections to Population"
 msgstr ""
 
 msgid "Correction"
@@ -955,16 +907,19 @@ msgstr ""
 msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
 msgstr ""
 
-msgid "<b>Table %i.</b> Implicit Sample"
+msgid "<b>Table %i.</b> Equivalent Prior Sample"
 msgstr ""
 
-msgid "Implicit sample size"
+msgid "Equivalent sample size"
 msgstr ""
 
-msgid "Implicit errors"
+msgid "Equivalent errors"
 msgstr ""
 
-msgid "The implicit sample is based on no existing information."
+msgid "The implicit sample is based on minimal prior information."
+msgstr ""
+
+msgid "The implicit sample is derived from the prior parameters %1$s, %2$s."
 msgstr ""
 
 msgid "The implicit sample is derived from the ARM risk assessments: IR = <b>%1$s</b> and CR = <b>%2$s</b>."
@@ -973,79 +928,64 @@ msgstr ""
 msgid "The implicit sample is derived from equal prior probabilities: <i>p(H%1$s) = p(H%2$s) = 0.5</i>"
 msgstr ""
 
-msgid "The implicit sample is derived from custom prior probabilities: <i>p(H%1$s) = %2$s, p(H%3$s) = %4$s</i>"
-msgstr ""
-
 msgid "The implicit sample is derived from an earlier sample of %1$s observations containing %2$s errors."
 msgstr ""
 
-msgid "The implicit sample is derived from an earlier sample of %1$s observations containing %2$s errors weighted by a factor <i>f = %3$s</i>."
-msgstr ""
-
-msgid "Implied Prior Distribution over Unknown Misstatement"
-msgstr ""
-
-msgid "Implied Prior Distribution"
-msgstr ""
-
-msgid "Prior"
-msgstr ""
-
-msgid "Expected\nposterior"
-msgstr ""
-
-msgid "Density"
-msgstr ""
-
-msgid "Population misstatement (%1$s)"
-msgstr ""
-
-msgid "Unseen population misstatement (%1$s)"
-msgstr ""
-
-msgid "%1$s%% Credible \nregion for %2$s"
-msgstr ""
-
-msgid "%1$s%% Credible region for %2$s"
-msgstr ""
-
-msgid "Support"
-msgstr ""
-
-msgid "The expected errors are visualized by the grey dot. The red dot represents the performance materiality."
-msgstr ""
-
-msgid "The expected posterior distribution is calculated so that its %1$s percentile lies below the performance materiality."
-msgstr ""
-
-msgid "<b>Figure %1$i.</b> The prior probability distribution <b>(%2$s)</b> on the misstatement (θ) in the population. The prior parameters <i>%3$s = %4$s, %5$s = %6$s</i> are derived from the assessments of the inherent and control risk, along with the expected errors. %7$s %8$s"
-msgstr ""
-
-msgid "Prior and Posterior Distribution over Unknown Misstatement"
+msgid "Prior and Expected Posterior Distribution"
 msgstr ""
 
 msgid "Prior and Posterior Distribution"
 msgstr ""
 
+msgid "Unseen population misstatement %1$s"
+msgstr ""
+
+msgid "Population misstatement %1$s"
+msgstr ""
+
+msgid "Prior"
+msgstr ""
+
 msgid "Posterior"
+msgstr ""
+
+msgid "Density"
 msgstr ""
 
 msgid "Population errors"
 msgstr ""
 
-msgid "Precision (%1$s)"
+msgid "The expected posterior distribution is calculated so that its %1$sth percentile lies below the performance materiality (gray dot)."
 msgstr ""
 
-msgid "Most likely error (%1$s)"
+msgid "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on the population misstatement θ. The prior parameters <i>%3$s = %4$s, %5$s = %6$s</i> are derived from the prior information. %7$s"
 msgstr ""
 
-msgid "Upper bound (%1$s)"
+msgid "The gray dots represent the performance materiality."
 msgstr ""
 
-msgid "The red dot represents the specified materiality. If the shaded area under the distribution surpasses this point, the estimate of the maximum misstatement exceeds the materiality."
+msgid "<b>Figure %1$i.</b> The prior and posterior distribution (%2$s) on the misstatement in the population. %3$s"
 msgstr ""
 
-msgid "<b>Figure %1$i.</b> The prior and posterior probability distribution <b>(%2$s)</b> on the misstatement in the population. %3$s"
+msgid "Prior Predictive Distribution"
+msgstr ""
+
+msgid "Posterior Predictive Distribution"
+msgstr ""
+
+msgid "Predicted samples before an error"
+msgstr ""
+
+msgid "Predicted errors"
+msgstr ""
+
+msgid "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays the predictions of the %2$s distribution for %4$s <i>n</i> = %5$s."
+msgstr ""
+
+msgid "Descriptive Statistics for Prior and Expected Posterior Distribution"
+msgstr ""
+
+msgid "Descriptive Statistics for Prior and Posterior Distribution"
 msgstr ""
 
 msgid "<b>Table %1$i.</b> %2$s"
@@ -1063,17 +1003,8 @@ msgstr ""
 msgid "Mode"
 msgstr ""
 
-msgid "Precision"
-msgstr ""
-
-msgid "Expected posterior"
-msgstr ""
-
-msgid "Expected shift"
-msgstr ""
-
 msgid "Shift"
 msgstr ""
 
-msgid "%1$s: The population misstatement is lower than materiality (%2$s %3$s). %4$s: The population misstatement is equal to, or higher than, materiality (%5$s %6$s)."
+msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr ""
