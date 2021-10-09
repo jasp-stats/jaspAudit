@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-10-09 03:29\n"
-"PO-Revision-Date: 2021-10-01 10:39+0000\n"
+"PO-Revision-Date: 2021-10-09 12:56+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -159,9 +159,8 @@ msgstr ""
 "Der Bayesfaktor wird mit einem <i>Dirichlet(%1$s,...,%2$s%3$s)</i>-Prior mit "
 "<i>%2$s = 1</i> berechnet."
 
-#, fuzzy
 msgid "<b>Table %i.</b> Frequency Table"
-msgstr "<b>Tabelle %i.</b> Häufigkeiten"
+msgstr "<b>Tabelle %i.</b> Häufigkeitstabelle"
 
 msgid "Benford's law"
 msgstr "Benfordsches Gesetz"
@@ -184,9 +183,8 @@ msgstr "Anzahl"
 msgid "Percentage"
 msgstr "Prozentzahl"
 
-#, fuzzy
 msgid "Observed vs. Expected Percentages"
-msgstr "Beobachtete Prozentzahlen vs. Erwartete Prozentzahlen"
+msgstr "Beobachtete vs. Erwartete Prozentzahlen"
 
 msgid "Observed"
 msgstr "Beobachtet"
@@ -499,13 +497,12 @@ msgstr "Zusätzliches <i>n</i>"
 msgid "Correlation Plot"
 msgstr "Streudiagramm"
 
-#, fuzzy
 msgid "Book value"
-msgstr "Buchwerte"
+msgstr "Buchwert"
 
 #, fuzzy
 msgid "Audit value"
-msgstr "Auditwerte"
+msgstr "Auditwert"
 
 msgid ""
 "<b>Figure 1.</b> Scatter plot of the book values in the selection and their "
@@ -576,13 +573,12 @@ msgstr ""
 msgid "<b>Table %i.</b> Assumption Checks"
 msgstr "<b>Tabelle %i.</b> Annahmeprüfungen"
 
-#, fuzzy
 msgid ""
 "The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r = "
 "0</i>."
 msgstr ""
-"Der angezeigte <i>p</i>-Wert ist für einen zweiseitigen Test gegen H₀: <i>r "
-"= 0</i>."
+"Der angezeigte <i>p</i>-Wert ist für einen zweiseitigen Test gegen H%1$s: "
+"<i>r = 0</i>."
 
 msgid "Value"
 msgstr "Wert"
@@ -641,7 +637,6 @@ msgstr "<u>Auswahl</u>"
 msgid "<u>Evaluation</u>"
 msgstr "<u>Evaluation</u>"
 
-#, fuzzy
 msgid ""
 "Analysis not possible: The materiality is higher than, or equal to the total "
 "value of the observations."
@@ -649,7 +644,6 @@ msgstr ""
 "Analyse nicht möglich: Die Wesentlichkeit ist größer als, oder gleich dem "
 "Gesamtwert der Beobachtungen."
 
-#, fuzzy
 msgid ""
 "Analysis not possible: The expected errors are higher than the performance "
 "materiality."
@@ -657,12 +651,11 @@ msgstr ""
 "Analyse nicht möglich: Die erwarteten Fehler sind größer als die "
 "Toleranzwesentlichkeit."
 
-#, fuzzy
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify the "
 "custom values for the Inherent risk and/or Control risk, or the confidence."
 msgstr ""
-"Das Detektionsrisiko ist höher als, oder gleich 100%%. Bitte korrigieren Sie "
+"Das Detektionsrisiko ist gleich oder höher als 100%%. Bitte korrigieren Sie "
 "Ihre benutzerdefinierten Werte für das inhärente Risiko und/oder das "
 "Kontrollrisiko, oder die Konfidenz."
 
@@ -873,34 +866,30 @@ msgstr ""
 "die Stichprobe liefert ausreichende Informationen, um zu schließen, dass die "
 "Falschangabe %1$s unterhalb der Toleranzwesentlichkeit %1$s* liegt"
 
-#, fuzzy
 msgid "a minimum precision of <b>%1$s</b>"
-msgstr "eine erforderliche Mindestgenauigkeit von <b>%1$s</b>"
+msgstr "eine Mindestgenauigkeit von <b>%1$s</b>"
 
-#, fuzzy
 msgid ""
 "the sample provides sufficient information to estimate the misstatement %1$s "
 "with the minimum precision"
 msgstr ""
 "die Stichprobe liefert ausreichend Informationen, um die Falschangabe %1$s "
-"mit der erforderlichen Genauigkeit zu schätzen"
+"mit der minimalen Genauigkeit zu schätzen"
 
-#, fuzzy
 msgid ""
 "a performance materiality of <b>%1$s</b> and a minimum precision of <b>%2$s</"
 "b>"
 msgstr ""
-"eine Toleranzwesentlichkeit von <b>%1$s</b> und eine erforderliche "
-"Mindestgenauigkeit von <b>%2$s</b>"
+"eine Toleranzwesentlichkeit von <b>%1$s</b> und eine minimale Genauigkeit "
+"von <b>%2$s</b>"
 
-#, fuzzy
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
 "%1$s is below the performance materiality %1$s* with the minimum precision"
 msgstr ""
 "die Stichprobe bietet ausreichend Informationen, um zu schließen, dass die "
 "Falschangabe %1$s unterhalb der Toleranzwesentlichkeit %1$s* mit der "
-"erforderlichen Mindestgenauigkeit liegt"
+"minimalen Genauigkeit liegt"
 
 msgid ""
 "Furthermore, the uncertainty regarding θ will only be extrapolated over the "
@@ -1073,9 +1062,8 @@ msgstr "Variable aufzeichnen (<i>...</i>)"
 msgid "ID variable (<i>%1$s</i>)"
 msgstr "Variable aufzeichnen (<i>%1$s</i>)"
 
-#, fuzzy
 msgid "ID variable (<i>...</i>)"
-msgstr "Variable aufzeichnen (<i>...</i>)"
+msgstr "ID-Variable (<i>...</i>)"
 
 msgid ""
 "<br><b>Warning:</b> A monetary unit sampling method was tried but failed."
@@ -1216,9 +1204,8 @@ msgstr ""
 "Genauigkeit von %6$s die Falschangabe in der Grundgesamtheit <b>%7$s</b> als "
 "die Toleranzwesentlichkeit ist. %8$s"
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
-msgstr "<b>Tabelle %1$i.</b> Deskriptive Statistiken für Ist-Position"
+msgstr "<b>Tabelle %1$i.</b> Deskriptive Statistiken für Buchwerte"
 
 msgid "Population size"
 msgstr "Größe der Grundgesamtheit"
@@ -1244,25 +1231,22 @@ msgstr "2"
 msgid "3"
 msgstr "3"
 
-#, fuzzy
 msgid "Distribution of Book Values"
-msgstr "Verteilung der Ist-Werte"
+msgstr "Verteilung der Buchwerte"
 
-#, fuzzy
 msgid "Mean ± St.dev"
-msgstr "Mittelwert %1$s Std.Abw"
+msgstr "Mittelwert ± Std.-Abw"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The distribution of book values in the population. The "
 "red and blue dots respectively represent the mean and the values exactly one "
 "standard deviation from the mean. The orange dots represent the first, "
 "second (median) and third quartiles of the book values."
 msgstr ""
-"<b>Abbildung %1$i.</b> Die Verteilung der Ist-Werte in der Grundgesamtheit. "
+"<b>Abbildung %1$i.</b> Die Verteilung der Buchwerte in der Grundgesamtheit. "
 "Die roten und blauen Punkte stellen jeweils den Mittelwert und die Werte mit "
 "genau einer Standardabweichung vom Mittelwert dar. Die orangen Punkte "
-"stellen das erste, zweite (Median) und dritte Quartil der Ist-Werte dar."
+"stellen das erste, zweite (Median) und dritte Quartil der Buchwerte dar."
 
 msgid "<u>Audit Risk Model</u>"
 msgstr "<u>Auditisiko-Modell</u>"
@@ -1305,7 +1289,6 @@ msgstr ""
 "Die Übersetzung von Hoch, Mittel und Niedrig in Wahrscheinlichkeiten wurde "
 "nach <b>Benutzereinstellungen</b> vorgenommen."
 
-#, fuzzy
 msgid ""
 "%1$s\n"
 "\n"
@@ -1318,8 +1301,8 @@ msgstr ""
 "\n"
 "Die Übersetzung von Hoch, Mittel und Niedrig in Wahrscheinlichkeiten erfolgt "
 "mit Standardwerten. Um mehr über die Wahl dieser Werte und deren Anpassung "
-"zu erfahren, lies die Hilfedatei dieser Analyse oder navigiere zum Abschnitt "
-"<i>Risikobewertungen</i>."
+"zu erfahren, lesen Sie die Hilfedatei dieser Analyse oder schauen Sie im "
+"Abschnitt <i>Risikobewertungen</i>."
 
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify your "
@@ -1347,9 +1330,8 @@ msgstr "<b>Tabelle %1$i.</b> Planungs-Zusammenfassung"
 msgid "Performance materiality"
 msgstr "Toleranzwesentlichkeit"
 
-#, fuzzy
 msgid "Min. precision"
-msgstr "Erreichte Genauigkeit"
+msgstr "Min. Genauigkeit"
 
 msgid "Inherent risk"
 msgstr "Inhärentes Risiko"
@@ -1363,47 +1345,34 @@ msgstr "Detektionsrisiko"
 msgid "Audit risk"
 msgstr "Audit-Risiko"
 
-#, fuzzy
 msgid "Tolerable errors"
-msgstr "Zusätzlich tolerierbare Fehler"
+msgstr "Tolerierbare Fehler"
 
-#, fuzzy
 msgid "Minimum sample size"
-msgstr "Implizierter Stichprobenumfang"
+msgstr "Minimaler Stichprobenumfang"
 
-#, fuzzy
 msgid "The minimum sample size is based on the Poisson distribution."
-msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Poisson</b>-Verteilung."
+msgstr "Der minimale Stichprobenumfang basiert auf der Poisson-Verteilung."
 
-#, fuzzy
 msgid "The minimum sample size is based on the binomial distribution."
-msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Binomial</b>-Verteilung."
+msgstr "Der minimale Stichprobenumfang basiert auf der Binomial-Verteilung."
 
-#, fuzzy
 msgid "The minimum sample size is based on the hypergeometric distribution."
 msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Hypergeometrischen</b> "
-"Verteilung."
+"Der minimale Stichprobenumfang basiert auf der hypergeometrischen Verteilung."
 
-#, fuzzy
 msgid "The minimum sample size is based on the gamma distribution."
-msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Gamma</b>-Verteilung."
+msgstr "Der minimale Stichprobenumfang basiert auf der Gamma-Verteilung."
 
-#, fuzzy
 msgid "The minimum sample size is based on the beta distribution."
-msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Beta</b>-Verteilung."
+msgstr "Der minimale Stichprobenumfang basiert auf der Beta-Verteilung."
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the beta-binomial distribution (N = "
 "%1$s)."
 msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Beta-Binomial</b>-"
-"Verteilung (N = %1$s)."
+"Der minimale Stichprobenumfang basiert auf der Beta-Binomial-Verteilung (N = "
+"%1$s)."
 
 #, fuzzy
 msgid ""
@@ -1416,53 +1385,47 @@ msgstr ""
 msgid "%1$s <b>Results could not be calculated.</b>"
 msgstr "%1$s <b>Ergebnisse konnten nicht berechnet werden.</b>"
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the Poisson distribution <i>(%1$s = "
 "%2$s)</i>."
 msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Poisson</b>-Verteilung "
-"<i>(%1$s = %2$s)</i>."
+"Der minimale Stichprobenumfang basiert auf der Poisson-Verteilung <i>(%1$s = "
+"%2$s)</i>."
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the binomial distribution <i>(p = %1$s)</"
 "i>"
 msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Binomial</b>-Verteilung "
-"<i>(p = %1$s)</i>"
+"Der minimale Stichprobenumfang basiert auf der Binomial-Verteilung <i>(p = "
+"%1$s)</i>"
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the hypergeometric distribution <i>(N = "
 "%1$s, K = %2$s)</i>."
 msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Hypergeometrischen</b> "
-"Verteilung <i>(N = %1$s, K = %2$s)</i>."
+"Der minimale Stichprobenumfang basiert auf der Hypergeometrischen Verteilung "
+"<i>(N = %1$s, K = %2$s)</i>."
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the gamma distribution <i>(%1$s = %2$s, "
 "%3$s = %4$s)</i>"
 msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Gamma</b>-Verteilung "
-"<i>(%1$s = %2$s, %3$s = %4$s)</i>"
+"Der minimale Stichprobenumfang basiert auf der Gamma-Verteilung <i>(%1$s = "
+"%2$s, %3$s = %4$s)</i>"
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the beta distribution <i>(%1$s = %2$s, "
 "%3$s = %4$s)</i>."
 msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Beta</b>-Verteilung "
-"<i>(%1$s = %2$s, %3$s = %4$s)</i>."
+"Der minimale Stichprobenumfang basiert auf der Beta-Verteilung <i>(%1$s = %2$"
+"s, %3$s = %4$s)</i>."
 
-#, fuzzy
 msgid ""
 "The minimum sample size is based on the beta-binomial distribution <i>(N = "
 "%1$s, %2$s = %3$s, %4$s = %5$s)</i>."
 msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Beta-Binomial</b>- "
-"Verteilung <i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>."
+"Der minimale Stichprobenumfang basiert auf der Beta-Binomial- Verteilung <i>("
+"N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>."
 
 msgid ""
 "The minimum sample size (%1$s) is larger than the number of units in the "
@@ -1479,9 +1442,8 @@ msgstr ""
 msgid "%1$s"
 msgstr "%1$s"
 
-#, fuzzy
 msgid "Minimum Sample Sizes"
-msgstr "Benötigter Stichprobenumfang"
+msgstr "Minimale Stichprobenumfänge"
 
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr "Über Wahrscheinlichkeitsverteilungen hinweg (Aktuell: %1$s)"
@@ -1492,9 +1454,8 @@ msgstr "Erwartet fehlerlos"
 msgid "Expected errors"
 msgstr "Erwartete Fehler"
 
-#, fuzzy
 msgid "An error occurred in a call to the jfa package: %1$s"
-msgstr "Er ist ein Fehler aufgetreten bei einem Anruf des jfa pacakge: %1$s"
+msgstr "Bei einem Aufruf des jfa-Pakets ist ein Fehler aufgetreten : %1$s"
 
 msgid "Across Expected Errors (Current: %1$s)"
 msgstr "Über erwartete Fehler hinweg (Aktuell: %1$s)"
@@ -1519,13 +1480,11 @@ msgstr ""
 "verschiedenen erwarteten Fehlern für die aktuelle "
 "Wahrscheinlichkeitsverteilung."
 
-#, fuzzy
 msgid "Assumed %1$s Distribution of Errors"
-msgstr "Implizierte %1$s-Verteilung der Fehler"
+msgstr "Angenommene %1$s-Verteilung der Fehler"
 
-#, fuzzy
 msgid "Expected"
-msgstr "Erwartet %1$s"
+msgstr "Erwartet"
 
 msgid "Errors"
 msgstr "Fehler"
@@ -1568,9 +1527,8 @@ msgstr "Stichprobenwert"
 msgid "%% of population value"
 msgstr "%% des Werts der Grundgesamtheit"
 
-#, fuzzy
 msgid "%% of population size"
-msgstr "%% des Werts der Grundgesamtheit"
+msgstr "%% der Größe der Grundgesamtheit"
 
 #, fuzzy
 msgid "Unit %1$s is selected from each of the intervals of size %2$s."
