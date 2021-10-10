@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-10-09 03:29\n"
-"PO-Revision-Date: 2021-10-09 12:56+0000\n"
+"PO-Revision-Date: 2021-10-11 15:38+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -1050,13 +1050,11 @@ msgstr "festes Intervall"
 msgid "cell"
 msgstr "Zelle"
 
-#, fuzzy
 msgid "book values (<i>%1$s</i>)"
-msgstr "Variable aufzeichnen (<i>%1$s</i>)"
+msgstr "Buchwerte (<i>%1$s</i>)"
 
-#, fuzzy
 msgid "book values (<i>...</i>)"
-msgstr "Variable aufzeichnen (<i>...</i>)"
+msgstr "Buchwerte (<i>...</i>)"
 
 #, fuzzy
 msgid "ID variable (<i>%1$s</i>)"
@@ -1460,7 +1458,6 @@ msgstr "Bei einem Aufruf des jfa-Pakets ist ein Fehler aufgetreten : %1$s"
 msgid "Across Expected Errors (Current: %1$s)"
 msgstr "Über erwartete Fehler hinweg (Aktuell: %1$s)"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The first panel shows a comparison of the minimum sample "
 "sizes under different probability distributions. The bars represent the "
@@ -1470,14 +1467,13 @@ msgid ""
 "comparison of the minimum sample sizes under different expected errors for "
 "the current probability distribution."
 msgstr ""
-"<b>Abbildung %1$i.</b> Die erste Panel zeigt einen Vergleich der "
-"erforderlichen Stichprobenumfänge unter verschiedenen "
-"Wahrscheinlichkeitsverteilungen. Die Balken stellen die erforderlichen "
-"Stichprobengrößen für die aktuellen erwarteten Fehler in der Stichprobe dar. "
-"Die Anzahl der erwarteten Fehler in jedem Balken ist rot und die Anzahl der "
-"erwarteten fehlerfreien Transaktionen ist grün gefärbt. Das zweite Feld "
-"zeigt einen Vergleich der erforderlichen Stichprobenumfänge unter "
-"verschiedenen erwarteten Fehlern für die aktuelle "
+"<b>Abbildung %1$i.</b> Die erste Panel zeigt einen Vergleich der minimalen "
+"Stichprobenumfänge unter verschiedenen Wahrscheinlichkeitsverteilungen. Die "
+"Balken stellen die minimalen Stichprobengrößen für die aktuellen erwarteten "
+"Fehler in der Stichprobe dar. Die Anzahl der erwarteten Fehler in jedem "
+"Balken ist rot und die Anzahl der erwarteten fehlerfreien Posten ist grün "
+"gefärbt. Das zweite Feld zeigt einen Vergleich der minimalen "
+"Stichprobenumfänge unter verschiedenen erwarteten Fehlern für die aktuelle "
 "Wahrscheinlichkeitsverteilung."
 
 msgid "Assumed %1$s Distribution of Errors"
@@ -1492,16 +1488,14 @@ msgstr "Fehler"
 msgid "Probability"
 msgstr "Wahrscheinlichkeit"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The assumed %2$s distribution. The number of expected "
 "errors in the selection is colored in red. The total probability of the "
 "errors does not exceed the detection risk as specified through the audit "
 "risk model."
 msgstr ""
-"<b>Abbildung %1$i.</b> Die implizierte <b>%2$s</b>Verteilung. Die Anzahl der "
-"erwarteten Fehler in der Auswahl ist rot gefärbt und die Anzahl der "
-"erwarteten fehlerfreien Beobachtungen ist grün gefärbt. Die "
+"<b>Abbildung %1$i.</b> Die angenommene %2$s-Verteilung. Die Anzahl der "
+"erwarteten Fehler in der Auswahl ist rot gefärbt. Die "
 "Gesamtwahrscheinlichkeit der Fehler übersteigt nicht das Detektionsrisiko, "
 "wie es durch das Auditrisikomodell festgelegt ist."
 
@@ -1534,17 +1528,13 @@ msgstr "%% der Größe der Grundgesamtheit"
 msgid "Unit %1$s is selected from each of the intervals of size %2$s."
 msgstr "Stichproben-Einheit %1$s wird aus jedem Intervall ausgewählt."
 
-#, fuzzy
 msgid "The sample is drawn with <i>seed %1$s</i> and intervals of size %2$s."
 msgstr ""
-"Die Stichprobe wird mit dem Zufallszahlengenerator-<i>Startwert %1$s</i> "
+"Die Stichprobe ist mit <i>Startwert %1$s</i> und Intervallen von Länge %2$s "
 "gezogen."
 
-#, fuzzy
 msgid "The sample is drawn with <i>seed %1$s</i>."
-msgstr ""
-"Die Stichprobe wird mit dem Zufallszahlengenerator-<i>Startwert %1$s</i> "
-"gezogen."
+msgstr "Die Stichprobe ist mit <i>Startwert %1$s</i> gezogen."
 
 msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
 msgstr "<b>Tabelle %1$i.</b> Informationen zur Auswahl des Währungsintervalls"
@@ -1567,13 +1557,11 @@ msgid ""
 "interval."
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Raw Sample"
-msgstr "<b>Tabelle %i.</b> Implizierte Stichprobe"
+msgstr "<b>Tabelle %1$i..</b> Rohe Stichprobe"
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Sample"
-msgstr "<b>Tabelle %1$i.</b> Deskriptive Statistiken für Ist-Position"
+msgstr "<b>Tabelle %1$i.</b> Deskriptive Statistiken der Stichprobe"
 
 msgid "Valid cases"
 msgstr "Gültige Fälle"
@@ -1642,36 +1630,26 @@ msgstr "Wahrscheinlichster Fehler"
 msgid "%1$s%% Upper bound"
 msgstr "%1$s%% obere Grenze"
 
-#, fuzzy
 msgid "%1$s%% Credible interval"
-msgstr "%1$s%% Konfidenzintervall"
+msgstr "%1$s%% Glaubwürdigkeitsintervall"
 
 msgid "Precision"
 msgstr "Genauigkeit"
 
-#, fuzzy
 msgid "The results are computed using the Poisson distribution."
-msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Poisson</b>-Verteilung."
+msgstr "Die Ergebnisse sind mit der Poisson-Verteilung berechnet."
 
-#, fuzzy
 msgid "The results are computed using the binomial distribution."
-msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Binomial</b>-Verteilung."
+msgstr "Die Ergebnisse sind mit der Binomial-Verteilung berechnet."
 
-#, fuzzy
 msgid "The results are computed using the hypergeometric distribution."
-msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Hypergeometrischen</b> "
-"Verteilung."
+msgstr "Die Ergebnisse sind mit der Hypergeometrischen Verteilung berechnet."
 
-#, fuzzy
 msgid "The results are computed using the Stringer method."
-msgstr ""
-"Die obere Schranke wird nach der Methode von <b>Stringer</b> berechnet."
+msgstr "Die Ergebnisse sind mit der Stringer-Methode berechnet."
 
 msgid "The results are computed using the regression estimator."
-msgstr ""
+msgstr "Die Ergebnisse sind mit dem Regressionsschätzer berechnet."
 
 msgid "The results are computed using the direct estimator."
 msgstr ""
@@ -1685,26 +1663,18 @@ msgstr ""
 msgid "The results are computed using the mean-per-unit estimator"
 msgstr ""
 
-#, fuzzy
 msgid "The results are computed using the beta distribution."
-msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Beta</b>-Verteilung."
+msgstr "Die Ergebnisse sind mit der Beta-Verteilung berechnet."
 
-#, fuzzy
 msgid "The results are computed using the gamma distribution."
-msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Gamma</b>-Verteilung."
+msgstr "Die Ergebnisse sind mit der Gamma-Verteilung berechnet."
 
-#, fuzzy
 msgid "The results are computed using the beta-binomial distribution."
-msgstr ""
-"Der benötigte Stichprobenumfang basiert auf der <b>Binomial</b>-Verteilung."
+msgstr "Die Ergebnisse sind mit der Beta-Binomialen-Verteilung berechnet."
 
-#, fuzzy
 msgid "The results are computed using the Stringer method with LTA adjustment."
 msgstr ""
-"Die obere Grenze wird nach dem <b>Stringer</b>-Verfahren mit <b>LTA-"
-"Anpassung</b> berechnet."
+"Die Ergebnisse sind mit der Stringer-Methode mit LTA-Anpassung berechnet."
 
 #, fuzzy
 msgid ""
@@ -1762,9 +1732,8 @@ msgstr "Beim Erstellen dieses Diagramms ist ein Fehler aufgetreten: %1$s"
 msgid "Upper bound"
 msgstr "%1$s%% obere Grenze"
 
-#, fuzzy
 msgid "Minimum precision"
-msgstr "Erreichte Genauigkeit"
+msgstr "Minimale Genauigkeit"
 
 msgid "Obtained precision"
 msgstr "Erreichte Genauigkeit"
