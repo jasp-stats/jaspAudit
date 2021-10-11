@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-10-09 03:29\n"
-"PO-Revision-Date: 2021-08-09 00:37+0000\n"
+"PO-Revision-Date: 2021-10-11 20:05+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "es/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 
 msgid "<u>Procedure</u>"
 msgstr ""
@@ -115,16 +115,16 @@ msgid "Benford's law"
 msgstr ""
 
 msgid "Uniform distribution"
-msgstr ""
+msgstr "Distribución Uniforme"
 
 msgid "Leading digit"
-msgstr ""
+msgstr "Dígito inicial"
 
 msgid "Leading digits"
-msgstr ""
+msgstr "Dígitos iniciales"
 
 msgid "Last digit"
-msgstr ""
+msgstr "Último dígito"
 
 msgid "Count"
 msgstr ""
@@ -181,16 +181,16 @@ msgid ""
 msgstr ""
 
 msgid "Direct estimator"
-msgstr ""
+msgstr "Estimador directo"
 
 msgid "Difference estimator"
-msgstr ""
+msgstr "Estimador de la diferencia"
 
 msgid "Ratio estimator"
-msgstr ""
+msgstr "Estimador del ratio"
 
 msgid "Regression estimator"
-msgstr ""
+msgstr "Estimador de la regresión"
 
 msgid "Estimate %1$s"
 msgstr ""
@@ -1052,7 +1052,7 @@ msgid "Assumed %1$s Distribution of Errors"
 msgstr ""
 
 msgid "Expected"
-msgstr ""
+msgstr "Esperado"
 
 msgid "Errors"
 msgstr ""
@@ -1103,7 +1103,7 @@ msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
 msgstr ""
 
 msgid "Items"
-msgstr ""
+msgstr "Elementos"
 
 msgid "Selected items"
 msgstr ""
@@ -1168,13 +1168,13 @@ msgid "<b>Table %1$i.</b> Evaluation Summary"
 msgstr ""
 
 msgid "Sample size"
-msgstr ""
+msgstr "Tamaño de la muestra"
 
 msgid "Taint"
-msgstr ""
+msgstr "Mancha"
 
 msgid "Most likely error"
-msgstr ""
+msgstr "Error más probable"
 
 msgid "%1$s%% Upper bound"
 msgstr ""
@@ -1368,7 +1368,7 @@ msgid "Population misstatement %1$s"
 msgstr ""
 
 msgid "Prior"
-msgstr "Anterior"
+msgstr "Previo"
 
 msgid "Posterior"
 msgstr "Posterior"
