@@ -1852,7 +1852,7 @@
           ggplot2::xlab("") +
           ggplot2::labs(fill = "") +
           ggplot2::scale_fill_manual(values = c("#7FE58B", "#FF6666"), guide = ggplot2::guide_legend(reverse = TRUE)) +
-          jaspGraphs::geom_rangeframe() +
+          jaspGraphs::geom_rangeframe(sides = "") +
           jaspGraphs::themeJaspRaw(legend.position = "top") +
           ggplot2::theme(
             axis.ticks.x = ggplot2::element_blank(),
