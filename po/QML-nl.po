@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-11 15:03+0000\n"
+"PO-Revision-Date: 2021-10-11 20:05+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-qml/"
 "nl/>\n"
@@ -1490,7 +1490,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Column name"
 msgstr "Kolomnaam"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Keep"
 msgstr "Behouden"
@@ -1618,7 +1617,6 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Explanatory text"
 msgstr "Toelichtende tekst"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Geef toelichtende tekst weer bij iedere stap van de analyse"
@@ -1639,7 +1637,6 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Last"
 msgstr "Laatste"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Frequency table"
 msgstr "Frequentietabel"
@@ -1664,7 +1661,6 @@ msgctxt "auditClassicalEstimation|"
 msgid "Explanatory text"
 msgstr "Toelichtende tekst"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Geef toelichtende tekst weer bij iedere stap van de analyse"
@@ -1745,12 +1741,10 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Explanatory text"
 msgstr "Toelichtende tekst"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Geef toelichtende tekst weer bij iedere stap van de analyse"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Audit Risk Model"
 msgstr "Audit Risico Model"
@@ -1815,7 +1809,6 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory text"
 msgstr "Toelichtende tekst"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Geef toelichtende tekst weer bij iedere stap van de analyse"
@@ -1860,7 +1853,6 @@ msgctxt "auditClassicalPlanning|"
 msgid "No. units"
 msgstr "Aantal eenheden"
 
-#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Audit Risk Model"
 msgstr "Audit Risico Model"
@@ -1897,12 +1889,10 @@ msgctxt "auditClassicalPlanning|"
 msgid "Format Tables"
 msgstr "Opmaak Tabellen"
 
-#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Numbers"
 msgstr "Nummers"
 
-#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Percentages"
 msgstr "Percentages"
@@ -1931,7 +1921,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Book Value"
 msgstr "Boekwaarde"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Audit Risk Model"
 msgstr "Audit Risico Model"
@@ -1988,7 +1977,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Column name"
 msgstr "Kolomnaam"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Keep"
 msgstr "Behouden"
