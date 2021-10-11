@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-10-09 03:29\n"
-"PO-Revision-Date: 2021-10-11 15:38+0000\n"
+"PO-Revision-Date: 2021-10-11 20:05+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
@@ -1749,9 +1749,8 @@ msgstr ""
 "de diagonaal staan, zijn de posten overgewaardeerd. Liggen deze rode stippen "
 "boven de diagonaal, dan zijn ze ondergewaardeerd. %2$s"
 
-#, fuzzy
 msgid "<b>Table %i.</b> Corrections to Population"
-msgstr "<b>Tabel %i.</b> Post-Hoc Correcties op Populatiewaarde"
+msgstr "<b>Tabel %i.</b> Correcties op Populatie"
 
 msgid "Correction"
 msgstr "Correctie"
@@ -1774,9 +1773,8 @@ msgstr "<b>Tabel %i.</b> Gelijkwaardige Voorafgaande Steekproef"
 msgid "Equivalent sample size"
 msgstr "Gelijkwaardige steekproefomvang"
 
-#, fuzzy
 msgid "Equivalent errors"
-msgstr "Verwachte fouten"
+msgstr "Gelijkwaardige fouten"
 
 msgid "The implicit sample is based on minimal prior information."
 msgstr "De impliciete steekproef is gebaseerd op minimale prior informatie."
@@ -1850,13 +1848,12 @@ msgstr ""
 msgid "The gray dots represent the performance materiality."
 msgstr "De grijze stippen geven de uitvoeringsmaterialiteit weer."
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The prior and posterior distribution (%2$s) on the "
 "misstatement in the population. %3$s"
 msgstr ""
-"<b>Figuur %1$i.</b> De prior en posterior kansverdeling <b>(%2$s)</b> voor "
-"de fout in de populatie. %3$s"
+"<b>Figuur %1$i.</b> De prior en posterior kansverdeling (%2$s) voor de fout "
+"in de populatie. %3$s"
 
 msgid "Prior Predictive Distribution"
 msgstr "Prior Predictive Verdeling"
@@ -1877,13 +1874,11 @@ msgstr ""
 "<b>Figuur %1$i.</b> De %2$s predictive verdeling is %3$s en toont de "
 "voorspellingen van de %2$s verdeling voor %4$s <i>n</i> = %5$s."
 
-#, fuzzy
 msgid "Descriptive Statistics for Prior and Expected Posterior Distribution"
-msgstr "Prior and posterior verdeling"
+msgstr "Beschrijvende Statistieken voor Prior en Verwachte Posterior Verdeling"
 
-#, fuzzy
 msgid "Descriptive Statistics for Prior and Posterior Distribution"
-msgstr "Prior and posterior verdeling"
+msgstr "Beschrijvende Statistieken voor Prior en Posterior Verdeling"
 
 msgid "<b>Table %1$i.</b> %2$s"
 msgstr "<b>Tabel %1$i.</b> %2$s"
