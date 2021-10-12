@@ -11,13 +11,12 @@ JASP for Audit (the Audit module) is an add-on module for JASP that facilitates 
 - [Manual](#manual)
 - [Structure](#structure)
 - [Analyses](#analyses)
-- [Analyses](#analyses)
 - [R packages](#r-packages)
 - [Translations](#translations)
 
 ## Manual
 
-For an introduction to the Audit module, please download the [manual](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf).
+For an introduction to the Audit module, please [download](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf) the manual or view it [online](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf).
 
 ## Structure
 
@@ -55,7 +54,7 @@ The sampling workflow is a four-stage analysis that guides the user through the 
 
 ### (Bayesian) Planning
 
-The planning analysis allows the user to, given a set of sampling objectives, calculate the minimum sample size for a statistical audit sample. By specifying a (set of) sampling objective(s), a sample size can be calculated which (when the intende sample goed according to plan) allows for a statement about the population misstatement with a prespecified amount of assurance.
+The planning analysis allows the user to, given a set of sampling objectives, calculate the minimum sample size for a statistical audit sample. By specifying a (set of) sampling objective(s), a sample size can be calculated which (when the intended sample goed according to plan) allows for a statement about the population misstatement with a prespecified amount of assurance.
 
 <p align="center">
   <img src='https://github.com/jasp-stats/jaspAudit/raw/master/inst/help/img/workflowPlanning.png' width='500' height='50'>
