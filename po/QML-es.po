@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-11 20:05+0000\n"
+"PO-Revision-Date: 2021-10-14 01:51+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/es/>\n"
@@ -183,7 +183,6 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Confidence interval"
 msgstr "Intervalo de confianza"
@@ -449,52 +448,42 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Starting point"
 msgstr "Punto de partida"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Seed"
 msgstr "Semilla"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Reset Workflow</b>"
-msgstr "<b> Restablecer flujo de trabajo </b>"
+msgstr "<b> Restablecer Flujo de Trabajo </b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Execution</b>"
-msgstr "<b> Para ejecución </b>"
+msgstr "<b> Para Ejecución </b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>3. Execution</b>"
 msgstr "<b> 3. Ejecución </b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "3. Execution"
 msgstr "3. Ejecución"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Correct / Incorrect"
-msgstr "Correcto incorrecto"
+msgstr "Correcto/Incorrecto"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Fill Variables</b>"
-msgstr "<b> Rellenar variables </b>"
+msgstr "<b> Rellenar Variables </b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Evaluation</b>"
-msgstr "<b> Para evaluación </b>"
+msgstr "<b> Para Evaluación </b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>4. Evaluation</b>"
 msgstr "<b> 4. Evaluación </b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "4. Evaluation"
 msgstr "4. Evaluación"
@@ -531,7 +520,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Extrapolated amounts"
 msgstr "Recuentos esperados"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Confidence interval"
 msgstr "Intervalo de confianza"
@@ -947,52 +935,42 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Starting point"
 msgstr "Punto de partida"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Seed"
 msgstr "Semilla"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Reset Workflow</b>"
-msgstr "<b> Restablecer flujo de trabajo </b>"
+msgstr "<b> Restablecer Flujo de Trabajo </b>"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Execution</b>"
-msgstr "<b> Para ejecución </b>"
+msgstr "<b> Para Ejecución </b>"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>3. Execution</b>"
 msgstr "<b> 3. Ejecución </b>"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "3. Execution"
 msgstr "3. Ejecución"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Correct / Incorrect"
-msgstr "Correcto incorrecto"
+msgstr "Correcto/Incorrecto"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Fill Variables</b>"
-msgstr "<b> Rellenar variables </b>"
+msgstr "<b> Rellenar Variables </b>"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Evaluation</b>"
-msgstr "<b> Para evaluación </b>"
+msgstr "<b> Para Evaluación </b>"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>4. Evaluation</b>"
 msgstr "<b> 4. Evaluación </b>"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "4. Evaluation"
 msgstr "4. Evaluación"
@@ -1091,7 +1069,6 @@ msgctxt "auditSelection|"
 msgid "Starting point"
 msgstr "Punto de partida"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Seed"
 msgstr "Semilla"
@@ -1174,7 +1151,6 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Number of samples"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Seed"
 msgstr "Semilla"
@@ -1432,7 +1408,7 @@ msgstr ""
 
 msgctxt "auditBayesianPlanning|"
 msgid "Compare sample sizes"
-msgstr ""
+msgstr "Comparar tamaños de muestras"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior"
@@ -1520,7 +1496,7 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Descriptive statistics"
-msgstr ""
+msgstr "Estadísticos descriptivos"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Equivalent prior sample"
@@ -1540,11 +1516,11 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Compare sample sizes"
-msgstr ""
+msgstr "Comparar tamaños de muestras"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Distribution of book values"
-msgstr ""
+msgstr "Distribución de valores contables"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior"
@@ -1650,7 +1626,7 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Method"
-msgstr ""
+msgstr "Método"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Randomize items"
@@ -1791,11 +1767,11 @@ msgstr ""
 
 msgctxt "auditClassicalEstimation|"
 msgid "Method"
-msgstr ""
+msgstr "Método"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Scatter plot"
-msgstr ""
+msgstr "Gráfico de dispersión"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Performance materiality"
@@ -1883,7 +1859,7 @@ msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Method"
-msgstr ""
+msgstr "Método"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Stringer"
@@ -1996,7 +1972,7 @@ msgstr ""
 
 msgctxt "auditClassicalPlanning|"
 msgid "Compare sample sizes"
-msgstr ""
+msgstr "Comparar tamaños de muestras"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Assumed error distribution"
@@ -2056,7 +2032,7 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Display"
-msgstr ""
+msgstr "Mostrar"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Explanatory text"
@@ -2064,15 +2040,15 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Descriptive statistics"
-msgstr ""
+msgstr "Estadísticos descriptivos"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Distribution of book values"
-msgstr ""
+msgstr "Distribución de valores contables"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Compare sample sizes"
-msgstr ""
+msgstr "Comparar tamaños de muestras"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Assumed error distribution"
@@ -2130,7 +2106,7 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Method"
-msgstr ""
+msgstr "Método"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Randomize items"
@@ -2234,7 +2210,7 @@ msgstr ""
 
 msgctxt "auditSelection|"
 msgid "Descriptive statistics"
-msgstr ""
+msgstr "Estadísticos descriptivos"
 
 msgctxt "auditSelection|"
 msgid "Raw sample"
@@ -2242,7 +2218,7 @@ msgstr ""
 
 msgctxt "auditSelection|"
 msgid "Method"
-msgstr ""
+msgstr "Método"
 
 msgctxt "auditSelection|"
 msgid "Randomize items"
