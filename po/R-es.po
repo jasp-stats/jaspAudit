@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-10-09 03:29\n"
-"PO-Revision-Date: 2021-10-15 11:32+0000\n"
+"PO-Revision-Date: 2021-10-15 19:45+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "es/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Generator: Weblate 4.9-dev\n"
 
 msgid "<u>Procedure</u>"
-msgstr ""
+msgstr "<u>Procedimiento</u>"
 
 msgid ""
 "Benford's law states that in many naturally occurring collections of "
@@ -196,7 +196,7 @@ msgid "Estimate %1$s"
 msgstr ""
 
 msgid "Uncertainty"
-msgstr ""
+msgstr "Incertidumbre"
 
 msgid "Lower"
 msgstr "Inferior"
@@ -1184,9 +1184,8 @@ msgstr "Error más probable"
 msgid "%1$s%% Upper bound"
 msgstr ""
 
-#, fuzzy
 msgid "%1$s%% Credible interval"
-msgstr "Región de credibilidad del %1$s%% para %2$s"
+msgstr "Intervalo de Credibilidad del %1$s%%"
 
 msgid "Precision"
 msgstr ""
@@ -1250,7 +1249,7 @@ msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr ""
 
 msgid "Pearson's r"
-msgstr ""
+msgstr "R de Pearson"
 
 msgid ""
 "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis "
@@ -1272,9 +1271,8 @@ msgstr ""
 msgid "An error occurred while creating this plot: The results contain NAs"
 msgstr ""
 
-#, fuzzy
 msgid "Upper bound"
-msgstr "Superior"
+msgstr "Límite superior"
 
 msgid "Minimum precision"
 msgstr ""
@@ -1359,9 +1357,8 @@ msgid ""
 "containing %2$s errors."
 msgstr ""
 
-#, fuzzy
 msgid "Prior and Expected Posterior Distribution"
-msgstr "Distribución posterior"
+msgstr "Distribución Previa y Posterior Esperada"
 
 msgid "Prior and Posterior Distribution"
 msgstr ""
@@ -1403,13 +1400,11 @@ msgid ""
 "misstatement in the population. %3$s"
 msgstr ""
 
-#, fuzzy
 msgid "Prior Predictive Distribution"
-msgstr "Distribución posterior"
+msgstr "Distribución Previa Predictiva"
 
-#, fuzzy
 msgid "Posterior Predictive Distribution"
-msgstr "Distribución posterior"
+msgstr "Distribución Posterior Preditiva"
 
 msgid "Predicted samples before an error"
 msgstr ""
