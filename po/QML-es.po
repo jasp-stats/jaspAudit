@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-15 11:32+0000\n"
+"PO-Revision-Date: 2021-10-15 19:45+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/es/>\n"
@@ -67,7 +67,6 @@ msgctxt "Description|"
 msgid "Other"
 msgstr "Otro"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Benford's Law"
 msgstr "Ley de Benford"
@@ -160,10 +159,9 @@ msgctxt "auditBayesianEvaluation|"
 msgid "One-sided upper bound"
 msgstr "Límite superior unilateral"
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Two-sided interval"
-msgstr "Intervalo de confianza"
+msgstr "Intervalo bilateral"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Numbers"
@@ -473,10 +471,9 @@ msgctxt "auditBayesianWorkflow|"
 msgid "One-sided upper bound"
 msgstr "Límite superior unilateral"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Two-sided interval"
-msgstr "Intervalo de confianza"
+msgstr "Intervalo bilateral"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Numbers"
@@ -534,12 +531,10 @@ msgctxt "auditClassicalEstimation|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Required sample size"
 msgstr "Tamaño de muestra requerido"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "for an uncertainty of:"
 msgstr "para una incertidumbre de:"
@@ -940,10 +935,9 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Display correlation"
 msgstr "Mostrar correlación"
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Explanatory Text"
-msgstr "Texto explicativo"
+msgstr "Texto Explicativo"
 
 msgctxt "auditSelection|"
 msgid "Show explanatory text at each step of the analysis"
@@ -1147,7 +1141,7 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Book Value"
-msgstr ""
+msgstr "Valor Contable"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Selection Counter"
@@ -1193,7 +1187,6 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Corrections to population"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Assumption checks"
 msgstr "Verificaciones de supuestos"
@@ -1400,15 +1393,15 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Book Value"
-msgstr ""
+msgstr "Valor Contable"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Display"
-msgstr ""
+msgstr "Mostrar"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Texto explicativo"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Descriptive statistics"
@@ -1416,19 +1409,19 @@ msgstr "Estadísticos descriptivos"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Equivalent prior sample"
-msgstr ""
+msgstr "Muestra previa equivalente"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior and posterior"
-msgstr ""
+msgstr "Previa y posterior"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Additional info"
-msgstr ""
+msgstr "Información adicional"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior predictive"
-msgstr ""
+msgstr "Predictivo previo"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Compare sample sizes"
@@ -1590,7 +1583,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Corrections to population"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Assumption checks"
 msgstr "Verificaciones de supuestos"
@@ -1713,7 +1705,7 @@ msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Book Value"
-msgstr ""
+msgstr "Valor Contable"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Selection Counter"
@@ -1925,7 +1917,7 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Book Value"
-msgstr ""
+msgstr "Valor Contable"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Audit Risk Model"
@@ -2093,7 +2085,7 @@ msgstr ""
 
 msgctxt "auditSelection|"
 msgid "Book Value"
-msgstr ""
+msgstr "Valor Contable"
 
 msgctxt "auditSelection|"
 msgid "Ranking Variable"
