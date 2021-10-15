@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-10-09 03:29\n"
-"PO-Revision-Date: 2021-10-14 20:07+0000\n"
+"PO-Revision-Date: 2021-10-15 11:32+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "es/>\n"
@@ -112,7 +112,7 @@ msgid "<b>Table %i.</b> Frequency Table"
 msgstr ""
 
 msgid "Benford's law"
-msgstr ""
+msgstr "Ley de Benford"
 
 msgid "Uniform distribution"
 msgstr "Distribución Uniforme"
@@ -932,50 +932,55 @@ msgid "Min. precision"
 msgstr ""
 
 msgid "Inherent risk"
-msgstr ""
+msgstr "Riesgo inherente"
 
 msgid "Control risk"
-msgstr ""
+msgstr "Riesgo de control"
 
 msgid "Detection risk"
-msgstr ""
+msgstr "Riesgo de detección"
 
 msgid "Audit risk"
-msgstr ""
+msgstr "Riesgo de auditoría"
 
 msgid "Tolerable errors"
-msgstr ""
+msgstr "Errores admisibles"
 
 msgid "Minimum sample size"
-msgstr ""
+msgstr "Tamaño mínimo de la muestra"
 
 msgid "The minimum sample size is based on the Poisson distribution."
-msgstr ""
+msgstr "El tamaño mínimo de la muestra se basa en la distribución de Poisson."
 
 msgid "The minimum sample size is based on the binomial distribution."
-msgstr ""
+msgstr "El tamaño mínimo de la muestra se basa en la distribución Binomial."
 
 msgid "The minimum sample size is based on the hypergeometric distribution."
 msgstr ""
+"El tamaño mínimo de la muestra se basa en la distribución Hipergeométrica."
 
 msgid "The minimum sample size is based on the gamma distribution."
-msgstr ""
+msgstr "El tamaño mínimo de la muestra se basa en la distribución Gamma."
 
 msgid "The minimum sample size is based on the beta distribution."
-msgstr ""
+msgstr "El tamaño mínimo de la muestra se basa en la distribución Beta."
 
 msgid ""
 "The minimum sample size is based on the beta-binomial distribution (N = "
 "%1$s)."
 msgstr ""
+"El tamaño mínimo de la muestra se basa en la distribución Beta-Binomial (N = "
+"%1$s)."
 
 msgid ""
 "Either the materiality (if applicable) or the number of units in the "
 "population is defined as zero."
 msgstr ""
+"La materialidad (si es aplicable) o el número de unidades de la población, "
+"están definidos como cero."
 
 msgid "%1$s <b>Results could not be calculated.</b>"
-msgstr ""
+msgstr "%1$s <b>No se pueden calcular los resultados.</b>"
 
 msgid ""
 "The minimum sample size is based on the Poisson distribution <i>(%1$s = "
@@ -1055,7 +1060,7 @@ msgid "Expected"
 msgstr "Esperado"
 
 msgid "Errors"
-msgstr ""
+msgstr "Errores"
 
 msgid "Probability"
 msgstr "Probabilidad"
@@ -1079,19 +1084,19 @@ msgid "No. units"
 msgstr ""
 
 msgid "No. items"
-msgstr ""
+msgstr "Número de elementos"
 
 msgid "Selection value"
-msgstr ""
+msgstr "Valor de selección"
 
 msgid "%% of population value"
-msgstr ""
+msgstr "%% del valor poblacional"
 
 msgid "%% of population size"
-msgstr ""
+msgstr "%% del tamaño de la población"
 
 msgid "Unit %1$s is selected from each of the intervals of size %2$s."
-msgstr ""
+msgstr "La unidad %1$s se escoge de cada uno de los intervalos de tamaño %2$s."
 
 msgid "The sample is drawn with <i>seed %1$s</i> and intervals of size %2$s."
 msgstr ""
