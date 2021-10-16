@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-15 19:45+0000\n"
-"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-qml/es/>\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1191,9 +1185,10 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Assumption checks"
 msgstr "Verificaciones de supuestos"
 
+#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Additional info"
-msgstr ""
+msgstr "Información adicional"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Posterior predictive"
@@ -1203,9 +1198,10 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Sampling objectives"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Scatter plot"
-msgstr ""
+msgstr "Gráfico de dispersión"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Display item ID's"
@@ -1287,33 +1283,39 @@ msgctxt "auditBayesianPlanning|"
 msgid "Minimum precision"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "No. units"
-msgstr ""
+msgstr "Número de unidades"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Display"
-msgstr ""
+msgstr "Mostrar"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Texto explicativo"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Equivalent prior sample"
-msgstr ""
+msgstr "Muestra previa equivalente"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior and posterior"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Additional info"
-msgstr ""
+msgstr "Información adicional"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Prior predictive"
-msgstr ""
+msgstr "Predictivo previo"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Compare sample sizes"
@@ -1595,9 +1597,10 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Sampling objectives"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Scatter plot"
-msgstr ""
+msgstr "Gráfico de dispersión"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Display item ID's"
@@ -1607,13 +1610,15 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Reference"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Display"
-msgstr ""
+msgstr "Mostrar"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Texto explicativo"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Show explanatory text at each step of the analysis"
@@ -1651,13 +1656,15 @@ msgctxt "auditClassicalEstimation|"
 msgid "Audit Values"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Display"
-msgstr ""
+msgstr "Mostrar"
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Texto explicativo"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Show explanatory text at each step of the analysis"
@@ -1779,9 +1786,10 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Sampling objectives"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Scatter plot"
-msgstr ""
+msgstr "Gráfico de dispersión"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Display item ID's"
@@ -1799,13 +1807,15 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Format Tables"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Display"
-msgstr ""
+msgstr "Mostrar"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Texto explicativo"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Show explanatory text at each step of the analysis"
@@ -1847,9 +1857,10 @@ msgctxt "auditClassicalPlanning|"
 msgid "Minimum precision"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "No. units"
-msgstr ""
+msgstr "Número de unidades"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Audit Risk Model"
@@ -2071,9 +2082,10 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Sampling objectives"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Scatter plot"
-msgstr ""
+msgstr "Gráfico de dispersión"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Display item ID's"

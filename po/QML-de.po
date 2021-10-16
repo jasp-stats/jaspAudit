@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-11 15:03+0000\n"
-"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-qml/de/>\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1579,9 +1573,10 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Audit Value"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Corrections to population"
-msgstr ""
+msgstr "Korrekturen der Grundgesamtheit"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Assumption checks"
@@ -1607,9 +1602,10 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Reference"
 msgstr "Referenz"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Display"
-msgstr ""
+msgstr "Anzeigen"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Explanatory text"
@@ -1760,9 +1756,10 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Control risk"
 msgstr "Kontrollrisiko"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Corrections to population"
-msgstr ""
+msgstr "Korrekturen der Grundgesamtheit"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Method"
@@ -2066,9 +2063,10 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Mean-per-unit estimator"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Corrections to population"
-msgstr ""
+msgstr "Korrekturen der Grundgesamtheit"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Sampling objectives"
