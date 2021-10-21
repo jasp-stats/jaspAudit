@@ -271,12 +271,13 @@ Form
 					name: 						"n"
 					text: 						qsTr("Sample size")
 					defaultValue: 				0
-					min: 						0
+					min: 						xobs.value
 					visible:					stats.checked
 				}
 
 				IntegerField
 				{
+					id:							xobs
 					name: 						"x"
 					text: 						qsTr("Number of errors")
 					defaultValue: 				0
@@ -497,17 +498,20 @@ Form
 
 					DoubleField
 					{
+						id:						prior_n
 						name: 					"prior_n"
 						label:					qsTr("Size")
-						min:					0
+						min:					prior_x.value
 						defaultValue: 			0
 					}
 
 					DoubleField
 					{
+						id:						prior_x
 						name: 					"prior_x"
 						label:					qsTr("Errors")
 						min:					0
+						max:					prior_n.value
 						defaultValue: 			0
 					}
 				}

@@ -389,6 +389,7 @@ Form
 			name: 								"by"
 			text: 								qsTr("Increment")
 			min: 								1
+			max:								50
 			defaultValue: 						1
 		}
 	}

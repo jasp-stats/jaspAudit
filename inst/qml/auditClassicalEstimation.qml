@@ -125,7 +125,7 @@ Form {
 				text: 						qsTr("for an uncertainty of:")
 				defaultValue: 				100000
 				fieldWidth: 				100 * preferencesModel.uiScale
-				min: 						0
+				min: 						1
 				decimals: 					2
 			}
 		}

@@ -384,17 +384,20 @@ Form
 
 					DoubleField
 					{
+						id:						prior_n
 						name: 					"n"
 						label:					qsTr("Size")
-						min:					0
+						min:					prior_x.value
 						defaultValue: 			0
 					}
 
 					DoubleField
 					{
+						id:						prior_x
 						name: 					"x"
 						label:					qsTr("Errors")
 						min:					0
+						max:					prior_n.value
 						defaultValue: 			0
 					}
 				}
@@ -497,6 +500,7 @@ Form
 			name: 								"by"
 			text: 								qsTr("Increment")
 			min: 								1
+			max:								50
 			defaultValue: 						1
 		}
 	}

@@ -290,12 +290,13 @@ Form
 					name: 						"n"
 					text: 						qsTr("Sample size")
 					defaultValue: 				0
-					min: 						0
+					min: 						xobs.value
 					visible:					stats.checked
 				}
 
 				IntegerField
 				{
+					id:							xobs
 					name: 						"x"
 					text: 						qsTr("Number of errors")
 					defaultValue: 				0

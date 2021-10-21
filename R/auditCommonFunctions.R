@@ -780,13 +780,22 @@
         return(TRUE)
       }
       expTMP <- if (options[["expected_type"]] == "expected_rel") options[["expected_rel_val"]] else options[["expected_abs_val"]]
-      if (options[["materiality_type"]] == "materiality_abs") {
-        expTMP <- expTMP / parentOptions[["N.units"]]
-      }
-      if (expTMP != 0 && expTMP < 1 && expTMP >= parentOptions[["materiality_val"]] && !options[["min_precision_test"]]) {
-        # Error if the expected errors exceed the performance materiality
-        parentContainer$setError(gettext("Analysis not possible: The expected errors are higher than the performance materiality."))
-        return(TRUE)
+      if (options[["expected_type"]] == "expected_abs" && parentOptions[["N.units"]] > 0) {
+        if (expTMP >= parentOptions[["N.units"]]) {
+          parentContainer$setError(gettext("Analysis not possible: The expected errors are equal to, or higher than, the number of units in the population."))
+          return(TRUE)
+        }
+        if (expTMP != 0 && expTMP >= ceiling(parentOptions[["materiality_val"]] * parentOptions[["N.units"]]) && options[["materiality_test"]]) {
+          # Error if the expected errors exceed the performance materiality
+          parentContainer$setError(gettext("Analysis not possible: The expected errors are higher than the performance materiality."))
+          return(TRUE)
+        }
+      } else if (options[["expected_type"]] == "expected_rel") {
+        if (expTMP != 0 && expTMP >= parentOptions[["materiality_val"]] && options[["materiality_test"]]) {
+          # Error if the expected errors exceed the performance materiality
+          parentContainer$setError(gettext("Analysis not possible: The expected errors are higher than the performance materiality."))
+          return(TRUE)
+        }
       }
       if (.jfaAuditRiskModelCalculation(options) >= 1) {
         # Error if the detection risk of the analysis is higher than one
@@ -798,6 +807,11 @@
         parentContainer$setError(gettext("You cannot incorporate this prior information into your analysis because you are not testing against a performance materiality."))
         return(TRUE)
       }
+      if (options[["bayesian"]] && options[["expected_type"]] == "expected_abs" && options[["prior_method"]] %in% c("impartial", "arm")) {
+        # Error if the prior construction method does not match the sampling objective
+        parentContainer$setError(gettext("The expected errors must specified relative to the total population to construct a prior distribution using this method."))
+        return(TRUE)
+      }
     }
     # No error in the planning options
     return(FALSE)
@@ -805,7 +819,7 @@
     if (options[["id"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[[options[["id"]]]]))) {
       # Error if the transaction ID's are not unique
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
-      parentContainer$setError(gettext("You must specify unique transaction ID's. The row numbers of the data set are sufficient."))
+      parentContainer$setError(gettext("You must specify unique item ID's. The row numbers of the data set are sufficient."))
       return(TRUE)
     } else {
       # No error in the selection options
@@ -820,12 +834,12 @@
     } else if (options[["method"]] %in% c("direct", "difference", "quotient", "regression") && (options[["n_items"]] == 0 || options[["n_units"]] == 0)) {
       # Error if the population size or the population value are zero when using direct, difference, quotient, or regression.
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation summary"))
-      parentContainer$setError(gettext("The direct, difference, ratio, and regression bounds require that you specify the population size and the population value."))
+      parentContainer$setError(gettext("The direct, difference, ratio, and regression bounds require that you specify the number of items and the number of units in the population."))
       return(TRUE)
     } else if (options[["dataType"]] == "data" && options[["id"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[[options[["id"]]]]))) {
       # Error if the transaction ID's are not unique
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
-      parentContainer$setError(gettext("Your must specify unique transaction ID's. The row numbers of the data set are sufficient."))
+      parentContainer$setError(gettext("Your must specify unique item ID's. The row numbers of the data set are sufficient."))
       return(TRUE)
     } else if (.jfaAuditRiskModelCalculation(options) >= 1) {
       # Error if the detection risk of the analysis is higher than one
@@ -1480,10 +1494,10 @@
       if (jaspBase:::.extractErrorMessage(result) == "the sample size is lower than 'max'") {
         parentContainer$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
         return()
+      } else {
+        parentContainer$setError(gettextf("An error occurred: %1$s", jaspBase:::.extractErrorMessage(result)))
+        return()
       }
-
-      parentContainer$setError(gettextf("An error occurred: %1$s", jaspBase:::.extractErrorMessage(result)))
-      return()
     }
 
     parentContainer[["planningState"]] <- createJaspState(result)
@@ -1574,7 +1588,7 @@
       message <- switch(options[["likelihood"]],
         "poisson" = gettext("The minimum sample size is based on the gamma distribution."),
         "binomial" = gettext("The minimum sample size is based on the beta distribution."),
-        "hypergeometric" = gettextf("The minimum sample size is based on the beta-binomial distribution (N = %1$s).", parentState[["N.units"]])
+        "hypergeometric" = gettextf("The minimum sample size is based on the beta-binomial distribution (N = %1$s).", parentOptions[["N.units"]])
       )
     }
     table$addFootnote(message)
@@ -2471,6 +2485,10 @@
 
     # Select evaluation method
     if (options[["annotation"]] == "binary") {
+      if (!all(sample[[options[["values.audit"]]]] %in% c(0, 1))) {
+        parentContainer$setError(gettext("The audit result variable should contain only 0's (correct) and 1's (incorrect)."))
+        return()
+      }
       result <- try({
         jfa::evaluation(
           conf.level = conf_level, materiality = materiality, min.precision = min_precision,
@@ -3514,7 +3532,7 @@
     likelihood = "binomial",
     mle = VAsFraction,
     mleUnseen = posteriorMode,
-    materiality = prevOptions[["materiality"]],
+    materiality = prevOptions[["materiality_val"]],
     N.units = prevOptions[["N.units"]],
     adjustedMateriality = (prevOptions[["materiality_val"]] / (1 - (sum(sample[[options[["values"]]]]) / prevOptions[["N.units"]])))
   )
