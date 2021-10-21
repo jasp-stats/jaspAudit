@@ -157,7 +157,7 @@ jfaBenfordsLawStage <- function(options, jaspResults, position) {
 
     result <- list(
       digits = as.numeric(test$digits),
-      percentages = as.numeric(test$observed) / as.numeric(test$n),
+      relFrequencies = as.numeric(test$observed) / as.numeric(test$n),
       inBenford = as.numeric(test$expected) / as.numeric(test$n),
       N = as.numeric(test$n),
       observed = as.numeric(test$observed),
@@ -310,8 +310,8 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
 
     benfordsLawTable$addColumnInfo(name = "digit", title = whichDigit, type = "integer")
     benfordsLawTable$addColumnInfo(name = "count", title = gettext("Count"), type = "integer")
-    benfordsLawTable$addColumnInfo(name = "percentage", title = gettext("Percentage"), type = "string")
-    benfordsLawTable$addColumnInfo(name = "inBenford", title = columnTitle, type = "string")
+    benfordsLawTable$addColumnInfo(name = "observed", title = gettext("Relative frequency"), type = "number")
+    benfordsLawTable$addColumnInfo(name = "expected", title = columnTitle, type = "number")
 
     benfordsLawContainer[["benfordsLawTable"]] <- benfordsLawTable
 
@@ -322,7 +322,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     }
 
     if (!ready) {
-      inBenford <- base::switch(options[["distribution"]],
+      expected <- base::switch(options[["distribution"]],
         "benford" = log10(1 + 1 / digits),
         "uniform" = 1 / length(digits)
       )
@@ -330,8 +330,8 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
       row <- data.frame(
         digit = digits,
         count = rep(".", length(digits)),
-        percentage = rep(".", length(digits)),
-        inBenford = paste0(round(inBenford * 100, 2), "%")
+        observed = rep(".", length(digits)),
+        expected = expected
       )
       benfordsLawTable$addRows(row)
       return()
@@ -339,14 +339,11 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
 
     state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
 
-    percentagesLabel <- paste0(round(state[["percentages"]] * 100, 2), "%")
-    inBenfordLabel <- paste0(round(state[["inBenford"]] * 100, 2), "%")
-
     row <- data.frame(
       digit = state[["digits"]],
       count = state[["observed"]],
-      percentage = percentagesLabel,
-      inBenford = inBenfordLabel
+      observed = state[["relFrequencies"]],
+      expected = state[["inBenford"]]
     )
 
     benfordsLawTable$addRows(row)
@@ -364,7 +361,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   if (is.null(benfordsLawContainer[["benfordsLawPlot"]])) {
     benfordsLawPlot <- createJaspPlot(
       plot = NULL,
-      title = gettext("Observed vs. Expected Percentages"),
+      title = gettext("Observed vs. Expected Relative Frequencies"),
       width = 600, height = 400
     )
 
@@ -394,7 +391,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
 
     d <- data.frame(
       x = c(state[["digits"]], state[["digits"]]),
-      y = c(state[["percentages"]], state[["inBenford"]]),
+      y = c(state[["relFrequencies"]], state[["inBenford"]]),
       type = c(
         rep(gettext("Observed"), length(state[["digits"]])),
         rep(legendName, length(state[["digits"]]))
@@ -453,8 +450,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
         limits = c(min(state[["digits"]]) - 0.5, max(state[["digits"]]) + 0.5),
       ) +
       ggplot2::scale_y_continuous(
-        name = "", breaks = yBreaks, labels = paste0(round(yBreaks * 100, 2), "%"),
-        limits = c(0, max(yBreaks))
+        name = gettext("Relative frequency"), breaks = yBreaks, limits = c(0, max(yBreaks))
       ) +
       ggplot2::labs(fill = "") +
       ggplot2::theme(legend.text = ggplot2::element_text(margin = ggplot2::margin(l = -5, r = 50))) +
@@ -473,7 +469,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
       "benford" = "Benford's law",
       "uniform" = "the uniform distribution"
     )
-    benfordsLawPlotText <- createJaspHtml(gettextf("<b>Figure %i:</b> The observed percentages of each digit in the data set compared to the expected percentage under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars.", jaspResults[["figNumber"]]$object, distribution), "p")
+    benfordsLawPlotText <- createJaspHtml(gettextf("<b>Figure %i.</b> The observed relative frequencies of each digit in the data set compared to the expected relative frequencies under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars.", jaspResults[["figNumber"]]$object, distribution), "p")
 
     benfordsLawPlotText$position <- positionInContainer + 1
     benfordsLawPlotText$dependOn(optionsFromObject = benfordsLawContainer[["benfordsLawPlot"]])

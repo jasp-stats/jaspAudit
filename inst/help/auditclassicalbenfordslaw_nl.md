@@ -42,8 +42,8 @@ De wet van Benford stelt dat de verdeling van de eerste cijfers in een populatie
 #### Frequentietabel
 - Voorloop / Laatste cijfer: Het cijfer waarvoor de informatie in de rij geldt.
 - Telling: De waargenomen tellingen van de cijfers.
-- Percentage: Het waargenomen percentage van het totaal aantal waarnemingen.
-- Wet van Benford / Uniforme verdeling: Het verwachte percentage van het totale aantal waarnemingen.
+- Relatieve frequentie: De waargenomen relatieve frequentie van de cijfers.
+- Wet van Benford / Uniforme verdeling: De verwachte relatieve frequentie van de cijfers.
 
 #### Figuren
 - Waargenomen vs. verwacht: Produceert een grafiek die de waargenomen verdeling van cijfers in de populatie laat zien in vergelijking met de verwachte verdeling volgens de wet van Benford of de uniforme verdeling.
