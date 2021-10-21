@@ -157,7 +157,7 @@ jfaBenfordsLawStage <- function(options, jaspResults, position) {
 
     result <- list(
       digits = as.numeric(test$digits),
-      frequencies = as.numeric(test$observed) / as.numeric(test$n),
+      relFrequencies = as.numeric(test$observed) / as.numeric(test$n),
       inBenford = as.numeric(test$expected) / as.numeric(test$n),
       N = as.numeric(test$n),
       observed = as.numeric(test$observed),
@@ -342,7 +342,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     row <- data.frame(
       digit = state[["digits"]],
       count = state[["observed"]],
-      observed = state[["frequencies"]],
+      observed = state[["relFrequencies"]],
       expected = state[["inBenford"]]
     )
 
@@ -391,7 +391,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
 
     d <- data.frame(
       x = c(state[["digits"]], state[["digits"]]),
-      y = c(state[["frequencies"]], state[["inBenford"]]),
+      y = c(state[["relFrequencies"]], state[["inBenford"]]),
       type = c(
         rep(gettext("Observed"), length(state[["digits"]])),
         rep(legendName, length(state[["digits"]]))
