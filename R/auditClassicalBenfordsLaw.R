@@ -330,7 +330,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
       row <- data.frame(
         digit = digits,
         count = rep(".", length(digits)),
-        percentage = rep(".", length(digits)),
+        observed = rep(".", length(digits)),
         expected = expected
       )
       benfordsLawTable$addRows(row)
