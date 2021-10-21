@@ -42,8 +42,8 @@ Benford's law states that the distribution of leading digits in a population nat
 #### Frequency Table
 - Leading / Last digit: The digit for which the information in the row applies.
 - Count: The observed counts of the digits.
-- Percentage: The observed percentage of the total number of observations.
-- Benford's Law / Uniform distribution: The expected percentage of the total number of observations.
+- Relative frequency: The observed relative frequency of the digits.
+- Benford's Law / Uniform distribution: The expected relative frequency of the digits.
 
 #### Plots
 - Observed vs. expected: Produces a plot that shows the observed distribution of digits in the population compared to the expected distribution under the Benford's law or the uniform distribution.
