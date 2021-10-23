@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2021-10-09 03:29\n"
+"POT-Creation-Date: 2021-10-23 03:29\n"
 "PO-Revision-Date: 2021-10-15 19:45+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -129,19 +129,20 @@ msgstr "Último dígito"
 msgid "Count"
 msgstr "Contar"
 
-msgid "Percentage"
-msgstr "Porcentaje"
+msgid "Relative frequency"
+msgstr ""
 
-msgid "Observed vs. Expected Percentages"
+msgid "Observed vs. Expected Relative Frequencies"
 msgstr ""
 
 msgid "Observed"
 msgstr "Observado"
 
 msgid ""
-"<b>Figure %i:</b> The observed percentages of each digit in the data set "
-"compared to the expected percentage under %2$s. For data sets distributed "
-"according %2$s the blue dots will lie near the top of the grey bars."
+"<b>Figure %i.</b> The observed relative frequencies of each digit in the "
+"data set compared to the expected relative frequencies under %2$s. For data "
+"sets distributed according %2$s the blue dots will lie near the top of the "
+"grey bars."
 msgstr ""
 
 msgid "<u>Conclusion</u>"
@@ -439,6 +440,9 @@ msgstr ""
 
 msgid "Value"
 msgstr "Valor"
+
+msgid "Percentage"
+msgstr "Porcentaje"
 
 msgid "Observed vs. Expected Average Frequency"
 msgstr ""

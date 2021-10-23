@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.0\n"
-"POT-Creation-Date: 2021-10-09 03:29\n"
+"POT-Creation-Date: 2021-10-23 03:29\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,16 +82,16 @@ msgstr ""
 msgid "Count"
 msgstr ""
 
-msgid "Percentage"
+msgid "Relative frequency"
 msgstr ""
 
-msgid "Observed vs. Expected Percentages"
+msgid "Observed vs. Expected Relative Frequencies"
 msgstr ""
 
 msgid "Observed"
 msgstr ""
 
-msgid "<b>Figure %i:</b> The observed percentages of each digit in the data set compared to the expected percentage under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars."
+msgid "<b>Figure %i.</b> The observed relative frequencies of each digit in the data set compared to the expected relative frequencies under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars."
 msgstr ""
 
 msgid "<u>Conclusion</u>"
@@ -305,6 +305,9 @@ msgid "The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r 
 msgstr ""
 
 msgid "Value"
+msgstr ""
+
+msgid "Percentage"
 msgstr ""
 
 msgid "Observed vs. Expected Average Frequency"

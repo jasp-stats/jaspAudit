@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2021-10-09 03:29\n"
+"POT-Creation-Date: 2021-10-23 03:29\n"
 "PO-Revision-Date: 2021-09-24 01:33+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -142,20 +142,23 @@ msgstr "最後の一桁"
 msgid "Count"
 msgstr "カウント"
 
-msgid "Percentage"
-msgstr "パーセンテージ"
+#, fuzzy
+msgid "Relative frequency"
+msgstr "頻度"
 
 #, fuzzy
-msgid "Observed vs. Expected Percentages"
+msgid "Observed vs. Expected Relative Frequencies"
 msgstr "観測されたパーセンテージ vs. 期待されたパーセンテージ"
 
 msgid "Observed"
 msgstr "観測された"
 
+#, fuzzy
 msgid ""
-"<b>Figure %i:</b> The observed percentages of each digit in the data set "
-"compared to the expected percentage under %2$s. For data sets distributed "
-"according %2$s the blue dots will lie near the top of the grey bars."
+"<b>Figure %i.</b> The observed relative frequencies of each digit in the "
+"data set compared to the expected relative frequencies under %2$s. For data "
+"sets distributed according %2$s the blue dots will lie near the top of the "
+"grey bars."
 msgstr ""
 "<b>図 %i:</b> %2$s の下で予想されるパーセンテージと比較したデータ セット内の"
 "各桁の観測された割合。%2$s に従って分布するデータセットの場合、青い点は灰色の"
@@ -463,6 +466,9 @@ msgstr ""
 
 msgid "Value"
 msgstr "値"
+
+msgid "Percentage"
+msgstr "パーセンテージ"
 
 msgid "Observed vs. Expected Average Frequency"
 msgstr "観測されたパーセンテージ vs. 期待されたパーセンテージ"
@@ -1475,6 +1481,10 @@ msgstr ""
 
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Observed vs. Expected Percentages"
+#~ msgstr "観測されたパーセンテージ vs. 期待されたパーセンテージ"
 
 #~ msgid "Std. Deviation"
 #~ msgstr "標準偏差"
