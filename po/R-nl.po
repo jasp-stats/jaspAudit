@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-10-23 03:29\n"
-"PO-Revision-Date: 2021-10-18 09:36+0000\n"
+"PO-Revision-Date: 2021-10-24 10:38+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
@@ -175,28 +175,25 @@ msgstr "Laatste cijfer"
 msgid "Count"
 msgstr "Aantal"
 
-#, fuzzy
 msgid "Relative frequency"
-msgstr "Gesimuleerde frequentie"
+msgstr "Relatieve frequentie"
 
-#, fuzzy
 msgid "Observed vs. Expected Relative Frequencies"
-msgstr "Waargenomen vs. Verwachte Gemiddelde Frequentie"
+msgstr "Waargenomen vs. Verwachte Relatieve Frequentie"
 
 msgid "Observed"
 msgstr "Geobserveerd"
 
-#, fuzzy
 msgid ""
 "<b>Figure %i.</b> The observed relative frequencies of each digit in the "
 "data set compared to the expected relative frequencies under %2$s. For data "
 "sets distributed according %2$s the blue dots will lie near the top of the "
 "grey bars."
 msgstr ""
-"<b>Figuur %i:</b> De geobserveerde percentages van ieder nummer in de "
-"gegevens vergeleken met het verwachte percentage onder %2$s. Hoe dichter de "
-"blauwe stippen rond de bovenkant van de grijze staven liggen, hoe meer de "
-"gegevens overeenstemmen met %2$s."
+"<b>Figuur %i.</b> De geobserveerde relatieve frequenties van ieder nummer in "
+"de gegevens vergeleken met de verwachte relatieve frequentie onder %2$s. Hoe "
+"dichter de blauwe stippen rond de bovenkant van de grijze staven liggen, hoe "
+"meer de gegevens overeenstemmen met %2$s."
 
 msgid "<u>Conclusion</u>"
 msgstr "<u>Conclusies</u>"
