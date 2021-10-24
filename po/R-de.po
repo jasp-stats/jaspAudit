@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-10-23 03:29\n"
-"PO-Revision-Date: 2021-10-11 15:38+0000\n"
+"PO-Revision-Date: 2021-10-24 09:01+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -1707,9 +1707,8 @@ msgstr ""
 msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr "<b>Tabelle %1$i.</b> Annahmeprüfungen"
 
-#, fuzzy
 msgid "Pearson's r"
-msgstr "Pearson's <i>r</i>"
+msgstr "Pearsons r"
 
 msgid ""
 "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis "
@@ -1735,9 +1734,8 @@ msgstr "Auswertung der Stichprobenziele"
 msgid "An error occurred while creating this plot: The results contain NAs"
 msgstr "Beim Erstellen dieses Diagramms ist ein Fehler aufgetreten: %1$s"
 
-#, fuzzy
 msgid "Upper bound"
-msgstr "%1$s%% obere Grenze"
+msgstr "Obere Grenze"
 
 msgid "Minimum precision"
 msgstr "Minimale Genauigkeit"
