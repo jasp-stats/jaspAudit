@@ -220,6 +220,7 @@ Form
 				singleVariable:						true
 				allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
 				allowAnalysisOwnComputedColumns: 	false
+				onCountChanged:						if(lik_hypergeometric.checked && id.count == 0) lik_poisson.click()
 			}
 
 			AssignedVariablesList
@@ -511,6 +512,7 @@ Form
 				name: 								"by"
 				text: 								qsTr("Increment")
 				min: 								1
+				max:								50
 				defaultValue: 						1
 				enabled:							!pasteVariables.checked
 			}
@@ -903,6 +905,7 @@ Form
 					performAuditTable.colName   = variable_col.value
 					performAuditTable.extraCol	= indicator_col.value
 					critical_negative.checked && inspect.checked ? performAuditTable.filter = indicator_col.value + " > 0" + " | " + critical_name.value + " > 0" : performAuditTable.filter = indicator_col.value + " > 0"
+					performAuditTable.initialValuesSource = continuous.checked ? "values" : ""
 				}
 			}
 		}
@@ -929,9 +932,8 @@ Form
 				name:								"performAudit"
 				Layout.fillWidth: 					true
 				modelType:							JASP.FilteredDataEntryModel
-				source:     						["id", "values", "variables"]
+				source:								["id", "values", "variables"]
 				colName:							"Filter"
-				initialValuesSource: 				"values"
 				defaultValue:						0
 				decimals:							10
 			}
@@ -1053,7 +1055,7 @@ Form
 				id: 								stringer
 				name: 								"stringer"
 				text: 								qsTr("Stringer")
-				enabled: 							values.count > 0 && auditResult.count > 0
+				enabled: 							values.count > 0 && continuous.checked
 
 				CheckBox
 				{
@@ -1068,7 +1070,7 @@ Form
 				id:									mpu
 				name: 								"mpu"
 				text: 								qsTr("Mean-per-unit estimator")
-				enabled: 							values.count > 0
+				enabled: 							values.count > 0 && continuous.checked
 			}
 
 			RadioButton
@@ -1076,7 +1078,7 @@ Form
 				id:									direct
 				name: 								"direct"
 				text: 								qsTr("Direct estimator")
-				enabled: 							values.count > 0
+				enabled: 							values.count > 0 && continuous.checked
 			}
 
 			RadioButton
@@ -1084,7 +1086,7 @@ Form
 				id:									difference
 				name: 								"difference"
 				text: 								qsTr("Difference estimator")
-				enabled: 							values.count > 0
+				enabled: 							values.count > 0 && continuous.checked
 			}
 
 			RadioButton
@@ -1092,7 +1094,7 @@ Form
 				id:									quotient
 				name: 								"quotient"
 				text: 								qsTr("Ratio estimator")
-				enabled: 							values.count > 0
+				enabled: 							values.count > 0 && continuous.checked
 			}
 
 			RadioButton
@@ -1100,7 +1102,7 @@ Form
 				id:									regression
 				name: 								"regression"
 				text: 								qsTr("Regression estimator")
-				enabled: 							values.count > 0
+				enabled: 							values.count > 0 && continuous.checked
 			}
 		}
 

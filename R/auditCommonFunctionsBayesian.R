@@ -78,12 +78,12 @@
     table$addColumnInfo(name = "n", title = gettext("Equivalent sample size"), type = "number")
     table$addColumnInfo(name = "x", title = gettext("Equivalent errors"), type = "number")
 
-    message <- base::switch(options[["prior_method"]],
-      "default" = gettext("The implicit sample is based on minimal prior information."),
-      "param"   = gettextf("The implicit sample is derived from the prior parameters %1$s, %2$s.", paste0("\u03B1 = ", options[["alpha"]]), paste0("\u03B2 = ", options[["beta"]])),
-      "arm"     = gettextf("The implicit sample is derived from the ARM risk assessments: IR = <b>%1$s</b> and CR = <b>%2$s</b>.", options[["ir"]], options[["cr"]]),
-      "impartial"  = gettextf("The implicit sample is derived from equal prior probabilities: <i>p(H%1$s) = p(H%2$s) = 0.5</i>", "\u208B", "\u208A"),
-      "sample"  = gettextf("The implicit sample is derived from an earlier sample of %1$s observations containing %2$s errors.", options[["n"]], options[["x"]])
+    message <- switch(options[["prior_method"]],
+      "default" = gettext("The equivalent sample is based on minimal prior information."),
+      "param"   = gettextf("The equivalent sample is derived from the prior parameters %1$s, %2$s.", paste0("\u03B1 = ", options[["alpha"]]), paste0("\u03B2 = ", options[["beta"]])),
+      "arm"     = gettextf("The equivalent sample is derived from the ARM risk assessments: IR = <b>%1$s</b> and CR = <b>%2$s</b>.", options[["ir"]], options[["cr"]]),
+      "impartial"  = gettextf("The equivalent sample is derived from equal prior probabilities: <i>p(H%1$s) = p(H%2$s) = 0.5</i>", "\u208B", "\u208A"),
+      "sample"  = gettextf("The equivalent sample is derived from an earlier sample of %1$s observations containing %2$s errors.", options[["n"]], options[["x"]])
     )
     table$addFootnote(message)
 
@@ -115,7 +115,7 @@
 
     parentContainer[["plotPriorAndPosterior"]] <- figure
 
-    if (is.null(parentState) || parentContainer$getError()) {
+    if (is.null(parentState[["posterior"]]) || parentContainer$getError()) {
       return()
     }
 
@@ -129,12 +129,12 @@
       dataPosterior <- data.frame(x = c(0, 1), type = factor(gettext("Posterior")))
 
       if (method == "poisson") {
-        ySeq <- c(dgamma(seq(0, 1, length = 100), shape = parentState[["prior"]][["description"]]$alpha, rate = parentState[["prior"]][["description"]]$beta), dgamma(seq(0, 1, length = 100), shape = parentState[["posterior"]][["description"]]$alpha, rate = parentState[["posterior"]][["description"]]$beta))
+        ySeq <- c(dgamma(seq(0, 1, length = 1000), shape = parentState[["prior"]][["description"]]$alpha, rate = parentState[["prior"]][["description"]]$beta), dgamma(seq(0, 1, length = 1000), shape = parentState[["posterior"]][["description"]]$alpha, rate = parentState[["posterior"]][["description"]]$beta))
         plot <- ggplot2::ggplot(NULL, mapping = ggplot2::aes(x = x, linetype = type)) +
           ggplot2::stat_function(data = dataPrior, fun = dgamma, args = list(shape = parentState[["prior"]][["description"]]$alpha, rate = parentState[["prior"]][["description"]]$beta), n = 500, size = 0.9) +
           ggplot2::stat_function(data = dataPosterior, fun = dgamma, args = list(shape = parentState[["posterior"]][["description"]]$alpha, rate = parentState[["posterior"]][["description"]]$beta), n = 500, size = 0.9)
       } else {
-        ySeq <- c(dbeta(seq(0, 1, length = 100), shape1 = parentState[["prior"]][["description"]]$alpha, shape2 = parentState[["prior"]][["description"]]$beta), dbeta(seq(0, 1, length = 100), shape1 = parentState[["posterior"]][["description"]]$alpha, shape2 = parentState[["posterior"]][["description"]]$beta))
+        ySeq <- c(dbeta(seq(0, 1, length = 1000), shape1 = parentState[["prior"]][["description"]]$alpha, shape2 = parentState[["prior"]][["description"]]$beta), dbeta(seq(0, 1, length = 1000), shape1 = parentState[["posterior"]][["description"]]$alpha, shape2 = parentState[["posterior"]][["description"]]$beta))
         plot <- ggplot2::ggplot(NULL, mapping = ggplot2::aes(x = x, linetype = type)) +
           ggplot2::stat_function(data = dataPrior, fun = dbeta, args = list(shape1 = parentState[["prior"]][["description"]]$alpha, shape2 = parentState[["prior"]][["description"]]$beta), n = 500, size = 0.9) +
           ggplot2::stat_function(data = dataPosterior, fun = dbeta, args = list(shape1 = parentState[["posterior"]][["description"]]$alpha, shape2 = parentState[["posterior"]][["description"]]$beta), n = 500, size = 0.9)
@@ -277,7 +277,7 @@
 
     parentContainer[["plotPredictive"]] <- figure
 
-    if (is.null(parentState) || parentContainer$getError()) {
+    if (is.null(parentState[["posterior"]]) || parentContainer$getError()) {
       return()
     }
 
@@ -361,7 +361,7 @@
 
     if (stage == "planning") {
       if (!ready || parentContainer$getError()) {
-        table$addRows(list(v = names))
+        table[["v"]] <- names
         return()
       }
     } else if (stage == "evaluation") {
@@ -370,7 +370,7 @@
         (options[["dataType"]] == "stats" && options[["n"]] == 0) ||
         (parentOptions[["materiality_val"]] == 0 && options[["materiality_test"]]) ||
         parentContainer$getError()) {
-        table$addRows(list(v = names))
+        table[["v"]] <- names
         return()
       }
     }

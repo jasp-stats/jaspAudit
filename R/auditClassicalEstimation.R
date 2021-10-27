@@ -107,7 +107,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     return()
   }
 
-  title <- base::switch(options[["estimator"]],
+  title <- switch(options[["estimator"]],
     "mpu"         = gettext("Direct estimator"),
     "difference"  = gettext("Difference estimator"),
     "ratio"       = gettext("Ratio estimator"),
@@ -162,6 +162,12 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   }
 
   regressionTable$addFootnote(gettext("Displayed numbers may differ from exact outcomes due to rounding in the calculations."))
+  if (nrow(dataset) > options[["populationSize"]]) {
+    regressionTable$addFootnote(symbol = gettext("<b>Warning.</b>"), gettext("The number of items in the population is lower than the number of items in the sample."))
+  }
+  if (sum(dataset[[options[["bookValues"]]]]) > options[["populationValue"]]) {
+    regressionTable$addFootnote(symbol = gettext("<b>Warning.</b>"), gettext("The number of items in the population is lower than the number of items in the sample."))
+  }
 
   dataset <- na.omit(dataset)
 
@@ -728,7 +734,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     return()
   }
 
-  title <- base::switch(options[["estimator"]],
+  title <- switch(options[["estimator"]],
     "mpu"         = "Direct",
     "difference"  = "Difference",
     "ratio"       = "Ratio",

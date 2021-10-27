@@ -82,13 +82,13 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     confidenceLabel <- paste0(round((1 - options[["confidence"]]) * 100, 2), "%")
 
     if (options[["distribution"]] == "benford") {
-      procedureText <- base::switch(options[["digits"]],
+      procedureText <- switch(options[["digits"]],
         "first" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first leading digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel),
         "firsttwo" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel),
         "last" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the last digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel)
       )
     } else if (options[["distribution"]] == "uniform") {
-      procedureText <- base::switch(options[["digits"]],
+      procedureText <- switch(options[["digits"]],
         "first" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of <b>%1$s</b>. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel),
         "firsttwo" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of <b>%1$s</b>. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel),
         "last" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the last digits in the data set follow the uniform distribution, and to test this relation with a type-I error of <b>%1$s</b>. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel)
@@ -127,7 +127,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 }
 
 jfaBenfordsLawStage <- function(options, jaspResults, position) {
-  containerTitle <- base::switch(options[["distribution"]],
+  containerTitle <- switch(options[["distribution"]],
     "benford" = gettext("<u>Assessing Benford's Law</u>"),
     "uniform" = gettext("<u>Assessing the Uniform Distribution</u>")
   )
@@ -235,12 +235,12 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     type = "number"
   )
 
-  distribution <- base::switch(options[["distribution"]],
+  distribution <- switch(options[["distribution"]],
     "benford" = "Benford's law",
     "uniform" = "the uniform distribution"
   )
 
-  message <- base::switch(options[["digits"]],
+  message <- switch(options[["digits"]],
     "first" = gettextf("The null hypothesis specifies that the first digits (1 - 9) in the data set are distributed according to %1$s.", distribution),
     "firsttwo" = gettextf("The null hypothesis specifies that the first two digits (10 - 99) in the data set are distributed according to %1$s.", distribution),
     "last" = gettextf("The null hypothesis specifies that the last digits (1 - 9) in the data set are distributed according to %1$s.", distribution)
@@ -295,14 +295,14 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
 
     benfordsLawTable <- createJaspTable(tableTitle)
     benfordsLawTable$position <- positionInContainer
-    columnTitle <- base::switch(options[["distribution"]],
+    columnTitle <- switch(options[["distribution"]],
       "benford" = gettext("Benford's law"),
       "uniform" = gettext("Uniform distribution")
     )
 
     benfordsLawTable$dependOn(options = "summaryTable")
 
-    whichDigit <- base::switch(options[["digits"]],
+    whichDigit <- switch(options[["digits"]],
       "first" = gettext("Leading digit"),
       "firsttwo" = gettext("Leading digits"),
       "last" = gettext("Last digit")
@@ -322,7 +322,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     }
 
     if (!ready) {
-      expected <- base::switch(options[["distribution"]],
+      expected <- switch(options[["distribution"]],
         "benford" = log10(1 + 1 / digits),
         "uniform" = 1 / length(digits)
       )
@@ -384,7 +384,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
 
     state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
 
-    legendName <- base::switch(options[["distribution"]],
+    legendName <- switch(options[["distribution"]],
       "benford" = gettext("Benford's law"),
       "uniform" = gettext("Uniform distribution")
     )
@@ -419,14 +419,14 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
       )
     }
 
-    axisName <- base::switch(options[["digits"]],
+    axisName <- switch(options[["digits"]],
       "first" = gettext("Leading digit"),
       "firsttwo" = gettext("Leading digits"),
       "last" = gettext("Last digit")
     )
 
     plotData <- data.frame(x = c(0, 0), y = c(0, 1), type = c(gettext("Observed"), legendName))
-    plotData$type <- base::switch(options[["distribution"]],
+    plotData$type <- switch(options[["distribution"]],
       "benford" = factor(x = plotData$type, levels = levels(factor(plotData$type))[c(1, 2)]),
       "uniform" = factor(x = plotData$type, levels = levels(factor(plotData$type))[c(2, 1)])
     )
@@ -465,7 +465,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   }
 
   if (options[["explanatoryText"]]) {
-    distribution <- base::switch(options[["distribution"]],
+    distribution <- switch(options[["distribution"]],
       "benford" = "Benford's law",
       "uniform" = "the uniform distribution"
     )
@@ -501,14 +501,14 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   conclusion <- if (rejectnull) gettext("is rejected") else gettext("is not rejected")
 
   pvalue <- format.pval(state[["pvalue"]], eps = 0.001)
-  pvalue <- if (rejectnull) gettextf("%1$s < \u03B1", pvalue) else gettextf("%1$s >= \u03B1", pvalue)
+  pvalue <- if (rejectnull) gettextf("%1$s < %2$s", pvalue, "\u03B1") else gettextf("%1$s >= %2$s", pvalue, "\u03B1")
 
-  distribution <- base::switch(options[["distribution"]],
+  distribution <- switch(options[["distribution"]],
     "benford" = "Benford's law",
     "uniform" = "the uniform distribution"
   )
 
-  conclusionText <- base::switch(options[["digits"]],
+  conclusionText <- switch(options[["digits"]],
     "first" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion),
     "firsttwo" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion),
     "last" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion)

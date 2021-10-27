@@ -374,7 +374,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
 
     if (length(unique(state[["bsAvgFreq"]])) == 1) {
-      plot$setError("The distribution of samples cannot be plotted because all samples have the same value.")
+      plot$setError("Plotting not possible: There are no repeated values in the data.")
       return()
     }
 
@@ -434,7 +434,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     state <- .jfaNumberBunchingState(dataset, options, jaspResults, ready)
 
     if (length(unique(state[["bsEntropy"]])) == 1) {
-      plot$setError("The distribution of samples cannot be plotted because all samples have the same value.")
+      plot$setError("Plotting not possible: There are no repeated values in the data.")
       return()
     }
 
