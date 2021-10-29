@@ -2254,7 +2254,7 @@
     table$addColumnInfo(name = "n.items", title = gettext("Selected items"), type = "integer")
     table$addColumnInfo(name = "n.units", title = gettext("Selected units"), type = "integer")
     table$addColumnInfo(name = "value", title = gettext("Selection value"), type = "number")
-    table$addColumnInfo(name = "percentage", title = gettext("% of total value"), type = "string")
+    table$addColumnInfo(name = "percentage", title = gettext("%% of total value"), type = "string")
 
     table$addFootnote(message = gettextf("The top stratum consists of all items with a book value larger than %1$s interval.", if (options[["sampling_method"]] == "cell") gettext("twice the") else gettext("a single")))
 
