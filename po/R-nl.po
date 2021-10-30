@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-10-23 03:29\n"
+"POT-Creation-Date: 2021-10-30 03:29\n"
 "PO-Revision-Date: 2021-10-29 10:56+0000\n"
 "Last-Translator: JASP Stats <b.boutin@uva.nl>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -204,11 +204,13 @@ msgstr "wordt verworpen"
 msgid "is not rejected"
 msgstr "wordt niet verworpen"
 
-msgid "%1$s < α"
-msgstr "%1$s < α"
+#, fuzzy
+msgid "%1$s < %2$s"
+msgstr "%1$s = %2$s"
 
-msgid "%1$s >= α"
-msgstr "%1$s >= α"
+#, fuzzy
+msgid "%1$s >= %2$s"
+msgstr "%1$s = %2$s"
 
 msgid ""
 "The <i>p</i> value is %1$s and the null hypothesis that the first digits in "
@@ -281,6 +283,18 @@ msgid ""
 msgstr ""
 "Weergegeven nummers kunnen afwijken van exacte uitkomsten door het afronden "
 "van de berekeningen."
+
+#, fuzzy
+msgid "<b>Warning.</b>"
+msgstr "<u>Planning</u>"
+
+#, fuzzy
+msgid ""
+"The number of items in the population is lower than the number of items in "
+"the sample."
+msgstr ""
+"De minimale steekproefomvang (%1$s) is groter dan het aantal eenheden in de "
+"populatie (%2$s)."
 
 msgid "<u>Calculations</u>"
 msgstr "<u>Berekeningen</u>"
@@ -607,6 +621,12 @@ msgstr "Histogram van Individuele Waarden"
 msgid "<b>Figure %i:</b> Histogram of the individual values in the data set."
 msgstr "<b>Figuur %i:</b> Histogram van de individuele waarden in de data set."
 
+msgid "%1$s < α"
+msgstr "%1$s < α"
+
+msgid "%1$s >= α"
+msgstr "%1$s >= α"
+
 msgid ""
 "The <i>p</i> value is %1$s and the null hypothesis that the data do not "
 "contain an unexpected amount of repeated values <b>%2$s</b>."
@@ -636,6 +656,14 @@ msgstr ""
 "Analyse niet mogelijk: De materialiteit is groter of gelijk aan de totale "
 "waarde van de observaties."
 
+#, fuzzy
+msgid ""
+"Analysis not possible: The expected errors are equal to, or higher than, the "
+"number of units in the population."
+msgstr ""
+"Analyse niet mogelijk: De verwachte fouten zijn hoger dan de "
+"uitvoeringsmaterialiteit."
+
 msgid ""
 "Analysis not possible: The expected errors are higher than the performance "
 "materiality."
@@ -658,12 +686,18 @@ msgstr ""
 "U deze bestaande informatie niet opnemen in uw analyse omdat u niet test "
 "tegen een uitvoeringsmaterialiteit."
 
+msgid ""
+"The expected errors must specified relative to the total population to "
+"construct a prior distribution using this method."
+msgstr ""
+
 msgid "Selection summary"
 msgstr "Selectie samenvatting"
 
+#, fuzzy
 msgid ""
-"You must specify unique transaction ID's. The row numbers of the data set "
-"are sufficient."
+"You must specify unique item ID's. The row numbers of the data set are "
+"sufficient."
 msgstr ""
 "U moet unieke transactie ID's specificeren. De rijnummers van de gegevens "
 "volstaan."
@@ -678,16 +712,18 @@ msgstr ""
 "De hypergeometrische bovengrens vereist dat u het aantal eenheden in de "
 "populatie opgeeft."
 
+#, fuzzy
 msgid ""
 "The direct, difference, ratio, and regression bounds require that you "
-"specify the population size and the population value."
+"specify the number of items and the number of units in the population."
 msgstr ""
 "De directe schatter, verschilschatter, ratioschatter, en regressieschatter "
 "vereisen dat u de populatiegrootte en de populatiewaarde opgeeft."
 
+#, fuzzy
 msgid ""
-"Your must specify unique transaction ID's. The row numbers of the data set "
-"are sufficient."
+"Your must specify unique item ID's. The row numbers of the data set are "
+"sufficient."
 msgstr ""
 "U moet unieke transactie ID's specificeren. De rijnummers van de gegevens "
 "volstaan."
@@ -1555,6 +1591,11 @@ msgid "Maximum"
 msgstr "Maximum"
 
 msgid ""
+"The audit result variable should contain only 0's (correct) and 1's "
+"(incorrect)."
+msgstr ""
+
+msgid ""
 "These results imply that there is a %1$s probability that, when one would "
 "repeatedly sample from this population, the upper bound on θ is below <b>"
 "%2$s</b> with a precision of <b>%3$s</b>."
@@ -1780,29 +1821,34 @@ msgstr "Gelijkwaardige steekproefomvang"
 msgid "Equivalent errors"
 msgstr "Gelijkwaardige fouten"
 
-msgid "The implicit sample is based on minimal prior information."
+#, fuzzy
+msgid "The equivalent sample is based on minimal prior information."
 msgstr "De impliciete steekproef is gebaseerd op minimale prior informatie."
 
-msgid "The implicit sample is derived from the prior parameters %1$s, %2$s."
+#, fuzzy
+msgid "The equivalent sample is derived from the prior parameters %1$s, %2$s."
 msgstr ""
 "De impliciete steekproef is afgeleid van de prior parameters %1$s, %2$s."
 
+#, fuzzy
 msgid ""
-"The implicit sample is derived from the ARM risk assessments: IR = <b>%1$s</"
-"b> and CR = <b>%2$s</b>."
+"The equivalent sample is derived from the ARM risk assessments: IR = <b>"
+"%1$s</b> and CR = <b>%2$s</b>."
 msgstr ""
 "De impliciete steekproef is afgeleid van de ARM risicobeoordelingen: IR = <b>"
 "%1$s</b> en CR = <b>%2$s</b>."
 
+#, fuzzy
 msgid ""
-"The implicit sample is derived from equal prior probabilities: <i>p(H%1$s) = "
-"p(H%2$s) = 0.5</i>"
+"The equivalent sample is derived from equal prior probabilities: <i>p(H%1$s) "
+"= p(H%2$s) = 0.5</i>"
 msgstr ""
 "De impliciete steekproef is afgeleid van gelijke prior kansen: <i>p(H%1$s) = "
 "p(H%2$s) = 0.5</i>"
 
+#, fuzzy
 msgid ""
-"The implicit sample is derived from an earlier sample of %1$s observations "
+"The equivalent sample is derived from an earlier sample of %1$s observations "
 "containing %2$s errors."
 msgstr ""
 "De impliciete steekproef is afgeleid van een eerdere steekproef van %1$s "

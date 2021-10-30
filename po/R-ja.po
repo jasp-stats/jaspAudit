@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2021-10-23 03:29\n"
+"POT-Creation-Date: 2021-10-30 03:29\n"
 "PO-Revision-Date: 2021-09-24 01:33+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -173,10 +173,10 @@ msgstr ""
 msgid "is not rejected"
 msgstr ""
 
-msgid "%1$s < α"
+msgid "%1$s < %2$s"
 msgstr ""
 
-msgid "%1$s >= α"
+msgid "%1$s >= %2$s"
 msgstr ""
 
 msgid ""
@@ -242,6 +242,14 @@ msgstr ""
 msgid ""
 "Displayed numbers may differ from exact outcomes due to rounding in the "
 "calculations."
+msgstr ""
+
+msgid "<b>Warning.</b>"
+msgstr ""
+
+msgid ""
+"The number of items in the population is lower than the number of items in "
+"the sample."
 msgstr ""
 
 msgid "<u>Calculations</u>"
@@ -499,6 +507,12 @@ msgstr ""
 msgid "<b>Figure %i:</b> Histogram of the individual values in the data set."
 msgstr ""
 
+msgid "%1$s < α"
+msgstr ""
+
+msgid "%1$s >= α"
+msgstr ""
+
 #, fuzzy
 msgid ""
 "The <i>p</i> value is %1$s and the null hypothesis that the data do not "
@@ -528,6 +542,11 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Analysis not possible: The expected errors are equal to, or higher than, the "
+"number of units in the population."
+msgstr ""
+
+msgid ""
 "Analysis not possible: The expected errors are higher than the performance "
 "materiality."
 msgstr ""
@@ -542,12 +561,17 @@ msgid ""
 "are not testing against a performance materiality."
 msgstr ""
 
+msgid ""
+"The expected errors must specified relative to the total population to "
+"construct a prior distribution using this method."
+msgstr ""
+
 msgid "Selection summary"
 msgstr ""
 
 msgid ""
-"You must specify unique transaction ID's. The row numbers of the data set "
-"are sufficient."
+"You must specify unique item ID's. The row numbers of the data set are "
+"sufficient."
 msgstr ""
 
 msgid "Evaluation summary"
@@ -560,12 +584,12 @@ msgstr ""
 
 msgid ""
 "The direct, difference, ratio, and regression bounds require that you "
-"specify the population size and the population value."
+"specify the number of items and the number of units in the population."
 msgstr ""
 
 msgid ""
-"Your must specify unique transaction ID's. The row numbers of the data set "
-"are sufficient."
+"Your must specify unique item ID's. The row numbers of the data set are "
+"sufficient."
 msgstr ""
 
 msgid ""
@@ -1181,6 +1205,11 @@ msgid "Maximum"
 msgstr "最大値"
 
 msgid ""
+"The audit result variable should contain only 0's (correct) and 1's "
+"(incorrect)."
+msgstr ""
+
+msgid ""
 "These results imply that there is a %1$s probability that, when one would "
 "repeatedly sample from this population, the upper bound on θ is below <b>"
 "%2$s</b> with a precision of <b>%3$s</b>."
@@ -1371,24 +1400,24 @@ msgstr ""
 msgid "Equivalent errors"
 msgstr ""
 
-msgid "The implicit sample is based on minimal prior information."
+msgid "The equivalent sample is based on minimal prior information."
 msgstr ""
 
-msgid "The implicit sample is derived from the prior parameters %1$s, %2$s."
-msgstr ""
-
-msgid ""
-"The implicit sample is derived from the ARM risk assessments: IR = <b>%1$s</"
-"b> and CR = <b>%2$s</b>."
+msgid "The equivalent sample is derived from the prior parameters %1$s, %2$s."
 msgstr ""
 
 msgid ""
-"The implicit sample is derived from equal prior probabilities: <i>p(H%1$s) = "
-"p(H%2$s) = 0.5</i>"
+"The equivalent sample is derived from the ARM risk assessments: IR = <b>"
+"%1$s</b> and CR = <b>%2$s</b>."
 msgstr ""
 
 msgid ""
-"The implicit sample is derived from an earlier sample of %1$s observations "
+"The equivalent sample is derived from equal prior probabilities: <i>p(H%1$s) "
+"= p(H%2$s) = 0.5</i>"
+msgstr ""
+
+msgid ""
+"The equivalent sample is derived from an earlier sample of %1$s observations "
 "containing %2$s errors."
 msgstr ""
 
