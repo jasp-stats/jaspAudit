@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-10-30 03:29\n"
-"PO-Revision-Date: 2021-10-24 09:01+0000\n"
+"PO-Revision-Date: 2021-11-04 16:37+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -180,28 +180,25 @@ msgstr "Letzte Ziffer"
 msgid "Count"
 msgstr "Anzahl"
 
-#, fuzzy
 msgid "Relative frequency"
-msgstr "Simulierte Häufigkeit"
+msgstr "Relative Häufigkeit"
 
-#, fuzzy
 msgid "Observed vs. Expected Relative Frequencies"
-msgstr "Beobachtete vs. erwartete durchschnittliche Häufigkeit"
+msgstr "Beobachtete vs. erwartete relative Häufigkeiten"
 
 msgid "Observed"
 msgstr "Beobachtet"
 
-#, fuzzy
 msgid ""
 "<b>Figure %i.</b> The observed relative frequencies of each digit in the "
 "data set compared to the expected relative frequencies under %2$s. For data "
 "sets distributed according %2$s the blue dots will lie near the top of the "
 "grey bars."
 msgstr ""
-"<b>Abbildung %i:</b> Die beobachteten Prozentzahlen jeder Ziffer des "
-"Datensatzes im Vergleich zum erwarteten Prozentsatz unter %2$s. Bei "
-"Datensätzen, die nach %2$s verteilt sind, liegen die blauen Punkte in der "
-"Nähe des oberen Randes der grauen Balken."
+"<b>Abbildung %i:</b> Die beobachteten relativen Häufigkeiten jeder Ziffer "
+"des Datensatzes im Vergleich zu den erwarteten relativen Häufigkeiten unter "
+"%2$s. Bei Datensätzen, die nach %2$s verteilt sind, liegen die blauen Punkte "
+"in der Nähe des oberen Randes der grauen Balken."
 
 msgid "<u>Conclusion</u>"
 msgstr "<u>Schlussfolgerung</u>"
@@ -212,13 +209,11 @@ msgstr "ist verworfen"
 msgid "is not rejected"
 msgstr "ist nicht verworfen"
 
-#, fuzzy
 msgid "%1$s < %2$s"
-msgstr "%1$s = %2$s"
+msgstr "%1$s < %2$s"
 
-#, fuzzy
 msgid "%1$s >= %2$s"
-msgstr "%1$s = %2$s"
+msgstr "%1$s >= %2$s"
 
 msgid ""
 "The <i>p</i> value is %1$s and the null hypothesis that the first digits in "
@@ -295,9 +290,8 @@ msgstr ""
 "Angezeigte Zahlen können wegen Rundungen in den Berechnungen von den exakten "
 "Ergebnissen abweichen."
 
-#, fuzzy
 msgid "<b>Warning.</b>"
-msgstr "<u>Planung</u>"
+msgstr "<b>Warnung.</b>"
 
 msgid ""
 "The number of items in the population is lower than the number of items in "
@@ -1721,13 +1715,12 @@ msgid "The results are computed using the Stringer method with LTA adjustment."
 msgstr ""
 "Die Ergebnisse sind mit der Stringer-Methode mit LTA-Anpassung berechnet."
 
-#, fuzzy
 msgid ""
 "The results are computed using the beta distribution and require the "
 "assumption that the population taints are homogeneous."
 msgstr ""
-"Die obere Grenze wird nach der <b>Beta</b>-Verteilung berechnet und setzt "
-"die Annahme voraus, dass die taints der Stichprobe austauschbar sind."
+"Die obere Grenze wird nach der Beta-Verteilung berechnet und setzt die "
+"Annahme voraus, dass die Taints der Grundgesamtheit homogen sind."
 
 msgid "The audit result column is empty."
 msgstr "Die Auditergebnis-Spalte ist leer."
@@ -1755,9 +1748,8 @@ msgstr ""
 "Die Nullhypothese H₀: ρ ≥ 0 wird gegen die Alternativhypothese H₋: ρ < 0 "
 "getestet"
 
-#, fuzzy
 msgid "Book values - Taints"
-msgstr "Buchwerte"
+msgstr "Buchwerte - Taints"
 
 msgid "There were no misstatements found in the sample."
 msgstr "In der Stichprobe wurden keine falschen Angaben gefunden."
@@ -1802,9 +1794,8 @@ msgstr ""
 msgid "Scatter Plot of Book and Audit Values"
 msgstr "Streudiagramm von Ist- und Soll-Werten"
 
-#, fuzzy
 msgid "Book value (%1$s)"
-msgstr "Soll-Wert (%1$s)"
+msgstr "Buchwert (%1$s)"
 
 #, fuzzy
 msgid "Audit value (%1$s)"
@@ -1827,9 +1818,8 @@ msgstr ""
 "der Diagonale liegen, sind die Transaktionen überschätzt. Wenn diese roten "
 "Punkte oberhalb der Diagonale liegen, sind sie unterschätzt. %2$s"
 
-#, fuzzy
 msgid "<b>Table %i.</b> Corrections to Population"
-msgstr "<b>Tabelle %i.</b> Post-Hoc-Korrekturen am Wert der Grundgesamtheit"
+msgstr "<b>Tabelle %i.</b> Korrekturen an Grundgesamtheit"
 
 msgid "Correction"
 msgstr "Korrektur"
@@ -1847,27 +1837,22 @@ msgstr "Keine Falschangaben mit %1$s%% Konfidenz"
 msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
 msgstr "Keine Falschangaben mit %1$s%% Konfidenz und %2$s%% Genauigkeit"
 
-#, fuzzy
 msgid "<b>Table %i.</b> Equivalent Prior Sample"
-msgstr "<b>Tabelle %i.</b> Implizierte Stichprobe"
+msgstr "<b>Tabelle %i.</b> Äquivalente Prior-Stichprobe"
 
-#, fuzzy
 msgid "Equivalent sample size"
-msgstr "Benötigte Stichprobengröße"
+msgstr "Äquivalente Stichprobengröße"
 
-#, fuzzy
 msgid "Equivalent errors"
-msgstr "Erwartete Fehler"
+msgstr "Äquivalente Fehler"
 
-#, fuzzy
 msgid "The equivalent sample is based on minimal prior information."
-msgstr "Die implizite Stichprobe basiert auf keinen vorhandenen Informationen."
+msgstr "Die äquivalente Stichprobe basiert auf minimalen Prior-Informationen."
 
-#, fuzzy
 msgid "The equivalent sample is derived from the prior parameters %1$s, %2$s."
 msgstr ""
-"Die implizierte Stichprobe ergibt sich aus gleichen Prior-"
-"Wahrscheinlichkeiten: <i>p(H%1$s) = p(H%2$s) = 0.5</i>"
+"Die äquivalente Stichprobe ist aus den Prior-Parametern %1$s, %2$s "
+"abgeleitet."
 
 #, fuzzy
 msgid ""
