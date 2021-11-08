@@ -20,7 +20,7 @@
 
 # This is a temporary fix
 # TODO: remove it when R will solve this problem!
-gettextf <- function(fmt, ..., domain = NULL)  {
+gettextf <- function(fmt, ..., domain = NULL) {
   return(sprintf(gettext(fmt, domain = domain), ...))
 }
 
@@ -977,7 +977,7 @@ gettextf <- function(fmt, ..., domain = NULL)  {
           samplingObjectivesMessage2 <- gettextf("the sample provides sufficient information to conclude that the misstatement %1$s is below the performance materiality %1$s* with the minimum precision", "\u03B8")
         }
 
-        separateMisstatementMessage <- if(options[["separateMisstatement"]]) gettext("\n\nFurthermore, the uncertainty regarding \u03B8 will only be extrapolated over the unseen part of the population. This requires the additional assumption that the population taints are homogeneous.") else ""
+        separateMisstatementMessage <- if (options[["separateMisstatement"]]) gettext("\n\nFurthermore, the uncertainty regarding \u03B8 will only be extrapolated over the unseen part of the population. This requires the additional assumption that the population taints are homogeneous.") else ""
 
         distribution <- options[["likelihood"]]
         if (options[["bayesian"]]) {
@@ -2151,20 +2151,11 @@ gettextf <- function(fmt, ..., domain = NULL)  {
 }
 
 .jfaSelectionCalculation <- function(options, dataset, prevState, parentContainer, unitsExtra = NULL) {
-
   if (options[["id"]] == "" || prevState[["n"]] == 0 || is.null(dataset)) {
     return()
   }
 
   units <- if (!is.null(unitsExtra)) unitsExtra else options[["units"]]
-
-  if (options[["randomize"]]) {
-    dataset <- dataset[sample(1:nrow(dataset)), ]
-  }
-  if (options[["rank"]] != "") {
-    rank <- dataset[[options[["rank"]]]]
-    dataset <- dataset[order(rank), ]
-  }
 
   if (options[["sampling_method"]] == "interval") {
     interval <- if (units == "items") length(dataset[[options[["id"]]]]) / prevState[["n"]] else sum(dataset[[options[["values"]]]]) / prevState[["n"]]
@@ -2185,7 +2176,8 @@ gettextf <- function(fmt, ..., domain = NULL)  {
   jfaresult <- jfa::selection(
     data = as.data.frame(dataset), size = prevState[["n"]], units = units, method = options[["sampling_method"]],
     values = if (options[["values"]] != "") options[["values"]] else NULL,
-    start = start, replace = TRUE
+    order = if (options[["rank"]] != "") options[["rank"]] else NULL,
+    start = start, replace = TRUE, randomize = options[["randomize"]]
   )
   return(jfaresult)
 }
@@ -2202,7 +2194,7 @@ gettextf <- function(fmt, ..., domain = NULL)  {
 
   table <- createJaspTable(title)
   table$position <- positionInContainer
-  table$dependOn(options = c("tableBookDist", "tableDescriptives", "tableSample", "samplingChecked", "evaluationChecked"))
+  table$dependOn(options = c("tableBookDist", "tableDescriptives", "tableSample", "samplingChecked", "evaluationChecked", "export_sample"))
 
   table$addColumnInfo(name = "size", title = gettext("No. units"), type = "integer")
   table$addColumnInfo(name = "items", title = gettext("No. items"), type = "integer")
@@ -2225,6 +2217,9 @@ gettextf <- function(fmt, ..., domain = NULL)  {
     "random" = gettextf("The sample is drawn with <i>seed %1$s</i>.", options[["seed_random"]])
   )
   table$addFootnote(message)
+  if (!options[["workflow"]] && options[["file"]] != "" && !options[["export_sample"]]) {
+    table$addFootnote(gettext("The sample is not exported until 'Export sample to file' is checked."))
+  }
 
   row <- list()
   row[["size"]] <- parentState[["n.units"]]

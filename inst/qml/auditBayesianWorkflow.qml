@@ -709,11 +709,13 @@ Form
 
 			AssignedVariablesList
 			{
+				id:									rank
 				name: 								"rank"
 				title: 								qsTr("Ranking Variable")
 				singleVariable:						true
 				allowedColumns:						["scale"]
 				allowAnalysisOwnComputedColumns: 	false
+				enabled:							!separate.checked
 			}
 
 			AssignedVariablesList
@@ -883,7 +885,7 @@ Form
 			{
 				name:								"randomize"
 				text:								qsTr("Randomize items")
-				enabled:							!pasteVariables.checked && !separate.checked
+				enabled:							!pasteVariables.checked && !separate.checked && rank.count == 0
 			}
 		}
 

@@ -288,7 +288,7 @@
     }
 
     object <- if (stage == "planning") parentState[["prior"]] else parentState[["posterior"]]
-	likelihood <- if (stage == "planning") parentState[["likelihood"]] else parentState[["method"]]
+    likelihood <- if (stage == "planning") parentState[["likelihood"]] else parentState[["method"]]
     x <- 0:size
     y <- predict(object, n = size)
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, x))
