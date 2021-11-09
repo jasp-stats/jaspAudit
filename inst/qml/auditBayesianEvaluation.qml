@@ -730,7 +730,7 @@ Form
 	Item
 	{
 		Layout.preferredHeight: 				download.height
-		Layout.fillWidth: 						true
+		Layout.preferredWidth: 					parent.width
 		Layout.columnSpan:						2
 
 		Button
