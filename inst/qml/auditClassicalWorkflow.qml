@@ -582,6 +582,7 @@ Form
 
 			AssignedVariablesList
 			{
+				id:									rank
 				name: 								"rank"
 				title: 								qsTr("Ranking Variable")
 				singleVariable:						true
@@ -752,7 +753,7 @@ Form
 			{
 				name:								"randomize"
 				text:								qsTr("Randomize items")
-				enabled:							!pasteVariables.checked
+				enabled:							!pasteVariables.checked && rank.count == 0
 			}
 		}
 
