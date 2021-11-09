@@ -178,7 +178,7 @@ Form {
 	Item
 	{
 		Layout.preferredHeight: 			download.height
-		Layout.fillWidth: 					true
+		Layout.preferredWidth: 				parent.width
 		Layout.columnSpan:					2
 
 		Button
@@ -186,7 +186,6 @@ Form {
 			id: 							download
 			enabled: 						populationSize.value != 0 && populationValue.value != 0 && auditValues.count > 0 && bookValues.count > 0
 			anchors.right: 					parent.right
-			anchors.bottom: 				parent.bottom
 			text: 							qsTr("<b>Download Report</b>")
 			onClicked:						form.exportResults()
 		}

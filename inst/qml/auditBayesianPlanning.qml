@@ -509,13 +509,12 @@ Form
 	{
 		Layout.preferredHeight: 				download.height
 		Layout.columnSpan: 2
-		Layout.fillWidth: 						true
+		Layout.preferredWidth: 					parent.width
 
 		Button
 		{
 			id: 								download
 			anchors.right: 						parent.right
-			anchors.bottom: 					parent.bottom
 			text: 								qsTr("<b>Download Report</b>")
 			onClicked: 							form.exportResults()
 		}
