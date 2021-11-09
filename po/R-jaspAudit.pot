@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.0\n"
-"POT-Creation-Date: 2021-10-30 03:29\n"
+"POT-Creation-Date: 2021-11-09 11:28\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -748,7 +748,7 @@ msgstr ""
 msgid "Selected units"
 msgstr ""
 
-msgid "% of total value"
+msgid "%% of total value"
 msgstr ""
 
 msgid "The top stratum consists of all items with a book value larger than %1$s interval."

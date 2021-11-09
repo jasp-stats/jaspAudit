@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-10-30 03:29\n"
+"POT-Creation-Date: 2021-11-09 11:28\n"
 "PO-Revision-Date: 2021-11-04 16:37+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1583,7 +1583,8 @@ msgstr "Ausgewählte Einheiten"
 msgid "Selected units"
 msgstr "Ausgewählte Einheiten"
 
-msgid "% of total value"
+#, fuzzy
+msgid "%% of total value"
 msgstr "% des Gesamtwerts"
 
 msgid ""
