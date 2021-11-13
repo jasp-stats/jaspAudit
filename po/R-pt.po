@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-11-09 11:28\n"
+"POT-Creation-Date: 2021-11-13 03:29\n"
 "PO-Revision-Date: 2021-09-11 03:27+0000\n"
 "Last-Translator: JASP Stats <b.boutin@uva.nl>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -1281,6 +1281,9 @@ msgstr ""
 #, fuzzy
 msgid "The sample is drawn with <i>seed %1$s</i>."
 msgstr "O tamanho da amostra <i>n</i>"
+
+msgid "The sample is not exported until 'Export sample to file' is checked."
+msgstr ""
 
 msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
 msgstr ""
