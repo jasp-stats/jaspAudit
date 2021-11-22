@@ -83,15 +83,15 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
     if (options[["distribution"]] == "benford") {
       procedureText <- switch(options[["digits"]],
-        "first" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first leading digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel),
-        "firsttwo" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel),
-        "last" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the last digits in the data set follow Benford's law, and to test this relation with a type-I error of <b>%1$s</b>. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel)
+        "first" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first leading digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel),
+        "firsttwo" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel),
+        "last" = gettextf("Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the last digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation.", confidenceLabel)
       )
     } else if (options[["distribution"]] == "uniform") {
       procedureText <- switch(options[["digits"]],
-        "first" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of <b>%1$s</b>. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel),
-        "firsttwo" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of <b>%1$s</b>. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel),
-        "last" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the last digits in the data set follow the uniform distribution, and to test this relation with a type-I error of <b>%1$s</b>. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel)
+        "first" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel),
+        "firsttwo" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel),
+        "last" = gettextf("The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the last digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation.", confidenceLabel)
       )
     }
     procedureContainer[["procedureParagraph"]] <- createJaspHtml(procedureText, "p")
@@ -247,7 +247,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   )
   benfordsLawTestTable$addFootnote(message)
 
-  message <- gettextf("The Bayes factor is computed using a <i>Dirichlet(%1$s,...,%2$s%3$s)</i> prior with <i>%2$s = 1</i>.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089")
+  message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = 1.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089")
   benfordsLawTestTable$addFootnote(message, colName = "bf")
 
   benfordsLawContainer[["benfordsLawTestTable"]] <- benfordsLawTestTable
@@ -509,11 +509,11 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   )
 
   conclusionText <- switch(options[["digits"]],
-    "first" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion),
-    "firsttwo" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion),
-    "last" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s <b>%3$s</b>.", pvalue, distribution, conclusion)
+    "first" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
+    "firsttwo" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
+    "last" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion)
   )
-  conclusionText <- gettextf("%1$s The Bayes factor indicates that the data are <b>%2$s times</b> more likely to occur under the null hypothesis than under the alternative hypothesis.", conclusionText, format(1 / exp(state[["logBF10"]]), digits = 3))
+  conclusionText <- gettextf("%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis.", conclusionText, format(1 / exp(state[["logBF10"]]), digits = 3))
 
   conclusionContainer[["conclusionParagraph"]] <- createJaspHtml(conclusionText, "p")
   conclusionContainer[["conclusionParagraph"]]$position <- 1

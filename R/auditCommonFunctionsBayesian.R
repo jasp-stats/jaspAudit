@@ -81,8 +81,8 @@
     message <- switch(options[["prior_method"]],
       "default" = gettext("The equivalent sample is based on minimal prior information."),
       "param"   = gettextf("The equivalent sample is derived from the prior parameters %1$s, %2$s.", paste0("\u03B1 = ", options[["alpha"]]), paste0("\u03B2 = ", options[["beta"]])),
-      "arm"     = gettextf("The equivalent sample is derived from the ARM risk assessments: IR = <b>%1$s</b> and CR = <b>%2$s</b>.", options[["ir"]], options[["cr"]]),
-      "impartial"  = gettextf("The equivalent sample is derived from equal prior probabilities: <i>p(H%1$s) = p(H%2$s) = 0.5</i>", "\u208B", "\u208A"),
+      "arm"     = gettextf("The equivalent sample is derived from the ARM risk assessments: IR = %1$s and CR = %2$s.", options[["ir"]], options[["cr"]]),
+      "impartial"  = gettextf("The equivalent sample is derived from equal prior probabilities: p(H%1$s) = p(H%2$s) = 0.5", "\u208B", "\u208A"),
       "sample"  = gettextf("The equivalent sample is derived from an earlier sample of %1$s observations containing %2$s errors.", options[["n"]], options[["x"]])
     )
     table$addFootnote(message)
@@ -231,7 +231,7 @@
     if (stage == "planning") {
       additionalText1 <- gettextf("The expected posterior distribution is calculated so that its %1$sth percentile lies below the performance materiality (gray dot).", round(options[["conf_level"]] * 100, 2))
       figureCaption <- createJaspHtml(gettextf(
-        "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on the population misstatement \u03B8. The prior parameters <i>%3$s = %4$s, %5$s = %6$s</i> are derived from the prior information. %7$s",
+        "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on the population misstatement \u03B8. The prior parameters (%3$s = %4$s, %5$s = %6$s) are derived from the prior information. %7$s",
         jaspResults[["figNumber"]]$object,
         distribution,
         "\u03B1",

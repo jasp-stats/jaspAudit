@@ -104,7 +104,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     procedureContainer$position <- position
 
     confidenceLabel <- paste0(round((1 - options[["confidence"]]) * 100, 2), "%")
-    procedureText <- gettextf("This procedure analyzes the frequency with which values get repeated within a data set to statistically identify whether the data were likely tampered with. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit.\n\nTo determine whether the data show an excessive amount of repeated values, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested with a type-I error of <b>%1$s</b>. To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.", confidenceLabel)
+    procedureText <- gettextf("This procedure analyzes the frequency with which values get repeated within a data set to statistically identify whether the data were likely tampered with. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit.\n\nTo determine whether the data show an excessive amount of repeated values, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested with a type-I error of %1$s. To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.", confidenceLabel)
 
     procedureContainer[["procedureParagraph"]] <- createJaspHtml(procedureText, "p")
     procedureContainer[["procedureParagraph"]]$position <- 1
@@ -238,7 +238,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     table$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
     table$addColumnInfo(name = "pvalue", title = "p", type = "pvalue")
 
-    table$addFootnote(gettextf("The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r = 0</i>.", "\u2080"))
+    table$addFootnote(gettextf("The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r</i> = 0.", "\u2080"))
 
     numberBunchingContainer[["correlationTable"]] <- table
 
@@ -548,7 +548,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
   pvalue <- format.pval(state[["pvalueAvgFrequency"]], eps = 0.001)
   pvalue <- if (rejectnull) gettextf("%1$s < \u03B1", pvalue) else gettextf("%1$s >= \u03B1", pvalue)
 
-  conclusionText <- gettextf("The <i>p</i> value is %1$s and the null hypothesis that the data do not contain an unexpected amount of repeated values <b>%2$s</b>.", pvalue, conclusion)
+  conclusionText <- gettextf("The <i>p</i> value is %1$s and the null hypothesis that the data do not contain an unexpected amount of repeated values %2$s.", pvalue, conclusion)
 
   conclusionContainer[["conclusionParagraph"]] <- createJaspHtml(conclusionText, "p")
   conclusionContainer[["conclusionParagraph"]]$position <- 1

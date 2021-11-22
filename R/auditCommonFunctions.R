@@ -596,12 +596,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
       input[["N.units"]] <- procedureOptions[["N.units"]]
     }
 
-    input[["materiality_type"]] <- if (options[["materiality_type"]] == "materiality_rel") gettext("<b>percentage</b>") else gettext("<b>amount</b>")
+    input[["materiality_type"]] <- if (options[["materiality_type"]] == "materiality_rel") gettext("percentage") else gettext("amount")
     input[["materiality_val"]] <- if (options[["materiality_type"]] == "materiality_rel") options[["materiality_rel_val"]] else options[["materiality_abs_val"]] / input[["N.units"]]
     input[["materiality_label"]] <- if (options[["materiality_type"]] == "materiality_rel") paste0(round(input[["materiality_val"]] * 100, 2), "%") else format(options[["materiality_abs_val"]], scientific = FALSE)
 
     input[["expected_val"]] <- if (options[["expected_type"]] == "expected_rel") options[["expected_rel_val"]] else options[["expected_abs_val"]]
-    input[["expected_type"]] <- if (options[["expected_type"]] == "expected_rel") gettext("<b>percentage</b>") else gettext("<b>amount</b>")
+    input[["expected_type"]] <- if (options[["expected_type"]] == "expected_rel") gettext("percentage") else gettext("amount")
     input[["expected_label"]] <- if (options[["expected_type"]] == "expected_rel") paste0(round(input[["expected_val"]] * 100, 2), "%") else options[["expected_abs_val"]]
 
     input[["min_precision_rel_val"]] <- options[["min_precision_rel_val"]]
@@ -628,7 +628,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     input[["materiality_label"]] <- if (options[["materiality_type"]] == "materiality_rel") paste0(round(options[["materiality_rel_val"]] * 100, 2), "%") else format(options[["materiality_abs_val"]], scientific = FALSE)
 
     if (options[["bayesian"]]) {
-      input[["expected_type"]] <- if (options[["expected_type"]] == "expected_rel") gettext("<b>percentage</b>") else gettext("<b>amount</b>")
+      input[["expected_type"]] <- if (options[["expected_type"]] == "expected_rel") gettext("percentage") else gettext("amount")
       input[["expected_val"]] <- if (options[["expected_type"]] == "expected_rel") options[["expected_rel_val"]] else options[["expected_abs_val"]]
     }
     input[["min_precision_val"]] <- options[["min_precision_rel_val"]]
@@ -916,23 +916,23 @@ gettextf <- function(fmt, ..., domain = NULL) {
       container <- .jfaAddStageContainer(jaspResults, stage = "procedure", position = 1)
 
       if (!options[["materiality_test"]] && !options[["min_precision_test"]]) {
-        text <- gettextf("Select one or both sampling objectives to begin planning an audit sample.\n\n%1$s <b>Test against a performance materiality</b>\n\nEnable this objective if you want to <i>test</i> whether the total misstatement in the population exceeds a certain limit (i.e., the performance materiality) based on a sample. This approach allows you to plan a sample such that, when the sample meets your expectations, the maximum error is said to be below performance materiality. In the evaluation you will be able to quantify the evidence that your sample contains for or against the statement that the population misstatement does not exceed the performance materiality.\n\n%2$s <b>Obtain a minimum precision</b>\n\nEnable this objective if you want to obtain a minimum precision when <i>estimating</i> the total misstatement in the population based on a sample. This approach allows you to plan a sample such that, when the sample meets expectations, the accuracy of your estimate is below a tolerable percentage. In the evaluation you will be able to quantify the accuracy of your estimate of the population misstatement.", "\u25CF", "\u25CF")
+        text <- gettextf("Select one or both sampling objectives to begin planning an audit sample.\n\n%1$s <b>Test against a performance materiality</b>\n\nEnable this objective if you want to test whether the total misstatement in the population exceeds a certain limit (i.e., the performance materiality) based on a sample. This approach allows you to plan a sample such that, when the sample meets your expectations, the maximum error is said to be below performance materiality. In the evaluation you will be able to quantify the evidence that your sample contains for or against the statement that the population misstatement does not exceed the performance materiality.\n\n%2$s <b>Obtain a minimum precision</b>\n\nEnable this objective if you want to obtain a minimum precision when estimating the total misstatement in the population based on a sample. This approach allows you to plan a sample such that, when the sample meets expectations, the accuracy of your estimate is below a tolerable percentage. In the evaluation you will be able to quantify the accuracy of your estimate of the population misstatement.", "\u25CF", "\u25CF")
       } else if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
         text <- gettextf(
-          "The objective of this sampling procedure is to show with <b>%1$s</b> confidence that the %2$s of misstatement in the population is lower than the performance materiality of <b>%3$s</b>.",
+          "The objective of this sampling procedure is to show with %1$s confidence that the %2$s of misstatement in the population is lower than the performance materiality of %3$s.",
           stageOptions[["conf_level_label"]],
           stageOptions[["expected_type"]],
           stageOptions[["materiality_label"]]
         )
       } else if (!options[["materiality_test"]] && options[["min_precision_test"]]) {
         text <- gettextf(
-          "The objective of this sampling procedure is to estimate the misstatement in the population with <b>%1$s</b> confidence and a minimum precision of <b>%2$s</b>.\n\nThe quantity of interest is the misstatement \u03B8 in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audited (true) value.",
+          "The objective of this sampling procedure is to estimate the misstatement in the population with %1$s confidence and a minimum precision of %2$s.\n\nThe quantity of interest is the misstatement \u03B8 in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audited (true) value.",
           stageOptions[["conf_level_label"]],
           stageOptions[["min_precision_label"]]
         )
       } else if (options[["materiality_test"]] && options[["min_precision_test"]]) {
         text <- gettextf(
-          "The objective of this sampling procedure is to show with <b>%1$s</b> confidence and a precision of <b>%3$s</b> that the %2$s of misstatement in the population is lower than the performance materiality of <b>%4$s</b>.",
+          "The objective of this sampling procedure is to show with %1$s confidence and a precision of %3$s that the %2$s of misstatement in the population is lower than the performance materiality of %4$s.",
           stageOptions[["conf_level_label"]],
           stageOptions[["expected_type"]],
           stageOptions[["min_precision_label"]],
@@ -943,9 +943,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
       if (options[["materiality_test"]]) {
         text <- gettextf(
           "%1$s\n\nThe quantity of interest is the misstatement (%2$s) in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, %2$s*, two statistical hypotheses about %2$s are formulated:\n
-                                  The (null) hypothesis of intolerable misstatement <i>%3$s</i>,
-                                  The (alternative) hypothesis of tolerable misstatement <i>%4$s</i>.\n
-                                  The audit risk (%5$s) is the risk of incorrectly rejecting the hypothesis <i>%3$s</i>. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (< %6$s%%).",
+                                  The (null) hypothesis of intolerable misstatement %3$s,
+                                  The (alternative) hypothesis of tolerable misstatement %4$s.\n
+                                  The audit risk (%5$s) is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (< %6$s%%).",
           text,
           "\u03B8",
           "H\u208A: \u03B8 \u2265 \u03B8*",
@@ -967,13 +967,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
     } else if (stage == "planning") {
       if (is.null(stageContainer[["paragraph"]]) && !stageContainer$getError()) {
         if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
-          samplingObjectivesMessage <- gettextf("a performance materiality of <b>%1$s</b>", stageOptions[["materiality_label"]])
+          samplingObjectivesMessage <- gettextf("a performance materiality of %1$s", stageOptions[["materiality_label"]])
           samplingObjectivesMessage2 <- gettextf("the sample provides sufficient information to conclude that the misstatement %1$s is below the performance materiality %1$s*", "\u03B8")
         } else if (!options[["materiality_test"]] && options[["min_precision_test"]]) {
-          samplingObjectivesMessage <- gettextf("a minimum precision of <b>%1$s</b>", stageOptions[["min_precision_label"]])
+          samplingObjectivesMessage <- gettextf("a minimum precision of %1$s", stageOptions[["min_precision_label"]])
           samplingObjectivesMessage2 <- gettextf("the sample provides sufficient information to estimate the misstatement %1$s with the minimum precision", "\u03B8")
         } else if (options[["materiality_test"]] && options[["min_precision_test"]]) {
-          samplingObjectivesMessage <- gettextf("a performance materiality of <b>%1$s</b> and a minimum precision of <b>%2$s</b>", stageOptions[["materiality_label"]], stageOptions[["min_precision_label"]])
+          samplingObjectivesMessage <- gettextf("a performance materiality of %1$s and a minimum precision of %2$s", stageOptions[["materiality_label"]], stageOptions[["min_precision_label"]])
           samplingObjectivesMessage2 <- gettextf("the sample provides sufficient information to conclude that the misstatement %1$s is below the performance materiality %1$s* with the minimum precision", "\u03B8")
         }
 
@@ -991,7 +991,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         introMessage <- gettext("The purpose of the planning stage is to find a minimum sample size so that, given a certain number of expected misstatements, the sample provides sufficient information to achieve the specified sampling objectives.\n\n")
         if (options[["prior_method"]] == "default" || options[["prior_method"]] == "strict") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s",
+            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
             introMessage,
             stageOptions[["expected_label"]],
             samplingObjectivesMessage,
@@ -1004,7 +1004,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           ), "p")
         } else if (options[["prior_method"]] == "arm") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assessments of inherent risk <b>(%7$s)</b> and control risk <b>(%8$s)</b> from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s",
+            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assessments of inherent risk (<i>%7$s</i>) and control risk (<i>%8$s</i>) from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s",
             introMessage,
             stageOptions[["expected_label"]],
             samplingObjectivesMessage,
@@ -1019,7 +1019,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           ), "p")
         } else if (options[["prior_method"]] == "impartial") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s",
+            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
             introMessage,
             stageOptions[["expected_label"]],
             samplingObjectivesMessage,
@@ -1032,7 +1032,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           ), "p")
         } else if (options[["prior_method"]] == "sample") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the <i>a priori</i> assumption that an earlier sample of <b>%7$s</b> transactions containing <b>%8$s</b> errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) <b>%9$s</b>, %10$s. %11$s",
+            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that an earlier sample of %7$s transactions containing %8$s errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s",
             introMessage,
             stageOptions[["expected_label"]],
             samplingObjectivesMessage,
@@ -1047,7 +1047,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           ), "p")
         } else if (options[["prior_method"]] == "param") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be <b>%2$s</b>. The minimum sample size that is required for %3$s, assuming the sample contains <b>%4$s</b> full errors, is <b>%5$s</b>. This sample size is based on the <b>%6$s</b> distribution, the manually specified prior distribution, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) <b>%7$s</b>, %8$s. %9$s",
+            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the manually specified prior distribution, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
             introMessage,
             stageOptions[["expected_label"]],
             samplingObjectivesMessage,
@@ -1087,7 +1087,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       label_method <- if (options[["units"]] == "items") gettextf("%1$s record sampling", label_method) else gettextf("%1$s monetary unit sampling", label_method)
 
       message <- gettextf(
-        "The purpose of the selection stage is to statistically select a number of sampling units from the population. Sampling units can be individual items (rows) or individual monetary units. The sampling units are selected from the population according to the selection method. To learn more about the current selection method, look under the <i>Method</i> section.\n\nFrom the population of <b>%1$s</b> %2$s items, <b>%3$s</b> sampling units (<i>%4$s</i>) are selected from the %5$s using a <b>%6$s</b> method.%7$s",
+        "The purpose of the selection stage is to statistically select a number of sampling units from the population. Sampling units can be individual items (rows) or individual monetary units. The sampling units are selected from the population according to the selection method. To learn more about the current selection method, look under the <i>Method</i> section.\n\nFrom the population of %1$s %2$s items, %3$s sampling units (%4$s) are selected from the %5$s using a %6$s method.%7$s",
         stageOptions[["N.items"]],
         if (options[["randomize"]]) gettext("randomized") else gettext("non-randomized"),
         if (options[["workflow"]]) prevState[["n"]] else options[["n"]],
@@ -1099,7 +1099,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
       if (!is.null(stageState) && stageState[["n.units"]] > stageState[["n.items"]]) {
         message <- gettextf(
-          "%1$s\n\n<i>Note:</i> The selected sample (%2$s) contains fewer items than the planned sample size (%3$s) because some items are selected more than once. The items containing these %4$s extra selected sampling units will be counted multiple times in the evaluation.",
+          "%1$s\n\n<b>Note:</b> The selected sample (%2$s) contains fewer items than the planned sample size (%3$s) because some items are selected more than once. The items containing these %4$s extra selected sampling units will be counted multiple times in the evaluation.",
           message,
           stageState[["n.items"]],
           stageState[["n.units"]],
@@ -1161,7 +1161,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
       if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
         message <- gettextf(
-          "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound on the misstatement is <b>%3$s</b> the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is <b>%4$s</b> than the performance materiality. %5$s",
+          "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound on the misstatement is %3$s the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %4$s than the performance materiality. %5$s",
           planningOptions[["conf_level_label"]],
           planningOptions[["materiality_label"]],
           aboveBelowMateriality,
@@ -1170,7 +1170,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         )
       } else if (!options[["materiality_test"]] && options[["min_precision_test"]]) {
         message <- gettextf(
-          "The objective of this audit sampling procedure was to determine the misstatement in the population with %1$s confidence and a minimum precision of %2$s. For the current data, the obtained precision is <b>%3$s</b> than the minimum precision. \n\nThe conclusion on the basis of these results is that the misstatement in the population has been determined with at least %1$s confidence and a precision of %4$s. %5$s",
+          "The objective of this audit sampling procedure was to determine the misstatement in the population with %1$s confidence and a minimum precision of %2$s. For the current data, the obtained precision is %3$s than the minimum precision. \n\nThe conclusion on the basis of these results is that the misstatement in the population has been determined with at least %1$s confidence and a precision of %4$s. %5$s",
           planningOptions[["conf_level_label"]],
           paste0(options[["min_precision_rel_val"]] * 100, "%"),
           lowerHigherPrecision,
@@ -1179,7 +1179,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         )
       } else if (options[["materiality_test"]] && options[["min_precision_test"]]) {
         message <- gettextf(
-          "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound on the misstatement is <b>%4$s</b> the performance materiality and the obtained precision is <b>%5$s</b> than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is <b>%7$s</b> than the performance materiality. %8$s",
+          "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound on the misstatement is %4$s the performance materiality and the obtained precision is %5$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is %7$s than the performance materiality. %8$s",
           planningOptions[["conf_level_label"]],
           paste0(options[["min_precision_rel_val"]] * 100, "%"),
           planningOptions[["materiality_label"]],
@@ -1400,7 +1400,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   if (options[["explanatoryText"]]) {
     message <- gettextf(
-      "The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk and control risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be <b>%1$s</b>. The internal control risk was determined to be <b>%2$s</b>. According to the Audit Risk Model, the required detection risk to maintain an audit risk of <b>%3$s</b> should be <b>%4$s</b>.",
+      "The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk and control risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be %1$s. The internal control risk was determined to be %2$s. According to the Audit Risk Model, the required detection risk to maintain an audit risk of %3$s should be %4$s.",
       paste0(options[["ir"]], " (", round(ir * 100, 2), "%)"),
       paste0(options[["cr"]], " (", round(cr * 100, 2), "%)"),
       paste0(round((1 - options[["conf_level"]]) * 100, 2), "%"),
@@ -1409,7 +1409,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     if (options[["ir"]] == "custom" || options[["cr"]] == "custom") {
       message <- gettextf(
-        "%1$s\n\nThe translation of High, Medium and Low to probabilities is done according custom preferences</b>.",
+        "%1$s\n\nThe translation of High, Medium and Low to probabilities is done according custom preferences.",
         message
       )
     } else {
@@ -1626,7 +1626,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     table$addRows(row)
     table$addFootnote(
       message = gettext("Either the materiality (if applicable) or the number of units in the population is defined as zero."),
-      symbol = gettextf("%1$s <b>Results could not be calculated.</b>", "\u26A0")
+      symbol = gettextf("%1$s <b>Insufficient information.</b>", "\u26A0")
     )
 
     return()
@@ -1634,24 +1634,24 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   if (!options[["bayesian"]]) {
     message <- switch(options[["likelihood"]],
-      "poisson" = gettextf("The minimum sample size is based on the Poisson distribution <i>(%1$s = %2$s)</i>.", "\u03BB", round(parentState[["materiality"]] * parentState[["n"]], 4)),
-      "binomial" =  gettextf("The minimum sample size is based on the binomial distribution <i>(p = %1$s)</i>", round(parentState[["materiality"]], 2)),
-      "hypergeometric" = gettextf("The minimum sample size is based on the hypergeometric distribution <i>(N = %1$s, K = %2$s)</i>.", parentState[["N.units"]], ceiling(parentState[["N.units"]] * parentState[["materiality"]]))
+      "poisson" = gettextf("The minimum sample size is based on the Poisson distribution (%1$s = %2$s).", "\u03BB", round(parentState[["materiality"]] * parentState[["n"]], 4)),
+      "binomial" =  gettextf("The minimum sample size is based on the binomial distribution (p = %1$s)", round(parentState[["materiality"]], 2)),
+      "hypergeometric" = gettextf("The minimum sample size is based on the hypergeometric distribution (N = %1$s, K = %2$s).", parentState[["N.units"]], ceiling(parentState[["N.units"]] * parentState[["materiality"]]))
     )
   } else {
     message <- switch(options[["likelihood"]],
       "poisson" = gettextf(
-        "The minimum sample size is based on the gamma distribution <i>(%1$s = %2$s, %3$s = %4$s)</i>",
+        "The minimum sample size is based on the gamma distribution (%1$s = %2$s, %3$s = %4$s)",
         "\u03B1", round(parentState[["prior"]][["description"]]$alpha, 3),
         "\u03B2", round(parentState[["prior"]][["description"]]$beta, 3)
       ),
       "binomial" = gettextf(
-        "The minimum sample size is based on the beta distribution <i>(%1$s = %2$s, %3$s = %4$s)</i>.",
+        "The minimum sample size is based on the beta distribution (%1$s = %2$s, %3$s = %4$s).",
         "\u03B1", round(parentState[["prior"]][["description"]]$alpha, 3),
         "\u03B2", round(parentState[["prior"]][["description"]]$beta, 3)
       ),
       "hypergeometric" = gettextf(
-        "The minimum sample size is based on the beta-binomial distribution <i>(N = %1$s, %2$s = %3$s, %4$s = %5$s)</i>.",
+        "The minimum sample size is based on the beta-binomial distribution (N = %1$s, %2$s = %3$s, %4$s = %5$s).",
         parentState[["N.units"]],
         "\u03B1", round(parentState[["prior"]][["description"]]$alpha, 3),
         "\u03B2", round(parentState[["prior"]][["description"]]$beta, 3)
@@ -2169,7 +2169,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (options[["sampling_method"]] != "interval") {
     set.seed(switch(options[["sampling_method"]],
       "random" = options[["seed_random"]],
-      "cell" = options[["seed_cell"]]
+      "cell" = options[["seed_cell"]],
+      "interval" = options[["start"]]
     ))
   }
 
@@ -2213,8 +2214,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   message <- switch(options[["sampling_method"]],
     "interval" = gettextf("Unit %1$s is selected from each of the intervals of size %2$s.", if (!is.null(prevState[["start"]])) prevState[["start"]] else options[["start"]], round(parentState[["interval"]], 2)),
-    "cell" = gettextf("The sample is drawn with <i>seed %1$s</i> and intervals of size %2$s.", options[["seed_cell"]], round(parentState[["interval"]], 2)),
-    "random" = gettextf("The sample is drawn with <i>seed %1$s</i>.", options[["seed_random"]])
+    "cell" = gettextf("The sample is drawn with seed %1$s and intervals of size %2$s.", options[["seed_cell"]], round(parentState[["interval"]], 2)),
+    "random" = gettextf("The sample is drawn with seed %1$s.", options[["seed_random"]])
   )
   table$addFootnote(message)
   if (!options[["workflow"]] && options[["file"]] != "" && !options[["export_sample"]]) {
@@ -2322,7 +2323,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     values <- .jfaReadVariableFromOptions(options, type = "values")
     rank <- .jfaReadVariableFromOptions(options, type = "rank")
     additional <- .jfaReadVariableFromOptions(options, type = "additional")
-    variables <- c("Row", "Selected", unique(c(id, values, rank, additional)))
+    variables <- c(gettext("Row"), gettext("Selected"), unique(c(id, values, rank, additional)))
 
     for (i in 1:length(variables)) {
       if (i %in% c(1, 2)) {
@@ -2581,14 +2582,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     if (!options[["bayesian"]]) {
       additionalMessage <- gettextf(
-        "\n\nThese results imply that there is a %1$s probability that, when one would repeatedly sample from this population, the upper bound on \u03B8 is below <b>%2$s</b> with a precision of <b>%3$s</b>.",
+        "\n\nThese results imply that there is a %1$s probability that, when one would repeatedly sample from this population, the upper bound on \u03B8 is below %2$s with a precision of %3$s.",
         planningOptions[["conf_level_label"]],
         boundLabel,
         precisionLabel
       )
     } else if (options[["bayesian"]]) {
       additionalMessage <- gettextf(
-        "\n\nThese results imply that there is a %1$s probability that \u03B8 is below <b>%2$s</b> with a precision of <b>%3$s</b>.",
+        "\n\nThese results imply that there is a %1$s probability that \u03B8 is below %2$s with a precision of %3$s.",
         planningOptions[["conf_level_label"]],
         boundLabel,
         precisionLabel
@@ -2596,7 +2597,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
 
     message <- gettextf(
-      "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe sample consisted of <b>%1$s</b> sampling units, of which a total of <b>%2$s</b> were misstated. The information from this sample %3$s results in a most likely error in the population of <b>%4$s</b> and an %5$s upper bound of <b>%6$s</b>. %7$s",
+      "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe sample consisted of %1$s sampling units, of which a total of %2$s were misstated. The information from this sample %3$s results in a most likely error in the population of %4$s and an %5$s upper bound of %6$s. %7$s",
       sampleSizeMessage,
       errors,
       if (options[["bayesian"]]) "combined with the information in the prior distribution " else "",
@@ -2852,12 +2853,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (options[["workflow"]]) {
       table$addFootnote(
         message = gettext("The audit result column is empty."),
-        symbol = gettextf("%1$s <b>Results cound not be calculated.</b>", "\u26A0")
+        symbol = gettextf("%1$s <b>Insufficient information.</b>", "\u26A0")
       )
     } else {
       table$addFootnote(
         message = gettext("Either the materiality, the population size, or the population value is defined as zero, or one of the required variables is missing."),
-        symbol = gettextf("%1$s <b>Results could not be calculated.</b>", "\u26A0")
+        symbol = gettextf("%1$s <b>Insufficient information.</b>", "\u26A0")
       )
     }
     return()
@@ -3013,7 +3014,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   })
 
   if (isTryError(p)) {
-    table$addFootnote(gettext("An error occurred while calculating the correlation."), symbol = "<b>Warning.</b>")
+    table$addFootnote(gettext("An error occurred while calculating the correlation."))
     return()
   }
 
