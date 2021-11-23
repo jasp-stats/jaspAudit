@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-11-13 03:29\n"
-"PO-Revision-Date: 2021-11-21 19:40+0000\n"
+"PO-Revision-Date: 2021-11-22 22:59+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "es/>\n"
@@ -431,15 +431,17 @@ msgid "Frequency"
 msgstr "Frecuencia"
 
 msgid "Entropy"
-msgstr ""
+msgstr "Entropía"
 
 msgid ""
 "The displayed <i>p</i> value is one-sided and is computed on the basis of "
 "%1$s samples."
 msgstr ""
+"El valor <i>p</i> mostrado es unilateral, y se calcula en base a %1$s "
+"muestras."
 
 msgid "<b>Table %i.</b> Assumption Checks"
-msgstr ""
+msgstr "<b>Tabla %i.</b> Comprobaciones de Supuestos"
 
 msgid ""
 "The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r = "
@@ -456,35 +458,41 @@ msgid "Observed vs. Expected Average Frequency"
 msgstr ""
 
 msgid "Average frequency"
-msgstr ""
+msgstr "Frecuencia media"
 
 msgid "Simulated frequency"
-msgstr ""
+msgstr "Frecuencia simulada"
 
 msgid ""
 "<b>Figure %i:</b> The expected average frequencies of values versus the "
 "observed average frequency in the data set."
 msgstr ""
+"<b>Figura %i:</b> Las frecuencias medias esperadas de los valores frente a "
+"la frecuencia media observada en el conjunto de datos."
 
 msgid "Observed vs. Expected Entropy"
-msgstr ""
+msgstr "Entropía Observada vs. Esperada"
 
 msgid ""
 "<b>Figure %i:</b> The expected entropy of values versus the observed entropy "
 "in the data set."
 msgstr ""
+"<b>Figura %i:</b> La entropía esperada de los valores frente a la entropía "
+"observada en el conjunto de datos."
 
 msgid "Histogram of Individual Values"
-msgstr ""
+msgstr "Histograma de los Valores Individuales"
 
 msgid "<b>Figure %i:</b> Histogram of the individual values in the data set."
 msgstr ""
+"<b>Figura %i:</b> Histograma de los valores individuales en el conjunto de "
+"datos."
 
 msgid "%1$s < α"
-msgstr ""
+msgstr "%1$s < α"
 
 msgid "%1$s >= α"
-msgstr ""
+msgstr "%1$s >= α"
 
 msgid ""
 "The <i>p</i> value is %1$s and the null hypothesis that the data do not "
@@ -954,10 +962,10 @@ msgid "<b>Table %1$i.</b> Planning Summary"
 msgstr ""
 
 msgid "Performance materiality"
-msgstr ""
+msgstr "Materialidad"
 
 msgid "Min. precision"
-msgstr ""
+msgstr "Precisión mínima"
 
 msgid "Inherent risk"
 msgstr "Riesgo inherente"
@@ -1109,7 +1117,7 @@ msgid "<b>Table %1$i.</b> Selection Summary"
 msgstr ""
 
 msgid "No. units"
-msgstr ""
+msgstr "Número de unidades"
 
 msgid "No. items"
 msgstr "Número de elementos"
@@ -1312,13 +1320,13 @@ msgid "Upper bound"
 msgstr "Límite superior"
 
 msgid "Minimum precision"
-msgstr ""
+msgstr "Precisión mínima"
 
 msgid "Obtained precision"
-msgstr ""
+msgstr "Precisión conseguida"
 
 msgid "An error occurred while creating this plot: %1$s"
-msgstr ""
+msgstr "Ocurrió un fallo al generar este gráfico: %1$s"
 
 msgid ""
 "<b>Figure %1$i.</b> Evaluation information for the current annotated "
