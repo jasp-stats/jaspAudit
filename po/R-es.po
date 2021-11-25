@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-11-13 03:29\n"
-"PO-Revision-Date: 2021-11-25 11:46+0000\n"
+"PO-Revision-Date: 2021-11-25 12:05+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "es/>\n"
@@ -854,45 +854,55 @@ msgid ""
 msgstr ""
 
 msgid "a performance materiality of <b>%1$s</b>"
-msgstr ""
+msgstr "una materialidad de <b>%1$s</b>"
 
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
 "%1$s is below the performance materiality %1$s*"
 msgstr ""
+"la muestra proporciona información suficiente para concluir que el %1$s de "
+"inexactitud está por debajo del %1$s* de materialidad"
 
 msgid "a minimum precision of <b>%1$s</b>"
-msgstr ""
+msgstr "una precisión mínima de <b>%1$s</b>"
 
 msgid ""
 "the sample provides sufficient information to estimate the misstatement %1$s "
 "with the minimum precision"
 msgstr ""
+"la muestra proporciona información suficiente para estimar el %1$s de "
+"inexactitud con la precisión mínima"
 
 msgid ""
 "a performance materiality of <b>%1$s</b> and a minimum precision of <b>%2$s</"
 "b>"
-msgstr ""
+msgstr "una materialidad de <b>%1$s</b> y una precisión mínima de <b>%2$s</b>"
 
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
 "%1$s is below the performance materiality %1$s* with the minimum precision"
 msgstr ""
+"la muestra proporciona información suficiente para concluir que el %1$s de "
+"inexactitud está por debajo del %1$s* de materialidad, con la precisión "
+"mínima"
 
 msgid ""
 "Furthermore, the uncertainty regarding θ will only be extrapolated over the "
 "unseen part of the population. This requires the additional assumption that "
 "the population taints are homogeneous."
 msgstr ""
+"Además, la incertidumbre respecto a θ solo se va a extrapolar a la parte de "
+"la población oculta. Esto requiere el supuesto adicional de que las manchas "
+"poblacionales son homogéneas."
 
 msgid "gamma"
-msgstr ""
+msgstr "Gamma"
 
 msgid "beta"
-msgstr ""
+msgstr "Beta"
 
 msgid "beta-binomial"
-msgstr ""
+msgstr "Beta-Binomial"
 
 msgid ""
 "The purpose of the planning stage is to find a minimum sample size so that, "
@@ -964,35 +974,37 @@ msgid ""
 msgstr ""
 
 msgid "random"
-msgstr ""
+msgstr "aleatorio"
 
 msgid "fixed interval"
-msgstr ""
+msgstr "intervalo fijo"
 
 msgid "cell"
-msgstr ""
+msgstr "celda"
 
 msgid "book values (<i>%1$s</i>)"
-msgstr ""
+msgstr "valores contables (<i>%1$s</i>)"
 
 msgid "book values (<i>...</i>)"
-msgstr ""
+msgstr "valores contables (<i>...</i>)"
 
 msgid "ID variable (<i>%1$s</i>)"
-msgstr ""
+msgstr "variable ID (<i>%1$s</i>)"
 
 msgid "ID variable (<i>...</i>)"
-msgstr ""
+msgstr "variable ID (<i>...</i>)"
 
 msgid ""
 "<br><b>Warning:</b> A monetary unit sampling method was tried but failed."
 msgstr ""
+"<br><b>Advertencia:</b> Se intentó un método de muestreo de unidades "
+"monetarias, pero falló."
 
 msgid "%1$s record sampling"
-msgstr ""
+msgstr "muestreo de %1$s registros"
 
 msgid "%1$s monetary unit sampling"
-msgstr ""
+msgstr "muestreo de %1$s unidades monetarias"
 
 msgid ""
 "The purpose of the selection stage is to statistically select a number of "
@@ -1015,7 +1027,7 @@ msgid ""
 msgstr ""
 
 msgid "below"
-msgstr ""
+msgstr "abajo"
 
 msgid "lower"
 msgstr "inferior"
@@ -1027,7 +1039,7 @@ msgid "higher"
 msgstr "mayor"
 
 msgid "<b>Objectives:</b> You have achieved your initial sampling objectives."
-msgstr ""
+msgstr "<b>Objetivos:</b> Se alcanzaron los objetivos iniciales de muestreo."
 
 msgid ""
 "<b>Objectives:</b> You have not achieved your initial sampling objectives. "
@@ -1071,13 +1083,13 @@ msgid ""
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
-msgstr ""
+msgstr "<b>Tabla %1$i.</b> Estadísticos Descriptivos para los Valores Contables"
 
 msgid "Population size"
-msgstr ""
+msgstr "Tamaño de la población"
 
 msgid "Absolute value"
-msgstr ""
+msgstr "Valor absoluto"
 
 msgid "Mean"
 msgstr "Media"
@@ -1086,22 +1098,22 @@ msgid "Std. deviation"
 msgstr "Desviación estándar"
 
 msgid "1"
-msgstr ""
+msgstr "1"
 
 msgid "Quartile"
-msgstr ""
+msgstr "Cuartiles"
 
 msgid "2"
-msgstr ""
+msgstr "2"
 
 msgid "3"
-msgstr ""
+msgstr "3"
 
 msgid "Distribution of Book Values"
-msgstr ""
+msgstr "Distribución de los Valores Contables"
 
 msgid "Mean ± St.dev"
-msgstr ""
+msgstr "Media ± Desv.típ"
 
 msgid ""
 "<b>Figure %1$i.</b> The distribution of book values in the population. The "
@@ -1111,7 +1123,7 @@ msgid ""
 msgstr ""
 
 msgid "<u>Audit Risk Model</u>"
-msgstr ""
+msgstr "<u>Modelo de Riesgo de Auditoría</u>"
 
 msgid ""
 "Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x "
