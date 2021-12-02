@@ -1,5 +1,6 @@
 <img src="inst/icons/readmeBackground.png" width="100%" />
 
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.02733/status.svg)](https://doi.org/10.21105/joss.02733)
 [![R_build_status](https://github.com/jasp-stats/jaspAudit/workflows/unit-tests/badge.svg)](https://github.com/jasp-stats/jaspAudit/actions)
 [![jfa](https://img.shields.io/cran/v/jfa?color=yellow&label=jfa&logo=r)](https://cran.r-project.org/package=jfa)
 [![digitTests](https://img.shields.io/cran/v/digitTests?color=yellow&label=digitTests&logo=r)](https://cran.r-project.org/package=digitTests)
@@ -16,7 +17,7 @@ JASP for Audit (the Audit module) is an add-on module for JASP that facilitates 
 
 ## Manual
 
-For an introduction to the Audit module, please [download](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf) the manual or view it [online](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf).
+For an introduction to the Audit module, please [download](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf) the manual or view it [online](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf). See this [link](https://doi.org/10.21105/joss.02733) for the paper about the Audit module.
 
 ## Structure
 
