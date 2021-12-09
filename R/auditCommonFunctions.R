@@ -2791,10 +2791,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
     ar <- 1 - options[["conf_level"]]
     dr <- .jfaAuditRiskModelCalculation(options)
     if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
-      table$addColumnInfo(name = "lb", title = gettext("Lower"), type = "number", overtitle = gettextf("%1$s%% Confidence interval", round((1 - dr) * 100, 2)))
-      table$addColumnInfo(name = "ub", title = gettext("Upper"), type = "number", overtitle = gettextf("%1$s%% Confidence interval", round((1 - dr) * 100, 2)))
+      table$addColumnInfo(name = "lb", title = gettext("Lower"), type = if (options[["display"]] == "percent") "string" else "number", overtitle = gettextf("%1$s%% Confidence interval", round((1 - dr) * 100, 2)))
+      table$addColumnInfo(name = "ub", title = gettext("Upper"), type = if (options[["display"]] == "percent") "string" else "number", overtitle = gettextf("%1$s%% Confidence interval", round((1 - dr) * 100, 2)))
     } else {
-      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round((1 - dr) * 100, 2)), type = "number")
+      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round((1 - dr) * 100, 2)), type = if (options[["display"]] == "percent") "string" else "number")
     }
   } else {
     if (options[["area"]] == "area_bound") {
