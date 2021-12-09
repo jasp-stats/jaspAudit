@@ -1545,20 +1545,21 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "by",
     "display"
   ))
+  columnType <- if (options[["display"]] == "percent") "string" else "number"
 
   # Add columns to table layout
   if (options[["materiality_test"]]) {
-    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = if (options[["display"]] == "percent") "string" else "number")
+    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType)
   }
   if (options[["min_precision_test"]]) {
-    table$addColumnInfo(name = "precision", title = gettext("Min. precision"), type = if (options[["display"]] == "percent") "string" else "number")
+    table$addColumnInfo(name = "precision", title = gettext("Min. precision"), type = columnType)
   }
   if (options[["materiality_test"]] && options[["prior_method"]] == "arm") {
-    table$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = if (options[["display"]] == "percent") "string" else "number")
-    table$addColumnInfo(name = "cr", title = gettext("Control risk"), type = if (options[["display"]] == "percent") "string" else "number")
-    table$addColumnInfo(name = "dr", title = gettext("Detection risk"), type = if (options[["display"]] == "percent") "string" else "number")
+    table$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = columnType)
+    table$addColumnInfo(name = "cr", title = gettext("Control risk"), type = columnType)
+    table$addColumnInfo(name = "dr", title = gettext("Detection risk"), type = columnType)
   } else {
-    table$addColumnInfo(name = "ar", title = gettext("Audit risk"), type = if (options[["display"]] == "percent") "string" else "number")
+    table$addColumnInfo(name = "ar", title = gettext("Audit risk"), type = columnType)
   }
 
   table$addColumnInfo(name = "x", title = gettext("Tolerable errors"), type = if (options[["expected_type"]] == "expected_all") "string" else "number")
@@ -2112,7 +2113,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       colnames(export)[length(colnames(export))] <- decodeColNames(options[["rank"]])
     }
     if (length(unlist(options[["variables"]])) >= 1 && unlist(options[["variables"]]) != "") {
-      export <- cbind(export, parentState[[unlist(options[["variables"]])]])
+      export <- cbind(export, sample[[unlist(options[["variables"]])]])
       colnames(export)[(length(colnames(export)) - length(unlist(options[["variables"]]))):length(colnames(export))] <- decodeColNames(unlist(options[["variables"]]))
     }
     export <- cbind(export, rep(NA, nrow(export)))
@@ -2213,7 +2214,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   message <- switch(options[["sampling_method"]],
-    "interval" = gettextf("Unit %1$s is selected from each of the intervals of size %2$s.", if (!is.null(prevState[["start"]])) prevState[["start"]] else options[["start"]], round(parentState[["interval"]], 2)),
+    "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else options[["start"]]),
     "cell" = gettextf("The sample is drawn with seed %1$s and intervals of size %2$s.", options[["seed_cell"]], round(parentState[["interval"]], 2)),
     "random" = gettextf("The sample is drawn with seed %1$s.", options[["seed_random"]])
   )
@@ -2776,38 +2777,39 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "values.audit", "ir", "irCustom", "cr", "crCustom"
   ))
 
+  columnType <- if (options[["display"]] == "percent") "string" else "number"
   if (options[["materiality_test"]]) {
-    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = if (options[["display"]] == "percent") "string" else "number")
+    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType)
   }
   if (options[["min_precision_test"]]) {
-    table$addColumnInfo(name = "min_precision", title = gettext("Min. precision"), type = if (options[["display"]] == "percent") "string" else "number")
+    table$addColumnInfo(name = "min_precision", title = gettext("Min. precision"), type = columnType)
   }
   table$addColumnInfo(name = "n", title = gettext("Sample size"), type = "integer")
   table$addColumnInfo(name = "x", title = gettext("Errors"), type = "integer")
-  table$addColumnInfo(name = "t", title = gettext("Taint"), type = if (options[["display"]] == "percent") "string" else "number")
-  table$addColumnInfo(name = "mle", title = gettext("Most likely error"), type = if (options[["display"]] == "percent") "string" else "number")
+  table$addColumnInfo(name = "t", title = gettext("Taint"), type = columnType)
+  table$addColumnInfo(name = "mle", title = gettext("Most likely error"), type = columnType)
 
   if (!options[["bayesian"]]) {
     ar <- 1 - options[["conf_level"]]
     dr <- .jfaAuditRiskModelCalculation(options)
     if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
-      table$addColumnInfo(name = "lb", title = gettext("Lower"), type = "number", overtitle = gettextf("%1$s%% Confidence interval", round((1 - dr) * 100, 2)))
-      table$addColumnInfo(name = "ub", title = gettext("Upper"), type = "number", overtitle = gettextf("%1$s%% Confidence interval", round((1 - dr) * 100, 2)))
+      table$addColumnInfo(name = "lb", title = gettext("Lower"), type = columnType, overtitle = gettextf("%1$s%% Confidence interval", round((1 - dr) * 100, 2)))
+      table$addColumnInfo(name = "ub", title = gettext("Upper"), type = columnType, overtitle = gettextf("%1$s%% Confidence interval", round((1 - dr) * 100, 2)))
     } else {
-      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round((1 - dr) * 100, 2)), type = "number")
+      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round((1 - dr) * 100, 2)), type = columnType)
     }
   } else {
     if (options[["area"]] == "area_bound") {
       title <- gettextf("%1$s%% Upper bound", round(options[["conf_level"]] * 100, 2))
-      table$addColumnInfo(name = "ub", title = title, type = if (options[["display"]] == "percent") "string" else "number")
+      table$addColumnInfo(name = "ub", title = title, type = columnType)
     } else if (options[["area"]] == "area_interval") {
       title <- gettextf("%1$s%% Credible interval", round(options[["conf_level"]] * 100, 2))
-      table$addColumnInfo(name = "lb", title = gettext("Lower"), type = if (options[["display"]] == "percent") "string" else "number", overtitle = title)
-      table$addColumnInfo(name = "ub", title = gettext("Upper"), type = if (options[["display"]] == "percent") "string" else "number", overtitle = title)
+      table$addColumnInfo(name = "lb", title = gettext("Lower"), type = columnType, overtitle = title)
+      table$addColumnInfo(name = "ub", title = gettext("Upper"), type = columnType, overtitle = title)
     }
   }
 
-  table$addColumnInfo(name = "precision", title = gettext("Precision"), type = if (options[["display"]] == "percent") "string" else "number")
+  table$addColumnInfo(name = "precision", title = gettext("Precision"), type = columnType)
   if (!options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
     table$addColumnInfo(name = "p", title = "p", type = "pvalue")
   }
@@ -3298,9 +3300,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table <- createJaspTable(title)
   table$position <- positionInContainer
   table$dependOn(options = c("tableCorrections", "display"))
+  columnType <- if (options[["display"]] == "percent") "string" else "number"
 
-  table$addColumnInfo(name = "name", title = "", type = if (options[["display"]] == "percent") "string" else "number")
-  table$addColumnInfo(name = "correction", title = gettext("Correction"), type = if (options[["display"]] == "percent") "string" else "number")
+  table$addColumnInfo(name = "name", title = "", type = columnType)
+  table$addColumnInfo(name = "correction", title = gettext("Correction"), type = columnType)
 
   message <- if (!options[["materiality_test"]] && options[["min_precision_test"]]) " minus the minimum precision" else ""
   table$addFootnote(gettextf("The correction to achieve no misstatements is the upper bound%1$s.", message))
