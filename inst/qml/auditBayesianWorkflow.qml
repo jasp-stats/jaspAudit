@@ -728,41 +728,57 @@ Form
 			}
 		}
 
-		RadioButtonGroup
+		Group
 		{
-			id: 									units
-			title:									qsTr("Sampling Units")
-			name: 									"units"
-			columns:								2
-			enabled:								!pasteVariables.checked
+			rowSpacing: 							15 * preferencesModel.uiScale
 
-			RadioButton
+			IntegerField
 			{
-				id: 								rows_sampling
-				text: 								qsTr("Items")
-				name: 								"items"
-				checked: 							true
-				enabled:							!separate.checked
+				id: 								seed
+				text: 								qsTr("Seed")
+				name: 								"seed"
+				defaultValue: 						1
+				min: 								1
+				max: 								99999
+				enabled:							(randomize.checked | method.value != "interval") & !separate.checked
 			}
 
-			HelpButton
+			RadioButtonGroup
 			{
-				toolTip: 							qsTr("Click to learn more about record sampling.")
-				helpPage:							"Audit/recordSampling"
-			}
+				id: 								units
+				title:								qsTr("Sampling Units")
+				name: 								"units"
+				columns:							2
+				enabled:							!pasteVariables.checked
 
-			RadioButton
-			{
-				id: 								values_sampling
-				text: 								qsTr("Monetary units")
-				name: 								"values"
-				enabled: 							values.count > 0
-			}
+				RadioButton
+				{
+					id: 							rows_sampling
+					text: 							qsTr("Items")
+					name: 							"items"
+					checked: 						true
+					enabled:						!separate.checked
+				}
 
-			HelpButton
-			{
-				helpPage:							"Audit/monetaryUnitSampling"
-				toolTip: 							qsTr("Click to learn more about monetary unit sampling.")
+				HelpButton
+				{
+					toolTip: 						qsTr("Click to learn more about record sampling.")
+					helpPage:						"Audit/recordSampling"
+				}
+
+				RadioButton
+				{
+					id: 							values_sampling
+					text: 							qsTr("Monetary units")
+					name: 							"values"
+					enabled: 						values.count > 0
+				}
+
+				HelpButton
+				{
+					helpPage:						"Audit/monetaryUnitSampling"
+					toolTip: 						qsTr("Click to learn more about monetary unit sampling.")
+				}
 			}
 		}
 
@@ -831,17 +847,6 @@ Form
 							text: 					qsTr("Cell sampling")
 							name: 					"cell"
 							enabled:				!separate.checked
-
-							IntegerField
-							{
-								id: 				seed_cell
-								text: 				qsTr("Seed")
-								name: 				"seed_cell"
-								defaultValue: 		1
-								min: 				1
-								max: 				99999
-								visible:			cell.checked
-							}
 						}
 
 						HelpButton
@@ -859,17 +864,6 @@ Form
 							text: 					qsTr("Random sampling")
 							name: 					"random"
 							enabled:				!separate.checked
-
-							IntegerField
-							{
-								id: 				seed_random
-								text: 				qsTr("Seed")
-								name: 				"seed_random"
-								defaultValue: 		1
-								min: 				1
-								max: 				99999
-								visible:			random.checked
-							}
 						}
 
 						HelpButton
@@ -883,6 +877,7 @@ Form
 
 			CheckBox
 			{
+				id:									randomize
 				name:								"randomize"
 				text:								qsTr("Randomize items")
 				enabled:							!pasteVariables.checked && !separate.checked && rank.count == 0
@@ -906,8 +901,8 @@ Form
 			Button
 			{
 				enabled:							((materiality_rel.checked ?
-														  materiality_rel_val.value != "0" && id.count > 0 :
-														  materiality_abs_val.value 		!= "0" && id.count > 0 && values.count > 0) |
+														materiality_rel_val.value != "0" && id.count > 0 :
+														materiality_abs_val.value != "0" && id.count > 0 && values.count > 0) |
 													 (min_precision_test.checked && min_precision_rel_val.value != "0" && id.count > 0))
 				anchors.right:						toExecution.left
 				anchors.rightMargin:				jaspTheme.generalAnchorMargin

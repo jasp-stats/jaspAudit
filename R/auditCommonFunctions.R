@@ -694,7 +694,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     container$position <- position
     container$dependOn(options = c(
       "id", "values", "variables", "rank", "sampling_method", "units",
-      "start", "seed_random", "seed_cell", "n", "randomize", "file"
+      "start", "seed", "n", "randomize", "file"
     ))
 
     jaspResults[["selectionContainer"]] <- container
@@ -710,7 +710,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       container$dependOn(
         optionsFromObject = prevContainer,
         options = c(
-          "samplingChecked", "units", "sampling_method", "seed_random", "seed_cell",
+          "samplingChecked", "units", "sampling_method", "seed",
           "start", "variables", "rank", "separateMisstatement", "randomize"
         )
       )
@@ -2093,7 +2093,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     jaspResults[["name_indicator"]] <- createJaspColumn(columnName = options[["name_indicator"]])
     jaspResults[["name_indicator"]]$dependOn(options = c(
       "id", "values", "variables", "rank", "sampling_method", "units",
-      "start", "seed_random", "seed_cell", "n", "export_sample", "name_indicator"
+      "start", "seed", "n", "export_sample", "name_indicator"
     ))
     jaspResults[["name_indicator"]]$setOrdinal(indicator)
   }
@@ -2167,12 +2167,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   start <- if (!is.null(prevState[["start"]])) prevState[["start"]] else options[["start"]]
-  if (options[["sampling_method"]] != "interval") {
-    set.seed(switch(options[["sampling_method"]],
-      "random" = options[["seed_random"]],
-      "cell" = options[["seed_cell"]],
-      "interval" = options[["start"]]
-    ))
+  if (options[["sampling_method"]] != "interval" || options[["randomize"]]) {
+    set.seed(options[["seed"]])
   }
 
   jfaresult <- jfa::selection(
@@ -2215,8 +2211,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   message <- switch(options[["sampling_method"]],
     "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else options[["start"]]),
-    "cell" = gettextf("The sample is drawn with seed %1$s and intervals of size %2$s.", options[["seed_cell"]], round(parentState[["interval"]], 2)),
-    "random" = gettextf("The sample is drawn with seed %1$s.", options[["seed_random"]])
+    "cell" = gettextf("The sample is drawn with seed %1$s and intervals of size %2$s.", options[["seed"]], round(parentState[["interval"]], 2)),
+    "random" = gettextf("The sample is drawn with seed %1$s.", options[["seed"]])
   )
   table$addFootnote(message)
   if (!options[["workflow"]] && options[["file"]] != "" && !options[["export_sample"]]) {

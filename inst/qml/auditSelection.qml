@@ -84,14 +84,27 @@ Form
 		}
 	}
 
-	IntegerField
+	Group
 	{
-		id:										nobs
-		text: 									qsTr("Sample size")
-		name: 									"n"
-		defaultValue: 							0
-		min: 									0
-		fieldWidth: 							60 * preferencesModel.uiScale
+		IntegerField
+		{
+			id:									nobs
+			text: 								qsTr("Sample size")
+			name: 								"n"
+			defaultValue: 						0
+			min: 								0
+		}
+
+		IntegerField
+		{
+			id: 								seed
+			text: 								qsTr("Seed")
+			name: 								"seed"
+			defaultValue: 						1
+			min: 								1
+			max: 								99999
+			enabled:							randomize.checked | method.value != "interval"
+		}
 	}
 
 	Group
@@ -212,17 +225,6 @@ Form
 						id: 					cell
 						text: 					qsTr("Cell sampling")
 						name: 					"cell"
-
-						IntegerField
-						{
-							id: 				seed_cell
-							text: 				qsTr("Seed")
-							name: 				"seed_cell"
-							defaultValue: 		1
-							min: 				1
-							max: 				99999
-							visible:			cell.checked
-						}
 					}
 
 					HelpButton
@@ -239,17 +241,6 @@ Form
 						id: 					random
 						text: 					qsTr("Random sampling")
 						name: 					"random"
-
-						IntegerField
-						{
-							id: 				seed_random
-							text: 				qsTr("Seed")
-							name: 				"seed_random"
-							defaultValue: 		1
-							min: 				1
-							max: 				99999
-							visible:			random.checked
-						}
 					}
 
 					HelpButton
@@ -263,6 +254,7 @@ Form
 
 		CheckBox
 		{
+			id:									randomize
 			name:								"randomize"
 			text:								qsTr("Randomize items")
 			enabled:							rank.count == 0
