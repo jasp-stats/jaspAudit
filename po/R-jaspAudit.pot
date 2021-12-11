@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.1\n"
-"POT-Creation-Date: 2021-12-04 03:29\n"
+"POT-Creation-Date: 2021-12-11 03:29\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -727,7 +727,7 @@ msgstr ""
 msgid "%% of population size"
 msgstr ""
 
-msgid "Unit %1$s is selected from each of the intervals of size %2$s."
+msgid "From each of the intervals of size %1$s, unit %2$s is selected."
 msgstr ""
 
 msgid "The sample is drawn with seed %1$s and intervals of size %2$s."
