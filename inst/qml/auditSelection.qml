@@ -103,7 +103,7 @@ Form
 			defaultValue: 						1
 			min: 								1
 			max: 								99999
-			enabled:							randomize.checked | method.value != "interval"
+			enabled:							randomize.checked || method.value != "interval"
 		}
 	}
 

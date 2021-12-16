@@ -740,7 +740,7 @@ Form
 				defaultValue: 						1
 				min: 								1
 				max: 								99999
-				enabled:							(randomize.checked | method.value != "interval") & !separate.checked
+				enabled:							(randomize.checked || method.value != "interval") & !separate.checked
 			}
 
 			RadioButtonGroup
