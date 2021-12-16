@@ -677,7 +677,7 @@ Form
 				text: 								qsTr("<b>To Selection</b>")
 				enabled: 							!samplingChecked.checked && ((materiality_rel.checked ?
 																					  materiality_rel_val.value > 0 && id.count > 0 :
-																					  materiality_abs_val.value > 0 && id.count > 0 && values.count > 0) |
+																					  materiality_abs_val.value > 0 && id.count > 0 && values.count > 0) ||
 																				 (min_precision_test.checked && min_precision_rel_val.value > 0 && id.count > 0))
 				onClicked:							samplingChecked.checked	= true
 			}
@@ -902,7 +902,7 @@ Form
 			{
 				enabled:							((materiality_rel.checked ?
 														materiality_rel_val.value != "0" && id.count > 0 :
-														materiality_abs_val.value != "0" && id.count > 0 && values.count > 0) |
+														materiality_abs_val.value != "0" && id.count > 0 && values.count > 0) ||
 													 (min_precision_test.checked && min_precision_rel_val.value != "0" && id.count > 0))
 				anchors.right:						toExecution.left
 				anchors.rightMargin:				jaspTheme.generalAnchorMargin
