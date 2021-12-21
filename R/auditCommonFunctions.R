@@ -515,14 +515,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
     out <- list()
 
     if (!is.null(id)) {
-      dataset <- .readDataSetToEnd(columns.as.factor = id, exclude.na.listwise = id)
+      dataset <- .readDataSetToEnd(columns = id, exclude.na.listwise = id)
       dataset[[id]] <- as.character(dataset[[id]])
 
       out[["N.items"]] <- nrow(dataset)
       out[["N.items.unique"]] <- length(unique(dataset[[id]]))
 
       if (!is.null(values)) {
-        dataset <- .readDataSetToEnd(columns.as.numeric = values, columns.as.factor = id, exclude.na.listwise = c(values, id))
+        dataset <- .readDataSetToEnd(columns.as.numeric = values, columns = id, exclude.na.listwise = c(values, id))
         dataset[[id]] <- as.character(dataset[[id]])
 
         data_values <- dataset[[values]]
@@ -570,7 +570,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   if (!is.null(variables)) {
-    dataset <- .readDataSetToEnd(columns.as.factor = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
+    dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
     dataset[[id]] <- as.character(dataset[[id]])
     if (stage == "evaluation" && !is.null(times) && !is.null(id) && !is.null(values.audit)) { # Apply sample filter only when required variables are given
       dataset <- subset(dataset, dataset[[times]] > 0)
