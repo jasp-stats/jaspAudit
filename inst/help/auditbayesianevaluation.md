@@ -85,7 +85,7 @@ The expected errors are the tolerable errors that can be found in the sample whi
 #### Format Tables
 - Numbers: Display table output as numbers.
 - Percentages: Display table output as percentages.
-- Extrapolated amounts: Display table output as monetary values.
+- Monetary values: Display table output as monetary values.
 
 #### Assume Homogeneous Taints
 Clicking this box will allow you to separate the known and the unknown misstatement in the population to be more efficient. Note that this requires the assumption that the taints in the sample are representative of the taints in the unseen part of the population.

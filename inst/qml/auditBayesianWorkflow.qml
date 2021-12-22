@@ -606,7 +606,7 @@ Form
 
 				RadioButton
 				{
-					text: 							qsTr("Extrapolated amounts")
+					text: 							qsTr("Monetary values")
 					name: 							"amount"
 					enabled:						values.count > 0
 				}

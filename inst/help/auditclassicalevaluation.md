@@ -93,7 +93,7 @@ You can manually adjust the value of IR and CR by selecting the Custom option un
 #### Format Tables
 - Numbers: Display table output as numbers.
 - Percentages: Display table output as percentages.
-- Extrapolated amounts: Display table output as monetary values.
+- Monetary values: Display table output as monetary values.
 
 ### Output
 ---
