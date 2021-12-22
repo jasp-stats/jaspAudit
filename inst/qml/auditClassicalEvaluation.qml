@@ -404,22 +404,22 @@ Form
 
 		RadioButton
 		{
-			name: 							"poisson"
-			text: 							qsTr("Poisson")
-			checked:						true
+			name: 							"hypergeometric"
+			text: 							qsTr("Hypergeometric")
+			enabled:						n_units.value > 0
 		}
 
 		RadioButton
 		{
 			name: 							"binomial"
 			text: 							qsTr("Binomial")
+			checked:						true
 		}
 
 		RadioButton
 		{
-			name: 							"hypergeometric"
-			text: 							qsTr("Hypergeometric")
-			enabled:						n_units.value > 0
+			name: 							"poisson"
+			text: 							qsTr("Poisson")
 		}
 
 		RadioButton

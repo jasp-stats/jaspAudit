@@ -1466,10 +1466,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
 
     if (!options[["bayesian"]]) {
-      expected <- if (options[["ir"]] != "high" || options[["cr"]] != "high") 0 else parentOptions[["expected_val"]]
       result <- try({
         jfa::planning(
-          materiality = materiality, min.precision = min_precision, expected = expected,
+          materiality = materiality, min.precision = min_precision, expected = parentOptions[["expected_val"]],
           likelihood = options[["likelihood"]], N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N.units) else N.units, conf.level = confidence,
           by = options[["by"]], max = 10000
         )

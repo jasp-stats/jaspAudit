@@ -316,10 +316,10 @@ Form
 
 		RadioButton
 		{
-			id:									poisson
-			name: 								"poisson"
-			text: 								qsTr("Gamma")
-			checked: 							true
+			id:									hypergeometric
+			name: 								"hypergeometric"
+			text: 								qsTr("Beta-binomial")
+			enabled: 							n_units.value > 0
 		}
 
 		RadioButton
@@ -327,14 +327,14 @@ Form
 			id:									binomial
 			name: 								"binomial"
 			text: 								qsTr("Beta")
+			checked: 							true
 		}
 
 		RadioButton
 		{
-			id:									hypergeometric
-			name: 								"hypergeometric"
-			text: 								qsTr("Beta-binomial")
-			enabled: 							n_units.value > 0
+			id:									poisson
+			name: 								"poisson"
+			text: 								qsTr("Gamma")
 		}
 	}
 

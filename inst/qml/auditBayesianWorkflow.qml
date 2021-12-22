@@ -302,10 +302,10 @@ Form
 
 			RadioButton
 			{
-				id: 								lik_poisson
-				text: 								qsTr("Gamma")
-				name: 								"poisson"
-				checked:							true
+				id: 								lik_hypergeometric
+				text: 								qsTr("Beta-binomial")
+				name: 								"hypergeometric"
+				enabled:							id.count > 0
 			}
 
 			RadioButton
@@ -313,14 +313,14 @@ Form
 				id: 								lik_binomial
 				text: 								qsTr("Beta")
 				name: 								"binomial"
+				checked:							true
 			}
 
 			RadioButton
 			{
-				id: 								lik_hypergeometric
-				text: 								qsTr("Beta-binomial")
-				name: 								"hypergeometric"
-				enabled:							id.count > 0
+				id: 								lik_poisson
+				text: 								qsTr("Gamma")
+				name: 								"poisson"
 			}
 		}
 
@@ -1149,10 +1149,10 @@ Form
 
 			RadioButton
 			{
-				id: 								poisson
-				name: 								"poisson"
-				text: 								qsTr("Gamma")
-				enabled: 							lik_poisson.checked
+				id: 								hypergeometric
+				name: 								"hypergeometric"
+				text: 								qsTr("Beta-binomial")
+				enabled: 							lik_hypergeometric.checked
 			}
 
 			RadioButton
@@ -1165,10 +1165,10 @@ Form
 
 			RadioButton
 			{
-				id: 								hypergeometric
-				name: 								"hypergeometric"
-				text: 								qsTr("Beta-binomial")
-				enabled: 							lik_hypergeometric.checked
+				id: 								poisson
+				name: 								"poisson"
+				text: 								qsTr("Gamma")
+				enabled: 							lik_poisson.checked
 			}
 		}
 

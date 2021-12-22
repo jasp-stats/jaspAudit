@@ -324,7 +324,7 @@ Form
 			id: 									expected
 			name: 									"expected_type"
 			title: 									qsTr("Expected Errors in Sample")
-			enabled:								ir.value == 'high' && cr.value == 'high' && !pasteVariables.checked
+			enabled:								!pasteVariables.checked
 
 			RadioButton
 			{
@@ -385,10 +385,10 @@ Form
 
 			RadioButton
 			{
-				id: 								lik_poisson
-				text: 								qsTr("Poisson")
-				name: 								"poisson"
-				checked: 							true
+				id: 								lik_hypergeometric
+				text: 								qsTr("Hypergeometric")
+				name: 								"hypergeometric"
+				enabled:							id.count > 0
 			}
 
 			RadioButton
@@ -396,14 +396,14 @@ Form
 				id: 								lik_binomial
 				text: 								qsTr("Binomial")
 				name: 								"binomial"
+				checked: 							true
 			}
 
 			RadioButton
 			{
-				id: 								lik_hypergeometric
-				text: 								qsTr("Hypergeometric")
-				name: 								"hypergeometric"
-				enabled:							id.count > 0
+				id: 								lik_poisson
+				text: 								qsTr("Poisson")
+				name: 								"poisson"
 			}
 		}
 
@@ -1025,10 +1025,10 @@ Form
 
 			RadioButton
 			{
-				id:									poisson
-				name: 								"poisson"
-				text: 								qsTr("Poisson")
-				checked:							true
+				id:									hypergeometric
+				name: 								"hypergeometric"
+				text: 								qsTr("Hypergeometric")
+				enabled:							id.count > 0
 			}
 
 			RadioButton
@@ -1036,14 +1036,14 @@ Form
 				id:									binomial
 				name: 								"binomial"
 				text: 								qsTr("Binomial")
+				checked:							true
 			}
 
 			RadioButton
 			{
-				id:									hypergeometric
-				name: 								"hypergeometric"
-				text: 								qsTr("Hypergeometric")
-				enabled:							id.count > 0
+				id:									poisson
+				name: 								"poisson"
+				text: 								qsTr("Poisson")
 			}
 
 			RadioButton
