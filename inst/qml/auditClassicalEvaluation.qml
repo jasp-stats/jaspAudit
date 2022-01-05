@@ -270,7 +270,7 @@ Form
 		{
 			id: 								data
 			name: 								"data"
-			label:								qsTr("Raw")
+			label:								qsTr("Columns")
 			checked: 							mainWindow.dataAvailable
 			enabled:							mainWindow.dataAvailable
 		}

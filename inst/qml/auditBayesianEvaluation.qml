@@ -251,7 +251,7 @@ Form
 		{
 			id: 								data
 			name: 								"data"
-			label:								qsTr("Raw")
+			label:								qsTr("Columns")
 			checked: 							mainWindow.dataAvailable
 			enabled:							mainWindow.dataAvailable
 		}
@@ -613,28 +613,9 @@ Form
 
 			RadioButton
 			{
-				id: 							expected_abs
-				name: 							"expected_abs"
-				text: 							qsTr("Absolute")
-				childrenOnSameRow: 				true
-
-				DoubleField
-				{
-					id:							expected_abs_val
-					name: 						"expected_abs_val"
-					enabled: 					expected_abs.checked
-					defaultValue: 				0
-					min: 						0
-					decimals: 					2
-					visible: 					expected_abs.checked
-				}
-			}
-
-			RadioButton
-			{
 				name:							"expected_all"
 				text:							qsTr("All possible")
-				visible:						separate.checked
+				enabled:						separate.checked
 			}
 		}
 	}

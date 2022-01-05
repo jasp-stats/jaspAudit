@@ -269,7 +269,7 @@ Form
 			{
 				name:								"expected_all"
 				text:								qsTr("All possible")
-				visible:							separate.checked
+				enabled:							separate.checked
 			}
 		}
 
