@@ -108,7 +108,6 @@ Form
 							name: 				"materiality_abs"
 							text: 				qsTr("Absolute")
 							childrenOnSameRow: 	true
-							onCheckedChanged:	if (checked) poisson.click()
 
 							DoubleField
 							{
@@ -589,7 +588,7 @@ Form
 		{
 			id: 								expected
 			name: 								"expected_type"
-			title: 								qsTr("Expected Errors in Sample")
+			title: 								qsTr("Prior Expected Error Rate")
 			enabled:							arm.checked || impartial.checked
 
 			RadioButton

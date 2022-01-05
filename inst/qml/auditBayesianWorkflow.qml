@@ -198,7 +198,7 @@ Form
 				singleVariable:						true
 				allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
 				allowAnalysisOwnComputedColumns: 	false
-				onCountChanged:						if(lik_hypergeometric.checked && id.count == 0) lik_poisson.click()
+				onCountChanged:						if(lik_hypergeometric.checked && id.count == 0) lik_binomial.click()
 			}
 
 			AssignedVariablesList

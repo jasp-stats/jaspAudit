@@ -116,7 +116,6 @@ Form
 							name: 				"materiality_abs"
 							text: 				qsTr("Absolute")
 							childrenOnSameRow: 	true
-							onCheckedChanged:	if (checked) poisson.click()
 
 							DoubleField
 							{

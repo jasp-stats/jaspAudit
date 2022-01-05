@@ -1161,7 +1161,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
       if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
         message <- gettextf(
-          "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound on the misstatement is %3$s the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %4$s than the performance materiality. %5$s",
+          "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound for the misstatement is %3$s the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %4$s than the performance materiality. %5$s",
           planningOptions[["conf_level_label"]],
           planningOptions[["materiality_label"]],
           aboveBelowMateriality,
@@ -1179,7 +1179,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         )
       } else if (options[["materiality_test"]] && options[["min_precision_test"]]) {
         message <- gettextf(
-          "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound on the misstatement is %4$s the performance materiality and the obtained precision is %5$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is %7$s than the performance materiality. %8$s",
+          "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound for the misstatement is %4$s the performance materiality and the obtained precision is %5$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is %7$s than the performance materiality. %8$s",
           planningOptions[["conf_level_label"]],
           paste0(options[["min_precision_rel_val"]] * 100, "%"),
           planningOptions[["materiality_label"]],
@@ -2578,7 +2578,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     if (!options[["bayesian"]]) {
       additionalMessage <- gettextf(
-        "\n\nThese results imply that there is a %1$s probability that, when one would repeatedly sample from this population, the upper bound on \u03B8 is below %2$s with a precision of %3$s.",
+        "\n\nThese results imply that there is a %1$s probability that, when one would repeatedly sample from this population, the upper bound for \u03B8 is below %2$s with a precision of %3$s.",
         planningOptions[["conf_level_label"]],
         boundLabel,
         precisionLabel
@@ -2593,7 +2593,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
 
     message <- gettextf(
-      "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe sample consisted of %1$s sampling units, of which a total of %2$s were misstated. The information from this sample %3$s results in a most likely error in the population of %4$s and an %5$s upper bound of %6$s. %7$s",
+      "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely error in the population of %6$s and an %7$s upper bound of %8$s. %9$s",
+      if (planningOptions[["N.items"]] == 0) "..." else format(planningOptions[["N.items"]], scientific = FALSE),
+      if (planningOptions[["N.units"]] == 0.01) "..." else format(planningOptions[["N.units"]], scientific = FALSE),
       sampleSizeMessage,
       errors,
       if (options[["bayesian"]]) "combined with the information in the prior distribution " else "",
