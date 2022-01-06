@@ -311,7 +311,7 @@
       "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays the predictions of the %2$s distribution for %4$s <i>n</i> = %5$s.",
       jaspResults[["figNumber"]]$object,
       if (stage == "planning") gettext("prior") else gettext("posterior"),
-      if (parentState[["posterior"]]$likelihood == "poisson") gettextf("negative binomial(r = %1$s, p = %2$s)", round(object[["predictive"]][["description"]]$r, 3), round(object[["predictive"]][["description"]]$p, 3)) else gettextf("beta-binomial(N = %1$s, \u03B1 = %2$s, \u03B2 = %3$s)", size, round(object[["predictive"]][["description"]]$alpha, 3), round(object[["predictive"]][["description"]]$beta, 3)),
+      if (parentState[["posterior"]]$likelihood == "poisson") gettext("negative binomial") else gettext("beta-binomial"),
       if (stage == "planning") gettext("the intended sample of") else gettext("the remaining population of"),
       size
     ), "p")
