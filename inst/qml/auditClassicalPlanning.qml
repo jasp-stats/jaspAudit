@@ -177,7 +177,6 @@ Form
 				fieldWidth: 					100 * preferencesModel.uiScale
 				min: 							0
 				decimals: 						2
-				onValueChanged:					if (n_units.value == 0) poisson.click()
 			}
 		}
 
