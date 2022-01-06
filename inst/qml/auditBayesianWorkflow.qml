@@ -628,14 +628,27 @@ Form
 				}
 			}
 
-			IntegerField
+			Group
 			{
-				name: 								"by"
-				text: 								qsTr("Increment")
-				min: 								1
-				max:								50
-				defaultValue: 						1
+				title:								qsTr("Iterations")
 				enabled:							!pasteVariables.checked
+
+				IntegerField
+				{
+					name: 							"by"
+					text: 							qsTr("Increment")
+					min: 							1
+					max:							50
+					defaultValue: 					1
+				}
+
+				IntegerField
+				{
+					name: 							"max"
+					text: 							qsTr("Maximum")
+					min: 							1
+					defaultValue: 					5000
+				}
 			}
 
 			Group

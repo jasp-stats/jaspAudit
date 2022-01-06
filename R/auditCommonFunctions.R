@@ -680,7 +680,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "ir", "irCustom", "cr", "crCustom", "conf_level", "n_units", "materiality_type",
       "materiality_rel_val", "materiality_abs_val", "expected_type", "expected_rel_val",
       "expected_abs_val", "likelihood", "id", "values", "separateMisstatement",
-      "min_precision_rel_val", "min_precision_test", "materiality_test", "by", "prior_method",
+      "min_precision_rel_val", "min_precision_test", "materiality_test", "by", "max", "prior_method",
       "n", "x", "alpha", "beta", "display"
     ))
 
@@ -1470,7 +1470,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         jfa::planning(
           materiality = materiality, min.precision = min_precision, expected = parentOptions[["expected_val"]],
           likelihood = options[["likelihood"]], N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N.units) else N.units, conf.level = confidence,
-          by = options[["by"]], max = 10000
+          by = options[["by"]], max = options[["max"]]
         )
       })
     } else {
@@ -1489,7 +1489,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           jfa::planning(
             materiality = materiality, min.precision = min_precision, expected = parentOptions[["expected_val"]],
             likelihood = options[["likelihood"]], N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N.units) else N.units, conf.level = options[["conf_level"]],
-            prior = prior, by = options[["by"]], max = 10000
+            prior = prior, by = options[["by"]], max = options[["max"]]
           )
         }
       })
@@ -1497,7 +1497,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     if (isTryError(result)) {
       if (jaspBase:::.extractErrorMessage(result) == "the sample size is lower than 'max'") {
-        parentContainer$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
+        parentContainer$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
         return()
       } else {
         parentContainer$setError(gettextf("An error occurred: %1$s", jaspBase:::.extractErrorMessage(result)))
@@ -1636,7 +1636,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     message <- switch(options[["likelihood"]],
       "poisson" = gettextf("The minimum sample size is based on the Poisson distribution (%1$s = %2$s).", "\u03BB", round(parentState[["materiality"]] * parentState[["n"]], 4)),
       "binomial" =  gettextf("The minimum sample size is based on the binomial distribution (p = %1$s)", round(parentState[["materiality"]], 2)),
-      "hypergeometric" = gettextf("The minimum sample size is based on the hypergeometric distribution (N = %1$s, K = %2$s).", parentState[["N.units"]], ceiling(parentState[["N.units"]] * parentState[["materiality"]]))
+      "hypergeometric" = gettextf("The minimum sample size is based on the hypergeometric distribution (N = %1$s, K = %2$s).", format(parentState[["N.units"]], scientific = FALSE), format(ceiling(parentState[["N.units"]] * parentState[["materiality"]]), scientific = FALSE))
     )
   } else {
     message <- switch(options[["likelihood"]],
@@ -1652,7 +1652,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       ),
       "hypergeometric" = gettextf(
         "The minimum sample size is based on the beta-binomial distribution (N = %1$s, %2$s = %3$s, %4$s = %5$s).",
-        parentState[["N.units"]],
+        format(parentState[["N.units"]], scientific = FALSE),
         "\u03B1", round(parentState[["prior"]][["description"]]$alpha, 3),
         "\u03B2", round(parentState[["prior"]][["description"]]$beta, 3)
       )
@@ -1843,7 +1843,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           result <- jfa::planning(
             conf.level = confidence, materiality = materiality, min.precision = min_precision,
             expected = if (!options[["bayesian"]] && options[["ir"]] != "high" || options[["cr"]] != "high") 0 else parentOptions[["expected_val"]],
-            likelihood = likelihoods[i], N.units = if (likelihoods[i] == "hypergeometric") ceiling(N) else N, by = options[["by"]], max = 10000, prior = prior
+            likelihood = likelihoods[i], N.units = if (likelihoods[i] == "hypergeometric") ceiling(N) else N, by = options[["by"]], max = options[["max"]], prior = prior
           )
           n[i] <- result[["n"]]
           k[i] <- result[["x"]]
@@ -1885,7 +1885,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         figure$plotObject <- plot
       } else {
         if (jaspBase:::.extractErrorMessage(leftPlotError) == "the sample size is lower than 'max'") {
-          figure$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
+          figure$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
         } else {
           figure$setError(gettextf("An error occurred in a call to the jfa package: %1$s", jaspBase:::.extractErrorMessage(leftPlotError)))
         }
@@ -1918,7 +1918,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           result <- jfa::planning(
             conf.level = confidence, materiality = materiality, min.precision = min_precision,
             likelihood = options[["likelihood"]], expected = i - 1,
-            N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N) else N, by = options[["by"]], max = 10000, prior = prior
+            N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N) else N, by = options[["by"]], max = options[["max"]], prior = prior
           )
           n[i] <- result[["n"]]
         }
@@ -1952,7 +1952,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         figure$plotObject <- plot
       } else {
         if (jaspBase:::.extractErrorMessage(rightPlotError) == "the sample size is lower than 'max'") {
-          figure$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
+          figure$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
         } else {
           figure$setError(gettextf("An error occurred in a call to the jfa package: %1$s", jaspBase:::.extractErrorMessage(rightPlotError)))
         }

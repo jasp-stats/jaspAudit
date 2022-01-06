@@ -77,8 +77,9 @@ The expected errors are the tolerable errors that can be found in the sample whi
 - Numbers: Display table output as numbers.
 - Percentages: Display table output as percentages.
 
-#### Increment
-The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+#### Iterations
+- Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+- Maximum: The maximum allows you to limit the sample size with a maximum.
 
 #### Assume Homogeneous Taints
 Clicking this box will allow you to separate the known and the unknown misstatement in the population to be more efficient. Note that this requires the assumption that the taints in the sample are representative of the taints in the unseen part of the population.
