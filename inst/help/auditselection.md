@@ -42,7 +42,7 @@ When a name is provided, adds the result from the selection analysis in a new co
 
 #### Tables
 - Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
-- Display sample: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
+- Selected items: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
 
 ### Output
 ---
@@ -71,7 +71,7 @@ When a name is provided, adds the result from the selection analysis in a new co
 - Minimum: Minimum of the data points.
 - Maximum: Maximum of the data points.
 
-#### Display Sample
+#### Selected Items
 - Row: The row number of the item.
 - Selected: The number of times (a unit in) the item is selected.
 

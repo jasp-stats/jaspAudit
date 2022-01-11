@@ -989,72 +989,78 @@ gettextf <- function(fmt, ..., domain = NULL) {
         }
 
         introMessage <- gettext("The purpose of the planning stage is to find a minimum sample size so that, given a certain number of expected misstatements, the sample provides sufficient information to achieve the specified sampling objectives.\n\n")
+        if (options[["separateMisstatement"]] && options[["expected_type"]] == "expected_all") {
+          mleMessage <- gettext("No assumptions are made about the most likely expected error in the sample.")
+        } else {
+          mleMessage <- gettextf("The most likely expected error in the sample is expected to be %1$s.", stageOptions[["expected_label"]])
+        }
+        finalx <- if (options[["separateMisstatement"]] && options[["expected_type"]] == "expected_all") stageState[["n"]] else stageState[["x"]]
         if (options[["prior_method"]] == "default" || options[["prior_method"]] == "strict") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
+            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
             introMessage,
-            stageOptions[["expected_label"]],
+            mleMessage,
             samplingObjectivesMessage,
-            stageState[["x"]],
+            finalx,
             stageState[["n"]],
             distribution,
-            stageState[["x"]],
+            finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
           ), "p")
         } else if (options[["prior_method"]] == "arm") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assessments of inherent risk (<i>%7$s</i>) and control risk (<i>%8$s</i>) from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s",
+            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assessments of inherent risk (<i>%7$s</i>) and control risk (<i>%8$s</i>) from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s",
             introMessage,
-            stageOptions[["expected_label"]],
+            mleMessage,
             samplingObjectivesMessage,
-            stageState[["x"]],
+            finalx,
             stageState[["n"]],
             distribution,
             options[["ir"]],
             options[["cr"]],
-            stageState[["x"]],
+            finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
           ), "p")
         } else if (options[["prior_method"]] == "impartial") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
+            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
             introMessage,
-            stageOptions[["expected_label"]],
+            mleMessage,
             samplingObjectivesMessage,
-            stageState[["x"]],
+            finalx,
             stageState[["n"]],
             distribution,
-            stageState[["x"]],
+            finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
           ), "p")
         } else if (options[["prior_method"]] == "sample") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that an earlier sample of %7$s transactions containing %8$s errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s",
+            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that an earlier sample of %7$s transactions containing %8$s errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s",
             introMessage,
-            stageOptions[["expected_label"]],
+            mleMessage,
             samplingObjectivesMessage,
-            stageState[["x"]],
+            finalx,
             stageState[["n"]],
             distribution,
             options[["n"]],
             options[["x"]],
-            stageState[["x"]],
+            finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
           ), "p")
         } else if (options[["prior_method"]] == "param") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the manually specified prior distribution, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
+            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the manually specified prior distribution, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
             introMessage,
-            stageOptions[["expected_label"]],
+            mleMessage,
             samplingObjectivesMessage,
-            stageState[["x"]],
+            finalx,
             stageState[["n"]],
             distribution,
-            stageState[["x"]],
+            finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
           ), "p")
@@ -2310,7 +2316,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   .jfaTableNumberUpdate(jaspResults)
 
   if (is.null(parentContainer[["tableSample"]])) {
-    title <- gettextf("<b>Table %1$i.</b> Raw Sample", jaspResults[["tabNumber"]]$object)
+    title <- gettextf("<b>Table %1$i.</b> Selected Items", jaspResults[["tabNumber"]]$object)
     table <- createJaspTable(title)
     table$position <- positionInContainer
     table$dependOn(options = c("tableBookDist", "tableDescriptives", "tableSample", "samplingChecked", "evaluationChecked"))
@@ -3353,7 +3359,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     # We choose a pseudo-random seed to get the impression of a random starting point
     # It is unlikely that two populations or users have the same seed
-    set.seed(-0.4083114 + options[["by"]] + parentOptions[["N.units"]])
+    set.seed(-0.4083114 + options[["by"]] + parentOptions[["N.units"]]) # -0.4083114 for backwards compatibility
 
     intervalStartingPoint <- sample(1:(interval - 1), size = 1)
     intervalSelection <- intervalStartingPoint + 0:(n - 1) * interval

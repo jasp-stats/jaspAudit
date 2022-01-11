@@ -150,7 +150,7 @@ Randomizes the items in the population before selection is performed.
 
 #### Tables
 - Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
-- Display sample: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
+- Selected items: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
 
 ### Output - Selection
 ---
@@ -179,7 +179,7 @@ Randomizes the items in the population before selection is performed.
 - Minimum: Minimum of the data points.
 - Maximum: Maximum of the data points.
 
-#### Display Sample
+#### Selected Items
 - Row: The row number of the item.
 - Selected: The number of times (a unit in) the item is selected.
 

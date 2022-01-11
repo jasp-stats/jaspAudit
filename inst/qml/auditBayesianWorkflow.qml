@@ -791,7 +791,7 @@ Form
 
 			CheckBox
 			{
-				text: 								qsTr("Display sample")
+				text: 								qsTr("Selected items")
 				name: 								"tableSample"
 			}
 		}
