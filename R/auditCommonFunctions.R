@@ -3353,7 +3353,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     # We choose a pseudo-random seed to get the impression of a random starting point
     # It is unlikely that two populations or users have the same seed
-    set.seed(rnorm(1) + options[["by"]] + parentOptions[["N.units"]])
+    set.seed(-0.4083114 + options[["by"]] + parentOptions[["N.units"]])
 
     intervalStartingPoint <- sample(1:(interval - 1), size = 1)
     intervalSelection <- intervalStartingPoint + 0:(n - 1) * interval
