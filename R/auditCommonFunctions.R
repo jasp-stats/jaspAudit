@@ -515,14 +515,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
     out <- list()
 
     if (!is.null(id)) {
-      dataset <- .readDataSetToEnd(columns.as.factor = id, exclude.na.listwise = id)
+      dataset <- .readDataSetToEnd(columns = id, exclude.na.listwise = id)
       dataset[[id]] <- as.character(dataset[[id]])
 
       out[["N.items"]] <- nrow(dataset)
       out[["N.items.unique"]] <- length(unique(dataset[[id]]))
 
       if (!is.null(values)) {
-        dataset <- .readDataSetToEnd(columns.as.numeric = values, columns.as.factor = id, exclude.na.listwise = c(values, id))
+        dataset <- .readDataSetToEnd(columns.as.numeric = values, columns = id, exclude.na.listwise = c(values, id))
         dataset[[id]] <- as.character(dataset[[id]])
 
         data_values <- dataset[[values]]
@@ -570,7 +570,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   if (!is.null(variables)) {
-    dataset <- .readDataSetToEnd(columns.as.factor = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
+    dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
     dataset[[id]] <- as.character(dataset[[id]])
     if (stage == "evaluation" && !is.null(times) && !is.null(id) && !is.null(values.audit)) { # Apply sample filter only when required variables are given
       dataset <- subset(dataset, dataset[[times]] > 0)
@@ -680,7 +680,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "ir", "irCustom", "cr", "crCustom", "conf_level", "n_units", "materiality_type",
       "materiality_rel_val", "materiality_abs_val", "expected_type", "expected_rel_val",
       "expected_abs_val", "likelihood", "id", "values", "separateMisstatement",
-      "min_precision_rel_val", "min_precision_test", "materiality_test", "by", "prior_method",
+      "min_precision_rel_val", "min_precision_test", "materiality_test", "by", "max", "prior_method",
       "n", "x", "alpha", "beta", "display"
     ))
 
@@ -989,72 +989,78 @@ gettextf <- function(fmt, ..., domain = NULL) {
         }
 
         introMessage <- gettext("The purpose of the planning stage is to find a minimum sample size so that, given a certain number of expected misstatements, the sample provides sufficient information to achieve the specified sampling objectives.\n\n")
+        if (options[["separateMisstatement"]] && options[["expected_type"]] == "expected_all") {
+          mleMessage <- gettext("No assumptions are made about the most likely expected error in the sample.")
+        } else {
+          mleMessage <- gettextf("The most likely expected error in the sample is expected to be %1$s.", stageOptions[["expected_label"]])
+        }
+        finalx <- if (options[["separateMisstatement"]] && options[["expected_type"]] == "expected_all") stageState[["n"]] else stageState[["x"]]
         if (options[["prior_method"]] == "default" || options[["prior_method"]] == "strict") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
+            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
             introMessage,
-            stageOptions[["expected_label"]],
+            mleMessage,
             samplingObjectivesMessage,
-            stageState[["x"]],
+            finalx,
             stageState[["n"]],
             distribution,
-            stageState[["x"]],
+            finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
           ), "p")
         } else if (options[["prior_method"]] == "arm") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assessments of inherent risk (<i>%7$s</i>) and control risk (<i>%8$s</i>) from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s",
+            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assessments of inherent risk (<i>%7$s</i>) and control risk (<i>%8$s</i>) from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s",
             introMessage,
-            stageOptions[["expected_label"]],
+            mleMessage,
             samplingObjectivesMessage,
-            stageState[["x"]],
+            finalx,
             stageState[["n"]],
             distribution,
             options[["ir"]],
             options[["cr"]],
-            stageState[["x"]],
+            finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
           ), "p")
         } else if (options[["prior_method"]] == "impartial") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
+            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
             introMessage,
-            stageOptions[["expected_label"]],
+            mleMessage,
             samplingObjectivesMessage,
-            stageState[["x"]],
+            finalx,
             stageState[["n"]],
             distribution,
-            stageState[["x"]],
+            finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
           ), "p")
         } else if (options[["prior_method"]] == "sample") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that an earlier sample of %7$s transactions containing %8$s errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s",
+            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that an earlier sample of %7$s transactions containing %8$s errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s",
             introMessage,
-            stageOptions[["expected_label"]],
+            mleMessage,
             samplingObjectivesMessage,
-            stageState[["x"]],
+            finalx,
             stageState[["n"]],
             distribution,
             options[["n"]],
             options[["x"]],
-            stageState[["x"]],
+            finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
           ), "p")
         } else if (options[["prior_method"]] == "param") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the manually specified prior distribution, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
+            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the manually specified prior distribution, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s",
             introMessage,
-            stageOptions[["expected_label"]],
+            mleMessage,
             samplingObjectivesMessage,
-            stageState[["x"]],
+            finalx,
             stageState[["n"]],
             distribution,
-            stageState[["x"]],
+            finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
           ), "p")
@@ -1161,7 +1167,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
       if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
         message <- gettextf(
-          "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound on the misstatement is %3$s the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %4$s than the performance materiality. %5$s",
+          "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound for the misstatement is %3$s the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %4$s than the performance materiality. %5$s",
           planningOptions[["conf_level_label"]],
           planningOptions[["materiality_label"]],
           aboveBelowMateriality,
@@ -1179,7 +1185,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         )
       } else if (options[["materiality_test"]] && options[["min_precision_test"]]) {
         message <- gettextf(
-          "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound on the misstatement is %4$s the performance materiality and the obtained precision is %5$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is %7$s than the performance materiality. %8$s",
+          "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound for the misstatement is %4$s the performance materiality and the obtained precision is %5$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is %7$s than the performance materiality. %8$s",
           planningOptions[["conf_level_label"]],
           paste0(options[["min_precision_rel_val"]] * 100, "%"),
           planningOptions[["materiality_label"]],
@@ -1466,12 +1472,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
 
     if (!options[["bayesian"]]) {
-      expected <- if (options[["ir"]] != "high" || options[["cr"]] != "high") 0 else parentOptions[["expected_val"]]
       result <- try({
         jfa::planning(
-          materiality = materiality, min.precision = min_precision, expected = expected,
+          materiality = materiality, min.precision = min_precision, expected = parentOptions[["expected_val"]],
           likelihood = options[["likelihood"]], N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N.units) else N.units, conf.level = confidence,
-          by = options[["by"]], max = 10000
+          by = options[["by"]], max = options[["max"]]
         )
       })
     } else {
@@ -1490,7 +1495,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           jfa::planning(
             materiality = materiality, min.precision = min_precision, expected = parentOptions[["expected_val"]],
             likelihood = options[["likelihood"]], N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N.units) else N.units, conf.level = options[["conf_level"]],
-            prior = prior, by = options[["by"]], max = 10000
+            prior = prior, by = options[["by"]], max = options[["max"]]
           )
         }
       })
@@ -1498,7 +1503,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     if (isTryError(result)) {
       if (jaspBase:::.extractErrorMessage(result) == "the sample size is lower than 'max'") {
-        parentContainer$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
+        parentContainer$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
         return()
       } else {
         parentContainer$setError(gettextf("An error occurred: %1$s", jaspBase:::.extractErrorMessage(result)))
@@ -1637,7 +1642,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     message <- switch(options[["likelihood"]],
       "poisson" = gettextf("The minimum sample size is based on the Poisson distribution (%1$s = %2$s).", "\u03BB", round(parentState[["materiality"]] * parentState[["n"]], 4)),
       "binomial" =  gettextf("The minimum sample size is based on the binomial distribution (p = %1$s)", round(parentState[["materiality"]], 2)),
-      "hypergeometric" = gettextf("The minimum sample size is based on the hypergeometric distribution (N = %1$s, K = %2$s).", parentState[["N.units"]], ceiling(parentState[["N.units"]] * parentState[["materiality"]]))
+      "hypergeometric" = gettextf("The minimum sample size is based on the hypergeometric distribution (N = %1$s, K = %2$s).", format(parentState[["N.units"]], scientific = FALSE), format(ceiling(parentState[["N.units"]] * parentState[["materiality"]]), scientific = FALSE))
     )
   } else {
     message <- switch(options[["likelihood"]],
@@ -1653,7 +1658,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       ),
       "hypergeometric" = gettextf(
         "The minimum sample size is based on the beta-binomial distribution (N = %1$s, %2$s = %3$s, %4$s = %5$s).",
-        parentState[["N.units"]],
+        format(parentState[["N.units"]], scientific = FALSE),
         "\u03B1", round(parentState[["prior"]][["description"]]$alpha, 3),
         "\u03B2", round(parentState[["prior"]][["description"]]$beta, 3)
       )
@@ -1844,7 +1849,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           result <- jfa::planning(
             conf.level = confidence, materiality = materiality, min.precision = min_precision,
             expected = if (!options[["bayesian"]] && options[["ir"]] != "high" || options[["cr"]] != "high") 0 else parentOptions[["expected_val"]],
-            likelihood = likelihoods[i], N.units = if (likelihoods[i] == "hypergeometric") ceiling(N) else N, by = options[["by"]], max = 10000, prior = prior
+            likelihood = likelihoods[i], N.units = if (likelihoods[i] == "hypergeometric") ceiling(N) else N, by = options[["by"]], max = options[["max"]], prior = prior
           )
           n[i] <- result[["n"]]
           k[i] <- result[["x"]]
@@ -1886,7 +1891,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         figure$plotObject <- plot
       } else {
         if (jaspBase:::.extractErrorMessage(leftPlotError) == "the sample size is lower than 'max'") {
-          figure$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
+          figure$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
         } else {
           figure$setError(gettextf("An error occurred in a call to the jfa package: %1$s", jaspBase:::.extractErrorMessage(leftPlotError)))
         }
@@ -1919,7 +1924,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           result <- jfa::planning(
             conf.level = confidence, materiality = materiality, min.precision = min_precision,
             likelihood = options[["likelihood"]], expected = i - 1,
-            N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N) else N, by = options[["by"]], max = 10000, prior = prior
+            N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N) else N, by = options[["by"]], max = options[["max"]], prior = prior
           )
           n[i] <- result[["n"]]
         }
@@ -1953,7 +1958,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         figure$plotObject <- plot
       } else {
         if (jaspBase:::.extractErrorMessage(rightPlotError) == "the sample size is lower than 'max'") {
-          figure$setError(gettext("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."))
+          figure$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
         } else {
           figure$setError(gettextf("An error occurred in a call to the jfa package: %1$s", jaspBase:::.extractErrorMessage(rightPlotError)))
         }
@@ -2311,7 +2316,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   .jfaTableNumberUpdate(jaspResults)
 
   if (is.null(parentContainer[["tableSample"]])) {
-    title <- gettextf("<b>Table %1$i.</b> Raw Sample", jaspResults[["tabNumber"]]$object)
+    title <- gettextf("<b>Table %1$i.</b> Selected Items", jaspResults[["tabNumber"]]$object)
     table <- createJaspTable(title)
     table$position <- positionInContainer
     table$dependOn(options = c("tableBookDist", "tableDescriptives", "tableSample", "samplingChecked", "evaluationChecked"))
@@ -2579,7 +2584,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     if (!options[["bayesian"]]) {
       additionalMessage <- gettextf(
-        "\n\nThese results imply that there is a %1$s probability that, when one would repeatedly sample from this population, the upper bound on \u03B8 is below %2$s with a precision of %3$s.",
+        "\n\nThese results imply that there is a %1$s probability that, when one would repeatedly sample from this population, the upper bound for \u03B8 is below %2$s with a precision of %3$s.",
         planningOptions[["conf_level_label"]],
         boundLabel,
         precisionLabel
@@ -2594,7 +2599,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
 
     message <- gettextf(
-      "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe sample consisted of %1$s sampling units, of which a total of %2$s were misstated. The information from this sample %3$s results in a most likely error in the population of %4$s and an %5$s upper bound of %6$s. %7$s",
+      "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely error in the population of %6$s and an %7$s upper bound of %8$s. %9$s",
+      if (planningOptions[["N.items"]] == 0) "..." else format(planningOptions[["N.items"]], scientific = FALSE),
+      if (planningOptions[["N.units"]] == 0.01) "..." else format(planningOptions[["N.units"]], scientific = FALSE),
       sampleSizeMessage,
       errors,
       if (options[["bayesian"]]) "combined with the information in the prior distribution " else "",
@@ -3352,7 +3359,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     # We choose a pseudo-random seed to get the impression of a random starting point
     # It is unlikely that two populations or users have the same seed
-    set.seed(rnorm(1) + options[["by"]] + parentOptions[["N.units"]])
+    set.seed(-0.4083114 + options[["by"]] + parentOptions[["N.units"]]) # -0.4083114 for backwards compatibility
 
     intervalStartingPoint <- sample(1:(interval - 1), size = 1)
     intervalSelection <- intervalStartingPoint + 0:(n - 1) * interval

@@ -79,7 +79,7 @@ test_that("<b>Table 3.</b> Information about Monetary Interval Selection results
   )
 })
 
-test_that("<b>Table 4.</b> Raw Sample results match", {
+test_that("<b>Table 4.</b> Selected Items results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
   jaspTools::expect_equal_tables(
     table,

@@ -38,9 +38,9 @@ The expected errors are the tolerable errors that can be found in the sample whi
 - Absolute: Enter your expected errors as the sum of (proportional) errors.
 
 #### Probability Distribution
-- Gamma: The gamma distribution accompanies the Poisson likelihood. The Poisson likelihood assumes an infinite population size and is therefore generally used when the population size is large. It is a likelihood that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors found (*t*). Because the gamma distribution accommodates partial errors it is generally used when you are planning a monetary unit sample (Stewart, 2013).
-- Beta: The beta distribution accompanies the binomial likelihood. The binomial likelihood assumes an infinite population size and is therefore generally used when the population size is large. It is a likelihood that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample. However, the beta distribution does accommodate partial errors, and may also be used for monetary unit sampling (de Swart, Wille & Majoor, 2013).
 - Beta-binomial: The beta-binomial distribution accompanies the hypergeometric likelihood (Dyer & Pierce, 1993). The hypergeometric likelihood assumes a finite population size and is therefore generally used when the population size is small. It is a likelihood that models the number of errors (*K*) in the population as a function of the population size (*N*), the number of observed found errors (*k*) and the number of correct transactions (*n*).
+- Beta: The beta distribution accompanies the binomial likelihood. The binomial likelihood assumes an infinite population size and is therefore generally used when the population size is large. It is a likelihood that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample. However, the beta distribution does accommodate partial errors, and may also be used for monetary unit sampling (de Swart, Wille & Majoor, 2013).
+- Gamma: The gamma distribution accompanies the Poisson likelihood. The Poisson likelihood assumes an infinite population size and is therefore generally used when the population size is large. It is a likelihood that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors found (*t*). Because the gamma distribution accommodates partial errors it is generally used when you are planning a monetary unit sample (Stewart, 2013).
 
 #### Display
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
@@ -77,8 +77,9 @@ The expected errors are the tolerable errors that can be found in the sample whi
 - Numbers: Display table output as numbers.
 - Percentages: Display table output as percentages.
 
-#### Increment
-The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+#### Iterations
+- Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+- Maximum: The maximum allows you to limit the sample size with a maximum.
 
 #### Assume Homogeneous Taints
 Clicking this box will allow you to separate the known and the unknown misstatement in the population to be more efficient. Note that this requires the assumption that the taints in the sample are representative of the taints in the unseen part of the population.
@@ -144,12 +145,12 @@ The required number of sampling units that should be selected from the populatio
 - Random sampling: Performs random selection in which each sampling unit has an equal chance of being selected.
   - Seed: Selects the seed for the random number generator in order to reproduce results.
 
-#### Randomize Items
+#### Randomize Item Order
 Randomizes the items in the population before selection is performed.
 
 #### Tables
 - Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
-- Raw sample: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
+- Selected items: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
 
 ### Output - Selection
 ---
@@ -178,7 +179,7 @@ Randomizes the items in the population before selection is performed.
 - Minimum: Minimum of the data points.
 - Maximum: Maximum of the data points.
 
-#### Raw Sample
+#### Selected Items
 - Row: The row number of the item.
 - Selected: The number of times (a unit in) the item is selected.
 
@@ -265,7 +266,7 @@ See *Probability Distribution*.
 ### References
 ---
 - AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.0.
+- Derks, K. (2022). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.2.
 - Dyer, D., & Pierce, R. L. (1993). On the choice of the prior distribution in hypergeometric sampling. <i>Communications in Statistics-Theory and Methods</i>, 22(8), 2125-2146.
 - Stewart, T. R. (2013). A Bayesian audit assurance model with application to the component materiality problem in group audits (Doctoral dissertation).
 - de Swart, J., Wille, J., & Majoor, B. (2013). Het 'Push Left'-Principe als Motor van Data Analytics in de Accountantscontrole [The 'Push-Left'-Principle as a Driver of Data Analytics in Financial Audit]. <i>Maandblad voor Accountancy en Bedrijfseconomie</i>, 87, 425-432.

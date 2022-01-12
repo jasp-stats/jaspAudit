@@ -116,7 +116,6 @@ Form
 							name: 				"materiality_abs"
 							text: 				qsTr("Absolute")
 							childrenOnSameRow: 	true
-							onCheckedChanged:	if (checked) poisson.click()
 
 							DoubleField
 							{
@@ -178,7 +177,6 @@ Form
 				fieldWidth: 					100 * preferencesModel.uiScale
 				min: 							0
 				decimals: 						2
-				onValueChanged:					if (n_units.value == 0) poisson.click()
 			}
 		}
 
@@ -273,7 +271,6 @@ Form
 		id: 									expected
 		name: 									"expected_type"
 		title: 									qsTr("Expected Errors in Sample")
-		enabled:								ir.value == 'high' && cr.value == 'high'
 
 		RadioButton
 		{
@@ -338,10 +335,10 @@ Form
 
 		RadioButton
 		{
-			id: 								poisson
-			text: 								qsTr("Poisson")
-			name: 								"poisson"
-			checked: 							true
+			id: 								hypergeometric
+			text: 								qsTr("Hypergeometric")
+			name: 								"hypergeometric"
+			enabled:							n_units.value > 0
 		}
 
 		RadioButton
@@ -349,14 +346,14 @@ Form
 			id: 								binomial
 			text: 								qsTr("Binomial")
 			name: 								"binomial"
+			checked:							true
 		}
 
 		RadioButton
 		{
-			id: 								hypergeometric
-			text: 								qsTr("Hypergeometric")
-			name: 								"hypergeometric"
-			enabled:							n_units.value > 0
+			id: 								poisson
+			text: 								qsTr("Poisson")
+			name: 								"poisson"
 		}
 	}
 
@@ -384,13 +381,25 @@ Form
 			}
 		}
 
-		IntegerField
+		Group
 		{
-			name: 								"by"
-			text: 								qsTr("Increment")
-			min: 								1
-			max:								50
-			defaultValue: 						1
+			title:								qsTr("Iterations")
+			IntegerField
+			{
+				name: 							"by"
+				text: 							qsTr("Increment")
+				min: 							1
+				max:							50
+				defaultValue: 					1
+			}
+
+			IntegerField
+			{
+				name: 							"max"
+				text: 							qsTr("Maximum")
+				min: 							1
+				defaultValue: 					5000
+			}
 		}
 	}
 

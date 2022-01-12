@@ -202,7 +202,7 @@
       plot <- plot + ggplot2::geom_errorbarh(data = errorDat, ggplot2::aes(y = y, xmin = xmin, xmax = xmax), inherit.aes = FALSE, size = 1, height = (yBreaks[length(yBreaks)] - (yMax)) / 3 * 2)
       text_right <- jaspGraphs:::draw2Lines(c(label_ub, label_mode), x = 1, align = "right")
 
-      if (options[["materiality_test"]]) {
+      if (options[["materiality_test"]] && !is.na(parentState[["posterior"]]$hypotheses$bf.h1)) {
         lab1 <- paste0("BF\u208A\u208B = ", formatC(parentState[["posterior"]]$hypotheses$bf.h0, 3, format = "f"))
         lab2 <- paste0("BF\u208B\u208A = ", formatC(parentState[["posterior"]]$hypotheses$bf.h1, 3, format = "f"))
         text_left <- jaspGraphs:::draw2Lines(c(lab1, lab2), x = 0.65, align = "center")
@@ -311,7 +311,7 @@
       "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays the predictions of the %2$s distribution for %4$s <i>n</i> = %5$s.",
       jaspResults[["figNumber"]]$object,
       if (stage == "planning") gettext("prior") else gettext("posterior"),
-      if (parentState[["posterior"]]$likelihood == "poisson") gettextf("negative binomial(r = %1$s, p = %2$s)", round(object[["predictive"]][["description"]]$r, 3), round(object[["predictive"]][["description"]]$p, 3)) else gettextf("beta-binomial(N = %1$s, \u03B1 = %2$s, \u03B2 = %3$s)", size, round(object[["predictive"]][["description"]]$alpha, 3), round(object[["predictive"]][["description"]]$beta, 3)),
+      if (parentState[["posterior"]]$likelihood == "poisson") gettext("negative binomial") else gettext("beta-binomial"),
       if (stage == "planning") gettext("the intended sample of") else gettext("the remaining population of"),
       size
     ), "p")

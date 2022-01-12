@@ -28,7 +28,7 @@ test_that("<b>Table 2.</b> Information about Monetary Interval Selection results
   )
 })
 
-test_that("<b>Table 3.</b> Raw Sample results match", {
+test_that("<b>Table 3.</b> Selected Items results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
@@ -136,7 +136,7 @@ set.seed(1)
 results <- jaspTools::runAnalysis("auditSelection", "BuildIt_Monetary.csv", options)
 
 
-test_that("<b>Table 2.</b> Raw Sample results match", {
+test_that("<b>Table 2.</b> Selected Items results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
@@ -254,7 +254,7 @@ test_that("<b>Table 2.</b> Descriptive Statistics for Sample results match", {
   )
 })
 
-test_that("<b>Table 3.</b> Raw Sample results match", {
+test_that("<b>Table 3.</b> Selected Items results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
   jaspTools::expect_equal_tables(
     table,

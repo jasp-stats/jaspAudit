@@ -127,7 +127,6 @@ Form
 							name: 				"materiality_abs"
 							text: 				qsTr("Absolute")
 							childrenOnSameRow: 	true
-							onCheckedChanged:	if (checked) poisson.click()
 
 							DoubleField
 							{
@@ -270,7 +269,7 @@ Form
 		{
 			id: 								data
 			name: 								"data"
-			label:								qsTr("Raw")
+			label:								qsTr("Columns")
 			checked: 							mainWindow.dataAvailable
 			enabled:							mainWindow.dataAvailable
 		}
@@ -404,22 +403,22 @@ Form
 
 		RadioButton
 		{
-			name: 							"poisson"
-			text: 							qsTr("Poisson")
-			checked:						true
+			name: 							"hypergeometric"
+			text: 							qsTr("Hypergeometric")
+			enabled:						n_units.value > 0
 		}
 
 		RadioButton
 		{
 			name: 							"binomial"
 			text: 							qsTr("Binomial")
+			checked:						true
 		}
 
 		RadioButton
 		{
-			name: 							"hypergeometric"
-			text: 							qsTr("Hypergeometric")
-			enabled:						n_units.value > 0
+			name: 							"poisson"
+			text: 							qsTr("Poisson")
 		}
 
 		RadioButton
@@ -562,7 +561,7 @@ Form
 
 			RadioButton
 			{
-				text: 							qsTr("Extrapolated amounts")
+				text: 							qsTr("Monetary values")
 				name: 							"amount"
 				enabled:						n_units.value != 0
 			}

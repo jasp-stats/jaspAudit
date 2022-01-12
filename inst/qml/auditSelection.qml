@@ -105,6 +105,14 @@ Form
 			max: 								99999
 			enabled:							randomize.checked || method.value != "interval"
 		}
+
+		CheckBox
+		{
+			id:									randomize
+			name:								"randomize"
+			text:								qsTr("Randomize item order")
+			enabled:							rank.count == 0
+		}
 	}
 
 	Group
@@ -175,7 +183,7 @@ Form
 
 		CheckBox
 		{
-			text: 								qsTr("Raw sample")
+			text: 								qsTr("Selected items")
 			name: 								"tableSample"
 		}
 	}
@@ -187,77 +195,57 @@ Form
 			id: 								method
 			title:								qsTr("Method")
 			name: 								"sampling_method"
+			columns:							2
 
-			Group
+			RadioButton
 			{
+				id: 							interval
+				text: 							qsTr("Fixed interval sampling")
+				name: 							"interval"
+				checked: 						true
 
-				Row
+				IntegerField
 				{
-					RadioButton
-					{
-						id: 					interval
-						text: 					qsTr("Fixed interval sampling")
-						name: 					"interval"
-						checked: 				true
-
-						IntegerField
-						{
-							id: 				start
-							text: 				qsTr("Starting point")
-							name: 				"start"
-							defaultValue: 		1
-							min: 				1
-							visible:			interval.checked
-						}
-					}
-
-					HelpButton
-					{
-						toolTip: 				qsTr("Click to learn more about fixed interval sampling.")
-						helpPage:				"Audit/fixedIntervalSampling"
-					}
-				}
-
-				Row
-				{
-					RadioButton
-					{
-						id: 					cell
-						text: 					qsTr("Cell sampling")
-						name: 					"cell"
-					}
-
-					HelpButton
-					{
-						toolTip: 				qsTr("Click to learn more about cell sampling.")
-						helpPage:				"Audit/cellSampling"
-					}
-				}
-
-				Row
-				{
-					RadioButton
-					{
-						id: 					random
-						text: 					qsTr("Random sampling")
-						name: 					"random"
-					}
-
-					HelpButton
-					{
-						toolTip: 				qsTr("Click to learn more about random sampling.")
-						helpPage:				"Audit/randomSampling"
-					}
+					id: 						start
+					text: 						qsTr("Starting point")
+					name: 						"start"
+					defaultValue: 				1
+					min: 						1
+					visible:					interval.checked
 				}
 			}
-		}
 
-		CheckBox
-		{
-			id:									randomize
-			name:								"randomize"
-			text:								qsTr("Randomize items")
-			enabled:							rank.count == 0
+			HelpButton
+			{
+				toolTip: 						qsTr("Click to learn more about fixed interval sampling.")
+				helpPage:						"Audit/fixedIntervalSampling"
+			}
+
+			RadioButton
+			{
+				id: 							cell
+				text: 							qsTr("Cell sampling")
+				name: 							"cell"
+			}
+
+			HelpButton
+			{
+				toolTip: 						qsTr("Click to learn more about cell sampling.")
+				helpPage:						"Audit/cellSampling"
+			}
+
+			RadioButton
+			{
+				id: 							random
+				text: 							qsTr("Random sampling")
+				name: 							"random"
+			}
+
+			HelpButton
+			{
+				toolTip: 						qsTr("Click to learn more about random sampling.")
+				helpPage:						"Audit/randomSampling"
+			}
 		}
 	}
 

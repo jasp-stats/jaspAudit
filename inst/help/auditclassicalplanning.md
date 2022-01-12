@@ -61,9 +61,9 @@ The expected errors are the tolerable errors that can be found in the sample whi
 - Absolute: Enter your expected errors as the sum of (proportional) errors.
 
 #### Probability distribution
-- Poisson: The Poisson distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors (*t*). Because the Poisson distribution accommodates partial errors it is generally used when you are planning a monetary unit sample.
-- Binomial: The binomial distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample.
 - Hypergeometric: The hypergeometric distribution assumes a finite population size and is therefore generally used when the population size is small. It is a probability distribution that models the number of errors (*K*) in the population as a function of the population size (*N*), the number of observed found errors (*k*) and the number of correct transactions (*n*).
+- Binomial: The binomial distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample.
+- Poisson: The Poisson distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors (*t*). Because the Poisson distribution accommodates partial errors it is generally used when you are planning a monetary unit sample.
 
 #### Display
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
@@ -76,8 +76,9 @@ The expected errors are the tolerable errors that can be found in the sample whi
 - Numbers: Display table output as numbers.
 - Percentages: Display table output as percentages.
 
-#### Increment
-The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+#### Iterations
+- Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+- Maximum: The maximum allows you to limit the sample size with a maximum.
 
 ### Output
 ---
@@ -95,7 +96,7 @@ The increment alows you to limit the possible sample sizes to a multiple of its 
 ### References
 ---
 - AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.0.
+- Derks, K. (2022). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.2.
 - Stewart, T. (2012). <i>Technical notes on the AICPA audit guide Audit Sampling</i>. American Institute of Certified Public Accountants, New York.
 
 ### R Packages

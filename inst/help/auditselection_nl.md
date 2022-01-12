@@ -78,7 +78,7 @@ Wanneer een naam is opgegeven, wordt het resultaat van de selectieanalyse in een
 ### Referenties
 ---
 - AICPA (2017). <i>Auditgids: controlesteekproeven</i>. American Institute of Certified Public Accountants.
-- Derks, K (2021). jfa: Bayesiaanse en klassieke auditsteekproeven. R-pakket versie 0.6.0.
+- Derks, K. (2022). jfa: Bayesiaanse en klassieke auditsteekproeven. R-pakket versie 0.6.2.
 
 ### R-pakketten
 ---

@@ -70,9 +70,9 @@ The expected errors are the tolerable errors that can be found in the sample whi
 - Absolute: Enter your expected errors as the sum of (proportional) errors.
 
 #### Probability distribution
-- Poisson: The Poisson distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors (*t*). Because the Poisson distribution accommodates partial errors it is generally used when you are planning a monetary unit sample.
-- Binomial: The binomial distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample.
 - Hypergeometric: The hypergeometric distribution assumes a finite population size and is therefore generally used when the population size is small. It is a probability distribution that models the number of errors (*K*) in the population as a function of the population size (*N*), the number of observed found errors (*k*) and the number of correct transactions (*n*).
+- Binomial: The binomial distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample.
+- Poisson: The Poisson distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors (*t*). Because the Poisson distribution accommodates partial errors it is generally used when you are planning a monetary unit sample.
 
 #### Display
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
@@ -94,8 +94,9 @@ The expected errors are the tolerable errors that can be found in the sample whi
 - Numbers: Display table output as numbers.
 - Percentages: Display table output as percentages.
 
-#### Increment
-The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+#### Iterations
+- Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+- Maximum: The maximum allows you to limit the sample size with a maximum.
 
 ### Ouput - Planning
 ---
@@ -141,12 +142,12 @@ The required number of sampling units that should be selected from the populatio
 - Random sampling: Performs random selection in which each sampling unit has an equal chance of being selected.
   - Seed: Selects the seed for the random number generator in order to reproduce results.
 
-#### Randomize Items
+#### Randomize Item Order
 Randomizes the items in the population before selection is performed.
 
 #### Tables
 - Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
-- Raw sample: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
+- Selected items: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
 
 ### Output - Selection
 ---
@@ -175,7 +176,7 @@ Randomizes the items in the population before selection is performed.
 - Minimum: Minimum of the data points.
 - Maximum: Maximum of the data points.
 
-#### Raw Sample
+#### Selected Items
 - Row: The row number of the item.
 - Selected: The number of times (a unit in) the item is selected.
 
@@ -238,9 +239,9 @@ Randomizes the items in the population before selection is performed.
 ### References
 ---
 - AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.0.
+- Derks, K. (2022). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.2.
 - Leslie, D. A., Teitlebaum, A. D., Anderson, R. J. (1979). <i>Dollar-unit Sampling: A Practical Guide for Auditors</i>. Toronto: Copp Clark Pitman.
-- Stringer, K.W. (1963) Practical aspects of statistical sampling in auditing. <i>Proceedings of Business and Economic Statistics Section</i>, American Statistical Association.
+- Stringer, K. W. (1963) Practical aspects of statistical sampling in auditing. <i>Proceedings of Business and Economic Statistics Section</i>, American Statistical Association.
 - Touw, P., & Hoogduin, L. (2011). Statistiek voor audit en controlling.
 
 ### R Packages

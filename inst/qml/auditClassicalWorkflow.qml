@@ -220,7 +220,7 @@ Form
 				singleVariable:						true
 				allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
 				allowAnalysisOwnComputedColumns: 	false
-				onCountChanged:						if(lik_hypergeometric.checked && id.count == 0) lik_poisson.click()
+				onCountChanged:						if(lik_hypergeometric.checked && id.count == 0) lik_binomial.click()
 			}
 
 			AssignedVariablesList
@@ -324,7 +324,7 @@ Form
 			id: 									expected
 			name: 									"expected_type"
 			title: 									qsTr("Expected Errors in Sample")
-			enabled:								ir.value == 'high' && cr.value == 'high' && !pasteVariables.checked
+			enabled:								!pasteVariables.checked
 
 			RadioButton
 			{
@@ -385,10 +385,10 @@ Form
 
 			RadioButton
 			{
-				id: 								lik_poisson
-				text: 								qsTr("Poisson")
-				name: 								"poisson"
-				checked: 							true
+				id: 								lik_hypergeometric
+				text: 								qsTr("Hypergeometric")
+				name: 								"hypergeometric"
+				enabled:							id.count > 0
 			}
 
 			RadioButton
@@ -396,14 +396,14 @@ Form
 				id: 								lik_binomial
 				text: 								qsTr("Binomial")
 				name: 								"binomial"
+				checked: 							true
 			}
 
 			RadioButton
 			{
-				id: 								lik_hypergeometric
-				text: 								qsTr("Hypergeometric")
-				name: 								"hypergeometric"
-				enabled:							id.count > 0
+				id: 								lik_poisson
+				text: 								qsTr("Poisson")
+				name: 								"poisson"
 			}
 		}
 
@@ -501,20 +501,33 @@ Form
 
 				RadioButton
 				{
-					text: 							qsTr("Extrapolated amounts")
+					text: 							qsTr("Monetary values")
 					name: 							"amount"
 					enabled:						values.count > 0
 				}
 			}
 
-			IntegerField
+			Group
 			{
-				name: 								"by"
-				text: 								qsTr("Increment")
-				min: 								1
-				max:								50
-				defaultValue: 						1
+				title:								qsTr("Iterations")
 				enabled:							!pasteVariables.checked
+
+				IntegerField
+				{
+					name: 							"by"
+					text: 							qsTr("Increment")
+					min: 							1
+					max:							50
+					defaultValue: 					1
+				}
+
+				IntegerField
+				{
+					name: 							"max"
+					text: 							qsTr("Maximum")
+					min: 							1
+					defaultValue: 					5000
+				}
 			}
 		}
 
@@ -602,8 +615,6 @@ Form
 
 		Group
 		{
-			rowSpacing: 							15 * preferencesModel.uiScale
-
 			IntegerField
 			{
 				id: 								seed
@@ -614,6 +625,36 @@ Form
 				max: 								99999
 				enabled:							randomize.checked || method.value != "interval"
 			}
+
+			CheckBox
+			{
+				id:									randomize
+				name:								"randomize"
+				text:								qsTr("Randomize item order")
+				enabled:							!pasteVariables.checked && rank.count == 0
+			}
+		}
+
+		Group
+		{
+			title: 									qsTr("Tables")
+
+			CheckBox
+			{
+				text: 								qsTr("Descriptive statistics")
+				name: 								"tableDescriptives"
+			}
+
+			CheckBox
+			{
+				text: 								qsTr("Selected items")
+				name: 								"tableSample"
+			}
+		}
+
+		Group
+		{
+			rowSpacing: 							15 * preferencesModel.uiScale
 
 			RadioButtonGroup
 			{
@@ -651,104 +692,64 @@ Form
 					toolTip: 						qsTr("Click to learn more about monetary unit sampling.")
 				}
 			}
-		}
 
-		Group
-		{
-			title: 									qsTr("Tables")
-
-			CheckBox
-			{
-				text: 								qsTr("Descriptive statistics")
-				name: 								"tableDescriptives"
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Raw sample")
-				name: 								"tableSample"
-			}
-		}
-
-		Group
-		{
 			RadioButtonGroup
 			{
 				id: 								method
 				title:								qsTr("Method")
 				name: 								"sampling_method"
 				enabled:							!pasteVariables.checked
+				columns:							2
 
-				Group
+				RadioButton
 				{
+					id: 							interval
+					text: 							qsTr("Fixed interval sampling")
+					name: 							"interval"
+					checked: 						true
 
-					Row
+					IntegerField
 					{
-						RadioButton
-						{
-							id: 					interval
-							text: 					qsTr("Fixed interval sampling")
-							name: 					"interval"
-							checked: 				true
-
-							IntegerField
-							{
-								id: 				start
-								text: 				qsTr("Starting point")
-								name: 				"start"
-								defaultValue: 		1
-								min: 				1
-								visible:			interval.checked
-							}
-						}
-
-						HelpButton
-						{
-							toolTip: 				qsTr("Click to learn more about fixed interval sampling.")
-							helpPage:				"Audit/fixedIntervalSampling"
-						}
-					}
-
-					Row
-					{
-						RadioButton
-						{
-							id: 					cell
-							text: 					qsTr("Cell sampling")
-							name: 					"cell"
-						}
-
-						HelpButton
-						{
-							toolTip: 				qsTr("Click to learn more about cell sampling.")
-							helpPage:				"Audit/cellSampling"
-						}
-					}
-
-					Row
-					{
-						RadioButton
-						{
-							id: 					random
-							text: 					qsTr("Random sampling")
-							name: 					"random"
-						}
-
-						HelpButton
-						{
-							toolTip: 				qsTr("Click to learn more about random sampling.")
-							helpPage:				"Audit/randomSampling"
-						}
+						id: 						start
+						text: 						qsTr("Starting point")
+						name: 						"start"
+						defaultValue: 				1
+						min: 						1
+						visible:					interval.checked
 					}
 				}
-			}
 
-			CheckBox
-			{
-				id:									randomize
-				name:								"randomize"
-				text:								qsTr("Randomize items")
-				enabled:							!pasteVariables.checked && rank.count == 0
+				HelpButton
+				{
+					toolTip: 						qsTr("Click to learn more about fixed interval sampling.")
+					helpPage:						"Audit/fixedIntervalSampling"
+				}
+
+				RadioButton
+				{
+					id: 							cell
+					text: 							qsTr("Cell sampling")
+					name: 							"cell"
+				}
+
+				HelpButton
+				{
+					toolTip: 						qsTr("Click to learn more about cell sampling.")
+					helpPage:						"Audit/cellSampling"
+				}
+
+				RadioButton
+				{
+					id: 							random
+					text: 							qsTr("Random sampling")
+					name: 							"random"
+				}
+
+				HelpButton
+				{
+					toolTip: 						qsTr("Click to learn more about random sampling.")
+					helpPage:						"Audit/randomSampling"
+				}
 			}
 		}
 
@@ -1025,10 +1026,10 @@ Form
 
 			RadioButton
 			{
-				id:									poisson
-				name: 								"poisson"
-				text: 								qsTr("Poisson")
-				checked:							true
+				id:									hypergeometric
+				name: 								"hypergeometric"
+				text: 								qsTr("Hypergeometric")
+				enabled:							id.count > 0
 			}
 
 			RadioButton
@@ -1036,14 +1037,14 @@ Form
 				id:									binomial
 				name: 								"binomial"
 				text: 								qsTr("Binomial")
+				checked:							true
 			}
 
 			RadioButton
 			{
-				id:									hypergeometric
-				name: 								"hypergeometric"
-				text: 								qsTr("Hypergeometric")
-				enabled:							id.count > 0
+				id:									poisson
+				name: 								"poisson"
+				text: 								qsTr("Poisson")
 			}
 
 			RadioButton
