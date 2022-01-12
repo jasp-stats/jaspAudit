@@ -202,7 +202,7 @@
       plot <- plot + ggplot2::geom_errorbarh(data = errorDat, ggplot2::aes(y = y, xmin = xmin, xmax = xmax), inherit.aes = FALSE, size = 1, height = (yBreaks[length(yBreaks)] - (yMax)) / 3 * 2)
       text_right <- jaspGraphs:::draw2Lines(c(label_ub, label_mode), x = 1, align = "right")
 
-      if (options[["materiality_test"]]) {
+      if (options[["materiality_test"]] && !is.na(parentState[["posterior"]]$hypotheses$bf.h1)) {
         lab1 <- paste0("BF\u208A\u208B = ", formatC(parentState[["posterior"]]$hypotheses$bf.h0, 3, format = "f"))
         lab2 <- paste0("BF\u208B\u208A = ", formatC(parentState[["posterior"]]$hypotheses$bf.h1, 3, format = "f"))
         text_left <- jaspGraphs:::draw2Lines(c(lab1, lab2), x = 0.65, align = "center")
