@@ -247,7 +247,6 @@ Form
 	{
 		title: 									qsTr("Probability Distribution")
 		name: 									"likelihood"
-		columns: 2
 
 		RadioButton
 		{
@@ -255,11 +254,6 @@ Form
 			text: 								qsTr("Beta-binomial")
 			name: 								"hypergeometric"
 			enabled:							n_units.value > 0
-		}
-
-		HelpButton
-		{
-			toolTip: 							qsTr("This distribution assumes you are working with a finite population.")
 		}
 
 		RadioButton
@@ -270,21 +264,11 @@ Form
 			checked: 							true
 		}
 
-		HelpButton
-		{
-			toolTip: 							qsTr("This distribution assumes you are working with an infinite population.")
-		}
-
 		RadioButton
 		{
 			id: 								poisson
 			text: 								qsTr("Gamma")
 			name: 								"poisson"
-		}
-
-		HelpButton
-		{
-			toolTip: 							qsTr("This distribution assumes you are working with an infinite population.")
 		}
 	}
 

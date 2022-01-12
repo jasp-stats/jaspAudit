@@ -96,7 +96,7 @@ The expected errors are the tolerable errors that can be found in the sample whi
 ### References
 ---
 - AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.2.
+- Derks, K. (2022). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.2.
 - Stewart, T. (2012). <i>Technical notes on the AICPA audit guide Audit Sampling</i>. American Institute of Certified Public Accountants, New York.
 
 ### R Packages

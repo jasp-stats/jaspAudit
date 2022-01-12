@@ -232,9 +232,9 @@ Randomiseert de items in de populatie voordat de selectie wordt uitgevoerd.
 ### Referenties
 ---
 - AICPA (2017). <i>Auditgids: controlesteekproeven</i>. American Institute of Certified Public Accountants.
-- Derks, K (2021). jfa: Bayesiaanse en klassieke auditsteekproeven. R-pakket versie 0.6.0.
-- Leslie, D.A., Teitlebaum, A.D., Anderson, R.J. (1979). <i>Sampling in dollars: een praktische gids voor auditors</i>. Toronto: Copp Clark Pitman.
-- Stringer, K.W. (1963) Praktische aspecten van statistische steekproeven bij auditing. <i>Proceedings of Business and Economic Statistics Section</i>, American Statistical Association.
+- Derks, K. (2022). jfa: Bayesiaanse en klassieke auditsteekproeven. R-pakket versie 0.6.2.
+- Leslie, D. A., Teitlebaum, A.D., Anderson, R.J. (1979). <i>Sampling in dollars: een praktische gids voor auditors</i>. Toronto: Copp Clark Pitman.
+- Stringer, K. W. (1963) Praktische aspecten van statistische steekproeven bij auditing. <i>Proceedings of Business and Economic Statistics Section</i>, American Statistical Association.
 - Touw, P., & Hoogduin, L. (2011). Statistiek voor audit en controlling.
 
 ### R-pakketten

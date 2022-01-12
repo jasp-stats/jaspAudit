@@ -95,7 +95,7 @@ Met de stapgrootte kunt u de mogelijke steekproefomvang beperken tot een veelvou
 ### Referenties
 ---
 - AICPA (2017). <i>Auditgids: controlesteekproeven</i>. American Institute of Certified Public Accountants.
-- Derks, K (2021). jfa: Bayesiaanse en klassieke auditsteekproeven. R-pakket versie 0.6.0.
+- Derks, K. (2022). jfa: Bayesiaanse en klassieke auditsteekproeven. R-pakket versie 0.6.2.
 -Stewart, T. (2012). <i>Technische opmerkingen over de AICPA-auditgids Auditsteekproeven</i>. American Institute of Certified Public Accountants, New York.
 
 ### R-pakketten

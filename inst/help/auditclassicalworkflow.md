@@ -239,9 +239,9 @@ Randomizes the items in the population before selection is performed.
 ### References
 ---
 - AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K (2021). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.2.
+- Derks, K. (2022). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.2.
 - Leslie, D. A., Teitlebaum, A. D., Anderson, R. J. (1979). <i>Dollar-unit Sampling: A Practical Guide for Auditors</i>. Toronto: Copp Clark Pitman.
-- Stringer, K.W. (1963) Practical aspects of statistical sampling in auditing. <i>Proceedings of Business and Economic Statistics Section</i>, American Statistical Association.
+- Stringer, K. W. (1963) Practical aspects of statistical sampling in auditing. <i>Proceedings of Business and Economic Statistics Section</i>, American Statistical Association.
 - Touw, P., & Hoogduin, L. (2011). Statistiek voor audit en controlling.
 
 ### R Packages
