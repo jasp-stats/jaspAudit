@@ -3350,7 +3350,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 .jfaSeparatedMisstatementPlanningState <- function(options, dataset, prior, parentOptions) {
 
   # Plan a sample for the efficiency technique Separate known and unknown misstatement
-  for (n in seq(5, nrow(dataset), by = options[["by"]])) {
+  for (n in seq(5, options[["max"]], by = options[["by"]])) {
     interval <- (parentOptions[["N.units"]] / n)
     topStratum <- subset(dataset, dataset[[options[["values"]]]] > interval)
     bottomStratum <- subset(dataset, dataset[[options[["values"]]]] <= interval)
