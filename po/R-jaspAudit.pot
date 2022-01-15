@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.1\n"
-"POT-Creation-Date: 2021-12-11 03:29\n"
+"POT-Creation-Date: 2022-01-15 03:30\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -454,19 +454,25 @@ msgstr ""
 msgid "The purpose of the planning stage is to find a minimum sample size so that, given a certain number of expected misstatements, the sample provides sufficient information to achieve the specified sampling objectives."
 msgstr ""
 
-msgid "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
+msgid "No assumptions are made about the most likely expected error in the sample."
 msgstr ""
 
-msgid "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assessments of inherent risk (<i>%7$s</i>) and control risk (<i>%8$s</i>) from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s"
+msgid "The most likely expected error in the sample is expected to be %1$s."
 msgstr ""
 
-msgid "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
 msgstr ""
 
-msgid "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that an earlier sample of %7$s transactions containing %8$s errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s"
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assessments of inherent risk (<i>%7$s</i>) and control risk (<i>%8$s</i>) from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s"
 msgstr ""
 
-msgid "%1$sThe most likely expected error in the sample is expected to be %2$s. The minimum sample size that is required for %3$s, assuming the sample contains %4$s full errors, is %5$s. This sample size is based on the %6$s distribution, the manually specified prior distribution, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
+msgstr ""
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that an earlier sample of %7$s transactions containing %8$s errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s"
+msgstr ""
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the manually specified prior distribution, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
 msgstr ""
 
 msgid "random"
@@ -523,13 +529,13 @@ msgstr ""
 msgid "<b>Objectives:</b> You have not achieved your initial sampling objectives. It is recommended to draw more samples from this population and continue audit procedures."
 msgstr ""
 
-msgid "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound on the misstatement is %3$s the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %4$s than the performance materiality. %5$s"
+msgid "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound for the misstatement is %3$s the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %4$s than the performance materiality. %5$s"
 msgstr ""
 
 msgid "The objective of this audit sampling procedure was to determine the misstatement in the population with %1$s confidence and a minimum precision of %2$s. For the current data, the obtained precision is %3$s than the minimum precision. \n\nThe conclusion on the basis of these results is that the misstatement in the population has been determined with at least %1$s confidence and a precision of %4$s. %5$s"
 msgstr ""
 
-msgid "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound on the misstatement is %4$s the performance materiality and the obtained precision is %5$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is %7$s than the performance materiality. %8$s"
+msgid "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound for the misstatement is %4$s the performance materiality and the obtained precision is %5$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is %7$s than the performance materiality. %8$s"
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
@@ -586,7 +592,7 @@ msgstr ""
 msgid "The detection risk is equal to or higher than 100%%. Please re-specify your custom values for the Inherent risk and/or Control risk."
 msgstr ""
 
-msgid "You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds 10000. Adjust your sampling objectives or variables accordingly."
+msgid "You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly."
 msgstr ""
 
 msgid "An error occurred: %1$s"
@@ -757,7 +763,7 @@ msgstr ""
 msgid "The top stratum consists of all items with a book value larger than %1$s interval."
 msgstr ""
 
-msgid "<b>Table %1$i.</b> Raw Sample"
+msgid "<b>Table %1$i.</b> Selected Items"
 msgstr ""
 
 msgid "Row"
@@ -790,13 +796,13 @@ msgstr ""
 msgid "The audit result variable should contain only 0's (correct) and 1's (incorrect)."
 msgstr ""
 
-msgid "These results imply that there is a %1$s probability that, when one would repeatedly sample from this population, the upper bound on θ is below %2$s with a precision of %3$s."
+msgid "These results imply that there is a %1$s probability that, when one would repeatedly sample from this population, the upper bound for θ is below %2$s with a precision of %3$s."
 msgstr ""
 
 msgid "These results imply that there is a %1$s probability that θ is below %2$s with a precision of %3$s."
 msgstr ""
 
-msgid "The purpose of the evaluation stage is to infer the misstatement θ in the population on the basis of a sample.\n\nThe sample consisted of %1$s sampling units, of which a total of %2$s were misstated. The information from this sample %3$s results in a most likely error in the population of %4$s and an %5$s upper bound of %6$s. %7$s"
+msgid "The purpose of the evaluation stage is to infer the misstatement θ in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely error in the population of %6$s and an %7$s upper bound of %8$s. %9$s"
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Evaluation Summary"

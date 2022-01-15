@@ -565,10 +565,6 @@ msgid "Earlier sample"
 msgstr "Amostra anterior"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Expected Errors in Sample"
-msgstr "Erros esperados na amostra"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "High"
 msgstr "Alto"
 
@@ -619,10 +615,6 @@ msgstr "Números"
 msgctxt "auditBayesianEvaluation|"
 msgid "Percentages"
 msgstr "Percentagens"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Extrapolated amounts"
-msgstr "Quantidades extrapoladas"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Tables"
@@ -731,10 +723,6 @@ msgstr "Números"
 msgctxt "auditBayesianWorkflow|"
 msgid "Percentages"
 msgstr "Porcentagens"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Extrapolated amounts"
-msgstr "Quantidades extrapoladas"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Confidence interval"
@@ -856,10 +844,6 @@ msgstr "Números"
 msgctxt "auditClassicalEvaluation|"
 msgid "Percentages"
 msgstr "Porcentagens"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Extrapolated amounts"
-msgstr "Quantidades extrapoladas"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Tables"
@@ -1022,10 +1006,6 @@ msgid "Percentages"
 msgstr "Porcentagens"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Extrapolated amounts"
-msgstr "Quantidades extrapoladas"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Display correlation"
 msgstr "Correlação de exibição"
 
@@ -1143,10 +1123,6 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Data"
-msgstr ""
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Raw"
 msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
@@ -1527,15 +1503,7 @@ msgid "Monetary units"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Raw sample"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Method"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Randomize items"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
@@ -1715,10 +1683,6 @@ msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Data"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Raw"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
@@ -2013,15 +1977,7 @@ msgid "Monetary units"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Raw sample"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Method"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Randomize items"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
@@ -2125,15 +2081,7 @@ msgid "Descriptive statistics"
 msgstr ""
 
 msgctxt "auditSelection|"
-msgid "Raw sample"
-msgstr ""
-
-msgctxt "auditSelection|"
 msgid "Method"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Randomize items"
 msgstr ""
 
 msgctxt "auditSelection|"
@@ -2154,4 +2102,88 @@ msgstr ""
 
 msgctxt "auditSelection|"
 msgid "e.g. sample.csv"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Columns"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Prior Expected Error Rate"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Maximum"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Maximum"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Randomize item order"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Selected items"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Columns"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Maximum"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Maximum"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Randomize item order"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Selected items"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Randomize item order"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Selected items"
 msgstr ""

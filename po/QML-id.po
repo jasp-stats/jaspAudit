@@ -138,10 +138,6 @@ msgid "Data"
 msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Raw"
-msgstr ""
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Summary statistics"
 msgstr ""
 
@@ -302,10 +298,6 @@ msgid "Control risk"
 msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Expected Errors in Sample"
-msgstr ""
-
-msgctxt "auditBayesianEvaluation|"
 msgid "All possible"
 msgstr ""
 
@@ -339,10 +331,6 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Percentages"
-msgstr ""
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Extrapolated amounts"
 msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
@@ -758,10 +746,6 @@ msgid "Percentages"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Extrapolated amounts"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Increment"
 msgstr ""
 
@@ -818,10 +802,6 @@ msgid "Click to learn more about monetary unit sampling."
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Raw sample"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Method"
 msgstr ""
 
@@ -855,10 +835,6 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about random sampling."
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Randomize items"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
@@ -1210,10 +1186,6 @@ msgid "Data"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Raw"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Summary statistics"
 msgstr ""
 
@@ -1367,10 +1339,6 @@ msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Percentages"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Extrapolated amounts"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
@@ -1778,10 +1746,6 @@ msgid "Percentages"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Extrapolated amounts"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Increment"
 msgstr ""
 
@@ -1830,10 +1794,6 @@ msgid "Click to learn more about monetary unit sampling."
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Raw sample"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Method"
 msgstr ""
 
@@ -1867,10 +1827,6 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about random sampling."
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Randomize items"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
@@ -2062,10 +2018,6 @@ msgid "Descriptive statistics"
 msgstr ""
 
 msgctxt "auditSelection|"
-msgid "Raw sample"
-msgstr ""
-
-msgctxt "auditSelection|"
 msgid "Method"
 msgstr ""
 
@@ -2102,10 +2054,6 @@ msgid "Click to learn more about random sampling."
 msgstr ""
 
 msgctxt "auditSelection|"
-msgid "Randomize items"
-msgstr ""
-
-msgctxt "auditSelection|"
 msgid "Export"
 msgstr ""
 
@@ -2131,4 +2079,88 @@ msgstr ""
 
 msgctxt "auditSelection|"
 msgid "<b>Download Report</b>"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Columns"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Prior Expected Error Rate"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Maximum"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Maximum"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Randomize item order"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Selected items"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Columns"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Maximum"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Maximum"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Randomize item order"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Selected items"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Randomize item order"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Selected items"
 msgstr ""
