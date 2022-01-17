@@ -1475,7 +1475,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       result <- try({
         jfa::planning(
           materiality = materiality, min.precision = min_precision, expected = parentOptions[["expected_val"]],
-          likelihood = options[["likelihood"]], N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N.units) else N.units, conf.level = confidence,
+          likelihood = options[["likelihood"]], N.units = N.units, conf.level = confidence,
           by = options[["by"]], max = options[["max"]]
         )
       })
@@ -1494,7 +1494,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         } else {
           jfa::planning(
             materiality = materiality, min.precision = min_precision, expected = parentOptions[["expected_val"]],
-            likelihood = options[["likelihood"]], N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N.units) else N.units, conf.level = options[["conf_level"]],
+            likelihood = options[["likelihood"]], N.units = N.units, conf.level = options[["conf_level"]],
             prior = prior, by = options[["by"]], max = options[["max"]]
           )
         }
@@ -1849,7 +1849,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           result <- jfa::planning(
             conf.level = confidence, materiality = materiality, min.precision = min_precision,
             expected = if (!options[["bayesian"]] && options[["ir"]] != "high" || options[["cr"]] != "high") 0 else parentOptions[["expected_val"]],
-            likelihood = likelihoods[i], N.units = if (likelihoods[i] == "hypergeometric") ceiling(N) else N, by = options[["by"]], max = options[["max"]], prior = prior
+            likelihood = likelihoods[i], N.units = N, by = options[["by"]], max = options[["max"]], prior = prior
           )
           n[i] <- result[["n"]]
           k[i] <- result[["x"]]
@@ -1924,7 +1924,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           result <- jfa::planning(
             conf.level = confidence, materiality = materiality, min.precision = min_precision,
             likelihood = options[["likelihood"]], expected = i - 1,
-            N.units = if (options[["likelihood"]] == "hypergeometric") ceiling(N) else N, by = options[["by"]], max = options[["max"]], prior = prior
+            N.units = N, by = options[["by"]], max = options[["max"]], prior = prior
           )
           n[i] <- result[["n"]]
         }
@@ -2497,7 +2497,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         jfa::evaluation(
           conf.level = conf_level, materiality = materiality, min.precision = min_precision,
           n = nrow(sample), x = length(which(sample[[options[["values.audit"]]]] == 1)),
-          method = options[["method"]], N.units = if (options[["method"]] == "hypergeometric") ceiling(prevOptions[["N.units"]]) else prevOptions[["N.units"]],
+          method = options[["method"]], N.units = prevOptions[["N.units"]],
           prior = prior
         )
       })
@@ -2512,7 +2512,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           data = sample, times = options[["indicator_col"]], conf.level = conf_level,
           materiality = materiality, min.precision = min_precision, alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
           values = options[["values"]], values.audit = options[["values.audit"]],
-          method = method, N.items = prevOptions[["N.items"]], N.units = if (options[["method"]] == "hypergeometric") ceiling(prevOptions[["N.units"]]) else prevOptions[["N.units"]],
+          method = method, N.items = prevOptions[["N.items"]], N.units = prevOptions[["N.units"]],
           prior = prior
         )
       })
@@ -2657,7 +2657,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
       planningState <- jfa::planning(
         conf.level = options[["conf_level"]], materiality = materiality, min.precision = min_precision,
-        expected = evaluationOptions[["expected_val"]], N.units = if (options[["method"]] == "hypergeometric") ceiling(evaluationOptions[["N.units"]]) else evaluationOptions[["N.units"]], prior = prior
+        expected = evaluationOptions[["expected_val"]], N.units = evaluationOptions[["N.units"]], prior = prior
       )
 
       planningState[["n"]] <- if (options[["dataType"]] == "stats") options[["n"]] else nrow(dataset)
@@ -2722,7 +2722,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         jfa::evaluation(
           conf.level = conf_level, materiality = materiality, min.precision = min_precision,
           n = options[["n"]], x = options[["x"]], method = options[["method"]],
-          N.units = if (options[["method"]] == "hypergeometric") ceiling(planningOptions[["N.units"]]) else planningOptions[["N.units"]], prior = prior
+          N.units = planningOptions[["N.units"]], prior = prior
         )
       })
     } else if (all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1))) {
@@ -2730,7 +2730,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         jfa::evaluation(
           conf.level = conf_level, materiality = materiality, min.precision = min_precision,
           n = nrow(sample), x = length(which(sample[[options[["values.audit"]]]] == 1)),
-          method = options[["method"]], N.units = if (options[["method"]] == "hypergeometric") ceiling(planningOptions[["N.units"]]) else planningOptions[["N.units"]],
+          method = options[["method"]], N.units = planningOptions[["N.units"]],
           prior = prior
         )
       })
@@ -2747,7 +2747,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           jfa::evaluation(
             data = sample, times = if (options[["times"]] != "") options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
             min.precision = min_precision, values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
-            method = options[["method"]], N.items = planningOptions[["N.items"]], N.units = if (options[["method"]] == "hypergeometric") ceiling(planningOptions[["N.units"]]) else planningOptions[["N.units"]],
+            method = options[["method"]], N.items = planningOptions[["N.items"]], N.units = planningOptions[["N.units"]],
             prior = prior
           )
         })
