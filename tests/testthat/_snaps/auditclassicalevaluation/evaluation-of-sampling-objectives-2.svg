@@ -28,15 +28,16 @@
 <g clip-path='url(#cpMTk1LjAxfDcyMC4wMHwyMC43MXw1MTAuMTQ=)'>
 <rect x='195.01' y='20.71' width='524.99' height='489.43' style='stroke-width: 10.67; stroke: none;' />
 <polyline points='218.87,510.14 218.87,20.71 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
-<polyline points='351.45,510.14 351.45,20.71 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
-<polyline points='484.03,510.14 484.03,20.71 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
-<polyline points='616.62,510.14 616.62,20.71 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
-<rect x='218.87' y='349.54' width='335.45' height='137.65' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #1380A1;' />
-<rect x='218.87' y='196.60' width='433.88' height='137.65' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FF0000;' />
-<rect x='218.87' y='43.65' width='132.58' height='137.65' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FFA500;' />
-<text x='568.84' y='424.25' style='font-size: 17.07px; font-family: sans;' textLength='48.41px' lengthAdjust='spacingAndGlyphs'>50.6%</text>
-<text x='670.12' y='271.30' style='font-size: 17.07px; font-family: sans;' textLength='57.90px' lengthAdjust='spacingAndGlyphs'>65.45%</text>
-<text x='361.70' y='118.35' style='font-size: 17.07px; font-family: sans;' textLength='34.17px' lengthAdjust='spacingAndGlyphs'>20%</text>
+<polyline points='338.19,510.14 338.19,20.71 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
+<polyline points='457.50,510.14 457.50,20.71 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
+<polyline points='576.82,510.14 576.82,20.71 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
+<polyline points='696.14,510.14 696.14,20.71 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
+<rect x='218.87' y='349.54' width='301.88' height='137.65' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #1380A1;' />
+<rect x='218.87' y='196.60' width='390.47' height='137.65' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FF0000;' />
+<rect x='218.87' y='43.65' width='119.32' height='137.65' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FFA500;' />
+<text x='525.60' y='424.25' style='font-size: 17.07px; font-family: sans;' textLength='48.41px' lengthAdjust='spacingAndGlyphs'>50.6%</text>
+<text x='615.13' y='271.30' style='font-size: 17.07px; font-family: sans;' textLength='57.90px' lengthAdjust='spacingAndGlyphs'>65.45%</text>
+<text x='341.60' y='118.35' style='font-size: 17.07px; font-family: sans;' textLength='34.17px' lengthAdjust='spacingAndGlyphs'>20%</text>
 <rect x='195.01' y='20.71' width='524.99' height='489.43' style='stroke-width: 0.00; stroke: none;' />
 </g>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
@@ -46,9 +47,10 @@
 <text x='-0.000000000000013' y='118.33' style='font-size: 17.00px; font-family: sans;' textLength='179.53px' lengthAdjust='spacingAndGlyphs'>Performance materiality</text>
 <polyline points='195.01,510.14 720.00,510.14 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
 <text x='218.87' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='24.57px' lengthAdjust='spacingAndGlyphs'>0%</text>
-<text x='351.45' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='34.03px' lengthAdjust='spacingAndGlyphs'>20%</text>
-<text x='484.03' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='34.03px' lengthAdjust='spacingAndGlyphs'>40%</text>
-<text x='616.62' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='34.03px' lengthAdjust='spacingAndGlyphs'>60%</text>
+<text x='338.19' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='34.03px' lengthAdjust='spacingAndGlyphs'>20%</text>
+<text x='457.50' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='34.03px' lengthAdjust='spacingAndGlyphs'>40%</text>
+<text x='576.82' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='34.03px' lengthAdjust='spacingAndGlyphs'>60%</text>
+<text x='696.14' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='34.03px' lengthAdjust='spacingAndGlyphs'>80%</text>
 <text x='457.50' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='267.44px' lengthAdjust='spacingAndGlyphs'>evaluation-of-sampling-objectives-2</text>
 </g>
 </svg>
