@@ -3100,27 +3100,23 @@ gettextf <- function(fmt, ..., domain = NULL) {
         values <- values * prevOptions[["N.units"]]
       }
 
-      yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, values), min.n = 4)
-
-      if (options[["display"]] == "amount") {
-        x.labels <- format(jaspGraphs::getPrettyAxisBreaks(seq(0, 1.1 * max(values), length.out = 100), min.n = 4), scientific = FALSE)
-        values.labels <- ceiling(values)
-      } else {
-        x.labels <- paste0(round(jaspGraphs::getPrettyAxisBreaks(seq(0, 1.1 * max(values), length.out = 100), min.n = 4) * 100, 4), "%")
-        values.labels <- paste0(round(values * 100, 2), "%")
-      }
-
       plotData <- data.frame(x = label, y = values)
       plotData$x <- factor(plotData$x, levels = plotData$x)
 
-      yLimits <- c(0, 1.1 * max(values))
-      yBreaks <- jaspGraphs::getPrettyAxisBreaks(seq(0, 1.1 * max(values), length.out = 100), min.n = 4)
+      if (all(plotData$y > 0)) {
+        yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, 1.2 * max(values)), min.n = 4)
+        yLimits <- c(0, max(yBreaks))
+      } else {
+        yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(min(values), 1.2 * max(values)), min.n = 4)
+        yLimits <- range(yBreaks)
+      }
 
-      if (mle < 0 || bound < 0 || precision < 0) {
-        # Here we adjust the axes if the mle/bound/precision is negative
-        yBreaks <- jaspGraphs::getPrettyAxisBreaks(seq(min(values), 1.1 * max(values), length.out = 100), min.n = 4)
-        x.labels <- format(jaspGraphs::getPrettyAxisBreaks(seq(min(values), 1.1 * max(values), length.out = 100), min.n = 4), scientific = FALSE)
-        yLimits <- c(min(values), 1.1 * max(values))
+      if (options[["display"]] == "amount") {
+        yLabels <- format(yBreaks, scientific = FALSE)
+        valueLabels <- ceiling(values)
+      } else {
+        yLabels <- paste0(round(yBreaks * 100, 2), "%")
+        valueLabels <- paste0(round(values * 100, 2), "%")
       }
     })
 
@@ -3129,11 +3125,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
         ggplot2::geom_bar(stat = "identity", col = "black", size = 1, fill = fill) +
         ggplot2::coord_flip() +
         ggplot2::xlab(NULL) +
-        ggplot2::annotate("text",
-          y = values, x = 1:length(values), label = values.labels,
-          size = 6, vjust = 0.5, hjust = -0.3
+        ggplot2::annotate(geom = "text",
+          y = values, x = 1:length(values), label = valueLabels,
+          size = 6, vjust = 0.5, hjust = -0.1
         ) +
-        ggplot2::scale_y_continuous(name = "", breaks = yBreaks, limits = yLimits, labels = x.labels) +
+        ggplot2::scale_y_continuous(name = "", breaks = yBreaks, limits = yLimits, labels = yLabels) +
         jaspGraphs::geom_rangeframe(sides = "") +
         jaspGraphs::themeJaspRaw(legend.position = "none") +
         ggplot2::theme(
