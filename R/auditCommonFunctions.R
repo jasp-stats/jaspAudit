@@ -815,7 +815,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
       }
       if (options[["bayesian"]] && options[["expected_type"]] == "expected_abs" && options[["prior_method"]] %in% c("impartial", "arm")) {
         # Error if the prior construction method does not match the sampling objective
-        parentContainer$setError(gettext("In order to construct a prior distribution using risk assessments, specify the expected errors as a percentage of the total population."))
+        currentMethod <- switch(options[["prior_method"]], "impartial" = gettext("an impartial prior distribution"), "arm" = gettext("a prior distribution using risk assessments"))
+        parentContainer$setError(gettextf("In order to construct %1$s, specify the expected errors as a percentage of the total population.", currentMethod))
         return(TRUE)
       }
     }
