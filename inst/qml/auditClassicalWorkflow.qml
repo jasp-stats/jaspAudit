@@ -525,7 +525,7 @@ Form
 				{
 					name: 							"max"
 					text: 							qsTr("Maximum")
-					min: 							1
+					min: 							2
 					defaultValue: 					5000
 				}
 			}

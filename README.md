@@ -29,12 +29,12 @@ The analyses in the Audit module are structured in JASP in the following way:
        - Sampling Workflow
        - Bayesian Sampling Workflow
     -- Planning
-       - Classical Planning
+       - Planning
        - Bayesian Planning
     -- Selection
        - Selection
     -- Evaluation
-       - Classical Evaluation
+       - Evaluation
        - Bayesian Evaluation
     -- Digit Analysis
        - Benford's Law
