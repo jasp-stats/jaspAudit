@@ -1131,7 +1131,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       evaluationContainer <- jaspResults[["evaluationContainer"]]
       evaluationState <- evaluationContainer[["evaluationState"]]$object
 
-      if (is.null(evaluationState)) {
+      if (is.null(evaluationState) || is.na(evaluationState[["ub"]]) || is.na(evaluationState[["precision"]])) {
         return()
       }
 
@@ -2533,8 +2533,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
                                              evaluationContainer, positionInContainer = 1) {
   if (options[["explanatoryText"]]) {
     ready <- FALSE
-    if ((options[["dataType"]] == "data" && options[["values.audit"]] != "" && options[["id"]] != "" && ((options[["materiality_test"]] && planningOptions[["materiality_val"]] > 0) || (options[["min_precision_test"]] && options[["min_precision_rel_val"]] > 0))) ||
-      (options[["dataType"]] == "stats" && options[["n"]] > 0 && ((options[["materiality_test"]] && planningOptions[["materiality_val"]] > 0) || (options[["min_precision_test"]] && options[["min_precision_rel_val"]] > 0)))) {
+    if (!is.null(evaluationContainer[["evaluationState"]]$object) && ((options[["dataType"]] == "data" && options[["values.audit"]] != "" && options[["id"]] != "" && ((options[["materiality_test"]] && planningOptions[["materiality_val"]] > 0) || (options[["min_precision_test"]] && options[["min_precision_rel_val"]] > 0))) ||
+      (options[["dataType"]] == "stats" && options[["n"]] > 0 && ((options[["materiality_test"]] && planningOptions[["materiality_val"]] > 0) || (options[["min_precision_test"]] && options[["min_precision_rel_val"]] > 0))))) {
       ready <- TRUE
     }
 
@@ -2685,6 +2685,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
   } else if (options[["dataType"]] == "stats" && options[["n"]] == 0) {
     return()
   }
+  if (options[["dataType"]] == "data" && options[["values.audit"]] != "" && !all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1)) && options[["values"]] == "") {
+    return()
+  }
 
   if (!is.null(evaluationContainer[["evaluationState"]])) {
     return(evaluationContainer[["evaluationState"]]$object)
@@ -2736,6 +2739,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         )
       })
     } else {
+      method <- options[["method"]]
       if (options[["method"]] == "stringer" && options[["lta"]]) {
         method <- "stringer.lta"
       }
@@ -2748,7 +2752,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           jfa::evaluation(
             data = sample, times = if (options[["times"]] != "") options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
             min.precision = min_precision, values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
-            method = options[["method"]], N.items = planningOptions[["N.items"]], N.units = planningOptions[["N.units"]],
+            method = method, N.items = planningOptions[["N.items"]], N.units = planningOptions[["N.units"]],
             prior = prior
           )
         })
@@ -3053,6 +3057,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     parentContainer[["plotObjectives"]] <- figure
 
+    if (is.null(parentState)) {
+      return()
+    }
+
     if (((options[["values.audit"]] == "" || options[["id"]] == "") && options[["dataType"]] == "data") ||
       (options[["dataType"]] == "stats" && options[["n"]] == 0) ||
       (prevOptions[["materiality_val"]] == 0 && options[["materiality_test"]]) ||
@@ -3197,7 +3205,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     parentContainer[["plotScatter"]] <- figure
 
-    if (options[["values.audit"]] == "" || parentContainer$getError()) {
+    if (options[["values.audit"]] == "" || options[["values"]] == "" || parentContainer$getError()) {
       return()
     }
 
