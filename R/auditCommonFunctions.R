@@ -1863,7 +1863,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         if (parentState[["N.units"]] == 0) {
           dPlot$x <- factor(x = dPlot$x, levels = levels(factor(dPlot$x))[c(1, 2)])
         } else {
-          dPlot$x <- factor(x = dPlot$x, levels = levels(factor(dPlot$x))[c(2, 3, 1)])
+          dPlot$x <- factor(x = dPlot$x, levels = levels(factor(dPlot$x))[c(2, 1, 3)])
         }
         dPlot$type <- factor(x = dPlot$type, levels = levels(factor(dPlot$type))[c(1, 2)])
 
