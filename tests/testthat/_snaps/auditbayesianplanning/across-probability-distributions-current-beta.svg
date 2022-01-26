@@ -35,11 +35,11 @@
 <polyline points='540.70,510.14 540.70,70.97 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
 <polyline points='613.73,510.14 613.73,70.97 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
 <polyline points='686.77,510.14 686.77,70.97 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
-<rect x='175.53' y='228.80' width='430.91' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #7FE58B;' />
-<rect x='175.53' y='91.56' width='423.60' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #7FE58B;' />
+<rect x='175.53' y='91.56' width='430.91' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #7FE58B;' />
+<rect x='175.53' y='228.80' width='423.60' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #7FE58B;' />
 <rect x='175.53' y='366.04' width='408.99' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #7FE58B;' />
-<rect x='175.53' y='228.80' width='0.00' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FF6666;' />
 <rect x='175.53' y='91.56' width='0.00' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FF6666;' />
+<rect x='175.53' y='228.80' width='0.00' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FF6666;' />
 <rect x='175.53' y='366.04' width='0.00' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FF6666;' />
 <text x='177.90' y='159.19' style='font-size: 17.07px; font-family: sans;' textLength='9.50px' lengthAdjust='spacingAndGlyphs'>0</text>
 <text x='177.90' y='296.43' style='font-size: 17.07px; font-family: sans;' textLength='9.50px' lengthAdjust='spacingAndGlyphs'>0</text>
@@ -52,8 +52,8 @@
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
 <polyline points='149.60,510.14 149.60,70.97 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
 <text x='30.17' y='433.65' style='font-size: 17.00px; font-family: sans;' textLength='103.95px' lengthAdjust='spacingAndGlyphs'>Beta-binomial</text>
-<text x='30.17' y='296.41' style='font-size: 17.00px; font-family: sans;' textLength='60.48px' lengthAdjust='spacingAndGlyphs'>Gamma</text>
-<text x='30.17' y='159.17' style='font-size: 17.00px; font-family: sans;' textLength='34.98px' lengthAdjust='spacingAndGlyphs'>Beta</text>
+<text x='30.17' y='296.41' style='font-size: 17.00px; font-family: sans;' textLength='34.98px' lengthAdjust='spacingAndGlyphs'>Beta</text>
+<text x='30.17' y='159.17' style='font-size: 17.00px; font-family: sans;' textLength='60.48px' lengthAdjust='spacingAndGlyphs'>Gamma</text>
 <polyline points='149.60,510.14 720.00,510.14 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
 <text x='175.53' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='9.46px' lengthAdjust='spacingAndGlyphs'>0</text>
 <text x='248.56' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='18.91px' lengthAdjust='spacingAndGlyphs'>10</text>
