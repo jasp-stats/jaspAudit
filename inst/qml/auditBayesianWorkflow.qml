@@ -260,7 +260,7 @@ Form
 					enabled: 						expected_abs.checked
 					defaultValue: 					0
 					min: 							0
-					decimals: 						2
+					decimals: 						3
 					visible: 						expected_abs.checked
 				}
 			}
@@ -448,7 +448,7 @@ Form
 					{
 						spacing: 					10 * preferencesModel.uiScale
 
-						DoubleField
+						IntegerField
 						{
 							id:						prior_n
 							name: 					"n"
@@ -465,6 +465,7 @@ Form
 							min:					0
 							max:					prior_n.value
 							defaultValue: 			0
+							decimals:				3
 						}
 					}
 				}

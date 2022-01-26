@@ -125,7 +125,7 @@ Form
 								defaultValue: 	0
 								min: 			0
 								fieldWidth: 	90 * preferencesModel.uiScale
-								decimals: 		2
+								decimals: 		3
 							}
 						}
 					}
@@ -305,7 +305,7 @@ Form
 				enabled: 						expected_abs.checked
 				defaultValue: 					0
 				min: 							0
-				decimals: 						2
+				decimals: 						3
 				visible: 						expected_abs.checked
 			}
 		}

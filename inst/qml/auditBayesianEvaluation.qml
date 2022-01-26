@@ -160,7 +160,7 @@ Form
 		{
 			title: 								qsTr("Population")
 
-			DoubleField
+			IntegerField
 			{
 				id: 							n_items
 				name: 							"n_items"
@@ -168,7 +168,6 @@ Form
 				defaultValue: 					0
 				fieldWidth: 					100 * preferencesModel.uiScale
 				min: 							0
-				decimals: 						2
 			}
 
 			DoubleField
@@ -274,7 +273,7 @@ Form
 					visible:					stats.checked
 				}
 
-				IntegerField
+				DoubleField
 				{
 					id:							xobs
 					name: 						"x"
@@ -283,6 +282,7 @@ Form
 					min: 						0
 					visible:					stats.checked
 					max:						nobs.value
+					decimals:					3
 				}
 			}
 		}
@@ -495,7 +495,7 @@ Form
 				{
 					spacing: 					10 * preferencesModel.uiScale
 
-					DoubleField
+					IntegerField
 					{
 						id:						prior_n
 						name: 					"prior_n"
@@ -512,6 +512,7 @@ Form
 						min:					0
 						max:					prior_n.value
 						defaultValue: 			0
+						decimals:				3
 					}
 				}
 			}
