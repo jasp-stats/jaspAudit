@@ -308,9 +308,9 @@
     table$addColumnInfo(name = "v", title = "", type = "string")
     table$addColumnInfo(name = "form", title = gettext("Functional form"), type = "string")
     if (options[["materiality_test"]]) {
-      table$addColumnInfo(name = "hMin", title = "p(H\u208B)", type = "number")
-      table$addColumnInfo(name = "hPlus", title = "p(H\u208A)", type = "number")
-      table$addColumnInfo(name = "odds", title = "<sup>p(H\u208B)</sup>&frasl;<sub>p(H\u208A)</sub>", type = "number")
+      table$addColumnInfo(name = "hMin", title = gettextf("Support %1$s", "H\u208B"), type = "number")
+      table$addColumnInfo(name = "hPlus", title = gettextf("Support %1$s", "H\u208A"), type = "number")
+      table$addColumnInfo(name = "odds", title = gettextf("Ratio %1$s", "<sup>H\u208B</sup>&frasl;<sub>H\u208A</sub>"), type = "number")
     }
     table$addColumnInfo(name = "mean", title = gettext("Mean"), type = "number")
     table$addColumnInfo(name = "median", title = gettext("Median"), type = "number")
