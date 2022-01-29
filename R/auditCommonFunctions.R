@@ -172,12 +172,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
   )
 
   if (options[["bayesian"]]) {
-    # Create the implicit sample table
-    .jfaTableImplicitSample(options, planningState, planningContainer, jaspResults,
-      ready,
-      positionInContainer = 3
-    )
-
     # Cerate the prior and posterior statistics table
     .jfaTablePriorPosterior(options, planningOptions, planningState, planningContainer,
       jaspResults, ready,

@@ -61,43 +61,6 @@
 ################## Common functions specific to the planning stage #############
 ################################################################################
 
-.jfaTableImplicitSample <- function(options, parentState, parentContainer, jaspResults,
-                                    ready, positionInContainer) {
-  if (!options[["tableImplicitSample"]]) {
-    return()
-  }
-
-  .jfaTableNumberUpdate(jaspResults)
-
-  if (is.null(parentContainer[["sampletable"]])) {
-    tableTitle <- gettextf("<b>Table %i.</b> Equivalent Prior Sample", jaspResults[["tabNumber"]]$object)
-    table <- createJaspTable(tableTitle)
-    table$position <- positionInContainer
-    table$dependOn(options = c("tableImplicitSample", "likelihood", "tablePrior"))
-
-    table$addColumnInfo(name = "n", title = gettext("Equivalent sample size"), type = "number")
-    table$addColumnInfo(name = "x", title = gettext("Equivalent errors"), type = "number")
-
-    message <- switch(options[["prior_method"]],
-      "default" = gettext("The equivalent sample is based on minimal prior information."),
-      "param"   = gettextf("The equivalent sample is derived from the prior parameters %1$s, %2$s.", paste0("\u03B1 = ", options[["alpha"]]), paste0("\u03B2 = ", options[["beta"]])),
-      "arm"     = gettextf("The equivalent sample is derived from the ARM risk assessments: IR = %1$s and CR = %2$s.", options[["ir"]], options[["cr"]]),
-      "impartial"  = gettextf("The equivalent sample is derived from equal prior probabilities: p(H%1$s) = p(H%2$s) = 0.5", "\u208B", "\u208A"),
-      "sample"  = gettextf("The equivalent sample is derived from an earlier sample of %1$s observations containing %2$s errors.", options[["n"]], options[["x"]])
-    )
-    table$addFootnote(message)
-
-    parentContainer[["sampletable"]] <- table
-
-    if (!ready || parentContainer$getError()) {
-      return()
-    }
-
-    row <- list(n = parentState[["prior"]][["description"]]$implicit.n, x = parentState[["prior"]][["description"]]$implicit.x)
-    table$addRows(row)
-  }
-}
-
 .jfaPlotPriorAndPosterior <- function(options, parentOptions, parentState, parentContainer, jaspResults,
                                       positionInContainer, stage) {
   if ((stage == "planning" && !options[["plotPrior"]]) || (stage == "evaluation" && !options[["plotPosterior"]])) {
@@ -345,9 +308,9 @@
     table$addColumnInfo(name = "v", title = "", type = "string")
     table$addColumnInfo(name = "form", title = gettext("Functional form"), type = "string")
     if (options[["materiality_test"]]) {
-      table$addColumnInfo(name = "hMin", title = gettextf("Support %1$s", "H\u208B"), type = "number")
-      table$addColumnInfo(name = "hPlus", title = gettextf("Support %1$s", "H\u208A"), type = "number")
-      table$addColumnInfo(name = "odds", title = gettextf("Ratio %1$s", "<sup>H\u208B</sup>&frasl;<sub>H\u208A</sub>"), type = "number")
+      table$addColumnInfo(name = "hMin", title = "p(H\u208B)", type = "number")
+      table$addColumnInfo(name = "hPlus", title = "p(H\u208A)", type = "number")
+      table$addColumnInfo(name = "odds", title = "<sup>p(H\u208B)</sup>&frasl;<sub>p(H\u208A)</sub>", type = "number")
     }
     table$addColumnInfo(name = "mean", title = gettext("Mean"), type = "number")
     table$addColumnInfo(name = "median", title = gettext("Median"), type = "number")

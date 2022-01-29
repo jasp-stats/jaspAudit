@@ -326,6 +326,8 @@ Form
 
 		Group
 		{
+			rowSpacing: 							15 * preferencesModel.uiScale
+
 			Group
 			{
 				title: 								qsTr("Tables")
@@ -335,12 +337,6 @@ Form
 					text: 							qsTr("Descriptive statistics")
 					name: 							"tableBookDist"
 					enabled:						values.count > 0
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Equivalent prior sample")
-					name: 							"tableImplicitSample"
 				}
 
 				CheckBox
@@ -356,24 +352,9 @@ Form
 
 				CheckBox
 				{
-					text: 							qsTr("Prior and posterior")
-					name: 							"plotPrior"
-					childrenOnSameRow: 				false
-
-					CheckBox
-					{
-						id:							info_prior
-						text: 						qsTr("Additional info")
-						name: 						"plotPriorInfo"
-						checked:					true
-					}
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Prior predictive")
-					name: 							"plotPriorPredictive"
-					enabled:						!lik_hypergeometric.checked
+					name: 							"plotBookDist"
+					text: 							qsTr("Distribution of book values")
+					enabled: 						values.count > 0
 				}
 
 				CheckBox
@@ -385,9 +366,15 @@ Form
 
 				CheckBox
 				{
-					name: 							"plotBookDist"
-					text: 							qsTr("Distribution of book values")
-					enabled: 						values.count > 0
+					text: 							qsTr("Prior and posterior")
+					name: 							"plotPrior"
+				}
+
+				CheckBox
+				{
+					text: 							qsTr("Prior predictive")
+					name: 							"plotPriorPredictive"
+					enabled:						!lik_hypergeometric.checked
 				}
 			}
 		}
@@ -587,6 +574,29 @@ Form
 				}
 			}
 
+			Group
+			{
+				title:								qsTr("Iterations")
+				enabled:							!pasteVariables.checked
+
+				IntegerField
+				{
+					name: 							"by"
+					text: 							qsTr("Increment")
+					min: 							1
+					max:							50
+					defaultValue: 					1
+				}
+
+				IntegerField
+				{
+					name: 							"max"
+					text: 							qsTr("Maximum")
+					min: 							2
+					defaultValue: 					5000
+				}
+			}
+
 			RadioButtonGroup
 			{
 				name: 								"display"
@@ -610,29 +620,6 @@ Form
 					text: 							qsTr("Monetary values")
 					name: 							"amount"
 					enabled:						values.count > 0
-				}
-			}
-
-			Group
-			{
-				title:								qsTr("Iterations")
-				enabled:							!pasteVariables.checked
-
-				IntegerField
-				{
-					name: 							"by"
-					text: 							qsTr("Increment")
-					min: 							1
-					max:							50
-					defaultValue: 					1
-				}
-
-				IntegerField
-				{
-					name: 							"max"
-					text: 							qsTr("Maximum")
-					min: 							2
-					defaultValue: 					5000
 				}
 			}
 

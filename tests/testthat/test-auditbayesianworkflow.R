@@ -29,7 +29,6 @@ options$samplingChecked <- TRUE
 options$sampling_method <- "interval"
 options$separateMisstatement <- FALSE
 options$tableBookDist <- TRUE
-options$tableImplicitSample <- TRUE
 options$tablePrior <- TRUE
 options$tablePriorPosterior <- TRUE
 options$units <- "values"
@@ -91,14 +90,6 @@ test_that("Prior and Expected Posterior Distribution plot matches", {
   plotName <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_plotPriorAndPosterior"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "prior-and-expected-posterior-distribution")
-})
-
-test_that("<b>Table 3.</b> Equivalent prior sample results match", {
-  table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_sampletable"]][["data"]]
-  jaspTools::expect_equal_tables(
-    table,
-    list(1, 0)
-  )
 })
 
 test_that("<b>Table 2.</b> Planning Summary results match", {
