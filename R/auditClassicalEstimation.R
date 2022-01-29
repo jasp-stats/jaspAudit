@@ -844,9 +844,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   bestModel <- 1 # which.min(Bic)
 
   # format x labels
-  xlow <- min(pretty(xVar))
-  xhigh <- max(pretty(xVar))
-  xticks <- pretty(c(xlow, xhigh))
+  xticks <- jaspGraphs::getPrettyAxisBreaks(c(xVar, yVar))
   xLabs <- vector("character", length(xticks))
   xLabs <- format(xticks, digits = 3, scientific = FALSE)
 
@@ -864,12 +862,14 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     ggplot2::scale_x_continuous(
       name = gettext("Book value"),
       breaks = xticks,
-      labels = xLabs
+      labels = xLabs,
+      limits = range(xticks)
     ) +
     ggplot2::scale_y_continuous(
       name = gettext("Audit value"),
       breaks = yticks,
-      labels = yLabs
+      labels = yLabs,
+      limits = range(yticks)
     ) +
     jaspGraphs::geom_point(size = 3, fill = cols)
 
