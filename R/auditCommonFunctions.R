@@ -3427,12 +3427,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
       odds.h1 = pbeta(adjustedMateriality, alphaPosterior, betaPosterior) / pbeta(adjustedMateriality, alphaPosterior, betaPosterior, lower.tail = FALSE)
     )
   )
+  expectedPosterior[["hypotheses"]]$bf.h1 <- expectedPosterior[["hypotheses"]]$odds.h1 / prior[["hypotheses"]]$odds.h1
 
 
   result <- list(
     n = n, x = parentOptions[["expected_val"]] * n,
     conf.level = options[["conf_level"]],
-    materiality = parentOptions[["materiality"]],
+    materiality = parentOptions[["materiality_val"]],
     adjustedMateriality = adjustedMateriality,
     N.units = parentOptions[["N.units"]],
     N.items = parentOptions[["N.items"]],

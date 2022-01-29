@@ -267,6 +267,7 @@ Form
 
 			RadioButton
 			{
+				id:									expected_all
 				name:								"expected_all"
 				text:								qsTr("All possible")
 				enabled:							separate.checked
@@ -368,6 +369,12 @@ Form
 				{
 					text: 							qsTr("Prior and posterior")
 					name: 							"plotPrior"
+
+					CheckBox
+					{
+						name: 						"plotPriorInfo"
+						visible:					false
+					}
 				}
 
 				CheckBox
@@ -635,6 +642,9 @@ Form
 						text: 						qsTr("Assume homogeneous taints")
 						name: 						"separateMisstatement"
 						enabled:					!pasteVariables.checked && id.count > 0 && values.count > 0 && lik_binomial.checked
+						onCheckedChanged:			{
+							if (!checked & expected_all.checked) expected_rel.checked = true
+						}
 					}
 
 					HelpButton
