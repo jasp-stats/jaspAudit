@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2022-01-15 03:30\n"
+"POT-Creation-Date: 2022-01-29 03:28\n"
 "PO-Revision-Date: 2022-01-16 20:34+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -689,12 +689,17 @@ msgstr ""
 "No se puede incorporar esta información previa al análisis porque no se está "
 "haciendo un contraste frente a una materialidad."
 
-msgid ""
-"The expected errors must specified relative to the total population to "
-"construct a prior distribution using this method."
+#, fuzzy
+msgid "an impartial prior distribution"
+msgstr "Distribución Uniforme"
+
+msgid "a prior distribution using risk assessments"
 msgstr ""
-"Los errores esperados deben especificarse en relación a la población total, "
-"para construir una distribución previa utilizando este método."
+
+msgid ""
+"In order to construct %1$s, specify the expected errors as a percentage of "
+"the total population."
+msgstr ""
 
 msgid "Selection summary"
 msgstr "Resumen de la selección"
@@ -1929,6 +1934,13 @@ msgstr "Desplazamiento"
 
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr "%1$s %2$s vs. %3$s %2$s."
+
+#~ msgid ""
+#~ "The expected errors must specified relative to the total population to "
+#~ "construct a prior distribution using this method."
+#~ msgstr ""
+#~ "Los errores esperados deben especificarse en relación a la población "
+#~ "total, para construir una distribución previa utilizando este método."
 
 #~ msgid "<b>Table %1$i.</b> Raw Sample"
 #~ msgstr "<b>Tabla %1$i.</b> Muestra en Bruto"

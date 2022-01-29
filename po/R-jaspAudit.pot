@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.1\n"
-"POT-Creation-Date: 2022-01-15 03:30\n"
+"POT-Creation-Date: 2022-01-29 03:28\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -379,7 +379,13 @@ msgstr ""
 msgid "You cannot incorporate this prior information into your analysis because you are not testing against a performance materiality."
 msgstr ""
 
-msgid "The expected errors must specified relative to the total population to construct a prior distribution using this method."
+msgid "an impartial prior distribution"
+msgstr ""
+
+msgid "a prior distribution using risk assessments"
+msgstr ""
+
+msgid "In order to construct %1$s, specify the expected errors as a percentage of the total population."
 msgstr ""
 
 msgid "Selection summary"
