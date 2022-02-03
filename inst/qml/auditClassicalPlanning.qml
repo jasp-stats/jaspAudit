@@ -125,7 +125,7 @@ Form
 								defaultValue: 	0
 								min: 			0
 								fieldWidth: 	90 * preferencesModel.uiScale
-								decimals: 		2
+								decimals: 		3
 							}
 						}
 					}
@@ -189,6 +189,117 @@ Form
 
 	Divider { }
 
+	RadioButtonGroup
+	{
+		id: 									expected
+		name: 									"expected_type"
+		title: 									qsTr("Expected Errors in Sample")
+
+		RadioButton
+		{
+			id: 								expected_rel
+			name: 								"expected_rel"
+			text: 								qsTr("Relative")
+			checked: 							true
+			childrenOnSameRow: 					true
+
+			PercentField
+			{
+				id:								expected_rel_val
+				name: 							"expected_rel_val"
+				enabled: 						expected_rel.checked
+				decimals: 						2
+				defaultValue: 					0
+				visible: 						expected_rel.checked
+			}
+		}
+
+		RadioButton
+		{
+			id: 								expected_abs
+			name: 								"expected_abs"
+			text: 								qsTr("Absolute")
+			childrenOnSameRow: 					true
+
+			DoubleField
+			{
+				id:								expected_abs_val
+				name: 							"expected_abs_val"
+				enabled: 						expected_abs.checked
+				defaultValue: 					0
+				min: 							0
+				decimals: 						3
+				visible: 						expected_abs.checked
+			}
+		}
+	}
+
+	Group
+	{
+		title: 									qsTr("Display")
+		columns: 								2
+
+		CheckBox
+		{
+			id: 								explanatoryText
+			text: 								qsTr("Explanatory text")
+			name: 								"explanatoryText"
+			checked: 							true
+		}
+
+		HelpButton
+		{
+			helpPage:							"Audit/explanatoryText"
+			toolTip: 							qsTr("Show explanatory text at each step of the analysis")
+		}
+	}
+
+	RadioButtonGroup
+	{
+		title: 									qsTr("Probability Distribution")
+		name: 									"likelihood"
+
+		RadioButton
+		{
+			id: 								hypergeometric
+			text: 								qsTr("Hypergeometric")
+			name: 								"hypergeometric"
+			enabled:							n_units.value > 0
+		}
+
+		RadioButton
+		{
+			id: 								binomial
+			text: 								qsTr("Binomial")
+			name: 								"binomial"
+			checked:							true
+		}
+
+		RadioButton
+		{
+			id: 								poisson
+			text: 								qsTr("Poisson")
+			name: 								"poisson"
+		}
+	}
+
+	Group
+	{
+		title: 									qsTr("Plots")
+
+		CheckBox
+		{
+			text: 								qsTr("Compare sample sizes")
+			name: 								"plotSampleSizes"
+		}
+
+		CheckBox
+		{
+			text: 								qsTr("Assumed error distribution")
+			name: 								"plotErrorDist"
+		}
+	}
+
 	Group
 	{
 		title: 									qsTr("Audit Risk Model")
@@ -246,140 +357,10 @@ Form
 		}
 	}
 
-	Group
-	{
-		title: 									qsTr("Display")
-		columns: 								2
-
-		CheckBox
-		{
-			id: 								explanatoryText
-			text: 								qsTr("Explanatory text")
-			name: 								"explanatoryText"
-			checked: 							true
-		}
-
-		HelpButton
-		{
-			helpPage:							"Audit/explanatoryText"
-			toolTip: 							qsTr("Show explanatory text at each step of the analysis")
-		}
-	}
-
-	RadioButtonGroup
-	{
-		id: 									expected
-		name: 									"expected_type"
-		title: 									qsTr("Expected Errors in Sample")
-
-		RadioButton
-		{
-			id: 								expected_rel
-			name: 								"expected_rel"
-			text: 								qsTr("Relative")
-			checked: 							true
-			childrenOnSameRow: 					true
-
-			PercentField
-			{
-				id:								expected_rel_val
-				name: 							"expected_rel_val"
-				enabled: 						expected_rel.checked
-				decimals: 						2
-				defaultValue: 					0
-				visible: 						expected_rel.checked
-			}
-		}
-
-		RadioButton
-		{
-			id: 								expected_abs
-			name: 								"expected_abs"
-			text: 								qsTr("Absolute")
-			childrenOnSameRow: 					true
-
-			DoubleField
-			{
-				id:								expected_abs_val
-				name: 							"expected_abs_val"
-				enabled: 						expected_abs.checked
-				defaultValue: 					0
-				min: 							0
-				decimals: 						2
-				visible: 						expected_abs.checked
-			}
-		}
-	}
-
-	Group
-	{
-		title: 									qsTr("Plots")
-
-		CheckBox
-		{
-			text: 								qsTr("Compare sample sizes")
-			name: 								"plotSampleSizes"
-		}
-
-		CheckBox
-		{
-			text: 								qsTr("Assumed error distribution")
-			name: 								"plotErrorDist"
-		}
-	}
-
-	RadioButtonGroup
-	{
-		title: 									qsTr("Probability Distribution")
-		name: 									"likelihood"
-
-		RadioButton
-		{
-			id: 								hypergeometric
-			text: 								qsTr("Hypergeometric")
-			name: 								"hypergeometric"
-			enabled:							n_units.value > 0
-		}
-
-		RadioButton
-		{
-			id: 								binomial
-			text: 								qsTr("Binomial")
-			name: 								"binomial"
-			checked:							true
-		}
-
-		RadioButton
-		{
-			id: 								poisson
-			text: 								qsTr("Poisson")
-			name: 								"poisson"
-		}
-	}
-
 	Section
 	{
 		title:									qsTr("Advanced Options")
 		columns:								2
-
-		RadioButtonGroup
-		{
-			name: 								"display"
-			title:								qsTr("Format Tables")
-
-			RadioButton
-			{
-				text: 							qsTr("Numbers")
-				name: 							"number"
-				checked: 						true
-			}
-
-			RadioButton
-			{
-				text: 							qsTr("Percentages")
-				name: 							"percent"
-			}
-		}
 
 		Group
 		{
@@ -399,6 +380,25 @@ Form
 				text: 							qsTr("Maximum")
 				min: 							2
 				defaultValue: 					5000
+			}
+		}
+
+		RadioButtonGroup
+		{
+			name: 								"display"
+			title:								qsTr("Format Tables")
+
+			RadioButton
+			{
+				text: 							qsTr("Numbers")
+				name: 							"number"
+				checked: 						true
+			}
+
+			RadioButton
+			{
+				text: 							qsTr("Percentages")
+				name: 							"percent"
 			}
 		}
 	}

@@ -172,12 +172,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
   )
 
   if (options[["bayesian"]]) {
-    # Create the implicit sample table
-    .jfaTableImplicitSample(options, planningState, planningContainer, jaspResults,
-      ready,
-      positionInContainer = 3
-    )
-
     # Cerate the prior and posterior statistics table
     .jfaTablePriorPosterior(options, planningOptions, planningState, planningContainer,
       jaspResults, ready,
@@ -1131,7 +1125,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       evaluationContainer <- jaspResults[["evaluationContainer"]]
       evaluationState <- evaluationContainer[["evaluationState"]]$object
 
-      if (is.null(evaluationState)) {
+      if (is.null(evaluationState) || is.na(evaluationState[["ub"]]) || is.na(evaluationState[["precision"]])) {
         return()
       }
 
@@ -1863,7 +1857,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         if (parentState[["N.units"]] == 0) {
           dPlot$x <- factor(x = dPlot$x, levels = levels(factor(dPlot$x))[c(1, 2)])
         } else {
-          dPlot$x <- factor(x = dPlot$x, levels = levels(factor(dPlot$x))[c(2, 3, 1)])
+          dPlot$x <- factor(x = dPlot$x, levels = levels(factor(dPlot$x))[c(2, 1, 3)])
         }
         dPlot$type <- factor(x = dPlot$type, levels = levels(factor(dPlot$type))[c(1, 2)])
 
@@ -2533,8 +2527,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
                                              evaluationContainer, positionInContainer = 1) {
   if (options[["explanatoryText"]]) {
     ready <- FALSE
-    if ((options[["dataType"]] == "data" && options[["values.audit"]] != "" && options[["id"]] != "" && ((options[["materiality_test"]] && planningOptions[["materiality_val"]] > 0) || (options[["min_precision_test"]] && options[["min_precision_rel_val"]] > 0))) ||
-      (options[["dataType"]] == "stats" && options[["n"]] > 0 && ((options[["materiality_test"]] && planningOptions[["materiality_val"]] > 0) || (options[["min_precision_test"]] && options[["min_precision_rel_val"]] > 0)))) {
+    if (!is.null(evaluationContainer[["evaluationState"]]$object) && ((options[["dataType"]] == "data" && options[["values.audit"]] != "" && options[["id"]] != "" && ((options[["materiality_test"]] && planningOptions[["materiality_val"]] > 0) || (options[["min_precision_test"]] && options[["min_precision_rel_val"]] > 0))) ||
+      (options[["dataType"]] == "stats" && options[["n"]] > 0 && ((options[["materiality_test"]] && planningOptions[["materiality_val"]] > 0) || (options[["min_precision_test"]] && options[["min_precision_rel_val"]] > 0))))) {
       ready <- TRUE
     }
 
@@ -2685,6 +2679,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
   } else if (options[["dataType"]] == "stats" && options[["n"]] == 0) {
     return()
   }
+  if (options[["dataType"]] == "data" && options[["values.audit"]] != "" && !all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1)) && options[["values"]] == "") {
+    return()
+  }
 
   if (!is.null(evaluationContainer[["evaluationState"]])) {
     return(evaluationContainer[["evaluationState"]]$object)
@@ -2736,6 +2733,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         )
       })
     } else {
+      method <- options[["method"]]
       if (options[["method"]] == "stringer" && options[["lta"]]) {
         method <- "stringer.lta"
       }
@@ -2748,7 +2746,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           jfa::evaluation(
             data = sample, times = if (options[["times"]] != "") options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
             min.precision = min_precision, values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
-            method = options[["method"]], N.items = planningOptions[["N.items"]], N.units = planningOptions[["N.units"]],
+            method = method, N.items = planningOptions[["N.items"]], N.units = planningOptions[["N.units"]],
             prior = prior
           )
         })
@@ -3053,6 +3051,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     parentContainer[["plotObjectives"]] <- figure
 
+    if (is.null(parentState)) {
+      return()
+    }
+
     if (((options[["values.audit"]] == "" || options[["id"]] == "") && options[["dataType"]] == "data") ||
       (options[["dataType"]] == "stats" && options[["n"]] == 0) ||
       (prevOptions[["materiality_val"]] == 0 && options[["materiality_test"]]) ||
@@ -3197,7 +3199,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     parentContainer[["plotScatter"]] <- figure
 
-    if (options[["values.audit"]] == "" || parentContainer$getError()) {
+    if (options[["values.audit"]] == "" || options[["values"]] == "" || parentContainer$getError()) {
       return()
     }
 
@@ -3347,7 +3349,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 .jfaSeparatedMisstatementPlanningState <- function(options, dataset, prior, parentOptions) {
 
   # Plan a sample for the efficiency technique Separate known and unknown misstatement
-  for (n in seq(5, options[["max"]], by = options[["by"]])) {
+  for (n in seq(options[["by"]], options[["max"]], by = options[["by"]])) {
     interval <- (parentOptions[["N.units"]] / n)
     topStratum <- subset(dataset, dataset[[options[["values"]]]] > interval)
     bottomStratum <- subset(dataset, dataset[[options[["values"]]]] <= interval)
@@ -3425,12 +3427,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
       odds.h1 = pbeta(adjustedMateriality, alphaPosterior, betaPosterior) / pbeta(adjustedMateriality, alphaPosterior, betaPosterior, lower.tail = FALSE)
     )
   )
+  expectedPosterior[["hypotheses"]]$bf.h1 <- expectedPosterior[["hypotheses"]]$odds.h1 / prior[["hypotheses"]]$odds.h1
 
 
   result <- list(
     n = n, x = parentOptions[["expected_val"]] * n,
     conf.level = options[["conf_level"]],
-    materiality = parentOptions[["materiality"]],
+    materiality = parentOptions[["materiality_val"]],
     adjustedMateriality = adjustedMateriality,
     N.units = parentOptions[["N.units"]],
     N.items = parentOptions[["N.items"]],

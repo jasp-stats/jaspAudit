@@ -217,7 +217,7 @@ Form
 				enabled: 						expected_abs.checked
 				defaultValue: 					0
 				min: 							0
-				decimals: 						2
+				decimals: 						3
 				visible: 						expected_abs.checked
 			}
 		}
@@ -274,15 +274,11 @@ Form
 
 	Group
 	{
+		rowSpacing: 							15 * preferencesModel.uiScale
+
 		Group
 		{
 			title: 								qsTr("Tables")
-
-			CheckBox
-			{
-				text: 							qsTr("Equivalent prior sample")
-				name: 							"tableImplicitSample"
-			}
 
 			CheckBox
 			{
@@ -297,16 +293,19 @@ Form
 
 			CheckBox
 			{
+				text: 							qsTr("Compare sample sizes")
+				name: 							"plotSampleSizes"
+			}
+
+			CheckBox
+			{
 				text: 							qsTr("Prior and posterior")
 				name: 							"plotPrior"
-				childrenOnSameRow: 				false
 
 				CheckBox
 				{
-					id:							info_prior
-					text: 						qsTr("Additional info")
 					name: 						"plotPriorInfo"
-					checked:					true
+					visible:					false
 				}
 			}
 
@@ -315,12 +314,6 @@ Form
 				text: 							qsTr("Prior predictive")
 				name: 							"plotPriorPredictive"
 				enabled:						!hypergeometric.checked
-			}
-
-			CheckBox
-			{
-				text: 							qsTr("Compare sample sizes")
-				name: 							"plotSampleSizes"
 			}
 		}
 	}
@@ -380,7 +373,7 @@ Form
 				{
 					spacing: 					10 * preferencesModel.uiScale
 
-					DoubleField
+					IntegerField
 					{
 						id:						prior_n
 						name: 					"n"
@@ -397,6 +390,7 @@ Form
 						min:					0
 						max:					prior_n.value
 						defaultValue: 			0
+						decimals:				3
 					}
 				}
 			}
@@ -474,25 +468,6 @@ Form
 		title:									qsTr("Advanced Options")
 		columns:								2
 
-		RadioButtonGroup
-		{
-			name: 								"display"
-			title:								qsTr("Format Tables")
-
-			RadioButton
-			{
-				text: 							qsTr("Numbers")
-				name: 							"number"
-				checked: 						true
-			}
-
-			RadioButton
-			{
-				text: 							qsTr("Percentages")
-				name: 							"percent"
-			}
-		}
-
 		Group
 		{
 			title:								qsTr("Iterations")
@@ -511,6 +486,25 @@ Form
 				text: 							qsTr("Maximum")
 				min: 							2
 				defaultValue: 					5000
+			}
+		}
+
+		RadioButtonGroup
+		{
+			name: 								"display"
+			title:								qsTr("Format Tables")
+
+			RadioButton
+			{
+				text: 							qsTr("Numbers")
+				name: 							"number"
+				checked: 						true
+			}
+
+			RadioButton
+			{
+				text: 							qsTr("Percentages")
+				name: 							"percent"
 			}
 		}
 	}

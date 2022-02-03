@@ -260,13 +260,14 @@ Form
 					enabled: 						expected_abs.checked
 					defaultValue: 					0
 					min: 							0
-					decimals: 						2
+					decimals: 						3
 					visible: 						expected_abs.checked
 				}
 			}
 
 			RadioButton
 			{
+				id:									expected_all
 				name:								"expected_all"
 				text:								qsTr("All possible")
 				enabled:							separate.checked
@@ -326,6 +327,8 @@ Form
 
 		Group
 		{
+			rowSpacing: 							15 * preferencesModel.uiScale
+
 			Group
 			{
 				title: 								qsTr("Tables")
@@ -335,12 +338,6 @@ Form
 					text: 							qsTr("Descriptive statistics")
 					name: 							"tableBookDist"
 					enabled:						values.count > 0
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Equivalent prior sample")
-					name: 							"tableImplicitSample"
 				}
 
 				CheckBox
@@ -356,24 +353,9 @@ Form
 
 				CheckBox
 				{
-					text: 							qsTr("Prior and posterior")
-					name: 							"plotPrior"
-					childrenOnSameRow: 				false
-
-					CheckBox
-					{
-						id:							info_prior
-						text: 						qsTr("Additional info")
-						name: 						"plotPriorInfo"
-						checked:					true
-					}
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Prior predictive")
-					name: 							"plotPriorPredictive"
-					enabled:						!lik_hypergeometric.checked
+					name: 							"plotBookDist"
+					text: 							qsTr("Distribution of book values")
+					enabled: 						values.count > 0
 				}
 
 				CheckBox
@@ -385,9 +367,21 @@ Form
 
 				CheckBox
 				{
-					name: 							"plotBookDist"
-					text: 							qsTr("Distribution of book values")
-					enabled: 						values.count > 0
+					text: 							qsTr("Prior and posterior")
+					name: 							"plotPrior"
+
+					CheckBox
+					{
+						name: 						"plotPriorInfo"
+						visible:					false
+					}
+				}
+
+				CheckBox
+				{
+					text: 							qsTr("Prior predictive")
+					name: 							"plotPriorPredictive"
+					enabled:						!lik_hypergeometric.checked
 				}
 			}
 		}
@@ -448,7 +442,7 @@ Form
 					{
 						spacing: 					10 * preferencesModel.uiScale
 
-						DoubleField
+						IntegerField
 						{
 							id:						prior_n
 							name: 					"n"
@@ -465,6 +459,7 @@ Form
 							min:					0
 							max:					prior_n.value
 							defaultValue: 			0
+							decimals:				3
 						}
 					}
 				}
@@ -586,6 +581,29 @@ Form
 				}
 			}
 
+			Group
+			{
+				title:								qsTr("Iterations")
+				enabled:							!pasteVariables.checked
+
+				IntegerField
+				{
+					name: 							"by"
+					text: 							qsTr("Increment")
+					min: 							1
+					max:							50
+					defaultValue: 					1
+				}
+
+				IntegerField
+				{
+					name: 							"max"
+					text: 							qsTr("Maximum")
+					min: 							2
+					defaultValue: 					5000
+				}
+			}
+
 			RadioButtonGroup
 			{
 				name: 								"display"
@@ -614,29 +632,6 @@ Form
 
 			Group
 			{
-				title:								qsTr("Iterations")
-				enabled:							!pasteVariables.checked
-
-				IntegerField
-				{
-					name: 							"by"
-					text: 							qsTr("Increment")
-					min: 							1
-					max:							50
-					defaultValue: 					1
-				}
-
-				IntegerField
-				{
-					name: 							"max"
-					text: 							qsTr("Maximum")
-					min: 							2
-					defaultValue: 					5000
-				}
-			}
-
-			Group
-			{
 				Layout.columnSpan:					3
 
 				Row
@@ -647,6 +642,9 @@ Form
 						text: 						qsTr("Assume homogeneous taints")
 						name: 						"separateMisstatement"
 						enabled:					!pasteVariables.checked && id.count > 0 && values.count > 0 && lik_binomial.checked
+						onCheckedChanged:			{
+							if (!checked & expected_all.checked) expected_rel.checked = true
+						}
 					}
 
 					HelpButton
