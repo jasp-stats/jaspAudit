@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-01-29 03:28\n"
+"POT-Creation-Date: 2022-02-05 03:27\n"
 "PO-Revision-Date: 2022-01-30 06:54+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1805,43 +1805,6 @@ msgstr "Geen fouten met %1$s%% betrouwbaarheid"
 msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
 msgstr "Geen fouten met %1$s%% betrouwbaarheid en %2$s%% nauwkeurigheid"
 
-msgid "<b>Table %i.</b> Equivalent Prior Sample"
-msgstr "<b>Tabel %i.</b> Gelijkwaardige Voorafgaande Steekproef"
-
-msgid "Equivalent sample size"
-msgstr "Gelijkwaardige steekproefomvang"
-
-msgid "Equivalent errors"
-msgstr "Gelijkwaardige fouten"
-
-msgid "The equivalent sample is based on minimal prior information."
-msgstr "De equivalente steekproef is gebaseerd op minimale prior informatie."
-
-msgid "The equivalent sample is derived from the prior parameters %1$s, %2$s."
-msgstr ""
-"De equivalente steekproef is afgeleid van de prior parameters %1$s, %2$s."
-
-msgid ""
-"The equivalent sample is derived from the ARM risk assessments: IR = %1$s "
-"and CR = %2$s."
-msgstr ""
-"De equivalente steekproef is afgeleid van de ARM risicobeoordelingen: IR = "
-"%1$s en CR = %2$s."
-
-msgid ""
-"The equivalent sample is derived from equal prior probabilities: p(H%1$s) = "
-"p(H%2$s) = 0.5"
-msgstr ""
-"De equivalente steekproef is afgeleid van gelijke prior kansen: p(H%1$s) = "
-"p(H%2$s) = 0.5"
-
-msgid ""
-"The equivalent sample is derived from an earlier sample of %1$s observations "
-"containing %2$s errors."
-msgstr ""
-"De equivalente steekproef is afgeleid van een eerdere steekproef van %1$s "
-"waarnemingen met %2$s fouten."
-
 msgid "Prior and Expected Posterior Distribution"
 msgstr "Prior and Verwachte Posterior Verdeling"
 
@@ -1937,6 +1900,45 @@ msgstr "Shift"
 
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr "%1$s %2$s vs. %3$s %2$s."
+
+#~ msgid "<b>Table %i.</b> Equivalent Prior Sample"
+#~ msgstr "<b>Tabel %i.</b> Gelijkwaardige Voorafgaande Steekproef"
+
+#~ msgid "Equivalent sample size"
+#~ msgstr "Gelijkwaardige steekproefomvang"
+
+#~ msgid "Equivalent errors"
+#~ msgstr "Gelijkwaardige fouten"
+
+#~ msgid "The equivalent sample is based on minimal prior information."
+#~ msgstr ""
+#~ "De equivalente steekproef is gebaseerd op minimale prior informatie."
+
+#~ msgid ""
+#~ "The equivalent sample is derived from the prior parameters %1$s, %2$s."
+#~ msgstr ""
+#~ "De equivalente steekproef is afgeleid van de prior parameters %1$s, %2$s."
+
+#~ msgid ""
+#~ "The equivalent sample is derived from the ARM risk assessments: IR = %1$s "
+#~ "and CR = %2$s."
+#~ msgstr ""
+#~ "De equivalente steekproef is afgeleid van de ARM risicobeoordelingen: IR "
+#~ "= %1$s en CR = %2$s."
+
+#~ msgid ""
+#~ "The equivalent sample is derived from equal prior probabilities: p(H%1$s) "
+#~ "= p(H%2$s) = 0.5"
+#~ msgstr ""
+#~ "De equivalente steekproef is afgeleid van gelijke prior kansen: p(H%1$s) "
+#~ "= p(H%2$s) = 0.5"
+
+#~ msgid ""
+#~ "The equivalent sample is derived from an earlier sample of %1$s "
+#~ "observations containing %2$s errors."
+#~ msgstr ""
+#~ "De equivalente steekproef is afgeleid van een eerdere steekproef van %1$s "
+#~ "waarnemingen met %2$s fouten."
 
 #~ msgid ""
 #~ "The expected errors must specified relative to the total population to "

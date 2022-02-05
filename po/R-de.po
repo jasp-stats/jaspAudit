@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-01-29 03:28\n"
+"POT-Creation-Date: 2022-02-05 03:27\n"
 "PO-Revision-Date: 2022-01-29 03:27+0000\n"
 "Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1843,47 +1843,6 @@ msgstr "Keine Falschangaben mit %1$s%% Konfidenz"
 msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
 msgstr "Keine Falschangaben mit %1$s%% Konfidenz und %2$s%% Genauigkeit"
 
-msgid "<b>Table %i.</b> Equivalent Prior Sample"
-msgstr "<b>Tabelle %i.</b> Äquivalente Prior-Stichprobe"
-
-msgid "Equivalent sample size"
-msgstr "Äquivalente Stichprobengröße"
-
-msgid "Equivalent errors"
-msgstr "Äquivalente Fehler"
-
-msgid "The equivalent sample is based on minimal prior information."
-msgstr "Die äquivalente Stichprobe basiert auf minimalen Prior-Informationen."
-
-msgid "The equivalent sample is derived from the prior parameters %1$s, %2$s."
-msgstr ""
-"Die äquivalente Stichprobe ist aus den Prior-Parametern %1$s, %2$s "
-"abgeleitet."
-
-#, fuzzy
-msgid ""
-"The equivalent sample is derived from the ARM risk assessments: IR = %1$s "
-"and CR = %2$s."
-msgstr ""
-"Die implizierte Stichprobe ergibt sich aus den ARM-Risikobewertungen: IR = "
-"<b>%1$s</b> und DR = <b>%2$s</b>."
-
-#, fuzzy
-msgid ""
-"The equivalent sample is derived from equal prior probabilities: p(H%1$s) = "
-"p(H%2$s) = 0.5"
-msgstr ""
-"Die implizierte Stichprobe ergibt sich aus gleichen Prior-"
-"Wahrscheinlichkeiten: <i>p(H%1$s) = p(H%2$s) = 0.5</i>"
-
-#, fuzzy
-msgid ""
-"The equivalent sample is derived from an earlier sample of %1$s observations "
-"containing %2$s errors."
-msgstr ""
-"Die implizierte Stichprobe wird aus einer früheren Stichprobe von %1$s "
-"Beobachtungen mit %2$s Fehlern abgeleitet."
-
 #, fuzzy
 msgid "Prior and Expected Posterior Distribution"
 msgstr "Prior- und Posterior-Verteilung"
@@ -1995,6 +1954,49 @@ msgstr "Verschiebung"
 #, fuzzy
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr "%1$s = %2$s %3$s %4$s"
+
+#~ msgid "<b>Table %i.</b> Equivalent Prior Sample"
+#~ msgstr "<b>Tabelle %i.</b> Äquivalente Prior-Stichprobe"
+
+#~ msgid "Equivalent sample size"
+#~ msgstr "Äquivalente Stichprobengröße"
+
+#~ msgid "Equivalent errors"
+#~ msgstr "Äquivalente Fehler"
+
+#~ msgid "The equivalent sample is based on minimal prior information."
+#~ msgstr ""
+#~ "Die äquivalente Stichprobe basiert auf minimalen Prior-Informationen."
+
+#~ msgid ""
+#~ "The equivalent sample is derived from the prior parameters %1$s, %2$s."
+#~ msgstr ""
+#~ "Die äquivalente Stichprobe ist aus den Prior-Parametern %1$s, %2$s "
+#~ "abgeleitet."
+
+#, fuzzy
+#~ msgid ""
+#~ "The equivalent sample is derived from the ARM risk assessments: IR = %1$s "
+#~ "and CR = %2$s."
+#~ msgstr ""
+#~ "Die implizierte Stichprobe ergibt sich aus den ARM-Risikobewertungen: IR "
+#~ "= <b>%1$s</b> und DR = <b>%2$s</b>."
+
+#, fuzzy
+#~ msgid ""
+#~ "The equivalent sample is derived from equal prior probabilities: p(H%1$s) "
+#~ "= p(H%2$s) = 0.5"
+#~ msgstr ""
+#~ "Die implizierte Stichprobe ergibt sich aus gleichen Prior-"
+#~ "Wahrscheinlichkeiten: <i>p(H%1$s) = p(H%2$s) = 0.5</i>"
+
+#, fuzzy
+#~ msgid ""
+#~ "The equivalent sample is derived from an earlier sample of %1$s "
+#~ "observations containing %2$s errors."
+#~ msgstr ""
+#~ "Die implizierte Stichprobe wird aus einer früheren Stichprobe von %1$s "
+#~ "Beobachtungen mit %2$s Fehlern abgeleitet."
 
 #~ msgid ""
 #~ "The expected errors must specified relative to the total population to "

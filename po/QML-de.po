@@ -1269,16 +1269,8 @@ msgid "Explanatory text"
 msgstr "Erklärungstext"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Equivalent prior sample"
-msgstr "Äquivalente Prior-Stichprobe"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Prior and posterior"
 msgstr "Prior und Posterior"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Additional info"
-msgstr "Weitere Infos"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior predictive"
@@ -1375,10 +1367,6 @@ msgstr "Erklärungstext"
 msgctxt "auditBayesianWorkflow|"
 msgid "Descriptive statistics"
 msgstr "Deskriptive Statistiken"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Equivalent prior sample"
-msgstr "Äquivalente Prior-Stichprobe"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior and posterior"

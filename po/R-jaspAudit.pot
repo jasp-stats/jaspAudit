@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.1\n"
-"POT-Creation-Date: 2022-01-29 03:28\n"
+"POT-Creation-Date: 2022-02-05 03:27\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -947,30 +947,6 @@ msgid "No misstatements with %1$s%% confidence"
 msgstr ""
 
 msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
-msgstr ""
-
-msgid "<b>Table %i.</b> Equivalent Prior Sample"
-msgstr ""
-
-msgid "Equivalent sample size"
-msgstr ""
-
-msgid "Equivalent errors"
-msgstr ""
-
-msgid "The equivalent sample is based on minimal prior information."
-msgstr ""
-
-msgid "The equivalent sample is derived from the prior parameters %1$s, %2$s."
-msgstr ""
-
-msgid "The equivalent sample is derived from the ARM risk assessments: IR = %1$s and CR = %2$s."
-msgstr ""
-
-msgid "The equivalent sample is derived from equal prior probabilities: p(H%1$s) = p(H%2$s) = 0.5"
-msgstr ""
-
-msgid "The equivalent sample is derived from an earlier sample of %1$s observations containing %2$s errors."
 msgstr ""
 
 msgid "Prior and Expected Posterior Distribution"

@@ -1272,15 +1272,7 @@ msgid "Explanatory text"
 msgstr ""
 
 msgctxt "auditBayesianPlanning|"
-msgid "Equivalent prior sample"
-msgstr ""
-
-msgctxt "auditBayesianPlanning|"
 msgid "Prior and posterior"
-msgstr ""
-
-msgctxt "auditBayesianPlanning|"
-msgid "Additional info"
 msgstr ""
 
 msgctxt "auditBayesianPlanning|"
@@ -1378,10 +1370,6 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Descriptive statistics"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Equivalent prior sample"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"

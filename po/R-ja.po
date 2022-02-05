@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2022-01-29 03:28\n"
+"POT-Creation-Date: 2022-02-05 03:27\n"
 "PO-Revision-Date: 2021-11-16 04:40+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -1422,37 +1422,6 @@ msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
 msgstr ""
 
 #, fuzzy
-msgid "<b>Table %i.</b> Equivalent Prior Sample"
-msgstr "<b>表 %i.</b> 記述統計"
-
-msgid "Equivalent sample size"
-msgstr ""
-
-msgid "Equivalent errors"
-msgstr ""
-
-msgid "The equivalent sample is based on minimal prior information."
-msgstr ""
-
-msgid "The equivalent sample is derived from the prior parameters %1$s, %2$s."
-msgstr ""
-
-msgid ""
-"The equivalent sample is derived from the ARM risk assessments: IR = %1$s "
-"and CR = %2$s."
-msgstr ""
-
-msgid ""
-"The equivalent sample is derived from equal prior probabilities: p(H%1$s) = "
-"p(H%2$s) = 0.5"
-msgstr ""
-
-msgid ""
-"The equivalent sample is derived from an earlier sample of %1$s observations "
-"containing %2$s errors."
-msgstr ""
-
-#, fuzzy
 msgid "Prior and Expected Posterior Distribution"
 msgstr "事後分布"
 
@@ -1541,6 +1510,10 @@ msgstr ""
 
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr ""
+
+#, fuzzy
+#~ msgid "<b>Table %i.</b> Equivalent Prior Sample"
+#~ msgstr "<b>表 %i.</b> 記述統計"
 
 #, fuzzy
 #~ msgid "<b>Table %1$i.</b> Raw Sample"

@@ -6,11 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-01-29 03:28\n"
+"POT-Creation-Date: 2022-02-05 03:27\n"
 "PO-Revision-Date: 2022-01-31 00:18+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-r/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
+"r/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1786,42 +1786,6 @@ msgstr "Ningunha inexactitude cunha confianza do %1$s%%"
 msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
 msgstr "Ningunha inexactitude cunha confianza do %1$s%% e precisión do %2$s%%"
 
-msgid "<b>Table %i.</b> Equivalent Prior Sample"
-msgstr "<b>Táboa %i.</b> Mostra Previa Equivalente"
-
-msgid "Equivalent sample size"
-msgstr "Tamaño de mostra equivalente"
-
-msgid "Equivalent errors"
-msgstr "Erros equivalentes"
-
-msgid "The equivalent sample is based on minimal prior information."
-msgstr "A mostra equivalente baséase en mínima información previa."
-
-msgid "The equivalent sample is derived from the prior parameters %1$s, %2$s."
-msgstr "A mostra equivalente derívase dos parámetros previos %1$s, %2$s."
-
-msgid ""
-"The equivalent sample is derived from the ARM risk assessments: IR = %1$s "
-"and CR = %2$s."
-msgstr ""
-"A mostra equivalente derívase das valoracións do risco do MRA: RI = %1$s e "
-"RC = %2$s."
-
-msgid ""
-"The equivalent sample is derived from equal prior probabilities: p(H%1$s) = "
-"p(H%2$s) = 0.5"
-msgstr ""
-"A mostra equivalente derívase de probabilidades previas iguais: p(H%1$s) = "
-"p(H%2$s) = 0.5"
-
-msgid ""
-"The equivalent sample is derived from an earlier sample of %1$s observations "
-"containing %2$s errors."
-msgstr ""
-"A mostra equivalente derívase dunha mostra anterior de %1$s observacións que "
-"conteñen %2$s erros."
-
 msgid "Prior and Expected Posterior Distribution"
 msgstr "Distribución Previa e Posterior Agardada"
 
@@ -1918,6 +1882,43 @@ msgstr "Desprazamento"
 
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr "%1$s %2$s vs. %3$s %2$s."
+
+#~ msgid "<b>Table %i.</b> Equivalent Prior Sample"
+#~ msgstr "<b>Táboa %i.</b> Mostra Previa Equivalente"
+
+#~ msgid "Equivalent sample size"
+#~ msgstr "Tamaño de mostra equivalente"
+
+#~ msgid "Equivalent errors"
+#~ msgstr "Erros equivalentes"
+
+#~ msgid "The equivalent sample is based on minimal prior information."
+#~ msgstr "A mostra equivalente baséase en mínima información previa."
+
+#~ msgid ""
+#~ "The equivalent sample is derived from the prior parameters %1$s, %2$s."
+#~ msgstr "A mostra equivalente derívase dos parámetros previos %1$s, %2$s."
+
+#~ msgid ""
+#~ "The equivalent sample is derived from the ARM risk assessments: IR = %1$s "
+#~ "and CR = %2$s."
+#~ msgstr ""
+#~ "A mostra equivalente derívase das valoracións do risco do MRA: RI = %1$s "
+#~ "e RC = %2$s."
+
+#~ msgid ""
+#~ "The equivalent sample is derived from equal prior probabilities: p(H%1$s) "
+#~ "= p(H%2$s) = 0.5"
+#~ msgstr ""
+#~ "A mostra equivalente derívase de probabilidades previas iguais: p(H%1$s) "
+#~ "= p(H%2$s) = 0.5"
+
+#~ msgid ""
+#~ "The equivalent sample is derived from an earlier sample of %1$s "
+#~ "observations containing %2$s errors."
+#~ msgstr ""
+#~ "A mostra equivalente derívase dunha mostra anterior de %1$s observacións "
+#~ "que conteñen %2$s erros."
 
 #~ msgid ""
 #~ "The expected errors must specified relative to the total population to "

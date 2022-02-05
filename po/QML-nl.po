@@ -1269,16 +1269,8 @@ msgid "Explanatory text"
 msgstr "Toelichtende tekst"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Equivalent prior sample"
-msgstr "Gelijkwaardige prior steekproef"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Prior and posterior"
 msgstr "Prior en posterior"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Additional info"
-msgstr "Aanvullende info"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior predictive"
@@ -1375,10 +1367,6 @@ msgstr "Toelichtende tekst"
 msgctxt "auditBayesianWorkflow|"
 msgid "Descriptive statistics"
 msgstr "Beschrijvende statistieken"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Equivalent prior sample"
-msgstr "Gelijkwaardige prior steekproef"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior and posterior"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-01-29 03:28\n"
+"POT-Creation-Date: 2022-02-05 03:27\n"
 "PO-Revision-Date: 2021-09-11 03:27+0000\n"
 "Last-Translator: JASP Stats <b.boutin@uva.nl>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -1550,38 +1550,6 @@ msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
 msgstr ""
 
 #, fuzzy
-msgid "<b>Table %i.</b> Equivalent Prior Sample"
-msgstr "<b>Tabela %i.</b> Estatísticas de frequência"
-
-#, fuzzy
-msgid "Equivalent sample size"
-msgstr "Tamanho da amostra"
-
-msgid "Equivalent errors"
-msgstr ""
-
-msgid "The equivalent sample is based on minimal prior information."
-msgstr ""
-
-msgid "The equivalent sample is derived from the prior parameters %1$s, %2$s."
-msgstr ""
-
-msgid ""
-"The equivalent sample is derived from the ARM risk assessments: IR = %1$s "
-"and CR = %2$s."
-msgstr ""
-
-msgid ""
-"The equivalent sample is derived from equal prior probabilities: p(H%1$s) = "
-"p(H%2$s) = 0.5"
-msgstr ""
-
-msgid ""
-"The equivalent sample is derived from an earlier sample of %1$s observations "
-"containing %2$s errors."
-msgstr ""
-
-#, fuzzy
 msgid "Prior and Expected Posterior Distribution"
 msgstr "Distribuição posterior"
 
@@ -1672,6 +1640,14 @@ msgstr ""
 #, fuzzy
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr "%1$s = %2$s %3$s %4$s"
+
+#, fuzzy
+#~ msgid "<b>Table %i.</b> Equivalent Prior Sample"
+#~ msgstr "<b>Tabela %i.</b> Estatísticas de frequência"
+
+#, fuzzy
+#~ msgid "Equivalent sample size"
+#~ msgstr "Tamanho da amostra"
 
 #, fuzzy
 #~ msgid "<b>Table %1$i.</b> Raw Sample"
