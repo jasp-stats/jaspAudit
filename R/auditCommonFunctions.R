@@ -1843,8 +1843,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
           result <- jfa::planning(
             conf.level = confidence, materiality = materiality, min.precision = min_precision,
-            expected = if (!options[["bayesian"]] && options[["ir"]] != "high" || options[["cr"]] != "high") 0 else parentOptions[["expected_val"]],
-            likelihood = likelihoods[i], N.units = N, by = options[["by"]], max = options[["max"]], prior = prior
+            expected = parentOptions[["expected_val"]], likelihood = likelihoods[i], N.units = N, 
+            by = options[["by"]], max = options[["max"]], prior = prior
           )
           n[i] <- result[["n"]]
           k[i] <- result[["x"]]
