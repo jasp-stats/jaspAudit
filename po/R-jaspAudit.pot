@@ -403,7 +403,7 @@ msgstr ""
 msgid "The direct, difference, ratio, and regression bounds require that you specify the number of items and the number of units in the population."
 msgstr ""
 
-msgid "Your must specify unique item ID's. The row numbers of the data set are sufficient."
+msgid "You must specify unique item ID's. The row numbers of the data set are sufficient."
 msgstr ""
 
 msgid "The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk, or the confidence."

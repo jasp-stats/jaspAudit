@@ -720,7 +720,7 @@ msgstr ""
 "opgeeft."
 
 msgid ""
-"Your must specify unique item ID's. The row numbers of the data set are "
+"You must specify unique item ID's. The row numbers of the data set are "
 "sufficient."
 msgstr ""
 "U moet unieke item ID's specificeren. De rijnummers van de gegevens volstaan."
