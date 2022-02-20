@@ -734,7 +734,7 @@ msgstr ""
 "que indiques o número de elementos e o número de unidades da poboación."
 
 msgid ""
-"Your must specify unique item ID's. The row numbers of the data set are "
+"You must specify unique item ID's. The row numbers of the data set are "
 "sufficient."
 msgstr ""
 "Debes indicar IDs de elementos únicas. Os números das filas do conxunto de "

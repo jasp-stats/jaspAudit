@@ -731,7 +731,7 @@ msgstr ""
 
 #, fuzzy
 msgid ""
-"Your must specify unique item ID's. The row numbers of the data set are "
+"You must specify unique item ID's. The row numbers of the data set are "
 "sufficient."
 msgstr ""
 "Es müssen eindeutige Transaktions-IDs angegeben werden. Die Zeilennummern "
