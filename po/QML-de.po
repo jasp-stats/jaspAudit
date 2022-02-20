@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2022-02-20 11:55+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.11-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1102,15 +1108,15 @@ msgstr "Minimale Genauigkeit"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "No. items"
-msgstr ""
+msgstr "Anz. Posten"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "No. units"
-msgstr ""
+msgstr "Anz. Einheiten"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Item ID"
-msgstr ""
+msgstr "Posten-ID"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Book Value"
@@ -1178,7 +1184,7 @@ msgstr "Streudiagramm"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Display item ID's"
-msgstr ""
+msgstr "Posten-IDs anzeigen"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior"
@@ -1206,7 +1212,7 @@ msgstr "Fehler"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Impartial"
-msgstr ""
+msgstr "Unparteiisch"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Risk assessments"
@@ -1226,7 +1232,7 @@ msgstr "Alles möglich"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Critical Items"
-msgstr ""
+msgstr "Kristische Posten"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Negative book values"
@@ -1234,7 +1240,7 @@ msgstr "Negative Buchwerte"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Format Tables"
-msgstr ""
+msgstr "Tabellenformat"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Assume homogeneous taints"
@@ -1258,7 +1264,7 @@ msgstr "Minimale Genauigkeit"
 
 msgctxt "auditBayesianPlanning|"
 msgid "No. units"
-msgstr ""
+msgstr "Anz. Einheiten"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Display"
@@ -1306,7 +1312,7 @@ msgstr "Fehler"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Impartial"
-msgstr ""
+msgstr "Unparteiisch"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Risk assessments"
@@ -1322,7 +1328,7 @@ msgstr "Kontrollrisiko"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Format Tables"
-msgstr ""
+msgstr "Tabellenformat"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Numbers"
@@ -1350,7 +1356,7 @@ msgstr "Minimale Genauigkeit"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Item ID"
-msgstr ""
+msgstr "Posten-ID"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Book Value"
@@ -1419,7 +1425,7 @@ msgstr "Fehler"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Impartial"
-msgstr ""
+msgstr "Unparteiisch"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Risk assessments"
@@ -1439,7 +1445,7 @@ msgstr "Weitere Optionen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Critical Items"
-msgstr ""
+msgstr "Kritische Posten"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Negative book values"
@@ -1455,7 +1461,7 @@ msgstr "Behalten"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Format Tables"
-msgstr ""
+msgstr "Tabellenformat"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Increment"
@@ -1479,11 +1485,11 @@ msgstr "Weitere Variablen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Items"
-msgstr ""
+msgstr "Posten"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Monetary units"
-msgstr ""
+msgstr "Geldeinheiten"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Method"
@@ -1491,19 +1497,21 @@ msgstr "Methode"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Annotation"
-msgstr ""
+msgstr "Annotation"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Audit value"
-msgstr ""
+msgstr "Auditwert"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Adds a column to specify the audit values of the items."
-msgstr ""
+msgstr "Fügt eine Spalte hinzu, um die Auditwerte der Posten anzugeben."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Adds a column to specify the items as correct (0) or misstated (1)."
 msgstr ""
+"Fügt eine Spalte hinzu, um die Posten als korrekt (0) oder inkorrekt (1) "
+"anzugeben."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Column name selection result"
@@ -1511,7 +1519,7 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Column name audit result"
-msgstr ""
+msgstr "Spaltenname Audit-Ergebnis"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Data Entry"
@@ -1520,14 +1528,18 @@ msgstr "Dateneingabe"
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
 msgstr ""
+"<b>Annotieren Sie Ihre ausgewählten Posten mit ihren (wahren) "
+"Auditwerten.</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
 msgstr ""
+"<b>Annotieren Sie Ihre ausgewählten Posten als korrekt (0) oder inkorrekt "
+"(1).</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Audit Value"
-msgstr ""
+msgstr "Auditwert"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
@@ -1552,7 +1564,7 @@ msgstr "Streudiagramm"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Display item ID's"
-msgstr ""
+msgstr "Posten-IDs anzeigen"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Reference"
@@ -1600,7 +1612,7 @@ msgstr "Buchwerte"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Audit Values"
-msgstr ""
+msgstr "Auditwerte"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Display"
@@ -1616,11 +1628,11 @@ msgstr "Erklärungstext bei jedem Schritt der Analyse anzeigen"
 
 msgctxt "auditClassicalEstimation|"
 msgid "No. items"
-msgstr ""
+msgstr "Anz. Posten"
 
 msgctxt "auditClassicalEstimation|"
 msgid "No. units"
-msgstr ""
+msgstr "Anz. Einheiten"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Method"
@@ -1644,15 +1656,15 @@ msgstr "Minimale Genauigkeit"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "No. items"
-msgstr ""
+msgstr "Anz. Posten"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "No. units"
-msgstr ""
+msgstr "Anz. Einheiten"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Item ID"
-msgstr ""
+msgstr "Posten-ID"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Book Value"
@@ -1690,7 +1702,6 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Erklärungstext bei jedem Schritt der Analyse anzeigen"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Audit Risk Model"
 msgstr "Audit-Risiko-Modell"
@@ -1722,7 +1733,7 @@ msgstr "Stringer"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Mean-per-unit estimator"
-msgstr ""
+msgstr "Mittelwert-pro-Einheit-Schätzer"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Sampling objectives"
@@ -1734,11 +1745,11 @@ msgstr "Streudiagramm"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Display item ID's"
-msgstr ""
+msgstr "Posten-IDs anzeigen"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Critical Items"
-msgstr ""
+msgstr "Kritische Posten"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Negative book values"
@@ -1746,7 +1757,7 @@ msgstr "Negative Buchwerte"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Format Tables"
-msgstr ""
+msgstr "Tabellenformat"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Display"
@@ -1798,7 +1809,7 @@ msgstr "Minimale Genauigkeit"
 
 msgctxt "auditClassicalPlanning|"
 msgid "No. units"
-msgstr ""
+msgstr "Anz. Einheiten"
 
 #, fuzzy
 msgctxt "auditClassicalPlanning|"
@@ -1835,7 +1846,7 @@ msgstr "Angenommene Fehlerverteilung"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Format Tables"
-msgstr ""
+msgstr "Tabellenformat"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Numbers"
@@ -1863,7 +1874,7 @@ msgstr "Minimale Genauigkeit"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Item ID"
-msgstr ""
+msgstr "Posten-ID"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Book Value"
@@ -1916,7 +1927,7 @@ msgstr "Weitere Optionen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Critical Items"
-msgstr ""
+msgstr "Kritische Posten"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Negative book values"
@@ -1932,7 +1943,7 @@ msgstr "Behalten"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Format Tables"
-msgstr ""
+msgstr "Tabellenformat"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Increment"
@@ -1948,11 +1959,11 @@ msgstr "Weitere Variablen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Items"
-msgstr ""
+msgstr "Posten"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Monetary units"
-msgstr ""
+msgstr "Geldeinheiten"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Method"
@@ -1960,19 +1971,20 @@ msgstr "Methode"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Annotation"
-msgstr ""
+msgstr "Annotation"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Audit value"
-msgstr ""
+msgstr "Auditwert"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Adds a column to specify the audit values of the items."
-msgstr ""
+msgstr "Fügt Spalte hinzu, um die Auditwerte der Posten anzugeben."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Adds a column to specify the items as correct (0) or misstated (1)."
 msgstr ""
+"Fügt Spalte hinzu, um die Posten als korrekt (0) oder falsch (1) anzugeben."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Column name selection result"
@@ -1980,7 +1992,7 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Column name audit result"
-msgstr ""
+msgstr "Spaltenname Audit-Ergebnis"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Data Entry"
@@ -1989,14 +2001,18 @@ msgstr "Dateneingabe"
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
 msgstr ""
+"<b>Annotieren Sie ihre ausgewählten Posten mit deren (wahren) "
+"Auditwerten.</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
 msgstr ""
+"<b>Annotieren Sie ihre ausgewählten Posten als korrekt (0) oder inkorrekt "
+"(1).</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Audit Value"
-msgstr ""
+msgstr "Auditwert"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Stringer"
@@ -2004,7 +2020,7 @@ msgstr "Stringer"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Mean-per-unit estimator"
-msgstr ""
+msgstr "Mittelwert-pro-Einheit-Schätzer"
 
 #, fuzzy
 msgctxt "auditClassicalWorkflow|"
@@ -2021,11 +2037,11 @@ msgstr "Streudiagramm"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Display item ID's"
-msgstr ""
+msgstr "Posten-IDs anzeigen"
 
 msgctxt "auditSelection|"
 msgid "Item ID"
-msgstr ""
+msgstr "Posten-ID"
 
 msgctxt "auditSelection|"
 msgid "Book Value"
@@ -2049,11 +2065,11 @@ msgstr "Anzeigen"
 
 msgctxt "auditSelection|"
 msgid "Items"
-msgstr ""
+msgstr "Posten"
 
 msgctxt "auditSelection|"
 msgid "Monetary units"
-msgstr ""
+msgstr "Geldeinheiten"
 
 msgctxt "auditSelection|"
 msgid "Descriptive statistics"
@@ -2085,84 +2101,84 @@ msgstr "z. B. Stichprobe.csv"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Columns"
-msgstr ""
+msgstr "Spalten"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior Expected Error Rate"
-msgstr ""
+msgstr "Vorher erwartete Fehlerrate"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Monetary values"
-msgstr ""
+msgstr "Geldwerte"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Iterations"
-msgstr ""
+msgstr "Iterationen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Maximum"
-msgstr ""
+msgstr "Maximum"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Monetary values"
-msgstr ""
+msgstr "Geldwerte"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Iterations"
-msgstr ""
+msgstr "Iterationen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Maximum"
-msgstr ""
+msgstr "Maximum"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Randomize item order"
-msgstr ""
+msgstr "Zufällige Posten-Reihenfolge"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Selected items"
-msgstr ""
+msgstr "Ausgewählte Posten"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Columns"
-msgstr ""
+msgstr "Spalten"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Monetary values"
-msgstr ""
+msgstr "Geldwerte"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Iterations"
-msgstr ""
+msgstr "Iterationen"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Maximum"
-msgstr ""
+msgstr "Maximum"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Monetary values"
-msgstr ""
+msgstr "Geldwerte"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Iterations"
-msgstr ""
+msgstr "Iterationen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Maximum"
-msgstr ""
+msgstr "Maximum"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Randomize item order"
-msgstr ""
+msgstr "Zufällige Posten-Reihenfolge"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Selected items"
-msgstr ""
+msgstr "Ausgewählte Posten"
 
 msgctxt "auditSelection|"
 msgid "Randomize item order"
-msgstr ""
+msgstr "Zufällige Posten-Reihenfolge"
 
 msgctxt "auditSelection|"
 msgid "Selected items"
-msgstr ""
+msgstr "Ausgewählte Posten"
