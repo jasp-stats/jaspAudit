@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-19 12:48+0000\n"
+"PO-Revision-Date: 2022-02-23 19:15+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"qml/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.11-dev\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
 "X-Qt-Contexts: true\n"
@@ -264,11 +264,11 @@ msgstr "1. Planificación"
 
 msgctxt "auditSelection|"
 msgid "Additional Variables <i>(optional)</i>"
-msgstr "Variables adicionais <i>(opcional)</i>"
+msgstr "Variables Adicionais <i>(opcional)</i>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Execution</b>"
-msgstr "<b>A executar</b>"
+msgstr "<b>A Execución</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>3. Execution</b>"
@@ -288,7 +288,7 @@ msgstr "Mostraxe aleatoria"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Reset Workflow</b>"
-msgstr "<b>Reiniciar o fluxo de traballo</b>"
+msgstr "<b>Reiniciar o Fluxo de Traballo</b>"
 
 msgctxt "auditSelection|"
 msgid "Column name selection result: "
@@ -296,7 +296,7 @@ msgstr "Nome de columna do resultado da selección: "
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Selection</b>"
-msgstr "<b>Á Selección</b>"
+msgstr "<b>A Selección</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>2. Selection</b>"
@@ -304,7 +304,7 @@ msgstr "<b>2. Selección</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Evaluation</b>"
-msgstr "<b>Á Avaliación</b>"
+msgstr "<b>A Avaliación</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>4. Evaluation</b>"
@@ -404,7 +404,7 @@ msgstr "Planificación Baiesiana"
 
 msgctxt "Description|"
 msgid "Bayesian Sampling Workflow"
-msgstr "Fluxo de Traballo Baiesiano da Mostraxe"
+msgstr "Fluxo de Traballo da Mostraxe baiesiana"
 
 msgctxt "Description|"
 msgid "Benford's Law"
@@ -658,7 +658,7 @@ msgstr "Información Previa"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior information:"
-msgstr "Información Previa:"
+msgstr "Información previa:"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "None"
@@ -1098,7 +1098,7 @@ msgstr "Gráficas"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Compare required sample sizes"
-msgstr "Comparar os tamaños das mostras requiridos"
+msgstr "Comparar tamaños de mostras requiridos"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Implied prior distribution"
@@ -1300,7 +1300,7 @@ msgstr "Erros Agardados na Mostra"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "All possible"
-msgstr "Todo posible"
+msgstr "Todo o posible"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Inherent Risk"
@@ -1452,7 +1452,7 @@ msgstr "<b>Descargar Informe</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Selection</b>"
-msgstr "<b>Á Selección</b>"
+msgstr "<b>A Selección</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>2. Selection</b>"
@@ -1528,7 +1528,7 @@ msgstr "Mostraxe de intervalo fixo"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about fixed interval sampling."
-msgstr "Fai clic para saber máis sobre mostraxe de intervalos fixos."
+msgstr "Fai clic para saber máis sobre mostraxe de intervalo fixo."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Starting point"
@@ -1584,7 +1584,7 @@ msgstr "<b>Reiniciar o Fluxo de Traballo</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Execution</b>"
-msgstr "<b>A executar</b>"
+msgstr "<b>A Execución</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>3. Execution</b>"
@@ -1651,7 +1651,7 @@ msgstr "A.     Entrada de Datos"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Evaluation</b>"
-msgstr "<b>Á Avaliación</b>"
+msgstr "<b>A Avaliación</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>4. Evaluation</b>"
@@ -2575,7 +2575,7 @@ msgstr "Mostraxe de intervalo fixo"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about fixed interval sampling."
-msgstr "Fai clic para saber máis sobre mostraxe de intervalos fixos."
+msgstr "Fai clic para saber máis sobre mostraxe de intervalo fixo."
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Starting point"
@@ -2786,7 +2786,7 @@ msgstr "Fai clic para saber máis sobre mostraxe de celas."
 
 msgctxt "auditSelection|"
 msgid "Click to learn more about fixed interval sampling."
-msgstr "Fai clic para saber máis sobre mostraxe de intervalos fixos."
+msgstr "Fai clic para saber máis sobre mostraxe de intervalo fixo."
 
 msgctxt "auditSelection|"
 msgid "Seed"
