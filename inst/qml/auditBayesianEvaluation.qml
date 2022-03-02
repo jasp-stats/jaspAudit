@@ -51,6 +51,13 @@ Form
 		visible:								false
 	}
 
+	IntegerField
+	{
+		name: 									"max"
+		defaultValue: 							5000
+		visible:								false
+	}
+
 	// Start analysis
 	GridLayout
 	{
