@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-02-17 15:13+0000\n"
+"PO-Revision-Date: 2022-03-05 03:27+0000\n"
 "Last-Translator: Reza Almanda <rezaalmanda27@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/id/>\n"
@@ -9,12 +9,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.11-dev\n"
+"X-Generator: Weblate 4.12-dev\n"
 "X-Qt-Contexts: true\n"
 
 msgctxt "Description|"
 msgid "Audit"
-msgstr ""
+msgstr "Audit"
 
 msgctxt "Description|"
 msgid ""
@@ -26,11 +26,11 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Workflow"
-msgstr ""
+msgstr "Alur kerja"
 
 msgctxt "Description|"
 msgid "Sampling Workflow"
-msgstr ""
+msgstr "Alur Kerja Sampling"
 
 msgctxt "Description|"
 msgid "Bayesian Sampling Workflow"
@@ -38,39 +38,39 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Planning"
-msgstr ""
+msgstr "Perencanaan"
 
 msgctxt "Description|"
 msgid "Bayesian Planning"
-msgstr ""
+msgstr "Perencanaan Bayesian"
 
 msgctxt "Description|"
 msgid "Selection"
-msgstr ""
+msgstr "Seleksi"
 
 msgctxt "Description|"
 msgid "Evaluation"
-msgstr ""
+msgstr "Evaluasi"
 
 msgctxt "Description|"
 msgid "Bayesian Evaluation"
-msgstr ""
+msgstr "Evaluasi Bayesian"
 
 msgctxt "Description|"
 msgid "Digit Analysis"
-msgstr ""
+msgstr "Analisis Digit"
 
 msgctxt "Description|"
 msgid "Benford's Law"
-msgstr ""
+msgstr "Hukum Benford"
 
 msgctxt "Description|"
 msgid "Repeated Values"
-msgstr ""
+msgstr "Nilai Berulang"
 
 msgctxt "Description|"
 msgid "Repeated Values Analysis"
-msgstr ""
+msgstr "Analisis Nilai Berulang"
 
 msgctxt "Description|"
 msgid "Other"
@@ -86,15 +86,15 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Performance materiality"
-msgstr ""
+msgstr "Materialitas kinerja"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Relative"
-msgstr ""
+msgstr "Relatif"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Absolute"
-msgstr ""
+msgstr "Absolut"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Click to learn more about performance materiality."
@@ -102,11 +102,11 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Minimum precision"
-msgstr ""
+msgstr "Presisi minimum"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Click to learn more about the precision."
-msgstr ""
+msgstr "Klik untuk mempelajari lebih lanjut tentang presisi."
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Population"
@@ -114,23 +114,23 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "No. items"
-msgstr ""
+msgstr "No. Item"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "No. units"
-msgstr ""
+msgstr "No. unit"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Confidence"
-msgstr ""
+msgstr "Kepercayaan"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Item ID"
-msgstr ""
+msgstr "ID Item"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Book Value"
-msgstr ""
+msgstr "Nilai Buku"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Audit Result"
@@ -138,31 +138,31 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Selection Counter"
-msgstr ""
+msgstr "Penghitung Seleksi"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Data"
-msgstr ""
+msgstr "Data"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Summary statistics"
-msgstr ""
+msgstr "Ringkasan statistik"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Sample size"
-msgstr ""
+msgstr "Ukuran sampel"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Number of errors"
-msgstr ""
+msgstr "Jumlah error"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Display"
-msgstr ""
+msgstr "Tampilan"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Teks penjelasan"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Show explanatory text at each step of the analysis"
@@ -170,15 +170,15 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Probability Distribution"
-msgstr ""
+msgstr "Distribusi Probabilitas"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Gamma"
-msgstr ""
+msgstr "Gamma"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Beta-binomial"
@@ -186,19 +186,19 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabel"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior and posterior"
-msgstr ""
+msgstr "Prior dan posterior"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Corrections to population"
-msgstr ""
+msgstr "Koreksi terhadap populasi"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Assumption checks"
-msgstr ""
+msgstr "Pengecekan asumsi"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Confidence interval"
