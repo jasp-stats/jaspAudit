@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.1\n"
-"POT-Creation-Date: 2022-02-05 03:27\n"
+"POT-Creation-Date: 2022-03-05 03:29\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -401,9 +401,6 @@ msgid "The hypergeometric upper bound requires that you specify the number of un
 msgstr ""
 
 msgid "The direct, difference, ratio, and regression bounds require that you specify the number of items and the number of units in the population."
-msgstr ""
-
-msgid "You must specify unique item ID's. The row numbers of the data set are sufficient."
 msgstr ""
 
 msgid "The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk, or the confidence."
