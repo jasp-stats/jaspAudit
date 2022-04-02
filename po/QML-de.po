@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2022-03-27 09:06+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.12-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1118,7 +1124,7 @@ msgstr "Buchwert"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Selection Counter"
-msgstr ""
+msgstr "Auswahlzähler"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Data"
@@ -1334,7 +1340,7 @@ msgstr "Prozentwerte"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Increment"
-msgstr ""
+msgstr "Erhöhung"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Performance materiality"
@@ -1408,7 +1414,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "β"
 msgstr "β"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Size"
 msgstr "Größe"
@@ -1459,7 +1464,7 @@ msgstr "Tabellenformat"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Increment"
-msgstr ""
+msgstr "Erhöhung"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Assume homogeneous taints"
@@ -1471,7 +1476,7 @@ msgstr "Klicken, um mehr über diese Annahme zu erfahren"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Ranking Variable"
-msgstr ""
+msgstr "Rangordnungsvariable"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Additional Variables"
@@ -1509,7 +1514,7 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Column name selection result"
-msgstr ""
+msgstr "Spaltenname Auswahlergebnis"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Column name audit result"
@@ -1666,7 +1671,7 @@ msgstr "Buchwert"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Selection Counter"
-msgstr ""
+msgstr "Auswahlzähler"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Data"
@@ -1852,7 +1857,7 @@ msgstr "Prozentwerte"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Increment"
-msgstr ""
+msgstr "Erhöhung"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Performance materiality"
@@ -1941,11 +1946,11 @@ msgstr "Tabellenformat"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Increment"
-msgstr ""
+msgstr "Erhöhung"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Ranking Variable"
-msgstr ""
+msgstr "Rangordnungsvariable"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Additional Variables"
@@ -1982,7 +1987,7 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Column name selection result"
-msgstr ""
+msgstr "Spaltenname Auswahlergebnis"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Column name audit result"
@@ -2043,7 +2048,7 @@ msgstr "Buchwert"
 
 msgctxt "auditSelection|"
 msgid "Ranking Variable"
-msgstr ""
+msgstr "Rangordnungsvariable"
 
 msgctxt "auditSelection|"
 msgid "Additional Variables"
@@ -2079,7 +2084,7 @@ msgstr "Exportieren"
 
 msgctxt "auditSelection|"
 msgid "Column name selection result"
-msgstr ""
+msgstr "Spaltenname Auswahlergebnis"
 
 msgctxt "auditSelection|"
 msgid "e.g. selected"
