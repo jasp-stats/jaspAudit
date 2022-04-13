@@ -475,6 +475,7 @@ options$id <- "Transaction.ID"
 options$values <- "Ist"
 options$by <- 5
 options$samplingChecked <- TRUE
+options$variables <- list("steek")
 options$tableSample <- TRUE
 options$pasteVariables <- FALSE
 options$tableAssumptions <- TRUE
@@ -496,29 +497,32 @@ options$variable_col <- "auditResult"
 set.seed(1)
 results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase6.csv", options)
 
+
 test_that("<b>Table 1.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(0.05, 20, 0.02, "0 - 20"))
+		list(0.05, 25, 0.02, "0 - 25"))
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
 	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(14, 134141, 7, 20, "93.02%", "Total", 124784, 3, 107900, 3, 16,
-			 "100%", "Top stratum", 107900, 11, 26241, 4, 4, "64.34%", "Bottom stratum",
-			 16884))
+		list(20, 148905.79, 10, 25, "90.09%", "Total", 134145.85, 3, 107900,
+			 3, 18, "100%", "Top stratum", 107900, 17, 41005.79, 7, 7, "64.01%",
+			 "Bottom stratum", 26245.85))
 })
 
 test_that("<b>Table 4.</b> Selected Items results match", {
 	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(4600, 1, 1, 1, 77900, 2, 11, 2, 15000, 3, 3, 3, 3500, 7, 1, 12,
-			 15000, 8, 2, 14, 3600, 10, 1, 16, 5184, 13, 1, 19))
+		list(4600, 1, 1, 1, 1, 77900, 2, 13, 13, 2, 15000, 3, 2, 2, 3, 5838.66,
+			 4, 1, 1, 4, 3500, 5, 1, 1, 5, 1880.44, 7, 1, 1, 7, 1642.75,
+			 11, 1, 1, 11, 15000, 14, 3, 3, 14, 3600, 16, 1, 1, 16, 5184,
+			 19, 1, 1, 19))
 })
 
 test_that("<b>Table 2.</b> Selection Summary results match", {
 	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(7, "93.02%", 20, 124784))
+		list(10, "90.09%", 25, 134145.85))
 })
