@@ -466,3 +466,63 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 	jaspTools::expect_equal_tables(table,
 		list(23, "84.03%", 45, 132101.57))
 })
+
+# Reproduce test case 6 from Excel
+
+options <- analysisOptions("auditBayesianWorkflow")
+options$min_precision_test <- TRUE
+options$id <- "Transaction.ID"
+options$values <- "Ist"
+options$by <- 5
+options$samplingChecked <- TRUE
+options$variables <- list("steek")
+options$tableSample <- TRUE
+options$pasteVariables <- FALSE
+options$tableAssumptions <- TRUE
+options$dataType <- "data"
+options$materiality_type <- "materiality_rel"
+options$expected_type <- "expected_all"
+options$likelihood <- "binomial"
+options$prior_method <- "default"
+options$critical_action <- "inspect"
+options$display <- "number"
+options$units <- "values"
+options$sampling_method <- "interval"
+options$annotation <- "continuous"
+options$method <- "binomial"
+options$area <- "area_bound"
+options$critical_name <- "critical"
+options$indicator_col <- "selected"
+options$variable_col <- "auditResult"
+set.seed(1)
+results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase6.csv", options)
+
+
+test_that("<b>Table 1.</b> Planning Summary results match", {
+	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.05, 25, 0.02, "0 - 25"))
+})
+
+test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
+	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(20, 148905.79, 10, 25, "90.09%", "Total", 134145.85, 3, 107900,
+			 3, 18, "100%", "Top stratum", 107900, 17, 41005.79, 7, 7, "64.01%",
+			 "Bottom stratum", 26245.85))
+})
+
+test_that("<b>Table 4.</b> Selected Items results match", {
+	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(4600, 1, 1, 1, 1, 77900, 2, 13, 13, 2, 15000, 3, 2, 2, 3, 5838.66,
+			 4, 1, 1, 4, 3500, 5, 1, 1, 5, 1880.44, 7, 1, 1, 7, 1642.75,
+			 11, 1, 1, 11, 15000, 14, 3, 3, 14, 3600, 16, 1, 1, 16, 5184,
+			 19, 1, 1, 19))
+})
+
+test_that("<b>Table 2.</b> Selection Summary results match", {
+	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(10, "90.09%", 25, 134145.85))
+})
