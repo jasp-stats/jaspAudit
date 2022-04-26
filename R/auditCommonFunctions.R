@@ -2341,6 +2341,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     selection <- as.data.frame(parentState[["sample"]])
 
     columns <- data.frame("Row" = selection[, "row"], "Selected" = selection[, "times"])
+    colnames(columns) <- c(gettext("Row"), gettext("Selected"))
     for (i in 3:length(variables)) {
       columns[[variables[i]]] <- selection[[variables[i]]]
     }
