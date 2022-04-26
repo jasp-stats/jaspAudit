@@ -1072,7 +1072,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       )
 
       if (options[["units"]] == "values") {
-        label_var <- if (options[["id"]] != "") gettextf("book values (<i>%1$s</i>)", options[["id"]]) else gettext("book values (<i>...</i>)")
+        label_var <- if (options[["values"]] != "") gettextf("book values (<i>%1$s</i>)", options[["values"]]) else gettext("book values (<i>...</i>)")
       }
       if (options[["units"]] == "items") {
         label_var <- if (options[["id"]] != "") gettextf("ID variable (<i>%1$s</i>)", options[["id"]]) else gettext("ID variable (<i>...</i>)")
