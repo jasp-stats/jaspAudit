@@ -73,7 +73,7 @@
     title <- if (stage == "planning") gettext("Prior and Expected Posterior Distribution") else gettext("Prior and Posterior Distribution")
     figure <- createJaspPlot(plot = NULL, title = title, width = 530, height = 350)
     figure$position <- positionInContainer
-    depends <- if (stage == "planning") c("plotPrior", "plotPriorInfo") else c("plotPosterior", "plotPosteriorInfo", "area")
+    depends <- if (stage == "planning") "plotPrior" else c("plotPosterior", "plotPosteriorInfo", "area")
     figure$dependOn(options = depends)
 
     parentContainer[["plotPriorAndPosterior"]] <- figure
@@ -83,7 +83,7 @@
     }
 
     method <- if (stage == "planning") options[["likelihood"]] else options[["method"]]
-    info <- if (stage == "planning") options[["plotPriorInfo"]] else options[["plotPosteriorInfo"]]
+    info <- if (stage == "planning") FALSE else options[["plotPosteriorInfo"]]
 
     if (method != "hypergeometric") { # Gamma and beta priors
 
@@ -138,7 +138,6 @@
         ggplot2::scale_fill_manual(values = c("lightgray", "darkgray"), breaks = c(gettext("Prior"), gettext("Posterior"))) +
         ggplot2::labs(fill = "")
     }
-
 
     plot <- plot + jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = c(0.8, 0.875)) +
