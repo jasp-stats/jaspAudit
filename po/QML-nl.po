@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-04-29 11:52+0000\n"
+"PO-Revision-Date: 2022-05-03 12:13+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-qml/"
 "nl/>\n"
@@ -360,7 +360,7 @@ msgstr "<b>Download Verslag</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Selection</b>"
-msgstr "<b>Naar selectie </b>"
+msgstr "<b>Naar Selectie </b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>2. Selection</b>"
@@ -420,7 +420,7 @@ msgstr "<b>Herstel Workflow</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Execution</b>"
-msgstr "<b>Naar uitvoering</b>"
+msgstr "<b>Naar Uitvoering</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>3. Execution</b>"
@@ -440,7 +440,7 @@ msgstr "<b>Vul variabelen in</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Evaluation</b>"
-msgstr "<b>Naar evaluatie</b>"
+msgstr "<b>Naar Evaluatie</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>4. Evaluation</b>"
@@ -792,7 +792,7 @@ msgstr "<b>Download verslag</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Selection</b>"
-msgstr "<b>Naar selectie</b>"
+msgstr "<b>Naar Selectie</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>2. Selection</b>"
@@ -848,11 +848,11 @@ msgstr "Toevalsgenerator beginwaarde"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Reset Workflow</b>"
-msgstr "<b>Reset werkflow</b>"
+msgstr "<b>Reset Workflow</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Execution</b>"
-msgstr "<b>Naar uitvoering</b>"
+msgstr "<b>Naar Uitvoering</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>3. Execution</b>"
@@ -872,7 +872,7 @@ msgstr "<b>Vul variabelen in</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Evaluation</b>"
-msgstr "<b>Naar evaluatie</b>"
+msgstr "<b>Naar Evaluatie</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>4. Evaluation</b>"
