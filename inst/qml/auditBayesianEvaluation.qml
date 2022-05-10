@@ -202,7 +202,7 @@ Form
 
 	VariablesForm
 	{
-		preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
+		preferredHeight: 						260 * preferencesModel.uiScale
 		enabled:								!stats.checked
 		visible:								!stats.checked
 
@@ -246,6 +246,15 @@ Form
 			title: 								qsTr("Selection Counter")
 			singleVariable: 					true
 			allowedColumns: 					["nominal", "ordinal", "scale"]
+		}
+
+		AssignedVariablesList
+		{
+			id: 								stratum
+			name: 								"stratum"
+			title: 								qsTr("Stratum")
+			singleVariable: 					true
+			allowedColumns: 					["nominal", "nominalText", "ordinal"]
 		}
 	}
 

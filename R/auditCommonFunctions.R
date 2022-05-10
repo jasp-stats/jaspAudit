@@ -396,13 +396,18 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   # Create a table containing information about the evaluation process
   .jfaTableEvaluation(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, positionInContainer = 2)
+  if (!options[["workflow"]]) {
+    .jfaTableStratum(options, sample, evaluationContainer, jaspResults, positionInContainer = 3)
+  }
+
+  .jfaTableTaints(options, sample, evaluationContainer, jaspResults, positionInContainer = 4)
 
   if (options[["bayesian"]]) { # Create a table containing assumption checks
-    .jfaTableAssumptions(options, sample, evaluationContainer, jaspResults, positionInContainer = 3)
+    .jfaTableAssumptions(options, sample, evaluationContainer, jaspResults, positionInContainer = 5)
   }
 
   if (options[["bayesian"]]) { # Create a table containing information regarding the prior and posterior
-    .jfaTablePriorPosterior(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, ready = NULL, positionInContainer = 4, stage = "evaluation")
+    .jfaTablePriorPosterior(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, ready = NULL, positionInContainer = 6, stage = "evaluation")
   }
 
   .jfaTableTaints(options, sample, evaluationContainer, jaspResults, positionInContainer = 5)
@@ -412,22 +417,22 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (options[["bayesian"]]) { # Create a plot containing the prior and posterior distribution
     .jfaPlotPriorAndPosterior(options, evaluationOptions, evaluationState, evaluationContainer,
       jaspResults,
-      positionInContainer = 6, stage = "evaluation"
+      positionInContainer = 7, stage = "evaluation"
     )
   }
 
   if (options[["bayesian"]]) { # Create the prior predictive plots
     .jfaPlotPredictive(options, evaluationOptions, evaluationState, evaluationContainer,
       jaspResults,
-      positionInContainer = 8, stage = "evaluation"
+      positionInContainer = 9, stage = "evaluation"
     )
   }
 
   # Create a plot containing evaluation information
-  .jfaPlotObjectives(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, positionInContainer = 10)
+  .jfaPlotObjectives(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, positionInContainer = 11)
 
   # Create a plot containing the correlation between the book and audit values
-  .jfaPlotScatter(options, sample, evaluationOptions, evaluationContainer, jaspResults, positionInContainer = 12)
+  .jfaPlotScatter(options, sample, evaluationOptions, evaluationContainer, jaspResults, positionInContainer = 13)
 
   # Add the conclusion stage
   .jfaConclusionStage(options, jaspResults, workflow)
@@ -495,7 +500,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "times" = options[["times"]],
     "rank" = options[["rank"]],
     "additional" = unlist(options[["variables"]]),
-    "critical" = options[["critical_name"]]
+    "critical" = options[["critical_name"]],
+	"stratum" = options[["stratum"]]
   )
   if (name == "" && !(type %in% c("additional", "critical"))) {
     name <- NULL
@@ -562,7 +568,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
     values <- .jfaReadVariableFromOptions(options, type = "values")
     values.audit <- .jfaReadVariableFromOptions(options, type = "values.audit")
     times <- .jfaReadVariableFromOptions(options, type = "times")
-    variables <- c(id, values, values.audit, times)
+	stratum <- .jfaReadVariableFromOptions(options, type = "stratum")
+    variables <- c(id, values, values.audit, times, stratum)
   }
 
   if (!is.null(variables)) {
@@ -741,7 +748,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "display", "priorType", "separateMisstatement",
       "min_precision_test", "min_precision_rel_val",
       "by", "prior_method", "prior_n", "prior_x", "alpha", "beta",
-      "critical_items", "critical_negative", "critical_action"
+      "critical_items", "critical_negative", "critical_action", "stratum"
     ))
 
     jaspResults[["evaluationContainer"]] <- container
@@ -843,12 +850,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
   } else if (stage == "evaluation") {
     if (!options[["bayesian"]] && options[["method"]] == "hypergeometric" && (options[["n_units"]] == 0 && options[["dataType"]] != "pdata")) {
       # Error if the population size is not defined when the hypergeometric bound is used.
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Population Evaluation Summary"))
       parentContainer$setError(gettext("The hypergeometric upper bound requires that you specify the number of units in the population."))
       return(TRUE)
     } else if (options[["method"]] %in% c("direct", "difference", "quotient", "regression") && ((options[["n_items"]] == 0 || options[["n_units"]] == 0) && options[["dataType"]] != "pdata")) {
       # Error if the population size or the population value are zero when using direct, difference, quotient, or regression.
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Population Evaluation Summary"))
       parentContainer$setError(gettext("The direct, difference, ratio, and regression bounds require that you specify the number of items and the number of units in the population."))
       return(TRUE)
     } else if (options[["dataType"]] %in% c("data", "pdata") && options[["id"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[[options[["id"]]]]))) {
@@ -858,7 +865,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       return(TRUE)
     } else if (.jfaAuditRiskModelCalculation(options) >= 1) {
       # Error if the detection risk of the analysis is higher than one
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Population Evaluation Summary"))
       parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk, or the confidence."))
       return(TRUE)
     } else {
@@ -2785,7 +2792,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     return()
   }
 
-  title <- gettextf("<b>Table %1$i.</b> Evaluation Summary", jaspResults[["tabNumber"]]$object)
+  title <- gettextf("<b>Table %1$i.</b> Population evaluation Summary", jaspResults[["tabNumber"]]$object)
   table <- createJaspTable(title)
   table$position <- positionInContainer
   table$dependOn(options = c(
@@ -2978,6 +2985,62 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$addRows(row)
 }
 
+.jfaTableStratum <- function(options, sample, parentContainer, jaspResults, positionInContainer = 3) {
+  if (options[["id"]] == "" || options[["stratum"]] == "" || !is.null(parentContainer[["tableStratum"]])) {
+    return()
+  }
+
+  .jfaTableNumberUpdate(jaspResults)
+
+  title <- gettextf("<b>Table %1$i.</b> Stratum Evaluation Summary", jaspResults[["tabNumber"]]$object)
+  table <- createJaspTable(title)
+  table$position <- positionInContainer
+
+  table$addColumnInfo(name = "stratum", title = gettext("Stratum"), type = "string")
+  table$addColumnInfo(name = "n", title = gettext("Sample size"), type = "integer")
+  table$addColumnInfo(name = "k", title = gettext("Errors"), type = "integer")
+  table$addColumnInfo(name = "t", title = gettext("Taint"), type = "number")
+  table$addColumnInfo(name = "mle", title = gettext("Most likely error"), type = "number")
+  table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round(options[["conf_level"]] * 100, 2)), type = "number")
+  table$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
+
+  parentContainer[["tableStratum"]] <- table
+
+  sample[[options[["stratum"]]]] <- as.factor(sample[[options[["stratum"]]]])
+
+  if (options[["values.audit"]] == "") {
+	row <- data.frame(stratum = levels(sample[[options[["stratum"]]]]))
+	if (options[["values"]] != "") {
+		row[["n"]] <- aggregate(sample[[options[["values"]]]], by = list(m = sample[[options[["stratum"]]]]), FUN = length)[, 2]
+	}
+	table$addRows(row)
+    return()
+  }
+  
+  names <- levels(sample[[options[["stratum"]]]])
+  n <- aggregate(sample[[options[["values"]]]], by = list(m = sample[[options[["stratum"]]]]), FUN = length)[, 2]
+  k <- as.numeric(table(sample[[options[["stratum"]]]][which(sample[[options[["values"]]]] != sample[[options[["values.audit"]]]])]))
+  taints <- (sample[[options[["values"]]]] - sample[[options[["values.audit"]]]]) / sample[[options[["values"]]]]
+  t <- aggregate(taints, by = list(m = sample[[options[["stratum"]]]]), FUN = sum)[, 2]
+  if (!options[["bayesian"]]) {
+	  prior <- FALSE
+  } else {
+	prior <- jfa::auditPrior(
+        method = options[["prior_method"]], conf.level = options[["conf_level"]],
+        materiality = 0.05, # CHANGE
+		expected = 0,
+        likelihood = options[["method"]], N.units = options[["n_units"]], ir = ir,
+        cr = cr, n = options[["n"]], x = options[["x"]],
+        alpha = options[["alpha"]], beta = options[["beta"]]
+      )
+  }
+  for (i in 1:length(n)) {
+    res <- jfa::evaluation(min.precision = 0.99, materiality = 0.99, n = n[i], x = t[i], method = options[["method"]], prior = prior)
+    row <- data.frame(stratum = names[i], n = n[i], k = k[i], t = t[i], mle = res$mle, ub = res$ub, precision = res$precision)
+    table$addRows(row)
+  }
+}
+
 .jfaTableTaints <- function(options, sample, parentContainer, jaspResults, positionInContainer = 3) {
   if (!options[["tableTaints"]] || options[["dataType"]] == "stats") {
     return()
@@ -3095,7 +3158,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$addRows(row)
 }
 
-.jfaPlotObjectives <- function(options, prevOptions, parentState, parentContainer, jaspResults, positionInContainer = 3) {
+.jfaPlotObjectives <- function(options, prevOptions, parentState, parentContainer, jaspResults, positionInContainer = 5) {
   if (!options[["plotObjectives"]]) {
     return()
   }
