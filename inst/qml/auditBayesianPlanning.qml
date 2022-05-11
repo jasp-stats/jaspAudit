@@ -301,12 +301,6 @@ Form
 			{
 				text: 							qsTr("Prior and posterior")
 				name: 							"plotPrior"
-
-				CheckBox
-				{
-					name: 						"plotPriorInfo"
-					visible:					false
-				}
 			}
 
 			CheckBox
