@@ -356,6 +356,13 @@ Form
 
 		CheckBox
 		{
+			text: 								qsTr("Misstated items")
+			name: 								"tableTaints"
+			enabled:							values.count > 0 && data.checked
+		}
+
+		CheckBox
+		{
 			text: 								qsTr("Corrections to population")
 			name: 								"tableCorrections"
 			enabled:							n_units.value > 0

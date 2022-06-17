@@ -405,27 +405,29 @@ gettextf <- function(fmt, ..., domain = NULL) {
     .jfaTablePriorPosterior(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, ready = NULL, positionInContainer = 4, stage = "evaluation")
   }
 
+  .jfaTableTaints(options, sample, evaluationContainer, jaspResults, positionInContainer = 5)
+
   # --- PLOTS
 
   if (options[["bayesian"]]) { # Create a plot containing the prior and posterior distribution
     .jfaPlotPriorAndPosterior(options, evaluationOptions, evaluationState, evaluationContainer,
       jaspResults,
-      positionInContainer = 5, stage = "evaluation"
+      positionInContainer = 6, stage = "evaluation"
     )
   }
 
   if (options[["bayesian"]]) { # Create the prior predictive plots
     .jfaPlotPredictive(options, evaluationOptions, evaluationState, evaluationContainer,
       jaspResults,
-      positionInContainer = 7, stage = "evaluation"
+      positionInContainer = 8, stage = "evaluation"
     )
   }
 
   # Create a plot containing evaluation information
-  .jfaPlotObjectives(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, positionInContainer = 9)
+  .jfaPlotObjectives(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, positionInContainer = 10)
 
   # Create a plot containing the correlation between the book and audit values
-  .jfaPlotScatter(options, sample, evaluationOptions, evaluationContainer, jaspResults, positionInContainer = 11)
+  .jfaPlotScatter(options, sample, evaluationOptions, evaluationContainer, jaspResults, positionInContainer = 12)
 
   # Add the conclusion stage
   .jfaConclusionStage(options, jaspResults, workflow)
@@ -819,7 +821,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   } else if (stage == "selection") {
     if (options[["id"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[[options[["id"]]]]))) {
       # Error if the transaction ID's are not unique
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection Summary"))
       parentContainer$setError(gettext("You must specify unique item ID's. The row numbers of the data set are sufficient."))
       return(TRUE)
     } else {
@@ -829,22 +831,22 @@ gettextf <- function(fmt, ..., domain = NULL) {
   } else if (stage == "evaluation") {
     if (!options[["bayesian"]] && options[["method"]] == "hypergeometric" && options[["n_units"]] == 0) {
       # Error if the population size is not defined when the hypergeometric bound is used.
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettext("The hypergeometric upper bound requires that you specify the number of units in the population."))
       return(TRUE)
     } else if (options[["method"]] %in% c("direct", "difference", "quotient", "regression") && (options[["n_items"]] == 0 || options[["n_units"]] == 0)) {
       # Error if the population size or the population value are zero when using direct, difference, quotient, or regression.
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettext("The direct, difference, ratio, and regression bounds require that you specify the number of items and the number of units in the population."))
       return(TRUE)
     } else if (options[["dataType"]] == "data" && options[["id"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[[options[["id"]]]]))) {
       # Error if the transaction ID's are not unique
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection Summary"))
       parentContainer$setError(gettext("You must specify unique item ID's. The row numbers of the data set are sufficient."))
       return(TRUE)
     } else if (.jfaAuditRiskModelCalculation(options) >= 1) {
       # Error if the detection risk of the analysis is higher than one
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk, or the confidence."))
       return(TRUE)
     } else {
@@ -2962,6 +2964,50 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   table$addRows(row)
+}
+
+.jfaTableTaints <- function(options, sample, parentContainer, jaspResults, positionInContainer = 3) {
+  if (!options[["tableTaints"]] || options[["dataType"]] == "stats") {
+    return()
+  }
+
+  .jfaTableNumberUpdate(jaspResults)
+
+  title <- gettextf("<b>Table %1$i.</b> Misstated Items", jaspResults[["tabNumber"]]$object)
+  table <- createJaspTable(title)
+  table$position <- positionInContainer
+  table$dependOn(options = "tableTaints")
+
+  table$addColumnInfo(name = "id", title = gettext("ID"), type = "string")
+  table$addColumnInfo(name = "values", title = gettext("Book value"), type = "number")
+  table$addColumnInfo(name = "values.audit", title = gettext("Audit value"), type = "number")
+  table$addColumnInfo(name = "diff", title = gettext("Difference"), type = "number")
+  table$addColumnInfo(name = "taint", title = gettext("Taint"), type = "number")
+  table$addColumnInfo(name = "times", title = gettext("Counted"), type = "string")
+  parentContainer[["tableTaints"]] <- table
+  
+  if (options[["values.audit"]] == "" || options[["values"]] == "") {
+    return()
+  }
+  
+  sample <- sample[sample[[options[["values"]]]] != sample[[options[["values.audit"]]]], ]
+  id <- sample[[options[["id"]]]]
+  ist <- sample[[options[["values"]]]]
+  soll <- sample[[options[["values.audit"]]]]
+  if (options[["workflow"]]) {
+    times <- sample[[options[["indicator_col"]]]]
+  } else {
+    if (options[["times"]] == "") {
+      times <- rep(1, nrow(sample))
+    } else {
+      times <- sample[[options[["times"]]]]
+    }
+  }
+  rows <- data.frame(id = id, values = ist, values.audit = soll, diff = ist - soll, taint = (ist - soll) / ist, times = paste0("x", times))
+  table$addRows(rows)
+  if(nrow(rows) == 0) {
+    table$addFootnote(message = gettext("No misstatements were identified in the sample."))
+  }
 }
 
 .jfaTableAssumptions <- function(options, sample, parentContainer, jaspResults, positionInContainer = 3) {
