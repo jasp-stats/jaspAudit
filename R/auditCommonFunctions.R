@@ -577,7 +577,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 }
 
-.jfaInputOptionsGather <- function(options, dataset, jaspResults, stage, rawData = FALSE, rawDataset = NULL) {
+.jfaInputOptionsGather <- function(options, dataset, jaspResults, stage, rawData = FALSE) {
   input <- list()
 
   if (stage == "planning") {
