@@ -841,12 +841,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
       return(FALSE)
     }
   } else if (stage == "evaluation") {
-    if (!options[["bayesian"]] && options[["method"]] == "hypergeometric" && options[["n_units"]] == 0) {
+    if (!options[["bayesian"]] && options[["method"]] == "hypergeometric" && (options[["n_units"]] == 0 && options[["dataType"]] != "pdata")) {
       # Error if the population size is not defined when the hypergeometric bound is used.
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettext("The hypergeometric upper bound requires that you specify the number of units in the population."))
       return(TRUE)
-    } else if (options[["method"]] %in% c("direct", "difference", "quotient", "regression") && (options[["n_items"]] == 0 || options[["n_units"]] == 0)) {
+    } else if (options[["method"]] %in% c("direct", "difference", "quotient", "regression") && ((options[["n_items"]] == 0 || options[["n_units"]] == 0) && options[["dataType"]] != "pdata")) {
       # Error if the population size or the population value are zero when using direct, difference, quotient, or regression.
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettext("The direct, difference, ratio, and regression bounds require that you specify the number of items and the number of units in the population."))

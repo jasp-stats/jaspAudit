@@ -409,7 +409,7 @@ Form
 		{
 			text: 						qsTr("Corrections to population")
 			name: 						"tableCorrections"
-			enabled:					n_units.value > 0
+			enabled:					n_units.value != 0 || pdata.checked
 		}
 	}
 
@@ -422,7 +422,7 @@ Form
 		{
 			name: 							"hypergeometric"
 			text: 							qsTr("Hypergeometric")
-			enabled:						n_units.value > 0
+			enabled:						n_units.value != 0 || pdata.checked
 		}
 
 		RadioButton
@@ -485,7 +485,7 @@ Form
 		{
 			name: 							"regression"
 			text: 							qsTr("Regression estimator")
-			enabled: 						!stats.checked && n_units.value != 0 && n_items.value != 0 && values.count > 0 && auditResult.count > 0
+			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 		}
 	}
 
