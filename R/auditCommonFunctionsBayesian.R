@@ -328,7 +328,7 @@
       }
     } else if (stage == "evaluation") {
       if (!(options[["materiality_test"]] || options[["min_precision_test"]]) ||
-        ((options[["values.audit"]] == "" || options[["id"]] == "") && options[["dataType"]] == "data") ||
+        ((options[["values.audit"]] == "" || options[["id"]] == "") && options[["dataType"]] %in% c("data", "pdata")) ||
         (options[["dataType"]] == "stats" && options[["n"]] == 0) ||
         (parentOptions[["materiality_val"]] == 0 && options[["materiality_test"]]) ||
         parentContainer$getError()) {

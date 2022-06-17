@@ -438,7 +438,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 #####################################
 
 .jfaConclusionStage <- function(options, jaspResults, workflow) {
-  if (!is.null(jaspResults[["conclusionContainer"]]) || (options[["values.audit"]] == "" && options[["dataType"]] == "data")) {
+  if (!is.null(jaspResults[["conclusionContainer"]]) || (options[["values.audit"]] == "" && options[["dataType"]] %in% c("data", "pdata"))) {
     return()
   }
 
@@ -577,7 +577,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 }
 
-.jfaInputOptionsGather <- function(options, dataset, jaspResults, stage, rawData = FALSE) {
+.jfaInputOptionsGather <- function(options, dataset, jaspResults, stage, rawData = FALSE, rawDataset = NULL) {
   input <- list()
 
   if (stage == "planning") {
@@ -614,10 +614,22 @@ gettextf <- function(fmt, ..., domain = NULL) {
     input[["conf_level"]] <- options[["conf_level"]]
     input[["conf_level_label"]] <- paste0(round(options[["conf_level"]] * 100, 2), "%")
     input[["likelihood"]] <- options[["method"]]
-    input[["N.items"]] <- options[["n_items"]]
-    input[["N.units"]] <- options[["n_units"]]
-    if (input[["N.units"]] == 0) {
-      input[["N.units"]] <- 0.01
+    # Take over N.units and N.items from population
+    if (options[["dataType"]] == "pdata") {
+      if (options[["values.audit"]] != "") {
+        dataset <- as.data.frame(.readDataSetToEnd(columns = options[["values"]], exclude.na.listwise = options[["values"]]))
+        input[["N.items"]] <- nrow(dataset)
+        input[["N.units"]] <- sum(dataset[[options[["values"]]]])
+      } else {
+        input[["N.items"]] <- 0
+        input[["N.units"]] <- 0.01
+      }
+    } else {
+      input[["N.items"]] <- options[["n_items"]]
+      input[["N.units"]] <- options[["n_units"]]
+      if (input[["N.units"]] == 0) {
+        input[["N.units"]] <- 0.01
+      }
     }
 
     input[["materiality_val"]] <- if (options[["materiality_type"]] == "materiality_rel") options[["materiality_rel_val"]] else options[["materiality_abs_val"]] / input[["N.units"]]
@@ -839,7 +851,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettext("The direct, difference, ratio, and regression bounds require that you specify the number of items and the number of units in the population."))
       return(TRUE)
-    } else if (options[["dataType"]] == "data" && options[["id"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[[options[["id"]]]]))) {
+    } else if (options[["dataType"]] %in% c("data", "pdata") && options[["id"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[[options[["id"]]]]))) {
       # Error if the transaction ID's are not unique
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection Summary"))
       parentContainer$setError(gettext("You must specify unique item ID's. The row numbers of the data set are sufficient."))
@@ -2530,7 +2542,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
                                              evaluationContainer, positionInContainer = 1) {
   if (options[["explanatoryText"]]) {
     ready <- FALSE
-    if (!is.null(evaluationContainer[["evaluationState"]]$object) && ((options[["dataType"]] == "data" && options[["values.audit"]] != "" && options[["id"]] != "" && ((options[["materiality_test"]] && planningOptions[["materiality_val"]] > 0) || (options[["min_precision_test"]] && options[["min_precision_rel_val"]] > 0))) ||
+    if (!is.null(evaluationContainer[["evaluationState"]]$object) && ((options[["dataType"]] %in% c("data", "pdata") && options[["values.audit"]] != "" && options[["id"]] != "" && ((options[["materiality_test"]] && planningOptions[["materiality_val"]] > 0) || (options[["min_precision_test"]] && options[["min_precision_rel_val"]] > 0))) ||
       (options[["dataType"]] == "stats" && options[["n"]] > 0 && ((options[["materiality_test"]] && planningOptions[["materiality_val"]] > 0) || (options[["min_precision_test"]] && options[["min_precision_rel_val"]] > 0))))) {
       ready <- TRUE
     }
@@ -2677,12 +2689,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
     return()
   } else if (options[["materiality_test"]] && planningOptions[["materiality_val"]] == 0) {
     return()
-  } else if (options[["dataType"]] == "data" && (options[["values.audit"]] == "" || options[["id"]] == "")) {
+  } else if (options[["dataType"]] %in% c("data", "pdata") && (options[["values.audit"]] == "" || options[["id"]] == "")) {
     return()
   } else if (options[["dataType"]] == "stats" && options[["n"]] == 0) {
     return()
   }
-  if (options[["dataType"]] == "data" && options[["values.audit"]] != "" && !all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1)) && options[["values"]] == "") {
+  if (options[["dataType"]] %in% c("data", "pdata") && options[["values.audit"]] != "" && !all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1)) && options[["values"]] == "") {
     return()
   }
 
@@ -2856,7 +2868,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   parentContainer[["evaluationTable"]] <- table
 
-  if (is.null(parentState) || (options[["values.audit"]] == "" && options[["dataType"]] == "data")) {
+  if (is.null(parentState) || (options[["values.audit"]] == "" && options[["dataType"]] %in% c("data", "pdata"))) {
     if (options[["workflow"]]) {
       table$addFootnote(
         message = gettext("The audit result column is empty."),
@@ -3102,7 +3114,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       return()
     }
 
-    if (((options[["values.audit"]] == "" || options[["id"]] == "") && options[["dataType"]] == "data") ||
+    if (((options[["values.audit"]] == "" || options[["id"]] == "") && options[["dataType"]] %in% c("data", "pdata")) ||
       (options[["dataType"]] == "stats" && options[["n"]] == 0) ||
       (prevOptions[["materiality_val"]] == 0 && options[["materiality_test"]]) ||
       parentContainer$getError()) {

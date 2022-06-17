@@ -187,6 +187,7 @@ Form
 				defaultValue: 					0
 				fieldWidth: 					100 * preferencesModel.uiScale
 				min: 							0
+				enabled:						!pdata.checked
 			}
 
 			DoubleField
@@ -198,6 +199,7 @@ Form
 				fieldWidth: 					100 * preferencesModel.uiScale
 				min: 							0
 				decimals: 						2
+				enabled:						!pdata.checked				
 			}
 		}
 
@@ -266,10 +268,18 @@ Form
 
 		RadioButton
 		{
+			id: 								pdata
+			name: 								"pdata"
+			label:								qsTr("Population")
+			checked: 							mainWindow.dataAvailable
+			enabled:							mainWindow.dataAvailable
+		}
+
+		RadioButton
+		{
 			id: 								data
 			name: 								"data"
-			label:								qsTr("Columns")
-			checked: 							mainWindow.dataAvailable
+			label:								qsTr("Sample")
 			enabled:							mainWindow.dataAvailable
 		}
 
@@ -392,7 +402,7 @@ Form
 		{
 			text: 						qsTr("Misstated items")
 			name: 						"tableTaints"
-			enabled:					values.count > 0 && data.checked
+			enabled:					values.count > 0 && !stats.checked
 		}
 
 		CheckBox
@@ -454,21 +464,21 @@ Form
 		{
 			name: 							"direct"
 			text: 							qsTr("Direct estimator")
-			enabled: 						!stats.checked && n_units.value != 0 && n_items.value != 0 && values.count > 0 && auditResult.count > 0
+			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 		}
 
 		RadioButton
 		{
 			name: 							"difference"
 			text: 							qsTr("Difference estimator")
-			enabled: 						!stats.checked && n_units.value != 0 && n_items.value != 0 && values.count > 0 && auditResult.count > 0
+			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 		}
 
 		RadioButton
 		{
 			name: 							"quotient"
 			text: 							qsTr("Ratio estimator")
-			enabled: 						!stats.checked && n_units.value != 0 && n_items.value != 0 && values.count > 0 && auditResult.count > 0
+			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 		}
 
 		RadioButton
@@ -570,7 +580,7 @@ Form
 			{
 				text: 							qsTr("Monetary values")
 				name: 							"amount"
-				enabled:						n_units.value != 0
+				enabled:						n_units.value != 0 || pdata.checked
 			}
 		}
 	}
