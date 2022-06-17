@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-02-05 03:27\n"
+"POT-Creation-Date: 2022-06-17 17:51\n"
 "PO-Revision-Date: 2021-09-11 03:27+0000\n"
 "Last-Translator: JASP Stats <b.boutin@uva.nl>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -1312,6 +1312,12 @@ msgid "Selected units"
 msgstr "Selecionada"
 
 msgid "%% of total value"
+msgstr ""
+
+msgid "twice the"
+msgstr ""
+
+msgid "a single"
 msgstr ""
 
 msgid ""

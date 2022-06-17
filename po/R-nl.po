@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-02-05 03:27\n"
+"POT-Creation-Date: 2022-06-17 17:51\n"
 "PO-Revision-Date: 2022-01-30 06:54+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1539,6 +1539,12 @@ msgstr "Geselecteerde eenheden"
 
 msgid "%% of total value"
 msgstr "%% van de totale waarde"
+
+msgid "twice the"
+msgstr ""
+
+msgid "a single"
+msgstr ""
 
 msgid ""
 "The top stratum consists of all items with a book value larger than %1$s "
