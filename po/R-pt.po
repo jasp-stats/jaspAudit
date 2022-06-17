@@ -723,11 +723,6 @@ msgid ""
 msgstr ""
 
 msgid ""
-"You must specify unique item ID's. The row numbers of the data set are "
-"sufficient."
-msgstr ""
-
-msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify your "
 "values for the Inherent risk and/or Control risk, or the confidence."
 msgstr ""

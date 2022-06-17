@@ -734,13 +734,6 @@ msgstr ""
 "que indiques o número de elementos e o número de unidades da poboación."
 
 msgid ""
-"You must specify unique item ID's. The row numbers of the data set are "
-"sufficient."
-msgstr ""
-"Debes indicar IDs de elementos únicas. Os números das filas do conxunto de "
-"datos son suficientes."
-
-msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify your "
 "values for the Inherent risk and/or Control risk, or the confidence."
 msgstr ""
@@ -880,7 +873,7 @@ msgstr ""
 "información existente utilizando as opcións da sección <i>Previa</i>."
 
 msgid "a performance materiality of %1$s"
-msgstr "unha materialidade de 1$s"
+msgstr "unha materialidade de %1$s"
 
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
