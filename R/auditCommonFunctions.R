@@ -1650,7 +1650,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (!options[["bayesian"]]) {
     message <- switch(options[["likelihood"]],
       "poisson" = gettextf("The minimum sample size is based on the Poisson distribution (%1$s = %2$s).", "\u03BB", round(parentState[["materiality"]] * parentState[["n"]], 4)),
-      "binomial" =  gettextf("The minimum sample size is based on the binomial distribution (p = %1$s)", round(parentState[["materiality"]], 2)),
+      "binomial" =  gettextf("The minimum sample size is based on the binomial distribution (p = %1$s)", round(parentState[["materiality"]], 4)),
       "hypergeometric" = gettextf("The minimum sample size is based on the hypergeometric distribution (N = %1$s, K = %2$s).", format(parentState[["N.units"]], scientific = FALSE), format(ceiling(parentState[["N.units"]] * parentState[["materiality"]]), scientific = FALSE))
     )
   } else {
