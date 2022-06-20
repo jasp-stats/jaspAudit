@@ -2807,7 +2807,3 @@ msgstr "Mediana"
 msgctxt "auditSelection|"
 msgid "<b>Download Report</b>"
 msgstr "<b>Descargar Informe</b>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid ""
-msgstr "  "
