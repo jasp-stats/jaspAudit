@@ -2799,7 +2799,3 @@ msgstr "最後の1桁"
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last two digits"
 msgstr "最後の 2 桁"
-
-msgctxt "auditClassicalWorkflow|"
-msgid ""
-msgstr " "
