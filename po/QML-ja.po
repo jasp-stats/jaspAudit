@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-09-24 01:34+0000\n"
-"Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"qml/ja/>\n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.9-dev\n"
 "X-Language: ja\n"
 "X-Qt-Contexts: true\n"
 
@@ -73,24 +67,12 @@ msgid "Sampling Objectives"
 msgstr "サンプリングの目的"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Test against a performance materiality"
-msgstr "パフォーマンスの重要性に対してテストする"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Relative"
 msgstr "相対的"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Absolute"
 msgstr "絶対的"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Click to learn more about the performance materiality."
-msgstr "クリックすると、パフォーマンス・マテリアリティの詳細が表示されます。"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Obtain a required minimum precision"
-msgstr "必要最小限の精度を得る"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Click to learn more about the precision."
@@ -105,92 +87,12 @@ msgid "Size"
 msgstr "サイズ"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Value"
-msgstr "値"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Audit Risk"
-msgstr "監査リスク"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Confidence"
 msgstr "信頼度"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Transaction ID's"
-msgstr "トランザクションID"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Soll Position"
-msgstr "Sollポジション"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Audit Result"
 msgstr "監査結果"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Ist Position <i>(required)</i>"
-msgstr "lstポジション <i>(required)</i>"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Ist Position"
-msgstr "lstポジション"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Selection Counter <i>(optional)</i>"
-msgstr "選択カウンター <i>(optional)</i>"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Annotation Method"
-msgstr "アノテーション方法"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Soll values"
-msgstr "Soll値"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Correct / Incorrect"
-msgstr "正解/不正解"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Use summary statistics"
-msgstr "要約統計量の使用"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Number of seen transactions"
-msgstr "見られたトランザクションの数"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Number of found errors"
-msgstr "検出されたエラーの数"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Explanatory Text"
-msgstr "説明用テキスト"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Enable"
-msgstr "有効"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Click to learn more about the explanatory text."
-msgstr "クリックすると説明文の詳細が表示されます。"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Critical Transactions"
-msgstr "重要なトランザクション"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Select critical transactions"
-msgstr "重要なトランザクションを選択する"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Negative Ist values"
-msgstr "負のIst値"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "How to handle critical transactions"
-msgstr "重要なトランザクションの処理方法"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Keep"
@@ -201,60 +103,8 @@ msgid "Remove"
 msgstr "削除"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Efficiency Techniques"
-msgstr "効率化技術"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Separate known and unknown misstatement"
-msgstr "既知と未知の虚偽表示を分離する"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Click to learn more about this efficiency technique."
-msgstr "この効率化手法の詳細については、ここをクリックしてください。"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Prior Information"
-msgstr "事前情報"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Prior information:"
-msgstr "事前情報:"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "None"
-msgstr "なし"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Audit Risk Model"
-msgstr "監査リスク モデル"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Equal prior probabilities"
-msgstr "均等な事前確率"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Custom prior probabilities"
-msgstr "事前確率をカスタムする"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Earlier sample"
 msgstr "先行サンプル"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Weighted earlier sample"
-msgstr "重み付け先行サンプル"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Click to learn more about the prior information."
-msgstr "クリックすると、事前情報の詳細が表示されます。"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Expected Errors in Sample"
-msgstr "サンプルの予想誤差"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Inherent Risk"
-msgstr "固有のリスク"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "High"
@@ -267,34 +117,6 @@ msgstr "中程度"
 msgctxt "auditBayesianEvaluation|"
 msgid "Low"
 msgstr "低い"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Custom"
-msgstr "カスタム"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Control Risk"
-msgstr "コントロール・リスク"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Prior probability of tolerable misstatement: p(H₋) = "
-msgstr "許容できる虚偽表示の事前確率：p(H₋)＝。 "
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Prior probability of intolerable misstatement: p(H₊) = "
-msgstr "許容できる虚偽表示の事前確率：p(H₋)＝。 "
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Number of earlier seen transactions"
-msgstr "以前に見たトランザクションの数"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Number of earlier seen errors"
-msgstr "以前に見たエラーの数"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Weighting factor"
-msgstr "重み係数"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Advanced Options"
@@ -329,10 +151,6 @@ msgid "Two-sided interval"
 msgstr "両端の間隔"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Show Results As"
-msgstr "結果を次のように表示"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Numbers"
 msgstr "数"
 
@@ -341,44 +159,8 @@ msgid "Percentages"
 msgstr "パーセンテージ"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Extrapolated amounts"
-msgstr "外挿量"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Tables and Plots"
-msgstr "テーブルとプロット"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Statistics"
-msgstr "統計量"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Most likely error (MLE)"
-msgstr "最も可能性の高いエラー (MLE)"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Obtained precision"
-msgstr "得られた精度"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Posterior odds"
-msgstr "事後オッズ"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Bayes factor (BF₋₊)"
-msgstr "ベイズファクター(BF₋₊)"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Tables"
 msgstr "表"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Description of prior and posterior distribution"
-msgstr "事前分布と事後分布の説明"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Evaluate post-hoc assumptions"
-msgstr "ポストホックな仮定を評価する"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Confidence interval"
@@ -389,48 +171,8 @@ msgid "Plots"
 msgstr "プロット"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Evaluate sampling objectives"
-msgstr "サンプリング目標の評価"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Scatter plot of Ist and Soll values"
-msgstr "Ist値とSoll値の散布図"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Display correlation"
 msgstr "相関関係を表示する"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Display transaction ID's"
-msgstr "トランザクションIDの表示"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Prior and posterior distribution"
-msgstr "事前分布と事後分布"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "x-axis limit"
-msgstr "x 軸のリミット"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Display inferential statistics"
-msgstr "推測統計量の表示"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Display additional information"
-msgstr "追加情報の表示"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Shade"
-msgstr "シェード"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Credible region"
-msgstr "信頼できる領域"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Support regions"
-msgstr "サポート領域"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "<b>Download Report</b>"
@@ -441,24 +183,12 @@ msgid "Sampling Objectives"
 msgstr "サンプリングの目的"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Test against a performance materiality"
-msgstr "パフォーマンスの重要性に対してテストする"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Relative"
 msgstr "相対的"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Absolute"
 msgstr "絶対的"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Click to learn more about the performance materiality."
-msgstr "クリックすると、パフォーマンス・マテリアリティの詳細が表示されます。"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Obtain a required minimum precision"
-msgstr "必要最小限の精度を得る"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Click to learn more about the precision."
@@ -473,60 +203,16 @@ msgid "Size"
 msgstr "サイズ"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Value"
-msgstr "値"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Audit Risk"
-msgstr "監査リスク"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Confidence"
 msgstr "信頼度"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Prior Information"
-msgstr "事前情報"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Prior information:"
-msgstr "事前情報:"
-
-msgctxt "auditBayesianPlanning|"
-msgid "None"
-msgstr "なし"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Audit Risk Model"
-msgstr "監査リスク モデル"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Equal prior probabilities"
-msgstr "均等な事前確率"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Custom prior probabilities"
-msgstr "事前確率をカスタムする"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Earlier sample"
 msgstr "先行サンプル"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Weighted earlier sample"
-msgstr "重み付け先行サンプル"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Click to learn more about the prior information."
-msgstr "クリックすると、事前情報の詳細が表示されます。"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Expected Errors in Sample"
 msgstr "サンプルの予想誤差"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Inherent Risk"
-msgstr "固有のリスク"
 
 msgctxt "auditBayesianPlanning|"
 msgid "High"
@@ -539,34 +225,6 @@ msgstr "中程度"
 msgctxt "auditBayesianPlanning|"
 msgid "Low"
 msgstr "低い"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Custom"
-msgstr "カスタム"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Control Risk"
-msgstr "コントロール・リスク"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Prior probability of tolerable misstatement: p(H₋) = "
-msgstr "許容できる虚偽表示の事前確率：p(H₋)＝。 "
-
-msgctxt "auditBayesianPlanning|"
-msgid "Prior probability of intolerable misstatement: p(H₊) = "
-msgstr "許容できる虚偽表示の事前確率：p(H₋)＝。 "
-
-msgctxt "auditBayesianPlanning|"
-msgid "Number of earlier seen transactions"
-msgstr "以前に見たトランザクションの数"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Number of earlier seen errors"
-msgstr "以前に見たエラーの数"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Weighting factor"
-msgstr "重み係数"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Advanced Options"
@@ -589,100 +247,16 @@ msgid "Beta-binomial"
 msgstr "ベータ二項"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Step size"
-msgstr "ステップサイズ"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Currency"
-msgstr "通貨"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Euro (€)"
-msgstr "ユーロ (€)"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Dollar ($)"
-msgstr "ドル ($)"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Other"
-msgstr "その他"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Explanatory Text"
-msgstr "説明文"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Enable"
-msgstr "有効"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "分析の各ステップで説明文を表示"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Tables and Plots"
-msgstr "テーブルとプロット"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Statistics"
-msgstr "統計量"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Expected posterior odds"
-msgstr "期待される事後オッズ"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Expected Bayes factor (BF₋₊)"
-msgstr "期待されるベイズファクター (BF₋₊)"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Tables"
 msgstr "表"
 
 msgctxt "auditBayesianPlanning|"
-msgid "Implicit sample induced by prior distribution"
-msgstr "事前分布によって誘発された暗黙のサンプル(implicit sample)"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Description of prior and expected posterior distribution"
-msgstr "事前分布と期待される事後分布の説明"
-
-msgctxt "auditBayesianPlanning|"
 msgid "Plots"
 msgstr "プロット"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Compare required sample sizes"
-msgstr "必要なサンプルサイズの比較"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Implied prior distribution"
-msgstr "暗黙の(implied)事前分布"
-
-msgctxt "auditBayesianPlanning|"
-msgid "x-axis limit"
-msgstr "x 軸のリミット"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Expected posterior distribution"
-msgstr "期待される事後分布"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Display additional information"
-msgstr "追加情報の表示"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Shade"
-msgstr "シェード"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Credible region"
-msgstr "信頼できる領域"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Hypothesis regions"
-msgstr "仮説領域"
 
 msgctxt "auditBayesianPlanning|"
 msgid "<b>Download Report</b>"
@@ -701,10 +275,6 @@ msgid "Sampling Objectives"
 msgstr "サンプリングの目的"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Test against a performance materiality"
-msgstr "パフォーマンスの重要性に対してテストする"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Relative"
 msgstr "相対的"
 
@@ -713,136 +283,24 @@ msgid "Absolute"
 msgstr "絶対的"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Click to learn more about the performance materiality."
-msgstr "クリックすると、パフォーマンス・マテリアリティの詳細が表示されます。"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Obtain a required minimum precision"
-msgstr "必要最小限の精度を得る"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about the precision."
 msgstr "クリックすると、精度についての詳細が表示されます。"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Audit Risk"
-msgstr "監査リスク"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Confidence"
 msgstr "信頼度"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Explanatory Text"
-msgstr "説明文"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Enable"
-msgstr "有効"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "分析の各ステップで説明文を表示"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>Variable Definitions</b>"
-msgstr "<b>変数の定義</b>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Transaction ID's"
-msgstr "トランザクションID"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Ist Position <i>(required)</i>"
-msgstr "lstポジション <i>(required)</i>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Ist Position <i>(optional)</i>"
-msgstr "Ist ポジション <i>(オプション)</i>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "A.     Critical Transactions"
-msgstr "A.     重要な取引"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Select critical transactions"
-msgstr "重要なトランザクションを選択する"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Column name critical transactions: "
-msgstr "重要なトランザクションの列名: "
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Negative Ist values"
-msgstr "負の Ist 値"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "How to handle critical transactions"
-msgstr "重要なトランザクションの処理方法"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Inspect"
-msgstr "検査"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Remove"
 msgstr "削除"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "<b>Critical Transaction List</b>"
-msgstr "<b>重要なトランザクションリスト</b>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "B.     Efficiency Techniques"
-msgstr "B.     効率化技術"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Efficiency Techniques"
-msgstr "効率化技術"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Separate known and unknown misstatement"
-msgstr "既知と未知の虚偽表示を分離する"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Click to learn more about this efficiency technique."
-msgstr "この効率化手法の詳細については、ここをクリックしてください。"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "C.     Prior Information"
-msgstr "C.     事前情報"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Prior information:"
-msgstr "事前情報:"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "None"
-msgstr "なし"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Audit Risk Model"
-msgstr "監査リスク モデル"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Equal prior probabilities"
-msgstr "均等な事前確率"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Custom prior probabilities"
-msgstr "事前確率をカスタムする"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Earlier sample"
 msgstr "先行サンプル"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Weighted earlier sample"
-msgstr "重み付け先行サンプル"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Click to learn more about the prior information."
-msgstr "クリックすると、事前情報の詳細が表示されます。"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Expected Errors in Sample"
@@ -851,10 +309,6 @@ msgstr "サンプルの予想誤差"
 msgctxt "auditBayesianWorkflow|"
 msgid "All possible"
 msgstr "全ての可能なケース"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Inherent Risk"
-msgstr "固有のリスク"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "High"
@@ -867,38 +321,6 @@ msgstr "中程度"
 msgctxt "auditBayesianWorkflow|"
 msgid "Low"
 msgstr "低い"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Custom"
-msgstr "カスタム"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Control Risk"
-msgstr "コントロール・リスク"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Prior probability of tolerable misstatement: p(H₋) = "
-msgstr "許容できる虚偽表示の事前確率：p(H₋)＝。 "
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Prior probability of intolerable misstatement: p(H₊) = "
-msgstr "許容できる虚偽表示の事前確率：p(H₋)＝。 "
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Number of earlier seen transactions"
-msgstr "以前に見たトランザクションの数"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Number of earlier seen errors"
-msgstr "以前に見たエラーの数"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Weighting factor"
-msgstr "重み係数"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "D.     Advanced Options"
-msgstr "D.     詳細オプション"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Probability Distribution"
@@ -917,96 +339,12 @@ msgid "Beta-binomial"
 msgstr "ベータ二項"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Step size"
-msgstr "ステップサイズ"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Currency"
-msgstr "通貨"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Euro (€)"
-msgstr "ユーロ (€)"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Dollar ($)"
-msgstr "ドル ($)"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Other"
-msgstr "その他"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "E.     Tables and Plots"
-msgstr "E.     テーブルとプロット"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Statistics"
-msgstr "統計量"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Expected posterior odds"
-msgstr "期待される事後オッズ"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Expected Bayes factor (BF₋₊)"
-msgstr "期待されるベイズファクター (BF₋₊)"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Tables"
 msgstr "表"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Descriptive statistics for Ist values"
-msgstr "Ist値の記述的統計量"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Implicit sample induced by prior distribution"
-msgstr "事前分布によって誘発された暗黙のサンプル(implicit sample)"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Description of prior and expected posterior distribution"
-msgstr "事前分布と期待される事後分布の説明"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Plots"
 msgstr "プロット"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Distribution of Ist values"
-msgstr "Ist値の分布"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Compare required sample sizes"
-msgstr "必要なサンプルサイズの比較"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Implied prior distribution"
-msgstr "暗黙の(implied)事前分布"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "x-axis limit"
-msgstr "x 軸のリミット"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Expected posterior distribution"
-msgstr "期待される事後分布"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Display additional information"
-msgstr "追加情報の表示"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Shade area"
-msgstr "シェードエリア"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Credible region"
-msgstr "信頼できる領域"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Hypothesis regions"
-msgstr "仮説領域"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Download Report</b>"
@@ -1025,48 +363,16 @@ msgid "2. Selection"
 msgstr "2. 選択"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Add custom variables to sample"
-msgstr "サンプルにカスタム変数を追加"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Ranking Variable <i>(optional)</i>"
-msgstr "ランキング変数<i>(オプション)</i>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Additional Variables <i>(optional)</i>"
-msgstr "追加変数 <i>(オプション)</i>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "A.     Selection Methodology"
-msgstr "A.     選択方法"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Randomly organize transactions before selection"
-msgstr "選択前にトランザクションをランダムに整理"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Sampling Units"
 msgstr "サンプリング単位"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Monetary unit sampling"
-msgstr "通貨単位のサンプリング"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about monetary unit sampling."
 msgstr "クリックすると、金額単位のサンプリングについての詳細が表示されます。"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Record sampling"
-msgstr "サンプリングの記録"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Click to learn more about record sampling."
 msgstr "レコードサンプリングの詳細については、ここをクリックしてください。"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Selection Method"
-msgstr "選定方法"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Random sampling"
@@ -1101,44 +407,8 @@ msgid "Seed"
 msgstr "シード"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "B.     Tables"
-msgstr "B.     表"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Display selected transactions"
-msgstr "選択されたトランザクションの表示"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Descriptive statistics of selected transactions"
-msgstr "選択したトランザクションの記述統計"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Mean"
-msgstr "平均値"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Median"
-msgstr "中央値"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Std. deviation"
-msgstr "標準偏差"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Variance"
-msgstr "分散"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Minimum"
-msgstr "最小値"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Maximum"
 msgstr "最大値"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Range"
-msgstr "範囲"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Reset Workflow</b>"
@@ -1157,56 +427,12 @@ msgid "3. Execution"
 msgstr "3.実行"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "<b>How would you like to evaluate your transactions?</b>"
-msgstr "<b>トランザクションをどのように評価しますか?</b>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Soll values"
-msgstr "Soll 値"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Adds a column to specify the Soll values of the transactions."
-msgstr "トランザクションのSoll値を指定する列を追加します。"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Correct / Incorrect"
 msgstr "正解/不正解"
 
 msgctxt "auditBayesianWorkflow|"
-msgid ""
-"Adds a column to specify the transactions as correct (0) or misstated (1)"
-msgstr "トランザクションを正解（0）または誤り（1）として指定する列を追加"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Column name selection result: "
-msgstr "列名選択結果: "
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Column name Soll values: "
-msgstr "Soll 値の列名: "
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Column name audit result: "
-msgstr "監査結果の列名： "
-
-msgctxt "auditBayesianWorkflow|"
 msgid "<b>Fill Variables</b>"
 msgstr "<b>変数を塗りつぶす</b>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>Annotate your selected transactions with their Soll values.</b>"
-msgstr "<b>選択したトランザクションにSoll値で注釈を付けます。</b>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid ""
-"<b>Annotate your selected transactions with a 0 (correct) or a 1 (misstated)."
-"</b>"
-msgstr ""
-"<b>選択したトランザクションに0（正しい）または1（誤記）の注釈をつける</b>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "A.     Data Entry"
-msgstr "A.     データ入力"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Evaluation</b>"
@@ -1221,24 +447,8 @@ msgid "4. Evaluation"
 msgstr "4.評価"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Soll Values"
-msgstr "Soll 値"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Audit Result"
 msgstr "監査結果"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "A.     Advanced Options"
-msgstr "A.詳細オプション"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Estimation Method"
-msgstr "推定法"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Regression"
-msgstr "回帰"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Area Under Posterior"
@@ -1253,10 +463,6 @@ msgid "Two-sided interval"
 msgstr "両端の間隔"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Show Results As"
-msgstr "結果を次のように表示"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Numbers"
 msgstr "数"
 
@@ -1265,68 +471,12 @@ msgid "Percentages"
 msgstr "パーセンテージ"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Extrapolated amounts"
-msgstr "外挿量"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "B.     Tables and Plots"
-msgstr "B.     テーブルとプロット"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Most likely error (MLE)"
-msgstr "最も可能性の高いエラー (MLE)"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Obtained precision"
-msgstr "得られた精度"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Posterior odds"
-msgstr "事後オッズ"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Bayes factor (BF₋₊)"
-msgstr "ベイズファクター(BF₋₊)"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Description of prior and posterior distribution"
-msgstr "事前分布と事後分布の説明"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Evaluate post-hoc assumptions"
-msgstr "ポストホックな仮定を評価する"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Confidence interval"
 msgstr "信頼区間"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "Evaluate sampling objectives"
-msgstr "サンプリング目標の評価"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Scatter plot of Ist and Soll values"
-msgstr "Ist値とSoll値の散布図"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "Display correlation"
 msgstr "相関関係を表示する"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Display transaction ID's"
-msgstr "トランザクションIDの表示"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Prior and posterior distribution"
-msgstr "事前分布と事後分布"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Display inferential statistics"
-msgstr "推測統計量の表示"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Shade"
-msgstr "シェード"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Variable"
@@ -1339,18 +489,6 @@ msgstr "一様分布"
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Confidence"
 msgstr "信頼度"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Explanatory Text"
-msgstr "説明文"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Enable"
-msgstr "有効"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Click to learn more about the explanatory text."
-msgstr "クリックすると説明文の詳細が表示されます。"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Tables"
@@ -1369,32 +507,8 @@ msgid "Population"
 msgstr "母集団"
 
 msgctxt "auditClassicalEstimation|"
-msgid "Size"
-msgstr "サイズ"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Value"
-msgstr "値"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Audit Risk"
-msgstr "監査リスク"
-
-msgctxt "auditClassicalEstimation|"
 msgid "Confidence"
 msgstr "信頼度"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Explanatory Text"
-msgstr "説明文"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Enable"
-msgstr "有効"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Click to learn more about the explanatory text."
-msgstr "クリックすると説明文の詳細が表示されます。"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Tables"
@@ -1413,20 +527,12 @@ msgid "Plots"
 msgstr "プロット"
 
 msgctxt "auditClassicalEstimation|"
-msgid "Correlation plot"
-msgstr "相関のプロット"
-
-msgctxt "auditClassicalEstimation|"
 msgid "<b>Download Report</b>"
 msgstr "<b>レポートのダウンロード</b>"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Sampling Objectives"
 msgstr "サンプリングの目的"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Test against a performance materiality"
-msgstr "パフォーマンスの重要性に対してテストする"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Relative"
@@ -1437,14 +543,6 @@ msgid "Absolute"
 msgstr "絶対的"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Click to learn more about the performance materiality."
-msgstr "クリックすると、パフォーマンス・マテリアリティの詳細が表示されます。"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Obtain a required minimum precision"
-msgstr "必要最小限の精度を得る"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Click to learn more about the precision."
 msgstr "クリックすると、精度についての詳細が表示されます。"
 
@@ -1453,96 +551,12 @@ msgid "Population"
 msgstr "母集団"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Size"
-msgstr "サイズ"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Value"
-msgstr "値"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Audit Risk"
-msgstr "監査リスク"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Confidence"
 msgstr "信頼度"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Transaction ID's"
-msgstr "トランザクションID"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Soll Position"
-msgstr "Sollポジション"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Audit Result"
 msgstr "監査結果"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Ist Position <i>(required)</i>"
-msgstr "lstポジション <i>(required)</i>"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Ist Position"
-msgstr "lstポジション"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Selection Counter <i>(optional)</i>"
-msgstr "選択カウンター <i>(optional)</i>"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Annotation Method"
-msgstr "アノテーション方法"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Soll values"
-msgstr "Soll 値"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Correct / Incorrect"
-msgstr "正解/不正解"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Use summary statistics"
-msgstr "要約統計量の使用"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Number of seen transactions"
-msgstr "見られたトランザクションの数"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Number of found errors"
-msgstr "検出されたエラーの数"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Explanatory Text"
-msgstr "説明文"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Enable"
-msgstr "有効"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Click to learn more about the explanatory text."
-msgstr "クリックすると説明文の詳細が表示されます。"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Critical Transactions"
-msgstr "重要なトランザクション"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Select critical transactions"
-msgstr "重要なトランザクションを選択する"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Negative Ist values"
-msgstr "負の Ist 値"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "How to handle critical transactions"
-msgstr "重要なトランザクションの処理方法"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Keep"
@@ -1551,14 +565,6 @@ msgstr "キープ"
 msgctxt "auditClassicalEvaluation|"
 msgid "Remove"
 msgstr "削除"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Risk Assessments"
-msgstr "リスク評価"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Inherent Risk"
-msgstr "固有のリスク"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "High"
@@ -1573,24 +579,8 @@ msgid "Low"
 msgstr "低い"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Custom"
-msgstr "カスタム"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Control Risk"
-msgstr "コントロール・リスク"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Advanced Options"
 msgstr "詳細オプション"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Evaluation Method"
-msgstr "評価方法"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Stringer bound"
-msgstr "ストリンガーバウンド"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "LTA adjustment"
@@ -1613,10 +603,6 @@ msgid "Regression estimator"
 msgstr "回帰推定量"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Probability Distribution"
-msgstr "確率分布"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Binomial"
 msgstr "二項"
 
@@ -1629,10 +615,6 @@ msgid "Hypergeometric"
 msgstr "超幾何"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Show Results As"
-msgstr "結果を次のように表示"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Numbers"
 msgstr "数"
 
@@ -1641,44 +623,12 @@ msgid "Percentages"
 msgstr "パーセンテージ"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Extrapolated amounts"
-msgstr "外挿量"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Tables and Plots"
-msgstr "テーブルとプロット"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Statistics"
-msgstr "統計量"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Most likely error (MLE)"
-msgstr "最も可能性の高いエラー (MLE)"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Obtained precision"
-msgstr "得られた精度"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Plots"
 msgstr "プロット"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Evaluate sampling objectives"
-msgstr "サンプリング目標の評価"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Scatter plot of Ist and Soll values"
-msgstr "Ist値とSoll値の散布図"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Display correlation"
 msgstr "相関関係を表示する"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Display transaction ID's"
-msgstr "トランザクションIDの表示"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "<b>Download Report</b>"
@@ -1689,24 +639,12 @@ msgid "Sampling Objectives"
 msgstr "サンプリングの目的"
 
 msgctxt "auditClassicalPlanning|"
-msgid "Test against a performance materiality"
-msgstr "パフォーマンスの重要性に対してテストする"
-
-msgctxt "auditClassicalPlanning|"
 msgid "Relative"
 msgstr "相対的"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Absolute"
 msgstr "絶対的"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Click to learn more about the performance materiality."
-msgstr "クリックすると、パフォーマンス・マテリアリティの詳細が表示されます。"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Obtain a required minimum precision"
-msgstr "必要最小限の精度を得る"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Click to learn more about the precision."
@@ -1717,28 +655,8 @@ msgid "Population"
 msgstr "母集団"
 
 msgctxt "auditClassicalPlanning|"
-msgid "Size"
-msgstr "サイズ"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Value"
-msgstr "値"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Audit Risk"
-msgstr "監査リスク"
-
-msgctxt "auditClassicalPlanning|"
 msgid "Confidence"
 msgstr "信頼度"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Risk Assessments"
-msgstr "リスク評価"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Inherent Risk"
-msgstr "固有のリスク"
 
 msgctxt "auditClassicalPlanning|"
 msgid "High"
@@ -1751,14 +669,6 @@ msgstr "中程度"
 msgctxt "auditClassicalPlanning|"
 msgid "Low"
 msgstr "低い"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Custom"
-msgstr "カスタム"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Control Risk"
-msgstr "コントロール・リスク"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Expected Errors in Sample"
@@ -1785,48 +695,12 @@ msgid "Hypergeometric"
 msgstr "超幾何"
 
 msgctxt "auditClassicalPlanning|"
-msgid "Step size"
-msgstr "ステップサイズ"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Currency"
-msgstr "通貨"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Euro (€)"
-msgstr "ユーロ (€)"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Dollar ($)"
-msgstr "ドル ($)"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Other"
-msgstr "その他"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Explanatory Text"
-msgstr "説明文"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Enable"
-msgstr "有効"
-
-msgctxt "auditClassicalPlanning|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "分析の各ステップで説明文を表示"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Plots"
 msgstr "プロット"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Compare required sample sizes"
-msgstr "必要なサンプルサイズの比較"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Implied distribution of errors"
-msgstr "誤差の暗黙の(implied)分布"
 
 msgctxt "auditClassicalPlanning|"
 msgid "<b>Download Report</b>"
@@ -1845,10 +719,6 @@ msgid "Sampling Objectives"
 msgstr "サンプリングの目的"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Test against a performance materiality"
-msgstr "パフォーマンスの重要性に対してテストする"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Relative"
 msgstr "相対的"
 
@@ -1857,92 +727,20 @@ msgid "Absolute"
 msgstr "絶対的"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Click to learn more about the performance materiality."
-msgstr "クリックすると、パフォーマンス・マテリアリティの詳細が表示されます。"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Obtain a required minimum precision"
-msgstr "必要最小限の精度を得る"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about the precision."
 msgstr "クリックすると、精度についての詳細が表示されます。"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Audit Risk"
-msgstr "監査リスク"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Confidence"
 msgstr "信頼度"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Explanatory Text"
-msgstr "説明文"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Enable"
-msgstr "有効"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "分析の各ステップで説明文を表示"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "<b>Variable Definitions</b>"
-msgstr "<b>変数の定義</b>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Transaction ID's"
-msgstr "トランザクションID"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Ist Position <i>(required)</i>"
-msgstr "lstポジション <i>(required)</i>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Ist Position <i>(optional)</i>"
-msgstr "Ist ポジション <i>(オプション)</i>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "A.     Critical Transactions"
-msgstr "A.     重要な取引"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Select critical transactions"
-msgstr "重要なトランザクションを選択する"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Column name critical transactions: "
-msgstr "重要なトランザクションの列名: "
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Negative Ist values"
-msgstr "負のIst値"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "How to handle critical transactions"
-msgstr "重要なトランザクションの処理方法"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Inspect"
-msgstr "検査"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Remove"
 msgstr "削除"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Critical Transaction List</b>"
-msgstr "<b>重要なトランザクションリスト</b>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "B.     Risk Assessments"
-msgstr "B.     リスク評価"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Inherent Risk"
-msgstr "固有のリスク"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "High"
@@ -1957,20 +755,8 @@ msgid "Low"
 msgstr "低い"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Custom"
-msgstr "カスタム"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Control Risk"
-msgstr "コントロール・リスク"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Expected Errors in Sample"
 msgstr "サンプルの予想誤差"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "C.     Advanced Options"
-msgstr "C.     詳細オプション"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Probability Distribution"
@@ -1989,52 +775,12 @@ msgid "Hypergeometric"
 msgstr "超幾何"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Step size"
-msgstr "ステップサイズ"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Currency"
-msgstr "通貨"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Euro (€)"
-msgstr "ユーロ (€)"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Dollar ($)"
-msgstr "ドル ($)"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Other"
-msgstr "その他"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "D.     Tables and Plots"
-msgstr "D.     表とプロット"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Tables"
 msgstr "表"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Descriptive statistics for Ist values"
-msgstr "Ist値の記述的統計量"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Plots"
 msgstr "プロット"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Distribution of Ist values"
-msgstr "Ist値の分布"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Compare required sample sizes"
-msgstr "必要なサンプルサイズの比較"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Implied distribution of errors"
-msgstr "誤差の暗黙の(implied)分布"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Download Report</b>"
@@ -2053,48 +799,16 @@ msgid "2. Selection"
 msgstr "2. 選択"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Add custom variables to sample"
-msgstr "サンプルにカスタム変数を追加"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Ranking Variable <i>(optional)</i>"
-msgstr "ランキング変数<i>(オプション)</i>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Additional Variables <i>(optional)</i>"
-msgstr "追加変数 <i>(オプション)</i>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "A.     Selection Methodology"
-msgstr "A.     選択方法"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Randomly organize transactions before selection"
-msgstr "選択前にトランザクションをランダムに整理"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Sampling Units"
 msgstr "サンプリング単位"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Monetary unit sampling"
-msgstr "通貨単位のサンプリング"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about monetary unit sampling."
 msgstr "クリックすると、金額単位のサンプリングについての詳細が表示されます。"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Record sampling"
-msgstr "サンプリングの記録"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Click to learn more about record sampling."
 msgstr "レコードサンプリングの詳細については、ここをクリックしてください。"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Selection Method"
-msgstr "選定方法"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Random sampling"
@@ -2129,44 +843,8 @@ msgid "Seed"
 msgstr "シード"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "B.     Tables"
-msgstr "B.     表"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Display selected transactions"
-msgstr "選択されたトランザクションの表示"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Descriptive statistics of selected transactions"
-msgstr "選択したトランザクションの記述統計"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Mean"
-msgstr "平均値"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Median"
-msgstr "中央値"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Std. deviation"
-msgstr "標準偏差"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Variance"
-msgstr "分散"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Minimum"
-msgstr "最小値"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Maximum"
 msgstr "最大値"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Range"
-msgstr "範囲"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Reset Workflow</b>"
@@ -2185,58 +863,12 @@ msgid "3. Execution"
 msgstr "3.実行"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "<b>How would you like to evaluate your transactions?</b>"
-msgstr "<b>トランザクションをどのように評価しますか?</b>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Soll values"
-msgstr "Soll 値"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Adds a column to specify the Soll values of the transactions."
-msgstr "トランザクションのSoll値を指定する列を追加します。"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Correct / Incorrect"
 msgstr "正解/不正解"
 
 msgctxt "auditClassicalWorkflow|"
-msgid ""
-"Adds a column to specify the transactions as correct (0) or misstated (1)."
-msgstr ""
-"トランザクションを正解（0）または誤り（1）として指定する列を追加します。"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Column name selection result: "
-msgstr "列名選択結果: "
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Column name Soll values: "
-msgstr "Soll 値の列名: "
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Column name audit result: "
-msgstr "監査結果の列名： "
-
-msgctxt "auditClassicalWorkflow|"
 msgid "<b>Fill Variables</b>"
 msgstr "<b>変数を塗りつぶす</b>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Annotate your selected transactions with their Soll values.</b>"
-msgstr "<b>選択したトランザクションにSoll値で注釈を付けます。</b>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid ""
-"<b>Annotate your selected transactions with a 0 (correct) or a 1 (incorrect)."
-"</b>"
-msgstr ""
-"<b>選択したトランザクションに 0 (正しい) または 1 (正しくない) で注釈を付けま"
-"す。</b>"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "A.     Data Entry"
-msgstr "A.     データ入力"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Evaluation</b>"
@@ -2251,24 +883,8 @@ msgid "4. Evaluation"
 msgstr "4.評価"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Soll Values"
-msgstr "Soll 値"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Audit Result"
 msgstr "監査結果"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "A.     Advanced Options"
-msgstr "A.詳細オプション"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Evaluation Method"
-msgstr "評価方法"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Stringer bound"
-msgstr "ストリンガーバウンド"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "LTA adjustment"
@@ -2291,10 +907,6 @@ msgid "Regression estimator"
 msgstr "回帰推定量"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Show Results As"
-msgstr "結果を次のように表示"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Numbers"
 msgstr "数"
 
@@ -2303,104 +915,28 @@ msgid "Percentages"
 msgstr "パーセンテージ"
 
 msgctxt "auditClassicalWorkflow|"
-msgid "B.     Tables and Plots"
-msgstr "B.     テーブルとプロット"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Statistics"
-msgstr "統計量"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Most likely error (MLE)"
-msgstr "最も可能性の高いエラー (MLE)"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Obtained precision"
-msgstr "得られた精度"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Evaluate sampling objectives"
-msgstr "サンプリング目標の評価"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Scatter plot of Ist and Soll values"
-msgstr "Ist値とSoll値の散布図"
-
-msgctxt "auditClassicalWorkflow|"
 msgid "Display correlation"
 msgstr "相関関係を表示する"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Display transaction ID's"
-msgstr "トランザクションIDの表示"
-
-msgctxt "auditSelection|"
-msgid "Record ID's"
-msgstr "レコードID"
-
-msgctxt "auditSelection|"
-msgid "Ist Position"
-msgstr "Istポジション"
-
-msgctxt "auditSelection|"
-msgid "Ist Position <i>(optional)</i>"
-msgstr "Ist ポジション <i>(オプション)</i>"
-
-msgctxt "auditSelection|"
-msgid "Ranking Variable <i>(optional)</i>"
-msgstr "ランキング変数<i>(オプション)</i>"
-
-msgctxt "auditSelection|"
-msgid "Additional Variables <i>(optional)</i>"
-msgstr "追加変数 <i>(オプション)</i>"
-
-msgctxt "auditSelection|"
-msgid "Number of sampling units to select"
-msgstr "選択するサンプリング単位の数"
 
 msgctxt "auditSelection|"
 msgid "Explanatory Text"
 msgstr "説明文"
 
 msgctxt "auditSelection|"
-msgid "Enable"
-msgstr "有効"
-
-msgctxt "auditSelection|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "分析の各ステップで説明文を表示"
-
-msgctxt "auditSelection|"
-msgid "Selection Methodology"
-msgstr "選定方法"
-
-msgctxt "auditSelection|"
-msgid "Randomly organize transactions before selection"
-msgstr "選択前にトランザクションをランダムに整理"
 
 msgctxt "auditSelection|"
 msgid "Sampling Units"
 msgstr "サンプリング単位"
 
 msgctxt "auditSelection|"
-msgid "Monetary unit sampling"
-msgstr "通貨単位のサンプリング"
-
-msgctxt "auditSelection|"
 msgid "Click to learn more about monetary unit sampling."
 msgstr "クリックすると、金額単位のサンプリングについての詳細が表示されます。"
 
 msgctxt "auditSelection|"
-msgid "Record sampling"
-msgstr "サンプリングの記録"
-
-msgctxt "auditSelection|"
 msgid "Click to learn more about record sampling."
 msgstr "レコードサンプリングの詳細については、ここをクリックしてください。"
-
-msgctxt "auditSelection|"
-msgid "Selection Method"
-msgstr "選定方法"
 
 msgctxt "auditSelection|"
 msgid "Random sampling"
@@ -2435,104 +971,16 @@ msgid "Seed"
 msgstr "シード"
 
 msgctxt "auditSelection|"
-msgid "Advanced Options"
-msgstr "詳細オプション"
-
-msgctxt "auditSelection|"
-msgid "Currency"
-msgstr "通貨"
-
-msgctxt "auditSelection|"
-msgid "Euro (€)"
-msgstr "ユーロ (€)"
-
-msgctxt "auditSelection|"
-msgid "Dollar ($)"
-msgstr "ドル ($)"
-
-msgctxt "auditSelection|"
-msgid "Other"
-msgstr "その他"
-
-msgctxt "auditSelection|"
 msgid "Tables"
 msgstr "表"
-
-msgctxt "auditSelection|"
-msgid "Display selected transactions"
-msgstr "選択されたトランザクションの表示"
-
-msgctxt "auditSelection|"
-msgid "Descriptive statistics of selected transactions"
-msgstr "選択したトランザクションの記述統計"
-
-msgctxt "auditSelection|"
-msgid "Mean"
-msgstr "平均値"
-
-msgctxt "auditSelection|"
-msgid "Median"
-msgstr "中央値"
-
-msgctxt "auditSelection|"
-msgid "Std. deviation"
-msgstr "標準偏差"
-
-msgctxt "auditSelection|"
-msgid "Variance"
-msgstr "分散"
-
-msgctxt "auditSelection|"
-msgid "Minimum"
-msgstr "最小値"
-
-msgctxt "auditSelection|"
-msgid "Maximum"
-msgstr "最大値"
-
-msgctxt "auditSelection|"
-msgid "Range"
-msgstr "範囲"
 
 msgctxt "auditSelection|"
 msgid "Export sample to file"
 msgstr "サンプルをファイルにエクスポート"
 
 msgctxt "auditSelection|"
-msgid "Column name selection result: "
-msgstr "列名選択結果: "
-
-msgctxt "auditSelection|"
-msgid "e.g. Count"
-msgstr "例）カウント"
-
-msgctxt "auditSelection|"
-msgid "Save as: "
-msgstr "名前を付けて保存: "
-
-msgctxt "auditSelection|"
-msgid "<b>Synchronize: On</b>"
-msgstr "<b>同期: オン</b>"
-
-msgctxt "auditSelection|"
-msgid "<b>Synchronize: Off</b>"
-msgstr "<b>同期: オフ</b>"
-
-msgctxt "auditSelection|"
 msgid "<b>Download Report</b>"
 msgstr "<b>レポートのダウンロード</b>"
-
-msgctxt "Description|"
-msgid "Classical Sampling Workflow"
-msgstr "伝統的なサンプリングワークフロー"
-
-msgctxt "Description|"
-msgid "Classical Planning"
-msgstr "伝統的な計画"
-
-msgctxt "Description|"
-msgid "Classical Evaluation"
-msgstr "伝統的評価"
 
 msgctxt "Description|"
 msgid "Digit Analysis"
@@ -2549,88 +997,6 @@ msgstr "繰り返し値分析"
 msgctxt "Description|"
 msgid "True Value Estimation"
 msgstr "真値の推定"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Dollar ($)"
-msgstr "ドル ($)"
-
-msgctxt "auditBayesianEvaluation|"
-msgid ""
-"<i>Requires additional assumption: The population taints are homogeneous</i>"
-msgstr "<i>追加の仮定が必要です。母集団の汚染が均質である</i>"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Additional samples for sampling objectives"
-msgstr "サンプリング目的のための追加サンプル"
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Post-hoc corrections to population value"
-msgstr "母集団の値に対する事後的な補正"
-
-msgctxt "auditBayesianPlanning|"
-msgid "Calculation Preferences"
-msgstr "計算方法の設定"
-
-msgctxt "auditBayesianWorkflow|"
-msgid ""
-"<i>Requires additional assumption: The population taints are homogeneous</i>"
-msgstr "<i>追加の仮定が必要です。母集団の汚染が均質である</i>"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Calculation Preferences"
-msgstr "計算方法の設定"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Additional samples for sampling objectives"
-msgstr "サンプリング目的のための追加サンプル"
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Post-hoc corrections to population value"
-msgstr "母集団の値に対する事後的な補正"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Audit Risk"
-msgstr "監査リスク"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Reference Distribution"
-msgstr "参照分布"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Check Digits"
-msgstr "ディジットのチェック"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "First digit"
-msgstr "1桁目"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "First and second digits"
-msgstr "1桁目と2桁目"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Last digit"
-msgstr "最後の1桁"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Frequency statistics"
-msgstr "頻度統計"
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Compare to reference distribution"
-msgstr "参照分布との比較"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Ist Position"
-msgstr "Istポジション"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Soll Position"
-msgstr "Soll の位置"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Estimation Method"
-msgstr "推定法"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Direct estimator"
@@ -2649,40 +1015,12 @@ msgid "Regression estimator"
 msgstr "回帰推定量"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Dollar ($)"
-msgstr "ドル ($)"
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Tables"
 msgstr "表"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Additional samples for sampling objectives"
-msgstr "サンプリング目的のための追加サンプル"
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Post-hoc corrections to population value"
-msgstr "母集団の値に対する事後的な補正"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Audit Risk"
-msgstr "監査リスク"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
 msgstr "信頼度"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Explanatory Text"
-msgstr "説明文"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Enable"
-msgstr "有効"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Click to learn more about the explanatory text."
-msgstr "クリックすると説明文の詳細が表示されます。"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Variable"
@@ -2703,14 +1041,6 @@ msgstr "エントロピー"
 msgctxt "auditClassicalNumberBunching|"
 msgid "Shuffle Decimal Digits"
 msgstr "10 進数の桁のシャッフル"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "All digits"
-msgstr "すべての数字"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Bootstrap Options"
-msgstr "ブートストラップオプション"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Number of samples"
@@ -2737,14 +1067,6 @@ msgid "Plots"
 msgstr "プロット"
 
 msgctxt "auditClassicalNumberBunching|"
-msgid "Observed vs. expected values"
-msgstr "観測値と期待値"
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Histogram of individual values"
-msgstr "個々の値のヒストグラム"
-
-msgctxt "auditClassicalNumberBunching|"
 msgid "Label"
 msgstr "ラベル"
 
@@ -2755,26 +1077,6 @@ msgstr "最も出現率の高い"
 msgctxt "auditClassicalNumberBunching|"
 msgid "<b>Download Report</b>"
 msgstr "<b>レポートのダウンロード</b>"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Calculation Preferences"
-msgstr "計算方法の設定"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Calculation Preferences"
-msgstr "計算方法の設定"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Extrapolated amounts"
-msgstr "外挿量"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Additional samples for sampling objectives"
-msgstr "サンプリング目的のための追加サンプル"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Post-hoc corrections to population value"
-msgstr "母集団の値に対する事後的な補正"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Benford's law"
@@ -2792,10 +1094,1090 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Log(BF₁₀)"
 msgstr "Log(BF₁₀)"
 
-msgctxt "auditClassicalNumberBunching|"
-msgid "Last digit"
-msgstr "最後の1桁"
+msgctxt "auditBayesianEvaluation|"
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "No. items"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "No. units"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Item ID"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Selection Counter"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Data"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Columns"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Summary statistics"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Sample size"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Number of errors"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Explanatory text"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianEvaluation|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr "分析の各ステップで説明文を表示"
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Prior and posterior"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Corrections to population"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianEvaluation|"
+msgid "Assumption checks"
+msgstr "仮定のチェック"
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Additional info"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Posterior predictive"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Sampling objectives"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Scatter plot"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Display item ID's"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Prior"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Default"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "α"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "β"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Errors"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Impartial"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Risk assessments"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Control risk"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Prior Expected Error Rate"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianEvaluation|"
+msgid "All possible"
+msgstr "全ての可能なケース"
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Critical Items"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Negative book values"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Format Tables"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Assume homogeneous taints"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Click to learn more about this assumption"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "No. units"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Explanatory text"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Prior and posterior"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Compare sample sizes"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Prior predictive"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Prior"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Default"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "α"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "β"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Errors"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Impartial"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Risk assessments"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Control risk"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Increment"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianPlanning|"
+msgid "Maximum"
+msgstr "最大値"
+
+msgctxt "auditBayesianPlanning|"
+msgid "Format Tables"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianPlanning|"
+msgid "Numbers"
+msgstr "数"
+
+#, fuzzy
+msgctxt "auditBayesianPlanning|"
+msgid "Percentages"
+msgstr "パーセンテージ"
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Item ID"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Explanatory text"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Descriptive statistics"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Prior and posterior"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Distribution of book values"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Compare sample sizes"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Prior predictive"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Prior"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Default"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "α"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "β"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianWorkflow|"
+msgid "Size"
+msgstr "サイズ"
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Errors"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Impartial"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Risk assessments"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Control risk"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianWorkflow|"
+msgid "Advanced Options"
+msgstr "詳細オプション"
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Critical Items"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Negative book values"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Column name"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianWorkflow|"
+msgid "Keep"
+msgstr "キープ"
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Increment"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Format Tables"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Assume homogeneous taints"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Click to learn more about this assumption"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Ranking Variable"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Additional Variables"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Randomize item order"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Selected items"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Items"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Monetary units"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Annotation"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Audit value"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Adds a column to specify the audit values of the items."
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Adds a column to specify the items as correct (0) or misstated (1)."
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Column name selection result"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Column name audit result"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Data Entry"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Annotate your selected items with their audit (true) values.</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Audit Value"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Corrections to population"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianWorkflow|"
+msgid "Assumption checks"
+msgstr "仮定のチェック"
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Additional info"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Posterior predictive"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Sampling objectives"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Scatter plot"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Display item ID's"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Reference"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Explanatory text"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr "分析の各ステップで説明文を表示"
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Digits"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "First"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "First and second"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Last"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Frequency table"
+msgstr "度数分布表"
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Observed vs. expected"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Book Values"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Audit Values"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Explanatory text"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalEstimation|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr "分析の各ステップで説明文を表示"
+
+msgctxt "auditClassicalEstimation|"
+msgid "No. items"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "No. units"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Scatter plot"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "No. items"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "No. units"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Item ID"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Selection Counter"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Data"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Columns"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Summary statistics"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Sample size"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Number of errors"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Explanatory text"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalEvaluation|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr "分析の各ステップで説明文を表示"
+
+#, fuzzy
+msgctxt "auditClassicalEvaluation|"
+msgid "Audit Risk Model"
+msgstr "監査リスク モデル"
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Control risk"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Corrections to population"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Stringer"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Mean-per-unit estimator"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Sampling objectives"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Scatter plot"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Display item ID's"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Critical Items"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Negative book values"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Format Tables"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Monetary values"
+msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
-msgid "Last two digits"
-msgstr "最後の 2 桁"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Explanatory text"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalNumberBunching|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr "分析の各ステップで説明文を表示"
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Last"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Last two"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "All"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Observed vs. expected"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Histogram"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalNumberBunching|"
+msgid "Advanced Options"
+msgstr "詳細オプション"
+
+msgctxt "auditClassicalPlanning|"
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "No. units"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Explanatory text"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Compare sample sizes"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Assumed error distribution"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalPlanning|"
+msgid "Audit Risk Model"
+msgstr "監査リスク モデル"
+
+msgctxt "auditClassicalPlanning|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Control risk"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Increment"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalPlanning|"
+msgid "Maximum"
+msgstr "最大値"
+
+msgctxt "auditClassicalPlanning|"
+msgid "Format Tables"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalPlanning|"
+msgid "Numbers"
+msgstr "数"
+
+#, fuzzy
+msgctxt "auditClassicalPlanning|"
+msgid "Percentages"
+msgstr "パーセンテージ"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Performance materiality"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Click to learn more about performance materiality."
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Minimum precision"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Item ID"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Explanatory text"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Descriptive statistics"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalWorkflow|"
+msgid "Audit Risk Model"
+msgstr "監査リスク モデル"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Inherent risk"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Control risk"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Distribution of book values"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Compare sample sizes"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Assumed error distribution"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalWorkflow|"
+msgid "Advanced Options"
+msgstr "詳細オプション"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Critical Items"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Negative book values"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Column name"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalWorkflow|"
+msgid "Keep"
+msgstr "キープ"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Increment"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Format Tables"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Ranking Variable"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Additional Variables"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Randomize item order"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Selected items"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Items"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Monetary units"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Annotation"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Audit value"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Adds a column to specify the audit values of the items."
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Adds a column to specify the items as correct (0) or misstated (1)."
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Column name selection result"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Column name audit result"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Data Entry"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Annotate your selected items with their audit (true) values.</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Audit Value"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Stringer"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Mean-per-unit estimator"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Corrections to population"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Sampling objectives"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Scatter plot"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Display item ID's"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Item ID"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Ranking Variable"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Additional Variables"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Sample size"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Randomize item order"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Items"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Monetary units"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Descriptive statistics"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Selected items"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Export"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Column name selection result"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "e.g. selected"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Save as"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "e.g. sample.csv"
+msgstr ""
