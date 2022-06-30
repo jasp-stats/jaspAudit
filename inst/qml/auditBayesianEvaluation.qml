@@ -175,6 +175,7 @@ Form
 				defaultValue: 					0
 				fieldWidth: 					100 * preferencesModel.uiScale
 				min: 							0
+				enabled:						!pdata.checked
 			}
 
 			DoubleField
@@ -186,6 +187,7 @@ Form
 				fieldWidth: 					100 * preferencesModel.uiScale
 				min: 							0
 				decimals: 						2
+				enabled:						!pdata.checked
 			}
 		}
 
@@ -254,10 +256,18 @@ Form
 
 		RadioButton
 		{
+			id: 								pdata
+			name: 								"pdata"
+			label:								qsTr("Population")
+			checked: 							mainWindow.dataAvailable
+			enabled:							mainWindow.dataAvailable
+		}
+
+		RadioButton
+		{
 			id: 								data
 			name: 								"data"
-			label:								qsTr("Columns")
-			checked: 							mainWindow.dataAvailable
+			label:								qsTr("Sample")
 			enabled:							mainWindow.dataAvailable
 		}
 
@@ -325,7 +335,7 @@ Form
 			id:									hypergeometric
 			name: 								"hypergeometric"
 			text: 								qsTr("Beta-binomial")
-			enabled: 							n_units.value > 0
+			enabled: 							n_units.value > 0 || pdata.checked
 		}
 
 		RadioButton
@@ -356,9 +366,16 @@ Form
 
 		CheckBox
 		{
+			text: 								qsTr("Misstated items")
+			name: 								"tableTaints"
+			enabled:							values.count > 0 && !stats.checked
+		}
+
+		CheckBox
+		{
 			text: 								qsTr("Corrections to population")
 			name: 								"tableCorrections"
-			enabled:							n_units.value > 0
+			enabled:							n_units.value > 0 || pdata.checked
 		}
 
 		CheckBox
@@ -688,7 +705,7 @@ Form
 			{
 				text: 							qsTr("Monetary values")
 				name: 							"amount"
-				enabled:						n_units.value > 0
+				enabled:						n_units.value > 0 || pdata.checked
 			}
 		}
 
@@ -703,7 +720,7 @@ Form
 					id: 						separate
 					text: 						qsTr("Assume homogeneous taints")
 					name: 						"separateMisstatement"
-					enabled:					id.count > 0 && values.count > 0 && auditResult.count > 0 && n_items.value > 0 && n_units.value > 0 && binomial.checked
+					enabled:					id.count > 0 && values.count > 0 && auditResult.count > 0 && ((n_items.value > 0 && n_units.value > 0) || pdata.checked) && binomial.checked
 				}
 
 				HelpButton

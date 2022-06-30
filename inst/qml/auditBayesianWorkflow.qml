@@ -551,7 +551,7 @@ Form
 						name: 						"critical_name"
 						text: 						qsTr("Column name")
 						fieldWidth: 				120 * preferencesModel.uiScale
-						value: 						"critical"
+						value: 						qsTr("critical")
 					}
 
 					RadioButtonGroup
@@ -985,7 +985,7 @@ Form
 				name: 								"indicator_col"
 				text: 								qsTr("Column name selection result")
 				fieldWidth: 						120 * preferencesModel.uiScale
-				value:								"selected"
+				value:								qsTr("selected")
 			}
 
 			ComputedColumnField
@@ -994,7 +994,7 @@ Form
 				name: 								"variable_col"
 				text: 								qsTr("Column name audit result")
 				fieldWidth: 						120 * preferencesModel.uiScale
-				value: 								"auditResult"
+				value: 								qsTr("auditResult")
 			}
 		}
 
@@ -1173,6 +1173,13 @@ Form
 			{
 				text: 								qsTr("Prior and posterior")
 				name: 								"tablePriorPosterior"
+			}
+
+			CheckBox
+			{
+				text: 								qsTr("Misstated items")
+				name: 								"tableTaints"
+				enabled:							values.count > 0 && data.checked
 			}
 
 			CheckBox

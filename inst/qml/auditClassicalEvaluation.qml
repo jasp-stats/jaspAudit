@@ -187,6 +187,7 @@ Form
 				defaultValue: 					0
 				fieldWidth: 					100 * preferencesModel.uiScale
 				min: 							0
+				enabled:						!pdata.checked
 			}
 
 			DoubleField
@@ -198,6 +199,7 @@ Form
 				fieldWidth: 					100 * preferencesModel.uiScale
 				min: 							0
 				decimals: 						2
+				enabled:						!pdata.checked				
 			}
 		}
 
@@ -266,10 +268,18 @@ Form
 
 		RadioButton
 		{
+			id: 								pdata
+			name: 								"pdata"
+			label:								qsTr("Population")
+			checked: 							mainWindow.dataAvailable
+			enabled:							mainWindow.dataAvailable
+		}
+
+		RadioButton
+		{
 			id: 								data
 			name: 								"data"
-			label:								qsTr("Columns")
-			checked: 							mainWindow.dataAvailable
+			label:								qsTr("Sample")
 			enabled:							mainWindow.dataAvailable
 		}
 
@@ -390,9 +400,16 @@ Form
 
 		CheckBox
 		{
+			text: 						qsTr("Misstated items")
+			name: 						"tableTaints"
+			enabled:					values.count > 0 && !stats.checked
+		}
+
+		CheckBox
+		{
 			text: 						qsTr("Corrections to population")
 			name: 						"tableCorrections"
-			enabled:					n_units.value > 0
+			enabled:					n_units.value != 0 || pdata.checked
 		}
 	}
 
@@ -405,7 +422,7 @@ Form
 		{
 			name: 							"hypergeometric"
 			text: 							qsTr("Hypergeometric")
-			enabled:						n_units.value > 0
+			enabled:						n_units.value != 0 || pdata.checked
 		}
 
 		RadioButton
@@ -447,28 +464,28 @@ Form
 		{
 			name: 							"direct"
 			text: 							qsTr("Direct estimator")
-			enabled: 						!stats.checked && n_units.value != 0 && n_items.value != 0 && values.count > 0 && auditResult.count > 0
+			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 		}
 
 		RadioButton
 		{
 			name: 							"difference"
 			text: 							qsTr("Difference estimator")
-			enabled: 						!stats.checked && n_units.value != 0 && n_items.value != 0 && values.count > 0 && auditResult.count > 0
+			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 		}
 
 		RadioButton
 		{
 			name: 							"quotient"
 			text: 							qsTr("Ratio estimator")
-			enabled: 						!stats.checked && n_units.value != 0 && n_items.value != 0 && values.count > 0 && auditResult.count > 0
+			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 		}
 
 		RadioButton
 		{
 			name: 							"regression"
 			text: 							qsTr("Regression estimator")
-			enabled: 						!stats.checked && n_units.value != 0 && n_items.value != 0 && values.count > 0 && auditResult.count > 0
+			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 		}
 	}
 
@@ -563,7 +580,7 @@ Form
 			{
 				text: 							qsTr("Monetary values")
 				name: 							"amount"
-				enabled:						n_units.value != 0
+				enabled:						n_units.value != 0 || pdata.checked
 			}
 		}
 	}
