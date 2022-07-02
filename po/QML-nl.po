@@ -2084,10 +2084,6 @@ msgid "e.g. sample.csv"
 msgstr "bijv. steekproef.csv"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Columns"
-msgstr "Kolommen"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Prior Expected Error Rate"
 msgstr "Prior Verwachte Foutfractie"
 
@@ -2124,45 +2120,89 @@ msgid "Selected items"
 msgstr "Geselecteerde posten"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Columns"
-msgstr "Kolommen"
+msgid "Monetary values"
+msgstr "Monetaire waarden"
+
+msgctxt "auditClassicalPlanning|"
+msgid "Iterations"
+msgstr "Iteraties"
+
+msgctxt "auditClassicalPlanning|"
+msgid "Maximum"
+msgstr "Maximum"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Monetary values"
+msgstr "Monetaire waarden"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Iterations"
+msgstr "Iteraties"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Maximum"
+msgstr "Maximum"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Randomize item order"
+msgstr "Willekeurige volgorde posten"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Selected items"
+msgstr "Geselecteerde posten"
+
+msgctxt "auditSelection|"
+msgid "Randomize item order"
+msgstr "Willekeurige volgorde posten"
+
+msgctxt "auditSelection|"
+msgid "Selected items"
+msgstr "Geselecteerde posten"
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Sample"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Misstated items"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "critical"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "selected"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "auditResult"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Misstated items"
+msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Monetary values"
-msgstr "Monetaire waarden"
+msgid "Sample"
+msgstr ""
 
-msgctxt "auditClassicalPlanning|"
-msgid "Iterations"
-msgstr "Iteraties"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Maximum"
-msgstr "Maximum"
+msgctxt "auditClassicalEvaluation|"
+msgid "Misstated items"
+msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Monetary values"
-msgstr "Monetaire waarden"
+msgid "critical"
+msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Iterations"
-msgstr "Iteraties"
+msgid "selected"
+msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Maximum"
-msgstr "Maximum"
+msgid "auditResult"
+msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Randomize item order"
-msgstr "Willekeurige volgorde posten"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Selected items"
-msgstr "Geselecteerde posten"
-
-msgctxt "auditSelection|"
-msgid "Randomize item order"
-msgstr "Willekeurige volgorde posten"
-
-msgctxt "auditSelection|"
-msgid "Selected items"
-msgstr "Geselecteerde posten"
+msgid "Misstated items"
+msgstr ""

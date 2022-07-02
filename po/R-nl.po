@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-06-17 17:51\n"
+"POT-Creation-Date: 2022-07-02 03:54\n"
 "PO-Revision-Date: 2022-06-20 18:19+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -692,7 +692,8 @@ msgstr ""
 "Om %1$s te construeren, specificeert u de verwachte fouten als een "
 "percentage van de totale populatie."
 
-msgid "Selection summary"
+#, fuzzy
+msgid "Selection Summary"
 msgstr "Selectie samenvatting"
 
 msgid ""
@@ -701,7 +702,8 @@ msgid ""
 msgstr ""
 "U moet unieke item ID's specificeren. De rijnummers van de gegevens volstaan."
 
-msgid "Evaluation summary"
+#, fuzzy
+msgid "Evaluation Summary"
 msgstr "Evaluatie samenvatting"
 
 msgid ""
@@ -1706,6 +1708,25 @@ msgid ""
 msgstr ""
 "De materialiteit, de populatiegrootte, of de populatiewaarde is nul, of een "
 "van deze variabelen ontbreekt."
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Misstated Items"
+msgstr "<b>Tabel %1$i.</b> Geselecteerde Posten"
+
+msgid "ID"
+msgstr ""
+
+#, fuzzy
+msgid "Difference"
+msgstr "Verschilschatter"
+
+#, fuzzy
+msgid "Counted"
+msgstr "Aantal"
+
+#, fuzzy
+msgid "No misstatements were identified in the sample."
+msgstr "In de steekproef werden geen fouten aangetroffen."
 
 msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr "<b>Tabel %1$i.</b> Aanname Controles"

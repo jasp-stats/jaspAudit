@@ -2093,10 +2093,6 @@ msgid "e.g. sample.csv"
 msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Columns"
-msgstr ""
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Prior Expected Error Rate"
 msgstr ""
 
@@ -2133,45 +2129,89 @@ msgid "Selected items"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Columns"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditClassicalPlanning|"
+msgid "Maximum"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Monetary values"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Maximum"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Randomize item order"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Selected items"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Randomize item order"
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Selected items"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Sample"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Misstated items"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "critical"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "selected"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "auditResult"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Misstated items"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Monetary values"
+msgid "Sample"
 msgstr ""
 
-msgctxt "auditClassicalPlanning|"
-msgid "Iterations"
-msgstr ""
-
-msgctxt "auditClassicalPlanning|"
-msgid "Maximum"
+msgctxt "auditClassicalEvaluation|"
+msgid "Misstated items"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Monetary values"
+msgid "critical"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Iterations"
+msgid "selected"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Maximum"
+msgid "auditResult"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Randomize item order"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Selected items"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Randomize item order"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Selected items"
+msgid "Misstated items"
 msgstr ""

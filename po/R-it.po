@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.3\n"
-"POT-Creation-Date: 2022-06-17 17:51\n"
+"POT-Creation-Date: 2022-07-02 03:54\n"
 "PO-Revision-Date: 2022-06-19 11:19+0000\n"
 "Last-Translator: Giovanni Schettino <giannischettino00@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -547,7 +547,7 @@ msgid ""
 "the total population."
 msgstr ""
 
-msgid "Selection summary"
+msgid "Selection Summary"
 msgstr ""
 
 msgid ""
@@ -555,7 +555,7 @@ msgid ""
 "sufficient."
 msgstr ""
 
-msgid "Evaluation summary"
+msgid "Evaluation Summary"
 msgstr ""
 
 msgid ""
@@ -1283,6 +1283,21 @@ msgstr ""
 msgid ""
 "Either the materiality, the population size, or the population value is "
 "defined as zero, or one of the required variables is missing."
+msgstr ""
+
+msgid "<b>Table %1$i.</b> Misstated Items"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Difference"
+msgstr ""
+
+msgid "Counted"
+msgstr ""
+
+msgid "No misstatements were identified in the sample."
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Assumption Checks"

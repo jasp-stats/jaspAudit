@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2022-06-17 17:51\n"
+"POT-Creation-Date: 2022-07-02 03:54\n"
 "PO-Revision-Date: 2022-06-19 11:19+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -702,7 +702,8 @@ msgstr ""
 "Con el fin de producir %1$s, especifica los errores esperados como "
 "porcentaje de la población total."
 
-msgid "Selection summary"
+#, fuzzy
+msgid "Selection Summary"
 msgstr "Resumen de la selección"
 
 msgid ""
@@ -712,7 +713,8 @@ msgstr ""
 "Se deben indicar IDs de elementos únicos. Los números de las filas del "
 "conjunto de datos son suficientes."
 
-msgid "Evaluation summary"
+#, fuzzy
+msgid "Evaluation Summary"
 msgstr "Resumen de la evaluación"
 
 msgid ""
@@ -1704,6 +1706,25 @@ msgid ""
 msgstr ""
 "La materialidad, el tamaño de la población, o el valor poblacional están "
 "definidos como cero; o falta una de las variables requeridas."
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Misstated Items"
+msgstr "<b>Tabla %1$i.</b> Elementos Seleccionados"
+
+msgid "ID"
+msgstr ""
+
+#, fuzzy
+msgid "Difference"
+msgstr "Estimador de la diferencia"
+
+#, fuzzy
+msgid "Counted"
+msgstr "Cantidad"
+
+#, fuzzy
+msgid "No misstatements were identified in the sample."
+msgstr "Non se encontraron inexactitudes en la muestra."
 
 msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr "<b>Tabla %1$i.</b> Comprobaciones de Supuestos"

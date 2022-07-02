@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-06-17 17:51\n"
+"POT-Creation-Date: 2022-07-02 03:54\n"
 "PO-Revision-Date: 2022-02-20 11:55+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -701,7 +701,8 @@ msgstr ""
 "Um %1$s zu konstruieren, geben Sie die erwarteten Fehler als Prozentsatz der "
 "Grundgesamtheit an."
 
-msgid "Selection summary"
+#, fuzzy
+msgid "Selection Summary"
 msgstr "Auswahl-Zusammenfassung"
 
 msgid ""
@@ -711,7 +712,8 @@ msgstr ""
 "Sie müssen eindeutige Posten-IDs angeben. Die Zeilennummern des Datensatzes "
 "sind ausreichend."
 
-msgid "Evaluation summary"
+#, fuzzy
+msgid "Evaluation Summary"
 msgstr "Evaluations-Zusammenfassung"
 
 msgid ""
@@ -1712,6 +1714,25 @@ msgid ""
 msgstr ""
 "Entweder ist die Wesentlichkeit, die Größe oder der Wert der Grundgesamtheit "
 "als Null definiert, oder eine der benötigten Variablen fehlt."
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Misstated Items"
+msgstr "<b>Tabelle %1$i.</b> Ausgewählte Posten"
+
+msgid "ID"
+msgstr ""
+
+#, fuzzy
+msgid "Difference"
+msgstr "Differenzschätzer"
+
+#, fuzzy
+msgid "Counted"
+msgstr "Anzahl"
+
+#, fuzzy
+msgid "No misstatements were identified in the sample."
+msgstr "In der Stichprobe wurden keine falschen Angaben gefunden."
 
 msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr "<b>Tabelle %1$i.</b> Annahmeprüfungen"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-06-17 17:51\n"
+"POT-Creation-Date: 2022-07-02 03:54\n"
 "PO-Revision-Date: 2021-09-11 03:27+0000\n"
 "Last-Translator: JASP Stats <b.boutin@uva.nl>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -701,15 +701,16 @@ msgid ""
 "the total population."
 msgstr ""
 
-msgid "Selection summary"
-msgstr ""
+#, fuzzy
+msgid "Selection Summary"
+msgstr "Selecionar tudo"
 
 msgid ""
 "You must specify unique item ID's. The row numbers of the data set are "
 "sufficient."
 msgstr ""
 
-msgid "Evaluation summary"
+msgid "Evaluation Summary"
 msgstr ""
 
 msgid ""
@@ -1458,6 +1459,24 @@ msgstr ""
 msgid ""
 "Either the materiality, the population size, or the population value is "
 "defined as zero, or one of the required variables is missing."
+msgstr ""
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Misstated Items"
+msgstr "<b>Tabela %i.</b> Teste de valores repetidos"
+
+msgid "ID"
+msgstr ""
+
+#, fuzzy
+msgid "Difference"
+msgstr "Estimador de diferença"
+
+#, fuzzy
+msgid "Counted"
+msgstr "Contagem"
+
+msgid "No misstatements were identified in the sample."
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Assumption Checks"

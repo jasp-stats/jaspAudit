@@ -2091,10 +2091,6 @@ msgid "e.g. sample.csv"
 msgstr "p.e. muestra.csv"
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Columns"
-msgstr "Columnas"
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Prior Expected Error Rate"
 msgstr "Ratio del Error Esperado Previo"
 
@@ -2131,45 +2127,89 @@ msgid "Selected items"
 msgstr "Elementos seleccionados"
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Columns"
-msgstr "Columnas"
+msgid "Monetary values"
+msgstr "Valores monetarios"
+
+msgctxt "auditClassicalPlanning|"
+msgid "Iterations"
+msgstr "Iteraciones"
+
+msgctxt "auditClassicalPlanning|"
+msgid "Maximum"
+msgstr "Máximo"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Monetary values"
+msgstr "Valores monetarios"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Iterations"
+msgstr "Iteraciones"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Maximum"
+msgstr "Máximo"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Randomize item order"
+msgstr "Hacer aleatorio el orden de elementos"
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Selected items"
+msgstr "Elementos seleccionados"
+
+msgctxt "auditSelection|"
+msgid "Randomize item order"
+msgstr "Hacer aleatorio el orden de elementos"
+
+msgctxt "auditSelection|"
+msgid "Selected items"
+msgstr "Elementos seleccionados"
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Sample"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Misstated items"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "critical"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "selected"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "auditResult"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Misstated items"
+msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Monetary values"
-msgstr "Valores monetarios"
+msgid "Sample"
+msgstr ""
 
-msgctxt "auditClassicalPlanning|"
-msgid "Iterations"
-msgstr "Iteraciones"
-
-msgctxt "auditClassicalPlanning|"
-msgid "Maximum"
-msgstr "Máximo"
+msgctxt "auditClassicalEvaluation|"
+msgid "Misstated items"
+msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Monetary values"
-msgstr "Valores monetarios"
+msgid "critical"
+msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Iterations"
-msgstr "Iteraciones"
+msgid "selected"
+msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Maximum"
-msgstr "Máximo"
+msgid "auditResult"
+msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
-msgid "Randomize item order"
-msgstr "Hacer aleatorio el orden de elementos"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Selected items"
-msgstr "Elementos seleccionados"
-
-msgctxt "auditSelection|"
-msgid "Randomize item order"
-msgstr "Hacer aleatorio el orden de elementos"
-
-msgctxt "auditSelection|"
-msgid "Selected items"
-msgstr "Elementos seleccionados"
+msgid "Misstated items"
+msgstr ""

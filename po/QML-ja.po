@@ -1131,10 +1131,6 @@ msgid "Data"
 msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
-msgid "Columns"
-msgstr ""
-
-msgctxt "auditBayesianEvaluation|"
 msgid "Summary statistics"
 msgstr ""
 
@@ -1720,10 +1716,6 @@ msgid "Data"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
-msgid "Columns"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
 msgid "Summary statistics"
 msgstr ""
 
@@ -2180,4 +2172,52 @@ msgstr ""
 
 msgctxt "auditSelection|"
 msgid "e.g. sample.csv"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Sample"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Misstated items"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "critical"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "selected"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "auditResult"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Misstated items"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Sample"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Misstated items"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "critical"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "selected"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "auditResult"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Misstated items"
 msgstr ""
