@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2022-07-02 03:54\n"
-"PO-Revision-Date: 2022-06-19 11:19+0000\n"
+"PO-Revision-Date: 2022-07-04 11:17+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "es/>\n"
@@ -702,9 +702,8 @@ msgstr ""
 "Con el fin de producir %1$s, especifica los errores esperados como "
 "porcentaje de la población total."
 
-#, fuzzy
 msgid "Selection Summary"
-msgstr "Resumen de la selección"
+msgstr "Resumen de la Selección"
 
 msgid ""
 "You must specify unique item ID's. The row numbers of the data set are "
@@ -713,9 +712,8 @@ msgstr ""
 "Se deben indicar IDs de elementos únicos. Los números de las filas del "
 "conjunto de datos son suficientes."
 
-#, fuzzy
 msgid "Evaluation Summary"
-msgstr "Resumen de la evaluación"
+msgstr "Resumen de la Evaluación"
 
 msgid ""
 "The hypergeometric upper bound requires that you specify the number of units "
@@ -1707,24 +1705,20 @@ msgstr ""
 "La materialidad, el tamaño de la población, o el valor poblacional están "
 "definidos como cero; o falta una de las variables requeridas."
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Misstated Items"
-msgstr "<b>Tabla %1$i.</b> Elementos Seleccionados"
+msgstr "<b>Tabla %1$i.</b> Elementos Inexactos"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
-#, fuzzy
 msgid "Difference"
-msgstr "Estimador de la diferencia"
+msgstr "Diferencia"
 
-#, fuzzy
 msgid "Counted"
 msgstr "Cantidad"
 
-#, fuzzy
 msgid "No misstatements were identified in the sample."
-msgstr "Non se encontraron inexactitudes en la muestra."
+msgstr "Non se identificaron inexactitudes en la muestra."
 
 msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr "<b>Tabla %1$i.</b> Comprobaciones de Supuestos"
