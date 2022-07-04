@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-07-02 03:54\n"
-"PO-Revision-Date: 2022-06-19 11:19+0000\n"
+"PO-Revision-Date: 2022-07-04 10:53+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"r/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-r/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -706,9 +706,8 @@ msgstr ""
 "Co obxecto de producir %1$s, especifica os erros agardados como porcentaxe "
 "da poboación total."
 
-#, fuzzy
 msgid "Selection Summary"
-msgstr "Resumo da selección"
+msgstr "Resumo da Selección"
 
 msgid ""
 "You must specify unique item ID's. The row numbers of the data set are "
@@ -717,9 +716,8 @@ msgstr ""
 "Debes indicar IDs de elementos únicas. Os números das filas do conxunto de "
 "datos son suficientes."
 
-#, fuzzy
 msgid "Evaluation Summary"
-msgstr "Resumo da avaliación"
+msgstr "Resumo da Avaliación"
 
 msgid ""
 "The hypergeometric upper bound requires that you specify the number of units "
@@ -1692,24 +1690,20 @@ msgstr ""
 "A materialidade, o tamaño da poboación, ou o valor poboacional están "
 "definidos como cero; ou falta unha das variables requiridas."
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Misstated Items"
-msgstr "<b>Táboa %1$i.</b> Elementos Seleccionados"
+msgstr "<b>Táboa %1$i.</b> Elementos Inexactos"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
-#, fuzzy
 msgid "Difference"
-msgstr "diferenza"
+msgstr "Diferenza"
 
-#, fuzzy
 msgid "Counted"
 msgstr "Cantidade"
 
-#, fuzzy
 msgid "No misstatements were identified in the sample."
-msgstr "Non se atoparon inexactitudes na mostra."
+msgstr "Non se identificaron inexactitudes na mostra."
 
 msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr "<b>Táboa %1$i.</b> Comprobacións de Supostos"
