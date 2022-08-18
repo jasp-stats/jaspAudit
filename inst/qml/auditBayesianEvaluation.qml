@@ -259,7 +259,6 @@ Form
 			id: 								pdata
 			name: 								"pdata"
 			label:								qsTr("Population")
-			checked: 							mainWindow.dataAvailable
 			enabled:							mainWindow.dataAvailable
 		}
 
@@ -268,6 +267,7 @@ Form
 			id: 								data
 			name: 								"data"
 			label:								qsTr("Sample")
+			checked: 							mainWindow.dataAvailable
 			enabled:							mainWindow.dataAvailable
 		}
 
