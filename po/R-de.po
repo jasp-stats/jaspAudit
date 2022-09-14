@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2022-07-02 03:54\n"
-"PO-Revision-Date: 2022-07-17 05:38+0000\n"
-"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"PO-Revision-Date: 2022-09-15 07:21+0000\n"
+"Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
 "Language: de\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.14.1-dev\n"
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Prozedur</u>"
@@ -701,9 +701,8 @@ msgstr ""
 "Um %1$s zu konstruieren, geben Sie die erwarteten Fehler als Prozentsatz der "
 "Grundgesamtheit an."
 
-#, fuzzy
 msgid "Selection Summary"
-msgstr "Auswahl-Zusammenfassung"
+msgstr "Zusammenfassung der Auswahl"
 
 msgid ""
 "You must specify unique item ID's. The row numbers of the data set are "
@@ -712,9 +711,8 @@ msgstr ""
 "Sie müssen eindeutige Posten-IDs angeben. Die Zeilennummern des Datensatzes "
 "sind ausreichend."
 
-#, fuzzy
 msgid "Evaluation Summary"
-msgstr "Evaluations-Zusammenfassung"
+msgstr "Zusammenfassung der Evaluation"
 
 msgid ""
 "The hypergeometric upper bound requires that you specify the number of units "
@@ -1553,10 +1551,10 @@ msgid "%% of total value"
 msgstr "%% des Gesamtwerts"
 
 msgid "twice the"
-msgstr ""
+msgstr "doppelt so viel"
 
 msgid "a single"
-msgstr ""
+msgstr "eine einzelne"
 
 msgid ""
 "The top stratum consists of all items with a book value larger than %1$s "
@@ -1719,14 +1717,13 @@ msgid "<b>Table %1$i.</b> Misstated Items"
 msgstr "<b>Tabelle %1$i.</b> Falsch angegebene Posten"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Difference"
 msgstr "Differenz"
 
-#, fuzzy
 msgid "Counted"
-msgstr "Anzahl"
+msgstr "Gezählt"
 
 msgid "No misstatements were identified in the sample."
 msgstr "In der Stichprobe wurden keine falschen Angaben festgestellt."
