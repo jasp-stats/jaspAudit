@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2022-09-18 09:24+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1534,7 +1540,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Audit Value"
 msgstr "Auditwert"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Corrections to population"
 msgstr "Korrekturen der Grundgesamtheit"
@@ -1711,7 +1716,6 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Control risk"
 msgstr "Kontrollrisiko"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Corrections to population"
 msgstr "Korrekturen der Grundgesamtheit"
@@ -1804,7 +1808,6 @@ msgctxt "auditClassicalPlanning|"
 msgid "No. units"
 msgstr "Anz. Einheiten"
 
-#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Audit Risk Model"
 msgstr "Audit-Risiko-Modell"
@@ -1873,7 +1876,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Book Value"
 msgstr "Buchwert"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Audit Risk Model"
 msgstr "Audit-Risiko-Modell"
@@ -2015,7 +2017,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Mean-per-unit estimator"
 msgstr "Mittelwert-pro-Einheit-Schätzer"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Corrections to population"
 msgstr "Korrekturen der Grundgesamtheit"
