@@ -3003,6 +3003,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   
   sample <- sample[sample[[options[["values"]]]] != sample[[options[["values.audit"]]]], ]
+  if(nrow(sample) == 0) {
+    table$addFootnote(message = gettext("No misstatements were identified in the sample."))
+    return()
+  }
+
   id <- sample[[options[["id"]]]]
   ist <- sample[[options[["values"]]]]
   soll <- sample[[options[["values.audit"]]]]
@@ -3017,9 +3022,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   rows <- data.frame(id = id, values = ist, values.audit = soll, diff = ist - soll, taint = (ist - soll) / ist, times = paste0("x", times))
   table$addRows(rows)
-  if(nrow(rows) == 0) {
-    table$addFootnote(message = gettext("No misstatements were identified in the sample."))
-  }
 }
 
 .jfaTableAssumptions <- function(options, sample, parentContainer, jaspResults, positionInContainer = 3) {
