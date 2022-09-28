@@ -1,20 +1,13 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-09-28 09:41+0000\n"
-"Last-Translator: Cécile Mazon <cecile.mazon@inria.fr>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"qml/fr/>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14.1\n"
 "X-Qt-Contexts: true\n"
 
 msgctxt "Description|"
 msgid "Audit"
-msgstr "Audit"
+msgstr ""
 
 msgctxt "Description|"
 msgid ""
@@ -145,6 +138,10 @@ msgid "Data"
 msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
+msgid "Sample"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
 msgid "Summary statistics"
 msgstr ""
 
@@ -190,6 +187,10 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior and posterior"
+msgstr ""
+
+msgctxt "auditBayesianEvaluation|"
+msgid "Misstated items"
 msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
@@ -733,6 +734,10 @@ msgid "Column name"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
+msgid "critical"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
 msgid "Keep"
 msgstr ""
 
@@ -905,7 +910,15 @@ msgid "Column name selection result"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
+msgid "selected"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
 msgid "Column name audit result"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "auditResult"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
@@ -942,6 +955,10 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Audit Result"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Misstated items"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
@@ -1217,6 +1234,10 @@ msgid "Data"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
+msgid "Sample"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
 msgid "Summary statistics"
 msgstr ""
 
@@ -1270,6 +1291,10 @@ msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Tables"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Misstated items"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
@@ -1769,6 +1794,10 @@ msgid "Column name"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
+msgid "critical"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
 msgid "Keep"
 msgstr ""
 
@@ -1933,7 +1962,15 @@ msgid "Column name selection result"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
+msgid "selected"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
 msgid "Column name audit result"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "auditResult"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
@@ -1998,6 +2035,10 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Regression estimator"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Misstated items"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
@@ -2150,52 +2191,4 @@ msgstr ""
 
 msgctxt "auditSelection|"
 msgid "<b>Download Report</b>"
-msgstr ""
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Sample"
-msgstr ""
-
-msgctxt "auditBayesianEvaluation|"
-msgid "Misstated items"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "critical"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "selected"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "auditResult"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Misstated items"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Sample"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Misstated items"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "critical"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "selected"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "auditResult"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Misstated items"
 msgstr ""
