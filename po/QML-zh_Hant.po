@@ -252,7 +252,7 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Default"
-msgstr ""
+msgstr "預設"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Manual"
@@ -460,7 +460,7 @@ msgstr ""
 
 msgctxt "auditBayesianPlanning|"
 msgid "Default"
-msgstr ""
+msgstr "預設"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Manual"
@@ -664,7 +664,7 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Default"
-msgstr ""
+msgstr "預設"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Manual"
