@@ -503,7 +503,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "critical" = options[["critical_name"]],
 	"stratum" = options[["stratum"]]
   )
-  if (name == "" && !(type %in% c("additional", "critical"))) {
+  if (!is.null(name) && name == "" && !(type %in% c("additional", "critical"))) {
     name <- NULL
   }
   return(name)
@@ -572,7 +572,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     variables <- c(id, values, values.audit, times, stratum)
   }
   if (!is.null(variables)) {
-	if (!is.null(stratum)){
+	if (!is.null(.jfaReadVariableFromOptions(options, type = "stratum"))) {
     dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id & variables != stratum)], columns.as.factor = stratum, exclude.na.listwise = variables)
 	} else {
 		dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
@@ -2792,7 +2792,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     return()
   }
 
-  title <- gettextf("<b>Table %1$i.</b> Population evaluation Summary", jaspResults[["tabNumber"]]$object)
+  title <- gettextf("<b>Table %1$i.</b> Population Evaluation Summary", jaspResults[["tabNumber"]]$object)
   table <- createJaspTable(title)
   table$position <- positionInContainer
   table$dependOn(options = c(
