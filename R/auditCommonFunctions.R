@@ -2767,10 +2767,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
       } else {
         result <- try({
           jfa::evaluation(
-            data = sample, times = if (options[["times"]] != "" && !options[["pool"]]) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
+            data = sample, times = if (options[["times"]] != "" && (!options[["bayesian"]] || !options[["pool"]])) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
             values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
             method = method, N.items = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.items"]], N.units = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.units"]],
-            prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL, pool = options[["pool"]]
+            prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL, pool = if (options[["bayesian"]]) options[["pool"]] else FALSE
           )
         })
       }
