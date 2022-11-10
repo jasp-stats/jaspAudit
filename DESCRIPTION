@@ -11,13 +11,15 @@ License: GPL (>= 2)
 Encoding: UTF-8
 Imports:
   bstats,
+  coda,
   digitTests (>= 0.1.1),
   extraDistr,
   ggplot2,
   ggrepel,
   jaspBase,
   jaspGraphs,
-  jfa (>= 0.6.3),
+  jfa (>= 0.6.5),
+  rjags,
   utils
 Remotes:
   jasp-stats/jaspBase,

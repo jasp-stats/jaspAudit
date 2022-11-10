@@ -252,9 +252,15 @@ Form
 		{
 			id: 								stratum
 			name: 								"stratum"
-			title: 								qsTr("Stratum")
+			title: 								qsTr("Strata")
 			singleVariable: 					true
 			allowedColumns: 					["nominal", "nominalText", "ordinal"]
+		}
+		CheckBox
+		{
+			text: 								qsTr("Pool information")
+			name: 								"pool"
+			enabled:							stratum.count > 0
 		}
 	}
 

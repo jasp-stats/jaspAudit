@@ -397,7 +397,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   # Create a table containing information about the evaluation process
   .jfaTableEvaluation(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, positionInContainer = 2)
   if (!options[["workflow"]]) {
-    .jfaTableStratum(options, sample, evaluationContainer, jaspResults, positionInContainer = 3)
+    .jfaTableStratum(options, sample, evaluationState, evaluationContainer, jaspResults, positionInContainer = 3)
   }
 
   .jfaTableTaints(options, sample, evaluationContainer, jaspResults, positionInContainer = 4)
@@ -571,10 +571,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
 	stratum <- .jfaReadVariableFromOptions(options, type = "stratum")
     variables <- c(id, values, values.audit, times, stratum)
   }
-
   if (!is.null(variables)) {
-    dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
-    dataset[[id]] <- as.character(dataset[[id]])
+	if (!is.null(stratum)){
+    dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id & variables != stratum)], columns.as.factor = stratum, exclude.na.listwise = variables)
+	} else {
+		dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
+	}
+	dataset[[id]] <- as.character(dataset[[id]])
     if (stage == "evaluation" && !is.null(times) && !is.null(id) && !is.null(values.audit)) { # Apply sample filter only when required variables are given
       dataset <- subset(dataset, dataset[[times]] > 0)
     }
@@ -2523,7 +2526,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
       if (method == "stringer" && options[["lta"]]) {
         method <- "stringer.lta"
       }
-
       result <- try({
         jfa::evaluation(
           data = sample, times = options[["indicator_col"]], conf.level = conf_level,
@@ -2732,11 +2734,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
       prior <- jfa::auditPrior(
         method = options[["prior_method"]], conf.level = conf_level, materiality = materiality,
         expected = planningOptions[["expected_val"]], likelihood = options[["method"]],
-        N.units = planningOptions[["N.units"]], ir = ir, cr = cr, n = options[["prior_n"]],
+        N.units = if (options[["dataType"]] == "pdata") planningOptions[["N.units"]] else NULL, ir = ir, cr = cr, n = options[["prior_n"]],
         x = options[["prior_x"]], alpha = options[["alpha"]], beta = options[["beta"]]
       )
     }
-
     if (options[["dataType"]] == "stats") {
       result <- try({
         jfa::evaluation(
@@ -2766,15 +2767,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
       } else {
         result <- try({
           jfa::evaluation(
-            data = sample, times = if (options[["times"]] != "") options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
+            data = sample, times = if (options[["times"]] != "" && !options[["pool"]]) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
             values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
-            method = method, N.items = planningOptions[["N.items"]], N.units = planningOptions[["N.units"]],
-            prior = prior
+            method = method, N.items = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.items"]], N.units = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.units"]],
+            prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL, pool = options[["pool"]]
           )
         })
       }
     }
-
     if (isTryError(result)) {
       evaluationContainer$setError(paste0("An error occurred: ", jaspBase:::.extractErrorMessage(result)))
       return()
@@ -2985,7 +2985,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$addRows(row)
 }
 
-.jfaTableStratum <- function(options, sample, parentContainer, jaspResults, positionInContainer = 3) {
+.jfaTableStratum <- function(options, sample, parentState, parentContainer, jaspResults, positionInContainer = 3) {
   if (options[["id"]] == "" || options[["stratum"]] == "" || !is.null(parentContainer[["tableStratum"]])) {
     return()
   }
@@ -3016,29 +3016,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
 	table$addRows(row)
     return()
   }
-  
-  names <- levels(sample[[options[["stratum"]]]])
-  n <- aggregate(sample[[options[["values"]]]], by = list(m = sample[[options[["stratum"]]]]), FUN = length)[, 2]
-  k <- as.numeric(table(sample[[options[["stratum"]]]][which(sample[[options[["values"]]]] != sample[[options[["values.audit"]]]])]))
-  taints <- (sample[[options[["values"]]]] - sample[[options[["values.audit"]]]]) / sample[[options[["values"]]]]
-  t <- aggregate(taints, by = list(m = sample[[options[["stratum"]]]]), FUN = sum)[, 2]
-  if (!options[["bayesian"]]) {
-	  prior <- FALSE
-  } else {
-	prior <- jfa::auditPrior(
-        method = options[["prior_method"]], conf.level = options[["conf_level"]],
-        materiality = 0.05, # CHANGE
-		expected = 0,
-        likelihood = options[["method"]], N.units = options[["n_units"]], ir = ir,
-        cr = cr, n = options[["n"]], x = options[["x"]],
-        alpha = options[["alpha"]], beta = options[["beta"]]
-      )
+  if (is.null(parentState)) {
+	return()
   }
-  for (i in 1:length(n)) {
-    res <- jfa::evaluation(min.precision = 0.99, materiality = 0.99, n = n[i], x = t[i], method = options[["method"]], prior = prior)
-    row <- data.frame(stratum = names[i], n = n[i], k = k[i], t = t[i], mle = res$mle, ub = res$ub, precision = res$precision)
-    table$addRows(row)
-  }
+  row <- data.frame(stratum = rownames(parentState[["strata"]]), n = parentState[["strata"]]$n, k = parentState[["strata"]]$x, t = parentState[["strata"]]$t, mle = parentState[["strata"]]$mle, ub = parentState[["strata"]]$ub, precision = parentState[["strata"]]$precision)
+  table$addRows(row)
 }
 
 .jfaTableTaints <- function(options, sample, parentContainer, jaspResults, positionInContainer = 3) {
