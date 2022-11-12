@@ -751,7 +751,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "display", "priorType", "separateMisstatement",
       "min_precision_test", "min_precision_rel_val",
       "by", "prior_method", "prior_n", "prior_x", "alpha", "beta",
-      "critical_items", "critical_negative", "critical_action", "stratum"
+      "critical_items", "critical_negative", "critical_action",
+      "stratum", "pool"
     ))
 
     jaspResults[["evaluationContainer"]] <- container
