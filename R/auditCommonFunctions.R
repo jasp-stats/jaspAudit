@@ -752,7 +752,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "min_precision_test", "min_precision_rel_val",
       "by", "prior_method", "prior_n", "prior_x", "alpha", "beta",
       "critical_items", "critical_negative", "critical_action",
-      "stratum", "pool"
+      "stratum", "pooling"
     ))
 
     jaspResults[["evaluationContainer"]] <- container
@@ -2768,10 +2768,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
       } else {
         result <- try({
           jfa::evaluation(
-            data = sample, times = if (options[["times"]] != "" && (!options[["bayesian"]] || !options[["pool"]])) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
+            data = sample, times = if (options[["times"]] != "" && (!options[["bayesian"]] || options[["pooling"]] != "partial")) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
             values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
             method = method, N.items = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.items"]], N.units = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.units"]],
-            prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL, pool = if (options[["bayesian"]]) options[["pool"]] else FALSE
+            prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL, 
+			pooling = if (options[["bayesian"]]) options[["pooling"]] else "none"
           )
         })
       }

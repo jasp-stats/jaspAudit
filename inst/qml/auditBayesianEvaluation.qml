@@ -256,12 +256,6 @@ Form
 			singleVariable: 					true
 			allowedColumns: 					["nominal", "nominalText", "ordinal"]
 		}
-		CheckBox
-		{
-			text: 								qsTr("Pool information")
-			name: 								"pool"
-			enabled:							stratum.count > 0
-		}
 	}
 
 	RadioButtonGroup
@@ -474,6 +468,35 @@ Form
 			{
 				text: 							qsTr("Display item ID's")
 				name:							"plotScatterId"
+			}
+		}
+	}
+
+	Group 
+	{
+		RadioButtonGroup
+		{
+			name:								"pooling"
+			title:								qsTr("Level of pooling")
+			enabled:							stratum.count > 0
+
+			RadioButton
+			{
+				name: 							"none"
+				label:							qsTr("No")
+				checked:						true
+			}
+
+			RadioButton
+			{
+				name: 							"complete"
+				label:							qsTr("Complete")
+			}
+
+			RadioButton
+			{
+				name: 							"partial"
+				label:							qsTr("Partial")
 			}
 		}
 	}
