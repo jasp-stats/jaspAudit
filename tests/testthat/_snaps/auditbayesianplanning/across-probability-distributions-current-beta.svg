@@ -35,12 +35,12 @@
 <polyline points='540.70,510.14 540.70,70.97 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
 <polyline points='613.73,510.14 613.73,70.97 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
 <polyline points='686.77,510.14 686.77,70.97 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
-<rect x='175.53' y='91.56' width='430.91' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #7FE58B;' />
-<rect x='175.53' y='228.80' width='423.60' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #7FE58B;' />
-<rect x='175.53' y='366.04' width='408.99' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #7FE58B;' />
-<rect x='175.53' y='91.56' width='0.00' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FF6666;' />
-<rect x='175.53' y='228.80' width='0.00' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FF6666;' />
-<rect x='175.53' y='366.04' width='0.00' height='123.52' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FF6666;' />
+<rect x='175.53' y='91.56' width='430.91' height='123.52' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #7FE58B;' />
+<rect x='175.53' y='228.80' width='423.60' height='123.52' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #7FE58B;' />
+<rect x='175.53' y='366.04' width='408.99' height='123.52' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #7FE58B;' />
+<rect x='175.53' y='91.56' width='0.00' height='123.52' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF6666;' />
+<rect x='175.53' y='228.80' width='0.00' height='123.52' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF6666;' />
+<rect x='175.53' y='366.04' width='0.00' height='123.52' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF6666;' />
 <text x='177.90' y='159.19' style='font-size: 17.07px; font-family: sans;' textLength='9.50px' lengthAdjust='spacingAndGlyphs'>0</text>
 <text x='177.90' y='296.43' style='font-size: 17.07px; font-family: sans;' textLength='9.50px' lengthAdjust='spacingAndGlyphs'>0</text>
 <text x='177.90' y='433.67' style='font-size: 17.07px; font-family: sans;' textLength='9.50px' lengthAdjust='spacingAndGlyphs'>0</text>
@@ -67,9 +67,9 @@
 <rect x='220.90' y='20.71' width='427.80' height='39.31' style='stroke-width: 0.75; stroke: none;' />
 <rect x='220.90' y='20.71' width='427.80' height='39.31' style='stroke-width: 10.67; stroke: none;' />
 <rect x='234.85' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='236.27' y='27.60' width='25.51' height='25.51' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #FF6666;' />
+<rect x='236.27' y='27.60' width='25.51' height='25.51' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF6666;' />
 <rect x='430.04' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='431.46' y='27.60' width='25.51' height='25.51' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #7FE58B;' />
+<rect x='431.46' y='27.60' width='25.51' height='25.51' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #7FE58B;' />
 <text x='271.66' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='120.02px' lengthAdjust='spacingAndGlyphs'>Expected errors</text>
 <text x='466.86' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='146.47px' lengthAdjust='spacingAndGlyphs'>Expected error-free</text>
 <text x='434.80' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='332.61px' lengthAdjust='spacingAndGlyphs'>across-probability-distributions-current-beta-</text>
