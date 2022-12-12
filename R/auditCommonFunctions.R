@@ -2505,7 +2505,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       }
       result <- try({
         jfa::evaluation(
-          conf.level = conf_level, materiality = materiality, min.precision = min_precision,
+          conf.level = conf_level, materiality = materiality,
           n = nrow(sample), x = length(which(sample[[options[["values.audit"]]]] == 1)),
           method = options[["method"]], N.units = prevOptions[["N.units"]],
           prior = prior
@@ -2520,7 +2520,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       result <- try({
         jfa::evaluation(
           data = sample, times = options[["indicator_col"]], conf.level = conf_level,
-          materiality = materiality, min.precision = min_precision, alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
+          materiality = materiality, alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
           values = options[["values"]], values.audit = options[["values.audit"]],
           method = method, N.items = prevOptions[["N.items"]], N.units = prevOptions[["N.units"]],
           prior = prior
@@ -2733,7 +2733,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (options[["dataType"]] == "stats") {
       result <- try({
         jfa::evaluation(
-          conf.level = conf_level, materiality = materiality, min.precision = min_precision,
+          conf.level = conf_level, materiality = materiality,
           n = options[["n"]], x = options[["x"]], method = options[["method"]],
           N.units = planningOptions[["N.units"]], prior = prior
         )
@@ -2741,7 +2741,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     } else if (all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1))) {
       result <- try({
         jfa::evaluation(
-          conf.level = conf_level, materiality = materiality, min.precision = min_precision,
+          conf.level = conf_level, materiality = materiality,
           n = nrow(sample), x = length(which(sample[[options[["values.audit"]]]] == 1)),
           method = options[["method"]], N.units = planningOptions[["N.units"]],
           prior = prior
