@@ -2760,7 +2760,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         result <- try({
           jfa::evaluation(
             data = sample, times = if (options[["times"]] != "") options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
-            min.precision = min_precision, values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
+            values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
             method = method, N.items = planningOptions[["N.items"]], N.units = planningOptions[["N.units"]],
             prior = prior
           )
