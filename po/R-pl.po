@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.0\n"
 "POT-Creation-Date: 2022-11-28 15:49\n"
-"PO-Revision-Date: 2022-12-31 03:26+0000\n"
+"PO-Revision-Date: 2023-01-13 12:30+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "pl/>\n"
@@ -180,7 +180,7 @@ msgid "%1$s = %2$i"
 msgstr ""
 
 msgid "The sample size <i>n</i>"
-msgstr ""
+msgstr "Wielkość próby <i>n</i>"
 
 msgid "The mean of the sample audit values %1$s"
 msgstr ""
@@ -264,7 +264,7 @@ msgid "%1$s\n                                %2$s\n                             
 msgstr ""
 
 msgid "Required Sample Size"
-msgstr ""
+msgstr "Wymagana wielkość próby"
 
 msgid "Estimator"
 msgstr ""
@@ -558,7 +558,7 @@ msgid "Mean"
 msgstr ""
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "Odchylenie std."
 
 msgid "1"
 msgstr ""
@@ -822,7 +822,7 @@ msgid "<b>Table %1$i.</b> Evaluation Summary"
 msgstr ""
 
 msgid "Sample size"
-msgstr ""
+msgstr "Wielkość próby"
 
 msgid "Taint"
 msgstr ""
