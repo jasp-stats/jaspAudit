@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-01-15 10:48+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -170,7 +176,7 @@ msgstr "Konfidenzintervall"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Display correlation"
@@ -258,7 +264,7 @@ msgstr "Tabellen"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "auditBayesianPlanning|"
 msgid "<b>Download Report</b>"
@@ -346,7 +352,7 @@ msgstr "Tabellen"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Download Report</b>"
@@ -494,7 +500,7 @@ msgstr "Tabellen"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "<b>Download Report</b>"
@@ -522,7 +528,7 @@ msgstr "für eine Unsicherheit von:"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "auditClassicalEstimation|"
 msgid "<b>Download Report</b>"
@@ -622,7 +628,7 @@ msgstr "Prozentwerte"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Display correlation"
@@ -698,7 +704,7 @@ msgstr "Erklärungstext bei jedem Schritt der Analyse anzeigen"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "auditClassicalPlanning|"
 msgid "<b>Download Report</b>"
@@ -778,7 +784,7 @@ msgstr "Tabellen"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Download Report</b>"
@@ -1058,7 +1064,7 @@ msgstr "Häufigkeitstabelle"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Label"
