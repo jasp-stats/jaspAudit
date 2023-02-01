@@ -29,7 +29,7 @@ RadioButtonGroup
 	property bool	use_materiality:	false
 
 	name: 						"prior_method"
-	text:						qsTr("Method")
+	text:						qsTr("Construction Method")
 
 	RadioButton
 	{
@@ -80,20 +80,20 @@ RadioButtonGroup
 
 			IntegerField
 			{
-				id:				prior_n
-				name: 			"n"
+				id:				n_prior
+				name: 			"n_prior"
 				label:			qsTr("Size")
-				min:			prior_x.value
+				min:			x_prior.value
 				defaultValue: 	0
 			}
 
 			DoubleField
 			{
-				id:				prior_x
-				name: 			"x"
+				id:				x_prior
+				name: 			"x_prior"
 				label:			qsTr("Errors")
 				min:			0
-				max:			prior_n.value
+				max:			n_prior.value
 				defaultValue: 	0
 				decimals:		3
 			}

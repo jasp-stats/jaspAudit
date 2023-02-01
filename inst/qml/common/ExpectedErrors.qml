@@ -25,6 +25,8 @@ import JASP.Widgets
 RadioButtonGroup
 {
 	readonly	property alias	expected_is_relative:	expected_rel.checked
+				property bool	show_all:				false
+				property bool   enable_all:				false
 
 	id: 					expected
 	name: 					"expected_type"
@@ -66,5 +68,13 @@ RadioButtonGroup
 			decimals: 		3
 			visible: 		expected_abs.checked
 		}
+	}
+
+	RadioButton
+	{
+		name:							"expected_all"
+		text:							qsTr("All possible")
+		enabled:						enable_all
+		visible:						show_all
 	}
 }

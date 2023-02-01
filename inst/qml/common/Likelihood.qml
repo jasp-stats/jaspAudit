@@ -28,10 +28,11 @@ RadioButtonGroup
 	readonly	property bool	use_binomial: 			binomial.checked
 	readonly	property bool	use_poisson: 			poisson.checked
 				property bool	bayesian:				false
+				property bool	evaluation:				false
 				property bool	enable_hypergeometric: 	false
 	
-	title: 			qsTr("Probability Distribution")
-	name: 			"likelihood"
+	title: 			bayesian ? qsTr("Distribution") : qsTr("Likelihood")
+	name: 			evaluation ? "method" : "likelihood"
 
 	RadioButton
 	{

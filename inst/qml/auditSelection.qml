@@ -38,6 +38,47 @@ Form
 	}
 
 	// Visible options
+	GridLayout
+	{
+		columns:								3
+
+		Group
+		{
+			IntegerField
+			{
+				id:								nobs
+				text: 							qsTr("Sample size")
+				name: 							"n"
+				defaultValue: 					0
+				min: 							0
+			}
+
+			IntegerField
+			{
+				id: 							seed
+				text: 							qsTr("Seed")
+				name: 							"seed"
+				defaultValue: 					1
+				min: 							1
+				max: 							99999
+				enabled:						randomize.checked || !method.use_interval
+			}
+
+			CheckBox
+			{
+				id:								randomize
+				name:							"randomize"
+				text:							qsTr("Randomize item order")
+				enabled:						rank.count == 0
+			}
+		}
+
+		Common.SamplingUnits { enable_mus: values.count > 0}
+		Common.SelectionMethod { id: method }
+	}
+
+	Divider { }
+
 	VariablesForm
 	{
 		id:										variablesFormSampling
@@ -65,7 +106,6 @@ Form
 			singleVariable:						true
 			allowedColumns:						["scale"]
 			allowAnalysisOwnComputedColumns:	false
-			onCountChanged:						values.count == 0 ? rows_sampling.click() : values_sampling.click()
 		}
 
 		AssignedVariablesList
@@ -94,40 +134,6 @@ Form
 
 		Group
 		{
-			IntegerField
-			{
-				id:								nobs
-				text: 							qsTr("Sample size")
-				name: 							"n"
-				defaultValue: 					0
-				min: 							0
-			}
-
-			IntegerField
-			{
-				id: 							seed
-				text: 							qsTr("Seed")
-				name: 							"seed"
-				defaultValue: 					1
-				min: 							1
-				max: 							99999
-				enabled:						randomize.checked || method.value != "interval"
-			}
-
-			CheckBox
-			{
-				id:								randomize
-				name:							"randomize"
-				text:							qsTr("Randomize item order")
-				enabled:						rank.count == 0
-			}
-		}
-
-		Common.ExplanatoryText { }
-		Common.SelectionMethod { }
-
-		Group
-		{
 			title: 								qsTr("Tables")
 
 			CheckBox
@@ -143,7 +149,7 @@ Form
 			}
 		}
 
-		Common.SamplingUnits { enable_mus: values.count > 0}
+		Common.ExplanatoryText { }
 	}
 
 	Common.ExportSample { enabled: id.count > 0 && nobs.value > 0 }

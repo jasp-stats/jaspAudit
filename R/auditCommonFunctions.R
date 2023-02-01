@@ -1065,8 +1065,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
             finalx,
             stageState[["n"]],
             distribution,
-            options[["n"]],
-            options[["x"]],
+            options[["n_prior"]],
+            options[["x_prior"]],
             finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
@@ -1504,7 +1504,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         method = options[["prior_method"]], conf.level = options[["conf_level"]],
         materiality = materiality, expected = parentOptions[["expected_val"]],
         likelihood = options[["likelihood"]], N.units = N.units, ir = ir,
-        cr = cr, n = options[["n"]], x = options[["x"]],
+        cr = cr, n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
       )
 
@@ -1859,7 +1859,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
               conf.level = options[["conf_level"]], materiality = parentState[["materiality"]],
               expected = parentOptions[["expected_val"]], likelihood = likelihoods[i],
               N.units = N, ir = ir, cr = cr, method = options[["prior_method"]],
-              n = options[["n"]], x = options[["x"]], alpha = options[["alpha"]], beta = options[["beta"]]
+              n = options[["n_prior"]], x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
             )
           } else {
             names <- if (parentState[["N.units"]] > 0) c("Poisson", "Binomial", "Hypergeometric") else c("Poisson", "Binomial")
@@ -1933,7 +1933,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           prior <- jfa::auditPrior(
             conf.level = options[["conf_level"]], materiality = materiality, expected = parentOptions[["expected_val"]],
             likelihood = options[["likelihood"]], N.units = N, ir = ir, cr = cr, method = options[["prior_method"]],
-            n = options[["n"]], x = options[["x"]], alpha = options[["alpha"]], beta = options[["beta"]]
+            n = options[["n_prior"]], x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
           )
         } else {
           prior <- FALSE
@@ -2494,7 +2494,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       prior <- jfa::auditPrior(
         conf.level = options[["conf_level"]], materiality = materiality, expected = prevOptions[["expected_val"]],
         likelihood = options[["likelihood"]], N.units = prevOptions[["N.units"]], ir = ir, cr = cr,
-        method = options[["prior_method"]], n = options[["n"]], x = options[["x"]],
+        method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
       )
 
@@ -2666,7 +2666,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       prior <- jfa::auditPrior(
         conf.level = options[["conf_level"]], materiality = materiality, expected = evaluationOptions[["expected_val"]],
         likelihood = options[["method"]], N.units = evaluationOptions[["N.units"]], ir = ir,
-        cr = cr, method = options[["prior_method"]], n = options[["n"]], x = options[["x"]],
+        cr = cr, method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
       )
 
@@ -2735,8 +2735,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
       prior <- jfa::auditPrior(
         method = options[["prior_method"]], conf.level = conf_level, materiality = materiality,
         expected = planningOptions[["expected_val"]], likelihood = options[["method"]],
-        N.units = if (options[["dataType"]] == "pdata") planningOptions[["N.units"]] else NULL, ir = ir, cr = cr, n = options[["prior_n"]],
-        x = options[["prior_x"]], alpha = options[["alpha"]], beta = options[["beta"]]
+        N.units = if (options[["dataType"]] == "pdata") planningOptions[["N.units"]] else NULL, ir = ir, cr = cr, n = options[["n_prior"]],
+        x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
       )
     }
     if (options[["dataType"]] == "stats") {
@@ -2744,7 +2744,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         jfa::evaluation(
           conf.level = conf_level, materiality = materiality,
           n = options[["n"]], x = options[["x"]], method = options[["method"]],
-          N.units = planningOptions[["N.units"]], prior = prior
+          prior = prior, N.units = planningOptions[["N.units"]]
         )
       })
     } else if (all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1))) {
@@ -2770,7 +2770,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           jfa::evaluation(
             data = sample, times = if (options[["times"]] != "" && (!options[["bayesian"]] || options[["pooling"]] != "partial")) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
             values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
-            method = method, N.items = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.items"]], N.units = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.units"]],
+            method = method, N.items = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.items"]], N.units = 1e5,#if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else if (options[["n_units"]] == 0) NULL else planningOptions[["N.units"]],
             prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL, 
 			pooling = if (options[["bayesian"]]) if (options[["pooling"]]) "partial" else "none" else "none"
           )

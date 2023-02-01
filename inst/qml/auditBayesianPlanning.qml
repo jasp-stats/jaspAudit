@@ -29,26 +29,9 @@ Form
 	columns:					1
 
 	// Hidden option(s)
-	CheckBox
-	{
-		name: 					"workflow"
-		checked: 				false
-		visible: 				false
-	}
-
-	CheckBox
-	{
-		name: 					"bayesian"
-		checked: 				true
-		visible: 				false
-	}
-
-	CheckBox
-	{
-		name: 					"separateMisstatement"
-		checked: 				false
-		visible: 				false
-	}
+	CheckBox { name: "workflow"; checked: false; visible: false }
+	CheckBox { name: "bayesian"; checked: true; visible: false }
+	CheckBox { name: "separateMisstatement"; checked: false; visible: false }
 
 	// Visible options
 	GridLayout
@@ -64,11 +47,10 @@ Form
 
 	GridLayout
 	{
-		columns:				3
+		columns:				2
 
 		Group
 		{
-
 			Group
 			{
 				title: 			qsTr("Tables")
@@ -101,7 +83,7 @@ Form
 				{
 					text: 		qsTr("Prior predictive")
 					name: 		"plotPriorPredictive"
-					enabled:	!hypergeometric.checked
+					enabled:	!likelihood.use_hypergeometric
 				}
 			}
 		}
@@ -112,15 +94,17 @@ Form
 	Section
 	{
 		title: 					qsTr("Prior")
-		Common.PriorMethod { has_materiality: objectives.has_materiality }
+		columns:				2
+		
+		Common.Likelihood { id: likelihood; bayesian: true; enable_hypergeometric: population.n_units > 0 }
+		Common.PriorMethod { use_materiality: objectives.use_materiality }
 	}
 
 	Section
 	{
 		title:					qsTr("Advanced")
-		columns:				3
+		columns:				2
 
-		Common.Likelihood { bayesian: true; enable_hypergeometric: population.n > 0 }
 		Common.Iterations { }
 		Common.Display { }
 	}

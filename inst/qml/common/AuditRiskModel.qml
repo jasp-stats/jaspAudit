@@ -25,9 +25,11 @@ import JASP.Widgets
 Group
 {
 	property bool	show_title:	true
+	property bool	enable:		true
 
 	columns:					2
 	title:						show_title ? qsTr("Audit Risk Model") : ""
+	enabled:					enable
 
 	DropDown
 	{

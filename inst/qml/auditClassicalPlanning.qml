@@ -29,45 +29,17 @@ Form
 	columns:				1
 
 	// Hidden option(s)
-	CheckBox
-	{
-		name: 				"workflow"
-		checked: 			false
-		visible: 			false
-	}
-
-	CheckBox
-	{
-		name: 				"bayesian"
-		checked: 			false
-		visible: 			false
-	}
-
-	CheckBox
-	{
-		name: 				"separateMisstatement"
-		checked: 			false
-		visible: 			false
-	}
-
-	RadioButtonGroup
-	{
-		name: 				"prior_method"
-		visible: 			false
-
-		RadioButton
-		{
-			name: 			"arm"
-			checked: 		true
-		}
-	}
+	CheckBox { name: "workflow"; checked: false; visible: false }
+	CheckBox { name: "bayesian"; checked: false; visible: false }
+	CheckBox { name: "separateMisstatement"; checked: false; visible: false }
+	RadioButtonGroup { name: "prior_method"; visible: false; RadioButton { name: "arm"; checked: true } }
 
 	// Visible options
 	GridLayout
 	{
 		columns:			3
 
-		Common.SamplingObjectives { }
+		Common.SamplingObjectives { id: objectives }
 		Common.ExpectedErrors { }
 		Common.Population { id: population }
 	}
@@ -77,7 +49,8 @@ Form
 	GridLayout
 	{
 		columns:			2
-		Common.AuditRiskModel { }
+		
+		Common.AuditRiskModel { enable: objectives.use_materiality }
 		Common.ExplanatoryText { }
 	}
 
@@ -104,7 +77,7 @@ Form
 		title:				qsTr("Advanced")
 		columns:			3
 
-		Common.Likelihood { bayesian: false; enable_hypergeometric: population.n > 0 }
+		Common.Likelihood { bayesian: false; enable_hypergeometric: population.n_units > 0 }
 		Common.Iterations { }
 		Common.Display { }
 	}

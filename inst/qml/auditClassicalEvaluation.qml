@@ -19,388 +19,48 @@
 // When making changes to this file always mention @koenderks as a
 // reviewer in the Pull Request
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick
+import QtQuick.Layouts
+import JASP
+import JASP.Controls
+import JASP.Widgets
+
+import "./common" as Common
 
 Form
 {
 
-	columns: 									2
+	columns: 									1
 
-	// Extra options
-	CheckBox
-	{
-		name: 									"workflow"
-		checked: 								false
-		visible: 								false
-	}
+	// Hidden option(s)
+	CheckBox { name: "workflow"; checked: false; visible: false }
+	CheckBox { name: "bayesian"; checked: false; visible: false }
+	CheckBox { name: "separateMisstatement"; checked: false; visible: false }
+	RadioButtonGroup { name: "prior_method"; visible: false; RadioButton { name: "arm"; checked: true } }
+	IntegerField { name: "by"; defaultValue: 1; visible: false }
+	IntegerField { name: "max"; defaultValue: 5000; visible: false }
 
-	CheckBox
-	{
-		name: 									"bayesian"
-		checked: 								false
-		visible: 								false
-	}
-
-	CheckBox
-	{
-		name: 									"separateMisstatement"
-		checked: 								false
-		visible: 								false
-	}
-
-	RadioButtonGroup
-	{
-		name: 									"prior_method"
-		visible: 								false
-
-		RadioButton
-		{
-			name: 								"arm"
-			checked: 							true
-		}
-	}
-
-	IntegerField
-	{
-		name: 									"by"
-		defaultValue: 							1
-		visible:								false
-	}
-
-	// Start analysis
+	// Visible options
 	GridLayout
 	{
-		columns: 								3
-		Layout.columnSpan: 						2
+		columns:				3
 
-		Group
-		{
-			title: 								qsTr("Sampling Objectives")
-			columns:							2
-
-			CheckBox
-			{
-				id: 							materiality_test
-				text: 							qsTr("Performance materiality")
-				name: 							"materiality_test"
-
-				RadioButtonGroup
-				{
-					id: 						materiality_type
-					name: 						"materiality_type"
-
-					Row
-					{
-						visible: 				materiality_test.checked
-
-						RadioButton
-						{
-							id: 				materiality_rel
-							name: 				"materiality_rel"
-							text: 				qsTr("Relative")
-							checked:			true
-							childrenOnSameRow: 	true
-
-							PercentField
-							{
-								id: 			materiality_rel_val
-								visible: 		materiality_rel.checked
-								decimals: 		2
-								defaultValue: 	0
-								min:			0
-								max:			99
-								name: 			"materiality_rel_val"
-							}
-						}
-					}
-
-					Row
-					{
-						visible: 				materiality_test.checked
-
-						RadioButton
-						{
-							id: 				materiality_abs
-							name: 				"materiality_abs"
-							text: 				qsTr("Absolute")
-							childrenOnSameRow: 	true
-
-							DoubleField
-							{
-								id: 			materiality_abs_val
-								visible: 		materiality_abs.checked
-								name: 			"materiality_abs_val"
-								defaultValue: 	0
-								min: 			0
-								fieldWidth: 	90 * preferencesModel.uiScale
-								decimals: 		2
-							}
-						}
-					}
-				}
-			}
-
-			HelpButton
-			{
-				toolTip: 						qsTr("Click to learn more about performance materiality.")
-				helpPage:						"Audit/performanceMateriality"
-			}
-
-			CheckBox
-			{
-				id: 							min_precision_test
-				text: 							qsTr("Minimum precision")
-				name: 							"min_precision_test"
-
-				PercentField
-				{
-					id: 						min_precision_rel_val
-					name: 						"min_precision_rel_val"
-					decimals: 					2
-					defaultValue: 				2
-					min:						0.1
-					max:						99.9
-					label: 						qsTr("Relative")
-					visible: 					min_precision_test.checked
-				}
-			}
-
-			HelpButton
-			{
-				toolTip: 						qsTr("Click to learn more about the precision.")
-				helpPage:						"Audit/minimumPrecision"
-			}
-		}
-
-		Group
-		{
-			title: 								qsTr("Population")
-
-			IntegerField
-			{
-				id: 							n_items
-				name: 							"n_items"
-				text: 							qsTr("No. items")
-				defaultValue: 					0
-				fieldWidth: 					100 * preferencesModel.uiScale
-				min: 							0
-				enabled:						!pdata.checked
-			}
-
-			DoubleField
-			{
-				id: 							n_units
-				name: 							"n_units"
-				text: 							qsTr("No. units")
-				defaultValue: 					0
-				fieldWidth: 					100 * preferencesModel.uiScale
-				min: 							0
-				decimals: 						2
-				enabled:						!pdata.checked				
-			}
-		}
-
-		CIField
-		{
-			name: 								"conf_level"
-			label: 								qsTr("Confidence")
-		}
+		Common.SamplingObjectives { id: objectives }
+		Common.DataType { id: data }
+		Common.Population { id: population; enable: !data.use_population; show_items: true }
 	}
 
 	Divider { }
 
-	VariablesForm
+	Common.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample }
+
+
+	GridLayout
 	{
-		preferredHeight: 						260 * preferencesModel.uiScale
-		enabled:								!stats.checked
-		visible:								!stats.checked
+		columns:								2
 
-		AvailableVariablesList
-		{
-			id: 								evaluationVariables
-			name: 								"evaluationVariables"
-		}
-
-		AssignedVariablesList
-		{
-			id: 								id
-			name: 								"id"
-			title: 								qsTr("Item ID")
-			singleVariable: 					true
-			allowedColumns: 					["nominal", "nominalText", "ordinal", "scale"]
-		}
-
-		AssignedVariablesList
-		{
-			id: 								values
-			name: 								"values"
-			title: 								qsTr("Book Value")
-			singleVariable: 					true
-			allowedColumns: 					["scale"]
-		}
-
-		AssignedVariablesList
-		{
-			id: 								auditResult
-			name: 								"values.audit"
-			title: 								qsTr("Audit Result")
-			singleVariable: 					true
-			allowedColumns: 					["nominal", "scale"]
-		}
-
-		AssignedVariablesList
-		{
-			id: 								sampleCounter
-			name: 								"times"
-			title: 								qsTr("Selection Counter")
-			singleVariable: 					true
-			allowedColumns: 					["nominal", "ordinal", "scale"]
-		}
-		
-		AssignedVariablesList
-		{
-			id: 								stratum
-			name: 								"stratum"
-			title: 								qsTr("Stratum")
-			singleVariable: 					true
-			allowedColumns: 					["nominal", "nominalText", "ordinal"]
-		}
-	}
-
-	RadioButtonGroup
-	{
-		name:									"dataType"
-		title:									qsTr("Data")
-
-		RadioButton
-		{
-			id: 								pdata
-			name: 								"pdata"
-			label:								qsTr("Population")
-			enabled:							mainWindow.dataAvailable
-		}
-
-		RadioButton
-		{
-			id: 								data
-			name: 								"data"
-			label:								qsTr("Sample")
-			checked: 							mainWindow.dataAvailable
-			enabled:							mainWindow.dataAvailable
-		}
-
-		RadioButton
-		{
-			id: 								stats
-			name: 								"stats"
-			label:								qsTr("Summary statistics")
-			checked: 							!mainWindow.dataAvailable
-
-			Group
-			{
-				IntegerField
-				{
-					id: 						nobs
-					name: 						"n"
-					text: 						qsTr("Sample size")
-					defaultValue: 				0
-					min: 						xobs.value
-					visible:					stats.checked
-				}
-
-				DoubleField
-				{
-					id:							xobs
-					name: 						"x"
-					text: 						qsTr("Number of errors")
-					defaultValue: 				0
-					min: 						0
-					visible:					stats.checked
-					max:						nobs.value
-					decimals:					3
-				}
-			}
-		}
-	}
-
-	Group
-	{
-		title: 									qsTr("Display")
-		columns: 								2
-
-		CheckBox
-		{
-			id: 								explanatoryText
-			text: 								qsTr("Explanatory text")
-			name: 								"explanatoryText"
-			checked: 							true
-		}
-
-		HelpButton
-		{
-			helpPage:							"Audit/explanatoryText"
-			toolTip: 							qsTr("Show explanatory text at each step of the analysis")
-		}
-	}
-
-	Group
-	{
-		title: 									qsTr("Audit Risk Model")
-		enabled:								materiality_test.checked
-
-		Group
-		{
-			columns:							2
-
-			DropDown
-			{
-				id: 						ir
-				name: 						"ir"
-				indexDefaultValue: 	 		0
-				startValue:					"high"
-				label: 						qsTr("Inherent risk")
-				values: 					[
-					{ label: qsTr("High"),	value: "high"},
-					{ label: qsTr("Medium"), value: "medium"},
-					{ label: qsTr("Low"), 		value: "low"},
-					{ label: qsTr("Manual"), 	value: "custom"}
-				]
-			}
-
-			PercentField
-			{
-				name: 							"irCustom"
-				defaultValue: 					ir.value == "high" ? 100 : (ir.value == 'medium' ? 60 : (ir.value == "low" ? 36 : 100))
-				min: 							25
-				enabled: 						ir.value == "custom"
-			}
-
-			DropDown
-			{
-				id: 							cr
-				name: 							"cr"
-				indexDefaultValue:				0
-				startValue:						"high"
-				label: 							qsTr("Control risk")
-				values: 						[
-					{ label: qsTr("High"),		value: "high"},
-					{ label: qsTr("Medium"), 	value: "medium"},
-					{ label: qsTr("Low"), 		value: "low"},
-					{ label: qsTr("Manual"), 	value: "custom"}
-				]
-			}
-
-			PercentField
-			{
-				name: 							"crCustom"
-				defaultValue:					cr.value == "high" ? 100 : (cr.value == 'medium' ? 60 : (cr.value == "low" ? 36 : 100))
-				min: 							25
-				enabled: 						cr.value == "custom"
-			}
-		}
+		Common.AuditRiskModel { enable: objectives.use_materiality }
+		Common.ExplanatoryText { }
 	}
 
 	Group
@@ -411,16 +71,54 @@ Form
 		{
 			text: 						qsTr("Misstated items")
 			name: 						"tableTaints"
-			enabled:					values.count > 0 && !stats.checked
+			enabled:					variables.use_book && !data.use_stats
 		}
 
 		CheckBox
 		{
 			text: 						qsTr("Corrections to population")
 			name: 						"tableCorrections"
-			enabled:					n_units.value != 0 || pdata.checked
+			enabled:					population.n_units > 0 || data.use_population
 		}
 	}
+
+	Group
+	{
+		title: 								qsTr("Plots")
+
+		CheckBox
+		{
+			text: 							qsTr("Sampling objectives")
+			name: 							"plotObjectives"
+			enabled:						objectives.use_materiality || objectives.use_precision
+		}
+
+
+		CheckBox
+		{
+			text: 							qsTr("Scatter plot")
+			name: 							"plotScatter"
+			enabled:						!data.use_stats
+			visible:						false
+
+			CheckBox
+			{
+				text: 						qsTr("Display correlation")
+				name:						"plotScatterCorrelation"
+			}
+
+			CheckBox
+			{
+				text: 						qsTr("Display item ID's")
+				name:						"plotScatterId"
+			}
+		}
+	}
+
+	Section
+	{
+		title:									qsTr("Advanced")
+		columns:								3
 
 	RadioButtonGroup
 	{
@@ -431,7 +129,7 @@ Form
 		{
 			name: 							"hypergeometric"
 			text: 							qsTr("Hypergeometric")
-			enabled:						n_units.value != 0 || pdata.checked
+			enabled:						population.n_units > 0 || data.use_population
 		}
 
 		RadioButton
@@ -498,41 +196,6 @@ Form
 		}
 	}
 
-	Group
-	{
-		title: 								qsTr("Plots")
-
-		CheckBox
-		{
-			text: 							qsTr("Sampling objectives")
-			name: 							"plotObjectives"
-		}
-
-		CheckBox
-		{
-			text: 							qsTr("Scatter plot")
-			name: 							"plotScatter"
-			enabled:						!stats.checked
-
-			CheckBox
-			{
-				text: 						qsTr("Display correlation")
-				name:						"plotScatterCorrelation"
-			}
-
-			CheckBox
-			{
-				text: 						qsTr("Display item ID's")
-				name:						"plotScatterId"
-			}
-		}
-	}
-
-	Section
-	{
-		title:									qsTr("Advanced Options")
-		columns:								2
-
 		Group
 		{
 			name:							"critical_items"
@@ -567,45 +230,8 @@ Form
 			}
 		}
 
-		RadioButtonGroup
-		{
-			name: 								"display"
-			title:								qsTr("Format Tables")
-
-			RadioButton
-			{
-				text: 							qsTr("Numbers")
-				name: 							"number"
-				checked: 						true
-			}
-
-			RadioButton
-			{
-				text: 							qsTr("Percentages")
-				name: 							"percent"
-			}
-
-			RadioButton
-			{
-				text: 							qsTr("Monetary values")
-				name: 							"amount"
-				enabled:						n_units.value != 0 || pdata.checked
-			}
-		}
+		Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
 	}
 
-	Item
-	{
-		Layout.preferredHeight: 				download.height
-		Layout.preferredWidth: 					parent.width
-		Layout.columnSpan:						2
-
-		Button
-		{
-			id: 								download
-			anchors.right:						parent.right
-			text:								qsTr("<b>Download Report</b>")
-			onClicked:							form.exportResults()
-		}
-	}
+	Common.DownloadReport { }
 }

@@ -24,13 +24,28 @@ import JASP.Widgets
 
 Group
 {
-	readonly	property alias	n:	n_units.value
+	readonly	property alias	n_items:		nitems.value
+	readonly	property alias	n_units:		nunits.value
+				property bool 	enable:			true
+				property bool	show_items:		false
 
 	title: 								qsTr("Population")
+	enabled:							enable
+
+	IntegerField
+	{
+		id: 							nitems
+		name: 							"n_items"
+		text: 							qsTr("No. items")
+		value: 							0
+		fieldWidth: 					100 * preferencesModel.uiScale
+		min: 							0
+		visible:						show_items
+	}
 
 	DoubleField
 	{
-		id: 							n_units
+		id: 							nunits
 		name: 							"n_units"
 		text: 							qsTr("No. units")
 		defaultValue: 					0
