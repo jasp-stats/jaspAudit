@@ -1,0 +1,131 @@
+
+// Copyright (C) 2013-2018 University of Amsterdam
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as
+// published by the Free Software Foundation, either version 3 of the
+// License, or (at your option) any later version.
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+// You should have received a copy of the GNU Affero General Public
+// License along with this program.  If not, see
+// <http://www.gnu.org/licenses/>.
+//
+
+// When making changes to this file always mention @koenderks as a
+// reviewer in the Pull Request
+
+import QtQuick
+import QtQuick.Layouts
+import JASP
+import JASP.Controls
+import JASP.Widgets
+
+Group
+{
+	readonly	property alias	has_materiality:	materiality_test.checked
+
+	title: 								qsTr("Sampling Objectives")
+	columns:							2
+
+	CIField
+	{
+		name: 							"conf_level"
+		label: 							qsTr("Confidence")
+		Layout.columnSpan:				2
+	}
+
+	CheckBox
+	{
+		id: 							materiality_test
+		text: 							qsTr("Performance materiality")
+		name: 							"materiality_test"
+
+		RadioButtonGroup
+		{
+			id: 						materiality_type
+			name: 						"materiality_type"
+
+			Row
+			{
+				visible: 				materiality_test.checked
+
+				RadioButton
+				{
+					id: 				materiality_rel
+					name: 				"materiality_rel"
+					text: 				qsTr("Relative")
+					checked:			true
+					childrenOnSameRow: 	true
+
+					PercentField
+					{
+						id: 			materiality_rel_val
+						visible: 		materiality_rel.checked
+						decimals: 		2
+						defaultValue: 	0
+						min:			0
+						max:			99
+						name: 			"materiality_rel_val"
+					}
+				}
+			}
+
+			Row
+			{
+				visible: 				materiality_test.checked
+
+				RadioButton
+				{
+					id: 				materiality_abs
+					name: 				"materiality_abs"
+					text: 				qsTr("Absolute")
+					childrenOnSameRow: 	true
+
+					DoubleField
+					{
+						id: 			materiality_abs_val
+						visible: 		materiality_abs.checked
+						name: 			"materiality_abs_val"
+						defaultValue: 	0
+						min: 			0
+						fieldWidth: 	90 * preferencesModel.uiScale
+						decimals: 		2
+					}
+				}
+			}
+		}
+	}
+
+	HelpButton
+	{
+		toolTip: 						qsTr("Click to learn more about performance materiality.")
+		helpPage:						"Audit/performanceMateriality"
+	}
+
+	CheckBox
+	{
+		id: 							min_precision_test
+		text: 							qsTr("Minimum precision")
+		name: 							"min_precision_test"
+
+		PercentField
+		{
+			id: 						min_precision_rel_val
+			name: 						"min_precision_rel_val"
+			decimals: 					2
+			defaultValue: 				2
+			min:						0.1
+			max:						99.9
+			label: 						qsTr("Relative")
+			visible: 					min_precision_test.checked
+		}
+	}
+
+	HelpButton
+	{
+		toolTip: 						qsTr("Click to learn more about the precision.")
+		helpPage:						"Audit/minimumPrecision"
+	}
+}
