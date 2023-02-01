@@ -2772,7 +2772,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
             values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
             method = method, N.items = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.items"]], N.units = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.units"]],
             prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL, 
-			pooling = if (options[["bayesian"]]) options[["pooling"]] else "none"
+			pooling = if (options[["bayesian"]]) if (options[["pooling"]]) "partial" else "none" else "none"
           )
         })
       }

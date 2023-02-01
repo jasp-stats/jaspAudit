@@ -472,35 +472,6 @@ Form
 		}
 	}
 
-	Group 
-	{
-		RadioButtonGroup
-		{
-			name:								"pooling"
-			title:								qsTr("Level of pooling")
-			enabled:							stratum.count > 0
-
-			RadioButton
-			{
-				name: 							"none"
-				label:							qsTr("No")
-				checked:						true
-			}
-
-			RadioButton
-			{
-				name: 							"complete"
-				label:							qsTr("Complete")
-			}
-
-			RadioButton
-			{
-				name: 							"partial"
-				label:							qsTr("Partial")
-			}
-		}
-	}
-
 	Section
 	{
 		title: 									qsTr("Prior")
@@ -750,6 +721,13 @@ Form
 		Group
 		{
 			Layout.columnSpan: 					2
+
+			CheckBox
+			{
+				text:							qsTr("Share information")
+				name:							"pooling"
+				enabled:						stratum.count > 0
+			}
 
 			Row
 			{
