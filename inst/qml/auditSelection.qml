@@ -87,7 +87,7 @@ Form
 	{
 		IntegerField
 		{
-			id:								nobs
+			id:								sample_size
 			text: 							qsTr("Sample size")
 			name: 							"n"
 			defaultValue: 					0
@@ -120,28 +120,13 @@ Form
 
 	Section
 	{
-		columns:								1
-		title:									qsTr("Report")
-
+		title:			qsTr("Report")
 		Group
 		{
-			title: 								qsTr("Tables")
-
-			CheckBox
-			{
-				text: 							qsTr("Descriptive statistics")
-				name: 							"tableDescriptives"
-				debug:							true
-			}
-
-			CheckBox
-			{
-				text: 							qsTr("Selected items")
-				name: 							"tableSample"
-			}
+			Common.SelectionOutput { }
 		}
 	}
 
-	Common.ExportSample { enabled: id.count > 0 && nobs.value > 0 }
+	Common.ExportSample { enabled: id.count > 0 && sample_size.value > 0 }
 	Common.DownloadReport { }
 }

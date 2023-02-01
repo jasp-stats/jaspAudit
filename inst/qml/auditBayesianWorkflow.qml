@@ -219,6 +219,13 @@ Form
 			Common.Iterations { enable: !pasteVariables.checked }
 			Common.Display { show_monetary: true; enable_monetary: values.count > 0 }
 
+			Common.Algorithm
+			{
+				id: 								algorithm
+				enable:								!pasteVariables.checked
+				enable_algorithm2: 					id.count > 0 && values.count > 0 && likelihood.use_binomial
+			}
+			
 			Group
 			{
 				Layout.columnSpan:					3

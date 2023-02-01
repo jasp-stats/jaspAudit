@@ -578,9 +578,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
 		dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
 	}
 	dataset[[id]] <- as.character(dataset[[id]])
-    if (stage == "evaluation" && !is.null(times) && !is.null(id) && !is.null(values.audit)) { # Apply sample filter only when required variables are given
-      dataset <- subset(dataset, dataset[[times]] > 0)
-    }
+    # if (stage == "evaluation" && !is.null(times) && !is.null(id) && !is.null(values.audit)) { # Apply sample filter only when required variables are given
+    #   dataset <- subset(dataset, dataset[[times]] > 0)
+    # }
     return(dataset)
   } else {
     return(NULL)
@@ -630,16 +630,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
         dataset <- as.data.frame(.readDataSetToEnd(columns = options[["values"]], exclude.na.listwise = options[["values"]]))
         input[["N.items"]] <- nrow(dataset)
         input[["N.units"]] <- sum(dataset[[options[["values"]]]])
-      } else {
-        input[["N.items"]] <- 0
-        input[["N.units"]] <- 0.01
       }
     } else {
       input[["N.items"]] <- options[["n_items"]]
       input[["N.units"]] <- options[["n_units"]]
-      if (input[["N.units"]] == 0) {
-        input[["N.units"]] <- 0.01
-      }
     }
 
     input[["materiality_val"]] <- if (options[["materiality_type"]] == "materiality_rel") options[["materiality_rel_val"]] else options[["materiality_abs_val"]] / input[["N.units"]]
@@ -2608,7 +2602,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     message <- gettextf(
       "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely error in the population of %6$s and an %7$s upper bound of %8$s.",
       if (planningOptions[["N.items"]] == 0) "..." else format(planningOptions[["N.items"]], scientific = FALSE),
-      if (planningOptions[["N.units"]] == 0.01) "..." else format(planningOptions[["N.units"]], scientific = FALSE),
+      if (planningOptions[["N.units"]] == 0) "..." else format(planningOptions[["N.units"]], scientific = FALSE),
       sampleSizeMessage,
       errors,
       if (options[["bayesian"]]) "combined with the information in the prior distribution " else "",
@@ -2649,9 +2643,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
         "custom" = options[["crCustom"]]
       )
 
+      N_units <- if (evaluationOptions[["N.units"]] == 0) NULL else evaluationOptions[["N.units"]]
       prior <- jfa::auditPrior(
         conf.level = options[["conf_level"]], materiality = materiality, expected = evaluationOptions[["expected_val"]],
-        likelihood = options[["method"]], N.units = evaluationOptions[["N.units"]], ir = ir,
+        likelihood = options[["method"]], N.units = N_units, ir = ir,
         cr = cr, method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
       )
@@ -2717,11 +2712,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
     conf_level <- if (!options[["bayesian"]]) 1 - .jfaAuditRiskModelCalculation(options) else options[["conf_level"]]
 
     prior <- FALSE
+	N_units <- if (planningOptions[["N.units"]] == 0) NULL else planningOptions[["N.units"]]
     if (options[["bayesian"]]) {
       prior <- jfa::auditPrior(
         method = options[["prior_method"]], conf.level = conf_level, materiality = materiality,
         expected = planningOptions[["expected_val"]], likelihood = options[["method"]],
-        N.units = if (options[["dataType"]] == "pdata") planningOptions[["N.units"]] else NULL, ir = ir, cr = cr, n = options[["n_prior"]],
+        N.units = N_units, ir = ir, cr = cr, n = options[["n_prior"]],
         x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
       )
     }
@@ -2730,7 +2726,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         jfa::evaluation(
           conf.level = conf_level, materiality = materiality,
           n = options[["n"]], x = options[["x"]], method = options[["method"]],
-          prior = prior, N.units = planningOptions[["N.units"]]
+          prior = prior, N.units = N_units
         )
       })
     } else if (all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1))) {
@@ -2738,7 +2734,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         jfa::evaluation(
           conf.level = conf_level, materiality = materiality,
           n = nrow(sample), x = length(which(sample[[options[["values.audit"]]]] == 1)),
-          method = options[["method"]], N.units = planningOptions[["N.units"]],
+          method = options[["method"]], N.units = N_units,
           prior = prior
         )
       })
@@ -2756,7 +2752,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           jfa::evaluation(
             data = sample, times = if (options[["times"]] != "" && (!options[["bayesian"]] || options[["pooling"]] != "partial")) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
             values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
-            method = method, N.items = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.items"]], N.units = 1e5,#if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else if (options[["n_units"]] == 0) NULL else planningOptions[["N.units"]],
+            method = method, N.items = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.items"]], N.units = N_units,
             prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL, 
 			pooling = if (options[["bayesian"]]) if (options[["pooling"]]) "partial" else "none" else "none"
           )
@@ -2825,7 +2821,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   table$addColumnInfo(name = "precision", title = gettext("Precision"), type = columnType)
   if (!options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
-    table$addColumnInfo(name = "p", title = "p", type = "pvalue")
+    table$addColumnInfo(name = "p", title = gettext("p-value"), type = "pvalue")
   }
   if (options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
     table$addColumnInfo(name = "bf", title = gettextf("BF%1$s", "\u208B\u208A"), type = "number")

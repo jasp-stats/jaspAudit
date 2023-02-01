@@ -36,16 +36,19 @@ Form
 	// Visible options
 	Common.SamplingObjectives { id: objectives }
 	Common.ExpectedErrors { }
-	Common.Population { id: population }
+	Common.Population { id: population; optional: !objectives.absolute_materiality }
 	Common.ExplanatoryText { }
 
 	Section
 	{
 		title: 				qsTr("Prior")
-		columns:			2
+		Group
+		{
+			columns:		2
 		
-		Common.Likelihood { id: likelihood; bayesian: true; enable_hypergeometric: population.n_units > 0 }
-		Common.PriorMethod { use_materiality: objectives.use_materiality }
+			Common.Likelihood { id: likelihood; bayesian: true; enable_hypergeometric: population.n_units > 0 }
+			Common.PriorMethod { use_materiality: objectives.use_materiality }
+		}
 	}
 
 	Section
@@ -53,52 +56,19 @@ Form
 		title:				qsTr("Report")
 		columns:			2
 
-		Group
-		{
-			title: 			qsTr("Tables")
-
-			CheckBox
-			{
-				text: 		qsTr("Prior and posterior")
-				name: 		"tablePrior"
-			}
-		}
-
-
-		Group
-		{
-			title: 			qsTr("Plots")
-
-			CheckBox
-			{
-				text: 		qsTr("Compare sample sizes")
-				name: 		"plotSampleSizes"
-				debug:		true
-			}
-
-			CheckBox
-			{
-				text: 		qsTr("Prior and posterior")
-				name: 		"plotPrior"
-			}
-
-			CheckBox
-			{
-				text: 		qsTr("Prior predictive")
-				name: 		"plotPriorPredictive"
-				enabled:	!likelihood.use_hypergeometric
-			}
-		}
+		Common.PlanningOutput { bayesian: true; disable_predictive: likelihood.use_hypergeometric }
 	}
-
 
 	Section
 	{
 		title:				qsTr("Advanced")
-		columns:			2
+		Group
+		{
+			columns:		2
 
-		Common.Iterations { }
-		Common.Display { }
+			Common.Iterations { }
+			Common.Display { }
+		}
 	}
 
 	Common.DownloadReport { }

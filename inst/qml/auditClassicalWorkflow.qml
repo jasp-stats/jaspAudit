@@ -37,7 +37,7 @@ Form
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: true; visible: false }
-	CheckBox { name: "bayesian"; checked: true; visible: false }
+	CheckBox { name: "bayesian"; checked: false; visible: false }
 	CheckBox { name: "separateMisstatement"; checked: false; visible: false }
 	RadioButtonGroup { name: "dataType"; visible: false; RadioButton { name: "data"; checked: true } }
 	RadioButtonGroup { name: "prior_method"; visible: false; RadioButton { name: "arm"; checked: true } }

@@ -24,6 +24,7 @@ import JASP.Widgets
 
 VariablesForm
 {
+	readonly	property bool	use_id:			id.count > 0
 	readonly	property bool	use_book:		book_values.count > 0
 	readonly	property bool	use_real:		audit_values.count > 0
 	readonly	property bool	use_strata:		stratum_indicator.count > 0

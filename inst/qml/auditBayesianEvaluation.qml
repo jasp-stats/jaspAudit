@@ -42,7 +42,7 @@ Form
 	Common.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample }
 	Common.SamplingObjectives { id: objectives }
 	Common.DataType { id: data }
-	Common.Population { id: population; enable: !data.use_population; show_items: true }
+	Common.Population { id: population; optional: !objectives.absolute_materiality; enable: !data.use_population; show_items: true }
 	Common.ExplanatoryText { }
 
 	Section
@@ -52,104 +52,26 @@ Form
 
 		Common.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
 		Common.PriorMethod { use_materiality: objectives.use_materiality}
-		Common.ExpectedErrors { show_all: true; enable_all: separate.checked }
+		Common.ExpectedErrors { show_all: true; enable_all: algorithm.use_algorithm2 }
 	}
 
 	Section
 	{
-		title:											qsTr("Report")
-		columns:										2
+		title:			qsTr("Report")
 
 		Group
 		{
-			title: 									qsTr("Tables")
+			columns:	2
 
-			CheckBox
-			{
-				text: 								qsTr("Misstated items")
-				name: 								"tableTaints"
-				enabled:							!data.use_stats && variables.use_book && variables.use_real
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Prior and posterior")
-				name: 								"tablePriorPosterior"
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Corrections to population")
-				name: 								"tableCorrections"
-				enabled:							n_units.value > 0 || data.use_population
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Assumption checks")
-				name: 								"tableAssumptions"
-				checked: 							separate.checked
-				enabled: 							separate.checked
-
-				CIField
-				{
-					name: 							"tableAssumptionsConfidence"
-					label: 							qsTr("Confidence interval")
-				}
-			}
-		}
-
-		Group
-		{
-			title: 									qsTr("Plots")
-
-			CheckBox
-			{
-				text: 								qsTr("Sampling objectives")
-				name: 								"plotObjectives"
-				enabled:							objectives.use_materiality || objectives.use_precision
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Prior and posterior")
-				name: 								"plotPosterior"
-
-				CheckBox
-				{
-					id: 							plotPosteriorInfo
-					text: 							qsTr("Additional info")
-					name: 							"plotPosteriorInfo"
-					checked:						true
-				}
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Posterior predictive")
-				name: 								"plotPosteriorPredictive"
-				enabled:							!likelihood.use_hypergeometric
-				debug:								true
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Scatter plot")
-				name: 								"plotScatter"
-				enabled: 							!data.use_stats
-				debug:								true
-
-				CheckBox
-				{
-					text: 							qsTr("Display correlation")
-					name:							"plotScatterCorrelation"
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Display item ID's")
-					name:							"plotScatterId"
-				}
+			Common.EvaluationOutput
+			{ 
+				bayesian: true
+				enable_taints: !data.use_stats && variables.use_book && variables.use_real
+				enable_corrections: n_units.value > 0 || data.use_population
+				enable_assumptions: algorithm.use_algorithm2
+				enable_objectives: objectives.use_materiality || objectives.use_precision
+				enable_predictive: !likelihood.use_hypergeometric
+				enable_scatter: !data.use_stats
 			}
 		}
 	}
@@ -157,73 +79,57 @@ Form
 	Section
 	{
 		title: 									qsTr("Advanced")
-		columns: 								3
 
 		Group
 		{
-			name:								"critical_items"
-			title:								qsTr("Critical Items")
-			enabled:							!data.use_stats && values.count > 0
-
-			CheckBox
-			{
-				id: 							flagNegativeValues
-				name:							"critical_negative"
-				text:							qsTr("Negative book values")
-				enabled:						values.count > 0
-				checked:						true
-
-				RadioButtonGroup
-				{
-					name: 						"critical_action"
-
-					RadioButton
-					{
-						text: 					qsTr("Keep")
-						name: 					"inspect"
-						checked: 				true
-					}
-
-					RadioButton
-					{
-						text: 					qsTr("Remove")
-						name: 					"remove"
-					}
-				}
-			}
-		}
-
-		Group
-		{
-
-			CheckBox
-			{
-				text:							qsTr("Share information")
-				name:							"pooling"
-				enabled:						stratum.count > 0
-			}
+			columns:								3
 
 			Group
 			{
-				columns: 2
+				name:								"critical_items"
+				title:								qsTr("Critical Items")
+				enabled:							!data.use_stats && values.count > 0
+
 				CheckBox
 				{
-					id: 						separate
-					text: 						qsTr("Assume homogeneous taints")
-					name: 						"separateMisstatement"
-					enabled:					id.count > 0 && values.count > 0 && auditResult.count > 0 && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
-				}
+					id: 							flagNegativeValues
+					name:							"critical_negative"
+					text:							qsTr("Negative book values")
+					enabled:						values.count > 0
+					checked:						true
 
-				HelpButton
-				{
-					toolTip: 					qsTr("Click to learn more about this assumption")
-					helpPage:					"Audit/separateKnownAndUnknownMisstatement"
+					RadioButtonGroup
+					{
+						name: 						"critical_action"
+
+						RadioButton
+						{
+							text: 					qsTr("Keep")
+							name: 					"inspect"
+							checked: 				true
+						}
+
+						RadioButton
+						{
+							text: 					qsTr("Remove")
+							name: 					"remove"
+						}
+					}
 				}
 			}
-		}
 
-		Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
-		Common.EstimateType { }
+			Common.Algorithm
+			{
+				id: 								algorithm
+				hide_algorithm1:					false
+				enable:								!data.use_stats
+				enable_algorithm1: 					stratum.count > 1
+				enable_algorithm2: 					variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
+			}
+
+			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
+			Common.EstimateType { }
+		}
 	}
 
 	Common.DownloadReport { }
