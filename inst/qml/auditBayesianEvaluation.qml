@@ -50,7 +50,7 @@ Form
 
 	Divider { }
 
-	Common.EvaluationVariablesList { id: variables; show_variables: !data.use_stats }
+	Common.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample }
 
 	GridLayout
 	{
