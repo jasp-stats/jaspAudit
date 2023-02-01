@@ -26,7 +26,7 @@ import "./common" as Common
 
 Form 
 {
-	columns:					1
+	columns:				1
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }
@@ -41,8 +41,8 @@ Form
 
 	Section
 	{
-		title: 					qsTr("Prior")
-		columns:				2
+		title: 				qsTr("Prior")
+		columns:			2
 		
 		Common.Likelihood { id: likelihood; bayesian: true; enable_hypergeometric: population.n_units > 0 }
 		Common.PriorMethod { use_materiality: objectives.use_materiality }
@@ -50,8 +50,8 @@ Form
 
 	Section
 	{
-		title:					qsTr("Report")
-		columns:				2
+		title:				qsTr("Report")
+		columns:			2
 
 		Group
 		{
@@ -63,6 +63,7 @@ Form
 				name: 		"tablePrior"
 			}
 		}
+
 
 		Group
 		{
@@ -90,10 +91,11 @@ Form
 		}
 	}
 
+
 	Section
 	{
-		title:					qsTr("Advanced")
-		columns:				2
+		title:				qsTr("Advanced")
+		columns:			2
 
 		Common.Iterations { }
 		Common.Display { }

@@ -1556,13 +1556,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   table <- createJaspTable(tableTitle)
   table$position <- positionInContainer
+  table$transpose <- TRUE
   table$dependOn(options = c(
     "plotBookDist",
     "tableDescriptives",
     "tableSample",
     "samplingChecked",
     "evaluationChecked",
-    "likelihiood",
+    "likelihood",
     "expected_type",
     "min_precision_test",
     "materiality_test",
@@ -1573,6 +1574,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   columnType <- if (options[["display"]] == "percent") "string" else "number"
 
   # Add columns to table layout
+  table$addColumnInfo(name = "null", title = "", type = "string")
   if (options[["materiality_test"]]) {
     table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType)
   }
@@ -1713,7 +1715,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     row <- cbind(row, ar = if (options[["display"]] == "percent") paste0(round((1 - options[["conf_level"]]) * 100, 2), "%") else 1 - options[["conf_level"]])
   }
 
-  table$addRows(row)
+  table$addRows(cbind(null = "Value", row))
 
   if (parentState[["n"]] > parentState[["N.units"]]) {
     table$addFootnote(gettextf("The minimum sample size (%1$s) is larger than the number of units in the population (%2$s).", parentState[["n"]], ceiling(parentState[["N.units"]])), symbol = "\u26A0")
@@ -2270,6 +2272,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     title <- gettextf("<b>Table %1$i.</b> Information about Monetary Interval Selection", jaspResults[["tabNumber"]]$object)
     table <- createJaspTable(title)
     table$position <- positionInContainer + 1
+	table$transpose <- TRUE
     table$dependOn(options = c("tableBookDist", "tableDescriptives", "tableSample", "samplingChecked", "evaluationChecked"))
 
     table$addColumnInfo(name = "stratum", title = "", type = "string")
@@ -2602,24 +2605,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
       sampleSizeMessage <- planningState[["n"]]
     }
 
-    if (!options[["bayesian"]]) {
-      additionalMessage <- gettextf(
-        "\n\nThese results imply that there is a %1$s probability that, when one would repeatedly sample from this population, the upper bound for \u03B8 is below %2$s with a precision of %3$s.",
-        planningOptions[["conf_level_label"]],
-        boundLabel,
-        precisionLabel
-      )
-    } else if (options[["bayesian"]]) {
-      additionalMessage <- gettextf(
-        "\n\nThese results imply that there is a %1$s probability that \u03B8 is below %2$s with a precision of %3$s.",
-        planningOptions[["conf_level_label"]],
-        boundLabel,
-        precisionLabel
-      )
-    }
-
     message <- gettextf(
-      "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely error in the population of %6$s and an %7$s upper bound of %8$s. %9$s",
+      "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely error in the population of %6$s and an %7$s upper bound of %8$s.",
       if (planningOptions[["N.items"]] == 0) "..." else format(planningOptions[["N.items"]], scientific = FALSE),
       if (planningOptions[["N.units"]] == 0.01) "..." else format(planningOptions[["N.units"]], scientific = FALSE),
       sampleSizeMessage,
@@ -2627,8 +2614,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       if (options[["bayesian"]]) "combined with the information in the prior distribution " else "",
       mleLabel,
       planningOptions[["conf_level_label"]],
-      boundLabel,
-      additionalMessage
+      boundLabel
     )
 
     evaluationContainer[["evaluationParagraph"]] <- createJaspHtml(message, "p")
@@ -2797,6 +2783,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   title <- gettextf("<b>Table %1$i.</b> Population Evaluation Summary", jaspResults[["tabNumber"]]$object)
   table <- createJaspTable(title)
   table$position <- positionInContainer
+  table$transpose <- TRUE
   table$dependOn(options = c(
     "tableBookDist", "tableDescriptives", "tableSample",
     "samplingChecked", "evaluationChecked", "display",

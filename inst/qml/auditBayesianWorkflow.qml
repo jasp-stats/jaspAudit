@@ -110,7 +110,7 @@ Form
 
 		Section
 		{
-			title: 									qsTr("Tables and Plots")
+			title: 									qsTr("Report")
 			columns:								2
 
 			Group
@@ -650,7 +650,7 @@ Form
 
 		Section
 		{
-			title:									qsTr("Tables and Plots")
+			title:									qsTr("Report")
 
 			Group
 			{

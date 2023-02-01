@@ -301,6 +301,7 @@
     tableTitle <- gettextf("<b>Table %1$i.</b> %2$s", jaspResults[["tabNumber"]]$object, title)
     table <- createJaspTable(tableTitle)
     table$position <- positionInContainer
+	table$transpose <- TRUE
     depends <- if (stage == "planning") c("tablePrior", "likelihood", "tableImplicitSample", "tableBookDist") else "tablePriorPosterior"
     table$dependOn(options = depends)
 

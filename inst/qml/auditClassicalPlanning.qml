@@ -26,7 +26,7 @@ import "./common" as Common
 
 Form 
 {
-	columns:				1
+	columns:		1
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }
@@ -37,32 +37,32 @@ Form
 	// Visible options
 	Common.SamplingObjectives { id: objectives }
 	Common.ExpectedErrors { }
-	Common.Population { id: population }
+	Common.Population { id: population; optional: !objectives.absolute_materiality }
 	Common.AuditRiskModel { enable: objectives.use_materiality }
 	Common.ExplanatoryText { }
 
 	Group
 	{
-		title: 				qsTr("Plots")
-		debug:				true
+		title: 		qsTr("Plots")
+		debug:		true
 
 		CheckBox
 		{
-			text: 			qsTr("Compare sample sizes")
-			name: 			"plotSampleSizes"
+			text: 	qsTr("Compare sample sizes")
+			name: 	"plotSampleSizes"
 		}
 
 		CheckBox
 		{
-			text: 			qsTr("Assumed error distribution")
-			name: 			"plotErrorDist"
+			text: 	qsTr("Assumed error distribution")
+			name: 	"plotErrorDist"
 		}
 	}
 
 	Section
 	{
-		title:				qsTr("Advanced")
-		columns:			3
+		title:		qsTr("Advanced")
+		columns:	3
 
 		Common.Likelihood { bayesian: false; enable_hypergeometric: population.n_units > 0 }
 		Common.Iterations { }

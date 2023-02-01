@@ -26,10 +26,11 @@ Group
 {
 	readonly	property alias	n_items:		nitems.value
 	readonly	property alias	n_units:		nunits.value
+				property bool	optional:		false
 				property bool 	enable:			true
 				property bool	show_items:		false
 
-	title: 								qsTr("Population")
+	title: 								optional ? qsTr("Population (optional)") : qsTr("Population (required)")
 	enabled:							enable
 
 	IntegerField

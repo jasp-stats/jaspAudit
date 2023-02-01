@@ -24,7 +24,7 @@ import JASP.Widgets
 
 RadioButtonGroup
 {
-	readonly	property alias	expected_is_relative:	expected_rel.checked
+	readonly	property bool	expected_is_relative:	expected_rel.checked
 				property bool	enable:					true
 				property bool	show_all:				false
 				property bool   enable_all:				false

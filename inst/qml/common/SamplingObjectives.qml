@@ -24,9 +24,10 @@ import JASP.Widgets
 
 Group
 {
-	readonly	property alias	use_materiality:	materiality_test.checked
-	readonly	property alias	use_precision:		min_precision_test.checked
-				property bool	enable:				true
+	readonly	property bool	use_materiality:		materiality_test.checked
+	readonly	property bool	absolute_materiality:	materiality_test.checked && materiality_absolute.checked
+	readonly	property bool	use_precision:			min_precision_test.checked
+				property bool	enable:					true
 
 	title: 								qsTr("Sampling Objectives")
 	columns:							2
@@ -56,7 +57,7 @@ Group
 
 				RadioButton
 				{
-					id: 				materiality_rel
+					id:					materiality_relative
 					name: 				"materiality_rel"
 					text: 				qsTr("Relative")
 					checked:			true
@@ -64,8 +65,7 @@ Group
 
 					PercentField
 					{
-						id: 			materiality_rel_val
-						visible: 		materiality_rel.checked
+						visible: 		materiality_relative.checked
 						decimals: 		2
 						defaultValue: 	1
 						min:			0
@@ -81,15 +81,14 @@ Group
 
 				RadioButton
 				{
-					id: 				materiality_abs
+					id: 				materiality_absolute
 					name: 				"materiality_abs"
 					text: 				qsTr("Absolute")
 					childrenOnSameRow: 	true
 
 					DoubleField
 					{
-						id: 			materiality_abs_val
-						visible: 		materiality_abs.checked
+						visible: 		materiality_absolute.checked
 						name: 			"materiality_abs_val"
 						defaultValue: 	0
 						min: 			0
@@ -103,7 +102,7 @@ Group
 
 	HelpButton
 	{
-		toolTip: 						qsTr("Click to learn more about performance materiality objective.")
+		toolTip: 						qsTr("Click to learn more about the performance materiality objective.")
 		helpPage:						"Audit/performanceMateriality"
 	}
 
@@ -115,7 +114,6 @@ Group
 
 		PercentField
 		{
-			id: 						min_precision_rel_val
 			name: 						"min_precision_rel_val"
 			decimals: 					2
 			defaultValue: 				2

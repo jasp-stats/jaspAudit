@@ -24,96 +24,67 @@ import JASP.Widgets
 
 import "./" as Common
 
-RadioButtonGroup
+Group
 {
 	property bool	use_materiality:	false
 
-	name: 						"prior_method"
-	text:						qsTr("Construction Method")
+	title:					qsTr("Elicitation")
 
-	RadioButton
+	DropDown
 	{
-		name: 					"default"
-		label:					qsTr("Default")
-		checked:				true
+		id: 				prior_method
+		name: 				"prior_method"
+		indexDefaultValue: 	 0
+		startValue:			"default"
+		label: 				qsTr("Method")
+		values: [
+			{ label: qsTr("Default"),			value: "default"},
+			{ label: qsTr("Manual"), 			value: "param"},
+			{ label: qsTr("Earlier sample"), 	value: "sample"},
+			{ label: qsTr("Impartial"), 		value: "impartial"},
+			{ label: qsTr("Risk assessments"), 	value: "arm"}
+		]
 	}
 
-	RadioButton
+	DoubleField
 	{
-		id: 					param
-		name: 					"param"
-		label: 					qsTr("Manual")
-		childrenOnSameRow: 		true
-
-		Row
-		{
-			spacing: 			10 * preferencesModel.uiScale
-
-			DoubleField
-			{
-				name: 			"alpha"
-				label:			qsTr("\u03B1")
-				min:			1
-				defaultValue: 	1
-			}
-
-			DoubleField
-			{
-				name: 			"beta"
-				label:			qsTr("\u03B2")
-				min:			0
-				defaultValue: 	1
-			}
-		}
+		name: 				"alpha"
+		label:				qsTr("Prior parameter \u03B1")
+		min:				1
+		defaultValue: 		1
+		visible:			prior_method.value == "param"
 	}
 
-	RadioButton
+	DoubleField
 	{
-		id: 					sample
-		name: 					"sample"
-		label: 					qsTr("Earlier sample")
-		childrenOnSameRow: 		true
-
-		Row
-		{
-			spacing: 			10 * preferencesModel.uiScale
-
-			IntegerField
-			{
-				id:				n_prior
-				name: 			"n_prior"
-				label:			qsTr("Size")
-				min:			x_prior.value
-				defaultValue: 	0
-			}
-
-			DoubleField
-			{
-				id:				x_prior
-				name: 			"x_prior"
-				label:			qsTr("Errors")
-				min:			0
-				max:			n_prior.value
-				defaultValue: 	0
-				decimals:		3
-			}
-		}
+		name: 				"beta"
+		label:				qsTr("Prior parameter \u03B2")
+		min:				0
+		defaultValue: 		1
+		visible:			prior_method.value == "param"
 	}
 
-	RadioButton
+	IntegerField
 	{
-		name: 					"impartial"
-		label:					qsTr("Impartial")
-		enabled:				use_materiality
+		id:					n_prior
+		name: 				"n_prior"
+		label:				qsTr("Sample size")
+		min:				x_prior.value
+		defaultValue: 		0
+		visible:			prior_method.value == "sample"
 	}
 
-	RadioButton
+	DoubleField
 	{
-		id: 					arm
-		name: 					"arm"
-		label:					qsTr("Risk assessments")
-		enabled:				use_materiality
-
-		Common.AuditRiskModel { show_title: false }
+		id:					x_prior
+		name: 				"x_prior"
+		label:				qsTr("Number of misstatements")
+		min:				0
+		max:				n_prior.value
+		defaultValue: 		0
+		decimals:			3
+		visible:			prior_method.value == "sample"
 	}
+
+	Common.AuditRiskModel { hide: prior_method.value != "arm" }
 }
