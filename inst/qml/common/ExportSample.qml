@@ -24,7 +24,7 @@ import JASP.Widgets
 
 Section
 {
-	property bool	enabled
+	property bool	enabled:	false
 	
 	title: 							qsTr("Export")
 

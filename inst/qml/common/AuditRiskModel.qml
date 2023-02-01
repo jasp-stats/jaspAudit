@@ -24,10 +24,10 @@ import JASP.Widgets
 
 Group
 {
-	property bool	has_title
+	property bool	show_title:	true
 
 	columns:					2
-	title:						has_title ? qsTr("Audit Risk Model") : ""
+	title:						show_title ? qsTr("Audit Risk Model") : ""
 
 	DropDown
 	{

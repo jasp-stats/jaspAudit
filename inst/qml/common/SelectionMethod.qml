@@ -24,6 +24,10 @@ import JASP.Widgets
 
 RadioButtonGroup
 {
+	readonly	property bool	use_interval:	interval.checked
+	readonly	property bool	use_cell:		cell.checked
+	readonly	property bool	use_random:		random.checked
+
 	id: 					method
 	title:					qsTr("Method")
 	name: 					"sampling_method"
@@ -49,7 +53,7 @@ RadioButtonGroup
 
 	HelpButton
 	{
-		toolTip: 			qsTr("Click to learn more about fixed interval sampling.")
+		toolTip: 			qsTr("Click to learn more about the fixed interval sampling method.")
 		helpPage:			"Audit/fixedIntervalSampling"
 	}
 
@@ -62,7 +66,7 @@ RadioButtonGroup
 
 	HelpButton
 	{
-		toolTip: 			qsTr("Click to learn more about cell sampling.")
+		toolTip: 			qsTr("Click to learn more about the cell sampling method.")
 		helpPage:			"Audit/cellSampling"
 	}
 
@@ -75,7 +79,7 @@ RadioButtonGroup
 
 	HelpButton
 	{
-		toolTip: 			qsTr("Click to learn more about random sampling.")
+		toolTip: 			qsTr("Click to learn more about the random sampling method.")
 		helpPage:			"Audit/randomSampling"
 	}
 }

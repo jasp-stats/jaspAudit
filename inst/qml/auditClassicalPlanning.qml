@@ -28,7 +28,7 @@ Form
 {
 	columns:				1
 
-	// Extra options
+	// Hidden option(s)
 	CheckBox
 	{
 		name: 				"workflow"
@@ -62,6 +62,7 @@ Form
 		}
 	}
 
+	// Visible options
 	GridLayout
 	{
 		columns:			3
@@ -76,7 +77,7 @@ Form
 	GridLayout
 	{
 		columns:			2
-		Common.AuditRiskModel { has_title: true }
+		Common.AuditRiskModel { }
 		Common.ExplanatoryText { }
 	}
 

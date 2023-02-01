@@ -26,7 +26,7 @@ import "./" as Common
 
 RadioButtonGroup
 {
-	property bool	has_materiality
+	property bool	use_materiality:	false
 
 	name: 						"prior_method"
 	text:						qsTr("Method")
@@ -104,7 +104,7 @@ RadioButtonGroup
 	{
 		name: 					"impartial"
 		label:					qsTr("Impartial")
-		enabled:				has_materiality
+		enabled:				use_materiality
 	}
 
 	RadioButton
@@ -112,8 +112,8 @@ RadioButtonGroup
 		id: 					arm
 		name: 					"arm"
 		label:					qsTr("Risk assessments")
-		enabled:				has_materiality
+		enabled:				use_materiality
 
-		Common.AuditRiskModel { has_title: false }
+		Common.AuditRiskModel { show_title: false }
 	}
 }

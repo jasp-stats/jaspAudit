@@ -25,6 +25,7 @@ import JASP.Widgets
 Group
 {
 	title:				qsTr("Iterations")
+	
 	IntegerField
 	{
 		name: 			"by"

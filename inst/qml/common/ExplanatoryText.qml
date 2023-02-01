@@ -29,7 +29,6 @@ Group
 
 	CheckBox
 	{
-		id: 		explanatoryText
 		text: 		qsTr("Explanatory text")
 		name: 		"explanatoryText"
 		checked: 	true

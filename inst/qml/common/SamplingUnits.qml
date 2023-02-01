@@ -24,7 +24,8 @@ import JASP.Widgets
 
 RadioButtonGroup
 {
-	property bool	enable_mus
+	readonly	property bool	use_mus:	values_sampling.checked
+				property bool	enable_mus
 
 	id: 			units
 	title:			qsTr("Sampling Units")
@@ -36,7 +37,7 @@ RadioButtonGroup
 		id: 		rows_sampling
 		text: 		qsTr("Items")
 		name: 		"items"
-		checked: 	true
+		checked:	!enable_mus
 	}
 
 	HelpButton
@@ -51,6 +52,7 @@ RadioButtonGroup
 		text: 		qsTr("Monetary units")
 		name: 		"values"
 		enabled: 	enable_mus
+		checked:	enable_mus
 	}
 
 	HelpButton

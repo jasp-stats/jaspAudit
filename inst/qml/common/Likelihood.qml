@@ -24,8 +24,11 @@ import JASP.Widgets
 
 RadioButtonGroup
 {
-	property bool	bayesian
-	property bool	enable_hypergeometric
+	readonly	property bool	use_hypergeometric: 	hypergeometric.checked
+	readonly	property bool	use_binomial: 			binomial.checked
+	readonly	property bool	use_poisson: 			poisson.checked
+				property bool	bayesian:				false
+				property bool	enable_hypergeometric: 	false
 	
 	title: 			qsTr("Probability Distribution")
 	name: 			"likelihood"

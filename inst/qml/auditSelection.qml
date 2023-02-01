@@ -29,7 +29,7 @@ Form
 
 	columns:									1
 
-	// Extra options
+	// Hidden option(s)
 	CheckBox
 	{
 		name:									"workflow"
@@ -37,6 +37,7 @@ Form
 		visible:								false
 	}
 
+	// Visible options
 	VariablesForm
 	{
 		id:										variablesFormSampling
@@ -142,9 +143,9 @@ Form
 			}
 		}
 
-		Common.SamplingUnits { enable_mus: values.count > 0 }
-
+		Common.SamplingUnits { enable_mus: values.count > 0}
 	}
+
 	Common.ExportSample { enabled: id.count > 0 && nobs.value > 0 }
 	Common.DownloadReport { }
 }

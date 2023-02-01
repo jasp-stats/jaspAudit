@@ -24,6 +24,8 @@ import JASP.Widgets
 
 RadioButtonGroup
 {
+	readonly	property alias	expected_is_relative:	expected_rel.checked
+
 	id: 					expected
 	name: 					"expected_type"
 	title: 					qsTr("Expected Misstatements")

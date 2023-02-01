@@ -28,7 +28,7 @@ Form
 {
 	columns:					1
 
-	// Extra options
+	// Hidden option(s)
 	CheckBox
 	{
 		name: 					"workflow"
@@ -50,6 +50,7 @@ Form
 		visible: 				false
 	}
 
+	// Visible options
 	GridLayout
 	{
 		columns:				3

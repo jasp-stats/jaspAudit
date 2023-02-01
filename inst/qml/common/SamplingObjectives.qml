@@ -24,7 +24,8 @@ import JASP.Widgets
 
 Group
 {
-	readonly	property alias	has_materiality:	materiality_test.checked
+	readonly	property alias	use_materiality:	materiality_test.checked
+	readonly	property alias	use_precision:		min_precision_test.checked
 
 	title: 								qsTr("Sampling Objectives")
 	columns:							2
@@ -100,7 +101,7 @@ Group
 
 	HelpButton
 	{
-		toolTip: 						qsTr("Click to learn more about performance materiality.")
+		toolTip: 						qsTr("Click to learn more about performance materiality objective.")
 		helpPage:						"Audit/performanceMateriality"
 	}
 
@@ -125,7 +126,7 @@ Group
 
 	HelpButton
 	{
-		toolTip: 						qsTr("Click to learn more about the precision.")
+		toolTip: 						qsTr("Click to learn more about the minimum precision objective.")
 		helpPage:						"Audit/minimumPrecision"
 	}
 }

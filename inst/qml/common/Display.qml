@@ -24,6 +24,9 @@ import JASP.Widgets
 
 RadioButtonGroup
 {
+	property bool	show_monetary:		false
+	property bool	enable_monetary:	false
+
 	name: 			"display"
 	title:			qsTr("Format Tables")
 
@@ -38,5 +41,13 @@ RadioButtonGroup
 	{
 		text: 		qsTr("Percentages")
 		name: 		"percent"
+	}
+
+	RadioButton
+	{
+		text: 		qsTr("Monetary units")
+		name: 		"amount"
+		visible:	show_monetary
+		enabled:	enable_monetary
 	}
 }

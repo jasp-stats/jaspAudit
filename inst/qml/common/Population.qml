@@ -24,7 +24,6 @@ import JASP.Widgets
 
 Group
 {
-
 	readonly	property alias	n:	n_units.value
 
 	title: 								qsTr("Population")
