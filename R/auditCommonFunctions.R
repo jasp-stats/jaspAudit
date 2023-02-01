@@ -2791,6 +2791,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   ))
 
   columnType <- if (options[["display"]] == "percent") "string" else "number"
+  table$addColumnInfo(name = "null", title = "", type = "string")
   if (options[["materiality_test"]]) {
     table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType)
   }
@@ -2971,7 +2972,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     row <- cbind(row, bf = parentState[["posterior"]][["hypotheses"]]$bf.h1)
   }
 
-  table$addRows(row)
+  table$addRows(cbind(null = "Value", row))
 }
 
 .jfaTableStratum <- function(options, sample, parentState, parentContainer, jaspResults, positionInContainer = 3) {
