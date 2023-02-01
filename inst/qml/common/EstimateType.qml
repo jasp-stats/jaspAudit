@@ -22,27 +22,21 @@ import JASP
 import JASP.Controls
 import JASP.Widgets
 
-Group
+RadioButtonGroup
 {
-	property bool	enable:	true
+	title: 			qsTr("Area Under Posterior")
+	name: 			"area"
 
-	title:				qsTr("Iterations")
-	enabled:			enable
-	
-	IntegerField
+	RadioButton
 	{
-		name: 			"by"
-		text: 			qsTr("Increment")
-		min: 			1
-		max:			50
-		defaultValue: 	1
+		text: 		qsTr("One-sided upper bound")
+		name: 		"area_bound"
+		checked:	true
 	}
 
-	IntegerField
+	RadioButton
 	{
-		name: 			"max"
-		text: 			qsTr("Maximum")
-		min: 			2
-		defaultValue: 	5000
+		text: 		qsTr("Two-sided interval")
+		name: 		"area_interval"
 	}
 }

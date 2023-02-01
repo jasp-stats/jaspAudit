@@ -39,122 +39,11 @@ Form
 	IntegerField { name: "max"; defaultValue: 5000; visible: false }
 
 	// Visible options
-	GridLayout
-	{
-		columns:				3
-
-		Common.SamplingObjectives { id: objectives }
-		Common.DataType { id: data }
-		Common.Population { id: population; enable: !data.use_population; show_items: true }
-	}
-
-	Divider { }
-
 	Common.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample }
-
-	GridLayout
-	{
-		columns:				2
-
-		Group
-		{
-			Group
-			{
-				title: 			qsTr("Tables")
-
-				CheckBox
-				{
-					text: 								qsTr("Misstated items")
-					name: 								"tableTaints"
-					enabled:							!data.use_stats && variables.use_book && variables.use_real
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Prior and posterior")
-					name: 								"tablePriorPosterior"
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Corrections to population")
-					name: 								"tableCorrections"
-					enabled:							n_units.value > 0 || data.use_population
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Assumption checks")
-					name: 								"tableAssumptions"
-					checked: 							separate.checked
-					enabled: 							separate.checked
-
-					CIField
-					{
-						name: 							"tableAssumptionsConfidence"
-						label: 							qsTr("Confidence interval")
-					}
-				}
-			}
-
-			Group
-			{
-				title: 			qsTr("Plots")
-
-				CheckBox
-				{
-					text: 								qsTr("Sampling objectives")
-					name: 								"plotObjectives"
-					enabled:							objectives.use_materiality || objectives.use_precision
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Prior and posterior")
-					name: 								"plotPosterior"
-
-					CheckBox
-					{
-						id: 							plotPosteriorInfo
-						text: 							qsTr("Additional info")
-						name: 							"plotPosteriorInfo"
-						checked:						true
-					}
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Posterior predictive")
-					name: 								"plotPosteriorPredictive"
-					enabled:							!likelihood.use_hypergeometric
-					visible:							false
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Scatter plot")
-					name: 								"plotScatter"
-					enabled: 							!data.use_stats
-					visible:							false
-
-					CheckBox
-					{
-						text: 							qsTr("Display correlation")
-						name:							"plotScatterCorrelation"
-					}
-
-					CheckBox
-					{
-						text: 							qsTr("Display item ID's")
-						name:							"plotScatterId"
-					}
-				}
-			}
-		}
-
-		Common.ExplanatoryText { }
-	}
-
+	Common.SamplingObjectives { id: objectives }
+	Common.DataType { id: data }
+	Common.Population { id: population; enable: !data.use_population; show_items: true }
+	Common.ExplanatoryText { }
 
 	Section
 	{
@@ -164,6 +53,105 @@ Form
 		Common.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
 		Common.PriorMethod { use_materiality: objectives.use_materiality}
 		Common.ExpectedErrors { show_all: true; enable_all: separate.checked }
+	}
+
+	Section
+	{
+		title:											qsTr("Report")
+		columns:										2
+
+		Group
+		{
+			title: 									qsTr("Tables")
+
+			CheckBox
+			{
+				text: 								qsTr("Misstated items")
+				name: 								"tableTaints"
+				enabled:							!data.use_stats && variables.use_book && variables.use_real
+			}
+
+			CheckBox
+			{
+				text: 								qsTr("Prior and posterior")
+				name: 								"tablePriorPosterior"
+			}
+
+			CheckBox
+			{
+				text: 								qsTr("Corrections to population")
+				name: 								"tableCorrections"
+				enabled:							n_units.value > 0 || data.use_population
+			}
+
+			CheckBox
+			{
+				text: 								qsTr("Assumption checks")
+				name: 								"tableAssumptions"
+				checked: 							separate.checked
+				enabled: 							separate.checked
+
+				CIField
+				{
+					name: 							"tableAssumptionsConfidence"
+					label: 							qsTr("Confidence interval")
+				}
+			}
+		}
+
+		Group
+		{
+			title: 									qsTr("Plots")
+
+			CheckBox
+			{
+				text: 								qsTr("Sampling objectives")
+				name: 								"plotObjectives"
+				enabled:							objectives.use_materiality || objectives.use_precision
+			}
+
+			CheckBox
+			{
+				text: 								qsTr("Prior and posterior")
+				name: 								"plotPosterior"
+
+				CheckBox
+				{
+					id: 							plotPosteriorInfo
+					text: 							qsTr("Additional info")
+					name: 							"plotPosteriorInfo"
+					checked:						true
+				}
+			}
+
+			CheckBox
+			{
+				text: 								qsTr("Posterior predictive")
+				name: 								"plotPosteriorPredictive"
+				enabled:							!likelihood.use_hypergeometric
+				debug:								true
+			}
+
+			CheckBox
+			{
+				text: 								qsTr("Scatter plot")
+				name: 								"plotScatter"
+				enabled: 							!data.use_stats
+				debug:								true
+
+				CheckBox
+				{
+					text: 							qsTr("Display correlation")
+					name:							"plotScatterCorrelation"
+				}
+
+				CheckBox
+				{
+					text: 							qsTr("Display item ID's")
+					name:							"plotScatterId"
+				}
+			}
+		}
 	}
 
 	Section
@@ -235,25 +223,7 @@ Form
 		}
 
 		Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
-
-		RadioButtonGroup
-		{
-			title: 									qsTr("Area Under Posterior")
-			name: 									"area"
-
-			RadioButton
-			{
-				text: 								qsTr("One-sided upper bound")
-				name: 								"area_bound"
-				checked:							true
-			}
-
-			RadioButton
-			{
-				text: 								qsTr("Two-sided interval")
-				name: 								"area_interval"
-			}
-		}
+		Common.EstimateType { }
 	}
 
 	Common.DownloadReport { }

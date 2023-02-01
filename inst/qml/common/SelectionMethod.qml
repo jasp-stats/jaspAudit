@@ -27,11 +27,14 @@ RadioButtonGroup
 	readonly	property bool	use_interval:	interval.checked
 	readonly	property bool	use_cell:		cell.checked
 	readonly	property bool	use_random:		random.checked
+				property bool	enable:			true
+				property bool	force_interval:	false
 
 	id: 					method
-	title:					qsTr("Method")
+	title:					qsTr("Selection Method")
 	name: 					"sampling_method"
 	columns:				2
+	enabled:				enable
 
 	RadioButton
 	{
@@ -48,6 +51,7 @@ RadioButtonGroup
 			defaultValue: 	1
 			min: 			1
 			visible:		interval.checked
+			enabled:		!force_interval
 		}
 	}
 
@@ -62,6 +66,7 @@ RadioButtonGroup
 		id: 				cell
 		text: 				qsTr("Cell sampling")
 		name: 				"cell"
+		enabled:			!force_interval
 	}
 
 	HelpButton
@@ -75,6 +80,7 @@ RadioButtonGroup
 		id: 				random
 		text: 				qsTr("Random sampling")
 		name: 				"random"
+		enabled:			!force_interval
 	}
 
 	HelpButton

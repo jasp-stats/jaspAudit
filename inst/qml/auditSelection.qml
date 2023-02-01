@@ -26,62 +26,16 @@ import "./common" as Common
 
 Form 
 {
-
 	columns:									1
 
 	// Hidden option(s)
-	CheckBox
-	{
-		name:									"workflow"
-		checked:								false
-		visible:								false
-	}
+	CheckBox { name: "workflow"; checked: false; visible: false }
 
 	// Visible options
-	GridLayout
-	{
-		columns:								3
-
-		Group
-		{
-			IntegerField
-			{
-				id:								nobs
-				text: 							qsTr("Sample size")
-				name: 							"n"
-				defaultValue: 					0
-				min: 							0
-			}
-
-			IntegerField
-			{
-				id: 							seed
-				text: 							qsTr("Seed")
-				name: 							"seed"
-				defaultValue: 					1
-				min: 							1
-				max: 							99999
-				enabled:						randomize.checked || !method.use_interval
-			}
-
-			CheckBox
-			{
-				id:								randomize
-				name:							"randomize"
-				text:							qsTr("Randomize item order")
-				enabled:						rank.count == 0
-			}
-		}
-
-		Common.SamplingUnits { enable_mus: values.count > 0}
-		Common.SelectionMethod { id: method }
-	}
-
-	Divider { }
-
 	VariablesForm
 	{
 		id:										variablesFormSampling
+		preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
 
 		AvailableVariablesList
 		{
@@ -92,7 +46,7 @@ Form
 		{
 			id:									id
 			name:								"id"
-			title:								qsTr("Item ID")
+			title:								qsTr("Item ID (required)")
 			singleVariable:						true
 			allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
 			allowAnalysisOwnComputedColumns:	false
@@ -102,7 +56,7 @@ Form
 		{
 			id:									values
 			name:								"values"
-			title:								qsTr("Book Value")
+			title:								units.use_mus ? qsTr("Book Value (required)") : qsTr("Book Value (optional)")
 			singleVariable:						true
 			allowedColumns:						["scale"]
 			allowAnalysisOwnComputedColumns:	false
@@ -116,6 +70,7 @@ Form
 			singleVariable:						true
 			allowedColumns:						["scale"]
 			allowAnalysisOwnComputedColumns: 	false
+			debug:								true
 		}
 
 		AssignedVariablesList
@@ -128,9 +83,45 @@ Form
 		}
 	}
 
-	GridLayout
+	Group
 	{
-		columns:								2
+		IntegerField
+		{
+			id:								nobs
+			text: 							qsTr("Sample size")
+			name: 							"n"
+			defaultValue: 					0
+			min: 							0
+		}
+
+		IntegerField
+		{
+			id: 							seed
+			text: 							qsTr("Seed")
+			name: 							"seed"
+			defaultValue: 					1
+			min: 							1
+			max: 							99999
+			enabled:						randomize.checked || !method.use_interval
+		}
+
+		CheckBox
+		{
+			id:								randomize
+			name:							"randomize"
+			text:							qsTr("Randomize item order")
+			enabled:						rank.count == 0
+		}
+	}
+
+	Common.SamplingUnits { id: units; enable_mus: values.count > 0}
+	Common.SelectionMethod { id: method }
+	Common.ExplanatoryText { }
+
+	Section
+	{
+		columns:								1
+		title:									qsTr("Report")
 
 		Group
 		{
@@ -140,6 +131,7 @@ Form
 			{
 				text: 							qsTr("Descriptive statistics")
 				name: 							"tableDescriptives"
+				debug:							true
 			}
 
 			CheckBox
@@ -148,8 +140,6 @@ Form
 				name: 							"tableSample"
 			}
 		}
-
-		Common.ExplanatoryText { }
 	}
 
 	Common.ExportSample { enabled: id.count > 0 && nobs.value > 0 }

@@ -34,62 +34,10 @@ Form
 	CheckBox { name: "separateMisstatement"; checked: false; visible: false }
 
 	// Visible options
-	GridLayout
-	{
-		columns:				3
-
-		Common.SamplingObjectives { id: objectives }
-		Common.ExpectedErrors { }
-		Common.Population { id: population }
-	}
-
-	Divider { }
-
-	GridLayout
-	{
-		columns:				2
-
-		Group
-		{
-			Group
-			{
-				title: 			qsTr("Tables")
-
-				CheckBox
-				{
-					text: 		qsTr("Prior and posterior")
-					name: 		"tablePrior"
-				}
-			}
-
-			Group
-			{
-				title: 			qsTr("Plots")
-
-				CheckBox
-				{
-					text: 		qsTr("Compare sample sizes")
-					name: 		"plotSampleSizes"
-					visible:	false
-				}
-
-				CheckBox
-				{
-					text: 		qsTr("Prior and posterior")
-					name: 		"plotPrior"
-				}
-
-				CheckBox
-				{
-					text: 		qsTr("Prior predictive")
-					name: 		"plotPriorPredictive"
-					enabled:	!likelihood.use_hypergeometric
-				}
-			}
-		}
-
-		Common.ExplanatoryText { }
-	}
+	Common.SamplingObjectives { id: objectives }
+	Common.ExpectedErrors { }
+	Common.Population { id: population }
+	Common.ExplanatoryText { }
 
 	Section
 	{
@@ -98,6 +46,48 @@ Form
 		
 		Common.Likelihood { id: likelihood; bayesian: true; enable_hypergeometric: population.n_units > 0 }
 		Common.PriorMethod { use_materiality: objectives.use_materiality }
+	}
+
+	Section
+	{
+		title:					qsTr("Report")
+		columns:				2
+
+		Group
+		{
+			title: 			qsTr("Tables")
+
+			CheckBox
+			{
+				text: 		qsTr("Prior and posterior")
+				name: 		"tablePrior"
+			}
+		}
+
+		Group
+		{
+			title: 			qsTr("Plots")
+
+			CheckBox
+			{
+				text: 		qsTr("Compare sample sizes")
+				name: 		"plotSampleSizes"
+				debug:		true
+			}
+
+			CheckBox
+			{
+				text: 		qsTr("Prior and posterior")
+				name: 		"plotPrior"
+			}
+
+			CheckBox
+			{
+				text: 		qsTr("Prior predictive")
+				name: 		"plotPriorPredictive"
+				enabled:	!likelihood.use_hypergeometric
+			}
+		}
 	}
 
 	Section

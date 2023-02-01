@@ -699,7 +699,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "materiality_rel_val", "materiality_abs_val", "expected_type", "expected_rel_val",
       "expected_abs_val", "likelihood", "id", "values", "separateMisstatement",
       "min_precision_rel_val", "min_precision_test", "materiality_test", "by", "max", "prior_method",
-      "n", "x", "alpha", "beta", "display"
+      "n_prior", "x_prior", "alpha", "beta", "display"
     ))
 
     jaspResults[["planningContainer"]] <- container

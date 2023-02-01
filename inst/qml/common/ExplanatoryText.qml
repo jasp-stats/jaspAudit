@@ -37,6 +37,6 @@ Group
 	HelpButton
 	{
 		helpPage:	"Audit/explanatoryText"
-		toolTip: 	qsTr("Show explanatory text at each step of the analysis")
+		toolTip: 	qsTr("Show explanatory text in the audit report")
 	}
 }

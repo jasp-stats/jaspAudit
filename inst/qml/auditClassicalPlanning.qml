@@ -35,29 +35,16 @@ Form
 	RadioButtonGroup { name: "prior_method"; visible: false; RadioButton { name: "arm"; checked: true } }
 
 	// Visible options
-	GridLayout
-	{
-		columns:			3
-
-		Common.SamplingObjectives { id: objectives }
-		Common.ExpectedErrors { }
-		Common.Population { id: population }
-	}
-
-	Divider { }
-
-	GridLayout
-	{
-		columns:			2
-		
-		Common.AuditRiskModel { enable: objectives.use_materiality }
-		Common.ExplanatoryText { }
-	}
+	Common.SamplingObjectives { id: objectives }
+	Common.ExpectedErrors { }
+	Common.Population { id: population }
+	Common.AuditRiskModel { enable: objectives.use_materiality }
+	Common.ExplanatoryText { }
 
 	Group
 	{
 		title: 				qsTr("Plots")
-		visible:			false
+		debug:				true
 
 		CheckBox
 		{

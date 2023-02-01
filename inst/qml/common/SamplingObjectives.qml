@@ -26,9 +26,11 @@ Group
 {
 	readonly	property alias	use_materiality:	materiality_test.checked
 	readonly	property alias	use_precision:		min_precision_test.checked
+				property bool	enable:				true
 
 	title: 								qsTr("Sampling Objectives")
 	columns:							2
+	enabled:							enable
 
 	CIField
 	{
@@ -65,7 +67,7 @@ Group
 						id: 			materiality_rel_val
 						visible: 		materiality_rel.checked
 						decimals: 		2
-						defaultValue: 	0
+						defaultValue: 	1
 						min:			0
 						max:			99
 						name: 			"materiality_rel_val"

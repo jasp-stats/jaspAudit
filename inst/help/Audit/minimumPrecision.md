@@ -1,16 +1,13 @@
-Sampling objective: Obtaining a required minimum precision
+Sampling objective: Obtaining a Minimum Precision
 ==========================
 
 The precision is a measure of how much certainty there is in the estimate of the misstatement from testing a particular characteristic of a sample at a given level of sampling risk.
 
 #### Statistical interpretation
-In the statistical analysis, the precision is represented by the difference between the estimated most likely error and the upper bound on the misstatement. 
-
-#### Effect on procedure
-By enabling this sampling objective, you are be able to plan a sample so that the difference between the estimated most likely error and the upper bound on the misstatement is reduced to a minimum percentage. 
+In statistical analysis, precision is expressed as the difference between the estimated most likely error and the upper bound of the misstatement. By setting this sampling objective, you can design a sample that minimizes the difference between the estimated most likely misstatement and the upper bound of the misstatement to a certain percentage.
 
 #### When should you enable this objective?
-You should enable this objective if you are interested in making an estimate of the population misstatement with a certain accuracy.
+You should implement this objective if you aim to make an estimate of the population misstatement with a specified level of accuracy.
 
 #### Effect on sample size
-A lower minimum required precision will result in a higher required sample size. Vice versa, a higher minimum required precision will result in a lower required sample size.
+A smaller minimum required precision will result in a larger sample size, while a higher minimum required precision will result in a smaller sample size.

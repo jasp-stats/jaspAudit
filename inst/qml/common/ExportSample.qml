@@ -41,7 +41,7 @@ Section
 			fieldWidth: 			120 * preferencesModel.uiScale
 		}
 
-		Row 
+		Row
 		{
 			spacing: 				5 * preferencesModel.uiScale
 

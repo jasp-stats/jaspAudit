@@ -41,76 +41,66 @@ Form
 	IntegerField { name: "max"; defaultValue: 5000; visible: false }
 
 	// Visible options
-	GridLayout
-	{
-		columns:				3
-
-		Common.SamplingObjectives { id: objectives }
-		Common.DataType { id: data }
-		Common.Population { id: population; enable: !data.use_population; show_items: true }
-	}
-
-	Divider { }
-
 	Common.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample }
+	Common.SamplingObjectives { id: objectives }
+	Common.DataType { id: data }
+	Common.Population { id: population; enable: !data.use_population; show_items: true }
+	Common.AuditRiskModel { enable: objectives.use_materiality }
+	Common.ExplanatoryText { }
 
-
-	GridLayout
+	Section
 	{
-		columns:								2
+		title:							qsTr("Report")
 
-		Common.AuditRiskModel { enable: objectives.use_materiality }
-		Common.ExplanatoryText { }
-	}
-
-	Group
-	{
-		title: 							qsTr("Tables")
-
-		CheckBox
+		Group
 		{
-			text: 						qsTr("Misstated items")
-			name: 						"tableTaints"
-			enabled:					variables.use_book && !data.use_stats
-		}
-
-		CheckBox
-		{
-			text: 						qsTr("Corrections to population")
-			name: 						"tableCorrections"
-			enabled:					population.n_units > 0 || data.use_population
-		}
-	}
-
-	Group
-	{
-		title: 								qsTr("Plots")
-
-		CheckBox
-		{
-			text: 							qsTr("Sampling objectives")
-			name: 							"plotObjectives"
-			enabled:						objectives.use_materiality || objectives.use_precision
-		}
-
-
-		CheckBox
-		{
-			text: 							qsTr("Scatter plot")
-			name: 							"plotScatter"
-			enabled:						!data.use_stats
-			visible:						false
+			title: 							qsTr("Tables")
 
 			CheckBox
 			{
-				text: 						qsTr("Display correlation")
-				name:						"plotScatterCorrelation"
+				text: 						qsTr("Misstated items")
+				name: 						"tableTaints"
+				enabled:					variables.use_book && !data.use_stats
 			}
 
 			CheckBox
 			{
-				text: 						qsTr("Display item ID's")
-				name:						"plotScatterId"
+				text: 						qsTr("Corrections to population")
+				name: 						"tableCorrections"
+				enabled:					population.n_units > 0 || data.use_population
+			}
+		}
+
+		Group
+		{
+			title: 								qsTr("Plots")
+
+			CheckBox
+			{
+				text: 							qsTr("Sampling objectives")
+				name: 							"plotObjectives"
+				enabled:						objectives.use_materiality || objectives.use_precision
+			}
+
+
+			CheckBox
+			{
+				text: 							qsTr("Scatter plot")
+				name: 							"plotScatter"
+				enabled:						!data.use_stats
+				debug:							true
+
+				CheckBox
+				{
+					text: 						qsTr("Display correlation")
+					name:						"plotScatterCorrelation"
+				}
+
+				CheckBox
+				{
+					text: 						qsTr("Display item ID's")
+					name:						"plotScatterId"
+				}
 			}
 		}
 	}
@@ -120,81 +110,81 @@ Form
 		title:									qsTr("Advanced")
 		columns:								3
 
-	RadioButtonGroup
-	{
-		title: 								qsTr("Method")
-		name: 								"method"
-
-		RadioButton
+		RadioButtonGroup
 		{
-			name: 							"hypergeometric"
-			text: 							qsTr("Hypergeometric")
-			enabled:						population.n_units > 0 || data.use_population
-		}
+			title: 								qsTr("Method")
+			name: 								"method"
 
-		RadioButton
-		{
-			name: 							"binomial"
-			text: 							qsTr("Binomial")
-			checked:						true
-		}
-
-		RadioButton
-		{
-			name: 							"poisson"
-			text: 							qsTr("Poisson")
-		}
-
-		RadioButton
-		{
-			id: 							stringer
-			name: 							"stringer"
-			text: 							qsTr("Stringer")
-			enabled: 						!stats.checked && values.count > 0 && auditResult.count > 0
-
-			CheckBox
+			RadioButton
 			{
-				name: 						"lta"
-				text: 						qsTr("LTA adjustment")
-				checked: 					true
+				name: 							"hypergeometric"
+				text: 							qsTr("Hypergeometric")
+				enabled:						population.n_units > 0 || data.use_population
+			}
+
+			RadioButton
+			{
+				name: 							"binomial"
+				text: 							qsTr("Binomial")
+				checked:						true
+			}
+
+			RadioButton
+			{
+				name: 							"poisson"
+				text: 							qsTr("Poisson")
+			}
+
+			RadioButton
+			{
+				id: 							stringer
+				name: 							"stringer"
+				text: 							qsTr("Stringer")
+				enabled: 						!stats.checked && values.count > 0 && auditResult.count > 0
+
+				CheckBox
+				{
+					name: 						"lta"
+					text: 						qsTr("LTA adjustment")
+					checked: 					true
+				}
+			}
+
+			RadioButton
+			{
+				name: 							"mpu"
+				text: 							qsTr("Mean-per-unit estimator")
+				enabled: 						!stats.checked && values.count > 0 && auditResult.count > 0
+			}
+
+			RadioButton
+			{
+				name: 							"direct"
+				text: 							qsTr("Direct estimator")
+				enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
+			}
+
+			RadioButton
+			{
+				name: 							"difference"
+				text: 							qsTr("Difference estimator")
+				enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
+			}
+
+			RadioButton
+			{
+				name: 							"quotient"
+				text: 							qsTr("Ratio estimator")
+				enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
+			}
+
+			RadioButton
+			{
+				name: 							"regression"
+				text: 							qsTr("Regression estimator")
+				enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 			}
 		}
-
-		RadioButton
-		{
-			name: 							"mpu"
-			text: 							qsTr("Mean-per-unit estimator")
-			enabled: 						!stats.checked && values.count > 0 && auditResult.count > 0
-		}
-
-		RadioButton
-		{
-			name: 							"direct"
-			text: 							qsTr("Direct estimator")
-			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
-		}
-
-		RadioButton
-		{
-			name: 							"difference"
-			text: 							qsTr("Difference estimator")
-			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
-		}
-
-		RadioButton
-		{
-			name: 							"quotient"
-			text: 							qsTr("Ratio estimator")
-			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
-		}
-
-		RadioButton
-		{
-			name: 							"regression"
-			text: 							qsTr("Regression estimator")
-			enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
-		}
-	}
 
 		Group
 		{
