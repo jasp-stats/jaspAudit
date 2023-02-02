@@ -721,7 +721,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     container$position <- position
     container$dependOn(options = c(
       "id", "values", "variables", "rank", "sampling_method", "units",
-      "start", "seed", "n", "randomize", "file"
+      "start", "seed", "n", "randomize", "file", "randomStart"
     ))
 
     jaspResults[["selectionContainer"]] <- container
@@ -738,7 +738,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         optionsFromObject = prevContainer,
         options = c(
           "samplingChecked", "units", "sampling_method", "seed",
-          "start", "variables", "rank", "separateMisstatement", "randomize"
+          "start", "variables", "rank", "separateMisstatement", "randomize", "randomStart"
         )
       )
 
@@ -2196,13 +2196,16 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   if (options[["sampling_method"]] == "interval") {
     interval <- if (units == "items") length(dataset[[options[["id"]]]]) / prevState[["n"]] else sum(dataset[[options[["values"]]]]) / prevState[["n"]]
-    if (options[["start"]] > interval) {
+    if (!options[["randomStart"]] && options[["start"]] > interval) {
       parentContainer$setError(gettextf("Starting point is outside the range of the selection interval of 1 to %1$s. Please choose a starting point < %1$s.", round(interval, 3)))
       return()
     }
   }
 
   start <- if (!is.null(prevState[["start"]])) prevState[["start"]] else options[["start"]]
+  if (options[["sampling_method"]] == "interval" && options[["randomStart"]]) {
+    start <- sample(1:floor(interval), size = 1)
+  }
   if (options[["sampling_method"]] != "interval" || options[["randomize"]]) {
     set.seed(options[["seed"]])
   }
@@ -2246,7 +2249,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   message <- switch(options[["sampling_method"]],
-    "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else options[["start"]]),
+    "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else if (!is.null(parentState[["start"]])) parentState[["start"]] else options[["start"]]),
     "cell" = gettextf("The sample is drawn with seed %1$s and intervals of size %2$s.", options[["seed"]], round(parentState[["interval"]], 2)),
     "random" = gettextf("The sample is drawn with seed %1$s.", options[["seed"]])
   )

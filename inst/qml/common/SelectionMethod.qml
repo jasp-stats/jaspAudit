@@ -51,6 +51,15 @@ RadioButtonGroup
 			defaultValue: 	1
 			min: 			1
 			visible:		interval.checked
+			enabled:		!force_interval && !randomize.checked
+		}
+
+		CheckBox
+		{
+			id:				randomize
+			text: 			qsTr("Randomize")
+			name: 			"randomStart"
+			visible:		interval.checked
 			enabled:		!force_interval
 		}
 	}
