@@ -124,7 +124,7 @@ Form
 				hide_algorithm1:					false
 				enable:								!data.use_stats
 				enable_algorithm1: 					stratum.count > 1
-				enable_algorithm2: 					variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
+				enable_algorithm2: 					!variables.use_strata && variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
 			}
 
 			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }

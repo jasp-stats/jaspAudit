@@ -626,11 +626,26 @@ gettextf <- function(fmt, ..., domain = NULL) {
     input[["likelihood"]] <- options[["method"]]
     # Take over N.units and N.items from population
     if (options[["dataType"]] == "pdata") {
-      if (options[["values.audit"]] != "") {
-        dataset <- as.data.frame(.readDataSetToEnd(columns = options[["values"]], exclude.na.listwise = options[["values"]]))
-        input[["N.items"]] <- nrow(dataset)
-        input[["N.units"]] <- sum(dataset[[options[["values"]]]])
-      }
+	  if (options[["id"]] != "") {
+		if (options[["values"]] != "") {
+			if (options[["stratum"]] != "") {
+			  dataset <- as.data.frame(.readDataSetToEnd(columns.as.numeric = options[["values"]], columns.as.factor = options[["stratum"]], exclude.na.listwise = c(options[["values"]], options[["stratum"]])))
+			  input[["N.items"]] <- as.numeric(table(dataset[[options[["stratum"]]]]))
+			  input[["N.units"]] <- aggregate(dataset[[options[["values"]]]], by = list(stratum = dataset[[options[["stratum"]]]]), FUN = sum)[["x"]]
+			} else {
+			  dataset <- as.data.frame(.readDataSetToEnd(columns = options[["values"]], exclude.na.listwise = options[["values"]]))
+			  input[["N.items"]] <- nrow(dataset)
+			  input[["N.units"]] <- sum(dataset[[options[["values"]]]])
+			}
+		} else {
+			dataset <- as.data.frame(.readDataSetToEnd(columns = options[["id"]], exclude.na.listwise = options[["id"]]))
+			input[["N.items"]] <- nrow(dataset)
+			input[["N.units"]] <- input[["N.items"]]
+		}
+	  } else {
+        input[["N.items"]] <- 0
+        input[["N.units"]] <- 0
+	  }
     } else {
       input[["N.items"]] <- options[["n_items"]]
       input[["N.units"]] <- options[["n_units"]]
@@ -1583,7 +1598,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     table$addColumnInfo(name = "ar", title = gettext("Audit risk"), type = columnType)
   }
 
-  table$addColumnInfo(name = "x", title = gettext("Tolerable errors"), type = if (options[["expected_type"]] == "expected_all") "string" else "number")
+  table$addColumnInfo(name = "x", title = gettext("Tolerable misstatements"), type = if (options[["expected_type"]] == "expected_all") "string" else "number")
   table$addColumnInfo(name = "n", title = gettext("Minimum sample size"), type = "integer")
 
   parentContainer[["summaryTable"]] <- table
@@ -2600,9 +2615,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
 
     message <- gettextf(
-      "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely error in the population of %6$s and an %7$s upper bound of %8$s.",
-      if (planningOptions[["N.items"]] == 0) "..." else format(planningOptions[["N.items"]], scientific = FALSE),
-      if (planningOptions[["N.units"]] == 0) "..." else format(planningOptions[["N.units"]], scientific = FALSE),
+      "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely misstatement in the population of %6$s and an %7$s upper bound of %8$s.",
+      if (planningOptions[["N.items"]][1] == 0) "..." else format(sum(planningOptions[["N.items"]]), scientific = FALSE),
+      if (planningOptions[["N.units"]][1] == 0) "..." else format(sum(planningOptions[["N.units"]]), scientific = FALSE),
       sampleSizeMessage,
       errors,
       if (options[["bayesian"]]) "combined with the information in the prior distribution " else "",
@@ -2643,10 +2658,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
         "custom" = options[["crCustom"]]
       )
 
-      N_units <- if (evaluationOptions[["N.units"]] == 0) NULL else evaluationOptions[["N.units"]]
+      N_units <- if (evaluationOptions[["N.units"]][1] == 0) NULL else evaluationOptions[["N.units"]]
       prior <- jfa::auditPrior(
         conf.level = options[["conf_level"]], materiality = materiality, expected = evaluationOptions[["expected_val"]],
-        likelihood = options[["method"]], N.units = N_units, ir = ir,
+        likelihood = options[["method"]], N.units = sum(N_units), ir = ir,
         cr = cr, method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
       )
@@ -2674,7 +2689,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
 .jfaEvaluationAnalysisState <- function(options, sample, planningOptions, evaluationContainer) {
 
-
   # Check whether there is enough data to perform an analysis
   if (!options[["materiality_test"]] && !options[["min_precision_test"]]) {
     return()
@@ -2692,7 +2706,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (!is.null(evaluationContainer[["evaluationState"]])) {
     return(evaluationContainer[["evaluationState"]]$object)
   } else {
-    ar <- 1 - options[["conf_level"]]
     ir <- switch(options[["ir"]],
       "high" = 1,
       "medium" = 0.60,
@@ -2705,15 +2718,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "low" = 0.36,
       "custom" = options[["crCustom"]]
     )
-
-    min_precision <- if (options[["min_precision_test"]]) options[["min_precision_rel_val"]] else NULL
-    materiality <- if (options[["materiality_test"]]) planningOptions[["materiality_val"]] else NULL
-
-    conf_level <- if (!options[["bayesian"]]) 1 - .jfaAuditRiskModelCalculation(options) else options[["conf_level"]]
-
     prior <- FALSE
-	N_units <- if (planningOptions[["N.units"]] == 0) NULL else planningOptions[["N.units"]]
-    if (options[["bayesian"]]) {
+	N_units <- if (planningOptions[["N.units"]][1] == 0) NULL else planningOptions[["N.units"]]
+	N_items <- if (planningOptions[["N.items"]][1] == 0) NULL else planningOptions[["N.items"]]
+    materiality <- if (options[["materiality_test"]]) planningOptions[["materiality_val"]] else NULL
+    conf_level <- if (!options[["bayesian"]]) 1 - .jfaAuditRiskModelCalculation(options) else options[["conf_level"]]
+    
+	if (options[["bayesian"]]) {
       prior <- jfa::auditPrior(
         method = options[["prior_method"]], conf.level = conf_level, materiality = materiality,
         expected = planningOptions[["expected_val"]], likelihood = options[["method"]],
@@ -2752,7 +2763,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           jfa::evaluation(
             data = sample, times = if (options[["times"]] != "" && (!options[["bayesian"]] || options[["pooling"]] != "partial")) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
             values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
-            method = method, N.items = if (options[["stratum"]] != "") as.numeric(table(sample[[options[["stratum"]]]])) else planningOptions[["N.items"]], N.units = N_units,
+            method = method, N.items = N_items, N.units = N_units,
             prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL, 
 			pooling = if (options[["bayesian"]]) if (options[["pooling"]]) "partial" else "none" else "none"
           )
@@ -2795,9 +2806,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
     table$addColumnInfo(name = "min_precision", title = gettext("Min. precision"), type = columnType)
   }
   table$addColumnInfo(name = "n", title = gettext("Sample size"), type = "integer")
-  table$addColumnInfo(name = "x", title = gettext("Errors"), type = "integer")
+  table$addColumnInfo(name = "x", title = gettext("Misstatements"), type = "integer")
   table$addColumnInfo(name = "t", title = gettext("Taint"), type = columnType)
-  table$addColumnInfo(name = "mle", title = gettext("Most likely error"), type = columnType)
+  table$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = columnType)
 
   if (!options[["bayesian"]]) {
     ar <- 1 - options[["conf_level"]]
@@ -2984,9 +2995,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   table$addColumnInfo(name = "stratum", title = gettext("Stratum"), type = "string")
   table$addColumnInfo(name = "n", title = gettext("Sample size"), type = "integer")
-  table$addColumnInfo(name = "k", title = gettext("Errors"), type = "integer")
+  table$addColumnInfo(name = "k", title = gettext("Misstatements"), type = "integer")
   table$addColumnInfo(name = "t", title = gettext("Taint"), type = "number")
-  table$addColumnInfo(name = "mle", title = gettext("Most likely error"), type = "number")
+  table$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = "number")
   table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round(options[["conf_level"]] * 100, 2)), type = "number")
   table$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
 
@@ -3052,6 +3063,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
   }
   rows <- data.frame(id = id, values = ist, values.audit = soll, diff = ist - soll, taint = (ist - soll) / ist, times = paste0("x", times))
+  rows <- rbind(rows, data.frame(id = "Total", values = NA, values.audit = NA, diff = sum(rows$diff), taint = sum(rows$taint * times), times = NA))
   table$addRows(rows)
 }
 
@@ -3242,7 +3254,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   if (options[["explanatoryText"]]) {
     figureCaption <- createJaspHtml(gettextf(
-      "<b>Figure %1$i.</b> Evaluation information for the current annotated selection. The materiality is compared with the maximum misstatement and the most likely error. The most likely error (MLE) is an estimate of the true misstatement in the population. The upper bound is an estimate of the maximum error in the population.",
+      "<b>Figure %1$i.</b> Evaluation information for the current annotated selection. The materiality is compared with the maximum misstatement and the most likely misstatement. The most likely misstatement is the best estimate of the true misstatement in the population. The upper bound is an estimate of the maximum misstatement in the population.",
       jaspResults[["figNumber"]]$object
     ), "p")
 
