@@ -24,19 +24,19 @@ import JASP.Widgets
 
 Section
 {
-	property bool	enabled:	false
+	property bool	enable:	false
 	
 	title: 							qsTr("Export")
 
 	Group
 	{
-		enabled: 					enabled
+		enabled: 					enable
 
 		ComputedColumnField
 		{
 			id:						name_indicator
 			name: 					"name_indicator"
-			text: 					qsTr("Column name selection result")
+			text: 					qsTr("Step 1: Column name selection result")
 			placeholderText: 		qsTr("e.g. selected")
 			fieldWidth: 			120 * preferencesModel.uiScale
 		}
@@ -44,12 +44,13 @@ Section
 		Row
 		{
 			spacing: 				5 * preferencesModel.uiScale
+			enabled:				name_indicator.value != ""
 
 			FileSelector
 			{
 				id:					file
 				name:				"file"
-				label:				qsTr("Save as")
+				label:				qsTr("Step 2: File")
 				placeholderText: 	qsTr("e.g. sample.csv")
 				filter:				"*.csv"
 				save:				true
@@ -59,7 +60,7 @@ Section
 			CheckBox
 			{
 				name: 				"export_sample"
-				text: 				qsTr("Export sample to file")
+				text: 				qsTr("Save")
 				enabled:			name_indicator.value != "" && file.value != ""
 			}
 		}

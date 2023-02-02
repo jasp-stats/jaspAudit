@@ -127,6 +127,6 @@ Form
 		}
 	}
 
-	Common.ExportSample { enabled: id.count > 0 && sample_size.value > 0 }
+	Common.ExportSample { enable: id.count > 0 && sample_size.value > 0 }
 	Common.DownloadReport { }
 }
