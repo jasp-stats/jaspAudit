@@ -26,6 +26,9 @@ Group
 {
 	readonly	property bool	use_materiality:		materiality_test.checked
 	readonly	property bool	absolute_materiality:	materiality_test.checked && materiality_absolute.checked
+	readonly	property bool	absolute_value:			materiality_absolute_value.value
+	readonly	property bool	relative_value:			materiality_relative_value.value
+	readonly	property bool	precision_value:		min_precision_value.value
 	readonly	property bool	use_precision:			min_precision_test.checked
 				property bool	enable:					true
 
@@ -65,11 +68,12 @@ Group
 
 					PercentField
 					{
+						id:				materiality_relative_value
 						visible: 		materiality_relative.checked
 						decimals: 		2
 						defaultValue: 	1
-						min:			0
-						max:			99
+						min:			0.01
+						max:			99.99
 						name: 			"materiality_rel_val"
 					}
 				}
@@ -88,6 +92,7 @@ Group
 
 					DoubleField
 					{
+						id:				materiality_absolute_value
 						visible: 		materiality_absolute.checked
 						name: 			"materiality_abs_val"
 						defaultValue: 	0
@@ -114,6 +119,7 @@ Group
 
 		PercentField
 		{
+			id:							min_precision_value
 			name: 						"min_precision_rel_val"
 			decimals: 					2
 			defaultValue: 				2

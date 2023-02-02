@@ -1122,7 +1122,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       label_method <- if (options[["units"]] == "items") gettextf("%1$s record sampling", label_method) else gettextf("%1$s monetary unit sampling", label_method)
 
       message <- gettextf(
-        "The purpose of the selection stage is to statistically select a number of sampling units from the population. Sampling units can be individual items (rows) or individual monetary units. The sampling units are selected from the population according to the selection method. To learn more about the current selection method, look under the <i>Method</i> section.\n\nFrom the population of %1$s %2$s items, %3$s sampling units (%4$s) are selected from the %5$s using a %6$s method.%7$s",
+        "The purpose of the selection stage is to statistically select a number of sampling units from the population. Sampling units can be individual items (rows) or individual monetary units. The sampling units are selected from the population according to the selection method. To learn more about the current selection method, look under the <i>Method</i> section.\n\nFrom the population of %1$s %2$s items, %3$s sampling units (%4$s) are selected from the %5$s using the %6$s method.%7$s",
         stageOptions[["N.items"]],
         if (options[["randomize"]]) gettext("randomized") else gettext("non-randomized"),
         if (options[["workflow"]]) prevState[["n"]] else options[["n"]],
@@ -2252,7 +2252,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   )
   table$addFootnote(message)
   if (!options[["workflow"]] && options[["file"]] != "" && !options[["export_sample"]]) {
-    table$addFootnote(gettext("The sample is not exported until 'Export sample to file' is checked."))
+    table$addFootnote(gettext("The sample is not exported until the 'Synchronize' option is checked."))
   }
 
   row <- list()
@@ -2811,7 +2811,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = columnType)
 
   if (!options[["bayesian"]]) {
-    ar <- 1 - options[["conf_level"]]
     dr <- .jfaAuditRiskModelCalculation(options)
     if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
       table$addColumnInfo(name = "lb", title = gettext("Lower"), type = columnType, overtitle = gettextf("%1$s%% Confidence interval", round((1 - dr) * 100, 2)))

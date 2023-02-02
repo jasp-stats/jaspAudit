@@ -104,7 +104,7 @@ Form
 			title: 									qsTr("Prior")
 			columns:								2
 
-			Common.Likelihood { id:likelihood; bayesian: true; evaluation: false; enable_hypergeometric: population.n_units > 0 || data.use_population }
+			Common.Likelihood { id:likelihood; bayesian: true; evaluation: false; enable_hypergeometric: id.count > 0 && values.count > 0 }
 			Common.PriorMethod { use_materiality: objectives.use_materiality }
 		}
 
@@ -113,7 +113,7 @@ Form
 			title:				qsTr("Report")
 			columns:			1
 
-			Common.PlanningOutput { bayesian: true; workflow: true; enable_values: values.count > 1; disable_predictive: likelihood.use_hypergeometric }
+			Common.PlanningOutput { bayesian: true; workflow: true; enable_values: values.count > 0; disable_predictive: likelihood.use_hypergeometric }
 		}
 
 		Section
@@ -163,10 +163,10 @@ Form
 				id: 								toSampling
 				anchors.right: 						parent.right
 				text: 								qsTr("<b>To Selection</b>")
-				enabled: 							!samplingChecked.checked && ((materiality_rel.checked ?
-																					  materiality_rel_val.value > 0 && id.count > 0 :
-																					  materiality_abs_val.value > 0 && id.count > 0 && values.count > 0) ||
-																				 (min_precision_test.checked && min_precision_rel_val.value > 0 && id.count > 0))
+				enabled: 							!samplingChecked.checked && ((objectives.use_materiality && (objectives.absolute_materiality ? 
+																					objectives.absolute_value > 0 && id.count > 0 && values.count > 0 :
+																					  objectives.relative_value > 0 && id.count > 0)) ||
+																				 (objectives.use_precision && objectives.precision_value > 0 && id.count > 0))
 				onClicked:							samplingChecked.checked	= true
 			}
 		}
@@ -198,7 +198,7 @@ Form
 					defaultValue: 						1
 					min: 								1
 					max: 								99999
-					enabled:							(randomize.checked || !method.use_interval) & !separate.checked
+					enabled:							(randomize.checked || !method.use_interval) && !algorithm.use_algorithm2
 				}
 
 				CheckBox
@@ -219,7 +219,7 @@ Form
 			}
 
 			Common.SamplingUnits { enable: !pasteVariables.checked; enable_mus: values.count > 0; force_mus: separate.checked }
-			Common.SelectionMethod { enable: !pasteVariables.checked; force_interval: separate.checked}
+			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; force_interval: separate.checked}
 		}
 
 		VariablesForm
@@ -280,10 +280,6 @@ Form
 
 			Button
 			{
-				enabled:							((materiality_rel.checked ?
-														  materiality_rel_val.value != "0" && id.count > 0 :
-														  materiality_abs_val.value != "0" && id.count > 0 && values.count > 0) ||
-													 (min_precision_test.checked && min_precision_rel_val.value != "0" && id.count > 0))
 				anchors.right:						toExecution.left
 				anchors.rightMargin:				jaspTheme.generalAnchorMargin
 				text:								qsTr("<b>Download Report</b>")
@@ -412,7 +408,7 @@ Form
 					pasteVariables.checked 		= true
 					performAuditTable.colName   = variable_col.value
 					performAuditTable.extraCol	= indicator_col.value
-					critical.use_negative && critical.use_inspect ? performAuditTable.filter = indicator_col.value + " > 0" + " | " + critical.name + " > 0" : performAuditTable.filter = indicator_col.value + " > 0"
+					critical.use_negative && critical.use_inspect ? performAuditTable.filter = indicator_col.value + " > 0" + " | " + critical.use_name + " > 0" : performAuditTable.filter = indicator_col.value + " > 0"
 					performAuditTable.initialValuesSource = continuous.checked ? "values" : ""
 				}
 			}
@@ -524,98 +520,21 @@ Form
 
 		Section
 		{
-			title:									qsTr("Report")
+			title:						qsTr("Report")
 
 			Group
 			{
-				title: 									qsTr("Tables")
+				columns:				1
 
-				CheckBox
-				{
-					text: 								qsTr("Misstated items")
-					name: 								"tableTaints"
-					enabled:							values.count > 0 && data.checked
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Prior and posterior")
-					name: 								"tablePriorPosterior"
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Corrections to population")
-					name: 								"tableCorrections"
-					enabled:							values.count > 0
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Assumption checks")
-					name: 								"tableAssumptions"
-					checked: 							separate.checked
-					enabled: 							separate.checked
-
-					CIField
-					{
-						name: 							"tableAssumptionsConfidence"
-						label: 							qsTr("Confidence interval")
-					}
-				}
-			}
-
-			Group
-			{
-				title: 									qsTr("Plots")
-
-				CheckBox
-				{
-					text: 								qsTr("Sampling objectives")
-					name: 								"plotObjectives"
-				}
-
-				CheckBox
-				{
-					id: 								plotPosterior
-					text: 								qsTr("Prior and posterior")
-					name: 								"plotPosterior"
-
-					CheckBox
-					{
-						id: 							plotPosteriorInfo
-						text: 							qsTr("Additional info")
-						name: 							"plotPosteriorInfo"
-						checked:						true
-					}
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Posterior predictive")
-					name: 								"plotPosteriorPredictive"
-					enabled:							!hypergeometric.checked
-					debug:								true
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Scatter plot")
-					name: 								"plotScatter"
-					enabled: 							continuous.checked
-					debug:								true
-
-					CheckBox
-					{
-						text: 							qsTr("Display correlation")
-						name:							"plotScatterCorrelation"
-					}
-
-					CheckBox
-					{
-						text: 							qsTr("Display item ID's")
-						name:							"plotScatterId"
-					}
+				Common.EvaluationOutput
+				{ 
+					bayesian: true
+					enable_taints: values.count > 0 && !data.use_stats
+					enable_corrections: values.count > 0
+					enable_assumptions: algorithm.use_algorithm2
+					enable_objectives: objectives.use_materiality || objectives.use_precision
+					enable_predictive: !likelihood.use_hypergeometric
+					enable_scatter: continuous.checked
 				}
 			}
 		}

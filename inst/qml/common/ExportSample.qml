@@ -26,42 +26,47 @@ Section
 {
 	property bool	enable:	false
 	
-	title: 							qsTr("Export")
+	title: 						qsTr("Export")
 
 	Group
 	{
-		enabled: 					enable
+		enabled: 				enable
 
 		ComputedColumnField
 		{
-			id:						name_indicator
-			name: 					"name_indicator"
-			text: 					qsTr("Step 1: Column name selection result")
-			placeholderText: 		qsTr("e.g. selected")
-			fieldWidth: 			120 * preferencesModel.uiScale
+			id:					name_indicator
+			name: 				"name_indicator"
+			text: 				qsTr("Step 1: Column name selection result")
+			placeholderText: 	qsTr("e.g. selected")
+			fieldWidth: 		120 * preferencesModel.uiScale
+		}
+
+		FileSelector
+		{
+			id:					file
+			name:				"file"
+			label:				qsTr("Step 2: File name")
+			placeholderText: 	qsTr("e.g. sample.csv")
+			filter:				"*.csv"
+			save:				true
+			fieldWidth:			180 * preferencesModel.uiScale
+			enabled:			name_indicator.value != ""
 		}
 
 		Row
 		{
-			spacing: 				5 * preferencesModel.uiScale
-			enabled:				name_indicator.value != ""
-
-			FileSelector
+			spacing: 			35 * preferencesModel.uiScale
+			Label
 			{
-				id:					file
-				name:				"file"
-				label:				qsTr("Step 2: File")
-				placeholderText: 	qsTr("e.g. sample.csv")
-				filter:				"*.csv"
-				save:				true
-				fieldWidth:			180 * preferencesModel.uiScale
+				text:			qsTr("Step 3: Enable synchronization")
+				enabled:		name_indicator.value != "" && file.value != ""
 			}
 
 			CheckBox
 			{
-				name: 				"export_sample"
-				text: 				qsTr("Save")
-				enabled:			name_indicator.value != "" && file.value != ""
+				name: 			"export_sample"
+				text: 			qsTr("Synchronize")
+				enabled:		name_indicator.value != "" && file.value != ""
 			}
 		}
 	}

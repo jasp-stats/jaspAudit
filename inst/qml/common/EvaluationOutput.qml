@@ -106,7 +106,6 @@ Group
 			name: 			"plotPosteriorPredictive"
 			visible:		bayesian
 			enabled:		enable_predictive
-			debug:			true
 		}
 
 		CheckBox

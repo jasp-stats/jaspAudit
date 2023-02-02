@@ -117,7 +117,7 @@
       }
 
       plotList <- list(text_left, plot_middle, text_right)
-      plotList <- c(plotList, mainGraph = list(plot))
+      plotList <- c(plotList, mainGraph = list(p))
       p <- jaspGraphs:::jaspGraphsPlot$new(subplots = plotList, layout = matrix(c(1, 4, 2, 4, 3, 4), nrow = 2), heights = c(0.2, 0.8), widths = c(0.4, 0.2, 0.4))
     }
     fg$plotObject <- p
@@ -181,7 +181,7 @@
 
     size <- if (stage == "planning") parentState[["n"]] else parentState[["N.units"]] - parentState[["n"]]
     if (size <= 0) {
-      figure$setError("The number of units in the population is lower than the sample size")
+      fg$setError("The number of units in the population is lower than the sample size")
       return()
     }
 
@@ -189,7 +189,7 @@
 	p <- plot(predict(object, size)) +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "none")
-    figure$plotObject <- p
+    fg$plotObject <- p
   }
 
   if (options[["explanatoryText"]]) {
