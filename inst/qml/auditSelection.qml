@@ -114,7 +114,7 @@ Form
 		}
 	}
 
-	Common.SamplingUnits { id: units; enable_mus: values.count > 0}
+	Common.SamplingUnits { id: units; enable_mus: values.count > 0 }
 	Common.SelectionMethod { id: method }
 	Common.ExplanatoryText { }
 

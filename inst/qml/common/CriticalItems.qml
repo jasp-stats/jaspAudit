@@ -27,6 +27,7 @@ Group
 	readonly	property bool	use_negative:	critical_negative.checked
 	readonly	property bool	use_inspect:	critical_inspect.checked
 				property bool	enable:			false
+				property bool	workflow:		true
 				property alias	use_name:		critical_name.value
 
 	name:					"critical_items"
@@ -46,7 +47,8 @@ Group
 			name: 			"critical_name"
 			text: 			qsTr("Column name")
 			fieldWidth: 	120 * preferencesModel.uiScale
-			value: 			qsTr("critical")
+			value: 			workflow ? qsTr("critical") : ""
+			visible:		workflow
 		}
 
 		RadioButtonGroup

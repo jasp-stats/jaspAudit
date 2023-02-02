@@ -71,18 +71,18 @@
 
   if (is.null(parentContainer[["plotPriorAndPosterior"]])) {
     title <- if (stage == "planning") gettext("Prior and Expected Posterior Distribution") else gettext("Prior and Posterior Distribution")
-    figure <- createJaspPlot(plot = NULL, title = title, width = 530, height = 350)
-    figure$position <- positionInContainer
+    fg <- createJaspPlot(plot = NULL, title = title, width = 530, height = 350)
+    fg$position <- positionInContainer
     depends <- if (stage == "planning") "plotPrior" else c("plotPosterior", "plotPosteriorInfo", "area")
-    figure$dependOn(options = depends)
+    fg$dependOn(options = depends)
 
-    parentContainer[["plotPriorAndPosterior"]] <- figure
+    parentContainer[["plotPriorAndPosterior"]] <- fg
 
     if (is.null(parentState[["posterior"]]) || parentContainer$getError()) {
       return()
     }
 
-	plot <- plot(parentState) +
+	p <- plot(parentState) +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = c(0.8, 0.875)) +
       ggplot2::theme(
@@ -118,10 +118,9 @@
 
       plotList <- list(text_left, plot_middle, text_right)
       plotList <- c(plotList, mainGraph = list(plot))
-      plot <- jaspGraphs:::jaspGraphsPlot$new(subplots = plotList, layout = matrix(c(1, 4, 2, 4, 3, 4), nrow = 2), heights = c(0.2, 0.8), widths = c(0.4, 0.2, 0.4))
+      p <- jaspGraphs:::jaspGraphsPlot$new(subplots = plotList, layout = matrix(c(1, 4, 2, 4, 3, 4), nrow = 2), heights = c(0.2, 0.8), widths = c(0.4, 0.2, 0.4))
     }
-
-    figure$plotObject <- plot
+    fg$plotObject <- p
   }
 
   if (options[["explanatoryText"]]) {
@@ -132,8 +131,8 @@
       "hypergeometric" = gettext("beta-binomial")
     )
     if (stage == "planning") {
-      additionalText1 <- gettextf("The expected posterior distribution is calculated so that its %1$sth percentile lies below the performance materiality (gray dot).", round(options[["conf_level"]] * 100, 2))
-      figureCaption <- createJaspHtml(gettextf(
+      text <- gettextf("The expected posterior distribution is calculated so that its %1$sth percentile lies below the performance materiality (gray dot).", round(options[["conf_level"]] * 100, 2))
+      caption <- createJaspHtml(gettextf(
         "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on the population misstatement \u03B8. The prior parameters (%3$s = %4$s, %5$s = %6$s) are derived from the prior information. %7$s",
         jaspResults[["figNumber"]]$object,
         distribution,
@@ -141,21 +140,21 @@
         round(parentState[["prior"]][["description"]]$alpha, 3),
         "\u03B2",
         round(parentState[["prior"]][["description"]]$beta, 3),
-        if (options[["materiality_test"]]) additionalText1 else ""
+        if (options[["materiality_test"]]) text else ""
       ), "p")
     } else {
-      additionalText <- gettext("The gray dots represent the performance materiality.")
-      figureCaption <- createJaspHtml(gettextf(
+      text <- gettext("The gray dots represent the performance materiality.")
+      caption <- createJaspHtml(gettextf(
         "<b>Figure %1$i.</b> The prior and posterior distribution (%2$s) on the misstatement in the population. %3$s",
         jaspResults[["figNumber"]]$object,
         distribution,
-        if (options[["plotPosteriorInfo"]] && options[["materiality_test"]]) additionalText else ""
+        if (options[["plotPosteriorInfo"]] && options[["materiality_test"]]) text else ""
       ), "p")
     }
-    figureCaption$position <- positionInContainer + 1
-    figureCaption$dependOn(optionsFromObject = parentContainer[["plotPriorAndPosterior"]])
-    figureCaption$dependOn(options = "explanatoryText")
-    parentContainer[["priorAndPosteriorPlotText"]] <- figureCaption
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = parentContainer[["plotPriorAndPosterior"]])
+    caption$dependOn(options = "explanatoryText")
+    parentContainer[["priorAndPosteriorPlotText"]] <- caption
   }
 }
 
@@ -173,12 +172,12 @@
 
   if (is.null(parentContainer[["plotPredictive"]])) {
     title <- if (stage == "planning") gettext("Prior Predictive Distribution") else gettext("Posterior Predictive Distribution")
-    figure <- createJaspPlot(plot = NULL, title = title, width = 530, height = 350)
-    figure$position <- positionInContainer
+    fg <- createJaspPlot(plot = NULL, title = title, width = 530, height = 350)
+    fg$position <- positionInContainer
     depends <- if (stage == "planning") "plotPriorPredictive" else "plotPosteriorPredictive"
-    figure$dependOn(options = depends)
+    fg$dependOn(options = depends)
 
-    parentContainer[["plotPredictive"]] <- figure
+    parentContainer[["plotPredictive"]] <- fg
 
     if (is.null(parentState[["posterior"]]) || parentContainer$getError()) {
       return()
@@ -191,16 +190,16 @@
     }
 
 	object <- if (stage == "planning") parentState[["prior"]] else parentState[["posterior"]]
-	plot <- plot(predict(object, size)) +
+	p <- plot(predict(object, size)) +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "none")
-    figure$plotObject <- plot
+    figure$plotObject <- p
   }
 
   if (options[["explanatoryText"]]) {
     object <- if (stage == "planning") parentState[["prior"]] else parentState[["posterior"]]
     size <- if (stage == "planning") parentState[["n"]] else parentState[["N.units"]] - parentState[["n"]]
-    figureCaption <- createJaspHtml(gettextf(
+    caption <- createJaspHtml(gettextf(
       "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays the predictions of the %2$s distribution for %4$s <i>n</i> = %5$s.",
       jaspResults[["figNumber"]]$object,
       if (stage == "planning") gettext("prior") else gettext("posterior"),
@@ -208,10 +207,10 @@
       if (stage == "planning") gettext("the intended sample of") else gettext("the remaining population of"),
       size
     ), "p")
-    figureCaption$position <- positionInContainer + 1
-    figureCaption$dependOn(optionsFromObject = parentContainer[["plotPredictive"]])
-    figureCaption$dependOn(options = "explanatoryText")
-    parentContainer[["priorPredictiveText"]] <- figureCaption
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = parentContainer[["plotPredictive"]])
+    caption$dependOn(options = "explanatoryText")
+    parentContainer[["priorPredictiveText"]] <- caption
   }
 }
 
@@ -230,32 +229,32 @@
   if (is.null(parentContainer[["tablePriorPosterior"]])) {
     title <- if (stage == "planning") gettext("Descriptive Statistics for Prior and Expected Posterior Distribution") else gettext("Descriptive Statistics for Prior and Posterior Distribution")
     tableTitle <- gettextf("<b>Table %1$i.</b> %2$s", jaspResults[["tabNumber"]]$object, title)
-    table <- createJaspTable(tableTitle)
-    table$position <- positionInContainer
-	table$transpose <- TRUE
+    tb <- createJaspTable(tableTitle)
+    tb$position <- positionInContainer
+	tb$transpose <- TRUE
     depends <- if (stage == "planning") c("tablePrior", "likelihood", "tableImplicitSample", "tableBookDist") else "tablePriorPosterior"
-    table$dependOn(options = depends)
+    tb$dependOn(options = depends)
 
-    table$addColumnInfo(name = "v", title = "", type = "string")
-    table$addColumnInfo(name = "form", title = gettext("Functional form"), type = "string")
+    tb$addColumnInfo(name = "v", title = "", type = "string")
+    tb$addColumnInfo(name = "form", title = gettext("Functional form"), type = "string")
     if (options[["materiality_test"]]) {
-      table$addColumnInfo(name = "hMin", title = gettextf("Support %1$s", "H\u208B"), type = "number")
-      table$addColumnInfo(name = "hPlus", title = gettextf("Support %1$s", "H\u208A"), type = "number")
-      table$addColumnInfo(name = "odds", title = gettextf("Ratio %1$s", "<sup>H\u208B</sup>&frasl;<sub>H\u208A</sub>"), type = "number")
+      tb$addColumnInfo(name = "hMin", title = gettextf("Support %1$s", "H\u208B"), type = "number")
+      tb$addColumnInfo(name = "hPlus", title = gettextf("Support %1$s", "H\u208A"), type = "number")
+      tb$addColumnInfo(name = "odds", title = gettextf("Ratio %1$s", "<sup>H\u208B</sup>&frasl;<sub>H\u208A</sub>"), type = "number")
     }
-    table$addColumnInfo(name = "mean", title = gettext("Mean"), type = "number")
-    table$addColumnInfo(name = "median", title = gettext("Median"), type = "number")
-    table$addColumnInfo(name = "mode", title = gettext("Mode"), type = "number")
-    table$addColumnInfo(name = "bound", title = gettextf("%1$s%% Upper bound", round(options[["conf_level"]] * 100, 2)), type = "number")
-    table$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
+    tb$addColumnInfo(name = "mean", title = gettext("Mean"), type = "number")
+    tb$addColumnInfo(name = "median", title = gettext("Median"), type = "number")
+    tb$addColumnInfo(name = "mode", title = gettext("Mode"), type = "number")
+    tb$addColumnInfo(name = "bound", title = gettextf("%1$s%% Upper bound", round(options[["conf_level"]] * 100, 2)), type = "number")
+    tb$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
 
-    parentContainer[["tablePriorPosterior"]] <- table
+    parentContainer[["tablePriorPosterior"]] <- tb
 
     names <- c(gettext("Prior"), gettext("Posterior"), gettext("Shift"))
 
     if (stage == "planning") {
       if (!ready || parentContainer$getError()) {
-        table[["v"]] <- names
+        tb[["v"]] <- names
         return()
       }
     } else if (stage == "evaluation") {
@@ -264,7 +263,7 @@
         (options[["dataType"]] == "stats" && options[["n"]] == 0) ||
         (parentOptions[["materiality_val"]] == 0 && options[["materiality_test"]]) ||
         parentContainer$getError()) {
-        table[["v"]] <- names
+        tb[["v"]] <- names
         return()
       }
     }
@@ -272,17 +271,16 @@
     likelihood <- if (stage == "planning") parentState[["likelihood"]] else parentState[["method"]]
 
     if (options[["materiality_test"]] && likelihood != "hypergeometric") {
-      table$addFootnote(message = gettextf("%1$s %2$s vs. %3$s %2$s.", "H\u208B: \u03B8 <", round(parentState[["materiality"]], 3), "H\u208A: \u03B8 >"))
+      tb$addFootnote(message = gettextf("%1$s %2$s vs. %3$s %2$s.", "H\u208B: \u03B8 <", round(parentState[["materiality"]], 3), "H\u208A: \u03B8 >"))
     }
     if (options[["materiality_test"]] && likelihood == "hypergeometric") {
-      table$addFootnote(message = gettextf("%1$s %2$s vs. %3$s %2$s.", "H\u208B: \u03B8 <", ceiling(parentState[["materiality"]] * parentState[["N.units"]]), "H\u208A: \u03B8 >="))
+      tb$addFootnote(message = gettextf("%1$s %2$s vs. %3$s %2$s.", "H\u208B: \u03B8 <", ceiling(parentState[["materiality"]] * parentState[["N.units"]]), "H\u208A: \u03B8 >="))
     }
 
     N <- parentState[["N.units"]]
     prior <- parentState[["prior"]]
     posterior <- parentState[["posterior"]]
     n <- parentState[["n"]]
-    k <- parentState[["x"]]
 
     if (likelihood == "poisson") {
       formPrior <- paste0("gamma(\u03B1 = ", round(prior[["description"]]$alpha, 3), ", \u03B2 = ", round(prior[["description"]]$beta, 3), ")")
@@ -313,7 +311,7 @@
       )
     }
 
-    table$addRows(rows)
+    tb$addRows(rows)
   }
 }
 

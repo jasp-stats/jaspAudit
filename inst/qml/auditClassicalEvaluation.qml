@@ -30,7 +30,7 @@ import "./common" as Common
 Form
 {
 
-	columns: 									1
+	columns: 						1
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }
@@ -50,11 +50,11 @@ Form
 
 	Section
 	{
-		title:			qsTr("Report")
+		title:						qsTr("Report")
 
 		Group
 		{
-			columns:	2
+			columns:				1
 
 			Common.EvaluationOutput 
 			{
@@ -69,89 +69,89 @@ Form
 
 	Section
 	{
-		title:									qsTr("Advanced")
+		title:						qsTr("Advanced")
 
 		Group
 		{
-			columns:								3
+			columns:				3
 
 			RadioButtonGroup
 			{
-				title: 								qsTr("Method")
-				name: 								"method"
+				title: 				qsTr("Method")
+				name: 				"method"
 
 				RadioButton
 				{
-					name: 							"hypergeometric"
-					text: 							qsTr("Hypergeometric")
-					enabled:						population.n_units > 0 || data.use_population
+					name: 			"hypergeometric"
+					text: 			qsTr("Hypergeometric")
+					enabled:		population.n_units > 0 || data.use_population
 				}
 
 				RadioButton
 				{
-					name: 							"binomial"
-					text: 							qsTr("Binomial")
-					checked:						true
+					name: 			"binomial"
+					text: 			qsTr("Binomial")
+					checked:		true
 				}
 
 				RadioButton
 				{
-					name: 							"poisson"
-					text: 							qsTr("Poisson")
+					name: 			"poisson"
+					text: 			qsTr("Poisson")
 				}
 
 				RadioButton
 				{
-					id: 							stringer
-					name: 							"stringer"
-					text: 							qsTr("Stringer")
-					enabled: 						!stats.checked && values.count > 0 && auditResult.count > 0
+					id: 			stringer
+					name: 			"stringer"
+					text: 			qsTr("Stringer")
+					enabled: 		!stats.checked && values.count > 0 && auditResult.count > 0
 
 					CheckBox
 					{
-						name: 						"lta"
-						text: 						qsTr("LTA adjustment")
-						checked: 					true
+						name: 		"lta"
+						text: 		qsTr("LTA adjustment")
+						checked: 	true
 					}
 				}
 
 				RadioButton
 				{
-					name: 							"mpu"
-					text: 							qsTr("Mean-per-unit estimator")
-					enabled: 						!stats.checked && values.count > 0 && auditResult.count > 0
+					name: 			"mpu"
+					text: 			qsTr("Mean-per-unit estimator")
+					enabled: 		!stats.checked && values.count > 0 && auditResult.count > 0
 				}
 
 				RadioButton
 				{
-					name: 							"direct"
-					text: 							qsTr("Direct estimator")
-					enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
+					name: 			"direct"
+					text: 			qsTr("Direct estimator")
+					enabled: 		!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 				}
 
 				RadioButton
 				{
-					name: 							"difference"
-					text: 							qsTr("Difference estimator")
-					enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
+					name: 			"difference"
+					text: 			qsTr("Difference estimator")
+					enabled: 		!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 				}
 
 				RadioButton
 				{
-					name: 							"quotient"
-					text: 							qsTr("Ratio estimator")
-					enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
+					name: 			"quotient"
+					text: 			qsTr("Ratio estimator")
+					enabled: 		!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 				}
 
 				RadioButton
 				{
-					name: 							"regression"
-					text: 							qsTr("Regression estimator")
-					enabled: 						!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
+					name: 			"regression"
+					text: 			qsTr("Regression estimator")
+					enabled: 		!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
 				}
 			}
 
-			Common.CriticalItems { enable: !data.use_stats && values.count > 0 }
+			Common.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
 			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
 		}
 	}

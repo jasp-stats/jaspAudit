@@ -30,7 +30,7 @@ import "./common" as Common
 Form
 {
 
-	columns: 									1
+	columns: 1
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }
@@ -47,27 +47,30 @@ Form
 
 	Section
 	{
-		title: 									qsTr("Prior")
-		columns:								3
+		title: qsTr("Prior")
+		Group
+		{
+			columns: 3
 
-		Common.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
-		Common.PriorMethod { use_materiality: objectives.use_materiality}
-		Common.ExpectedErrors { show_all: true; enable_all: algorithm.use_algorithm2 }
+			Common.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
+			Common.PriorMethod { use_materiality: objectives.use_materiality}
+			Common.ExpectedErrors { show_all: true; enable_all: algorithm.use_algorithm2 }
+		}
 	}
 
 	Section
 	{
-		title:			qsTr("Report")
+		title: qsTr("Report")
 
 		Group
 		{
-			columns:	2
+			columns: 1
 
 			Common.EvaluationOutput
 			{ 
 				bayesian: true
 				enable_taints: !data.use_stats && variables.use_book && variables.use_real
-				enable_corrections: n_units.value > 0 || data.use_population
+				enable_corrections: population.n_units > 0 || data.use_population
 				enable_assumptions: algorithm.use_algorithm2
 				enable_objectives: objectives.use_materiality || objectives.use_precision
 				enable_predictive: !likelihood.use_hypergeometric
@@ -78,21 +81,21 @@ Form
 
 	Section
 	{
-		title: 									qsTr("Advanced")
+		title: qsTr("Advanced")
 
 		Group
 		{
-			columns:								3
+			columns: 3
 
-			Common.CriticalItems { enable: !data.use_stats && values.count > 0 }
+			Common.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
 
 			Common.Algorithm
 			{
-				id: 								algorithm
-				hide_algorithm1:					false
-				enable:								!data.use_stats
-				enable_algorithm1: 					stratum.count > 1
-				enable_algorithm2: 					!variables.use_strata && variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
+				id: 				algorithm
+				hide_algorithm1:	false
+				enable:				!data.use_stats
+				enable_algorithm1: 	variables.use_strata
+				enable_algorithm2: 	!variables.use_strata && variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
 			}
 
 			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }

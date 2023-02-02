@@ -6,7 +6,7 @@ Date: 2023-02-08
 Author: Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille, and Ruud Wetzels
 Website: https://github.com/jasp-stats/jaspAudit
 Maintainer: Koen Derks <k.derks@nyenrode.nl>
-Description: Statistical methods for auditing sampling and data auditing.
+Description: Statistical methods for auditing.
 License: GPL (>= 2)
 Encoding: UTF-8
 Imports:

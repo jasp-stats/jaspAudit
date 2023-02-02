@@ -26,7 +26,7 @@ import "./common" as Common
 
 Form 
 {
-	columns:			1
+	columns: 1
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }
@@ -43,11 +43,11 @@ Form
 
 	Section
 	{
-		title:			qsTr("Report")
-		debug:			true
+		title: qsTr("Report")
+		debug: true
 		Group
 		{
-			columns:	2
+			columns: 2
 
 			Common.PlanningOutput { bayesian: false; }
 		}
@@ -55,10 +55,10 @@ Form
 
 	Section
 	{
-		title:		qsTr("Advanced")
+		title: qsTr("Advanced")
 		Group
 		{
-			columns:	3
+			columns: 3
 
 			Common.Likelihood { bayesian: false; enable_hypergeometric: population.n_units > 0 }
 			Common.Iterations { }
