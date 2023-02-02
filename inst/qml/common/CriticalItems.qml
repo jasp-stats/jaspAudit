@@ -24,17 +24,48 @@ import JASP.Widgets
 
 Group
 {
-	title: 		qsTr("Tables")
+	readonly	property bool	use_negative:	critical_negative.checked
+	readonly	property bool	use_inspect:	critical_inspect.checked
+				property bool	enable:			false
+				property alias	use_name:		critical_name.value
+
+	name:					"critical_items"
+	title:					qsTr("Critical Items")
+	enabled:				enable
 
 	CheckBox
 	{
-		text: 	qsTr("Selected items")
-		name: 	"tableSample"
-	}
+		id:					critical_negative
+		name:				"critical_negative"
+		text:				qsTr("Negative book values")
+		checked:			true
 
-	CheckBox
-	{
-		text: 	qsTr("Descriptive statistics")
-		name: 	"tableDescriptives"
+		ComputedColumnField
+		{
+			id:				critical_name
+			name: 			"critical_name"
+			text: 			qsTr("Column name")
+			fieldWidth: 	120 * preferencesModel.uiScale
+			value: 			qsTr("critical")
+		}
+
+		RadioButtonGroup
+		{
+			name: 			"critical_action"
+
+			RadioButton
+			{
+				id:			critical_inspect
+				text: 		qsTr("Keep")
+				name: 		"inspect"
+				checked: 	true
+			}
+
+			RadioButton
+			{
+				text: 		qsTr("Remove")
+				name: 		"remove"
+			}
+		}
 	}
 }

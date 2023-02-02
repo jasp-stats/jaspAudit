@@ -82,64 +82,8 @@
       return()
     }
 
-    method <- if (stage == "planning") options[["likelihood"]] else options[["method"]]
-    info <- if (stage == "planning") FALSE else options[["plotPosteriorInfo"]]
-
-    if (method != "hypergeometric") { # Gamma and beta priors
-
-      title <- if (options[["separateMisstatement"]]) gettextf("Unseen population misstatement %1$s", "\u03B8") else gettextf("Population misstatement %1$s", "\u03B8")
-      dataPrior <- data.frame(x = c(0, 1), type = factor(gettext("Prior")))
-      dataPosterior <- data.frame(x = c(0, 1), type = factor(gettext("Posterior")))
-
-      if (method == "poisson") {
-        ySeq <- c(dgamma(seq(0, 1, length = 1000), shape = parentState[["prior"]][["description"]]$alpha, rate = parentState[["prior"]][["description"]]$beta), dgamma(seq(0, 1, length = 1000), shape = parentState[["posterior"]][["description"]]$alpha, rate = parentState[["posterior"]][["description"]]$beta))
-        plot <- ggplot2::ggplot(NULL, mapping = ggplot2::aes(x = x, linetype = type)) +
-          ggplot2::stat_function(data = dataPrior, fun = dgamma, args = list(shape = parentState[["prior"]][["description"]]$alpha, rate = parentState[["prior"]][["description"]]$beta), n = 500, size = 0.9) +
-          ggplot2::stat_function(data = dataPosterior, fun = dgamma, args = list(shape = parentState[["posterior"]][["description"]]$alpha, rate = parentState[["posterior"]][["description"]]$beta), n = 500, size = 0.9)
-      } else {
-        ySeq <- c(dbeta(seq(0, 1, length = 1000), shape1 = parentState[["prior"]][["description"]]$alpha, shape2 = parentState[["prior"]][["description"]]$beta), dbeta(seq(0, 1, length = 1000), shape1 = parentState[["posterior"]][["description"]]$alpha, shape2 = parentState[["posterior"]][["description"]]$beta))
-        plot <- ggplot2::ggplot(NULL, mapping = ggplot2::aes(x = x, linetype = type)) +
-          ggplot2::stat_function(data = dataPrior, fun = dbeta, args = list(shape1 = parentState[["prior"]][["description"]]$alpha, shape2 = parentState[["prior"]][["description"]]$beta), n = 500, size = 0.9) +
-          ggplot2::stat_function(data = dataPosterior, fun = dbeta, args = list(shape1 = parentState[["posterior"]][["description"]]$alpha, shape2 = parentState[["posterior"]][["description"]]$beta), n = 500, size = 0.9)
-      }
-      ySeq <- ySeq[!is.infinite(ySeq)]
-      yMax <- max(ySeq)
-      yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, yMax * 1.1))
-
-      plot <- plot +
-        ggplot2::scale_x_continuous(name = title, limits = c(0, 1), breaks = seq(0, 1, 0.2)) +
-        ggplot2::scale_y_continuous(name = gettext("Density"), limits = c(0, max(yBreaks)), breaks = yBreaks) +
-        ggplot2::scale_linetype_manual(values = c("solid", "22"), breaks = c(gettext("Posterior"), gettext("Prior"))) +
-        ggplot2::labs(linetype = "")
-
-      if (info && options[["materiality_test"]]) {
-        dPrior <- switch(method,
-          "poisson" = dgamma(parentState[["materiality"]], shape = parentState[["prior"]][["description"]]$alpha, rate = parentState[["prior"]][["description"]]$beta),
-          "binomial" = dbeta(parentState[["materiality"]], shape1 = parentState[["prior"]][["description"]]$alpha, shape2 = parentState[["prior"]][["description"]]$beta)
-        )
-        dPost <- switch(method,
-          "poisson" = dgamma(parentState[["materiality"]], shape = parentState[["posterior"]][["description"]]$alpha, rate = parentState[["posterior"]][["description"]]$beta),
-          "binomial" = dbeta(parentState[["materiality"]], shape1 = parentState[["posterior"]][["description"]]$alpha, shape2 = parentState[["posterior"]][["description"]]$beta)
-        )
-        matData <- data.frame(x = rep(parentState[["materiality"]], 2), y = c(dPrior, dPost))
-        plot <- plot + jaspGraphs::geom_point(mapping = ggplot2::aes(x = x, y = y), data = matData, size = 4, stroke = 1.2, inherit.aes = FALSE)
-      }
-    } else {
-      dataPrior <- data.frame(x = 0:parentState[["N.units"]], y = extraDistr::dbbinom(x = 0:parentState[["N.units"]], size = parentState[["N.units"]], alpha = parentState[["prior"]][["description"]]$alpha, beta = parentState[["prior"]][["description"]]$beta), type = factor(gettext("Prior")))
-      dataPosterior <- data.frame(x = 0:(parentState[["N.units"]] - parentState[["n"]]), y = extraDistr::dbbinom(x = 0:(parentState[["N.units"]] - parentState[["n"]]), size = parentState[["N.units"]] - parentState[["n"]], alpha = parentState[["posterior"]][["description"]]$alpha, beta = parentState[["posterior"]][["description"]]$beta), type = factor(gettext("Posterior")))
-      xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, parentState[["N.units"]]), min.n = 4)
-      yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, max(dataPrior$y, dataPosterior$y) * 1.1))
-      yMax <- max(dataPrior$y, dataPosterior$y)
-      plot <- ggplot2::ggplot(NULL, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
-        ggplot2::geom_bar(data = dataPrior, stat = "identity", color = "black") +
-        ggplot2::geom_bar(data = dataPosterior, stat = "identity", color = "black") +
-        ggplot2::scale_x_continuous(name = gettext("Population errors"), limits = c(0, max(xBreaks)), breaks = xBreaks) +
-        ggplot2::scale_y_continuous(name = gettext("Probability"), limits = c(0, max(yBreaks)), breaks = yBreaks) +
-        ggplot2::scale_fill_manual(values = c("lightgray", "darkgray"), breaks = c(gettext("Prior"), gettext("Posterior"))) +
-        ggplot2::labs(fill = "")
-    }
-
-    plot <- plot + jaspGraphs::geom_rangeframe() +
+	plot <- plot(parentState) +
+      jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = c(0.8, 0.875)) +
       ggplot2::theme(
         legend.title = ggplot2::element_blank(),
@@ -148,21 +92,18 @@
         legend.key.width = ggplot2::unit(1.5, "cm")
       )
 
-    if (info && stage == "evaluation") {
+    if (stage == "evaluation" && options[["plotPosteriorInfo"]]) {
       if (options[["area"]] == "area_bound") {
         label_mode <- paste0("Mode: ", formatC(parentState[["posterior"]]$statistics$mode, 3, format = "f"))
         label_ub <- paste0(round(options[["conf_level"]] * 100, 3), "% CI: [0, ", formatC(parentState[["posterior"]]$statistics$ub, 3, format = "f"), "]")
-        errorDat <- data.frame(xmin = 0, xmax = parentState[["posterior"]]$statistics$ub, y = (yBreaks[length(yBreaks)] - yMax) / 2 + yMax)
       } else {
         label_mode <- paste0("Median: ", formatC(parentState[["posterior"]]$statistics$median, 3, format = "f"))
         int <- .jfaCredibleIntervalCalculation(options, parentState)
         lb <- if (options[["separateMisstatement"]]) int[["lb_unseen"]] else int[["lb"]]
         ub <- if (options[["separateMisstatement"]]) int[["ub_unseen"]] else int[["ub"]]
         label_ub <- paste0(round(options[["conf_level"]] * 100, 3), "% CI: [", formatC(lb, 3, format = "f"), ", ", formatC(ub, 3, format = "f"), "]")
-        errorDat <- data.frame(xmin = lb, xmax = ub, y = (yBreaks[length(yBreaks)] - yMax) / 2 + yMax)
       }
-      plot <- plot + ggplot2::geom_errorbarh(data = errorDat, ggplot2::aes(y = y, xmin = xmin, xmax = xmax), inherit.aes = FALSE, size = 1, height = (yBreaks[length(yBreaks)] - (yMax)) / 3 * 2)
-      text_right <- jaspGraphs:::draw2Lines(c(label_ub, label_mode), x = 1, align = "right")
+       text_right <- jaspGraphs:::draw2Lines(c(label_ub, label_mode), x = 1, align = "right")
 
       if (options[["materiality_test"]] && !is.na(parentState[["posterior"]]$hypotheses$bf.h1)) {
         lab1 <- paste0("BF\u208A\u208B = ", formatC(parentState[["posterior"]]$hypotheses$bf.h0, 3, format = "f"))
@@ -249,20 +190,10 @@
       return()
     }
 
-    object <- if (stage == "planning") parentState[["prior"]] else parentState[["posterior"]]
-    likelihood <- if (stage == "planning") parentState[["likelihood"]] else parentState[["method"]]
-    x <- 0:size
-    y <- as.numeric(predict(object, n = size))
-    xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, x))
-    yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, y))
-    plotData <- data.frame(x = x, y = y)
-    plot <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y)) +
-      ggplot2::geom_bar(stat = "identity", color = "black", fill = "lightgray") +
-      ggplot2::scale_x_continuous(name = if (likelihood == "poisson") gettext("Predicted samples before an error") else gettext("Predicted errors"), limits = c(-1, max(xBreaks)), breaks = xBreaks) +
-      ggplot2::scale_y_continuous(name = gettext("Probability"), limits = c(0, max(yBreaks)), breaks = yBreaks) +
+	object <- if (stage == "planning") parentState[["prior"]] else parentState[["posterior"]]
+	plot <- plot(predict(object, size)) +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "none")
-
     figure$plotObject <- plot
   }
 

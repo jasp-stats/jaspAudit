@@ -110,61 +110,10 @@ Form
 
 		Section
 		{
-			title: 									qsTr("Report")
-			columns:								2
+			title:				qsTr("Report")
+			columns:			1
 
-			Group
-			{
-				title: 								qsTr("Tables")
-
-				CheckBox
-				{
-					text: 							qsTr("Descriptive statistics")
-					name: 							"tableBookDist"
-					enabled:						values.count > 0
-					debug:							true
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Prior and posterior")
-					name: 							"tablePrior"
-				}
-			}
-
-			Group
-			{
-				title: 								qsTr("Plots")
-
-				CheckBox
-				{
-					name: 							"plotBookDist"
-					text: 							qsTr("Distribution of book values")
-					enabled: 						values.count > 0
-					debug:							true
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Compare sample sizes")
-					name: 							"plotSampleSizes"
-					enabled:						!separate.checked
-					debug:							true
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Prior and posterior")
-					name: 							"plotPrior"
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Prior predictive")
-					name: 							"plotPriorPredictive"
-					enabled:						!lik_hypergeometric.checked
-				}
-			}
+			Common.PlanningOutput { bayesian: true; workflow: true; enable_values: values.count > 1; disable_predictive: likelihood.use_hypergeometric }
 		}
 
 		Section
@@ -172,50 +121,7 @@ Form
 			title:									qsTr("Advanced")
 			columns:								3
 
-			Group
-			{
-				name:								"critical_items"
-				title:								qsTr("Critical Items")
-				enabled:							data.checked && values.count > 0 && !pasteVariables.checked
-
-				CheckBox
-				{
-					id: 							critical_negative
-					name:							"critical_negative"
-					text:							qsTr("Negative book values")
-					enabled:						values.count > 0
-					checked:						true
-
-					ComputedColumnField
-					{
-						id: 						critical_name
-						name: 						"critical_name"
-						text: 						qsTr("Column name")
-						fieldWidth: 				120 * preferencesModel.uiScale
-						value: 						qsTr("critical")
-					}
-
-					RadioButtonGroup
-					{
-						name: 						"critical_action"
-
-						RadioButton
-						{
-							id:						inspect
-							text: 					qsTr("Keep")
-							name: 					"inspect"
-							checked: 				true
-						}
-
-						RadioButton
-						{
-							text: 					qsTr("Remove")
-							name: 					"remove"
-						}
-					}
-				}
-			}
-
+			Common.CriticalItems { id: critical; enable: !data.use_stats && values.count > 0 && !pasteVariables.checked }
 			Common.Iterations { enable: !pasteVariables.checked }
 			Common.Display { show_monetary: true; enable_monetary: values.count > 0 }
 
@@ -224,31 +130,6 @@ Form
 				id: 								algorithm
 				enable:								!pasteVariables.checked
 				enable_algorithm2: 					id.count > 0 && values.count > 0 && likelihood.use_binomial
-			}
-			
-			Group
-			{
-				Layout.columnSpan:					3
-
-				Row
-				{
-					CheckBox
-					{
-						id: 						separate
-						text: 						qsTr("Assume homogeneous taints")
-						name: 						"separateMisstatement"
-						enabled:					!pasteVariables.checked && id.count > 0 && values.count > 0 && lik_binomial.checked
-						onCheckedChanged:			{
-							if (!checked & expected_all.checked) expected_rel.checked = true
-						}
-					}
-
-					HelpButton
-					{
-						toolTip: 					qsTr("Click to learn more about this assumption")
-						helpPage:					"Audit/separateKnownAndUnknownMisstatement"
-					}
-				}
 			}
 		}
 
@@ -376,24 +257,10 @@ Form
 
 		Section
 		{
-			title:										qsTr("Tables")
-
+			title:			qsTr("Report")
 			Group
 			{
-				title: 									qsTr("Tables")
-
-				CheckBox
-				{
-					text: 								qsTr("Descriptive statistics")
-					name: 								"tableDescriptives"
-					debug:								true
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Selected items")
-					name: 								"tableSample"
-				}
+				Common.SelectionOutput { }
 			}
 		}
 
@@ -545,7 +412,7 @@ Form
 					pasteVariables.checked 		= true
 					performAuditTable.colName   = variable_col.value
 					performAuditTable.extraCol	= indicator_col.value
-					critical_negative.checked && inspect.checked ? performAuditTable.filter = indicator_col.value + " > 0" + " | " + critical_name.value + " > 0" : performAuditTable.filter = indicator_col.value + " > 0"
+					critical.use_negative && critical.use_inspect ? performAuditTable.filter = indicator_col.value + " > 0" + " | " + critical.name + " > 0" : performAuditTable.filter = indicator_col.value + " > 0"
 					performAuditTable.initialValuesSource = continuous.checked ? "values" : ""
 				}
 			}

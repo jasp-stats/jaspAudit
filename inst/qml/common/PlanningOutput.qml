@@ -26,18 +26,29 @@ Group
 {
 	property bool	bayesian:			false
 	property bool	disable_predictive: true
+	property bool	workflow:			false
+	property bool   enable_values:		false
 
 	columns:			2
 	
 	Group
 	{
 		title: 			qsTr("Tables")
-		visible:		bayesian
+		visible:		bayesian || workflow
 
 		CheckBox
 		{
 			text: 		qsTr("Prior and posterior")
 			name: 		"tablePrior"
+			visible:	bayesian
+		}
+
+		CheckBox
+		{
+			text: 		qsTr("Descriptive statistics")
+			name: 		"tableBookDist"
+			visible:	workflow
+			enabled:	enable_values
 		}
 	}
 
@@ -49,7 +60,6 @@ Group
 		{
 			text: 		qsTr("Compare sample sizes")
 			name: 		"plotSampleSizes"
-			debug:		true
 		}
 
 		CheckBox
@@ -57,7 +67,14 @@ Group
 			text: 		qsTr("Assumed error distribution")
 			name: 		"plotErrorDist"
 			visible:	!bayesian
-			debug:		true
+		}
+
+		CheckBox
+		{
+			name: 		"plotBookDist"
+			text: 		qsTr("Distribution of book values")
+			visible:	workflow
+			enabled:	enable_values
 		}
 
 		CheckBox

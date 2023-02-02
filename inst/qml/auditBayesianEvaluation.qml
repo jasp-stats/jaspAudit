@@ -84,39 +84,7 @@ Form
 		{
 			columns:								3
 
-			Group
-			{
-				name:								"critical_items"
-				title:								qsTr("Critical Items")
-				enabled:							!data.use_stats && values.count > 0
-
-				CheckBox
-				{
-					id: 							flagNegativeValues
-					name:							"critical_negative"
-					text:							qsTr("Negative book values")
-					enabled:						values.count > 0
-					checked:						true
-
-					RadioButtonGroup
-					{
-						name: 						"critical_action"
-
-						RadioButton
-						{
-							text: 					qsTr("Keep")
-							name: 					"inspect"
-							checked: 				true
-						}
-
-						RadioButton
-						{
-							text: 					qsTr("Remove")
-							name: 					"remove"
-						}
-					}
-				}
-			}
+			Common.CriticalItems { enable: !data.use_stats && values.count > 0 }
 
 			Common.Algorithm
 			{

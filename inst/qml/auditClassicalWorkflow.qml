@@ -106,45 +106,10 @@ Form
 
 		Section
 		{
-			title:									qsTr("Report")
-			debug:									true
+			title:				qsTr("Report")
+			columns:			1
 
-			Group
-			{
-				title: 									qsTr("Tables")
-
-				CheckBox
-				{
-					text: 								qsTr("Descriptive statistics")
-					name: 								"tableBookDist"
-					enabled:							values.count > 0
-				}
-			}
-
-			Group
-			{
-				title: 									qsTr("Plots")
-
-				CheckBox
-				{
-					name: 								"plotBookDist"
-					text: 								qsTr("Distribution of book values")
-					enabled: 							values.count > 0
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Compare sample sizes")
-					name: 								"plotSampleSizes"
-					enabled:							materiality_test.checked
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Assumed error distribution")
-					name: 								"plotErrorDist"
-				}
-			}
+			Common.PlanningOutput { bayesian: false; workflow: true; enable_values: values.count > 1}
 		}
 
 		Section
@@ -153,51 +118,7 @@ Form
 			columns:								3
 
 			Common.Likelihood { id:likelihood; bayesian: false; evaluation: false; enable_hypergeometric: population.n_units > 0 || data.use_population }
-
-			Group
-			{
-				name:								"critical_items"
-				title:								qsTr("Critical Items")
-				enabled:							data.checked && values.count > 0 && !pasteVariables.checked
-
-				CheckBox
-				{
-					id: 							critical_negative
-					name:							"critical_negative"
-					text:							qsTr("Negative book values")
-					enabled:						values.count > 0
-					checked:						true
-
-					ComputedColumnField
-					{
-						id: 						critical_name
-						name: 						"critical_name"
-						text: 						qsTr("Column name")
-						fieldWidth: 				120 * preferencesModel.uiScale
-						value: 						qsTr("critical")
-					}
-
-					RadioButtonGroup
-					{
-						name: 						"critical_action"
-
-						RadioButton
-						{
-							id:						inspect
-							text: 					qsTr("Keep")
-							name: 					"inspect"
-							checked: 				true
-						}
-
-						RadioButton
-						{
-							text: 					qsTr("Remove")
-							name: 					"remove"
-						}
-					}
-				}
-			}
-
+			Common.CriticalItems { id: critical; enable: !data.use_stats && values.count > 0 && !pasteVariables.checked }
 			Common.Iterations { enable: !pasteVariables.checked }
 			Common.Display { show_monetary: true; enable_monetary: values.count > 0 }
 		}
@@ -324,24 +245,10 @@ Form
 
 		Section
 		{
-			title:										qsTr("Tables")
-
+			title:			qsTr("Report")
 			Group
 			{
-				title: 									qsTr("Tables")
-
-				CheckBox
-				{
-					text: 								qsTr("Descriptive statistics")
-					name: 								"tableDescriptives"
-					debug:								true
-				}
-
-				CheckBox
-				{
-					text: 								qsTr("Selected items")
-					name: 								"tableSample"
-				}
+				Common.SelectionOutput { }
 			}
 		}
 
