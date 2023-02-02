@@ -131,24 +131,20 @@
       "hypergeometric" = gettext("beta-binomial")
     )
     if (stage == "planning") {
-      text <- gettextf("The expected posterior distribution is calculated so that its %1$sth percentile lies below the performance materiality (gray dot).", round(options[["conf_level"]] * 100, 2))
       caption <- createJaspHtml(gettextf(
-        "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on the population misstatement \u03B8. The prior parameters (%3$s = %4$s, %5$s = %6$s) are derived from the prior information. %7$s",
+        "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on the population misstatement \u03B8. The prior parameters (%3$s = %4$s, %5$s = %6$s) are derived from the prior information. The expected posterior distribution fulfills the conditions set in the sampling objectives.",
         jaspResults[["figNumber"]]$object,
         distribution,
         "\u03B1",
         round(parentState[["prior"]][["description"]]$alpha, 3),
         "\u03B2",
-        round(parentState[["prior"]][["description"]]$beta, 3),
-        if (options[["materiality_test"]]) text else ""
+        round(parentState[["prior"]][["description"]]$beta, 3)
       ), "p")
     } else {
-      text <- gettext("The gray dots represent the performance materiality.")
       caption <- createJaspHtml(gettextf(
-        "<b>Figure %1$i.</b> The prior and posterior distribution (%2$s) on the misstatement in the population. %3$s",
+        "<b>Figure %1$i.</b> The prior and posterior distribution (%2$s) on the misstatement in the population.",
         jaspResults[["figNumber"]]$object,
-        distribution,
-        if (options[["plotPosteriorInfo"]] && options[["materiality_test"]]) text else ""
+        distribution
       ), "p")
     }
     caption$position <- positionInContainer + 1

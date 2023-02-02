@@ -57,6 +57,7 @@ Form
 		columns: 2
 
 		Common.PlanningOutput { bayesian: true; disable_predictive: likelihood.use_hypergeometric }
+		Common.Display { }
 	}
 
 	Section
@@ -64,10 +65,9 @@ Form
 		title: qsTr("Advanced")
 		Group
 		{
-			columns: 2
+			columns: 1
 
 			Common.Iterations { }
-			Common.Display { }
 		}
 	}
 

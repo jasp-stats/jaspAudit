@@ -28,11 +28,11 @@ RadioButtonGroup
 	property bool	enable_monetary:	false
 
 	name: 			"display"
-	title:			qsTr("Format Tables")
+	title:			qsTr("Format Output")
 
 	RadioButton
 	{
-		text: 		qsTr("Numbers")
+		text: 		qsTr("Numeric")
 		name: 		"number"
 		checked: 	true
 	}

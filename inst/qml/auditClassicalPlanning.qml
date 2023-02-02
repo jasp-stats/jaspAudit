@@ -44,12 +44,12 @@ Form
 	Section
 	{
 		title: qsTr("Report")
-		debug: true
 		Group
 		{
 			columns: 2
 
 			Common.PlanningOutput { bayesian: false; }
+			Common.Display { }
 		}
 	}
 
@@ -58,11 +58,10 @@ Form
 		title: qsTr("Advanced")
 		Group
 		{
-			columns: 3
+			columns: 2
 
 			Common.Likelihood { bayesian: false; enable_hypergeometric: population.n_units > 0 }
 			Common.Iterations { }
-			Common.Display { }
 		}
 	}
 
