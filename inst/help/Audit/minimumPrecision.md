@@ -1,5 +1,5 @@
-Objective: Obtaining a Minimum Precision
-==========================
+Objective: Obtain a Minimum Precision
+===
 
 The precision is a measure of how much certainty there is in the estimate of the misstatement from testing a particular characteristic of a sample at a given level of sampling risk.
 

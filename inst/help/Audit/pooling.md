@@ -1,5 +1,5 @@
 Algorithm: Share Information Between Strata
-==========================
+===
 
 By sharing information among strata, the information from various sources can be captured while preserving the unique traits of each stratum. Using the *Share stratum info* technique you choose to share information about the misstatement between strata. 
 

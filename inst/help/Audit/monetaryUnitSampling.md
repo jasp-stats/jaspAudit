@@ -1,5 +1,5 @@
-Sampling units
-==========================
+Sampling units: Monetary Units
+===
 
 Sampling from the population requires knowledge of the sampling units; physical representations of the population that need to be audited. Sampling units can be individual <i>transactions</i> or <i>monetary units</i>. For statistical sampling, sampling probabilities are assignned to the sampling units of the population elements. The total collection of all sampling units with an assigned selection probability is named the sampling frame. 
 

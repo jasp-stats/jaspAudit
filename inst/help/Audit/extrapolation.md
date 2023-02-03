@@ -1,5 +1,5 @@
 Algorithm: Extrapolate Over Unseen Population
-==========================
+===
 
 In estimating the total misstatement in the population, the auditor is faced with both known and unknown portions of the population misstatement. The known misstatement can be divided into two sources: misstatements in critical transactions and misstatements in sample transactions. By using the "Extrapolate over unseen" algorithm, the auditor can extrapolate the uncertainty from the sample to the unseen part of the population alone, which will result in an increase in certainty and a smaller sample size.
 
