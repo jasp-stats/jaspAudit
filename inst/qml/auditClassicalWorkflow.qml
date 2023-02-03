@@ -106,9 +106,10 @@ Form
 		Section
 		{
 			title:				qsTr("Report")
-			columns:			1
+			columns:			2
 
 			Common.PlanningOutput { bayesian: false; workflow: true; enable_values: values.count > 0 }
+			Common.Display { show_monetary: true; enable_monetary: values.count > 0 }
 		}
 
 		Section
@@ -117,9 +118,8 @@ Form
 			columns:								3
 
 			Common.Likelihood { id:likelihood; bayesian: false; evaluation: false; enable_hypergeometric: id.count > 0 && values.count > 0  }
-			Common.CriticalItems { id: critical; enable: !data.use_stats && values.count > 0 && !pasteVariables.checked }
 			Common.Iterations { enable: !pasteVariables.checked }
-			Common.Display { show_monetary: true; enable_monetary: values.count > 0 }
+			Common.CriticalItems { id: critical; enable: !data.use_stats && values.count > 0 && !pasteVariables.checked }
 		}
 
 		Item
@@ -152,9 +152,9 @@ Form
 				id: 								toSampling
 				anchors.right: 						parent.right
 				text: 								qsTr("<b>To Selection</b>")
-				enabled: 							!samplingChecked.checked && ((objectives.use_materiality && (objectives.absolute_materiality ? 
-																					objectives.absolute_value > 0 && id.count > 0 && values.count > 0 :
-																					  objectives.relative_value > 0 && id.count > 0)) ||
+				enabled: 							!samplingChecked.checked && ((objectives.use_materiality && (objectives.absolute_materiality ?
+																													 objectives.absolute_value > 0 && id.count > 0 && values.count > 0 :
+																													 objectives.relative_value > 0 && id.count > 0)) ||
 																				 (objectives.use_precision && objectives.precision_value > 0 && id.count > 0))
 				onClicked:							samplingChecked.checked	= true
 			}
@@ -522,7 +522,7 @@ Form
 			{
 				columns:				1
 
-				Common.EvaluationOutput 
+				Common.EvaluationOutput
 				{
 					bayesian: false
 					enable_taints: values.count > 0 && !data.use_stats

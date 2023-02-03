@@ -45,7 +45,7 @@ Form
 		Group
 		{
 			columns: 2
-		
+
 			Common.Likelihood { id: likelihood; bayesian: true; enable_hypergeometric: population.n_units > 0 }
 			Common.PriorMethod { use_materiality: objectives.use_materiality }
 		}

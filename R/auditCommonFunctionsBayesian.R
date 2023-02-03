@@ -23,7 +23,6 @@
 ################################################################################
 
 .jfaCredibleIntervalCalculation <- function(options, parentState) {
-
   # In calculation of the credible interval, we split the confidence from the
   # original one-sided bound in two so that it becomes two-sided.
   # Example: A 95% credible bound corresponds to the 95th percentile of the
@@ -82,7 +81,7 @@
       return()
     }
 
-	p <- plot(parentState) +
+    p <- plot(parentState) +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = c(0.8, 0.875)) +
       ggplot2::theme(
@@ -98,12 +97,12 @@
         label_ub <- paste0(round(options[["conf_level"]] * 100, 3), "% CI: [0, ", formatC(parentState[["posterior"]]$statistics$ub, 3, format = "f"), "]")
       } else {
         label_mode <- paste0("Median: ", formatC(parentState[["posterior"]]$statistics$median, 3, format = "f"))
-        int <- .jfaCredibleIntervalCalculation(options, parentState)
-        lb <- if (options[["separateMisstatement"]]) int[["lb_unseen"]] else int[["lb"]]
-        ub <- if (options[["separateMisstatement"]]) int[["ub_unseen"]] else int[["ub"]]
+        int <- if (options[["separateMisstatement"]]) .jfaCredibleIntervalCalculation(options, parentState) else NULL
+        lb <- if (options[["separateMisstatement"]]) int[["lb_unseen"]] else parentState[["lb"]]
+        ub <- if (options[["separateMisstatement"]]) int[["ub_unseen"]] else parentState[["ub"]]
         label_ub <- paste0(round(options[["conf_level"]] * 100, 3), "% CI: [", formatC(lb, 3, format = "f"), ", ", formatC(ub, 3, format = "f"), "]")
       }
-       text_right <- jaspGraphs:::draw2Lines(c(label_ub, label_mode), x = 1, align = "right")
+      text_right <- jaspGraphs:::draw2Lines(c(label_ub, label_mode), x = 1, align = "right")
 
       if (options[["materiality_test"]] && !is.na(parentState[["posterior"]]$hypotheses$bf.h1)) {
         lab1 <- paste0("BF\u208A\u208B = ", formatC(parentState[["posterior"]]$hypotheses$bf.h0, 3, format = "f"))
@@ -185,8 +184,8 @@
       return()
     }
 
-	object <- if (stage == "planning") parentState[["prior"]] else parentState[["posterior"]]
-	p <- plot(predict(object, size)) +
+    object <- if (stage == "planning") parentState[["prior"]] else parentState[["posterior"]]
+    p <- plot(predict(object, size)) +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "none")
     fg$plotObject <- p
@@ -227,7 +226,7 @@
     tableTitle <- gettextf("<b>Table %1$i.</b> %2$s", jaspResults[["tabNumber"]]$object, title)
     tb <- createJaspTable(tableTitle)
     tb$position <- positionInContainer
-	tb$transpose <- TRUE
+    tb$transpose <- TRUE
     depends <- if (stage == "planning") c("tablePrior", "likelihood", "tableImplicitSample", "tableBookDist") else "tablePriorPosterior"
     tb$dependOn(options = depends)
 

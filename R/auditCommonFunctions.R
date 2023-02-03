@@ -29,7 +29,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 ################################################################################
 
 .jfaWorkflowAnalysis <- function(options, jaspResults) {
-
   ### PROCEDURE STAGE ###
   .jfaProcedureStage(options, jaspResults)
   ready <- .jfaReadyForNextStageCheck(options, jaspResults, stage = "procedure")
@@ -69,7 +68,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 #####################################
 
 .jfaProcedureStage <- function(options, jaspResults) {
-
   # Extract the record number and book value columns
   dataset <- .jfaReadData(options, jaspResults, stage = "procedure")
 
@@ -214,7 +212,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
 .jfaSelectionStage <- function(options, jaspResults, workflow) {
   if (workflow) {
-
     # Create the container that holds the selection output
     selectionContainer <- .jfaAddStageContainer(jaspResults, stage = "selection-workflow", position = 4)
 
@@ -326,7 +323,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
 .jfaEvaluationStage <- function(options, jaspResults, workflow) {
   if (workflow) {
-
     # Create the container that holds the selection output
     evaluationContainer <- .jfaAddStageContainer(jaspResults, stage = "evaluation-workflow", position = 5)
 
@@ -501,7 +497,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "rank" = options[["rank"]],
     "additional" = unlist(options[["variables"]]),
     "critical" = options[["critical_name"]],
-	"stratum" = options[["stratum"]]
+    "stratum" = options[["stratum"]]
   )
   if (!is.null(name) && name == "" && !(type %in% c("additional", "critical"))) {
     name <- NULL
@@ -568,16 +564,16 @@ gettextf <- function(fmt, ..., domain = NULL) {
     values <- .jfaReadVariableFromOptions(options, type = "values")
     values.audit <- .jfaReadVariableFromOptions(options, type = "values.audit")
     times <- .jfaReadVariableFromOptions(options, type = "times")
-	stratum <- .jfaReadVariableFromOptions(options, type = "stratum")
+    stratum <- .jfaReadVariableFromOptions(options, type = "stratum")
     variables <- c(id, values, values.audit, times, stratum)
   }
   if (!is.null(variables)) {
-	if (!is.null(.jfaReadVariableFromOptions(options, type = "stratum"))) {
-    dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id & variables != stratum)], columns.as.factor = stratum, exclude.na.listwise = variables)
-	} else {
-		dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
-	}
-	dataset[[id]] <- as.character(dataset[[id]])
+    if (!is.null(.jfaReadVariableFromOptions(options, type = "stratum"))) {
+      dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id & variables != stratum)], columns.as.factor = stratum, exclude.na.listwise = variables)
+    } else {
+      dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
+    }
+    dataset[[id]] <- as.character(dataset[[id]])
     # if (stage == "evaluation" && !is.null(times) && !is.null(id) && !is.null(values.audit)) { # Apply sample filter only when required variables are given
     #   dataset <- subset(dataset, dataset[[times]] > 0)
     # }
@@ -626,26 +622,26 @@ gettextf <- function(fmt, ..., domain = NULL) {
     input[["likelihood"]] <- options[["method"]]
     # Take over N.units and N.items from population
     if (options[["dataType"]] == "pdata") {
-	  if (options[["id"]] != "") {
-		if (options[["values"]] != "") {
-			if (options[["stratum"]] != "") {
-			  dataset <- as.data.frame(.readDataSetToEnd(columns.as.numeric = options[["values"]], columns.as.factor = options[["stratum"]], exclude.na.listwise = c(options[["values"]], options[["stratum"]])))
-			  input[["N.items"]] <- as.numeric(table(dataset[[options[["stratum"]]]]))
-			  input[["N.units"]] <- aggregate(dataset[[options[["values"]]]], by = list(stratum = dataset[[options[["stratum"]]]]), FUN = sum)[["x"]]
-			} else {
-			  dataset <- as.data.frame(.readDataSetToEnd(columns = options[["values"]], exclude.na.listwise = options[["values"]]))
-			  input[["N.items"]] <- nrow(dataset)
-			  input[["N.units"]] <- sum(dataset[[options[["values"]]]])
-			}
-		} else {
-			dataset <- as.data.frame(.readDataSetToEnd(columns = options[["id"]], exclude.na.listwise = options[["id"]]))
-			input[["N.items"]] <- nrow(dataset)
-			input[["N.units"]] <- input[["N.items"]]
-		}
-	  } else {
+      if (options[["id"]] != "") {
+        if (options[["values"]] != "") {
+          if (options[["stratum"]] != "") {
+            dataset <- as.data.frame(.readDataSetToEnd(columns.as.numeric = options[["values"]], columns.as.factor = options[["stratum"]], exclude.na.listwise = c(options[["values"]], options[["stratum"]])))
+            input[["N.items"]] <- as.numeric(table(dataset[[options[["stratum"]]]]))
+            input[["N.units"]] <- aggregate(dataset[[options[["values"]]]], by = list(stratum = dataset[[options[["stratum"]]]]), FUN = sum)[["x"]]
+          } else {
+            dataset <- as.data.frame(.readDataSetToEnd(columns = options[["values"]], exclude.na.listwise = options[["values"]]))
+            input[["N.items"]] <- nrow(dataset)
+            input[["N.units"]] <- sum(dataset[[options[["values"]]]])
+          }
+        } else {
+          dataset <- as.data.frame(.readDataSetToEnd(columns = options[["id"]], exclude.na.listwise = options[["id"]]))
+          input[["N.items"]] <- nrow(dataset)
+          input[["N.units"]] <- input[["N.items"]]
+        }
+      } else {
         input[["N.items"]] <- 0
         input[["N.units"]] <- 0
-	  }
+      }
     } else {
       input[["N.items"]] <- options[["n_items"]]
       input[["N.units"]] <- options[["n_units"]]
@@ -843,7 +839,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
       }
       if (options[["bayesian"]] && options[["expected_type"]] == "expected_abs" && options[["prior_method"]] %in% c("impartial", "arm")) {
         # Error if the prior construction method does not match the sampling objective
-        currentMethod <- switch(options[["prior_method"]], "impartial" = gettext("an impartial prior distribution"), "arm" = gettext("a prior distribution using risk assessments"))
+        currentMethod <- switch(options[["prior_method"]],
+          "impartial" = gettext("an impartial prior distribution"),
+          "arm" = gettext("a prior distribution using risk assessments")
+        )
         parentContainer$setError(gettextf("In order to construct %1$s, specify the expected errors as a percentage of the total population.", currentMethod))
         return(TRUE)
       }
@@ -863,12 +862,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
   } else if (stage == "evaluation") {
     if (!options[["bayesian"]] && options[["method"]] == "hypergeometric" && (options[["n_units"]] == 0 && options[["dataType"]] != "pdata")) {
       # Error if the population size is not defined when the hypergeometric bound is used.
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Population Evaluation Summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettext("The hypergeometric upper bound requires that you specify the number of units in the population."))
       return(TRUE)
     } else if (options[["method"]] %in% c("direct", "difference", "quotient", "regression") && ((options[["n_items"]] == 0 || options[["n_units"]] == 0) && options[["dataType"]] != "pdata")) {
       # Error if the population size or the population value are zero when using direct, difference, quotient, or regression.
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Population Evaluation Summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettext("The direct, difference, ratio, and regression bounds require that you specify the number of items and the number of units in the population."))
       return(TRUE)
     } else if (options[["dataType"]] %in% c("data", "pdata") && options[["id"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[[options[["id"]]]]))) {
@@ -878,7 +877,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       return(TRUE)
     } else if (.jfaAuditRiskModelCalculation(options) >= 1) {
       # Error if the detection risk of the analysis is higher than one
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Population Evaluation Summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk, or the confidence."))
       return(TRUE)
     } else {
@@ -1147,7 +1146,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
       stageContainer[["paragraph"]]$position <- positionInContainer
       stageContainer[["paragraph"]]$dependOn(options = "explanatoryText")
     } else if (stage == "conclusion") {
-
       # Import options and results from the planning and selection stages
       stage <- if (workflow) "planning" else "evaluation"
       planningOptions <- .jfaInputOptionsGather(options,
@@ -1358,7 +1356,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 ################################################################################
 
 .jfaAuditRiskModelCalculation <- function(options) {
-
   # Audit risk 		= Inherent risk x Control risk x Detection risk
   # Detection risk 	= Audit risk / (Inherent risk x Control risk)
 
@@ -1624,7 +1621,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (!options[["bayesian"]]) {
       message <- switch(options[["likelihood"]],
         "poisson" = gettext("The minimum sample size is based on the Poisson distribution."),
-        "binomial" =  gettext("The minimum sample size is based on the binomial distribution."),
+        "binomial" = gettext("The minimum sample size is based on the binomial distribution."),
         "hypergeometric" = gettext("The minimum sample size is based on the hypergeometric distribution.")
       )
     } else {
@@ -1672,7 +1669,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (!options[["bayesian"]]) {
     message <- switch(options[["likelihood"]],
       "poisson" = gettextf("The minimum sample size is based on the Poisson distribution (%1$s = %2$s).", "\u03BB", round(parentState[["materiality"]] * parentState[["n"]], 4)),
-      "binomial" =  gettextf("The minimum sample size is based on the binomial distribution (p = %1$s)", round(parentState[["materiality"]], 4)),
+      "binomial" = gettextf("The minimum sample size is based on the binomial distribution (p = %1$s)", round(parentState[["materiality"]], 4)),
       "hypergeometric" = gettextf("The minimum sample size is based on the hypergeometric distribution (N = %1$s, K = %2$s).", format(parentState[["N.units"]], scientific = FALSE), format(ceiling(parentState[["N.units"]] * parentState[["materiality"]]), scientific = FALSE))
     )
   } else {
@@ -1833,7 +1830,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
 
     if (is.null(collection[["comparisonDistributions"]])) {
-
       # First plot: Comparison across probability distributions
       figure <- createJaspPlot(
         plot = NULL, title = gettextf("Across Probability Distributions (Current: %1$s)", dist),
@@ -1879,7 +1875,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
           result <- jfa::planning(
             conf.level = confidence, materiality = materiality, min.precision = min_precision,
-            expected = parentOptions[["expected_val"]], likelihood = likelihoods[i], N.units = N, 
+            expected = parentOptions[["expected_val"]], likelihood = likelihoods[i], N.units = N,
             by = options[["by"]], max = options[["max"]], prior = prior
           )
           n[i] <- result[["n"]]
@@ -1930,7 +1926,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
 
     if (is.null(collection[["comparisonErrors"]])) {
-
       # Second plot: Comparison across expected errors
       figure <- createJaspPlot(
         plot = NULL, title = gettextf("Across Expected Errors (Current: %1$s)", round(parentState[["x"]], 2)),
@@ -2284,7 +2279,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     title <- gettextf("<b>Table %1$i.</b> Information about Monetary Interval Selection", jaspResults[["tabNumber"]]$object)
     table <- createJaspTable(title)
     table$position <- positionInContainer + 1
-	table$transpose <- TRUE
+    # table$transpose <- TRUE
     table$dependOn(options = c("tableBookDist", "tableDescriptives", "tableSample", "samplingChecked", "evaluationChecked"))
 
     table$addColumnInfo(name = "stratum", title = "", type = "string")
@@ -2481,7 +2476,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (!is.null(parentContainer[["evaluationState"]])) {
     return(parentContainer[["evaluationState"]]$object)
   } else {
-
     # Add critical transactions to the sample
     sample <- .jfaAddCriticalTransactions(options, sample)
 
@@ -2534,7 +2528,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           conf.level = conf_level, materiality = materiality,
           n = nrow(sample), x = length(which(sample[[options[["values.audit"]]]] == 1)),
           method = options[["method"]], N.units = prevOptions[["N.units"]],
-          prior = prior
+          prior = prior, alternative = if (options[["area"]] == "area_bound") "less" else "two.sided"
         )
       })
     } else if (options[["annotation"]] == "continuous") {
@@ -2545,7 +2539,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       result <- try({
         jfa::evaluation(
           data = sample, times = options[["indicator_col"]], conf.level = conf_level,
-          materiality = materiality, alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else "less",
+          materiality = materiality, alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else if (options[["area"]] == "area_bound") "less" else "two.sided",
           values = options[["values"]], values.audit = options[["values.audit"]],
           method = method, N.items = prevOptions[["N.items"]], N.units = prevOptions[["N.units"]],
           prior = prior
@@ -2691,7 +2685,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 }
 
 .jfaEvaluationAnalysisState <- function(options, sample, planningOptions, evaluationContainer) {
-
   # Check whether there is enough data to perform an analysis
   if (!options[["materiality_test"]] && !options[["min_precision_test"]]) {
     return()
@@ -2722,12 +2715,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "custom" = options[["crCustom"]]
     )
     prior <- FALSE
-	N_units <- if (planningOptions[["N.units"]][1] == 0) NULL else planningOptions[["N.units"]]
-	N_items <- if (planningOptions[["N.items"]][1] == 0) NULL else planningOptions[["N.items"]]
+    N_units <- if (planningOptions[["N.units"]][1] == 0) NULL else planningOptions[["N.units"]]
+    N_items <- if (planningOptions[["N.items"]][1] == 0) NULL else planningOptions[["N.items"]]
     materiality <- if (options[["materiality_test"]]) planningOptions[["materiality_val"]] else NULL
     conf_level <- if (!options[["bayesian"]]) 1 - .jfaAuditRiskModelCalculation(options) else options[["conf_level"]]
-    
-	if (options[["bayesian"]]) {
+
+    if (options[["bayesian"]]) {
       prior <- jfa::auditPrior(
         method = options[["prior_method"]], conf.level = conf_level, materiality = materiality,
         expected = planningOptions[["expected_val"]], likelihood = options[["method"]],
@@ -2740,8 +2733,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
         jfa::evaluation(
           conf.level = conf_level, materiality = materiality,
           n = options[["n"]], x = options[["x"]], method = options[["method"]],
-          prior = prior, N.units = N_units, 
-		  alternative = if (options[["area"]] == "area_bound") "less" else "two.sided"
+          prior = prior, N.units = N_units,
+          alternative = if (options[["area"]] == "area_bound") "less" else "two.sided"
         )
       })
     } else if (all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1))) {
@@ -2751,7 +2744,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           n = nrow(sample), x = length(which(sample[[options[["values.audit"]]]] == 1)),
           method = options[["method"]], N.units = N_units,
           prior = prior,
-		  alternative = if (options[["area"]] == "area_bound") "less" else "two.sided"
+          alternative = if (options[["area"]] == "area_bound") "less" else "two.sided"
         )
       })
     } else {
@@ -2769,8 +2762,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
             data = sample, times = if (options[["times"]] != "" && (!options[["bayesian"]] || options[["pooling"]] != "partial")) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
             values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else if (options[["area"]] == "area_bound") "less" else "two.sided",
             method = method, N.items = N_items, N.units = N_units,
-            prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL, 
-			pooling = if (options[["bayesian"]]) if (options[["pooling"]]) "partial" else "none" else "none"
+            prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL,
+            pooling = if (options[["bayesian"]]) if (options[["pooling"]]) "partial" else "none" else "none"
           )
         })
       }
@@ -2792,7 +2785,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     return()
   }
 
-  title <- gettextf("<b>Table %1$i.</b> Population Evaluation Summary", jaspResults[["tabNumber"]]$object)
+  title <- gettextf("<b>Table %1$i.</b> Evaluation Summary", jaspResults[["tabNumber"]]$object)
   table <- createJaspTable(title)
   table$position <- positionInContainer
   table$transpose <- TRUE
@@ -2817,20 +2810,22 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   if (!options[["bayesian"]]) {
     dr <- .jfaAuditRiskModelCalculation(options)
-    if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
-      table$addColumnInfo(name = "lb", title = gettext("Lower"), type = columnType, overtitle = gettextf("%1$s%% Confidence interval", round((1 - dr) * 100, 2)))
-      table$addColumnInfo(name = "ub", title = gettext("Upper"), type = columnType, overtitle = gettextf("%1$s%% Confidence interval", round((1 - dr) * 100, 2)))
+    if (options[["method"]] %in% c("direct", "difference", "quotient", "regression") || options[["area"]] == "area_interval") {
+      uppertitle <- round((1 - (1 - (1 - dr)) / 2) * 100, 2)
+      table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - uppertitle), type = columnType)
+      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", uppertitle), type = columnType)
     } else {
-      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round((1 - dr) * 100, 2)), type = columnType)
+      title <- round((1 - dr) * 100, 2)
+      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", title), type = columnType)
     }
   } else {
     if (options[["area"]] == "area_bound") {
-      title <- gettextf("%1$s%% Upper bound", round(options[["conf_level"]] * 100, 2))
-      table$addColumnInfo(name = "ub", title = title, type = columnType)
+      ubtitle <- round(options[["conf_level"]] * 100, 2)
+      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = columnType)
     } else if (options[["area"]] == "area_interval") {
-      title <- gettextf("%1$s%% Credible interval", round(options[["conf_level"]] * 100, 2))
-      table$addColumnInfo(name = "lb", title = gettext("Lower"), type = columnType, overtitle = title)
-      table$addColumnInfo(name = "ub", title = gettext("Upper"), type = columnType, overtitle = title)
+      ubtitle <- round((1 - (1 - options[["conf_level"]]) / 2) * 100, 2)
+      table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - ubtitle), type = columnType)
+      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = columnType)
     }
   }
 
@@ -2839,7 +2834,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
     table$addColumnInfo(name = "p", title = gettext("p-value"), type = "pvalue")
   }
   if (options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
-    table$addColumnInfo(name = "bf", title = gettextf("BF%1$s", "\u208B\u208A"), type = "number")
+    bftitle <- if (options[["area"]] == "area_bound") gettextf("BF%1$s", "\u208B\u208A") else gettextf("BF%1$s", "\u2081\u2080")
+    table$addColumnInfo(name = "bf", title = bftitle, type = "number")
   }
 
   if (!options[["bayesian"]]) {
@@ -2890,100 +2886,92 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
     return()
   }
-  t <- if (options[["display"]] == "percent") paste0(round(parentState[["t"]] / parentState[["n"]] * 100, 3), "%") else parentState[["t"]]
 
-  if (options[["bayesian"]] && options[["area"]] == "area_interval") {
-    int <- .jfaCredibleIntervalCalculation(options, parentState)
-    lb_label <- switch(options[["display"]],
-      "number" = int[["lb"]],
-      "percent" = paste0(round(int[["lb"]] * 100, 3), "%"),
-      "amount" = int[["lb"]] * parentState[["N.units"]]
-    )
-    ub_label <- switch(options[["display"]],
-      "number" = int[["ub"]],
-      "percent" = paste0(round(int[["ub"]] * 100, 3), "%"),
-      "amount" = int[["ub"]] * parentState[["N.units"]]
-    )
-    row <- data.frame(n = parentState[["n"]], x = parentState[["x"]], t = t, lb = lb_label, ub = ub_label)
-  } else {
-    if (parentState[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
-      lb_label <- switch(options[["display"]],
-        "number" = parentState[["lb"]],
-        "percent" = paste0(round(parentState[["lb"]] / parentState[["N.units"]] * 100, 3), "%"),
-        "amount" = parentState[["lb"]]
-      )
-      ub_label <- switch(options[["display"]],
-        "number" = parentState[["ub"]],
-        "percent" = paste0(round(parentState[["ub"]] / parentState[["N.units"]] * 100, 3), "%"),
-        "amount" = parentState[["ub"]]
-      )
-      row <- data.frame(n = parentState[["n"]], x = parentState[["x"]], t = t, lb = lb_label, ub = ub_label)
-    } else {
-      ub_label <- switch(options[["display"]],
-        "number" = parentState[["ub"]],
-        "percent" = paste0(round(parentState[["ub"]] * 100, 3), "%"),
-        "amount" = parentState[["ub"]] * parentState[["N.units"]]
-      )
-      row <- data.frame(n = parentState[["n"]], x = parentState[["x"]], t = t, ub = ub_label)
-    }
-  }
+  table[["null"]] <- "Value"
+  table[["n"]] <- parentState[["n"]]
+  table[["x"]] <- parentState[["x"]]
+  table[["t"]] <- if (options[["display"]] == "percent") paste0(round(parentState[["t"]] / parentState[["n"]] * 100, 3), "%") else parentState[["t"]]
 
   if (options[["materiality_test"]]) {
-    materiality <- switch(options[["display"]],
+    table[["materiality"]] <- switch(options[["display"]],
       "number" = prevOptions[["materiality_val"]],
       "percent" = paste0(round(prevOptions[["materiality_val"]] * 100, 3), "%"),
       "amount" = prevOptions[["materiality_val"]] * parentState[["N.units"]]
     )
-    row <- cbind(row, materiality = materiality)
   }
 
   if (options[["min_precision_test"]]) {
-    minPrecision <- switch(options[["display"]],
+    table[["min_precision"]] <- switch(options[["display"]],
       "number" = options[["min_precision_rel_val"]],
       "percent" = paste0(round(options[["min_precision_rel_val"]] * 100, 3), "%"),
       "amount" = options[["min_precision_rel_val"]] * parentState[["N.units"]]
     )
-    row <- cbind(row, min_precision = minPrecision)
   }
 
   if (parentState[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
-    mle <- switch(options[["display"]],
+    table[["mle"]] <- switch(options[["display"]],
       "number" = parentState[["mle"]],
       "percent" = paste0(round(parentState[["mle"]] / parentState[["N.units"]] * 100, 3), "%"),
       "amount" = parentState[["mle"]]
     )
   } else {
-    mle <- switch(options[["display"]],
+    table[["mle"]] <- switch(options[["display"]],
       "number" = parentState[["mle"]],
       "percent" = paste0(round(parentState[["mle"]] * 100, 3), "%"),
       "amount" = parentState[["mle"]] * parentState[["N.units"]]
     )
   }
-  row <- cbind(row, mle = mle)
 
   if (parentState[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
-    precision <- switch(options[["display"]],
+    table[["lb"]] <- switch(options[["display"]],
+      "number" = parentState[["lb"]],
+      "percent" = paste0(round(parentState[["lb"]] / parentState[["N.units"]] * 100, 3), "%"),
+      "amount" = parentState[["lb"]]
+    )
+    table[["ub"]] <- switch(options[["display"]],
+      "number" = parentState[["ub"]],
+      "percent" = paste0(round(parentState[["ub"]] / parentState[["N.units"]] * 100, 3), "%"),
+      "amount" = parentState[["ub"]]
+    )
+  } else if (options[["area"]] == "area_interval") {
+    table[["lb"]] <- switch(options[["display"]],
+      "number" = parentState[["lb"]],
+      "percent" = paste0(round(parentState[["lb"]] * 100, 3), "%"),
+      "amount" = parentState[["lb"]] * parentState[["N.units"]]
+    )
+    table[["ub"]] <- switch(options[["display"]],
+      "number" = parentState[["ub"]],
+      "percent" = paste0(round(parentState[["ub"]] * 100, 3), "%"),
+      "amount" = parentState[["ub"]] * parentState[["N.units"]]
+    )
+  } else {
+    table[["ub"]] <- switch(options[["display"]],
+      "number" = parentState[["ub"]],
+      "percent" = paste0(round(parentState[["ub"]] * 100, 3), "%"),
+      "amount" = parentState[["ub"]] * parentState[["N.units"]]
+    )
+  }
+
+  if (parentState[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
+    table[["precision"]] <- switch(options[["display"]],
       "number" = parentState[["precision"]],
       "percent" = paste0(round(parentState[["precision"]] / parentState[["N.units"]] * 100, 3), "%"),
       "amount" = parentState[["precision"]]
     )
   } else {
-    precision <- switch(options[["display"]],
+    table[["precision"]] <- switch(options[["display"]],
       "number" = parentState[["precision"]],
       "percent" = paste0(round(parentState[["precision"]] * 100, 3), "%"),
       "amount" = parentState[["precision"]] * parentState[["N.units"]]
     )
   }
-  row <- cbind(row, precision = precision)
 
   if (!options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
-    row <- cbind(row, p = parentState[["p.value"]])
+    table[["p"]] <- parentState[["p.value"]]
   }
   if (options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
-    row <- cbind(row, bf = parentState[["posterior"]][["hypotheses"]]$bf.h1)
+    table[["bf"]] <- parentState[["posterior"]][["hypotheses"]]$bf.h1
   }
-
-  table$addRows(cbind(null = "Value", row))
 }
 
 .jfaTableStratum <- function(options, sample, parentState, parentContainer, jaspResults, positionInContainer = 3) {
@@ -2993,35 +2981,41 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   .jfaTableNumberUpdate(jaspResults)
 
-  title <- gettextf("<b>Table %1$i.</b> Stratum Evaluation Summary", jaspResults[["tabNumber"]]$object)
-  table <- createJaspTable(title)
-  table$position <- positionInContainer
+  title <- gettextf("<b>Table %1$i.</b> Stratum Summary", jaspResults[["tabNumber"]]$object)
+  tb <- createJaspTable(title)
+  tb$position <- positionInContainer
+  tb$transpose <- TRUE
 
-  table$addColumnInfo(name = "stratum", title = gettext("Stratum"), type = "string")
-  table$addColumnInfo(name = "n", title = gettext("Sample size"), type = "integer")
-  table$addColumnInfo(name = "k", title = gettext("Misstatements"), type = "integer")
-  table$addColumnInfo(name = "t", title = gettext("Taint"), type = "number")
-  table$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = "number")
-  table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round(options[["conf_level"]] * 100, 2)), type = "number")
-  table$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
+  tb$addColumnInfo(name = "stratum", title = gettext("Stratum"), type = "string")
+  tb$addColumnInfo(name = "n", title = gettext("Sample size"), type = "integer")
+  tb$addColumnInfo(name = "k", title = gettext("Misstatements"), type = "integer")
+  tb$addColumnInfo(name = "t", title = gettext("Taint"), type = "number")
+  tb$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = "number")
+  if (options[["area"]] == "area_bound") {
+    ubtitle <- round(options[["conf_level"]] * 100, 2)
+    tb$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = "number")
+  } else {
+    ubtitle <- round((1 - (1 - options[["conf_level"]]) / 2) * 100, 2)
+    tb$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - ubtitle), type = "number")
+    tb$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = "number")
+  }
+  tb$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
+  parentContainer[["tableStratum"]] <- tb
 
-  parentContainer[["tableStratum"]] <- table
-
-  sample[[options[["stratum"]]]] <- as.factor(sample[[options[["stratum"]]]])
-
-  if (options[["values.audit"]] == "") {
-	row <- data.frame(stratum = levels(sample[[options[["stratum"]]]]))
-	if (options[["values"]] != "") {
-		row[["n"]] <- aggregate(sample[[options[["values"]]]], by = list(m = sample[[options[["stratum"]]]]), FUN = length)[, 2]
-	}
-	table$addRows(row)
+  if (is.null(parentState) || parentContainer$getError()) {
     return()
   }
-  if (is.null(parentState)) {
-	return()
+
+  tb[["stratum"]] <- rownames(parentState[["strata"]])
+  tb[["n"]] <- parentState[["strata"]]$n
+  tb[["k"]] <- parentState[["strata"]]$x
+  tb[["t"]] <- parentState[["strata"]]$t
+  tb[["mle"]] <- parentState[["strata"]]$mle
+  if (options[["area"]] == "area_interval") {
+    tb[["lb"]] <- parentState[["strata"]]$lb
   }
-  row <- data.frame(stratum = rownames(parentState[["strata"]]), n = parentState[["strata"]]$n, k = parentState[["strata"]]$x, t = parentState[["strata"]]$t, mle = parentState[["strata"]]$mle, ub = parentState[["strata"]]$ub, precision = parentState[["strata"]]$precision)
-  table$addRows(row)
+  tb[["ub"]] <- parentState[["strata"]]$ub
+  tb[["precision"]] <- parentState[["strata"]]$precision
 }
 
 .jfaTableTaints <- function(options, sample, parentContainer, jaspResults, positionInContainer = 3) {
@@ -3032,43 +3026,46 @@ gettextf <- function(fmt, ..., domain = NULL) {
   .jfaTableNumberUpdate(jaspResults)
 
   title <- gettextf("<b>Table %1$i.</b> Misstated Items", jaspResults[["tabNumber"]]$object)
-  table <- createJaspTable(title)
-  table$position <- positionInContainer
-  table$dependOn(options = "tableTaints")
+  tb <- createJaspTable(title)
+  tb$position <- positionInContainer
+  tb$dependOn(options = "tableTaints")
 
-  table$addColumnInfo(name = "id", title = gettext("ID"), type = "string")
-  table$addColumnInfo(name = "values", title = gettext("Book value"), type = "number")
-  table$addColumnInfo(name = "values.audit", title = gettext("Audit value"), type = "number")
-  table$addColumnInfo(name = "diff", title = gettext("Difference"), type = "number")
-  table$addColumnInfo(name = "taint", title = gettext("Taint"), type = "number")
-  table$addColumnInfo(name = "times", title = gettext("Counted"), type = "string")
-  parentContainer[["tableTaints"]] <- table
-  
+  tb$addColumnInfo(name = "id", title = gettext("ID"), type = "string")
+  tb$addColumnInfo(name = "values", title = gettext("Book value"), type = "number")
+  tb$addColumnInfo(name = "values.audit", title = gettext("Audit value"), type = "number")
+  tb$addColumnInfo(name = "diff", title = gettext("Difference"), type = "number")
+  tb$addColumnInfo(name = "taint", title = gettext("Taint"), type = "number")
+  tb$addColumnInfo(name = "times", title = gettext("Counted"), type = "string")
+  parentContainer[["tableTaints"]] <- tb
+
   if (options[["values.audit"]] == "" || options[["values"]] == "") {
     return()
   }
-  
-  sample <- sample[sample[[options[["values"]]]] != sample[[options[["values.audit"]]]], ]
-  if(nrow(sample) == 0) {
+
+  errors <- sample[sample[[options[["values"]]]] != sample[[options[["values.audit"]]]], ]
+  if (nrow(errors) == 0) {
     table$addFootnote(message = gettext("No misstatements were identified in the sample."))
     return()
   }
 
-  id <- sample[[options[["id"]]]]
-  ist <- sample[[options[["values"]]]]
-  soll <- sample[[options[["values.audit"]]]]
+  id <- errors[[options[["id"]]]]
+  ist <- errors[[options[["values"]]]]
+  soll <- errors[[options[["values.audit"]]]]
   if (options[["workflow"]]) {
-    times <- sample[[options[["indicator_col"]]]]
+    times <- errors[[options[["indicator_col"]]]]
   } else {
     if (options[["times"]] == "") {
-      times <- rep(1, nrow(sample))
+      times <- rep(1, nrow(errors))
     } else {
-      times <- sample[[options[["times"]]]]
+      times <- errors[[options[["times"]]]]
     }
   }
-  rows <- data.frame(id = id, values = ist, values.audit = soll, diff = ist - soll, taint = (ist - soll) / ist, times = paste0("x", times))
-  rows <- rbind(rows, data.frame(id = "Total", values = NA, values.audit = NA, diff = sum(rows$diff), taint = sum(rows$taint * times), times = NA))
-  table$addRows(rows)
+  tb[["id"]] <- c(id, "Total")
+  tb[["values"]] <- c(ist, NA)
+  tb[["values.audit"]] <- c(soll, NA)
+  tb[["diff"]] <- c(ist - soll, sum(ist - soll))
+  tb[["taint"]] <- c((ist - soll) / ist, sum(((ist - soll) / ist) * times))
+  tb[["times"]] <- c(paste0("x", times), NA)
 }
 
 .jfaTableAssumptions <- function(options, sample, parentContainer, jaspResults, positionInContainer = 3) {
@@ -3080,7 +3077,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   title <- gettextf("<b>Table %1$i.</b> Assumption Checks", jaspResults[["tabNumber"]]$object)
   table <- createJaspTable(title)
-  overTitle <- gettextf("%1$s%% Confidence interval", options[["tableAssumptionsConfidence"]] * 100)
   table$position <- positionInContainer
   table$dependOn(options = c("tableAssumptions"))
 
@@ -3236,7 +3232,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
         ggplot2::geom_bar(stat = "identity", col = "black", size = 1, fill = fill) +
         ggplot2::coord_flip() +
         ggplot2::xlab(NULL) +
-        ggplot2::annotate(geom = "text",
+        ggplot2::annotate(
+          geom = "text",
           y = values, x = 1:length(values), label = valueLabels,
           size = 6, vjust = 0.5, hjust = -0.1
         ) +
@@ -3455,7 +3452,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 ################################################################################
 
 .jfaSeparatedMisstatementPlanningState <- function(options, dataset, prior, parentOptions) {
-
   # Plan a sample for the efficiency technique Separate known and unknown misstatement
   for (n in seq(options[["by"]], options[["max"]], by = options[["by"]])) {
     interval <- (parentOptions[["N.units"]] / n)

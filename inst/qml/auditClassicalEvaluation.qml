@@ -29,7 +29,6 @@ import "./common" as Common
 
 Form
 {
-
 	columns: 						1
 
 	// Hidden option(s)
@@ -54,9 +53,9 @@ Form
 
 		Group
 		{
-			columns:				1
+			columns:				2
 
-			Common.EvaluationOutput 
+			Common.EvaluationOutput
 			{
 				bayesian: false
 				enable_taints: !data.use_stats && variables.use_book && variables.use_real
@@ -64,6 +63,7 @@ Form
 				enable_objectives: objectives.use_materiality || objectives.use_precision
 				enable_scatter: !data.use_stats
 			}
+			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
 		}
 	}
 
@@ -152,7 +152,7 @@ Form
 			}
 
 			Common.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
-			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
+			Common.IntervalType { bayesian: false }
 		}
 	}
 

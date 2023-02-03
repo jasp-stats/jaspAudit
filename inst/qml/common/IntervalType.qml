@@ -24,7 +24,9 @@ import JASP.Widgets
 
 RadioButtonGroup
 {
-	title: 			qsTr("Area Under Posterior")
+	property bool	bayesian:	false
+
+	title: 			bayesian ? qsTr("Credible Interval") : qsTr("Confidence Interval")
 	name: 			"area"
 
 	RadioButton

@@ -37,20 +37,20 @@ Group
 	CheckBox
 	{
 		id:				algorithm1
-		text:			qsTr("Share information")
+		text:			qsTr("Share stratum info")
 		name:			"pooling"
 		enabled:		enable_algorithm1
 		visible:		!hide_algorithm1
 	}
 
-	Group
+	Row
 	{
-		columns: 2
+		spacing: 5 * preferencesModel.uiScale
 
 		CheckBox
 		{
 			id:			algorithm2
-			text: 		qsTr("Assume homogeneous taints")
+			text: 		qsTr("Extrapolate to unseen")
 			name: 		"separateMisstatement"
 			enabled:	enable_algorithm2
 		}

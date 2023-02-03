@@ -29,7 +29,6 @@ import "./common" as Common
 
 Form
 {
-
 	columns: 1
 
 	// Hidden option(s)
@@ -64,10 +63,10 @@ Form
 
 		Group
 		{
-			columns: 1
+			columns: 2
 
 			Common.EvaluationOutput
-			{ 
+			{
 				bayesian: true
 				enable_taints: !data.use_stats && variables.use_book && variables.use_real
 				enable_corrections: population.n_units > 0 || data.use_population
@@ -76,6 +75,8 @@ Form
 				enable_predictive: !likelihood.use_hypergeometric
 				enable_scatter: !data.use_stats
 			}
+
+			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
 		}
 	}
 
@@ -88,7 +89,6 @@ Form
 			columns: 3
 
 			Common.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
-
 			Common.Algorithm
 			{
 				id: 				algorithm
@@ -97,9 +97,7 @@ Form
 				enable_algorithm1: 	variables.use_strata
 				enable_algorithm2: 	!variables.use_strata && variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
 			}
-
-			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
-			Common.EstimateType { }
+			Common.IntervalType { bayesian: true }
 		}
 	}
 
