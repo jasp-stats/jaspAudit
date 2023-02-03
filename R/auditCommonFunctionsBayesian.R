@@ -108,7 +108,7 @@
         lab1 <- paste0("BF\u208A\u208B = ", formatC(parentState[["posterior"]]$hypotheses$bf.h0, 3, format = "f"))
         lab2 <- paste0("BF\u208B\u208A = ", formatC(parentState[["posterior"]]$hypotheses$bf.h1, 3, format = "f"))
         text_left <- jaspGraphs:::draw2Lines(c(lab1, lab2), x = 0.65, align = "center")
-        tmp <- jaspGraphs:::makeBFwheelAndText(BF = parentState[["posterior"]]$hypotheses$bf.h1, bfSubscripts = c("-+", "+-"), pizzaTxt = c("data | H\u208A", "data | H\u208B"), drawPizzaTxt = TRUE, bfType = "BF10")
+        tmp <- jaspGraphs:::makeBFwheelAndText(BF = parentState[["posterior"]]$hypotheses$bf.h1, bfSubscripts = c("-+", "+-"), pizzaTxt = c("data | H-", "data | H+"), drawPizzaTxt = TRUE, bfType = "BF10")
         plot_middle <- tmp$gWheel
       } else {
         plot_middle <- text_left <- ggplot2::ggplot() +
