@@ -239,8 +239,8 @@ Form
 				}
 			}
 
-			Common.SamplingUnits { enable: !pasteVariables.checked; enable_mus: values.count > 0 }
-			Common.SelectionMethod { id: method; enable: !pasteVariables.checked }
+			Common.SamplingUnits { id: units; enable: !pasteVariables.checked; enable_mus: values.count > 0 }
+			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; enable_sieve: values.count > 0 && units.use_mus }
 		}
 
 		Section

@@ -30,6 +30,7 @@ RadioButtonGroup
 	readonly	property bool	use_random:			random.checked
 				property bool	enable:				true
 				property bool	force_interval:		false
+				property bool	enable_sieve:		false
 
 	id: 					method
 	title:					qsTr("Selection Method")
@@ -97,5 +98,19 @@ RadioButtonGroup
 	{
 		toolTip: 			qsTr("Click to learn more about this method")
 		helpPage:			"Audit/randomSampling"
+	}
+
+	RadioButton
+	{
+		id: 				sieve
+		text: 				qsTr("Modified sieve sampling")
+		name: 				"sieve"
+		enabled:			!force_interval && enable_sieve
+	}
+
+	HelpButton
+	{
+		toolTip: 			qsTr("Click to learn more about this method")
+		helpPage:			"Audit/sieveSampling"
 	}
 }

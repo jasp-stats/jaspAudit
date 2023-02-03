@@ -115,7 +115,7 @@ Form
 	}
 
 	Common.SamplingUnits { id: units; enable_mus: values.count > 0 }
-	Common.SelectionMethod { id: method }
+	Common.SelectionMethod { id: method; enable_sieve: values.count > 0 && units.use_mus }
 	Common.ExplanatoryText { }
 
 	Section

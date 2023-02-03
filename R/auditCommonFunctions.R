@@ -1101,7 +1101,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
       label_method <- switch(options[["sampling_method"]],
         "random" = gettext("random"),
         "interval" = gettext("fixed interval"),
-        "cell" = gettext("cell")
+        "cell" = gettext("cell"),
+		"sieve" = gettext("sieve")
       )
 
       if (options[["units"]] == "values") {
@@ -2206,7 +2207,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
   message <- switch(options[["sampling_method"]],
     "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else if (!is.null(parentState[["start"]])) parentState[["start"]] else options[["start"]]),
     "cell" = gettextf("The sample is drawn with seed %1$s and intervals of size %2$s.", options[["seed"]], round(parentState[["interval"]], 2)),
-    "random" = gettextf("The sample is drawn with seed %1$s.", options[["seed"]])
+    "random" = gettextf("The sample is drawn with seed %1$s.", options[["seed"]]),
+	"sieve" = gettextf("The random numbers are generated with seed %1$s.", options[["seed"]])
   )
   table$addFootnote(message)
   if (!options[["workflow"]] && options[["file"]] != "" && !options[["export_sample"]]) {
@@ -2229,7 +2231,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     return()
   }
 
-  if (options[["units"]] == "values" && options[["sampling_method"]] != "random") {
+  if (options[["units"]] == "values" && !(options[["sampling_method"]] %in% c("random", "sieve"))) {
     .jfaTableNumberUpdate(jaspResults)
 
     if (!is.null(parentContainer[["tableInterval"]])) {

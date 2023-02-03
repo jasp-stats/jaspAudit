@@ -216,8 +216,8 @@ Form
 				}
 			}
 
-			Common.SamplingUnits { enable: !pasteVariables.checked; enable_mus: values.count > 0; force_mus: algorithm.use_algorithm2 }
-			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; force_interval: algorithm.use_algorithm2}
+			Common.SamplingUnits { id: units; enable: !pasteVariables.checked; enable_mus: values.count > 0; force_mus: algorithm.use_algorithm2 }
+			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; force_interval: algorithm.use_algorithm2; enable_sieve: values.count > 0 && units.use_mus}
 		}
 
 		VariablesForm
