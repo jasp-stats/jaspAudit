@@ -219,7 +219,7 @@ Form
 					defaultValue: 						1
 					min: 								1
 					max: 								99999
-					enabled:							randomize.checked || !method.use_interval
+					enabled:							randomize.checked || !method.use_interval || method.use_random_start
 				}
 
 				CheckBox

@@ -24,11 +24,12 @@ import JASP.Widgets
 
 RadioButtonGroup
 {
-	readonly	property bool	use_interval:	interval.checked
-	readonly	property bool	use_cell:		cell.checked
-	readonly	property bool	use_random:		random.checked
-				property bool	enable:			true
-				property bool	force_interval:	false
+	readonly	property bool	use_interval:		interval.checked
+	readonly	property bool	use_random_start:	interval.checked && randomize.checked
+	readonly	property bool	use_cell:			cell.checked
+	readonly	property bool	use_random:			random.checked
+				property bool	enable:				true
+				property bool	force_interval:		false
 
 	id: 					method
 	title:					qsTr("Selection Method")
@@ -57,7 +58,7 @@ RadioButtonGroup
 		CheckBox
 		{
 			id:				randomize
-			text: 			qsTr("Randomize")
+			text: 			qsTr("Random")
 			name: 			"randomStart"
 			visible:		interval.checked
 			enabled:		!force_interval

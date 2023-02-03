@@ -2158,11 +2158,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   start <- if (!is.null(prevState[["start"]])) prevState[["start"]] else options[["start"]]
-  if (options[["sampling_method"]] == "interval" && options[["randomStart"]]) {
-    start <- sample(1:floor(interval), size = 1)
-  }
-  if (options[["sampling_method"]] != "interval" || options[["randomize"]]) {
+  if (options[["sampling_method"]] != "interval" || options[["randomize"]] || (options[["sampling_method"]] == "interval" && options[["randomStart"]])) {
     set.seed(options[["seed"]])
+    if (options[["sampling_method"]] == "interval" && options[["randomStart"]]) {
+      start <- sample(1:floor(interval), size = 1)
+    }
   }
 
   jfaresult <- jfa::selection(
