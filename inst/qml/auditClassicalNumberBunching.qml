@@ -167,7 +167,7 @@ Form {
 
 	Section
 	{
-		title:							qsTr("Advanced Options")
+		title:							qsTr("Advanced")
 		columns:						2
 
 		IntegerField

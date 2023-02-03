@@ -34,18 +34,29 @@ Group
 	title:				qsTr("Algorithm")
 	enabled:			enable
 
-	CheckBox
+	Row
 	{
-		id:				algorithm1
-		text:			qsTr("Share stratum info")
-		name:			"pooling"
-		enabled:		enable_algorithm1
-		visible:		!hide_algorithm1
+		spacing: 		5 * preferencesModel.uiScale
+
+		CheckBox
+		{
+			id:			algorithm1
+			text:		qsTr("Share stratum info")
+			name:		"pooling"
+			enabled:	enable_algorithm1
+			visible:	!hide_algorithm1
+		}
+
+		HelpButton
+		{
+			toolTip: 	qsTr("Click to learn more about this algorithm")
+			helpPage:	"Audit/pooling"
+		}
 	}
 
 	Row
 	{
-		spacing: 5 * preferencesModel.uiScale
+		spacing: 		5 * preferencesModel.uiScale
 
 		CheckBox
 		{
@@ -57,8 +68,8 @@ Group
 
 		HelpButton
 		{
-			toolTip: 	qsTr("Click to learn more about this assumption")
-			helpPage:	"Audit/separateKnownAndUnknownMisstatement"
+			toolTip: 	qsTr("Click to learn more about this algorithm")
+			helpPage:	"Audit/extrapolation"
 		}
 	}
 }

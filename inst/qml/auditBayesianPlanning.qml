@@ -65,8 +65,6 @@ Form
 		title: qsTr("Advanced")
 		Group
 		{
-			columns: 1
-
 			Common.Iterations { }
 		}
 	}

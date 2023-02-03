@@ -25,18 +25,22 @@ import JASP.Widgets
 Group
 {
 	title: 			qsTr("Display")
-	columns: 		2
 
-	CheckBox
+	Row
 	{
-		text: 		qsTr("Explanatory text")
-		name: 		"explanatoryText"
-		checked: 	true
-	}
+		spacing: 		5 * preferencesModel.uiScale
 
-	HelpButton
-	{
-		helpPage:	"Audit/explanatoryText"
-		toolTip: 	qsTr("Show explanatory text in the audit report")
+		CheckBox
+		{
+			text: 		qsTr("Explanatory text")
+			name: 		"explanatoryText"
+			checked: 	true
+		}
+
+		HelpButton
+		{
+			helpPage:	"Audit/explanatoryText"
+			toolTip: 	qsTr("Show explanatory text in the audit report")
+		}
 	}
 }

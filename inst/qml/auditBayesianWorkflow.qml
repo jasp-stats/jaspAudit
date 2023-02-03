@@ -91,8 +91,8 @@ Form
 
 		GridLayout
 		{
-			Layout.columnSpan: 2
 			columns: 1
+
 			Common.SamplingObjectives { id: objectives; enabled: !pasteVariables.checked }
 			Common.ExpectedErrors { enabled: !pasteVariables.checked }
 			Common.ExplanatoryText { }
