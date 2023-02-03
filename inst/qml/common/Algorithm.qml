@@ -43,7 +43,7 @@ Group
 		CheckBox
 		{
 			id:			algorithm1
-			text:		qsTr("Share stratum info")
+			text:		qsTr("Share information")
 			name:		"pooling"
 		}
 
@@ -62,7 +62,7 @@ Group
 		CheckBox
 		{
 			id:			algorithm2
-			text: 		qsTr("Extrapolate to unseen")
+			text: 		qsTr("Partial projection")
 			name: 		"separateMisstatement"
 		}
 
