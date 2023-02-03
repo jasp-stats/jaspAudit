@@ -60,11 +60,12 @@ Group
 		{
 			text: 		qsTr("Compare sample sizes")
 			name: 		"plotSampleSizes"
+			debug:		true
 		}
 
 		CheckBox
 		{
-			text: 		qsTr("Assumed error distribution")
+			text: 		qsTr("Presumed data distribution")
 			name: 		"plotErrorDist"
 			visible:	!bayesian
 		}

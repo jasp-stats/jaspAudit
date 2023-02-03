@@ -107,7 +107,7 @@ Group
 
 	HelpButton
 	{
-		toolTip: 						qsTr("Click to learn more about the performance materiality objective.")
+		toolTip: 						qsTr("Click to learn more about this objective")
 		helpPage:						"Audit/performanceMateriality"
 	}
 
@@ -132,7 +132,7 @@ Group
 
 	HelpButton
 	{
-		toolTip: 						qsTr("Click to learn more about the minimum precision objective.")
+		toolTip: 						qsTr("Click to learn more about this objective")
 		helpPage:						"Audit/minimumPrecision"
 	}
 }

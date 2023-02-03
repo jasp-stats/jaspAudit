@@ -1,10 +1,10 @@
 Objective: Test Against Performance Materiality
 ===
 
-The performance materiality, also known as the upper error limit, tolerable deviation rate, or tolerable misstatement, is a value established by the auditor that is below the overall materiality of financial reports. Its purpose is to reduce the likelihood that the total of uncorrected and undetected misstatements exceeds the materiality of the financial reports as a whole.
+This objective should be enabled when you wish to test if the population as a whole contains misstatements exceeding a certain critical limit.
 
-In statistical analysis, the performance materiality represents the highest acceptable level of misstatement in the population being tested. By testing against this performance materiality, you can design a sample to determine whether the population as a whole contains misstatements that are deemed material (i.e. greater than the upper limit of tolerable misstatement).
+The performance materiality, also known the intolerable deviation rate or intolerable misstatement (sometimes tolerable deviation rate or misstatement), is a value established by the auditor that is below, or equal to, the overall materiality of the financial statements. Typically in an audit, the performance materiality is set lower than the overall materiality to reduce the chance that the total of undetected misstatements exceeds the materiality of the financial statements as a whole.
 
-This objective should be enabled when you wish to assess if the population has misstatements exceeding a specific limit (the performance materiality) using a sample from the population.
+In this analysis, the performance materiality represents the lowest unacceptable level of misstatement in the population being tested. By enabling this sampling objective, you can design a sample to determine whether the population as a whole contain misstatements that are deemed material (i.e. are greater or equal to the performance materiality) while respecting a certain audit risk (1 - confidence level).
 
-The required sample size will increase with a lower performance materiality and decrease with a higher performance materiality.
+The value of the performance materiality affects the minimum sample size. A lower performance materiality requires a relatively larger minimum sample size to reduce the audit risk to an acceptably low level, while a higher performance materiality requires a relatively smaller sample size to reduce the audit risk to an acceptably low level.

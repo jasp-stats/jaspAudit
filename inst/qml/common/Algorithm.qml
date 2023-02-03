@@ -37,14 +37,14 @@ Group
 	Row
 	{
 		spacing: 		5 * preferencesModel.uiScale
+		enabled:		enable_algorithm1
+		visible:		!hide_algorithm1
 
 		CheckBox
 		{
 			id:			algorithm1
 			text:		qsTr("Share stratum info")
 			name:		"pooling"
-			enabled:	enable_algorithm1
-			visible:	!hide_algorithm1
 		}
 
 		HelpButton
@@ -57,13 +57,13 @@ Group
 	Row
 	{
 		spacing: 		5 * preferencesModel.uiScale
+		enabled:		enable_algorithm2
 
 		CheckBox
 		{
 			id:			algorithm2
 			text: 		qsTr("Extrapolate to unseen")
 			name: 		"separateMisstatement"
-			enabled:	enable_algorithm2
 		}
 
 		HelpButton

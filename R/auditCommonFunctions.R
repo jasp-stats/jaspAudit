@@ -2013,64 +2013,25 @@ gettextf <- function(fmt, ..., domain = NULL) {
   .jfaFigureNumberUpdate(jaspResults)
 
   if (is.null(parentContainer[["samplingDistribution"]])) {
-    likelihood <- switch(options[["likelihood"]],
+    
+	likelihood <- switch(options[["likelihood"]],
       "poisson" = "Poisson",
       "binomial" = "Binomial",
       "hypergeometric" = "Hypergeometric"
     )
-    title <- gettextf("Assumed %1$s Distribution of Errors", likelihood)
-
-    figure <- createJaspPlot(plot = NULL, title = title, width = 530, height = 350)
-    figure$position <- positionInContainer
-    figure$dependOn(options = c("likelihood", "plotErrorDist"))
-
-    parentContainer[["samplingDistribution"]] <- figure
+    title <- gettextf("Presumed %1$s Distribution", likelihood)
+    fg <- createJaspPlot(plot = NULL, title = title, width = 530, height = 350)
+    fg$position <- positionInContainer
+    fg$dependOn(options = c("likelihood", "plotErrorDist"))
+    parentContainer[["samplingDistribution"]] <- fg
 
     if (!ready || parentContainer$getError()) {
       return()
     }
 
-    xVals <- 0:parentState[["n"]]
-    limx <- min(parentState[["n"]] + 1, 31)
-    xVals <- xVals[1:limx]
-
-    if (parentState[["likelihood"]] == "poisson") {
-      dErrorFree <- stats::dpois(x = xVals, lambda = parentState[["materiality"]] * parentState[["n"]])
-      dError <- stats::dpois(x = 0:parentState[["x"]], lambda = parentState[["materiality"]] * parentState[["n"]])
-    } else if (parentState[["likelihood"]] == "binomial") {
-      dErrorFree <- stats::dbinom(x = xVals, size = parentState[["n"]], prob = parentState[["materiality"]])
-      dError <- stats::dbinom(x = 0:parentState[["x"]], size = parentState[["n"]], prob = parentState[["materiality"]])
-    } else if (parentState[["likelihood"]] == "hypergeometric") {
-      dErrorFree <- stats::dhyper(x = xVals, m = parentState[["K"]], n = parentState[["N.units"]] - parentState[["K"]], k = parentState[["n"]])
-      dError <- stats::dhyper(x = 0:parentState[["x"]], m = parentState[["K"]], n = parentState[["N.units"]] - parentState[["K"]], k = parentState[["n"]])
-    }
-
-    dataErrorFree <- data.frame(x = xVals, y = dErrorFree)
-    dataError <- data.frame(x = 0:parentState[["x"]], y = dError)
-    dataLegend <- data.frame(x = 0, y = 0, type = gettext("Expected"))
-
-    xTicks <- jaspGraphs::getPrettyAxisBreaks(c(0, xVals))
-    yTicks <- jaspGraphs::getPrettyAxisBreaks(c(0, dataErrorFree[["y"]]))
-
-    jfaLegend <- ggplot2::guide_legend(override.aes = list(
-      size = 12, shape = 22, fill = "#FF6666",
-      stroke = 1.5, color = "black"
-    ))
-
-    plot <- ggplot2::ggplot(data = dataLegend, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
-      ggplot2::geom_point(shape = 2, alpha = 0) +
-      ggplot2::scale_x_continuous(name = gettext("Errors"), labels = xTicks, breaks = xTicks) +
-      ggplot2::scale_y_continuous(name = gettext("Probability"), labels = yTicks, breaks = yTicks, limits = c(0, max(yTicks))) +
-      ggplot2::geom_bar(data = dataErrorFree, mapping = ggplot2::aes(x = x, y = y), stat = "identity", fill = "lightgray", size = 0.5, color = "black") +
-      ggplot2::geom_bar(data = dataError, mapping = ggplot2::aes(x = x, y = y), stat = "identity", fill = "#FF6666", size = 0.5, color = "black") +
-      ggplot2::geom_point(data = dataLegend, mapping = ggplot2::aes(x = x, y = y, fill = type), size = 0) +
-      ggplot2::guides(fill = jfaLegend) +
-      ggplot2::labs(fill = "") +
+    fg$plotObject <- plot(parentState) +
       jaspGraphs::geom_rangeframe() +
-      jaspGraphs::themeJaspRaw(legend.position = "top") +
-      ggplot2::theme(legend.text = ggplot2::element_text(margin = ggplot2::margin(l = 0, r = 30)))
-
-    figure$plotObject <- plot
+      jaspGraphs::themeJaspRaw(legend.position = "none")
   }
 
   if (options[["explanatoryText"]] && ready) {
@@ -2079,7 +2040,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
       jaspResults[["figNumber"]]$object,
       options[["likelihood"]]
     ), "p")
-
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = parentContainer[["samplingDistribution"]])
     caption$dependOn(options = "explanatoryText")

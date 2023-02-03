@@ -66,7 +66,7 @@ RadioButtonGroup
 
 	HelpButton
 	{
-		toolTip: 			qsTr("Click to learn more about the fixed interval sampling method.")
+		toolTip: 			qsTr("Click to learn more about this method")
 		helpPage:			"Audit/fixedIntervalSampling"
 	}
 
@@ -80,7 +80,7 @@ RadioButtonGroup
 
 	HelpButton
 	{
-		toolTip: 			qsTr("Click to learn more about the cell sampling method.")
+		toolTip: 			qsTr("Click to learn more about this method")
 		helpPage:			"Audit/cellSampling"
 	}
 
@@ -94,7 +94,7 @@ RadioButtonGroup
 
 	HelpButton
 	{
-		toolTip: 			qsTr("Click to learn more about the random sampling method.")
+		toolTip: 			qsTr("Click to learn more about this method")
 		helpPage:			"Audit/randomSampling"
 	}
 }

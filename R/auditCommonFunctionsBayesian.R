@@ -185,10 +185,9 @@
     }
 
     object <- if (stage == "planning") parentState[["prior"]] else parentState[["posterior"]]
-    p <- plot(predict(object, size)) +
+    fg$plotObject <- plot(predict(object, size)) +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "none")
-    fg$plotObject <- p
   }
 
   if (options[["explanatoryText"]]) {

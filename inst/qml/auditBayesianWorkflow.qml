@@ -94,7 +94,7 @@ Form
 			columns: 1
 
 			Common.SamplingObjectives { id: objectives; enabled: !pasteVariables.checked }
-			Common.ExpectedErrors { enabled: !pasteVariables.checked }
+			Common.ExpectedErrors { enabled: !pasteVariables.checked; show_all: algorithm.use_algorithm2; enable_all: algorithm.use_algorithm2 }
 			Common.ExplanatoryText { }
 		}
 
@@ -204,7 +204,7 @@ Form
 					id:									randomize
 					name:								"randomize"
 					text:								qsTr("Randomize item order")
-					enabled:							!pasteVariables.checked && !separate.checked && rank.count == 0
+					enabled:							!pasteVariables.checked && !algorithm.use_algorithm2 && rank.count == 0
 				}
 
 				CheckBox
@@ -216,8 +216,8 @@ Form
 				}
 			}
 
-			Common.SamplingUnits { enable: !pasteVariables.checked; enable_mus: values.count > 0; force_mus: separate.checked }
-			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; force_interval: separate.checked}
+			Common.SamplingUnits { enable: !pasteVariables.checked; enable_mus: values.count > 0; force_mus: algorithm.use_algorithm2 }
+			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; force_interval: algorithm.use_algorithm2}
 		}
 
 		VariablesForm
@@ -240,7 +240,7 @@ Form
 				singleVariable:						true
 				allowedColumns:						["scale"]
 				allowAnalysisOwnComputedColumns: 	false
-				enabled:							!separate.checked
+				enabled:							!algorithm.use_algorithm2
 			}
 
 			AssignedVariablesList
@@ -345,7 +345,7 @@ Form
 				text: 								qsTr("Correct / Incorrect")
 				name: 								"binary"
 				checked: 							true
-				enabled: 							!separate.checked
+				enabled: 							!algorithm.use_algorithm2
 			}
 
 			HelpButton
@@ -573,7 +573,7 @@ Form
 				}
 			}
 
-			Common.IntervalType { }
+			Common.IntervalType { bayesian: true }
 		}
 
 		Item

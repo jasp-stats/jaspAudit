@@ -46,7 +46,7 @@ RadioButtonGroup
 
 	HelpButton
 	{
-		toolTip: 	qsTr("Click to learn more about record sampling.")
+		toolTip: 	qsTr("Click to learn more about this method")
 		helpPage:	"Audit/recordSampling"
 	}
 
@@ -62,6 +62,6 @@ RadioButtonGroup
 	HelpButton
 	{
 		helpPage:	"Audit/monetaryUnitSampling"
-		toolTip: 	qsTr("Click to learn more about monetary unit sampling.")
+		toolTip: 	qsTr("Click to learn more about this method")
 	}
 }
