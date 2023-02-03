@@ -620,6 +620,8 @@ Form
 					enabled: 							values.count > 0 && continuous.checked
 				}
 			}
+
+			Common.IntervalType { bayesian: false }
 		}
 
 		Item
