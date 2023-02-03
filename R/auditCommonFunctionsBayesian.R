@@ -276,7 +276,7 @@
     posterior <- parentState[["posterior"]]
     n <- parentState[["n"]]
 
-	if (!is.null(prior[["description"]]$alpha)) {
+	if (posterior[["description"]]$density != "MCMC") {
     if (likelihood == "poisson") {
       formPrior <- paste0("gamma(\u03B1 = ", round(prior[["description"]]$alpha, 3), ", \u03B2 = ", round(prior[["description"]]$beta, 3), ")")
       formPost <- paste0("gamma(\u03B1 = ", round(posterior[["description"]]$alpha, 3), ", \u03B2 = ", round(posterior[["description"]]$beta, 3), ")")
