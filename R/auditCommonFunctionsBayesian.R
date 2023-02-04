@@ -92,7 +92,7 @@
       )
 
     if (stage == "evaluation" && options[["plotPosteriorInfo"]]) {
-      if (options[["area"]] == "area_bound") {
+      if (options[["area"]] == "two.sided") {
         label_mode <- paste0("Mode: ", formatC(parentState[["posterior"]]$statistics$mode, 3, format = "f"))
         label_ub <- paste0(round(options[["conf_level"]] * 100, 3), "% CI: [0, ", formatC(parentState[["posterior"]]$statistics$ub, 3, format = "f"), "]")
       } else {
@@ -276,21 +276,21 @@
     posterior <- parentState[["posterior"]]
     n <- parentState[["n"]]
 
-	if (posterior[["description"]]$density != "MCMC") {
-    if (likelihood == "poisson") {
-      formPrior <- paste0("gamma(\u03B1 = ", round(prior[["description"]]$alpha, 3), ", \u03B2 = ", round(prior[["description"]]$beta, 3), ")")
-      formPost <- paste0("gamma(\u03B1 = ", round(posterior[["description"]]$alpha, 3), ", \u03B2 = ", round(posterior[["description"]]$beta, 3), ")")
-    } else if (likelihood == "binomial") {
-      formPrior <- paste0("beta(\u03B1 = ", round(prior[["description"]]$alpha, 3), ", \u03B2 = ", round(prior[["description"]]$beta, 3), ")")
-      formPost <- paste0("beta(\u03B1 = ", round(posterior[["description"]]$alpha, 3), ", \u03B2 = ", round(posterior[["description"]]$beta, 3), ")")
-    } else if (likelihood == "hypergeometric") {
-      formPrior <- paste0("beta-binomial(N = ", N, ", \u03B1 = ", round(prior[["description"]]$alpha, 3), ", \u03B2 = ", round(prior[["description"]]$beta, 3), ")")
-      formPost <- paste0("beta-binomial(N = ", N - n, ", \u03B1 = ", round(posterior[["description"]]$alpha, 3), ", \u03B2 = ", round(posterior[["description"]]$beta, 3), ")")
+    if (posterior[["description"]]$density != "MCMC") {
+      if (likelihood == "poisson") {
+        formPrior <- paste0("gamma(\u03B1 = ", round(prior[["description"]]$alpha, 3), ", \u03B2 = ", round(prior[["description"]]$beta, 3), ")")
+        formPost <- paste0("gamma(\u03B1 = ", round(posterior[["description"]]$alpha, 3), ", \u03B2 = ", round(posterior[["description"]]$beta, 3), ")")
+      } else if (likelihood == "binomial") {
+        formPrior <- paste0("beta(\u03B1 = ", round(prior[["description"]]$alpha, 3), ", \u03B2 = ", round(prior[["description"]]$beta, 3), ")")
+        formPost <- paste0("beta(\u03B1 = ", round(posterior[["description"]]$alpha, 3), ", \u03B2 = ", round(posterior[["description"]]$beta, 3), ")")
+      } else if (likelihood == "hypergeometric") {
+        formPrior <- paste0("beta-binomial(N = ", N, ", \u03B1 = ", round(prior[["description"]]$alpha, 3), ", \u03B2 = ", round(prior[["description"]]$beta, 3), ")")
+        formPost <- paste0("beta-binomial(N = ", N - n, ", \u03B1 = ", round(posterior[["description"]]$alpha, 3), ", \u03B2 = ", round(posterior[["description"]]$beta, 3), ")")
+      }
+    } else {
+      formPrior <- gettext("Nonparametric")
+      formPost <- gettext("Nonparametric")
     }
-	} else {
-		formPrior <- gettext("Nonparametric")
-		formPost <- gettext("Nonparametric")
-	}
 
     rows <- data.frame(
       v = names,

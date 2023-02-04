@@ -1104,7 +1104,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         "random" = gettext("random"),
         "interval" = gettext("fixed interval"),
         "cell" = gettext("cell"),
-		"sieve" = gettext("sieve")
+        "sieve" = gettext("sieve")
       )
 
       if (options[["units"]] == "values") {
@@ -2016,8 +2016,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   .jfaFigureNumberUpdate(jaspResults)
 
   if (is.null(parentContainer[["samplingDistribution"]])) {
-    
-	likelihood <- switch(options[["likelihood"]],
+    likelihood <- switch(options[["likelihood"]],
       "poisson" = "Poisson",
       "binomial" = "Binomial",
       "hypergeometric" = "Hypergeometric"
@@ -2210,7 +2209,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else if (!is.null(parentState[["start"]])) parentState[["start"]] else options[["start"]]),
     "cell" = gettextf("The sample is drawn with seed %1$s and intervals of size %2$s.", options[["seed"]], round(parentState[["interval"]], 2)),
     "random" = gettextf("The sample is drawn with seed %1$s.", options[["seed"]]),
-	"sieve" = gettextf("The random numbers are generated with seed %1$s.", options[["seed"]])
+    "sieve" = gettextf("The random numbers are generated with seed %1$s.", options[["seed"]])
   )
   table$addFootnote(message)
   if (!options[["workflow"]] && options[["file"]] != "" && !options[["export_sample"]]) {
@@ -2492,7 +2491,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           conf.level = conf_level, materiality = materiality,
           n = nrow(sample), x = length(which(sample[[options[["values.audit"]]]] == 1)),
           method = options[["method"]], N.units = prevOptions[["N.units"]],
-          prior = prior, alternative = if (options[["area"]] == "area_bound") "less" else "two.sided"
+          prior = prior, alternative = options[["area"]]
         )
       })
     } else if (options[["annotation"]] == "continuous") {
@@ -2503,7 +2502,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       result <- try({
         jfa::evaluation(
           data = sample, times = options[["indicator_col"]], conf.level = conf_level,
-          materiality = materiality, alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else if (options[["area"]] == "area_bound") "less" else "two.sided",
+          materiality = materiality, alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else options[["area"]],
           values = options[["values"]], values.audit = options[["values.audit"]],
           method = method, N.items = prevOptions[["N.items"]], N.units = prevOptions[["N.units"]],
           prior = prior
@@ -2698,7 +2697,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           conf.level = conf_level, materiality = materiality,
           n = options[["n"]], x = options[["x"]], method = options[["method"]],
           prior = prior, N.units = N_units,
-          alternative = if (options[["area"]] == "area_bound") "less" else "two.sided"
+          alternative = options[["area"]]
         )
       })
     } else if (all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1))) {
@@ -2708,7 +2707,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           n = nrow(sample), x = length(which(sample[[options[["values.audit"]]]] == 1)),
           method = options[["method"]], N.units = N_units,
           prior = prior,
-          alternative = if (options[["area"]] == "area_bound") "less" else "two.sided"
+          alternative = options[["area"]]
         )
       })
     } else {
@@ -2721,13 +2720,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
         result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior, planningOptions, selectionState, evaluationContainer)
         return(result)
       } else {
-		if (options[["bayesian"]]) {
-			options("mc.iterations" = options[["mc_iterations"]], "mc.chains" = options[["mc_chains"]], "mc.warmup" = options[["mc_warmup"]])
-		}
+        if (options[["bayesian"]]) {
+          options("mc.iterations" = options[["mc_iterations"]], "mc.chains" = options[["mc_chains"]], "mc.warmup" = options[["mc_warmup"]])
+        }
         result <- try({
           jfa::evaluation(
             data = sample, times = if (options[["times"]] != "" && (!options[["bayesian"]] || options[["pooling"]] != "partial")) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
-            values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else if (options[["area"]] == "area_bound") "less" else "two.sided",
+            values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else options[["area"]],
             method = method, N.items = N_items, N.units = N_units,
             prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL,
             pooling = if (options[["bayesian"]]) if (options[["pooling"]]) "partial" else "none" else "none"
@@ -2786,7 +2785,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", title), type = columnType)
     }
   } else {
-    if (options[["area"]] == "area_bound") {
+    if (options[["area"]] == "two.sided") {
       ubtitle <- round(options[["conf_level"]] * 100, 2)
       table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = columnType)
     } else if (options[["area"]] == "area_interval") {
@@ -2801,7 +2800,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
     table$addColumnInfo(name = "p", title = gettext("p-value"), type = "pvalue")
   }
   if (options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
-    bftitle <- if (options[["area"]] == "area_bound") gettextf("BF%1$s", "\u208B\u208A") else gettextf("BF%1$s", "\u2081\u2080")
+    bftitle <- switch(options[["area"]],
+      "less" = gettextf("BF%1$s", "\u208B\u208A"),
+      "two.sided" = gettextf("BF%1$s", "\u2081\u2080"),
+      "greater" = gettextf("BF%1$s", "\u208A\u208B")
+    )
     table$addColumnInfo(name = "bf", title = bftitle, type = "number")
   }
 
@@ -2958,7 +2961,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   tb$addColumnInfo(name = "k", title = gettext("Misstatements"), type = "integer")
   tb$addColumnInfo(name = "t", title = gettext("Taint"), type = "number")
   tb$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = "number")
-  if (options[["area"]] == "area_bound") {
+  if (options[["area"]] == "two.sided") {
     ubtitle <- round(options[["conf_level"]] * 100, 2)
     tb$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = "number")
   } else {
@@ -3261,8 +3264,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
     caption <- createJaspHtml(gettextf(
       "<b>Figure %1$i.</b> Most likely estimates (points) and %2$s%% %3$s %4$s intervals for the misstatement in the population and in the individual strata, showing the range of plausible values for the misstatement after seeing the data.",
       jaspResults[["figNumber"]]$object,
-	  round(options[["conf_level"]] * 100, 2),
-      if (options[["area"]] == "area_bound") gettext("one-sided") else gettext("two-sided"),
+      round(options[["conf_level"]] * 100, 2),
+      if (options[["area"]] == "two.sided") gettext("one-sided") else gettext("two-sided"),
       if (options[["bayesian"]]) gettext("credible") else gettext("confidence")
     ), "p")
     caption$position <- positionInContainer + 1

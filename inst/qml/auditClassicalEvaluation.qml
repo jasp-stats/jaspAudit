@@ -153,7 +153,7 @@ Form
 			}
 
 			Common.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
-			Common.IntervalType { bayesian: false }
+			Common.IntervalType { bayesian: false; test: objectives.use_materiality }
 		}
 	}
 

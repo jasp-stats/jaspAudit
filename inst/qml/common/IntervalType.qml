@@ -25,20 +25,27 @@ import JASP.Widgets
 RadioButtonGroup
 {
 	property bool	bayesian:	false
+	property bool	test:		false
 
-	title: 			bayesian ? qsTr("Credible Interval") : qsTr("Confidence Interval")
+	title: 			test ? (bayesian ? qsTr("Credible Interval (Alt. Hypothesis)") : qsTr("Confidence Interval (Alt. Hypothesis)")) : (bayesian ? qsTr("Credible Interval") : qsTr("Confidence Interval"))
 	name: 			"area"
 
 	RadioButton
 	{
-		text: 		qsTr("One-sided upper bound")
-		name: 		"area_bound"
+		text: 		test ? qsTr("Right-sided (< materiality)") : qsTr("Right-sided")
+		name: 		"less"
 		checked:	true
 	}
 
 	RadioButton
 	{
-		text: 		qsTr("Two-sided interval")
-		name: 		"area_interval"
+		text: 		test ? qsTr("Two-sided (\u2260 materiality)") : qsTr("Two-sided")
+		name: 		"two.sided"
+	}
+
+	RadioButton
+	{
+		text: 		test ? qsTr("Left-sided (> materiality)") : qsTr("Left-sided")
+		name: 		"greater"
 	}
 }
