@@ -94,7 +94,7 @@ Form
 			columns: 1
 
 			Common.SamplingObjectives { id: objectives; enabled: !pasteVariables.checked }
-			Common.ExpectedErrors { enabled: !pasteVariables.checked; show_all: algorithm.use_algorithm2; enable_all: algorithm.use_algorithm2 }
+			Common.ExpectedErrors { enabled: !pasteVariables.checked; show_all: algorithm.use_partial; enable_all: algorithm.use_partial }
 			Common.ExplanatoryText { }
 		}
 
@@ -127,7 +127,7 @@ Form
 			{
 				id: 								algorithm
 				enable:								!pasteVariables.checked
-				enable_algorithm2: 					id.count > 0 && values.count > 0 && likelihood.use_binomial
+				enable_partial: 					id.count > 0 && values.count > 0 && likelihood.use_binomial
 			}
 		}
 
@@ -196,7 +196,7 @@ Form
 					defaultValue: 						1
 					min: 								1
 					max: 								99999
-					enabled:							(randomize.checked || !method.use_interval || method.use_random_start) && !algorithm.use_algorithm2
+					enabled:							(randomize.checked || !method.use_interval || method.use_random_start) && !algorithm.use_partial
 				}
 
 				CheckBox
@@ -204,7 +204,7 @@ Form
 					id:									randomize
 					name:								"randomize"
 					text:								qsTr("Randomize item order")
-					enabled:							!pasteVariables.checked && !algorithm.use_algorithm2 && rank.count == 0
+					enabled:							!pasteVariables.checked && !algorithm.use_partial && rank.count == 0
 				}
 
 				CheckBox
@@ -216,8 +216,8 @@ Form
 				}
 			}
 
-			Common.SamplingUnits { id: units; enable: !pasteVariables.checked; enable_mus: values.count > 0; force_mus: algorithm.use_algorithm2 }
-			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; force_interval: algorithm.use_algorithm2; enable_sieve: values.count > 0 && units.use_mus}
+			Common.SamplingUnits { id: units; enable: !pasteVariables.checked; enable_mus: values.count > 0; force_mus: algorithm.use_partial }
+			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; force_interval: algorithm.use_partial; enable_sieve: values.count > 0 && units.use_mus}
 		}
 
 		VariablesForm
@@ -240,7 +240,7 @@ Form
 				singleVariable:						true
 				allowedColumns:						["scale"]
 				allowAnalysisOwnComputedColumns: 	false
-				enabled:							!algorithm.use_algorithm2
+				enabled:							!algorithm.use_partial
 			}
 
 			AssignedVariablesList
@@ -345,7 +345,7 @@ Form
 				text: 								qsTr("Correct / Incorrect")
 				name: 								"binary"
 				checked: 							true
-				enabled: 							!algorithm.use_algorithm2
+				enabled: 							!algorithm.use_partial
 			}
 
 			HelpButton
@@ -529,10 +529,11 @@ Form
 					bayesian: true
 					enable_taints: values.count > 0 && !data.use_stats
 					enable_corrections: values.count > 0
-					enable_assumptions: algorithm.use_algorithm2
+					enable_assumptions: algorithm.use_partial
 					enable_objectives: objectives.use_materiality || objectives.use_precision
 					enable_predictive: !likelihood.use_hypergeometric
 					enable_scatter: continuous.checked
+					enable_estimates: true
 				}
 			}
 		}

@@ -529,6 +529,7 @@ Form
 					enable_corrections: values.count > 0
 					enable_objectives: objectives.use_materiality || objectives.use_precision
 					enable_scatter: continuous.checked
+					enable_estimates: true
 				}
 			}
 		}

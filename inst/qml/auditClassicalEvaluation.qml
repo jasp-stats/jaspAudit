@@ -40,7 +40,7 @@ Form
 	IntegerField { name: "max"; defaultValue: 5000; visible: false }
 
 	// Visible options
-	Common.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample }
+	Common.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample; show_strata: true }
 	Common.SamplingObjectives { id: objectives }
 	Common.DataType { id: data }
 	Common.Population { id: population; optional: !objectives.absolute_materiality; enable: !data.use_population; show_items: true }
@@ -62,6 +62,7 @@ Form
 				enable_corrections: n_units.value > 0 || data.use_population
 				enable_objectives: objectives.use_materiality || objectives.use_precision
 				enable_scatter: !data.use_stats
+				enable_estimates: true
 			}
 			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
 		}

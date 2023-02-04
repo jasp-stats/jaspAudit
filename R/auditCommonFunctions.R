@@ -427,8 +427,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
   # Create a plot containing evaluation information
   .jfaPlotObjectives(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, positionInContainer = 11)
 
+  # Create a plot containing the estimates
+  .jfaPlotEstimates(options, evaluationState, evaluationContainer, jaspResults, positionInContainer = 13)
+
   # Create a plot containing the correlation between the book and audit values
-  .jfaPlotScatter(options, sample, evaluationOptions, evaluationContainer, jaspResults, positionInContainer = 13)
+  .jfaPlotScatter(options, sample, evaluationOptions, evaluationContainer, jaspResults, positionInContainer = 15)
 
   # Add the conclusion stage
   .jfaConclusionStage(options, jaspResults, workflow)
@@ -444,7 +447,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   evaluationContainer <- jaspResults[["evaluationContainer"]]
-  evaluationState <- evaluationContainer[["evaluationState"]]$object
 
   # Create a container for the conclusion
   conclusionContainer <- createJaspContainer(title = gettext("<u>Conclusion</u>"))
@@ -757,7 +759,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "min_precision_test", "min_precision_rel_val",
       "by", "prior_method", "prior_n", "prior_x", "alpha", "beta",
       "critical_items", "critical_negative", "critical_action",
-      "stratum", "pooling"
+      "stratum", "pooling", "mc_iterations", "mc_chains", "mc_warmup"
     ))
 
     jaspResults[["evaluationContainer"]] <- container
@@ -2719,6 +2721,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
         result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior, planningOptions, selectionState, evaluationContainer)
         return(result)
       } else {
+		if (options[["bayesian"]]) {
+			options("mc.iterations" = options[["mc_iterations"]], "mc.chains" = options[["mc_chains"]], "mc.warmup" = options[["mc_warmup"]])
+		}
         result <- try({
           jfa::evaluation(
             data = sample, times = if (options[["times"]] != "" && (!options[["bayesian"]] || options[["pooling"]] != "partial")) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
@@ -3225,6 +3230,45 @@ gettextf <- function(fmt, ..., domain = NULL) {
     figureCaption$dependOn(optionsFromObject = parentContainer[["plotObjectives"]])
     figureCaption$dependOn(options = "explanatoryText")
     parentContainer[["evaluationInformationText"]] <- figureCaption
+  }
+}
+
+.jfaPlotEstimates <- function(options, parentState, parentContainer, jaspResults,
+                              positionInContainer) {
+  if (!options[["plotEstimates"]]) {
+    return()
+  }
+
+  .jfaFigureNumberUpdate(jaspResults)
+
+  if (is.null(parentContainer[["plotEstimates"]])) {
+    fg <- createJaspPlot(plot = NULL, title = gettext("Estimates"), width = 530, height = 350)
+    fg$position <- positionInContainer
+    fg$dependOn(options = "plotEstimates")
+
+    parentContainer[["plotEstimates"]] <- fg
+
+    if (is.null(parentState) || parentContainer$getError()) {
+      return()
+    }
+
+    fg$plotObject <- plot(parentState, type = "estimates") +
+      jaspGraphs::geom_rangeframe() +
+      jaspGraphs::themeJaspRaw(legend.position = "none")
+  }
+
+  if (options[["explanatoryText"]]) {
+    caption <- createJaspHtml(gettextf(
+      "<b>Figure %1$i.</b> Most likely estimates (points) and %2$s%% %3$s %4$s intervals for the misstatement in the population and in the individual strata, showing the range of plausible values for the misstatement after seeing the data.",
+      jaspResults[["figNumber"]]$object,
+	  round(options[["conf_level"]] * 100, 2),
+      if (options[["area"]] == "area_bound") gettext("one-sided") else gettext("two-sided"),
+      if (options[["bayesian"]]) gettext("credible") else gettext("confidence")
+    ), "p")
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = parentContainer[["plotEstimates"]])
+    caption$dependOn(options = "explanatoryText")
+    parentContainer[["plotEstimatesText"]] <- caption
   }
 }
 

@@ -31,6 +31,7 @@ Group
 	property bool	enable_predictive:	false
 	property bool	enable_scatter:		false
 	property bool	enable_objectives:	false
+	property bool	enable_estimates:	false
 
 	columns:				2
 
@@ -84,6 +85,13 @@ Group
 			text: 			qsTr("Sampling objectives")
 			name: 			"plotObjectives"
 			enabled:		enable_objectives
+		}
+
+		CheckBox
+		{
+			text: 			qsTr("Estimates")
+			name: 			"plotEstimates"
+			enabled:		enable_estimates
 		}
 
 		CheckBox

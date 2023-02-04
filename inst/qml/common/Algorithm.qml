@@ -24,52 +24,86 @@ import JASP.Widgets
 
 Group
 {
-	readonly	property bool 	use_algorithm1:		algorithm1.checked
-	readonly	property bool 	use_algorithm2:		algorithm2.checked
-				property bool	enable:				true
-				property bool	hide_algorithm1:	true
-				property bool	enable_algorithm1:	true
-				property bool	enable_algorithm2:	true
+	readonly	property bool 	use_pooling:	pooling.checked
+	readonly	property bool 	use_partial:	partial.checked
+				property bool	enable:			true
+				property bool	hide_pooling:	true
+				property bool	enable_pooling:	true
+				property bool	enable_partial:	true
 
-	title:				qsTr("Algorithm")
-	enabled:			enable
+	title:							qsTr("Algorithm")
+	enabled:						enable
 
 	Row
 	{
-		spacing: 		5 * preferencesModel.uiScale
-		enabled:		enable_algorithm1
-		visible:		!hide_algorithm1
+		spacing: 					5 * preferencesModel.uiScale
+		enabled:					enable_partial && !pooling.checked
 
 		CheckBox
 		{
-			id:			algorithm1
-			text:		qsTr("Share information")
-			name:		"pooling"
+			id:						partial
+			text: 					qsTr("Partial projection")
+			name: 					"separateMisstatement"
 		}
 
 		HelpButton
 		{
-			toolTip: 	qsTr("Click to learn more about this algorithm")
-			helpPage:	"Audit/pooling"
+			toolTip: 				qsTr("Click to learn more about this algorithm")
+			helpPage:				"Audit/extrapolation"
 		}
 	}
 
 	Row
 	{
-		spacing: 		5 * preferencesModel.uiScale
-		enabled:		enable_algorithm2
+		spacing: 					5 * preferencesModel.uiScale
+		enabled:					enable_pooling
+		visible:					!hide_pooling
 
 		CheckBox
 		{
-			id:			algorithm2
-			text: 		qsTr("Partial projection")
-			name: 		"separateMisstatement"
+			id:						pooling
+			text:					qsTr("Share information")
+			name:					"pooling"
+			enabled:				!partial.checked
+
+			Group
+			{
+				IntegerField
+				{
+					id:				mciterations
+					name:			"mc_iterations"
+					text:			qsTr("Iterations")
+					visible:		pooling.checked
+					defaultValue:	2000
+					min:			200
+				}
+
+				IntegerField
+				{
+					name:			"mc_warmup"
+					text:			qsTr("Burnin")
+					visible:		pooling.checked
+					defaultValue:	1000
+					min:			100
+					max:			mciterations.value - 1
+				}
+
+				IntegerField
+				{
+					name:			"mc_chains"
+					text:			qsTr("Chains")
+					visible:		pooling.checked
+					defaultValue:	4
+					min:			1
+					max:			4
+				}
+			}
 		}
 
 		HelpButton
 		{
-			toolTip: 	qsTr("Click to learn more about this algorithm")
-			helpPage:	"Audit/extrapolation"
+			toolTip: 				qsTr("Click to learn more about this algorithm")
+			helpPage:				"Audit/pooling"
 		}
 	}
 }

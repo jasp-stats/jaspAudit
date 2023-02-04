@@ -53,7 +53,7 @@ Form
 
 			Common.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
 			Common.PriorMethod { use_materiality: objectives.use_materiality}
-			Common.ExpectedErrors { show_all: true; enable_all: algorithm.use_algorithm2 }
+			Common.ExpectedErrors { show_all: true; enable_all: algorithm.use_partial }
 		}
 	}
 
@@ -70,10 +70,11 @@ Form
 				bayesian: true
 				enable_taints: !data.use_stats && variables.use_book && variables.use_real
 				enable_corrections: population.n_units > 0 || data.use_population
-				enable_assumptions: algorithm.use_algorithm2
+				enable_assumptions: algorithm.use_partial
 				enable_objectives: objectives.use_materiality || objectives.use_precision
 				enable_predictive: !likelihood.use_hypergeometric
 				enable_scatter: !data.use_stats
+				enable_estimates: true
 			}
 
 			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
@@ -91,11 +92,11 @@ Form
 			Common.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
 			Common.Algorithm
 			{
-				id: 				algorithm
-				hide_algorithm1:	false
-				enable:				!data.use_stats
-				enable_algorithm1: 	variables.use_strata
-				enable_algorithm2: 	!variables.use_strata && variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
+				id: 			algorithm
+				hide_pooling:	false
+				enable:			!data.use_stats
+				enable_pooling: variables.use_strata
+				enable_partial: !variables.use_strata && variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
 			}
 			Common.IntervalType { bayesian: true }
 		}

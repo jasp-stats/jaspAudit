@@ -30,58 +30,60 @@ VariablesForm
 	readonly	property bool	use_strata:		stratum_indicator.count > 0
 				property bool	use_population: false
 				property bool	use_sample:		false
+				property bool	show_strata:	true
 
-	preferredHeight: 						260 * preferencesModel.uiScale
-	enabled:								use_population || use_sample
-	visible:								use_population || use_sample
+	preferredHeight: 		260 * preferencesModel.uiScale
+	enabled:				use_population || use_sample
+	visible:				use_population || use_sample
 
 	AvailableVariablesList
 	{
-		name: 								"variables"
+		name: 				"variables"
 	}
 
 	AssignedVariablesList
 	{
-		id: 								id
-		name: 								"id"
-		title: 								qsTr("Item ID (required)")
-		singleVariable: 					true
-		allowedColumns: 					["nominal", "nominalText", "ordinal", "scale"]
+		id: 				id
+		name: 				"id"
+		title: 				qsTr("Item ID (required)")
+		singleVariable: 	true
+		allowedColumns: 	["nominal", "nominalText", "ordinal", "scale"]
 	}
 
 	AssignedVariablesList
 	{
-		id: 								book_values
-		name: 								"values"
-		title: 								qsTr("Book Value (optional)")
-		singleVariable: 					true
-		allowedColumns: 					["scale"]
+		id: 				book_values
+		name: 				"values"
+		title: 				qsTr("Book Value (optional)")
+		singleVariable: 	true
+		allowedColumns: 	["scale"]
 	}
 
 	AssignedVariablesList
 	{
-		id: 								audit_values
-		name: 								"values.audit"
-		title: 								qsTr("Audit Result (required)")
-		singleVariable: 					true
-		allowedColumns: 					["nominal", "scale"]
+		id: 				audit_values
+		name: 				"values.audit"
+		title: 				qsTr("Audit Result (required)")
+		singleVariable: 	true
+		allowedColumns: 	["nominal", "scale"]
 	}
 
 	AssignedVariablesList
 	{
-		id: 								sample_indicator
-		name: 								"times"
-		title: 								use_sample ? qsTr("Selection Counter (optional)") : qsTr("Selection Counter (required)")
-		singleVariable: 					true
-		allowedColumns: 					["nominal", "ordinal", "scale"]
+		id: 				sample_indicator
+		name: 				"times"
+		title: 				use_sample ? qsTr("Selection Counter (optional)") : qsTr("Selection Counter (required)")
+		singleVariable: 	true
+		allowedColumns: 	["nominal", "ordinal", "scale"]
 	}
 	
 	AssignedVariablesList
 	{
-		id: 								stratum_indicator
-		name: 								"stratum"
-		title: 								qsTr("Stratum (optional)")
-		singleVariable: 					true
-		allowedColumns: 					["nominal", "nominalText", "ordinal"]
+		id: 				stratum_indicator
+		name: 				"stratum"
+		title: 				qsTr("Stratum (optional)")
+		singleVariable: 	true
+		allowedColumns: 	["nominal", "nominalText", "ordinal"]
+		visible:			show_strata
 	}
 }
