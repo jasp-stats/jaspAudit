@@ -39,6 +39,7 @@ Section
 			text: 				qsTr("Step 1: Column name selection result")
 			placeholderText: 	qsTr("e.g. selected")
 			fieldWidth: 		120 * preferencesModel.uiScale
+			info:				qsTr("When a name is provided, adds the result from the selection analysis in a new column to the data. The new column reflects how many times each transaction is included in the sample.")
 		}
 
 		FileSelector
@@ -51,6 +52,7 @@ Section
 			save:				true
 			fieldWidth:			180 * preferencesModel.uiScale
 			enabled:			name_indicator.value != ""
+			info:				qsTr("The location on the pc to which the sample should be saved.")
 		}
 
 		Row
@@ -67,6 +69,7 @@ Section
 				name: 			"export_sample"
 				text: 			qsTr("Synchronize")
 				enabled:		name_indicator.value != "" && file.value != ""
+				info:			qsTr("When checked, the sample is synchronized to the specified location on the pc.")
 			}
 		}
 	}

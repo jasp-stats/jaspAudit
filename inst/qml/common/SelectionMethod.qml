@@ -37,6 +37,7 @@ RadioButtonGroup
 	name: 					"sampling_method"
 	columns:				2
 	enabled:				enable
+	info:					qsTr("Choose the method by which sampling units are selected from the population.")
 
 	RadioButton
 	{
@@ -44,6 +45,7 @@ RadioButtonGroup
 		text: 				qsTr("Fixed interval sampling")
 		name: 				"interval"
 		checked: 			true
+		info:				qsTr("Performs selection by dividing the population in equal intervals and selecting a fixed unit in each interval. Any item with a value larger than the interval will always be included in the sample.")
 
 		IntegerField
 		{
@@ -54,6 +56,7 @@ RadioButtonGroup
 			min: 			1
 			visible:		interval.checked
 			enabled:		!force_interval && !randomize.checked
+			info:			qsTr("Selects which sampling unit is selected from each interval.")
 		}
 
 		CheckBox
@@ -63,6 +66,7 @@ RadioButtonGroup
 			name: 			"randomStart"
 			visible:		interval.checked
 			enabled:		!force_interval
+			info:			qsTr("Set the starting point randomly according to the specified seed.")
 		}
 	}
 
@@ -78,6 +82,7 @@ RadioButtonGroup
 		text: 				qsTr("Cell sampling")
 		name: 				"cell"
 		enabled:			!force_interval
+		info:				qsTr("Performs selection by dividing the population in equal intervals and selecting a variable unit in each interval. Any item with a value larger than twice the interval will always be included in the sample.")
 	}
 
 	HelpButton
@@ -92,6 +97,7 @@ RadioButtonGroup
 		text: 				qsTr("Random sampling")
 		name: 				"random"
 		enabled:			!force_interval
+		info:				qsTr("Performs random selection in which each sampling unit has an equal chance of being selected.")
 	}
 
 	HelpButton
@@ -106,6 +112,7 @@ RadioButtonGroup
 		text: 				qsTr("Modified sieve sampling")
 		name: 				"sieve"
 		enabled:			!force_interval && enable_sieve
+		info:				qsTr("Performs modified sieve sampling.")
 	}
 
 	HelpButton

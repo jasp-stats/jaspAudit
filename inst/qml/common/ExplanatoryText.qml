@@ -35,6 +35,7 @@ Group
 			text: 		qsTr("Explanatory text")
 			name: 		"explanatoryText"
 			checked: 	true
+			info:		qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
 		}
 
 		HelpButton

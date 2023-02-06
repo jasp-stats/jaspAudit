@@ -30,11 +30,13 @@ Group
 	{
 		text: 	qsTr("Selected items")
 		name: 	"tableSample"
+		info:	qsTr("Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.")
 	}
 
 	CheckBox
 	{
 		text: 	qsTr("Descriptive statistics")
 		name: 	"tableDescriptives"
+		info:	qsTr("Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.")
 	}
 }

@@ -27,6 +27,7 @@ import "./common" as Common
 Form 
 {
 	columns:									1
+	info:										qStr("The selection analysis allows the user to select a number of sampling units from a population using a combination of sampling techniques (record sampling versus monetary unit sampling) and sampling methods (random sampling, cell sampling, fixed interval sampling) that are standard in an audit context.")
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }
@@ -50,6 +51,7 @@ Form
 			singleVariable:						true
 			allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
 			allowAnalysisOwnComputedColumns:	false
+			info:								qsTr("A unique non-missing identifier for every item in the population. The row number of the items is sufficient.")
 		}
 
 		AssignedVariablesList
@@ -60,6 +62,7 @@ Form
 			singleVariable:						true
 			allowedColumns:						["scale"]
 			allowAnalysisOwnComputedColumns:	false
+			info:								qsTr("A numeric variable that contains the book (recorded) values of the items in the population.")
 		}
 
 		AssignedVariablesList
@@ -71,6 +74,7 @@ Form
 			allowedColumns:						["scale"]
 			allowAnalysisOwnComputedColumns: 	false
 			debug:								true
+			info:								qsTr("When provided, the population is first ranked in ascending order with respect to the values of this variable.")
 		}
 
 		AssignedVariablesList
@@ -80,6 +84,7 @@ Form
 			Layout.preferredHeight: 			140 * preferencesModel.uiScale
 			allowedColumns: 					["scale", "ordinal", "nominal"]
 			allowAnalysisOwnComputedColumns: 	false
+			info:								qsTr("Any other variables that should be included in the sample.")
 		}
 	}
 
@@ -92,6 +97,7 @@ Form
 			name: 							"n"
 			defaultValue: 					0
 			min: 							0
+			info:							qsTr("The required number of sampling units that should be selected from the population. Be aware that the sampling units are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.")
 		}
 
 		IntegerField
@@ -103,6 +109,7 @@ Form
 			min: 							1
 			max: 							99999
 			enabled:						randomize.checked || !method.use_interval || method.use_random_start
+			info:							qsTr("Selects the seed for the random number generator in order to reproduce results.")
 		}
 
 		CheckBox
@@ -111,6 +118,7 @@ Form
 			name:							"randomize"
 			text:							qsTr("Randomize item order")
 			enabled:						rank.count == 0
+			info:							qsTr("Randomizes the items in the population before selection is performed.")
 		}
 	}
 

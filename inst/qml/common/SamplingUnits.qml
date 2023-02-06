@@ -34,6 +34,7 @@ RadioButtonGroup
 	name: 			"units"
 	columns:		2
 	enabled:		enable
+	info:			qsTr("Choose which units are eligible for selection.")
 
 	RadioButton
 	{
@@ -42,6 +43,7 @@ RadioButtonGroup
 		name: 		"items"
 		checked:	!enable_mus
 		enabled:	!force_mus
+		info:		qsTr("Performs selection using the items (rows) in the population as sampling units.")
 	}
 
 	HelpButton
