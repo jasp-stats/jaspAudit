@@ -129,11 +129,9 @@ Form
 	Section
 	{
 		title:								qsTr("Report")
-
 		Group
 		{
 			columns:						1
-
 			Common.SelectionOutput { }
 		}
 	}

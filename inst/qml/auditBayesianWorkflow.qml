@@ -92,7 +92,6 @@ Form
 		GridLayout
 		{
 			columns: 1
-
 			Common.SamplingObjectives { id: objectives; enabled: !pasteVariables.checked }
 			Common.ExpectedErrors { enabled: !pasteVariables.checked; show_all: algorithm.use_partial; enable_all: algorithm.use_partial }
 			Common.ExplanatoryText { }
@@ -102,7 +101,6 @@ Form
 		{
 			title: 									qsTr("Prior")
 			columns:								2
-
 			Common.Likelihood { id:likelihood; bayesian: true; evaluation: false; enable_hypergeometric: id.count > 0 && values.count > 0 }
 			Common.PriorMethod { use_materiality: objectives.use_materiality }
 		}
@@ -111,7 +109,6 @@ Form
 		{
 			title:				qsTr("Report")
 			columns:			2
-
 			Common.PlanningOutput { bayesian: true; workflow: true; enable_values: values.count > 0; disable_predictive: likelihood.use_hypergeometric }
 			Common.Display { show_monetary: true; enable_monetary: values.count > 0 }
 		}
@@ -120,7 +117,6 @@ Form
 		{
 			title:									qsTr("Advanced")
 			columns:								3
-
 			Common.Iterations { enable: !pasteVariables.checked }
 			Common.CriticalItems { id: critical; enable: !data.use_stats && values.count > 0 && !pasteVariables.checked }
 			Common.Algorithm
@@ -519,11 +515,9 @@ Form
 		Section
 		{
 			title:						qsTr("Report")
-
 			Group
 			{
 				columns:				1
-
 				Common.EvaluationOutput
 				{
 					bayesian: true

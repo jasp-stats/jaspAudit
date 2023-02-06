@@ -45,7 +45,6 @@ Form
 		Group
 		{
 			columns: 2
-
 			Common.Likelihood { id: likelihood; bayesian: true; enable_hypergeometric: population.n_units > 0 }
 			Common.PriorMethod { use_materiality: objectives.use_materiality }
 		}
@@ -55,7 +54,6 @@ Form
 	{
 		title: qsTr("Report")
 		columns: 2
-
 		Common.PlanningOutput { bayesian: true; disable_predictive: likelihood.use_hypergeometric }
 		Common.Display { }
 	}

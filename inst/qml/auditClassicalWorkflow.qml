@@ -96,7 +96,6 @@ Form
 		GridLayout
 		{
 			columns: 1
-			
 			Common.SamplingObjectives { id: objectives; enabled: !pasteVariables.checked }
 			Common.ExpectedErrors { enabled: !pasteVariables.checked }
 			Common.AuditRiskModel { enable: objectives.use_materiality }
@@ -105,9 +104,8 @@ Form
 
 		Section
 		{
-			title:				qsTr("Report")
-			columns:			2
-
+			title:									qsTr("Report")
+			columns:								2
 			Common.PlanningOutput { bayesian: false; workflow: true; enable_values: values.count > 0 }
 			Common.Display { show_monetary: true; enable_monetary: values.count > 0 }
 		}
@@ -116,7 +114,6 @@ Form
 		{
 			title:									qsTr("Advanced")
 			columns:								3
-
 			Common.Likelihood { id:likelihood; bayesian: false; evaluation: false; enable_hypergeometric: id.count > 0 && values.count > 0  }
 			Common.Iterations { enable: !pasteVariables.checked }
 			Common.CriticalItems { id: critical; enable: !data.use_stats && values.count > 0 && !pasteVariables.checked }
@@ -517,11 +514,9 @@ Form
 		Section
 		{
 			title:						qsTr("Report")
-
 			Group
 			{
 				columns:				1
-
 				Common.EvaluationOutput
 				{
 					bayesian: false

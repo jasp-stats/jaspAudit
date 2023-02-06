@@ -50,7 +50,6 @@ Form
 		Group
 		{
 			columns: 3
-
 			Common.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
 			Common.PriorMethod { use_materiality: objectives.use_materiality}
 			Common.ExpectedErrors { show_all: true; enable_all: algorithm.use_partial }
@@ -60,11 +59,9 @@ Form
 	Section
 	{
 		title: qsTr("Report")
-
 		Group
 		{
 			columns: 2
-
 			Common.EvaluationOutput
 			{
 				bayesian: true
@@ -76,7 +73,6 @@ Form
 				enable_scatter: !data.use_stats
 				enable_estimates: true
 			}
-
 			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
 		}
 	}
@@ -84,11 +80,9 @@ Form
 	Section
 	{
 		title: qsTr("Advanced")
-
 		Group
 		{
 			columns: 3
-
 			Common.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
 			Common.Algorithm
 			{

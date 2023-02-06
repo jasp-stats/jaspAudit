@@ -50,11 +50,9 @@ Form
 	Section
 	{
 		title:						qsTr("Report")
-
 		Group
 		{
 			columns:				2
-
 			Common.EvaluationOutput
 			{
 				bayesian: false
