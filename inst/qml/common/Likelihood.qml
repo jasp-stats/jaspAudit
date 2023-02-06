@@ -33,6 +33,7 @@ RadioButtonGroup
 	
 	title: 			bayesian ? qsTr("Distribution") : qsTr("Likelihood")
 	name: 			evaluation ? "method" : "likelihood"
+	info:			qsTr("The likelihood is a function that relates the statistical model to the observed data. Specifically, it quantifies the probability of observing the data given the parameters of the model.")
 
 	RadioButton
 	{
@@ -40,6 +41,7 @@ RadioButtonGroup
 		text: 		bayesian ? qsTr("Beta-binomial") : qsTr("Hypergeometric")
 		name: 		"hypergeometric"
 		enabled:	enable_hypergeometric
+		info:		qsTr("The hypergeometric distribution assumes a finite population size and is therefore generally used when the population size is small. It is a probability distribution that models the number of errors (*K*) in the population as a function of the population size (*N*), the number of observed found errors (*k*) and the number of correct transactions (*n*). In a Bayesian analysis, the conjugate prior for the hypergeometric likelihood is the beta-binomial distribution.")
 	}
 
 	RadioButton
@@ -48,6 +50,7 @@ RadioButtonGroup
 		text: 		bayesian ? qsTr("Beta") : qsTr("Binomial")
 		name: 		"binomial"
 		checked: 	true
+		info:		qsTr("The binomial distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). In a Bayesian analysis, the conjugate prior for the binomial likelihood is the beta distribution.")
 	}
 
 	RadioButton
@@ -55,5 +58,6 @@ RadioButtonGroup
 		id: 		poisson
 		text: 		bayesian ? qsTr("Gamma") : qsTr("Poisson")
 		name: 		"poisson"
+		info:		qsTr("The Poisson distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors (*t*). In a Bayesian analysis, the conjugate prior for the Poisson likelihood is the gamma distribution.")
 	}
 }

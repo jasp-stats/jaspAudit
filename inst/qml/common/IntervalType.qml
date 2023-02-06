@@ -29,23 +29,27 @@ RadioButtonGroup
 
 	title: 			test ? (bayesian ? qsTr("Credible Interval (Alt. Hypothesis)") : qsTr("Confidence Interval (Alt. Hypothesis)")) : (bayesian ? qsTr("Credible Interval") : qsTr("Confidence Interval"))
 	name: 			"area"
+	info:			qsTr("Specify the type of interval and the alternative hypothesis.")
 
 	RadioButton
 	{
 		text: 		test ? qsTr("Right-sided (< materiality)") : qsTr("Right-sided")
 		name: 		"less"
 		checked:	true
+		info:		qsTr("Produces a one-sided upper bound for the misstatement in the population.")
 	}
 
 	RadioButton
 	{
 		text: 		test ? qsTr("Two-sided (\u2260 materiality)") : qsTr("Two-sided")
 		name: 		"two.sided"
+		info:		qsTr("Produces a two-sided interval for the misstatement in the population.")
 	}
 
 	RadioButton
 	{
 		text: 		test ? qsTr("Left-sided (> materiality)") : qsTr("Left-sided")
 		name: 		"greater"
+		info:		qsTr("Produces a one-sided lower bound for the misstatement in the population.")
 	}
 }

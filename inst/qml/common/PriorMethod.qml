@@ -29,6 +29,7 @@ Group
 	property bool	use_materiality:	false
 
 	title:					qsTr("Elicitation")
+	info:					qsTr("")
 
 	DropDown
 	{
@@ -44,6 +45,7 @@ Group
 			{ label: qsTr("Impartial"), 		value: "impartial"},
 			{ label: qsTr("Risk assessments"), 	value: "arm"}
 		]
+		info:				qsTr("Indicate the type of available audit information that should be incorporated into the prior distribution.")
 	}
 
 	DoubleField
@@ -53,6 +55,7 @@ Group
 		min:				1
 		defaultValue: 		1
 		visible:			prior_method.value == "param"
+		info:				qsTr("The \u03B1 parameter of the prior distribution.")
 	}
 
 	DoubleField
@@ -62,6 +65,7 @@ Group
 		min:				0
 		defaultValue: 		1
 		visible:			prior_method.value == "param"
+		info:				qsTr("The \u03B2 parameter of the prior distribution.")
 	}
 
 	IntegerField
@@ -72,6 +76,7 @@ Group
 		min:				x_prior.value
 		defaultValue: 		0
 		visible:			prior_method.value == "sample"
+		info:				qsTr("The number of sampling units audited in an earlier sample.")
 	}
 
 	DoubleField
@@ -84,6 +89,7 @@ Group
 		defaultValue: 		0
 		decimals:			3
 		visible:			prior_method.value == "sample"
+		info:				qsTr("The number of misstatements found in an earlier sample.")
 	}
 
 	Common.AuditRiskModel { hide: prior_method.value != "arm" }

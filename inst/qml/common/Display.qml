@@ -29,18 +29,21 @@ RadioButtonGroup
 
 	name: 			"display"
 	title:			qsTr("Format Output")
+	info:			qsTr("Choose how to display numbers in tables and figures.")
 
 	RadioButton
 	{
 		text: 		qsTr("Numeric")
 		name: 		"number"
 		checked: 	true
+		info:		qsTr("Display numbers as numeric values.")
 	}
 
 	RadioButton
 	{
 		text: 		qsTr("Percentages")
 		name: 		"percent"
+		info:		qsTr("Display numbers as percentages.")
 	}
 
 	RadioButton
@@ -49,5 +52,6 @@ RadioButtonGroup
 		name: 		"amount"
 		visible:	show_monetary
 		enabled:	enable_monetary
+		info:		qsTr("Display numbers as monetary units.")
 	}
 }

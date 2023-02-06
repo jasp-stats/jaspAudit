@@ -44,6 +44,7 @@ Group
 			id:						partial
 			text: 					qsTr("Partial projection")
 			name: 					"separateMisstatement"
+			info:					qsTr("This algorithm enables you to separate the known and the unknown misstatement in the population to be more efficient. Note that this requires the assumption that the taints in the sample are representative of the taints in the unseen part of the population.")
 		}
 
 		HelpButton
@@ -65,6 +66,7 @@ Group
 			text:					qsTr("Share information")
 			name:					"pooling"
 			enabled:				!partial.checked
+			info:					qsTr("This algorithm enables you to share information about the misstatement across different subgroups in the population (strata).")
 
 			Group
 			{
@@ -76,6 +78,7 @@ Group
 					visible:		pooling.checked
 					defaultValue:	2000
 					min:			200
+					info:			qsTr("The number of Markov Chain Monte-Carlo (MCMC) iterations used by the algorithm.")
 				}
 
 				IntegerField
@@ -86,6 +89,7 @@ Group
 					defaultValue:	1000
 					min:			100
 					max:			mciterations.value - 1
+					info:			qsTr("The number of warmup iterations used by the algorithm. This value must be lower than the total number of iterations.")
 				}
 
 				IntegerField
@@ -96,6 +100,7 @@ Group
 					defaultValue:	4
 					min:			1
 					max:			4
+					info:			qsTr("The number of chains used by the algorithm.")
 				}
 			}
 		}

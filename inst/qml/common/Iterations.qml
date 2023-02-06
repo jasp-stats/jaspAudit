@@ -28,6 +28,7 @@ Group
 
 	title:				qsTr("Iterations")
 	enabled:			enable
+	info:				qsTr("Specify how the sample size is computed.")
 	
 	IntegerField
 	{
@@ -36,6 +37,7 @@ Group
 		min: 			1
 		max:			50
 		defaultValue: 	1
+		info:			qsTr("The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.")
 	}
 
 	IntegerField
@@ -44,5 +46,6 @@ Group
 		text: 			qsTr("Maximum")
 		min: 			2
 		defaultValue: 	5000
+		info:			qsTr("The maximum sample size after which the algorithm terminates.")
 	}
 }

@@ -33,6 +33,7 @@ RadioButtonGroup
 	name: 					"expected_type"
 	title: 					qsTr("Expected Misstatements")
 	enabled:				enable
+	info:					qsTr("The expected misstatements are the tolerable misstatements that can be found in the sample while still achieving the conditions outlined in the sampling objectives. It is advised to set this value conservatively to minimize the probability of the observed misstatements exceeding the expected misstatements, which would imply that insufficient work has been done in the end.")
 
 	RadioButton
 	{
@@ -41,6 +42,7 @@ RadioButtonGroup
 		text: 				qsTr("Relative")
 		checked: 			true
 		childrenOnSameRow: 	true
+		info:				qsTr("Enter the expected misstatements as a percentage relative to the total size of the sample.")
 
 		PercentField
 		{
@@ -50,6 +52,7 @@ RadioButtonGroup
 			decimals: 		2
 			defaultValue: 	0
 			visible: 		expected_rel.checked
+			info:			qsTr("The percentage of expected misstatements in the sample.")
 		}
 	}
 
@@ -59,6 +62,7 @@ RadioButtonGroup
 		name: 				"expected_abs"
 		text: 				qsTr("Absolute")
 		childrenOnSameRow: 	true
+		info:				qsTr("Enter the expected misstatements as an absolute value.")
 
 		DoubleField
 		{
@@ -69,14 +73,16 @@ RadioButtonGroup
 			min: 			0
 			decimals: 		3
 			visible: 		expected_abs.checked
+			info:			qsTr("The number of expected misstatements in the sample.")
 		}
 	}
 
 	RadioButton
 	{
-		name:							"expected_all"
-		text:							qsTr("All possible")
-		enabled:						enable_all
-		visible:						show_all
+		name:				"expected_all"
+		text:				qsTr("All possible")
+		enabled:			enable_all
+		visible:			show_all
+		info:				qsTr("Do not make an assumption about the expected misstatements in the sample.")
 	}
 }

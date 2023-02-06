@@ -33,6 +33,7 @@ Group
 	name:					"critical_items"
 	title:					qsTr("Critical Items")
 	enabled:				enable
+	info:					qsTr("Choose how to handle critical items in the data set.")
 
 	CheckBox
 	{
@@ -40,6 +41,7 @@ Group
 		name:				"critical_negative"
 		text:				qsTr("Negative book values")
 		checked:			true
+		info:				qsTr("Isolates negative book values from the population.")
 
 		ComputedColumnField
 		{
@@ -49,6 +51,7 @@ Group
 			fieldWidth: 	120 * preferencesModel.uiScale
 			value: 			workflow ? qsTr("critical") : ""
 			visible:		workflow
+			info:			qsTr("Name for the column containing the critical item indicator to be added to the data set.")
 		}
 
 		RadioButtonGroup
@@ -61,12 +64,14 @@ Group
 				text: 		qsTr("Keep")
 				name: 		"inspect"
 				checked: 	true
+				info:		qsTr("Retains the critical items to be inspected as part of the sample.")
 			}
 
 			RadioButton
 			{
 				text: 		qsTr("Remove")
 				name: 		"remove"
+				info:		qsTr("Removes the critical items in the analysis.")
 			}
 		}
 	}

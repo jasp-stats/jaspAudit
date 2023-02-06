@@ -34,7 +34,7 @@ RadioButtonGroup
 	name: 			"units"
 	columns:		2
 	enabled:		enable
-	info:			qsTr("Choose which units are eligible for selection.")
+	info:			qsTr("Choose which type of units are eligible for selection.")
 
 	RadioButton
 	{
@@ -59,6 +59,7 @@ RadioButtonGroup
 		name: 		"values"
 		enabled: 	enable_mus
 		checked:	enable_mus
+		info:		qsTr("Performs selection using the monetary units in the population as sampling units. This method is preferred when you want to include more items with a high value in the sample.")
 	}
 
 	HelpButton

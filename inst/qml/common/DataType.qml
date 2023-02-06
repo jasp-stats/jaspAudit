@@ -30,6 +30,7 @@ RadioButtonGroup
 
 	name:									"dataType"
 	title:									qsTr("Data Type")
+	info:									qsTr("The type of input data for the analysis.")
 
 	RadioButton
 	{
@@ -37,6 +38,7 @@ RadioButtonGroup
 		name: 								"pdata"
 		label:								qsTr("Population")
 		enabled:							mainWindow.dataAvailable
+		info:								qsTr("Use the population as input data.")
 	}
 
 	RadioButton
@@ -46,6 +48,7 @@ RadioButtonGroup
 		label:								qsTr("Sample")
 		checked: 							mainWindow.dataAvailable
 		enabled:							mainWindow.dataAvailable
+		info:								qsTr("Use a sample of the population as input data.")
 	}
 
 	RadioButton
@@ -54,6 +57,7 @@ RadioButtonGroup
 		name: 								"stats"
 		label:								qsTr("Summary statistics")
 		checked: 							!mainWindow.dataAvailable
+		info:								qsTr("Use summary statistics from a sample as input data.")
 
 		Group
 		{
@@ -65,6 +69,7 @@ RadioButtonGroup
 				defaultValue: 				0
 				min: 						x.value
 				visible:					stats.checked
+				info:						qsTr("The number of sampling units that have been audited.")
 			}
 
 			DoubleField
@@ -77,6 +82,7 @@ RadioButtonGroup
 				visible:					stats.checked
 				max:						n.value
 				decimals:					3
+				info:						qsTr("The number of misstatements that have been found in the sample.")
 			}
 		}
 	}

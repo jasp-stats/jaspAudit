@@ -35,12 +35,14 @@ Group
 	{
 		title: 			qsTr("Tables")
 		visible:		bayesian || workflow
+		info:			qsTr("Add additional tables about the planning to the report.")
 
 		CheckBox
 		{
 			text: 		qsTr("Prior and posterior")
 			name: 		"tablePrior"
 			visible:	bayesian
+			info:		qsTr("Produces a table that shows statistics for the prior distribution and the posterior distribution.")
 		}
 
 		CheckBox
@@ -49,18 +51,21 @@ Group
 			name: 		"tableBookDist"
 			visible:	workflow
 			enabled:	enable_values
+			info:		qsTr("Produces a table showing descriptive statistics of the *Book Value* column in the data set.")
 		}
 	}
 
 	Group
 	{
 		title: 			qsTr("Plots")
+		info:			qsTr("Add additional figures about the planning to the report.")
 
 		CheckBox
 		{
 			text: 		qsTr("Compare sample sizes")
 			name: 		"plotSampleSizes"
 			debug:		true
+			info:		qsTr("Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.")
 		}
 
 		CheckBox
@@ -68,6 +73,7 @@ Group
 			text: 		qsTr("Presumed data distribution")
 			name: 		"plotErrorDist"
 			visible:	!bayesian
+			info:		qsTr("Produces a figure that displays the probability distribution implied by the input options and the calculated sample size.")
 		}
 
 		CheckBox
@@ -76,6 +82,7 @@ Group
 			text: 		qsTr("Distribution of book values")
 			visible:	workflow
 			enabled:	enable_values
+			info:		qsTr("Produces a histogram of the *Book Value* column in the data set.")
 		}
 
 		CheckBox
@@ -83,6 +90,7 @@ Group
 			text: 		qsTr("Prior and posterior")
 			name: 		"plotPrior"
 			visible:	bayesian
+			info:		qsTr("Produces a figure that shows the prior distribution and the intended posterior distribution.")
 		}
 
 		CheckBox
@@ -91,6 +99,7 @@ Group
 			name: 		"plotPriorPredictive"
 			visible:	bayesian
 			enabled:	!disable_predictive
+			info:		qsTr("Produces a figure that shows the predictions of the prior distribution on the data level for the intended sample.")
 		}
 	}
 }

@@ -48,6 +48,7 @@ VariablesForm
 		title: 				qsTr("Item ID (required)")
 		singleVariable: 	true
 		allowedColumns: 	["nominal", "nominalText", "ordinal", "scale"]
+		info:				qsTr("A unique non-missing identifier for every item in the population. The row number of the items is sufficient.")
 	}
 
 	AssignedVariablesList
@@ -57,6 +58,7 @@ VariablesForm
 		title: 				qsTr("Book Value (optional)")
 		singleVariable: 	true
 		allowedColumns: 	["scale"]
+		info:				qsTr("A numeric variable that contains the book (recorded) values of the items in the population.")
 	}
 
 	AssignedVariablesList
@@ -66,6 +68,7 @@ VariablesForm
 		title: 				qsTr("Audit Result (required)")
 		singleVariable: 	true
 		allowedColumns: 	["nominal", "scale"]
+		info:				qsTr("A numeric variable that contains the audited (true) values of the items in the population.")
 	}
 
 	AssignedVariablesList
@@ -75,6 +78,7 @@ VariablesForm
 		title: 				use_sample ? qsTr("Selection Counter (optional)") : qsTr("Selection Counter (required)")
 		singleVariable: 	true
 		allowedColumns: 	["nominal", "ordinal", "scale"]
+		info:				qsTr("An ordinal variable that indicates how many sampling units are selected for each item and thus how many times the item should be counted in the evaluation.")
 	}
 	
 	AssignedVariablesList
@@ -85,5 +89,6 @@ VariablesForm
 		singleVariable: 	true
 		allowedColumns: 	["nominal", "nominalText", "ordinal"]
 		visible:			show_strata
+		info:				qsTr("A nominal variable that indicates to which subgroup (strata) of the population an item belongs.")
 	}
 }
