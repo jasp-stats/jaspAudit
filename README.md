@@ -3,11 +3,10 @@
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.02733/status.svg)](https://doi.org/10.21105/joss.02733)
 [![R_build_status](https://github.com/jasp-stats/jaspAudit/workflows/unit-tests/badge.svg)](https://github.com/jasp-stats/jaspAudit/actions)
 [![jfa](https://img.shields.io/cran/v/jfa?color=yellow&label=jfa&logo=r)](https://cran.r-project.org/package=jfa)
-[![digitTests](https://img.shields.io/cran/v/digitTests?color=yellow&label=digitTests&logo=r)](https://cran.r-project.org/package=digitTests)
 
 # The Audit Module
 
-JASP for Audit (the Audit module) is an add-on module for JASP that facilitates statistical auditing. Among other things, the module provides functionality for planning, performing, evaluating, and reporting a statistical audit sample. More concretely, it contains analyses for calculating sample sizes, selecting itms according to standard audit sampling techniques, and performing inference about the population misstatement on the basis of a data sample or summary statistics of a sample. The module also features Bayesian equivalents of these analyses that enable the user to easily incorporate prior information into the statistical procedure. In all analyses, the Audit module offers explanatory text that helps the auditor in interpreting, explaining, and reporting the analysis.
+**JASP for Audit** (also known as to as the Audit module) is an add-on module for JASP that streamlines the process of statistical auditing. The Audit module offers a range of functionalities, including planning, executing, evaluating, and documenting statistical audit samples. Specifically, it comprises analysis tools for determining sample sizes, selecting items using standard audit sampling methododology, and inferring the population misstatement based on the sample data or the summary statistics of the sample. The Audit module also includes Bayesian equivalents of these analyses, providing users with the ability to incorporate prior information into the statistical procedure. In all analyses, the Audit module provides comprehensive explanatory text that assists the auditor in comprehending, communicating, and documenting the analysis results.
 
 - [Manual](#manual)
 - [Structure](#structure)
@@ -15,13 +14,17 @@ JASP for Audit (the Audit module) is an add-on module for JASP that facilitates 
 - [R packages](#r-packages)
 - [Translations](#translations)
 
-## Manual
+## Articles
 
-For an introduction to the Audit module, please [download](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf) the manual or view it [online](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf). See this [link](https://doi.org/10.21105/joss.02733) for the paper about the Audit module.
+In order to familiarize oneself with the Audit module, it is recommended to either download the manual via this [link](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf), or to view it online through this [link](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf). Further information regarding the Audit module can be obtained from the accompanying academic article published in the *Journal of Open-Source Software*, which can be accessed through the following [link](https://doi.org/10.21105/joss.02733).
 
-## Structure
+## R Package
 
-The analyses in the Audit module are structured in JASP in the following way:
+The Audit Module is a graphical user interface that has been constructed to integrate with the **jfa** R package, which offers a comprehensive set of statistical methods for auditing. To obtain a deeper understanding of the underlying statistical principles and implementation details of the **jfa** package, interested parties are encouraged to consult the [package website](https://koenderks.github.io/jfa/).
+
+## Content
+
+The organization of the analyses within the Audit module in JASP is as follows:
 
 ```
 --- Audit
@@ -43,56 +46,47 @@ The analyses in the Audit module are structured in JASP in the following way:
        - True Value Estimation
 ```
 
-## Analyses
+### Analyses
 
-### (Bayesian) Sampling Workflow
+#### (Bayesian) Sampling Workflow
 
-The sampling workflow is a four-stage analysis that guides the user through the process of planning, selecting, annotating, and evaluating a statistical audit sample. To make this process as easy as possible, the workflow automatically selects the appropriate options according to the type of data and audit question at hand. At the end, the sampling workflow produces a downloadable report containing the statistical results and their interpretation.
+The sampling workflow is a four-stage procedure that facilitates the process of planning, selecting, annotating,and evaluating statistical audit samples. To enhance ease of use, the workflow employs automated selection of the most suitable options based on the nature of the data and the audit question being addressed. The final outcome of the Sampling Workflow is a report that can be downloaded and that comprises statistical results along with their corresponding interpretation.
 
 <p align="center">
   <img src='https://github.com/jasp-stats/jaspAudit/raw/master/inst/help/img/workflow.png' width='500' height='50'>
 </p>
 
-### (Bayesian) Planning
+#### (Bayesian) Planning
 
-The planning analysis allows the user to, given a set of sampling objectives, calculate the minimum sample size for a statistical audit sample. By specifying a (set of) sampling objective(s), a sample size can be calculated which (when the intended sample goed according to plan) allows for a statement about the population misstatement with a prespecified amount of assurance.
+The planning analysis enables the user to determine the minimum sample size required for a statistical audit sample, based on a set of specified sampling objectives. By defining one or multiple objectives, the minimum sample size can be calculated to provide a specified level of assurance about the population misstatement, assuming that the actual sample follows the intended sampling plan.
 
 <p align="center">
   <img src='https://github.com/jasp-stats/jaspAudit/raw/master/inst/help/img/workflowPlanning.png' width='500' height='50'>
 </p>
 
-### Selection
+#### Selection
 
-The selection analysis is an interface for the most commonly used sampling methods in auditing. The analysis allows the user to select a specified number of sampling units from the population according to one of three sampling algorithms: fixed interval sampling, cell sampling, and random sampling. Sampling units can be items (rows) or monetary units. The sample can be saved and exported to a file for futher annotation.
+The selection analysis facilitates the utilization of the most frequently employed sampling techniques in auditing. This analysis provides the user with the capability to choose a specified number of sampling units from the population through the implementation of one of three available sampling algorithms: fixed interval sampling, cell sampling, and random sampling. The sampling units can be in the form of items (rows) or monetary units, and the generated sample can be saved and exported to a file for additional annotation and documentation.
 
 <p align="center">
   <img src='https://github.com/jasp-stats/jaspAudit/raw/master/inst/help/img/workflowSelection.png' width='500' height='50'>
 </p>
 
-### (Bayesian) Evaluation
+#### (Bayesian) Evaluation
 
-The evaluation analysis allows the user to perform inference about the population misstatement on the basis of a data sample or summary statistics of a sample. The analysis contains a variety of statistical methods to evaluate the misstatement.
+The evaluation analysis facilitates inference about the misstatement based on a sample data or summary statistics of the sample. The analysis incorporates a plethora of statistical techniques to estimate or test the population misstatement.
 
 <p align="center">
   <img src='https://github.com/jasp-stats/jaspAudit/raw/master/inst/help/img/workflowEvaluation.png' width='500' height='50'>
 </p>
 
-### Digit Analysis
-The two types of digits analyses (Benford's law and Repeated values) provide functionality for detecting irregular digit patterns in numerical data.
+#### Digit Analysis
 
-## `R` Packages
+The two forms of digit analysis, namely Benford's law and repeated values, furnish the capability for identifying irregular digit patterns within numerical data.
 
-The functionality of the Audit module heavily mirrors that of two `R` packages:
+### Translations
 
-- For the sampling analyses, the Audit module uses the [`jfa`](https://cran.r-project.org/package=jfa) package [[package website](https://koenderks.github.io/jfa/)].
-- For the digit analyses, the Audit module uses the [`digitTests`](https://cran.r-project.org/package=digitTests) package [[package website](https://koenderks.github.io/digitTests/)].
-
-<p align="center">
-  <img src='https://github.com/koenderks/jfa/raw/development/man/figures/logo.png' width='149' height='173'>
-  <img src='https://github.com/koenderks/digitTests/raw/development/man/figures/logo.png' width='149' height='173'>
-</p>
-
-## Translations
+The JASP translation project is located at the following [link](https://hosted.weblate.org/projects/jasp/). The Audit module is referred to as `jaspAudit` and consists of two distinct components: `jaspAudit-QML` and `jaspAudit-R`, both of which require translation. The participation of any individual who is interested would be highly valued. As demonstrated below, we have made substantial progress in the translation of the Audit module.
 
 | Interface | Results |
 | :---: | :---: |

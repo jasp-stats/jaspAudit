@@ -62,9 +62,9 @@ To determine whether the data show an excessive amount of bunching, the null hyp
 
 ### References
 ---
-- Derks, K (2021). digitTests: Tests for Detecting Irregular Digit Patterns. R package version 0.1.0.
+- Derks, K (2023). jfa: Statistical methods for auditing. R package version 0.6.5.
 - Simohnsohn, U. (2019, May 25). Number-Bunching: A New Tool for Forensic Data Analysis. Retrieved from [http://datacolada.org/77](http://datacolada.org/77).
 
 ### R Packages
 ---
-- digitTests
+- jfa

@@ -257,7 +257,7 @@ Zie *Kansverdeling*.
 ### Referenties
 ---
 - AICPA (2017). <i>Auditgids: controlesteekproeven</i>. American Institute of Certified Public Accountants.
-- Derks, K. (2022). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.2.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package version 0.6.5.
 - Dyer, D., & Pierce, R.L. (1993). Over de keuze van de voorafgaande verdeling bij hypergeometrische steekproeven. <i>Communicatie in statistiek-theorie en methoden</i>, 22(8), 2125-2146.
 - Stewart, TR (2013). Een Bayesiaans audit assurance-model met toepassing op het component materialiteitsprobleem bij groepsaudits (proefschrift).
 - de Swart, J., Wille, J., & Majoor, B. (2013). Het 'Push-Left'-Principe als Motor van Data Analytics in de Accountantcontrole [Het 'Push-Left'-Principe als aanjager van Data Analytics in Financial Audit]. <i>Maandblad voor Accountancy en Bedrijfseconomie</i>, 87, 425-432.

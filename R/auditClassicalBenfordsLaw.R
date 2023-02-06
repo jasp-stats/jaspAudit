@@ -19,7 +19,6 @@
 # reviewer in the pull Request.
 
 auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
-
   # Create the procedure paragraph
   .jfaBenfordsLawAddProcedure(options, jaspResults, position = 1)
 
@@ -149,13 +148,14 @@ jfaBenfordsLawStage <- function(options, jaspResults, position) {
   if (!is.null(benfordsLawContainer[["result"]])) {
     return(benfordsLawContainer[["result"]]$object)
   } else if (ready) {
-    test <- digitTests::distr.test(dataset[[options[["values"]]]], check = options[["digits"]], reference = options[["distribution"]])
-    btest <- digitTests::distr.btest(dataset[[options[["values"]]]],
+    test <- jfa::digit_test(dataset[[options[["values"]]]], check = options[["digits"]], reference = options[["distribution"]])
+    btest <- jfa::digit_test(dataset[[options[["values"]]]],
       check = options[["digits"]], reference = options[["distribution"]],
-      alpha = NULL, BF10 = TRUE, log = TRUE
+      prior = TRUE
     )
 
     result <- list(
+      object = test,
       digits = as.numeric(test$digits),
       relFrequencies = as.numeric(test$observed) / as.numeric(test$n),
       inBenford = as.numeric(test$expected) / as.numeric(test$n),
@@ -165,7 +165,7 @@ jfaBenfordsLawStage <- function(options, jaspResults, position) {
       chiSquare = as.numeric(test$statistic),
       df = as.numeric(test$parameter),
       pvalue = as.numeric(test$p.value),
-      logBF10 = as.numeric(btest$bf)
+      logBF10 = as.numeric(log(btest$bf))
     )
 
     benfordsLawContainer[["result"]] <- createJaspState(result)
@@ -189,94 +189,62 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     return()
   }
 
-  tableTitle <- gettextf(
+  title <- gettextf(
     "<b>Table %i.</b> Goodness-of-fit Test",
     jaspResults[["tabNumber"]]$object
   )
-
-  benfordsLawTestTable <- createJaspTable(tableTitle)
-  benfordsLawTestTable$position <- positionInContainer
-  benfordsLawTestTable$dependOn(options = "bayesFactorType")
-
-  bfTitle <- switch(options[["bayesFactorType"]],
+  bftitle <- switch(options[["bayesFactorType"]],
     "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
     "BF01" = gettextf("BF%1$s", "\u2080\u2081"),
     "logBF10" = gettextf("Log(BF%1$s)", "\u2081\u2080")
   )
 
-  benfordsLawTestTable$addColumnInfo(
-    name = "test",
-    title = "",
-    type = "string"
-  )
-  benfordsLawTestTable$addColumnInfo(
-    name = "N",
-    title = "n",
-    type = "integer"
-  )
-  benfordsLawTestTable$addColumnInfo(
-    name = "value",
-    title = "X\u00B2",
-    type = "string"
-  )
-  benfordsLawTestTable$addColumnInfo(
-    name = "df",
-    title = gettext("df"),
-    type = "integer"
-  )
-  benfordsLawTestTable$addColumnInfo(
-    name = "pvalue",
-    title = "p",
-    type = "pvalue"
-  )
-  benfordsLawTestTable$addColumnInfo(
-    name = "bf",
-    title = bfTitle,
-    type = "number"
-  )
+  tb <- createJaspTable(title)
+  tb$position <- positionInContainer
+  tb$dependOn(options = "bayesFactorType")
+  tb$addColumnInfo(name = "test", title = "", type = "string")
+  tb$addColumnInfo(name = "N", title = "n", type = "integer")
+  tb$addColumnInfo(name = "value", title = "X\u00B2", type = "string")
+  tb$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
+  tb$addColumnInfo(name = "pvalue", title = "p", type = "pvalue")
+  tb$addColumnInfo(name = "bf", title = bftitle, type = "number")
 
   distribution <- switch(options[["distribution"]],
     "benford" = "Benford's law",
     "uniform" = "the uniform distribution"
   )
-
   message <- switch(options[["digits"]],
     "first" = gettextf("The null hypothesis specifies that the first digits (1 - 9) in the data set are distributed according to %1$s.", distribution),
     "firsttwo" = gettextf("The null hypothesis specifies that the first two digits (10 - 99) in the data set are distributed according to %1$s.", distribution),
     "last" = gettextf("The null hypothesis specifies that the last digits (1 - 9) in the data set are distributed according to %1$s.", distribution)
   )
-  benfordsLawTestTable$addFootnote(message)
+  tb$addFootnote(message)
 
   message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = 1.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089")
-  benfordsLawTestTable$addFootnote(message, colName = "bf")
+  tb$addFootnote(message, colName = "bf")
 
-  benfordsLawContainer[["benfordsLawTestTable"]] <- benfordsLawTestTable
+  benfordsLawContainer[["benfordsLawTestTable"]] <- tb
 
   df <- if (options[["digits"]] == "first" || options[["digits"]] == "last") 8 else 89
 
   if (!ready) {
     row <- data.frame(test = ".", N = ".", value = ".", df = df, pvalue = ".", bf = ".")
-    benfordsLawTestTable$addRows(row)
+    tb$addRows(row)
     return()
   }
 
   state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
 
-  bf <- switch(options[["bayesFactorType"]],
+  tb[["test"]] <- options[["values"]]
+  tb[["N"]] <- state[["N"]]
+  tb[["value"]] <- round(state[["chiSquare"]], 3)
+  tb[["df"]] <- state[["df"]]
+  tb[["pvalue"]] <- state[["pvalue"]]
+  tb[["bf"]] <- switch(options[["bayesFactorType"]],
     "BF10" = exp(state[["logBF10"]]),
     "BF01" = 1 / exp(state[["logBF10"]]),
     "logBF10" = state[["logBF10"]]
   )
-
-  row <- data.frame(
-    test = options[["values"]],
-    N = state[["N"]],
-    value = round(state[["chiSquare"]], 3),
-    df = state[["df"]],
-    pvalue = state[["pvalue"]],
-    bf = bf
-  )
-  benfordsLawTestTable$addRows(row)
 }
 
 .jfaBenfordsLawDescriptivesTable <- function(dataset, options, benfordsLawContainer,
@@ -288,32 +256,29 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   .jfaTableNumberUpdate(jaspResults)
 
   if (is.null(benfordsLawContainer[["benfordsLawTable"]])) {
-    tableTitle <- gettextf(
+    title <- gettextf(
       "<b>Table %i.</b> Frequency Table",
       jaspResults[["tabNumber"]]$object
     )
 
-    benfordsLawTable <- createJaspTable(tableTitle)
-    benfordsLawTable$position <- positionInContainer
-    columnTitle <- switch(options[["distribution"]],
-      "benford" = gettext("Benford's law"),
-      "uniform" = gettext("Uniform distribution")
-    )
-
-    benfordsLawTable$dependOn(options = "summaryTable")
-
-    whichDigit <- switch(options[["digits"]],
+    tb <- createJaspTable(title)
+    tb$position <- positionInContainer
+    tb$dependOn(options = "summaryTable")
+    dtitle <- switch(options[["digits"]],
       "first" = gettext("Leading digit"),
       "firsttwo" = gettext("Leading digits"),
       "last" = gettext("Last digit")
     )
+    etitle <- switch(options[["distribution"]],
+      "benford" = gettext("Benford's law"),
+      "uniform" = gettext("Uniform distribution")
+    )
+    tb$addColumnInfo(name = "digit", title = dtitle, type = "integer")
+    tb$addColumnInfo(name = "count", title = gettext("Count"), type = "integer")
+    tb$addColumnInfo(name = "obs", title = gettext("Relative frequency"), type = "number")
+    tb$addColumnInfo(name = "exp", title = etitle, type = "number")
 
-    benfordsLawTable$addColumnInfo(name = "digit", title = whichDigit, type = "integer")
-    benfordsLawTable$addColumnInfo(name = "count", title = gettext("Count"), type = "integer")
-    benfordsLawTable$addColumnInfo(name = "observed", title = gettext("Relative frequency"), type = "number")
-    benfordsLawTable$addColumnInfo(name = "expected", title = columnTitle, type = "number")
-
-    benfordsLawContainer[["benfordsLawTable"]] <- benfordsLawTable
+    benfordsLawContainer[["benfordsLawTable"]] <- tb
 
     if (options[["digits"]] == "first" || options[["digits"]] == "last") {
       digits <- 1:9
@@ -322,31 +287,21 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     }
 
     if (!ready) {
-      expected <- switch(options[["distribution"]],
+      tb[["digit"]] <- digits
+      tb[["count"]] <- rep(".", length(digits))
+      tb[["obs"]] <- rep(".", length(digits))
+      tb[["exp"]] <- switch(options[["distribution"]],
         "benford" = log10(1 + 1 / digits),
         "uniform" = 1 / length(digits)
       )
-
-      row <- data.frame(
-        digit = digits,
-        count = rep(".", length(digits)),
-        observed = rep(".", length(digits)),
-        expected = expected
-      )
-      benfordsLawTable$addRows(row)
       return()
     }
 
     state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
-
-    row <- data.frame(
-      digit = state[["digits"]],
-      count = state[["observed"]],
-      observed = state[["relFrequencies"]],
-      expected = state[["inBenford"]]
-    )
-
-    benfordsLawTable$addRows(row)
+    tb[["digit"]] <- state[["digits"]]
+    tb[["count"]] <- state[["observed"]]
+    tb[["obs"]] <- state[["relFrequencies"]]
+    tb[["exp"]] <- state[["inBenford"]]
   }
 }
 
@@ -359,109 +314,26 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
   .jfaFigureNumberUpdate(jaspResults)
 
   if (is.null(benfordsLawContainer[["benfordsLawPlot"]])) {
-    benfordsLawPlot <- createJaspPlot(
+    fg <- createJaspPlot(
       plot = NULL,
       title = gettext("Observed vs. Expected Relative Frequencies"),
       width = 600, height = 400
     )
 
-    benfordsLawPlot$position <- positionInContainer
-    benfordsLawPlot$dependOn(options = c("benfordsLawPlot"))
+    fg$position <- positionInContainer
+    fg$dependOn(options = c("benfordsLawPlot"))
 
-    benfordsLawContainer[["benfordsLawPlot"]] <- benfordsLawPlot
+    benfordsLawContainer[["benfordsLawPlot"]] <- fg
 
     if (!ready) {
       return()
     }
 
-    if (options[["digits"]] == "first" || options[["digits"]] == "last") {
-      pointSize <- 5
-      lineSize <- 1.5
-    } else if (options[["digits"]] == "firsttwo") {
-      pointSize <- 2
-      lineSize <- 1.2
-    }
-
     state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
 
-    legendName <- switch(options[["distribution"]],
-      "benford" = gettext("Benford's law"),
-      "uniform" = gettext("Uniform distribution")
-    )
-
-    d <- data.frame(
-      x = c(state[["digits"]], state[["digits"]]),
-      y = c(state[["relFrequencies"]], state[["inBenford"]]),
-      type = c(
-        rep(gettext("Observed"), length(state[["digits"]])),
-        rep(legendName, length(state[["digits"]]))
-      )
-    )
-
-    yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, d$y), min.n = 4)
-
-    if (options[["digits"]] == "first" || options[["digits"]] == "last") {
-      xBreaks <- state[["digits"]]
-      xLabels <- state[["digits"]]
-    } else {
-      xBreaks <- state[["digits"]]
-      xLabels <- c(
-        10, rep("", 9),
-        20, rep("", 9),
-        30, rep("", 9),
-        40, rep("", 9),
-        50, rep("", 9),
-        60, rep("", 9),
-        70, rep("", 9),
-        80, rep("", 9),
-        90, rep("", 8),
-        99
-      )
-    }
-
-    axisName <- switch(options[["digits"]],
-      "first" = gettext("Leading digit"),
-      "firsttwo" = gettext("Leading digits"),
-      "last" = gettext("Last digit")
-    )
-
-    plotData <- data.frame(x = c(0, 0), y = c(0, 1), type = c(gettext("Observed"), legendName))
-    plotData$type <- switch(options[["distribution"]],
-      "benford" = factor(x = plotData$type, levels = levels(factor(plotData$type))[c(1, 2)]),
-      "uniform" = factor(x = plotData$type, levels = levels(factor(plotData$type))[c(2, 1)])
-    )
-
-    p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
-      ggplot2::geom_point(alpha = 0) +
-      ggplot2::geom_bar(
-        data = subset(d, type == legendName), mapping = ggplot2::aes(x = x, y = y), fill = "darkgray",
-        stat = "identity", color = "black", size = 1.2
-      ) +
-      jaspGraphs::geom_line(
-        data = subset(d, type == gettext("Observed")), mapping = ggplot2::aes(x = x, y = y),
-        color = "dodgerblue", size = lineSize
-      ) +
-      jaspGraphs::geom_point(
-        data = subset(d, type == gettext("Observed")), mapping = ggplot2::aes(x = x, y = y),
-        fill = "dodgerblue", size = pointSize, stroke = 1.5
-      ) +
-      ggplot2::scale_x_continuous(
-        name = axisName, breaks = xBreaks, labels = xLabels,
-        limits = c(min(state[["digits"]]) - 0.5, max(state[["digits"]]) + 0.5),
-      ) +
-      ggplot2::scale_y_continuous(
-        name = gettext("Relative frequency"), breaks = yBreaks, limits = c(0, max(yBreaks))
-      ) +
-      ggplot2::labs(fill = "") +
-      ggplot2::theme(legend.text = ggplot2::element_text(margin = ggplot2::margin(l = -5, r = 50))) +
-      ggplot2::guides(fill = ggplot2::guide_legend(reverse = TRUE, override.aes = list(
-        size = c(7, 10), shape = c(21, 22),
-        fill = c("dodgerblue", "darkgray"), stroke = 2, color = "black", alpha = 1
-      ))) +
+    fg$plotObject <- plot(state[["object"]]) +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "top")
-
-    benfordsLawPlot$plotObject <- p
   }
 
   if (options[["explanatoryText"]]) {
@@ -469,11 +341,10 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
       "benford" = "Benford's law",
       "uniform" = "the uniform distribution"
     )
-    benfordsLawPlotText <- createJaspHtml(gettextf("<b>Figure %i.</b> The observed relative frequencies of each digit in the data set compared to the expected relative frequencies under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars.", jaspResults[["figNumber"]]$object, distribution), "p")
-
-    benfordsLawPlotText$position <- positionInContainer + 1
-    benfordsLawPlotText$dependOn(optionsFromObject = benfordsLawContainer[["benfordsLawPlot"]])
-    benfordsLawContainer[["benfordsLawPlotText"]] <- benfordsLawPlotText
+    caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The observed relative frequencies of each digit in the data set compared to the expected relative frequencies under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars.", jaspResults[["figNumber"]]$object, distribution), "p")
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = benfordsLawContainer[["benfordsLawPlot"]])
+    benfordsLawContainer[["benfordsLawPlotText"]] <- caption
   }
 }
 
@@ -483,9 +354,9 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     return()
   }
 
-  conclusionContainer <- createJaspContainer(title = gettext("<u>Conclusion</u>"))
-  conclusionContainer$position <- position
-  conclusionContainer$dependOn(options = c(
+  container <- createJaspContainer(title = gettext("<u>Conclusion</u>"))
+  container$position <- position
+  container$dependOn(options = c(
     "values",
     "confidence",
     "digits",
@@ -493,31 +364,27 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     "distribution"
   ))
 
-  confidenceLabel <- paste0(round(options[["confidence"]] * 100, 2), "%")
-
-  state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
+  state <- .jfaBenfordsLawState(dataset = NULL, options, benfordsLawContainer, ready)
 
   rejectnull <- state[["pvalue"]] < (1 - options[["confidence"]])
   conclusion <- if (rejectnull) gettext("is rejected") else gettext("is not rejected")
-
   pvalue <- format.pval(state[["pvalue"]], eps = 0.001)
   pvalue <- if (rejectnull) gettextf("%1$s < %2$s", pvalue, "\u03B1") else gettextf("%1$s >= %2$s", pvalue, "\u03B1")
-
   distribution <- switch(options[["distribution"]],
     "benford" = "Benford's law",
     "uniform" = "the uniform distribution"
   )
 
-  conclusionText <- switch(options[["digits"]],
+  caption <- switch(options[["digits"]],
     "first" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
     "firsttwo" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
     "last" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion)
   )
-  conclusionText <- gettextf("%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis.", conclusionText, format(1 / exp(state[["logBF10"]]), digits = 3))
+  caption <- gettextf("%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis.", caption, format(1 / exp(state[["logBF10"]]), digits = 3))
 
-  conclusionContainer[["conclusionParagraph"]] <- createJaspHtml(conclusionText, "p")
-  conclusionContainer[["conclusionParagraph"]]$position <- 1
-  conclusionContainer$dependOn(options = c(
+  container[["conclusionParagraph"]] <- createJaspHtml(caption, "p")
+  container[["conclusionParagraph"]]$position <- 1
+  container$dependOn(options = c(
     "explanatoryText",
     "confidence",
     "values",
@@ -525,5 +392,5 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     "distribution"
   ))
 
-  jaspResults[["conclusionContainer"]] <- conclusionContainer
+  jaspResults[["conclusionContainer"]] <- container
 }

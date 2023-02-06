@@ -122,7 +122,7 @@ You can manually adjust the value of IR and CR by selecting the Custom option un
 ### References
 ---
 - AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K. (2022). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.2.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package version 0.6.5.
 - Leslie, D. A., Teitlebaum, A. D., Anderson, R. J. (1979). <i>Dollar-unit Sampling: A Practical Guide for Auditors</i>. Toronto: Copp Clark Pitman.
 - Stringer, K. W. (1963) Practical aspects of statistical sampling in auditing. <i>Proceedings of Business and Economic Statistics Section</i>, American Statistical Association.
 - Touw, P., & Hoogduin, L. (2011). Statistiek voor audit en controlling.

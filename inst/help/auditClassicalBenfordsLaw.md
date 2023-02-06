@@ -54,4 +54,4 @@ Benford's law states that the distribution of leading digits in a population nat
 
 ### R Packages
 ---
-- digitTests
+- jfa

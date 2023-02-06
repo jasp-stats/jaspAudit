@@ -78,7 +78,7 @@ When a name is provided, adds the result from the selection analysis in a new co
 ### References
 ---
 - AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K. (2022). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.2.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package version 0.6.5.
 
 ### R Packages
 ---
