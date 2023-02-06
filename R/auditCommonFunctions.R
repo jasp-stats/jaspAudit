@@ -2206,7 +2206,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   message <- switch(options[["sampling_method"]],
-    "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else if (!is.null(parentState[["start"]])) parentState[["start"]] else options[["start"]]),
+    "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected%3$s.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else if (!is.null(parentState[["start"]])) parentState[["start"]] else options[["start"]], if (options[["randomStart"]]) gettextf(" using seed %1$s", options[["seed"]]) else ""),
     "cell" = gettextf("The sample is drawn with seed %1$s and intervals of size %2$s.", options[["seed"]], round(parentState[["interval"]], 2)),
     "random" = gettextf("The sample is drawn with seed %1$s.", options[["seed"]]),
     "sieve" = gettextf("The random numbers are generated with seed %1$s.", options[["seed"]])
@@ -2776,7 +2776,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   if (!options[["bayesian"]]) {
     dr <- .jfaAuditRiskModelCalculation(options)
-    if (options[["method"]] %in% c("direct", "difference", "quotient", "regression") || options[["area"]] == "area_interval") {
+    if (options[["method"]] %in% c("direct", "difference", "quotient", "regression") || options[["area"]] == "two.sided") {
       uppertitle <- round((1 - (1 - (1 - dr)) / 2) * 100, 2)
       table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - uppertitle), type = columnType)
       table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", uppertitle), type = columnType)
@@ -2788,7 +2788,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (options[["area"]] == "two.sided") {
       ubtitle <- round(options[["conf_level"]] * 100, 2)
       table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = columnType)
-    } else if (options[["area"]] == "area_interval") {
+    } else if (options[["area"]] == "two.sided") {
       ubtitle <- round((1 - (1 - options[["conf_level"]]) / 2) * 100, 2)
       table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - ubtitle), type = columnType)
       table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = columnType)
@@ -2903,7 +2903,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "percent" = paste0(round(parentState[["ub"]] / parentState[["N.units"]] * 100, 3), "%"),
       "amount" = parentState[["ub"]]
     )
-  } else if (options[["area"]] == "area_interval") {
+  } else if (options[["area"]] == "two.sided") {
     table[["lb"]] <- switch(options[["display"]],
       "number" = parentState[["lb"]],
       "percent" = paste0(round(parentState[["lb"]] * 100, 3), "%"),
@@ -2961,7 +2961,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   tb$addColumnInfo(name = "k", title = gettext("Misstatements"), type = "integer")
   tb$addColumnInfo(name = "t", title = gettext("Taint"), type = "number")
   tb$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = "number")
-  if (options[["area"]] == "two.sided") {
+  if (options[["area"]] == "less") {
     ubtitle <- round(options[["conf_level"]] * 100, 2)
     tb$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = "number")
   } else {
@@ -2981,7 +2981,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   tb[["k"]] <- parentState[["strata"]]$x
   tb[["t"]] <- parentState[["strata"]]$t
   tb[["mle"]] <- parentState[["strata"]]$mle
-  if (options[["area"]] == "area_interval") {
+  if (options[["area"]] == "two.sided") {
     tb[["lb"]] <- parentState[["strata"]]$lb
   }
   tb[["ub"]] <- parentState[["strata"]]$ub
