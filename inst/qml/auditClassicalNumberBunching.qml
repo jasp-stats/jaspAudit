@@ -16,14 +16,18 @@
 // When making changes to this file always mention @koenderks as a 
 // reviewer in the Pull Request
 
-import QtQuick							2.8
-import QtQuick.Layouts					1.3
-import JASP.Controls					1.0
-import JASP.Widgets						1.0
+import QtQuick
+import QtQuick.Layouts
+import JASP
+import JASP.Controls
+import JASP.Widgets
 
-Form {
+import "./common" as Common
 
-	columns: 							2
+Form
+{
+	columns: 							1
+	info:								qsTr("This analysis analyzes the frequency with which values get repeated within a dataset (called “number-bunching”) to statistically identify whether the data were likely tampered with. Unlike Benford’s law this approach examines the entire number at once, not only the first or last digit (Simonsohn, 2019).\n\nTo determine whether the data show an excessive amount of bunching, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested. To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.")
 
 	VariablesForm
 	{
@@ -42,31 +46,64 @@ Form {
 			title: 						qsTr("Variable")
 			singleVariable:				true
 			allowedColumns:				["scale"]
+			info:						qsTr("In this box the variable is selected whose digits should be analyzed for repeated values.")
 		}
 	}
 
 	Group
 	{
 		title:							qsTr("Tests")
+		info:							qsTr("Indicate which type of quantity is calculated from the data.")
 
 		CheckBox
 		{
 			name:						"avgFrequency"
 			text:						qsTr("Average frequency")
 			checked:					true
+			info:						qsTr("Compute the average frequency of the data.")
 		}
 
 		CheckBox
 		{
 			name:						"entropy"
 			text:						qsTr("Entropy")
+			info:						qsTr("Compute the entropy of the data.")
+		}
+	}
+
+	RadioButtonGroup
+	{
+		name:							"shuffle"
+		title: 							qsTr("Shuffle Decimal Digits")
+		info:							qsTr("Indicate which decimals are shuffled in the analysis.")
+
+		RadioButton
+		{
+			name:						"last"
+			text:						qsTr("Last")
+			info:						qsTr("Last decimal digit is shuffled.")
+		}
+
+		RadioButton
+		{
+			name:						"lasttwo"
+			text:						qsTr("Last two")
+			checked:					true
+			info:						qsTr("Last two decimal digits are shuffled.")
+		}
+
+		RadioButton
+		{
+			name:						"all"
+			text:						qsTr("All")
+			info:						qsTr("All decimal digits are shuffled.")
 		}
 	}
 
 	Group
 	{
 		title: 							qsTr("Display")
-		columns: 						2
+		info:							qsTr("Specify options that have an effect on the look and feel of the audit report.")
 
 		Row
 		{
@@ -76,11 +113,13 @@ Form {
 				text: 					qsTr("Explanatory text")
 				name: 					"explanatoryText"
 				checked: 				true
+				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
 
 				CIField
 				{
 					name: 				"confidence"
 					label: 				qsTr("Confidence")
+					info:				qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
 				}
 			}
 
@@ -92,74 +131,62 @@ Form {
 		}
 	}
 
-	RadioButtonGroup
+	Section
 	{
-		name:							"shuffle"
-		title: 							qsTr("Shuffle Decimal Digits")
-
-		RadioButton
-		{
-			name:						"last"
-			text:						qsTr("Last")
-		}
-
-		RadioButton
-		{
-			name:						"lasttwo"
-			text:						qsTr("Last two")
-			checked:					true
-		}
-
-		RadioButton
-		{
-			name:						"all"
-			text:						qsTr("All")
-		}
-	}
-
-	Group
-	{
+		title:							qsTr("Report")
 		Group
 		{
-			title: 						qsTr("Tables")
+			columns:					2
 
-			CheckBox
+			Group
 			{
-				text: 					qsTr("Assumption checks")
-				name: 					"correlationTable"
-				checked: 				true
-			}
+				title: 					qsTr("Tables")
+				info:					qsTr("Add additional tables about the analysis to the report.")
 
-			CheckBox
-			{
-				text: 					qsTr("Frequency table")
-				name: 					"summaryTable"
-			}
-		}
-
-		Group
-		{
-			title: 						qsTr("Plots")
-
-			CheckBox
-			{
-				text: 					qsTr("Observed vs. expected")
-				name: 					"numberBunchingSimulationPlots"
-			}
-
-			CheckBox
-			{
-				text: 					qsTr("Histogram")
-				name: 					"numberBunchingHistogram"
-
-				IntegerField
+				CheckBox
 				{
-					name: 				"noHeads"
-					label: 				qsTr("Label")
-					afterLabel:			qsTr("with highest occurrence")
-					min: 				0
-					defaultValue:		0
-					max:				20
+					text: 				qsTr("Assumption checks")
+					name: 				"correlationTable"
+					checked: 			true
+					info:				qsTr("This table shows the correlation between the integer portions of the numbers and their decimal counterparts. To meet the required assumptions for this procedure, this correlation must be non-existent. This table also displays the correlation between the samples of the two simulation runs (average frequency and entropy).")
+				}
+
+				CheckBox
+				{
+					text: 				qsTr("Frequency table")
+					name: 				"summaryTable"
+					info:				qsTr("Produces a table containing the count and the percentage for every unique value in the data set.")
+				}
+			}
+
+			Group
+			{
+				title: 					qsTr("Plots")
+				info:					qsTr("Add additional figures about the analysis to the report.")
+
+				CheckBox
+				{
+					text: 				qsTr("Observed vs. expected")
+					name: 				"numberBunchingSimulationPlots"
+					info:				qsTr("Produces a histogram of the expected average frequencies and / or entropy vs. the observed average frequency and / or entropy.")
+				}
+
+				CheckBox
+				{
+					text: 				qsTr("Histogram")
+					name: 				"numberBunchingHistogram"
+					info:				qsTr("Produces a histogram with a single bin for each observed value.")
+
+					IntegerField
+					{
+						name: 			"noHeads"
+						label: 			qsTr("Label")
+						afterLabel:		qsTr("with highest occurrence")
+						min: 			0
+						defaultValue:	0
+						max:			20
+						info:			qsTr("Indicate how many items labels to display.")
+					}
 				}
 			}
 		}
@@ -168,39 +195,31 @@ Form {
 	Section
 	{
 		title:							qsTr("Advanced")
-		columns:						2
-
-		IntegerField
+		info:							qsTr("Adjust advanced options for this analysis.")
+		Group
 		{
-			name: 						"noSamples"
-			label: 						qsTr("Number of samples")
-			min: 						100
-			defaultValue: 				500
-			max: 						500000
-			fieldWidth:					70
-		}
+			columns:					1
 
-		IntegerField
-		{
-			name: 						"seed"
-			label: 						qsTr("Seed")
-			defaultValue: 				1
-		}
-	}
+			IntegerField
+			{
+				name: 					"noSamples"
+				label: 					qsTr("Number of samples")
+				min: 					100
+				defaultValue: 			500
+				max: 					500000
+				fieldWidth:				70
+				info:					qsTr("The number of samples to use for simulating the p value.")
+			}
 
-	Item
-	{
-		Layout.preferredHeight: 		download.height
-		Layout.preferredWidth: 			parent.width
-		Layout.columnSpan:				2
-
-		Button
-		{
-			id: 						download
-			enabled: 					values.count > 0
-			anchors.right:				parent.right
-			text: 						qsTr("<b>Download Report</b>")
-			onClicked: 					form.exportResults()
+			IntegerField
+			{
+				name: 					"seed"
+				label: 					qsTr("Seed")
+				defaultValue: 			1
+				info:					qsTr("Selects the seed for the random number generator in order to reproduce results.")
+			}
 		}
 	}
+
+	Common.DownloadReport { }
 }

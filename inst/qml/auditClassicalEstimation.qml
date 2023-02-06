@@ -16,178 +16,187 @@
 // When making changes to this file always mention @koenderks as a
 // reviewer in the Pull Request
 
-import QtQuick 								2.8
-import QtQuick.Layouts 						1.3
-import JASP.Controls 						1.0
-import JASP.Widgets 						1.0
+import QtQuick
+import QtQuick.Layouts
+import JASP
+import JASP.Controls
+import JASP.Widgets
 
-Form {
+import "./common" as Common
 
-	columns:								2
+Form
+{
+	columns:					2
+	info:						qsTr("The estimation analysis allows the user to estimate the true value of a population on the basis of a sample.")
 
 	VariablesForm
 	{
-		id: 								variablesFormEstimation
-		preferredHeight: 					jaspTheme.smallDefaultVariablesFormHeight
+		id: 					variablesFormEstimation
+		preferredHeight: 		jaspTheme.smallDefaultVariablesFormHeight
 
 		AvailableVariablesList
 		{
-			name: 							"variablesFormEstimation"
+			name: 				"variablesFormEstimation"
 		}
 
 		AssignedVariablesList
 		{
-			id: 							bookValues
-			name: 							"bookValues"
-			title: 							qsTr("Book Values")
-			singleVariable:					true
-			allowedColumns:					["scale"]
-			enabled: 						!mpu.checked
+			id: 				bookValues
+			name: 				"bookValues"
+			title: 				qsTr("Book Values")
+			singleVariable:		true
+			allowedColumns:		["scale"]
+			enabled: 			!mpu.checked
+			info:				qsTr("A numeric variable that contains the book (recorded) values of the items in the population.")
 		}
 
 		AssignedVariablesList
 		{
-			id: 							auditValues
-			name: 							"auditValues"
-			title: 							qsTr("Audit Values")
-			singleVariable: 				true
-			allowedColumns: 				["scale"]
-		}
-	}
-
-	CIField
-	{
-		name: 								"confidence"
-		label: 								qsTr("Confidence")
-	}
-
-	Group
-	{
-		title: 								qsTr("Display")
-		columns: 							2
-
-		CheckBox
-		{
-			id: 							explanatoryText
-			text: 							qsTr("Explanatory text")
-			name: 							"explanatoryText"
-			checked: 						true
-		}
-
-		HelpButton
-		{
-			helpPage:						"Audit/explanatoryText"
-			toolTip: 						qsTr("Show explanatory text at each step of the analysis")
+			id: 				auditValues
+			name: 				"auditValues"
+			title: 				qsTr("Audit Values")
+			singleVariable: 	true
+			allowedColumns: 	["scale"]
+			info:				qsTr("A numeric variable that contains the audited (true) values of the items in the population.")
 		}
 	}
 
 	Group
 	{
-		title: 								qsTr("Population")
+		title: 					qsTr("Display")
+		info:					qsTr("Specify options that have an effect on the look and feel of the audit report.")
+
+		Row
+		{
+			CheckBox
+			{
+				id: 			explanatoryText
+				text: 			qsTr("Explanatory text")
+				name: 			"explanatoryText"
+				checked: 		true
+				info:			qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
+
+				CIField
+				{
+					name: 		"confidence"
+					label: 					qsTr("Confidence")
+					info:		qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
+				}
+			}
+
+			HelpButton
+			{
+				helpPage:		"Audit/explanatoryText"
+				toolTip: 		qsTr("Show explanatory text at each step of the analysis")
+			}
+		}
+	}
+
+	Group
+	{
+		title: 					qsTr("Population")
 
 		IntegerField
 		{
-			id: 							populationSize
-			name: 							"populationSize"
-			text: 							qsTr("No. items")
-			fieldWidth: 					100 * preferencesModel.uiScale
-			defaultValue: 					0
-			min: 							0
+			id: 				populationSize
+			name: 				"populationSize"
+			text: 				qsTr("No. items")
+			fieldWidth: 		100 * preferencesModel.uiScale
+			defaultValue: 		0
+			min: 				0
+			info:				qsTr("The total number of items (rows) in the population.")
 		}
 
 		DoubleField
 		{
-			id: 							populationValue
-			name: 							"populationValue"
-			text: 							qsTr("No. units")
-			defaultValue: 					0
-			fieldWidth: 					100 * preferencesModel.uiScale
-			min: 							0
-			decimals: 						2
-			enabled:						!mpu.checked
+			id: 				populationValue
+			name: 				"populationValue"
+			text: 				qsTr("No. units")
+			defaultValue: 		0
+			fieldWidth: 		100 * preferencesModel.uiScale
+			min: 				0
+			decimals: 			2
+			enabled:			!mpu.checked
+			info:				qsTr("The total number of units in the population. Note that the units can be items (rows) or monetary units (values) depending on the audit question.")
 		}
 	}
 
 	Group
 	{
-		title: 								qsTr("Tables")
+		title: 					qsTr("Tables")
+		info:					qsTr("Add additional tables about the analysis to the report.")
 
 		CheckBox
 		{
-			id: 							requiredSampleSize
-			text:	 						qsTr("Required sample size")
-			name: 							"requiredSampleSizeTable"
+			id: 				requiredSampleSize
+			text:	 			qsTr("Required sample size")
+			name: 				"requiredSampleSizeTable"
+			info:				qsTr("Produces a table showing the required sample size to achive a desired precision.")
 
 			DoubleField
 			{
-				name: 						"requiredUncertainty"
-				visible: 					requiredSampleSize.checked
-				text: 						qsTr("for an uncertainty of:")
-				defaultValue: 				100000
-				fieldWidth: 				100 * preferencesModel.uiScale
-				min: 						1
-				decimals: 					2
+				name: 			"requiredUncertainty"
+				visible: 		requiredSampleSize.checked
+				text: 			qsTr("for an uncertainty of:")
+				defaultValue: 	100000
+				fieldWidth: 	100 * preferencesModel.uiScale
+				min: 			1
+				decimals: 		2
+				info:			qsTr("The value of the precision.")
 			}
 		}
 	}
 
 	RadioButtonGroup
 	{
-		name:								"estimator"
-		title: 								qsTr("Method")
+		name:					"estimator"
+		title: 					qsTr("Method")
+		info:					qsTr("The type of method used to estimate the true value of the population.")
 
 		RadioButton
 		{
-			id:								mpu
-			name:							"mpu"
-			text:							qsTr("Direct estimator")
+			id:					mpu
+			name:				"mpu"
+			text:				qsTr("Direct estimator")
+			info:				qsTr("The direct estimator.")
 		}
 
 		RadioButton
 		{
-			name:							"difference"
-			text:							qsTr("Difference estimator")
+			name:				"difference"
+			text:				qsTr("Difference estimator")
+			info:				qsTr("The difference estimator.")
 		}
 
 		RadioButton
 		{
-			name:							"ratio"
-			text:							qsTr("Ratio estimator")
+			name:				"ratio"
+			text:				qsTr("Ratio estimator")
+			info:				qsTr("The ratio estimator.")
 		}
 
 		RadioButton
 		{
-			name:							"regression"
-			text:							qsTr("Regression estimator")
-			checked:						true
+			name:				"regression"
+			text:				qsTr("Regression estimator")
+			checked:			true
+			info:				qsTr("The regression estimator.")
 		}
 	}
 
 	Group
 	{
-		title: 								qsTr("Plots")
+		title: 					qsTr("Plots")
+		info:					qsTr("Add additional figures about the analysis to the report.")
 
 		CheckBox
 		{
-			text: 							qsTr("Scatter plot")
-			name: 							"correlationPlot"
-			enabled: 						!mpu.checked
+			text: 				qsTr("Scatter plot")
+			name: 				"correlationPlot"
+			enabled: 			!mpu.checked
+			info:				qsTr("Produces a scatter plot comparing the book values in the sample against their audit values. Items for which these two values do not match are colored in red.")
 		}
 	}
 
-	Item
-	{
-		Layout.preferredHeight: 			download.height
-		Layout.preferredWidth: 				parent.width
-		Layout.columnSpan:					2
-
-		Button
-		{
-			id: 							download
-			enabled: 						populationSize.value != 0 && populationValue.value != 0 && auditValues.count > 0 && bookValues.count > 0
-			anchors.right: 					parent.right
-			text: 							qsTr("<b>Download Report</b>")
-			onClicked:						form.exportResults()
-		}
-	}
+	Common.DownloadReport { }
 }
