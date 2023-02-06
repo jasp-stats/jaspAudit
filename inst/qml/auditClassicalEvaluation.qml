@@ -30,6 +30,7 @@ import "./common" as Common
 Form
 {
 	columns: 						1
+	info:							qsTr("The evaluation analysis allows the user to perform inference about the total misstatement in the population on the basis of an audit sample.\n\n<img src='%HELP_FOLDER%/img/workflowEvaluation.png'/>Please see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.")
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }

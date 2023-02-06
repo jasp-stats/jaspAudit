@@ -27,7 +27,7 @@ import "./common" as Common
 Form 
 {
 	columns:									1
-	info:										qStr("The selection analysis allows the user to select a number of sampling units from a population using a combination of sampling techniques (record sampling versus monetary unit sampling) and sampling methods (random sampling, cell sampling, fixed interval sampling) that are standard in an audit context.")
+	info:										qsTr("The selection analysis allows the user to select a number of sampling units (items or monetary units) from a population using a variety of sampling methods (random sampling, cell sampling, fixed interval sampling) that are standard in an auditing context.\n\n<img src='%HELP_FOLDER%/img/workflowSelection.png'/>\n\nPlease see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.")
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }
