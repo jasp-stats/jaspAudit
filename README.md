@@ -8,12 +8,6 @@
 
 **JASP for Audit** (also known as to as the Audit module) is an add-on module for JASP that streamlines the process of statistical auditing. The Audit module offers a range of functionalities, including planning, executing, evaluating, and documenting statistical audit samples. Specifically, it comprises analysis tools for determining sample sizes, selecting items using standard audit sampling methododology, and inferring the population misstatement based on the sample data or the summary statistics of the sample. The Audit module also includes Bayesian equivalents of these analyses, providing users with the ability to incorporate prior information into the statistical procedure. In all analyses, the Audit module provides comprehensive explanatory text that assists the auditor in comprehending, communicating, and documenting the analysis results.
 
-- [Manual](#manual)
-- [Structure](#structure)
-- [Analyses](#analyses)
-- [R packages](#r-packages)
-- [Translations](#translations)
-
 ## Articles
 
 In order to familiarize oneself with the Audit module, it is recommended to either download the manual via this [link](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf), or to view it online through this [link](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf). Further information regarding the Audit module can be obtained from the accompanying academic article published in the *Journal of Open-Source Software*, which can be accessed through the following [link](https://doi.org/10.21105/joss.02733).
@@ -22,7 +16,7 @@ In order to familiarize oneself with the Audit module, it is recommended to eith
 
 The Audit Module is a graphical user interface that has been constructed to integrate with the **jfa** R package, which offers a comprehensive set of statistical methods for auditing. To obtain a deeper understanding of the underlying statistical principles and implementation details of the **jfa** package, interested parties are encouraged to consult the [package website](https://koenderks.github.io/jfa/).
 
-## Content
+## Module
 
 The organization of the analyses within the Audit module in JASP is as follows:
 
