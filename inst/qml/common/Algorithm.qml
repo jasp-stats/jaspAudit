@@ -31,84 +31,48 @@ Group
 				property bool	enable_pooling:	true
 				property bool	enable_partial:	true
 
-	title:							qsTr("Algorithm")
-	enabled:						enable
+	title:				qsTr("Algorithm")
+	enabled:			enable
 
 	Row
 	{
-		spacing: 					5 * preferencesModel.uiScale
-		enabled:					enable_partial && !pooling.checked
+		spacing: 		5 * preferencesModel.uiScale
+		enabled:		enable_partial && !pooling.checked
 
 		CheckBox
 		{
-			id:						partial
-			text: 					qsTr("Partial projection")
-			name: 					"separateMisstatement"
-			info:					qsTr("This algorithm enables you to separate the known and the unknown misstatement in the population to be more efficient. Note that this requires the assumption that the taints in the sample are representative of the taints in the unseen part of the population.")
+			id:			partial
+			text: 		qsTr("Partial projection")
+			name: 		"separateMisstatement"
+			info:		qsTr("This algorithm enables you to separate the known and the unknown misstatement in the population to be more efficient. Note that this requires the assumption that the taints in the sample are representative of the taints in the unseen part of the population.")
 		}
 
 		HelpButton
 		{
-			toolTip: 				qsTr("Click to learn more about this algorithm")
-			helpPage:				"Audit/extrapolation"
+			toolTip: 	qsTr("Click to learn more about this algorithm")
+			helpPage:	"Audit/extrapolation"
 		}
 	}
 
 	Row
 	{
-		spacing: 					5 * preferencesModel.uiScale
-		enabled:					enable_pooling
-		visible:					!hide_pooling
+		spacing: 		5 * preferencesModel.uiScale
+		enabled:		enable_pooling
+		visible:		!hide_pooling
 
 		CheckBox
 		{
-			id:						pooling
-			text:					qsTr("Share information")
-			name:					"pooling"
-			enabled:				!partial.checked
-			info:					qsTr("This algorithm enables you to share information about the misstatement across different subgroups in the population (strata).")
-
-			Group
-			{
-				IntegerField
-				{
-					id:				mciterations
-					name:			"mc_iterations"
-					text:			qsTr("Iterations")
-					visible:		pooling.checked
-					defaultValue:	2000
-					min:			200
-					info:			qsTr("The number of Markov Chain Monte-Carlo (MCMC) iterations used by the algorithm.")
-				}
-
-				IntegerField
-				{
-					name:			"mc_warmup"
-					text:			qsTr("Burnin")
-					visible:		pooling.checked
-					defaultValue:	1000
-					min:			100
-					max:			mciterations.value - 1
-					info:			qsTr("The number of warmup iterations used by the algorithm. This value must be lower than the total number of iterations.")
-				}
-
-				IntegerField
-				{
-					name:			"mc_chains"
-					text:			qsTr("Chains")
-					visible:		pooling.checked
-					defaultValue:	4
-					min:			1
-					max:			4
-					info:			qsTr("The number of chains used by the algorithm.")
-				}
-			}
+			id:			pooling
+			text:		qsTr("Share information")
+			name:		"pooling"
+			enabled:	!partial.checked
+			info:		qsTr("This algorithm enables you to share information about the misstatement across different subgroups in the population (strata).")
 		}
 
 		HelpButton
 		{
-			toolTip: 				qsTr("Click to learn more about this algorithm")
-			helpPage:				"Audit/pooling"
+			toolTip: 	qsTr("Click to learn more about this algorithm")
+			helpPage:	"Audit/pooling"
 		}
 	}
 }

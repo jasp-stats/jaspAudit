@@ -759,7 +759,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "min_precision_test", "min_precision_rel_val",
       "by", "prior_method", "prior_n", "prior_x", "alpha", "beta",
       "critical_items", "critical_negative", "critical_action",
-      "stratum", "pooling", "mc_iterations", "mc_chains", "mc_warmup"
+      "stratum", "pooling"
     ))
 
     jaspResults[["evaluationContainer"]] <- container
@@ -2720,9 +2720,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
         result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior, planningOptions, selectionState, evaluationContainer)
         return(result)
       } else {
-        if (options[["bayesian"]]) {
-          options("mc.iterations" = options[["mc_iterations"]], "mc.chains" = options[["mc_chains"]], "mc.warmup" = options[["mc_warmup"]])
-        }
         result <- try({
           jfa::evaluation(
             data = sample, times = if (options[["times"]] != "" && (!options[["bayesian"]] || options[["pooling"]] != "partial")) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
