@@ -42,8 +42,8 @@ Group
 		startValue:				"high"
 		label: 					qsTr("Inherent risk")
 		values: [
-			{ label: qsTr("High"),	value: "high"},
-			{ label: qsTr("Medium"), value: "medium"},
+			{ label: qsTr("High"),		value: "high"},
+			{ label: qsTr("Medium"), 	value: "medium"},
 			{ label: qsTr("Low"), 		value: "low"},
 			{ label: qsTr("Manual"), 	value: "custom"}
 		]
@@ -72,7 +72,7 @@ Group
 			{ label: qsTr("Low"), 		value: "low"},
 			{ label: qsTr("Manual"), 	value: "custom"}
 		]
-		info:						qsTr("A category or probability for the internal control risk. Control risk is defined as the risk of a material misstatement in the financial statements arising due to absence or failure in the operation of relevant controls of the auditee.")
+		info:					qsTr("A category or probability for the internal control risk. Control risk is defined as the risk of a material misstatement in the financial statements arising due to absence or failure in the operation of relevant controls of the auditee.")
 	}
 
 	PercentField

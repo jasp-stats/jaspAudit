@@ -62,10 +62,7 @@ Form
 	Section
 	{
 		title: qsTr("Advanced")
-		Group
-		{
-			Common.Iterations { }
-		}
+		Common.Iterations { }
 	}
 
 	Common.DownloadReport { }

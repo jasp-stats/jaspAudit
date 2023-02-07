@@ -29,7 +29,7 @@ Group
 	property bool	use_materiality:	false
 
 	title:					qsTr("Elicitation")
-	info:					qsTr("")
+	info:					qsTr("Choose how to construct the prior distribution.")
 
 	DropDown
 	{
@@ -38,12 +38,16 @@ Group
 		indexDefaultValue: 	 0
 		startValue:			"default"
 		label: 				qsTr("Method")
-		values: [
-			{ label: qsTr("Default"),			value: "default"},
-			{ label: qsTr("Manual"), 			value: "param"},
-			{ label: qsTr("Earlier sample"), 	value: "sample"},
+		values: use_materiality ? [
+			{ label: qsTr("Default"),			value: "default" },
+			{ label: qsTr("Manual"), 			value: "param" },
+			{ label: qsTr("Earlier sample"), 	value: "sample" },
 			{ label: qsTr("Impartial"), 		value: "impartial"},
 			{ label: qsTr("Risk assessments"), 	value: "arm"}
+		] : [
+			{ label: qsTr("Default"),			value: "default" },
+			{ label: qsTr("Manual"), 			value: "param" },
+			{ label: qsTr("Earlier sample"), 	value: "sample" }
 		]
 		info:				qsTr("Indicate the type of available audit information that should be incorporated into the prior distribution.")
 	}
@@ -76,20 +80,20 @@ Group
 		min:				x_prior.value
 		defaultValue: 		0
 		visible:			prior_method.value == "sample"
-		info:				qsTr("The number of sampling units audited in an earlier sample.")
+		info:				qsTr("The number of sampling units audited through an earlier sample.")
 	}
 
 	DoubleField
 	{
 		id:					x_prior
 		name: 				"x_prior"
-		label:				qsTr("Number of misstatements")
+		label:				qsTr("Misstatements")
 		min:				0
 		max:				n_prior.value
 		defaultValue: 		0
 		decimals:			3
 		visible:			prior_method.value == "sample"
-		info:				qsTr("The number of misstatements found in an earlier sample.")
+		info:				qsTr("The number of misstatements found through an earlier sample.")
 	}
 
 	Common.AuditRiskModel { hide: prior_method.value != "arm" }
