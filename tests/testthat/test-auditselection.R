@@ -6,11 +6,15 @@ options <- jaspTools::analysisOptions("auditSelection")
 options$id <- "ID"
 options$values <- "bookValue"
 options$n <- 200
+options$explanatoryText <- TRUE
 options$tableSample <- TRUE
 options$export_sample <- FALSE
 options$file <- ""
 options$units <- "values"
 options$sampling_method <- "interval"
+options$randomStart <- FALSE
+options$tableDescriptives <- FALSE
+options$start <- 1
 options$name_indicator <- ""
 set.seed(1)
 results <- jaspTools::runAnalysis("auditSelection", "BuildIt_Monetary.csv", options)
@@ -126,7 +130,9 @@ options <- jaspTools::analysisOptions("auditSelection")
 options$id <- "ID"
 options$values <- "bookValue"
 options$n <- 200
+options$explanatoryText <- TRUE
 options$tableSample <- TRUE
+options$tableDescriptives <- FALSE
 options$export_sample <- FALSE
 options$file <- ""
 options$units <- "items"
@@ -232,6 +238,7 @@ test_that("<b>Table 1.</b> Selection Summary results match", {
 options <- jaspTools::analysisOptions("auditSelection")
 options$id <- "ID"
 options$values <- "Deductions"
+options$explanatoryText <- TRUE
 options$n <- 40
 options$tableDescriptives <- TRUE
 options$tableSample <- TRUE

@@ -33,6 +33,7 @@ Form
 	CheckBox { name: "workflow"; checked: false; visible: false }
 	CheckBox { name: "bayesian"; checked: true; visible: false }
 	CheckBox { name: "separateMisstatement"; checked: false; visible: false }
+	RadioButtonGroup { name: "area"; visible: false; RadioButton { name: "less"; checked: true } }
 
 	// Visible options
 	Common.SamplingObjectives { id: objectives }

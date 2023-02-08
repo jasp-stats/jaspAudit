@@ -301,8 +301,7 @@
       bound = c(prior[["statistics"]]$ub, posterior[["statistics"]]$ub, posterior[["statistics"]]$ub - prior[["statistics"]]$ub),
       precision = c(prior[["statistics"]]$precision, posterior[["statistics"]]$precision, NA)
     )
-
-    if (options[["materiality_test"]]) {
+    if (options[["materiality_test"]] && options[["area"]] != "two.sided") {
       rows <- cbind(rows,
         hMin = c(prior[["hypotheses"]][["p.h1"]], posterior[["hypotheses"]][["p.h1"]], posterior[["hypotheses"]][["p.h1"]] / prior[["hypotheses"]][["p.h1"]]),
         hPlus = c(prior[["hypotheses"]][["p.h0"]], posterior[["hypotheses"]][["p.h0"]], posterior[["hypotheses"]][["p.h0"]] / prior[["hypotheses"]][["p.h0"]]),

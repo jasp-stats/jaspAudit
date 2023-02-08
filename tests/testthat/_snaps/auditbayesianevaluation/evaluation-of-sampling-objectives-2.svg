@@ -33,10 +33,10 @@
 <polyline points='576.82,510.14 576.82,20.71 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
 <polyline points='696.14,510.14 696.14,20.71 ' style='stroke-width: 1.07; stroke: #CBCBCB; stroke-linecap: butt;' />
 <rect x='218.87' y='349.54' width='301.88' height='137.65' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #1380A1;' />
-<rect x='218.87' y='196.60' width='354.70' height='137.65' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF0000;' />
+<rect x='218.87' y='196.60' width='364.60' height='137.65' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF0000;' />
 <rect x='218.87' y='43.65' width='119.32' height='137.65' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFA500;' />
 <text x='525.60' y='424.25' style='font-size: 17.07px; font-family: sans;' textLength='48.41px' lengthAdjust='spacingAndGlyphs'>50.6%</text>
-<text x='579.36' y='271.30' style='font-size: 17.07px; font-family: sans;' textLength='57.90px' lengthAdjust='spacingAndGlyphs'>59.46%</text>
+<text x='589.26' y='271.30' style='font-size: 17.07px; font-family: sans;' textLength='57.90px' lengthAdjust='spacingAndGlyphs'>61.11%</text>
 <text x='341.60' y='118.35' style='font-size: 17.07px; font-family: sans;' textLength='34.17px' lengthAdjust='spacingAndGlyphs'>20%</text>
 <rect x='195.01' y='20.71' width='524.99' height='489.43' style='stroke-width: 0.00; stroke: none;' />
 </g>

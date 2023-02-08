@@ -2502,7 +2502,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       result <- try({
         jfa::evaluation(
           data = sample, times = options[["indicator_col"]], conf.level = conf_level,
-          materiality = materiality, alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else options[["area"]],
+          materiality = materiality, alternative = options[["area"]],
           values = options[["values"]], values.audit = options[["values.audit"]],
           method = method, N.items = prevOptions[["N.items"]], N.units = prevOptions[["N.units"]],
           prior = prior
@@ -2723,7 +2723,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         result <- try({
           jfa::evaluation(
             data = sample, times = if (options[["times"]] != "" && (!options[["bayesian"]] || options[["pooling"]] != "partial")) options[["times"]] else NULL, conf.level = conf_level, materiality = materiality,
-            values = options[["values"]], values.audit = options[["values.audit"]], alternative = if (options[["method"]] %in% c("direct", "difference", "quotient", "regression")) "two.sided" else options[["area"]],
+            values = options[["values"]], values.audit = options[["values.audit"]], alternative = options[["area"]],
             method = method, N.items = N_items, N.units = N_units,
             prior = prior, strata = if (options[["stratum"]] != "") options[["stratum"]] else NULL,
             pooling = if (options[["bayesian"]]) if (options[["pooling"]]) "partial" else "none" else "none"

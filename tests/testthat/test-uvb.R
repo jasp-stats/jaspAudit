@@ -3,7 +3,27 @@ context("[Audit] UVB functionality")
 # Reproduce results from manual
 
 options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
 options$min_precision_test <- TRUE
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$randomStart <- FALSE
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
 options$id <- "Transaction"
 options$values <- "Ist"
 options$explanatoryText <- FALSE
@@ -24,8 +44,16 @@ options$display <- "percent"
 options$units <- "values"
 options$sampling_method <- "interval"
 options$method <- "binomial"
-options$area <- "area_bound"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
 options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
 options$indicator_col <- "SelectionResult"
 options$variable_col <- "AuditResult"
 options$annotation <- "continuous"
@@ -54,19 +82,16 @@ test_that("<b>Table 6.</b> Assumption Checks results match", {
 })
 
 test_that("<b>Table 5.</b> Evaluation Summary results match", {
-  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
-  jaspTools::expect_equal_tables(
-    table,
-    list("2%", "17.645%", 130, "1.631%", "18.037%", "19.276%", 68)
-  )
+	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list("%", "2%", "17.645%", 130, "Value", "1.631%", "18.037%", "19.276%",
+			 68))
 })
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
-  table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
-  jaspTools::expect_equal_tables(
-    table,
-    list("5%", 130, "2%", "0 - 130")
-  )
+	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list("5%", 130, "Value", "2%", "0 - 130"))
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
@@ -141,38 +166,69 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 # Reproduce test case 1 from Excel
 
-options <- analysisOptions("auditBayesianWorkflow")
-options$annotation <- "continuous"
-options$area <- "area_bound"
-options$by <- 5
-options$critical_action <- "inspect"
-options$critical_name <- "critical"
-options$dataType <- "data"
-options$display <- "number"
-options$expected_type <- "expected_all"
-options$id <- "ID"
-options$indicator_col <- "selected"
-options$likelihood <- "binomial"
-options$materiality_type <- "materiality_rel"
-options$method <- "binomial"
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
 options$min_precision_test <- TRUE
-options$pasteVariables <- FALSE
-options$prior_method <- "default"
-options$samplingChecked <- TRUE
-options$sampling_method <- "interval"
-options$tableAssumptions <- TRUE
-options$tableSample <- TRUE
-options$units <- "values"
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$randomStart <- FALSE
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
+options$id <- "ID"
 options$values <- "IST"
+options$explanatoryText <- FALSE
+options$by <- 5
+options$separateMisstatement <- TRUE
+options$samplingChecked <- TRUE
+options$tableSample <- TRUE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
+options$tableAssumptions <- TRUE
+options$materiality_type <- "materiality_rel"
+options$expected_type <- "expected_all"
+options$likelihood <- "binomial"
+options$prior_method <- "default"
+options$critical_action <- "inspect"
+options$display <- "percent"
+options$units <- "values"
+options$sampling_method <- "interval"
+options$method <- "binomial"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
+options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase1.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase1.csv", options)
 
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(0.05, 75, 0.02, "0 - 75"))
+		list("5%", 75, "Value", "2%", "0 - 75"))
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
@@ -217,36 +273,67 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 # Reproduce test case 2 from Excel
 
 options <- analysisOptions("auditBayesianWorkflow")
-options$annotation <- "continuous"
-options$area <- "area_bound"
-options$by <- 5
-options$critical_action <- "inspect"
-options$critical_name <- "critical"
-options$dataType <- "data"
-options$display <- "number"
-options$expected_type <- "expected_all"
-options$id <- "ID"
-options$indicator_col <- "selected"
-options$likelihood <- "binomial"
-options$materiality_type <- "materiality_rel"
-options$method <- "binomial"
+options$bayesian <- TRUE
 options$min_precision_test <- TRUE
-options$pasteVariables <- FALSE
-options$prior_method <- "default"
-options$samplingChecked <- TRUE
-options$sampling_method <- "interval"
-options$tableAssumptions <- TRUE
-options$tableSample <- TRUE
-options$units <- "values"
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$randomStart <- FALSE
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
+options$id <- "ID"
 options$values <- "IST"
+options$explanatoryText <- FALSE
+options$by <- 5
+options$separateMisstatement <- TRUE
+options$samplingChecked <- TRUE
+options$tableSample <- TRUE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
+options$tableAssumptions <- TRUE
+options$materiality_type <- "materiality_rel"
+options$expected_type <- "expected_all"
+options$likelihood <- "binomial"
+options$prior_method <- "default"
+options$critical_action <- "inspect"
+options$display <- "percent"
+options$units <- "values"
+options$sampling_method <- "interval"
+options$method <- "binomial"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
+options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
 results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase2.csv", options)
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(0.05, 25, 0.02, "0 - 25"))
+		list("5%", 25, "Value", "2%", "0 - 25"))
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
@@ -274,39 +361,69 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 # Reproduce test case 3 from Excel
 
-options <- analysisOptions("auditBayesianWorkflow")
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
 options$min_precision_test <- TRUE
-options$conf_level <- 0.85
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$randomStart <- FALSE
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
 options$id <- "TransactionID"
 options$values <- "Ist"
+options$explanatoryText <- FALSE
 options$by <- 15
+options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
-options$pasteVariables <- FALSE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
-options$dataType <- "data"
 options$materiality_type <- "materiality_rel"
 options$expected_type <- "expected_all"
 options$likelihood <- "binomial"
 options$prior_method <- "default"
 options$critical_action <- "inspect"
-options$display <- "number"
+options$display <- "percent"
 options$units <- "values"
 options$sampling_method <- "interval"
-options$annotation <- "continuous"
 options$method <- "binomial"
-options$area <- "area_bound"
-options$critical_name <- "critical"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.85
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
 options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase3.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase3.csv", options)
 
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(0.15, 60, 0.02, "0 - 60"))
+		list("5%", 60, "Value", "2%", "0 - 60"))
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
@@ -349,38 +466,69 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 # Reproduce test case 4 from Excel
 
-options <- analysisOptions("auditBayesianWorkflow")
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
 options$min_precision_test <- TRUE
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$randomStart <- FALSE
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
 options$id <- "Transaction.ID"
 options$values <- "Ist"
+options$explanatoryText <- FALSE
 options$by <- 5
+options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
-options$pasteVariables <- FALSE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
-options$dataType <- "data"
 options$materiality_type <- "materiality_rel"
 options$expected_type <- "expected_all"
 options$likelihood <- "binomial"
 options$prior_method <- "default"
 options$critical_action <- "inspect"
-options$display <- "number"
+options$display <- "percent"
 options$units <- "values"
 options$sampling_method <- "interval"
-options$annotation <- "continuous"
 options$method <- "binomial"
-options$area <- "area_bound"
-options$critical_name <- "critical"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
 options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase4.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase4.csv", options)
 
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(0.05, 25, 0.02, "0 - 25"))
+		list("5%", 25, "Value", "2%", "0 - 25"))
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
@@ -407,38 +555,69 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 # Reproduce test case 5 from Excel
 
-options <- analysisOptions("auditBayesianWorkflow")
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
 options$min_precision_test <- TRUE
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$randomStart <- FALSE
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
 options$id <- "Transaction.ID"
 options$values <- "Ist"
+options$explanatoryText <- FALSE
 options$by <- 5
+options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
-options$pasteVariables <- FALSE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
-options$dataType <- "data"
 options$materiality_type <- "materiality_rel"
 options$expected_type <- "expected_all"
 options$likelihood <- "binomial"
 options$prior_method <- "default"
 options$critical_action <- "inspect"
-options$display <- "number"
+options$display <- "percent"
 options$units <- "values"
 options$sampling_method <- "interval"
-options$annotation <- "continuous"
 options$method <- "binomial"
-options$area <- "area_bound"
-options$critical_name <- "critical"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
 options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase5.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase5.csv", options)
 
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(0.05, 45, 0.02, "0 - 45"))
+		list("5%", 45, "Value", "2%", "0 - 45"))
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
@@ -469,39 +648,70 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 # Reproduce test case 6 from Excel
 
-options <- analysisOptions("auditBayesianWorkflow")
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
 options$min_precision_test <- TRUE
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$randomStart <- FALSE
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
 options$id <- "Transaction.ID"
 options$values <- "Ist"
+options$explanatoryText <- FALSE
 options$by <- 5
+options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
-options$variables <- list("steek")
 options$tableSample <- TRUE
-options$pasteVariables <- FALSE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
-options$dataType <- "data"
 options$materiality_type <- "materiality_rel"
 options$expected_type <- "expected_all"
 options$likelihood <- "binomial"
 options$prior_method <- "default"
 options$critical_action <- "inspect"
-options$display <- "number"
+options$display <- "percent"
 options$units <- "values"
 options$sampling_method <- "interval"
-options$annotation <- "continuous"
 options$method <- "binomial"
-options$area <- "area_bound"
-options$critical_name <- "critical"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$variables <- list("steek")
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
 options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase6.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase6.csv", options)
 
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
 	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(0.05, 25, 0.02, "0 - 25"))
+		list("5%", 25, "Value", "2%", "0 - 25"))
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
