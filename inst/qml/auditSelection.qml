@@ -27,7 +27,7 @@ import "./common" as Common
 Form 
 {
 	columns:									1
-	info:										qsTr("The selection analysis allows the user to select a number of sampling units (items or monetary units) from a population using a variety of sampling methods (random sampling, cell sampling, fixed interval sampling) that are standard in an auditing context.\n\n<img src='%HELP_FOLDER%/img/workflowSelection.png'/>\n\nPlease see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.")
+	info:										qsTr("The selection analysis allows the user to select a number of sampling units (items or monetary units) from a population using a variety of sampling methods (random sampling, cell sampling, fixed interval sampling) that are standard in an auditing context.\n\n![Audit sampling workflow](%HELP_FOLDER%/img/workflowSelection.png)\n\nPlease see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.")
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }
@@ -92,33 +92,33 @@ Form
 	{
 		IntegerField
 		{
-			id:								sample_size
-			text: 							qsTr("Sample size")
-			name: 							"n"
-			defaultValue: 					0
-			min: 							0
-			info:							qsTr("The required number of sampling units that should be selected from the population. Be aware that the sampling units are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.")
+			id:									sample_size
+			text: 								qsTr("Sample size")
+			name: 								"n"
+			defaultValue: 						0
+			min: 								0
+			info:								qsTr("The required number of sampling units that should be selected from the population. Be aware that the sampling units are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.")
 		}
 
 		IntegerField
 		{
-			id: 							seed
-			text: 							qsTr("Seed")
-			name: 							"seed"
-			defaultValue: 					1
-			min: 							1
-			max: 							99999
-			enabled:						randomize.checked || !method.use_interval || method.use_random_start
-			info:							qsTr("Selects the seed for the random number generator in order to reproduce results.")
+			id: 								seed
+			text: 								qsTr("Seed")
+			name: 								"seed"
+			defaultValue: 						1
+			min: 								1
+			max: 								99999
+			enabled:							randomize.checked || !method.use_interval || method.use_random_start
+			info:								qsTr("Selects the seed for the random number generator in order to reproduce results.")
 		}
 
 		CheckBox
 		{
-			id:								randomize
-			name:							"randomize"
-			text:							qsTr("Randomize item order")
-			enabled:						rank.count == 0
-			info:							qsTr("Randomizes the items in the population before selection is performed.")
+			id:									randomize
+			name:								"randomize"
+			text:								qsTr("Randomize item order")
+			enabled:							rank.count == 0
+			info:								qsTr("Randomizes the items in the population before selection is performed.")
 		}
 	}
 
@@ -128,10 +128,10 @@ Form
 
 	Section
 	{
-		title:								qsTr("Report")
+		title:									qsTr("Report")
 		Group
 		{
-			columns:						1
+			columns:							1
 			Common.SelectionOutput { }
 		}
 	}
