@@ -38,16 +38,20 @@ results <- jaspTools::runAnalysis("auditClassicalEvaluation", dataset, options)
 
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.05, 0.010752688172043, 93, "Value", 0.0499757952426165, 0.0327870469156388,
-			 1, 0.0435397350876818, 1))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      0.05, 0.010752688172043, 93, "Value", 0.0499757952426165, 0.0327870469156388,
+      1, 0.0435397350876818, 1
+    )
+  )
 })
 
 test_that("Evaluation of Sampling Objectives plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-1")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-1")
 })
 
 ### Test 2: Evaluation using correct / incorrect
@@ -90,16 +94,20 @@ results <- jaspTools::runAnalysis("auditClassicalEvaluation", "auditRattle.csv",
 
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.393979377546691, 0.2, 0.506024096385542, 83, "Value", 5.1324011977083e-10,
-			 0.111602364625586, 42, 0.617626461011128, 42))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      0.393979377546691, 0.2, 0.506024096385542, 83, "Value", 5.1324011977083e-10,
+      0.111602364625586, 42, 0.617626461011128, 42
+    )
+  )
 })
 
 test_that("Evaluation of Sampling Objectives plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-2")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-2")
 })
 
 ### Test 3: Evaluation using soll values
@@ -144,15 +152,18 @@ results <- jaspTools::runAnalysis("auditClassicalEvaluation", "test-auditClassic
 
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.050115, 0.0128205272476822, 234, "Value", 0.00237577675705908,
-			 0.0167146359852805, 3.00000337595764, 0.0295351632329627, 5
-			))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      0.050115, 0.0128205272476822, 234, "Value", 0.00237577675705908,
+      0.0167146359852805, 3.00000337595764, 0.0295351632329627, 5
+    )
+  )
 })
 
 test_that("Evaluation of Sampling Objectives plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-3")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-3")
 })

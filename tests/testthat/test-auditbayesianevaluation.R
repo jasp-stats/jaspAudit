@@ -46,34 +46,42 @@ results <- jaspTools::runAnalysis("auditBayesianEvaluation", dataset, options)
 
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(211.088638102458, 0.0572299998232917, 0.05, 0.0125, 80, "Value",
-			 0.0447299998232917, 1, 1))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      211.088638102458, 0.0572299998232917, 0.05, 0.0125, 80, "Value",
+      0.0447299998232917, 1, 1
+    )
+  )
 })
 
 test_that("Evaluation of Sampling Objectives plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-1")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-1")
 })
 
 test_that("Prior and Posterior Distribution plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotPriorAndPosterior"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-1")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotPriorAndPosterior"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-1")
 })
 
 test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distribution results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_tablePriorPosterior"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.95, "beta(<unicode> = 1, <unicode> = 1)", 0.05, 0.95, 0.5, 0.5,
-			 "NaN", 0.0526315789473684, "NaN", "Prior", 0.0572299998232917,
-			 "beta(<unicode> = 2, <unicode> = 80)", 0.917423128074932, 0.0825768719250681,
-			 0.024390243902439, 0.0206338067351869, 0.0125, 11.109928321182,
-			 0.0447299998232917, "Posterior", -0.892770000176708, "", 18.3484625614986,
-			 0.0869230230790191, -0.475609756097561, -0.479366193264813,
-			 "NaN", 211.088638102458, "", "Shift"))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_tablePriorPosterior"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      0.95, "beta(<unicode> = 1, <unicode> = 1)", 0.05, 0.95, 0.5, 0.5,
+      "NaN", 0.0526315789473684, "NaN", "Prior", 0.0572299998232917,
+      "beta(<unicode> = 2, <unicode> = 80)", 0.917423128074932, 0.0825768719250681,
+      0.024390243902439, 0.0206338067351869, 0.0125, 11.109928321182,
+      0.0447299998232917, "Posterior", -0.892770000176708, "", 18.3484625614986,
+      0.0869230230790191, -0.475609756097561, -0.479366193264813,
+      "NaN", 211.088638102458, "", "Shift"
+    )
+  )
 })
 
 ### Test 2: Evaluation using correct / incorrect
@@ -121,32 +129,40 @@ results <- jaspTools::runAnalysis("auditBayesianEvaluation", "auditRattle.csv", 
 
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(30323119.9160736, 0.400352837948873, 0.2, 0.506024096385542, 83,
-			 "Value", 0.105125433872907, 42, 0.611149530258449, 42))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      30323119.9160736, 0.400352837948873, 0.2, 0.506024096385542, 83,
+      "Value", 0.105125433872907, 42, 0.611149530258449, 42
+    )
+  )
 })
 
 test_that("Evaluation of Sampling Objectives plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-2")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-2")
 })
 
 test_that("Prior and Posterior Distribution plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotPriorAndPosterior"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-2")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotPriorAndPosterior"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-2")
 })
 
 test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distribution results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_tablePriorPosterior"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.95, "beta(<unicode> = 1, <unicode> = 1)", 0.5, 0.5, "NaN", "NaN",
-			 "Prior", 0.611149530258449, "beta(<unicode> = 43, <unicode> = 42)",
-			 0.505882352941176, 0.505928705388406, 0.506024096385542, 0.105125433872907,
-			 "Posterior", -0.338850469741551, "", 0.00588235294117645, 0.0059287053884064,
-			 "NaN", "", "Shift"))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_tablePriorPosterior"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      0.95, "beta(<unicode> = 1, <unicode> = 1)", 0.5, 0.5, "NaN", "NaN",
+      "Prior", 0.611149530258449, "beta(<unicode> = 43, <unicode> = 42)",
+      0.505882352941176, 0.505928705388406, 0.506024096385542, 0.105125433872907,
+      "Posterior", -0.338850469741551, "", 0.00588235294117645, 0.0059287053884064,
+      "NaN", "", "Shift"
+    )
+  )
 })
 
 ### Test 3: Evaluation using soll values
@@ -198,32 +214,40 @@ results <- jaspTools::runAnalysis("auditBayesianEvaluation", "test-auditClassica
 
 
 test_that("<b>Table 1.</b> Evaluation Summary results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(8282.04678073276, 45726.6912117069, 70161, 17948.7381467551, 234,
-			 "Value", 27777.9530649518, 3.00000337595764, 5))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      8282.04678073276, 45726.6912117069, 70161, 17948.7381467551, 234,
+      "Value", 27777.9530649518, 3.00000337595764, 5
+    )
+  )
 })
 
 test_that("Evaluation of Sampling Objectives plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-3")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotObjectives"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "evaluation-of-sampling-objectives-3")
 })
 
 test_that("Prior and Posterior Distribution plot matches", {
-	plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotPriorAndPosterior"]][["data"]]
-	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-3")
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotPriorAndPosterior"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-3")
 })
 
 test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distribution results match", {
-	table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_tablePriorPosterior"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.95, "beta(<unicode> = 1, <unicode> = 1)", 0.050115, 0.949885,
-			 0.5, 0.5, "NaN", 0.0527590181969396, "NaN", "Prior", 0.0326619222940764,
-			 "beta(<unicode> = 4, <unicode> = 232)", 0.997716648170882, 0.00228335182911776,
-			 0.0169491668472781, 0.0156034818108654, 0.0128205272476822,
-			 436.952656812585, 0.0198413950463942, "Posterior", -0.917338077705924,
-			 "", 19.9085433137959, 0.0024038192298202, -0.483050833152722,
-			 -0.484396518189135, "NaN", 8282.04678073276, "", "Shift"))
+  table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_tablePriorPosterior"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      0.95, "beta(<unicode> = 1, <unicode> = 1)", 0.050115, 0.949885,
+      0.5, 0.5, "NaN", 0.0527590181969396, "NaN", "Prior", 0.0326619222940764,
+      "beta(<unicode> = 4, <unicode> = 232)", 0.997716648170882, 0.00228335182911776,
+      0.0169491668472781, 0.0156034818108654, 0.0128205272476822,
+      436.952656812585, 0.0198413950463942, "Posterior", -0.917338077705924,
+      "", 19.9085433137959, 0.0024038192298202, -0.483050833152722,
+      -0.484396518189135, "NaN", 8282.04678073276, "", "Shift"
+    )
+  )
 })

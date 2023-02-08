@@ -22,7 +22,6 @@
 # by Uri Simonsohn which is available at: http://datacolada.org/77.
 
 auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
-
   # Create the procedure paragraph
   .jfaNumberBunchingAddProcedure(options, jaspResults, position = 1)
 
@@ -335,7 +334,6 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
 }
 
 .jfaNumberBunchingSimulationPlots <- function(dataset, options, numberBunchingContainer, jaspResults, ready) {
-
   # Create the observed versus expected average frequency plot
   if (options[["avgFrequency"]]) {
     .jfaNumberBunchingFrequencyPlot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 4)
