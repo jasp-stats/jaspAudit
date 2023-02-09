@@ -64,26 +64,8 @@ Form
 			{
 				name: 								"variablesFormPlanning"
 			}
-
-			AssignedVariablesList
-			{
-				id: 								id
-				name: 								"id"
-				title: 								qsTr("Item ID")
-				singleVariable:						true
-				allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
-				allowAnalysisOwnComputedColumns: 	false
-			}
-
-			AssignedVariablesList
-			{
-				id: 								values
-				name: 								"values"
-				title: 								qsTr("Book Value")
-				singleVariable: 					true
-				allowedColumns: 					["scale"]
-				allowAnalysisOwnComputedColumns: 	false
-			}
+			Common.IdVariable { id: id }
+			Common.BookVariable { id: values }
 		}
 
 		GridLayout
@@ -99,17 +81,17 @@ Form
 		{
 			title:									qsTr("Report")
 			columns:								2
-			Common.PlanningOutput { bayesian: false; workflow: true; enable_values: values.count > 0 }
-			Common.Display { show_monetary: true; enable_monetary: values.count > 0 }
+			Common.PlanningOutput { bayesian: false; workflow: true; enable_values: values.use_book }
+			Common.Display { show_monetary: true; enable_monetary: values.use_book }
 		}
 
 		Section
 		{
 			title:									qsTr("Advanced")
 			columns:								3
-			Common.Likelihood { id:likelihood; bayesian: false; evaluation: false; enable_hypergeometric: id.count > 0 && values.count > 0  }
+			Common.Likelihood { id:likelihood; bayesian: false; evaluation: false; enable_hypergeometric: id.use_id && values.use_book  }
 			Common.Iterations { enable: !pasteVariables.checked }
-			Common.CriticalItems { id: critical; enable: !data.use_stats && values.count > 0 && !pasteVariables.checked }
+			Common.CriticalItems { id: critical; enable: !data.use_stats && values.use_book && !pasteVariables.checked }
 		}
 
 		Item
@@ -143,9 +125,9 @@ Form
 				anchors.right: 						parent.right
 				text: 								qsTr("<b>To Selection</b>")
 				enabled: 							!samplingChecked.checked && ((objectives.use_materiality && (objectives.absolute_materiality ?
-																													 objectives.absolute_value > 0 && id.count > 0 && values.count > 0 :
-																													 objectives.relative_value > 0 && id.count > 0)) ||
-																				 (objectives.use_precision && objectives.precision_value > 0 && id.count > 0))
+																													 objectives.absolute_value > 0 && id.use_id && values.use_book :
+																													 objectives.relative_value > 0 && id.use_id)) ||
+																				 (objectives.use_precision && objectives.precision_value > 0 && id.use_id))
 				onClicked:							samplingChecked.checked	= true
 			}
 		}
@@ -201,25 +183,8 @@ Form
 
 			Group
 			{
-				IntegerField
-				{
-					id: 							seed
-					text: 							qsTr("Seed")
-					name: 							"seed"
-					defaultValue: 					1
-					min: 							1
-					max: 							99999
-					enabled:						randomize.checked || !method.use_interval || method.use_random_start
-				}
-
-				CheckBox
-				{
-					id:								randomize
-					name:							"randomize"
-					text:							qsTr("Randomize item order")
-					enabled:						!pasteVariables.checked && rank.count == 0
-				}
-
+				Common.Seed { enable: randomize.use_randomize || !method.use_interval || method.use_random_start }
+				Common.Randomize { id: randomize; enable: !pasteVariables.checked && rank.count == 0 }
 				CheckBox
 				{
 					id:								add_selection_variables
@@ -229,8 +194,8 @@ Form
 				}
 			}
 
-			Common.SamplingUnits { id: units; enable: !pasteVariables.checked; enable_mus: values.count > 0 }
-			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; enable_sieve: values.count > 0 && units.use_mus }
+			Common.SamplingUnits { id: units; enable: !pasteVariables.checked; enable_mus: values.use_book }
+			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; enable_sieve: values.use_book && units.use_mus }
 		}
 
 		Section
@@ -310,8 +275,8 @@ Form
 				id: 								continuous
 				text: 								qsTr("Audit value")
 				name: 								"continuous"
-				enabled: 							values.count > 0
-				checked:							values.count > 0
+				enabled: 							values.use_book
+				checked:							values.use_book
 			}
 
 			HelpButton
@@ -504,8 +469,8 @@ Form
 				Common.EvaluationOutput
 				{
 					bayesian: false
-					enable_taints: values.count > 0 && !data.use_stats
-					enable_corrections: values.count > 0
+					enable_taints: values.use_book && !data.use_stats
+					enable_corrections: values.use_book
 					enable_objectives: objectives.use_materiality || objectives.use_precision
 					enable_scatter: continuous.checked
 					enable_estimates: true
@@ -527,7 +492,7 @@ Form
 					id:								hypergeometric
 					name: 							"hypergeometric"
 					text: 							qsTr("Hypergeometric")
-					enabled:						id.count > 0
+					enabled:						id.use_id
 					checked:						likelihood.use_hypergeometric
 				}
 
@@ -552,7 +517,7 @@ Form
 					id: 							stringer
 					name: 							"stringer"
 					text: 							qsTr("Stringer")
-					enabled: 						values.count > 0 && continuous.checked && interval.use_right
+					enabled: 						values.use_book && continuous.checked && interval.use_right
 
 					CheckBox
 					{
@@ -567,7 +532,7 @@ Form
 					id:								mpu
 					name: 							"mpu"
 					text: 							qsTr("Mean-per-unit estimator")
-					enabled: 						values.count > 0 && continuous.checked
+					enabled: 						values.use_book && continuous.checked
 				}
 
 				RadioButton
@@ -575,7 +540,7 @@ Form
 					id:								direct
 					name: 							"direct"
 					text: 							qsTr("Direct estimator")
-					enabled: 						values.count > 0 && continuous.checked
+					enabled: 						values.use_book && continuous.checked
 				}
 
 				RadioButton
@@ -583,7 +548,7 @@ Form
 					id:								difference
 					name: 							"difference"
 					text: 							qsTr("Difference estimator")
-					enabled: 						values.count > 0 && continuous.checked
+					enabled: 						values.use_book && continuous.checked
 				}
 
 				RadioButton
@@ -591,7 +556,7 @@ Form
 					id:								quotient
 					name: 							"quotient"
 					text: 							qsTr("Ratio estimator")
-					enabled: 						values.count > 0 && continuous.checked
+					enabled: 						values.use_book && continuous.checked
 				}
 
 				RadioButton
@@ -599,7 +564,7 @@ Form
 					id:								regression
 					name: 							"regression"
 					text: 							qsTr("Regression estimator")
-					enabled: 						values.count > 0 && continuous.checked
+					enabled: 						values.use_book && continuous.checked
 				}
 			}
 

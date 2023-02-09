@@ -26,8 +26,8 @@ import "./common" as Common
 
 Form 
 {
-	columns:									1
-	info:										qsTr("The selection analysis allows the user to select a number of sampling units (items or monetary units) from a population using a variety of sampling methods (random sampling, cell sampling, fixed interval sampling) that are standard in an auditing context.\n\n![Audit sampling workflow](%HELP_FOLDER%/img/workflowSelection.png)\n\nPlease see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.")
+	columns: 1
+	info: qsTr("The selection analysis allows the user to select a number of sampling units (items or monetary units) from a population using a variety of sampling methods (random sampling, cell sampling, fixed interval sampling) that are standard in an auditing context.\n\n![Audit sampling workflow](%HELP_FOLDER%/img/workflowSelection.png)\n\nPlease see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.")
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }
@@ -35,103 +35,41 @@ Form
 	// Visible options
 	VariablesForm
 	{
-		id:										variablesFormSampling
-		preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
+		id:	variablesFormSampling
+		preferredHeight: jaspTheme.smallDefaultVariablesFormHeight
 
-		AvailableVariablesList
-		{
-			name:								"variablesFormSampling"
-		}
-
-		AssignedVariablesList
-		{
-			id:									id
-			name:								"id"
-			title:								qsTr("Item ID (required)")
-			singleVariable:						true
-			allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
-			allowAnalysisOwnComputedColumns:	false
-			info:								qsTr("A unique non-missing identifier for every item in the population. The row number of the items is sufficient.")
-		}
-
-		AssignedVariablesList
-		{
-			id:									values
-			name:								"values"
-			title:								units.use_mus ? qsTr("Book Value (required)") : qsTr("Book Value (optional)")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-			allowAnalysisOwnComputedColumns:	false
-			info:								qsTr("A numeric variable that contains the book (recorded) values of the items in the population.")
-		}
-
-		AssignedVariablesList
-		{
-			id:									rank
-			name:								"rank"
-			title: 								qsTr("Ranking Variable")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-			allowAnalysisOwnComputedColumns: 	false
-			debug:								true
-			info:								qsTr("When provided, the population is first ranked in ascending order with respect to the values of this variable.")
-		}
-
-		AssignedVariablesList
-		{
-			name:								"variables"
-			title: 								qsTr("Additional Variables")
-			Layout.preferredHeight: 			140 * preferencesModel.uiScale
-			allowedColumns: 					["scale", "ordinal", "nominal"]
-			allowAnalysisOwnComputedColumns: 	false
-			info:								qsTr("Any other variables that should be included in the sample.")
-		}
+		AvailableVariablesList { name: "variablesFormSampling" }
+		Common.IdVariable { id: id }
+		Common.BookVariable { id: values; required: units.use_mus }
+		Common.RankVariable { id: rank }
+		Common.AdditionalVariables { }
 	}
 
 	Group
 	{
 		IntegerField
 		{
-			id:									sample_size
-			text: 								qsTr("Sample size")
-			name: 								"n"
-			defaultValue: 						0
-			min: 								0
-			info:								qsTr("The required number of sampling units that should be selected from the population. Be aware that the sampling units are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.")
+			id:				sample_size
+			text: 			qsTr("Sample size")
+			name: 			"n"
+			defaultValue: 	0
+			min: 			0
+			info:			qsTr("The required number of sampling units that should be selected from the population. Be aware that the sampling units are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.")
 		}
-
-		IntegerField
-		{
-			id: 								seed
-			text: 								qsTr("Seed")
-			name: 								"seed"
-			defaultValue: 						1
-			min: 								1
-			max: 								99999
-			enabled:							randomize.checked || !method.use_interval || method.use_random_start
-			info:								qsTr("Selects the seed for the random number generator in order to reproduce results.")
-		}
-
-		CheckBox
-		{
-			id:									randomize
-			name:								"randomize"
-			text:								qsTr("Randomize item order")
-			enabled:							rank.count == 0
-			info:								qsTr("Randomizes the items in the population before selection is performed.")
-		}
+		Common.Seed { enable: randomize.checked || !method.use_interval || method.use_random_start }
+		Common.Randomize { enable: rank.count == 0 }
 	}
 
-	Common.SamplingUnits { id: units; enable_mus: values.count > 0 }
-	Common.SelectionMethod { id: method; enable_sieve: values.count > 0 && units.use_mus }
+	Common.SamplingUnits { id: units; enable_mus: values.use_book }
+	Common.SelectionMethod { id: method; enable_sieve: values.use_book && units.use_mus }
 	Common.ExplanatoryText { }
 
 	Section
 	{
-		title:									qsTr("Report")
+		title: qsTr("Report")
 		Group
 		{
-			columns:							1
+			columns: 1
 			Common.SelectionOutput { }
 		}
 	}

@@ -22,10 +22,12 @@ import JASP
 import JASP.Controls
 import JASP.Widgets
 
+import "./" as Common
+
 VariablesForm
 {
-	readonly	property bool	use_id:			id.count > 0
-	readonly	property bool	use_book:		book_values.count > 0
+	readonly	property bool	use_id:			id.use_id
+	readonly	property bool	use_book:		values.use_book
 	readonly	property bool	use_real:		audit_values.count > 0
 	readonly	property bool	use_strata:		stratum_indicator.count > 0
 				property bool	use_population: false
@@ -41,25 +43,8 @@ VariablesForm
 		name: 				"variables"
 	}
 
-	AssignedVariablesList
-	{
-		id: 				id
-		name: 				"id"
-		title: 				qsTr("Item ID (required)")
-		singleVariable: 	true
-		allowedColumns: 	["nominal", "nominalText", "ordinal", "scale"]
-		info:				qsTr("A unique non-missing identifier for every item in the population. The row number of the items is sufficient.")
-	}
-
-	AssignedVariablesList
-	{
-		id: 				book_values
-		name: 				"values"
-		title: 				qsTr("Book Value (optional)")
-		singleVariable: 	true
-		allowedColumns: 	["scale"]
-		info:				qsTr("A numeric variable that contains the book (recorded) values of the items in the population.")
-	}
+	Common.IdVariable { id: id }
+	Common.BookVariable { id: values }
 
 	AssignedVariablesList
 	{

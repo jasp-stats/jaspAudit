@@ -60,25 +60,8 @@ Form
 				name: 								"variablesFormPlanning"
 			}
 
-			AssignedVariablesList
-			{
-				id: 								id
-				name: 								"id"
-				title: 								qsTr("Item ID (required)")
-				singleVariable:						true
-				allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
-				allowAnalysisOwnComputedColumns: 	false
-			}
-
-			AssignedVariablesList
-			{
-				id: 								values
-				name: 								"values"
-				title: 								qsTr("Book Value (optional)")
-				singleVariable: 					true
-				allowedColumns: 					["scale"]
-				allowAnalysisOwnComputedColumns: 	false
-			}
+			Common.IdVariable { id: id }
+			Common.BookVariable { id: values }
 		}
 
 		GridLayout
@@ -93,7 +76,7 @@ Form
 		{
 			title: 									qsTr("Prior")
 			columns:								2
-			Common.Likelihood { id:likelihood; bayesian: true; evaluation: false; enable_hypergeometric: id.count > 0 && values.count > 0 }
+			Common.Likelihood { id:likelihood; bayesian: true; evaluation: false; enable_hypergeometric: id.use_id && values.use_book }
 			Common.PriorMethod { use_materiality: objectives.use_materiality }
 		}
 
@@ -101,8 +84,8 @@ Form
 		{
 			title:				qsTr("Report")
 			columns:			2
-			Common.PlanningOutput { bayesian: true; workflow: true; enable_values: values.count > 0; disable_predictive: likelihood.use_hypergeometric }
-			Common.Display { show_monetary: true; enable_monetary: values.count > 0 }
+			Common.PlanningOutput { bayesian: true; workflow: true; enable_values: values.use_book; disable_predictive: likelihood.use_hypergeometric }
+			Common.Display { show_monetary: true; enable_monetary: values.use_book }
 		}
 
 		Section
@@ -110,12 +93,12 @@ Form
 			title:									qsTr("Advanced")
 			columns:								3
 			Common.Iterations { enable: !pasteVariables.checked }
-			Common.CriticalItems { id: critical; enable: !data.use_stats && values.count > 0 && !pasteVariables.checked }
+			Common.CriticalItems { id: critical; enable: !data.use_stats && values.use_book && !pasteVariables.checked }
 			Common.Algorithm
 			{
 				id: 								algorithm
 				enable:								!pasteVariables.checked
-				enable_partial: 					id.count > 0 && values.count > 0 && likelihood.use_binomial
+				enable_partial: 					id.use_id && values.use_book && likelihood.use_binomial
 			}
 		}
 
@@ -150,9 +133,9 @@ Form
 				anchors.right: 						parent.right
 				text: 								qsTr("<b>To Selection</b>")
 				enabled: 							!samplingChecked.checked && ((objectives.use_materiality && (objectives.absolute_materiality ?
-																													 objectives.absolute_value > 0 && id.count > 0 && values.count > 0 :
-																													 objectives.relative_value > 0 && id.count > 0)) ||
-																				 (objectives.use_precision && objectives.precision_value > 0 && id.count > 0))
+																													 objectives.absolute_value > 0 && id.use_id && values.use_book :
+																													 objectives.relative_value > 0 && id.use_id)) ||
+																				 (objectives.use_precision && objectives.precision_value > 0 && id.use_id))
 				onClicked:							samplingChecked.checked	= true
 			}
 		}
@@ -176,25 +159,8 @@ Form
 
 			Group
 			{
-				IntegerField
-				{
-					id: 							seed
-					text: 							qsTr("Seed")
-					name: 							"seed"
-					defaultValue: 					1
-					min: 							1
-					max: 							99999
-					enabled:						(randomize.checked || !method.use_interval || method.use_random_start) && !algorithm.use_partial
-				}
-
-				CheckBox
-				{
-					id:								randomize
-					name:							"randomize"
-					text:							qsTr("Randomize item order")
-					enabled:						!pasteVariables.checked && !algorithm.use_partial && rank.count == 0
-				}
-
+				Common.Seed { enable: (randomize.use_randomize || !method.use_interval || method.use_random_start) && !algorithm.use_partial }
+				Common.Randomize { id: randomize; enable: !pasteVariables.checked && !algorithm.use_partial && rank.count == 0 }
 				CheckBox
 				{
 					id:								add_selection_variables
@@ -204,8 +170,8 @@ Form
 				}
 			}
 
-			Common.SamplingUnits { id: units; enable: !pasteVariables.checked; enable_mus: values.count > 0; force_mus: algorithm.use_partial }
-			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; force_interval: algorithm.use_partial; enable_sieve: values.count > 0 && units.use_mus}
+			Common.SamplingUnits { id: units; enable: !pasteVariables.checked; enable_mus: values.use_book; force_mus: algorithm.use_partial }
+			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; force_interval: algorithm.use_partial; enable_sieve: values.use_book && units.use_mus}
 		}
 
 		VariablesForm
@@ -318,8 +284,8 @@ Form
 				id: 								continuous
 				text: 								qsTr("Audit value")
 				name: 								"continuous"
-				checked:							values.count > 0
-				enabled: 							values.count > 0
+				checked:							values.use_book
+				enabled: 							values.use_book
 			}
 
 			HelpButton
@@ -511,8 +477,8 @@ Form
 				Common.EvaluationOutput
 				{
 					bayesian: true
-					enable_taints: values.count > 0 && !data.use_stats
-					enable_corrections: values.count > 0
+					enable_taints: values.use_book && !data.use_stats
+					enable_corrections: values.use_book
 					enable_assumptions: algorithm.use_partial
 					enable_objectives: objectives.use_materiality || objectives.use_precision
 					enable_predictive: !likelihood.use_hypergeometric

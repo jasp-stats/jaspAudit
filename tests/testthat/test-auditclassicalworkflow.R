@@ -26,6 +26,7 @@ options$plotBookDist <- TRUE
 options$plotObjectives <- TRUE
 options$plotScatter <- FALSE
 options$randomStart <- FALSE
+options$randomize <- FALSE
 options$start <- 1
 options$indicator_col <- "SelectionResult"
 options$sampling_method <- "interval"

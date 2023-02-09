@@ -13,6 +13,7 @@ options$file <- ""
 options$units <- "values"
 options$sampling_method <- "interval"
 options$randomStart <- FALSE
+options$randomize <- FALSE
 options$tableDescriptives <- FALSE
 options$start <- 1
 options$name_indicator <- ""
@@ -134,6 +135,7 @@ options$explanatoryText <- TRUE
 options$tableSample <- TRUE
 options$tableDescriptives <- FALSE
 options$export_sample <- FALSE
+options$randomize <- FALSE
 options$file <- ""
 options$units <- "items"
 options$sampling_method <- "random"
@@ -241,6 +243,7 @@ options$values <- "Deductions"
 options$explanatoryText <- TRUE
 options$n <- 40
 options$tableDescriptives <- TRUE
+options$randomize <- FALSE
 options$tableSample <- TRUE
 options$units <- "values"
 options$sampling_method <- "random"

@@ -15,6 +15,7 @@ options$area <- "less"
 options$critical_action <- "inspect"
 options$critical_name <- "Critical"
 options$display <- "number"
+options$randomize <- FALSE
 options$expected_rel_val <- 0.025
 options$expected_type <- "expected_rel"
 options$likelihood <- "poisson"
