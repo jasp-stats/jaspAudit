@@ -52,8 +52,8 @@ Form
 		{
 			columns: 3
 			Common.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
-			Common.PriorMethod { use_materiality: objectives.use_materiality}
-			Common.ExpectedErrors { show_all: true; enable_all: algorithm.use_partial }
+			Common.PriorMethod { id: method; use_materiality: objectives.use_materiality}
+			Common.ExpectedErrors { show_all: true; enable: method.use_expected; enable_all: algorithm.use_partial }
 		}
 	}
 

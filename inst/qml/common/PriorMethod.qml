@@ -26,7 +26,8 @@ import "./" as Common
 
 Group
 {
-	property bool	use_materiality:	false
+	readonly	property bool	use_expected:		prior_method.value == "impartial" || prior_method.value == "arm"
+				property bool	use_materiality:	false
 
 	title:					qsTr("Elicitation")
 	info:					qsTr("Choose how to construct the prior distribution.")
@@ -78,7 +79,7 @@ Group
 		name: 				"n_prior"
 		label:				qsTr("Sample size")
 		min:				x_prior.value
-		defaultValue: 		0
+		defaultValue: 		1
 		visible:			prior_method.value == "sample"
 		info:				qsTr("The number of sampling units audited through an earlier sample.")
 	}
