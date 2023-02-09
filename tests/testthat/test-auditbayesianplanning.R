@@ -15,6 +15,7 @@ options$plotPriorPredictive <- TRUE
 options$cr <- "high"
 options$n_units <- 1000
 options$tablePrior <- TRUE
+options$plotPriorWithPosterior <- TRUE
 options$plotPrior <- TRUE
 options$plotSampleSizes <- TRUE
 options$alpha <- 1
@@ -93,6 +94,7 @@ options$n_units <- 1400000
 options$tablePrior <- TRUE
 options$plotPrior <- TRUE
 options$plotSampleSizes <- FALSE
+options$plotPriorWithPosterior <- TRUE
 options$materiality_type <- "materiality_abs"
 options$expected_type <- "expected_rel"
 options$likelihood <- "poisson"
@@ -153,6 +155,7 @@ options$materiality_abs_val <- 20
 options$n_units <- 100
 options$tablePrior <- TRUE
 options$plotPrior <- TRUE
+options$plotPriorWithPosterior <- TRUE
 options$materiality_type <- "materiality_abs"
 options$expected_type <- "expected_rel"
 options$likelihood <- "hypergeometric"

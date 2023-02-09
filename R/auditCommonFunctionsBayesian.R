@@ -69,10 +69,18 @@
   .jfaFigureNumberUpdate(jaspResults)
 
   if (is.null(parentContainer[["plotPriorAndPosterior"]])) {
-    title <- if (stage == "planning") gettext("Prior and Expected Posterior Distribution") else gettext("Prior and Posterior Distribution")
+    if (stage == "planning") {
+      if (options[["plotPriorWithPosterior"]]) {
+        title <- gettext("Prior and Expected Posterior Distribution")
+      } else {
+        title <- gettext("Prior Distribution")
+      }
+    } else {
+      title <- gettext("Prior and Posterior Distribution")
+    }
     fg <- createJaspPlot(plot = NULL, title = title, width = 530, height = 350)
     fg$position <- positionInContainer
-    depends <- if (stage == "planning") "plotPrior" else c("plotPosterior", "plotPosteriorInfo", "area")
+    depends <- if (stage == "planning") c("plotPrior", "plotPriorWithPosterior") else c("plotPosterior", "plotPosteriorInfo", "area")
     fg$dependOn(options = depends)
 
     parentContainer[["plotPriorAndPosterior"]] <- fg
@@ -81,7 +89,13 @@
       return()
     }
 
-    p <- plot(parentState) +
+    if (stage == "planning" && !options[["plotPriorWithPosterior"]]) {
+      p <- plot(parentState[["prior"]])
+    } else {
+      p <- plot(parentState)
+    }
+
+    p <- p +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = c(0.8, 0.875)) +
       ggplot2::theme(

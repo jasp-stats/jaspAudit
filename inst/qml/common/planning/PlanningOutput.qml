@@ -87,15 +87,23 @@ Group
 
 		CheckBox
 		{
-			text: 		qsTr("Prior and posterior")
+			text: 		qsTr("Prior distribution")
 			name: 		"plotPrior"
 			visible:	bayesian
-			info:		qsTr("Produces a figure that shows the prior distribution and the intended posterior distribution.")
+			info:		qsTr("Produces a figure that shows the prior distribution.")
+
+			CheckBox
+			{
+				text: 		qsTr("Posterior distribution")
+				name: 		"plotPriorWithPosterior"
+				checked:	true
+				info:		qsTr("Produces a figure that shows the prior distribution and the intended posterior distribution.")
+			}
 		}
 
 		CheckBox
 		{
-			text: 		qsTr("Prior predictive")
+			text: 		qsTr("Prior predictive distribution")
 			name: 		"plotPriorPredictive"
 			visible:	bayesian
 			enabled:	!disable_predictive
