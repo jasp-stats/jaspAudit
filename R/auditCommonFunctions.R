@@ -1539,7 +1539,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
 
     if (isTryError(result)) {
-      if (jaspBase:::.extractErrorMessage(result) == "the sample size is lower than 'max'") {
+      if (jaspBase:::.extractErrorMessage(result) == "the sample size is larger than 'max'") {
         parentContainer$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
         return()
       } else {
