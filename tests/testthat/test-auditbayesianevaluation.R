@@ -13,6 +13,7 @@ options$stats <- TRUE
 options$n <- 80
 options$x <- 1
 options$tablePriorPosterior <- TRUE
+options$plotPosteriorWithPrior <- TRUE
 options$plotPosterior <- TRUE
 options$plotObjectives <- TRUE
 options$cr <- "high"
@@ -98,6 +99,7 @@ options$values.audit <- "TARGET_Adjusted"
 options$tablePriorPosterior <- TRUE
 options$plotPosteriorInfo <- TRUE
 options$plotPosteriorPredictive <- FALSE
+options$plotPosteriorWithPrior <- TRUE
 options$plotEstimates <- FALSE
 options$plotPosterior <- TRUE
 options$min_precision_rel_val <- 0.02
@@ -179,6 +181,7 @@ options$dataType <- "data"
 options$values.audit <- "auditValue"
 options$times <- "selectionResult"
 options$tablePriorPosterior <- TRUE
+options$plotPosteriorWithPrior <- TRUE
 options$plotPosterior <- TRUE
 options$plotObjectives <- TRUE
 options$cr <- "medium"

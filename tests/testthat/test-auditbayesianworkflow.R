@@ -18,6 +18,7 @@ options$display <- "number"
 options$randomize <- FALSE
 options$rank <- ""
 options$plotPriorWithPosterior <- TRUE
+options$plotPosteriorWithPrior <- TRUE
 options$expected_rel_val <- 0.025
 options$expected_type <- "expected_rel"
 options$likelihood <- "poisson"

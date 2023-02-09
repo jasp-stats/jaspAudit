@@ -100,15 +100,23 @@ Group
 			text: 			qsTr("Estimates")
 			name: 			"plotEstimates"
 			enabled:		enable_estimates
-			info:			qsTr("Produces a figure showing the range of plausible values for the misstatement for the population and all subpopulations (if applicable)")
+			info:			qsTr("Produces a figure showing the range of plausible values for the misstatement for the population and all subpopulations (if applicable).")
 		}
 
 		CheckBox
 		{
-			text: 			qsTr("Prior and posterior")
+			text: 			qsTr("Posterior distribution")
 			name: 			"plotPosterior"
 			visible:		bayesian
-			info:			qsTr("Produces a figure that shows the prior distribution and the posterior distribution.")
+			info:			qsTr("Produces a figure that shows the posterior distribution.")
+
+			CheckBox
+			{
+				text: 		qsTr("Prior distribution")
+				name: 		"plotPosteriorWithPrior"
+				checked:	true
+				info:		qsTr("Produces a figure that shows the prior distribution and the posterior distribution.")
+			}
 
 			CheckBox
 			{

@@ -80,7 +80,7 @@
     }
     fg <- createJaspPlot(plot = NULL, title = title, width = 530, height = 350)
     fg$position <- positionInContainer
-    depends <- if (stage == "planning") c("plotPrior", "plotPriorWithPosterior") else c("plotPosterior", "plotPosteriorInfo", "area")
+    depends <- if (stage == "planning") c("plotPrior", "plotPriorWithPosterior") else c("plotPosterior", "plotPosteriorInfo", "area", "plotPosteriorWithPrior")
     fg$dependOn(options = depends)
 
     parentContainer[["plotPriorAndPosterior"]] <- fg
@@ -91,6 +91,8 @@
 
     if (stage == "planning" && !options[["plotPriorWithPosterior"]]) {
       p <- plot(parentState[["prior"]])
+    } else if (stage == "evaluation" && !options[["plotPosteriorWithPrior"]]) {
+      p <- plot(parentState[["posterior"]])
     } else {
       p <- plot(parentState)
     }
