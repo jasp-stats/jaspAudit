@@ -327,6 +327,7 @@ Form
 				id: 								continuous
 				text: 								qsTr("Audit value")
 				name: 								"continuous"
+				checked:							values.count > 0
 				enabled: 							values.count > 0
 			}
 
@@ -341,7 +342,7 @@ Form
 				id: 								binary
 				text: 								qsTr("Correct / Incorrect")
 				name: 								"binary"
-				checked: 							true
+				checked: 							values.count == 0
 				enabled: 							!algorithm.use_partial
 			}
 

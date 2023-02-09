@@ -24,8 +24,12 @@ import JASP.Widgets
 
 RadioButtonGroup
 {
-	property bool	bayesian:	false
-	property bool	test:		false
+	readonly	property bool	use_right:		less.checked
+	readonly	property bool	use_twosided:	less.checked
+	readonly	property bool	use_left:		greater.checked
+				property bool	bayesian:		false
+				property bool	test:			false
+				property bool	enable:			true
 
 	title: 			test ? (bayesian ? qsTr("Credible Interval (Alt. Hypothesis)") : qsTr("Confidence Interval (Alt. Hypothesis)")) : (bayesian ? qsTr("Credible Interval") : qsTr("Confidence Interval"))
 	name: 			"area"
@@ -33,7 +37,8 @@ RadioButtonGroup
 
 	RadioButton
 	{
-		text: 		test ? qsTr("Right-sided (< materiality)") : qsTr("Right-sided")
+		id:			less
+		text: 		test ? qsTr("Upper bound (< materiality)") : qsTr("Upper bound")
 		name: 		"less"
 		checked:	true
 		info:		qsTr("Produces a one-sided upper bound for the misstatement in the population.")
@@ -41,15 +46,19 @@ RadioButtonGroup
 
 	RadioButton
 	{
+		id:			twosided
 		text: 		test ? qsTr("Two-sided (\u2260 materiality)") : qsTr("Two-sided")
 		name: 		"two.sided"
 		info:		qsTr("Produces a two-sided interval for the misstatement in the population.")
+		enabled:	enable
 	}
 
 	RadioButton
 	{
-		text: 		test ? qsTr("Left-sided (> materiality)") : qsTr("Left-sided")
+		id:			greater
+		text: 		test ? qsTr("Lower bound (> materiality)") : qsTr("Lower bound")
 		name: 		"greater"
 		info:		qsTr("Produces a one-sided lower bound for the misstatement in the population.")
+		enabled:	enable
 	}
 }

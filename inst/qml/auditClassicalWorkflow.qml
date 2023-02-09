@@ -319,6 +319,7 @@ Form
 				text: 								qsTr("Audit value")
 				name: 								"continuous"
 				enabled: 							values.count > 0
+				checked:							values.count > 0
 			}
 
 			HelpButton
@@ -332,7 +333,7 @@ Form
 				id: 								binary
 				text: 								qsTr("Correct / Incorrect")
 				name: 								"binary"
-				checked: 							true
+				checked: 							values.count == 0
 				enabled: 							true
 			}
 
@@ -545,6 +546,7 @@ Form
 					name: 								"hypergeometric"
 					text: 								qsTr("Hypergeometric")
 					enabled:							id.count > 0
+					checked:							likelihood.use_hypergeometric
 				}
 
 				RadioButton
@@ -552,7 +554,7 @@ Form
 					id:									binomial
 					name: 								"binomial"
 					text: 								qsTr("Binomial")
-					checked:							true
+					checked:							likelihood.use_binomial
 				}
 
 				RadioButton
@@ -560,6 +562,7 @@ Form
 					id:									poisson
 					name: 								"poisson"
 					text: 								qsTr("Poisson")
+					checked:							likelihood.use_poisson
 				}
 
 				RadioButton
@@ -567,7 +570,7 @@ Form
 					id: 								stringer
 					name: 								"stringer"
 					text: 								qsTr("Stringer")
-					enabled: 							values.count > 0 && continuous.checked
+					enabled: 							values.count > 0 && continuous.checked && interval.use_right
 
 					CheckBox
 					{
@@ -618,7 +621,7 @@ Form
 				}
 			}
 
-			Common.IntervalType { bayesian: false }
+			Common.IntervalType { id: interval; bayesian: false; enable: !stringer.checked }
 		}
 
 		Item

@@ -92,9 +92,12 @@
       )
 
     if (stage == "evaluation" && options[["plotPosteriorInfo"]]) {
-      if (options[["area"]] == "two.sided") {
+      if (options[["area"]] == "less") {
         label_mode <- paste0("Mode: ", formatC(parentState[["posterior"]]$statistics$mode, 3, format = "f"))
         label_ub <- paste0(round(options[["conf_level"]] * 100, 3), "% CI: [0, ", formatC(parentState[["posterior"]]$statistics$ub, 3, format = "f"), "]")
+      } else if (options[["area"]] == "greater") {
+        label_mode <- paste0("Mode: ", formatC(parentState[["posterior"]]$statistics$mode, 3, format = "f"))
+        label_ub <- paste0(round(options[["conf_level"]] * 100, 3), "% CI: [", formatC(parentState[["posterior"]]$statistics$lb, 3, format = "f"), ", 1]")
       } else {
         label_mode <- paste0("Median: ", formatC(parentState[["posterior"]]$statistics$median, 3, format = "f"))
         int <- if (options[["separateMisstatement"]]) .jfaCredibleIntervalCalculation(options, parentState) else NULL

@@ -973,13 +973,21 @@ gettextf <- function(fmt, ..., domain = NULL) {
       if (options[["materiality_test"]]) {
         text <- gettextf(
           "%1$s\n\nThe quantity of interest is the misstatement (%2$s) in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, %2$s*, two statistical hypotheses about %2$s are formulated:\n
-                                  The (null) hypothesis of intolerable misstatement %3$s,
-                                  The (alternative) hypothesis of tolerable misstatement %4$s.\n
-                                  The audit risk (%5$s) is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (< %6$s%%).",
+                                  The (null) hypothesis %3$s,
+                                  The (alternative) hypothesis %4$s.\n
+                                  The audit risk (%5$s) is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (i.e., %5$s < %6$s%%).",
           text,
           "\u03B8",
-          "H\u208A: \u03B8 \u2265 \u03B8*",
-          "H\u208B: \u03B8 < \u03B8*",
+          switch(options[["area"]],
+            "less" = "of intolerable misstatement H\u208A: \u03B8 \u2265 \u03B8*",
+            "two.sided" = "of exact misstatement H\u2080: \u03B8 = \u03B8*",
+            "greater" = "of tolerable misstatement H\u208B: \u03B8 \u2264 \u03B8*"
+          ),
+          switch(options[["area"]],
+            "less" = "of tolerable misstatement H\u208B: \u03B8 < \u03B8*",
+            "two.sided" = "of no misstatement H\u2080: \u03B8 \u2260 \u03B8*",
+            "greater" = "of intolerable misstatement H\u208A: \u03B8 > \u03B8*"
+          ),
           "\u03B1",
           round((1 - options[["conf_level"]]) * 100, 2)
         )
@@ -2752,6 +2760,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table <- createJaspTable(title)
   table$position <- positionInContainer
   table$transpose <- TRUE
+  table$showSpecifiedColumnsOnly <- TRUE
   table$dependOn(options = c(
     "tableBookDist", "tableDescriptives", "tableSample",
     "samplingChecked", "evaluationChecked", "display",
@@ -2772,24 +2781,19 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = columnType)
 
   if (!options[["bayesian"]]) {
-    dr <- .jfaAuditRiskModelCalculation(options)
-    if (options[["method"]] %in% c("direct", "difference", "quotient", "regression") || options[["area"]] == "two.sided") {
-      uppertitle <- round((1 - (1 - (1 - dr)) / 2) * 100, 2)
-      table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - uppertitle), type = columnType)
-      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", uppertitle), type = columnType)
-    } else {
-      title <- round((1 - dr) * 100, 2)
-      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", title), type = columnType)
-    }
+    alpha <- .jfaAuditRiskModelCalculation(options)
   } else {
-    if (options[["area"]] == "two.sided") {
-      ubtitle <- round(options[["conf_level"]] * 100, 2)
-      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = columnType)
-    } else if (options[["area"]] == "two.sided") {
-      ubtitle <- round((1 - (1 - options[["conf_level"]]) / 2) * 100, 2)
-      table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - ubtitle), type = columnType)
-      table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = columnType)
-    }
+    alpha <- 1 - options[["conf_level"]]
+  }
+
+  if (options[["area"]] == "less") {
+    table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round((1 - alpha) * 100, 2)), type = columnType)
+  } else if (options[["area"]] == "greater") {
+    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", round(alpha * 100, 2)), type = columnType)
+  } else {
+    uppertitle <- round((1 - (1 - (1 - alpha)) / 2) * 100, 2)
+    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - uppertitle), type = columnType)
+    table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", uppertitle), type = columnType)
   }
 
   table$addColumnInfo(name = "precision", title = gettext("Precision"), type = columnType)
@@ -2876,10 +2880,26 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   if (parentState[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
+    # These methods method give estimates in monetary units, so to get decimal numbers we divide by N
     table[["mle"]] <- switch(options[["display"]],
-      "number" = parentState[["mle"]],
+      "number" = parentState[["mle"]] / parentState[["N.units"]],
       "percent" = paste0(round(parentState[["mle"]] / parentState[["N.units"]] * 100, 3), "%"),
       "amount" = parentState[["mle"]]
+    )
+    table[["lb"]] <- switch(options[["display"]],
+      "number" = parentState[["lb"]] / parentState[["N.units"]],
+      "percent" = paste0(round(parentState[["lb"]] / parentState[["N.units"]] * 100, 3), "%"),
+      "amount" = parentState[["lb"]]
+    )
+    table[["ub"]] <- switch(options[["display"]],
+      "number" = parentState[["ub"]] / parentState[["N.units"]],
+      "percent" = paste0(round(parentState[["ub"]] / parentState[["N.units"]] * 100, 3), "%"),
+      "amount" = parentState[["ub"]]
+    )
+    table[["precision"]] <- switch(options[["display"]],
+      "number" = parentState[["precision"]] / parentState[["N.units"]],
+      "percent" = paste0(round(parentState[["precision"]] / parentState[["N.units"]] * 100, 3), "%"),
+      "amount" = parentState[["precision"]]
     )
   } else {
     table[["mle"]] <- switch(options[["display"]],
@@ -2887,20 +2907,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "percent" = paste0(round(parentState[["mle"]] * 100, 3), "%"),
       "amount" = parentState[["mle"]] * parentState[["N.units"]]
     )
-  }
-
-  if (parentState[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
-    table[["lb"]] <- switch(options[["display"]],
-      "number" = parentState[["lb"]],
-      "percent" = paste0(round(parentState[["lb"]] / parentState[["N.units"]] * 100, 3), "%"),
-      "amount" = parentState[["lb"]]
-    )
-    table[["ub"]] <- switch(options[["display"]],
-      "number" = parentState[["ub"]],
-      "percent" = paste0(round(parentState[["ub"]] / parentState[["N.units"]] * 100, 3), "%"),
-      "amount" = parentState[["ub"]]
-    )
-  } else if (options[["area"]] == "two.sided") {
     table[["lb"]] <- switch(options[["display"]],
       "number" = parentState[["lb"]],
       "percent" = paste0(round(parentState[["lb"]] * 100, 3), "%"),
@@ -2911,21 +2917,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "percent" = paste0(round(parentState[["ub"]] * 100, 3), "%"),
       "amount" = parentState[["ub"]] * parentState[["N.units"]]
     )
-  } else {
-    table[["ub"]] <- switch(options[["display"]],
-      "number" = parentState[["ub"]],
-      "percent" = paste0(round(parentState[["ub"]] * 100, 3), "%"),
-      "amount" = parentState[["ub"]] * parentState[["N.units"]]
-    )
-  }
-
-  if (parentState[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
-    table[["precision"]] <- switch(options[["display"]],
-      "number" = parentState[["precision"]],
-      "percent" = paste0(round(parentState[["precision"]] / parentState[["N.units"]] * 100, 3), "%"),
-      "amount" = parentState[["precision"]]
-    )
-  } else {
     table[["precision"]] <- switch(options[["display"]],
       "number" = parentState[["precision"]],
       "percent" = paste0(round(parentState[["precision"]] * 100, 3), "%"),

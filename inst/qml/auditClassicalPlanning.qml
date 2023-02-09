@@ -34,6 +34,7 @@ Form
 	CheckBox { name: "bayesian"; checked: false; visible: false }
 	CheckBox { name: "separateMisstatement"; checked: false; visible: false }
 	RadioButtonGroup { name: "prior_method"; visible: false; RadioButton { name: "arm"; checked: true } }
+	RadioButtonGroup { name: "area"; visible: false; RadioButton { name: "less"; checked: true } }
 
 	// Visible options
 	Common.SamplingObjectives { id: objectives }

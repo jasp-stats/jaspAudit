@@ -2,6 +2,7 @@ context("[Audit] Classical Planning")
 
 options <- jaspTools::analysisOptions("auditClassicalPlanning")
 options$bayesian <- FALSE
+options$area <- "less"
 options$prior_method <- "arm"
 options$explanatoryText <- TRUE
 options$materiality_test <- TRUE
@@ -55,6 +56,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
 
 options <- jaspTools::analysisOptions("auditClassicalPlanning")
 options$bayesian <- FALSE
+options$area <- "less"
 options$prior_method <- "arm"
 options$explanatoryText <- TRUE
 options$materiality_test <- TRUE
@@ -96,6 +98,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
 
 options <- jaspTools::analysisOptions("auditClassicalPlanning")
 options$bayesian <- FALSE
+options$area <- "less"
 options$prior_method <- "arm"
 options$explanatoryText <- TRUE
 options$materiality_test <- TRUE
