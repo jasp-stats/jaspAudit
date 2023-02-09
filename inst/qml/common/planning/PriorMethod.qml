@@ -78,9 +78,8 @@ Group
 		id:					n_prior
 		name: 				"n_prior"
 		label:				qsTr("Sample size")
-		min:				x_prior.value
-		defaultValue: 		1
 		min:				1
+		defaultValue: 		1
 		visible:			prior_method.value == "sample"
 		info:				qsTr("The number of sampling units audited through an earlier sample.")
 	}
