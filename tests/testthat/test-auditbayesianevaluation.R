@@ -34,7 +34,7 @@ options$id <- ""
 options$stratum <- ""
 options$tableTaints <- FALSE
 options$tableAssumptions <- FALSE
-options$plotPosteriorInfo <- TRUE
+options$plotPosteriorInfo <- FALSE
 options$plotPosteriorPredictive <- FALSE
 options$plotEstimates <- FALSE
 options$plotScatter <- FALSE
