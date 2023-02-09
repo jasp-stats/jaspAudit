@@ -68,7 +68,6 @@ Form
 				singleVariable:						true
 				allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
 				allowAnalysisOwnComputedColumns: 	false
-				// onCountChanged:						if(likelihood.use_hypergeometric && id.count == 0) lik_binomial.click()
 			}
 
 			AssignedVariablesList
@@ -79,14 +78,6 @@ Form
 				singleVariable: 					true
 				allowedColumns: 					["scale"]
 				allowAnalysisOwnComputedColumns: 	false
-				onCountChanged:
-				{
-					if (initialized)
-					{
-						values.count > 0 ? values_sampling.click() : rows_sampling.click()
-						values.count > 0 ? continuous.click() : binary.click()
-					}
-				}
 			}
 		}
 
@@ -187,29 +178,29 @@ Form
 			{
 				IntegerField
 				{
-					id: 								seed
-					text: 								qsTr("Seed")
-					name: 								"seed"
-					defaultValue: 						1
-					min: 								1
-					max: 								99999
-					enabled:							(randomize.checked || !method.use_interval || method.use_random_start) && !algorithm.use_partial
+					id: 							seed
+					text: 							qsTr("Seed")
+					name: 							"seed"
+					defaultValue: 					1
+					min: 							1
+					max: 							99999
+					enabled:						(randomize.checked || !method.use_interval || method.use_random_start) && !algorithm.use_partial
 				}
 
 				CheckBox
 				{
-					id:									randomize
-					name:								"randomize"
-					text:								qsTr("Randomize item order")
-					enabled:							!pasteVariables.checked && !algorithm.use_partial && rank.count == 0
+					id:								randomize
+					name:							"randomize"
+					text:							qsTr("Randomize item order")
+					enabled:						!pasteVariables.checked && !algorithm.use_partial && rank.count == 0
 				}
 
 				CheckBox
 				{
-					id:									add_selection_variables
-					name:								"add_sel_vars"
-					text:								qsTr("Add variables to sample")
-					enabled:							!pasteVariables.checked
+					id:								add_selection_variables
+					name:							"add_sel_vars"
+					text:							qsTr("Add variables to sample")
+					enabled:						!pasteVariables.checked
 				}
 			}
 
@@ -474,9 +465,6 @@ Form
 					executionPhase.expanded = false
 					executeAuditSection.expanded = false
 					evaluationChecked.checked = true
-					if (lik_binomial.checked) 						binomial.click()
-					if (lik_hypergeometric.checked) 				hypergeometric.click()
-					if (lik_poisson.checked) 						poisson.click()
 				}
 			}
 		}
@@ -516,10 +504,10 @@ Form
 
 		Section
 		{
-			title:						qsTr("Report")
+			title:									qsTr("Report")
 			Group
 			{
-				columns:				1
+				columns:							1
 				Common.EvaluationOutput
 				{
 					bayesian: true
@@ -541,32 +529,31 @@ Form
 
 			RadioButtonGroup
 			{
-				title: 									qsTr("Distribution")
-				name: 									"method"
-				debug:									true
+				name: 								"method"
+				visible:							false
 
 				RadioButton
 				{
-					id: 								hypergeometric
-					name: 								"hypergeometric"
-					text: 								qsTr("Beta-binomial")
-					enabled: 							lik_hypergeometric.checked
+					id: 							hypergeometric
+					name: 							"hypergeometric"
+					text: 							qsTr("Beta-binomial")
+					enabled: 						lik_hypergeometric.checked
 				}
 
 				RadioButton
 				{
-					id: 								binomial
-					name: 								"binomial"
-					text: 								qsTr("Beta")
-					enabled: 							lik_binomial.checked
+					id: 							binomial
+					name: 							"binomial"
+					text: 							qsTr("Beta")
+					enabled: 						lik_binomial.checked
 				}
 
 				RadioButton
 				{
-					id: 								poisson
-					name: 								"poisson"
-					text: 								qsTr("Gamma")
-					enabled: 							lik_poisson.checked
+					id: 							poisson
+					name: 							"poisson"
+					text: 							qsTr("Gamma")
+					enabled: 						lik_poisson.checked
 				}
 			}
 
