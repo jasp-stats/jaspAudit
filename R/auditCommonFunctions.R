@@ -972,21 +972,21 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
       if (options[["materiality_test"]]) {
         text <- gettextf(
-          "%1$s\n\nThe quantity of interest is the misstatement (%2$s) in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, %2$s*, two statistical hypotheses about %2$s are formulated:\n
+          "%1$s\n\nThe quantity of interest is the misstatement %2$s in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, two statistical hypotheses about %2$s are formulated:\n
                                   The (null) hypothesis %3$s,
                                   The (alternative) hypothesis %4$s.\n
-                                  The audit risk (%5$s) is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (i.e., %5$s < %6$s%%).",
+                                  The audit risk %5$s is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (i.e., %5$s < %6$s%%).",
           text,
           "\u03B8",
           switch(options[["area"]],
-            "less" = "of intolerable misstatement H\u208A: \u03B8 \u2265 \u03B8*",
-            "two.sided" = "of exact misstatement H\u2080: \u03B8 = \u03B8*",
-            "greater" = "of tolerable misstatement H\u208B: \u03B8 \u2264 \u03B8*"
+            "less" = gettextf("of intolerable misstatement H\u208A: \u03B8 \u2265 %1$s", stageOptions[["materiality_label"]]),
+            "two.sided" = gettextf("of exact misstatement H\u2080: \u03B8 = %1$s", stageOptions[["materiality_label"]]),
+            "greater" = gettextf("of tolerable misstatement H\u208B: \u03B8 \u2264 %1$s", stageOptions[["materiality_label"]])
           ),
           switch(options[["area"]],
-            "less" = "of tolerable misstatement H\u208B: \u03B8 < \u03B8*",
-            "two.sided" = "of no misstatement H\u2080: \u03B8 \u2260 \u03B8*",
-            "greater" = "of intolerable misstatement H\u208A: \u03B8 > \u03B8*"
+            "less" = gettextf("of tolerable misstatement H\u208B: \u03B8 < %1$s", stageOptions[["materiality_label"]]),
+            "two.sided" = gettextf("of no misstatement H\u2080: \u03B8 \u2260 %1$s", stageOptions[["materiality_label"]]),
+            "greater" = gettextf("of intolerable misstatement H\u208A: \u03B8 > %1$s", stageOptions[["materiality_label"]])
           ),
           "\u03B1",
           round((1 - options[["conf_level"]]) * 100, 2)
@@ -995,7 +995,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
       if (options[["bayesian"]]) {
         text <- gettextf(
-          "%1$s\n\nIn a Bayesian analysis, the parameter %2$s is first assigned a prior probability distribution that incorporates the existing information about its possible values. A description and figure of the current prior distribution can be found under the <i>Report</i> section. You can incorporate existing information using the options under the <i>Prior</i> section.",
+          "%1$s\n\nIn a Bayesian analysis, the parameter %2$s is first assigned a prior probability distribution that incorporates the available audit information about the misstatement in the population. A description and figure of the current prior distribution can be found under the <i>Report</i> section. You can incorporate existing information using the options under the <i>Prior</i> section.",
           text, "\u03B8"
         )
       }
@@ -1006,13 +1006,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
       if (is.null(stageContainer[["paragraph"]]) && !stageContainer$getError()) {
         if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
           samplingObjectivesMessage <- gettextf("a performance materiality of %1$s", stageOptions[["materiality_label"]])
-          samplingObjectivesMessage2 <- gettextf("the sample provides sufficient information to conclude that the misstatement %1$s is below the performance materiality %1$s*", "\u03B8")
+          samplingObjectivesMessage2 <- gettext("the sample provides sufficient information to conclude that the misstatement in the population is below the performance materiality")
         } else if (!options[["materiality_test"]] && options[["min_precision_test"]]) {
           samplingObjectivesMessage <- gettextf("a minimum precision of %1$s", stageOptions[["min_precision_label"]])
-          samplingObjectivesMessage2 <- gettextf("the sample provides sufficient information to estimate the misstatement %1$s with the minimum precision", "\u03B8")
+          samplingObjectivesMessage2 <- gettext("the sample provides sufficient information to estimate the misstatement in the population with the minimum precision")
         } else if (options[["materiality_test"]] && options[["min_precision_test"]]) {
           samplingObjectivesMessage <- gettextf("a performance materiality of %1$s and a minimum precision of %2$s", stageOptions[["materiality_label"]], stageOptions[["min_precision_label"]])
-          samplingObjectivesMessage2 <- gettextf("the sample provides sufficient information to conclude that the misstatement %1$s is below the performance materiality %1$s* with the minimum precision", "\u03B8")
+          samplingObjectivesMessage2 <- gettext("the sample provides sufficient information to conclude that the misstatement in the population is below the performance materiality with the minimum precision")
         }
 
         separateMisstatementMessage <- if (options[["separateMisstatement"]]) gettext("\n\nFurthermore, the uncertainty regarding \u03B8 will only be extrapolated over the unseen part of the population. This requires the additional assumption that the population taints are homogeneous.") else ""
