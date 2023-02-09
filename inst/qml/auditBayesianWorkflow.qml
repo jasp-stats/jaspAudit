@@ -167,6 +167,7 @@ Form
 					name:							"add_sel_vars"
 					text:							qsTr("Add variables to sample")
 					enabled:						!pasteVariables.checked
+					debug:							true
 				}
 			}
 

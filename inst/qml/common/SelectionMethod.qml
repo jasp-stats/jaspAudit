@@ -113,11 +113,12 @@ RadioButtonGroup
 		name: 				"sieve"
 		enabled:			!force_interval && enable_sieve
 		info:				qsTr("Performs modified sieve sampling.")
+		debug:				true
 	}
 
-	HelpButton
-	{
-		toolTip: 			qsTr("Click to learn more about this method")
-		helpPage:			"Audit/sieveSampling"
-	}
+	// HelpButton
+	// {
+	// 	toolTip: 			qsTr("Click to learn more about this method")
+	// 	helpPage:			"Audit/sieveSampling"
+	// }
 }

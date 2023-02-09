@@ -25,7 +25,7 @@ import JASP.Widgets
 AssignedVariablesList
 {
 	name:								"variables"
-	title: 								qsTr("Additional Variables")
+	title: 								qsTr("Additional Variables (optional)")
 	Layout.preferredHeight: 			140 * preferencesModel.uiScale
 	allowedColumns: 					["scale", "ordinal", "nominal"]
 	allowAnalysisOwnComputedColumns: 	false

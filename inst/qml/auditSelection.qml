@@ -54,7 +54,7 @@ Form
 			name: 			"n"
 			defaultValue: 	0
 			min: 			0
-			info:			qsTr("The required number of sampling units that should be selected from the population. Be aware that the sampling units are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.")
+			info:			qsTr("The required number of sampling units that should be selected from the population, which are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.")
 		}
 		Common.Seed { enable: randomize.checked || !method.use_interval || method.use_random_start }
 		Common.Randomize { enable: !rank.use_rank }
@@ -67,11 +67,7 @@ Form
 	Section
 	{
 		title: qsTr("Report")
-		Group
-		{
-			columns: 1
-			Common.SelectionOutput { }
-		}
+		Common.SelectionOutput { }
 	}
 
 	Common.ExportSample { enable: id.count > 0 && sample_size.value > 0 }
