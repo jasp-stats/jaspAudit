@@ -4,6 +4,7 @@ context("[Audit] UVB functionality")
 
 options <- jaspTools::analysisOptions("auditBayesianWorkflow")
 options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
 options$materiality_type <- "relative"
 options$materiality_rel_val <- 0.02
@@ -174,6 +175,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 options <- jaspTools::analysisOptions("auditBayesianWorkflow")
 options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
 options$materiality_type <- "relative"
 options$materiality_rel_val <- 0.02
@@ -292,6 +294,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 options <- analysisOptions("auditBayesianWorkflow")
 options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
 options$materiality_type <- "relative"
 options$materiality_rel_val <- 0.02
@@ -392,6 +395,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 options <- jaspTools::analysisOptions("auditBayesianWorkflow")
 options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
 options$materiality_type <- "relative"
 options$materiality_rel_val <- 0.02
@@ -508,6 +512,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 options <- jaspTools::analysisOptions("auditBayesianWorkflow")
 options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
 options$materiality_type <- "relative"
 options$materiality_rel_val <- 0.02
@@ -609,6 +614,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 options <- jaspTools::analysisOptions("auditBayesianWorkflow")
 options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
 options$materiality_type <- "relative"
 options$materiality_rel_val <- 0.02
@@ -714,6 +720,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 options <- jaspTools::analysisOptions("auditBayesianWorkflow")
 options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
 options$materiality_type <- "relative"
 options$materiality_rel_val <- 0.02

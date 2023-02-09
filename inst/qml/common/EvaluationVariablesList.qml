@@ -28,7 +28,7 @@ VariablesForm
 {
 	readonly	property bool	use_id:			id.use_id
 	readonly	property bool	use_book:		values.use_book
-	readonly	property bool	use_real:		audit_values.count > 0
+	readonly	property bool	use_real:		audit_values.use_values
 	readonly	property bool	use_strata:		stratum_indicator.count > 0
 				property bool	use_population: false
 				property bool	use_sample:		false
@@ -45,16 +45,7 @@ VariablesForm
 
 	Common.IdVariable { id: id }
 	Common.BookVariable { id: values }
-
-	AssignedVariablesList
-	{
-		id: 				audit_values
-		name: 				"values.audit"
-		title: 				qsTr("Audit Result (required)")
-		singleVariable: 	true
-		allowedColumns: 	["nominal", "scale"]
-		info:				qsTr("A numeric variable that contains the audited (true) values of the items in the population.")
-	}
+	Common.AuditVariable { id: audit_values; binary: true }
 
 	AssignedVariablesList
 	{

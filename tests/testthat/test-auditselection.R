@@ -18,6 +18,7 @@ options$rank <- ""
 options$tableDescriptives <- FALSE
 options$start <- 1
 options$name_indicator <- ""
+options$seed <- 1
 set.seed(1)
 results <- jaspTools::runAnalysis("auditSelection", "BuildIt_Monetary.csv", options)
 
@@ -142,6 +143,7 @@ options$rank <- ""
 options$units <- "items"
 options$sampling_method <- "random"
 options$name_indicator <- ""
+options$seed <- 1
 set.seed(1)
 results <- jaspTools::runAnalysis("auditSelection", "BuildIt_Monetary.csv", options)
 
@@ -252,6 +254,7 @@ options$sampling_method <- "random"
 options$file <- ""
 options$rank <- ""
 options$name_indicator <- ""
+options$seed <- 1
 set.seed(1)
 results <- jaspTools::runAnalysis("auditSelection", "auditRattle.csv", options)
 

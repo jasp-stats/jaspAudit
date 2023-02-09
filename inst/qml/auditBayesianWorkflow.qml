@@ -254,72 +254,12 @@ Form
 		enabled: 									executionChecked.checked
 		columns: 									2
 
-		RadioButtonGroup
-		{
-			id: 									annotation
-			name: 									"annotation"
-			title: 									qsTr("Annotation")
-			enabled:								!pasteVariables.checked
-			columns:								2
-
-			RadioButton
-			{
-				id: 								continuous
-				text: 								qsTr("Audit value")
-				name: 								"continuous"
-				checked:							values.use_book
-				enabled: 							values.use_book
-			}
-
-			HelpButton
-			{
-				toolTip: 							qsTr("Adds a column to specify the audit values of the items.")
-				helpPage: 							"?"
-			}
-
-			RadioButton
-			{
-				id: 								binary
-				text: 								qsTr("Correct / Incorrect")
-				name: 								"binary"
-				checked: 							values.count == 0
-				enabled: 							!algorithm.use_partial
-			}
-
-			HelpButton
-			{
-				toolTip:							qsTr("Adds a column to specify the items as correct (0) or misstated (1).")
-				helpPage: 							"?"
-			}
-		}
-
-		Group
-		{
-			id: 									names
-			enabled:								!pasteVariables.checked
-
-			ComputedColumnField
-			{
-				id: 								indicator_col
-				name: 								"indicator_col"
-				text: 								qsTr("Column name selection result")
-				fieldWidth: 						120 * preferencesModel.uiScale
-				value:								qsTr("selected")
-			}
-
-			ComputedColumnField
-			{
-				id: 								variable_col
-				name: 								"variable_col"
-				text: 								qsTr("Column name audit result")
-				fieldWidth: 						120 * preferencesModel.uiScale
-				value: 								qsTr("auditResult")
-			}
-		}
+		Common.Annotation { id: annotation; enable: !pasteVariables.checked; enable_values: values.use_book; enable_binary: !algorithm.use_partial }
+		Common.AddVariables { id: names; enable: !pasteVariables.checked }
 
 		Item
 		{
-			Layout.preferredHeight:					names.height
+			Layout.preferredHeight:					annotation.height
 			Layout.columnSpan:						2
 			Layout.fillWidth:						true
 
@@ -337,15 +277,15 @@ Form
 			{
 				id: 								pasteButton
 				text: 								qsTr("<b>Fill Variables</b>")
-				enabled: 							indicator_col.value != "" && variable_col.value != "" && !pasteVariables.checked
+				enabled: 							names.indicator_name != "" && names.variable_name != "" && !pasteVariables.checked
 				anchors.right:						parent.right
 				onClicked:
 				{
 					pasteVariables.checked 		= true
-					performAuditTable.colName   = variable_col.value
-					performAuditTable.extraCol	= indicator_col.value
-					critical.use_negative && critical.use_inspect ? performAuditTable.filter = indicator_col.value + " > 0" + " | " + critical.use_name + " > 0" : performAuditTable.filter = indicator_col.value + " > 0"
-					performAuditTable.initialValuesSource = continuous.checked ? "values" : ""
+					performAuditTable.colName   = names.variable_name
+					performAuditTable.extraCol	= names.indicator_name
+					critical.use_negative && critical.use_inspect ? performAuditTable.filter = names.indicator_name + " > 0" + " | " + critical.use_name + " > 0" : performAuditTable.filter = names.indicator_name + " > 0"
+					performAuditTable.initialValuesSource = annotation.use_values ? "values" : ""
 				}
 			}
 		}
@@ -362,7 +302,7 @@ Form
 			{
 				id: 								performAuditText
 				Layout.alignment: 					Qt.AlignHCenter
-				text: 								continuous.checked ? qsTr("<b>Annotate your selected items with their audit (true) values.</b>") : qsTr("<b>Annotate your selected items as correct (0) or incorrect (1).</b>")
+				text: 								annotation.use_values ? qsTr("<b>Annotate your selected items with their audit (true) values.</b>") : qsTr("<b>Annotate your selected items as correct (0) or incorrect (1).</b>")
 				visible: 							pasteVariables.checked
 			}
 
@@ -440,15 +380,7 @@ Form
 				name: 								"evaluationVariables"
 				source: 							"variablesFormPlanning"
 			}
-
-			AssignedVariablesList
-			{
-				id: 								auditResult
-				name: 								"values.audit"
-				title: 								continuous.checked ? qsTr("Audit Value") : qsTr("Audit Result")
-				singleVariable: 					true
-				allowedColumns: 					["nominal", "scale"]
-			}
+			Common.AuditVariable { binary: annotation.use_values }
 		}
 
 		Section
@@ -465,7 +397,7 @@ Form
 					enable_assumptions: algorithm.use_partial
 					enable_objectives: objectives.use_materiality || objectives.use_precision
 					enable_predictive: !likelihood.use_hypergeometric
-					enable_scatter: continuous.checked
+					enable_scatter: annotation.use_values
 					enable_estimates: true
 				}
 			}
@@ -483,26 +415,20 @@ Form
 
 				RadioButton
 				{
-					id: 							hypergeometric
 					name: 							"hypergeometric"
 					text: 							qsTr("Beta-binomial")
-					enabled: 						lik_hypergeometric.checked
 				}
 
 				RadioButton
 				{
-					id: 							binomial
 					name: 							"binomial"
 					text: 							qsTr("Beta")
-					enabled: 						lik_binomial.checked
 				}
 
 				RadioButton
 				{
-					id: 							poisson
 					name: 							"poisson"
 					text: 							qsTr("Gamma")
-					enabled: 						lik_poisson.checked
 				}
 			}
 
