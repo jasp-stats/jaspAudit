@@ -14,6 +14,7 @@ options$units <- "values"
 options$sampling_method <- "interval"
 options$randomStart <- FALSE
 options$randomize <- FALSE
+options$rank <- ""
 options$tableDescriptives <- FALSE
 options$start <- 1
 options$name_indicator <- ""
@@ -137,6 +138,7 @@ options$tableDescriptives <- FALSE
 options$export_sample <- FALSE
 options$randomize <- FALSE
 options$file <- ""
+options$rank <- ""
 options$units <- "items"
 options$sampling_method <- "random"
 options$name_indicator <- ""
@@ -248,6 +250,7 @@ options$tableSample <- TRUE
 options$units <- "values"
 options$sampling_method <- "random"
 options$file <- ""
+options$rank <- ""
 options$name_indicator <- ""
 set.seed(1)
 results <- jaspTools::runAnalysis("auditSelection", "auditRattle.csv", options)

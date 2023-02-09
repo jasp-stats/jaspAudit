@@ -57,7 +57,7 @@ Form
 			info:			qsTr("The required number of sampling units that should be selected from the population. Be aware that the sampling units are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.")
 		}
 		Common.Seed { enable: randomize.checked || !method.use_interval || method.use_random_start }
-		Common.Randomize { enable: rank.count == 0 }
+		Common.Randomize { enable: !rank.use_rank }
 	}
 
 	Common.SamplingUnits { id: units; enable_mus: values.use_book }

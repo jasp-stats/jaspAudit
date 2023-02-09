@@ -24,12 +24,16 @@ import JASP.Widgets
 
 AssignedVariablesList
 {
+	readonly 	property bool	use_rank: 	rank.count > 0
+				property bool	enable:		true
+
 	id:									rank
 	name:								"rank"
 	title: 								qsTr("Ranking Variable")
 	singleVariable:						true
 	allowedColumns:						["scale"]
 	allowAnalysisOwnComputedColumns: 	false
+	enabled:							enable
 	debug:								true
 	info:								qsTr("When provided, the population is first ranked in ascending order with respect to the values of this variable.")
 }

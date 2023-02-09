@@ -160,7 +160,7 @@ Form
 			Group
 			{
 				Common.Seed { enable: (randomize.use_randomize || !method.use_interval || method.use_random_start) && !algorithm.use_partial }
-				Common.Randomize { id: randomize; enable: !pasteVariables.checked && !algorithm.use_partial && rank.count == 0 }
+				Common.Randomize { id: randomize; enable: !pasteVariables.checked && !algorithm.use_partial && !rank.use_rank }
 				CheckBox
 				{
 					id:								add_selection_variables
@@ -186,25 +186,8 @@ Form
 				name: 								"variablesFormSampling"
 			}
 
-			AssignedVariablesList
-			{
-				id:									rank
-				name: 								"rank"
-				title: 								qsTr("Ranking Variable (optional)")
-				singleVariable:						true
-				allowedColumns:						["scale"]
-				allowAnalysisOwnComputedColumns: 	false
-				enabled:							!algorithm.use_partial
-			}
-
-			AssignedVariablesList
-			{
-				name:								"variables"
-				title: 								qsTr("Additional Variables (optional)")
-				Layout.preferredHeight: 			140 * preferencesModel.uiScale
-				allowedColumns: 					["scale", "ordinal", "nominal", "nominalText"]
-				allowAnalysisOwnComputedColumns: 	false
-			}
+			Common.RankVariable { id: rank; enable: !algorithm.use_partial }
+			Common.AdditionalVariables { }
 		}
 
 		Section

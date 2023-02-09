@@ -157,24 +157,8 @@ Form
 				name: 								"variablesFormSampling"
 			}
 
-			AssignedVariablesList
-			{
-				id:									rank
-				name: 								"rank"
-				title: 								qsTr("Ranking Variable")
-				singleVariable:						true
-				allowedColumns:						["scale"]
-				allowAnalysisOwnComputedColumns: 	false
-			}
-
-			AssignedVariablesList
-			{
-				name:								"variables"
-				title: 								qsTr("Additional Variables")
-				Layout.preferredHeight: 			140 * preferencesModel.uiScale
-				allowedColumns: 					["scale", "ordinal", "nominal"]
-				allowAnalysisOwnComputedColumns: 	false
-			}
+			Common.RankVariable { id: rank }
+			Common.AdditionalVariables { }
 		}
 
 		GridLayout
@@ -184,7 +168,7 @@ Form
 			Group
 			{
 				Common.Seed { enable: randomize.use_randomize || !method.use_interval || method.use_random_start }
-				Common.Randomize { id: randomize; enable: !pasteVariables.checked && rank.count == 0 }
+				Common.Randomize { id: randomize; enable: !pasteVariables.checked && !rank.use_rank }
 				CheckBox
 				{
 					id:								add_selection_variables
