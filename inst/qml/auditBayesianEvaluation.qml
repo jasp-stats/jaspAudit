@@ -48,53 +48,43 @@ Form
 	Section
 	{
 		title: qsTr("Prior")
-		Group
-		{
-			columns: 3
-			Common.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
-			Common.PriorMethod { id: method; use_materiality: objectives.use_materiality}
-			Common.ExpectedErrors { show_all: true; enable: method.use_expected; enable_all: algorithm.use_partial }
-		}
+		columns: 3
+		Common.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
+		Common.PriorMethod { id: method; use_materiality: objectives.use_materiality}
+		Common.ExpectedErrors { show_all: true; enable: method.use_expected; enable_all: algorithm.use_partial }
 	}
 
 	Section
 	{
 		title: qsTr("Report")
-		Group
+		Common.EvaluationOutput
 		{
-			columns: 2
-			Common.EvaluationOutput
-			{
-				bayesian: true
-				enable_taints: !data.use_stats && variables.use_book && variables.use_real
-				enable_corrections: population.n_units > 0 || data.use_population
-				enable_assumptions: algorithm.use_partial
-				enable_objectives: objectives.use_materiality || objectives.use_precision
-				enable_predictive: !likelihood.use_hypergeometric
-				enable_scatter: !data.use_stats
-				enable_estimates: true
-			}
-			Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
+			bayesian: true
+			enable_taints: !data.use_stats && variables.use_book && variables.use_real
+			enable_corrections: population.n_units > 0 || data.use_population
+			enable_assumptions: algorithm.use_partial
+			enable_objectives: objectives.use_materiality || objectives.use_precision
+			enable_predictive: !likelihood.use_hypergeometric
+			enable_scatter: !data.use_stats
+			enable_estimates: true
 		}
+		Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
 	}
 
 	Section
 	{
 		title: qsTr("Advanced")
-		Group
+		columns: 3
+		Common.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
+		Common.Algorithm
 		{
-			columns: 3
-			Common.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
-			Common.Algorithm
-			{
-				id: 			algorithm
-				hide_pooling:	false
-				enable:			!data.use_stats
-				enable_pooling: variables.use_strata
-				enable_partial: !variables.use_strata && variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
-			}
-			Common.IntervalType { bayesian: true; test: objectives.use_materiality }
+			id: 			algorithm
+			hide_pooling:	false
+			enable:			!data.use_stats
+			enable_pooling: variables.use_strata
+			enable_partial: !variables.use_strata && variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
 		}
+		Common.IntervalType { bayesian: true; test: objectives.use_materiality }
 	}
 
 	Common.DownloadReport { }

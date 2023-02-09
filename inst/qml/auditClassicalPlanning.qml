@@ -46,23 +46,15 @@ Form
 	Section
 	{
 		title: qsTr("Report")
-		Group
-		{
-			columns: 2
-			Common.PlanningOutput { bayesian: false; }
-			Common.Display { }
-		}
+		Common.PlanningOutput { bayesian: false; }
+		Common.Display { }
 	}
 
 	Section
 	{
 		title: qsTr("Advanced")
-		Group
-		{
-			columns: 2
-			Common.Likelihood { bayesian: false; enable_hypergeometric: population.n_units > 0 }
-			Common.Iterations { }
-		}
+		Common.Likelihood { bayesian: false; enable_hypergeometric: population.n_units > 0 }
+		Common.Iterations { }
 	}
 
 	Common.DownloadReport { }

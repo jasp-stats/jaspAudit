@@ -82,8 +82,8 @@ Form
 
 		Section
 		{
-			title:				qsTr("Report")
-			columns:			2
+			title: 									qsTr("Report")
+			columns:								2
 			Common.PlanningOutput { bayesian: true; workflow: true; enable_values: values.use_book; disable_predictive: likelihood.use_hypergeometric }
 			Common.Display { show_monetary: true; enable_monetary: values.use_book }
 		}
@@ -194,10 +194,7 @@ Form
 		Section
 		{
 			title:			qsTr("Report")
-			Group
-			{
-				Common.SelectionOutput { }
-			}
+			Common.SelectionOutput { }
 		}
 
 		Item
@@ -387,20 +384,16 @@ Form
 		Section
 		{
 			title:									qsTr("Report")
-			Group
+			Common.EvaluationOutput
 			{
-				columns:							1
-				Common.EvaluationOutput
-				{
-					bayesian: true
-					enable_taints: values.use_book && !data.use_stats
-					enable_corrections: values.use_book
-					enable_assumptions: algorithm.use_partial
-					enable_objectives: objectives.use_materiality || objectives.use_precision
-					enable_predictive: !likelihood.use_hypergeometric
-					enable_scatter: annotation.use_values
-					enable_estimates: true
-				}
+				bayesian: true
+				enable_taints: values.use_book && !data.use_stats
+				enable_corrections: values.use_book
+				enable_assumptions: algorithm.use_partial
+				enable_objectives: objectives.use_materiality || objectives.use_precision
+				enable_predictive: !likelihood.use_hypergeometric
+				enable_scatter: annotation.use_values
+				enable_estimates: true
 			}
 		}
 
