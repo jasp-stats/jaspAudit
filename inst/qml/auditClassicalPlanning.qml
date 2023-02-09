@@ -23,6 +23,7 @@ import JASP.Controls
 import JASP.Widgets
 
 import "./common" as Common
+import "./common/planning" as Planning
 
 Form 
 {
@@ -37,24 +38,24 @@ Form
 	RadioButtonGroup { name: "area"; visible: false; RadioButton { name: "less"; checked: true } }
 
 	// Visible options
-	Common.SamplingObjectives { id: objectives }
-	Common.ExpectedErrors { }
-	Common.Population { id: population; optional: !objectives.absolute_materiality }
-	Common.AuditRiskModel { enable: objectives.use_materiality }
+	Planning.SamplingObjectives { id: objectives }
+	Planning.ExpectedErrors { }
+	Planning.Population { id: population; optional: !objectives.absolute_materiality }
+	Planning.AuditRiskModel { enable: objectives.use_materiality }
 	Common.ExplanatoryText { }
 
 	Section
 	{
 		title: qsTr("Report")
-		Common.PlanningOutput { bayesian: false; }
+		Planning.PlanningOutput { bayesian: false; }
 		Common.Display { }
 	}
 
 	Section
 	{
 		title: qsTr("Advanced")
-		Common.Likelihood { bayesian: false; enable_hypergeometric: population.n_units > 0 }
-		Common.Iterations { }
+		Planning.Likelihood { bayesian: false; enable_hypergeometric: population.n_units > 0 }
+		Planning.Iterations { }
 	}
 
 	Common.DownloadReport { }

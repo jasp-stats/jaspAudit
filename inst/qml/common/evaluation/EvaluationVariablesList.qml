@@ -22,7 +22,8 @@ import JASP
 import JASP.Controls
 import JASP.Widgets
 
-import "./" as Common
+import "../selection" as Selection
+import "./" as Evaluation
 
 VariablesForm
 {
@@ -43,9 +44,9 @@ VariablesForm
 		name: 				"variables"
 	}
 
-	Common.IdVariable { id: id }
-	Common.BookVariable { id: values }
-	Common.AuditVariable { id: audit_values; binary: true }
+	Selection.IdVariable { id: id }
+	Selection.BookVariable { id: values }
+	Evaluation.AuditVariable { id: audit_values; binary: true }
 
 	AssignedVariablesList
 	{

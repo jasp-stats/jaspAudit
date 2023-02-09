@@ -22,7 +22,7 @@ import JASP
 import JASP.Controls
 import JASP.Widgets
 
-import "./" as Common
+import "./" as Planning
 
 Group
 {
@@ -80,6 +80,7 @@ Group
 		label:				qsTr("Sample size")
 		min:				x_prior.value
 		defaultValue: 		1
+		min:				1
 		visible:			prior_method.value == "sample"
 		info:				qsTr("The number of sampling units audited through an earlier sample.")
 	}
@@ -97,5 +98,5 @@ Group
 		info:				qsTr("The number of misstatements found through an earlier sample.")
 	}
 
-	Common.AuditRiskModel { hide: prior_method.value != "arm" }
+	Planning.AuditRiskModel { hide: prior_method.value != "arm" }
 }

@@ -26,6 +26,8 @@ import JASP.Controls
 import JASP.Widgets
 
 import "./common" as Common
+import "./common/planning" as Planning
+import "./common/evaluation" as Evaluation
 
 Form
 {
@@ -41,17 +43,17 @@ Form
 	IntegerField { name: "max"; defaultValue: 5000; visible: false }
 
 	// Visible options
-	Common.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample; show_strata: true }
-	Common.SamplingObjectives { id: objectives }
-	Common.DataType { id: data }
-	Common.Population { id: population; optional: !objectives.absolute_materiality; enable: !data.use_population; show_items: true }
-	Common.AuditRiskModel { enable: objectives.use_materiality }
+	Evaluation.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample; show_strata: true }
+	Planning.SamplingObjectives { id: objectives }
+	Evaluation.DataType { id: data }
+	Planning.Population { id: population; optional: !objectives.absolute_materiality; enable: !data.use_population; show_items: true }
+	Planning.AuditRiskModel { enable: objectives.use_materiality }
 	Common.ExplanatoryText { }
 
 	Section
 	{
 		title: qsTr("Report")
-		Common.EvaluationOutput
+		Evaluation.EvaluationOutput
 		{
 			bayesian: false
 			enable_taints: !data.use_stats && variables.use_book && variables.use_real
@@ -144,8 +146,8 @@ Form
 			}
 		}
 
-		Common.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
-		Common.IntervalType { bayesian: false; test: objectives.use_materiality }
+		Planning.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
+		Evaluation.IntervalType { bayesian: false; test: objectives.use_materiality }
 	}
 
 	Common.DownloadReport { }

@@ -23,6 +23,7 @@ import JASP.Controls
 import JASP.Widgets
 
 import "./common" as Common
+import "./common/selection" as Selection
 
 Form 
 {
@@ -39,10 +40,10 @@ Form
 		preferredHeight: jaspTheme.smallDefaultVariablesFormHeight
 
 		AvailableVariablesList { name: "variablesFormSampling" }
-		Common.IdVariable { id: id }
-		Common.BookVariable { id: values; required: units.use_mus }
-		Common.RankVariable { id: rank }
-		Common.AdditionalVariables { }
+		Selection.IdVariable { id: id }
+		Selection.BookVariable { id: values; required: units.use_mus }
+		Selection.RankVariable { id: rank }
+		Selection.AdditionalVariables { }
 	}
 
 	Group
@@ -56,20 +57,20 @@ Form
 			min: 			0
 			info:			qsTr("The required number of sampling units that should be selected from the population, which are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.")
 		}
-		Common.Seed { enable: randomize.checked || !method.use_interval || method.use_random_start }
-		Common.Randomize { enable: !rank.use_rank }
+		Selection.Seed { enable: randomize.checked || !method.use_interval || method.use_random_start }
+		Selection.Randomize { enable: !rank.use_rank }
 	}
 
-	Common.SamplingUnits { id: units; enable_mus: values.use_book }
-	Common.SelectionMethod { id: method; enable_sieve: values.use_book && units.use_mus }
+	Selection.SamplingUnits { id: units; enable_mus: values.use_book }
+	Selection.SelectionMethod { id: method; enable_sieve: values.use_book && units.use_mus }
 	Common.ExplanatoryText { }
 
 	Section
 	{
 		title: qsTr("Report")
-		Common.SelectionOutput { }
+		Selection.SelectionOutput { }
 	}
 
-	Common.ExportSample { enable: id.count > 0 && sample_size.value > 0 }
+	Selection.ExportSample { enable: id.count > 0 && sample_size.value > 0 }
 	Common.DownloadReport { }
 }

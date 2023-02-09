@@ -26,6 +26,9 @@ import JASP.Controls
 import JASP.Widgets
 
 import "./common" as Common
+import "./common/selection" as Selection
+import "./common/planning" as Planning
+import "./common/evaluation" as Evaluation
 
 // --------------------------------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------  BEGIN WORKFLOW  -------------------------------------------------------------------------
@@ -64,16 +67,16 @@ Form
 			{
 				name: 								"variablesFormPlanning"
 			}
-			Common.IdVariable { id: id }
-			Common.BookVariable { id: values }
+			Selection.IdVariable { id: id }
+			Selection.BookVariable { id: values }
 		}
 
 		GridLayout
 		{
 			columns: 1
-			Common.SamplingObjectives { id: objectives; enabled: !pasteVariables.checked }
-			Common.ExpectedErrors { enabled: !pasteVariables.checked }
-			Common.AuditRiskModel { enable: objectives.use_materiality }
+			Planning.SamplingObjectives { id: objectives; enabled: !pasteVariables.checked }
+			Planning.ExpectedErrors { enabled: !pasteVariables.checked }
+			Planning.AuditRiskModel { enable: objectives.use_materiality }
 			Common.ExplanatoryText { }
 		}
 
@@ -81,7 +84,7 @@ Form
 		{
 			title:									qsTr("Report")
 			columns:								2
-			Common.PlanningOutput { bayesian: false; workflow: true; enable_values: values.use_book }
+			Planning.PlanningOutput { bayesian: false; workflow: true; enable_values: values.use_book }
 			Common.Display { show_monetary: true; enable_monetary: values.use_book }
 		}
 
@@ -89,9 +92,9 @@ Form
 		{
 			title:									qsTr("Advanced")
 			columns:								3
-			Common.Likelihood { id:likelihood; bayesian: false; evaluation: false; enable_hypergeometric: id.use_id && values.use_book  }
-			Common.Iterations { enable: !pasteVariables.checked }
-			Common.CriticalItems { id: critical; enable: !data.use_stats && values.use_book && !pasteVariables.checked }
+			Planning.Likelihood { id:likelihood; bayesian: false; evaluation: false; enable_hypergeometric: id.use_id && values.use_book  }
+			Planning.Iterations { enable: !pasteVariables.checked }
+			Planning.CriticalItems { id: critical; enable: !data.use_stats && values.use_book && !pasteVariables.checked }
 		}
 
 		Item
@@ -157,8 +160,8 @@ Form
 				name: 								"variablesFormSampling"
 			}
 
-			Common.RankVariable { id: rank }
-			Common.AdditionalVariables { }
+			Selection.RankVariable { id: rank }
+			Selection.AdditionalVariables { }
 		}
 
 		GridLayout
@@ -167,8 +170,8 @@ Form
 
 			Group
 			{
-				Common.Seed { enable: randomize.use_randomize || !method.use_interval || method.use_random_start }
-				Common.Randomize { id: randomize; enable: !pasteVariables.checked && !rank.use_rank }
+				Selection.Seed { enable: randomize.use_randomize || !method.use_interval || method.use_random_start }
+				Selection.Randomize { id: randomize; enable: !pasteVariables.checked && !rank.use_rank }
 				CheckBox
 				{
 					id:								add_selection_variables
@@ -179,17 +182,14 @@ Form
 				}
 			}
 
-			Common.SamplingUnits { id: units; enable: !pasteVariables.checked; enable_mus: values.use_book }
-			Common.SelectionMethod { id: method; enable: !pasteVariables.checked; enable_sieve: values.use_book && units.use_mus }
+			Selection.SamplingUnits { id: units; enable: !pasteVariables.checked; enable_mus: values.use_book }
+			Selection.SelectionMethod { id: method; enable: !pasteVariables.checked; enable_sieve: values.use_book && units.use_mus }
 		}
 
 		Section
 		{
 			title:									qsTr("Report")
-			Group
-			{
-				Common.SelectionOutput { }
-			}
+			Selection.SelectionOutput { }
 		}
 
 		Item
@@ -247,8 +247,8 @@ Form
 		enabled: 									executionChecked.checked
 		columns: 									2
 
-		Common.Annotation { id: annotation; enable: !pasteVariables.checked; enable_values: values.use_book; enable_binary: !algorithm.use_partial }
-		Common.AddVariables { id: names; enable: !pasteVariables.checked }
+		Evaluation.Annotation { id: annotation; enable: !pasteVariables.checked; enable_values: values.use_book; enable_binary: !algorithm.use_partial }
+		Evaluation.AddVariables { id: names; enable: !pasteVariables.checked }
 
 		Item
 		{
@@ -374,7 +374,7 @@ Form
 				name: 								"evaluationVariables"
 				source: 							"variablesFormPlanning"
 			}
-			Common.AuditVariable { binary: annotation.use_values }
+			Evaluation.AuditVariable { binary: annotation.use_values }
 		}
 
 		Section
@@ -383,7 +383,7 @@ Form
 			Group
 			{
 				columns:				1
-				Common.EvaluationOutput
+				Evaluation.EvaluationOutput
 				{
 					bayesian: false
 					enable_taints: values.use_book && !data.use_stats
@@ -485,7 +485,7 @@ Form
 				}
 			}
 
-			Common.IntervalType { id: interval; bayesian: false; enable: !stringer.checked }
+			Evaluation.IntervalType { id: interval; bayesian: false; enable: !stringer.checked }
 		}
 
 		Item

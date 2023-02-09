@@ -26,6 +26,8 @@ import JASP.Controls
 import JASP.Widgets
 
 import "./common" as Common
+import "./common/planning" as Planning
+import "./common/evaluation" as Evaluation
 
 Form
 {
@@ -39,25 +41,25 @@ Form
 	IntegerField { name: "max"; defaultValue: 5000; visible: false }
 
 	// Visible options
-	Common.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample }
-	Common.SamplingObjectives { id: objectives }
-	Common.DataType { id: data }
-	Common.Population { id: population; optional: !objectives.absolute_materiality; enable: !data.use_population; show_items: true }
+	Evaluation.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample }
+	Planning.SamplingObjectives { id: objectives }
+	Evaluation.DataType { id: data }
+	Planning.Population { id: population; optional: !objectives.absolute_materiality; enable: !data.use_population; show_items: true }
 	Common.ExplanatoryText { }
 
 	Section
 	{
 		title: qsTr("Prior")
 		columns: 3
-		Common.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
-		Common.PriorMethod { id: method; use_materiality: objectives.use_materiality}
-		Common.ExpectedErrors { show_all: true; enable: method.use_expected; enable_all: algorithm.use_partial }
+		Planning.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
+		Planning.PriorMethod { id: method; use_materiality: objectives.use_materiality}
+		Planning.ExpectedErrors { show_all: true; enable: method.use_expected; enable_all: algorithm.use_partial }
 	}
 
 	Section
 	{
 		title: qsTr("Report")
-		Common.EvaluationOutput
+		Evaluation.EvaluationOutput
 		{
 			bayesian: true
 			enable_taints: !data.use_stats && variables.use_book && variables.use_real
@@ -75,8 +77,8 @@ Form
 	{
 		title: qsTr("Advanced")
 		columns: 3
-		Common.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
-		Common.Algorithm
+		Planning.CriticalItems { workflow: false; enable: !data.use_stats && variables.use_book }
+		Planning.Algorithm
 		{
 			id: 			algorithm
 			hide_pooling:	false
@@ -84,7 +86,7 @@ Form
 			enable_pooling: variables.use_strata
 			enable_partial: !variables.use_strata && variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
 		}
-		Common.IntervalType { bayesian: true; test: objectives.use_materiality }
+		Evaluation.IntervalType { bayesian: true; test: objectives.use_materiality }
 	}
 
 	Common.DownloadReport { }
