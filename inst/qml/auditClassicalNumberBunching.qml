@@ -196,9 +196,12 @@ Form
 	{
 		title:							qsTr("Advanced")
 		info:							qsTr("Adjust advanced options for this analysis.")
+
 		Group
 		{
 			columns:					1
+			title:						qsTr("Bootstrap")
+			info:						qsTr("Options related to the bootstrapping procedure of the p-value.")
 
 			IntegerField
 			{

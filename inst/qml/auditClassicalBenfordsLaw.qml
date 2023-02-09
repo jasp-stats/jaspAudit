@@ -164,35 +164,32 @@ Form
 	Section
 	{
 		title:					qsTr("Report")
+		columns:				2
+
 		Group
 		{
-			columns:			2
+			title: 				qsTr("Tables")
+			info:				qsTr("Add additional tables about the analysis to the report.")
 
-			Group
+			CheckBox
 			{
-				title: 			qsTr("Tables")
-				info:			qsTr("Add additional tables about the analysis to the report.")
-
-				CheckBox
-				{
-					text: 		qsTr("Frequency table")
-					name: 		"summaryTable"
-					checked: 	true
-					info:		qsTr("Produces a table showing the relative frequency of the digits.")
-				}
+				text: 			qsTr("Frequency table")
+				name: 			"summaryTable"
+				checked: 		true
+				info:			qsTr("Produces a table showing the relative frequency of the digits.")
 			}
+		}
 
-			Group
+		Group
+		{
+			title:				qsTr("Plots")
+			info:				qsTr("Add additional figures about the analysis to the report.")
+
+			CheckBox
 			{
-				title:			qsTr("Plots")
-				info:			qsTr("Add additional figures about the analysis to the report.")
-
-				CheckBox
-				{
-					text:		qsTr("Observed vs. expected")
-					name:		"benfordsLawPlot"
-					info:		qsTr("Produces a figure that shows the observed distribution of digits in the population compared to the expected distribution under the Benford's law or the uniform distribution.")
-				}
+				text:			qsTr("Observed vs. expected")
+				name:			"benfordsLawPlot"
+				info:			qsTr("Produces a figure that shows the observed distribution of digits in the population compared to the expected distribution under the Benford's law or the uniform distribution.")
 			}
 		}
 	}
