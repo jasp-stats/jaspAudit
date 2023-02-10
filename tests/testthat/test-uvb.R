@@ -87,7 +87,7 @@ test_that("<b>Table 5.</b> Evaluation Summary results match", {
   jaspTools::expect_equal_tables(
     table,
     list(
-      "%", "2%", "17.645%", 130, "Value", "1.631%", "18.037%", "19.276%",
+      "0%", "2%", "17.645%", 130, "Value", "1.631%", "18.037%", "19.276%",
       68
     )
   )
