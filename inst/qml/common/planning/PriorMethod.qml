@@ -28,8 +28,10 @@ Group
 {
 	readonly	property bool	use_expected:		prior_method.value == "impartial" || prior_method.value == "arm"
 				property bool	use_materiality:	false
+				property bool	enable:				true
 
 	title:					qsTr("Elicitation")
+	enabled:				enable
 	info:					qsTr("Choose how to construct the prior distribution.")
 
 	DropDown
@@ -86,7 +88,6 @@ Group
 
 	DoubleField
 	{
-		id:					x_prior
 		name: 				"x_prior"
 		label:				qsTr("Misstatements")
 		min:				0

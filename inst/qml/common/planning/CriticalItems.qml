@@ -28,7 +28,7 @@ Group
 	readonly	property bool	use_inspect:	critical_inspect.checked
 				property bool	enable:			false
 				property bool	workflow:		true
-				property alias	use_name:		critical_name.value
+				property string	use_name:		critical_name.value
 
 	name:					"critical_items"
 	title:					qsTr("Critical Items")

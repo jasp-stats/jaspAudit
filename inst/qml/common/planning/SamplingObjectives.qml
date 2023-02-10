@@ -26,15 +26,15 @@ Group
 {
 	readonly	property bool	use_materiality:		materiality_test.checked
 	readonly	property bool	absolute_materiality:	materiality_test.checked && materiality_absolute.checked
-	readonly	property bool	absolute_value:			materiality_absolute_value.value
-	readonly	property bool	relative_value:			materiality_relative_value.value
-	readonly	property bool	precision_value:		min_precision_value.value
+	readonly	property alias	absolute_value:			materiality_absolute_value.value
+	readonly	property alias	relative_value:			materiality_relative_value.value
+	readonly	property alias	precision_value:		min_precision_value.value
 	readonly	property bool	use_precision:			min_precision_test.checked
 				property bool	enable:					true
 
 	enabled:								enable
 	columns:								1
-	info:									qsTr("")
+	info:									qsTr("Specify the options for the statistical procedure.")
 
 	Group
 	{

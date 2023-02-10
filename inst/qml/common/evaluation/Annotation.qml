@@ -27,7 +27,7 @@ RadioButtonGroup
 	readonly	property bool	use_values:		continuous.checked
 				property bool	enable:			true
 				property bool	enable_values:	false
-				property bool	enable_binary:	false
+				property bool	enable_binary:	true
 
 	name: 			"annotation"
 	title: 			qsTr("Annotation")

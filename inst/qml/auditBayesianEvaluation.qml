@@ -51,7 +51,7 @@ Form
 	{
 		title: qsTr("Prior")
 		columns: 3
-		Planning.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: population.n_units > 0 || data.use_population }
+		Planning.Likelihood { id:likelihood; bayesian: true; evaluation: true; enable_hypergeometric: (population.n_units > 0 || data.use_population) && !algorithm.use_partial; enable_poisson: !algorithm.use_partial }
 		Planning.PriorMethod { id: method; use_materiality: objectives.use_materiality}
 		Planning.ExpectedErrors { show_all: true; enable: method.use_expected; enable_all: algorithm.use_partial }
 	}

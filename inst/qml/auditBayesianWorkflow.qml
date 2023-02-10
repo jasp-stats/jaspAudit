@@ -70,8 +70,8 @@ Form
 		GridLayout
 		{
 			columns: 1
-			Planning.SamplingObjectives { id: objectives; enabled: !pasteVariables.checked }
-			Planning.ExpectedErrors { enabled: !pasteVariables.checked; show_all: algorithm.use_partial; enable_all: algorithm.use_partial }
+			Planning.SamplingObjectives { id: objectives; enable: !pasteVariables.checked }
+			Planning.ExpectedErrors { enable: !pasteVariables.checked; show_all: algorithm.use_partial; enable_all: algorithm.use_partial }
 			Common.ExplanatoryText { }
 		}
 
@@ -79,8 +79,8 @@ Form
 		{
 			title: 									qsTr("Prior")
 			columns:								2
-			Planning.Likelihood { id:likelihood; bayesian: true; evaluation: false; enable_hypergeometric: id.use_id && values.use_book }
-			Planning.PriorMethod { use_materiality: objectives.use_materiality }
+			Planning.Likelihood { id:likelihood; bayesian: true; evaluation: false; enable: !pasteVariables.checked; enable_hypergeometric: id.use_id && values.use_book && !algorithm.use_partial; enable_poisson: !algorithm.use_partial }
+			Planning.PriorMethod { use_materiality: objectives.use_materiality; enable: !pasteVariables.checked }
 		}
 
 		Section
@@ -96,7 +96,7 @@ Form
 			title:									qsTr("Advanced")
 			columns:								3
 			Planning.Iterations { enable: !pasteVariables.checked }
-			Planning.CriticalItems { id: critical; enable: !data.use_stats && values.use_book && !pasteVariables.checked }
+			Planning.CriticalItems { id: critical; enable: values.use_book && !pasteVariables.checked }
 			Planning.Algorithm
 			{
 				id: 								algorithm
@@ -390,7 +390,7 @@ Form
 			Evaluation.EvaluationOutput
 			{
 				bayesian: true
-				enable_taints: values.use_book && !data.use_stats
+				enable_taints: values.use_book
 				enable_corrections: values.use_book
 				enable_assumptions: algorithm.use_partial
 				enable_objectives: objectives.use_materiality || objectives.use_precision

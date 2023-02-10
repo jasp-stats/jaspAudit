@@ -28,61 +28,61 @@ RadioButtonGroup
 	readonly	property bool	use_sample:		sample.checked
 	readonly	property bool	use_stats:		stats.checked
 
-	name:									"dataType"
-	title:									qsTr("Data Type")
-	info:									qsTr("The type of input data for the analysis.")
+	name:						"dataType"
+	title:						qsTr("Data Type")
+	info:						qsTr("The type of input data for the analysis.")
 
 	RadioButton
 	{
-		id: 								population
-		name: 								"pdata"
-		label:								qsTr("Population")
-		enabled:							mainWindow.dataAvailable
-		info:								qsTr("Use the population as input data.")
+		id: 					population
+		name: 					"pdata"
+		label:					qsTr("Population")
+		enabled:				mainWindow.dataAvailable
+		info:					qsTr("Use the population as input data.")
 	}
 
 	RadioButton
 	{
-		id: 								sample
-		name: 								"data"
-		label:								qsTr("Sample")
-		checked: 							mainWindow.dataAvailable
-		enabled:							mainWindow.dataAvailable
-		info:								qsTr("Use a sample of the population as input data.")
+		id: 					sample
+		name: 					"data"
+		label:					qsTr("Sample")
+		checked: 				mainWindow.dataAvailable
+		enabled:				mainWindow.dataAvailable
+		info:					qsTr("Use a sample of the population as input data.")
 	}
 
 	RadioButton
 	{
-		id: 								stats
-		name: 								"stats"
-		label:								qsTr("Summary statistics")
-		checked: 							!mainWindow.dataAvailable
-		info:								qsTr("Use summary statistics from a sample as input data.")
+		id: 					stats
+		name: 					"stats"
+		label:					qsTr("Summary statistics")
+		checked: 				!mainWindow.dataAvailable
+		info:					qsTr("Use summary statistics from a sample as input data.")
 
 		Group
 		{
 			IntegerField
 			{
-				id: 						n
-				name: 						"n"
-				text: 						qsTr("Sample size")
-				defaultValue: 				0
-				min: 						x.value
-				visible:					stats.checked
-				info:						qsTr("The number of sampling units that have been audited.")
+				id: 			n
+				name: 			"n"
+				text: 			qsTr("Sample size")
+				defaultValue: 	0
+				min: 			x.value
+				visible:		stats.checked
+				info:			qsTr("The number of sampling units that have been audited.")
 			}
 
 			DoubleField
 			{
-				id:							x
-				name: 						"x"
-				text: 						qsTr("Misstatements")
-				defaultValue: 				0
-				min: 						0
-				visible:					stats.checked
-				max:						n.value
-				decimals:					3
-				info:						qsTr("The number of misstatements that have been found in the sample.")
+				id:				x
+				name: 			"x"
+				text: 			qsTr("Misstatements")
+				defaultValue: 	0
+				min: 			0
+				visible:		stats.checked
+				max:			n.value
+				decimals:		3
+				info:			qsTr("The number of misstatements that have been found in the sample.")
 			}
 		}
 	}

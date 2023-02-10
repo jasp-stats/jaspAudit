@@ -28,11 +28,14 @@ RadioButtonGroup
 	readonly	property bool	use_binomial: 			binomial.checked
 	readonly	property bool	use_poisson: 			poisson.checked
 				property bool	bayesian:				false
+				property bool	enable:					true
 				property bool	evaluation:				false
 				property bool	enable_hypergeometric: 	false
+				property bool	enable_poisson: 		true
 	
 	title: 			bayesian ? qsTr("Distribution") : qsTr("Likelihood")
 	name: 			evaluation ? "method" : "likelihood"
+	enabled:		enable
 	info:			qsTr("The likelihood is a function that relates the statistical model to the observed data. Specifically, it quantifies the probability of observing the data given the parameters of the model.")
 
 	RadioButton
@@ -58,6 +61,7 @@ RadioButtonGroup
 		id: 		poisson
 		text: 		bayesian ? qsTr("Gamma") : qsTr("Poisson")
 		name: 		"poisson"
+		enabled:	enable_poisson
 		info:		qsTr("The Poisson distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors (*t*). In a Bayesian analysis, the conjugate prior for the Poisson likelihood is the gamma distribution.")
 	}
 }

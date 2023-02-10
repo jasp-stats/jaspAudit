@@ -57,7 +57,7 @@ Form
 		{
 			bayesian: false
 			enable_taints: !data.use_stats && variables.use_book && variables.use_real
-			enable_corrections: n_units.value > 0 || data.use_population
+			enable_corrections: population.n_units > 0 || data.use_population
 			enable_objectives: objectives.use_materiality || objectives.use_precision
 			enable_scatter: !data.use_stats
 			enable_estimates: true
@@ -100,7 +100,7 @@ Form
 				id: 			stringer
 				name: 			"stringer"
 				text: 			qsTr("Stringer")
-				enabled: 		!stats.checked && values.count > 0 && auditResult.count > 0
+				enabled: 		!data.use_stats && variables.use_book && variables.use_real
 
 				CheckBox
 				{
@@ -114,35 +114,35 @@ Form
 			{
 				name: 			"mpu"
 				text: 			qsTr("Mean-per-unit estimator")
-				enabled: 		!stats.checked && values.count > 0 && auditResult.count > 0
+				enabled: 		!data.use_stats && variables.use_book && variables.use_real
 			}
 
 			RadioButton
 			{
 				name: 			"direct"
 				text: 			qsTr("Direct estimator")
-				enabled: 		!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
+				enabled: 		!data.use_stats && ((population.n_units > 0 && population.n_items > 0) || data.use_population) && variables.use_book && variables.use_real
 			}
 
 			RadioButton
 			{
 				name: 			"difference"
 				text: 			qsTr("Difference estimator")
-				enabled: 		!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
+				enabled: 		!data.use_stats && ((population.n_units > 0 && population.n_items > 0) || data.use_population) && variables.use_book && variables.use_real
 			}
 
 			RadioButton
 			{
 				name: 			"quotient"
 				text: 			qsTr("Ratio estimator")
-				enabled: 		!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
+				enabled: 		!data.use_stats && ((population.n_units > 0 && population.n_items > 0) || data.use_population) && variables.use_book && variables.use_real
 			}
 
 			RadioButton
 			{
 				name: 			"regression"
 				text: 			qsTr("Regression estimator")
-				enabled: 		!stats.checked && ((n_units.value != 0 && n_items.value != 0) || pdata.checked) && values.count > 0 && auditResult.count > 0
+				enabled: 		!data.use_stats && ((population.n_units > 0 && population.n_items > 0) || data.use_population) && variables.use_book && variables.use_real
 			}
 		}
 

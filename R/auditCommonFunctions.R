@@ -2799,8 +2799,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$addColumnInfo(name = "precision", title = gettext("Precision"), type = columnType)
   if (!options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
     table$addColumnInfo(name = "p", title = gettext("p-value"), type = "pvalue")
-  }
-  if (options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
+  } else if (options[["bayesian"]] && options[["materiality_test"]]) {
     bftitle <- switch(options[["area"]],
       "less" = gettextf("BF%1$s", "\u208B\u208A"),
       "two.sided" = gettextf("BF%1$s", "\u2081\u2080"),
@@ -3453,7 +3452,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
   for (n in seq(options[["by"]], options[["max"]], by = options[["by"]])) {
     interval <- (parentOptions[["N.units"]] / n)
     topStratum <- subset(dataset, dataset[[options[["values"]]]] > interval)
-    bottomStratum <- subset(dataset, dataset[[options[["values"]]]] <= interval)
 
     m_seen <- sum(topStratum[[options[["values"]]]])
 
@@ -3474,8 +3472,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     m_seen <- m_seen + sum(bottomStratumSample[[options[["values"]]]])
     m_seen_percentage <- m_seen / parentOptions[["N.units"]]
-
-    m_unseen <- parentOptions[["N.units"]] - m_seen
 
     if (options[["expected_type"]] == "expected_all") {
       a <- prior[["description"]]$alpha + 0:n
@@ -3515,7 +3511,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
   alphaPosterior <- prior[["description"]]$alpha + expErrors
   betaPosterior <- prior[["description"]]$beta + n - expErrors
   expectedPosterior <- list(
-    description = list(alpha = alphaPosterior, beta = betaPosterior),
+    likelihood = "binomial",
+    description = list(density = "beta", alpha = alphaPosterior, beta = betaPosterior),
     statistics = list(
       mean = alphaPosterior / (alphaPosterior + betaPosterior),
       mode = (alphaPosterior - 1) / (alphaPosterior + betaPosterior - 2),
@@ -3530,7 +3527,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
   )
   expectedPosterior[["hypotheses"]]$bf.h1 <- expectedPosterior[["hypotheses"]]$odds.h1 / prior[["hypotheses"]]$odds.h1
 
-
   result <- list(
     n = n, x = parentOptions[["expected_val"]] * n,
     conf.level = options[["conf_level"]],
@@ -3544,6 +3540,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     posterior = expectedPosterior,
     start = intervalStartingPoint
   )
+  class(result) <- "jfaPlanning"
 
   return(result)
 }
@@ -3573,7 +3570,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       t <- sum(taintings * sample[[options[["times"]]]])
     }
   }
-  avgTaint <- t / n
+
   posteriorMode <- (prior[["description"]]$alpha + t - 1) / (prior[["description"]]$alpha + t + prior[["description"]]$beta + n - t - 2)
 
   # Find out the total error in the critital transactions (if needed)
@@ -3610,11 +3607,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
   alphaPosterior <- prior[["description"]]$alpha + t
   betaPosterior <- prior[["description"]]$beta + n - t
   posterior <- list(
-    description = list(alpha = alphaPosterior, beta = betaPosterior),
+    description = list(density = "beta", alpha = alphaPosterior, beta = betaPosterior),
+    likelihood = "binomial",
     statistics = list(
       median = qbeta(0.5, alphaPosterior, betaPosterior),
       mean = alphaPosterior / (alphaPosterior + betaPosterior),
       mode = (alphaPosterior - 1) / (alphaPosterior + betaPosterior - 2),
+      lb = 0,
       ub = qbeta(options[["conf_level"]], alphaPosterior, betaPosterior),
       precision = qbeta(options[["conf_level"]], alphaPosterior, betaPosterior) - ((alphaPosterior - 1) / (alphaPosterior + betaPosterior - 2))
     ),
@@ -3627,7 +3626,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   )
 
   result <- list(
-    ub = V95AsFraction,
+    ub = V95AsFraction, lb = 0,
     ubUnseen = Vt95 / unseen_value,
     min.precision = options[["min_precision_rel_val"]],
     precision = precisionAsFraction,
@@ -3645,6 +3644,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     N.units = prevOptions[["N.units"]],
     adjustedMateriality = (prevOptions[["materiality_val"]] / (1 - (sum(sample[[options[["values"]]]]) / prevOptions[["N.units"]])))
   )
+  class(result) <- "jfaEvaluation"
 
   parentContainer[["evaluationState"]] <- createJaspState(result)
 

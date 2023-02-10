@@ -74,8 +74,8 @@ Form
 		GridLayout
 		{
 			columns: 1
-			Planning.SamplingObjectives { id: objectives; enabled: !pasteVariables.checked }
-			Planning.ExpectedErrors { enabled: !pasteVariables.checked }
+			Planning.SamplingObjectives { id: objectives; enable: !pasteVariables.checked }
+			Planning.ExpectedErrors { enable: !pasteVariables.checked }
 			Planning.AuditRiskModel { enable: objectives.use_materiality }
 			Common.ExplanatoryText { }
 		}
@@ -92,9 +92,9 @@ Form
 		{
 			title:									qsTr("Advanced")
 			columns:								3
-			Planning.Likelihood { id:likelihood; bayesian: false; evaluation: false; enable_hypergeometric: id.use_id && values.use_book  }
+			Planning.Likelihood { id:likelihood; bayesian: false; evaluation: false; enable: !pasteVariables.checked; enable_hypergeometric: id.use_id && values.use_book  }
 			Planning.Iterations { enable: !pasteVariables.checked }
-			Planning.CriticalItems { id: critical; enable: !data.use_stats && values.use_book && !pasteVariables.checked }
+			Planning.CriticalItems { id: critical; enable: values.use_book && !pasteVariables.checked }
 		}
 
 		Item
@@ -247,7 +247,7 @@ Form
 		enabled: 									executionChecked.checked
 		columns: 									2
 
-		Evaluation.Annotation { id: annotation; enable: !pasteVariables.checked; enable_values: values.use_book; enable_binary: !algorithm.use_partial }
+		Evaluation.Annotation { id: annotation; enable: !pasteVariables.checked; enable_values: values.use_book }
 		Evaluation.AddVariables { id: names; enable: !pasteVariables.checked }
 
 		Item
@@ -386,7 +386,7 @@ Form
 				Evaluation.EvaluationOutput
 				{
 					bayesian: false
-					enable_taints: values.use_book && !data.use_stats
+					enable_taints: values.use_book
 					enable_corrections: values.use_book
 					enable_objectives: objectives.use_materiality || objectives.use_precision
 					enable_scatter: annotation.use_values
