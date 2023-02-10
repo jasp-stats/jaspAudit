@@ -341,10 +341,10 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     }
 
     if ((options[["digits"]] == "first" || options[["digits"]] == "last") && options[["match"]] > 9) {
-      tb$addFootnote(symbol = gettext("<b>Warning</b>"), message = gettext("The requested digit must be in the range 1 - 9."))
+      tb$addFootnote(symbol = gettext("<b>Warning.</b>"), message = gettext("The requested digit must be in the range 1 - 9."))
       return()
     } else if (options[["digits"]] == "firsttwo" && options[["match"]] < 10) {
-      tb$addFootnote(symbol = gettext("<b>Warning</b>"), message = gettext("The requested digit must be in the range 10 - 99."))
+      tb$addFootnote(symbol = gettext("<b>Warning.</b>"), message = gettext("The requested digit must be in the range 10 - 99."))
     }
 
     state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
