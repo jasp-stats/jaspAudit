@@ -43,6 +43,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   # Create the observed and predicted probabilities table
   .jfaBenfordsLawDescriptivesTable(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 2)
 
+  # Create the matched rows table
+  .jfaBenfordsLawMatchTable(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 3)
+
   # ---
 
   # --- PLOTS
@@ -50,12 +53,12 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
 
   # Create the observed and predicted probabilities plot
-  .jfaBenfordsLawPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 3)
+  .jfaBenfordsLawPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 4)
 
   # ---
 
   # Create the conclusion paragraph
-  .jfaBenfordsLawAddConclusion(options, benfordsLawContainer, jaspResults, ready, position = 3)
+  .jfaBenfordsLawAddConclusion(options, benfordsLawContainer, jaspResults, ready, position = 5)
 
   # ---
 }
@@ -302,6 +305,52 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     tb[["count"]] <- state[["observed"]]
     tb[["obs"]] <- state[["relFrequencies"]]
     tb[["exp"]] <- state[["inBenford"]]
+  }
+}
+
+.jfaBenfordsLawMatchTable <- function(dataset, options, benfordsLawContainer,
+                                      jaspResults, ready, positionInContainer) {
+  if (!options[["matchTable"]]) {
+    return()
+  }
+
+  .jfaTableNumberUpdate(jaspResults)
+
+  if (is.null(benfordsLawContainer[["matchTable"]])) {
+    title <- gettextf(
+      "<b>Table %i.</b> Rows Matched to %2$s %3$s",
+      jaspResults[["tabNumber"]]$object,
+      switch(options[["digits"]],
+        "first" = gettext("Leading Digit"),
+        "firsttwo" = gettext("Leading Digits"),
+        "last" = gettext("Last Digit")
+      ),
+      options[["match"]]
+    )
+
+    tb <- createJaspTable(title)
+    tb$position <- positionInContainer
+    tb$dependOn(options = c("matchTable", "match"))
+    tb$addColumnInfo(name = "row", title = gettext("Row"), type = "integer")
+    tb$addColumnInfo(name = "value", title = gettext("Value"), type = "number")
+
+    benfordsLawContainer[["matchTable"]] <- tb
+
+    if (!ready) {
+      return()
+    }
+
+    if ((options[["digits"]] == "first" || options[["digits"]] == "last") && options[["match"]] > 9) {
+      tb$addFootnote(symbol = gettext("<b>Warning</b>"), message = gettext("The requested digit must be in the range 1 - 9."))
+      return()
+    } else if (options[["digits"]] == "firsttwo" && options[["match"]] < 10) {
+      tb$addFootnote(symbol = gettext("<b>Warning</b>"), message = gettext("The requested digit must be in the range 10 - 99."))
+    }
+
+    state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
+    rows <- state[["object"]][["match"]][[as.character(options[["match"]])]]
+    tb[["row"]] <- rows
+    tb[["value"]] <- dataset[rows, options[["values"]]]
   }
 }
 
