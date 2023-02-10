@@ -79,7 +79,7 @@ Form
 		{
 			title: 									qsTr("Prior")
 			columns:								2
-			Planning.Likelihood { id:likelihood; bayesian: true; evaluation: false; enable: !pasteVariables.checked; enable_hypergeometric: id.use_id && values.use_book && !algorithm.use_partial; enable_poisson: !algorithm.use_partial }
+			Planning.Likelihood { id:likelihood; bayesian: true; evaluation: false; enable: !pasteVariables.checked; enable_hypergeometric: (id.use_id || (id.use_id && values.use_book)) && !algorithm.use_partial; enable_poisson: !algorithm.use_partial }
 			Planning.PriorMethod { use_materiality: objectives.use_materiality; enable: !pasteVariables.checked }
 		}
 

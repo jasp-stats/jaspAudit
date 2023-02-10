@@ -2943,7 +2943,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   tb$position <- positionInContainer
   tb$transpose <- TRUE
 
-  tb$addColumnInfo(name = "stratum", title = gettext("Stratum"), type = "string")
+  tb$addColumnInfo(name = "stratum", title = "", type = "string")
   tb$addColumnInfo(name = "n", title = gettext("Sample size"), type = "integer")
   tb$addColumnInfo(name = "k", title = gettext("Misstatements"), type = "integer")
   tb$addColumnInfo(name = "t", title = gettext("Taint"), type = "number")

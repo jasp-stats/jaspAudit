@@ -92,7 +92,7 @@ Form
 		{
 			title:									qsTr("Advanced")
 			columns:								3
-			Planning.Likelihood { id:likelihood; bayesian: false; evaluation: false; enable: !pasteVariables.checked; enable_hypergeometric: id.use_id && values.use_book  }
+			Planning.Likelihood { id:likelihood; bayesian: false; evaluation: false; enable: !pasteVariables.checked; enable_hypergeometric: id.use_id || (id.use_id && values.use_book) }
 			Planning.Iterations { enable: !pasteVariables.checked }
 			Planning.CriticalItems { id: critical; enable: values.use_book && !pasteVariables.checked }
 		}
