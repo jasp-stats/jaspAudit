@@ -60,6 +60,7 @@ options$plotPriorPredictive <- FALSE
 options$plotPosteriorPredictive <- FALSE
 options$plotEstimates <- FALSE
 options$tableCorrections <- FALSE
+options$armpreset <- "jasp"
 set.seed(1)
 results <- jaspTools::runAnalysis("auditBayesianWorkflow", "test-workflow.csv", options)
 

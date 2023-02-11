@@ -829,7 +829,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           return(TRUE)
         }
       }
-      if (.jfaAuditRiskModelCalculation(options) >= 1) {
+      if (.jfaAuditRiskModelCalculation(options)[["dr"]] >= 1) {
         # Error if the detection risk of the analysis is higher than one
         parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify the custom values for the Inherent risk and/or Control risk, or the confidence."))
         return(TRUE)
@@ -877,7 +877,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection Summary"))
       parentContainer$setError(gettext("You must specify unique item ID's. The row numbers of the data set are sufficient."))
       return(TRUE)
-    } else if (.jfaAuditRiskModelCalculation(options) >= 1) {
+    } else if (.jfaAuditRiskModelCalculation(options)[["dr"]] >= 1) {
       # Error if the detection risk of the analysis is higher than one
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk, or the confidence."))
@@ -1369,22 +1369,36 @@ gettextf <- function(fmt, ..., domain = NULL) {
 .jfaAuditRiskModelCalculation <- function(options) {
   # Audit risk 		= Inherent risk x Control risk x Detection risk
   # Detection risk 	= Audit risk / (Inherent risk x Control risk)
-
   ar <- 1 - options[["conf_level"]]
-  ir <- switch(options[["ir"]],
-    "high" = 1,
-    "medium" = 0.60,
-    "low" = 0.36,
-    "custom" = options[["irCustom"]]
-  )
-  cr <- switch(options[["cr"]],
-    "high" = 1,
-    "medium" = 0.60,
-    "low" = 0.36,
-    "custom" = options[["crCustom"]]
-  )
+  if (options[["armpreset"]] == "jasp") {
+    ir <- switch(options[["ir"]],
+      "high" = 1,
+      "medium" = 0.60,
+      "low" = 0.36,
+      "custom" = options[["irCustom"]]
+    )
+    cr <- switch(options[["cr"]],
+      "high" = 1,
+      "medium" = 0.60,
+      "low" = 0.36,
+      "custom" = options[["crCustom"]]
+    )
+  } else if (options[["armpreset"]] == "adr") {
+    ir <- switch(options[["ir"]],
+      "high" = 1,
+      "medium" = 0.50,
+      "low" = 0.20,
+      "custom" = options[["irCustom"]]
+    )
+    cr <- switch(options[["cr"]],
+      "high" = 1,
+      "medium" = 0.50,
+      "low" = 0.20,
+      "custom" = options[["crCustom"]]
+    )
+  }
   dr <- ar / (ir * cr)
-  return(dr)
+  return(list(ar = ar, ir = ir, cr = cr, dr = dr))
 }
 
 .jfaAddAuditRiskModel <- function(options, jaspResults, position) {
@@ -1415,27 +1429,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   jaspResults[["ARMcontainer"]] <- container
 
-  ar <- 1 - options[["conf_level"]]
-  ir <- switch(options[["ir"]],
-    "high" = 1,
-    "medium" = 0.60,
-    "low" = 0.36,
-    "custom" = options[["irCustom"]]
-  )
-  cr <- switch(options[["cr"]],
-    "high" = 1,
-    "medium" = 0.60,
-    "low" = 0.36,
-    "custom" = options[["crCustom"]]
-  )
-  dr <- ar / (ir * cr)
+  risks <- .jfaAuditRiskModelCalculation(options)
 
   textARM <- gettextf(
     "Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x Detection risk (%4$s%%)",
-    round(ar * 100, 2),
-    if (options[["explanatoryText"]]) paste0(options[["ir"]], " = ", round(ir * 100, 2)) else round(ir * 100, 2),
-    if (options[["explanatoryText"]]) paste0(options[["cr"]], " = ", round(cr * 100, 2)) else round(cr * 100, 2),
-    round(dr * 100, 2)
+    round(risks[["ar"]] * 100, 2),
+    if (options[["explanatoryText"]]) paste0(options[["ir"]], " = ", round(risks[["ir"]] * 100, 2)) else round(risks[["ir"]] * 100, 2),
+    if (options[["explanatoryText"]]) paste0(options[["cr"]], " = ", round(risks[["cr"]] * 100, 2)) else round(risks[["cr"]] * 100, 2),
+    round(risks[["dr"]] * 100, 2)
   )
 
   container[["formula"]] <- createJaspHtml(textARM, "h3", "21cm")
@@ -1444,10 +1445,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (options[["explanatoryText"]]) {
     message <- gettextf(
       "The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk and control risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be %1$s. The internal control risk was determined to be %2$s. According to the Audit Risk Model, the required detection risk to maintain an audit risk of %3$s should be %4$s.",
-      paste0(options[["ir"]], " (", round(ir * 100, 2), "%)"),
-      paste0(options[["cr"]], " (", round(cr * 100, 2), "%)"),
-      paste0(round((1 - options[["conf_level"]]) * 100, 2), "%"),
-      paste0(round(dr * 100, 2), "%")
+      paste0(options[["ir"]], " (", round(risks[["ir"]] * 100, 2), "%)"),
+      paste0(options[["cr"]], " (", round(risks[["cr"]] * 100, 2), "%)"),
+      paste0(round(risks[["ar"]] * 100, 2), "%"),
+      paste0(round(risks[["dr"]] * 100, 2), "%")
     )
 
     if (options[["ir"]] == "custom" || options[["cr"]] == "custom") {
@@ -1485,27 +1486,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
     N.units <- parentOptions[["N.units"]]
 
     if (options[["prior_method"]] == "arm") {
-      ar <- 1 - options[["conf_level"]]
-      ir <- switch(options[["ir"]],
-        "high" = 1,
-        "medium" = 0.60,
-        "low" = 0.36,
-        "custom" = options[["irCustom"]]
-      )
-      cr <- switch(options[["cr"]],
-        "high" = 1,
-        "medium" = 0.60,
-        "low" = 0.36,
-        "custom" = options[["crCustom"]]
-      )
-      dr <- ar / (ir * cr)
-
-      if (dr >= 1) {
-        parentContainer$setError(gettext("The detection risk is equal to or higher than 100%%. Please re-specify your custom values for the Inherent risk and/or Control risk."))
+      risks <- .jfaAuditRiskModelCalculation(options)
+      if (risks[["dr"]] >= 1) {
+        parentContainer$setError(gettext("The detection risk is equal to or higher than 100%%. Please re-specify the percentages for the Inherent risk and/or Control risk."))
         return()
       }
-
-      confidence <- 1 - dr
+      confidence <- 1 - risks[["dr"]]
     }
 
     if (!options[["bayesian"]]) {
@@ -1520,8 +1506,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
       prior <- jfa::auditPrior(
         method = options[["prior_method"]], conf.level = options[["conf_level"]],
         materiality = materiality, expected = parentOptions[["expected_val"]],
-        likelihood = options[["likelihood"]], N.units = N.units, ir = ir,
-        cr = cr, n = options[["n_prior"]], x = options[["x_prior"]],
+        likelihood = options[["likelihood"]], N.units = N.units, ir = risks[["ir"]],
+        cr = risks[["cr"]], n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
       )
 
@@ -1611,22 +1597,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   parentContainer[["summaryTable"]] <- table
 
-  ar <- 1 - options[["conf_level"]]
-  if (options[["prior_method"]] == "arm") {
-    ir <- switch(options[["ir"]],
-      "high" = 1,
-      "medium" = 0.60,
-      "low" = 0.36,
-      "custom" = options[["irCustom"]]
-    )
-    cr <- switch(options[["cr"]],
-      "high" = 1,
-      "medium" = 0.60,
-      "low" = 0.36,
-      "custom" = options[["crCustom"]]
-    )
-    dr <- ar / (ir * cr)
-  }
+  risks <- .jfaAuditRiskModelCalculation(options)
 
   if (!ready || parentContainer$getError()) {
     if (!options[["bayesian"]]) {
@@ -1660,12 +1631,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     if (options[["materiality_test"]] && options[["prior_method"]] == "arm") {
       row <- cbind(row,
-        ir = if (options[["display"]] == "percent") paste0(round(ir * 100, 2), "%") else ir,
-        cr = if (options[["display"]] == "percent") paste0(round(cr * 100, 2), "%") else cr,
-        dr = if (options[["display"]] == "percent") paste0(round(dr * 100, 2), "%") else dr
+        ir = if (options[["display"]] == "percent") paste0(round(risks[["ir"]] * 100, 2), "%") else risks[["ir"]],
+        cr = if (options[["display"]] == "percent") paste0(round(risks[["cr"]] * 100, 2), "%") else risks[["cr"]],
+        dr = if (options[["display"]] == "percent") paste0(round(risks[["dr"]] * 100, 2), "%") else risks[["dr"]]
       )
     } else {
-      row <- cbind(row, ar = if (options[["display"]] == "percent") paste0(round((1 - options[["conf_level"]]) * 100, 2), "%") else 1 - options[["conf_level"]])
+      row <- cbind(row, ar = if (options[["display"]] == "percent") paste0(round(risks[["ar"]] * 100, 2), "%") else risks[["ar"]])
     }
 
     table$addRows(row)
@@ -1724,12 +1695,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   if (options[["materiality_test"]] && options[["prior_method"]] == "arm") {
     row <- cbind(row,
-      ir = if (options[["display"]] == "percent") paste0(round(ir * 100, 2), "%") else ir,
-      cr = if (options[["display"]] == "percent") paste0(round(cr * 100, 2), "%") else cr,
-      dr = if (options[["display"]] == "percent") paste0(round(dr * 100, 2), "%") else dr
+      ir = if (options[["display"]] == "percent") paste0(round(risks[["ir"]] * 100, 2), "%") else risks[["ir"]],
+      cr = if (options[["display"]] == "percent") paste0(round(risks[["cr"]] * 100, 2), "%") else risks[["cr"]],
+      dr = if (options[["display"]] == "percent") paste0(round(risks[["dr"]] * 100, 2), "%") else risks[["dr"]]
     )
   } else {
-    row <- cbind(row, ar = if (options[["display"]] == "percent") paste0(round((1 - options[["conf_level"]]) * 100, 2), "%") else 1 - options[["conf_level"]])
+    row <- cbind(row, ar = if (options[["display"]] == "percent") paste0(round(risks[["ar"]] * 100, 2), "%") else risks[["ar"]])
   }
 
   table$addRows(cbind(null = "Value", row))
@@ -1814,7 +1785,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       return()
     }
 
-    confidence <- if (options[["bayesian"]]) options[["conf_level"]] else 1 - .jfaAuditRiskModelCalculation(options)
+    confidence <- if (options[["bayesian"]]) options[["conf_level"]] else 1 - .jfaAuditRiskModelCalculation(options)[["dr"]]
     min_precision <- if (options[["min_precision_test"]]) options[["min_precision_rel_val"]] else NULL
     materiality <- if (options[["materiality_test"]]) parentState[["materiality"]] else NULL
 
@@ -1856,27 +1827,15 @@ gettextf <- function(fmt, ..., domain = NULL) {
       startProgressbar(length(likelihoods))
 
       leftPlotError <- try({
-        for (i in 1:length(likelihoods)) {
+        for (i in seq_along(likelihoods)) {
           if (options[["bayesian"]]) {
             names <- if (parentState[["N.units"]] > 0) c("Gamma", "Beta", "Beta-binomial") else c("Gamma", "Beta")
-            ir <- switch(options[["ir"]],
-              "high" = 1,
-              "medium" = 0.60,
-              "low" = 0.36,
-              "custom" = options[["irCustom"]]
-            )
-            cr <- switch(options[["cr"]],
-              "high" = 1,
-              "medium" = 0.60,
-              "low" = 0.36,
-              "custom" = options[["crCustom"]]
-            )
-
+            risks <- .jfaAuditRiskModelCalculation(options)
             # Create a prior distribution that incorporates the existing information
             prior <- jfa::auditPrior(
               conf.level = options[["conf_level"]], materiality = parentState[["materiality"]],
               expected = parentOptions[["expected_val"]], likelihood = likelihoods[i],
-              N.units = N, ir = ir, cr = cr, method = options[["prior_method"]],
+              N.units = N, ir = risks[["ir"]], cr = risks[["cr"]], method = options[["prior_method"]],
               n = options[["n_prior"]], x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
             )
           } else {
@@ -2451,40 +2410,23 @@ gettextf <- function(fmt, ..., domain = NULL) {
     sample <- .jfaAddCriticalTransactions(options, sample)
 
     materiality <- if (options[["materiality_test"]]) prevOptions[["materiality_val"]] else NULL
-    min_precision <- if (options[["min_precision_test"]]) options[["min_precision_rel_val"]] else NULL
 
-    if (options[["prior_method"]] == "arm") {
-      ir <- switch(options[["ir"]],
-        "high" = 1,
-        "medium" = 0.60,
-        "low" = 0.36,
-        "custom" = options[["irCustom"]]
-      )
-      cr <- switch(options[["cr"]],
-        "high" = 1,
-        "medium" = 0.60,
-        "low" = 0.36,
-        "custom" = options[["crCustom"]]
-      )
-      dr <- (1 - options[["conf_level"]]) / (ir * cr)
-      conf_level <- 1 - dr
-    }
-
+    risks <- .jfaAuditRiskModelCalculation(options)
     if (options[["bayesian"]]) {
+      conf_level <- options[["conf_level"]]
       prior <- jfa::auditPrior(
         conf.level = options[["conf_level"]], materiality = materiality, expected = prevOptions[["expected_val"]],
-        likelihood = options[["likelihood"]], N.units = prevOptions[["N.units"]], ir = ir, cr = cr,
+        likelihood = options[["likelihood"]], N.units = prevOptions[["N.units"]], ir = risks[["ir"]], cr = risks[["cr"]],
         method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
       )
-
-      conf_level <- options[["conf_level"]]
 
       if (options[["separateMisstatement"]] && options[["values"]] != "") {
         result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior, prevOptions, prevState, parentContainer)
         return(result)
       }
     } else {
+      conf_level <- 1 - risks[["dr"]]
       prior <- FALSE
     }
 
@@ -2613,24 +2555,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
       planningState[["n"]] <- if (options[["dataType"]] == "stats") options[["n"]] else nrow(dataset)
       return(planningState)
     } else if (options[["bayesian"]]) {
-      ir <- switch(options[["ir"]],
-        "high" = 1,
-        "medium" = 0.60,
-        "low" = 0.36,
-        "custom" = options[["irCustom"]]
-      )
-      cr <- switch(options[["cr"]],
-        "high" = 1,
-        "medium" = 0.60,
-        "low" = 0.36,
-        "custom" = options[["crCustom"]]
-      )
-
+      risks <- .jfaAuditRiskModelCalculation(options)
       N_units <- if (evaluationOptions[["N.units"]][1] == 0) NULL else evaluationOptions[["N.units"]]
       prior <- jfa::auditPrior(
         conf.level = options[["conf_level"]], materiality = materiality, expected = evaluationOptions[["expected_val"]],
-        likelihood = options[["method"]], N.units = sum(N_units), ir = ir,
-        cr = cr, method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
+        likelihood = options[["method"]], N.units = sum(N_units), ir = risks[["ir"]],
+        cr = risks[["cr"]], method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
       )
 
@@ -2673,29 +2603,18 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (!is.null(evaluationContainer[["evaluationState"]])) {
     return(evaluationContainer[["evaluationState"]]$object)
   } else {
-    ir <- switch(options[["ir"]],
-      "high" = 1,
-      "medium" = 0.60,
-      "low" = 0.36,
-      "custom" = options[["irCustom"]]
-    )
-    cr <- switch(options[["cr"]],
-      "high" = 1,
-      "medium" = 0.60,
-      "low" = 0.36,
-      "custom" = options[["crCustom"]]
-    )
+    risks <- .jfaAuditRiskModelCalculation(options)
     prior <- FALSE
     N_units <- if (planningOptions[["N.units"]][1] == 0) NULL else planningOptions[["N.units"]]
     N_items <- if (planningOptions[["N.items"]][1] == 0) NULL else planningOptions[["N.items"]]
     materiality <- if (options[["materiality_test"]]) planningOptions[["materiality_val"]] else NULL
-    conf_level <- if (!options[["bayesian"]]) 1 - .jfaAuditRiskModelCalculation(options) else options[["conf_level"]]
+    conf_level <- if (!options[["bayesian"]]) 1 - risks[["dr"]] else options[["conf_level"]]
 
     if (options[["bayesian"]]) {
       prior <- jfa::auditPrior(
         method = options[["prior_method"]], conf.level = conf_level, materiality = materiality,
         expected = planningOptions[["expected_val"]], likelihood = options[["method"]],
-        N.units = N_units, ir = ir, cr = cr, n = options[["n_prior"]],
+        N.units = N_units, ir = risks[["ir"]], cr = risks[["cr"]], n = options[["n_prior"]],
         x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
       )
     }
@@ -2781,7 +2700,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = columnType)
 
   if (!options[["bayesian"]]) {
-    alpha <- .jfaAuditRiskModelCalculation(options)
+    alpha <- .jfaAuditRiskModelCalculation(options)[["dr"]]
   } else {
     alpha <- 1 - options[["conf_level"]]
   }

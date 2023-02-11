@@ -36,6 +36,22 @@ Group
 
 	DropDown
 	{
+		id: 					preset
+		Layout.columnSpan: 		2
+		name: 					"armpreset"
+		indexDefaultValue: 	 	0
+		startValue:				"jasp"
+		label: 					qsTr("Preset")
+		values: [
+			{ label: qsTr("JASP"),	value: "jasp" },
+			{ label: qsTr("ADR"),	value: "adr" }
+		]
+		info:					qsTr("A preset for the mapping of the risk categories low / medium / high to probabilities.")
+		debug:					true
+	}
+
+	DropDown
+	{
 		id: 					ir
 		name: 					"ir"
 		indexDefaultValue: 	 	0
@@ -53,8 +69,10 @@ Group
 	PercentField
 	{
 		name: 					"irCustom"
-		defaultValue: 			ir.value == "high" ? 100 : (ir.value == 'medium' ? 60 : (ir.value == "low" ? 36 : 100))
-		min: 					25
+		defaultValue: 			preset.value == "jasp" ? 
+									(ir.value == "high" ? 100 : (ir.value == 'medium' ? 60 : (ir.value == "low" ? 36 : 100))) :
+									(ir.value == "high" ? 100 : (ir.value == 'medium' ? 50 : (ir.value == "low" ? 20 : 100)))
+		min: 					1
 		enabled: 				ir.value == "custom"
 		info:					qsTr("The percentage that corresponds with the inherent risk probability.")
 	}
@@ -78,8 +96,10 @@ Group
 	PercentField
 	{
 		name: 					"crCustom"
-		defaultValue:			cr.value == "high" ? 100 : (cr.value == 'medium' ? 60 : (cr.value == "low" ? 36 : 100))
-		min: 					25
+		defaultValue:			preset.value == "jasp" ? 
+									(cr.value == "high" ? 100 : (cr.value == 'medium' ? 60 : (cr.value == "low" ? 36 : 100))) :
+									(cr.value == "high" ? 100 : (cr.value == 'medium' ? 50 : (cr.value == "low" ? 20 : 100)))
+		min: 					1
 		enabled: 				cr.value == "custom"
 		info:					qsTr("The percentage that corresponds with the control risk probability.")
 	}

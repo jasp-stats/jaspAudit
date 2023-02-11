@@ -29,6 +29,7 @@ options$expected_type <- "expected_rel"
 options$likelihood <- "binomial"
 options$prior_method <- "param"
 options$display <- "number"
+options$armpreset <- "jasp"
 set.seed(1)
 dataset <- NULL
 results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
@@ -109,6 +110,7 @@ options$max <- 5000
 options$by <- 1
 options$plotPriorPredictive <- FALSE
 options$min_precision_test <- FALSE
+options$armpreset <- "jasp"
 set.seed(1)
 dataset <- NULL
 results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
@@ -173,6 +175,7 @@ options$cr <- "high"
 options$plotSampleSizes <- FALSE
 options$plotPriorPredictive <- FALSE
 options$min_precision_test <- FALSE
+options$armpreset <- "jasp"
 set.seed(1)
 dataset <- NULL
 results <- jaspTools::runAnalysis("auditBayesianPlanning", dataset, options)
