@@ -35,13 +35,13 @@ VariablesForm
 				property bool	use_sample:		false
 				property bool	show_strata:	true
 
-	preferredHeight: 		260 * preferencesModel.uiScale
-	enabled:				use_population || use_sample
-	visible:				use_population || use_sample
+	preferredHeight: 	260 * preferencesModel.uiScale
+	enabled:			use_population || use_sample
+	visible:			use_population || use_sample
 
 	AvailableVariablesList
 	{
-		name: 				"variables"
+		name: 			"variables"
 	}
 
 	Selection.IdVariable { id: id }
@@ -50,22 +50,22 @@ VariablesForm
 
 	AssignedVariablesList
 	{
-		id: 				sample_indicator
-		name: 				"times"
-		title: 				use_sample ? qsTr("Selection Counter (optional)") : qsTr("Selection Counter (required)")
-		singleVariable: 	true
-		allowedColumns: 	["nominal", "ordinal", "scale"]
-		info:				qsTr("An ordinal variable that indicates how many sampling units are selected for each item and thus how many times the item should be counted in the evaluation.")
+		id: 			sample_indicator
+		name: 			"times"
+		title: 			use_sample ? qsTr("Selection Counter (optional)") : qsTr("Selection Counter (required)")
+		singleVariable: true
+		allowedColumns: ["nominal", "ordinal", "scale"]
+		info:			qsTr("An ordinal variable that indicates how many sampling units are selected for each item and thus how many times the item should be counted in the evaluation.")
 	}
 	
 	AssignedVariablesList
 	{
-		id: 				stratum_indicator
-		name: 				"stratum"
-		title: 				qsTr("Stratum (optional)")
-		singleVariable: 	true
-		allowedColumns: 	["nominal", "nominalText", "ordinal"]
-		visible:			show_strata
-		info:				qsTr("A nominal variable that indicates to which subgroup (strata) of the population an item belongs.")
+		id: 			stratum_indicator
+		name: 			"stratum"
+		title: 			qsTr("Stratum (optional)")
+		singleVariable: true
+		allowedColumns: ["nominal", "nominalText", "ordinal"]
+		visible:		show_strata
+		info:			qsTr("A nominal variable that indicates to which subgroup (strata) of the population an item belongs.")
 	}
 }

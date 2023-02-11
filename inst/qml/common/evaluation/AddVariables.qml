@@ -26,7 +26,7 @@ Group
 {
 	readonly	property string		indicator_name:	indicator_col.value
 	readonly	property string		variable_name:	variable_col.value
-	property bool	enable:	true
+				property bool		enable:	true
 
 	enabled:		enable
 

@@ -48,7 +48,7 @@ Group
 			id:				critical_name
 			name: 			"critical_name"
 			text: 			qsTr("Column name")
-			fieldWidth: 	120 * preferencesModel.uiScale
+			fieldWidth: 120 * preferencesModel.uiScale
 			value: 			workflow ? qsTr("critical") : ""
 			visible:		workflow
 			info:			qsTr("Name for the column containing the critical item indicator to be added to the data set.")

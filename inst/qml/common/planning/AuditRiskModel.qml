@@ -44,7 +44,7 @@ Group
 		label: 					qsTr("Mapping")
 		values: [
 			{ label: qsTr("Default - \uD83C\uDF10"),	value: "jasp" },
-			{ label: qsTr("ADR - NL"),		value: "adr" }
+			{ label: qsTr("ADR - NL"),					value: "adr" }
 		]
 		info:					qsTr("A preset for the mapping of the risk categories low / medium / high to probabilities.")
 		debug:					true

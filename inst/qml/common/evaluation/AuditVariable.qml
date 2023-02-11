@@ -27,10 +27,10 @@ AssignedVariablesList
 	readonly	property bool	use_values:	audit_values.count > 0
 				property bool	binary:		false
 
-	id: 				audit_values
-	name: 				"values.audit"
-	title: 				binary ? qsTr("Audit Result (required)") : qsTr("Audit Values (required)")
-	singleVariable: 	true
-	allowedColumns: 	["nominal", "scale"]
-	info:				qsTr("A numeric variable that contains the audited (true) values of the items in the population, or a binary variable that contains a 0 (correct item) or a 1 (misstated item) for each row.")
+	id: 			audit_values
+	name: 			"values.audit"
+	title: 			binary ? qsTr("Audit Result (required)") : qsTr("Audit Values (required)")
+	singleVariable: true
+	allowedColumns: ["nominal", "scale"]
+	info:			qsTr("A numeric variable that contains the audited (true) values of the items in the population, or a binary variable that contains a 0 (correct item) or a 1 (misstated item) for each row.")
 }

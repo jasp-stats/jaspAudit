@@ -116,9 +116,10 @@ RadioButtonGroup
 		debug:				true
 	}
 
-	// HelpButton
-	// {
-	// 	toolTip: 			qsTr("Click to learn more about this method")
-	// 	helpPage:			"Audit/sieveSampling"
-	// }
+	HelpButton
+	{
+		toolTip: 			qsTr("Click to learn more about this method")
+		helpPage:			"Audit/sieveSampling"
+		visible:			false
+	}
 }
