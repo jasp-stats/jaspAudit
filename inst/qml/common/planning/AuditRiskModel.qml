@@ -41,10 +41,10 @@ Group
 		name: 					"armpreset"
 		indexDefaultValue: 	 	0
 		startValue:				"jasp"
-		label: 					qsTr("Preset")
+		label: 					qsTr("Mapping")
 		values: [
-			{ label: qsTr("JASP"),	value: "jasp" },
-			{ label: qsTr("ADR"),	value: "adr" }
+			{ label: qsTr("Default - \uD83C\uDF10"),	value: "jasp" },
+			{ label: qsTr("ADR - NL"),		value: "adr" }
 		]
 		info:					qsTr("A preset for the mapping of the risk categories low / medium / high to probabilities.")
 		debug:					true
