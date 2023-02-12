@@ -348,9 +348,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
     }
 
     state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
-    rows <- state[["object"]][["match"]][[as.character(options[["match"]])]]
-    tb[["row"]] <- rows
-    tb[["value"]] <- dataset[rows, options[["values"]]]
+    tb$setData(state[["object"]][["match"]][[as.character(options[["match"]])]])
   }
 }
 
