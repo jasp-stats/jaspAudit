@@ -340,11 +340,14 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
       return()
     }
 
-    if ((options[["digits"]] == "first" || options[["digits"]] == "last") && options[["match"]] > 9) {
-      tb$addFootnote(symbol = gettext("<b>Warning.</b>"), message = gettext("The requested digit must be in the range 1 - 9."))
-      return()
+    if (options[["digits"]] != "firsttwo" && options[["match"]] > 9) {
+      tb$addFootnote(gettext("The requested digit must be between 1 - 9."),
+                     symbol = gettext("<b>Warning.</b>"))
     } else if (options[["digits"]] == "firsttwo" && options[["match"]] < 10) {
-      tb$addFootnote(symbol = gettext("<b>Warning.</b>"), message = gettext("The requested digit must be in the range 10 - 99."))
+      tb$addFootnote(gettext("The requested digit must be between 10 - 99."),
+                     symbol = gettext("<b>Warning.</b>"))
+    } else {
+      tb$addFootnote(gettext("Values are rounded to the number of decimals set in the global preferences."))
     }
 
     state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
