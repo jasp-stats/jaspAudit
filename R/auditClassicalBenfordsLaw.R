@@ -347,7 +347,7 @@ jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
       tb$addFootnote(gettext("The requested digit must be between 10 - 99."),
                      symbol = gettext("<b>Warning.</b>"))
     } else {
-      tb$addFootnote(gettext("Values are rounded to the number of decimals set in the global preferences."))
+      tb$addFootnote(gettext("Displayed values are rounded to the number of decimals set in the global preferences."))
     }
 
     state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
