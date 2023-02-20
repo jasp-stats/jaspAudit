@@ -67,6 +67,8 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
   .jfaNumberBunchingAddConclusion(options, numberBunchingContainer, jaspResults, ready, position = 3)
 
   # ---
+
+  .jfaCreatedByText(jaspResults)
 }
 
 .jfaNumberBunchingDataCheck <- function(dataset, options) {
@@ -535,8 +537,6 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     "noSamples",
     "seed"
   ))
-
-  confidenceLabel <- paste0(round(options[["confidence"]] * 100, 2), "%")
 
   state <- .jfaNumberBunchingState(dataset = NULL, options, jaspResults, ready)
 

@@ -61,6 +61,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   .jfaBenfordsLawAddConclusion(options, benfordsLawContainer, jaspResults, ready, position = 5)
 
   # ---
+
+  .jfaCreatedByText(jaspResults)
 }
 
 .jfaBenfordsLawReadData <- function(dataset, options) {

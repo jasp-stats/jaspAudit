@@ -47,6 +47,8 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   .jfaEstimationCorrelationPlot(dataset, options, jaspResults, ready, position = 4)
 
   # ---
+
+  .jfaCreatedByText(jaspResults)
 }
 
 .jfaEstimationReadData <- function(dataset, options) {

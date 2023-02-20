@@ -21,4 +21,5 @@
 auditClassicalEvaluation <- function(jaspResults, dataset, options, ...) {
   # For the evaluation constituents, see auditCommonFunctions.R
   .jfaEvaluationStage(options, jaspResults, workflow = FALSE)
+  .jfaCreatedByText(jaspResults)
 }

@@ -3570,6 +3570,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
   return(result)
 }
 
+.jfaCreatedByText <- function(jaspResults) {
+  jaspResults[["createdBy"]] <- createJaspHtml(gettextf("Created by JASP for Audit (Version %1$s) on %2$s at %3$s.", .jaspVersion, format(Sys.time(), "%b %d %Y"), format(Sys.time(), "%X")), "p")
+  jaspResults[["createdBy"]]$position <- 99
+}
+
 ################################################################################
 ################## End functions ###############################################
 ################################################################################
