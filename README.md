@@ -10,7 +10,7 @@
 
 ## Articles
 
-In order to familiarize oneself with the Audit module, it is recommended to either download the manual via this [link](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf), or to view it online through this [link](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf). Further information regarding the Audit module can be obtained from the accompanying academic article published in the *Journal of Open-Source Software*, which can be accessed through the following [link](https://doi.org/10.21105/joss.02733).
+In order to familiarize oneself with the Audit module, it is recommended to either download the manual via this [link](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf), or to view it online through this [link](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf). A reference for the Audit module can be obtained from the accompanying academic article published in the *Journal of Open-Source Software*, which can be accessed through the following [link](https://doi.org/10.21105/joss.02733).
 
 ## R Package
 
