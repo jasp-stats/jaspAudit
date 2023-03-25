@@ -33,7 +33,7 @@ RadioButtonGroup
 	title: 			qsTr("Annotation")
 	enabled:		enable
 	columns:		2
-	info:			qsTr("")
+	info:			qsTr("Specify how to annotate your data set.")
 
 	RadioButton
 	{
@@ -42,7 +42,7 @@ RadioButtonGroup
 		name: 		"continuous"
 		checked:	enable_values
 		enabled: 	enable_values
-		info:		qsTr("")
+		info:		qsTr("Annotate the items in the selection with their audit (true) values. This approach is recommended (and automatically selected) when the items have a monetary value.")
 	}
 
 	HelpButton
@@ -58,7 +58,7 @@ RadioButtonGroup
 		name: 		"binary"
 		checked: 	!enable_values
 		enabled: 	enable_binary
-		info:		qsTr("")
+		info:		qsTr("Annotate the items in the selection with correct (0) or incorrect (1). This approach is recommended (and automatically selected) when your items do not have a monetary value.")
 	}
 
 	HelpButton
