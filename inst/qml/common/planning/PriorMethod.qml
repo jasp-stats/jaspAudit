@@ -43,13 +43,13 @@ Group
 		label: 				qsTr("Method")
 		values: use_materiality ? [
 			{ label: qsTr("Default"),			value: "default" },
-			{ label: qsTr("Manual"), 			value: "param" },
+			{ label: qsTr("Parameters"), 		value: "param" },
 			{ label: qsTr("Earlier sample"), 	value: "sample" },
 			{ label: qsTr("Impartial"), 		value: "impartial"},
 			{ label: qsTr("Risk assessments"), 	value: "arm"}
 		] : [
 			{ label: qsTr("Default"),			value: "default" },
-			{ label: qsTr("Manual"), 			value: "param" },
+			{ label: qsTr("Parameters"), 		value: "param" },
 			{ label: qsTr("Earlier sample"), 	value: "sample" }
 		]
 		info:				qsTr("Indicate the type of available audit information that should be incorporated into the prior distribution.")
