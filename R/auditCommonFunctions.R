@@ -86,12 +86,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
     jaspResults, stage = "procedure", positionInContainer = 1
   )
 
+  .jfaTableNumberInit(jaspResults) # Initialize table numbers
+
   # Create the audit risk model paragraph
   .jfaAddAuditRiskModel(options, jaspResults, position = 2)
 
   # --- TABLES
-
-  .jfaTableNumberInit(jaspResults) # Initialize table numbers
 
   # Create a table containing descriptive statistics for the book values
   .jfaTableBookDist(options, planningOptions, jaspResults, positionInContainer = 2)
@@ -719,7 +719,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     container$position <- position
     container$dependOn(options = c(
       "id", "values", "variables", "rank", "sampling_method", "units",
-      "start", "seed", "n", "randomize", "file", "randomStart"
+      "start", "seed", "n", "randomize", "file", "startMethod"
     ))
 
     jaspResults[["selectionContainer"]] <- container
@@ -736,7 +736,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         optionsFromObject = prevContainer,
         options = c(
           "samplingChecked", "units", "sampling_method", "seed",
-          "start", "variables", "rank", "separateMisstatement", "randomize", "randomStart"
+          "start", "variables", "rank", "separateMisstatement", "randomize", "startMethod"
         )
       )
 
@@ -1368,19 +1368,16 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
 .jfaAuditRiskModelCalculation <- function(options, jaspResults) {
   # Define the default settings for high, medium and low
-  if (options[["armpreset"]] == "jasp") {
-    tb <- data.frame(
-      category = c("High", "Medium", "Low"),
-      ir = c(1, 0.6, 0.36),
-      cr = c(1, 0.6, 0.36)
-    )
-  } else if (options[["armpreset"]] == "adr") {
-    tb <- data.frame(
-      category = c("High", "Medium", "Low"),
-      ir = c(1, 0.63, 0.40),
-      cr = c(1, 0.52, 0.34)
-    )
-  }
+  tb <- data.frame(
+    category = c("High", "Medium", "Low"),
+    ir = c(1, 0.6, 0.36),
+    cr = c(1, 0.6, 0.36)
+  )
+  # tb <- data.frame(
+  #   category = c("High", "Medium", "Low"),
+  #   ir = c(1, 0.63, 0.40),
+  #   cr = c(1, 0.52, 0.34)
+  # )
   # Read the risks from the options and the table
   ar <- 1 - options[["conf_level"]]
   ir <- switch(options[["ir"]],
@@ -1426,8 +1423,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "explanatoryText",
     "materiality_type",
     "min_precision_test",
-    "prior_method",
-    "armpreset"
+    "prior_method"
   ))
   jaspResults[["ARMcontainer"]] <- container
   # Get the risk assessment percentages from the options
@@ -1457,24 +1453,25 @@ gettextf <- function(fmt, ..., domain = NULL) {
   # Create and set the second paragraph of explanatory text
   if (options[["explanatoryText"]]) {
     if (options[["ir"]] == "custom" || options[["cr"]] == "custom") {
-      message2 <- gettext("The translation of High, Medium and Low to probabilities is done according custom preferences.")
+      message2 <- gettext("At least one translation of the categories High, Medium and Low to probabilities is done according custom settings.")
     } else {
-      message2 <- gettext("The translation of High, Medium and Low to probabilities is done using default values. To learn more about the choice of these values and how to adjust these, see the help file of this analysis or look under the <i>Audit Risk Model</i> section.")
+      message2 <- gettext("The translation of the categories High, Medium and Low to probabilities is done using the default settings shown in the table below. To learn more about these default settings and how to adjust them, see the help file of this analysis or look under the <i>Audit Risk Model</i> section.")
     }
     container[["paragraph2"]] <- createJaspHtml(message2, "p")
     container[["paragraph2"]]$position <- 3
   }
   # Create and set the table with the default settings
-  tb <- createJaspTable(title = gettext("Default Settings"))
-  tb$addColumnInfo(name = "category", title = "", type = "string")
-  tb$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = "string")
-  tb$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "string")
-  tb$position <- 4
-  tb$setData(risks$tb)
-  if (options[["armpreset"]] == "adr") {
-    tb$addFootnote(gettext("The default settings for the Audit Risk Model are based on <i>Handboek Auditing Rijksoverheid (2023)</i>."))
+  if (!(options[["ir"]] == "custom" && options[["cr"]] == "custom")) {
+    .jfaTableNumberUpdate(jaspResults)
+    tb <- createJaspTable(gettextf("<b>Table %1$i.</b> Default Settings Audit Risk Model", jaspResults[["tabNumber"]]$object))
+    tb$addColumnInfo(name = "category", title = "", type = "string")
+    tb$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = "string")
+    tb$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "string")
+    tb$position <- 4
+    tb$setData(risks$tb)
+    # tb$addFootnote(gettext("The default settings for the Audit Risk Model are based on <i>Handboek Auditing Rijksoverheid (2023)</i>."))
+    container[["table"]] <- tb
   }
-  container[["table"]] <- tb
 }
 
 ################################################################################
@@ -2129,16 +2126,16 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   if (options[["sampling_method"]] == "interval") {
     interval <- if (units == "items") length(dataset[[options[["id"]]]]) / prevState[["n"]] else sum(dataset[[options[["values"]]]]) / prevState[["n"]]
-    if (!options[["randomStart"]] && options[["start"]] > interval) {
+    if (options[["startMethod"]] == "fixedStart" && options[["start"]] > interval) {
       parentContainer$setError(gettextf("Starting point is outside the range of the selection interval of 1 to %1$s. Please choose a starting point < %1$s.", round(interval, 3)))
       return()
     }
   }
 
   start <- if (!is.null(prevState[["start"]])) prevState[["start"]] else options[["start"]]
-  if (options[["sampling_method"]] != "interval" || options[["randomize"]] || (options[["sampling_method"]] == "interval" && options[["randomStart"]])) {
+  if (options[["sampling_method"]] != "interval" || options[["randomize"]] || (options[["sampling_method"]] == "interval" && options[["startMethod"]] == "randomStart")) {
     set.seed(options[["seed"]])
-    if (options[["sampling_method"]] == "interval" && options[["randomStart"]]) {
+    if (options[["sampling_method"]] == "interval" && options[["startMethod"]] == "randomStart") {
       start <- sample(1:floor(interval), size = 1)
     }
   }
@@ -2182,7 +2179,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   message <- switch(options[["sampling_method"]],
-    "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected%3$s.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else if (!is.null(parentState[["start"]])) parentState[["start"]] else options[["start"]], if (options[["randomStart"]]) gettextf(" using seed %1$s", options[["seed"]]) else ""),
+    "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected%3$s.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else if (!is.null(parentState[["start"]])) parentState[["start"]] else options[["start"]], if (options[["startMethod"]] == "randomStart") gettextf(" using seed %1$s", options[["seed"]]) else ""),
     "cell" = gettextf("The sample is drawn with seed %1$s and intervals of size %2$s.", options[["seed"]], round(parentState[["interval"]], 2)),
     "random" = gettextf("The sample is drawn with seed %1$s.", options[["seed"]]),
     "sieve" = gettextf("The random numbers are generated with seed %1$s.", options[["seed"]])
@@ -3580,7 +3577,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 }
 
 .jfaCreatedByText <- function(jaspResults) {
-  jaspResults[["createdBy"]] <- createJaspHtml(gettextf("Audit report created by JASP for Audit (Version %1$s) on %2$s at %3$s.", .jaspVersion, format(Sys.time(), "%b %d %Y"), format(Sys.time(), "%X")), "p")
+  jaspResults[["createdBy"]] <- createJaspHtml(gettextf("Created by JASP for Audit (Version %1$s) on %2$s at %3$s.", .jaspVersion, format(Sys.time(), "%b %d %Y"), format(Sys.time(), "%X")), "p")
   jaspResults[["createdBy"]]$position <- 99
 }
 

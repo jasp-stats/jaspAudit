@@ -12,7 +12,7 @@ options$export_sample <- FALSE
 options$file <- ""
 options$units <- "values"
 options$sampling_method <- "interval"
-options$randomStart <- FALSE
+options$startMethod <- "fixedStart"
 options$randomize <- FALSE
 options$rank <- ""
 options$tableDescriptives <- FALSE

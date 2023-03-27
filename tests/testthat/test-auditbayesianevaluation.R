@@ -41,7 +41,6 @@ options$plotEstimates <- FALSE
 options$plotScatter <- FALSE
 options$tableCorrections <- FALSE
 options$display <- "number"
-options$armpreset <- "jasp"
 set.seed(1)
 dataset <- NULL
 results <- jaspTools::runAnalysis("auditBayesianEvaluation", dataset, options)
@@ -127,7 +126,6 @@ options$tableAssumptions <- FALSE
 options$expected_rel_val <- 0
 options$min_precision_test <- FALSE
 options$explanatoryText <- TRUE
-options$armpreset <- "jasp"
 set.seed(1)
 results <- jaspTools::runAnalysis("auditBayesianEvaluation", "auditRattle.csv", options)
 
@@ -214,7 +212,6 @@ options$plotPosteriorPredictive <- FALSE
 options$plotEstimates <- FALSE
 options$plotScatter <- FALSE
 options$tableCorrections <- FALSE
-options$armpreset <- "jasp"
 set.seed(1)
 results <- jaspTools::runAnalysis("auditBayesianEvaluation", "test-auditClassicalWorkflow.csv", options)
 

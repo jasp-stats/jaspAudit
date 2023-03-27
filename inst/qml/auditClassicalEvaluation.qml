@@ -43,7 +43,7 @@ Form
 	IntegerField { name: "max"; defaultValue: 5000; visible: false }
 
 	// Visible options
-	Evaluation.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample; show_strata: true }
+	Evaluation.EvaluationVariablesList { id: variables; use_population: data.use_population; use_sample: data.use_sample; show_strata: false }
 	Planning.SamplingObjectives { id: objectives }
 	Evaluation.DataType { id: data }
 	Planning.Population { id: population; optional: !objectives.absolute_materiality; enable: !data.use_population; show_items: true }

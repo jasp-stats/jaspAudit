@@ -64,7 +64,6 @@ Group
 		{
 			text: 			qsTr("Compare sample sizes")
 			name: 			"plotSampleSizes"
-			debug:			true
 			info:			qsTr("Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.")
 		}
 

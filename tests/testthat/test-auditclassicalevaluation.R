@@ -32,7 +32,6 @@ options$tableTaints <- FALSE
 options$tableCorrections <- FALSE
 options$plotEstimates <- FALSE
 options$plotScatter <- FALSE
-options$armpreset <- "jasp"
 set.seed(1)
 dataset <- NULL
 results <- jaspTools::runAnalysis("auditClassicalEvaluation", dataset, options)
@@ -90,7 +89,6 @@ options$tableTaints <- FALSE
 options$expected_rel_val <- 0
 options$min_precision_test <- FALSE
 options$explanatoryText <- TRUE
-options$armpreset <- "jasp"
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalEvaluation", "auditRattle.csv", options)
 
@@ -149,7 +147,6 @@ options$tableAssumptions <- FALSE
 options$plotEstimates <- FALSE
 options$plotScatter <- FALSE
 options$tableCorrections <- FALSE
-options$armpreset <- "jasp"
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalEvaluation", "test-auditClassicalWorkflow.csv", options)
 

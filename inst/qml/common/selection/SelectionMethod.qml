@@ -32,94 +32,107 @@ RadioButtonGroup
 				property bool	force_interval:		false
 				property bool	enable_sieve:		false
 
-	id: 					method
-	title:					qsTr("Selection Method")
-	name: 					"sampling_method"
-	columns:				2
-	enabled:				enable
-	info:					qsTr("Choose the method by which sampling units are selected from the population.")
+	id: 							method
+	title:							qsTr("Selection Method")
+	name: 							"sampling_method"
+	columns:						2
+	enabled:						enable
+	info:							qsTr("Choose the method by which sampling units are selected from the population.")
 
 	RadioButton
 	{
-		id: 				interval
-		text: 				qsTr("Fixed interval sampling")
-		name: 				"interval"
-		checked: 			true
-		info:				qsTr("Performs selection by dividing the population in equal intervals and selecting a fixed unit in each interval. Any item with a value larger than the interval will always be included in the sample.")
+		id: 						interval
+		text: 						qsTr("Fixed interval sampling")
+		name: 						"interval"
+		checked: 					true
+		info:						qsTr("Performs selection by dividing the population in equal intervals and selecting a fixed unit in each interval. Any item with a value larger than the interval will always be included in the sample.")
 
-		IntegerField
+		RadioButtonGroup
 		{
-			id: 			start
-			text: 			qsTr("Starting point")
-			name: 			"start"
-			defaultValue: 	1
-			min: 			1
-			visible:		interval.checked
-			enabled:		!force_interval && !randomize.checked
-			info:			qsTr("Selects which sampling unit is selected from each interval.")
+			name:					"startMethod"
+			text:					qsTr("Starting point")
+			info:					qsTr("Selects which sampling unit is selected from each interval.")
+			visible:				interval.checked
+			enabled:				!force_interval
+
+			RadioButton
+			{
+				text: 				qsTr("User-specified")
+				name: 				"fixedStart"
+				info:				qsTr("Set a starting point using to a user-specified value.")
+				checked:			true
+				childrenOnSameRow: 	true
+				
+				IntegerField
+				{
+					id: 			start
+					name: 			"start"
+					defaultValue: 	1
+					min: 			1
+					info:			qsTr("Selects which sampling unit is selected from each interval.")
+				}
+			}
+
+			RadioButton
+			{
+				id:					randomize
+				text: 				qsTr("Random")
+				name: 				"randomStart"
+				info:				qsTr("Set a starting point via random number generation according to a user-specified seed.")
+			}
 		}
-
-		CheckBox
-		{
-			id:				randomize
-			text: 			qsTr("Random")
-			name: 			"randomStart"
-			visible:		interval.checked
-			enabled:		!force_interval
-			info:			qsTr("Set the starting point randomly according to the specified seed.")
-		}
 	}
 
 	HelpButton
 	{
-		toolTip: 			qsTr("Click to learn more about this method")
-		helpPage:			"Audit/fixedIntervalSampling"
+		toolTip: 					qsTr("Click to learn more about this method")
+		helpPage:					"Audit/fixedIntervalSampling"
 	}
 
 	RadioButton
 	{
-		id: 				cell
-		text: 				qsTr("Cell sampling")
-		name: 				"cell"
-		enabled:			!force_interval
-		info:				qsTr("Performs selection by dividing the population in equal intervals and selecting a variable unit in each interval. Any item with a value larger than twice the interval will always be included in the sample.")
+		id: 						cell
+		text: 						qsTr("Cell sampling")
+		name: 						"cell"
+		enabled:					!force_interval
+		info:						qsTr("Performs selection by dividing the population in equal intervals and selecting a variable unit in each interval. Any item with a value larger than twice the interval will always be included in the sample.")
 	}
 
 	HelpButton
 	{
-		toolTip: 			qsTr("Click to learn more about this method")
-		helpPage:			"Audit/cellSampling"
+		toolTip: 					qsTr("Click to learn more about this method")
+		helpPage:					"Audit/cellSampling"
 	}
 
 	RadioButton
 	{
-		id: 				random
-		text: 				qsTr("Random sampling")
-		name: 				"random"
-		enabled:			!force_interval
-		info:				qsTr("Performs random selection in which each sampling unit has an equal chance of being selected.")
+		id: 						random
+		text: 						qsTr("Random sampling")
+		name: 						"random"
+		enabled:					!force_interval
+		info:						qsTr("Performs random selection in which each sampling unit has an equal chance of being selected.")
 	}
 
 	HelpButton
 	{
-		toolTip: 			qsTr("Click to learn more about this method")
-		helpPage:			"Audit/randomSampling"
+		toolTip: 					qsTr("Click to learn more about this method")
+		helpPage:					"Audit/randomSampling"
 	}
 
 	RadioButton
 	{
-		id: 				sieve
-		text: 				qsTr("Modified sieve sampling")
-		name: 				"sieve"
-		enabled:			!force_interval && enable_sieve
-		info:				qsTr("Performs modified sieve sampling.")
-		debug:				true
+		id: 						sieve
+		text: 						qsTr("Modified sieve sampling")
+		name: 						"sieve"
+		enabled:					!force_interval && enable_sieve
+		info:						qsTr("Performs modified sieve sampling.")
+		debug:						true
 	}
 
 	HelpButton
 	{
-		toolTip: 			qsTr("Click to learn more about this method")
-		helpPage:			"Audit/sieveSampling"
-		visible:			false
+		toolTip: 					qsTr("Click to learn more about this method")
+		helpPage:					"Audit/sieveSampling"
+		visible:					false
 	}
 }

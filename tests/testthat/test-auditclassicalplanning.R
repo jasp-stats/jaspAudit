@@ -21,7 +21,6 @@ options$plotErrorDist <- TRUE
 options$materiality_type <- "materiality_rel"
 options$expected_type <- "expected_rel"
 options$likelihood <- "binomial"
-options$armpreset <- "jasp"
 set.seed(1)
 dataset <- NULL
 results <- jaspTools::runAnalysis("auditClassicalPlanning", dataset, options)
@@ -76,7 +75,6 @@ options$plotSampleSizes <- FALSE
 options$display <- "number"
 options$expected_type <- "expected_rel"
 options$likelihood <- "poisson"
-options$armpreset <- "jasp"
 set.seed(1)
 dataset <- NULL
 results <- jaspTools::runAnalysis("auditClassicalPlanning", dataset, options)
@@ -119,7 +117,6 @@ options$max <- 5000
 options$by <- 1
 options$expected_type <- "expected_rel"
 options$likelihood <- "hypergeometric"
-options$armpreset <- "jasp"
 set.seed(1)
 dataset <- NULL
 results <- jaspTools::runAnalysis("auditClassicalPlanning", dataset, options)

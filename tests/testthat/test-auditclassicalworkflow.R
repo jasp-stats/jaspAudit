@@ -25,7 +25,7 @@ options$materiality_type <- "materiality_abs"
 options$plotBookDist <- TRUE
 options$plotObjectives <- TRUE
 options$plotScatter <- FALSE
-options$randomStart <- FALSE
+options$startMethod <- "fixedStart"
 options$rank <- ""
 options$randomize <- FALSE
 options$start <- 1
@@ -51,7 +51,6 @@ options$tableAssumptions <- FALSE
 options$plotEstimates <- FALSE
 options$tableCorrections <- FALSE
 options$plotErrorDist <- FALSE
-options$armpreset <- "jasp"
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalWorkflow", "test-workflow.csv", options)
 

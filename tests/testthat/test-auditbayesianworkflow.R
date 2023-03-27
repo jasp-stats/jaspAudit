@@ -31,7 +31,7 @@ options$plotPosterior <- TRUE
 options$plotPrior <- TRUE
 options$plotScatter <- FALSE
 options$prior_method <- "default"
-options$randomStart <- FALSE
+options$startMethod <- "fixedStart"
 options$start <- 1
 options$indicator_col <- "SelectionResult"
 options$sampling_method <- "interval"
@@ -60,7 +60,6 @@ options$plotPriorPredictive <- FALSE
 options$plotPosteriorPredictive <- FALSE
 options$plotEstimates <- FALSE
 options$tableCorrections <- FALSE
-options$armpreset <- "jasp"
 set.seed(1)
 results <- jaspTools::runAnalysis("auditBayesianWorkflow", "test-workflow.csv", options)
 
