@@ -429,7 +429,7 @@ Form
 				}
 			}
 
-			Evaluation.IntervalType { bayesian: true }
+			Evaluation.IntervalType { bayesian: true; test: objectives.use_materiality }
 		}
 
 		Item

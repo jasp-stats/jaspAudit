@@ -485,7 +485,7 @@ Form
 				}
 			}
 
-			Evaluation.IntervalType { id: interval; bayesian: false; enable: !stringer.checked }
+			Evaluation.IntervalType { id: interval; bayesian: false; enable: !stringer.checked; test: objectives.use_materiality }
 		}
 
 		Item

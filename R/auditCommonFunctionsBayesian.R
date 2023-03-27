@@ -122,13 +122,29 @@
       text_right <- jaspGraphs:::draw2Lines(c(label_ub, label_mode), x = 1, align = "right")
 
       if (options[["materiality_test"]] && !is.na(parentState[["posterior"]]$hypotheses$bf.h1)) {
-		lab1 <- switch(options[["area"]], "less" = "BF\u208A\u208B", "two.sided" = "BF\u2080\u2081", "greater" = "BF\u208B\u208A")
+        lab1 <- switch(options[["area"]],
+          "less" = "BF\u208A\u208B",
+          "two.sided" = "BF\u2080\u2081",
+          "greater" = "BF\u208B\u208A"
+        )
         lab1 <- paste0(lab1, " = ", formatC(parentState[["posterior"]]$hypotheses$bf.h0, 3, format = "f"))
-		lab2 <- switch(options[["area"]], "less" = "BF\u208B\u208A", "two.sided" = "BF\u2081\u2080", "greater" = "BF\u208A\u208B")
+        lab2 <- switch(options[["area"]],
+          "less" = "BF\u208B\u208A",
+          "two.sided" = "BF\u2081\u2080",
+          "greater" = "BF\u208A\u208B"
+        )
         lab2 <- paste0(lab2, " = ", formatC(parentState[["posterior"]]$hypotheses$bf.h1, 3, format = "f"))
         text_left <- jaspGraphs:::draw2Lines(c(lab1, lab2), x = 0.65, align = "center")
-		subscripts <- switch(options[["area"]], "less" = c("-+", "+-"), "two.sided" = c("01", "10"), "greater" = c("+-", "-+"))
-		txts <- switch(options[["area"]], "less" = c("data | H+", "data | H-"), "two.sided" = c("data | H0", "data | H1"), "greater" = c("data | H-", "data | H+"))
+        subscripts <- switch(options[["area"]],
+          "less" = c("-+", "+-"),
+          "two.sided" = c("01", "10"),
+          "greater" = c("+-", "-+")
+        )
+        txts <- switch(options[["area"]],
+          "less" = c("data | H+", "data | H-"),
+          "two.sided" = c("data | H0", "data | H1"),
+          "greater" = c("data | H-", "data | H+")
+        )
         tmp <- jaspGraphs:::makeBFwheelAndText(BF = parentState[["posterior"]]$hypotheses$bf.h1, bfSubscripts = subscripts, pizzaTxt = txts, drawPizzaTxt = TRUE, bfType = "BF10")
         plot_middle <- tmp$gWheel
       } else {
@@ -252,7 +268,7 @@
 
     tb$addColumnInfo(name = "v", title = "", type = "string")
     tb$addColumnInfo(name = "form", title = gettext("Functional form"), type = "string")
-    if (options[["materiality_test"]]) {
+    if (options[["materiality_test"]] && options[["area"]] != "two.sided") {
       tb$addColumnInfo(name = "hMin", title = gettextf("Support %1$s", "H\u208B"), type = "number")
       tb$addColumnInfo(name = "hPlus", title = gettextf("Support %1$s", "H\u208A"), type = "number")
       tb$addColumnInfo(name = "odds", title = gettextf("Ratio %1$s", "<sup>H\u208B</sup>&frasl;<sub>H\u208A</sub>"), type = "number")
@@ -284,13 +300,6 @@
     }
 
     likelihood <- if (stage == "planning") parentState[["likelihood"]] else parentState[["method"]]
-
-    if (options[["materiality_test"]] && likelihood != "hypergeometric") {
-      tb$addFootnote(message = gettextf("%1$s %2$s vs. %3$s %2$s.", "H\u208B: \u03B8 <", round(parentState[["materiality"]], 3), "H\u208A: \u03B8 >"))
-    }
-    if (options[["materiality_test"]] && likelihood == "hypergeometric") {
-      tb$addFootnote(message = gettextf("%1$s %2$s vs. %3$s %2$s.", "H\u208B: \u03B8 <", ceiling(parentState[["materiality"]] * parentState[["N.units"]]), "H\u208A: \u03B8 >="))
-    }
 
     N <- parentState[["N.units"]]
     prior <- parentState[["prior"]]
@@ -328,6 +337,11 @@
         hPlus = c(prior[["hypotheses"]][["p.h0"]], posterior[["hypotheses"]][["p.h0"]], posterior[["hypotheses"]][["p.h0"]] / prior[["hypotheses"]][["p.h0"]]),
         odds = c(prior[["hypotheses"]][["odds.h1"]], posterior[["hypotheses"]][["odds.h1"]], posterior[["hypotheses"]][["bf.h1"]])
       )
+      if (likelihood != "hypergeometric") {
+        tb$addFootnote(message = gettextf("%1$s %2$s vs. %3$s %2$s.", "H\u208B: \u03B8 <", round(parentState[["materiality"]], 3), "H\u208A: \u03B8 >"))
+      } else {
+        tb$addFootnote(message = gettextf("%1$s %2$s vs. %3$s %2$s.", "H\u208B: \u03B8 <", ceiling(parentState[["materiality"]] * parentState[["N.units"]]), "H\u208A: \u03B8 >="))
+      }
     }
 
     tb$addRows(rows)
