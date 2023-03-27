@@ -122,10 +122,14 @@
       text_right <- jaspGraphs:::draw2Lines(c(label_ub, label_mode), x = 1, align = "right")
 
       if (options[["materiality_test"]] && !is.na(parentState[["posterior"]]$hypotheses$bf.h1)) {
-        lab1 <- paste0("BF\u208A\u208B = ", formatC(parentState[["posterior"]]$hypotheses$bf.h0, 3, format = "f"))
-        lab2 <- paste0("BF\u208B\u208A = ", formatC(parentState[["posterior"]]$hypotheses$bf.h1, 3, format = "f"))
+		lab1 <- switch(options[["area"]], "less" = "BF\u208A\u208B", "two.sided" = "BF\u2080\u2081", "greater" = "BF\u208B\u208A")
+        lab1 <- paste0(lab1, " = ", formatC(parentState[["posterior"]]$hypotheses$bf.h0, 3, format = "f"))
+		lab2 <- switch(options[["area"]], "less" = "BF\u208B\u208A", "two.sided" = "BF\u2081\u2080", "greater" = "BF\u208A\u208B")
+        lab2 <- paste0(lab2, " = ", formatC(parentState[["posterior"]]$hypotheses$bf.h1, 3, format = "f"))
         text_left <- jaspGraphs:::draw2Lines(c(lab1, lab2), x = 0.65, align = "center")
-        tmp <- jaspGraphs:::makeBFwheelAndText(BF = parentState[["posterior"]]$hypotheses$bf.h1, bfSubscripts = c("-+", "+-"), pizzaTxt = c("data | H-", "data | H+"), drawPizzaTxt = TRUE, bfType = "BF10")
+		subscripts <- switch(options[["area"]], "less" = c("-+", "+-"), "two.sided" = c("01", "10"), "greater" = c("+-", "-+"))
+		txts <- switch(options[["area"]], "less" = c("data | H+", "data | H-"), "two.sided" = c("data | H0", "data | H1"), "greater" = c("data | H-", "data | H+"))
+        tmp <- jaspGraphs:::makeBFwheelAndText(BF = parentState[["posterior"]]$hypotheses$bf.h1, bfSubscripts = subscripts, pizzaTxt = txts, drawPizzaTxt = TRUE, bfType = "BF10")
         plot_middle <- tmp$gWheel
       } else {
         plot_middle <- text_left <- ggplot2::ggplot() +

@@ -576,9 +576,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
       dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
     }
     dataset[[id]] <- as.character(dataset[[id]])
-    # if (stage == "evaluation" && !is.null(times) && !is.null(id) && !is.null(values.audit)) { # Apply sample filter only when required variables are given
-    #   dataset <- subset(dataset, dataset[[times]] > 0)
-    # }
+    if (stage == "evaluation" && !is.null(times) && !is.null(id) && !is.null(values.audit)) { # Apply sample filter only when required variables are given
+      dataset <- subset(dataset, dataset[[times]] > 0)
+    }
     return(dataset)
   } else {
     return(NULL)
@@ -1201,7 +1201,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         }
       }
 
-      additionalMessage <- if (approveMateriality && approvePrecision) gettext("\n\n<b>Objectives:</b> You have achieved your initial sampling objectives.") else gettext("\n\n<b>Objectives:</b> You have not achieved your initial sampling objectives. It is recommended to draw more samples from this population and continue audit procedures.")
+      additionalMessage <- if (approveMateriality && approvePrecision) gettext("\n\n<b>Objectives:</b> You have achieved your initial sampling objectives.") else gettext("\n\n<b>Objectives:</b> You have not achieved your initial sampling objectives.")
 
       if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
         message <- gettextf(
@@ -2714,7 +2714,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (options[["area"]] == "less") {
     table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round((1 - alpha) * 100, 2)), type = columnType)
   } else if (options[["area"]] == "greater") {
-    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", round(alpha * 100, 2)), type = columnType)
+    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", round((1 - alpha) * 100, 2)), type = columnType)
   } else {
     uppertitle <- round((1 - (1 - (1 - alpha)) / 2) * 100, 2)
     table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - uppertitle), type = columnType)
@@ -2857,29 +2857,39 @@ gettextf <- function(fmt, ..., domain = NULL) {
 }
 
 .jfaTableStratum <- function(options, sample, parentState, parentContainer, jaspResults, positionInContainer = 3) {
-  if (options[["id"]] == "" || options[["stratum"]] == "" || !is.null(parentContainer[["tableStratum"]])) {
+  if (options[["id"]] == "" || options[["stratum"]] == "" || !is.null(parentContainer[["tableStratum"]]) || options[["dataType"]] == "stats") {
     return()
   }
 
   .jfaTableNumberUpdate(jaspResults)
 
-  title <- gettextf("<b>Table %1$i.</b> Stratum Summary", jaspResults[["tabNumber"]]$object)
+  title <- gettextf("<b>Table %1$i.</b> Stratum Evaluation Summary", jaspResults[["tabNumber"]]$object)
   tb <- createJaspTable(title)
   tb$position <- positionInContainer
-  tb$transpose <- TRUE
 
-  tb$addColumnInfo(name = "stratum", title = "", type = "string")
+  if (!options[["bayesian"]]) {
+    alpha <- .jfaAuditRiskModelCalculation(options)[["dr"]]
+  } else {
+    alpha <- 1 - options[["conf_level"]]
+  }
+
+  tb$addColumnInfo(name = "stratum", title = gettext("Stratum"), type = "string")
   tb$addColumnInfo(name = "n", title = gettext("Sample size"), type = "integer")
   tb$addColumnInfo(name = "k", title = gettext("Misstatements"), type = "integer")
   tb$addColumnInfo(name = "t", title = gettext("Taint"), type = "number")
   tb$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = "number")
-  if (options[["area"]] == "less") {
-    ubtitle <- round(options[["conf_level"]] * 100, 2)
-    tb$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = "number")
-  } else {
-    ubtitle <- round((1 - (1 - options[["conf_level"]]) / 2) * 100, 2)
-    tb$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - ubtitle), type = "number")
-    tb$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = "number")
+  if (options[["area"]] == "less" || options[["area"]] == "greater") {
+    ubtitle <- round((1 - alpha) * 100, 2)
+    if (options[["area"]] == "less") {
+      tb$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", ubtitle), type = "number")
+    } else {
+      tb$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", ubtitle), type = "number")
+    }
+  } else if (options[["area"]] == "two.sided") {
+    overtitle <- gettextf("%1$s%% Interval", round((1 - alpha) * 100, 2))
+    ubtitle <- round((1 - (1 - alpha) / 2) * 100, 2)
+    tb$addColumnInfo(name = "lb", title = gettext("Lower"), type = "number", overtitle = overtitle)
+    tb$addColumnInfo(name = "ub", title = gettextf("Upper"), type = "number", overtitle = overtitle)
   }
   tb$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
   parentContainer[["tableStratum"]] <- tb
@@ -2893,10 +2903,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
   tb[["k"]] <- parentState[["strata"]]$x
   tb[["t"]] <- parentState[["strata"]]$t
   tb[["mle"]] <- parentState[["strata"]]$mle
-  if (options[["area"]] == "two.sided") {
+  if (options[["area"]] == "two.sided" || options[["area"]] == "greater") {
     tb[["lb"]] <- parentState[["strata"]]$lb
   }
-  tb[["ub"]] <- parentState[["strata"]]$ub
+  if (options[["area"]] == "two.sided" || options[["area"]] == "less") {
+    tb[["ub"]] <- parentState[["strata"]]$ub
+  }
   tb[["precision"]] <- parentState[["strata"]]$precision
 }
 
