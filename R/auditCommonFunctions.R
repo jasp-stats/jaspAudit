@@ -1366,50 +1366,52 @@ gettextf <- function(fmt, ..., domain = NULL) {
 ################## Common functions for the Audit Risk Model ###################
 ################################################################################
 
-.jfaAuditRiskModelCalculation <- function(options) {
-  # Audit risk 		= Inherent risk x Control risk x Detection risk
-  # Detection risk 	= Audit risk / (Inherent risk x Control risk)
-  ar <- 1 - options[["conf_level"]]
+.jfaAuditRiskModelCalculation <- function(options, jaspResults) {
+  # Define the default settings for high, medium and low
   if (options[["armpreset"]] == "jasp") {
-    ir <- switch(options[["ir"]],
-      "high" = 1,
-      "medium" = 0.60,
-      "low" = 0.36,
-      "custom" = options[["irCustom"]]
-    )
-    cr <- switch(options[["cr"]],
-      "high" = 1,
-      "medium" = 0.60,
-      "low" = 0.36,
-      "custom" = options[["crCustom"]]
+    tb <- data.frame(
+      category = c("High", "Medium", "Low"),
+      ir = c(1, 0.6, 0.36),
+      cr = c(1, 0.6, 0.36)
     )
   } else if (options[["armpreset"]] == "adr") {
-    ir <- switch(options[["ir"]],
-      "high" = 1,
-      "medium" = 0.50,
-      "low" = 0.20,
-      "custom" = options[["irCustom"]]
-    )
-    cr <- switch(options[["cr"]],
-      "high" = 1,
-      "medium" = 0.50,
-      "low" = 0.20,
-      "custom" = options[["crCustom"]]
+    tb <- data.frame(
+      category = c("High", "Medium", "Low"),
+      ir = c(1, 0.63, 0.40),
+      cr = c(1, 0.52, 0.34)
     )
   }
+  # Read the risks from the options and the table
+  ar <- 1 - options[["conf_level"]]
+  ir <- switch(options[["ir"]],
+    "high" = tb[1, 2],
+    "medium" = tb[2, 2],
+    "low" = tb[3, 2],
+    "custom" = options[["irCustom"]]
+  )
+  cr <- switch(options[["cr"]],
+    "high" = tb[1, 3],
+    "medium" = tb[2, 3],
+    "low" = tb[3, 3],
+    "custom" = options[["crCustom"]]
+  )
+  # Formulate decimal values as percentages
+  tb$ir <- paste0(round(tb$ir * 100, 4), "%")
+  tb$cr <- paste0(round(tb$cr * 100, 4), "%")
+  # Audit risk 		= Inherent risk x Control risk x Detection risk
+  # Detection risk 	= Audit risk / (Inherent risk x Control risk)
   dr <- ar / (ir * cr)
-  return(list(ar = ar, ir = ir, cr = cr, dr = dr))
+  return(list(ar = ar, ir = ir, cr = cr, dr = dr, tb = tb))
 }
 
 .jfaAddAuditRiskModel <- function(options, jaspResults, position) {
   if (!is.null(jaspResults[["ARMcontainer"]]) || (!options[["materiality_test"]] && !options[["min_precision_test"]])) {
     return()
   }
-
   if (options[["prior_method"]] != "arm" || !options[["materiality_test"]]) {
     return()
   }
-
+  # Create the container that holds the results
   container <- createJaspContainer(title = gettext("<u>Audit Risk Model</u>"))
   container$position <- position
   container$dependOn(options = c(
@@ -1424,24 +1426,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "explanatoryText",
     "materiality_type",
     "min_precision_test",
-    "prior_method"
+    "prior_method",
+    "armpreset"
   ))
-
   jaspResults[["ARMcontainer"]] <- container
-
+  # Get the risk assessment percentages from the options
   risks <- .jfaAuditRiskModelCalculation(options)
-
-  textARM <- gettextf(
-    "Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x Detection risk (%4$s%%)",
-    round(risks[["ar"]] * 100, 2),
-    if (options[["explanatoryText"]]) paste0(options[["ir"]], " = ", round(risks[["ir"]] * 100, 2)) else round(risks[["ir"]] * 100, 2),
-    if (options[["explanatoryText"]]) paste0(options[["cr"]], " = ", round(risks[["cr"]] * 100, 2)) else round(risks[["cr"]] * 100, 2),
-    round(risks[["dr"]] * 100, 2)
-  )
-
-  container[["formula"]] <- createJaspHtml(textARM, "h3", "21cm")
-  container[["formula"]]$position <- 2
-
+  # Create and set the first paragraph of explanatory text
   if (options[["explanatoryText"]]) {
     message <- gettextf(
       "The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk and control risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be %1$s. The internal control risk was determined to be %2$s. According to the Audit Risk Model, the required detection risk to maintain an audit risk of %3$s should be %4$s.",
@@ -1450,22 +1441,40 @@ gettextf <- function(fmt, ..., domain = NULL) {
       paste0(round(risks[["ar"]] * 100, 2), "%"),
       paste0(round(risks[["dr"]] * 100, 2), "%")
     )
-
-    if (options[["ir"]] == "custom" || options[["cr"]] == "custom") {
-      message <- gettextf(
-        "%1$s\n\nThe translation of High, Medium and Low to probabilities is done according custom preferences.",
-        message
-      )
-    } else {
-      message <- gettextf(
-        "%1$s\n\nThe translation of High, Medium and Low to probabilities is done using default values. To learn more about the choice of these values and how to adjust these, see the help file of this analysis or look under the <i>Audit Risk Model</i> section.",
-        message
-      )
-    }
-
     container[["paragraph"]] <- createJaspHtml(message, "p")
     container[["paragraph"]]$position <- 1
   }
+  # Create and set the formula
+  textARM <- gettextf(
+    "Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x Detection risk (%4$s%%)",
+    round(risks[["ar"]] * 100, 2),
+    paste0(options[["ir"]], " = ", round(risks[["ir"]] * 100, 2)),
+    paste0(options[["cr"]], " = ", round(risks[["cr"]] * 100, 2)),
+    round(risks[["dr"]] * 100, 2)
+  )
+  container[["formula"]] <- createJaspHtml(textARM, "h5", "21cm")
+  container[["formula"]]$position <- 2
+  # Create and set the second paragraph of explanatory text
+  if (options[["explanatoryText"]]) {
+    if (options[["ir"]] == "custom" || options[["cr"]] == "custom") {
+      message2 <- gettext("The translation of High, Medium and Low to probabilities is done according custom preferences.")
+    } else {
+      message2 <- gettext("The translation of High, Medium and Low to probabilities is done using default values. To learn more about the choice of these values and how to adjust these, see the help file of this analysis or look under the <i>Audit Risk Model</i> section.")
+    }
+    container[["paragraph2"]] <- createJaspHtml(message2, "p")
+    container[["paragraph2"]]$position <- 3
+  }
+  # Create and set the table with the default settings
+  tb <- createJaspTable(title = gettext("Default Settings"))
+  tb$addColumnInfo(name = "category", title = "", type = "string")
+  tb$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = "string")
+  tb$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "string")
+  tb$position <- 4
+  tb$setData(risks$tb)
+  if (options[["armpreset"]] == "adr") {
+    tb$addFootnote(gettext("The default settings for the Audit Risk Model are based on <i>Handboek Auditing Rijksoverheid (2023)</i>."))
+  }
+  container[["table"]] <- tb
 }
 
 ################################################################################
@@ -1870,8 +1879,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
           ggplot2::geom_bar(stat = "identity", col = "black", size = 1) +
           ggplot2::scale_y_continuous(name = gettext("Minimum sample size"), breaks = yBreaks, limits = yLimits) +
           ggplot2::coord_flip() +
-          ggplot2::annotate("text", y = k, x = length(n):1, label = k, size = 6, vjust = 0.5, hjust = -0.25) +
-          ggplot2::annotate("text", y = n, x = length(n):1, label = n, size = 6, vjust = 0.5, hjust = -0.75) +
+          ggplot2::annotate("text", y = k, x = rev(seq_along(n)), label = k, size = 6, vjust = 0.5, hjust = -0.25) +
+          ggplot2::annotate("text", y = n, x = rev(seq_along(n)), label = n, size = 6, vjust = 0.5, hjust = -0.75) +
           ggplot2::xlab("") +
           ggplot2::labs(fill = "") +
           ggplot2::scale_fill_manual(values = c("#7FE58B", "#FF6666"), guide = ggplot2::guide_legend(reverse = TRUE)) +
@@ -1908,7 +1917,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           # Create a prior distribution that incorporates the existing information
           prior <- jfa::auditPrior(
             conf.level = options[["conf_level"]], materiality = materiality, expected = parentOptions[["expected_val"]],
-            likelihood = options[["likelihood"]], N.units = N, ir = ir, cr = cr, method = options[["prior_method"]],
+            likelihood = options[["likelihood"]], N.units = N, ir = risks[["ir"]], cr = risks[["cr"]], method = options[["prior_method"]],
             n = options[["n_prior"]], x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
           )
         } else {
@@ -3571,7 +3580,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 }
 
 .jfaCreatedByText <- function(jaspResults) {
-  jaspResults[["createdBy"]] <- createJaspHtml(gettextf("Created by JASP for Audit (Version %1$s) on %2$s at %3$s.", .jaspVersion, format(Sys.time(), "%b %d %Y"), format(Sys.time(), "%X")), "p")
+  jaspResults[["createdBy"]] <- createJaspHtml(gettextf("Audit report created by JASP for Audit (Version %1$s) on %2$s at %3$s.", .jaspVersion, format(Sys.time(), "%b %d %Y"), format(Sys.time(), "%X")), "p")
   jaspResults[["createdBy"]]$position <- 99
 }
 

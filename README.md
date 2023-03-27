@@ -6,15 +6,15 @@
 
 # The Audit Module
 
-**JASP for Audit** (also known as to as the Audit module) is an add-on module for JASP that streamlines the process of statistical auditing. The Audit module offers a range of functionalities, including planning, executing, evaluating, and documenting statistical audit samples. Specifically, it comprises analysis tools for determining sample sizes, selecting items using standard audit sampling methododology, and inferring the population misstatement based on the sample data or the summary statistics of the sample. The Audit module also includes Bayesian equivalents of these analyses, providing users with the ability to incorporate prior information into the statistical procedure. In all analyses, the Audit module provides comprehensive explanatory text that assists the auditor in comprehending, communicating, and documenting the analysis results.
+**JASP for Audit** (also known as to as the Audit module) is an add-on module for JASP that streamlines the process of statistical auditing. The Audit module offers a wide range of functionalities, including (but not limited to) planning, executing, evaluating, and documenting statistical audit samples. Specifically, it comprises analysis tools for determining sample sizes, selecting items using standard audit sampling methododology, and inferring the population misstatement based on the sample data or the summary statistics of the sample. Furthermore, the Audit module also includes tools for data auditing. The module provides Bayesian equivalents of most analyses, enabling users to incorporate pre-existing audit information into the statistical procedure. In all analyses, the Audit module provides comprehensive explanatory text that assists the auditor in understanding, documenting and communicating the statistical results.
 
 ## Articles
 
-In order to familiarize oneself with the Audit module, it is recommended to either download the manual via this [link](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf), or to view it online through this [link](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf). A reference for the Audit module can be obtained from the accompanying academic article published in the *Journal of Open-Source Software*, which can be accessed through the following [link](https://doi.org/10.21105/joss.02733).
+In order to familiarize oneself with the Audit module, it is recommended to obtain and read the manual via this [download link](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf), or to view it online through this [link](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf). A reference for the Audit module can be obtained from the accompanying academic article published in the *Journal of Open-Source Software*, which can be accessed through the following permanent link [https://doi.org/10.21105/joss.02733](https://doi.org/10.21105/joss.02733).
 
 ## R Package
 
-The Audit Module is a graphical user interface that has been constructed to integrate with the **jfa** R package, which offers a comprehensive set of statistical methods for auditing. To obtain a deeper understanding of the underlying statistical principles and implementation details of the **jfa** package, interested parties are encouraged to consult the [package website](https://koenderks.github.io/jfa/).
+The Audit Module is a graphical user interface that has been constructed to integrate with the **jfa** R package available on [CRAN](https://cran.r-project.org/package=jfa), which offers a comprehensive set of statistical methods for auditing. To obtain a deeper understanding of the underlying statistical principles and implementation details of the **jfa** package, interested parties are encouraged to consult the [package website](https://koenderks.github.io/jfa/).
 
 ## Module
 
@@ -39,6 +39,10 @@ The organization of the analyses within the Audit module in JASP is as follows:
     -- Other
        - True Value Estimation
 ```
+
+### Changelog
+
+Please find the module's changelog by clicking [here](https://github.com/jasp-stats/jaspAudit/blob/master/NEWS.md). This changelog provides a detailed record of all the modifications and updates made to the module. It can be useful to stay up-to-date with the latest changes and bug fixes, or to check if a particular issue has been addressed.
 
 ### Analyses
 

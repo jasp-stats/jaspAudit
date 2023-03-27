@@ -31,14 +31,14 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   # Ready for analysis
   ready <- .jfaBenfordsLawReadyCheck(options)
 
-  benfordsLawContainer <- jfaBenfordsLawStage(options, jaspResults, position = 2)
+  benfordsLawContainer <- .jfaBenfordsLawStage(options, jaspResults, position = 2)
 
   # --- TABLES
 
   .jfaTableNumberInit(jaspResults) # Initialize table numbers
 
   # Create the goodness-of-fit table
-  jfaBenfordsLawTable(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 1)
+  .jfaBenfordsLawTable(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 1)
 
   # Create the observed and predicted probabilities table
   .jfaBenfordsLawDescriptivesTable(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 2)
@@ -130,7 +130,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   return(ready)
 }
 
-jfaBenfordsLawStage <- function(options, jaspResults, position) {
+.jfaBenfordsLawStage <- function(options, jaspResults, position) {
   containerTitle <- switch(options[["distribution"]],
     "benford" = gettext("<u>Assessing Benford's Law</u>"),
     "uniform" = gettext("<u>Assessing the Uniform Distribution</u>")
@@ -186,7 +186,7 @@ jfaBenfordsLawStage <- function(options, jaspResults, position) {
   }
 }
 
-jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
+.jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
                                 jaspResults, ready, positionInContainer) {
   .jfaTableNumberUpdate(jaspResults)
 
