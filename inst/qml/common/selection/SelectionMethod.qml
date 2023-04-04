@@ -60,7 +60,6 @@ RadioButtonGroup
 				text: 				qsTr("User-specified")
 				name: 				"fixedStart"
 				info:				qsTr("Set a starting point using to a user-specified value.")
-				checked:			true
 				childrenOnSameRow: 	true
 				
 				IntegerField
@@ -78,6 +77,7 @@ RadioButtonGroup
 				id:					randomize
 				text: 				qsTr("Random")
 				name: 				"randomStart"
+				checked:			true
 				info:				qsTr("Set a starting point via random number generation according to a user-specified seed.")
 			}
 		}
