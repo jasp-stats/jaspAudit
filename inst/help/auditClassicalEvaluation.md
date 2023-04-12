@@ -39,29 +39,13 @@ When the auditor has information that indicates a low-risk profile on the popula
 
 *AR = IR x CR x DR*
 
-The auditor assesses inherent risk and internal control risk generally on a 3-point scale to determine the appropriate detection risk. Using the ARM and zero errors the sample size depends on the risk factor *R* and the performance materiality. The risk factor *R* is a function of the detection risk (Stewart 2012).
+The auditor assesses inherent risk and internal control risk generally on a 3-point scale to determine the appropriate detection risk. The Audit module handles the default values in the table below. to convert the risk assessments for IR and CR to percentages. These default values are inspired by the <i>Handboek Auditing Rijksoverheid</i>. You can manually adjust the percentages associated with one or both of the risks by selecting the Custom option under the corresponding risk assessment.
 
-*R = -ln(DR)*
-
-The following table presents values of *R* as a function of the detection risk, provided that there are zero errors (Touw and Hoogduin 2012).
-
-| Detection risk (%) | 1 | 4 | 5 | 10 | 14 |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| R | 4.6 | 3.2 | 3 | 2.3 | 2 |
-
-The risk factor *R* can be adjusted using the assessments of the inherent risk and the internal control risk. By default, the standard method of setting the probabilities of IR and CR is by following the table below for a detection risk of 5%:
-
-|  | High | Medium | Low | 
-| :---: | :---: | :---: |
-| R | 3 | 2 | 1 |
-
-These values of *R* are used to set default percentages for IR and CR. The Audit module handles the following default values for IR and CR:
-
-- High: 100%
-- Medium: 60%
-- Low: 36%
-
-You can manually adjust the value of IR and CR by selecting the Custom option under the corresponding risk assessment, thus adjusting the risk factor *R*.
+|  | Inherent risk (IR) | Control risk (CR) |
+| ---: | :---: | :---: |
+| High | 100% | 100% |
+| Medium | 63% | 52% |
+| Low | 40% | 34% |
 
 #### Method
 - Poisson: Uses the Poisson likelhood to evaluate the sample.
