@@ -7,12 +7,8 @@ The estimation analysis allows the user to estimate the true value of a populati
 ---
 
 #### Assignment Box
-- Item ID: A unique non-missing identifier for every item in the population. The row number of the items is sufficient.
 - Book Value: The variable that contains the book values of the items in the population.
 - Audit Value: The variable that contains the audit (true) values, or the binary classification of correct (0) or incorrect (1).
-
-#### Confidence
-The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to have an audit risk of 5%, this equals 95% confidence.
 
 #### Population
 - No. items: The total number of items (rows) in the population.
@@ -26,12 +22,14 @@ The confidence level used. The confidence level is the complement of the audit r
 
 #### Display
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
+  Confidence: The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to have an audit risk of 5%, this equals 95% confidence.
 
-#### Tables
-- Required sample size: Produces a table that shows, for a given uncertainty, the required sample size.
+#### Report
+- Tables
+  - Required sample size: Produces a table that shows, for a given uncertainty, the required sample size.
 
-#### Plots
-- Scatter plot: Produces a scatter plot comparing book values of the selection against their audit values. Observations that are in error are colored in red.
+- Plots
+  - Scatter plot: Produces a scatter plot comparing book values of the selection against their audit values. Observations that are in error are colored in red.
 
 ### Output
 ---
@@ -49,7 +47,7 @@ The confidence level used. The confidence level is the complement of the audit r
 
 ### References
 ---
-- AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
+- AICPA (2019). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
 - Touw, P., & Hoogduin, L. (2011). Statistiek voor audit en controlling.
 
 ### R Packages

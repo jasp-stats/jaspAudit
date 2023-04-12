@@ -1,7 +1,7 @@
 Planning
 ===
 
-The planning analysis allows the user to calculate a minimum sample size given a set of sampling objectives and summary statistics of the population. Note that when you have access to the raw population data you may want to use the audit workflow, an analysis that guides you through the sampling process.
+The planning analysis allows the user to calculate a minimum sample size given a set of sampling objectives and summary statistics of the population. Note that, when you have access to the raw population data, you may want to use the audit workflow, an analysis that guides you through the sampling process.
 
 <img src="%HELP_FOLDER%/img/workflowPlanning.png" />
 
@@ -36,7 +36,7 @@ When the auditor has information that indicates a low-risk profile on the popula
 
 *AR = IR x CR x DR*
 
-The auditor assesses inherent risk and internal control risk generally on a 3-point scale to determine the appropriate detection risk. The Audit module handles the default values in the table below. to convert the risk assessments for IR and CR to percentages. These default values are inspired by the <i>Handboek Auditing Rijksoverheid</i>. You can manually adjust the percentages associated with one or both of the risks by selecting the Custom option under the corresponding risk assessment.
+The auditor assesses inherent risk and internal control risk generally on a 3-point scale consisting of high, medium and low to determine the appropriate detection risk. To use the ARM, these categorical risk assessments must be mapped to probabilities. By default, the Audit module uses the percentages shown in the table below, which are inspired by the <i>Handboek Auditing Rijksoverheid</i>. You can manually adjust the percentages associated with one or both of the risks by selecting the Custom option in the drop-down list under the corresponding risk assessment.
 
 |  | Inherent risk (IR) | Control risk (CR) |
 | ---: | :---: | :---: |
@@ -47,22 +47,24 @@ The auditor assesses inherent risk and internal control risk generally on a 3-po
 #### Display
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
 
-#### Plots
-- Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
-- Presumed data distribution: Produces a plot that displays the probability distribution implied by the input options and the calculated sample size.
+#### Report
+- Plots
+  - Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
+  - Presumed data distribution: Produces a plot that displays the probability distribution implied by the input options and the calculated sample size.
 
-#### Format Output
-- Numbers: Display table output as numbers.
-- Percentages: Display table output as percentages.
+- Format Output
+  - Numbers: Display table output as numbers.
+  - Percentages: Display table output as percentages.
 
-#### Likelihood
-- Hypergeometric: The hypergeometric distribution assumes a finite population size and is therefore generally used when the population size is small. It is a probability distribution that models the number of errors (*K*) in the population as a function of the population size (*N*), the number of observed found errors (*k*) and the number of correct transactions (*n*).
-- Binomial: The binomial distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample.
-- Poisson: The Poisson distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors (*t*). Because the Poisson distribution accommodates partial errors it is generally used when you are planning a monetary unit sample.
+#### Advanced
+- Likelihood
+  - Hypergeometric: The hypergeometric distribution assumes a finite population size and is therefore generally used when the population size is small. It is a probability distribution that models the number of errors (*K*) in the population as a function of the population size (*N*), the number of observed found errors (*k*) and the number of correct transactions (*n*).
+  - Binomial: The binomial distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample.
+  - Poisson: The Poisson distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors (*t*). Because the Poisson distribution accommodates partial errors it is generally used when you are planning a monetary unit sample.
 
-#### Iterations
-- Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
-- Maximum: The maximum allows you to limit the sample size with a maximum.
+- Iterations
+  - Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+  - Maximum: The maximum allows you to limit the sample size with a maximum.
 
 ### Output
 ---

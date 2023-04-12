@@ -24,15 +24,16 @@ To determine whether the data show an excessive amount of bunching, the null hyp
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
   - Confidence: The confidence level used in the explanatory text.
 
-#### Tables
-- Assumption checks: This table shows the correlation between the integer portions of the numbers and their decimal counterparts. To meet the required assumptions for this procedure, this correlation must be non-existent. This table also displays the correlation between the samples of the two simulation runs (average frequency and entropy).
-- Frequency table: Produces a table containing the count and the percentage for every unique value in the data set.
+#### Report
+- Tables
+  - Assumption checks: This table shows the correlation between the integer portions of the numbers and their decimal counterparts. To meet the required assumptions for this procedure, this correlation must be non-existent. This table also displays the correlation between the samples of the two simulation runs (average frequency and entropy).
+  - Frequency table: Produces a table containing the count and the percentage for every unique value in the data set.
 
-#### Plots
-- Observed vs. expected: Produces a histogram of the expected average frequencies and / or entropy vs. the observed average frequency and / or entropy.
-- Histogram: Produces a histogram with a single bin for each observed value.
+- Plots
+  - Observed vs. expected: Produces a histogram of the expected average frequencies and / or entropy vs. the observed average frequency and / or entropy.
+  - Histogram: Produces a histogram with a single bin for each observed value.
 
-#### Advanced Options
+#### Advanced
 - Number of samples: The number of samples to use for simulating the p value.
 - Seed: Selects the seed for the random number generator in order to reproduce results.
 
@@ -62,7 +63,7 @@ To determine whether the data show an excessive amount of bunching, the null hyp
 
 ### References
 ---
-- Derks, K (2023). jfa: Statistical methods for auditing. R package version 0.6.5.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package version 0.6.6.
 - Simohnsohn, U. (2019, May 25). Number-Bunching: A New Tool for Forensic Data Analysis. Retrieved from [http://datacolada.org/77](http://datacolada.org/77).
 
 ### R Packages

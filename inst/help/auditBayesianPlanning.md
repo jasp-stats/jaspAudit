@@ -1,7 +1,7 @@
 Bayesian Planning
 ===
 
-The Bayesian planning analysis allows the user to calculate a minimum sample size given a set of sampling objectives and summary statistics of the population. Note that when you have access to the raw population data you may want to use the audit workflow, an analysis that guides you through the sampling process.
+The Bayesian planning analysis allows the user to calculate a minimum sample size given a set of sampling objectives and summary statistics of the population. Note that, when you have access to the raw population data, you may want to use the audit workflow, an analysis that guides you through the sampling process.
 
 <img src="%HELP_FOLDER%/img/workflowPlanning.png" />
 
@@ -31,38 +31,41 @@ The expected errors are the tolerable errors that can be found in the sample whi
 #### Display
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
 
-#### Distribution
-- Beta-binomial: The beta-binomial distribution accompanies the hypergeometric likelihood (Dyer & Pierce, 1993). The hypergeometric likelihood assumes a finite population size and is therefore generally used when the population size is small. It is a likelihood that models the number of errors (*K*) in the population as a function of the population size (*N*), the number of observed found errors (*k*) and the number of correct transactions (*n*).
-- Beta: The beta distribution accompanies the binomial likelihood. The binomial likelihood assumes an infinite population size and is therefore generally used when the population size is large. It is a likelihood that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample. However, the beta distribution does accommodate partial errors, and may also be used for monetary unit sampling (de Swart, Wille & Majoor, 2013).
-- Gamma: The gamma distribution accompanies the Poisson likelihood. The Poisson likelihood assumes an infinite population size and is therefore generally used when the population size is large. It is a likelihood that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors found (*t*). Because the gamma distribution accommodates partial errors it is generally used when you are planning a monetary unit sample (Stewart, 2013).
+#### Prior
+- Distribution: Specify the family of the prior distribution.
+  - Beta-binomial: The beta-binomial distribution accompanies the hypergeometric likelihood (Dyer & Pierce, 1993). The hypergeometric likelihood assumes a finite population size and is therefore generally used when the population size is small. It is a likelihood that models the number of errors (*K*) in the population as a function of the population size (*N*), the number of observed found errors (*k*) and the number of correct transactions (*n*).
+  - Beta: The beta distribution accompanies the binomial likelihood. The binomial likelihood assumes an infinite population size and is therefore generally used when the population size is large. It is a likelihood that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample. However, the beta distribution does accommodate partial errors, and may also be used for monetary unit sampling (de Swart, Wille & Majoor, 2013).
+  - Gamma: The gamma distribution accompanies the Poisson likelihood. The Poisson likelihood assumes an infinite population size and is therefore generally used when the population size is large. It is a likelihood that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors found (*t*). Because the gamma distribution accommodates partial errors it is generally used when you are planning a monetary unit sample (Stewart, 2013).
 
-#### Eliciation
-- Default: This option does not incorporate any information into the statistical analysis and therefore assumes a negligible and conservative prior distribution.
-- Manual: Provide the parameters of the prior distribution.
-- Earlier sample: Create a prior distribution on the basis of an earlier sample.
-  - Size: Earlier sample size.
-  - Errors: Earlier found errors.
-- Impartial: Create a prior distribution that is impartial with respect to the tested hypotheses.
-- Risk assessments: Translate information from the audit risk model into a prior distribution.
-  - Inherent risk: A category or probability for the inherent risk. Inherent risk is defined as the risk of material misstatement posed by an error or omission in a financial statement due to a factor other than a failure of internal control.
-  - Control risk: A category or probability for the internal control risk. Control risk is defined as the risk of a material misstatement in the financial statements arising due to absence or failure in the operation of relevant controls of the auditee.
+- Eliciation: Specify how to construct the prior distribution, or in other words, what type of audit information to incorporate into the prior distribution.
+  - Default: This option does not incorporate any information into the statistical analysis and therefore assumes a negligible and conservative prior distribution.
+  - Parameters: Provide the parameters of the prior distribution.
+  - Earlier sample: Create a prior distribution on the basis of an earlier sample.
+    - Size: Earlier sample size.
+    - Errors: Earlier found errors.
+  - Impartial: Create a prior distribution that is impartial with respect to the tested hypotheses.
+  - Risk assessments: Translate information from the audit risk model into a prior distribution.
+    - Inherent risk: A category or probability for the inherent risk. Inherent risk is defined as the risk of material misstatement posed by an error or omission in a financial statement due to a factor other than a failure of internal control.
+    - Control risk: A category or probability for the internal control risk. Control risk is defined as the risk of a material misstatement in the financial statements arising due to absence or failure in the operation of relevant controls of the auditee.
 
-#### Tables
-- Prior and posterior: Produces a table in which the prior and expected posterior distribution are summarized through several statistics, such as their functional form, their prior and expected posterior probabilities and odds, and the shift between these.
+#### Report
+- Tables
+  - Prior and posterior: Produces a table in which the prior and expected posterior distribution are summarized through several statistics, such as their functional form, their prior and expected posterior probabilities and odds, and the shift between these.
 
-#### Plots
-- Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
-- Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
-  - Additional info: Produces dots on the materiality.
-- Prior predictive: Produces a plot of the predictions of the prior distribution.
+- Plots
+  - Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
+  - Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
+    - Additional info: Produces dots on the materiality.
+  - Prior predictive: Produces a plot of the predictions of the prior distribution.
 
-#### Format Output
-- Numbers: Display table output as numbers.
-- Percentages: Display table output as percentages.
+- Format Output
+  - Numbers: Display table output as numbers.
+  - Percentages: Display table output as percentages.
 
-#### Iterations
-- Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
-- Maximum: The maximum allows you to limit the sample size with a maximum.
+#### Advanced
+- Iterations
+  - Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+  - Maximum: The maximum allows you to limit the sample size with a maximum.
 
 ### Output
 ---

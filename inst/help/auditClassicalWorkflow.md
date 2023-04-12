@@ -18,6 +18,10 @@ Please see the manual of the Audit module (download [here](https://github.com/ja
 ### Input - Planning
 ---
 
+#### Assignment Box
+- Item ID: A unique non-missing identifier for every item in the population. The row number of the items is sufficient.
+- Book Values: The variable that contains the book values of the items in the population.
+
 #### Sampling Objectives
 - Performance materiality: Also called the upper error limit, the tolerable deviation rate, or the tolerable misstatement, the performance materiality is the upper bound of tolerable misstatement in the population to be tested. By testing against a performance materiality, you are able to plan a sample in order to collect evidence for or against the statement that the population as a whole does not contain misstatements that are considered material (i.e., are greater than the upper bound of tolerable misstatement). You should enable this objective when you want to find out whether the population contains misstatement above or below a certain limit (the performance materiality) using a sample of the population. A lower performance materiality will result in a higher required sample size. Vice versa, a higher performance materiality will result in a lower required sample size.
 - Minimum precision: The precision is the the difference between the estimated most likely error and the upper bound on the misstatement. By enabling this sampling objective, you are be able to plan a sample so that the difference between the estimated most likely error and the upper bound on the misstatement is reduced to a minimum percentage. You should enable this objective if you are interested in making an estimate of the population misstatement with a certain accuracy. A lower minimum required precision will result in a higher required sample size. Vice versa, a higher minimum required precision will result in a lower required sample size.
@@ -25,9 +29,13 @@ Please see the manual of the Audit module (download [here](https://github.com/ja
 #### Confidence
 The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to have an audit risk of 5%, this equals 95% confidence.
 
-#### Assignment Box
-- Item ID: A unique non-missing identifier for every item in the population. The row number of the items is sufficient.
-- Book Values: The variable that contains the book values of the items in the population.
+#### Expected Misstatements
+The expected errors are the tolerable errors that can be found in the sample while still achieving the specified sampling objectives. A sample size is calculated so that, when the number of expected errors is found in the sample, the desired confidence is retained.
+
+*Note:* It is advised to set this value conservatively to minimize the probability of the observed errors exceeding the expected errors, which would imply that insufficient work has been done.
+
+- Relative: Enter your expected errors as a percentage relative to the total size of the selection.
+- Absolute: Enter your expected errors as the sum of (proportional) errors.
 
 #### Audit Risk Model
 - Inherent risk: A category or probability for the inherent risk. Inherent risk is defined as the risk of material misstatement posed by an error or omission in a financial statement due to a factor other than a failure of internal control.
@@ -37,7 +45,7 @@ When the auditor has information that indicates a low-risk profile on the popula
 
 *AR = IR x CR x DR*
 
-The auditor assesses inherent risk and internal control risk generally on a 3-point scale to determine the appropriate detection risk. The Audit module handles the default values in the table below. to convert the risk assessments for IR and CR to percentages. These default values are inspired by the <i>Handboek Auditing Rijksoverheid</i>. You can manually adjust the percentages associated with one or both of the risks by selecting the Custom option under the corresponding risk assessment.
+The auditor assesses inherent risk and internal control risk generally on a 3-point scale consisting of high, medium and low to determine the appropriate detection risk. To use the ARM, these categorical risk assessments must be mapped to probabilities. By default, the Audit module uses the percentages shown in the table below, which are inspired by the <i>Handboek Auditing Rijksoverheid</i>. You can manually adjust the percentages associated with one or both of the risks by selecting the Custom option in the drop-down list under the corresponding risk assessment.
 
 |  | Inherent risk (IR) | Control risk (CR) |
 | ---: | :---: | :---: |
@@ -45,42 +53,36 @@ The auditor assesses inherent risk and internal control risk generally on a 3-po
 | Medium | 63% | 52% |
 | Low | 40% | 34% |
 
-#### Expected errors in Sample
-The expected errors are the tolerable errors that can be found in the sample while still achieving the specified sampling objectives. A sample size is calculated so that, when the number of expected errors is found in the sample, the desired confidence is retained.
-
-*Note:* It is advised to set this value conservatively to minimize the probability of the observed errors exceeding the expected errors, which would imply that insufficient work has been done.
-
-- Relative: Enter your expected errors as a percentage relative to the total size of the selection.
-- Absolute: Enter your expected errors as the sum of (proportional) errors.
-
-#### Probability distribution
-- Hypergeometric: The hypergeometric distribution assumes a finite population size and is therefore generally used when the population size is small. It is a probability distribution that models the number of errors (*K*) in the population as a function of the population size (*N*), the number of observed found errors (*k*) and the number of correct transactions (*n*).
-- Binomial: The binomial distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample.
-- Poisson: The Poisson distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors (*t*). Because the Poisson distribution accommodates partial errors it is generally used when you are planning a monetary unit sample.
-
 #### Display
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
 
-#### Tables
-- Descriptive statistics: Produces a table with descriptive statistics of the book values in the population.
+#### Report
+- Tables
+  - Descriptive statistics: Produces a table with descriptive statistics of the book values in the population.
 
-#### Plots
-- Distribution of book values: Produces a histogram of the book values in the population.
-- Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
-- Assumed error distribution: Produces a plot that displays the probability distribution implied by the input options and the calculated sample size.
+- Plots
+  - Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
+  - Presumed data distribution: Produces a plot that displays the probability distribution implied by the input options and the calculated sample size.
+  - Distribution of book values: Produces a histogram of the book values in the population.
 
-#### Critical Items
-- Negative book values: Isolates negative book values from the population.
-  - Keep: Keeps negative book values to be inspected in the sample.
-  - Remove: Removes negative book values.
+- Format Output
+  - Numbers: Display table output as numbers.
+  - Percentages: Display table output as percentages.
 
-#### Format Tables
-- Numbers: Display table output as numbers.
-- Percentages: Display table output as percentages.
+#### Advanced
+- Probability distribution
+  - Hypergeometric: The hypergeometric distribution assumes a finite population size and is therefore generally used when the population size is small. It is a probability distribution that models the number of errors (*K*) in the population as a function of the population size (*N*), the number of observed found errors (*k*) and the number of correct transactions (*n*).
+  - Binomial: The binomial distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed number of errors (*k*) and the number of correct transactions (*n - k*). Because the binomial distribution strictly does not accommodate partial errors, it is generally used when you are not planning a monetary unit sample.
+  - Poisson: The Poisson distribution assumes an infinite population size and is therefore generally used when the population size is large. It is a probability distribution that models the rate of misstatement (*\u03B8*) as a function of the observed sample size (*n*) and the sum of the proportional errors (*t*). Because the Poisson distribution accommodates partial errors it is generally used when you are planning a monetary unit sample.
 
-#### Iterations
-- Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
-- Maximum: The maximum allows you to limit the sample size with a maximum.
+- Iterations
+  - Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+  - Maximum: The maximum allows you to limit the sample size with a maximum.
+
+- Critical Items
+  - Negative book values: Isolates negative book values from the population.
+    - Keep: Keeps negative book values to be inspected in the sample.
+    - Remove: Removes negative book values.
 
 ### Ouput - Planning
 ---
@@ -102,7 +104,7 @@ The expected errors are the tolerable errors that can be found in the sample whi
 #### Plots
 - Distribution of book values: Produces a histogram of the book values in the population.
 - Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
-- Assumed error distribution: Produces a plot that displays the probability distribution implied by the input options and the calculated sample size.
+- Presumed data distribution: Produces a plot that displays the probability distribution implied by the input options and the calculated sample size.
 
 ### Input - Selection
 ---
