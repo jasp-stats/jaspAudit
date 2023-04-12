@@ -1955,7 +1955,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
       } else {
         if (jaspBase:::.extractErrorMessage(rightPlotError) == "the sample size is lower than 'max'") {
           figure$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
-        } else {
+        } else if (jaspBase:::.extractErrorMessage(rightPlotError) == "'expected' / 'N.units' must be < 'materiality'") {
+          figure$setError(gettext("You cannot achieve your current sampling objectives with up to three full misstatements this population."))
+		} else {
           figure$setError(gettextf("An error occurred in a call to the jfa package: %1$s", jaspBase:::.extractErrorMessage(rightPlotError)))
         }
       }
