@@ -45,7 +45,7 @@ Group
 			{ label: qsTr("High"),		value: "high"},
 			{ label: qsTr("Medium"), 	value: "medium"},
 			{ label: qsTr("Low"), 		value: "low"},
-			{ label: qsTr("Manual"), 	value: "custom"}
+			{ label: qsTr("Custom"), 	value: "custom"}
 		]
 		info:					qsTr("A category or probability for the inherent risk. Inherent risk is defined as the risk of material misstatement posed by an error or omission in a financial statement due to a factor other than a failure of internal control.")
 	}
@@ -70,7 +70,7 @@ Group
 			{ label: qsTr("High"),		value: "high"},
 			{ label: qsTr("Medium"), 	value: "medium"},
 			{ label: qsTr("Low"), 		value: "low"},
-			{ label: qsTr("Manual"), 	value: "custom"}
+			{ label: qsTr("Custom"), 	value: "custom"}
 		]
 		info:					qsTr("A category or probability for the internal control risk. Control risk is defined as the risk of a material misstatement in the financial statements arising due to absence or failure in the operation of relevant controls of the auditee.")
 	}
