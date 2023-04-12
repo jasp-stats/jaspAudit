@@ -120,26 +120,27 @@ test_that("Prior and Expected Posterior Distribution plot matches", {
   jaspTools::expect_equal_plots(testPlot, "prior-and-expected-posterior-distribution-2")
 })
 
-test_that("<b>Table 1.</b> Planning Summary results match", {
+test_that("<b>Table 2.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(0.6, 0.0833333333333334, 1, 0.050115, 50, "Value", 0)
+    list(0.52, 0.0961538461538462, 1, 0.050115, 47, "Value", 0)
   )
 })
 
-test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
+test_that("<b>Table 3.</b> Descriptive Statistics for Prior and Expected Posterior Distribution results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_tablePriorPosterior"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
     list(
-      0.299573227355399, "gamma(<unicode> = 1, <unicode> = 10)", 0.394166449631336,
-      0.605833550368664, 0.1, 0.0693147180559945, 0, 0.65061839079641,
-      0.299573227355399, "Prior", 0.0499288712258998, "gamma(<unicode> = 1, <unicode> = 60)",
-      0.950555279943933, 0.0494447200560672, 0.0166666666666667, 0.0115524530093324,
-      0, 19.224606365777, 0.0499288712258998, "Posterior", -0.249644356129499,
-      "", 2.41155806343484, 0.0816143642523247, -0.0833333333333333,
-      -0.0577622650466621, 0, 29.5482061954082, "", "Shift"
+      0.230440944119538, "gamma(<unicode> = 1, <unicode> = 13)", 0.478734098573176,
+      0.521265901426824, 0.0769230769230769, 0.0533190138892266, 0,
+      0.918406704261244, 0.230440944119538, "Prior", 0.0499288712258998,
+      "gamma(<unicode> = 1, <unicode> = 60)", 0.950555279943933, 0.0494447200560672,
+      0.0166666666666667, 0.0115524530093324, 0, 19.224606365777,
+      0.0499288712258998, "Posterior", -0.180512072893638, "", 1.98556000664456,
+      0.0948550824458798, -0.0602564102564103, -0.0417665608798941,
+      0, 20.9325631842388, "", "Shift"
     )
   )
 })

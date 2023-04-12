@@ -187,7 +187,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 }
 
 .jfaBenfordsLawTable <- function(dataset, options, benfordsLawContainer,
-                                jaspResults, ready, positionInContainer) {
+                                 jaspResults, ready, positionInContainer) {
   .jfaTableNumberUpdate(jaspResults)
 
   if (!is.null(benfordsLawContainer[["benfordsLawTestTable"]])) {
@@ -344,10 +344,12 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
     if (options[["digits"]] != "firsttwo" && options[["match"]] > 9) {
       tb$addFootnote(gettext("The requested digit must be between 1 - 9."),
-                     symbol = gettext("<b>Warning.</b>"))
+        symbol = gettext("<b>Warning.</b>")
+      )
     } else if (options[["digits"]] == "firsttwo" && options[["match"]] < 10) {
       tb$addFootnote(gettext("The requested digit must be between 10 - 99."),
-                     symbol = gettext("<b>Warning.</b>"))
+        symbol = gettext("<b>Warning.</b>")
+      )
     } else {
       tb$addFootnote(gettext("Displayed values are rounded to the number of decimals set in the global preferences."))
     }

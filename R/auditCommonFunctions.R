@@ -1370,14 +1370,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
   # Define the default settings for high, medium and low
   tb <- data.frame(
     category = c("High", "Medium", "Low"),
-    ir = c(1, 0.6, 0.36),
-    cr = c(1, 0.6, 0.36)
+    ir = c(1, 0.63, 0.40),
+    cr = c(1, 0.52, 0.34)
   )
-  # tb <- data.frame(
-  #   category = c("High", "Medium", "Low"),
-  #   ir = c(1, 0.63, 0.40),
-  #   cr = c(1, 0.52, 0.34)
-  # )
   # Read the risks from the options and the table
   ar <- 1 - options[["conf_level"]]
   ir <- switch(options[["ir"]],
@@ -1469,7 +1464,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
     tb$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "string")
     tb$position <- 4
     tb$setData(risks$tb)
-    # tb$addFootnote(gettext("The default settings for the Audit Risk Model are based on <i>Handboek Auditing Rijksoverheid (2023)</i>."))
     container[["table"]] <- tb
   }
 }

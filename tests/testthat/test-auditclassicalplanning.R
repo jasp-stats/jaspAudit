@@ -86,11 +86,11 @@ test_that("Presumed Poisson Distribution plot matches", {
   jaspTools::expect_equal_plots(testPlot, "presumed-poisson-distribution")
 })
 
-test_that("<b>Table 1.</b> Planning Summary results match", {
+test_that("<b>Table 2.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(0.6, 0.0833333333333334, 1, 0.0584675, 43, "Value", 0)
+    list(0.52, 0.0961538461538462, 1, 0.0584675, 41, "Value", 0)
   )
 })
 
@@ -128,10 +128,13 @@ test_that("Presumed Hypergeometric Distribution plot matches", {
   jaspTools::expect_equal_plots(testPlot, "presumed-hypergeometric-distribution")
 })
 
-test_that("<b>Table 1.</b> Planning Summary results match", {
+test_that("<b>Table 2.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(0.6, 0.0833333333333334, 1, 0.0584666666666667, 42, "Value", 0)
+    list(
+      0.52, 0.0961538461538462, 1, 0.0584666666666667, 39, "Value",
+      0
+    )
   )
 })
