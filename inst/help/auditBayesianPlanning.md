@@ -55,7 +55,7 @@ The expected errors are the tolerable errors that can be found in the sample whi
 - Plots
   - Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
   - Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
-    - Additional info: Produces dots on the materiality.
+    - Additional info: Annotates the figure with the mode and the credible interval. If a materiality is specified, annotates the figure with the materiality and includes a visualization of the Bayes factor via a proportion wheel.
   - Prior predictive: Produces a plot of the predictions of the prior distribution.
 
 - Format Output
@@ -92,9 +92,9 @@ The expected errors are the tolerable errors that can be found in the sample whi
 - Precision: Difference between the upper bound and the mode of the distribution.
 
 #### Plots
-- Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
-  - Additional info: Produces dots on the materiality.
-- Prior predictive: Produces a plot of the predictions of the prior distribution.
+- Prior distribution: Produces a plot that shows the prior distribution.
+  - Posterior distribution: Adds the posterior distribution after observing the intended sample to the figure.
+- Prior predictive distribution: Produces a plot of the predictions of the prior distribution.
 - Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
 
 ### References

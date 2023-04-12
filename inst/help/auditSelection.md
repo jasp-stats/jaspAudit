@@ -12,7 +12,7 @@ Please see the manual of the Audit module (download [here](https://github.com/ja
 
 #### Assignment Box
 - Item ID: A unique non-missing identifier for every item in the population. The row number of the items is sufficient.
-- Book Values: The variable that contains the book values of the items in the population.
+- Book Values: The variable that contains the book values of the items in the population. Ideally, all book values are positive values, all items containing negative book values are removed before selection.
 - Additional Variables: Any other variables that should be included in the sample.
 
 #### Sample Size

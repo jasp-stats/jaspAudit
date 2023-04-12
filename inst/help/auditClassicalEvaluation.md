@@ -12,7 +12,7 @@ Please see the manual of the Audit module (download [here](https://github.com/ja
 
 #### Assignment Box
 - Item ID: A unique non-missing identifier for every item in the population. The row number of the items is sufficient.
-- Book Values: The variable that contains the book values of the items in the population.
+- Book Values: The variable that contains the book values of the items in the population. Ideally, all book values are positive values, see the <i>Critical Items</i> option for the handling of negative book values.
 - Audit result / values: The variable that contains the audit (true) values, or the binary classification of correct (0) or incorrect (1).
 - Selection counter: The variable that contains how many times each observation should be evaluated.
 - Stratum: An optional variable that contains, for each item, which stratum an item belong to in the population. Providing a stratum variable indicates to the analysis that the population is split into several subgroups, and that an estimate must be made for each of these subgroups.

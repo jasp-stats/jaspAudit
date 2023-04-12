@@ -20,7 +20,7 @@ Please see the manual of the Audit module (download [here](https://github.com/ja
 
 #### Assignment Box
 - Item ID: A unique non-missing identifier for every item in the population. The row number of the items is sufficient.
-- Book Values: The variable that contains the book values of the items in the population.
+- Book Values: The variable that contains the book values of the items in the population. Ideally, all book values are positive values, see the <i>Critical Items</i> option for the handling of negative book values.
 
 #### Sampling Objectives
 - Performance materiality: Also called the upper error limit, the tolerable deviation rate, or the tolerable misstatement, the performance materiality is the upper bound of tolerable misstatement in the population to be tested. By testing against a performance materiality, you are able to plan a sample in order to collect evidence for or against the statement that the population as a whole does not contain misstatements that are considered material (i.e., are greater than the upper bound of tolerable misstatement). You should enable this objective when you want to find out whether the population contains misstatement above or below a certain limit (the performance materiality) using a sample of the population. A lower performance materiality will result in a higher required sample size. Vice versa, a higher performance materiality will result in a lower required sample size.

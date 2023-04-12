@@ -12,7 +12,7 @@ Please see the manual of the Audit module (download [here](https://github.com/ja
 
 #### Assignment Box
 - Item ID: A unique non-missing identifier for every item in the population. The row number of the items is sufficient.
-- Book Values: The variable that contains the book values of the items in the population.
+- Book Values: The variable that contains the book values of the items in the population. Ideally, all book values are positive values, see the <i>Critical Items</i> option for the handling of negative book values.
 - Audit result / values: The variable that contains the audit (true) values, or the binary classification of correct (0) or incorrect (1).
 - Selection counter: The variable that contains how many times each observation should be evaluated.
 - Stratum: An optional variable that contains, for each item, which stratum an item belong to in the population. Providing a stratum variable indicates to the analysis that the population is split into several subgroups, and that an estimate must be made for each of these subgroups.
@@ -73,7 +73,7 @@ The expected errors are the tolerable errors that can be found in the sample whi
   - Sampling objectives: Produces a bar chart comparing the materiality, maximum misstatement and most likely error (MLE).
   - Estimates: Produces an interval plot for the population and optionally the stratum estimates of the misstatement.
   - Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
-    - Additional info: Produces dots on the materiality.
+    - Additional info: Annotates the figure with the mode and the credible interval. If a materiality is specified, annotates the figure with the materiality and includes a visualization of the Bayes factor via a proportion wheel.
 
 - Format Output
   - Numbers: Display table output as numbers.
@@ -133,7 +133,7 @@ The expected errors are the tolerable errors that can be found in the sample whi
 
 #### Plots
 - Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
-  - Additional info: Produces dots on the materiality.
+  - Additional info: Annotates the figure with the mode and the credible interval. If a materiality is specified, annotates the figure with the materiality and includes a visualization of the Bayes factor via a proportion wheel.
 - Posterior predictive: Produces a plot of the predictions of the posterior distribution.
 - Sampling objectives: Produces a bar chart comparing the materiality, maximum misstatement and most likely error (MLE).
 - Scatter plot: Produces a scatter plot comparing book values of the selection against their audit values. Observations that are in error are colored in red.

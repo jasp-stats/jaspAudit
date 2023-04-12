@@ -27,7 +27,7 @@ The confidence level used. The confidence level is the complement of the audit r
 
 #### Assignment Box
 - Item ID: A unique non-missing identifier for every item in the population. The row number of the items is sufficient.
-- Book Values: The variable that contains the book values of the items in the population.
+- Book Values: The variable that contains the book values of the items in the population. Ideally, all book values are positive values, see the <i>Critical Items</i> option for the handling of negative book values.
 
 #### Expected errors in Sample
 The expected errors are the tolerable errors that can be found in the sample while still achieving the specified sampling objectives. A sample size is calculated so that, when the number of expected errors is found in the sample, the desired confidence is retained.
@@ -51,9 +51,9 @@ The expected errors are the tolerable errors that can be found in the sample whi
 - Prior and posterior: Produces a table in which the prior and expected posterior distribution are summarized through several statistics, such as their functional form, their prior and expected posterior probabilities and odds, and the shift between these.
 
 #### Plots
-- Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
-  - Additional info: Produces dots on the materiality.
-- Prior predictive: Produces a plot of the predictions of the prior distribution.
+- Prior distribution: Produces a plot that shows the prior distribution.
+  - Posterior distribution: Adds the posterior distribution after observing the intended sample to the figure.
+- Prior predictive distribution: Produces a plot of the predictions of the prior distribution.
 - Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
 - Distribution of book values: Produces a histogram of the book values in the population.
 
@@ -118,7 +118,7 @@ Clicking this box will allow you to separate the known and the unknown misstatem
 
 #### Plots
 - Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
-  - Additional info: Produces dots on the materiality.
+  - Additional info: Annotates the figure with the mode and the credible interval. If a materiality is specified, annotates the figure with the materiality and includes a visualization of the Bayes factor via a proportion wheel.
 - Prior predictive: Produces a plot of the predictions of the prior distribution.
 - Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
 - Distribution of book values: Produces a histogram of the book values in the population.
@@ -211,7 +211,7 @@ See *Probability Distribution*.
 
 #### Plots
 - Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
-  - Additional info: Produces dots on the materiality.
+  - Additional info: Annotates the figure with the mode and the credible interval. If a materiality is specified, annotates the figure with the materiality and includes a visualization of the Bayes factor via a proportion wheel.
 - Posterior predictive: Produces a plot of the predictions of the posterior distribution.
 - Sampling objectives: Produces a bar chart comparing the materiality, upper bound on the misstatement and most likely error (MLE).
 - Scatter plot: Produces a scatter plot comparing book values of the selection against their audit values. Observations that are in error are colored in red.
@@ -256,7 +256,7 @@ See *Probability Distribution*.
 
 #### Plots
 - Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
-  - Additional info: Produces dots on the materiality.
+  - Additional info: Annotates the figure with the mode and the credible interval. If a materiality is specified, annotates the figure with the materiality and includes a visualization of the Bayes factor via a proportion wheel.
 - Posterior predictive: Produces a plot of the predictions of the posterior distribution.
 - Sampling objectives: Produces a bar chart comparing the materiality, upper bound on the misstatement and most likely error (MLE).
 - Scatter plot: Produces a scatter plot comparing book values of the selection against their audit values. Observations that are in error are colored in red.
