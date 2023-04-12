@@ -37,7 +37,6 @@ Group
 	Row
 	{
 		spacing: 		5 * preferencesModel.uiScale
-		enabled:		enable_partial && !pooling.checked
 
 		CheckBox
 		{
@@ -45,6 +44,7 @@ Group
 			text: 		qsTr("Partial projection")
 			name: 		"separateMisstatement"
 			info:		qsTr("This algorithm enables you to separate the known and the unknown misstatement in the population to be more efficient. Note that this requires the assumption that the taints in the sample are representative of the taints in the unseen part of the population.")
+			enabled:	enable_partial && !pooling.checked
 		}
 
 		HelpButton
