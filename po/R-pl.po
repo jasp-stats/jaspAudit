@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.0\n"
 "POT-Creation-Date: 2022-11-28 15:49\n"
-"PO-Revision-Date: 2023-01-13 12:30+0000\n"
+"PO-Revision-Date: 2023-04-14 22:50+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "pl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.17-dev\n"
 
 msgid "<u>Procedure</u>"
 msgstr ""
@@ -84,7 +84,7 @@ msgid "Last digit"
 msgstr ""
 
 msgid "Count"
-msgstr ""
+msgstr "Liczebność"
 
 msgid "Relative frequency"
 msgstr ""
@@ -315,7 +315,7 @@ msgid "The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r<
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "Wartość"
 
 msgid "Percentage"
 msgstr ""
@@ -450,10 +450,10 @@ msgid "Furthermore, the uncertainty regarding θ will only be extrapolated over 
 msgstr ""
 
 msgid "gamma"
-msgstr ""
+msgstr "gamma"
 
 msgid "beta"
-msgstr ""
+msgstr "beta"
 
 msgid "beta-binomial"
 msgstr ""
@@ -708,7 +708,7 @@ msgid "Assumed %1$s Distribution of Errors"
 msgstr ""
 
 msgid "Expected"
-msgstr ""
+msgstr "Oczekiwane"
 
 msgid "Errors"
 msgstr ""
@@ -780,7 +780,7 @@ msgid "<b>Table %1$i.</b> Selected Items"
 msgstr ""
 
 msgid "Row"
-msgstr ""
+msgstr "Wiersz"
 
 msgid "Selected"
 msgstr ""
@@ -792,10 +792,10 @@ msgid "Valid cases"
 msgstr ""
 
 msgid "Median"
-msgstr ""
+msgstr "Mediana"
 
 msgid "Variance"
-msgstr ""
+msgstr "Wariancja"
 
 msgid "Range"
 msgstr ""
@@ -987,7 +987,7 @@ msgid "Prior"
 msgstr "Prior"
 
 msgid "Posterior"
-msgstr ""
+msgstr "Posterior"
 
 msgid "Density"
 msgstr "Gęstość"
