@@ -29,6 +29,15 @@ Benford's law states that the distribution of leading digits in a population nat
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
   - Confidence: The confidence level used in the explanatory text.
 
+#### Report
+- Tables
+  - Frequency table: Displays a table of the observed frequencies of the requested digits in the data alongside their expected frequencies under the reference distribution.
+  - Matched rows: Shows a table of the rows in the data that match their requested digit(s) to the number in <i>Digit</i>.
+    - Digit: Digit(s) to match.
+
+- Plots
+  - Observed vs. expected: Produces a plot that shows the observed distribution of digits in the population compared to the expected distribution under the Benford's law or the uniform distribution.  
+
 ### Output
 ---
 
@@ -46,12 +55,12 @@ Benford's law states that the distribution of leading digits in a population nat
 - Benford's Law / Uniform distribution: The expected relative frequency of the digits.
 
 #### Plots
-- Observed vs. expected: Produces a plot that shows the observed distribution of digits in the population compared to the expected distribution under the Benford's law or the uniform distribution.
+- Observed vs. expected: A plot that shows the observed distribution of digits in the population compared to the expected distribution under the Benford's law or the uniform distribution.
 
 ### References
 ---
-- Derks, K (2021). digitTests: Tests for Detecting Irregular Digit Patterns. R package version 0.1.0.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package version 0.6.6.
 
 ### R Packages
 ---
-- digitTests
+- jfa

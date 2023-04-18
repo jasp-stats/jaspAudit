@@ -6,12 +6,19 @@ options <- jaspTools::analysisOptions("auditSelection")
 options$id <- "ID"
 options$values <- "bookValue"
 options$n <- 200
+options$explanatoryText <- TRUE
 options$tableSample <- TRUE
 options$export_sample <- FALSE
 options$file <- ""
 options$units <- "values"
 options$sampling_method <- "interval"
+options$startMethod <- "fixedStart"
+options$randomize <- FALSE
+options$rank <- ""
+options$tableDescriptives <- FALSE
+options$start <- 1
 options$name_indicator <- ""
+options$seed <- 1
 set.seed(1)
 results <- jaspTools::runAnalysis("auditSelection", "BuildIt_Monetary.csv", options)
 
@@ -126,12 +133,17 @@ options <- jaspTools::analysisOptions("auditSelection")
 options$id <- "ID"
 options$values <- "bookValue"
 options$n <- 200
+options$explanatoryText <- TRUE
 options$tableSample <- TRUE
+options$tableDescriptives <- FALSE
 options$export_sample <- FALSE
+options$randomize <- FALSE
 options$file <- ""
+options$rank <- ""
 options$units <- "items"
 options$sampling_method <- "random"
 options$name_indicator <- ""
+options$seed <- 1
 set.seed(1)
 results <- jaspTools::runAnalysis("auditSelection", "BuildIt_Monetary.csv", options)
 
@@ -232,13 +244,17 @@ test_that("<b>Table 1.</b> Selection Summary results match", {
 options <- jaspTools::analysisOptions("auditSelection")
 options$id <- "ID"
 options$values <- "Deductions"
+options$explanatoryText <- TRUE
 options$n <- 40
 options$tableDescriptives <- TRUE
+options$randomize <- FALSE
 options$tableSample <- TRUE
 options$units <- "values"
 options$sampling_method <- "random"
 options$file <- ""
+options$rank <- ""
 options$name_indicator <- ""
+options$seed <- 1
 set.seed(1)
 results <- jaspTools::runAnalysis("auditSelection", "auditRattle.csv", options)
 

@@ -3,7 +3,28 @@ context("[Audit] UVB functionality")
 # Reproduce results from manual
 
 options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$startMethod <- "fixedStart"
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
 options$id <- "Transaction"
 options$values <- "Ist"
 options$explanatoryText <- FALSE
@@ -24,8 +45,16 @@ options$display <- "percent"
 options$units <- "values"
 options$sampling_method <- "interval"
 options$method <- "binomial"
-options$area <- "area_bound"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
 options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
 options$indicator_col <- "SelectionResult"
 options$variable_col <- "AuditResult"
 options$annotation <- "continuous"
@@ -57,7 +86,10 @@ test_that("<b>Table 5.</b> Evaluation Summary results match", {
   table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_evaluationTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list("2%", "17.645%", 130, "1.631%", "18.037%", "19.276%", 68)
+    list(
+      "0%", "2%", "17.645%", 130, "Value", "1.631%", "18.037%", "19.276%",
+      68
+    )
   )
 })
 
@@ -65,7 +97,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list("5%", 130, "2%", "0 - 130")
+    list("5%", 130, "Value", "2%", "0 - 130")
   )
 })
 
@@ -141,388 +173,649 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
 
 # Reproduce test case 1 from Excel
 
-options <- analysisOptions("auditBayesianWorkflow")
-options$annotation <- "continuous"
-options$area <- "area_bound"
-options$by <- 5
-options$critical_action <- "inspect"
-options$critical_name <- "critical"
-options$dataType <- "data"
-options$display <- "number"
-options$expected_type <- "expected_all"
-options$id <- "ID"
-options$indicator_col <- "selected"
-options$likelihood <- "binomial"
-options$materiality_type <- "materiality_rel"
-options$method <- "binomial"
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
-options$pasteVariables <- FALSE
-options$prior_method <- "default"
-options$samplingChecked <- TRUE
-options$sampling_method <- "interval"
-options$tableAssumptions <- TRUE
-options$tableSample <- TRUE
-options$units <- "values"
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$startMethod <- "fixedStart"
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
+options$id <- "ID"
 options$values <- "IST"
+options$explanatoryText <- FALSE
+options$by <- 5
+options$separateMisstatement <- TRUE
+options$samplingChecked <- TRUE
+options$tableSample <- TRUE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
+options$tableAssumptions <- TRUE
+options$materiality_type <- "materiality_rel"
+options$expected_type <- "expected_all"
+options$likelihood <- "binomial"
+options$prior_method <- "default"
+options$critical_action <- "inspect"
+options$display <- "percent"
+options$units <- "values"
+options$sampling_method <- "interval"
+options$method <- "binomial"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
+options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase1.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase1.csv", options)
 
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
-	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.05, 75, 0.02, "0 - 75"))
+  table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list("5%", 75, "Value", "2%", "0 - 75")
+  )
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(120, 443865.098571, 64, 75, "79.13%", "Total", 351213.1, 23, 206189.14,
-			 23, 34, "100%", "Top stratum", 206189.14, 97, 237675.958571,
-			 41, 41, "61.02%", "Bottom stratum", 145023.96))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      120, 443865.098571, 64, 75, "79.13%", "Total", 351213.1, 23, 206189.14,
+      23, 34, "100%", "Top stratum", 206189.14, 97, 237675.958571,
+      41, 41, "61.02%", "Bottom stratum", 145023.96
+    )
+  )
 })
 
 test_that("<b>Table 4.</b> Selected Items results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(3, 17000, 3, 3, 4, 2550, 4, 1, 6, 3825, 6, 1, 7, 11060, 7, 2,
-			 9, 5250, 9, 1, 12, 3825, 12, 1, 14, 2450, 14, 1, 15, 3825, 15,
-			 1, 17, 5200, 17, 1, 19, 3060, 19, 1, 21, 15250, 21, 3, 23, 5737.5,
-			 23, 1, 25, 2550, 25, 1, 27, 3825, 27, 1, 29, 637.5, 29, 1, 33,
-			 3825, 33, 1, 34, 9000, 34, 2, 36, 4160, 36, 1, 37, 5250, 37,
-			 1, 39, 3937.5, 39, 1, 41, 30000, 41, 5, 42, 3818, 42, 1, 43,
-			 6900, 43, 1, 46, 2100, 46, 1, 48, 3150, 48, 1, 50, 3750, 50,
-			 1, 52, 4254.89, 52, 1, 53, 5366.1, 53, 1, 54, 5625, 54, 1, 57,
-			 1633.5, 57, 1, 59, 6161.32, 59, 1, 60, 6161.32, 60, 1, 61, 6485.6,
-			 61, 1, 62, 7782.72, 62, 1, 63, 5188.48, 63, 1, 64, 6485.6, 64,
-			 1, 65, 8611.54, 65, 2, 70, 1633.5, 70, 1, 72, 6161.32, 72, 1,
-			 73, 6809.88, 73, 1, 74, 5837.04, 74, 1, 75, 4605.62, 75, 1,
-			 78, 4864.2, 78, 1, 79, 6485.6, 79, 1, 80, 6485.6, 80, 1, 82,
-			 815.58, 82, 1, 86, 1633.5, 86, 1, 87, 7134.16, 87, 1, 88, 6391.22,
-			 88, 1, 89, 5706.36, 89, 1, 90, 7925.5, 90, 1, 91, 1633.5, 91,
-			 1, 97, 1585.1, 97, 1, 98, 6974.44, 98, 1, 99, 7291.46, 99, 1,
-			 101, 1633.5, 101, 1, 103, 2821.72, 103, 1, 106, 2821.72, 106,
-			 1, 107, 6023.38, 107, 1, 108, 7608.48, 108, 1, 109, 3078.24,
-			 109, 1, 112, 5451.05, 112, 1, 113, 4617.36, 113, 1, 117, 1492.5,
-			 117, 1))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      3, 17000, 3, 3, 4, 2550, 4, 1, 6, 3825, 6, 1, 7, 11060, 7, 2,
+      9, 5250, 9, 1, 12, 3825, 12, 1, 14, 2450, 14, 1, 15, 3825, 15,
+      1, 17, 5200, 17, 1, 19, 3060, 19, 1, 21, 15250, 21, 3, 23, 5737.5,
+      23, 1, 25, 2550, 25, 1, 27, 3825, 27, 1, 29, 637.5, 29, 1, 33,
+      3825, 33, 1, 34, 9000, 34, 2, 36, 4160, 36, 1, 37, 5250, 37,
+      1, 39, 3937.5, 39, 1, 41, 30000, 41, 5, 42, 3818, 42, 1, 43,
+      6900, 43, 1, 46, 2100, 46, 1, 48, 3150, 48, 1, 50, 3750, 50,
+      1, 52, 4254.89, 52, 1, 53, 5366.1, 53, 1, 54, 5625, 54, 1, 57,
+      1633.5, 57, 1, 59, 6161.32, 59, 1, 60, 6161.32, 60, 1, 61, 6485.6,
+      61, 1, 62, 7782.72, 62, 1, 63, 5188.48, 63, 1, 64, 6485.6, 64,
+      1, 65, 8611.54, 65, 2, 70, 1633.5, 70, 1, 72, 6161.32, 72, 1,
+      73, 6809.88, 73, 1, 74, 5837.04, 74, 1, 75, 4605.62, 75, 1,
+      78, 4864.2, 78, 1, 79, 6485.6, 79, 1, 80, 6485.6, 80, 1, 82,
+      815.58, 82, 1, 86, 1633.5, 86, 1, 87, 7134.16, 87, 1, 88, 6391.22,
+      88, 1, 89, 5706.36, 89, 1, 90, 7925.5, 90, 1, 91, 1633.5, 91,
+      1, 97, 1585.1, 97, 1, 98, 6974.44, 98, 1, 99, 7291.46, 99, 1,
+      101, 1633.5, 101, 1, 103, 2821.72, 103, 1, 106, 2821.72, 106,
+      1, 107, 6023.38, 107, 1, 108, 7608.48, 108, 1, 109, 3078.24,
+      109, 1, 112, 5451.05, 112, 1, 113, 4617.36, 113, 1, 117, 1492.5,
+      117, 1
+    )
+  )
 })
 
 test_that("<b>Table 2.</b> Selection Summary results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(64, "79.13%", 75, 351213.1))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(64, "79.13%", 75, 351213.1)
+  )
 })
 
 # Reproduce test case 2 from Excel
 
 options <- analysisOptions("auditBayesianWorkflow")
-options$annotation <- "continuous"
-options$area <- "area_bound"
-options$by <- 5
-options$critical_action <- "inspect"
-options$critical_name <- "critical"
-options$dataType <- "data"
-options$display <- "number"
-options$expected_type <- "expected_all"
-options$id <- "ID"
-options$indicator_col <- "selected"
-options$likelihood <- "binomial"
-options$materiality_type <- "materiality_rel"
-options$method <- "binomial"
+options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
-options$pasteVariables <- FALSE
-options$prior_method <- "default"
-options$samplingChecked <- TRUE
-options$sampling_method <- "interval"
-options$tableAssumptions <- TRUE
-options$tableSample <- TRUE
-options$units <- "values"
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$startMethod <- "fixedStart"
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
+options$id <- "ID"
 options$values <- "IST"
+options$explanatoryText <- FALSE
+options$by <- 5
+options$separateMisstatement <- TRUE
+options$samplingChecked <- TRUE
+options$tableSample <- TRUE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
+options$tableAssumptions <- TRUE
+options$materiality_type <- "materiality_rel"
+options$expected_type <- "expected_all"
+options$likelihood <- "binomial"
+options$prior_method <- "default"
+options$critical_action <- "inspect"
+options$display <- "percent"
+options$units <- "values"
+options$sampling_method <- "interval"
+options$method <- "binomial"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
+options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
 results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase2.csv", options)
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
-	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.05, 25, 0.02, "0 - 25"))
+  table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list("5%", 25, "Value", "2%", "0 - 25")
+  )
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(17, 102270.276135, 8, 25, "97.13%", "Total", 99336.784375, 3,
-			 84030.93125, 3, 20, "100%", "Top stratum", 84030.93125, 14,
-			 18239.344885, 5, 5, "83.92%", "Bottom stratum", 15305.853125
-			))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      17, 102270.276135, 8, 25, "97.13%", "Total", 99336.784375, 3,
+      84030.93125, 3, 20, "100%", "Top stratum", 84030.93125, 14,
+      18239.344885, 5, 5, "83.92%", "Bottom stratum", 15305.853125
+    )
+  )
 })
 
 test_that("<b>Table 4.</b> Selected Items results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(4, 4098.78975, 4, 1, 6, 2972.52, 6, 1, 8, 2979.167, 8, 1, 9, 3176.665125,
-			 9, 1, 10, 29988.5615, 10, 7, 11, 4047.8275, 11, 1, 13, 2129.6735,
-			 13, 1, 17, 49943.58, 17, 12))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      4, 4098.78975, 4, 1, 6, 2972.52, 6, 1, 8, 2979.167, 8, 1, 9, 3176.665125,
+      9, 1, 10, 29988.5615, 10, 7, 11, 4047.8275, 11, 1, 13, 2129.6735,
+      13, 1, 17, 49943.58, 17, 12
+    )
+  )
 })
 
 test_that("<b>Table 2.</b> Selection Summary results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(8, "97.13%", 25, 99336.784375))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(8, "97.13%", 25, 99336.784375)
+  )
 })
 
 # Reproduce test case 3 from Excel
 
-options <- analysisOptions("auditBayesianWorkflow")
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
-options$conf_level <- 0.85
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$startMethod <- "fixedStart"
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
 options$id <- "TransactionID"
 options$values <- "Ist"
+options$explanatoryText <- FALSE
 options$by <- 15
+options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
-options$pasteVariables <- FALSE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
-options$dataType <- "data"
 options$materiality_type <- "materiality_rel"
 options$expected_type <- "expected_all"
 options$likelihood <- "binomial"
 options$prior_method <- "default"
 options$critical_action <- "inspect"
-options$display <- "number"
+options$display <- "percent"
 options$units <- "values"
 options$sampling_method <- "interval"
-options$annotation <- "continuous"
 options$method <- "binomial"
-options$area <- "area_bound"
-options$critical_name <- "critical"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.85
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
 options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase3.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase3.csv", options)
 
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
-	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.15, 60, 0.02, "0 - 60"))
+  table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list("5%", 60, "Value", "2%", "0 - 60")
+  )
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(95, 617839.407382, 51, 60, "81.41%", "Total", 502960.443217, 24,
-			 347324.50499, 24, 33, "100%", "Top stratum", 347324.50499, 71,
-			 270514.902392, 27, 27, "57.53%", "Bottom stratum", 155635.938227
-			))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      95, 617839.407382, 51, 60, "81.41%", "Total", 502960.443217, 24,
+      347324.50499, 24, 33, "100%", "Top stratum", 347324.50499, 71,
+      270514.902392, 27, 27, "57.53%", "Bottom stratum", 155635.938227
+    )
+  )
 })
 
 test_that("<b>Table 4.</b> Selected Items results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(20172.4425, 5, 2, 5, 12601.5505, 6, 1, 6, 15091.9755, 7, 2, 7,
-			 3338.566, 10, 1, 10, 3287.361, 13, 1, 13, 19325.698, 15, 2,
-			 15, 8437.4668, 16, 1, 16, 4283.531, 18, 1, 18, 3487.26, 20,
-			 1, 20, 3935.8956, 24, 1, 24, 11622.34161, 26, 1, 26, 10279.7695,
-			 27, 1, 27, 3320.208395, 29, 1, 29, 9563.232, 33, 1, 33, 9563.232,
-			 34, 1, 34, 7136.913, 36, 1, 36, 6425.2965, 37, 1, 37, 5977.02,
-			 39, 1, 39, 4041.072, 41, 1, 41, 13031.5395, 43, 1, 43, 13099.46925,
-			 45, 1, 45, 11661.02438, 46, 2, 46, 12337.9578, 48, 1, 48, 5362.26075,
-			 49, 1, 49, 15989.2866, 50, 1, 50, 10888.66013, 51, 1, 51, 4003.66575,
-			 52, 1, 52, 11258.2638, 53, 1, 53, 7291.1265, 55, 1, 55, 3236.38875,
-			 58, 1, 58, 5769.988875, 60, 1, 60, 11394.80018, 64, 1, 64, 15166.68825,
-			 66, 2, 66, 14216.28581, 67, 1, 67, 5427.496452, 69, 1, 69, 5424.804,
-			 71, 1, 71, 10858.74643, 73, 1, 73, 7187.450655, 74, 1, 74, 5799.53815,
-			 76, 1, 76, 10396.84275, 80, 1, 80, 17110.5165, 81, 2, 81, 4528.2909,
-			 84, 1, 84, 14406.43365, 85, 1, 85, 17570.763, 86, 2, 86, 9861.5244,
-			 87, 1, 87, 19404.4872, 88, 2, 88, 21902.40675, 89, 2, 89, 7614.81525,
-			 91, 1, 91, 14320.2696, 92, 1, 92, 13496.0553, 93, 1, 93, 1051.764,
-			 94, 1, 94))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      20172.4425, 5, 2, 5, 12601.5505, 6, 1, 6, 15091.9755, 7, 2, 7,
+      3338.566, 10, 1, 10, 3287.361, 13, 1, 13, 19325.698, 15, 2,
+      15, 8437.4668, 16, 1, 16, 4283.531, 18, 1, 18, 3487.26, 20,
+      1, 20, 3935.8956, 24, 1, 24, 11622.34161, 26, 1, 26, 10279.7695,
+      27, 1, 27, 3320.208395, 29, 1, 29, 9563.232, 33, 1, 33, 9563.232,
+      34, 1, 34, 7136.913, 36, 1, 36, 6425.2965, 37, 1, 37, 5977.02,
+      39, 1, 39, 4041.072, 41, 1, 41, 13031.5395, 43, 1, 43, 13099.46925,
+      45, 1, 45, 11661.02438, 46, 2, 46, 12337.9578, 48, 1, 48, 5362.26075,
+      49, 1, 49, 15989.2866, 50, 1, 50, 10888.66013, 51, 1, 51, 4003.66575,
+      52, 1, 52, 11258.2638, 53, 1, 53, 7291.1265, 55, 1, 55, 3236.38875,
+      58, 1, 58, 5769.988875, 60, 1, 60, 11394.80018, 64, 1, 64, 15166.68825,
+      66, 2, 66, 14216.28581, 67, 1, 67, 5427.496452, 69, 1, 69, 5424.804,
+      71, 1, 71, 10858.74643, 73, 1, 73, 7187.450655, 74, 1, 74, 5799.53815,
+      76, 1, 76, 10396.84275, 80, 1, 80, 17110.5165, 81, 2, 81, 4528.2909,
+      84, 1, 84, 14406.43365, 85, 1, 85, 17570.763, 86, 2, 86, 9861.5244,
+      87, 1, 87, 19404.4872, 88, 2, 88, 21902.40675, 89, 2, 89, 7614.81525,
+      91, 1, 91, 14320.2696, 92, 1, 92, 13496.0553, 93, 1, 93, 1051.764,
+      94, 1, 94
+    )
+  )
 })
 
 test_that("<b>Table 2.</b> Selection Summary results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(51, "81.41%", 60, 502960.443217))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(51, "81.41%", 60, 502960.443217)
+  )
 })
 
 # Reproduce test case 4 from Excel
 
-options <- analysisOptions("auditBayesianWorkflow")
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$startMethod <- "fixedStart"
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
 options$id <- "Transaction.ID"
 options$values <- "Ist"
+options$explanatoryText <- FALSE
 options$by <- 5
+options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
-options$pasteVariables <- FALSE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
-options$dataType <- "data"
 options$materiality_type <- "materiality_rel"
 options$expected_type <- "expected_all"
 options$likelihood <- "binomial"
 options$prior_method <- "default"
 options$critical_action <- "inspect"
-options$display <- "number"
+options$display <- "percent"
 options$units <- "values"
 options$sampling_method <- "interval"
-options$annotation <- "continuous"
 options$method <- "binomial"
-options$area <- "area_bound"
-options$critical_name <- "critical"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
 options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase4.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase4.csv", options)
 
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
-	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.05, 25, 0.02, "0 - 25"))
+  table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list("5%", 25, "Value", "2%", "0 - 25")
+  )
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(20, 148905.79, 10, 25, "90.09%", "Total", 134145.85, 3, 107900,
-			 3, 18, "100%", "Top stratum", 107900, 17, 41005.79, 7, 7, "64.01%",
-			 "Bottom stratum", 26245.85))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      20, 148905.79, 10, 25, "90.09%", "Total", 134145.85, 3, 107900,
+      3, 18, "100%", "Top stratum", 107900, 17, 41005.79, 7, 7, "64.01%",
+      "Bottom stratum", 26245.85
+    )
+  )
 })
 
 test_that("<b>Table 4.</b> Selected Items results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(4600, 1, 1, 1, 77900, 2, 13, 2, 15000, 3, 2, 3, 5838.66, 4, 1,
-			 4, 3500, 5, 1, 5, 1880.44, 7, 1, 7, 1642.75, 11, 1, 11, 15000,
-			 14, 3, 14, 3600, 16, 1, 16, 5184, 19, 1, 19))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      4600, 1, 1, 1, 77900, 2, 13, 2, 15000, 3, 2, 3, 5838.66, 4, 1,
+      4, 3500, 5, 1, 5, 1880.44, 7, 1, 7, 1642.75, 11, 1, 11, 15000,
+      14, 3, 14, 3600, 16, 1, 16, 5184, 19, 1, 19
+    )
+  )
 })
 
 test_that("<b>Table 2.</b> Selection Summary results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(10, "90.09%", 25, 134145.85))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(10, "90.09%", 25, 134145.85)
+  )
 })
 
 # Reproduce test case 5 from Excel
 
-options <- analysisOptions("auditBayesianWorkflow")
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$startMethod <- "fixedStart"
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
 options$id <- "Transaction.ID"
 options$values <- "Ist"
+options$explanatoryText <- FALSE
 options$by <- 5
+options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
-options$pasteVariables <- FALSE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
-options$dataType <- "data"
 options$materiality_type <- "materiality_rel"
 options$expected_type <- "expected_all"
 options$likelihood <- "binomial"
 options$prior_method <- "default"
 options$critical_action <- "inspect"
-options$display <- "number"
+options$display <- "percent"
 options$units <- "values"
 options$sampling_method <- "interval"
-options$annotation <- "continuous"
 options$method <- "binomial"
-options$area <- "area_bound"
-options$critical_name <- "critical"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
 options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase5.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase5.csv", options)
 
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
-	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.05, 45, 0.02, "0 - 45"))
+  table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list("5%", 45, "Value", "2%", "0 - 45")
+  )
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(38, 157198.31, 23, 45, "84.03%", "Total", 132101.57, 8, 107542.71,
-			 8, 30, "100%", "Top stratum", 107542.71, 30, 49655.6, 15, 15,
-			 "49.46%", "Bottom stratum", 24558.86))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      38, 157198.31, 23, 45, "84.03%", "Total", 132101.57, 8, 107542.71,
+      8, 30, "100%", "Top stratum", 107542.71, 30, 49655.6, 15, 15,
+      "49.46%", "Bottom stratum", 24558.86
+    )
+  )
 })
 
 test_that("<b>Table 4.</b> Selected Items results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(9561.12, 1, 3, 1, 11100.38, 2, 3, 2, 1700.2, 3, 1, 3, 1707.6,
-			 5, 1, 5, 1694.4, 7, 1, 7, 1627.2, 9, 1, 9, 4260.33, 10, 1, 10,
-			 1658.04, 12, 1, 12, 1784.4, 14, 1, 14, 1587, 16, 1, 16, 1581.54,
-			 18, 1, 18, 1503.8, 20, 1, 20, 1609.02, 22, 1, 22, 1479.02, 25,
-			 1, 25, 1518.2, 27, 1, 27, 1451.54, 29, 1, 29, 1654.4, 31, 1,
-			 31, 5155, 32, 1, 32, 17413.46, 33, 5, 33, 25257.39, 34, 7, 34,
-			 24876.93, 35, 7, 35, 9918.1, 36, 3, 36, 2002.5, 37, 1, 37))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      9561.12, 1, 3, 1, 11100.38, 2, 3, 2, 1700.2, 3, 1, 3, 1707.6,
+      5, 1, 5, 1694.4, 7, 1, 7, 1627.2, 9, 1, 9, 4260.33, 10, 1, 10,
+      1658.04, 12, 1, 12, 1784.4, 14, 1, 14, 1587, 16, 1, 16, 1581.54,
+      18, 1, 18, 1503.8, 20, 1, 20, 1609.02, 22, 1, 22, 1479.02, 25,
+      1, 25, 1518.2, 27, 1, 27, 1451.54, 29, 1, 29, 1654.4, 31, 1,
+      31, 5155, 32, 1, 32, 17413.46, 33, 5, 33, 25257.39, 34, 7, 34,
+      24876.93, 35, 7, 35, 9918.1, 36, 3, 36, 2002.5, 37, 1, 37
+    )
+  )
 })
 
 test_that("<b>Table 2.</b> Selection Summary results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(23, "84.03%", 45, 132101.57))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(23, "84.03%", 45, 132101.57)
+  )
 })
 
 # Reproduce test case 6 from Excel
 
-options <- analysisOptions("auditBayesianWorkflow")
+options <- jaspTools::analysisOptions("auditBayesianWorkflow")
+options$bayesian <- TRUE
+options$rank <- ""
 options$min_precision_test <- TRUE
+options$materiality_type <- "relative"
+options$materiality_rel_val <- 0.02
+options$tableBookDist <- FALSE
+options$plotBookDist <- FALSE
+options$min_precision_rel_val <- 0.02
+options$critical_negative <- TRUE
+options$ir <- "high"
+options$cr <- "high"
+options$conf_level <- 0.95
+options$max <- 5000
+options$tablePrior <- FALSE
+options$plotSampleSizes <- FALSE
+options$startMethod <- "fixedStart"
+options$plotPrior <- FALSE
+options$start <- 1
+options$tableTaints <- FALSE
+options$plotPriorPredictive <- FALSE
+options$tableDescriptives <- FALSE
+options$materiality_test <- FALSE
 options$id <- "Transaction.ID"
 options$values <- "Ist"
+options$explanatoryText <- FALSE
 options$by <- 5
+options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
-options$variables <- list("steek")
 options$tableSample <- TRUE
-options$pasteVariables <- FALSE
+options$evaluationChecked <- FALSE
+options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
-options$dataType <- "data"
 options$materiality_type <- "materiality_rel"
 options$expected_type <- "expected_all"
 options$likelihood <- "binomial"
 options$prior_method <- "default"
 options$critical_action <- "inspect"
-options$display <- "number"
+options$display <- "percent"
 options$units <- "values"
 options$sampling_method <- "interval"
-options$annotation <- "continuous"
 options$method <- "binomial"
-options$area <- "area_bound"
-options$critical_name <- "critical"
+options$area <- "two.sided"
+options$tableAssumptionsConfidence <- 0.95
+options$critical_name <- "Critical"
+options$plotPosterior <- FALSE
+options$plotPrior <- FALSE
+options$plotPosteriorPredictive <- FALSE
+options$plotObjectives <- FALSE
+options$variables <- list("steek")
+options$plotEstimates <- FALSE
+options$plotScatter <- FALSE
+options$tablePriorPosterior <- FALSE
 options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
+options$annotation <- "continuous"
+options$randomize <- FALSE
 set.seed(1)
-results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase6.csv", options)
+results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase6.csv", options)
 
 
 test_that("<b>Table 1.</b> Planning Summary results match", {
-	table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.05, 25, 0.02, "0 - 25"))
+  table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list("5%", 25, "Value", "2%", "0 - 25")
+  )
 })
 
 test_that("<b>Table 3.</b> Information about Monetary Interval Selection results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(20, 148905.79, 10, 25, "90.09%", "Total", 134145.85, 3, 107900,
-			 3, 18, "100%", "Top stratum", 107900, 17, 41005.79, 7, 7, "64.01%",
-			 "Bottom stratum", 26245.85))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      20, 148905.79, 10, 25, "90.09%", "Total", 134145.85, 3, 107900,
+      3, 18, "100%", "Top stratum", 107900, 17, 41005.79, 7, 7, "64.01%",
+      "Bottom stratum", 26245.85
+    )
+  )
 })
 
 test_that("<b>Table 4.</b> Selected Items results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(4600, 1, 1, 1, 1, 77900, 2, 13, 13, 2, 15000, 3, 2, 2, 3, 5838.66,
-			 4, 1, 1, 4, 3500, 5, 1, 1, 5, 1880.44, 7, 1, 1, 7, 1642.75,
-			 11, 1, 1, 11, 15000, 14, 3, 3, 14, 3600, 16, 1, 1, 16, 5184,
-			 19, 1, 1, 19))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSample"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      4600, 1, 1, 1, 1, 77900, 2, 13, 13, 2, 15000, 3, 2, 2, 3, 5838.66,
+      4, 1, 1, 4, 3500, 5, 1, 1, 5, 1880.44, 7, 1, 1, 7, 1642.75,
+      11, 1, 1, 11, 15000, 14, 3, 3, 14, 3600, 16, 1, 1, 16, 5184,
+      19, 1, 1, 19
+    )
+  )
 })
 
 test_that("<b>Table 2.</b> Selection Summary results match", {
-	table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(10, "90.09%", 25, 134145.85))
+  table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(10, "90.09%", 25, 134145.85)
+  )
 })

@@ -12,37 +12,42 @@ Please see the manual of the Audit module (download [here](https://github.com/ja
 
 #### Assignment Box
 - Item ID: A unique non-missing identifier for every item in the population. The row number of the items is sufficient.
-- Book Values: The variable that contains the book values of the items in the population.
-- Ranking Variable: When provided, the population is first ranked in ascending order with respect to the values of this variable.
+- Book Values: The variable that contains the book values of the items in the population. Ideally, all book values are positive values, all items containing negative book values are removed before selection.
 - Additional Variables: Any other variables that should be included in the sample.
 
 #### Sample Size
 The required number of sampling units that should be selected from the population. Be aware that the sampling units are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.
 
+#### Seed
+Selects the seed for the random number generator in order to reproduce results.
+
+#### Randomize Item Order
+Randomizes the order of the items in the population before the selection procedure is performed.
+
 #### Sampling Units
 - Items: Performs selection using the items in the population as sampling units.
 - Monetary units: Performs selection using the monetary units in the population as sampling units. This method is preferred when you want to include more items with a high value in the sample.
 
-#### Method
+#### Sampling Method
 - Fixed interval sampling: Performs selection by dividing the population in equal intervals and selecting a fixed unit in each interval. Any item with a value larger than the interval will always be included in the sample.
-  - Starting point: Selects which sampling unit is selected from each interval.
-- Cell sampling: Performs selection by dividing the population in equal intervals and selecting a variable unit in each interval. Any item with a value larger than twice the interval will always be included in the sample.
-  - Seed: Selects the seed for the random number generator in order to reproduce results.
-- Random sampling: Performs random selection in which each sampling unit has an equal chance of being selected.
-  - Seed: Selects the seed for the random number generator in order to reproduce results.
-
-#### Randomize Item Order
-Randomizes the items in the population before selection is performed.
+  - Starting point: Determines which sampling unit is selected from each of the computed intervals.
+    - User-specified: Manually specify a starting point in the computed interval.
+	- Random: Randomly set a starting point in the computed interval using the specified seed.
+- Cell sampling: Performs selection by dividing the population in equal intervals and selecting a variable unit in each interval. Any item with a value larger than twice the interval will always be included in the sample. This method uses the specified seed.
+- Random sampling: Performs random selection in which each sampling unit has an equal chance of being selected. This method uses the specified seed.
 
 #### Display
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
 
-#### Column Name Selection Result
-When a name is provided, adds the result from the selection analysis in a new column to the data. The new column reflects how many times each transaction is included in the sample.
+#### Report
+- Tables
+  - Selected items: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
+  - Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
 
-#### Tables
-- Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
-- Selected items: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
+#### Export
+- Column Name Selection Result: When a name is provided, adds the result from the selection analysis in a new column to the data. The new column reflects how many times each transaction is included in the sample.
+- File Name: Click Browse to choose a location on your computer to save the sample data.
+- Enable Synchronization: Turn on synchronization between the JASP output and the file specified on your computer, thus writing the sample data to the given file.
 
 ### Output
 ---
@@ -77,8 +82,8 @@ When a name is provided, adds the result from the selection analysis in a new co
 
 ### References
 ---
-- AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K. (2022). jfa: Bayesian and Classical Audit Sampling. R package version 0.6.2.
+- AICPA (2019). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package version 0.6.6.
 
 ### R Packages
 ---

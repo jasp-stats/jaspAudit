@@ -16,11 +16,16 @@
 // When making changes to this file always mention @koenderks as a
 // reviewer in the Pull Request
 
-import QtQuick										2.8
-import QtQuick.Layouts								1.3
-import JASP.Controls								1.0
-import JASP.Widgets									1.0
-import JASP											1.0
+import QtQuick
+import QtQuick.Layouts
+import JASP
+import JASP.Controls
+import JASP.Widgets
+
+import "./common" as Common
+import "./common/planning" as Planning
+import "./common/selection" as Selection
+import "./common/evaluation" as Evaluation
 
 // --------------------------------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------  BEGIN WORKFLOW  -------------------------------------------------------------------------
@@ -28,36 +33,13 @@ import JASP											1.0
 
 Form
 {
-
 	columns: 										2
+	info:											qsTr("The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population. When the auditor has access to the raw population data, they can use the *audit workflow* to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgment. The user can then sample these items from the population, inspect and audit these items, and perform statistical inference about the misstatement in the population. The sampling workflow guides the auditor through the audit process, making the correct choices of calculations along the way.\n\nPlease see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.\n\n### Workflow\n---\n- Planning: Calculate the minimum sample size to achieve your sampling objectives with the specified confidence.\n- Selection: Select the required sampling units from the population.\n- Execution: Annotate the selection with your assessment of the fairness of the selected items.\n- Evaluation: Make a population statement based on your annotated selection.\n\n![Audit sampling workflow](%HELP_FOLDER%/img/workflow.png)")
 
-	// Extra options to be included without being visible
-	CheckBox
-	{
-		name: 										"workflow"
-		checked: 									true
-		visible: 									false
-	}
-
-	CheckBox
-	{
-		name: 										"bayesian"
-		checked: 									true
-		visible: 									false
-	}
-
-	RadioButtonGroup
-	{
-		name:										"dataType"
-		visible:									false
-
-		RadioButton
-		{
-			id:										data
-			name: 									"data"
-			checked: 								true
-		}
-	}
+	// Hidden option(s)
+	CheckBox { name: "workflow"; checked: true; visible: false }
+	CheckBox { name: "bayesian"; checked: true; visible: false }
+	RadioButtonGroup { name: "dataType"; visible: false; RadioButton { name: "data"; checked: true } }
 
 	// --------------------------------------------------------------------------------------------------------------------------------------------
 	// ---------------------------------------------------  PLANNING  -----------------------------------------------------------------------------
@@ -70,115 +52,6 @@ Form
 		expanded:									!samplingChecked.checked
 		columns: 									2
 
-		Group
-		{
-			title: 									qsTr("Sampling Objectives")
-			columns:								2
-			enabled:								!pasteVariables.checked
-
-			CheckBox
-			{
-				id: 								materiality_test
-				text: 								qsTr("Performance materiality")
-				name: 								"materiality_test"
-
-				RadioButtonGroup
-				{
-					id: 							materiality_type
-					name: 							"materiality_type"
-
-					Row
-					{
-						visible: 					materiality_test.checked
-
-						RadioButton
-						{
-							id: 					materiality_rel
-							name: 					"materiality_rel"
-							text: 					qsTr("Relative")
-							checked:				true
-							childrenOnSameRow: 		true
-
-							PercentField
-							{
-								id: 				materiality_rel_val
-								visible: 			materiality_rel.checked
-								decimals: 			2
-								defaultValue: 		0
-								min:				0
-								max:				99
-								name: 				"materiality_rel_val"
-							}
-						}
-					}
-
-					Row
-					{
-						visible: 					materiality_test.checked
-
-						RadioButton
-						{
-							id: 					materiality_abs
-							name: 					"materiality_abs"
-							text: 					qsTr("Absolute")
-							childrenOnSameRow: 		true
-
-							DoubleField
-							{
-								id: 				materiality_abs_val
-								visible: 			materiality_abs.checked
-								name: 				"materiality_abs_val"
-								defaultValue: 		0
-								min: 				0
-								fieldWidth: 		90 * preferencesModel.uiScale
-								decimals: 			2
-							}
-						}
-					}
-				}
-			}
-
-			HelpButton
-			{
-				toolTip: 							qsTr("Click to learn more about performance materiality.")
-				helpPage:							"Audit/performanceMateriality"
-			}
-
-			CheckBox
-			{
-				id: 								min_precision_test
-				text: 								qsTr("Minimum precision")
-				name: 								"min_precision_test"
-
-				PercentField
-				{
-					id: 							min_precision_rel_val
-					name: 							"min_precision_rel_val"
-					decimals: 						2
-					defaultValue: 					2
-					min:							0.1
-					max:							99.9
-					label: 							qsTr("Relative")
-					visible: 						min_precision_test.checked
-				}
-			}
-
-			HelpButton
-			{
-				toolTip: 							qsTr("Click to learn more about the precision.")
-				helpPage:							"Audit/minimumPrecision"
-			}
-		}
-
-		CIField
-		{
-			name: 									"conf_level"
-			label: 									qsTr("Confidence")
-			enabled:								!pasteVariables.checked
-		}
-
-		Divider { }
-
 		VariablesForm
 		{
 			id: 									variablesFormPlanning
@@ -190,463 +63,45 @@ Form
 				name: 								"variablesFormPlanning"
 			}
 
-			AssignedVariablesList
-			{
-				id: 								id
-				name: 								"id"
-				title: 								qsTr("Item ID")
-				singleVariable:						true
-				allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
-				allowAnalysisOwnComputedColumns: 	false
-				onCountChanged:						if(lik_hypergeometric.checked && id.count == 0) lik_binomial.click()
-			}
-
-			AssignedVariablesList
-			{
-				id: 								values
-				name: 								"values"
-				title: 								qsTr("Book Value")
-				singleVariable: 					true
-				allowedColumns: 					["scale"]
-				allowAnalysisOwnComputedColumns: 	false
-				onCountChanged:
-				{
-					if (initialized)
-					{
-						values.count > 0 ? values_sampling.click() : rows_sampling.click()
-						values.count > 0 ? continuous.click() : binary.click()
-					}
-				}
-			}
+			Selection.IdVariable { id: id }
+			Selection.BookVariable { id: values }
 		}
 
-		RadioButtonGroup
+		GridLayout
 		{
-			id: 									expected
-			name: 									"expected_type"
-			title: 									qsTr("Expected Errors in Sample")
-			enabled:								!pasteVariables.checked
-
-			RadioButton
-			{
-				id: 								expected_rel
-				name: 								"expected_rel"
-				text: 								qsTr("Relative")
-				checked: 							true
-				childrenOnSameRow: 					true
-
-				PercentField
-				{
-					id:								expected_rel_val
-					name: 							"expected_rel_val"
-					enabled: 						expected_rel.checked
-					decimals: 						2
-					defaultValue: 					0
-					visible: 						expected_rel.checked
-				}
-			}
-
-			RadioButton
-			{
-				id: 								expected_abs
-				name: 								"expected_abs"
-				text: 								qsTr("Absolute")
-				childrenOnSameRow: 					true
-
-				DoubleField
-				{
-					id:								expected_abs_val
-					name: 							"expected_abs_val"
-					enabled: 						expected_abs.checked
-					defaultValue: 					0
-					min: 							0
-					decimals: 						3
-					visible: 						expected_abs.checked
-				}
-			}
-
-			RadioButton
-			{
-				id:									expected_all
-				name:								"expected_all"
-				text:								qsTr("All possible")
-				enabled:							separate.checked
-			}
-		}
-
-		Group
-		{
-			title: 									qsTr("Display")
-			columns: 								2
-
-			CheckBox
-			{
-				id: 								explanatoryText
-				text: 								qsTr("Explanatory text")
-				name: 								"explanatoryText"
-				checked: 							true
-			}
-
-			HelpButton
-			{
-				helpPage:							"Audit/explanatoryText"
-				toolTip: 							qsTr("Show explanatory text at each step of the analysis")
-			}
-		}
-
-		RadioButtonGroup
-		{
-			id: 									likelihood
-			title: 									qsTr("Probability Distribution")
-			name: 									"likelihood"
-			enabled:								!pasteVariables.checked
-
-			RadioButton
-			{
-				id: 								lik_hypergeometric
-				text: 								qsTr("Beta-binomial")
-				name: 								"hypergeometric"
-				enabled:							id.count > 0
-			}
-
-			RadioButton
-			{
-				id: 								lik_binomial
-				text: 								qsTr("Beta")
-				name: 								"binomial"
-				checked:							true
-			}
-
-			RadioButton
-			{
-				id: 								lik_poisson
-				text: 								qsTr("Gamma")
-				name: 								"poisson"
-			}
-		}
-
-		Group
-		{
-			rowSpacing: 							15 * preferencesModel.uiScale
-
-			Group
-			{
-				title: 								qsTr("Tables")
-
-				CheckBox
-				{
-					text: 							qsTr("Descriptive statistics")
-					name: 							"tableBookDist"
-					enabled:						values.count > 0
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Prior and posterior")
-					name: 							"tablePrior"
-				}
-			}
-
-			Group
-			{
-				title: 								qsTr("Plots")
-
-				CheckBox
-				{
-					name: 							"plotBookDist"
-					text: 							qsTr("Distribution of book values")
-					enabled: 						values.count > 0
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Compare sample sizes")
-					name: 							"plotSampleSizes"
-					enabled:						!separate.checked
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Prior and posterior")
-					name: 							"plotPrior"
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Prior predictive")
-					name: 							"plotPriorPredictive"
-					enabled:						!lik_hypergeometric.checked
-				}
-			}
+			columns: 1
+			Planning.SamplingObjectives { id: objectives; enable: !pasteVariables.checked }
+			Planning.ExpectedErrors { enable: !pasteVariables.checked; show_all: algorithm.use_partial; enable_all: algorithm.use_partial }
+			Common.ExplanatoryText { }
 		}
 
 		Section
 		{
 			title: 									qsTr("Prior")
-
-			RadioButtonGroup
-			{
-				name: 								"prior_method"
-				enabled:							!pasteVariables.checked
-
-				RadioButton
-				{
-					name: 							"default"
-					label:							qsTr("Default")
-					checked:						true
-				}
-
-				RadioButton
-				{
-					id: 							param
-					name: 							"param"
-					label: 							qsTr("Manual")
-					childrenOnSameRow: 				true
-
-					Row
-					{
-						spacing: 					10 * preferencesModel.uiScale
-
-						DoubleField
-						{
-							name: 					"alpha"
-							label:					qsTr("\u03B1")
-							min:					1
-							defaultValue: 			1
-						}
-
-						DoubleField
-						{
-							name: 					"beta"
-							label:					qsTr("\u03B2")
-							min:					0
-							defaultValue: 			1
-						}
-					}
-				}
-
-				RadioButton
-				{
-					id: 							sample
-					name: 							"sample"
-					label: 							qsTr("Earlier sample")
-					childrenOnSameRow: 				true
-
-					Row
-					{
-						spacing: 					10 * preferencesModel.uiScale
-
-						IntegerField
-						{
-							id:						prior_n
-							name: 					"n"
-							label:					qsTr("Size")
-							min:					prior_x.value
-							defaultValue: 			0
-						}
-
-						DoubleField
-						{
-							id:						prior_x
-							name: 					"x"
-							label:					qsTr("Errors")
-							min:					0
-							max:					prior_n.value
-							defaultValue: 			0
-							decimals:				3
-						}
-					}
-				}
-
-				RadioButton
-				{
-					name: 							"impartial"
-					label:							qsTr("Impartial")
-					enabled:						materiality_test.checked
-				}
-
-				RadioButton
-				{
-					id: 							arm
-					name: 							"arm"
-					label:							qsTr("Risk assessments")
-					enabled:						materiality_test.checked
-
-					Group
-					{
-						columns:							2
-
-						DropDown
-						{
-							id: 						ir
-							name: 						"ir"
-							indexDefaultValue: 	 		0
-							startValue:					"high"
-							label: 						qsTr("Inherent risk")
-							values: 					[
-								{ label: qsTr("High"),	value: "high"},
-								{ label: qsTr("Medium"), value: "medium"},
-								{ label: qsTr("Low"), 		value: "low"},
-								{ label: qsTr("Manual"), 	value: "custom"}
-							]
-						}
-
-						PercentField
-						{
-							name: 							"irCustom"
-							defaultValue: 					ir.value == "high" ? 100 : (ir.value == 'medium' ? 60 : (ir.value == "low" ? 36 : 100))
-							min: 							25
-							enabled: 						ir.value == "custom"
-						}
-
-						DropDown
-						{
-							id: 							cr
-							name: 							"cr"
-							indexDefaultValue:				0
-							startValue:						"high"
-							label: 							qsTr("Control risk")
-							values: 						[
-								{ label: qsTr("High"),		value: "high"},
-								{ label: qsTr("Medium"), 	value: "medium"},
-								{ label: qsTr("Low"), 		value: "low"},
-								{ label: qsTr("Manual"), 	value: "custom"}
-							]
-						}
-
-						PercentField
-						{
-							name: 							"crCustom"
-							defaultValue:					cr.value == "high" ? 100 : (cr.value == 'medium' ? 60 : (cr.value == "low" ? 36 : 100))
-							min: 							25
-							enabled: 						cr.value == "custom"
-						}
-					}
-				}
-			}
+			columns:								2
+			Planning.Likelihood { id:likelihood; bayesian: true; evaluation: false; enable: !pasteVariables.checked; enable_hypergeometric: (id.use_id || (id.use_id && values.use_book)) && !algorithm.use_partial; enable_poisson: !algorithm.use_partial }
+			Planning.PriorMethod { use_materiality: objectives.use_materiality; enable: !pasteVariables.checked }
 		}
 
 		Section
 		{
-			title:									qsTr("Advanced Options")
+			title: 									qsTr("Report")
+			columns:								2
+			Planning.PlanningOutput { bayesian: true; workflow: true; enable_values: values.use_book; disable_predictive: likelihood.use_hypergeometric }
+			Common.Display { show_monetary: true; enable_monetary: values.use_book }
+		}
+
+		Section
+		{
+			title:									qsTr("Advanced")
 			columns:								3
-
-			Group
+			Planning.Iterations { enable: !pasteVariables.checked }
+			Planning.CriticalItems { id: critical; enable: values.use_book && !pasteVariables.checked }
+			Planning.Algorithm
 			{
-				name:								"critical_items"
-				title:								qsTr("Critical Items")
-				enabled:							data.checked && values.count > 0 && !pasteVariables.checked
-
-				CheckBox
-				{
-					id: 							critical_negative
-					name:							"critical_negative"
-					text:							qsTr("Negative book values")
-					enabled:						values.count > 0
-					checked:						true
-
-					ComputedColumnField
-					{
-						id: 						critical_name
-						name: 						"critical_name"
-						text: 						qsTr("Column name")
-						fieldWidth: 				120 * preferencesModel.uiScale
-						value: 						qsTr("critical")
-					}
-
-					RadioButtonGroup
-					{
-						name: 						"critical_action"
-
-						RadioButton
-						{
-							id:						inspect
-							text: 					qsTr("Keep")
-							name: 					"inspect"
-							checked: 				true
-						}
-
-						RadioButton
-						{
-							text: 					qsTr("Remove")
-							name: 					"remove"
-						}
-					}
-				}
-			}
-
-			Group
-			{
-				title:								qsTr("Iterations")
-				enabled:							!pasteVariables.checked
-
-				IntegerField
-				{
-					name: 							"by"
-					text: 							qsTr("Increment")
-					min: 							1
-					max:							50
-					defaultValue: 					1
-				}
-
-				IntegerField
-				{
-					name: 							"max"
-					text: 							qsTr("Maximum")
-					min: 							2
-					defaultValue: 					5000
-				}
-			}
-
-			RadioButtonGroup
-			{
-				name: 								"display"
-				title:								qsTr("Format Tables")
-
-				RadioButton
-				{
-					text: 							qsTr("Numbers")
-					name: 							"number"
-					checked: 						true
-				}
-
-				RadioButton
-				{
-					text: 							qsTr("Percentages")
-					name: 							"percent"
-				}
-
-				RadioButton
-				{
-					text: 							qsTr("Monetary values")
-					name: 							"amount"
-					enabled:						values.count > 0
-				}
-			}
-
-			Group
-			{
-				Layout.columnSpan:					3
-
-				Row
-				{
-					CheckBox
-					{
-						id: 						separate
-						text: 						qsTr("Assume homogeneous taints")
-						name: 						"separateMisstatement"
-						enabled:					!pasteVariables.checked && id.count > 0 && values.count > 0 && lik_binomial.checked
-						onCheckedChanged:			{
-							if (!checked & expected_all.checked) expected_rel.checked = true
-						}
-					}
-
-					HelpButton
-					{
-						toolTip: 					qsTr("Click to learn more about this assumption")
-						helpPage:					"Audit/separateKnownAndUnknownMisstatement"
-					}
-				}
+				id: 								algorithm
+				enable:								!pasteVariables.checked
+				enable_partial: 					id.use_id && values.use_book && likelihood.use_binomial
 			}
 		}
 
@@ -680,10 +135,10 @@ Form
 				id: 								toSampling
 				anchors.right: 						parent.right
 				text: 								qsTr("<b>To Selection</b>")
-				enabled: 							!samplingChecked.checked && ((materiality_rel.checked ?
-																					  materiality_rel_val.value > 0 && id.count > 0 :
-																					  materiality_abs_val.value > 0 && id.count > 0 && values.count > 0) ||
-																				 (min_precision_test.checked && min_precision_rel_val.value > 0 && id.count > 0))
+				enabled: 							!samplingChecked.checked && ((objectives.use_materiality && (objectives.absolute_materiality ?
+																													 objectives.absolute_value > 0 && id.use_id && values.use_book :
+																													 objectives.relative_value > 0 && id.use_id)) ||
+																				 (objectives.use_precision && objectives.precision_value > 0 && id.use_id))
 				onClicked:							samplingChecked.checked	= true
 			}
 		}
@@ -701,180 +156,48 @@ Form
 		expanded: 									samplingChecked.checked && !executionChecked.checked
 		columns: 									2
 
+		GridLayout
+		{
+			columns:								1
+
+			Group
+			{
+				Selection.Seed { enable: (randomize.use_randomize || !method.use_interval || method.use_random_start) && !algorithm.use_partial }
+				Selection.Randomize { id: randomize; enable: !pasteVariables.checked && !algorithm.use_partial && !rank.use_rank }
+				CheckBox
+				{
+					id:								add_selection_variables
+					name:							"add_sel_vars"
+					text:							qsTr("Add variables to sample")
+					enabled:						!pasteVariables.checked
+					debug:							true
+				}
+			}
+
+			Selection.SamplingUnits { id: units; enable: !pasteVariables.checked; enable_mus: values.use_book; force_mus: algorithm.use_partial }
+			Selection.SelectionMethod { id: method; enable: !pasteVariables.checked; force_interval: algorithm.use_partial; enable_sieve: values.use_book && units.use_mus}
+		}
+
 		VariablesForm
 		{
 			id: 									variablesFormSampling
 			preferredHeight: 						jaspTheme.smallDefaultVariablesFormHeight
 			enabled: 								!pasteVariables.checked
+			visible:								add_selection_variables.checked
 
 			AvailableVariablesList
 			{
 				name: 								"variablesFormSampling"
 			}
 
-			AssignedVariablesList
-			{
-				id:									rank
-				name: 								"rank"
-				title: 								qsTr("Ranking Variable")
-				singleVariable:						true
-				allowedColumns:						["scale"]
-				allowAnalysisOwnComputedColumns: 	false
-				enabled:							!separate.checked
-			}
-
-			AssignedVariablesList
-			{
-				name:								"variables"
-				title: 								qsTr("Additional Variables")
-				Layout.preferredHeight: 			140 * preferencesModel.uiScale
-				allowedColumns: 					["scale", "ordinal", "nominal"]
-				allowAnalysisOwnComputedColumns: 	false
-			}
+			Selection.RankVariable { id: rank; enable: !algorithm.use_partial }
+			Selection.AdditionalVariables { }
 		}
 
-		Group
+		Section
 		{
-			IntegerField
-			{
-				id: 								seed
-				text: 								qsTr("Seed")
-				name: 								"seed"
-				defaultValue: 						1
-				min: 								1
-				max: 								99999
-				enabled:							(randomize.checked || method.value != "interval") & !separate.checked
-			}
-
-			CheckBox
-			{
-				id:									randomize
-				name:								"randomize"
-				text:								qsTr("Randomize item order")
-				enabled:							!pasteVariables.checked && !separate.checked && rank.count == 0
-			}
-		}
-
-		Group
-		{
-			title: 									qsTr("Tables")
-
-			CheckBox
-			{
-				text: 								qsTr("Descriptive statistics")
-				name: 								"tableDescriptives"
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Selected items")
-				name: 								"tableSample"
-			}
-		}
-
-		Group
-		{
-			rowSpacing: 							15 * preferencesModel.uiScale
-
-			RadioButtonGroup
-			{
-				id: 								units
-				title:								qsTr("Sampling Units")
-				name: 								"units"
-				columns:							2
-				enabled:							!pasteVariables.checked
-
-				RadioButton
-				{
-					id: 							rows_sampling
-					text: 							qsTr("Items")
-					name: 							"items"
-					checked: 						true
-					enabled:						!separate.checked
-				}
-
-				HelpButton
-				{
-					toolTip: 						qsTr("Click to learn more about record sampling.")
-					helpPage:						"Audit/recordSampling"
-				}
-
-				RadioButton
-				{
-					id: 							values_sampling
-					text: 							qsTr("Monetary units")
-					name: 							"values"
-					enabled: 						values.count > 0
-				}
-
-				HelpButton
-				{
-					helpPage:						"Audit/monetaryUnitSampling"
-					toolTip: 						qsTr("Click to learn more about monetary unit sampling.")
-				}
-			}
-
-			RadioButtonGroup
-			{
-				id: 								method
-				title:								qsTr("Method")
-				name: 								"sampling_method"
-				enabled:							!pasteVariables.checked
-				columns:							2
-
-				RadioButton
-				{
-					id: 							interval
-					text: 							qsTr("Fixed interval sampling")
-					name: 							"interval"
-					checked: 						true
-
-					IntegerField
-					{
-						id: 						start
-						text: 						qsTr("Starting point")
-						name: 						"start"
-						defaultValue: 				1
-						min: 						1
-						visible:					interval.checked
-						enabled:					!separate.checked
-					}
-				}
-
-				HelpButton
-				{
-					toolTip: 						qsTr("Click to learn more about fixed interval sampling.")
-					helpPage:						"Audit/fixedIntervalSampling"
-				}
-
-				RadioButton
-				{
-					id: 							cell
-					text: 							qsTr("Cell sampling")
-					name: 							"cell"
-					enabled:						!separate.checked
-				}
-
-				HelpButton
-				{
-					toolTip: 						qsTr("Click to learn more about cell sampling.")
-					helpPage:						"Audit/cellSampling"
-				}
-
-				RadioButton
-				{
-					id: 							random
-					text: 							qsTr("Random sampling")
-					name: 							"random"
-					enabled:						!separate.checked
-				}
-
-				HelpButton
-				{
-					toolTip: 						qsTr("Click to learn more about random sampling.")
-					helpPage:						"Audit/randomSampling"
-				}
-			}
+			title:									qsTr("Report")
+			Selection.SelectionOutput { }
 		}
 
 		Item
@@ -893,10 +216,6 @@ Form
 
 			Button
 			{
-				enabled:							((materiality_rel.checked ?
-														materiality_rel_val.value != "0" && id.count > 0 :
-														materiality_abs_val.value != "0" && id.count > 0 && values.count > 0) ||
-													 (min_precision_test.checked && min_precision_rel_val.value != "0" && id.count > 0))
 				anchors.right:						toExecution.left
 				anchors.rightMargin:				jaspTheme.generalAnchorMargin
 				text:								qsTr("<b>Download Report</b>")
@@ -936,71 +255,12 @@ Form
 		enabled: 									executionChecked.checked
 		columns: 									2
 
-		RadioButtonGroup
-		{
-			id: 									annotation
-			name: 									"annotation"
-			title: 									qsTr("Annotation")
-			enabled:								!pasteVariables.checked
-			columns:								2
-
-			RadioButton
-			{
-				id: 								continuous
-				text: 								qsTr("Audit value")
-				name: 								"continuous"
-				enabled: 							values.count > 0
-			}
-
-			HelpButton
-			{
-				toolTip: 							qsTr("Adds a column to specify the audit values of the items.")
-				helpPage: 							"?"
-			}
-
-			RadioButton
-			{
-				id: 								binary
-				text: 								qsTr("Correct / Incorrect")
-				name: 								"binary"
-				checked: 							true
-				enabled: 							!separate.checked
-			}
-
-			HelpButton
-			{
-				toolTip:							qsTr("Adds a column to specify the items as correct (0) or misstated (1).")
-				helpPage: 							"?"
-			}
-		}
-
-		Group
-		{
-			id: 									names
-			enabled:								!pasteVariables.checked
-
-			ComputedColumnField
-			{
-				id: 								indicator_col
-				name: 								"indicator_col"
-				text: 								qsTr("Column name selection result")
-				fieldWidth: 						120 * preferencesModel.uiScale
-				value:								qsTr("selected")
-			}
-
-			ComputedColumnField
-			{
-				id: 								variable_col
-				name: 								"variable_col"
-				text: 								qsTr("Column name audit result")
-				fieldWidth: 						120 * preferencesModel.uiScale
-				value: 								qsTr("auditResult")
-			}
-		}
+		Evaluation.Annotation { id: annotation; enable: !pasteVariables.checked; enable_values: values.use_book; enable_binary: !algorithm.use_partial }
+		Evaluation.AddVariables { id: names; enable: !pasteVariables.checked }
 
 		Item
 		{
-			Layout.preferredHeight:					names.height
+			Layout.preferredHeight:					annotation.height
 			Layout.columnSpan:						2
 			Layout.fillWidth:						true
 
@@ -1018,15 +278,15 @@ Form
 			{
 				id: 								pasteButton
 				text: 								qsTr("<b>Fill Variables</b>")
-				enabled: 							indicator_col.value != "" && variable_col.value != "" && !pasteVariables.checked
+				enabled: 							names.indicator_name != "" && names.variable_name != "" && !pasteVariables.checked
 				anchors.right:						parent.right
 				onClicked:
 				{
 					pasteVariables.checked 		= true
-					performAuditTable.colName   = variable_col.value
-					performAuditTable.extraCol	= indicator_col.value
-					critical_negative.checked && inspect.checked ? performAuditTable.filter = indicator_col.value + " > 0" + " | " + critical_name.value + " > 0" : performAuditTable.filter = indicator_col.value + " > 0"
-					performAuditTable.initialValuesSource = continuous.checked ? "values" : ""
+					performAuditTable.colName   = names.variable_name
+					performAuditTable.extraCol	= names.indicator_name
+					critical.use_negative && critical.use_inspect ? performAuditTable.filter = names.indicator_name + " > 0" + " | " + critical.use_name + " > 0" : performAuditTable.filter = names.indicator_name + " > 0"
+					performAuditTable.initialValuesSource = annotation.use_values ? "values" : ""
 				}
 			}
 		}
@@ -1034,7 +294,7 @@ Form
 		Section
 		{
 			id: 									executeAuditSection
-			title:									qsTr("Data Entry")
+			title:									qsTr("Sample List")
 			expanded:								pasteVariables.checked
 			enabled:								pasteVariables.checked
 			columns:								1
@@ -1043,7 +303,7 @@ Form
 			{
 				id: 								performAuditText
 				Layout.alignment: 					Qt.AlignHCenter
-				text: 								continuous.checked ? qsTr("<b>Annotate your selected items with their audit (true) values.</b>") : qsTr("<b>Annotate your selected items as correct (0) or incorrect (1).</b>")
+				text: 								annotation.use_values ? qsTr("<b>Annotate your selected items with their audit (true) values.</b>") : qsTr("<b>Annotate your selected items as correct (0) or incorrect (1).</b>")
 				visible: 							pasteVariables.checked
 			}
 
@@ -1095,9 +355,6 @@ Form
 					executionPhase.expanded = false
 					executeAuditSection.expanded = false
 					evaluationChecked.checked = true
-					if (lik_binomial.checked) 						binomial.click()
-					if (lik_hypergeometric.checked) 				hypergeometric.click()
-					if (lik_poisson.checked) 						poisson.click()
 				}
 			}
 		}
@@ -1124,155 +381,55 @@ Form
 				name: 								"evaluationVariables"
 				source: 							"variablesFormPlanning"
 			}
+			Evaluation.AuditVariable { binary: annotation.use_values }
+		}
 
-			AssignedVariablesList
+		Section
+		{
+			title:									qsTr("Report")
+			Evaluation.EvaluationOutput
 			{
-				id: 								auditResult
-				name: 								"values.audit"
-				title: 								continuous.checked ? qsTr("Audit Value") : qsTr("Audit Result")
-				singleVariable: 					true
-				allowedColumns: 					["nominal", "scale"]
+				bayesian: true
+				enable_taints: values.use_book
+				enable_corrections: values.use_book
+				enable_assumptions: algorithm.use_partial
+				enable_objectives: objectives.use_materiality || objectives.use_precision
+				enable_predictive: !likelihood.use_hypergeometric
+				enable_scatter: annotation.use_values
+				enable_estimates: true
 			}
 		}
 
-		RadioButtonGroup
+		Section
 		{
-			title: 									qsTr("Method")
-			name: 									"method"
+			title:									qsTr("Advanced")
+			columns:								2
 
-			RadioButton
+			RadioButtonGroup
 			{
-				id: 								hypergeometric
-				name: 								"hypergeometric"
-				text: 								qsTr("Beta-binomial")
-				enabled: 							lik_hypergeometric.checked
-			}
+				name: 								"method"
+				visible:							false
 
-			RadioButton
-			{
-				id: 								binomial
-				name: 								"binomial"
-				text: 								qsTr("Beta")
-				enabled: 							lik_binomial.checked
-			}
-
-			RadioButton
-			{
-				id: 								poisson
-				name: 								"poisson"
-				text: 								qsTr("Gamma")
-				enabled: 							lik_poisson.checked
-			}
-		}
-
-		Group
-		{
-			title: 									qsTr("Tables")
-
-			CheckBox
-			{
-				text: 								qsTr("Prior and posterior")
-				name: 								"tablePriorPosterior"
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Misstated items")
-				name: 								"tableTaints"
-				enabled:							values.count > 0 && data.checked
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Corrections to population")
-				name: 								"tableCorrections"
-				enabled:							values.count > 0
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Assumption checks")
-				name: 								"tableAssumptions"
-				checked: 							separate.checked
-				enabled: 							separate.checked
-
-				CIField
+				RadioButton
 				{
-					name: 							"tableAssumptionsConfidence"
-					label: 							qsTr("Confidence interval")
+					name: 							"hypergeometric"
+					text: 							qsTr("Beta-binomial")
 				}
-			}
-		}
 
-		RadioButtonGroup
-		{
-			title: 									qsTr("Area Under Posterior")
-			name: 									"area"
-
-			RadioButton
-			{
-				text: 								qsTr("One-sided upper bound")
-				name: 								"area_bound"
-				checked:							true
-			}
-
-			RadioButton
-			{
-				text: 								qsTr("Two-sided interval")
-				name: 								"area_interval"
-			}
-		}
-
-		Group
-		{
-			title: 									qsTr("Plots")
-
-			CheckBox
-			{
-				id: 								plotPosterior
-				text: 								qsTr("Prior and posterior")
-				name: 								"plotPosterior"
-
-				CheckBox
+				RadioButton
 				{
-					id: 							plotPosteriorInfo
-					text: 							qsTr("Additional info")
-					name: 							"plotPosteriorInfo"
-					checked:						true
+					name: 							"binomial"
+					text: 							qsTr("Beta")
+				}
+
+				RadioButton
+				{
+					name: 							"poisson"
+					text: 							qsTr("Gamma")
 				}
 			}
 
-			CheckBox
-			{
-				text: 								qsTr("Posterior predictive")
-				name: 								"plotPosteriorPredictive"
-				enabled:							!hypergeometric.checked
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Sampling objectives")
-				name: 								"plotObjectives"
-			}
-
-			CheckBox
-			{
-				text: 								qsTr("Scatter plot")
-				name: 								"plotScatter"
-				enabled: 							continuous.checked
-
-				CheckBox
-				{
-					text: 							qsTr("Display correlation")
-					name:							"plotScatterCorrelation"
-				}
-
-				CheckBox
-				{
-					text: 							qsTr("Display item ID's")
-					name:							"plotScatterId"
-				}
-			}
+			Evaluation.IntervalType { bayesian: true; test: objectives.use_materiality }
 		}
 
 		Item

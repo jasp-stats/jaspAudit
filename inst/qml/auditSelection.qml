@@ -16,288 +16,61 @@
 // When making changes to this file always mention @koenderks as a
 // reviewer in the Pull Request
 
-import QtQuick 									2.8
-import QtQuick.Layouts 							1.3
-import JASP.Controls 							1.0
-import JASP.Widgets 							1.0
+import QtQuick
+import QtQuick.Layouts
+import JASP
+import JASP.Controls
+import JASP.Widgets
+
+import "./common" as Common
+import "./common/selection" as Selection
 
 Form 
 {
+	columns: 1
+	info: qsTr("The selection analysis allows the user to select a number of sampling units (items or monetary units) from a population using a variety of sampling methods (random sampling, cell sampling, fixed interval sampling) that are standard in an auditing context.\n\n![Audit sampling workflow](%HELP_FOLDER%/img/workflowSelection.png)\n\nPlease see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.")
 
-	columns:									2
+	// Hidden option(s)
+	CheckBox { name: "workflow"; checked: false; visible: false }
 
-	// Extra options
-	CheckBox
-	{
-		name:									"workflow"
-		checked:								false
-		visible:								false
-	}
-
+	// Visible options
 	VariablesForm
 	{
-		id:										variablesFormSampling
+		id:	variablesFormSampling
+		preferredHeight: jaspTheme.smallDefaultVariablesFormHeight
 
-		AvailableVariablesList
-		{
-			name:								"variablesFormSampling"
-		}
-
-		AssignedVariablesList
-		{
-			id:									id
-			name:								"id"
-			title:								qsTr("Item ID")
-			singleVariable:						true
-			allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
-			allowAnalysisOwnComputedColumns:	false
-		}
-
-		AssignedVariablesList
-		{
-			id:									values
-			name:								"values"
-			title:								qsTr("Book Value")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-			allowAnalysisOwnComputedColumns:	false
-			onCountChanged:						values.count == 0 ? rows_sampling.click() : values_sampling.click()
-		}
-
-		AssignedVariablesList
-		{
-			id:									rank
-			name:								"rank"
-			title: 								qsTr("Ranking Variable")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-			allowAnalysisOwnComputedColumns: 	false
-		}
-
-		AssignedVariablesList
-		{
-			name:								"variables"
-			title: 								qsTr("Additional Variables")
-			Layout.preferredHeight: 			140 * preferencesModel.uiScale
-			allowedColumns: 					["scale", "ordinal", "nominal"]
-			allowAnalysisOwnComputedColumns: 	false
-		}
+		AvailableVariablesList { name: "variablesFormSampling" }
+		Selection.IdVariable { id: id }
+		Selection.BookVariable { id: values; required: units.use_mus }
+		Selection.RankVariable { id: rank }
+		Selection.AdditionalVariables { }
 	}
 
 	Group
 	{
 		IntegerField
 		{
-			id:									nobs
-			text: 								qsTr("Sample size")
-			name: 								"n"
-			defaultValue: 						0
-			min: 								0
+			id:				sample_size
+			text: 			qsTr("Sample size")
+			name: 			"n"
+			defaultValue: 	0
+			min: 			0
+			info:			qsTr("The required number of sampling units that should be selected from the population, which are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.")
 		}
-
-		IntegerField
-		{
-			id: 								seed
-			text: 								qsTr("Seed")
-			name: 								"seed"
-			defaultValue: 						1
-			min: 								1
-			max: 								99999
-			enabled:							randomize.checked || method.value != "interval"
-		}
-
-		CheckBox
-		{
-			id:									randomize
-			name:								"randomize"
-			text:								qsTr("Randomize item order")
-			enabled:							rank.count == 0
-		}
+		Selection.Seed { enable: randomize.checked || !method.use_interval || method.use_random_start }
+		Selection.Randomize { id: randomize; enable: !rank.use_rank }
 	}
 
-	Group
-	{
-		title: 									qsTr("Display")
-		columns: 2
-
-		CheckBox
-		{
-			id: 								explanatoryText
-			text: 								qsTr("Explanatory Text")
-			name: 								"explanatoryText"
-			checked: 							true
-		}
-
-		HelpButton
-		{
-			helpPage:							"Audit/explanatoryText"
-			toolTip: 							qsTr("Show explanatory text at each step of the analysis")
-		}
-	}
-
-	RadioButtonGroup
-	{
-		id: 									units
-		title:									qsTr("Sampling Units")
-		name: 									"units"
-		columns:								2
-
-		RadioButton
-		{
-			id: 								rows_sampling
-			text: 								qsTr("Items")
-			name: 								"items"
-			checked: 							true
-		}
-
-		HelpButton
-		{
-			toolTip: 							qsTr("Click to learn more about record sampling.")
-			helpPage:							"Audit/recordSampling"
-		}
-
-		RadioButton
-		{
-			id: 								values_sampling
-			text: 								qsTr("Monetary units")
-			name: 								"values"
-			enabled: 							values.count > 0
-		}
-
-		HelpButton
-		{
-			helpPage:							"Audit/monetaryUnitSampling"
-			toolTip: 							qsTr("Click to learn more about monetary unit sampling.")
-		}
-	}
-
-	Group
-	{
-		title: 									qsTr("Tables")
-
-		CheckBox
-		{
-			text: 								qsTr("Descriptive statistics")
-			name: 								"tableDescriptives"
-		}
-
-		CheckBox
-		{
-			text: 								qsTr("Selected items")
-			name: 								"tableSample"
-		}
-	}
-
-	Group
-	{
-		RadioButtonGroup
-		{
-			id: 								method
-			title:								qsTr("Method")
-			name: 								"sampling_method"
-			columns:							2
-
-			RadioButton
-			{
-				id: 							interval
-				text: 							qsTr("Fixed interval sampling")
-				name: 							"interval"
-				checked: 						true
-
-				IntegerField
-				{
-					id: 						start
-					text: 						qsTr("Starting point")
-					name: 						"start"
-					defaultValue: 				1
-					min: 						1
-					visible:					interval.checked
-				}
-			}
-
-			HelpButton
-			{
-				toolTip: 						qsTr("Click to learn more about fixed interval sampling.")
-				helpPage:						"Audit/fixedIntervalSampling"
-			}
-
-			RadioButton
-			{
-				id: 							cell
-				text: 							qsTr("Cell sampling")
-				name: 							"cell"
-			}
-
-			HelpButton
-			{
-				toolTip: 						qsTr("Click to learn more about cell sampling.")
-				helpPage:						"Audit/cellSampling"
-			}
-
-			RadioButton
-			{
-				id: 							random
-				text: 							qsTr("Random sampling")
-				name: 							"random"
-			}
-
-			HelpButton
-			{
-				toolTip: 						qsTr("Click to learn more about random sampling.")
-				helpPage:						"Audit/randomSampling"
-			}
-		}
-	}
+	Selection.SamplingUnits { id: units; enable_mus: values.use_book }
+	Selection.SelectionMethod { id: method; enable_sieve: values.use_book && units.use_mus }
+	Common.ExplanatoryText { }
 
 	Section
 	{
-		title: 									qsTr("Export")
-
-		Group
-		{
-			enabled: 							id.count > 0 && nobs.value > 0
-
-			ComputedColumnField
-			{
-				id:								name_indicator
-				name: 							"name_indicator"
-				text: 							qsTr("Column name selection result")
-				placeholderText: 				qsTr("e.g. selected")
-				fieldWidth: 					120 * preferencesModel.uiScale
-			}
-
-			FileSelector
-			{
-				id:                             file
-				name:                           "file"
-				label:                          qsTr("Save as")
-				placeholderText: 				qsTr("e.g. sample.csv")
-				filter:                         "*.csv"
-				save:                           true
-				fieldWidth:                     180 * preferencesModel.uiScale
-			}
-
-			CheckBox
-			{
-				name: 							"export_sample"
-				text: 							qsTr("Export sample to file")
-				enabled:						name_indicator.value != "" && file.value != ""
-			}
-		}
+		title: qsTr("Report")
+		Selection.SelectionOutput { }
 	}
 
-	Item
-	{
-		Layout.preferredHeight: 				download.height
-		Layout.preferredWidth:					parent.width
-		Layout.columnSpan:						2
-
-		Button
-		{
-			id: 								download
-			anchors.right: 						parent.right
-			text: 								qsTr("<b>Download Report</b>")
-			onClicked: 							form.exportResults()
-		}
-	}
+	Selection.ExportSample { enable: id.count > 0 && sample_size.value > 0 }
+	Common.DownloadReport { }
 }

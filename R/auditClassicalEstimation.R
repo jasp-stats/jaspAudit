@@ -19,7 +19,6 @@
 # reviewer in the pull Request.
 
 auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
-
   # Read in the data
   dataset <- .jfaEstimationReadData(dataset, options)
 
@@ -48,6 +47,8 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   .jfaEstimationCorrelationPlot(dataset, options, jaspResults, ready, position = 4)
 
   # ---
+
+  .jfaCreatedByText(jaspResults)
 }
 
 .jfaEstimationReadData <- function(dataset, options) {
@@ -100,6 +101,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
       options[["populationSize"]] != 0 &&
       options[["populationValue"]] != 0 # adjust for mpu
   }
+  return(ready)
 }
 
 .jfaEstimationTable <- function(dataset, options, jaspResults, ready, position) {

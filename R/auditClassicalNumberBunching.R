@@ -22,7 +22,6 @@
 # by Uri Simonsohn which is available at: http://datacolada.org/77.
 
 auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
-
   # Create the procedure paragraph
   .jfaNumberBunchingAddProcedure(options, jaspResults, position = 1)
 
@@ -68,6 +67,8 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
   .jfaNumberBunchingAddConclusion(options, numberBunchingContainer, jaspResults, ready, position = 3)
 
   # ---
+
+  .jfaCreatedByText(jaspResults)
 }
 
 .jfaNumberBunchingDataCheck <- function(dataset, options) {
@@ -185,8 +186,8 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
   } else if (ready) {
     set.seed(options[["seed"]])
 
-    test_af <- digitTests::rv.test(x = dataset[[options[["values"]]]], check = options[["shuffle"]], method = "af", B = options[["noSamples"]])
-    test_e <- digitTests::rv.test(x = dataset[[options[["values"]]]], check = options[["shuffle"]], method = "entropy", B = options[["noSamples"]])
+    test_af <- jfa::repeated_test(x = dataset[[options[["values"]]]], check = options[["shuffle"]], method = "af", samples = options[["noSamples"]])
+    test_e <- jfa::repeated_test(x = dataset[[options[["values"]]]], check = options[["shuffle"]], method = "entropy", samples = options[["noSamples"]])
 
     state <- list()
     state[["N"]] <- as.numeric(test_af$n)
@@ -335,7 +336,6 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
 }
 
 .jfaNumberBunchingSimulationPlots <- function(dataset, options, numberBunchingContainer, jaspResults, ready) {
-
   # Create the observed versus expected average frequency plot
   if (options[["avgFrequency"]]) {
     .jfaNumberBunchingFrequencyPlot(dataset, options, numberBunchingContainer, jaspResults, ready, positionInContainer = 4)
@@ -537,8 +537,6 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     "noSamples",
     "seed"
   ))
-
-  confidenceLabel <- paste0(round(options[["confidence"]] * 100, 2), "%")
 
   state <- .jfaNumberBunchingState(dataset = NULL, options, jaspResults, ready)
 

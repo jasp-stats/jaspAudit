@@ -21,4 +21,5 @@
 auditClassicalWorkflow <- function(jaspResults, dataset, options, ...) {
   # For the workflow constituents, see auditCommonFunctions.R
   .jfaWorkflowAnalysis(options, jaspResults)
+  .jfaCreatedByText(jaspResults)
 }

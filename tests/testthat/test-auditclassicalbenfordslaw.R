@@ -6,6 +6,8 @@ options$benfordsLawPlot <- TRUE
 options$distribution <- "benford"
 options$digits <- "first"
 options$bayesFactorType <- "BF10"
+options$matchTable <- TRUE
+options$match <- 9
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalBenfordsLaw", "sinoForest.csv", options)
 
@@ -36,5 +38,22 @@ test_that("<b>Table 1.</b> Goodness-of-fit Test results match", {
   jaspTools::expect_equal_tables(
     table,
     list(772, 1.4493429670676e-07, 8, 0.468206381300368, "value", 7.652)
+  )
+})
+
+test_that("<b>Table 3.</b> Rows Matched to Leading Digit 9 results match", {
+  table <- results[["results"]][["benfordsLawContainer"]][["collection"]][["benfordsLawContainer_matchTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      12, 9691, 30, 97030, 67, 925466, 156, 9200, 163, 9458, 179, 9714,
+      185, 9699, 242, 9000, 300, 966000, 337, 9135000, 342, 91107000,
+      348, 939, 351, 97077922, 353, 939000, 390, 9209102, 452, 90764,
+      459, 97030000, 485, 924, 487, 924, 492, 99711, 503, 98863000,
+      504, 96605000, 549, 90432000, 551, 92054000, 588, 9351000, 621,
+      9684, 631, 927, 637, 9858, 645, 954194, 657, 960, 684, 9454000,
+      686, 96454000, 699, 9140, 703, 913480, 708, 926507000, 711,
+      925929000, 737, 96, 758, 9336
+    )
   )
 })

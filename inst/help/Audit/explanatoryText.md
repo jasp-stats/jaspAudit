@@ -1,4 +1,6 @@
-The use of explanatory text
-==========================
+Explanatory Text
+===
 
-The explanatory text provides you with an in-depth explanation of each step in the audit process. The text will help you understand what the practical interpretation of your choices is, and helps translate your statistical findings to others (in common English). With explanatory text enabled, each figure will also have its own caption interpreting the result displayed in that graph.
+The purpose of the explanatory text is to give a thorough and comprehensive explanation of each step in the auditing process. When the explanatory text is enabled, every table and figure will have a corresponding caption that clarifies the meaning of the data being presented.
+
+This text aims to make it easier for you to comprehend the practical implications of your decisions and to communicate your statistical results to others in a clear and easily understood manner.
