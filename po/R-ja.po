@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2022-07-02 03:54\n"
+"POT-Creation-Date: 2023-04-19 10:09\n"
 "PO-Revision-Date: 2022-05-31 11:20+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -26,9 +26,9 @@ msgid ""
 "law might need further investigation."
 msgstr ""
 "一様分布は、発生する可能性のあるすべての桁に等しい確率を割り当てます。この手"
-"順の目的は、データセットの最初の桁がどの程度一様分布に従うかを決定し、<b>"
-"%1$s</b>のタイプI誤差でこの関係を検定することです。一様分布の仮定が望ましい場"
-"合、一様分布の違反はさらなる調査の原因となります。"
+"順の目的は、データセットの最初の桁がどの程度一様分布に従うかを決定し、"
+"<b>%1$s</b>のタイプI誤差でこの関係を検定することです。一様分布の仮定が望まし"
+"い場合、一様分布の違反はさらなる調査の原因となります。"
 
 #, fuzzy
 msgid ""
@@ -54,9 +54,9 @@ msgid ""
 "might need further investigation."
 msgstr ""
 "一様分布は、発生する可能性のあるすべての桁に等しい確率を割り当てます。この手"
-"順の目的は、データセットの最後の桁がどの程度一様分布に従うかを決定し、<b>"
-"%1$s</b>のタイプI誤差でこの関係を検定することです。一様分布の仮定が望ましい場"
-"合、一様分布の違反はさらなる調査の原因となります。"
+"順の目的は、データセットの最後の桁がどの程度一様分布に従うかを決定し、"
+"<b>%1$s</b>のタイプI誤差でこの関係を検定することです。一様分布の仮定が望まし"
+"い場合、一様分布の違反はさらなる調査の原因となります。"
 
 #, fuzzy
 msgid ""
@@ -68,9 +68,9 @@ msgid ""
 "for further investigation."
 msgstr ""
 "一様分布は、発生する可能性のあるすべての桁に等しい確率を割り当てます。この手"
-"順の目的は、データセットの最初の桁がどの程度一様分布に従うかを決定し、<b>"
-"%1$s</b>のタイプI誤差でこの関係を検定することです。一様分布の仮定が望ましい場"
-"合、一様分布の違反はさらなる調査の原因となります。"
+"順の目的は、データセットの最初の桁がどの程度一様分布に従うかを決定し、"
+"<b>%1$s</b>のタイプI誤差でこの関係を検定することです。一様分布の仮定が望まし"
+"い場合、一様分布の違反はさらなる調査の原因となります。"
 
 #, fuzzy
 msgid ""
@@ -96,9 +96,9 @@ msgid ""
 "investigation."
 msgstr ""
 "一様分布は、発生する可能性のあるすべての桁に等しい確率を割り当てます。この手"
-"順の目的は、データセットの最後の桁がどの程度一様分布に従うかを決定し、<b>"
-"%1$s</b>のタイプI誤差でこの関係を検定することです。一様分布の仮定が望ましい場"
-"合、一様分布の違反はさらなる調査の原因となります。"
+"順の目的は、データセットの最後の桁がどの程度一様分布に従うかを決定し、"
+"<b>%1$s</b>のタイプI誤差でこの関係を検定することです。一様分布の仮定が望まし"
+"い場合、一様分布の違反はさらなる調査の原因となります。"
 
 msgid "<u>Assessing Benford's Law</u>"
 msgstr "<u>ベンフォードの法則を評価する</u>"
@@ -149,12 +149,6 @@ msgstr ""
 msgid "<b>Table %i.</b> Frequency Table"
 msgstr "<b>表 %i.</b> 記述統計"
 
-msgid "Benford's law"
-msgstr "ベンフォードの法則"
-
-msgid "Uniform distribution"
-msgstr "一様分布"
-
 msgid "Leading digit"
 msgstr "第一桁"
 
@@ -164,17 +158,44 @@ msgstr "第一桁"
 msgid "Last digit"
 msgstr "最後の一桁"
 
+msgid "Benford's law"
+msgstr "ベンフォードの法則"
+
+msgid "Uniform distribution"
+msgstr "一様分布"
+
 msgid "Count"
 msgstr "カウント"
 
 msgid "Relative frequency"
 msgstr "相対度数"
 
+#, fuzzy
+msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
+msgstr "<b>表 %i.</b> 適合度検定"
+
+msgid "Row"
+msgstr ""
+
+msgid "Value"
+msgstr "値"
+
+msgid "The requested digit must be between 1 - 9."
+msgstr ""
+
+msgid "<b>Warning.</b>"
+msgstr "<b>警告</b>"
+
+msgid "The requested digit must be between 10 - 99."
+msgstr ""
+
+msgid ""
+"Displayed values are rounded to the number of decimals set in the global "
+"preferences."
+msgstr ""
+
 msgid "Observed vs. Expected Relative Frequencies"
 msgstr "観測値と期待される相対度数"
-
-msgid "Observed"
-msgstr "観測された"
 
 #, fuzzy
 msgid ""
@@ -271,9 +292,6 @@ msgid ""
 "calculations."
 msgstr ""
 
-msgid "<b>Warning.</b>"
-msgstr "<b>警告</b>"
-
 msgid ""
 "The number of items in the population is lower than the number of items in "
 "the sample."
@@ -305,13 +323,13 @@ msgid "The standard deviation of the sample audit values %1$s"
 msgstr ""
 
 msgid ""
-"The t-value <i>(df = n - 1)</i> corresponding to %1$s%% confidence %2$s%3$s"
-"%4$s"
+"The t-value <i>(df = n - 1)</i> corresponding to %1$s%% confidence "
+"%2$s%3$s%4$s"
 msgstr ""
 
 msgid ""
-"The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence %3$s"
-"%4$s%5$s%6$s"
+"The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence "
+"%3$s%4$s%5$s%6$s"
 msgstr ""
 
 msgid ""
@@ -499,9 +517,6 @@ msgid ""
 "= 0."
 msgstr ""
 
-msgid "Value"
-msgstr "値"
-
 msgid "Percentage"
 msgstr "パーセンテージ"
 
@@ -675,32 +690,30 @@ msgstr ""
 msgid ""
 "%1$s\n"
 "\n"
-"The quantity of interest is the misstatement (%2$s) in the population. "
+"The quantity of interest is the misstatement %2$s in the population. "
 "Misstatement is defined as the difference between an item's booked "
 "(recorded) value and its audit (true) value. When testing the population "
-"misstatement against a given performance materiality, %2$s*, two statistical "
+"misstatement against a given performance materiality, two statistical "
 "hypotheses about %2$s are formulated:\n"
 "\n"
-"                                  The (null) hypothesis of intolerable "
-"misstatement %3$s,\n"
-"                                  The (alternative) hypothesis of tolerable "
-"misstatement %4$s.\n"
+"                                  The (null) hypothesis %3$s,\n"
+"                                  The (alternative) hypothesis %4$s.\n"
 "\n"
-"                                  The audit risk (%5$s) is the risk of "
+"                                  The audit risk %5$s is the risk of "
 "incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the "
 "basis of a sample, the information from the sample must be sufficient to "
-"reduce %5$s to an appropriately low level (< %6$s%%)."
+"reduce %5$s to an appropriately low level (i.e., %5$s < %6$s%%)."
 msgstr ""
 
 msgid ""
 "%1$s\n"
 "\n"
 "In a Bayesian analysis, the parameter %2$s is first assigned a prior "
-"probability distribution that incorporates the existing information about "
-"its possible values. A description and figure of the current prior "
-"distribution can be found under the <i>Tables</i> section. You can "
-"incorporate existing information using the options under the <i>Prior</i> "
-"section."
+"probability distribution that incorporates the available audit information "
+"about the misstatement in the population. A description and figure of the "
+"current prior distribution can be found under the <i>Report</i> section. You "
+"can incorporate existing information using the options under the <i>Prior</"
+"i> section."
 msgstr ""
 
 msgid "a performance materiality of %1$s"
@@ -708,15 +721,15 @@ msgstr ""
 
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
-"%1$s is below the performance materiality %1$s*"
+"in the population is below the performance materiality"
 msgstr ""
 
 msgid "a minimum precision of %1$s"
 msgstr ""
 
 msgid ""
-"the sample provides sufficient information to estimate the misstatement %1$s "
-"with the minimum precision"
+"the sample provides sufficient information to estimate the misstatement in "
+"the population with the minimum precision"
 msgstr ""
 
 msgid "a performance materiality of %1$s and a minimum precision of %2$s"
@@ -724,7 +737,8 @@ msgstr ""
 
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
-"%1$s is below the performance materiality %1$s* with the minimum precision"
+"in the population is below the performance materiality with the minimum "
+"precision"
 msgstr ""
 
 msgid ""
@@ -820,6 +834,9 @@ msgstr ""
 msgid "cell"
 msgstr ""
 
+msgid "sieve"
+msgstr ""
+
 msgid "book values (<i>%1$s</i>)"
 msgstr ""
 
@@ -850,7 +867,7 @@ msgid ""
 "current selection method, look under the <i>Method</i> section.\n"
 "\n"
 "From the population of %1$s %2$s items, %3$s sampling units (%4$s) are "
-"selected from the %5$s using a %6$s method.%7$s"
+"selected from the %5$s using the %6$s method.%7$s"
 msgstr ""
 
 msgid ""
@@ -878,9 +895,7 @@ msgid "<b>Objectives:</b> You have achieved your initial sampling objectives."
 msgstr ""
 
 msgid ""
-"<b>Objectives:</b> You have not achieved your initial sampling objectives. "
-"It is recommended to draw more samples from this population and continue "
-"audit procedures."
+"<b>Objectives:</b> You have not achieved your initial sampling objectives."
 msgstr ""
 
 msgid ""
@@ -963,11 +978,6 @@ msgid "<u>Audit Risk Model</u>"
 msgstr ""
 
 msgid ""
-"Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x "
-"Detection risk (%4$s%%)"
-msgstr ""
-
-msgid ""
 "The Audit Risk Model is a method to reduce the required information from the "
 "sample on the basis of earlier assessments of inherent risk and control "
 "risk, while maintaining the desired audit risk.\n"
@@ -979,24 +989,35 @@ msgid ""
 msgstr ""
 
 msgid ""
-"%1$s\n"
-"\n"
-"The translation of High, Medium and Low to probabilities is done according "
-"custom preferences."
+"Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x "
+"Detection risk (%4$s%%)"
 msgstr ""
 
 msgid ""
-"%1$s\n"
-"\n"
-"The translation of High, Medium and Low to probabilities is done using "
-"default values. To learn more about the choice of these values and how to "
-"adjust these, see the help file of this analysis or look under the <i>Audit "
-"Risk Model</i> section."
+"At least one translation of the categories High, Medium and Low to "
+"probabilities is done according custom settings."
 msgstr ""
 
 msgid ""
-"The detection risk is equal to or higher than 100%%. Please re-specify your "
-"custom values for the Inherent risk and/or Control risk."
+"The translation of the categories High, Medium and Low to probabilities is "
+"done using the default settings shown in the table below. To learn more "
+"about these default settings and how to adjust them, see the help file of "
+"this analysis or look under the <i>Audit Risk Model</i> section."
+msgstr ""
+
+#, fuzzy
+msgid "<b>Table %1$i.</b> Default Settings Audit Risk Model"
+msgstr "<b>表 %i.</b> 記述統計"
+
+msgid "Inherent risk"
+msgstr ""
+
+msgid "Control risk"
+msgstr ""
+
+msgid ""
+"The detection risk is equal to or higher than 100%%. Please re-specify the "
+"percentages for the Inherent risk and/or Control risk."
 msgstr ""
 
 msgid ""
@@ -1017,19 +1038,13 @@ msgstr ""
 msgid "Min. precision"
 msgstr ""
 
-msgid "Inherent risk"
-msgstr ""
-
-msgid "Control risk"
-msgstr ""
-
 msgid "Detection risk"
 msgstr ""
 
 msgid "Audit risk"
 msgstr ""
 
-msgid "Tolerable errors"
+msgid "Tolerable misstatements"
 msgstr ""
 
 msgid "Minimum sample size"
@@ -1123,6 +1138,11 @@ msgid "Across Expected Errors (Current: %1$s)"
 msgstr ""
 
 msgid ""
+"You cannot achieve your current sampling objectives with up to three full "
+"misstatements this population."
+msgstr ""
+
+msgid ""
 "<b>Figure %1$i.</b> The first panel shows a comparison of the minimum sample "
 "sizes under different probability distributions. The bars represent the "
 "minimum sample sizes for the current expected errors in the sample. The "
@@ -1132,17 +1152,9 @@ msgid ""
 "the current probability distribution."
 msgstr ""
 
-msgid "Assumed %1$s Distribution of Errors"
-msgstr ""
-
-msgid "Expected"
-msgstr ""
-
-msgid "Errors"
-msgstr ""
-
-msgid "Probability"
-msgstr "確率"
+#, fuzzy
+msgid "Presumed %1$s Distribution"
+msgstr "事後分布"
 
 msgid ""
 "<b>Figure %1$i.</b> The assumed %2$s distribution. The number of expected "
@@ -1174,7 +1186,7 @@ msgstr ""
 msgid "%% of population size"
 msgstr ""
 
-msgid "From each of the intervals of size %1$s, unit %2$s is selected."
+msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."
 msgstr ""
 
 msgid "The sample is drawn with seed %1$s and intervals of size %2$s."
@@ -1183,7 +1195,10 @@ msgstr ""
 msgid "The sample is drawn with seed %1$s."
 msgstr ""
 
-msgid "The sample is not exported until 'Export sample to file' is checked."
+msgid "The random numbers are generated with seed %1$s."
+msgstr ""
+
+msgid "The sample is not exported until the 'Synchronize' option is checked."
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
@@ -1216,9 +1231,6 @@ msgstr ""
 msgid "<b>Table %1$i.</b> Selected Items"
 msgstr "<b>表 %i.</b> 適合度検定"
 
-msgid "Row"
-msgstr ""
-
 msgid "Selected"
 msgstr ""
 
@@ -1250,24 +1262,13 @@ msgid ""
 msgstr ""
 
 msgid ""
-"These results imply that there is a %1$s probability that, when one would "
-"repeatedly sample from this population, the upper bound for θ is below %2$s "
-"with a precision of %3$s."
-msgstr ""
-
-msgid ""
-"These results imply that there is a %1$s probability that θ is below %2$s "
-"with a precision of %3$s."
-msgstr ""
-
-msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "
 "population on the basis of a sample.\n"
 "\n"
 "The population consisted of %1$s items and %2$s units. The sample consisted "
 "of %3$s sampling units, of which a total of %4$s were misstated. The "
-"information from this sample %5$s results in a most likely error in the "
-"population of %6$s and an %7$s upper bound of %8$s. %9$s"
+"information from this sample %5$s results in a most likely misstatement in "
+"the population of %6$s and a %7$s upper bound of %8$s."
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Evaluation Summary"
@@ -1276,20 +1277,26 @@ msgstr ""
 msgid "Sample size"
 msgstr "サンプルサイズ"
 
+msgid "Misstatements"
+msgstr ""
+
 msgid "Taint"
 msgstr ""
 
-msgid "Most likely error"
+msgid "Most likely misstatement"
 msgstr ""
 
 msgid "%1$s%% Upper bound"
 msgstr ""
 
-msgid "%1$s%% Credible interval"
+msgid "%1$s%% Lower bound"
 msgstr ""
 
 msgid "Precision"
 msgstr ""
+
+msgid "p-value"
+msgstr "p値"
 
 msgid "The results are computed using the Poisson distribution."
 msgstr ""
@@ -1344,6 +1351,16 @@ msgid ""
 msgstr ""
 
 #, fuzzy
+msgid "<b>Table %1$i.</b> Stratum Evaluation Summary"
+msgstr "<b>表 %i.</b> 記述統計"
+
+msgid "Stratum"
+msgstr ""
+
+msgid "%1$s%% Interval"
+msgstr ""
+
+#, fuzzy
 msgid "<b>Table %1$i.</b> Misstated Items"
 msgstr "<b>表 %i.</b> 適合度検定"
 
@@ -1390,6 +1407,9 @@ msgstr ""
 msgid "Upper bound"
 msgstr "上"
 
+msgid "Most likely error"
+msgstr ""
+
 msgid "Minimum precision"
 msgstr ""
 
@@ -1402,9 +1422,19 @@ msgstr ""
 msgid ""
 "<b>Figure %1$i.</b> Evaluation information for the current annotated "
 "selection. The materiality is compared with the maximum misstatement and the "
-"most likely error. The most likely error (MLE) is an estimate of the true "
-"misstatement in the population. The upper bound is an estimate of the "
-"maximum error in the population."
+"most likely misstatement. The most likely misstatement is the best estimate "
+"of the true misstatement in the population. The upper bound is an estimate "
+"of the maximum misstatement in the population."
+msgstr ""
+
+msgid "Estimates"
+msgstr ""
+
+msgid ""
+"<b>Figure %1$i.</b> Most likely estimates (points) and %2$s%% %3$s %4$s "
+"intervals for the misstatement in the population and in the individual "
+"strata, showing the range of plausible values for the misstatement after "
+"seeing the data."
 msgstr ""
 
 msgid "Scatter Plot of Book and Audit Values"
@@ -1444,48 +1474,30 @@ msgstr ""
 msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
 msgstr ""
 
+msgid "Created by JASP for Audit (Version %1$s) on %2$s at %3$s."
+msgstr ""
+
 #, fuzzy
 msgid "Prior and Expected Posterior Distribution"
 msgstr "事後分布"
 
+#, fuzzy
+msgid "Prior Distribution"
+msgstr "一様分布"
+
 msgid "Prior and Posterior Distribution"
-msgstr ""
-
-msgid "Unseen population misstatement %1$s"
-msgstr ""
-
-msgid "Population misstatement %1$s"
-msgstr ""
-
-msgid "Prior"
-msgstr "事前分布"
-
-msgid "Posterior"
-msgstr "事後分布"
-
-msgid "Density"
-msgstr "密度"
-
-msgid "Population errors"
-msgstr ""
-
-msgid ""
-"The expected posterior distribution is calculated so that its %1$sth "
-"percentile lies below the performance materiality (gray dot)."
 msgstr ""
 
 msgid ""
 "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on "
 "the population misstatement θ. The prior parameters (%3$s = %4$s, %5$s = "
-"%6$s) are derived from the prior information. %7$s"
-msgstr ""
-
-msgid "The gray dots represent the performance materiality."
+"%6$s) are derived from the prior information. The expected posterior "
+"distribution fulfills the conditions set in the sampling objectives."
 msgstr ""
 
 msgid ""
 "<b>Figure %1$i.</b> The prior and posterior distribution (%2$s) on the "
-"misstatement in the population. %3$s"
+"misstatement in the population."
 msgstr ""
 
 #, fuzzy
@@ -1495,12 +1507,6 @@ msgstr "事後分布"
 #, fuzzy
 msgid "Posterior Predictive Distribution"
 msgstr "事後分布"
-
-msgid "Predicted samples before an error"
-msgstr ""
-
-msgid "Predicted errors"
-msgstr ""
 
 msgid ""
 "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays "
@@ -1528,15 +1534,29 @@ msgstr ""
 msgid "Mode"
 msgstr "最頻値"
 
+msgid "Prior"
+msgstr "事前分布"
+
+msgid "Posterior"
+msgstr "事後分布"
+
 msgid "Shift"
+msgstr ""
+
+msgid "Nonparametric"
 msgstr ""
 
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr ""
 
-#, fuzzy
-#~ msgid "<b>Table %i.</b> Equivalent Prior Sample"
-#~ msgstr "<b>表 %i.</b> 記述統計"
+#~ msgid "Observed"
+#~ msgstr "観測された"
+
+#~ msgid "Probability"
+#~ msgstr "確率"
+
+#~ msgid "Density"
+#~ msgstr "密度"
 
 #, fuzzy
 #~ msgid "<b>Table %1$i.</b> Raw Sample"
@@ -1548,9 +1568,6 @@ msgstr ""
 
 #~ msgid "Std. Deviation"
 #~ msgstr "標準偏差"
-
-#~ msgid "p-value"
-#~ msgstr "p値"
 
 #~ msgid "Statistic"
 #~ msgstr "統計"
