@@ -26,11 +26,10 @@ Upgrades
 		functionName:	"auditBayesianPlanning"
 		fromVersion:	"0.17.1"
 		toVersion:		"0.17.2"
-
+		
 		ChangeJS
 		{
 			name:		"area"
-
 			jsFunction:	function(options)
 			{
 				switch(options["area"])
@@ -51,7 +50,6 @@ Upgrades
 		ChangeJS
 		{
 			name:		"area"
-
 			jsFunction:	function(options)
 			{
 				switch(options["area"])
@@ -72,7 +70,6 @@ Upgrades
 		ChangeJS
 		{
 			name:		"area"
-
 			jsFunction:	function(options)
 			{
 				switch(options["area"])
