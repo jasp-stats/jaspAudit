@@ -979,14 +979,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
           text,
           "\u03B8",
           switch(options[["area"]],
-            "less" = gettextf("of intolerable misstatement H\u208A: \u03B8 \u2265 %1$s", stageOptions[["materiality_label"]]),
-            "two.sided" = gettextf("of exact misstatement H\u2080: \u03B8 = %1$s", stageOptions[["materiality_label"]]),
-            "greater" = gettextf("of tolerable misstatement H\u208B: \u03B8 \u2264 %1$s", stageOptions[["materiality_label"]])
+            "less" = gettextf("of intolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208A", "\u03B8", "\u2265", stageOptions[["materiality_label"]]),
+            "two.sided" = gettextf("of exact misstatement H%1$s: %2$s = %3$s", "\u2080", "\u03B8", stageOptions[["materiality_label"]]),
+            "greater" = gettextf("of tolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208B", "\u03B8" , "\u2264", stageOptions[["materiality_label"]])
           ),
           switch(options[["area"]],
-            "less" = gettextf("of tolerable misstatement H\u208B: \u03B8 < %1$s", stageOptions[["materiality_label"]]),
-            "two.sided" = gettextf("of no misstatement H\u2080: \u03B8 \u2260 %1$s", stageOptions[["materiality_label"]]),
-            "greater" = gettextf("of intolerable misstatement H\u208A: \u03B8 > %1$s", stageOptions[["materiality_label"]])
+            "less" = gettextf("of tolerable misstatement H%1$s: %2$s < %3$s", "\u208B", "\u03B8", stageOptions[["materiality_label"]]),
+            "two.sided" = gettextf("of no misstatement H%1$s: %2$s %3$s %4$s", "\u2080", "\u03B8", "\u2260", stageOptions[["materiality_label"]]),
+            "greater" = gettextf("of intolerable misstatement H%1$s: %2$s > %3$s", "\u208A", "\u03B8", stageOptions[["materiality_label"]])
           ),
           "\u03B1",
           round((1 - options[["conf_level"]]) * 100, 2)
