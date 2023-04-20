@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-04-19 10:09\n"
-"PO-Revision-Date: 2023-04-20 07:34+0000\n"
+"PO-Revision-Date: 2023-04-20 08:05+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
@@ -1851,13 +1851,13 @@ msgid "Created by JASP for Audit (Version %1$s) on %2$s at %3$s."
 msgstr "Gemaakt door JASP voor Audit (Versie %1$s) op %2$s op %3$s."
 
 msgid "Prior and Expected Posterior Distribution"
-msgstr "Prior and Verwachte Posterior Verdeling"
+msgstr "Prior- en Verwachte Posterior-verdeling"
 
 msgid "Prior Distribution"
 msgstr "Prior-verdeling"
 
 msgid "Prior and Posterior Distribution"
-msgstr "Prior and posterior verdeling"
+msgstr "Prior- en Posterior-verdeling"
 
 msgid ""
 "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on "
@@ -1879,23 +1879,23 @@ msgstr ""
 "de populatie."
 
 msgid "Prior Predictive Distribution"
-msgstr "Prior Predictive Verdeling"
+msgstr "Prior-voorspellende-verdeling"
 
 msgid "Posterior Predictive Distribution"
-msgstr "Posterior Predictive Verdeling"
+msgstr "Posterior-voorspellende-verdeling"
 
 msgid ""
 "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays "
 "the predictions of the %2$s distribution for %4$s <i>n</i> = %5$s."
 msgstr ""
-"<b>Figuur %1$i.</b> De %2$s predictive verdeling is %3$s en toont de "
+"<b>Figuur %1$i.</b> De %2$s voorspellende verdeling is %3$s en toont de "
 "voorspellingen van de %2$s verdeling voor %4$s <i>n</i> = %5$s."
 
 msgid "Descriptive Statistics for Prior and Expected Posterior Distribution"
-msgstr "Beschrijvende Statistieken voor Prior en Verwachte Posterior Verdeling"
+msgstr "Beschrijvende Statistieken voor Prior- en Verwachte Posterior-verdeling"
 
 msgid "Descriptive Statistics for Prior and Posterior Distribution"
-msgstr "Beschrijvende Statistieken voor Prior en Posterior Verdeling"
+msgstr "Beschrijvende Statistieken voor Prior- en Posterior-verdeling"
 
 msgid "<b>Table %1$i.</b> %2$s"
 msgstr "<b>Tabel %1$i.</b> %2$s"
