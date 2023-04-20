@@ -1,25 +1,25 @@
 Evaluatie
 ===
 
-Met de evaluatieanalyse kan de gebruiker op basis van een controlesteekproef conclusies trekken over de totale onjuistheid in de populatie.
+Met de evaluatieanalyse kan de gebruiker op basis van een steekproef conclusies trekken over de totale fout in de populatie.
 
 <img src="%HELP_FOLDER%/img/workflowEvaluation.png" />
 
-Zie de handleiding van de module Audit (download [hier](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) voor meer gedetailleerde informatie over deze analyse.
+Zie de handleiding van de auditmodule (download [hier](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) voor meer gedetailleerde informatie over deze analyse.
 
 ### Input
 ---
 
 #### Toewijzingsvak
-- Item ID: Een unieke, niet ontbrekende identifier voor elk item in de populatie. Het rijnummer van de items is voldoende.
-- Boekwaarden: De variabele die de boekwaarden van de items in de populatie bevat. Idealiter zijn alle boekwaarden positieve waarden, zie de <i>Kritische items</i> optie voor de afhandeling van negatieve boekwaarden.
-- Audit resultaat / waarden: De variabele die de controle (ware) waarden bevat, of de binaire classificatie van juist (0) of onjuist (1).
+- Item ID: Een unieke, niet ontbrekende identifier voor elk item in de populatie. Het rijnummer van de posten is voldoende.
+- Boekwaarden: De variabele die de boekwaarden van de posten in de populatie bevat. Idealiter zijn alle boekwaarden positieve waarden, zie de optie <i>Kritische posten</i> voor de afhandeling van negatieve boekwaarden.
+- Audit resultaat / waarden: De variabele die de audit (ware) waarden bevat, of de binaire classificatie van juist (0) of onjuist (1).
 - Selectieteller: De variabele die bevat hoeveel keer elke waarneming moet worden geëvalueerd.
-- Stratum: Een optionele variabele die voor elk item bevat tot welk stratum een item behoort in de populatie. Het verstrekken van een stratumvariabele geeft aan de analyse aan dat de populatie in verschillende subgroepen is verdeeld en dat voor elk van deze subgroepen een schatting moet worden gemaakt.
+- Deelpopulatie: Een optionele variabele die voor elk item bevat tot welke deelpopulatie een poast behoort in de populatie. Het verstrekken van een deelpopulatie-variabele geeft aan de analyse aan dat de populatie in verschillende deelpopulatie is verdeeld en dat voor elk van deze deelpopulatie een uitspraak moet worden gedaan.
 
 #### Steekproefdoelstellingen
 - Uitvoeringsmaterialiteit: Ook wel de maximale fout, het aanvaardbare foutpercentage of de toelaatbare fout genoemd, is de uitvoeringsmaterialiteit de bovengrens van de fout in de te toetsen populatie. Door te toetsen aan een uitvoeringsmaterialiteit kunt u een steekproef plannen om bewijs te verzamelen voor of tegen de conclusie dat de populatie als geheel geen fouten bevat die als materieel worden beschouwd (d.w.z. groter zijn dan de bovengrens van de toelaatbare fout). U moet deze doelstelling inschakelen wanneer u aan de hand van een steekproef van de populatie wilt nagaan of de populatie fouten bevat boven of onder een bepaalde grens (de uitvoeringsmaterialiteit). Een lagere uitvoeringsmaterialiteit leidt tot een grotere vereiste steekproefomvang. Omgekeerd zal een hogere uitvoeringsmaterialiteit resulteren in een kleinere vereiste steekproefomvang.
-- Minimale precisie: De precisie is het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout. Door deze steekproefdoelstelling in te schakelen, kunt u een steekproef zo plannen dat het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout tot een minimumpercentage wordt beperkt. U moet deze doelstelling inschakelen als u een schatting van de fout van de populatie met een bepaalde nauwkeurigheid wilt maken. Een lagere minimaal vereiste nauwkeurigheid leidt tot een hogere vereiste steekproefomvang. Omgekeerd zal een hogere minimaal vereiste nauwkeurigheid resulteren in een lagere vereiste steekproefomvang.
+- Minimale nauwkeurigheid: De nauwkeurigheid is het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout. Door deze steekproefdoelstelling in te schakelen, kunt u een steekproef zo plannen dat het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout tot een minimumpercentage wordt beperkt. U moet deze doelstelling inschakelen als u een schatting van de fout van de populatie met een bepaalde nauwkeurigheid wilt maken. Een lagere minimaal vereiste nauwkeurigheid leidt tot een hogere vereiste steekproefomvang. Omgekeerd zal een hogere minimaal vereiste nauwkeurigheid resulteren in een lagere vereiste steekproefomvang.
 
 #### Betrouwbaarheid
 Het gebruikte betrouwbaarheidsniveau. Het betrouwbaarheidsniveau is het complement van het auditrisico: het risico dat de auditor bereid is te nemen om een onjuist oordeel over de populatie te geven. Als u bijvoorbeeld een auditrisico van 5% wilt hebben, komt dit overeen met een betrouwbaarheidsniveau van 95%.
@@ -30,8 +30,8 @@ Het gebruikte betrouwbaarheidsniveau. Het betrouwbaarheidsniveau is het compleme
 - Samenvattende statistieken: Vereist geen gegevensinvoer en alleen samenvattende statistieken van de steekproef.
 
 #### Populatie
-- Aantal items: Het totale aantal items (rijen) in de populatie.
-- Aantal eenheden: Het totale aantal eenheden in de populatie. De eenheden kunnen items (rijen) of monetaire eenheden (waarden) zijn, afhankelijk van de controlevraag.
+- Aantal posten: Het totale aantal posten (rijen) in de populatie.
+- Aantal eenheden: Het totale aantal eenheden in de populatie. De eenheden kunnen posten (rijen) of geldeenheden (waarden) zijn, afhankelijk van de controlevraag.
 
 #### Audit Risico Model
 - Inherent risico: Een categorie of waarschijnlijkheid voor het inherente risico. Inherent risico wordt gedefinieerd als het risico op een materiele fout in de populatie door een andere factor dan het falen van de interne controle.
@@ -50,68 +50,65 @@ De accountant beoordeelt het inherente risico en het interne beheersingsrisico d
 | Low | 40% | 34% |
 
 #### Weergave
-- Verklarende tekst: Indien aangevinkt, wordt in de analyse verklarende tekst weergegeven om de procedure en de statistische resultaten te helpen interpreteren.
+- Toelichtende tekst: Indien aangevinkt, wordt in de analyse verklarende tekst weergegeven om de procedure en de statistische resultaten te helpen interpreteren.
 
 #### Rapport
 - Tabellen
-  - Foutieve items: Produceert een tabel met alle items die een onjuiste opgave bleken te bevatten.
+  - Foute posten: Produceert een tabel met alle posten die een fout bleken te bevatten.
   - Correcties op populatie: Produceert een tabel die de vereiste correcties op de populatiewaarde bevat om de steekproefdoelstellingen te bereiken.
 
-- Plots
+- Figuren
   - Steekproefdoelstellingen: Produceert een staafdiagram waarin de materialiteit, maximale onjuistheid en meest waarschijnlijke fout (MLE) worden vergeleken.
   - Schattingen: Produceert een intervalplot voor de populatie en optioneel de stratumschattingen van de onjuistheid.
 
-- Formaat uitvoer
-  - Getallen: Geef de tabeluitvoer weer als getallen.
-  - Percentages: Geef tabeluitvoer weer als percentages.
-  - Monetaire waarden: Tabeluitvoer weergeven als monetaire waarden.
+- Weergave Getallen
+  - Numeriek: Getallen weergeven als numerieke waarden.
+  - Percentages: Getallen weergeven als percentages.
+  - Geldeenheden: Getallen weergeven als geldeenheden.
 
 #### Geavanceerd
 - Methode
-  - Poisson: Gebruikt de Poisson waarschijnlijkheid om de steekproef te evalueren.
-  - Binomiaal: Gebruikt de binomiale waarschijnlijkheid om de steekproef te evalueren.
-  - Hypergeometrisch: Gebruikt de hypergeometrische waarschijnlijkheid om de steekproef te evalueren.
+  - Poisson: Gebruikt de Poisson kansverdeling om de steekproef te evalueren.
+  - Binomiaal: Gebruikt de binomiale kansverdeling om de steekproef te evalueren.
+  - Hypergeometrisch: Gebruikt de hypergeometrische kansverdeling om de steekproef te evalueren.
   - Stringer: De Stringer bound om de steekproef te evalueren (Stringer, 1963).
     - LTA-aanpassing: LTA-aanpassing voor de stringer bound om understatements op te nemen (Leslie, Teitlebaum, & Anderson, 1979).
   - Gemiddelde-per-eenheidsschatter: Gebruikt de gemiddelde-per-eenheidsschatter.
-  - Directe schatter: Deze methode gebruikt alleen de controlewaarden om de onjuistheid te schatten (Touw en Hoogduin, 2011).
-  - Verschilschatter: Deze methode gebruikt het verschil tussen de boekwaarden en de controlewaarden om de onjuistheid te schatten (Touw en Hoogduin, 2011).
-  - Ratioschatter: Deze methode gebruikt de correctieratio tussen de boekwaarden en de controlewaarden om de onjuistheid te schatten (Touw en Hoogduin, 2011).
-  - Regressieschatter: Deze methode gebruikt de lineaire relatie tussen de boekwaarden en de controlewaarden om de onjuistheid te schatten (Touw en Hoogduin, 2011).
+  - Directe schatter: Deze methode gebruikt alleen de controlewaarden om de fout te schatten (Touw en Hoogduin, 2011).
+  - Verschilschatter: Deze methode gebruikt het verschil tussen de boekwaarden en de controlewaarden om de fout te schatten (Touw en Hoogduin, 2011).
+  - Ratioschatter: Deze methode gebruikt de correctieratio tussen de boekwaarden en de controlewaarden om de fout te schatten (Touw en Hoogduin, 2011).
+  - Regressieschatter: Deze methode gebruikt de lineaire relatie tussen de boekwaarden en de controlewaarden om de fout te schatten (Touw en Hoogduin, 2011).
 
 - Kritische posten
   - Negatieve boekwaarden: Isoleert negatieve boekwaarden uit de populatie.
-    - Bewaart: Houdt negatieve boekwaarden aan voor controle in de steekproef.
-    - Verwijderen: Verwijdert negatieve boekwaarden.
+    - Behoud: Houdt negatieve boekwaarden aan voor controle in de steekproef.
+    - Verwijder: Verwijdert negatieve boekwaarden.
 
 - Betrouwbaarheidsinterval (Alt. Hypothese)
-  - Bovengrens (< materialiteit): Bereken de bovengrens en test de alternatieve hypothese dat onjuistheid < materialiteit.
-  - Tweezijdig (< materialiteit): Bereken de boven- en ondergrens en toets de alternatieve hypothese dat onjuiste opgave != materialiteit.
-  - Ondergrens (< materialiteit): Bereken de ondergrens en test de alternatieve hypothese dat onjuistheid > materialiteit.
+  - Bovengrens (< materialiteit): Bereken de bovengrens en toets de alternatieve hypothese dat fout < materialiteit.
+  - Tweezijdig (= materialiteit): Bereken de boven- en ondergrens en toets de alternatieve hypothese dat fout != materialiteit.
+  - Ondergrens (< materialiteit): Bereken de ondergrens en toets de alternatieve hypothese dat fout > materialiteit.
 
 ### Output
 ---
 
 #### Samenvatting van de evaluatie
-- Materialiteit: Indien verstrekt, de materialiteit van de prestatie.
+- Materialiteit: Indien verstrekt, de uitvoeringsmaterialiteit.
 - Min. nauwkeurigheid: Indien verstrekt, de minimale precisie.
 - Steekproefgrootte: De steekproefgrootte (aantal eenheden).
-- Fouten: Het aantal foutieve elementen in de selectie.
-- Fouten: De som van de proportionele fouten. Gecontroleerde posten kunnen worden geëvalueerd met inachtneming van de omvang van de onjuistheid door hun tint te berekenen. De tint van een post *i* is het proportionele verschil tussen de boekwaarde van die post (*y*) en de gecontroleerde (werkelijke) waarde van de post (*x*). Positieve tinten worden geassocieerd met te hoge opgaven, terwijl negatieve tinten voorkomen wanneer posten te laag zijn opgegeven.
+- Fouten: Het aantal fouten in de steekproef.
+- Taint: De som van de proportionele fouten. Gecontroleerde posten kunnen worden geëvalueerd met inachtneming van de omvang van de fout door hun taint te berekenen. De taint van een post *i* is het proportionele verschil tussen de boekwaarde van die post (*y*) en de gecontroleerde (werkelijke) waarde van de post (*x*). Positieve taints worden geassocieerd met te hoge opgaven, terwijl negatieve taints voorkomen wanneer posten te laag zijn opgegeven.
 <img src="%HELP_FOLDER%/img/taints.png" />
 - Meest waarschijnlijke fout: De meest waarschijnlijke fout in de populatie.
-- x-% Betrouwbaarheidsgrens: Bovengrens van de fout in de populatie.
-- Precisie: Verschil tussen bovengrens en meest waarschijnlijke fout.
-- p: De p-waarde voor de test.
+- x-% Betrouwbaarheidsgrens: De bovengrens van de fout in de populatie.
+- Nauwkeurigheid: Het verschil tussen bovengrens en meest waarschijnlijke fout.
+- p: De p-waarde voor de toets.
 
 #### Correcties op de populatie
 - Correctie: De hoeveelheid of het percentage dat van de populatie moet worden afgetrokken.
 
 #### Plots
-- Steekproefdoelstellingen: Produceert een staafdiagram waarin de materialiteit, de bovengrens van de onjuistheid en de meest waarschijnlijke fout (MLE) worden vergeleken.
-- Scatter plot: Produceert een scatter plot waarin de boekwaarden van de selectie worden vergeleken met hun controlewaarden. Waarnemingen die een fout bevatten zijn rood gekleurd.
-  - Weergave correlatie: Voegt de correlatie tussen de boekwaarden en de controlewaarden toe aan de plot.
-  - Item ID's weergeven: Voegt de item ID's toe aan de plot.
+- Steekproefdoelstellingen: Produceert een staafdiagram waarin de materialiteit, de bovengrens van de fout en de meest waarschijnlijke fout (MLE) worden vergeleken.
 
 ### Referenties
 ---

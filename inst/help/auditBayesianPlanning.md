@@ -76,10 +76,6 @@ The expected errors are the tolerable errors that can be found in the sample whi
 - Expected errors: The number (sum of proportional taints) of expected / tolerable errors in the sample.
 - Minimum sample size: The minimum sample size.
 
-#### Equivalent prior sample
-- Equivalent sample size: The sample size equivalent to the prior information.
-- Equivalent errors: The number of errors equivalent to the prior information.
-
 #### Prior and Posterior
 - Functional form: The functional form of the distribution.
 - Support H-: Total probability in the range of H- under the distribution. Only displayes when testing against a performance materiality.

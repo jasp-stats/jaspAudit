@@ -12,13 +12,13 @@ Raadpleeg de handleiding van de auditmodule (download [hier](https://github.com/
 
 #### Steekproefdoelstellingen
 - Uitvoeringsmaterialiteit: Ook wel de maximale fout, het aanvaardbare foutpercentage of de toelaatbare fout genoemd, is de uitvoeringsmaterialiteit de bovengrens van de fout in de te toetsen populatie. Door te toetsen aan een uitvoeringsmaterialiteit kunt u een steekproef plannen om bewijs te verzamelen voor of tegen de conclusie dat de populatie als geheel geen fouten bevat die als materieel worden beschouwd (d.w.z. groter zijn dan de bovengrens van de toelaatbare fout). U moet deze doelstelling inschakelen wanneer u aan de hand van een steekproef van de populatie wilt nagaan of de populatie fouten bevat boven of onder een bepaalde grens (de uitvoeringsmaterialiteit). Een lagere uitvoeringsmaterialiteit leidt tot een grotere vereiste steekproefomvang. Omgekeerd zal een hogere uitvoeringsmaterialiteit resulteren in een kleinere vereiste steekproefomvang.
-- Minimale precisie: De precisie is het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout. Door deze steekproefdoelstelling in te schakelen, kunt u een steekproef zo plannen dat het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout tot een minimumpercentage wordt beperkt. U moet deze doelstelling inschakelen als u een schatting van de fout van de populatie met een bepaalde nauwkeurigheid wilt maken. Een lagere minimaal vereiste nauwkeurigheid leidt tot een hogere vereiste steekproefomvang. Omgekeerd zal een hogere minimaal vereiste nauwkeurigheid resulteren in een lagere vereiste steekproefomvang.
+- Minimale nauwkeurigheid: De nauwkeurigheid is het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout. Door deze steekproefdoelstelling in te schakelen, kunt u een steekproef zo plannen dat het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout tot een minimumpercentage wordt beperkt. U moet deze doelstelling inschakelen als u een schatting van de fout van de populatie met een bepaalde nauwkeurigheid wilt maken. Een lagere minimaal vereiste nauwkeurigheid leidt tot een hogere vereiste steekproefomvang. Omgekeerd zal een hogere minimaal vereiste nauwkeurigheid resulteren in een lagere vereiste steekproefomvang.
 
 #### Betrouwbaarheid
 Het gebruikte betrouwbaarheidsniveau. Het betrouwbaarheidsniveau is het complement van het auditrisico: het risico dat de auditor bereid is te nemen om een onjuist oordeel over de populatie te geven. Als u bijvoorbeeld een auditrisico van 5% wilt hebben, komt dit overeen met een betrouwbaarheidsniveau van 95%.
 
 #### Verwachte Fouten
-De verwachte fouten zijn de toelaatbare fouten die in de steekproef kunnen worden aangetroffen terwijl toch de gespecificeerde steekproefdoelstellingen worden gehaald. Een steekproefomvang wordt zodanig berekend dat, wanneer het aantal verwachte fouten in de steekproef wordt aangetroffen, de gewenste betrouwbaarheid behouden blijft.
+De verwachte fouten zijn de toelaatbare fouten die in de steekproef kunnen worden aangetroffen terwijl toch de gespecificeerde steekproefdoelstellingen worden gehaald. Een steekproefomvang wordt zodanig berekend zodat, wanneer het aantal verwachte fouten in de steekproef wordt aangetroffen, de gewenste betrouwbaarheid behouden blijft.
 
 *Noot:* Geadviseerd wordt deze waarde conservatief vast te stellen om de kans dat de waargenomen fouten groter zijn dan de verwachte fouten, hetgeen zou betekenen dat er onvoldoende werk is verricht, zo klein mogelijk te houden.
 
@@ -45,32 +45,32 @@ De accountant beoordeelt het inherente risico en het interne beheersingsrisico d
 | Low | 40% | 34% |
 
 #### Weergave
-- Verklarende tekst: Indien aangevinkt, wordt in de analyse verklarende tekst weergegeven om de procedure en de statistische resultaten te helpen interpreteren.
+- Toelichtende tekst: Indien aangevinkt, wordt in de analyse verklarende tekst weergegeven om de procedure en de statistische resultaten te helpen interpreteren.
 
 #### Rapport
-- Plots
+- Figuren
   - Vergelijk steekproefgrootten: Produceert een plot die de steekproefgrootte vergelijkt 1) over kansverdelingen en 2) over het aantal verwachte fouten in de steekproef.
   - Veronderstelde gegevensverdeling: Produceert een plot die de kansverdeling weergeeft die wordt geïmpliceerd door de invoeropties en de berekende steekproefgrootte.
 
-- Formaat uitvoer
-  - Getallen: Tabeluitvoer weergeven als getallen.
-  - Percentages: Tabeluitvoer weergeven als percentages.
+- Weergave Getallen
+  - Numeriek: Getallen weergeven als numerieke waarden.
+  - Percentages: Getallen weergeven als percentages.
 
 #### Geavanceerd
-- Waarschijnlijkheid
-  - Hypergeometrisch: De hypergeometrische verdeling gaat uit van een eindige populatieomvang en wordt daarom meestal gebruikt als de populatieomvang klein is. Het is een kansverdeling die het aantal fouten (*K*) in de populatie modelleert als functie van de populatiegrootte (*N*), het aantal waargenomen gevonden fouten (*k*) en het aantal correcte transacties (*n*).
-  - Binomiaal: De binomiale verdeling gaat uit van een oneindige populatiegrootte en wordt daarom meestal gebruikt als de populatiegrootte groot is. Het is een kansverdeling die het percentage onjuiste opgaven (*k*) modelleert als functie van het waargenomen aantal fouten (*k*) en het aantal correcte transacties (*n - k*). Omdat de binomiale verdeling strikt genomen geen rekening houdt met gedeeltelijke fouten, wordt deze meestal gebruikt wanneer u geen steekproef voor monetaire eenheden plant.
-  - Poisson: De Poisson-verdeling gaat uit van een oneindige populatieomvang en wordt daarom meestal gebruikt als de populatieomvang groot is. Het is een kansverdeling die het percentage onjuistheden (*u03B8*) modelleert als functie van de waargenomen steekproefomvang (*n*) en de som van de proportionele fouten (*t*). Omdat de Poisson-verdeling rekening houdt met gedeeltelijke fouten, wordt zij doorgaans gebruikt wanneer u een steekproef voor monetaire eenheden plant.
+- Kansverdeling
+  - Hypergeometrisch: De hypergeometrische verdeling gaat uit van een eindige populatie en wordt daarom meestal gebruikt als de populatieomvang klein is. Het is een kansverdeling die het aantal fouten (*K*) in de populatie modelleert als functie van de populatiegrootte (*N*), het aantal waargenomen gevonden fouten (*k*) en het aantal steekproefeenheden (*n*).
+  - Binomiaal: De binomiale verdeling gaat uit van een oneindige populatie en wordt daarom meestal gebruikt als de populatiegrootte groot is. Het is een kansverdeling die het percentage fouten (*\u03B8*) modelleert als functie van het waargenomen aantal fouten (*k*) en het aantal correcte eenheden (*n - k*). Omdat de binomiale verdeling strikt genomen geen rekening houdt met gedeeltelijke fouten, wordt deze meestal gebruikt wanneer u geen steekproef voor monetaire eenheden plant.
+  - Poisson: De Poisson-verdeling gaat uit van een oneindige populatie en wordt daarom meestal gebruikt als de populatieomvang groot is. Het is een kansverdeling die het percentage fouten (*\u03B8*) modelleert als functie van het steekproefeenheden (*n*) en de som van de proportionele fouten (*t*). Omdat de Poisson-verdeling rekening houdt met gedeeltelijke fouten, wordt zij doorgaans gebruikt wanneer u een steekproef voor monetaire eenheden plant.
 
 - Iteraties
-  - Verhoging: Met het increment kunt u de mogelijke steekproefomvang beperken tot een veelvoud van de waarde ervan. Bijvoorbeeld, een increment van 5 staat alleen steekproefgroottes toe van 5, 10, 15, 20, 25, enz.
+  - Verhoging: Met de verhoging kunt u de mogelijke steekproefomvang beperken tot een veelvoud van de waarde ervan. Bijvoorbeeld, een verhoging van 5 staat alleen steekproefgroottes toe van 5, 10, 15, 20, 25, enz.
   - Maximum: Met het maximum kunt u de steekproefgrootte beperken met een maximum.
 
 ### Uitvoer
 ---
 
 #### Planning Samenvatting
-- Prestatiematerialiteit: Indien verstrekt, de prestatiematerialiteit.
+- Uitvoeringsmaterialiteit: Indien verstrekt, de uitvoeringsmaterialiteit.
 - Min. nauwkeurigheid: Indien verstrekt, de minimale precisie.
 - Verwachte fouten: Het aantal (som van proportionele tinten) verwachte / aanvaardbare fouten in de steekproef.
 - Minimale steekproefomvang: De minimale steekproefgrootte.
