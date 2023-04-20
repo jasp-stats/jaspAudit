@@ -1369,7 +1369,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 .jfaAuditRiskModelCalculation <- function(options, jaspResults) {
   # Define the default settings for high, medium and low
   tb <- data.frame(
-    category = c("High", "Medium", "Low"),
+    category = c(gettext("High"), gettext("Medium"), gettext("Low")),
     ir = c(1, 0.63, 0.40),
     cr = c(1, 0.52, 0.34)
   )
