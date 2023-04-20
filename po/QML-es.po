@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-04-20 11:28+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.18-dev\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -610,7 +616,6 @@ msgctxt "auditBayesianPlanning|"
 msgid "Report"
 msgstr "Informar"
 
-#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Advanced"
 msgstr "Avanzado"
@@ -649,7 +654,6 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Report"
 msgstr "Informar"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Advanced"
 msgstr "Avanzado"
@@ -910,7 +914,6 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Report"
 msgstr "Informar"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Advanced"
 msgstr "Avanzado"
@@ -1025,18 +1028,17 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Indicate how many items labels to display."
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Advanced"
 msgstr "Avanzado"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Adjust advanced options for this analysis."
-msgstr ""
+msgstr "Ajusta las opciones avanzadas para este análisis."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Bootstrap"
-msgstr ""
+msgstr "Bootstrap"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Options related to the bootstrapping procedure of the p-value."
@@ -1072,7 +1074,6 @@ msgctxt "auditClassicalPlanning|"
 msgid "Report"
 msgstr "Informar"
 
-#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Advanced"
 msgstr "Avanzado"
@@ -1111,7 +1112,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Report"
 msgstr "Informar"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Advanced"
 msgstr "Avanzado"
