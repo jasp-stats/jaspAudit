@@ -132,8 +132,8 @@ The required number of sampling units that should be selected from the populatio
 Randomizes the items in the population before selection is performed.
 
 #### Tables
-- Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
 - Selected items: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
+- Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
 
 ### Output - Selection
 ---
