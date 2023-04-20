@@ -38,7 +38,7 @@ Wanneer de accountant over informatie beschikt die wijst op een laag risicoprofi
 
 De accountant beoordeelt het inherente risico en het interne beheersingsrisico doorgaans op een driepuntsschaal bestaande uit hoog, gemiddeld en laag om het passende detectierisico te bepalen. Om het ARM te kunnen gebruiken, moeten deze categorische risicobeoordelingen worden omgezet in percentages. Standaard gebruikt de Auditmodule de percentages in onderstaande tabel, die zijn geïnspireerd op het <i>Handboek Auditing Rijksoverheid</i>. U kunt de percentages voor één of beide risico's handmatig aanpassen door in de keuzelijst onder de betreffende risicobeoordeling de optie Aangepast te selecteren.
 
-| Inherent risico (IR) | Intern beheersingsrisico (IBR) |
+| | Inherent risico (IR) | Intern beheersingsrisico (IBR) |
 | ---: | :---: | :---: |
 | High | 100% | 100% |
 | Medium | 63% | 52% |
