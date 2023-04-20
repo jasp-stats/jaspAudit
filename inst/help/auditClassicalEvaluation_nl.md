@@ -11,7 +11,7 @@ Zie de handleiding van de auditmodule (download [hier](https://github.com/jasp-s
 ---
 
 #### Toewijzingsvak
-- Item ID: Een unieke, niet ontbrekende identifier voor elk item in de populatie. Het rijnummer van de posten is voldoende.
+- Item ID: Een unieke, niet ontbrekende identifier voor elke post in de populatie. Het rijnummer van de posten is voldoende.
 - Boekwaarden: De variabele die de boekwaarden van de posten in de populatie bevat. Idealiter zijn alle boekwaarden positieve waarden, zie de optie <i>Kritische posten</i> voor de afhandeling van negatieve boekwaarden.
 - Audit resultaat / waarden: De variabele die de audit (ware) waarden bevat, of de binaire classificatie van juist (0) of onjuist (1).
 - Selectieteller: De variabele die bevat hoeveel keer elke waarneming moet worden geëvalueerd.
@@ -58,8 +58,8 @@ De accountant beoordeelt het inherente risico en het interne beheersingsrisico d
   - Correcties op populatie: Produceert een tabel die de vereiste correcties op de populatiewaarde bevat om de steekproefdoelstellingen te bereiken.
 
 - Figuren
-  - Steekproefdoelstellingen: Produceert een staafdiagram waarin de materialiteit, maximale onjuistheid en meest waarschijnlijke fout (MLE) worden vergeleken.
-  - Schattingen: Produceert een intervalplot voor de populatie en optioneel de stratumschattingen van de onjuistheid.
+  - Steekproefdoelstellingen: Produceert een staafdiagram waarin de materialiteit, maximale fout en meest waarschijnlijke fout (MLE) worden vergeleken.
+  - Schattingen: Produceert een intervalplot voor de populatie en optioneel de stratumschattingen van de fout.
 
 - Weergave Getallen
   - Numeriek: Getallen weergeven als numerieke waarden.

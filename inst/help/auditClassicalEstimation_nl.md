@@ -15,10 +15,10 @@ Met de schattingsanalyse kan de gebruiker de werkelijke waarde van een populatie
 - Aantal eenheden: Het totale aantal eenheden in de populatie. Merk op dat de eenheden items (rijen) of monetaire eenheden (waarden) kunnen zijn, afhankelijk van de controlevraag.
 
 #### Methode
-- Directe schatter: Deze methode gebruikt alleen de controlewaarden om de afwijking te schatten (Touw en Hoogduin, 2011).
-- Verschilschatter: Deze methode gebruikt het verschil tussen de boekwaarden en de controlewaarden om de afwijking te schatten (Touw en Hoogduin, 2011).
-- Ratioschatter: Deze methode gebruikt de correctieratio tussen de boekwaarden en de controlewaarden om de onjuistheid te schatten (Touw en Hoogduin, 2011).
-- Regressieschatter: Deze methode gebruikt de lineaire relatie tussen de boekwaarden en de controlewaarden om de onjuistheid te schatten (Touw en Hoogduin, 2011).
+- Directe schatter: Deze methode gebruikt alleen de controlewaarden om de fout te schatten (Touw en Hoogduin, 2011).
+- Verschilschatter: Deze methode gebruikt het verschil tussen de boekwaarden en de controlewaarden om de fout te schatten (Touw en Hoogduin, 2011).
+- Ratioschatter: Deze methode gebruikt de correctieratio tussen de boekwaarden en de controlewaarden om de fout te schatten (Touw en Hoogduin, 2011).
+- Regressieschatter: Deze methode gebruikt de lineaire relatie tussen de boekwaarden en de controlewaarden om de fout te schatten (Touw en Hoogduin, 2011).
 
 #### Weergave
 - Verklarende tekst: Indien aangevinkt, wordt verklarende tekst in de analyse ingeschakeld om de procedure en de statistische resultaten te helpen interpreteren.

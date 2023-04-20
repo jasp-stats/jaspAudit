@@ -11,7 +11,7 @@ Zie de handleiding van de module Audit (download [hier](https://github.com/jasp-
 ---
 
 #### Toewijzingsvak
-- Item ID: Een unieke, niet ontbrekende identifier voor elk item in de populatie. Het rijnummer van de posten is voldoende.
+- Item ID: Een unieke, niet ontbrekende identifier voor elke post in de populatie. Het rijnummer van de posten is voldoende.
 - Boekwaarden: De variabele die de boekwaarden van de posten in de populatie bevat. Idealiter zijn alle boekwaarden positief, alle posten met negatieve boekwaarden worden verwijderd voor selectie.
 - Aanvullende variabelen: Alle andere variabelen die in de steekproef moeten worden opgenomen.
 
@@ -25,8 +25,8 @@ Selecteert  voor de random number generator om de resultaten te reproduceren.
 Randomiseert de volgorde van de items in de populatie voordat de selectieprocedure wordt uitgevoerd.
 
 #### Steekproefeenheden
-- Items: Voert de selectie uit met de items in de populatie als steekproefeenheden.
-- Monetaire eenheden: Voert de selectie uit met de monetaire eenheden in de populatie als steekproefeenheden. Deze methode heeft de voorkeur wanneer u meer items met een hoge waarde in de steekproef wilt opnemen.
+- Posten: Voert een selectie uit met de posten in de populatie als steekproefeenheden.
+- Geldeenheden: Voert de selectie uit met de monetaire eenheden in de populatie als steekproefeenheden. Deze methode verdient de voorkeur wanneer u meer posten met een hoge waarde in de steekproef wilt opnemen.
 
 #### Selectiemethode
 - Vast interval steekproef: Voert selectie uit door de populatie in gelijke intervallen te verdelen en in elk interval een vaste eenheid te selecteren. Elke post met een boekwaarde groter dan het interval wordt altijd opgenomen in de steekproef.
