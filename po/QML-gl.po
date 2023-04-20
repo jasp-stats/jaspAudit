@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-04-20 11:23+0000\n"
-"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-qml/gl/>\n"
-"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
 "X-Qt-Contexts: true\n"
@@ -578,15 +572,15 @@ msgid ""
 "information about this analysis."
 msgstr ""
 "A análise baiesiana de avaliación permite ao usuario realizar inferencias "
-"sobre a inexactitude total na poboación, en base a unha mostra de auditoría."
-"\n"
+"sobre a inexactitude total na poboación, en base a unha mostra de "
+"auditoría.\n"
 "\n"
 "![Fluxo de traballo da mostraxe de Auditoría](%HELP_FOLDER%/img/"
 "workflowEvaluation.png)\n"
 "\n"
-"Por favor, consulta o manual do módulo de Auditoría (descarga "
-"[aquí](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) "
-"para obter información máis detallada sobre esta análise."
+"Por favor, consulta o manual do módulo de Auditoría (descarga [aquí](https://"
+"github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) para obter "
+"información máis detallada sobre esta análise."
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Report"
@@ -611,13 +605,15 @@ msgid ""
 "information about this analysis."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Report"
-msgstr ""
+msgstr "Informar"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avanzado"
 
 msgctxt "auditBayesianWorkflow|"
 msgid ""
@@ -648,13 +644,15 @@ msgid ""
 "![Audit sampling workflow](%HELP_FOLDER%/img/workflow.png)"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Report"
-msgstr ""
+msgstr "Informar"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avanzado"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Add variables to sample"
@@ -755,9 +753,10 @@ msgid ""
 "of 5%, this equals 95% confidence."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Report"
-msgstr ""
+msgstr "Informar"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Add additional tables about the analysis to the report."
@@ -865,9 +864,10 @@ msgid ""
 "of 5%, this equals 95% confidence."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Report"
-msgstr ""
+msgstr "Informar"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Add additional tables about the analysis to the report."
@@ -905,13 +905,15 @@ msgid ""
 "about this analysis."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Report"
-msgstr ""
+msgstr "Informar"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avanzado"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
@@ -981,9 +983,10 @@ msgid ""
 "of 5%, this equals 95% confidence."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Report"
-msgstr ""
+msgstr "Informar"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Add additional tables about the analysis to the report."
@@ -1022,9 +1025,10 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Indicate how many items labels to display."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avanzado"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Adjust advanced options for this analysis."
@@ -1063,13 +1067,15 @@ msgid ""
 "information about this analysis."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Report"
-msgstr ""
+msgstr "Informar"
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avanzado"
 
 msgctxt "auditClassicalWorkflow|"
 msgid ""
@@ -1100,13 +1106,15 @@ msgid ""
 "![Audit sampling workflow](%HELP_FOLDER%/img/workflow.png)"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Report"
-msgstr ""
+msgstr "Informar"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avanzado"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Add variables to sample"
@@ -1138,9 +1146,10 @@ msgid ""
 "values are provided, the ideal sampling units to use are monetary units."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditSelection|"
 msgid "Report"
-msgstr ""
+msgstr "Informar"
 
 msgctxt "Display|"
 msgid "Format Output"
@@ -2414,10 +2423,6 @@ msgid "Selects which sampling unit is selected from each interval."
 msgstr ""
 
 msgctxt "SelectionMethod|"
-msgid "User-specified"
-msgstr ""
-
-msgctxt "SelectionMethod|"
 msgid "Set a starting point using to a user-specified value."
 msgstr ""
 
@@ -2493,4 +2498,8 @@ msgid ""
 "variables in the selection. Statistics that are included are the mean, the "
 "median, the standard deviation, the variance, the minimum, the maximum, and "
 "the range."
+msgstr ""
+
+msgctxt "SelectionMethod|"
+msgid "Custom"
 msgstr ""

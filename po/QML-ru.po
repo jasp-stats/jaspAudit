@@ -2301,10 +2301,6 @@ msgid "Selects which sampling unit is selected from each interval."
 msgstr ""
 
 msgctxt "SelectionMethod|"
-msgid "User-specified"
-msgstr ""
-
-msgctxt "SelectionMethod|"
 msgid "Set a starting point using to a user-specified value."
 msgstr ""
 
@@ -2375,4 +2371,8 @@ msgid ""
 "variables in the selection. Statistics that are included are the mean, the "
 "median, the standard deviation, the variance, the minimum, the maximum, and "
 "the range."
+msgstr ""
+
+msgctxt "SelectionMethod|"
+msgid "Custom"
 msgstr ""

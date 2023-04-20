@@ -2728,10 +2728,6 @@ msgid "Selects which sampling unit is selected from each interval."
 msgstr "Selecteert welke steekproefeenheid uit elk interval wordt gekozen."
 
 msgctxt "SelectionMethod|"
-msgid "User-specified"
-msgstr "Aangepast"
-
-msgctxt "SelectionMethod|"
 msgid "Set a starting point using to a user-specified value."
 msgstr ""
 "Stel een startpunt in met behulp van een door de gebruiker opgegeven waarde."
@@ -2817,3 +2813,8 @@ msgstr ""
 "Produceert een tabel met beschrijvende informatie over numerieke variabelen "
 "in de selectie. De opgenomen statistieken zijn het gemiddelde, de mediaan, "
 "de standaardafwijking, de variantie, het minimum, het maximum en het bereik."
+
+#, fuzzy
+msgctxt "SelectionMethod|"
+msgid "Custom"
+msgstr "Aangepast"
