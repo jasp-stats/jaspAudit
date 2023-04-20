@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-04-19 10:09\n"
-"PO-Revision-Date: 2023-04-20 14:22+0000\n"
+"PO-Revision-Date: 2023-04-20 16:37+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-r/gl/>\n"
@@ -833,7 +833,6 @@ msgstr ""
 "e unha precisión de %3$s, que o %2$s da inexactitude na poboación é menor "
 "que a materialidade de %4$s."
 
-#, fuzzy
 msgid ""
 "%1$s\n"
 "\n"
@@ -853,21 +852,19 @@ msgid ""
 msgstr ""
 "%1$s\n"
 "\n"
-"A cantidade de interese é a inexactitude (%2$s) na poboación. A inexactitude "
+"A cantidade de interese é a inexactitude %2$s na poboación. A inexactitude "
 "defínese como a diferenza entre o valor contabilizado (rexistrado) dun "
 "elemento e o seu valor auditado (verdadeiro). Cando se proba a inexactitude "
-"poboacional fronte a unha materialidade, %2$s*, formúlanse dúas hipóteses "
+"poboacional fronte a unha materialidade, formúlanse dúas hipóteses "
 "estatísticas sobre %2$s:\n"
 "\n"
-"                                  A hipótese (nula) de inexactitude %3$s "
-"inaceptable,\n"
-"                                  A hipótese (alternativa) de inexactitude "
-"%4$s aceptable.\n"
+"                                  A hipótese (nula) %3$s,\n"
+"                                  A hipótese (alternativa) %4$s.\n"
 "\n"
-"                                  O risco de auditoría (%5$s) é o risco de "
+"                                  O risco de auditoría %5$s é o risco de "
 "rexeitar incorrectamente a hipótese %3$s. Para rexeitar esta hipótese en "
 "base a unha mostra, a información da mostra debe ser suficiente para reducir "
-"%5$s a un nivel adecuadamente baixo (< %6$s%%)."
+"%5$s a un nivel adecuadamente baixo (p.e., %5$s < %6$s%%)."
 
 msgid ""
 "%1$s\n"
@@ -891,36 +888,33 @@ msgstr ""
 msgid "a performance materiality of %1$s"
 msgstr "unha materialidade de %1$s"
 
-#, fuzzy
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
 "in the population is below the performance materiality"
 msgstr ""
-"a mostra proporciona información suficiente para concluír que o %1$s de "
-"inexactitude está por debaixo do %1$s* de materialidade"
+"a mostra proporciona información suficiente para concluír que a inexactitude "
+"na poboación está por debaixo da materialidade"
 
 msgid "a minimum precision of %1$s"
 msgstr "unha precisión mínima de %1$s"
 
-#, fuzzy
 msgid ""
 "the sample provides sufficient information to estimate the misstatement in "
 "the population with the minimum precision"
 msgstr ""
-"a mostra proporciona información suficiente para estimar o %1$s de "
-"inexactitude coa precisión mínima"
+"a mostra proporciona información suficiente para estimar a inexactitude na "
+"poboación, coa precisión mínima"
 
 msgid "a performance materiality of %1$s and a minimum precision of %2$s"
 msgstr "unha materialidade de %1$s e unha precisión mínima de %2$s"
 
-#, fuzzy
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
 "in the population is below the performance materiality with the minimum "
 "precision"
 msgstr ""
-"a mostra proporciona información suficiente para concluír que o %1$s de "
-"inexactitude está por debaixo do %1$s* de materialidade, coa precisión mínima"
+"a mostra proporciona información suficiente para concluír que a inexactitude "
+"na poboación está por debaixo da materialidade, coa precisión mínima"
 
 msgid ""
 "Furthermore, the uncertainty regarding θ will only be extrapolated over the "
@@ -1065,7 +1059,7 @@ msgid "cell"
 msgstr "cela"
 
 msgid "sieve"
-msgstr ""
+msgstr "criba"
 
 msgid "book values (<i>%1$s</i>)"
 msgstr "valores contables (<i>%1$s</i>)"
@@ -1091,7 +1085,6 @@ msgstr "mostraxe de %1$s rexistros"
 msgid "%1$s monetary unit sampling"
 msgstr "mostraxe de %1$s unidades monetarias"
 
-#, fuzzy
 msgid ""
 "The purpose of the selection stage is to statistically select a number of "
 "sampling units from the population. Sampling units can be individual items "
@@ -1110,7 +1103,7 @@ msgstr ""
 "sección <i>Método</i>.\n"
 "\n"
 "A partir da poboación de %1$s %2$s elementos , escóllense %3$s unidades de "
-"mostraxe (%4$s) de %5$s utilizando un método %6$s.%7$s"
+"mostraxe (%4$s) de %5$s utilizando o método %6$s.%7$s"
 
 msgid ""
 "%1$s\n"
@@ -1142,10 +1135,10 @@ msgstr "maior"
 msgid "<b>Objectives:</b> You have achieved your initial sampling objectives."
 msgstr "<b>Obxectivos:</b> Acadaches os teus obxectivos iniciais de mostraxe."
 
-#, fuzzy
 msgid ""
 "<b>Objectives:</b> You have not achieved your initial sampling objectives."
-msgstr "<b>Obxectivos:</b> Acadaches os teus obxectivos iniciais de mostraxe."
+msgstr ""
+"<b>Obxectivos:</b> Non acadaches os teus obxectivos iniciais de mostraxe."
 
 msgid ""
 "The objective of this audit sampling procedure was to determine with %1$s "
@@ -1279,33 +1272,29 @@ msgstr ""
 "Risco de auditoría (%1$s%%) = Risco inherente (%2$s%%) x Risco de control "
 "(%3$s%%) x Risco de detección (%4$s%%)"
 
-#, fuzzy
 msgid ""
 "At least one translation of the categories High, Medium and Low to "
 "probabilities is done according custom settings."
 msgstr ""
-"%1$s\n"
-"\n"
-"A conversión de Alto, Medio e Baixo a probabilidades faise de acordo coas "
-"preferencias persoais."
+"Cando menos, unha conversión das categorías Alto, Medio e Baixo a "
+"probabilidades faise de acordo coas preferencias persoais."
 
-#, fuzzy
 msgid ""
 "The translation of the categories High, Medium and Low to probabilities is "
 "done using the default settings shown in the table below. To learn more "
 "about these default settings and how to adjust them, see the help file of "
 "this analysis or look under the <i>Audit Risk Model</i> section."
 msgstr ""
-"%1$s\n"
-"\n"
-"A conversión de Alto, Medio e Baixo a probabilidades faise utilizando os "
-"valores predeterminados. Para saber máis sobre a elección destes valores e "
-"como axustalos, consulta o ficheiro de axuda para esta análise ou vaite á "
-"sección <i>Modelo do Risco de Auditoría</i>."
+"A conversión das categorías Alto, Medio e Baixo a probabilidades faise "
+"utilizando os valores predeterminados que se amosan na táboa de abaixo. Para "
+"saber máis sobre estes valores predeterminados e como axustalos, consulta o "
+"ficheiro de axuda para esta análise ou vaite á sección <i>Modelo do Risco de "
+"Auditoría</i>."
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Default Settings Audit Risk Model"
-msgstr "<b>Táboa %1$i.</b> Estatísticos Descritivos para a Mostra"
+msgstr ""
+"<b>Táboa %1$i.</b> Configuración predeterminada para o Modelo de Risco de "
+"Auditoría"
 
 msgid "Inherent risk"
 msgstr "Risco inherente"
@@ -1313,14 +1302,12 @@ msgstr "Risco inherente"
 msgid "Control risk"
 msgstr "Risco de control"
 
-#, fuzzy
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify the "
 "percentages for the Inherent risk and/or Control risk."
 msgstr ""
 "O risco de detección é igual a (ou maior que) 100%%. Por favor, volve "
-"especificar os teus valores persoais para o Risco Inherente e/ou Risco de "
-"Control."
+"especificar as porcentaxes para o Risco Inherente e/ou Risco de Control."
 
 msgid ""
 "You cannot achieve your current sampling objectives with this population. "
@@ -1349,9 +1336,8 @@ msgstr "Risco de detección"
 msgid "Audit risk"
 msgstr "Risco de auditoría"
 
-#, fuzzy
 msgid "Tolerable misstatements"
-msgstr "Inexactitude da poboación %1$s"
+msgstr "Inexactitude tolerable"
 
 msgid "Minimum sample size"
 msgstr "Tamaño mínimo da mostra"
@@ -1459,14 +1445,12 @@ msgstr "Aconteceu un fallo nunha solicitude ao paquete jfA: %1$s"
 msgid "Across Expected Errors (Current: %1$s)"
 msgstr "Entre os Erros Agardados (Actual: %1$s)"
 
-#, fuzzy
 msgid ""
 "You cannot achieve your current sampling objectives with up to three full "
 "misstatements this population."
 msgstr ""
-"Non podes acadar os teus obxectivos actuais de mostraxe con esta poboación. "
-"O tamaño da mostra resultante pasa do máximo de %1$s. Axusta a opción máxima "
-"consecuentemente."
+"Non podes acadar os teus obxectivos actuais de mostraxe con ata 3 "
+"inexactitudes completas nesta poboación."
 
 msgid ""
 "<b>Figure %1$i.</b> The first panel shows a comparison of the minimum sample "
@@ -1485,9 +1469,8 @@ msgstr ""
 "panel amosa unha comparanza dos tamaños mínimos da mostra baixo distintos "
 "erros agardados para a distribución de probabilidade actual."
 
-#, fuzzy
 msgid "Presumed %1$s Distribution"
-msgstr "Distribución %1$s Asumida dos Erros"
+msgstr "Presunta Distribución %1$s"
 
 msgid ""
 "<b>Figure %1$i.</b> The assumed %2$s distribution. The number of expected "
@@ -1525,9 +1508,9 @@ msgstr "%% do valor poboacional"
 msgid "%% of population size"
 msgstr "%% do tamaño da poboación"
 
-#, fuzzy
 msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."
-msgstr "A unidade %2$s escóllese de cada un dos intervalos de tamaño %1$s."
+msgstr ""
+"De cada un dos intervalos de tamaño %1$s, a unidade %2$s escóllese %3$s."
 
 msgid "The sample is drawn with seed %1$s and intervals of size %2$s."
 msgstr "A mostra extráese mediante a semente %1$s e intervalos de tamaño %2$s."
@@ -1535,14 +1518,11 @@ msgstr "A mostra extráese mediante a semente %1$s e intervalos de tamaño %2$s.
 msgid "The sample is drawn with seed %1$s."
 msgstr "A mostra extráese con semente %1$s."
 
-#, fuzzy
 msgid "The random numbers are generated with seed %1$s."
-msgstr "A mostra extráese con semente %1$s."
+msgstr "Os números aleatorios xéranse con semente %1$s."
 
-#, fuzzy
 msgid "The sample is not exported until the 'Synchronize' option is checked."
-msgstr ""
-"A mostra non se exporta ata que se marque 'Exportar a mostra a un ficheiro'."
+msgstr "A mostra non se exporta ata que se marque 'Sincronizar'."
 
 msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
 msgstr ""
@@ -1607,7 +1587,6 @@ msgstr ""
 "A variable dos resultados de auditoría debería conter só valores 0 "
 "(correcto) e 1 (incorrecto)."
 
-#, fuzzy
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "
 "population on the basis of a sample.\n"
@@ -1622,8 +1601,8 @@ msgstr ""
 "\n"
 "A poboación consistía en %1$s elementos e %2$s unidades. A mostra consistía "
 "en %3$s unidades mostrais, das que un total de %4$s eran inadecuadas. Da "
-"información desta mostra %5$s resulta un erro máis probable na poboación de "
-"%6$s e un límite superior para %7$s de %8$s. %9$s"
+"información desta mostra %5$s resulta unha inexactitude máis probable na "
+"poboación de %6$s e un límite superior para %7$s de %8$s."
 
 msgid "<b>Table %1$i.</b> Evaluation Summary"
 msgstr "<b>Táboa %1$i.</b> Resumo da Avaliación"
@@ -1631,23 +1610,20 @@ msgstr "<b>Táboa %1$i.</b> Resumo da Avaliación"
 msgid "Sample size"
 msgstr "Tamaño da mostra"
 
-#, fuzzy
 msgid "Misstatements"
-msgstr "enunciado se-entón"
+msgstr "Inexactitudes"
 
 msgid "Taint"
 msgstr "Mancha"
 
-#, fuzzy
 msgid "Most likely misstatement"
-msgstr "Erro máis probable"
+msgstr "Inexactitude máis probable"
 
 msgid "%1$s%% Upper bound"
 msgstr "Límite superior do %1$s%%"
 
-#, fuzzy
 msgid "%1$s%% Lower bound"
-msgstr "Límite superior do %1$s%%"
+msgstr "Límite inferior do %1$s%%"
 
 msgid "Precision"
 msgstr "Precisión"
@@ -1712,16 +1688,14 @@ msgstr ""
 "A materialidade, o tamaño da poboación, ou o valor poboacional están "
 "definidos como cero; ou falta unha das variables requiridas."
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Stratum Evaluation Summary"
-msgstr "<b>Táboa %1$i.</b> Resumo da Avaliación"
+msgstr "<b>Táboa %1$i.</b> Resumo da Avaliación do Estrato"
 
 msgid "Stratum"
-msgstr ""
+msgstr "Estrato"
 
-#, fuzzy
 msgid "%1$s%% Interval"
-msgstr "Intervalo de Credibilidade do %1$s%%"
+msgstr "Intervalo do %1$s%%"
 
 msgid "<b>Table %1$i.</b> Misstated Items"
 msgstr "<b>Táboa %1$i.</b> Elementos Inexactos"
@@ -1780,7 +1754,6 @@ msgstr "Precisión obtida"
 msgid "An error occurred while creating this plot: %1$s"
 msgstr "Ocorreu un fallo ao xerar esta gráfica: %1$s"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> Evaluation information for the current annotated "
 "selection. The materiality is compared with the maximum misstatement and the "
@@ -1789,14 +1762,13 @@ msgid ""
 "of the maximum misstatement in the population."
 msgstr ""
 "<b>Imaxe %1$i.</b> Información de avaliación para a selección anotada "
-"actual. A materialidade compárase coa inexactitude máxima e o erro máis "
-"probable. O erro máis probable (EMP, MLE) é unha estimación da inexactitude "
-"verdadeira na poboación. O límite superior é unha estimación do erro máximo "
-"na poboación."
+"actual. A materialidade compárase coa inexactitude máxima e a inexactitude "
+"máis probable. A inexactitude máis probable é a mellor estimación da "
+"inexactitude verdadeira na poboación. O límite superior é unha estimación da "
+"inexactitude máxima na poboación."
 
-#, fuzzy
 msgid "Estimates"
-msgstr "Estimado"
+msgstr "Estimacións"
 
 msgid ""
 "<b>Figure %1$i.</b> Most likely estimates (points) and %2$s%% %3$s %4$s "
@@ -1804,6 +1776,10 @@ msgid ""
 "strata, showing the range of plausible values for the misstatement after "
 "seeing the data."
 msgstr ""
+"<b>Imaxe %1$i.</b> Estimacións máis probables (puntos) e intervalos de %3$s "
+"%4$s ao %2$s%% para a inexactitude na poboación e no estrato individual, "
+"amosando o rango de valores plausibles para a inexactitude despois de ver os "
+"datos."
 
 msgid "Scatter Plot of Book and Audit Values"
 msgstr "Gráfica de Dispersión dos Valores Contables e de Auditoría"
@@ -1849,19 +1825,17 @@ msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
 msgstr "Ningunha inexactitude cunha confianza do %1$s%% e precisión do %2$s%%"
 
 msgid "Created by JASP for Audit (Version %1$s) on %2$s at %3$s."
-msgstr ""
+msgstr "Creado por JASP para Auditoría (Versión %1$s) en %2$s a %3$s."
 
 msgid "Prior and Expected Posterior Distribution"
 msgstr "Distribución Previa e Posterior Agardada"
 
-#, fuzzy
 msgid "Prior Distribution"
 msgstr "Distribución previa"
 
 msgid "Prior and Posterior Distribution"
 msgstr "Distribución Previa e Posterior"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on "
 "the population misstatement θ. The prior parameters (%3$s = %4$s, %5$s = "
@@ -1869,16 +1843,17 @@ msgid ""
 "distribution fulfills the conditions set in the sampling objectives."
 msgstr ""
 "<b>Imaxe %1$i.</b> A distribución de probabilidade previa e posterior "
-"agardada (%2$s) sobre a inexactitude (θ) na poboación. Os parámetros previos "
-"(%3$s = %4$s, %5$s = %6$s) derívanse da información previa. %7$s"
+"agardada (%2$s) sobre a inexactitude θ na poboación. Os parámetros previos "
+"(%3$s = %4$s, %5$s = %6$s) derívanse da información previa. A distribución "
+"agardada posterior satisfai as condicións establecidas nos obxectivos de "
+"mostraxe."
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The prior and posterior distribution (%2$s) on the "
 "misstatement in the population."
 msgstr ""
-"<b>Imaxe %1$i.</b> A distribución previa e posterior (%2$s) con inexactitude "
-"na poboación. %3$s"
+"<b>Imaxe %1$i.</b> A distribución previa e posterior (%2$s) sobre a "
+"inexactitude na poboación."
 
 msgid "Prior Predictive Distribution"
 msgstr "Distribución Previa Preditiva"
