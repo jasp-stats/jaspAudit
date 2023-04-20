@@ -1160,9 +1160,10 @@ msgctxt "Display|"
 msgid "Display numbers as monetary units."
 msgstr ""
 
+#, fuzzy
 msgctxt "DownloadReport|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>Bericht herunterladen</b>"
 
 #, fuzzy
 msgctxt "AddVariables|"
@@ -1858,9 +1859,10 @@ msgctxt "Likelihood|"
 msgid "Beta"
 msgstr "Beta"
 
+#, fuzzy
 msgctxt "Likelihood|"
 msgid "Binomial"
-msgstr ""
+msgstr "Binomial"
 
 msgctxt "Likelihood|"
 msgid ""

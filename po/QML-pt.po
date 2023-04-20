@@ -1154,9 +1154,10 @@ msgctxt "Display|"
 msgid "Display numbers as monetary units."
 msgstr ""
 
+#, fuzzy
 msgctxt "DownloadReport|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>Baixar relatório</b>"
 
 msgctxt "AddVariables|"
 msgid "Column name selection result"
