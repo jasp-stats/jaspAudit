@@ -31,8 +31,8 @@ Randomizes the order of the items in the population before the selection procedu
 #### Sampling Method
 - Fixed interval sampling: Performs selection by dividing the population in equal intervals and selecting a fixed unit in each interval. Any item with a value larger than the interval will always be included in the sample.
   - Starting point: Determines which sampling unit is selected from each of the computed intervals.
-    - User-specified: Manually specify a starting point in the computed interval.
-	- Random: Randomly set a starting point in the computed interval using the specified seed.
+    - Random: Randomly set a starting point in the computed interval using the specified seed.
+    - Custom: Manually specify a starting point in the computed interval.
 - Cell sampling: Performs selection by dividing the population in equal intervals and selecting a variable unit in each interval. Any item with a value larger than twice the interval will always be included in the sample. This method uses the specified seed.
 - Random sampling: Performs random selection in which each sampling unit has an equal chance of being selected. This method uses the specified seed.
 

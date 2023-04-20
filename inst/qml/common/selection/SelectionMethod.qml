@@ -57,7 +57,16 @@ RadioButtonGroup
 
 			RadioButton
 			{
-				text: 				qsTr("User-specified")
+				id:					randomize
+				text: 				qsTr("Random")
+				name: 				"randomStart"
+				checked:			true
+				info:				qsTr("Set a starting point via random number generation according to a user-specified seed.")
+			}
+
+			RadioButton
+			{
+				text: 				qsTr("Custom")
 				name: 				"fixedStart"
 				info:				qsTr("Set a starting point using to a user-specified value.")
 				childrenOnSameRow: 	true
@@ -70,15 +79,6 @@ RadioButtonGroup
 					min: 			1
 					info:			qsTr("Selects which sampling unit is selected from each interval.")
 				}
-			}
-
-			RadioButton
-			{
-				id:					randomize
-				text: 				qsTr("Random")
-				name: 				"randomStart"
-				checked:			true
-				info:				qsTr("Set a starting point via random number generation according to a user-specified seed.")
 			}
 		}
 	}
