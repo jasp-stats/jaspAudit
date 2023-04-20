@@ -134,11 +134,7 @@ The expected errors are the tolerable errors that can be found in the sample whi
 #### Plots
 - Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
   - Additional info: Annotates the figure with the mode and the credible interval. If a materiality is specified, annotates the figure with the materiality and includes a visualization of the Bayes factor via a proportion wheel.
-- Posterior predictive: Produces a plot of the predictions of the posterior distribution.
 - Sampling objectives: Produces a bar chart comparing the materiality, maximum misstatement and most likely error (MLE).
-- Scatter plot: Produces a scatter plot comparing book values of the selection against their audit values. Observations that are in error are colored in red.
-  - Display correlation: Adds the correlation between the book values and the audit values to the plot.
-  - Display item ID's: Adds the item ID's to the plot.
 
 ### References
 ---

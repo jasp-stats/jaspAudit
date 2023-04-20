@@ -68,6 +68,7 @@ The auditor assesses inherent risk and internal control risk generally on a 3-po
 - Format Output
   - Numbers: Display table output as numbers.
   - Percentages: Display table output as percentages.
+  - Monetary units: Display table output as monetary units.
 
 #### Advanced
 - Probability distribution
@@ -109,12 +110,8 @@ The auditor assesses inherent risk and internal control risk generally on a 3-po
 ### Input - Selection
 ---
 
-#### Assignment Box
-- Ranking Variable: When provided, the population is first ranked in ascending order with respect to the values of this variable.
-- Additional Variables: Any other variables that should be included in the sample.
-
-#### Sample Size
-The required number of sampling units that should be selected from the population. Be aware that the sampling units are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.
+#### Randomize Item Order
+Randomizes the items in the population before selection is performed.
 
 #### Sampling Units
 - Items: Performs selection using the items in the population as sampling units.
@@ -128,12 +125,10 @@ The required number of sampling units that should be selected from the populatio
 - Random sampling: Performs random selection in which each sampling unit has an equal chance of being selected.
   - Seed: Selects the seed for the random number generator in order to reproduce results.
 
-#### Randomize Item Order
-Randomizes the items in the population before selection is performed.
-
-#### Tables
-- Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
-- Selected items: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
+#### Report
+- Tables
+  - Selected items: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
+  - Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
 
 ### Output - Selection
 ---
@@ -179,24 +174,27 @@ Randomizes the items in the population before selection is performed.
 #### Assignment Box
 - Audit result / values: The variable that contains the audit (true) values, or the binary classification of correct (0) or incorrect (1).
 
-#### Method
-- Poisson: Uses the Poisson likelhood to evaluate the sample.
-- Binomial: Uses the binomial likelhood to evaluate the sample.
-- Hypergeometric: Uses the hypergeometric likelhood to evaluate the sample.
-- Stringer: The Stringer bound to evaluate the sample (Stringer, 1963).
-  - LTA adjustment: LTA adjustment for the stringer bound to incorporate understatements (Leslie, Teitlebaum, & Anderson, 1979).
-- Mean-per-unit estimator: Uses the mean-per-unit estimator.
-- Direct estimator: This method uses only the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
-- Difference estimator: This method uses the difference between the book values and the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
-- Ratio estimator: This method uses the ratio of correctness between the book values and the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
-- Regression estimator: This method uses the linear relation between the book values and the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
+#### Report
+- Tables
+  - Misstated items: Produces a table that contains all items that were found to contain a misstatement.
+  - Corrections to population: Produces a table that contains the required corrections to the population value to achieve the sampling objectives.
 
-#### Tables
-- Corrections to population: Produces a table that contains the required corrections to the population value to achieve the sampling objectives.
+- Plots
+  - Sampling objectives: Produces a bar chart comparing the materiality, maximum misstatement and most likely error (MLE).
+  - Estimates: Produces an interval plot for the population and optionally the stratum estimates of the misstatement.
 
-#### Plots
-- Sampling objectives: Produces a bar chart comparing the materiality, maximum misstatement and most likely error (MLE).
-- Scatter plot: Produces a scatter plot comparing book values of the selection against their audit values. Observations that are in error are colored in red.
+#### Advanced
+- Method
+  - Poisson: Uses the Poisson likelhood to evaluate the sample.
+  - Binomial: Uses the binomial likelhood to evaluate the sample.
+  - Hypergeometric: Uses the hypergeometric likelhood to evaluate the sample.
+  - Stringer: The Stringer bound to evaluate the sample (Stringer, 1963).
+    - LTA adjustment: LTA adjustment for the stringer bound to incorporate understatements (Leslie, Teitlebaum, & Anderson, 1979).
+  - Mean-per-unit estimator: Uses the mean-per-unit estimator.
+  - Direct estimator: This method uses only the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
+  - Difference estimator: This method uses the difference between the book values and the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
+  - Ratio estimator: This method uses the ratio of correctness between the book values and the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
+  - Regression estimator: This method uses the linear relation between the book values and the audit values to estimate the misstatement (Touw and Hoogduin, 2011).
 
 ### Output - Evaluation
 ---

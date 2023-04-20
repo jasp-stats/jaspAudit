@@ -1,266 +1,264 @@
-Bayesiaanse Steekproef Workflow
+Bayesiaanse steekproefworkflow
 ===
 
-De taak van een auditor is om een ​​oordeel te vellen over de billijkheid van de gepresenteerde transacties in een populatie. Wanneer de auditor toegang heeft tot de onbewerkte populatiegegevens, kan hij de *auditworkflow* gebruiken om te berekenen hoeveel monsters moeten worden geëvalueerd om een ​​zeker vertrouwen in zijn oordeel te krijgen. De gebruiker kan vervolgens steekproeven nemen van deze items uit de populatie, deze items inspecteren en controleren, en statistische conclusies trekken over de afwijking in de populatie. De workflow voor steekproeven leidt de auditor door het auditproces en maakt onderweg de juiste keuzes van berekeningen.
+De taak van een auditor is een oordeel te vellen over de fout in een populatie. Als de gebruiker toegang heeft tot de ruwe populatiegegevens, kan deze de *audit workflow* gebruiken om te berekenen hoeveel steekproeven moeten worden geëvalueerd om een bepaalde betrouwbaarheid in zijn oordeel te krijgen. De gebruiker kan dan een steekproef nemen uit de populatie, deze posten inspecteren en controleren, en statistische conclusies trekken over de fout in de populatie. De steekproefworkflow leidt de gebruiker door het auditproces, waarbij onderweg de juiste berekeningskeuzes worden gemaakt.
 
-Zie de handleiding van de Audit module (download [hier](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) voor meer gedetailleerde informatie over deze analyse.
+Zie de handleiding van de auditmodule (download [hier](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) voor meer gedetailleerde informatie over deze analyse.
 
-### Werkstroom
+### Workflow
 ---
 
-- Planning: Bereken de minimale steekproefomvang om uw steekproefdoelstellingen met het gespecificeerde vertrouwen te bereiken.
-- Selectie: Selecteer de gewenste steekproefeenheden uit de populatie.
-- Uitvoering: Annoteer de selectie met uw beoordeling van de eerlijkheid van de geselecteerde items.
-- Evaluatie: maak een bevolkingsverklaring op basis van uw geannoteerde selectie.
+- Planning: Bereken de minimale steekproefgrootte om uw steekproefdoelstellingen met de opgegeven betrouwbaarheid te bereiken.
+- Selectie: Selecteer de vereiste steekproefeenheden uit de populatie.
+- Uitvoering: Annoteer de selectie met uw beoordeling van de fouten van de geselecteerde posten.
+- Evaluatie: Evalueer de geannoteerde selectie met statistische methodiek.
 
 <img src="%HELP_FOLDER%/img/workflow.png" />
 
-### Invoer - Planning
+### Input - Planning
 ---
 
-#### Steekproef Doelstellingen
-- Uitvoeringsmaterialiteit: ook wel de bovengrens voor de fout, het maximaal toelaatbare afwijkingspercentage of de maximaal toelaatbare afwijking genoemd, de uitvoeringsmaterialiteit is de bovengrens van de toelaatbare afwijking in de te testen populatie. Door te toetsen aan een uitvoeringsmaterialiteit bent u in staat een steekproef te plannen om bewijs te verzamelen voor of tegen de stelling dat de populatie als geheel geen afwijkingen bevat die als materieel worden beschouwd (d.w.z groter zijn dan de uitvoeringsmaterialiteit). U moet deze doelstelling inschakelen als u met een steekproef uit de populatie wilt weten of de populatie een afwijking boven of onder een bepaalde limiet (de prestatiematerialiteit) bevat. Een lagere uitvoeringsmaterialiteit zal resulteren in een hogere steekproefomvang. Omgekeerd zal een hogere uitvoeringsmaterialiteit resulteren in een lagere steekproefomvang.
-- Minimale precisie: de precisie is het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout. Door deze steekproefdoelstelling in te schakelen, kunt u een steekproef plannen zodat het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de afwijking tot een minimumpercentage wordt teruggebracht. U moet deze doelstelling inschakelen als u geïnteresseerd bent in het maken van een schatting van de populatieafwijking met een bepaalde nauwkeurigheid. Een lagere minimaal vereiste precisie zal resulteren in een hogere steekproefomvang. Omgekeerd zal een hogere minimale precisie resulteren in een vereiste steekproefomvang.
+#### Steekproefdoelstellingen
+- Uitvoeringsmaterialiteit: Ook wel de maximale fout, het aanvaardbare foutpercentage of de toelaatbare fout genoemd, is de uitvoeringsmaterialiteit de bovengrens van de fout in de te toetsen populatie. Door te toetsen aan een uitvoeringsmaterialiteit kunt u een steekproef plannen om bewijs te verzamelen voor of tegen de conclusie dat de populatie als geheel geen fouten bevat die als materieel worden beschouwd (d.w.z. groter zijn dan de bovengrens van de toelaatbare fout). U moet deze doelstelling inschakelen wanneer u aan de hand van een steekproef van de populatie wilt nagaan of de populatie fouten bevat boven of onder een bepaalde grens (de uitvoeringsmaterialiteit). Een lagere uitvoeringsmaterialiteit leidt tot een grotere vereiste steekproefomvang. Omgekeerd zal een hogere uitvoeringsmaterialiteit resulteren in een kleinere vereiste steekproefomvang.
+- Minimale nauwkeurigheid: De nauwkeurigheid is het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout. Door deze steekproefdoelstelling in te schakelen, kunt u een steekproef zo plannen dat het verschil tussen de geschatte meest waarschijnlijke fout en de bovengrens van de fout tot een minimumpercentage wordt beperkt. U moet deze doelstelling inschakelen als u een schatting van de fout van de populatie met een bepaalde nauwkeurigheid wilt maken. Een lagere minimaal vereiste nauwkeurigheid leidt tot een hogere vereiste steekproefomvang. Omgekeerd zal een hogere minimaal vereiste nauwkeurigheid resulteren in een lagere vereiste steekproefomvang.
 
 #### Betrouwbaarheid
-Het gebruikte betrouwbaarheidsniveau. Het betrouwbaarheidsniveau is het complement van het auditrisico: het risico dat de gebruiker bereid is te nemen om een ​​onjuist oordeel over de populatie te geven. Als u bijvoorbeeld een controlerisico van 5% wilt hebben, staat dit gelijk aan 95% betrouwbaarheid.
+Het gebruikte betrouwbaarheidsniveau. Het betrouwbaarheidsniveau is het complement van het auditrisico: het risico dat de auditor bereid is te nemen om een onjuist oordeel over de populatie te geven. Als u bijvoorbeeld een auditrisico van 5% wilt hebben, komt dit overeen met een betrouwbaarheidsniveau van 95%.
 
-#### Opdrachtbox
-- Item-ID: een unieke niet-ontbrekende identifier voor elk item in de populatie. Het rijnummer van de items is voldoende.
-- Boekwaarden: de variabele die de boekwaarden van de items in de populatie bevat.
+#### Toewijzingsvak
+- Item ID: Een unieke, niet ontbrekende identifier voor elke post in de populatie. Het rijnummer van de posten is voldoende.
+- Boekwaarden: De variabele die de boekwaarden van de posten in de populatie bevat. Idealiter zijn alle boekwaarden positieve waarden, zie de optie <i>Kritische posten</i> voor de afhandeling van negatieve boekwaarden.
 
-#### Verwachte fouten in steekproef
-De verwachte fouten zijn de toelaatbare fouten die in de steekproef kunnen worden gevonden terwijl de gespecificeerde steekproefdoelstellingen nog steeds worden bereikt. Er wordt een steekproefomvang berekend zodat, wanneer het aantal verwachte fouten in de steekproef wordt gevonden, het gewenste vertrouwen behouden blijft.
+#### Verwachte Fouten
+De verwachte fouten zijn de toelaatbare fouten die in de steekproef kunnen worden aangetroffen terwijl toch de gespecificeerde steekproefdoelstellingen worden gehaald. Een steekproefomvang wordt zodanig berekend zodat, wanneer het aantal verwachte fouten in de steekproef wordt aangetroffen, de gewenste betrouwbaarheid behouden blijft.
 
-*Opmerking:* Het wordt aangeraden om deze waarde conservatief in te stellen om de kans te minimaliseren dat de waargenomen fouten de verwachte fouten overschrijden, wat zou betekenen dat er onvoldoende werk is verricht.
+*Noot:* Geadviseerd wordt deze waarde conservatief vast te stellen om de kans dat de waargenomen fouten groter zijn dan de verwachte fouten, hetgeen zou betekenen dat er onvoldoende werk is verricht, zo klein mogelijk te houden.
 
-- Relatief: voer uw verwachte fouten in als een percentage ten opzichte van de totale grootte van de selectie.
-- Absoluut: Voer uw verwachte fouten in als de som van (proportionele) fouten.
-
-#### Kansverdeling
-- Gamma: De gammaverdeling gaat samen met de Poisson-verdeling. De Poisson-verdeling gaat uit van een oneindige populatieomvang en wordt daarom over het algemeen gebruikt wanneer de populatieomvang groot is. Het is een verdeling waarmee het percentage afwijkingen (*\u03B8*) modelleerd als functie van de waargenomen steekproefomvang (*n*) en de som van de gevonden proportionele fouten (*t*). Omdat de gammaverdeling deelfouten mogelijk maakt, wordt deze over het algemeen gebruikt bij het plannen van een steekproef in munteenheden (Stewart, 2013).
-- Beta: de bètaverdeling gaat samen met de binominaalverdeling. De binominaalverdeling gaat uit van een oneindige populatieomvang en wordt daarom over het algemeen gebruikt wanneer de populatieomvang groot is. Het is een verdeling waarmee het percentage afwijkingen (*\u03B8*) wordt gemodelleerd als functie van het waargenomen aantal fouten (*k*) en het aantal correcte transacties (*n - k*). Omdat de binominaalverdeling strikt genomen geen rekening houdt met gedeeltelijke fouten, wordt deze over het algemeen gebruikt wanneer u geen steekproef in een munteenheid plant. De betaverdeling is echter geschikt voor gedeeltelijke fouten en kan ook worden gebruikt voor steekproeven op monetaire eenheden (de Swart, Wille & Majoor, 2013).
-- Beta-binomiaal: De beta-binomiaalverdeling gaat samen met de hypergeometrische verdeling (Dyer & Pierce, 1993). De hypergeometrische verdeling gaat uit van een eindige populatieomvang en wordt daarom over het algemeen gebruikt wanneer de populatieomvang klein is. Het is een verdeling waarmee het aantal fouten (*K*) in de populatie wordt gemodelleerd als functie van de populatieomvang (*N*), het aantal geobserveerde gevonden fouten (*k*) en het aantal correcte transacties (*N*).
+- Relatief: Voer uw verwachte fouten in als percentage ten opzichte van de totale omvang van de selectie.
+- Absoluut: Voer uw verwachte fouten in als de som van de (proportionele) fouten.
 
 #### Weergave
-- Verklarende tekst: indien ingeschakeld, wordt verklarende tekst in de analyse ingeschakeld om de procedure en de statistische resultaten te helpen interpreteren.
-
-#### Tabellen
-- Beschrijvende statistieken: Produceert een tabel met beschrijvende statistieken van de boekwaarden in de populatie.
-- Impliciete eerdere steekproef: Produceert een tabel die de impliciete steekproef weergeeft waarop de prior verdeling is gebaseerd.
-- Prior en posterior: Produceert een tabel waarin de eerdere en verwachte posterieure distributie worden samengevat door middel van verschillende statistieken, zoals hun functionele vorm, hun eerdere en verwachte posterieure kansen en kansen, en de verschuiving daartussen.
-
-#### Figuren
-- Prior en posterior: Produceert een plot die de prior verdeling en de posterieure distributie toont na observatie van het beoogde monster.
-  - Extra info: Produceert stippen op de materialiteit.
-- Prior predictive: Produceert een plot van de voorspellingen van de prior verdeling.
-- Vergelijk steekproefomvang: Produceert een plot die de steekproefomvang vergelijkt 1) over kansverdelingen, en 2) over het aantal verwachte fouten in de steekproef.
-- Verdeling van boekwaarden: Produceert een histogram van de boekwaarden in de populatie.
+- Toelichtende tekst: Indien aangevinkt, wordt verklarende tekst in de analyse ingeschakeld om de procedure en de statistische resultaten te helpen interpreteren.
 
 #### Prior
-- Standaard: deze optie neemt geen informatie op in de statistische analyse en gaat daarom uit van een verwaarloosbare en conservatieve eerdere verdeling.
-- Handmatig: geef de parameters van de prior verdeling op.
-- Eerdere steekproef: Maak een eerdere verdeling op basis van een eerdere steekproef.
-  - Grootte: eerdere steekproefomvang.
-  - Fouten: eerder gevonden fouten.
-- Onpartijdig: maak een voorafgaande verdeling die onpartijdig is met betrekking tot de geteste hypothesen.
-- Risicobeoordelingen: Vertaal informatie uit het auditrisicomodel naar een eerdere verspreiding.
-  - Inherent risico: Een categorie of waarschijnlijkheid voor het inherente risico. Inherent risico wordt gedefinieerd als het risico op een afwijking van materieel belang als gevolg van een fout of weglating in een financieel overzicht als gevolg van een andere factor dan een falen van de interne beheersing.
-  - Beheersingsrisico: Een categorie of waarschijnlijkheid voor het internecontrolerisico. Het interne beheersingsrisico wordt gedefinieerd als het risico van een afwijking van materieel belang in de financiële overzichten die voortvloeit uit het ontbreken of falen van de relevante interne beheersingsmaatregelen van de gecontroleerde.
+- Kansverdeling: Specificeer de familie van de prior-verdeling.
+  - Beta-binomiaal: De beta-binomiale verdeling hoort bij de hypergeometrische kansverdeling (Dyer & Pierce, 1993). De hypergeometrische kansverdeling gaat uit van een eindige populatie en wordt daarom meestal gebruikt als de populatieomvang klein is. Het is een waarschijnlijkheid die het aantal fouten (*K*) in de populatie modelleert als functie van de populatiegrootte (*N*), het aantal waargenomen gevonden fouten (*k*) en het aantal correcte verrichtingen (*n*).
+  - Beta: De betaverdeling hoort bij de binomiale kansverdeling. De binomiale kansverdeling gaat uit van een oneindige populatie en wordt daarom meestal gebruikt wanneer de populatieomvang groot is. Het is een kansverdeling die het percentage fouten (*\u03B8*) modelleert als functie van het waargenomen aantal fouten (*k*) en het aantal correcte eenheden (*n - k*). Omdat de binomiale verdeling strikt genomen geen rekening houdt met gedeeltelijke fouten, wordt deze meestal gebruikt wanneer u geen geldsteekproef uitvoert. De beta-verdeling herbergt echter wel partiële fouten, en kan ook worden gebruikt voor geldsteekproeven (de Swart, Wille & Majoor, 2013).
+  - Gamma: De gammaverdeling hoort bij de Poisson kansverdeling. De Poisson kansverdeling gaat uit van een oneindige populatie en wordt daarom meestal gebruikt als de populatieomvang groot is. Het is een waarschijnlijkheid die het percentage fouten (*\u03B8*) modelleert als functie van de steekproefomvang (*n*) en de som van de gevonden proportionele fouten (*t*). Omdat de gamma-verdeling rekening houdt met gedeeltelijke fouten, wordt deze meestal gebruikt wanneer u een geldsteekproef uitvoert (Stewart, 2013).
 
-#### Kritieke items
-- Negatieve boekwaarden: Isoleert negatieve boekwaarden van de populatie.
-  - Bewaren: houdt negatieve boekwaarden die moeten worden geïnspecteerd in het monster.
-  - Verwijderen: verwijdert negatieve boekwaarden.
+- Opstelling: Specificeer hoe de prior-verdeling moet worden geconstrueerd, of met andere woorden, welk type audit-informatie in de prior-verdeling moet worden opgenomen.
+  - Standaard: Deze optie neemt geen informatie op in de statistische analyse en gaat daarom uit van een verwaarloosbare en conservatieve prior-verdeling.
+  - Parameters: Geef de parameters van de prior-verdeling.
+  - Eerdere steekproef: Creëer een prior-verdeling op basis van een eerdere steekproef.
+    - Grootte: Grootte van de eerdere steekproef.
+    - Fouten: Aantal eerder gevonden fouten.
+  - Onpartijdig: Maak een prior-verdeling die onpartijdig is ten opzichte van de geteste hypothesen.
+  - Risicobeoordelingen: Vertaal informatie uit het audit risicomodel in een prior verdeling.
+    - Inherent risico: Een categorie of waarschijnlijkheid voor het inherente risico. Inherent risico wordt gedefinieerd als het risico van een materiele fout in de populatie door een andere factor dan het falen van de interne controle.
+    - Intern beheersingsrisico: Een categorie of waarschijnlijkheid voor het interne beheersingsrisico. Intern beheersingsrisico wordt gedefinieerd als het risico op een materiele fout in de populatie als gevolg van het ontbreken of falen van de werking van relevante interne controles van de gecontroleerde.
 
-#### Tabellen opmaken
-- Cijfers: geef tabeluitvoer weer als getallen.
-- Percentages: geef de tabeluitvoer weer als percentages.
+#### Rapport
+- Tabellen
+  - Beschrijvende statistieken: Produceert een tabel met beschrijvende statistieken van de boekwaarden in de populatie.
+  - Equivalente voorafgaande steekproef: Produceert een tabel met de impliciete steekproef waarop de prior-verdeling is gebaseerd.
+  - Prior en posterior: Produceert een tabel waarin de prior en verwachte posterior verdeling worden samengevat via verschillende statistieken, zoals hun functionele vorm, hun prior en verwachte posterior kansen en waarschijnlijkheden, en de verschuiving daartussen.
 
-#### Stapgrootte
-Met de stapgrootte kunt u de mogelijke steekproefomvang beperken tot een veelvoud van de waarde. Een stapgrootte van 5 staat bijvoorbeeld alleen steekproefomvang van 5, 10, 15, 20, 25, enz. toe.
+- Figuren
+  - Vergelijk steekproefgrootten: Produceert een plot die de steekproefgrootte vergelijkt 1) over kansverdelingen, en 2) over het aantal verwachte fouten in de steekproef.
+  - Prior-verdeling: Produceert een plot die de prior-verdeling toont.
+    - Posterior verdeling: Voegt de posterior verdeling na waarneming van de bedoelde steekproef toe aan de figuur.
+  - Prior-voorspellende-verdeling: Produceert een plot van de voorspellingen van de prior-verdeling.
+  - Verdeling van boekwaarden: Produceert een histogram van de boekwaarden in de populatie.
 
-#### Veronderstel homogene taints
-Als u op dit vakje klikt, kunt u de bekende en onbekende afwijking in de populatie scheiden om efficiënter te werken. Let op dat hiervoor de aanname vereist is dat de taints in de steekproef representatief zijn voor de taints in het onzichtbare deel van de populatie.
+- Weergave Getallen
+  - Numeriek: Getallen weergeven als numerieke waarden.
+  - Percentages: Getallen weergeven als percentages.
+  - Geldeenheden: Getallen weergeven als geldeenheden.
 
-### Uitgang - Planning
+#### Geavanceerd
+- Iteraties
+  - Verhoging: Met het increment kunt u de mogelijke steekproefomvang beperken tot een veelvoud van de waarde ervan. Bijvoorbeeld, een increment van 5 staat alleen steekproefgroottes toe van 5, 10, 15, 20, 25, enz.
+  - Maximum: Met het maximum kunt u de steekproefgrootte beperken met een maximum.
+
+- Kritische posten
+  - Negatieve boekwaarden: Isoleert negatieve boekwaarden uit de populatie.
+    - Houden: Houdt negatieve boekwaarden om te inspecteren in de steekproef.
+    - Verwijderen: Verwijdert negatieve boekwaarden.
+
+- Algoritme
+  - Gedeeltelijke projectie: Als u op dit vakje klikt, kunt u de bekende en de onbekende fouten in de populatie scheiden om efficiënter te werk te gaan. Merk op dat dit de veronderstelling vereist dat de fouten in het geziene deel van de populatie representatief zijn voor de fouten in het ongeziene deel van de populatie.
+
+### Planning
 ---
 
-#### Planningsoverzicht
-- Uitvoeringsmaterialiteit: indien aanwezig, de uitvoeringsmaterialiteit.
-- Min. precisie: indien aanwezig, de minimale precisie.
-- Verwachte fouten: Het aantal (som van proportionele taints) verwachte / toelaatbare fouten in de steekproef.
-- Minimale steekproefomvang: de minimale steekproefomvang.
+#### Planning Samenvatting
+- Uitvoeringsmaterialiteit: Indien verstrekt, de uitvoeringsmaterialiteit.
+- Min. nauwkeurigheid: Indien verstrekt, de minimale precisie.
+- Verwachte fouten: Het aantal (som van proportionele taits) verwachte / aanvaardbare fouten in de steekproef.
+- Minimale steekproefomvang: De minimale steekproefomvang.
 
 #### Beschrijvende statistieken
-- Populatiegrootte: aantal items in de populatie.
+- Populatiegrootte: Aantal posten in de populatie.
 - Waarde: Totale waarde van de boekwaarden.
 - Absolute waarde: Absolute waarde van de boekwaarden.
-- Gemiddelde: gemiddelde van de boekwaarden.
-- Soa. afwijking: Standaarddeviatie van de boekwaarden.
+- Gemiddelde: Gemiddelde van de boekwaarden.
+- Std. afwijking: Standaardafwijking van de boekwaarden.
 - Kwartiel: Kwartielen van de boekwaarden.
 
-#### Impliciete voorafgaande steekproef
-- Impliciete steekproefomvang: de steekproefomvang die overeenkomt met de voorafgaande informatie.
-- Impliciete fouten: het aantal fouten dat gelijk is aan de eerdere informatie.
-
-#### Prior en posterieur
-- Functionele vorm: De functionele vorm van de distributie.
-- Ondersteuning H-: Totale kans in het bereik van H- onder de verdeling. Wordt alleen weergegeven bij toetsing aan een uitvoeringsmaterialiteit.
-- Ondersteuning H+: Totale kans in het bereik van H+ onder de verdeling. Wordt alleen weergegeven bij toetsing aan een uitvoeringsmaterialiteit.
-- Verhouding H- / H+: Kansen in het voordeel van H- onder de verdeling. Wordt alleen weergegeven bij toetsing aan een uitvoeringsmaterialiteit.
-- Gemiddelde: gemiddelde van de verdeling.
+#### Prior en posterior
+- Functionele vorm: De functionele vorm van de verdeling.
+- Steun H-: Totale kans in het bereik van H- onder de verdeling. Wordt alleen weergegeven bij toetsing aan een prestatiematerialiteit.
+- Ondersteuning H+: Totale kans in het bereik van H+ onder de verdeling. Wordt alleen weergegeven bij toetsing aan een prestatiematerialiteit.
+- Verhouding H- / H+: Kans in het voordeel van H- onder de verdeling. Wordt alleen weergegeven bij toetsing aan een prestatiematerialiteit.
+- Gemiddelde: Gemiddelde van de verdeling.
 - Mediaan: Mediaan van de verdeling.
-- Mode: Mode van de distributie.
-- Bovengrens: x-% percentiel van de verdeling.
-- Precisie: verschil tussen de bovengrens en de wijze van verdeling.
+- Modus: Modus van de verdeling.
+- Bovengrens: x-percentiel van de verdeling.
+- Nauwkeurigheid: Verschil tussen de bovengrens en de modus van de verdeling.
 
-#### Figuren
-- Prior en posterior: Produceert een plot die de prior verdeling en de posterieure distributie toont na observatie van het beoogde monster.
-  - Extra info: Produceert stippen op de materialiteit.
-- Prior predictive: Produceert een plot van de voorspellingen van de prior verdeling.
-- Vergelijk steekproefomvang: Produceert een plot die de steekproefomvang vergelijkt 1) over kansverdelingen, en 2) over het aantal verwachte fouten in de steekproef.
+#### Plots
+- Prior en posterior: Produceert een plot die de prior-verdeling en de posterior-verdeling toont na waarneming van het beoogde monster.
+  - Extra info: Annoteert de figuur met de modus en het geloofwaardigheidsinterval. Indien een materialiteit is gespecificeerd, wordt de figuur geannoteerd met de materialiteit en bevat een visualisatie van de Bayes-factor via een verhoudingswiel.
+- Prior predictief: Produceert een plot van de voorspellingen van de prior-verdeling.
+- Vergelijk steekproefgrootten: Produceert een plot die de steekproefgrootte vergelijkt 1) over kansverdelingen, en 2) over het aantal verwachte fouten in de steekproef.
 - Verdeling van boekwaarden: Produceert een histogram van de boekwaarden in de populatie.
 
 ### Invoer - Selectie
 ---
 
-#### Opdrachtbox
-- Rangschikkingsvariabele: indien opgegeven, wordt de populatie eerst gerangschikt in oplopende volgorde met betrekking tot de waarden van deze variabele.
-- Aanvullende variabelen: alle andere variabelen die in de steekproef moeten worden opgenomen.
+#### Willekeurige volgorde posten
+Randomiseert de posten in de populatie voordat de selectie wordt uitgevoerd.
 
-#### Steekproefgrootte
-Het vereiste aantal steekproefeenheden dat uit de populatie moet worden geselecteerd. Houd er rekening mee dat de steekproefeenheden worden bepaald door de optie *eenheden*. Als er geen boekwaarden worden opgegeven, zijn de steekproefeenheden standaard items (rijen). Wanneer boekwaarden worden verstrekt, zijn de ideale steekproefeenheden om te gebruiken monetaire eenheden.
+#### Steekproefeenheden
+- Posten: Voert een selectie uit met de posten in de populatie als steekproefeenheden.
+- Geldeenheden: Voert de selectie uit met de monetaire eenheden in de populatie als steekproefeenheden. Deze methode verdient de voorkeur wanneer u meer posten met een hoge waarde in de steekproef wilt opnemen.
 
-#### Bemonsteringseenheden
-- Items: voert selectie uit met behulp van de items in de populatie als steekproefeenheden.
-- Monetaire eenheden: voert een selectie uit waarbij de monetaire eenheden in de populatie als steekproefeenheden worden gebruikt. Deze methode heeft de voorkeur als u meer items met een hoge waarde in de steekproef wilt opnemen.
+#### Selectiemethode
+- Vast interval steekproef: Voert selectie uit door de populatie in gelijke intervallen te verdelen en in elk interval een vaste eenheid te selecteren. Elke post met een boekwaarde groter dan het interval wordt altijd opgenomen in de steekproef.
+  - Startpunt: Bepaalt welke steekproefeenheid wordt geselecteerd uit elk van de berekende intervallen.
+    - Willekeurig: Stelt willekeurig een startpunt in het berekende interval in met behulp van de opgegeven toevalsgenerator beginwaarde.
+    - Aangepast: Handmatig een beginpunt in het berekende interval opgeven.
+- Cel steekproef: Voert selectie uit door de populatie in gelijke intervallen te verdelen en in elk interval een variabele eenheid te selecteren. Elke post met een boekwaarde groter dan tweemaal het interval wordt altijd opgenomen in de steekproef. Deze methode gebruikt de opgegeven toevalsgenerator beginwaarde.
+- Willekeurige steekproef: Voert een willekeurige selectie uit waarbij elke steekproefeenheid een gelijke kans heeft om geselecteerd te worden. Deze methode gebruikt de opgegeven toevalsgenerator beginwaarde.
 
-#### Methode
-- Steekproef met vast interval: voert selectie uit door de populatie in gelijke intervallen te verdelen en in elk interval een vaste eenheid te selecteren. Elk item met een waarde groter dan het interval wordt altijd in de steekproef opgenomen.
-  - Startpunt: Selecteert welke bemonsteringseenheid wordt geselecteerd uit elk interval.
-- Celbemonstering: voert selectie uit door de populatie in gelijke intervallen te verdelen en in elk interval een variabele eenheid te selecteren. Elk item met een waarde groter dan tweemaal het interval wordt altijd in de steekproef opgenomen.
-  - Seed: Selecteert de seed voor de generator van willekeurige getallen om resultaten te reproduceren.
-- Willekeurige steekproef: Voert willekeurige selectie uit waarbij elke steekproefeenheid een gelijke kans heeft om geselecteerd te worden.
-  - Seed: Selecteert de seed voor de generator van willekeurige getallen om resultaten te reproduceren.
-
-#### Items willekeurig maken
-Randomiseert de items in de populatie voordat de selectie wordt uitgevoerd.
-
-#### Tabellen
-- Beschrijvende statistiek: Produceert een tabel met beschrijvende informatie over numerieke variabelen in de selectie. Statistieken die zijn opgenomen zijn het gemiddelde, de mediaan, de standaarddeviatie, de variantie, het minimum, het maximum en het bereik.
-- Ruwe steekproef: produceert een tabel met de geselecteerde transacties samen met eventuele aanvullende waarnemingen in het veld met aanvullende variabelen.
+#### Rapport
+- Tabellen
+  - Geselecteerde posten: Produceert een tabel met de geselecteerde posten samen met eventuele aanvullende waarnemingen die in het veld aanvullende variabelen zijn opgegeven.
+  - Beschrijvende statistieken: Produceert een tabel met beschrijvende informatie over numerieke variabelen in de selectie. Statistieken die worden opgenomen zijn het gemiddelde, de mediaan, de standaardafwijking, de variantie, het minimum, het maximum en het bereik.
 
 ### Uitvoer - Selectie
 ---
 
-#### Selectie Samenvatting
+#### Selectieoverzicht
 - Aantal eenheden: Het aantal geselecteerde steekproefeenheden uit de populatie.
-- Aantal items: Het aantal geselecteerde items uit de populatie.
-- Selectiewaarde: De totale waarde van de geselecteerde items. Alleen weergegeven wanneer steekproeven op munteenheid worden gebruikt.
-- % van populatieomvang / waarde: Het geselecteerde deel van de totale omvang of waarde van de populatie.
+- Aantal posten: Het aantal geselecteerde posten uit de populatie.
+- Selectie waarde: De totale waarde van de geselecteerde posten. Wordt alleen weergegeven bij geldsteekproeven.
+- % van populatiegrootte / waarde: Het geselecteerde aandeel van de totale omvang of waarde van de populatie.
+
+#### Informatie over monetaire intervalselectie
+- Posten: Het aantal posten in de populatie.
+- Waarde: De waarde van de posten in de populatie.
+- Geselecteerde posten: Het aantal posten in de steekproef.
+- Geselecteerde eenheden: Het aantal geselecteerde eenheden uit de populatie.
+- Selectie waarde: De waarde van de posten in de steekproef.
+- % van de totale waarde: Het geselecteerde aandeel van de totale waarde van de posten ten opzichte van de posten in de populatie.
 
 #### Beschrijvende statistieken
-- Geldig: aantal geldige gevallen.
-- Gemiddelde: rekenkundig gemiddelde van de gegevenspunten.
-- Mediaan: Mediaan van de gegevenspunten.
-- Soa. deviatie: Standaarddeviatie van de gegevenspunten.
-- Variantie: Variantie van de datapunten.
-- Bereik: bereik van de datapunten.
+- Geldig: Aantal geldige gevallen.
+- Gemiddelde: Rekenkundig gemiddelde van de datapunten.
+- Mediaan: Mediaan van de datapunten.
+- Std. afwijking: Standaardafwijking van de gegevenspunten.
+- Variantie: Variantie van de gegevenspunten.
+- Bereik: Bereik van de gegevenspunten.
 - Minimum: Minimum van de datapunten.
 - Maximum: Maximum van de datapunten.
 
-#### Ruw monster
-- Rij: het rijnummer van het item.
-- Geselecteerd: het aantal keren (een eenheid in) dat het item is geselecteerd.
+#### Geselecteerde posten
+- Rij: Het rijnummer van de post.
+- Geselecteerd: Het aantal keren dat een (eenheid in een) post is geselecteerd.
 
 ### Invoer - Uitvoering
 ---
 
 #### Annotatie
-- Auditwaarde: Annoteer de items in de selectie met hun audit (true) waarden. Deze aanpak wordt aanbevolen (en automatisch geselecteerd) wanneer de items een geldwaarde hebben.
-- Correct/Incorrect: Annoteer de items in de selectie met correct (0) of incorrect (1). Deze aanpak wordt aanbevolen (en automatisch geselecteerd) wanneer uw artikelen geen geldwaarde hebben.
+- Auditwaarde: Annoteer de posten in de steekproef met hun audit (werkelijke) waarden. Deze aanpak wordt aanbevolen (en automatisch geselecteerd) wanneer de posten een geldwaarde hebben.
+- Correct / Incorrect: Annoteer de posten in de steekproef met correct (0) of incorrect (1). Deze aanpak wordt aanbevolen (en automatisch geselecteerd) wanneer de posten geen geldwaarde hebben.
 
 ### Invoer - Evaluatie
 ---
 
-#### Opdrachtbox
-- Auditresultaat / waarden: De variabele die de audit (true) waarden bevat, of de binaire classificatie van correct (0) of incorrect (1).
+#### Toewijzingsvak
+- Auditresultaat / waarden: De variabele die de audit (werkelijke) waarden bevat, of de binaire classificatie van juist (0) of onjuist (1).
 
-#### Methode
-Zie *Kansverdeling*.
+#### Rapport
+- Tabellen
+  - Foute posten: Produceert een tabel met alle posten die een fout bleken te bevatten.
+  - Correcties op populatie: Produceert een tabel die de vereiste correcties op de populatiewaarde bevat om de steekproefdoelstellingen te bereiken.
+  - Prior en posterior: Produceert een tabel waarin de prior en verwachte posterior verdeling worden samengevat via verschillende statistieken, zoals hun functionele vorm, hun prior en verwachte posterior kansen en waarschijnlijkheden, en de verschuiving daartussen.
+  - Aannamecontroles: Produceert een tabel die de correlatie weergeeft tussen de boekwaarden in de steekproef en hun tinten.
+    - Betrouwbaarheidsinterval: Breedte van het betrouwbaarheidsinterval voor de correlatie.
 
-#### Gebied onder posterior
-- Eenzijdige bovengrens: Geeft een (bovenste) schatting van de afwijking in de populatie.
-- Tweezijdig interval: Geeft een (bovenste en onderste) schatting van de afwijking in de populatie.
+- Figuren
+  - Steekproefdoelstellingen: Produceert een staafdiagram waarin de materialiteit, maximale fout en meest waarschijnlijke fout (MLE) worden vergeleken.
+  - Schattingen: Produceert een intervalplot voor de populatie en optioneel de stratumschattingen van de fout.
+  - Prior en posterior: Produceert een plot die de prior-verdeling en de posterior-verdeling toont na het observeren van de beoogde steekproef.
+    - Extra info: Annoteert de figuur met de modus en het geloofwaardigheidsinterval. Als een materialiteit is gespecificeerd, wordt de figuur geannoteerd met de materialiteit en bevat een visualisatie van de Bayes-factor via een proportioneel wiel.
 
-#### Tabellen
-- Correcties op populatie: Produceert een tabel die de vereiste correcties op de populatiewaarde bevat om de steekproefdoelstellingen te bereiken.
-- Prior en posterior: Produceert een tabel waarin de eerdere en verwachte posterieure distributie worden samengevat door middel van verschillende statistieken, zoals hun functionele vorm, hun eerdere en verwachte posterieure kansen en kansen, en de verschuiving daartussen.
-- Aannamecontroles: Produceert een tabel die de correlatie weergeeft tussen de boekwaarden in de steekproef en hun invloeden.
-  - Betrouwbaarheidsinterval: Breedte van het betrouwbaarheidsinterval voor de correlatie.
+#### Geavanceerd
+- Geloofwaardigheidsinterval (Alt. Hypothese)
+  - Bovengrens (< materialiteit): Bereken de bovengrens en toets de alternatieve hypothese dat fout < materialiteit.
+  - Tweezijdig (= materialiteit): Bereken de boven- en ondergrens en toets de alternatieve hypothese dat fout != materialiteit.
+  - Ondergrens (< materialiteit): Bereken de ondergrens en toets de alternatieve hypothese dat fout > materialiteit.
 
-#### Figuren
-- Prior en posterior: Produceert een plot die de prior verdeling en de posterieure distributie toont na observatie van het beoogde monster.
-  - Extra info: Produceert stippen op de materialiteit.
-- Posterior predictive: Produceert een plot van de voorspellingen van de posterieure verdeling.
-- Steekproefdoelstellingen: Produceert een staafdiagram waarin de materialiteit, de bovengrens van de afwijking en de meest waarschijnlijke fout (MLE) worden vergeleken.
-- Spreidingsplot: Produceert een spreidingsplot die boekwaarden van de selectie vergelijkt met hun controlewaarden. Waarnemingen die fout zijn, zijn rood gekleurd.
-  - Correlatie weergeven: Voegt de correlatie tussen de boekwaarden en de controlewaarden toe aan de plot.
-  - Item-ID's weergeven: voegt de item-ID's toe aan de plot.
-
-### Uitvoer - Evaluatie
+### Evaluatie
 ---
 
-#### Evaluatieoverzicht
-- Materialiteit: indien aanwezig, de uitvoeringsmaterialiteit.
-- Min. precisie: indien aanwezig, de minimale precisie.
-- Steekproefomvang: De steekproefomvang (aantal eenheden).
-- Fouten: het aantal foutieve elementen in de selectie.
-- Taint: De som van de proportionele fouten. Gecontroleerde items kunnen worden geëvalueerd terwijl de omvang van de afwijking wordt meegenomen door hun taint te berekenen. De taint van een item *i* is het proportionele verschil tussen de boekwaarde van dat item (*y*) en de controlewaarde (true) van het item (*x*). Positieve taint worden geassocieerd met te hoge bedragen, terwijl negatieve taints optreden wanneer items worden onderschat.
+#### Samenvatting van de evaluatie
+- Materialiteit: Indien verstrekt, de uitvoeringsmaterialiteit.
+- Min. nauwkeurigheid: Indien verstrekt, de minimale precisie.
+- Steekproefgrootte: De steekproefgrootte (aantal eenheden).
+- Fouten: Het aantal fouten in de steekproef.
+- Taint: De som van de proportionele fouten. Gecontroleerde posten kunnen worden geëvalueerd met inachtneming van de omvang van de fout door hun taint te berekenen. De taint van een post *i* is het proportionele verschil tussen de boekwaarde van die post (*y*) en de gecontroleerde (werkelijke) waarde van de post (*x*). Positieve taints worden geassocieerd met te hoge opgaven, terwijl negatieve taints voorkomen wanneer posten te laag zijn opgegeven.
 <img src="%HELP_FOLDER%/img/taints.png" />
 - Meest waarschijnlijke fout: De meest waarschijnlijke fout in de populatie.
-- x-% Betrouwbaarheidsgrens: Bovengrens van de afwijking in de populatie.
-- Precisie: verschil tussen bovengrens en meest waarschijnlijke fout.
-- BF-+: De Bayes-factor voor de test.
+- x-% Betrouwbaarheidsgrens: De bovengrens van de fout in de populatie.
+- Precisie: Het verschil tussen bovengrens en meest waarschijnlijke fout.
+- BF-+: De Bayes factor voor de toets.
 
-#### Prior en posterieur
-- Functionele vorm: De functionele vorm van de distributie.
+#### Prior en posterior
+- Functionele vorm: De functionele vorm van de verdeling.
 - Ondersteuning H-: Totale kans in het bereik van H- onder de verdeling. Wordt alleen weergegeven bij toetsing aan een uitvoeringsmaterialiteit.
 - Ondersteuning H+: Totale kans in het bereik van H+ onder de verdeling. Wordt alleen weergegeven bij toetsing aan een uitvoeringsmaterialiteit.
-- Verhouding H- / H+: Kansen in het voordeel van H- onder de verdeling. Wordt alleen weergegeven bij toetsing aan een uitvoeringsmaterialiteit.
-- Gemiddelde: gemiddelde van de verdeling.
+- Verhouding H- / H+: Kans in het voordeel van H- onder de verdeling. Wordt alleen weergegeven bij toetsing aan een uitvoeringsmaterialiteit.
+- Gemiddelde: Gemiddelde van de verdeling.
 - Mediaan: Mediaan van de verdeling.
-- Mode: Mode van de distributie.
-- Bovengrens: x-% percentiel van de verdeling.
-- Precisie: verschil tussen de bovengrens en de wijze van verdeling.
+- Modus: Modus van de verdeling.
+- Bovengrens: x-percentiel van de verdeling.
+- Nauwkeurigheid: Verschil tussen de bovengrens en de modus van de verdeling.
 
-#### Correcties voor de bevolking
-- Correctie: Het van de populatie af te trekken bedrag of percentage.
+#### Correcties op de populatie
+- Correctie: De hoeveelheid of het percentage dat van de populatie moet worden afgetrokken.
 
 #### Aannamecontroles
-- n: steekproefomvang.
-- Pearsons r: Pearson-correlatiecoëfficiënt.
-- x-% bovengrens: bovengrens voor correlatiecoëfficiënt.
+- n: Steekproefgrootte.
+- Pearsons r: Pearson correlatiecoëfficiënt.
+- x-% bovengrens: Bovengrens voor de correlatiecoëfficiënt.
 - p: p-waarde voor de test.
 - BF-0: Bayes-factor voor de test.
 
-#### Figuren
-- Prior en posterior: Produceert een plot die de prior verdeling en de posterieure distributie toont na observatie van het beoogde monster.
-  - Extra info: Produceert stippen op de materialiteit.
-- Posterior predictive: Produceert een plot van de voorspellingen van de posterieure verdeling.
-- Steekproefdoelstellingen: Produceert een staafdiagram waarin de materialiteit, de bovengrens van de afwijking en de meest waarschijnlijke fout (MLE) worden vergeleken.
-- Spreidingsplot: Produceert een spreidingsplot die boekwaarden van de selectie vergelijkt met hun controlewaarden. Waarnemingen die fout zijn, zijn rood gekleurd.
-  - Correlatie weergeven: Voegt de correlatie tussen de boekwaarden en de controlewaarden toe aan de plot.
-  - Item-ID's weergeven: voegt de item-ID's toe aan de plot.
+#### Plots
+- Prior en posterior: Produceert een plot die de prior-verdeling en de posterior-verdeling toont na waarneming van het beoogde monster.
+  - Extra info: Annoteert de figuur met de modus en het geloofwaardigheidsinterval. Indien een materialiteit is gespecificeerd, wordt de figuur geannoteerd met de materialiteit en bevat een visualisatie van de Bayes-factor via een proportiewiel.
+- Posterior voorspellend: Produceert een plot van de voorspellingen van de posterior distributie.
+- Steekproefdoelen: Produceert een staafdiagram waarin de materialiteit, de bovengrens van de fout en de meest waarschijnlijke fout (MLE) worden vergeleken.
 
 ### Referenties
 ---
-- AICPA (2017). <i>Auditgids: controlesteekproeven</i>. American Institute of Certified Public Accountants.
-- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package version 0.6.5.
-- Dyer, D., & Pierce, R.L. (1993). Over de keuze van de voorafgaande verdeling bij hypergeometrische steekproeven. <i>Communicatie in statistiek-theorie en methoden</i>, 22(8), 2125-2146.
-- Stewart, TR (2013). Een Bayesiaans audit assurance-model met toepassing op het component materialiteitsprobleem bij groepsaudits (proefschrift).
-- de Swart, J., Wille, J., & Majoor, B. (2013). Het 'Push-Left'-Principe als Motor van Data Analytics in de Accountantcontrole [Het 'Push-Left'-Principe als aanjager van Data Analytics in Financial Audit]. <i>Maandblad voor Accountancy en Bedrijfseconomie</i>, 87, 425-432.
+- AICPA (2017). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R-pakket versie 0.6.5.
+- Dyer, D., & Pierce, R. L. (1993). On the choice of the prior distribution in hypergeometric sampling. <i>Communications in Statistics-Theory and Methods</i>, 22(8), 2125-2146.
+- Stewart, T. R. (2013). A Bayesian audit assurance model with application to the component materiality problem in group audits (Doctoral dissertation).
+- de Swart, J., Wille, J., & Majoor, B. (2013). Het 'Push Left'-Principe als Motor van Data Analytics in de Accountantscontrole. <i>Maandblad voor Accountancy en Bedrijfseconomie</i>, 87, 425-432.
 
 ### R-pakketten
 ---

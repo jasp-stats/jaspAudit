@@ -45,18 +45,6 @@ The expected errors are the tolerable errors that can be found in the sample whi
 #### Display
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.
 
-#### Tables
-- Descriptive statistics: Produces a table with descriptive statistics of the book values in the population.
-- Equivalent prior sample: Produces a table that displays the implicit sample on which the prior distribution is based.
-- Prior and posterior: Produces a table in which the prior and expected posterior distribution are summarized through several statistics, such as their functional form, their prior and expected posterior probabilities and odds, and the shift between these.
-
-#### Plots
-- Prior distribution: Produces a plot that shows the prior distribution.
-  - Posterior distribution: Adds the posterior distribution after observing the intended sample to the figure.
-- Prior predictive distribution: Produces a plot of the predictions of the prior distribution.
-- Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
-- Distribution of book values: Produces a histogram of the book values in the population.
-
 #### Prior
 - Default: This option does not incorporate any information into the statistical analysis and therefore assumes a negligible and conservative prior distribution.
 - Manual: Provide the parameters of the prior distribution.
@@ -68,18 +56,37 @@ The expected errors are the tolerable errors that can be found in the sample whi
   - Inherent risk: A category or probability for the inherent risk. Inherent risk is defined as the risk of material misstatement posed by an error or omission in a financial statement due to a factor other than a failure of internal control.
   - Control risk: A category or probability for the internal control risk. Control risk is defined as the risk of a material misstatement in the financial statements arising due to absence or failure in the operation of relevant controls of the auditee.
 
-#### Critical Items
-- Negative book values: Isolates negative book values from the population.
-  - Keep: Keeps negative book values to be inspected in the sample.
-  - Remove: Removes negative book values.
+#### Report
+- Tables
+  - Descriptive statistics: Produces a table with descriptive statistics of the book values in the population.
+  - Equivalent prior sample: Produces a table that displays the implicit sample on which the prior distribution is based.
+  - Prior and posterior: Produces a table in which the prior and expected posterior distribution are summarized through several statistics, such as their functional form, their prior and expected posterior probabilities and odds, and the shift between these.
 
-#### Format Tables
-- Numbers: Display table output as numbers.
-- Percentages: Display table output as percentages.
+- Plots
+  - Prior distribution: Produces a plot that shows the prior distribution.
+    - Posterior distribution: Adds the posterior distribution after observing the intended sample to the figure.
+  - Prior predictive distribution: Produces a plot of the predictions of the prior distribution.
+  - Compare sample sizes: Produces a plot that compares the sample size 1) across probability distributions, and 2) across the number of expected errors in the sample.
+  - Distribution of book values: Produces a histogram of the book values in the population.
 
-#### Iterations
-- Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
-- Maximum: The maximum allows you to limit the sample size with a maximum.
+- Format Output
+  - Numbers: Display table output as numbers.
+  - Percentages: Display table output as percentages.
+  - Monetary units: Display table output as monetary units.
+
+#### Advanced
+- Iterations
+  - Increment: The increment alows you to limit the possible sample sizes to a multiple of its value. For example, an increment of 5 allows only sample sizes of 5, 10, 15, 20, 25, etc.
+  - Maximum: The maximum allows you to limit the sample size with a maximum.
+
+- Critical Items
+  - Negative book values: Isolates negative book values from the population.
+    - Keep: Keeps negative book values to be inspected in the sample.
+    - Remove: Removes negative book values.
+
+- Algorithm
+  - Partial projection: Clicking this box will allow you to separate the known and the unknown misstatement in the population to be more efficient. Note that this requires the assumption that the taints in the sample are representative of the taints in the unseen part of the population.
+  - Share information: Clicking this box will allow you to share information between strata using a so-called multilevel modeling approach.
 
 #### Assume Homogeneous Taints
 Clicking this box will allow you to separate the known and the unknown misstatement in the population to be more efficient. Note that this requires the assumption that the taints in the sample are representative of the taints in the unseen part of the population.
@@ -100,10 +107,6 @@ Clicking this box will allow you to separate the known and the unknown misstatem
 - Mean: Mean of the book values.
 - Std. deviation: Standard deviation of the book values.
 - Quartile: Quartiles of the book values.
-
-#### Equivalent prior sample
-- Equivalent sample size: The sample size equivalent to the prior information.
-- Equivalent errors: The number of errors equivalent to the prior information.
 
 #### Prior and Posterior
 - Functional form: The functional form of the distribution.
@@ -126,12 +129,8 @@ Clicking this box will allow you to separate the known and the unknown misstatem
 ### Input - Selection
 ---
 
-#### Assignment Box
-- Ranking Variable: When provided, the population is first ranked in ascending order with respect to the values of this variable.
-- Additional Variables: Any other variables that should be included in the sample.
-
-#### Sample Size
-The required number of sampling units that should be selected from the population. Be aware that the sampling units are determined by the *units* option. By default, when no book values are provided, the sampling units are items (rows). When book values are provided, the ideal sampling units to use are monetary units.
+#### Randomize Item Order
+Randomizes the items in the population before selection is performed.
 
 #### Sampling Units
 - Items: Performs selection using the items in the population as sampling units.
@@ -145,12 +144,10 @@ The required number of sampling units that should be selected from the populatio
 - Random sampling: Performs random selection in which each sampling unit has an equal chance of being selected.
   - Seed: Selects the seed for the random number generator in order to reproduce results.
 
-#### Randomize Item Order
-Randomizes the items in the population before selection is performed.
-
-#### Tables
-- Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
-- Selected items: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
+#### Report
+- Tables
+  - Selected items: Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.
+  - Descriptive statistics: Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.
 
 ### Output - Selection
 ---
@@ -196,27 +193,25 @@ Randomizes the items in the population before selection is performed.
 #### Assignment Box
 - Audit result / values: The variable that contains the audit (true) values, or the binary classification of correct (0) or incorrect (1).
 
-#### Method
-See *Probability Distribution*.
+#### Report
+- Tables
+  - Misstated items: Produces a table that contains all items that were found to contain a misstatement.
+  - Prior and posterior: Produces a table in which the prior and expected posterior distribution are summarized through several statistics, such as their functional form, their prior and expected posterior probabilities and odds, and the shift between these.
+  - Corrections to population: Produces a table that contains the required corrections to the population value to achieve the sampling objectives.
+  - Assumption checks: Produces a table that displays the correlation between the book values in the sample and their taints.
+    - Confidence interval: Width of the confidence interval for the correlation.
 
-#### Area Under Posterior
-- One-sided upper bound: Gives an (upper) estimate of the misstatement in the population.
-- Two-sided interval: Gives an (upper and lower) estimate of the misstatement in the population.
+- Plots
+  - Sampling objectives: Produces a bar chart comparing the materiality, maximum misstatement and most likely error (MLE).
+  - Estimates: Produces an interval plot for the population and optionally the stratum estimates of the misstatement.
+  - Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
+    - Additional info: Annotates the figure with the mode and the credible interval. If a materiality is specified, annotates the figure with the materiality and includes a visualization of the Bayes factor via a proportion wheel.
 
-#### Tables
-- Corrections to population: Produces a table that contains the required corrections to the population value to achieve the sampling objectives.
-- Prior and posterior: Produces a table in which the prior and expected posterior distribution are summarized through several statistics, such as their functional form, their prior and expected posterior probabilities and odds, and the shift between these.
-- Assumption checks: Produces a table that displays the correlation between the book values in the sample and their taints.
-  - Confidence interval: Width of the confidence interval for the correlation.
-
-#### Plots
-- Prior and posterior: Produces a plot that shows the prior distribution and the posterior distribution after observing the intended sample.
-  - Additional info: Annotates the figure with the mode and the credible interval. If a materiality is specified, annotates the figure with the materiality and includes a visualization of the Bayes factor via a proportion wheel.
-- Posterior predictive: Produces a plot of the predictions of the posterior distribution.
-- Sampling objectives: Produces a bar chart comparing the materiality, upper bound on the misstatement and most likely error (MLE).
-- Scatter plot: Produces a scatter plot comparing book values of the selection against their audit values. Observations that are in error are colored in red.
-  - Display correlation: Adds the correlation between the book values and the audit values to the plot.
-  - Display item ID's: Adds the item ID's to the plot.
+#### Advanced
+- Credible interval (Alt. Hypothesis)
+  - Upper bound (< materiality): Calculate the upper bound and test the alternative hypothesis that misstatement < materiality.
+  - Two-sided (< materiality): Calculate the upper and lower bound and test the alternative hypothesis that misstatement != materiality.
+  - Lower bound (< materiality): Calculate the lower bound and test the alternative hypothesis that misstatement > materiality.
 
 ### Output - Evaluation
 ---
@@ -259,9 +254,6 @@ See *Probability Distribution*.
   - Additional info: Annotates the figure with the mode and the credible interval. If a materiality is specified, annotates the figure with the materiality and includes a visualization of the Bayes factor via a proportion wheel.
 - Posterior predictive: Produces a plot of the predictions of the posterior distribution.
 - Sampling objectives: Produces a bar chart comparing the materiality, upper bound on the misstatement and most likely error (MLE).
-- Scatter plot: Produces a scatter plot comparing book values of the selection against their audit values. Observations that are in error are colored in red.
-  - Display correlation: Adds the correlation between the book values and the audit values to the plot.
-  - Display item ID's: Adds the item ID's to the plot.
 
 ### References
 ---
