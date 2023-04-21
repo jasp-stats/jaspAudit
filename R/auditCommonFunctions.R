@@ -2133,10 +2133,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   start <- if (!is.null(prevState[["start"]])) prevState[["start"]] else options[["start"]]
-  if (options[["sampling_method"]] != "interval" || options[["randomize"]] || (options[["sampling_method"]] == "interval" && options[["startMethod"]] == "randomStart")) {
-    set.seed(options[["seed"]])
-    if (options[["sampling_method"]] == "interval" && options[["startMethod"]] == "randomStart") {
-      start <- sample(1:floor(interval), size = 1)
+  if (is.null(prevState[["start"]])) {
+    if (options[["sampling_method"]] != "interval" || options[["randomize"]] || (options[["sampling_method"]] == "interval" && options[["startMethod"]] == "randomStart")) {
+      set.seed(options[["seed"]])
+      if (options[["sampling_method"]] == "interval" && options[["startMethod"]] == "randomStart") {
+        start <- sample.int(floor(interval), size = 1)
+      }
     }
   }
 
