@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-04-21 13:17\n"
-"PO-Revision-Date: 2023-04-21 13:15+0000\n"
+"PO-Revision-Date: 2023-04-21 13:22+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
@@ -177,17 +177,14 @@ msgstr "Aantal"
 msgid "Relative frequency"
 msgstr "Relatieve frequentie"
 
-#, fuzzy
 msgid "Leading Digit"
-msgstr "Leidend cijfer"
+msgstr "Leidend Cijfer"
 
-#, fuzzy
 msgid "Leading Digits"
-msgstr "Leidende cijfers"
+msgstr "Leidende Cijfers"
 
-#, fuzzy
 msgid "Last Digit"
-msgstr "Laatste cijfer"
+msgstr "Laatste Cijfer"
 
 msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
 msgstr "<b>Tabel %i.</b> Rijen die overeenkomen met %2$s %3$s"
@@ -1488,25 +1485,22 @@ msgid "Minimum Sample Sizes"
 msgstr "Minimale Steekproefomvang"
 
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
-#, fuzzy
 msgid "Gamma"
-msgstr "gamma"
+msgstr "Gamma"
 
-#, fuzzy
 msgid "Beta-binomial"
-msgstr "beta-binomiaal"
+msgstr "Beta-binomiaal"
 
-#, fuzzy
 msgid "Binomial"
-msgstr "beta-binomiaal"
+msgstr "Binomiaal"
 
 msgid "Poisson"
-msgstr ""
+msgstr "Poisson"
 
 msgid "Hypergeometric"
-msgstr ""
+msgstr "Hypergeometrisch"
 
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr "Over Kansverdelingen (Huidig: %1$s)"
@@ -1682,9 +1676,8 @@ msgstr ""
 "De audit resultaat variabele mag alleen de waarden 0 (correct) en 1 "
 "(incorrect) bevatten."
 
-#, fuzzy
 msgid "combined with the information in the prior distribution"
-msgstr "een onpartijdige prior verdeling"
+msgstr "gecombineerd met de informatie in de prior-verdeling"
 
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "
