@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-04-21 10:12\n"
-"PO-Revision-Date: 2023-04-21 10:22+0000\n"
+"PO-Revision-Date: 2023-04-21 13:15+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
@@ -1148,13 +1148,13 @@ msgstr ""
 "steekproefeenheden bevatten, worden bij de evaluatie meerdere malen geteld."
 
 msgid "below"
-msgstr "onder"
+msgstr "lager"
 
 msgid "lower"
 msgstr "lager"
 
 msgid "above"
-msgstr "boven"
+msgstr "hoger"
 
 msgid "higher"
 msgstr "hoger"
@@ -1757,7 +1757,7 @@ msgstr ""
 "van deze variabelen ontbreekt."
 
 msgid "<b>Table %1$i.</b> Stratum Evaluation Summary"
-msgstr "<b>Tabel %1$i.</b> Deelpopulatie Evaluatie"
+msgstr "<b>Tabel %1$i.</b> Evaluatie voor Deelpopulaties"
 
 msgid "Stratum"
 msgstr "Deelpopulatie"
