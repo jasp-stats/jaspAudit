@@ -2228,7 +2228,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     if (is.null(parentState)) {
       row <- data.frame(
-        stratum = c("Total", "Top stratum", "Bottom stratum"),
+        stratum = c(gettext("Total"), gettext("Top stratum"), gettext("Bottom stratum")),
         N.items = c(nrow(dataset), NA, NA),
         N.units = c(sum(dataset[[options[["values"]]]]), NA, NA),
         n.items = rep(".", 3), n.units = rep(".", 3), value = rep(".", 3), percentage = rep(".", 3)
@@ -2253,7 +2253,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     bottom_stratum_value <- sum(bottom_stratum_sample[[options[["values"]]]])
 
     row <- data.frame(
-      stratum = c("Total", "Top stratum", "Bottom stratum"),
+      stratum = c(gettext("Total"), gettext("Top stratum"), gettext("Bottom stratum")),
       N.items = c(nrow(dataset), nrow(top_stratum), nrow(dataset) - nrow(top_stratum)),
       N.units = c(parentState[["N.units"]], top_stratum_value, bottom_stratum_value_pop),
       n.units = c(parentState[["n.units"]], parentState[["n.units"]] - nrow(bottom_stratum_sample), nrow(bottom_stratum_sample)),
@@ -2950,7 +2950,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       times <- errors[[options[["times"]]]]
     }
   }
-  tb[["id"]] <- c(id, "Total")
+  tb[["id"]] <- c(id, gettext("Total"))
   tb[["values"]] <- c(ist, NA)
   tb[["values.audit"]] <- c(soll, NA)
   tb[["diff"]] <- c(ist - soll, sum(ist - soll))
