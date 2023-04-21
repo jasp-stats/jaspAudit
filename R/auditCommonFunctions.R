@@ -1803,15 +1803,15 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     if (options[["bayesian"]]) {
       dist <- switch(options[["likelihood"]],
-        "binomial" = "Beta",
-        "poisson" = "Gamma",
-        "hypergeometric" = "Beta-binomial"
+        "binomial" = gettext("Beta"),
+        "poisson" = gettext("Gamma"),
+        "hypergeometric" = gettext("Beta-binomial")
       )
     } else {
       dist <- switch(options[["likelihood"]],
-        "binomial" = "Binomial",
-        "poisson" = "Poisson",
-        "hypergeometric" = "Hypergeometric"
+        "binomial" = gettext("Binomial"),
+        "poisson" = gettext("Poisson"),
+        "hypergeometric" = gettext("Hypergeometric")
       )
     }
 
@@ -1833,7 +1833,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       leftPlotError <- try({
         for (i in seq_along(likelihoods)) {
           if (options[["bayesian"]]) {
-            names <- if (parentState[["N.units"]] > 0) c("Gamma", "Beta", "Beta-binomial") else c("Gamma", "Beta")
+            names <- if (parentState[["N.units"]] > 0) c(gettext("Gamma"), gettext("Beta"), gettext("Beta-binomial")) else c(gettext("Gamma"), gettext("Beta"))
             risks <- .jfaAuditRiskModelCalculation(options)
             # Create a prior distribution that incorporates the existing information
             prior <- jfa::auditPrior(
@@ -1843,7 +1843,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
               n = options[["n_prior"]], x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
             )
           } else {
-            names <- if (parentState[["N.units"]] > 0) c("Poisson", "Binomial", "Hypergeometric") else c("Poisson", "Binomial")
+            names <- if (parentState[["N.units"]] > 0) c(gettext("Poisson"), gettext("Binomial"), gettext("Hypergeometric")) else c(gettext("Poisson"), gettext("Binomial"))
             prior <- FALSE
           }
 
