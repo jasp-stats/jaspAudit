@@ -2614,8 +2614,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
   } else {
     risks <- .jfaAuditRiskModelCalculation(options)
     prior <- FALSE
-    N_units <- if (planningOptions[["N.units"]][1] == 0) NULL else planningOptions[["N.units"]]
-    N_items <- if (planningOptions[["N.items"]][1] == 0) NULL else planningOptions[["N.items"]]
+    N_units <- if (planningOptions[["N.units"]][1] == 0 || (!options[["workflow"]] && options[["dataType"]] == "data" && options[["stratum"]] != "")) NULL else planningOptions[["N.units"]]
+    N_items <- if (planningOptions[["N.items"]][1] == 0 || (!options[["workflow"]] && options[["dataType"]] == "data" && options[["stratum"]] != "")) NULL else planningOptions[["N.items"]]
     materiality <- if (options[["materiality_test"]]) planningOptions[["materiality_val"]] else NULL
     conf_level <- if (!options[["bayesian"]]) 1 - risks[["dr"]] else options[["conf_level"]]
 
