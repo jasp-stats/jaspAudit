@@ -319,14 +319,15 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   .jfaTableNumberUpdate(jaspResults)
 
   if (is.null(benfordsLawContainer[["matchTable"]])) {
-    title <- gettextf(
-      "<b>Table %i.</b> Rows Matched to %2$s %3$s",
-      jaspResults[["tabNumber"]]$object,
-      switch(options[["digits"]],
+    label_digit <- switch(options[["digits"]],
         "first" = gettext("Leading Digit"),
         "firsttwo" = gettext("Leading Digits"),
         "last" = gettext("Last Digit")
-      ),
+      )
+    title <- gettextf(
+      "<b>Table %i.</b> Rows Matched to %2$s %3$s",
+      jaspResults[["tabNumber"]]$object,
+      label_digit,
       options[["match"]]
     )
 
