@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-04-21 10:12\n"
-"PO-Revision-Date: 2023-04-21 10:10+0000\n"
+"PO-Revision-Date: 2023-04-21 10:22+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
@@ -821,28 +821,23 @@ msgstr ""
 "en een minimale nauwkeurigheid van %3$s vast te stellen of het %2$s fouten "
 "in de populatie lager is dan de uitvoeringsmaterialiteit van %4$s."
 
-#, fuzzy
 msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "Toelaatbare fouten"
+msgstr "van een ontoelaatbare fout H%1$s: %2$s %3$s %4$s"
 
 msgid "of exact misstatement H%1$s: %2$s = %3$s"
-msgstr ""
+msgstr "van de exacte fout H%1$s: %2$s = %3$s"
 
-#, fuzzy
 msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "Toelaatbare fouten"
+msgstr "van een toelaatbare fout H%1$s: %2$s %3$s %4$s"
 
-#, fuzzy
 msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
-msgstr "Toelaatbare fouten"
+msgstr "van een toelaatbare fout H%1$s: %2$s < %3$s"
 
-#, fuzzy
 msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "%1$s = %2$s %3$s %4$s"
+msgstr "van geen exacte fout H%1$s: %2$s %3$s %4$s"
 
-#, fuzzy
 msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
-msgstr "Toelaatbare fouten"
+msgstr "van een ontoelaatbare fout H%1$s: %2$s > %3$s"
 
 msgid ""
 "%1$s\n"
@@ -998,7 +993,7 @@ msgid ""
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) %9$s, %10$s. %11$s"
 msgstr ""
-"%1$s%2$s. De minimale steekproefomvang die nodig is voor %3$s, ervan "
+"%1$s%2$s De minimale steekproefomvang die nodig is voor %3$s, ervan "
 "uitgaande dat de steekproef %4$s fouten bevat, is %5$s. Deze "
 "steekproefomvang is gebaseerd op de %6$s verdeling, de a priori "
 "beoordelingen van het inherente risico (<i>%7$s</i>) en het interne "
@@ -1019,15 +1014,15 @@ msgid ""
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) %7$s, %8$s. %9$s"
 msgstr ""
-"%1$s%2$s. De minimale steekproefomvang die nodig is voor %3$s, ervan "
+"%1$s%2$s De minimale steekproefomvang die nodig is voor %3$s, ervan "
 "uitgaande dat de steekproef %4$s fouten bevat, is %5$s. Deze "
 "steekproefomvang is gebaseerd op de %6$s verdeling, de a priori aanname dat "
 "een toelaatbare fout evenveel kans heeft als een ontoelaatbare fout, en de "
 "verwachte fouten.\n"
 "\n"
 "Als de beoogde steekproef wordt geëvalueerd en de som van de (proportionele) "
-"foutenin de gecontroleerde posten lager is dan (of gelijk is aan) %7$s, "
-"%8$s. %9$s"
+"foutenin de gecontroleerde posten lager is dan (of gelijk is aan) %7$s, %8$"
+"s. %9$s"
 
 msgid ""
 "%1$s%2$s The minimum sample size that is required for %3$s, assuming the "
@@ -1039,7 +1034,7 @@ msgid ""
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) %9$s, %10$s. %11$s"
 msgstr ""
-"%1$s%2$s. De minimale steekproefomvang die nodig is voor %3$s, ervan "
+"%1$s%2$s De minimale steekproefomvang die nodig is voor %3$s, ervan "
 "uitgaande dat de steekproef %4$s fouten bevat, is %5$s. Deze "
 "steekproefomvang is gebaseerd op de %6$s verdeling, de a priori aanname dat "
 "een eerdere steekproef van %7$s posten met %8$s fouten is gezien, en de "
@@ -1059,15 +1054,15 @@ msgid ""
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) %7$s, %8$s. %9$s"
 msgstr ""
-"%1$s%2$s. De minimale steekproefomvang die nodig is voor %3$s, ervan "
+"%1$s%2$s De minimale steekproefomvang die nodig is voor %3$s, ervan "
 "uitgaande dat de steekproef %4$s fouten bevat, is %5$s. Deze "
 "steekproefomvang is gebaseerd op de %6$s verdeling, de a priori aanname dat "
 "elke waarde van de fout even waarschijnlijk is, en het aantal verwachte "
 "fouten.\n"
 "\n"
 "Als de beoogde steekproef wordt geëvalueerd en de som van de (proportionele) "
-"fouten in de gecontroleerde posten lager is dan (of gelijk is aan) %7$s, "
-"%8$s. %9$s"
+"fouten in de gecontroleerde posten lager is dan (of gelijk is aan) %7$s, %8$"
+"s. %9$s"
 
 msgid "random"
 msgstr "aselect"
@@ -1105,21 +1100,17 @@ msgstr "%1$s posten steekproef"
 msgid "%1$s monetary unit sampling"
 msgstr "%1$s munteenheid steekproef"
 
-#, fuzzy
 msgid "items"
-msgstr "Posten"
+msgstr "posten"
 
-#, fuzzy
 msgid "monetary units"
-msgstr "%1$s munteenheid steekproef"
+msgstr "geldeenheden"
 
-#, fuzzy
 msgid "randomized"
-msgstr "aselect"
+msgstr "gerandomiseerde"
 
-#, fuzzy
 msgid "non-randomized"
-msgstr "aselect"
+msgstr "niet-gerandomiseerde"
 
 msgid ""
 "The purpose of the selection stage is to statistically select a number of "
@@ -1615,16 +1606,14 @@ msgstr ""
 "Het topstratum bestaat uit alle posten met een boekwaarde groter dan %1$s "
 "interval."
 
-#, fuzzy
 msgid "Total"
-msgstr "Boekwaardes"
+msgstr "Totaal"
 
-#, fuzzy
 msgid "Top stratum"
-msgstr "Deelpopulatie"
+msgstr "Topstratum"
 
 msgid "Bottom stratum"
-msgstr ""
+msgstr "Onderstratum"
 
 msgid "<b>Table %1$i.</b> Selected Items"
 msgstr "<b>Tabel %1$i.</b> Geselecteerde Posten"
