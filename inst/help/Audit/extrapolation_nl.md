@@ -1,0 +1,6 @@
+Algoritme: Extrapoleer over Ongeziene Deel van de Populatie
+===
+
+Bij het schatten van de totale fout in de populatie wordt de audit geconfronteerd met zowel bekende als onbekende delen van de fout in de populatie. De bekende fouten kunnen worden onderverdeeld in twee bronnen: fouten in kritieke transacties en fouten in voorbeeldtransacties. Door het algoritme "Gedeeltelijke projectie" te gebruiken, kan de auditor de onzekerheid uit de steekproef extrapoleren naar het ongeziene deel van de populatie alleen, waardoor de zekerheid toeneemt en de vereiste steekproef kleiner wordt.
+
+Deze techniek vereist echter de aanname dat de fouten in de populatie homogeen verdeeld zijn. De auditor moet deze veronderstelling verifiëren door middel van een post-hoccontrole waarbij de correlatie tussen de omvang van de fout en de waarde van de posten in de steekproef wordt getest. Indien de correlatie aanwezig is, kan de techniek niet betrouwbaar worden gebruikt en moet een andere evaluatiemethode worden toegepast.
