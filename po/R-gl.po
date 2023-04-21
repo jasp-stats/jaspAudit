@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-04-21 10:12\n"
+"POT-Creation-Date: 2023-04-21 13:17\n"
 "PO-Revision-Date: 2023-04-20 16:37+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -186,6 +186,18 @@ msgstr "Recontos"
 
 msgid "Relative frequency"
 msgstr "Frecuencia relativa"
+
+#, fuzzy
+msgid "Leading Digit"
+msgstr "Díxito inicial"
+
+#, fuzzy
+msgid "Leading Digits"
+msgstr "Díxitos iniciais"
+
+#, fuzzy
+msgid "Last Digit"
+msgstr "Derradeiro díxito"
 
 msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
 msgstr "<b>Táboa %i.</b> Filas Coincidentes con %2$s %3$s"
@@ -1478,6 +1490,26 @@ msgstr "%1$s"
 msgid "Minimum Sample Sizes"
 msgstr "Tamaños Mínimos de Mostra"
 
+msgid "Beta"
+msgstr "Beta"
+
+#, fuzzy
+msgid "Gamma"
+msgstr "Gamma"
+
+#, fuzzy
+msgid "Beta-binomial"
+msgstr "Beta-Binomial"
+
+msgid "Binomial"
+msgstr "Binomial"
+
+msgid "Poisson"
+msgstr "Poisson"
+
+msgid "Hypergeometric"
+msgstr "Hiperxeométrico"
+
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr "Entre as Distribucións de Probabilidade (Actual: %1$s)"
 
@@ -1645,6 +1677,10 @@ msgid ""
 msgstr ""
 "A variable dos resultados de auditoría debería conter só valores 0 "
 "(correcto) e 1 (incorrecto)."
+
+#, fuzzy
+msgid "combined with the information in the prior distribution"
+msgstr "unha distribución previa imparcial"
 
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "
@@ -4282,9 +4318,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 #~ msgid "Shape:"
 #~ msgstr "Forma:"
 
-#~ msgid "Beta"
-#~ msgstr "Beta"
-
 #~ msgid "Spike"
 #~ msgstr "Pico"
 
@@ -4884,9 +4917,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 #~ msgid "Logit"
 #~ msgstr "Logit"
 
-#~ msgid "Binomial"
-#~ msgstr "Binomial"
-
 #~ msgid "Inverse"
 #~ msgstr "Inversa"
 
@@ -4919,9 +4949,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "Dependent variable"
 #~ msgstr "Variable dependente"
-
-#~ msgid "Poisson"
-#~ msgstr "Poisson"
 
 #~ msgid "Selected variables"
 #~ msgstr "Variables escollidas"
@@ -5132,9 +5159,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "LTA adjustment"
 #~ msgstr "Axuste LTA"
-
-#~ msgid "Hypergeometric"
-#~ msgstr "Hiperxeométrico"
 
 #~ msgid "Risk Assessments"
 #~ msgstr "Avaliación do risco"

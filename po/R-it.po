@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.3\n"
-"POT-Creation-Date: 2023-04-21 10:12\n"
+"POT-Creation-Date: 2023-04-21 13:17\n"
 "PO-Revision-Date: 2022-06-19 11:19+0000\n"
 "Last-Translator: Giovanni Schettino <giannischettino00@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -136,6 +136,15 @@ msgid "Count"
 msgstr ""
 
 msgid "Relative frequency"
+msgstr ""
+
+msgid "Leading Digit"
+msgstr ""
+
+msgid "Leading Digits"
+msgstr ""
+
+msgid "Last Digit"
 msgstr ""
 
 msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
@@ -1103,6 +1112,24 @@ msgstr ""
 msgid "Minimum Sample Sizes"
 msgstr ""
 
+msgid "Beta"
+msgstr ""
+
+msgid "Gamma"
+msgstr ""
+
+msgid "Beta-binomial"
+msgstr ""
+
+msgid "Binomial"
+msgstr ""
+
+msgid "Poisson"
+msgstr ""
+
+msgid "Hypergeometric"
+msgstr ""
+
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr ""
 
@@ -1246,6 +1273,9 @@ msgstr ""
 msgid ""
 "The audit result variable should contain only 0's (correct) and 1's "
 "(incorrect)."
+msgstr ""
+
+msgid "combined with the information in the prior distribution"
 msgstr ""
 
 msgid ""

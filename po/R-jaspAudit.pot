@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
-"POT-Creation-Date: 2023-04-21 10:12\n"
+"POT-Creation-Date: 2023-04-21 13:17\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,6 +83,15 @@ msgid "Count"
 msgstr ""
 
 msgid "Relative frequency"
+msgstr ""
+
+msgid "Leading Digit"
+msgstr ""
+
+msgid "Leading Digits"
+msgstr ""
+
+msgid "Last Digit"
 msgstr ""
 
 msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
@@ -739,6 +748,24 @@ msgstr ""
 msgid "Minimum Sample Sizes"
 msgstr ""
 
+msgid "Beta"
+msgstr ""
+
+msgid "Gamma"
+msgstr ""
+
+msgid "Beta-binomial"
+msgstr ""
+
+msgid "Binomial"
+msgstr ""
+
+msgid "Poisson"
+msgstr ""
+
+msgid "Hypergeometric"
+msgstr ""
+
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr ""
 
@@ -863,6 +890,9 @@ msgid "Maximum"
 msgstr ""
 
 msgid "The audit result variable should contain only 0's (correct) and 1's (incorrect)."
+msgstr ""
+
+msgid "combined with the information in the prior distribution"
 msgstr ""
 
 msgid "The purpose of the evaluation stage is to infer the misstatement θ in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely misstatement in the population of %6$s and a %7$s upper bound of %8$s."

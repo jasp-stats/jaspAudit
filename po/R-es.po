@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2023-04-21 10:12\n"
+"POT-Creation-Date: 2023-04-21 13:17\n"
 "PO-Revision-Date: 2023-04-20 16:37+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -179,6 +179,18 @@ msgstr "Recuentos"
 
 msgid "Relative frequency"
 msgstr "Frecuencia relativa"
+
+#, fuzzy
+msgid "Leading Digit"
+msgstr "Dígito inicial"
+
+#, fuzzy
+msgid "Leading Digits"
+msgstr "Dígitos iniciales"
+
+#, fuzzy
+msgid "Last Digit"
+msgstr "Último dígito"
 
 msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
 msgstr "<b>Tabla %i.</b> Filas Coincidentes con %2$s %3$s"
@@ -1490,6 +1502,27 @@ msgstr "%1$s"
 msgid "Minimum Sample Sizes"
 msgstr "Tamaños Mínimos de Muestra"
 
+msgid "Beta"
+msgstr ""
+
+#, fuzzy
+msgid "Gamma"
+msgstr "Gamma"
+
+#, fuzzy
+msgid "Beta-binomial"
+msgstr "Beta-Binomial"
+
+#, fuzzy
+msgid "Binomial"
+msgstr "Beta-Binomial"
+
+msgid "Poisson"
+msgstr ""
+
+msgid "Hypergeometric"
+msgstr ""
+
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr "Entre las Distribuciones de Probabilidad (Actual: %1$s)"
 
@@ -1658,6 +1691,10 @@ msgid ""
 msgstr ""
 "La variable de los resultados de auditoría debería contener solo valores 0 "
 "(correcto) y 1 (incorrecto)."
+
+#, fuzzy
+msgid "combined with the information in the prior distribution"
+msgstr "una distribución previa imparcial"
 
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "

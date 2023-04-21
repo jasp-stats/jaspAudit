@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-04-21 10:12\n"
+"POT-Creation-Date: 2023-04-21 13:17\n"
 "PO-Revision-Date: 2023-04-21 13:15+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -176,6 +176,18 @@ msgstr "Aantal"
 
 msgid "Relative frequency"
 msgstr "Relatieve frequentie"
+
+#, fuzzy
+msgid "Leading Digit"
+msgstr "Leidend cijfer"
+
+#, fuzzy
+msgid "Leading Digits"
+msgstr "Leidende cijfers"
+
+#, fuzzy
+msgid "Last Digit"
+msgstr "Laatste cijfer"
 
 msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
 msgstr "<b>Tabel %i.</b> Rijen die overeenkomen met %2$s %3$s"
@@ -1021,8 +1033,8 @@ msgstr ""
 "verwachte fouten.\n"
 "\n"
 "Als de beoogde steekproef wordt geëvalueerd en de som van de (proportionele) "
-"foutenin de gecontroleerde posten lager is dan (of gelijk is aan) %7$s, %8$"
-"s. %9$s"
+"foutenin de gecontroleerde posten lager is dan (of gelijk is aan) %7$s, "
+"%8$s. %9$s"
 
 msgid ""
 "%1$s%2$s The minimum sample size that is required for %3$s, assuming the "
@@ -1061,8 +1073,8 @@ msgstr ""
 "fouten.\n"
 "\n"
 "Als de beoogde steekproef wordt geëvalueerd en de som van de (proportionele) "
-"fouten in de gecontroleerde posten lager is dan (of gelijk is aan) %7$s, %8$"
-"s. %9$s"
+"fouten in de gecontroleerde posten lager is dan (of gelijk is aan) %7$s, "
+"%8$s. %9$s"
 
 msgid "random"
 msgstr "aselect"
@@ -1475,6 +1487,27 @@ msgstr "%1$s"
 msgid "Minimum Sample Sizes"
 msgstr "Minimale Steekproefomvang"
 
+msgid "Beta"
+msgstr ""
+
+#, fuzzy
+msgid "Gamma"
+msgstr "gamma"
+
+#, fuzzy
+msgid "Beta-binomial"
+msgstr "beta-binomiaal"
+
+#, fuzzy
+msgid "Binomial"
+msgstr "beta-binomiaal"
+
+msgid "Poisson"
+msgstr ""
+
+msgid "Hypergeometric"
+msgstr ""
+
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr "Over Kansverdelingen (Huidig: %1$s)"
 
@@ -1648,6 +1681,10 @@ msgid ""
 msgstr ""
 "De audit resultaat variabele mag alleen de waarden 0 (correct) en 1 "
 "(incorrect) bevatten."
+
+#, fuzzy
+msgid "combined with the information in the prior distribution"
+msgstr "een onpartijdige prior verdeling"
 
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "

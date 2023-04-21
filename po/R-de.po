@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-04-21 10:12\n"
+"POT-Creation-Date: 2023-04-21 13:17\n"
 "PO-Revision-Date: 2022-12-10 12:02+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -180,6 +180,18 @@ msgstr "Anzahl"
 
 msgid "Relative frequency"
 msgstr "Relative Häufigkeit"
+
+#, fuzzy
+msgid "Leading Digit"
+msgstr "Führende Ziffer"
+
+#, fuzzy
+msgid "Leading Digits"
+msgstr "Führende Ziffern"
+
+#, fuzzy
+msgid "Last Digit"
+msgstr "Letzte Ziffer"
 
 #, fuzzy
 msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
@@ -1511,6 +1523,27 @@ msgstr "%1$s"
 msgid "Minimum Sample Sizes"
 msgstr "Minimale Stichprobenumfänge"
 
+msgid "Beta"
+msgstr ""
+
+#, fuzzy
+msgid "Gamma"
+msgstr "Gamma"
+
+#, fuzzy
+msgid "Beta-binomial"
+msgstr "Beta-Binomial"
+
+#, fuzzy
+msgid "Binomial"
+msgstr "Beta-Binomial"
+
+msgid "Poisson"
+msgstr ""
+
+msgid "Hypergeometric"
+msgstr ""
+
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr "Über Wahrscheinlichkeitsverteilungen hinweg (Aktuell: %1$s)"
 
@@ -1686,6 +1719,10 @@ msgid ""
 msgstr ""
 "Die Audit-Ergebnisvariable sollte nur 0en (korrekt) und 1en (inkorrekt) "
 "enthalten."
+
+#, fuzzy
+msgid "combined with the information in the prior distribution"
+msgstr "eine unparteiische Prior-Verteilung"
 
 #, fuzzy
 msgid ""

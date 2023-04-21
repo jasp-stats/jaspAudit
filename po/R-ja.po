@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2023-04-21 10:12\n"
+"POT-Creation-Date: 2023-04-21 13:17\n"
 "PO-Revision-Date: 2022-05-31 11:20+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -169,6 +169,18 @@ msgstr "カウント"
 
 msgid "Relative frequency"
 msgstr "相対度数"
+
+#, fuzzy
+msgid "Leading Digit"
+msgstr "第一桁"
+
+#, fuzzy
+msgid "Leading Digits"
+msgstr "第一桁"
+
+#, fuzzy
+msgid "Last Digit"
+msgstr "最後の一桁"
 
 #, fuzzy
 msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
@@ -1165,6 +1177,25 @@ msgstr ""
 msgid "Minimum Sample Sizes"
 msgstr ""
 
+msgid "Beta"
+msgstr ""
+
+#, fuzzy
+msgid "Gamma"
+msgstr "ガンマ"
+
+msgid "Beta-binomial"
+msgstr ""
+
+msgid "Binomial"
+msgstr ""
+
+msgid "Poisson"
+msgstr ""
+
+msgid "Hypergeometric"
+msgstr ""
+
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr ""
 
@@ -1312,6 +1343,10 @@ msgid ""
 "The audit result variable should contain only 0's (correct) and 1's "
 "(incorrect)."
 msgstr ""
+
+#, fuzzy
+msgid "combined with the information in the prior distribution"
+msgstr "一様分布"
 
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-04-21 10:12\n"
+"POT-Creation-Date: 2023-04-21 13:17\n"
 "PO-Revision-Date: 2022-08-28 23:22+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -187,6 +187,18 @@ msgstr "Contagem"
 
 msgid "Relative frequency"
 msgstr ""
+
+#, fuzzy
+msgid "Leading Digit"
+msgstr "Dígito inicial"
+
+#, fuzzy
+msgid "Leading Digits"
+msgstr "Dígitos iniciais"
+
+#, fuzzy
+msgid "Last Digit"
+msgstr "Último dígito"
 
 #, fuzzy
 msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
@@ -1276,6 +1288,25 @@ msgstr ""
 msgid "Minimum Sample Sizes"
 msgstr "Tamanho de amostra necessária"
 
+msgid "Beta"
+msgstr ""
+
+#, fuzzy
+msgid "Gamma"
+msgstr "gamma"
+
+msgid "Beta-binomial"
+msgstr ""
+
+msgid "Binomial"
+msgstr ""
+
+msgid "Poisson"
+msgstr ""
+
+msgid "Hypergeometric"
+msgstr ""
+
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr ""
 
@@ -1432,6 +1463,10 @@ msgid ""
 "The audit result variable should contain only 0's (correct) and 1's "
 "(incorrect)."
 msgstr ""
+
+#, fuzzy
+msgid "combined with the information in the prior distribution"
+msgstr "Distribuição cumulativa empírica"
 
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "
