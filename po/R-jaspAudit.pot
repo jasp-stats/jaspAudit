@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
-"POT-Creation-Date: 2023-04-21 08:54\n"
+"POT-Creation-Date: 2023-04-21 10:12\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -430,6 +430,24 @@ msgstr ""
 msgid "The objective of this sampling procedure is to show with %1$s confidence and a precision of %3$s that the %2$s of misstatement in the population is lower than the performance materiality of %4$s."
 msgstr ""
 
+msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr ""
+
+msgid "of exact misstatement H%1$s: %2$s = %3$s"
+msgstr ""
+
+msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr ""
+
+msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
+msgstr ""
+
+msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
+msgstr ""
+
+msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
+msgstr ""
+
 msgid "%1$s\n\nThe quantity of interest is the misstatement %2$s in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, two statistical hypotheses about %2$s are formulated:\n\n                                  The (null) hypothesis %3$s,\n                                  The (alternative) hypothesis %4$s.\n\n                                  The audit risk %5$s is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (i.e., %5$s < %6$s%%)."
 msgstr ""
 
@@ -521,6 +539,18 @@ msgid "%1$s record sampling"
 msgstr ""
 
 msgid "%1$s monetary unit sampling"
+msgstr ""
+
+msgid "items"
+msgstr ""
+
+msgid "monetary units"
+msgstr ""
+
+msgid "randomized"
+msgstr ""
+
+msgid "non-randomized"
 msgstr ""
 
 msgid "The purpose of the selection stage is to statistically select a number of sampling units from the population. Sampling units can be individual items (rows) or individual monetary units. The sampling units are selected from the population according to the selection method. To learn more about the current selection method, look under the <i>Method</i> section.\n\nFrom the population of %1$s %2$s items, %3$s sampling units (%4$s) are selected from the %5$s using the %6$s method.%7$s"
@@ -794,6 +824,15 @@ msgid "a single"
 msgstr ""
 
 msgid "The top stratum consists of all items with a book value larger than %1$s interval."
+msgstr ""
+
+msgid "Total"
+msgstr ""
+
+msgid "Top stratum"
+msgstr ""
+
+msgid "Bottom stratum"
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Selected Items"

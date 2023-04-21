@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.0\n"
-"POT-Creation-Date: 2023-04-21 08:54\n"
+"POT-Creation-Date: 2023-04-21 10:12\n"
 "PO-Revision-Date: 2023-04-14 22:50+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -626,6 +626,24 @@ msgid ""
 "than the performance materiality of %4$s."
 msgstr ""
 
+msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr ""
+
+msgid "of exact misstatement H%1$s: %2$s = %3$s"
+msgstr ""
+
+msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr ""
+
+msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
+msgstr ""
+
+msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
+msgstr ""
+
+msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
+msgstr ""
+
 msgid ""
 "%1$s\n"
 "\n"
@@ -796,6 +814,18 @@ msgid "%1$s record sampling"
 msgstr ""
 
 msgid "%1$s monetary unit sampling"
+msgstr ""
+
+msgid "items"
+msgstr ""
+
+msgid "monetary units"
+msgstr ""
+
+msgid "randomized"
+msgstr ""
+
+msgid "non-randomized"
 msgstr ""
 
 msgid ""
@@ -1172,6 +1202,15 @@ msgstr ""
 msgid ""
 "The top stratum consists of all items with a book value larger than %1$s "
 "interval."
+msgstr ""
+
+msgid "Total"
+msgstr ""
+
+msgid "Top stratum"
+msgstr ""
+
+msgid "Bottom stratum"
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Selected Items"

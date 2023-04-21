@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-04-21 08:54\n"
+"POT-Creation-Date: 2023-04-21 10:12\n"
 "PO-Revision-Date: 2022-12-10 12:02+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -833,6 +833,29 @@ msgstr ""
 "Grundgesamtheit geringer ist als die Toleranzwesentlichkeit von %4$s."
 
 #, fuzzy
+msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "Falscheangabe der Grundgesamtheit %1$s"
+
+msgid "of exact misstatement H%1$s: %2$s = %3$s"
+msgstr ""
+
+#, fuzzy
+msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "Falscheangabe der Grundgesamtheit %1$s"
+
+#, fuzzy
+msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
+msgstr "Falscheangabe der Grundgesamtheit %1$s"
+
+#, fuzzy
+msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "%1$s = %2$s %3$s %4$s"
+
+#, fuzzy
+msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
+msgstr "Falscheangabe der Grundgesamtheit %1$s"
+
+#, fuzzy
 msgid ""
 "%1$s\n"
 "\n"
@@ -1098,6 +1121,22 @@ msgstr "%1$s Record Sampling"
 
 msgid "%1$s monetary unit sampling"
 msgstr "%1$s Monetary-Unit Sampling"
+
+#, fuzzy
+msgid "items"
+msgstr "Posten"
+
+#, fuzzy
+msgid "monetary units"
+msgstr "%1$s Monetary-Unit Sampling"
+
+#, fuzzy
+msgid "randomized"
+msgstr "zufällig"
+
+#, fuzzy
+msgid "non-randomized"
+msgstr "zufällig"
 
 #, fuzzy
 msgid ""
@@ -1603,6 +1642,16 @@ msgid ""
 msgstr ""
 "Die oberste Schicht besteht aus allen Posten mit einem Buchwert größer als "
 "%1$s Intervall."
+
+#, fuzzy
+msgid "Total"
+msgstr "Gesamtwert"
+
+msgid "Top stratum"
+msgstr ""
+
+msgid "Bottom stratum"
+msgstr ""
 
 msgid "<b>Table %1$i.</b> Selected Items"
 msgstr "<b>Tabelle %1$i.</b> Ausgewählte Posten"
@@ -2245,9 +2294,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "Transactions"
 #~ msgstr "Transaktionen"
-
-#~ msgid "Total value"
-#~ msgstr "Gesamtwert"
 
 #~ msgid "<b>Table %1$i.</b> Descriptive Statistics for Selected Transactions"
 #~ msgstr ""

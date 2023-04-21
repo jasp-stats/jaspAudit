@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-04-21 08:54\n"
+"POT-Creation-Date: 2023-04-21 10:12\n"
 "PO-Revision-Date: 2022-08-28 23:22+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -787,6 +787,29 @@ msgid ""
 "than the performance materiality of %4$s."
 msgstr ""
 
+#, fuzzy
+msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "Medidas Adicionais de Ajuste"
+
+msgid "of exact misstatement H%1$s: %2$s = %3$s"
+msgstr ""
+
+#, fuzzy
+msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "Medidas Adicionais de Ajuste"
+
+#, fuzzy
+msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
+msgstr "Medidas Adicionais de Ajuste"
+
+#, fuzzy
+msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "%1$s = %2$s %3$s %4$s"
+
+#, fuzzy
+msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
+msgstr "Medidas Adicionais de Ajuste"
+
 msgid ""
 "%1$s\n"
 "\n"
@@ -960,6 +983,20 @@ msgstr ""
 
 msgid "%1$s monetary unit sampling"
 msgstr ""
+
+msgid "items"
+msgstr ""
+
+msgid "monetary units"
+msgstr ""
+
+#, fuzzy
+msgid "randomized"
+msgstr "aleatório"
+
+#, fuzzy
+msgid "non-randomized"
+msgstr "aleatório"
 
 msgid ""
 "The purpose of the selection stage is to statistically select a number of "
@@ -1350,6 +1387,15 @@ msgstr ""
 msgid ""
 "The top stratum consists of all items with a book value larger than %1$s "
 "interval."
+msgstr ""
+
+msgid "Total"
+msgstr ""
+
+msgid "Top stratum"
+msgstr ""
+
+msgid "Bottom stratum"
 msgstr ""
 
 #, fuzzy

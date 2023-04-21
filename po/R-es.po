@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2023-04-21 08:54\n"
+"POT-Creation-Date: 2023-04-21 10:12\n"
 "PO-Revision-Date: 2023-04-20 16:37+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -831,6 +831,29 @@ msgstr ""
 "de %1$s y una precisión de %3$s, que el %2$s de la inexactitud en la "
 "población es menor que la materialidad de %4$s."
 
+#, fuzzy
+msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "Inexactitud tolerable"
+
+msgid "of exact misstatement H%1$s: %2$s = %3$s"
+msgstr ""
+
+#, fuzzy
+msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "Inexactitud tolerable"
+
+#, fuzzy
+msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
+msgstr "Inexactitud tolerable"
+
+#, fuzzy
+msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "%1$s = %2$s %3$s %4$s"
+
+#, fuzzy
+msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
+msgstr "Inexactitud tolerable"
+
 msgid ""
 "%1$s\n"
 "\n"
@@ -1087,6 +1110,22 @@ msgstr "muestreo de %1$s registros"
 
 msgid "%1$s monetary unit sampling"
 msgstr "muestreo de %1$s unidades monetarias"
+
+#, fuzzy
+msgid "items"
+msgstr "Elementos"
+
+#, fuzzy
+msgid "monetary units"
+msgstr "muestreo de %1$s unidades monetarias"
+
+#, fuzzy
+msgid "randomized"
+msgstr "aleatorio"
+
+#, fuzzy
+msgid "non-randomized"
+msgstr "aleatorio"
 
 msgid ""
 "The purpose of the selection stage is to statistically select a number of "
@@ -1575,6 +1614,16 @@ msgid ""
 msgstr ""
 "El estrato de arriba se compone de todos los elementos con un valor contable "
 "mayor que el intervalo de %1$s."
+
+msgid "Total"
+msgstr ""
+
+#, fuzzy
+msgid "Top stratum"
+msgstr "Estrato"
+
+msgid "Bottom stratum"
+msgstr ""
 
 msgid "<b>Table %1$i.</b> Selected Items"
 msgstr "<b>Tabla %1$i.</b> Elementos Seleccionados"

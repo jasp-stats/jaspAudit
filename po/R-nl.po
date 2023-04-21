@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-04-21 08:54\n"
+"POT-Creation-Date: 2023-04-21 10:12\n"
 "PO-Revision-Date: 2023-04-21 10:10+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -821,6 +821,29 @@ msgstr ""
 "en een minimale nauwkeurigheid van %3$s vast te stellen of het %2$s fouten "
 "in de populatie lager is dan de uitvoeringsmaterialiteit van %4$s."
 
+#, fuzzy
+msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "Toelaatbare fouten"
+
+msgid "of exact misstatement H%1$s: %2$s = %3$s"
+msgstr ""
+
+#, fuzzy
+msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "Toelaatbare fouten"
+
+#, fuzzy
+msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
+msgstr "Toelaatbare fouten"
+
+#, fuzzy
+msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "%1$s = %2$s %3$s %4$s"
+
+#, fuzzy
+msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
+msgstr "Toelaatbare fouten"
+
 msgid ""
 "%1$s\n"
 "\n"
@@ -1081,6 +1104,22 @@ msgstr "%1$s posten steekproef"
 
 msgid "%1$s monetary unit sampling"
 msgstr "%1$s munteenheid steekproef"
+
+#, fuzzy
+msgid "items"
+msgstr "Posten"
+
+#, fuzzy
+msgid "monetary units"
+msgstr "%1$s munteenheid steekproef"
+
+#, fuzzy
+msgid "randomized"
+msgstr "aselect"
+
+#, fuzzy
+msgid "non-randomized"
+msgstr "aselect"
 
 msgid ""
 "The purpose of the selection stage is to statistically select a number of "
@@ -1575,6 +1614,17 @@ msgid ""
 msgstr ""
 "Het topstratum bestaat uit alle posten met een boekwaarde groter dan %1$s "
 "interval."
+
+#, fuzzy
+msgid "Total"
+msgstr "Boekwaardes"
+
+#, fuzzy
+msgid "Top stratum"
+msgstr "Deelpopulatie"
+
+msgid "Bottom stratum"
+msgstr ""
 
 msgid "<b>Table %1$i.</b> Selected Items"
 msgstr "<b>Tabel %1$i.</b> Geselecteerde Posten"
@@ -2208,9 +2258,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "Transactions"
 #~ msgstr "Transacties"
-
-#~ msgid "Total value"
-#~ msgstr "Boekwaardes"
 
 #~ msgid "<b>Table %1$i.</b> Descriptive Statistics for Selected Transactions"
 #~ msgstr ""
