@@ -1707,7 +1707,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     row <- cbind(row, ar = if (options[["display"]] == "percent") paste0(round(risks[["ar"]] * 100, 2), "%") else risks[["ar"]])
   }
 
-  table$addRows(cbind(null = "Value", row))
+  table$addRows(cbind(null = gettext("Value"), row))
 
   if (parentState[["n"]] > parentState[["N.units"]]) {
     table$addFootnote(gettextf("The minimum sample size (%1$s) is larger than the number of units in the population (%2$s).", parentState[["n"]], ceiling(parentState[["N.units"]])), symbol = "\u26A0")
@@ -2782,7 +2782,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     return()
   }
 
-  table[["null"]] <- "Value"
+  table[["null"]] <- gettext("Value")
   table[["n"]] <- parentState[["n"]]
   table[["x"]] <- parentState[["x"]]
   table[["t"]] <- if (options[["display"]] == "percent") paste0(round(parentState[["t"]] / parentState[["n"]] * 100, 3), "%") else parentState[["t"]]
