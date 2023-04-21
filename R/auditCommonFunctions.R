@@ -2895,6 +2895,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
     tb$addColumnInfo(name = "ub", title = gettextf("Upper"), type = "number", overtitle = overtitle)
   }
   tb$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
+  label_pooling <- if (options[["bayesian"]] && options[["pooling"]]) gettext("Information is shared between the strata in the population.") else gettext("The strata in the population are assumed to be independent.")
+  tb$addFootnote(label_pooling)
   parentContainer[["tableStratum"]] <- tb
 
   if (is.null(parentState) || parentContainer$getError()) {
