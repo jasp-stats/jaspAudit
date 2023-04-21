@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-04-21 08:54\n"
-"PO-Revision-Date: 2023-04-20 23:22+0000\n"
+"PO-Revision-Date: 2023-04-21 08:59+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
@@ -1245,15 +1245,13 @@ msgstr ""
 "boekwaarden."
 
 msgid "High"
-msgstr ""
+msgstr "Hoog"
 
-#, fuzzy
 msgid "Medium"
-msgstr "Mediaan"
+msgstr "Gemiddeld"
 
-#, fuzzy
 msgid "Low"
-msgstr "Onder"
+msgstr "Laag"
 
 msgid "<u>Audit Risk Model</u>"
 msgstr "<u>Audit Risico Model</u>"
