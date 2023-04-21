@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-04-19 10:09\n"
+"POT-Creation-Date: 2023-04-21 08:54\n"
 "PO-Revision-Date: 2022-08-28 23:22+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -1075,6 +1075,17 @@ msgid ""
 "standard deviation from the mean. The orange dots represent the first, "
 "second (median) and third quartiles of the book values."
 msgstr ""
+
+msgid "High"
+msgstr ""
+
+#, fuzzy
+msgid "Medium"
+msgstr "Mediana"
+
+#, fuzzy
+msgid "Low"
+msgstr "Inferior"
 
 msgid "<u>Audit Risk Model</u>"
 msgstr ""

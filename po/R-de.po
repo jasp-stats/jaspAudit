@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-04-19 10:09\n"
+"POT-Creation-Date: 2023-04-21 08:54\n"
 "PO-Revision-Date: 2022-12-10 12:02+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1261,6 +1261,17 @@ msgstr ""
 "Die roten und blauen Punkte stellen jeweils den Mittelwert und die Werte mit "
 "genau einer Standardabweichung vom Mittelwert dar. Die orangen Punkte "
 "stellen das erste, zweite (Median) und dritte Quartil der Buchwerte dar."
+
+msgid "High"
+msgstr ""
+
+#, fuzzy
+msgid "Medium"
+msgstr "Median"
+
+#, fuzzy
+msgid "Low"
+msgstr "Untergrenze"
 
 msgid "<u>Audit Risk Model</u>"
 msgstr "<u>Auditisiko-Modell</u>"

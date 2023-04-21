@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.0\n"
-"POT-Creation-Date: 2023-04-19 10:09\n"
+"POT-Creation-Date: 2023-04-21 08:54\n"
 "PO-Revision-Date: 2023-04-14 22:50+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -911,6 +911,17 @@ msgid ""
 "standard deviation from the mean. The orange dots represent the first, "
 "second (median) and third quartiles of the book values."
 msgstr ""
+
+msgid "High"
+msgstr ""
+
+#, fuzzy
+msgid "Medium"
+msgstr "Mediana"
+
+#, fuzzy
+msgid "Low"
+msgstr "Wiersz"
 
 msgid "<u>Audit Risk Model</u>"
 msgstr ""

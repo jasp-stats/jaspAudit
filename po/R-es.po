@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2023-04-19 10:09\n"
+"POT-Creation-Date: 2023-04-21 08:54\n"
 "PO-Revision-Date: 2023-04-20 16:37+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1140,7 +1140,8 @@ msgstr "<b>Objetivos:</b> Se alcanzaron los objetivos iniciales de muestreo."
 
 msgid ""
 "<b>Objectives:</b> You have not achieved your initial sampling objectives."
-msgstr "<b>Objetivos:</b> No se alcanzaron los objetivos iniciales de muestreo."
+msgstr ""
+"<b>Objetivos:</b> No se alcanzaron los objetivos iniciales de muestreo."
 
 msgid ""
 "The objective of this audit sampling procedure was to determine with %1$s "
@@ -1246,6 +1247,17 @@ msgstr ""
 "los valores separados exactamente una desviación típica de la media. Los "
 "puntos naranjas representan el primer, segundo (mediana) y tercer cuartiles "
 "de los valores contables."
+
+msgid "High"
+msgstr ""
+
+#, fuzzy
+msgid "Medium"
+msgstr "Mediana"
+
+#, fuzzy
+msgid "Low"
+msgstr "Inferior"
 
 msgid "<u>Audit Risk Model</u>"
 msgstr "<u>Modelo de Riesgo de Auditoría</u>"

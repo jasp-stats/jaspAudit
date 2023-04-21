@@ -6,11 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-04-19 10:09\n"
+"POT-Creation-Date: 2023-04-21 08:54\n"
 "PO-Revision-Date: 2023-04-20 16:37+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-r/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
+"r/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1242,6 +1242,15 @@ msgstr ""
 "separados exactamente un desvío padrón da media. Os puntos laranxas "
 "representan o primeiro, segundo (mediana) e terceiro cuartiles dos valores "
 "contables."
+
+msgid "High"
+msgstr "Alto"
+
+msgid "Medium"
+msgstr "Medio"
+
+msgid "Low"
+msgstr "Baixo"
 
 msgid "<u>Audit Risk Model</u>"
 msgstr "<u>Modelo de Risco de Auditoría</u>"
@@ -4915,12 +4924,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 #~ msgid "SD factor covariates"
 #~ msgstr "SD Covariantes dos factores"
 
-#~ msgid "Low"
-#~ msgstr "Baixo"
-
-#~ msgid "High"
-#~ msgstr "Alto"
-
 #~ msgid "Size"
 #~ msgstr "Tamaño"
 
@@ -4953,9 +4956,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "Use summary statistics"
 #~ msgstr "Utilizar os estatísticos resumidos"
-
-#~ msgid "Medium"
-#~ msgstr "Medio"
 
 #~ msgid "Remove"
 #~ msgstr "Eliminar"
