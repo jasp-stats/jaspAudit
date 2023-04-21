@@ -2532,7 +2532,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       if (planningOptions[["N.units"]][1] == 0) "..." else format(sum(planningOptions[["N.units"]]), scientific = FALSE),
       sampleSizeMessage,
       errors,
-      if (options[["bayesian"]]) "combined with the information in the prior distribution " else "",
+      if (options[["bayesian"]]) gettext("combined with the information in the prior distribution ") else "",
       mleLabel,
       planningOptions[["conf_level_label"]],
       boundLabel
