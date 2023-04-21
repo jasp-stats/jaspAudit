@@ -2532,13 +2532,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
       sampleSizeMessage <- planningState[["n"]]
     }
 
+    label_combine <- if (options[["bayesian"]]) gettext("combined with the information in the prior distribution ") else ""
     message <- gettextf(
       "The purpose of the evaluation stage is to infer the misstatement \u03B8 in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely misstatement in the population of %6$s and a %7$s upper bound of %8$s.",
       if (planningOptions[["N.items"]][1] == 0) "..." else format(sum(planningOptions[["N.items"]]), scientific = FALSE),
       if (planningOptions[["N.units"]][1] == 0) "..." else format(sum(planningOptions[["N.units"]]), scientific = FALSE),
       sampleSizeMessage,
       errors,
-      if (options[["bayesian"]]) gettext("combined with the information in the prior distribution ") else "",
+      label_combine,
       mleLabel,
       planningOptions[["conf_level_label"]],
       boundLabel
