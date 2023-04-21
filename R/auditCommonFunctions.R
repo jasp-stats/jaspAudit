@@ -971,6 +971,16 @@ gettextf <- function(fmt, ..., domain = NULL) {
       }
 
       if (options[["materiality_test"]]) {
+        label_h0 <- switch(options[["area"]],
+            "less" = gettextf("of intolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208A", "\u03B8", "\u2265", stageOptions[["materiality_label"]]),
+            "two.sided" = gettextf("of exact misstatement H%1$s: %2$s = %3$s", "\u2080", "\u03B8", stageOptions[["materiality_label"]]),
+            "greater" = gettextf("of tolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208B", "\u03B8" , "\u2264", stageOptions[["materiality_label"]])
+          )
+        label_h1 <- switch(options[["area"]],
+            "less" = gettextf("of tolerable misstatement H%1$s: %2$s < %3$s", "\u208B", "\u03B8", stageOptions[["materiality_label"]]),
+            "two.sided" = gettextf("of no misstatement H%1$s: %2$s %3$s %4$s", "\u2080", "\u03B8", "\u2260", stageOptions[["materiality_label"]]),
+            "greater" = gettextf("of intolerable misstatement H%1$s: %2$s > %3$s", "\u208A", "\u03B8", stageOptions[["materiality_label"]])
+          )
         text <- gettextf(
           "%1$s\n\nThe quantity of interest is the misstatement %2$s in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, two statistical hypotheses about %2$s are formulated:\n
                                   The (null) hypothesis %3$s,
@@ -978,16 +988,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
                                   The audit risk %5$s is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (i.e., %5$s < %6$s%%).",
           text,
           "\u03B8",
-          switch(options[["area"]],
-            "less" = gettextf("of intolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208A", "\u03B8", "\u2265", stageOptions[["materiality_label"]]),
-            "two.sided" = gettextf("of exact misstatement H%1$s: %2$s = %3$s", "\u2080", "\u03B8", stageOptions[["materiality_label"]]),
-            "greater" = gettextf("of tolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208B", "\u03B8" , "\u2264", stageOptions[["materiality_label"]])
-          ),
-          switch(options[["area"]],
-            "less" = gettextf("of tolerable misstatement H%1$s: %2$s < %3$s", "\u208B", "\u03B8", stageOptions[["materiality_label"]]),
-            "two.sided" = gettextf("of no misstatement H%1$s: %2$s %3$s %4$s", "\u2080", "\u03B8", "\u2260", stageOptions[["materiality_label"]]),
-            "greater" = gettextf("of intolerable misstatement H%1$s: %2$s > %3$s", "\u208A", "\u03B8", stageOptions[["materiality_label"]])
-          ),
+          label_h0,
+          label_h1,
           "\u03B1",
           round((1 - options[["conf_level"]]) * 100, 2)
         )
@@ -1130,13 +1132,15 @@ gettextf <- function(fmt, ..., domain = NULL) {
       }
 
       label_method <- if (options[["units"]] == "items") gettextf("%1$s record sampling", label_method) else gettextf("%1$s monetary unit sampling", label_method)
+      label_units <- if (options[["units"]] == "items") gettext("items") else gettext("monetary units")
+      label_randomized <- if (options[["randomize"]]) gettext("randomized") else gettext("non-randomized")
 
       message <- gettextf(
         "The purpose of the selection stage is to statistically select a number of sampling units from the population. Sampling units can be individual items (rows) or individual monetary units. The sampling units are selected from the population according to the selection method. To learn more about the current selection method, look under the <i>Method</i> section.\n\nFrom the population of %1$s %2$s items, %3$s sampling units (%4$s) are selected from the %5$s using the %6$s method.%7$s",
         stageOptions[["N.items"]],
-        if (options[["randomize"]]) gettext("randomized") else gettext("non-randomized"),
+        label_randomized,
         if (options[["workflow"]]) prevState[["n"]] else options[["n"]],
-        if (options[["units"]] == "items") gettext("items") else gettext("monetary units"),
+        label_units,
         label_var,
         label_method,
         warningMessage
@@ -2228,7 +2232,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
     if (is.null(parentState)) {
       row <- data.frame(
-        stratum = c("Total", "Top stratum", "Bottom stratum"),
+        stratum = c(gettext("Total"), gettext("Top stratum"), gettext("Bottom stratum")),
         N.items = c(nrow(dataset), NA, NA),
         N.units = c(sum(dataset[[options[["values"]]]]), NA, NA),
         n.items = rep(".", 3), n.units = rep(".", 3), value = rep(".", 3), percentage = rep(".", 3)
@@ -2253,7 +2257,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     bottom_stratum_value <- sum(bottom_stratum_sample[[options[["values"]]]])
 
     row <- data.frame(
-      stratum = c("Total", "Top stratum", "Bottom stratum"),
+      stratum = c(gettext("Total"), gettext("Top stratum"), gettext("Bottom stratum")),
       N.items = c(nrow(dataset), nrow(top_stratum), nrow(dataset) - nrow(top_stratum)),
       N.units = c(parentState[["N.units"]], top_stratum_value, bottom_stratum_value_pop),
       n.units = c(parentState[["n.units"]], parentState[["n.units"]] - nrow(bottom_stratum_sample), nrow(bottom_stratum_sample)),
@@ -2950,7 +2954,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       times <- errors[[options[["times"]]]]
     }
   }
-  tb[["id"]] <- c(id, "Total")
+  tb[["id"]] <- c(id, gettext("Total"))
   tb[["values"]] <- c(ist, NA)
   tb[["values.audit"]] <- c(soll, NA)
   tb[["diff"]] <- c(ist - soll, sum(ist - soll))
