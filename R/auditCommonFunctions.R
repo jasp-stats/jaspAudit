@@ -979,14 +979,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
           text,
           "\u03B8",
           switch(options[["area"]],
-            "less" = gettextf("of intolerable misstatement H\u208A: \u03B8 \u2265 %1$s", stageOptions[["materiality_label"]]),
-            "two.sided" = gettextf("of exact misstatement H\u2080: \u03B8 = %1$s", stageOptions[["materiality_label"]]),
-            "greater" = gettextf("of tolerable misstatement H\u208B: \u03B8 \u2264 %1$s", stageOptions[["materiality_label"]])
+            "less" = gettextf("of intolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208A", "\u03B8", "\u2265", stageOptions[["materiality_label"]]),
+            "two.sided" = gettextf("of exact misstatement H%1$s: %2$s = %3$s", "\u2080", "\u03B8", stageOptions[["materiality_label"]]),
+            "greater" = gettextf("of tolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208B", "\u03B8" , "\u2264", stageOptions[["materiality_label"]])
           ),
           switch(options[["area"]],
-            "less" = gettextf("of tolerable misstatement H\u208B: \u03B8 < %1$s", stageOptions[["materiality_label"]]),
-            "two.sided" = gettextf("of no misstatement H\u2080: \u03B8 \u2260 %1$s", stageOptions[["materiality_label"]]),
-            "greater" = gettextf("of intolerable misstatement H\u208A: \u03B8 > %1$s", stageOptions[["materiality_label"]])
+            "less" = gettextf("of tolerable misstatement H%1$s: %2$s < %3$s", "\u208B", "\u03B8", stageOptions[["materiality_label"]]),
+            "two.sided" = gettextf("of no misstatement H%1$s: %2$s %3$s %4$s", "\u2080", "\u03B8", "\u2260", stageOptions[["materiality_label"]]),
+            "greater" = gettextf("of intolerable misstatement H%1$s: %2$s > %3$s", "\u208A", "\u03B8", stageOptions[["materiality_label"]])
           ),
           "\u03B1",
           round((1 - options[["conf_level"]]) * 100, 2)
@@ -1369,7 +1369,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 .jfaAuditRiskModelCalculation <- function(options, jaspResults) {
   # Define the default settings for high, medium and low
   tb <- data.frame(
-    category = c("High", "Medium", "Low"),
+    category = c(gettext("High"), gettext("Medium"), gettext("Low")),
     ir = c(1, 0.63, 0.40),
     cr = c(1, 0.52, 0.34)
   )
@@ -2532,7 +2532,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       if (planningOptions[["N.units"]][1] == 0) "..." else format(sum(planningOptions[["N.units"]]), scientific = FALSE),
       sampleSizeMessage,
       errors,
-      if (options[["bayesian"]]) "combined with the information in the prior distribution " else "",
+      if (options[["bayesian"]]) gettext("combined with the information in the prior distribution ") else "",
       mleLabel,
       planningOptions[["conf_level_label"]],
       boundLabel
