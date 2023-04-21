@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-04-21 13:17\n"
-"PO-Revision-Date: 2023-04-20 16:37+0000\n"
+"PO-Revision-Date: 2023-04-21 21:08+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"r/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-r/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -187,15 +187,12 @@ msgstr "Recontos"
 msgid "Relative frequency"
 msgstr "Frecuencia relativa"
 
-#, fuzzy
 msgid "Leading Digit"
 msgstr "Díxito inicial"
 
-#, fuzzy
 msgid "Leading Digits"
 msgstr "Díxitos iniciais"
 
-#, fuzzy
 msgid "Last Digit"
 msgstr "Derradeiro díxito"
 
@@ -845,28 +842,23 @@ msgstr ""
 "e unha precisión de %3$s, que o %2$s da inexactitude na poboación é menor "
 "que a materialidade de %4$s."
 
-#, fuzzy
 msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "Inexactitude tolerable"
+msgstr "de inexactitude intolerable H%1$s: %2$s %3$s %4$s"
 
 msgid "of exact misstatement H%1$s: %2$s = %3$s"
-msgstr ""
+msgstr "de inexactitude exacta H%1$s: %2$s = %3$s"
 
-#, fuzzy
 msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "Inexactitude tolerable"
+msgstr "de inexactitude tolerable H%1$s: %2$s %3$s %4$s"
 
-#, fuzzy
 msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
-msgstr "Inexactitude tolerable"
+msgstr "de inexactitude tolerable H%1$s: %2$s < %3$s"
 
-#, fuzzy
 msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "%1$s = %2$s %3$s %4$s"
+msgstr "de ningunha inexactitude H%1$s: %2$s %3$s %4$s"
 
-#, fuzzy
 msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
-msgstr "Inexactitude tolerable"
+msgstr "de inexactitude intolerable H%1$s: %2$s > %3$s"
 
 msgid ""
 "%1$s\n"
@@ -1120,21 +1112,17 @@ msgstr "mostraxe de %1$s rexistros"
 msgid "%1$s monetary unit sampling"
 msgstr "mostraxe de %1$s unidades monetarias"
 
-#, fuzzy
 msgid "items"
 msgstr "Elementos"
 
-#, fuzzy
 msgid "monetary units"
-msgstr "mostraxe de %1$s unidades monetarias"
+msgstr "unidades monetarias"
 
-#, fuzzy
 msgid "randomized"
 msgstr "aleatorio"
 
-#, fuzzy
 msgid "non-randomized"
-msgstr "aleatorio"
+msgstr "non aleatorio"
 
 msgid ""
 "The purpose of the selection stage is to statistically select a number of "
@@ -1493,11 +1481,9 @@ msgstr "Tamaños Mínimos de Mostra"
 msgid "Beta"
 msgstr "Beta"
 
-#, fuzzy
 msgid "Gamma"
 msgstr "Gamma"
 
-#, fuzzy
 msgid "Beta-binomial"
 msgstr "Beta-Binomial"
 
@@ -1636,13 +1622,11 @@ msgstr ""
 msgid "Total"
 msgstr "Total"
 
-#, fuzzy
 msgid "Top stratum"
-msgstr "Estrato"
+msgstr "Estrato superior"
 
-#, fuzzy
 msgid "Bottom stratum"
-msgstr "Bootstrap"
+msgstr "Estrato inferior"
 
 msgid "<b>Table %1$i.</b> Selected Items"
 msgstr "<b>Táboa %1$i.</b> Elementos Seleccionados"
@@ -1678,9 +1662,8 @@ msgstr ""
 "A variable dos resultados de auditoría debería conter só valores 0 "
 "(correcto) e 1 (incorrecto)."
 
-#, fuzzy
 msgid "combined with the information in the prior distribution"
-msgstr "unha distribución previa imparcial"
+msgstr "combinado coa información na distribución previa"
 
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "
