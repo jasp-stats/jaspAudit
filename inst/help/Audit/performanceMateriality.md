@@ -1,10 +1,10 @@
-Doelstelling: Toetsen aan de Uitvoeringsmaterialiteit
+Objective: Test Against Performance Materiality
 ===
 
-Deze doelstelling moet worden ingeschakeld wanneer u wilt testen of de populatie als geheel fouten bevat die een bepaalde kritische grens overschrijden.
+This objective should be enabled when you wish to test if the population as a whole contains misstatements exceeding a certain critical limit.
 
-De uitvoeringsmaterialiteit, ook bekend als het maximale foutpercentage of de ontoelaatbare fout (soms tolerabele foutpercentage of fout), is een door de auditor vastgestelde waarde die lager is dan of gelijk is aan de algemene materialiteit van de jaarrekening. Gewoonlijk wordt bij een audit de uitvoeringsmaterialiteit lager vastgesteld dan de algemene materialiteit om de kans te verkleinen dat het totaal van de niet-ontdekte afwijkingen de materialiteit van de jaarrekening als geheel overschrijdt.
+The performance materiality, also known the intolerable deviation rate or intolerable misstatement (sometimes tolerable deviation rate or misstatement), is a value established by the auditor that is below, or equal to, the overall materiality of the financial statements. Typically in an audit, the performance materiality is set lower than the overall materiality to reduce the chance that the total of undetected misstatements exceeds the materiality of the financial statements as a whole.
 
-In deze analyse vertegenwoordigt de uitvoeringsmaterialiteit het laagste onaanvaardbare niveau van fouten in de geteste populatie. Door deze steekproefdoelstelling aan te klikken, kunt u een steekproef ontwerpen om te bepalen of de populatie als geheel fouten bevat die van materieel belang worden geacht (d.w.z. groter of gelijk zijn aan de uitvoeringsmaterialiteit), met inachtneming van een bepaald auditrisico (1 - betrouwbaarheidsniveau).
+In this analysis, the performance materiality represents the lowest unacceptable level of misstatement in the population being tested. By enabling this sampling objective, you can design a sample to determine whether the population as a whole contain misstatements that are deemed material (i.e. are greater or equal to the performance materiality) while respecting a certain audit risk (1 - confidence level).
 
-De waarde van de uitvoeringsmaterialiteit is van invloed op de minimale steekproefomvang. Een lagere uitvoeringsmaterialiteit vereist een relatief grotere minimale steekproefomvang om het auditrisico tot een aanvaardbaar laag niveau terug te brengen, terwijl een hogere uitvoeringsmaterialiteit een relatief kleinere steekproefomvang vereist om het auditrisico tot een aanvaardbaar laag niveau terug te brengen.
+The value of the performance materiality affects the minimum sample size. A lower performance materiality requires a relatively larger minimum sample size to reduce the audit risk to an acceptably low level, while a higher performance materiality requires a relatively smaller sample size to reduce the audit risk to an acceptably low level.
