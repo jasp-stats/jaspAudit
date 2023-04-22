@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-04-21 21:08+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/gl/>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.18-dev\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
 "X-Qt-Contexts: true\n"
@@ -841,7 +847,7 @@ msgstr "Díxito"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "For which digit should matched rows be displayed?"
-msgstr ""
+msgstr "Para que díxito deben presentarse as filas coincidentes?"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Add additional figures about the analysis to the report."
@@ -853,24 +859,33 @@ msgid ""
 "population compared to the expected distribution under the Benford's law or "
 "the uniform distribution."
 msgstr ""
+"Produce unha imaxe que amosa a distribución observada dos díxitos na "
+"poboación, comparada coa distribución agardada baixo a lei de Benford ou a "
+"distribución uniforme."
 
 msgctxt "auditClassicalEstimation|"
 msgid ""
 "The estimation analysis allows the user to estimate the true value of a "
 "population on the basis of a sample."
 msgstr ""
+"A análise de estimación permite ao usuario estimar o valor verdadeiro da "
+"poboación, en base a unha mostra."
 
 msgctxt "auditClassicalEstimation|"
 msgid ""
 "A numeric variable that contains the book (recorded) values of the items in "
 "the population."
 msgstr ""
+"Unha variable numérica que contén os valores contables (rexistrados) dos "
+"elementos da poboación."
 
 msgctxt "auditClassicalEstimation|"
 msgid ""
 "A numeric variable that contains the audited (true) values of the items in "
 "the population."
 msgstr ""
+"Unha variable numérica que contén os valores auditados (verdadeiros) dos "
+"elementos da poboación."
 
 msgctxt "auditClassicalEstimation|"
 msgid "Population (required)"
@@ -878,17 +893,21 @@ msgstr "Poboación (obrigatotrio)"
 
 msgctxt "auditClassicalEstimation|"
 msgid "The total number of items (rows) in the population."
-msgstr ""
+msgstr "O número total de elementos (filas) da poboación."
 
 msgctxt "auditClassicalEstimation|"
 msgid ""
 "The total number of units in the population. Note that the units can be "
 "items (rows) or monetary units (values) depending on the audit question."
 msgstr ""
+"O número total de unidades na poboación. Observa que as unidades poden ser "
+"elementos (filas) ou unidades monetarias (valores) dependendo do asunto da "
+"auditoría."
 
 msgctxt "auditClassicalEstimation|"
 msgid "The type of method used to estimate the true value of the population."
 msgstr ""
+"O tipo de método utilizado para estimar o valor verdadeiro da poboación."
 
 msgctxt "auditClassicalEstimation|"
 msgid "The direct estimator."
@@ -1018,19 +1037,19 @@ msgstr "Calcular a entropía dos datos."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Indicate which decimals are shuffled in the analysis."
-msgstr ""
+msgstr "Indicar que decimais se barallan na análise."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last decimal digit is shuffled."
-msgstr ""
+msgstr "Se baralla o último díxito decimal."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last two decimal digits are shuffled."
-msgstr ""
+msgstr "Se barallan os dous últimos díxitos decimais."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "All decimal digits are shuffled."
-msgstr ""
+msgstr "Se barallan tódolos díxitos decimais."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
@@ -1402,14 +1421,13 @@ msgctxt "DataType|"
 msgid "Use summary statistics from a sample as input data."
 msgstr ""
 
-#, fuzzy
 msgctxt "DataType|"
 msgid "Sample size"
 msgstr "Tamaño da mostra"
 
 msgctxt "DataType|"
 msgid "The number of sampling units that have been audited."
-msgstr ""
+msgstr "O número de unidades da mostraxe que foron auditadas."
 
 msgctxt "DataType|"
 msgid "Misstatements"
@@ -1987,7 +2005,6 @@ msgctxt "Likelihood|"
 msgid "Beta"
 msgstr "Beta"
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Binomial"
 msgstr "Binomial"
@@ -2007,7 +2024,6 @@ msgctxt "Likelihood|"
 msgid "Gamma"
 msgstr "Gamma"
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Poisson"
 msgstr "Poisson"
@@ -2122,7 +2138,7 @@ msgstr ""
 
 msgctxt "Population|"
 msgid "Population (optional)"
-msgstr ""
+msgstr "Poboación (opcional)"
 
 msgctxt "Population|"
 msgid "Population (required)"
@@ -2138,9 +2154,8 @@ msgstr "Número de elementos"
 
 msgctxt "Population|"
 msgid "The total number of items (rows) in the population."
-msgstr ""
+msgstr "O número total de elementos (filas) da poboación."
 
-#, fuzzy
 msgctxt "Population|"
 msgid "No. units"
 msgstr "Número de unidades"
@@ -2150,40 +2165,38 @@ msgid ""
 "The total number of units in the population. Note that the units can be "
 "items (rows) or monetary units (values) depending on the audit question."
 msgstr ""
+"O número total de unidades na poboación. Observa que as unidades poden ser "
+"elementos (filas) ou unidades monetarias (valores) dependendo do asunto da "
+"auditoría."
 
 msgctxt "PriorMethod|"
 msgid "Elicitation"
-msgstr ""
+msgstr "Obtención"
 
 msgctxt "PriorMethod|"
 msgid "Choose how to construct the prior distribution."
-msgstr ""
+msgstr "Elixe como elaborar a distribución previa."
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Method"
 msgstr "Método"
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Default"
 msgstr "Por defecto"
 
 msgctxt "PriorMethod|"
 msgid "Parameters"
-msgstr ""
+msgstr "Parámetros"
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Earlier sample"
 msgstr "Mostra anterior"
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Impartial"
 msgstr "Imparcial"
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Risk assessments"
 msgstr "Valoracións do risco"
@@ -2193,24 +2206,25 @@ msgid ""
 "Indicate the type of available audit information that should be incorporated "
 "into the prior distribution."
 msgstr ""
+"Indica o tipo de información dispoñible de auditoría que debería "
+"incorporarse na distribución previa."
 
 msgctxt "PriorMethod|"
 msgid "Prior parameter α"
-msgstr ""
+msgstr "Parámetro α previo"
 
 msgctxt "PriorMethod|"
 msgid "The α parameter of the prior distribution."
-msgstr ""
+msgstr "O parámetro α da distribución previa."
 
 msgctxt "PriorMethod|"
 msgid "Prior parameter β"
-msgstr ""
+msgstr "Parámetro β previo"
 
 msgctxt "PriorMethod|"
 msgid "The β parameter of the prior distribution."
-msgstr ""
+msgstr "O parámetro β da distribución previa."
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Sample size"
 msgstr "Tamaño da mostra"
@@ -2218,6 +2232,7 @@ msgstr "Tamaño da mostra"
 msgctxt "PriorMethod|"
 msgid "The number of sampling units audited through an earlier sample."
 msgstr ""
+"O número de unidades da mostraxe auditadas mediante unha mostra anterior."
 
 msgctxt "PriorMethod|"
 msgid "Misstatements"
@@ -2365,8 +2380,9 @@ msgid ""
 "A numeric variable that contains the book (recorded) values of the items in "
 "the population."
 msgstr ""
+"Unha variable numérica que contén os valores contables (rexistrados) dos "
+"elementos da poboación."
 
-#, fuzzy
 msgctxt "ExportSample|"
 msgid "Export"
 msgstr "Exportar"
