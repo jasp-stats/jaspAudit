@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-04-22 23:56+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.18-dev\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -982,6 +988,9 @@ msgid ""
 "their audit values. Items for which these two values do not match are "
 "colored in red."
 msgstr ""
+"Produce un gráfico de dispersión que compara los valores contables en la "
+"muestra, con sus valores auditados. Los elementos para los que no coinciden "
+"esos dos valores se colorean de rojo."
 
 msgctxt "auditClassicalEvaluation|"
 msgid ""
@@ -1022,10 +1031,12 @@ msgid ""
 "In this box the variable is selected whose digits should be analyzed for "
 "repeated values."
 msgstr ""
+"En esta caja se selecciona la variable cuyos dígitos deberían analizarse "
+"para valores repetidos."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Indicate which type of quantity is calculated from the data."
-msgstr ""
+msgstr "Indicar qué tipo de cantidad se calcula con los datos."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Compute the average frequency of the data."
@@ -1101,6 +1112,8 @@ msgid ""
 "Produces a table containing the count and the percentage for every unique "
 "value in the data set."
 msgstr ""
+"Produce una tabla que contiene el recuento y el porcentaje de cada valor "
+"único en el conjunto de datos."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Add additional figures about the analysis to the report."
@@ -1111,14 +1124,16 @@ msgid ""
 "Produces a histogram of the expected average frequencies and / or entropy "
 "vs. the observed average frequency and / or entropy."
 msgstr ""
+"Produce un histograma de las frecuencias medias y/o entropía esperadas vs. "
+"las frecuencias medias y/o entropía observadas."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Produces a histogram with a single bin for each observed value."
-msgstr ""
+msgstr "Produce un histograma con una única barra por cada valor observado."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Indicate how many items labels to display."
-msgstr ""
+msgstr "Indicar cuántas etiquetas de elementos se presentan."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Advanced"
@@ -1276,69 +1291,60 @@ msgstr "Formato de la salida"
 
 msgctxt "Display|"
 msgid "Choose how to display numbers in tables and figures."
-msgstr ""
+msgstr "Escoge cómo presentar los números en las tablas e imágenes."
 
 msgctxt "Display|"
 msgid "Numeric"
-msgstr ""
+msgstr "Numérico"
 
 msgctxt "Display|"
 msgid "Display numbers as numeric values."
-msgstr ""
+msgstr "Presentar los números como valores numéricos."
 
-#, fuzzy
 msgctxt "Display|"
 msgid "Percentages"
 msgstr "Porcentajes"
 
 msgctxt "Display|"
 msgid "Display numbers as percentages."
-msgstr ""
+msgstr "Presentar los números como porcentajes."
 
-#, fuzzy
 msgctxt "Display|"
 msgid "Monetary units"
 msgstr "Unidades monetarias"
 
 msgctxt "Display|"
 msgid "Display numbers as monetary units."
-msgstr ""
+msgstr "Presentar los números como unidades monetarias."
 
-#, fuzzy
 msgctxt "DownloadReport|"
 msgid "<b>Download Report</b>"
 msgstr "<b>Descargar Informe</b>"
 
-#, fuzzy
 msgctxt "AddVariables|"
 msgid "Column name selection result"
 msgstr "Nombre de columna del resultado de la selección"
 
-#, fuzzy
 msgctxt "AddVariables|"
 msgid "selected"
 msgstr "seleccionado"
 
-#, fuzzy
 msgctxt "AddVariables|"
 msgid "Column name audit result"
 msgstr "Nombre de columna del resultado de la auditoría"
 
-#, fuzzy
 msgctxt "AddVariables|"
 msgid "auditResult"
-msgstr "Resultado de audit"
+msgstr "Resultado de auditoría"
 
-#, fuzzy
 msgctxt "Annotation|"
 msgid "Annotation"
 msgstr "Anotación"
 
 msgctxt "Annotation|"
 msgid "Specify how to annotate your data set."
-msgstr ""
+msgstr "Especifique cómo anotar su conjunto de datos."
 
-#, fuzzy
 msgctxt "Annotation|"
 msgid "Audit value"
 msgstr "Valor de auditoría"
@@ -1356,7 +1362,6 @@ msgid "Adds a column to specify the audit values of the items."
 msgstr ""
 "Añade una columna para especificar los valores de auditoría de los elementos."
 
-#, fuzzy
 msgctxt "Annotation|"
 msgid "Correct / Incorrect"
 msgstr "Correcto/Incorrecto"
@@ -1368,20 +1373,19 @@ msgid ""
 "have a monetary value."
 msgstr ""
 
-#, fuzzy
 msgctxt "Annotation|"
 msgid "Adds a column to specify the items as correct (0) or misstated (1)."
 msgstr ""
 "Añade una columna para especificar los elementos como correctos (0) o "
-"incorrectos (1)."
+"inexactos (1)."
 
 msgctxt "AuditVariable|"
 msgid "Audit Result (required)"
-msgstr ""
+msgstr "Resultado de Auditoría (obligatorio)"
 
 msgctxt "AuditVariable|"
 msgid "Audit Values (required)"
-msgstr ""
+msgstr "Valores de Auditoría (obligatorio)"
 
 msgctxt "AuditVariable|"
 msgid ""
@@ -1392,31 +1396,28 @@ msgstr ""
 
 msgctxt "DataType|"
 msgid "Data Type"
-msgstr ""
+msgstr "Tipo de Datos"
 
 msgctxt "DataType|"
 msgid "The type of input data for the analysis."
-msgstr ""
+msgstr "El tipo de datos de entrada para el análisis."
 
-#, fuzzy
 msgctxt "DataType|"
 msgid "Population"
 msgstr "Población"
 
 msgctxt "DataType|"
 msgid "Use the population as input data."
-msgstr ""
+msgstr "Utilizar la población como datos de entrada."
 
-#, fuzzy
 msgctxt "DataType|"
 msgid "Sample"
 msgstr "Muestra"
 
 msgctxt "DataType|"
 msgid "Use a sample of the population as input data."
-msgstr ""
+msgstr "Utilizar una muestra de la población como datos de entrada."
 
-#, fuzzy
 msgctxt "DataType|"
 msgid "Summary statistics"
 msgstr "Estadísticos de resumen"
@@ -1424,6 +1425,7 @@ msgstr "Estadísticos de resumen"
 msgctxt "DataType|"
 msgid "Use summary statistics from a sample as input data."
 msgstr ""
+"Utilizar los estadísticos de resumen de una muestra como datos de entrada."
 
 msgctxt "DataType|"
 msgid "Sample size"
@@ -1459,7 +1461,6 @@ msgid ""
 "(recorded) value does not equal the audit (true) value."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Prior and posterior"
 msgstr "Previa y posterior"
@@ -1470,7 +1471,6 @@ msgid ""
 "posterior distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Corrections to population"
 msgstr "Correcciones a la población"
@@ -1482,7 +1482,6 @@ msgid ""
 "objectives have been met."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Assumption checks"
 msgstr "Verificaciones de supuestos"
@@ -1493,7 +1492,6 @@ msgid ""
 "book values and the taints."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Confidence interval"
 msgstr "Intervalo de confianza"
@@ -1503,7 +1501,6 @@ msgid ""
 "Width of the one-sided confidence interval for the population correlation."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Plots"
 msgstr "Gráficos"
@@ -1512,7 +1509,6 @@ msgctxt "EvaluationOutput|"
 msgid "Add additional figures about the evaluation to the report."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Sampling objectives"
 msgstr "Objetivos del muestreo"
@@ -1538,7 +1534,6 @@ msgid ""
 "Produces a figure that shows the posterior and the posterior distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Additional info"
 msgstr "Información adicional"
@@ -1549,7 +1544,6 @@ msgid ""
 "Bayes factor and the estimates in text."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Posterior predictive"
 msgstr "Predictiva posterior"
@@ -1560,7 +1554,6 @@ msgid ""
 "on the data level."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Scatter plot"
 msgstr "Gráfico de dispersión"
@@ -1571,32 +1564,33 @@ msgid ""
 "their audit values. Items for which these two values do not match are "
 "colored in red."
 msgstr ""
+"Produce un gráfico de dispersión que compara los valores contables en la "
+"muestra, con sus valores auditados. Los elementos para los que no coinciden "
+"esos dos valores se colorean de rojo."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Display correlation"
 msgstr "Mostrar correlación"
 
 msgctxt "EvaluationOutput|"
 msgid "Add a correlation line to the figure."
-msgstr ""
+msgstr "Añadir una línea de correlación a la imagen."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Display item ID's"
-msgstr "Mostrar IDs de elementos"
+msgstr "Mostrar la ID del elemento"
 
 msgctxt "EvaluationOutput|"
 msgid "Display the row number of the misstated items in the figure."
-msgstr ""
+msgstr "Mostrar el número de fila de los elementos inexactos en la imagen."
 
 msgctxt "EvaluationVariablesList|"
 msgid "Selection Counter (optional)"
-msgstr ""
+msgstr "Contador de Selección (opcional)"
 
 msgctxt "EvaluationVariablesList|"
 msgid "Selection Counter (required)"
-msgstr ""
+msgstr "Contador de Selección (obligatorio)"
 
 msgctxt "EvaluationVariablesList|"
 msgid ""
@@ -1604,76 +1598,82 @@ msgid ""
 "each item and thus how many times the item should be counted in the "
 "evaluation."
 msgstr ""
+"Una variable ordinal que indica cuántas unidades de muestreo se seleccionan "
+"por cada elemento, y así cuántas veces debe contarse el elemento en la "
+"evaluación."
 
 msgctxt "EvaluationVariablesList|"
 msgid "Stratum (optional)"
-msgstr ""
+msgstr "Estrato (opcional)"
 
 msgctxt "EvaluationVariablesList|"
 msgid ""
 "A nominal variable that indicates to which subgroup (strata) of the "
 "population an item belongs."
 msgstr ""
+"Una variable nominal que indica a qué subgrupo (estrato) de la población "
+"pertenece un elemento."
 
 msgctxt "IntervalType|"
 msgid "Credible Interval (Alt. Hypothesis)"
-msgstr ""
+msgstr "Intervalo de Credibilidad (Hipótesis Alt.)"
 
 msgctxt "IntervalType|"
 msgid "Confidence Interval (Alt. Hypothesis)"
-msgstr ""
+msgstr "Intervalo de Confianza (Hipótesis Alt.)"
 
 msgctxt "IntervalType|"
 msgid "Credible Interval"
-msgstr ""
+msgstr "Intervalo de Credibilidad"
 
 msgctxt "IntervalType|"
 msgid "Confidence Interval"
-msgstr ""
+msgstr "Intervalo de Confianza"
 
 msgctxt "IntervalType|"
 msgid "Specify the type of interval and the alternative hypothesis."
-msgstr ""
+msgstr "Especifica el tipo de intervalo y la hipótesis alternativa."
 
 msgctxt "IntervalType|"
 msgid "Upper bound (< materiality)"
-msgstr ""
+msgstr "Límite superior (< Materialidad)"
 
 msgctxt "IntervalType|"
 msgid "Upper bound"
-msgstr ""
+msgstr "Límite superior"
 
 msgctxt "IntervalType|"
 msgid ""
 "Produces a one-sided upper bound for the misstatement in the population."
 msgstr ""
+"Produce un límite superior de una cola para la inexactitud en la población."
 
 msgctxt "IntervalType|"
 msgid "Two-sided (≠ materiality)"
-msgstr ""
+msgstr "Bilateral (≠ Materialidad)"
 
 msgctxt "IntervalType|"
 msgid "Two-sided"
-msgstr ""
+msgstr "Bilateral"
 
 msgctxt "IntervalType|"
 msgid "Produces a two-sided interval for the misstatement in the population."
-msgstr ""
+msgstr "Produce un intervalo bilateral para la inexactitud en la población."
 
 msgctxt "IntervalType|"
 msgid "Lower bound (> materiality)"
-msgstr ""
+msgstr "Límite inferior (> Materialidad)"
 
 msgctxt "IntervalType|"
 msgid "Lower bound"
-msgstr ""
+msgstr "Límite inferior"
 
 msgctxt "IntervalType|"
 msgid ""
 "Produces a one-sided lower bound for the misstatement in the population."
 msgstr ""
+"Produce un límite inferior de una cola para la inexactitud en la población."
 
-#, fuzzy
 msgctxt "ExplanatoryText|"
 msgid "Display"
 msgstr "Mostrar"
@@ -1719,11 +1719,11 @@ msgstr ""
 
 msgctxt "Algorithm|"
 msgid "Click to learn more about this algorithm"
-msgstr ""
+msgstr "Haga click para saber más sobre este algoritmo"
 
 msgctxt "Algorithm|"
 msgid "Share information"
-msgstr ""
+msgstr "Compartir información"
 
 msgctxt "Algorithm|"
 msgid ""
@@ -1731,7 +1731,6 @@ msgid ""
 "across different subgroups in the population (strata)."
 msgstr ""
 
-#, fuzzy
 msgctxt "AuditRiskModel|"
 msgid "Audit Risk Model"
 msgstr "Modelo de Riesgo de Auditoría"
@@ -1782,7 +1781,6 @@ msgid ""
 "factor *R*."
 msgstr ""
 
-#, fuzzy
 msgctxt "AuditRiskModel|"
 msgid "Inherent risk"
 msgstr "Riesgo inherente"
@@ -1814,7 +1812,6 @@ msgctxt "AuditRiskModel|"
 msgid "The percentage that corresponds with the inherent risk probability."
 msgstr ""
 
-#, fuzzy
 msgctxt "AuditRiskModel|"
 msgid "Control risk"
 msgstr "Riesgo de control"
@@ -1831,7 +1828,6 @@ msgctxt "AuditRiskModel|"
 msgid "The percentage that corresponds with the control risk probability."
 msgstr ""
 
-#, fuzzy
 msgctxt "CriticalItems|"
 msgid "Critical Items"
 msgstr "Elementos Críticos"
@@ -1840,7 +1836,6 @@ msgctxt "CriticalItems|"
 msgid "Choose how to handle critical items in the data set."
 msgstr ""
 
-#, fuzzy
 msgctxt "CriticalItems|"
 msgid "Negative book values"
 msgstr "Valores contables negativos"
@@ -1849,12 +1844,10 @@ msgctxt "CriticalItems|"
 msgid "Isolates negative book values from the population."
 msgstr ""
 
-#, fuzzy
 msgctxt "CriticalItems|"
 msgid "Column name"
 msgstr "Nombre de columna"
 
-#, fuzzy
 msgctxt "CriticalItems|"
 msgid "critical"
 msgstr "crítico"
@@ -1865,7 +1858,6 @@ msgid ""
 "the data set."
 msgstr ""
 
-#, fuzzy
 msgctxt "CriticalItems|"
 msgid "Keep"
 msgstr "Mantener"
@@ -1874,7 +1866,6 @@ msgctxt "CriticalItems|"
 msgid "Retains the critical items to be inspected as part of the sample."
 msgstr ""
 
-#, fuzzy
 msgctxt "CriticalItems|"
 msgid "Remove"
 msgstr "Eliminar"
@@ -1885,7 +1876,7 @@ msgstr ""
 
 msgctxt "ExpectedErrors|"
 msgid "Expected Misstatements"
-msgstr ""
+msgstr "Inexactitudes Esperadas"
 
 msgctxt "ExpectedErrors|"
 msgid ""
@@ -1897,7 +1888,6 @@ msgid ""
 "end."
 msgstr ""
 
-#, fuzzy
 msgctxt "ExpectedErrors|"
 msgid "Relative"
 msgstr "Relativo"
@@ -1912,20 +1902,18 @@ msgctxt "ExpectedErrors|"
 msgid "The percentage of expected misstatements in the sample."
 msgstr ""
 
-#, fuzzy
 msgctxt "ExpectedErrors|"
 msgid "Absolute"
 msgstr "Absoluto"
 
 msgctxt "ExpectedErrors|"
 msgid "Enter the expected misstatements as an absolute value."
-msgstr ""
+msgstr "Introducir las inexactitudes esperadas como un valor absoluto."
 
 msgctxt "ExpectedErrors|"
 msgid "The number of expected misstatements in the sample."
-msgstr ""
+msgstr "El número de inexactitudes esperadas en la muestra."
 
-#, fuzzy
 msgctxt "ExpectedErrors|"
 msgid "All possible"
 msgstr "Todo lo posible"
@@ -1934,17 +1922,16 @@ msgctxt "ExpectedErrors|"
 msgid ""
 "Do not make an assumption about the expected misstatements in the sample."
 msgstr ""
+"No hacer ningún supuesto sobre las inexactitudes esperadas en la muestra."
 
-#, fuzzy
 msgctxt "Iterations|"
 msgid "Iterations"
 msgstr "Iteraciones"
 
 msgctxt "Iterations|"
 msgid "Specify how the sample size is computed."
-msgstr ""
+msgstr "Especifica cómo se calcula la muestra."
 
-#, fuzzy
 msgctxt "Iterations|"
 msgid "Increment"
 msgstr "Incremento"
@@ -1956,7 +1943,6 @@ msgid ""
 "15, 20, 25, etc."
 msgstr ""
 
-#, fuzzy
 msgctxt "Iterations|"
 msgid "Maximum"
 msgstr "Máximo"
@@ -1984,7 +1970,6 @@ msgctxt "Likelihood|"
 msgid "Beta-binomial"
 msgstr "Beta-Binomial"
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Hypergeometric"
 msgstr "Hipergeométrica"
@@ -2000,7 +1985,6 @@ msgid ""
 "is the beta-binomial distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Beta"
 msgstr "Beta"
@@ -2037,7 +2021,6 @@ msgid ""
 "likelihood is the gamma distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Tables"
 msgstr "Tablas"
@@ -2046,7 +2029,6 @@ msgctxt "PlanningOutput|"
 msgid "Add additional tables about the planning to the report."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Prior and posterior"
 msgstr "Previa y posterior"
@@ -2057,7 +2039,6 @@ msgid ""
 "posterior distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Descriptive statistics"
 msgstr "Estadísticos descriptivos"
@@ -2068,7 +2049,6 @@ msgid ""
 "in the data set."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Plots"
 msgstr "Gráficos"
@@ -2077,7 +2057,6 @@ msgctxt "PlanningOutput|"
 msgid "Add additional figures about the planning to the report."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Compare sample sizes"
 msgstr "Comparar tamaños de muestras"
