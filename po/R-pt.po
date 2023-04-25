@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-04-21 13:17\n"
+"POT-Creation-Date: 2023-04-25 08:10\n"
 "PO-Revision-Date: 2022-08-28 23:22+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -1570,6 +1570,12 @@ msgstr ""
 #, fuzzy
 msgid "%1$s%% Interval"
 msgstr "Intervalo de Confiança %1$s%%"
+
+msgid "Information is shared between the strata in the population."
+msgstr ""
+
+msgid "The strata in the population are assumed to be independent."
+msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Misstated Items"

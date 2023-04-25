@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2023-04-21 13:17\n"
+"POT-Creation-Date: 2023-04-25 08:10\n"
 "PO-Revision-Date: 2023-04-24 18:54+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1789,6 +1789,12 @@ msgstr "Estrato"
 
 msgid "%1$s%% Interval"
 msgstr "Intervalo del %1$s%%"
+
+msgid "Information is shared between the strata in the population."
+msgstr ""
+
+msgid "The strata in the population are assumed to be independent."
+msgstr ""
 
 msgid "<b>Table %1$i.</b> Misstated Items"
 msgstr "<b>Tabla %1$i.</b> Elementos Inexactos"

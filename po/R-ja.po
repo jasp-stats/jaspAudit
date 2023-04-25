@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2023-04-21 13:17\n"
+"POT-Creation-Date: 2023-04-25 08:10\n"
 "PO-Revision-Date: 2023-04-21 21:08+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-r/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
+"r/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1445,6 +1445,12 @@ msgid "Stratum"
 msgstr ""
 
 msgid "%1$s%% Interval"
+msgstr ""
+
+msgid "Information is shared between the strata in the population."
+msgstr ""
+
+msgid "The strata in the population are assumed to be independent."
 msgstr ""
 
 #, fuzzy

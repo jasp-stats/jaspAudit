@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
-"POT-Creation-Date: 2023-04-21 13:17\n"
+"POT-Creation-Date: 2023-04-25 08:10\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -980,6 +980,12 @@ msgid "Stratum"
 msgstr ""
 
 msgid "%1$s%% Interval"
+msgstr ""
+
+msgid "Information is shared between the strata in the population."
+msgstr ""
+
+msgid "The strata in the population are assumed to be independent."
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Misstated Items"
