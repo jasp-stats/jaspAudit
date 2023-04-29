@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-04-25 08:10\n"
-"PO-Revision-Date: 2023-04-26 20:33+0000\n"
+"PO-Revision-Date: 2023-04-30 11:47+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -181,21 +181,17 @@ msgstr "Anzahl"
 msgid "Relative frequency"
 msgstr "Relative Häufigkeit"
 
-#, fuzzy
 msgid "Leading Digit"
 msgstr "Führende Ziffer"
 
-#, fuzzy
 msgid "Leading Digits"
 msgstr "Führende Ziffern"
 
-#, fuzzy
 msgid "Last Digit"
 msgstr "Letzte Ziffer"
 
-#, fuzzy
 msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
-msgstr "<b>Tabelle %i.</b> Test wiederholter Werte"
+msgstr "<b>Tabelle %i.</b> Zeilen übereinstimmend mit %2$s %3$s"
 
 msgid "Row"
 msgstr "Zeile"
@@ -204,18 +200,20 @@ msgid "Value"
 msgstr "Wert"
 
 msgid "The requested digit must be between 1 - 9."
-msgstr ""
+msgstr "Die gewünschte Ziffer muss zwischen 1 und 9 liegen."
 
 msgid "<b>Warning.</b>"
 msgstr "<b>Warnung.</b>"
 
 msgid "The requested digit must be between 10 - 99."
-msgstr ""
+msgstr "Die gewünschte Ziffer muss zwischen 10 und 99 liegen."
 
 msgid ""
 "Displayed values are rounded to the number of decimals set in the global "
 "preferences."
 msgstr ""
+"Angezeigte Werte werden auf die Anzahl der Dezimalstellen gerundet, die in "
+"den globalen Einstellungen festgelegt sind."
 
 msgid "Observed vs. Expected Relative Frequencies"
 msgstr "Beobachtete vs. erwartete relative Häufigkeiten"
@@ -844,30 +842,24 @@ msgstr ""
 "einer Genauigkeit von %3$s zu zeigen, dass die %2$s der Falschangabe in der "
 "Grundgesamtheit geringer ist als die Toleranzwesentlichkeit von %4$s."
 
-#, fuzzy
 msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "Falscheangabe der Grundgesamtheit %1$s"
+msgstr "der nicht tolerierbaren Falschangabe H%1$s: %2$s %3$s %4$s"
 
 msgid "of exact misstatement H%1$s: %2$s = %3$s"
-msgstr ""
+msgstr "der genauen Falschangabe H%1$s: %2$s = %3$s"
 
-#, fuzzy
 msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "Falscheangabe der Grundgesamtheit %1$s"
+msgstr "der tolerierbaren Falschangabe H%1$s: %2$s %3$s %4$s"
 
-#, fuzzy
 msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
-msgstr "Falscheangabe der Grundgesamtheit %1$s"
+msgstr "der tolerierbaren Falschangabe H%1$s: %2$s < %3$s"
 
-#, fuzzy
 msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "%1$s = %2$s %3$s %4$s"
+msgstr "von keiner Falschangabe H%1$s: %2$s %3$s %4$s"
 
-#, fuzzy
 msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
-msgstr "Falscheangabe der Grundgesamtheit %1$s"
+msgstr "der untolerierbaren Falschangabe H%1$s: %2$s > %3$s"
 
-#, fuzzy
 msgid ""
 "%1$s\n"
 "\n"
@@ -890,21 +882,18 @@ msgstr ""
 "Die Größe von Interesse ist die Falschangabe (%2$s) in der Grundgesamtheit. "
 "Falschangabe ist definiert als die Differenz zwischen dem (angegebenen) "
 "Buchwert eines Postens und seines (wahren) Auditwerts. Beim Testen der "
-"Falschangabe der Grundgesamtheit gegen eine gegebene Toleranzwesentlichkeit, "
-"%2$s*, werden zwei statistische Hypothesen über %2$s formuliert:\n"
+"Falschangabe der Grundgesamtheit gegen eine gegebene Toleranzwesentlichkeit "
+"werden zwei statistische Hypothesen über %2$s formuliert:\n"
 "\n"
-"                                  Die (Null-)Hypothese der nicht "
-"tolerierbaren Falschangabe %3$s,\n"
-"                                  die (alternative) Hypothese der "
-"tolerierbaren Falschangabe %4$s.\n"
+"                                  Die (Null-)Hypothese %3$s,\n"
+"                                  die (alternative) Hypothese %4$s.\n"
 "\n"
 "                                  Das Audit-Risiko (%5$s) ist das Risiko, "
 "die Hypothese %3$s fälschlicherweise abzulehnen. Um diese Hypothese auf "
 "Grundlage einer Stichprobe abzulehnen, müssen die Informationen aus der "
 "Stichprobe ausreichen, um %5$s auf ein angemessen niedriges Niveau zu "
-"reduzieren (< %6$s%%)."
+"reduzieren (d.h., %5$s < %6$s%%)."
 
-#, fuzzy
 msgid ""
 "%1$s\n"
 "\n"
@@ -919,46 +908,44 @@ msgstr ""
 "\n"
 "In einer Bayesschen Analyse wird dem Parameter %2$s zunächst eine Prior-"
 "Wahrscheinlichkeitsverteilung zugewiesen, welche die vorhandenen "
-"Informationen über seine möglichen Werte einbezieht. Eine Beschreibung und "
-"ein Diagramm der aktuellen Prior-Verteilung sind im Abschnitt <i>Tabellen</"
-"i> zu finden. Sie können vorhandene Informationen mithilfe der Optionen im "
-"Abschnitt <i>Prior</i> einbeziehen."
+"Prüfungsinformationen über die Falschangabe in der Grundgesamtheit "
+"einbezieht. Eine Beschreibung und ein Diagramm der aktuellen Prior-"
+"Verteilung sind im Abschnitt <i>Bericht</i> zu finden. Sie können vorhandene "
+"Informationen mithilfe der Optionen im Abschnitt <i>Prior</i> einbeziehen."
 
 msgid "a performance materiality of %1$s"
 msgstr "eine Toleranzwesentlichkeit von %1$s"
 
-#, fuzzy
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
 "in the population is below the performance materiality"
 msgstr ""
-"die Stichprobe liefert ausreichende Informationen, um zu schließen, dass die "
-"Falschangabe %1$s unterhalb der Toleranzwesentlichkeit %1$s* liegt"
+"die Stichprobe liefert ausreichende Informationen für die Schlussfolgerung, "
+"dass die Falschangabe in der Grundgesamtheit unterhalb der "
+"Toleranzwesentlichkeit liegt"
 
 msgid "a minimum precision of %1$s"
 msgstr "eine Mindestgenauigkeit von %1$s"
 
-#, fuzzy
 msgid ""
 "the sample provides sufficient information to estimate the misstatement in "
 "the population with the minimum precision"
 msgstr ""
-"die Stichprobe liefert ausreichend Informationen, um die Falschangabe %1$s "
-"mit der minimalen Genauigkeit zu schätzen"
+"die Stichprobe liefert ausreichende Informationen, um die Falschangabe in "
+"der Grundgesamtheit mit der minimalen Genauigkeit zu schätzen"
 
 msgid "a performance materiality of %1$s and a minimum precision of %2$s"
 msgstr ""
 "eine Toleranzwesentlichkeit von %1$s und eine minimale Genauigkeit von %2$s"
 
-#, fuzzy
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
 "in the population is below the performance materiality with the minimum "
 "precision"
 msgstr ""
-"die Stichprobe bietet ausreichend Informationen, um zu schließen, dass die "
-"Falschangabe %1$s unterhalb der Toleranzwesentlichkeit %1$s* mit der "
-"minimalen Genauigkeit liegt"
+"die Stichprobe liefert ausreichende Informationen für die Schlussfolgerung, "
+"dass die Falschangabe in der Grundgesamtheit unterhalb der "
+"Toleranzwesentlichkeit mit der minimalen Genauigkeit liegt"
 
 msgid ""
 "Furthermore, the uncertainty regarding θ will only be extrapolated over the "
@@ -983,9 +970,9 @@ msgid ""
 "given a certain number of expected misstatements, the sample provides "
 "sufficient information to achieve the specified sampling objectives."
 msgstr ""
-"Zweck der Planungsphase ist es, einen Stichprobenumfang zu finden, der bei "
-"einer bestimmten Anzahl erwarteter Falschangaben ausreichend Informationen "
-"liefert, um die vorgegebenen Stichprobenziele zu erreichen."
+"Zweck der Planungsphase ist es, einen minimalen Stichprobenumfang zu finden, "
+"der bei einer bestimmten Anzahl erwarteter Falschangaben ausreichende "
+"Informationen liefert, um die vorgegebenen Stichprobenziele zu erreichen."
 
 msgid ""
 "No assumptions are made about the most likely expected error in the sample."
@@ -1107,8 +1094,9 @@ msgstr "festes Intervall"
 msgid "cell"
 msgstr "Zelle"
 
+#, fuzzy
 msgid "sieve"
-msgstr ""
+msgstr "Sieb"
 
 msgid "book values (<i>%1$s</i>)"
 msgstr "Buchwerte (<i>%1$s</i>)"
@@ -1134,23 +1122,20 @@ msgstr "%1$s Record Sampling"
 msgid "%1$s monetary unit sampling"
 msgstr "%1$s Monetary-Unit Sampling"
 
-#, fuzzy
 msgid "items"
 msgstr "Posten"
 
-#, fuzzy
 msgid "monetary units"
-msgstr "%1$s Monetary-Unit Sampling"
+msgstr "Geldeinheiten"
 
 #, fuzzy
 msgid "randomized"
-msgstr "zufällig"
+msgstr "randomisiert"
 
 #, fuzzy
 msgid "non-randomized"
-msgstr "zufällig"
+msgstr "nicht randomisiert"
 
-#, fuzzy
 msgid ""
 "The purpose of the selection stage is to statistically select a number of "
 "sampling units from the population. Sampling units can be individual items "
@@ -1169,8 +1154,7 @@ msgstr ""
 "Auswahlmethode finden Sie im Abschnitt <i>Methode</i>.\n"
 "\n"
 "Aus der Grundgesamtheit von %1$s %2$s Posten werden %3$s "
-"Stichprobeneinheiten (%4$s) aus den %5$s mit einer %6$s Methode ausgewählt."
-"%7$s"
+"Stichprobeneinheiten (%4$s) aus den %5$s mit der %6$s Methode ausgewählt.%7$s"
 
 msgid ""
 "%1$s\n"
@@ -1202,10 +1186,10 @@ msgstr "höher"
 msgid "<b>Objectives:</b> You have achieved your initial sampling objectives."
 msgstr "<b>Ziele:</b> Sie haben Ihre ursprünglichen Stichprobenziele erreicht."
 
-#, fuzzy
 msgid ""
 "<b>Objectives:</b> You have not achieved your initial sampling objectives."
-msgstr "<b>Ziele:</b> Sie haben Ihre ursprünglichen Stichprobenziele erreicht."
+msgstr ""
+"<b>Ziele:</b> Sie haben Ihre ursprünglichen Stichprobenziele nicht erreicht."
 
 msgid ""
 "The objective of this audit sampling procedure was to determine with %1$s "
@@ -1314,15 +1298,13 @@ msgstr ""
 "stellen das erste, zweite (Median) und dritte Quartil der Buchwerte dar."
 
 msgid "High"
-msgstr ""
+msgstr "Hoch"
 
-#, fuzzy
 msgid "Medium"
-msgstr "Median"
+msgstr "Mittel"
 
-#, fuzzy
 msgid "Low"
-msgstr "Untergrenze"
+msgstr "Niedrig"
 
 msgid "<u>Audit Risk Model</u>"
 msgstr "<u>Auditisiko-Modell</u>"
@@ -1354,15 +1336,12 @@ msgstr ""
 "Auditrisiko (%1$s%%) = Inhärentes Risiko (%2$s%%) x Kontrollrisiko (%3$s%%) "
 "x Detektionsrisiko (%4$s%%)"
 
-#, fuzzy
 msgid ""
 "At least one translation of the categories High, Medium and Low to "
 "probabilities is done according custom settings."
 msgstr ""
-"%1$s\n"
-"\n"
-"Die Übersetzung von Hoch, Mittel und Niedrig in Wahrscheinlichkeiten "
-"erfolgte nach den Benutzereinstellungen."
+"Mindestens eine der Übersetzungen von Hoch, Mittel und Niedrig in "
+"Wahrscheinlichkeiten erfolgte nach Benutzereinstellungen."
 
 #, fuzzy
 msgid ""
