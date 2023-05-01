@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-04-30 10:50+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.18-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -556,9 +562,10 @@ msgctxt "auditSelection|"
 msgid "Sample size"
 msgstr "Stichprobenumfang"
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Statistical methods for auditing"
-msgstr ""
+msgstr "Statistische Methoden zur Wirtschaftsprüfung"
 
 msgctxt "auditBayesianEvaluation|"
 msgid ""
@@ -574,7 +581,7 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Report"
-msgstr ""
+msgstr "Bericht"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Advanced"
@@ -597,7 +604,7 @@ msgstr ""
 
 msgctxt "auditBayesianPlanning|"
 msgid "Report"
-msgstr ""
+msgstr "Bericht"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Advanced"
@@ -634,7 +641,7 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Report"
-msgstr ""
+msgstr "Bericht"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Advanced"
@@ -723,7 +730,7 @@ msgstr ""
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Specify options that have an effect on the look and feel of the audit report."
-msgstr ""
+msgstr "Optionen angeben, die das Erscheinungsbild des Prüfberichts ändern."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
@@ -741,11 +748,11 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Report"
-msgstr ""
+msgstr "Bericht"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Add additional tables about the analysis to the report."
-msgstr ""
+msgstr "Dem Bericht weitere Tabellen zur Analyse hinzufügen."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Produces a table showing the relative frequency of the digits."
@@ -769,7 +776,7 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Add additional figures about the analysis to the report."
-msgstr ""
+msgstr "Dem Bericht weitere Diagramme zur Analyse hinzufügen."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
@@ -833,7 +840,7 @@ msgstr ""
 msgctxt "auditClassicalEstimation|"
 msgid ""
 "Specify options that have an effect on the look and feel of the audit report."
-msgstr ""
+msgstr "Optionen angeben, die das Erscheinungsbild des Prüfberichts ändern."
 
 msgctxt "auditClassicalEstimation|"
 msgid ""
@@ -851,11 +858,11 @@ msgstr ""
 
 msgctxt "auditClassicalEstimation|"
 msgid "Report"
-msgstr ""
+msgstr "Bericht"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Add additional tables about the analysis to the report."
-msgstr ""
+msgstr "Dem Bericht weitere Tabellen zur Analyse hinzufügen."
 
 msgctxt "auditClassicalEstimation|"
 msgid ""
@@ -869,7 +876,7 @@ msgstr ""
 
 msgctxt "auditClassicalEstimation|"
 msgid "Add additional figures about the analysis to the report."
-msgstr ""
+msgstr "Dem Bericht weitere Diagramme zur Analyse hinzufügen."
 
 msgctxt "auditClassicalEstimation|"
 msgid ""
@@ -891,7 +898,7 @@ msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Report"
-msgstr ""
+msgstr "Bericht"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Advanced"
@@ -949,7 +956,7 @@ msgstr ""
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
 "Specify options that have an effect on the look and feel of the audit report."
-msgstr ""
+msgstr "Optionen angeben, die das Erscheinungsbild des Prüfberichts ändern."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
@@ -967,11 +974,11 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Report"
-msgstr ""
+msgstr "Bericht"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Add additional tables about the analysis to the report."
-msgstr ""
+msgstr "Dem Bericht weitere Tabellen zur Analyse hinzufügen."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
@@ -990,7 +997,7 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Add additional figures about the analysis to the report."
-msgstr ""
+msgstr "Dem Bericht weitere Diagramme zur Analyse hinzufügen."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
@@ -1049,7 +1056,7 @@ msgstr ""
 
 msgctxt "auditClassicalPlanning|"
 msgid "Report"
-msgstr ""
+msgstr "Bericht"
 
 msgctxt "auditClassicalPlanning|"
 msgid "Advanced"
@@ -1086,7 +1093,7 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Report"
-msgstr ""
+msgstr "Bericht"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Advanced"
@@ -1124,7 +1131,7 @@ msgstr ""
 
 msgctxt "auditSelection|"
 msgid "Report"
-msgstr ""
+msgstr "Bericht"
 
 msgctxt "Display|"
 msgid "Format Output"
@@ -1160,7 +1167,6 @@ msgctxt "Display|"
 msgid "Display numbers as monetary units."
 msgstr ""
 
-#, fuzzy
 msgctxt "DownloadReport|"
 msgid "<b>Download Report</b>"
 msgstr "<b>Bericht herunterladen</b>"
@@ -1300,7 +1306,7 @@ msgstr "Tabellen"
 
 msgctxt "EvaluationOutput|"
 msgid "Add additional tables about the evaluation to the report."
-msgstr ""
+msgstr "Dem Bericht weitere Tabellen zur Evaluation hinzufügen."
 
 #, fuzzy
 msgctxt "EvaluationOutput|"
@@ -1364,7 +1370,7 @@ msgstr "Diagramme"
 
 msgctxt "EvaluationOutput|"
 msgid "Add additional figures about the evaluation to the report."
-msgstr ""
+msgstr "Dem Bericht weitere Diagramme zur Evaluation hinzufügen."
 
 #, fuzzy
 msgctxt "EvaluationOutput|"
@@ -1535,7 +1541,7 @@ msgstr "Anzeigen"
 msgctxt "ExplanatoryText|"
 msgid ""
 "Specify options that have an effect on the look and feel of the audit report."
-msgstr ""
+msgstr "Optionen angeben, die das Erscheinungsbild des Prüfberichts ändern."
 
 #, fuzzy
 msgctxt "ExplanatoryText|"
@@ -1550,7 +1556,7 @@ msgstr ""
 
 msgctxt "ExplanatoryText|"
 msgid "Show explanatory text in the audit report"
-msgstr ""
+msgstr "Erklärungstext im Prüfbericht anzeigen"
 
 msgctxt "Algorithm|"
 msgid "Algorithm"
@@ -1899,7 +1905,7 @@ msgstr "Tabellen"
 
 msgctxt "PlanningOutput|"
 msgid "Add additional tables about the planning to the report."
-msgstr ""
+msgstr "Dem Bericht weitere Tabellen zur Planung hinzufügen."
 
 #, fuzzy
 msgctxt "PlanningOutput|"
@@ -1930,7 +1936,7 @@ msgstr "Diagramme"
 
 msgctxt "PlanningOutput|"
 msgid "Add additional figures about the planning to the report."
-msgstr ""
+msgstr "Dem Bericht weitere Diagramme zur Planung hinzufügen."
 
 #, fuzzy
 msgctxt "PlanningOutput|"
