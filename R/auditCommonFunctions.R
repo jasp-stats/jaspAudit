@@ -1531,11 +1531,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (isTryError(result)) {
       if (jaspBase:::.extractErrorMessage(result) == "the sample size is larger than 'max'") {
         parentContainer$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
-        return()
       } else {
         parentContainer$setError(gettextf("An error occurred: %1$s", jaspBase:::.extractErrorMessage(result)))
-        return()
       }
+      return()
     }
 
     parentContainer[["planningState"]] <- createJaspState(result)
@@ -3391,6 +3390,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
 .jfaSeparatedMisstatementPlanningState <- function(options, dataset, prior, parentOptions) {
   # Plan a sample for the efficiency technique Separate known and unknown misstatement
+  sufficient <- FALSE
   for (n in seq(options[["by"]], options[["max"]], by = options[["by"]])) {
     interval <- (parentOptions[["N.units"]] / n)
     topStratum <- subset(dataset, dataset[[options[["values"]]]] > interval)
@@ -3435,17 +3435,25 @@ gettextf <- function(fmt, ..., domain = NULL) {
     # Sampling objectives
     if (options[["min_precision_test"]] && !options[["materiality_test"]]) {
       if (all(diff <= 0)) {
+        sufficient <- TRUE
         break
       }
     } else if (!options[["min_precision_test"]] && options[["materiality_test"]]) {
       if (all(v95 < (parentOptions[["materiality_val"]] / (1 - (m_seen / parentOptions[["N.units"]]))))) {
+        sufficient <- TRUE
         break
       }
     } else if (options[["min_precision_test"]] && options[["materiality_test"]]) {
       if (all(diff <= 0) && all(v95 < (parentOptions[["materiality_val"]] / (1 - (m_seen / parentOptions[["N.units"]]))))) {
+        sufficient <- TRUE
         break
       }
     }
+  }
+
+  if (!sufficient) {
+    result <- jfa::planning(materiality = 0.01, max = 1) # intentional error
+    return(result)
   }
 
   adjustedMateriality <- (parentOptions[["materiality_val"]] / (1 - (m_seen / parentOptions[["N.units"]])))
