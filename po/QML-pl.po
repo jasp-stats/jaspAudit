@@ -1,10 +1,16 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-05-12 20:50+0000\n"
+"Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/pl/>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.18-dev\n"
 "X-Language: pl\n"
 "X-Qt-Contexts: true\n"
 
@@ -46,7 +52,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Other"
-msgstr ""
+msgstr "Inne"
 
 msgctxt "Description|"
 msgid "Benford's Law"
@@ -62,11 +68,11 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Gamma"
-msgstr ""
+msgstr "Gamma"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Beta-binomial"
@@ -122,11 +128,11 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Variable"
-msgstr ""
+msgstr "Zmienna"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Uniform distribution"
-msgstr ""
+msgstr "Rozkład jednorodny"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Confidence"
@@ -134,11 +140,11 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Confidence"
@@ -146,11 +152,11 @@ msgstr ""
 
 msgctxt "auditClassicalEstimation|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Required sample size"
-msgstr ""
+msgstr "Wymagana wielkość próby"
 
 msgctxt "auditClassicalEstimation|"
 msgid "for an uncertainty of:"
@@ -158,7 +164,7 @@ msgstr ""
 
 msgctxt "auditClassicalEstimation|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "LTA adjustment"
@@ -182,15 +188,15 @@ msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Binomial"
-msgstr ""
+msgstr "Dwumianowy"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Poisson"
-msgstr ""
+msgstr "Poisson"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Hypergeometric"
-msgstr ""
+msgstr "Hipergeometryczny"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>1. Planning</b>"
@@ -202,19 +208,19 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Binomial"
-msgstr ""
+msgstr "Dwumianowy"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Poisson"
-msgstr ""
+msgstr "Poisson"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Hypergeometric"
-msgstr ""
+msgstr "Hipergeometryczny"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>Pobierz Raport</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Selection</b>"
@@ -318,11 +324,11 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Variable"
-msgstr ""
+msgstr "Zmienna"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tests"
-msgstr ""
+msgstr "Testy"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Average frequency"
@@ -330,7 +336,7 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Entropy"
-msgstr ""
+msgstr "Entropia"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Shuffle Decimal Digits"
@@ -338,31 +344,31 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Number of samples"
-msgstr ""
+msgstr "Liczba próbek"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Seed"
-msgstr ""
+msgstr "Ziarno generatora"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Assumption checks"
-msgstr ""
+msgstr "Weryfikacja założeń"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Frequency table"
-msgstr ""
+msgstr "Tabele częstości"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Label"
-msgstr ""
+msgstr "Etykietka"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "with highest occurrence"
@@ -374,27 +380,27 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₁₀"
-msgstr ""
+msgstr "BF₁₀"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₀₁"
-msgstr ""
+msgstr "BF₀₁"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Log(BF₁₀)"
-msgstr ""
+msgstr "Log(BF₁₀)"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior"
-msgstr ""
+msgstr "Prior"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior"
-msgstr ""
+msgstr "Prior"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior"
-msgstr ""
+msgstr "Prior"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
@@ -410,11 +416,11 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Display"
-msgstr ""
+msgstr "Wyświetl"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Objaśnienie"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Show explanatory text at each step of the analysis"
@@ -426,23 +432,23 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First"
-msgstr ""
+msgstr "Pierwszy"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First and second"
-msgstr ""
+msgstr "Pierwszy i drugi"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Last"
-msgstr ""
+msgstr "Ostatni"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Frequency table"
-msgstr ""
+msgstr "Tabele częstości"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Observed vs. expected"
-msgstr ""
+msgstr "Obserwowane vs. oczekiwane"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Book Values"
@@ -454,11 +460,11 @@ msgstr ""
 
 msgctxt "auditClassicalEstimation|"
 msgid "Display"
-msgstr ""
+msgstr "Wyświetl"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Objaśnienie"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Show explanatory text at each step of the analysis"
@@ -466,11 +472,11 @@ msgstr ""
 
 msgctxt "auditClassicalEstimation|"
 msgid "No. items"
-msgstr ""
+msgstr "LIczba itemów"
 
 msgctxt "auditClassicalEstimation|"
 msgid "No. units"
-msgstr ""
+msgstr "Liczba jednostek"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Method"
@@ -478,7 +484,7 @@ msgstr "Metoda"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Scatter plot"
-msgstr ""
+msgstr "Wykres rozrzutu"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Method"
@@ -486,7 +492,7 @@ msgstr "Metoda"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Stringer"
-msgstr ""
+msgstr "Stringer"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Mean-per-unit estimator"
@@ -494,11 +500,11 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Display"
-msgstr ""
+msgstr "Wyświetl"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Objaśnienie"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Show explanatory text at each step of the analysis"
@@ -506,23 +512,23 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last"
-msgstr ""
+msgstr "Ostatni"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last two"
-msgstr ""
+msgstr "Ostatnie dwa"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "All"
-msgstr ""
+msgstr "Wszystkie"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Observed vs. expected"
-msgstr ""
+msgstr "Obserwowane vs oczekiwane"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Histogram"
-msgstr ""
+msgstr "Histogram"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Method"
@@ -538,7 +544,7 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Stringer"
-msgstr ""
+msgstr "Stringer"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Mean-per-unit estimator"
@@ -570,7 +576,7 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Advanced"
-msgstr ""
+msgstr "Zaawansowane"
 
 msgctxt "auditBayesianPlanning|"
 msgid ""
@@ -593,7 +599,7 @@ msgstr ""
 
 msgctxt "auditBayesianPlanning|"
 msgid "Advanced"
-msgstr ""
+msgstr "Zaawansowane"
 
 msgctxt "auditBayesianWorkflow|"
 msgid ""
@@ -630,11 +636,11 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Advanced"
-msgstr ""
+msgstr "Zaawansowane"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Add variables to sample"
-msgstr ""
+msgstr "Dodaj zmienne do próby"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Sample List"
@@ -694,7 +700,7 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Choose which type of Bayes factor to display."
-msgstr ""
+msgstr "Wybierz, który typ współczynnika Bayesa ma być wyświetlony."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
@@ -710,7 +716,7 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Natural logarithm of BF10."
-msgstr ""
+msgstr "Logarytm naturalny z BF10."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
@@ -790,7 +796,7 @@ msgstr ""
 
 msgctxt "auditClassicalEstimation|"
 msgid "Population (required)"
-msgstr ""
+msgstr "Populacja (wymagane)"
 
 msgctxt "auditClassicalEstimation|"
 msgid "The total number of items (rows) in the population."
@@ -887,7 +893,7 @@ msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Advanced"
-msgstr ""
+msgstr "Zaawansowane"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
@@ -1000,7 +1006,7 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Advanced"
-msgstr ""
+msgstr "Zaawansowane"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Adjust advanced options for this analysis."
@@ -1008,7 +1014,7 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Bootstrap"
-msgstr ""
+msgstr "Bootstrap"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Options related to the bootstrapping procedure of the p-value."
@@ -1045,7 +1051,7 @@ msgstr ""
 
 msgctxt "auditClassicalPlanning|"
 msgid "Advanced"
-msgstr ""
+msgstr "Zaawansowane"
 
 msgctxt "auditClassicalWorkflow|"
 msgid ""
@@ -1082,11 +1088,11 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Advanced"
-msgstr ""
+msgstr "Zaawansowane"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Add variables to sample"
-msgstr ""
+msgstr "Dodaj zmienną do próby"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Sample List"
@@ -1136,7 +1142,7 @@ msgstr ""
 
 msgctxt "Display|"
 msgid "Percentages"
-msgstr ""
+msgstr "Procenty"
 
 msgctxt "Display|"
 msgid "Display numbers as percentages."
@@ -1144,7 +1150,7 @@ msgstr ""
 
 msgctxt "Display|"
 msgid "Monetary units"
-msgstr ""
+msgstr "Jednostki monetarne"
 
 msgctxt "Display|"
 msgid "Display numbers as monetary units."
@@ -1152,7 +1158,7 @@ msgstr ""
 
 msgctxt "DownloadReport|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>Pobierz Raport</b>"
 
 msgctxt "AddVariables|"
 msgid "Column name selection result"
@@ -1160,7 +1166,7 @@ msgstr ""
 
 msgctxt "AddVariables|"
 msgid "selected"
-msgstr ""
+msgstr "wybrane"
 
 msgctxt "AddVariables|"
 msgid "Column name audit result"
@@ -1168,7 +1174,7 @@ msgstr ""
 
 msgctxt "AddVariables|"
 msgid "auditResult"
-msgstr ""
+msgstr "auditResult"
 
 msgctxt "Annotation|"
 msgid "Annotation"
@@ -1195,7 +1201,7 @@ msgstr ""
 
 msgctxt "Annotation|"
 msgid "Correct / Incorrect"
-msgstr ""
+msgstr "Poprawne / Błędne"
 
 msgctxt "Annotation|"
 msgid ""
@@ -1225,7 +1231,7 @@ msgstr ""
 
 msgctxt "DataType|"
 msgid "Data Type"
-msgstr ""
+msgstr "Typ danych"
 
 msgctxt "DataType|"
 msgid "The type of input data for the analysis."
@@ -1233,29 +1239,28 @@ msgstr ""
 
 msgctxt "DataType|"
 msgid "Population"
-msgstr ""
+msgstr "Populacja"
 
 msgctxt "DataType|"
 msgid "Use the population as input data."
-msgstr ""
+msgstr "Użyj populacji jako danych wejściowych."
 
 msgctxt "DataType|"
 msgid "Sample"
-msgstr ""
+msgstr "Próba"
 
 msgctxt "DataType|"
 msgid "Use a sample of the population as input data."
-msgstr ""
+msgstr "Użyj próby z populacji jako danych wejściowych."
 
 msgctxt "DataType|"
 msgid "Summary statistics"
-msgstr ""
+msgstr "Statystyki podsumowujące"
 
 msgctxt "DataType|"
 msgid "Use summary statistics from a sample as input data."
 msgstr ""
 
-#, fuzzy
 msgctxt "DataType|"
 msgid "Sample size"
 msgstr "Wielkość próby"
@@ -1274,7 +1279,7 @@ msgstr ""
 
 msgctxt "EvaluationOutput|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "EvaluationOutput|"
 msgid "Add additional tables about the evaluation to the report."
@@ -1292,7 +1297,7 @@ msgstr ""
 
 msgctxt "EvaluationOutput|"
 msgid "Prior and posterior"
-msgstr ""
+msgstr "Prior i posterior"
 
 msgctxt "EvaluationOutput|"
 msgid ""
@@ -1313,7 +1318,7 @@ msgstr ""
 
 msgctxt "EvaluationOutput|"
 msgid "Assumption checks"
-msgstr ""
+msgstr "Weryfikacja założeń"
 
 msgctxt "EvaluationOutput|"
 msgid ""
@@ -1323,7 +1328,7 @@ msgstr ""
 
 msgctxt "EvaluationOutput|"
 msgid "Confidence interval"
-msgstr ""
+msgstr "Przedział ufności"
 
 msgctxt "EvaluationOutput|"
 msgid ""
@@ -1332,7 +1337,7 @@ msgstr ""
 
 msgctxt "EvaluationOutput|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "EvaluationOutput|"
 msgid "Add additional figures about the evaluation to the report."
@@ -1350,7 +1355,7 @@ msgstr ""
 
 msgctxt "EvaluationOutput|"
 msgid "Estimates"
-msgstr ""
+msgstr "Oszacowania"
 
 msgctxt "EvaluationOutput|"
 msgid ""
@@ -1365,7 +1370,7 @@ msgstr ""
 
 msgctxt "EvaluationOutput|"
 msgid "Additional info"
-msgstr ""
+msgstr "Dodatkowe informacje"
 
 msgctxt "EvaluationOutput|"
 msgid ""
@@ -1385,7 +1390,7 @@ msgstr ""
 
 msgctxt "EvaluationOutput|"
 msgid "Scatter plot"
-msgstr ""
+msgstr "Wykres rozrzutu"
 
 msgctxt "EvaluationOutput|"
 msgid ""
@@ -1396,7 +1401,7 @@ msgstr ""
 
 msgctxt "EvaluationOutput|"
 msgid "Display correlation"
-msgstr ""
+msgstr "Pokaż korelacje"
 
 msgctxt "EvaluationOutput|"
 msgid "Add a correlation line to the figure."
@@ -1404,7 +1409,7 @@ msgstr ""
 
 msgctxt "EvaluationOutput|"
 msgid "Display item ID's"
-msgstr ""
+msgstr "Pokaż ID itemu"
 
 msgctxt "EvaluationOutput|"
 msgid "Display the row number of the misstated items in the figure."
@@ -1437,19 +1442,19 @@ msgstr ""
 
 msgctxt "IntervalType|"
 msgid "Credible Interval (Alt. Hypothesis)"
-msgstr ""
+msgstr "Przedział wiarygodności (hipoteza alt.)"
 
 msgctxt "IntervalType|"
 msgid "Confidence Interval (Alt. Hypothesis)"
-msgstr ""
+msgstr "Przedział ufności (hipoteza alt.)"
 
 msgctxt "IntervalType|"
 msgid "Credible Interval"
-msgstr ""
+msgstr "Przedział wiarygodności"
 
 msgctxt "IntervalType|"
 msgid "Confidence Interval"
-msgstr ""
+msgstr "Przedział ufności"
 
 msgctxt "IntervalType|"
 msgid "Specify the type of interval and the alternative hypothesis."
@@ -1461,7 +1466,7 @@ msgstr ""
 
 msgctxt "IntervalType|"
 msgid "Upper bound"
-msgstr ""
+msgstr "Górna granica"
 
 msgctxt "IntervalType|"
 msgid ""
@@ -1474,7 +1479,7 @@ msgstr ""
 
 msgctxt "IntervalType|"
 msgid "Two-sided"
-msgstr ""
+msgstr "Dwustronna"
 
 msgctxt "IntervalType|"
 msgid "Produces a two-sided interval for the misstatement in the population."
@@ -1486,7 +1491,7 @@ msgstr ""
 
 msgctxt "IntervalType|"
 msgid "Lower bound"
-msgstr ""
+msgstr "Dolna granica"
 
 msgctxt "IntervalType|"
 msgid ""
@@ -1495,7 +1500,7 @@ msgstr ""
 
 msgctxt "ExplanatoryText|"
 msgid "Display"
-msgstr ""
+msgstr "Wyświetl"
 
 msgctxt "ExplanatoryText|"
 msgid ""
@@ -1504,7 +1509,7 @@ msgstr ""
 
 msgctxt "ExplanatoryText|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "Objaśnienie"
 
 msgctxt "ExplanatoryText|"
 msgid ""
@@ -1518,7 +1523,7 @@ msgstr ""
 
 msgctxt "Algorithm|"
 msgid "Algorithm"
-msgstr ""
+msgstr "Algorytm"
 
 msgctxt "Algorithm|"
 msgid "Partial projection"
@@ -1534,7 +1539,7 @@ msgstr ""
 
 msgctxt "Algorithm|"
 msgid "Click to learn more about this algorithm"
-msgstr ""
+msgstr "Naciśnij, aby dowiedzieć się więcej"
 
 msgctxt "Algorithm|"
 msgid "Share information"
@@ -1602,19 +1607,19 @@ msgstr ""
 
 msgctxt "AuditRiskModel|"
 msgid "High"
-msgstr ""
+msgstr "Wysokie"
 
 msgctxt "AuditRiskModel|"
 msgid "Medium"
-msgstr ""
+msgstr "Średnie"
 
 msgctxt "AuditRiskModel|"
 msgid "Low"
-msgstr ""
+msgstr "Niskie"
 
 msgctxt "AuditRiskModel|"
 msgid "Custom"
-msgstr ""
+msgstr "Niestandardowe"
 
 msgctxt "AuditRiskModel|"
 msgid ""
@@ -1661,7 +1666,7 @@ msgstr ""
 
 msgctxt "CriticalItems|"
 msgid "Column name"
-msgstr ""
+msgstr "Nazwa kolumny"
 
 msgctxt "CriticalItems|"
 msgid "critical"
@@ -1675,7 +1680,7 @@ msgstr ""
 
 msgctxt "CriticalItems|"
 msgid "Keep"
-msgstr ""
+msgstr "Zachowaj"
 
 msgctxt "CriticalItems|"
 msgid "Retains the critical items to be inspected as part of the sample."
@@ -1683,7 +1688,7 @@ msgstr ""
 
 msgctxt "CriticalItems|"
 msgid "Remove"
-msgstr ""
+msgstr "Usuń"
 
 msgctxt "CriticalItems|"
 msgid "Removes the critical items in the analysis."
@@ -1705,7 +1710,7 @@ msgstr ""
 
 msgctxt "ExpectedErrors|"
 msgid "Relative"
-msgstr ""
+msgstr "Względne"
 
 msgctxt "ExpectedErrors|"
 msgid ""
@@ -1719,7 +1724,7 @@ msgstr ""
 
 msgctxt "ExpectedErrors|"
 msgid "Absolute"
-msgstr ""
+msgstr "Bezwzględne"
 
 msgctxt "ExpectedErrors|"
 msgid "Enter the expected misstatements as an absolute value."
@@ -1740,7 +1745,7 @@ msgstr ""
 
 msgctxt "Iterations|"
 msgid "Iterations"
-msgstr ""
+msgstr "Iteracje"
 
 msgctxt "Iterations|"
 msgid "Specify how the sample size is computed."
@@ -1759,7 +1764,7 @@ msgstr ""
 
 msgctxt "Iterations|"
 msgid "Maximum"
-msgstr ""
+msgstr "Maksimum"
 
 msgctxt "Iterations|"
 msgid "The maximum sample size after which the algorithm terminates."
@@ -1767,11 +1772,11 @@ msgstr ""
 
 msgctxt "Likelihood|"
 msgid "Distribution"
-msgstr ""
+msgstr "Rozkład"
 
 msgctxt "Likelihood|"
 msgid "Likelihood"
-msgstr ""
+msgstr "Prawdopodobieństwo"
 
 msgctxt "Likelihood|"
 msgid ""
@@ -1782,11 +1787,11 @@ msgstr ""
 
 msgctxt "Likelihood|"
 msgid "Beta-binomial"
-msgstr ""
+msgstr "Beta-dwumianowy"
 
 msgctxt "Likelihood|"
 msgid "Hypergeometric"
-msgstr ""
+msgstr "Hipergeometryczny"
 
 msgctxt "Likelihood|"
 msgid ""
@@ -1801,11 +1806,11 @@ msgstr ""
 
 msgctxt "Likelihood|"
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
 msgctxt "Likelihood|"
 msgid "Binomial"
-msgstr ""
+msgstr "Dwumianowy"
 
 msgctxt "Likelihood|"
 msgid ""
@@ -1819,11 +1824,11 @@ msgstr ""
 
 msgctxt "Likelihood|"
 msgid "Gamma"
-msgstr ""
+msgstr "Gamma"
 
 msgctxt "Likelihood|"
 msgid "Poisson"
-msgstr ""
+msgstr "Poisson"
 
 msgctxt "Likelihood|"
 msgid ""
@@ -1837,7 +1842,7 @@ msgstr ""
 
 msgctxt "PlanningOutput|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "PlanningOutput|"
 msgid "Add additional tables about the planning to the report."
@@ -1845,7 +1850,7 @@ msgstr ""
 
 msgctxt "PlanningOutput|"
 msgid "Prior and posterior"
-msgstr ""
+msgstr "Prior i posterior"
 
 msgctxt "PlanningOutput|"
 msgid ""
@@ -1855,7 +1860,7 @@ msgstr ""
 
 msgctxt "PlanningOutput|"
 msgid "Descriptive statistics"
-msgstr ""
+msgstr "Statystyki opisowe"
 
 msgctxt "PlanningOutput|"
 msgid ""
@@ -1865,13 +1870,12 @@ msgstr ""
 
 msgctxt "PlanningOutput|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "PlanningOutput|"
 msgid "Add additional figures about the planning to the report."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Compare sample sizes"
 msgstr "Porównaj wielkości prób"
@@ -1902,7 +1906,7 @@ msgstr ""
 
 msgctxt "PlanningOutput|"
 msgid "Prior distribution"
-msgstr ""
+msgstr "Rozkład a priori"
 
 msgctxt "PlanningOutput|"
 msgid "Produces a figure that shows the prior distribution."
@@ -1910,7 +1914,7 @@ msgstr ""
 
 msgctxt "PlanningOutput|"
 msgid "Posterior distribution"
-msgstr ""
+msgstr "Rozkład a posteriori"
 
 msgctxt "PlanningOutput|"
 msgid ""
@@ -1930,19 +1934,19 @@ msgstr ""
 
 msgctxt "Population|"
 msgid "Population (optional)"
-msgstr ""
+msgstr "Populacja (ocjonalne)"
 
 msgctxt "Population|"
 msgid "Population (required)"
-msgstr ""
+msgstr "Populacja (wymagane)"
 
 msgctxt "Population|"
 msgid "Provide information about the population."
-msgstr ""
+msgstr "Dostarcz informacje na temat populacji."
 
 msgctxt "Population|"
 msgid "No. items"
-msgstr ""
+msgstr "Liczba itemów"
 
 msgctxt "Population|"
 msgid "The total number of items (rows) in the population."
@@ -1950,7 +1954,7 @@ msgstr ""
 
 msgctxt "Population|"
 msgid "No. units"
-msgstr ""
+msgstr "Liczba jednostek"
 
 msgctxt "Population|"
 msgid ""
@@ -1966,22 +1970,21 @@ msgctxt "PriorMethod|"
 msgid "Choose how to construct the prior distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Method"
 msgstr "Metoda"
 
 msgctxt "PriorMethod|"
 msgid "Default"
-msgstr ""
+msgstr "Domyślna"
 
 msgctxt "PriorMethod|"
 msgid "Parameters"
-msgstr ""
+msgstr "Parametry"
 
 msgctxt "PriorMethod|"
 msgid "Earlier sample"
-msgstr ""
+msgstr "Poprzednia próba"
 
 msgctxt "PriorMethod|"
 msgid "Impartial"
@@ -1999,7 +2002,7 @@ msgstr ""
 
 msgctxt "PriorMethod|"
 msgid "Prior parameter α"
-msgstr ""
+msgstr "Parametr α a priori"
 
 msgctxt "PriorMethod|"
 msgid "The α parameter of the prior distribution."
@@ -2007,13 +2010,12 @@ msgstr ""
 
 msgctxt "PriorMethod|"
 msgid "Prior parameter β"
-msgstr ""
+msgstr "Parametr β a priori"
 
 msgctxt "PriorMethod|"
 msgid "The β parameter of the prior distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Sample size"
 msgstr "Wielkość próby"
@@ -2073,7 +2075,7 @@ msgstr ""
 
 msgctxt "SamplingObjectives|"
 msgid "Relative"
-msgstr ""
+msgstr "Względne"
 
 msgctxt "SamplingObjectives|"
 msgid ""
@@ -2087,7 +2089,7 @@ msgstr ""
 
 msgctxt "SamplingObjectives|"
 msgid "Absolute"
-msgstr ""
+msgstr "Bezwzględne"
 
 msgctxt "SamplingObjectives|"
 msgid ""
@@ -2141,7 +2143,7 @@ msgstr ""
 
 msgctxt "AdditionalVariables|"
 msgid "Additional Variables (optional)"
-msgstr ""
+msgstr "Dodatkowe zmienne (opcjonalne)"
 
 msgctxt "AdditionalVariables|"
 msgid "Any other variables that should be included in the sample."
@@ -2163,7 +2165,7 @@ msgstr ""
 
 msgctxt "ExportSample|"
 msgid "Export"
-msgstr ""
+msgstr "Eksportuj"
 
 msgctxt "ExportSample|"
 msgid "Step 1: Column name selection result"
@@ -2171,7 +2173,7 @@ msgstr ""
 
 msgctxt "ExportSample|"
 msgid "e.g. selected"
-msgstr ""
+msgstr "np. wybrane"
 
 msgctxt "ExportSample|"
 msgid ""
@@ -2186,7 +2188,7 @@ msgstr ""
 
 msgctxt "ExportSample|"
 msgid "e.g. sample.csv"
-msgstr ""
+msgstr "np. próba.csv"
 
 msgctxt "ExportSample|"
 msgid "The location on the pc to which the sample should be saved."
@@ -2198,7 +2200,7 @@ msgstr ""
 
 msgctxt "ExportSample|"
 msgid "Synchronize"
-msgstr ""
+msgstr "Synchronizuj"
 
 msgctxt "ExportSample|"
 msgid ""
@@ -2207,7 +2209,7 @@ msgstr ""
 
 msgctxt "IdVariable|"
 msgid "Item ID (required)"
-msgstr ""
+msgstr "ID itemu (wymagane)"
 
 msgctxt "IdVariable|"
 msgid ""
@@ -2217,7 +2219,7 @@ msgstr ""
 
 msgctxt "Randomize|"
 msgid "Randomize item order"
-msgstr ""
+msgstr "Losowa kolejność itemów"
 
 msgctxt "Randomize|"
 msgid "Randomizes the items in the population before selection is performed."
@@ -2243,7 +2245,7 @@ msgstr ""
 
 msgctxt "SamplingUnits|"
 msgid "Items"
-msgstr ""
+msgstr "Itemy"
 
 msgctxt "SamplingUnits|"
 msgid ""
@@ -2253,11 +2255,11 @@ msgstr ""
 
 msgctxt "SamplingUnits|"
 msgid "Click to learn more about this method"
-msgstr ""
+msgstr "Naciśnij, aby dowiedzieć się więcej"
 
 msgctxt "SamplingUnits|"
 msgid "Monetary units"
-msgstr ""
+msgstr "Jednostki monetarne"
 
 msgctxt "SamplingUnits|"
 msgid ""
@@ -2268,7 +2270,7 @@ msgstr ""
 
 msgctxt "Seed|"
 msgid "Seed"
-msgstr ""
+msgstr "Ziarno generatora"
 
 msgctxt "Seed|"
 msgid ""
@@ -2278,7 +2280,7 @@ msgstr ""
 
 msgctxt "SelectionMethod|"
 msgid "Selection Method"
-msgstr ""
+msgstr "Metoda selekcji"
 
 msgctxt "SelectionMethod|"
 msgid ""
@@ -2310,7 +2312,7 @@ msgstr ""
 
 msgctxt "SelectionMethod|"
 msgid "Random"
-msgstr ""
+msgstr "Losowy"
 
 msgctxt "SelectionMethod|"
 msgid ""
@@ -2320,7 +2322,7 @@ msgstr ""
 
 msgctxt "SelectionMethod|"
 msgid "Click to learn more about this method"
-msgstr ""
+msgstr "Naciśnij, aby dowiedzieć się więcej"
 
 msgctxt "SelectionMethod|"
 msgid "Cell sampling"
@@ -2335,7 +2337,7 @@ msgstr ""
 
 msgctxt "SelectionMethod|"
 msgid "Random sampling"
-msgstr ""
+msgstr "Losowe próbkowanie"
 
 msgctxt "SelectionMethod|"
 msgid ""
@@ -2353,11 +2355,11 @@ msgstr ""
 
 msgctxt "SelectionOutput|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "SelectionOutput|"
 msgid "Selected items"
-msgstr ""
+msgstr "Wybrane itemy"
 
 msgctxt "SelectionOutput|"
 msgid ""
@@ -2367,7 +2369,7 @@ msgstr ""
 
 msgctxt "SelectionOutput|"
 msgid "Descriptive statistics"
-msgstr ""
+msgstr "Statystyki opisowe"
 
 msgctxt "SelectionOutput|"
 msgid ""
@@ -2379,4 +2381,4 @@ msgstr ""
 
 msgctxt "SelectionMethod|"
 msgid "Custom"
-msgstr ""
+msgstr "Niestandardowe"
