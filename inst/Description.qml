@@ -75,7 +75,16 @@ Description
 		func:			"auditBayesianEvaluation"
 		requiresData:	false
 	}
-
+GroupTitle
+	{
+		title:			qsTr("Responsible AI")
+		icon:			"audit-number-analysis.svg"
+	}
+	Analysis
+	{
+		title:			qsTr("Fairness Measures")
+		func:			"auditFairnessMeasures"
+	}
 	GroupTitle
 	{
 		title:			qsTr("Digit Analysis")
