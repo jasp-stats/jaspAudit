@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-30 14:49+0000\n"
+"PO-Revision-Date: 2023-06-02 20:48+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/pl/>\n"
@@ -232,7 +232,7 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "2. Selection"
-msgstr ""
+msgstr "2. Selekcja"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Reset Workflow</b>"
@@ -320,7 +320,7 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
-msgstr ""
+msgstr "Pewność"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Variable"
@@ -376,7 +376,7 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Benford's law"
-msgstr ""
+msgstr "Prawo Benforda"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₁₀"
@@ -508,7 +508,7 @@ msgstr "Objaśnienie"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Show explanatory text at each step of the analysis"
-msgstr ""
+msgstr "Pokaż objaśnienia na każdym etapie analizy"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last"
