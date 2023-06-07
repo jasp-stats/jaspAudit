@@ -14,6 +14,7 @@ options$min_precision_rel_val <- 0.02
 options$critical_negative <- TRUE
 options$ir <- "high"
 options$cr <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$max <- 5000
 options$tablePrior <- FALSE
@@ -185,6 +186,7 @@ options$min_precision_rel_val <- 0.02
 options$critical_negative <- TRUE
 options$ir <- "high"
 options$cr <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$max <- 5000
 options$tablePrior <- FALSE
@@ -304,6 +306,7 @@ options$min_precision_rel_val <- 0.02
 options$critical_negative <- TRUE
 options$ir <- "high"
 options$cr <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$max <- 5000
 options$tablePrior <- FALSE
@@ -405,6 +408,7 @@ options$min_precision_rel_val <- 0.02
 options$critical_negative <- TRUE
 options$ir <- "high"
 options$cr <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$max <- 5000
 options$tablePrior <- FALSE
@@ -522,6 +526,7 @@ options$min_precision_rel_val <- 0.02
 options$critical_negative <- TRUE
 options$ir <- "high"
 options$cr <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$max <- 5000
 options$tablePrior <- FALSE
@@ -624,6 +629,7 @@ options$min_precision_rel_val <- 0.02
 options$critical_negative <- TRUE
 options$ir <- "high"
 options$cr <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$max <- 5000
 options$tablePrior <- FALSE
@@ -730,6 +736,7 @@ options$min_precision_rel_val <- 0.02
 options$critical_negative <- TRUE
 options$ir <- "high"
 options$cr <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$max <- 5000
 options$tablePrior <- FALSE

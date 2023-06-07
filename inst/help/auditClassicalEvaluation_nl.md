@@ -36,18 +36,19 @@ Het gebruikte betrouwbaarheidsniveau. Het betrouwbaarheidsniveau is het compleme
 #### Audit Risico Model
 - Inherent risico: Een categorie of waarschijnlijkheid voor het inherente risico. Inherent risico wordt gedefinieerd als het risico op een materiele fout in de populatie door een andere factor dan het falen van de interne controle.
 - Intern beheersingsrisico: Een categorie of waarschijnlijkheid voor het interne beheersingsrisico. Intern beheersingsrisico wordt gedefinieerd als het risico op een materiele fout in de populatie als gevolg van het ontbreken of falen van de werking van relevante interne controles van de gecontroleerde.
+- Cijferanalyserisico: Een categorie of waarschijnlijkheid voor het cijferanalyserisico. Cijferanalysierisico wordt gedefinieerd als het risico dat een materiele fout niet met cijferanalyse wordt ontdekt door de auditor.
 
-Wanneer de accountant over informatie beschikt die wijst op een laag risicoprofiel van de populatie, kan hij deze informatie gebruiken om zijn vereiste steekproefomvang te beperken via het Audit Risico Model (ARM), mits er geen fouten in de populatie voorkomen. Volgens het ARM is het auditrisico (AR) een functie van het inherente risico (IR), het interne beheersingsrisico (IBR) en het detectierisico (DR).
+Wanneer de accountant over informatie beschikt die wijst op een laag risicoprofiel van de populatie, kan hij deze informatie gebruiken om zijn vereiste steekproefomvang te beperken via het Audit Risico Model (ARM), mits er geen fouten in de populatie voorkomen. Volgens het ARM is het auditrisico (AR) een functie van het inherente risico (IR), het interne beheersingsrisico (IBR), het cijferanalyserisico (CAR) en het detectierisico (DR).
 
-*AR = IR x IBR x DR*
+*AR = IR x IBR x CAR x DR*
 
-De accountant beoordeelt het inherente risico en het interne beheersingsrisico doorgaans op een driepuntsschaal bestaande uit hoog, gemiddeld en laag om het passende detectierisico te bepalen. Om het ARM te kunnen gebruiken, moeten deze categorische risicobeoordelingen worden omgezet in percentages. Standaard gebruikt de Auditmodule de percentages in onderstaande tabel, die zijn geïnspireerd op het <i>Handboek Auditing Rijksoverheid</i>. U kunt de percentages voor één of beide risico's handmatig aanpassen door in de keuzelijst onder de betreffende risicobeoordeling de optie Aangepast te selecteren.
+De accountant beoordeelt het inherente risico, het interne beheersingsrisico en het cijferanalyserisico doorgaans op een driepuntsschaal bestaande uit hoog, gemiddeld en laag om het passende detectierisico te bepalen. Om het ARM te kunnen gebruiken, moeten deze categorische risicobeoordelingen worden omgezet in percentages. Standaard gebruikt de Auditmodule de percentages in onderstaande tabel, die zijn geïnspireerd door het <i>Handboek Auditing Rijksoverheid</i>. U kunt de percentages voor één of alle risico's handmatig aanpassen door in de keuzelijst onder de betreffende risicobeoordeling de optie Aangepast te selecteren.
 
-| | Inherent risico (IR) | Intern beheersingsrisico (IBR) |
-| ---: | :---: | :---: |
-| High | 100% | 100% |
-| Medium | 63% | 52% |
-| Low | 40% | 34% |
+| | Inherent risico (IR) | Intern beheersingsrisico (IBR) | Cijferanalyserisico (CAR) |
+| ---: | :---: | :---: | :---: |
+| High | 100% | 100% | 100% |
+| Medium | 63% | 52% | 50% |
+| Low | 40% | 34% | 25% |
 
 #### Weergave
 - Toelichtende tekst: Indien aangevinkt, wordt in de analyse verklarende tekst weergegeven om de procedure en de statistische resultaten te helpen interpreteren.

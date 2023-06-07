@@ -21,6 +21,7 @@ options$display <- "number"
 options$critical_negative <- TRUE
 options$critical_action <- "inspect"
 options$ir <- "high"
+options$car <- "high"
 options$id <- ""
 options$stratum <- ""
 options$conf_level <- 0.95
@@ -81,6 +82,7 @@ options$critical_negative <- TRUE
 options$critical_action <- "inspect"
 options$conf_level <- 0.95
 options$ir <- "high"
+options$car <- "high"
 options$cr <- "high"
 options$n <- 0
 options$x <- 0
@@ -134,6 +136,7 @@ options$display <- "number"
 options$critical_negative <- TRUE
 options$critical_action <- "inspect"
 options$ir <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$min_precision_test <- FALSE
 options$min_precision_rel_val <- 0.02

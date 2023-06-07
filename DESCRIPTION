@@ -1,8 +1,8 @@
 Package: jaspAudit
 Type: Package
 Title: JASP for Audit
-Version: 0.17.2
-Date: 2023-02-08
+Version: 0.17.3
+Date: 2023-06-07
 Author: Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille, and Ruud Wetzels
 Website: https://github.com/jasp-stats/jaspAudit
 Maintainer: Koen Derks <k.derks@nyenrode.nl>

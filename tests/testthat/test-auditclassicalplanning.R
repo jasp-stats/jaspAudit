@@ -11,6 +11,7 @@ options$materiality_rel_val <- 0.05
 options$n_units <- 1000
 options$ir <- "high"
 options$cr <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$expected_rel_val <- 0
 options$max <- 5000
@@ -67,6 +68,7 @@ options$cr <- "medium"
 options$plotErrorDist <- TRUE
 options$materiality_type <- "materiality_abs"
 options$ir <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$expected_rel_val <- 0
 options$max <- 5000
@@ -111,6 +113,7 @@ options$plotErrorDist <- TRUE
 options$plotSampleSizes <- FALSE
 options$materiality_type <- "materiality_abs"
 options$ir <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$expected_rel_val <- 0
 options$max <- 5000

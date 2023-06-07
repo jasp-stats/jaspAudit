@@ -702,7 +702,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     container <- createJaspContainer(title = gettext("<u>Planning</u>"))
     container$position <- position
     container$dependOn(options = c(
-      "ir", "irCustom", "cr", "crCustom", "conf_level", "n_units", "materiality_type",
+      "ir", "irCustom", "cr", "crCustom", "car", "carCustom", "conf_level", "n_units", "materiality_type",
       "materiality_rel_val", "materiality_abs_val", "expected_type", "expected_rel_val",
       "expected_abs_val", "likelihood", "id", "values", "separateMisstatement",
       "min_precision_rel_val", "min_precision_test", "materiality_test", "by", "max", "prior_method",
@@ -751,7 +751,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     container$position <- position
     container$dependOn(options = c(
       "id", "values", "values.audit", "times", "conf_level",
-      "n_units", "n_items", "ir", "irCustom", "cr", "crCustom",
+      "n_units", "n_items", "ir", "irCustom", "cr", "crCustom", "car", "carCustom",
       "expected_type", "expected_rel_val", "expected_abs_val",
       "materiality_test", "materiality_type", "materiality_rel_val", "materiality_abs_val",
       "dataType", "n", "x", "method", "area", "lta",
@@ -831,7 +831,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       }
       if (.jfaAuditRiskModelCalculation(options)[["dr"]] >= 1) {
         # Error if the detection risk of the analysis is higher than one
-        parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify the custom values for the Inherent risk and/or Control risk, or the confidence."))
+        parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify the custom values for the Inherent risk and/or Control risk and/or Analytical risk, or the confidence."))
         return(TRUE)
       }
       if (options[["bayesian"]] && !options[["materiality_test"]] && options[["prior_method"]] %in% c("impartial", "arm")) {
@@ -880,7 +880,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     } else if (.jfaAuditRiskModelCalculation(options)[["dr"]] >= 1) {
       # Error if the detection risk of the analysis is higher than one
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
-      parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk, or the confidence."))
+      parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk and/or Analytical risk, or the confidence."))
       return(TRUE)
     } else {
       # No error in the evaluation options
@@ -1050,7 +1050,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           ), "p")
         } else if (options[["prior_method"]] == "arm") {
           stageContainer[["paragraph"]] <- createJaspHtml(gettextf(
-            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assessments of inherent risk (<i>%7$s</i>) and control risk (<i>%8$s</i>) from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s",
+            "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assessments of inherent risk (<i>%7$s</i>), control risk (<i>%8$s</i>) and analytical risk (<i>%9$s</i>) from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %10$s, %11$s. %12$s",
             introMessage,
             mleMessage,
             samplingObjectivesMessage,
@@ -1059,6 +1059,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
             distribution,
             options[["ir"]],
             options[["cr"]],
+            options[["car"]],
             finalx,
             samplingObjectivesMessage2,
             separateMisstatementMessage
@@ -1375,7 +1376,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
   tb <- data.frame(
     category = c(gettext("High"), gettext("Medium"), gettext("Low")),
     ir = c(1, 0.63, 0.40),
-    cr = c(1, 0.52, 0.34)
+    cr = c(1, 0.52, 0.34),
+    car = c(1, 0.5, 0.25)
   )
   # Read the risks from the options and the table
   ar <- 1 - options[["conf_level"]]
@@ -1391,13 +1393,20 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "low" = tb[3, 3],
     "custom" = options[["crCustom"]]
   )
+  car <- switch(options[["car"]],
+    "high" = tb[1, 4],
+    "medium" = tb[2, 4],
+    "low" = tb[3, 4],
+    "custom" = options[["crCustom"]]
+  )
   # Formulate decimal values as percentages
   tb$ir <- paste0(round(tb$ir * 100, 4), "%")
   tb$cr <- paste0(round(tb$cr * 100, 4), "%")
-  # Audit risk 		= Inherent risk x Control risk x Detection risk
-  # Detection risk 	= Audit risk / (Inherent risk x Control risk)
-  dr <- ar / (ir * cr)
-  return(list(ar = ar, ir = ir, cr = cr, dr = dr, tb = tb))
+  tb$car <- paste0(round(tb$car * 100, 4), "%")
+  # Audit risk 		= Inherent risk x Control risk x Analytical risk x Detection risk
+  # Detection risk 	= Audit risk / (Inherent risk x Control risk x Analytical risk)
+  dr <- ar / (ir * cr * car)
+  return(list(ar = ar, ir = ir, cr = cr, car = car, dr = dr, tb = tb))
 }
 
 .jfaAddAuditRiskModel <- function(options, jaspResults, position) {
@@ -1416,6 +1425,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "irCustom",
     "cr",
     "crCustom",
+    "car",
+    "carCustom",
     "materiality_test",
     "materiality_rel_val",
     "materiality_abs_val",
@@ -1430,9 +1441,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
   # Create and set the first paragraph of explanatory text
   if (options[["explanatoryText"]]) {
     message <- gettextf(
-      "The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk and control risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be %1$s. The internal control risk was determined to be %2$s. According to the Audit Risk Model, the required detection risk to maintain an audit risk of %3$s should be %4$s.",
+      "The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk, control risk and analytical risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be %1$s, the internal control risk was determined to be %2$s and the analytical risk was determined to be %3$s. According to the Audit Risk Model, the required detection risk to maintain an audit risk of %4$s should be %5$s.",
       paste0(options[["ir"]], " (", round(risks[["ir"]] * 100, 2), "%)"),
       paste0(options[["cr"]], " (", round(risks[["cr"]] * 100, 2), "%)"),
+	  paste0(options[["car"]], " (", round(risks[["car"]] * 100, 2), "%)"),
       paste0(round(risks[["ar"]] * 100, 2), "%"),
       paste0(round(risks[["dr"]] * 100, 2), "%")
     )
@@ -1441,17 +1453,18 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   # Create and set the formula
   textARM <- gettextf(
-    "Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x Detection risk (%4$s%%)",
+    "Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x Analytical Risk (%4$s%%) x Detection risk (%5$s%%)",
     round(risks[["ar"]] * 100, 2),
     paste0(options[["ir"]], " = ", round(risks[["ir"]] * 100, 2)),
     paste0(options[["cr"]], " = ", round(risks[["cr"]] * 100, 2)),
+	paste0(options[["car"]], " = ", round(risks[["car"]] * 100, 2)),
     round(risks[["dr"]] * 100, 2)
   )
   container[["formula"]] <- createJaspHtml(textARM, "h5", "21cm")
   container[["formula"]]$position <- 2
   # Create and set the second paragraph of explanatory text
   if (options[["explanatoryText"]]) {
-    if (options[["ir"]] == "custom" || options[["cr"]] == "custom") {
+    if (options[["ir"]] == "custom" || options[["cr"]] == "custom" || options[["car"]] == "custom") {
       message2 <- gettext("At least one translation of the categories High, Medium and Low to probabilities is done according custom settings.")
     } else {
       message2 <- gettext("The translation of the categories High, Medium and Low to probabilities is done using the default settings shown in the table below. To learn more about these default settings and how to adjust them, see the help file of this analysis or look under the <i>Audit Risk Model</i> section.")
@@ -1460,12 +1473,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
     container[["paragraph2"]]$position <- 3
   }
   # Create and set the table with the default settings
-  if (!(options[["ir"]] == "custom" && options[["cr"]] == "custom")) {
+  if (!(options[["ir"]] == "custom" && options[["cr"]] == "custom" || options[["car"]] == "custom")) {
     .jfaTableNumberUpdate(jaspResults)
     tb <- createJaspTable(gettextf("<b>Table %1$i.</b> Default Settings Audit Risk Model", jaspResults[["tabNumber"]]$object))
     tb$addColumnInfo(name = "category", title = "", type = "string")
     tb$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = "string")
     tb$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "string")
+	tb$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = "string")
     tb$position <- 4
     tb$setData(risks$tb)
     container[["table"]] <- tb
@@ -1492,7 +1506,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (options[["prior_method"]] == "arm") {
       risks <- .jfaAuditRiskModelCalculation(options)
       if (risks[["dr"]] >= 1) {
-        parentContainer$setError(gettext("The detection risk is equal to or higher than 100%%. Please re-specify the percentages for the Inherent risk and/or Control risk."))
+        parentContainer$setError(gettext("The detection risk is equal to or higher than 100%%. Please re-specify the percentages for the Inherent risk and/or Control risk and/or Analytical risk."))
         return()
       }
       confidence <- 1 - risks[["dr"]]
@@ -1511,7 +1525,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         method = options[["prior_method"]], conf.level = options[["conf_level"]],
         materiality = materiality, expected = parentOptions[["expected_val"]],
         likelihood = options[["likelihood"]], N.units = N.units, ir = risks[["ir"]],
-        cr = risks[["cr"]], n = options[["n_prior"]], x = options[["x_prior"]],
+        cr = (risks[["cr"]] * risks[["car"]]), n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
       )
 
@@ -1590,6 +1604,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (options[["materiality_test"]] && options[["prior_method"]] == "arm") {
     table$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = columnType)
     table$addColumnInfo(name = "cr", title = gettext("Control risk"), type = columnType)
+	table$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = columnType)
     table$addColumnInfo(name = "dr", title = gettext("Detection risk"), type = columnType)
   } else {
     table$addColumnInfo(name = "ar", title = gettext("Audit risk"), type = columnType)
@@ -1636,6 +1651,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       row <- cbind(row,
         ir = if (options[["display"]] == "percent") paste0(round(risks[["ir"]] * 100, 2), "%") else risks[["ir"]],
         cr = if (options[["display"]] == "percent") paste0(round(risks[["cr"]] * 100, 2), "%") else risks[["cr"]],
+        car = if (options[["display"]] == "percent") paste0(round(risks[["car"]] * 100, 2), "%") else risks[["car"]],
         dr = if (options[["display"]] == "percent") paste0(round(risks[["dr"]] * 100, 2), "%") else risks[["dr"]]
       )
     } else {
@@ -1700,6 +1716,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     row <- cbind(row,
       ir = if (options[["display"]] == "percent") paste0(round(risks[["ir"]] * 100, 2), "%") else risks[["ir"]],
       cr = if (options[["display"]] == "percent") paste0(round(risks[["cr"]] * 100, 2), "%") else risks[["cr"]],
+      car = if (options[["display"]] == "percent") paste0(round(risks[["car"]] * 100, 2), "%") else risks[["car"]],
       dr = if (options[["display"]] == "percent") paste0(round(risks[["dr"]] * 100, 2), "%") else risks[["dr"]]
     )
   } else {
@@ -1838,7 +1855,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
             prior <- jfa::auditPrior(
               conf.level = options[["conf_level"]], materiality = parentState[["materiality"]],
               expected = parentOptions[["expected_val"]], likelihood = likelihoods[i],
-              N.units = N, ir = risks[["ir"]], cr = risks[["cr"]], method = options[["prior_method"]],
+              N.units = N, ir = risks[["ir"]], cr = (risks[["cr"]] * risks[["car"]]), method = options[["prior_method"]],
               n = options[["n_prior"]], x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
             )
           } else {
@@ -1911,7 +1928,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           # Create a prior distribution that incorporates the existing information
           prior <- jfa::auditPrior(
             conf.level = options[["conf_level"]], materiality = materiality, expected = parentOptions[["expected_val"]],
-            likelihood = options[["likelihood"]], N.units = N, ir = risks[["ir"]], cr = risks[["cr"]], method = options[["prior_method"]],
+            likelihood = options[["likelihood"]], N.units = N, ir = risks[["ir"]], cr = (risks[["cr"]] * risks[["car"]]), method = options[["prior_method"]],
             n = options[["n_prior"]], x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
           )
         } else {
@@ -2423,7 +2440,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       conf_level <- options[["conf_level"]]
       prior <- jfa::auditPrior(
         conf.level = options[["conf_level"]], materiality = materiality, expected = prevOptions[["expected_val"]],
-        likelihood = options[["likelihood"]], N.units = prevOptions[["N.units"]], ir = risks[["ir"]], cr = risks[["cr"]],
+        likelihood = options[["likelihood"]], N.units = prevOptions[["N.units"]], ir = risks[["ir"]], cr = (risks[["cr"]] * risks[["car"]]),
         method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
       )
@@ -2568,7 +2585,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       prior <- jfa::auditPrior(
         conf.level = options[["conf_level"]], materiality = materiality, expected = evaluationOptions[["expected_val"]],
         likelihood = options[["method"]], N.units = sum(N_units), ir = risks[["ir"]],
-        cr = risks[["cr"]], method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
+        cr = (risks[["cr"]] * risks[["car"]]), method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
       )
 
@@ -2622,7 +2639,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       prior <- jfa::auditPrior(
         method = options[["prior_method"]], conf.level = conf_level, materiality = materiality,
         expected = planningOptions[["expected_val"]], likelihood = options[["method"]],
-        N.units = N_units, ir = risks[["ir"]], cr = risks[["cr"]], n = options[["n_prior"]],
+        N.units = N_units, ir = risks[["ir"]], cr = (risks[["cr"]] * risks[["car"]]), n = options[["n_prior"]],
         x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
       )
     }
@@ -2691,7 +2708,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$dependOn(options = c(
     "tableBookDist", "tableDescriptives", "tableSample",
     "samplingChecked", "evaluationChecked", "display",
-    "values.audit", "ir", "irCustom", "cr", "crCustom"
+    "values.audit", "ir", "irCustom", "cr", "crCustom", "car", "carCustom"
   ))
 
   columnType <- if (options[["display"]] == "percent") "string" else "number"

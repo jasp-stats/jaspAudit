@@ -83,4 +83,29 @@ Group
 		enabled: 				cr.value == "custom"
 		info:					qsTr("The percentage that corresponds with the control risk probability.")
 	}
+
+	DropDown
+	{
+		id: 					car
+		name: 					"car"
+		indexDefaultValue:		0
+		startValue:				"high"
+		label: 					qsTr("Analytical risk")
+		values: [
+			{ label: qsTr("High"),		value: "high"},
+			{ label: qsTr("Medium"), 	value: "medium"},
+			{ label: qsTr("Low"), 		value: "low"},
+			{ label: qsTr("Custom"), 	value: "custom"}
+		]
+		info:					qsTr("A category or probability for the analytical risk. Analytical risk is defined as the the risk that a material misstatement will not be discovered by the auditor through analytical procedures.")
+	}
+
+	PercentField
+	{
+		name: 					"carCustom"
+		defaultValue:			car.value == "high" ? 100 : (car.value == 'medium' ? 50 : (car.value == "low" ? 25 : 100))
+		min: 					1
+		enabled: 				car.value == "custom"
+		info:					qsTr("The percentage that corresponds with the analytical risk probability.")
+	}
 }
