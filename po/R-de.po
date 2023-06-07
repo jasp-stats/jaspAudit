@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-04-25 08:10\n"
-"PO-Revision-Date: 2023-04-30 11:47+0000\n"
+"PO-Revision-Date: 2023-06-04 09:49+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -1343,23 +1343,20 @@ msgstr ""
 "Mindestens eine der Übersetzungen von Hoch, Mittel und Niedrig in "
 "Wahrscheinlichkeiten erfolgte nach Benutzereinstellungen."
 
-#, fuzzy
 msgid ""
 "The translation of the categories High, Medium and Low to probabilities is "
 "done using the default settings shown in the table below. To learn more "
 "about these default settings and how to adjust them, see the help file of "
 "this analysis or look under the <i>Audit Risk Model</i> section."
 msgstr ""
-"%1$s\n"
-"\n"
-"Die Übersetzung von Hoch, Mittel und Niedrig in Wahrscheinlichkeiten erfolgt "
-"mit Standardwerten. Um mehr über die Wahl dieser Werte und deren Anpassung "
-"zu erfahren, lesen Sie die Hilfedatei dieser Analyse oder schauen Sie im "
-"Abschnitt <i>Risikobewertungen</i>."
+"Die Übersetzung der Kategorien Hoch, Mittel und Niedrig in "
+"Wahrscheinlichkeiten erfolgt anhand der Standardeinstellungen in der "
+"untenstehenden Tabelle. Weitere Informationen über diese "
+"Standardeinstellungen und deren Anpassung finden Sie in der Hilfedatei "
+"dieser Analyse oder unter <i>Audit-Riskomodell</i>."
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Default Settings Audit Risk Model"
-msgstr "<b>Tabelle %1$i.</b> Deskriptive Statistiken der Stichprobe"
+msgstr "<b>Tabelle %1$i.</b> Standardeinstellungen Audit-Risiko-Modell"
 
 msgid "Inherent risk"
 msgstr "Inhärentes Risiko"
@@ -1367,14 +1364,12 @@ msgstr "Inhärentes Risiko"
 msgid "Control risk"
 msgstr "Kontrollrisiko"
 
-#, fuzzy
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify the "
 "percentages for the Inherent risk and/or Control risk."
 msgstr ""
-"Das Detektionsrisiko ist gleich oder höher als 100%%. Bitte korrigieren Sie "
-"Ihre benutzerdefinierten Werte für das inhärente Risiko und/oder das "
-"Kontrollrisiko."
+"Das Detektionsrisiko ist gleich oder höher als 100%%. Bitte geben Sie die "
+"Prozentsätze für das inhärente Risiko und/oder das Kontrollrisiko neu an."
 
 msgid ""
 "You cannot achieve your current sampling objectives with this population. "
@@ -1403,9 +1398,8 @@ msgstr "Detektionsrisiko"
 msgid "Audit risk"
 msgstr "Audit-Risiko"
 
-#, fuzzy
 msgid "Tolerable misstatements"
-msgstr "Falscheangabe der Grundgesamtheit %1$s"
+msgstr "Tolerierbare Falschangaben"
 
 msgid "Minimum sample size"
 msgstr "Minimaler Stichprobenumfang"
@@ -1503,25 +1497,22 @@ msgid "Minimum Sample Sizes"
 msgstr "Minimale Stichprobenumfänge"
 
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
-#, fuzzy
 msgid "Gamma"
 msgstr "Gamma"
 
-#, fuzzy
 msgid "Beta-binomial"
 msgstr "Beta-Binomial"
 
-#, fuzzy
 msgid "Binomial"
-msgstr "Beta-Binomial"
+msgstr "Binomial"
 
 msgid "Poisson"
-msgstr ""
+msgstr "Poisson"
 
 msgid "Hypergeometric"
-msgstr ""
+msgstr "Hypergeometrisch"
 
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr "Über Wahrscheinlichkeitsverteilungen hinweg (Aktuell: %1$s)"
@@ -1538,14 +1529,12 @@ msgstr "Bei einem Aufruf des jfa-Pakets ist ein Fehler aufgetreten : %1$s"
 msgid "Across Expected Errors (Current: %1$s)"
 msgstr "Über erwartete Fehler hinweg (Aktuell: %1$s)"
 
-#, fuzzy
 msgid ""
 "You cannot achieve your current sampling objectives with up to three full "
 "misstatements this population."
 msgstr ""
-"Mit dieser Grundgesamtheit können Sie Ihre aktuellen Stichprobenziele nicht "
-"erreichen. Die resultierende Stichprobengröße überschreitet das Maximum von "
-"%1$s. Passen Sie die maximale Option entsprechend an."
+"Sie können Ihre derzeitigen Stichprobenziele mit bis zu drei vollständigen "
+"Falschangaben in dieser Grundgesamtheit nicht erreichen."
 
 msgid ""
 "<b>Figure %1$i.</b> The first panel shows a comparison of the minimum sample "
@@ -1565,9 +1554,8 @@ msgstr ""
 "Stichprobenumfänge unter verschiedenen erwarteten Fehlern für die aktuelle "
 "Wahrscheinlichkeitsverteilung."
 
-#, fuzzy
 msgid "Presumed %1$s Distribution"
-msgstr "Angenommene %1$s-Verteilung der Fehler"
+msgstr "Angenommene %1$s-Verteilung"
 
 msgid ""
 "<b>Figure %1$i.</b> The assumed %2$s distribution. The number of expected "
@@ -1607,7 +1595,8 @@ msgstr "%% der Größe der Grundgesamtheit"
 
 #, fuzzy
 msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."
-msgstr "Aus jedem der Intervalle der Breite %1$s wird Einheit %2$s ausgewählt."
+msgstr ""
+"Aus jedem der Intervalle der Breite %1$s ist Einheit %2$s ausgewählt %3$s."
 
 msgid "The sample is drawn with seed %1$s and intervals of size %2$s."
 msgstr ""
@@ -1617,15 +1606,13 @@ msgstr ""
 msgid "The sample is drawn with seed %1$s."
 msgstr "Die Stichprobe ist mit Startwert %1$s gezogen."
 
-#, fuzzy
 msgid "The random numbers are generated with seed %1$s."
-msgstr "Die Stichprobe ist mit Startwert %1$s gezogen."
+msgstr "Die Zufallszahlen werden mit Startwert %1$s erzeugt."
 
-#, fuzzy
 msgid "The sample is not exported until the 'Synchronize' option is checked."
 msgstr ""
-"Die Stichprobe wird erst exportiert, wenn \"Stichprobe in Datei "
-"exportieren\" aktiviert ist."
+"Die Probe wird erst exportiert, wenn die Option 'Synchronisieren' aktiviert "
+"ist."
 
 msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
 msgstr "<b>Tabelle %1$i.</b> Informationen zur Auswahl des Währungsintervalls"
@@ -1655,9 +1642,8 @@ msgstr ""
 "Die oberste Schicht besteht aus allen Posten mit einem Buchwert größer als "
 "%1$s Intervall."
 
-#, fuzzy
 msgid "Total"
-msgstr "Gesamtwert"
+msgstr "Gesamt"
 
 msgid "Top stratum"
 msgstr ""
@@ -1699,11 +1685,9 @@ msgstr ""
 "Die Audit-Ergebnisvariable sollte nur 0en (korrekt) und 1en (inkorrekt) "
 "enthalten."
 
-#, fuzzy
 msgid "combined with the information in the prior distribution"
-msgstr "eine unparteiische Prior-Verteilung"
+msgstr "kombiniert mit den Informationen in der Prior-Verteilung"
 
-#, fuzzy
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "
 "population on the basis of a sample.\n"
@@ -1713,14 +1697,14 @@ msgid ""
 "information from this sample %5$s results in a most likely misstatement in "
 "the population of %6$s and a %7$s upper bound of %8$s."
 msgstr ""
-"Der Zweck der Auswertungsphase besteht darin, mit einer Stichprobe auf die "
+"Zweck der Auswertungsphase ist es, anhand einer Stichprobe auf die "
 "Falschangabe θ in der Grundgesamtheit zu schließen.\n"
 "\n"
 "Die Grundgesamtheit bestand aus %1$s Posten und %2$s Einheiten. Die "
 "Stichprobe bestand aus %3$s Stichprobeneinheiten, von denen insgesamt %4$s "
-"falsch angegeben wurden. Die Informationen aus dieser Stichprobe %5$s führen "
-"zu einem wahrscheinlichsten Fehler in der Grundgesamtheit von %6$s und einer "
-"%7$s Obergrenze von %8$s. %9$s"
+"falsch angegeben wurden. Aus den Informationen aus dieser Stichprobe %5$s "
+"ergibt sich eine höchstwahrscheinliche Falschangabe in der Grundgesamtheit "
+"von %6$s und eine %7$s-Obergrenze von %8$s."
 
 msgid "<b>Table %1$i.</b> Evaluation Summary"
 msgstr "<b>Tabelle %1$i.</b> Evaluations-Zusammenfassung"
@@ -1729,21 +1713,19 @@ msgid "Sample size"
 msgstr "Stichprobenumfang"
 
 msgid "Misstatements"
-msgstr ""
+msgstr "Falschangaben"
 
 msgid "Taint"
 msgstr "Taint"
 
-#, fuzzy
 msgid "Most likely misstatement"
-msgstr "Wahrscheinlichster Fehler"
+msgstr "Wahrscheinlichste Falschangabe"
 
 msgid "%1$s%% Upper bound"
 msgstr "%1$s%% obere Grenze"
 
-#, fuzzy
 msgid "%1$s%% Lower bound"
-msgstr "%1$s%% obere Grenze"
+msgstr "%1$s%% Untere Grenze"
 
 msgid "Precision"
 msgstr "Genauigkeit"
@@ -1811,20 +1793,20 @@ msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Stratum Evaluation Summary"
-msgstr "<b>Tabelle %1$i.</b> Evaluations-Zusammenfassung"
+msgstr "<b>Tabelle %1$i.</b> Zusammenfassung Schichtauswertung"
 
 msgid "Stratum"
-msgstr ""
+msgstr "Schicht"
+
+msgid "%1$s%% Interval"
+msgstr "%1$s%% Intervall"
 
 #, fuzzy
-msgid "%1$s%% Interval"
-msgstr "%1$s%% Glaubwürdigkeitsintervall"
-
 msgid "Information is shared between the strata in the population."
-msgstr ""
+msgstr "Information wird zwischen den Schichten in der Grundgesamtheit geteilt."
 
 msgid "The strata in the population are assumed to be independent."
-msgstr ""
+msgstr "Die Schichten in der Grundgesamtheit werden als unabhängig angenommen."
 
 msgid "<b>Table %1$i.</b> Misstated Items"
 msgstr "<b>Tabelle %1$i.</b> Falsch angegebene Posten"
