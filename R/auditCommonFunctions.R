@@ -1473,7 +1473,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     container[["paragraph2"]]$position <- 3
   }
   # Create and set the table with the default settings
-  if (!(options[["ir"]] == "custom" && options[["cr"]] == "custom" || options[["car"]] == "custom")) {
+  if (!(options[["ir"]] == "custom" && options[["cr"]] == "custom" && options[["car"]] == "custom")) {
     .jfaTableNumberUpdate(jaspResults)
     tb <- createJaspTable(gettextf("<b>Table %1$i.</b> Default Settings Audit Risk Model", jaspResults[["tabNumber"]]$object))
     tb$addColumnInfo(name = "category", title = "", type = "string")
@@ -1481,6 +1481,21 @@ gettextf <- function(fmt, ..., domain = NULL) {
     tb$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "string")
     tb$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = "string")
     tb$position <- 4
+    tb$addFootnote(gettext("= Selected"), colNames = "ir", rowNames = switch(options[["ir"]],
+      "high" = "1",
+      "medium" = "2",
+      "low" = "3"
+    ), symbol = "<b>x</b>")
+    tb$addFootnote(gettext("= Selected"), colNames = "cr", rowNames = switch(options[["cr"]],
+      "high" = "1",
+      "medium" = "2",
+      "low" = "3"
+    ), symbol = "<b>x</b>")
+    tb$addFootnote(gettext("= Selected"), colNames = "car", rowNames = switch(options[["car"]],
+      "high" = "1",
+      "medium" = "2",
+      "low" = "3"
+    ), symbol = "<b>x</b>")
     tb$setData(risks$tb)
     container[["table"]] <- tb
   }
