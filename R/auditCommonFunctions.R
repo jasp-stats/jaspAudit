@@ -972,15 +972,15 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
       if (options[["materiality_test"]]) {
         label_h0 <- switch(options[["area"]],
-            "less" = gettextf("of intolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208A", "\u03B8", "\u2265", stageOptions[["materiality_label"]]),
-            "two.sided" = gettextf("of exact misstatement H%1$s: %2$s = %3$s", "\u2080", "\u03B8", stageOptions[["materiality_label"]]),
-            "greater" = gettextf("of tolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208B", "\u03B8" , "\u2264", stageOptions[["materiality_label"]])
-          )
+          "less" = gettextf("of intolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208A", "\u03B8", "\u2265", stageOptions[["materiality_label"]]),
+          "two.sided" = gettextf("of exact misstatement H%1$s: %2$s = %3$s", "\u2080", "\u03B8", stageOptions[["materiality_label"]]),
+          "greater" = gettextf("of tolerable misstatement H%1$s: %2$s %3$s %4$s", "\u208B", "\u03B8", "\u2264", stageOptions[["materiality_label"]])
+        )
         label_h1 <- switch(options[["area"]],
-            "less" = gettextf("of tolerable misstatement H%1$s: %2$s < %3$s", "\u208B", "\u03B8", stageOptions[["materiality_label"]]),
-            "two.sided" = gettextf("of no misstatement H%1$s: %2$s %3$s %4$s", "\u2080", "\u03B8", "\u2260", stageOptions[["materiality_label"]]),
-            "greater" = gettextf("of intolerable misstatement H%1$s: %2$s > %3$s", "\u208A", "\u03B8", stageOptions[["materiality_label"]])
-          )
+          "less" = gettextf("of tolerable misstatement H%1$s: %2$s < %3$s", "\u208B", "\u03B8", stageOptions[["materiality_label"]]),
+          "two.sided" = gettextf("of no misstatement H%1$s: %2$s %3$s %4$s", "\u2080", "\u03B8", "\u2260", stageOptions[["materiality_label"]]),
+          "greater" = gettextf("of intolerable misstatement H%1$s: %2$s > %3$s", "\u208A", "\u03B8", stageOptions[["materiality_label"]])
+        )
         text <- gettextf(
           "%1$s\n\nThe quantity of interest is the misstatement %2$s in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, two statistical hypotheses about %2$s are formulated:\n
                                   The (null) hypothesis %3$s,
@@ -1444,7 +1444,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk, control risk and analytical risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be %1$s, the internal control risk was determined to be %2$s and the analytical risk was determined to be %3$s. According to the Audit Risk Model, the required detection risk to maintain an audit risk of %4$s should be %5$s.",
       paste0(options[["ir"]], " (", round(risks[["ir"]] * 100, 2), "%)"),
       paste0(options[["cr"]], " (", round(risks[["cr"]] * 100, 2), "%)"),
-	  paste0(options[["car"]], " (", round(risks[["car"]] * 100, 2), "%)"),
+      paste0(options[["car"]], " (", round(risks[["car"]] * 100, 2), "%)"),
       paste0(round(risks[["ar"]] * 100, 2), "%"),
       paste0(round(risks[["dr"]] * 100, 2), "%")
     )
@@ -1457,7 +1457,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     round(risks[["ar"]] * 100, 2),
     paste0(options[["ir"]], " = ", round(risks[["ir"]] * 100, 2)),
     paste0(options[["cr"]], " = ", round(risks[["cr"]] * 100, 2)),
-	paste0(options[["car"]], " = ", round(risks[["car"]] * 100, 2)),
+    paste0(options[["car"]], " = ", round(risks[["car"]] * 100, 2)),
     round(risks[["dr"]] * 100, 2)
   )
   container[["formula"]] <- createJaspHtml(textARM, "h5", "21cm")
@@ -1479,7 +1479,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     tb$addColumnInfo(name = "category", title = "", type = "string")
     tb$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = "string")
     tb$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "string")
-	tb$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = "string")
+    tb$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = "string")
     tb$position <- 4
     tb$setData(risks$tb)
     container[["table"]] <- tb
@@ -1604,7 +1604,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (options[["materiality_test"]] && options[["prior_method"]] == "arm") {
     table$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = columnType)
     table$addColumnInfo(name = "cr", title = gettext("Control risk"), type = columnType)
-	table$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = columnType)
+    table$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = columnType)
     table$addColumnInfo(name = "dr", title = gettext("Detection risk"), type = columnType)
   } else {
     table$addColumnInfo(name = "ar", title = gettext("Audit risk"), type = columnType)
@@ -1977,7 +1977,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           figure$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
         } else if (jaspBase:::.extractErrorMessage(rightPlotError) == "'expected' / 'N.units' must be < 'materiality'") {
           figure$setError(gettext("You cannot achieve your current sampling objectives with up to three full misstatements this population."))
-		} else {
+        } else {
           figure$setError(gettextf("An error occurred in a call to the jfa package: %1$s", jaspBase:::.extractErrorMessage(rightPlotError)))
         }
       }

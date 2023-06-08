@@ -320,10 +320,10 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
   if (is.null(benfordsLawContainer[["matchTable"]])) {
     label_digit <- switch(options[["digits"]],
-        "first" = gettext("Leading Digit"),
-        "firsttwo" = gettext("Leading Digits"),
-        "last" = gettext("Last Digit")
-      )
+      "first" = gettext("Leading Digit"),
+      "firsttwo" = gettext("Leading Digits"),
+      "last" = gettext("Last Digit")
+    )
     title <- gettextf(
       "<b>Table %i.</b> Rows Matched to %2$s %3$s",
       jaspResults[["tabNumber"]]$object,

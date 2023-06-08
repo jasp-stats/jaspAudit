@@ -126,7 +126,7 @@ test_that("<b>Table 2.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(0.52, 0.0961538461538462, 1, 0.050115, 47, "Value", 0)
+    list(1, 0.52, 0.0961538461538462, 1, 0.050115, 47, "Value", 0)
   )
 })
 

@@ -45,11 +45,11 @@ test_that("Presumed Binomial Distribution plot matches", {
   jaspTools::expect_equal_plots(testPlot, "presumed-binomial-distribution")
 })
 
-test_that("<b>Table 1.</b> Planning Summary results match", {
+test_that("<b>Table 2.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(1, 0.05, 1, 0.05, 59, "Value", 0)
+    list(1, 1, 0.05, 1, 0.05, 59, "Value", 0)
   )
 })
 
@@ -92,7 +92,7 @@ test_that("<b>Table 2.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(0.52, 0.0961538461538462, 1, 0.0584675, 41, "Value", 0)
+    list(1, 0.52, 0.0961538461538462, 1, 0.0584675, 41, "Value", 0)
   )
 })
 
@@ -136,7 +136,7 @@ test_that("<b>Table 2.</b> Planning Summary results match", {
   jaspTools::expect_equal_tables(
     table,
     list(
-      0.52, 0.0961538461538462, 1, 0.0584666666666667, 39, "Value",
+      1, 0.52, 0.0961538461538462, 1, 0.0584666666666667, 39, "Value",
       0
     )
   )
