@@ -28,19 +28,23 @@ Group
 	property bool	enable:		true
 	property bool	hide:		false
 
-	columns:					2
+	columns:					3
 	title:						show_title ? qsTr("Audit Risk Model") : ""
 	enabled:					enable
 	visible:					!hide
 	info:						qsTr("When the auditor has information that indicates a low-risk profile on the population, they can use this information to reduce their required sample size via the Audit Risk Model (ARM) provided that there are no errors in the population. According to the ARM, the audit risk (AR) is a function of the inherent risk (IR), the internal control risk (CR), and the detection risk (DR).\n\n*AR = IR x CR x DR*\n\nThe auditor assesses inherent risk and internal control risk generally on a 3-point scale to determine the appropriate detection risk. Using the ARM and zero errors the sample size depends on the risk factor *R* and the performance materiality. The risk factor *R* is a function of the detection risk (Stewart 2012).\n\n*R = -ln(DR)*\n\nThe following table presents values of *R* as a function of the detection risk, provided that there are zero errors (Touw and Hoogduin 2012).\n\n| Detection risk (%) | 1 | 4 | 5 | 10 | 14 |\n| :---: | :---: | :---: | :---: | :---: | :---: |\n| R | 4.6 | 3.2 | 3 | 2.3 | 2 |\n\nThe risk factor *R* can be adjusted using the assessments of the inherent risk and the internal control risk. By default, the standard method of setting the probabilities of IR and CR is by following the table below for a detection risk of 5%:\n\n|  | High | Medium | Low | \n| :---: | :---: | :---: |\n| R | 3 | 2 | 1 |\n\nThese values of *R* are used to set default percentages for IR and CR. The Audit module handles the following default values for IR and CR:\n- High: 100%\n- Medium: 60%\n- Low: 36%\n\nYou can manually adjust the value of IR and CR by selecting the Custom option under the corresponding risk assessment, thus adjusting the risk factor *R*.")
 
+	Label 
+	{
+		text: 					qsTr("Inherent risk")
+	}
+
 	DropDown
 	{
 		id: 					ir
 		name: 					"ir"
-		indexDefaultValue: 	 	0
+		indexDefaultValue: 		0
 		startValue:				"high"
-		label: 					qsTr("Inherent risk")
 		values: [
 			{ label: qsTr("High"),		value: "high"},
 			{ label: qsTr("Medium"), 	value: "medium"},
@@ -59,13 +63,17 @@ Group
 		info:					qsTr("The percentage that corresponds with the inherent risk probability.")
 	}
 
+	Label 
+	{
+		text: 					qsTr("Control risk")
+	}
+
 	DropDown
 	{
 		id: 					cr
 		name: 					"cr"
 		indexDefaultValue:		0
 		startValue:				"high"
-		label: 					qsTr("Control risk")
 		values: [
 			{ label: qsTr("High"),		value: "high"},
 			{ label: qsTr("Medium"), 	value: "medium"},
@@ -84,13 +92,17 @@ Group
 		info:					qsTr("The percentage that corresponds with the control risk probability.")
 	}
 
+	Label 
+	{
+		text: 					qsTr("Analytical risk")
+	}
+
 	DropDown
 	{
 		id: 					car
 		name: 					"car"
 		indexDefaultValue:		0
 		startValue:				"high"
-		label: 					qsTr("Analytical risk")
 		values: [
 			{ label: qsTr("High"),		value: "high"},
 			{ label: qsTr("Medium"), 	value: "medium"},
