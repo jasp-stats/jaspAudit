@@ -982,10 +982,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
           "greater" = gettextf("of intolerable misstatement H%1$s: %2$s > %3$s", "\u208A", "\u03B8", stageOptions[["materiality_label"]])
         )
         text <- gettextf(
-          "%1$s\n\nThe quantity of interest is the misstatement %2$s in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, two statistical hypotheses about %2$s are formulated:\n
-                                  - The (null) hypothesis %3$s,
-                                  - The (alternative) hypothesis %4$s.\n
-                                  The audit risk %5$s is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (i.e., %5$s < %6$s%%).",
+          "%1$s\n\nThe quantity of interest is the misstatement %2$s in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, two statistical hypotheses about %2$s are formulated:\n\n- The (null) hypothesis %3$s,\n- The (alternative) hypothesis %4$s.\n\nThe audit risk %5$s is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (i.e., %5$s < %6$s%%).",
           text,
           "\u03B8",
           label_h0,
@@ -997,7 +994,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
       if (options[["bayesian"]]) {
         text <- gettextf(
-          "%1$s\n\nIn a Bayesian analysis, the parameter %2$s is first assigned a prior probability distribution that incorporates the available audit information about the misstatement in the population.",
+          "%1$s\n\nIn a Bayesian analysis, the parameter %2$s is assigned a prior probability distribution that incorporates the available audit information about the misstatement in the population.",
           text, "\u03B8"
         )
       }
