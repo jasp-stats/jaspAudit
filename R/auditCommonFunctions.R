@@ -983,8 +983,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
         )
         text <- gettextf(
           "%1$s\n\nThe quantity of interest is the misstatement %2$s in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, two statistical hypotheses about %2$s are formulated:\n
-                                  The (null) hypothesis %3$s,
-                                  The (alternative) hypothesis %4$s.\n
+                                  - The (null) hypothesis %3$s,
+                                  - The (alternative) hypothesis %4$s.\n
                                   The audit risk %5$s is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (i.e., %5$s < %6$s%%).",
           text,
           "\u03B8",
@@ -997,7 +997,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
       if (options[["bayesian"]]) {
         text <- gettextf(
-          "%1$s\n\nIn a Bayesian analysis, the parameter %2$s is first assigned a prior probability distribution that incorporates the available audit information about the misstatement in the population. A description and figure of the current prior distribution can be found under the <i>Report</i> section. You can incorporate existing information using the options under the <i>Prior</i> section.",
+          "%1$s\n\nIn a Bayesian analysis, the parameter %2$s is first assigned a prior probability distribution that incorporates the available audit information about the misstatement in the population.",
           text, "\u03B8"
         )
       }
@@ -1467,7 +1467,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (options[["ir"]] == "custom" || options[["cr"]] == "custom" || options[["car"]] == "custom") {
       message2 <- gettext("At least one translation of the categories High, Medium and Low to probabilities is done according custom settings.")
     } else {
-      message2 <- gettext("The translation of the categories High, Medium and Low to probabilities is done using the default settings shown in the table below. To learn more about these default settings and how to adjust them, see the help file of this analysis or look under the <i>Audit Risk Model</i> section.")
+      message2 <- gettext("The translation of the categories high, medium and low to probabilities is done using the default settings shown in the table below.")
     }
     container[["paragraph2"]] <- createJaspHtml(message2, "p")
     container[["paragraph2"]]$position <- 3
