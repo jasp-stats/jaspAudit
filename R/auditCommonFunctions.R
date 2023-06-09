@@ -1438,7 +1438,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   # Create and set the first paragraph of explanatory text
   if (options[["explanatoryText"]]) {
     message <- gettextf(
-      "The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk, control risk and analytical risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be %1$s, the internal control risk was determined to be %2$s and the analytical risk was determined to be %3$s. According to the Audit Risk Model, the required detection risk to maintain an audit risk of %4$s should be %5$s.",
+      "The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk, control risk and analytical risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be %1$s, the control risk was determined to be %2$s and the analytical risk was determined to be %3$s. According to the Audit Risk Model, the required detection risk to maintain an audit risk of %4$s should be %5$s.",
       paste0(options[["ir"]], " (", round(risks[["ir"]] * 100, 2), "%)"),
       paste0(options[["cr"]], " (", round(risks[["cr"]] * 100, 2), "%)"),
       paste0(options[["car"]], " (", round(risks[["car"]] * 100, 2), "%)"),
