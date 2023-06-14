@@ -12,6 +12,10 @@
 
 In order to familiarize oneself with the Audit module, it is recommended to obtain and read the manual via this [download link](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf), or to view it online through this [link](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf). A reference for the Audit module can be obtained from the accompanying academic article published in the *Journal of Open-Source Software*, which can be accessed through the following permanent link [https://doi.org/10.21105/joss.02733](https://doi.org/10.21105/joss.02733).
 
+## Blog posts
+
+- 05/07/2019 - [JASP for Audit: Bayesian Tools for the Auditing Practice](https://jasp-stats.org/2019/07/25/jasp-for-audit-bayesian-tools-for-the-auditing-practice/)
+
 ## R Package
 
 The Audit Module is a graphical user interface that has been constructed to integrate with the **jfa** R package available on [CRAN](https://cran.r-project.org/package=jfa), which offers a comprehensive set of statistical methods for auditing. To obtain a deeper understanding of the underlying statistical principles and implementation details of the **jfa** package, interested parties are encouraged to consult the [package website](https://koenderks.github.io/jfa/).
