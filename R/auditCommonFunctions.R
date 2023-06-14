@@ -1481,18 +1481,21 @@ gettextf <- function(fmt, ..., domain = NULL) {
     tb$addFootnote(gettext("= Selected"), colNames = "ir", rowNames = switch(options[["ir"]],
       "high" = "1",
       "medium" = "2",
-      "low" = "3"
-    ), symbol = "<b>x</b>")
+      "low" = "3",
+      "custom" = NA
+    ), symbol = "<b>\u2713</b>")
     tb$addFootnote(gettext("= Selected"), colNames = "cr", rowNames = switch(options[["cr"]],
       "high" = "1",
       "medium" = "2",
-      "low" = "3"
-    ), symbol = "<b>x</b>")
+      "low" = "3",
+      "custom" = NA
+    ), symbol = "<b>\u2713</b>")
     tb$addFootnote(gettext("= Selected"), colNames = "car", rowNames = switch(options[["car"]],
       "high" = "1",
       "medium" = "2",
-      "low" = "3"
-    ), symbol = "<b>x</b>")
+      "low" = "3",
+      "custom" = NA
+    ), symbol = "<b>\u2713</b>")
     tb$setData(risks$tb)
     container[["table"]] <- tb
   }
