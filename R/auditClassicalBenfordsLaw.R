@@ -170,7 +170,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       chiSquare = as.numeric(test$statistic),
       df = as.numeric(test$parameter),
       pvalue = as.numeric(test$p.value),
-      logBF10 = as.numeric(log(btest$bf))
+      logBF10 = as.numeric(log(btest$bf)),
+      estimates = test$estimates
     )
 
     benfordsLawContainer[["result"]] <- createJaspState(result)
@@ -278,9 +279,12 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "benford" = gettext("Benford's law"),
       "uniform" = gettext("Uniform distribution")
     )
+    otitle <- gettextf("%1$s%% Confidence Interval", paste0(round(options[["confidence"]] * 100, 3)))
     tb$addColumnInfo(name = "digit", title = dtitle, type = "integer")
     tb$addColumnInfo(name = "count", title = gettext("Count"), type = "integer")
     tb$addColumnInfo(name = "obs", title = gettext("Relative frequency"), type = "number")
+    tb$addColumnInfo(name = "lb", title = gettext("Lower"), type = "number", overtitle = otitle)
+    tb$addColumnInfo(name = "ub", title = gettext("Upper"), type = "number", overtitle = otitle)
     tb$addColumnInfo(name = "exp", title = etitle, type = "number")
 
     benfordsLawContainer[["benfordsLawTable"]] <- tb
@@ -306,7 +310,10 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     tb[["digit"]] <- state[["digits"]]
     tb[["count"]] <- state[["observed"]]
     tb[["obs"]] <- state[["relFrequencies"]]
+    tb[["lb"]] <- state[["estimates"]]$lb
+    tb[["ub"]] <- state[["estimates"]]$ub
     tb[["exp"]] <- state[["inBenford"]]
+    tb$addFootnote(gettext("Confidence intervals are based on independent binomial distributions."))
   }
 }
 
