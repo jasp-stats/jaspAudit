@@ -125,17 +125,17 @@
 <text x='658.46' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='9.46px' lengthAdjust='spacingAndGlyphs'>9</text>
 <text x='399.37' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='96.41px' lengthAdjust='spacingAndGlyphs'>Leading digit</text>
 <text transform='translate(16.68,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='140.82px' lengthAdjust='spacingAndGlyphs'>Relative frequency</text>
-<rect x='145.29' y='20.71' width='508.16' height='39.31' style='stroke-width: 0.75; stroke: none;' />
-<rect x='145.29' y='20.71' width='508.16' height='39.31' style='stroke-width: 10.67; stroke: none;' />
-<rect x='159.24' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<circle cx='173.41' cy='40.36' r='7.82' style='stroke-width: 0.71; fill: #1E90FF;' />
-<rect x='323.08' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='327.48' y='30.59' width='19.54' height='19.54' style='stroke-width: 0.71; fill: #A9A9A9;' />
-<rect x='484.09' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='488.50' y='30.59' width='19.54' height='19.54' style='stroke-width: 0.71; fill: #B22222;' />
-<text x='191.07' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='73.73px' lengthAdjust='spacingAndGlyphs'>Observed</text>
-<text x='354.91' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.90px' lengthAdjust='spacingAndGlyphs'>Expected</text>
-<text x='515.93' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='82.23px' lengthAdjust='spacingAndGlyphs'>Suspicious</text>
+<rect x='150.97' y='20.71' width='496.81' height='39.31' style='stroke-width: 0.75; stroke: none;' />
+<rect x='150.97' y='20.71' width='496.81' height='39.31' style='stroke-width: 10.67; stroke: none;' />
+<rect x='164.91' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<circle cx='179.09' cy='40.36' r='7.82' style='stroke-width: 0.71; fill: #1E90FF;' />
+<rect x='328.75' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<rect x='333.16' y='30.59' width='19.54' height='19.54' style='stroke-width: 0.71; fill: #A9A9A9;' />
+<rect x='489.77' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<rect x='494.17' y='30.59' width='19.54' height='19.54' style='stroke-width: 0.71; fill: #B22222;' />
+<text x='196.75' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='73.73px' lengthAdjust='spacingAndGlyphs'>Observed</text>
+<text x='360.59' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.90px' lengthAdjust='spacingAndGlyphs'>Expected</text>
+<text x='521.60' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.88px' lengthAdjust='spacingAndGlyphs'>Deviation</text>
 <text x='399.37' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='321.33px' lengthAdjust='spacingAndGlyphs'>observed-vs-expected-relative-frequencies</text>
 </g>
 </svg>
