@@ -153,9 +153,17 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   if (!is.null(benfordsLawContainer[["result"]])) {
     return(benfordsLawContainer[["result"]]$object)
   } else if (ready) {
-    test <- jfa::digit_test(dataset[[options[["values"]]]], check = options[["digits"]], reference = options[["distribution"]])
-    btest <- jfa::digit_test(dataset[[options[["values"]]]],
-      check = options[["digits"]], reference = options[["distribution"]],
+    test <- jfa::digit_test(
+      dataset[[options[["values"]]]],
+      check = options[["digits"]],
+      reference = options[["distribution"]],
+      conf.level = options[["confidence"]]
+    )
+    btest <- jfa::digit_test(
+      dataset[[options[["values"]]]],
+      check = options[["digits"]],
+      reference = options[["distribution"]],
+      conf.level = options[["confidence"]],
       prior = TRUE
     )
     estimates <- test$estimates

@@ -50,6 +50,13 @@ Form
 		}
 	}
 
+	CIField
+	{
+		name: 			"confidence"
+		label: 			qsTr("Confidence")
+		info:			qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
+	}
+
 	RadioButtonGroup
 	{
 		name:						"distribution"
@@ -144,13 +151,6 @@ Form
 				name: 				"explanatoryText"
 				checked: 			true
 				info:				qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
-
-				CIField
-				{
-					name: 			"confidence"
-					label: 			qsTr("Confidence")
-					info:			qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
-				}
 			}
 
 			HelpButton
