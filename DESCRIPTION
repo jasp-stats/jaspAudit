@@ -12,7 +12,7 @@ Encoding: UTF-8
 Imports:
   bstats,
   extraDistr,
-  ggplot2,
+  ggplot2 (>= 3.4.2),
   ggrepel,
   jaspBase,
   jaspGraphs,
