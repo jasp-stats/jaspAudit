@@ -158,7 +158,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       check = options[["digits"]], reference = options[["distribution"]],
       prior = TRUE
     )
-
+    estimates <- test$estimates
+    estimates$bf10 <- btest$estimates$bf10
     result <- list(
       object = test,
       digits = as.numeric(test$digits),
@@ -171,7 +172,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       df = as.numeric(test$parameter),
       pvalue = as.numeric(test$p.value),
       logBF10 = as.numeric(log(btest$bf)),
-      estimates = test$estimates
+      estimates = estimates,
+      mad = as.numeric(test$mad)
     )
 
     benfordsLawContainer[["result"]] <- createJaspState(result)
@@ -210,6 +212,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   tb$dependOn(options = "bayesFactorType")
   tb$addColumnInfo(name = "test", title = "", type = "string")
   tb$addColumnInfo(name = "N", title = "n", type = "integer")
+  tb$addColumnInfo(name = "mad", title = "MAD", type = "number")
   tb$addColumnInfo(name = "value", title = "X\u00B2", type = "string")
   tb$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
   tb$addColumnInfo(name = "pvalue", title = "p", type = "pvalue")
@@ -234,8 +237,6 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   df <- if (options[["digits"]] == "first" || options[["digits"]] == "last") 8 else 89
 
   if (!ready) {
-    row <- data.frame(test = ".", N = ".", value = ".", df = df, pvalue = ".", bf = ".")
-    tb$addRows(row)
     return()
   }
 
@@ -243,6 +244,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
   tb[["test"]] <- options[["values"]]
   tb[["N"]] <- state[["N"]]
+  tb[["mad"]] <- state[["mad"]]
   tb[["value"]] <- round(state[["chiSquare"]], 3)
   tb[["df"]] <- state[["df"]]
   tb[["pvalue"]] <- state[["pvalue"]]
@@ -282,10 +284,17 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     otitle <- gettextf("%1$s%% Confidence Interval", paste0(round(options[["confidence"]] * 100, 3)))
     tb$addColumnInfo(name = "digit", title = dtitle, type = "integer")
     tb$addColumnInfo(name = "count", title = gettext("Count"), type = "integer")
+    tb$addColumnInfo(name = "exp", title = etitle, type = "number")
     tb$addColumnInfo(name = "obs", title = gettext("Relative frequency"), type = "number")
     tb$addColumnInfo(name = "lb", title = gettext("Lower"), type = "number", overtitle = otitle)
     tb$addColumnInfo(name = "ub", title = gettext("Upper"), type = "number", overtitle = otitle)
-    tb$addColumnInfo(name = "exp", title = etitle, type = "number")
+    tb$addColumnInfo(name = "pval", title = "p", type = "pvalue")
+    bftitle <- switch(options[["bayesFactorType"]],
+      "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
+      "BF01" = gettextf("BF%1$s", "\u2080\u2081"),
+      "logBF10" = gettextf("Log(BF%1$s)", "\u2081\u2080")
+    )
+    tb$addColumnInfo(name = "bf", title = bftitle, type = "number")
 
     benfordsLawContainer[["benfordsLawTable"]] <- tb
 
@@ -313,7 +322,13 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     tb[["lb"]] <- state[["estimates"]]$lb
     tb[["ub"]] <- state[["estimates"]]$ub
     tb[["exp"]] <- state[["inBenford"]]
-    tb$addFootnote(gettext("Confidence intervals are based on independent binomial distributions."))
+    tb[["pval"]] <- state[["estimates"]]$p.value
+    tb[["bf"]] <- switch(options[["bayesFactorType"]],
+      "BF10" = state[["estimates"]]$bf10,
+      "BF01" = 1 / state[["estimates"]]$bf10,
+      "logBF10" = log(state[["estimates"]]$bf10)
+    )
+    tb$addFootnote(gettext("Confidence intervals, <i>p</i>-values and Bayes factors are based on independent binomial distributions."))
   }
 }
 
