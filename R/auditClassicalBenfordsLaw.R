@@ -312,6 +312,10 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
         "benford" = log10(1 + 1 / digits),
         "uniform" = 1 / length(digits)
       )
+      tb[["lb"]] <- rep(".", length(digits))
+      tb[["ub"]] <- rep(".", length(digits))
+      tb[["pval"]] <- rep(".", length(digits))
+      tb[["bf"]] <- rep(".", length(digits))
       return()
     }
 
