@@ -2,12 +2,12 @@ Package: jaspAudit
 Type: Package
 Title: JASP for Audit
 Version: 0.17.3
-Date: 2023-06-07
+Date: 2023-06-29
 Author: Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille, and Ruud Wetzels
 Website: https://github.com/jasp-stats/jaspAudit
 Maintainer: Koen Derks <k.derks@nyenrode.nl>
 Description: Statistical methods for auditing.
-License: GPL (>= 2)
+License: GPL (>= 3)
 Encoding: UTF-8
 Imports:
   bstats,

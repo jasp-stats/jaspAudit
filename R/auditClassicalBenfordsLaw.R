@@ -237,12 +237,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   )
   tb$addFootnote(message)
 
-  message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = 1.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089")
-  tb$addFootnote(message, colName = "bf")
-
   benfordsLawContainer[["benfordsLawTestTable"]] <- tb
-
-  df <- if (options[["digits"]] == "first" || options[["digits"]] == "last") 8 else 89
 
   if (!ready) {
     return()
@@ -261,6 +256,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     "BF01" = 1 / exp(state[["logBF10"]]),
     "logBF10" = state[["logBF10"]]
   )
+
+  message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = 1.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089")
+  tb$addFootnote(message, colName = "bf")
 }
 
 .jfaBenfordsLawDescriptivesTable <- function(dataset, options, benfordsLawContainer,
