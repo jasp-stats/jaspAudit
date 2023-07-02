@@ -57,9 +57,9 @@ Group
 	PercentField
 	{
 		name: 					"irCustom"
-		defaultValue: 			ir.value == "high" ? 100 : (ir.value == 'medium' ? 63 : (ir.value == "low" ? 40 : 100))
+		defaultValue: 			ir.value === "high" ? 100 : (ir.value === 'medium' ? 63 : (ir.value === "low" ? 40 : 100))
 		min: 					1
-		enabled: 				ir.value == "custom"
+		enabled: 				ir.value === "custom"
 		info:					qsTr("The percentage that corresponds with the inherent risk probability.")
 	}
 
@@ -86,9 +86,9 @@ Group
 	PercentField
 	{
 		name: 					"crCustom"
-		defaultValue:			cr.value == "high" ? 100 : (cr.value == 'medium' ? 52 : (cr.value == "low" ? 34 : 100))
+		defaultValue:			cr.value === "high" ? 100 : (cr.value === 'medium' ? 52 : (cr.value === "low" ? 34 : 100))
 		min: 					1
-		enabled: 				cr.value == "custom"
+		enabled: 				cr.value === "custom"
 		info:					qsTr("The percentage that corresponds with the control risk probability.")
 	}
 
@@ -115,9 +115,9 @@ Group
 	PercentField
 	{
 		name: 					"carCustom"
-		defaultValue:			car.value == "high" ? 100 : (car.value == 'medium' ? 50 : (car.value == "low" ? 25 : 100))
+		defaultValue:			car.value === "high" ? 100 : (car.value == 'medium' ? 50 : (car.value === "low" ? 25 : 100))
 		min: 					1
-		enabled: 				car.value == "custom"
+		enabled: 				car.value === "custom"
 		info:					qsTr("The percentage that corresponds with the analytical risk probability.")
 	}
 }

@@ -1394,7 +1394,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "high" = tb[1, 4],
     "medium" = tb[2, 4],
     "low" = tb[3, 4],
-    "custom" = options[["crCustom"]]
+    "custom" = options[["carCustom"]]
   )
   # Formulate decimal values as percentages
   tb$ir <- paste0(round(tb$ir * 100, 4), "%")
