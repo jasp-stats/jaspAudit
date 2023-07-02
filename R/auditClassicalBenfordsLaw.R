@@ -220,7 +220,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   tb$dependOn(options = "bayesFactorType")
   tb$addColumnInfo(name = "test", title = "", type = "string")
   tb$addColumnInfo(name = "N", title = "n", type = "integer")
-  tb$addColumnInfo(name = "mad", title = "MAD", type = "number")
+  tb$addColumnInfo(name = "mad", title = gettext("MAD"), type = "number")
   tb$addColumnInfo(name = "value", title = "X\u00B2", type = "string")
   tb$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
   tb$addColumnInfo(name = "pvalue", title = "p", type = "pvalue")
