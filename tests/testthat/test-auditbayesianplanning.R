@@ -11,6 +11,7 @@ options$materiality_test <- TRUE
 options$materiality_rel_val <- 0.05
 options$min_precision_test <- FALSE
 options$ir <- "high"
+options$car <- "high"
 options$plotPriorPredictive <- TRUE
 options$cr <- "high"
 options$n_units <- 1000
@@ -101,6 +102,7 @@ options$likelihood <- "poisson"
 options$prior_method <- "arm"
 options$cr <- "medium"
 options$ir <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$expected_rel_val <- 0
 options$explanatoryText <- TRUE
@@ -124,7 +126,7 @@ test_that("<b>Table 2.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(0.52, 0.0961538461538462, 1, 0.050115, 47, "Value", 0)
+    list(1, 0.52, 0.0961538461538462, 1, 0.050115, 47, "Value", 0)
   )
 })
 
@@ -171,6 +173,7 @@ options$alpha <- 1
 options$beta <- 1
 options$ir <- "high"
 options$cr <- "high"
+options$car <- "high"
 options$plotSampleSizes <- FALSE
 options$plotPriorPredictive <- FALSE
 options$min_precision_test <- FALSE

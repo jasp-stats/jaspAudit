@@ -1,3 +1,9 @@
+# Version 0.17.3
+
+**New features**
+
+- Added analytical risk as a constituent of the audit risk model.
+
 # Version 0.17.2
 
 **New features**

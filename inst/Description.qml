@@ -6,8 +6,8 @@ Description
 	name				: "jaspAudit"
 	title				: qsTr("Audit")
 	description			: qsTr("Statistical methods for auditing")
-	version				: "0.17.2"
-	author				: "Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille & Ruud Wetzels"
+	version				: "0.17.3"
+	author				: "Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille and Ruud Wetzels"
 	maintainer			: "Koen Derks <k.derks@nyenrode.nl>"
 	website				: "www.github.com/koenderks/jfa"
 	license				: "GPL (>= 3)"

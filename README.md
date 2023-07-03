@@ -4,13 +4,17 @@
 [![R_build_status](https://github.com/jasp-stats/jaspAudit/workflows/unit-tests/badge.svg)](https://github.com/jasp-stats/jaspAudit/actions)
 [![jfa](https://img.shields.io/cran/v/jfa?color=yellow&label=jfa&logo=r)](https://cran.r-project.org/package=jfa)
 
-# The Audit Module
+# The Audit Module <img src='https://github.com/jasp-stats/jaspAudit/raw/master/inst/icons/audit-module.svg' width='149' height='173' align='right'/>
 
 **JASP for Audit** (also known as to as the Audit module) is an add-on module for JASP that streamlines the process of statistical auditing. The Audit module offers a wide range of functionalities, including (but not limited to) planning, executing, evaluating, and documenting statistical audit samples. Specifically, it comprises analysis tools for determining sample sizes, selecting items using standard audit sampling methododology, and inferring the population misstatement based on the sample data or the summary statistics of the sample. Furthermore, the Audit module also includes tools for data auditing. The module provides Bayesian equivalents of most analyses, enabling users to incorporate pre-existing audit information into the statistical procedure. In all analyses, the Audit module provides comprehensive explanatory text that assists the auditor in understanding, documenting and communicating the statistical results.
 
 ## Articles
 
 In order to familiarize oneself with the Audit module, it is recommended to obtain and read the manual via this [download link](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf), or to view it online through this [link](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf). A reference for the Audit module can be obtained from the accompanying academic article published in the *Journal of Open-Source Software*, which can be accessed through the following permanent link [https://doi.org/10.21105/joss.02733](https://doi.org/10.21105/joss.02733).
+
+## Blog posts
+
+- 05/07/2019 - [JASP for Audit: Bayesian Tools for the Auditing Practice](https://jasp-stats.org/2019/07/25/jasp-for-audit-bayesian-tools-for-the-auditing-practice/)
 
 ## R Package
 

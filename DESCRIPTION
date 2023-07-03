@@ -1,22 +1,22 @@
 Package: jaspAudit
 Type: Package
 Title: JASP for Audit
-Version: 0.17.2
-Date: 2023-02-08
+Version: 0.17.3
+Date: 2023-06-29
 Author: Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille, and Ruud Wetzels
 Website: https://github.com/jasp-stats/jaspAudit
 Maintainer: Koen Derks <k.derks@nyenrode.nl>
 Description: Statistical methods for auditing.
-License: GPL (>= 2)
+License: GPL (>= 3)
 Encoding: UTF-8
 Imports:
   bstats,
   extraDistr,
-  ggplot2,
+  ggplot2 (>= 3.4.2),
   ggrepel,
   jaspBase,
   jaspGraphs,
-  jfa (>= 0.6.5),
+  jfa (>= 0.6.7),
   utils
 Remotes:
   jasp-stats/jaspBase,

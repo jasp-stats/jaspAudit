@@ -56,6 +56,7 @@ De verwachte fouten zijn de toelaatbare fouten die in de steekproef kunnen worde
   - Risicobeoordelingen: Vertaal informatie uit het audit risicomodel in een prior verdeling.
     - Inherent risico: Een categorie of waarschijnlijkheid voor het inherente risico. Inherent risico wordt gedefinieerd als het risico van een materiele fout in de populatie door een andere factor dan het falen van de interne controle.
     - Intern beheersingsrisico: Een categorie of waarschijnlijkheid voor het interne beheersingsrisico. Intern beheersingsrisico wordt gedefinieerd als het risico op een materiele fout in de populatie als gevolg van het ontbreken of falen van de werking van relevante interne controles van de gecontroleerde.
+    - Cijferanalyserisico: Een categorie of waarschijnlijkheid voor het cijferanalyserisico. Cijferanalysierisico wordt gedefinieerd als het risico dat een materiele fout niet met cijferanalyse wordt ontdekt door de auditor.
 
 #### Rapport
 - Tabellen

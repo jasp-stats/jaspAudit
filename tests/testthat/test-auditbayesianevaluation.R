@@ -27,6 +27,7 @@ options$separateMisstatement <- FALSE
 options$critical_negative <- TRUE
 options$critical_action <- "inspect"
 options$ir <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$min_precision_test <- FALSE
 options$min_precision_rel_val <- 0.02
@@ -118,6 +119,7 @@ options$critical_action <- "inspect"
 options$conf_level <- 0.95
 options$ir <- "high"
 options$cr <- "high"
+options$car <- "high"
 options$n <- 0
 options$x <- 0
 options$stratum <- ""
@@ -197,6 +199,7 @@ options$annotation <- "continuous"
 options$critical_negative <- TRUE
 options$critical_action <- "inspect"
 options$ir <- "high"
+options$car <- "high"
 options$conf_level <- 0.95
 options$min_precision_test <- FALSE
 options$min_precision_rel_val <- 0.02

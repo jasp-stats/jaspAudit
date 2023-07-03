@@ -40,18 +40,19 @@ The expected errors are the tolerable errors that can be found in the sample whi
 #### Audit Risk Model
 - Inherent risk: A category or probability for the inherent risk. Inherent risk is defined as the risk of material misstatement posed by an error or omission in a financial statement due to a factor other than a failure of internal control.
 - Control risk: A category or probability for the internal control risk. Control risk is defined as the risk of a material misstatement in the financial statements arising due to absence or failure in the operation of relevant controls of the auditee.
+- Analytical risk: A category or probability for the analytical risk. Analytical risk is defined as the the risk that a material misstatement will not be discovered by the auditor through analytical procedures.
 
-When the auditor has information that indicates a low-risk profile on the population, they can use this information to reduce their required sample size via the Audit Risk Model (ARM) provided that there are no errors in the population. According to the ARM, the audit risk (AR) is a function of the inherent risk (IR), the internal control risk (CR), and the detection risk (DR).
+When the auditor has information that indicates a low-risk profile on the population, they can use this information to reduce their required sample size via the Audit Risk Model (ARM) provided that there are no errors in the population. According to the ARM, the audit risk (AR) is a function of the inherent risk (IR), the internal control risk (CR), the analytical risk (CAR) and the detection risk (DR).
 
-*AR = IR x CR x DR*
+*AR = IR x CR x CAR x DR*
 
-The auditor assesses inherent risk and internal control risk generally on a 3-point scale consisting of high, medium and low to determine the appropriate detection risk. To use the ARM, these categorical risk assessments must be mapped to probabilities. By default, the Audit module uses the percentages shown in the table below, which are inspired by the <i>Handboek Auditing Rijksoverheid</i>. You can manually adjust the percentages associated with one or both of the risks by selecting the Custom option in the drop-down list under the corresponding risk assessment.
+The auditor assesses inherent risk, internal control risk and analytical risk generally on a 3-point scale consisting of high, medium and low to determine the appropriate detection risk. To use the ARM, these categorical risk assessments must be mapped to probabilities. By default, the Audit module uses the percentages shown in the table below, which are inspired by the <i>Handboek Auditing Rijksoverheid</i>. You can manually adjust the percentages associated with one or all of the risks by selecting the Custom option in the drop-down list under the corresponding risk assessment.
 
-|  | Inherent risk (IR) | Control risk (CR) |
-| ---: | :---: | :---: |
-| High | 100% | 100% |
-| Medium | 63% | 52% |
-| Low | 40% | 34% |
+|  | Inherent risk (IR) | Control risk (CR) | Analytical risk (CAR) |
+| ---: | :---: | :---: | :---: |
+| High | 100% | 100% | 100% |
+| Medium | 63% | 52% | 50% |
+| Low | 40% | 34% | 25% |
 
 #### Display
 - Explanatory Text: When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.

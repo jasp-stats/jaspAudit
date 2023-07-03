@@ -153,12 +153,21 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   if (!is.null(benfordsLawContainer[["result"]])) {
     return(benfordsLawContainer[["result"]]$object)
   } else if (ready) {
-    test <- jfa::digit_test(dataset[[options[["values"]]]], check = options[["digits"]], reference = options[["distribution"]])
-    btest <- jfa::digit_test(dataset[[options[["values"]]]],
-      check = options[["digits"]], reference = options[["distribution"]],
+    test <- jfa::digit_test(
+      dataset[[options[["values"]]]],
+      check = options[["digits"]],
+      reference = options[["distribution"]],
+      conf.level = options[["confidence"]]
+    )
+    btest <- jfa::digit_test(
+      dataset[[options[["values"]]]],
+      check = options[["digits"]],
+      reference = options[["distribution"]],
+      conf.level = options[["confidence"]],
       prior = TRUE
     )
-
+    estimates <- test$estimates
+    estimates$bf10 <- btest$estimates$bf10
     result <- list(
       object = test,
       digits = as.numeric(test$digits),
@@ -170,7 +179,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       chiSquare = as.numeric(test$statistic),
       df = as.numeric(test$parameter),
       pvalue = as.numeric(test$p.value),
-      logBF10 = as.numeric(log(btest$bf))
+      logBF10 = as.numeric(log(btest$bf)),
+      estimates = estimates,
+      mad = as.numeric(test$mad)
     )
 
     benfordsLawContainer[["result"]] <- createJaspState(result)
@@ -209,6 +220,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   tb$dependOn(options = "bayesFactorType")
   tb$addColumnInfo(name = "test", title = "", type = "string")
   tb$addColumnInfo(name = "N", title = "n", type = "integer")
+  tb$addColumnInfo(name = "mad", title = gettext("MAD"), type = "number")
   tb$addColumnInfo(name = "value", title = "X\u00B2", type = "string")
   tb$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
   tb$addColumnInfo(name = "pvalue", title = "p", type = "pvalue")
@@ -225,16 +237,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   )
   tb$addFootnote(message)
 
-  message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = 1.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089")
-  tb$addFootnote(message, colName = "bf")
-
   benfordsLawContainer[["benfordsLawTestTable"]] <- tb
 
-  df <- if (options[["digits"]] == "first" || options[["digits"]] == "last") 8 else 89
-
   if (!ready) {
-    row <- data.frame(test = ".", N = ".", value = ".", df = df, pvalue = ".", bf = ".")
-    tb$addRows(row)
     return()
   }
 
@@ -242,6 +247,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
   tb[["test"]] <- options[["values"]]
   tb[["N"]] <- state[["N"]]
+  tb[["mad"]] <- state[["mad"]]
   tb[["value"]] <- round(state[["chiSquare"]], 3)
   tb[["df"]] <- state[["df"]]
   tb[["pvalue"]] <- state[["pvalue"]]
@@ -250,6 +256,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     "BF01" = 1 / exp(state[["logBF10"]]),
     "logBF10" = state[["logBF10"]]
   )
+
+  message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = 1.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089")
+  tb$addFootnote(message, colName = "bf")
 }
 
 .jfaBenfordsLawDescriptivesTable <- function(dataset, options, benfordsLawContainer,
@@ -278,10 +287,20 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "benford" = gettext("Benford's law"),
       "uniform" = gettext("Uniform distribution")
     )
+    otitle <- gettextf("%1$s%% Confidence Interval", paste0(round(options[["confidence"]] * 100, 3)))
     tb$addColumnInfo(name = "digit", title = dtitle, type = "integer")
     tb$addColumnInfo(name = "count", title = gettext("Count"), type = "integer")
-    tb$addColumnInfo(name = "obs", title = gettext("Relative frequency"), type = "number")
     tb$addColumnInfo(name = "exp", title = etitle, type = "number")
+    tb$addColumnInfo(name = "obs", title = gettext("Relative frequency"), type = "number")
+    tb$addColumnInfo(name = "lb", title = gettext("Lower"), type = "number", overtitle = otitle)
+    tb$addColumnInfo(name = "ub", title = gettext("Upper"), type = "number", overtitle = otitle)
+    tb$addColumnInfo(name = "pval", title = "p", type = "pvalue")
+    bftitle <- switch(options[["bayesFactorType"]],
+      "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
+      "BF01" = gettextf("BF%1$s", "\u2080\u2081"),
+      "logBF10" = gettextf("Log(BF%1$s)", "\u2081\u2080")
+    )
+    tb$addColumnInfo(name = "bf", title = bftitle, type = "number")
 
     benfordsLawContainer[["benfordsLawTable"]] <- tb
 
@@ -299,6 +318,10 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
         "benford" = log10(1 + 1 / digits),
         "uniform" = 1 / length(digits)
       )
+      tb[["lb"]] <- rep(".", length(digits))
+      tb[["ub"]] <- rep(".", length(digits))
+      tb[["pval"]] <- rep(".", length(digits))
+      tb[["bf"]] <- rep(".", length(digits))
       return()
     }
 
@@ -306,7 +329,16 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     tb[["digit"]] <- state[["digits"]]
     tb[["count"]] <- state[["observed"]]
     tb[["obs"]] <- state[["relFrequencies"]]
+    tb[["lb"]] <- state[["estimates"]]$lb
+    tb[["ub"]] <- state[["estimates"]]$ub
     tb[["exp"]] <- state[["inBenford"]]
+    tb[["pval"]] <- state[["estimates"]]$p.value
+    tb[["bf"]] <- switch(options[["bayesFactorType"]],
+      "BF10" = state[["estimates"]]$bf10,
+      "BF01" = 1 / state[["estimates"]]$bf10,
+      "logBF10" = log(state[["estimates"]]$bf10)
+    )
+    tb$addFootnote(gettext("Confidence intervals, <i>p</i>-values and Bayes factors are based on independent binomial distributions."))
   }
 }
 
@@ -320,10 +352,10 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
   if (is.null(benfordsLawContainer[["matchTable"]])) {
     label_digit <- switch(options[["digits"]],
-        "first" = gettext("Leading Digit"),
-        "firsttwo" = gettext("Leading Digits"),
-        "last" = gettext("Last Digit")
-      )
+      "first" = gettext("Leading Digit"),
+      "firsttwo" = gettext("Leading Digits"),
+      "last" = gettext("Last Digit")
+    )
     title <- gettextf(
       "<b>Table %i.</b> Rows Matched to %2$s %3$s",
       jaspResults[["tabNumber"]]$object,
