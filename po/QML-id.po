@@ -2416,3 +2416,18 @@ msgstr ""
 msgctxt "SelectionMethod|"
 msgid "Custom"
 msgstr ""
+
+msgctxt "AuditRiskModel|"
+msgid "Analytical risk"
+msgstr ""
+
+msgctxt "AuditRiskModel|"
+msgid ""
+"A category or probability for the analytical risk. Analytical risk is "
+"defined as the the risk that a material misstatement will not be discovered "
+"by the auditor through analytical procedures."
+msgstr ""
+
+msgctxt "AuditRiskModel|"
+msgid "The percentage that corresponds with the analytical risk probability."
+msgstr ""
