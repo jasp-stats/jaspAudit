@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-07-04 12:36\n"
-"PO-Revision-Date: 2023-07-15 12:10+0000\n"
+"PO-Revision-Date: 2023-07-22 18:10+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -769,15 +769,14 @@ msgstr ""
 "dass Sie die Anzahl der Posten und die Anzahl der Einheiten in der "
 "Grundgesamtheit angeben."
 
-#, fuzzy
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify your "
 "values for the Inherent risk and/or Control risk and/or Analytical risk, or "
 "the confidence."
 msgstr ""
-"Das Detektionsrisiko ist höher als, oder gleich 100%%. Bitte korrigieren Sie "
-"Ihre benutzerdefinierten Werte für das inhärente Risiko und/oder das "
-"Kontrollrisiko, oder die Konfidenz."
+"Das Detektionsrisiko ist gleich oder höher als 100%%. Bitte korrigieren Sie "
+"Ihre Werte für das inhärente Risiko und/oder das Kontrollrisiko und/oder das "
+"Analytische Risiko, oder die Konfidenz."
 
 msgid ""
 "Select one or both sampling objectives to begin planning an audit sample.\n"
@@ -1658,11 +1657,9 @@ msgstr ""
 msgid "Total"
 msgstr "Gesamt"
 
-#, fuzzy
 msgid "Top stratum"
 msgstr "Oberste Schicht"
 
-#, fuzzy
 msgid "Bottom stratum"
 msgstr "Unterste Schicht"
 
@@ -1806,7 +1803,6 @@ msgstr ""
 "Entweder ist die Wesentlichkeit, die Größe oder der Wert der Grundgesamtheit "
 "als Null definiert, oder eine der benötigten Variablen fehlt."
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Stratum Evaluation Summary"
 msgstr "<b>Tabelle %1$i.</b> Zusammenfassung Schichtauswertung"
 
@@ -1960,9 +1956,8 @@ msgstr "Erstellt von JASP for Audit (Version %1$s) am %2$s um %3$s."
 msgid "Prior and Expected Posterior Distribution"
 msgstr "Prior- und erwartete Posterior-Verteilung"
 
-#, fuzzy
 msgid "Prior Distribution"
-msgstr "Uniforme Verteilung"
+msgstr "Prior-Verteilung"
 
 msgid "Prior and Posterior Distribution"
 msgstr "Prior- und Posterior-Verteilung"
