@@ -25,182 +25,179 @@ import "./common"	as Common
 
 Form 
 {
-	columns:							2
-	
+
+	VariablesForm
+	{
+		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
+
+		AvailableVariablesList
+		{
+			name: 						"variablesFormFairness"
+		}
+		AssignedVariablesList
+		{
+			id: 						actual
+			name: 						"target"
+			title: 						qsTr("Target")
+			singleVariable:				true
+			allowedColumns:				["nominal", "nominalText"]
+		}
+		AssignedVariablesList
+		{
+			id: 						predicted
+			name: 						"predictions"
+			title: 						qsTr("Predictions")
+			singleVariable:				true
+			allowedColumns:				["nominal", "nominalText"]
+		}
+		AssignedVariablesList
+		{
+			id: 						group
+			name: 						"protected"
+			title: 						qsTr("Sensitive Attribute")
+			singleVariable:				true
+			allowedColumns:				["nominal", "nominalText"]
+		}
+	}
+
+	Group
+	{
+		Layout.columnSpan: 2
+		Label	{ text : qsTr("Priveleged Group")	}
+		TableView
+		{
+			id					: selectedDesign2
+			implicitWidth		: (form.implicitWidth) /2
+			implicitHeight		: 150 * preferencesModel.uiScale
+			source: 			[{name: "protected", use: "levels"}]
+			modelType			: JASP.Simple
+			name				: "selectedDesign2"
+			columnNames			: ""
+			cornerText			: qsTr("Name")
+			initialColumnCount	: 1// -1 because the first "column" is not a column but the row header
+			columnCount			: 1
+			itemType			: JASP.Double
+			rowCount			: 0
+			initialRowCount		: 0
+
+			itemDelegate: Item
+			{
+
+				Rectangle
+				{
+
+					id: backgroundRect
+					color: rowIndex === tableView.rowSelected ? jaspTheme.grayLighter : jaspTheme.white
+					anchors
+					{
+						fill:			parent
+						topMargin:		-selectedDesign2.view.itemVerticalPadding
+						bottomMargin:	-selectedDesign2.view.itemVerticalPadding
+					}
+
+					MouseArea
+					{
+						anchors.fill: parent
+						onClicked:
+						{
+							tableView.colSelected = columnIndex
+							tableView.rowSelected = rowIndex
+						}
+					}
+				}
+
+				Label
+				{
+					text						: tableView.getDefaultValue(columnIndex, rowIndex)
+					anchors.verticalCenter		: parent.verticalCenter
+					anchors.horizontalCenter	: parent.horizontalCenter
+					onTextChanged:
+					{
+						selectedDesign2.itemChanged(columnIndex, rowIndex, value, inputType)
+					}
+				}
+			}
+
+			rowNumberDelegate: Rectangle
+			{
+				// identical to default but with changed colors
+				color: rowIndex === tableView.rowSelected ? jaspTheme.grayLighter : jaspTheme.white// : jaspTheme.analysisBackgroundColor
+				Text
+				{
+					text:					tableView.getRowHeaderText(headerText, rowIndex);
+					color:					jaspTheme.textEnabled
+					anchors.centerIn:		parent;
+					horizontalAlignment:	Text.AlignHCenter
+					verticalAlignment:		Text.AlignVCenter
+					leftPadding:			3 * preferencesModel.uiScale
+					elide:					Text.ElideRight;
+					width:					parent.width
+					height:					parent.width
+					font:					jaspTheme.font
+				}
+
+				MouseArea
+				{
+					anchors.fill: parent
+					onClicked:
+					{
+						if (tableView.rowSelected === rowIndex)
+							rowIndex = -1
+						tableView.rowSelected = rowIndex;
+					}
+				}
+			}
+
+			columnHeaderDelegate : Rectangle
+			{
+				// identical to the default definition in TableView, but this does not change color when the column is selected
+				color: jaspTheme.analysisBackgroundColor
+				Text { text: tableView.getColHeaderText(headerText, columnIndex); anchors.centerIn: parent; font: jaspTheme.font; color:	jaspTheme.textEnabled }
+				MouseArea
+				{
+					anchors.fill: parent
+					onClicked:
+					{
+						if (tableView.colSelected === columnIndex)
+							columnIndex = -1
+						tableView.colSelected = columnIndex;
+					}
+				}
+			}
+
+
+		}
+		IntegerField { name: "selectedRow"; label: qsTr("debug selected row"); defaultValue: selectedDesign2.rowSelected; negativeValues: true; visible: false }
+	}
+
 	Section
 	{
-		title: 							qsTr("Pick Variables")
-		
-		VariablesForm
+		title: qsTr("Report")
+		columns: 2
+
+		Group
 		{
-			id: 							variablesFormBenfordsLaw
-			preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
+			title: qsTr("Tables")
 
-			AvailableVariablesList
+			CheckBox
 			{
-				name: 						"variablesFormBenfordsLaw"
+				text:	qsTr("Model performance")
+				name:	"performanceTable"
 			}
-
-			AssignedVariablesList
-			{
-				id: 						group
-				name: 						"group"
-				title: 						qsTr("Group")
-				singleVariable:				true
-				allowedColumns:				["nominal", "nominalText"]
-			}
-			AssignedVariablesList
-			{
-				id: 						predicted
-				name: 						"predicted"
-				title: 						qsTr("Predicted")
-				singleVariable:				true
-				allowedColumns:				["nominal", "nominalText"]
-			}
-			AssignedVariablesList
-			{
-				id: 						actual
-				name: 						"actual"
-				title: 						qsTr("Actual")
-				singleVariable:				true
-				allowedColumns:				["nominal", "nominalText"]
-			}
-
 		}
 
 		Group
 		{
-			Label	{ text : qsTr("Choose a Level")	}
-			TableView
+			title: qsTr("Plots")
+
+			CheckBox
 			{
-
-				property int designDataColumns : 1
-
-
-				id					: selectedDesign2
-				implicitWidth		: (form.implicitWidth) /2
-				implicitHeight		: 150 * preferencesModel.uiScale
-				source: [{name: "group", use: "levels"}]
-
-				modelType			: JASP.Simple
-				name				: "selectedDesign2"
-
-				columnNames			: qsTr("Counts")
-				cornerText			: qsTr("Level")
-				initialColumnCount	: 1// -1 because the first "column" is not a column but the row header
-				columnCount			: 1
-
-				itemType			: JASP.Double
-				rowCount			: 0
-				initialRowCount		: 0
-
-				itemDelegate: Item
-				{
-
-					Rectangle
-					{
-
-						id: backgroundRect
-						color: rowIndex === tableView.rowSelected ? jaspTheme.grayLighter : jaspTheme.white
-						anchors
-						{
-							fill:			parent
-							topMargin:		-selectedDesign2.view.itemVerticalPadding
-							bottomMargin:	-selectedDesign2.view.itemVerticalPadding
-						}
-
-						MouseArea
-						{
-							anchors.fill: parent
-							onClicked:
-							{
-								tableView.colSelected = columnIndex
-								tableView.rowSelected = rowIndex
-							}
-						}
-					}
-
-					Label
-					{
-						text						: tableView.getDefaultValue(columnIndex, rowIndex)
-						anchors.verticalCenter		: parent.verticalCenter
-						anchors.horizontalCenter	: parent.horizontalCenter
-						onTextChanged:
-						{
-							selectedDesign2.itemChanged(columnIndex, rowIndex, value, inputType)
-						}
-					}
-				}
-
-				rowNumberDelegate: Rectangle
-				{
-					// identical to default but with changed colors
-					color: rowIndex === tableView.rowSelected ? jaspTheme.grayLighter : jaspTheme.white// : jaspTheme.analysisBackgroundColor
-					Text
-					{
-						text:					tableView.getRowHeaderText(headerText, rowIndex);
-						color:					jaspTheme.textEnabled
-						anchors.centerIn:		parent;
-						horizontalAlignment:	Text.AlignHCenter
-						verticalAlignment:		Text.AlignVCenter
-						leftPadding:			3 * preferencesModel.uiScale
-						elide:					Text.ElideRight;
-						width:					parent.width
-						height:					parent.width
-						font:					jaspTheme.font
-					}
-
-					MouseArea
-					{
-						anchors.fill: parent
-						onClicked:
-						{
-							if (tableView.rowSelected === rowIndex)
-								rowIndex = -1
-							tableView.rowSelected = rowIndex;
-						}
-					}
-				}
-
-				columnHeaderDelegate : Rectangle
-				{
-					// identical to the default definition in TableView, but this does not change color when the column is selected
-					color: jaspTheme.analysisBackgroundColor
-					Text { text: tableView.getColHeaderText(headerText, columnIndex); anchors.centerIn: parent; font: jaspTheme.font; color:	jaspTheme.textEnabled }
-					MouseArea
-					{
-						anchors.fill: parent
-						onClicked:
-						{
-							if (tableView.colSelected === columnIndex)
-								columnIndex = -1
-							tableView.colSelected = columnIndex;
-						}
-					}
-				}
-
-
-			}
-			IntegerField { name: "selectedRow"; label: qsTr("debug selected row"); defaultValue: selectedDesign2.rowSelected; negativeValues: true; visible: false }
-		}
-
-
-		Item
-		{
-			Layout.preferredHeight:			download.height
-			Layout.preferredWidth: 			parent.width
-			Layout.columnSpan:				2
-
-			Button
-			{
-				id:							download
-				enabled: 					values.count > 0
-				anchors.right:				parent.right
-				text:						qsTr("<b>Download Report</b>")
-				onClicked:					form.exportResults()
+				text:	qsTr("Compare parity against priveleged")
+				name:	"parityPlot"
 			}
 		}
 	}
+
 
 	Section
 	{
@@ -352,20 +349,5 @@ Form
 		}
 	}
 
-	Section {
-		title: qsTr("Performance Measures")
-
-		CheckBox
-		{
-			text:									qsTr("Enable Performance Metrics Group")
-			name:									"performanceMeasuresGroup"
-		}
-
-		CheckBox
-		{
-			text:									qsTr("Enable Performance Metrics All")
-			name:									"performanceMeasuresAll"
-		}
-
-	}
+	Common.DownloadReport { }
 }

@@ -16,7 +16,7 @@ Description
 	GroupTitle
 	{
 		title:			qsTr("Audit Sampling")
-		icon:			"audit-workflow.svg"
+		icon:			"audit-selection.svg"
 	}
 	Analysis
 	{
@@ -83,11 +83,11 @@ Description
 	GroupTitle
 	{
 		title:			qsTr("Algorithm Auditing")
-		icon:			"audit-number-analysis.svg"
+		icon:			"audit-workflow.svg"
 	}
 	Analysis
 	{
-		title:			qsTr("Fairness Measures")
-		func:			"auditFairnessMeasures"
+		title:			qsTr("Fairness")
+		func:			"auditModelFairness"
 	}
 }
