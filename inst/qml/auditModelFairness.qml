@@ -25,6 +25,7 @@ import "./common"	as Common
 
 Form 
 {
+	columns: 1
 
 	VariablesForm
 	{
@@ -60,114 +61,46 @@ Form
 		}
 	}
 
-	Group
+	Group 
 	{
-		Layout.columnSpan: 2
-		Label	{ text : qsTr("Priveleged Group")	}
-		TableView
-		{
-			id					: selectedDesign2
-			implicitWidth		: (form.implicitWidth) /2
-			implicitHeight		: 150 * preferencesModel.uiScale
-			source: 			[{name: "protected", use: "levels"}]
-			modelType			: JASP.Simple
-			name				: "selectedDesign2"
-			columnNames			: ""
-			cornerText			: qsTr("Name")
-			initialColumnCount	: 1// -1 because the first "column" is not a column but the row header
-			columnCount			: 1
-			itemType			: JASP.Double
-			rowCount			: 0
-			initialRowCount		: 0
 
-			itemDelegate: Item
-			{
+	CIField
+	{
+		name: 							"conf_level"
+		label: 							qsTr("Confidence")
+		info:							qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
+	}
 
-				Rectangle
-				{
+	DropDown
+	{
+		label: 					qsTr("Fairness metric")
+		name: 					"metric"
+		indexDefaultValue: 		0
+		values: [
+			{ label: qsTr("Proportional parity"),		value: "pp"},
+			{ label: qsTr("Specificity parity"), 		value: "sp"}
+		]
+	}
 
-					id: backgroundRect
-					color: rowIndex === tableView.rowSelected ? jaspTheme.grayLighter : jaspTheme.white
-					anchors
-					{
-						fill:			parent
-						topMargin:		-selectedDesign2.view.itemVerticalPadding
-						bottomMargin:	-selectedDesign2.view.itemVerticalPadding
-					}
+	DropDown
+	{
+		label: 					qsTr("Privileged group")
+		name: 					"privileged"
+		indexDefaultValue: 		0
+		addEmptyValue: 			true
+		placeholderText: 		qsTr("None")
+		source: 				[{name: "protected", use: "levels"}]
+	}
 
-					MouseArea
-					{
-						anchors.fill: parent
-						onClicked:
-						{
-							tableView.colSelected = columnIndex
-							tableView.rowSelected = rowIndex
-						}
-					}
-				}
-
-				Label
-				{
-					text						: tableView.getDefaultValue(columnIndex, rowIndex)
-					anchors.verticalCenter		: parent.verticalCenter
-					anchors.horizontalCenter	: parent.horizontalCenter
-					onTextChanged:
-					{
-						selectedDesign2.itemChanged(columnIndex, rowIndex, value, inputType)
-					}
-				}
-			}
-
-			rowNumberDelegate: Rectangle
-			{
-				// identical to default but with changed colors
-				color: rowIndex === tableView.rowSelected ? jaspTheme.grayLighter : jaspTheme.white// : jaspTheme.analysisBackgroundColor
-				Text
-				{
-					text:					tableView.getRowHeaderText(headerText, rowIndex);
-					color:					jaspTheme.textEnabled
-					anchors.centerIn:		parent;
-					horizontalAlignment:	Text.AlignHCenter
-					verticalAlignment:		Text.AlignVCenter
-					leftPadding:			3 * preferencesModel.uiScale
-					elide:					Text.ElideRight;
-					width:					parent.width
-					height:					parent.width
-					font:					jaspTheme.font
-				}
-
-				MouseArea
-				{
-					anchors.fill: parent
-					onClicked:
-					{
-						if (tableView.rowSelected === rowIndex)
-							rowIndex = -1
-						tableView.rowSelected = rowIndex;
-					}
-				}
-			}
-
-			columnHeaderDelegate : Rectangle
-			{
-				// identical to the default definition in TableView, but this does not change color when the column is selected
-				color: jaspTheme.analysisBackgroundColor
-				Text { text: tableView.getColHeaderText(headerText, columnIndex); anchors.centerIn: parent; font: jaspTheme.font; color:	jaspTheme.textEnabled }
-				MouseArea
-				{
-					anchors.fill: parent
-					onClicked:
-					{
-						if (tableView.colSelected === columnIndex)
-							columnIndex = -1
-						tableView.colSelected = columnIndex;
-					}
-				}
-			}
-
-
-		}
-		IntegerField { name: "selectedRow"; label: qsTr("debug selected row"); defaultValue: selectedDesign2.rowSelected; negativeValues: true; visible: false }
+	DropDown
+	{
+		label: 					qsTr("Positive class")
+		name: 					"positive"
+		indexDefaultValue: 		0
+		addEmptyValue: 			true
+		placeholderText: 		qsTr("None")
+		source: 				[{name: "target", use: "levels"}]
+	}
 	}
 
 	Section
@@ -192,162 +125,105 @@ Form
 
 			CheckBox
 			{
-				text:	qsTr("Compare parity against priveleged")
+				text:	qsTr("Parity ratio")
 				name:	"parityPlot"
 			}
+
+			CheckBox
+			{
+				text:	qsTr("Prior and posterior distribution")
+				name:	"posteriorPlot"
+			}
 		}
 	}
 
 
-	Section
-	{
-		title: qsTr("Fairness Measures")
+// Section
+//  {
+//   columns: 1 
+//   title: qsTr("Fairness Measures")
+    
+//   Group
+//   {
+//     HelpButton
+//   	{
+//   		toolTip:			qsTr("Click to learn more about Q1.")
+//   		helpPage:			"auditFairness"
+//   		Layout.columnSpan:	1
+//   	}
+  	
+//     RadioButtonGroup
+//     {
+//     name: "q1"
+//     id: "q1"
+//     title: qsTr("Should the ground truth labels be considered?")
+//     RadioButton{id:"q1option1"; label: qsTr("Yes"); name:"q1option1"; value:"yes";  checked: true}
+//     RadioButton{id:"q1option2"; label: qsTr("No"); value:"no"}
+//     }
+//    }
+  
+//   Group
+//   {
+  
+//     HelpButton
+//   	{
+//   		toolTip:			qsTr("Click to learn more about Q2.")
+//   		helpPage:			"auditQ2Helper"
+//   		Layout.columnSpan:	1
+//   	}
 
-		Group
-		{
-			columns:			2
-			Layout.columnSpan:	2
+//     RadioButtonGroup
+//     {
+//     name: "q2"
+//     id: "q2"
+//     title: q1option1.checked ? qsTr("Should all elements of the confusion matrix be considered?") : qsTr("Should the absolute values or the proportions of the favorable predictions be used?")
+//     RadioButton{id:"q2option1"; label: q1option1.checked ? qsTr("Yes"): qsTr("Absolute"); name:"q2option1"; value:q1option1.checked ? "yes": "abs";  checked: true}
+//     RadioButton{id:"q2option2"; label: q1option1.checked ? qsTr("No"): qsTr("Proportional"); name:"q2option2"; value:q1option1.checked ? "no": "prop";  checked: true}
+//     }
+//    }
+   
+//   Group
+//   {
+//     id: "g3"
+//     visible: (q1option1.checked && q2option2.value == "no" && q2option2.checked) ? true: false
+//     HelpButton
+//   	{
+//   		toolTip:			qsTr("Click to learn more about Q3.")
+//   		helpPage:			"auditQ2Helper"
+//   		Layout.columnSpan:	1
+//   	}
 
-			HelpButton
-			{
-				toolTip:			qsTr("Click for more help.")
-				helpPage:			"auditFairnessQuestionHelp/auditQ1Helper"
-				Layout.columnSpan:	2
-			}
+//     RadioButtonGroup
+//     {
+//     name: "q3"
+//     id: "q3"
+//     title: qsTr("Should we focus on correctly or incorrectly classified instances?")
+//     RadioButton{id:"q3option1"; label: qsTr("Correctly"); name:"q3option1"; value:(g3.visible) ? "corr": "";  checked: true}
+//     RadioButton{id:"q3option2"; label: qsTr("Incorrectly"); name:"q3option2"; value:(g3.visible) ? "incorr": "";  checked: true}
+//     }
+//    }
+   
+//   Group
+//   {
+//     visible: (g3.visible) ? true: false
+//     HelpButton
+//   	{
+//   		toolTip:			qsTr("Click to learn more about Q4.")
+//   		helpPage:			"auditQ2Helper"
+//   		Layout.columnSpan:	1
+//   	}
 
-			Group
-			{
-				RadioButtonGroup
-				{
-					name: "q1"
-					id: "q1"
-					title: qsTr("Do you want to be fair based on disparate representation or based on disparate errors of your system?")
-
-					RadioButton{
-						id:"q1option1"; label: qsTr("Representation"); name:"q1option1"; value:"rep";  checked: true; onClicked:
-						{
-							groupQ2.visible = true
-							q2.title= qsTr("Do you need to select equal # of people from each group or proportional to their percentage in the \n overall population?")
-							q2option1.label =qsTr("Equal Numbers")
-							q2option2.label =qsTr("Proportional")
-						}
-					}
-
-					RadioButton{
-						id:"q1option2"; label: qsTr("Errors"); value:"err"; onClicked:
-						{
-							groupQ2.visible = true
-							q2.title= qsTr("Are your interventions punitive or assistive")
-							q2option1.label =qsTr("Punitive")
-							q2option2.label =qsTr("Assistive")
-						}
-					}
-				}
-			}
-		}
-
-		Group
-		{
-			id : groupQ2
-			visible: false
-			columns:			2
-			Layout.columnSpan:	2
-
-			HelpButton
-			{
-				toolTip:			qsTr("Click to learn more about stuff from Q2.")
-				helpPage:			"auditQ2Helper"
-				Layout.columnSpan:	2
-			}
-
-			Group
-			{
-				RadioButtonGroup
-				{
-					name: "q2"
-					id: "q2"
-					title: qsTr("")
-
-					RadioButton{
-						id:"q2option1"; checked: true; value:"a"; onClicked:
-						{
-							if(q1option1.clicked)
-							{
-								groupQ3.visible = false
-							}
-							if(q1option2.clicked)
-							{
-								groupQ3.visible = true
-								q3.title= qsTr("Are you intervening with a very small % of the population?")
-								q3option1.label =qsTr("Yes")
-								q3option2.label =qsTr("No")
-							}
-						}
-					}
-
-					RadioButton{
-						id:"q2option2";  value:"b"; onClicked:
-						{
-							if(q1option1.clicked)
-							{
-								groupQ3.visible = false
-							}
-							if(q1option2.clicked)
-							{
-								groupQ3.visible = true
-								q3.title= qsTr("Are you intervening with a very small % of the population?")
-								q3option1.label =qsTr("Yes")
-								q3option2.label =qsTr("No")
-							}
-						}
-					}
-				}
-			}
-		}
-
-		Group{
-			id: groupQ3
-			visible: false
-			columns:			2
-			Layout.columnSpan:	2
-
-			HelpButton
-			{
-				toolTip:			qsTr("Click to learn more about stuff from Q2.")
-				helpPage:			"auditQ2Helper"
-				Layout.columnSpan:	2
-			}
-
-			Group{
-				RadioButtonGroup
-				{
-					name: "q3"
-					id: "q3"
-					title: qsTr("")
-
-					RadioButton{
-						id:"q3option1"; label: qsTr("Representation"); value:"c"; onClicked:
-						{
-							groupQ4.visible = true
-							q4.title= qsTr("Do you need to select equal # of people from each group or proportional to their percentage in the \n overall population?")
-							q4option1.label =qsTr("Equal Numbers")
-							q4option2.label =qsTr("Proportional")
-						}
-					}
-
-					RadioButton{
-						id:"q3option2";label: qsTr("Errors"); value:"d"; onClicked:
-						{
-							groupQ4.visible = true
-							q4.title= qsTr("Are your interventions punitive or assistive")
-							q4option1.label =qsTr("Punitive")
-							q4option2.label =qsTr("Assistive")
-						}
-					}
-				}
-			}
-		}
-	}
+//     RadioButtonGroup
+//     {
+//     name: "q4"
+//     id: "q4"
+//     title: q3option1.checked ? qsTr("Should we focus on true positive or true negative rates?") : qsTr("Should we focus on false positive or false negative rates?")
+//     RadioButton{id:"q4option1"; label: q3option1.checked ? qsTr("True Positives"): qsTr("False Positives"); name:"q3option1"; value: (g3.visible) ? q3option1.checked ? "tp" : "fp": ""; checked: true}
+//     RadioButton{id:"q4option2"; label: q3option1.checked ? qsTr("True Negatives"): qsTr("False Negatives"); name:"q3option2"; value: (g3.visible) ? q3option1.checked ? "tn" : "fn": "";  checked: true}
+//     }
+//    }
+    
+//   }
 
 	Common.DownloadReport { }
 }
