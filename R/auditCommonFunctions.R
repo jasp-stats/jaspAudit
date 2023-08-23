@@ -2490,7 +2490,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       })
     } else if (options[["annotation"]] == "continuous") {
       method <- options[["method"]]
-      if (method == "stringer" && options[["lta"]]) {
+      if (method == "stringer.binomial" && options[["lta"]]) {
         method <- "stringer.lta"
       }
       result <- try({
@@ -2684,7 +2684,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       })
     } else {
       method <- options[["method"]]
-      if (options[["method"]] == "stringer" && options[["lta"]]) {
+      if (options[["method"]] == "stringer.binomial" && options[["lta"]]) {
         method <- "stringer.lta"
       }
 
@@ -2777,7 +2777,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "poisson" = gettext("The results are computed using the Poisson distribution."),
       "binomial" = gettext("The results are computed using the binomial distribution."),
       "hypergeometric" = gettext("The results are computed using the hypergeometric distribution."),
-      "stringer" = gettext("The results are computed using the Stringer method."),
+      "stringer.binomial" = gettext("The results are computed using the Stringer method."),
       "regression" = gettext("The results are computed using the regression estimator."),
       "direct" = gettext("The results are computed using the direct estimator."),
       "difference" = gettext("The results are computed using the difference estimator."),
@@ -2793,7 +2793,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   # Custom message for stringer bound with LTA
-  if (options[["method"]] == "stringer" && options[["lta"]]) {
+  if (options[["method"]] == "stringer.binomial" && options[["lta"]]) {
     message <- gettext("The results are computed using the Stringer method with LTA adjustment.")
   }
 
