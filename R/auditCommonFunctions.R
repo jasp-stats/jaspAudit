@@ -2154,9 +2154,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   units <- if (!is.null(unitsExtra)) unitsExtra else options[["units"]]
+  N.units <- if (units == "items") length(dataset[[options[["id"]]]]) else sum(dataset[[options[["values"]]]])
+  if (options[["sampling_method"]] != "random" && prevState[["n"]] > N.units) {
+    parentContainer$setError(gettextf("You cannot use an interval-based selection method because the sample size exceeds the population size of %1$s. Please change the selection method to random sampling.", N.units))
+    return()
+  }
 
   if (options[["sampling_method"]] == "interval") {
-    interval <- if (units == "items") length(dataset[[options[["id"]]]]) / prevState[["n"]] else sum(dataset[[options[["values"]]]]) / prevState[["n"]]
+    interval <- N.units / prevState[["n"]]
     if (options[["startMethod"]] == "fixedStart" && options[["start"]] > interval) {
       parentContainer$setError(gettextf("Starting point is outside the range of the selection interval of 1 to %1$s. Please choose a starting point < %1$s.", round(interval, 3)))
       return()
