@@ -25,92 +25,129 @@ import "./common"	as Common
 
 Form 
 {
-	columns: 1
+	columns: 							1
 
 	VariablesForm
 	{
-		preferredHeight:		jaspTheme.smallDefaultVariablesFormHeight
+		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
 
 		AvailableVariablesList
 		{
-			name: 				"variablesFormFairness"
+			name: 						"variablesFormFairness"
 		}
 		AssignedVariablesList
 		{
-			id: 				actual
-			name: 				"target"
-			title: 				qsTr("Target")
-			singleVariable:		true
-			allowedColumns:		["nominal", "nominalText"]
+			name: 						"target"
+			title: 						qsTr("Target")
+			singleVariable:				true
+			allowedColumns:				["nominal", "nominalText"]
 		}
 		AssignedVariablesList
 		{
-			id: 				predicted
-			name: 				"predictions"
-			title: 				qsTr("Predictions")
-			singleVariable:		true
-			allowedColumns:		["nominal", "nominalText"]
+			name: 						"predictions"
+			title: 						qsTr("Predictions")
+			singleVariable:				true
+			allowedColumns:				["nominal", "nominalText"]
 		}
 		AssignedVariablesList
 		{
-			id: 				group
-			name: 				"protected"
-			title: 				qsTr("Sensitive Attribute")
-			singleVariable:		true
-			allowedColumns:		["nominal", "nominalText"]
+			name: 						"protected"
+			title: 						qsTr("Sensitive Attribute")
+			singleVariable:				true
+			allowedColumns:				["nominal", "nominalText"]
 		}
+	}
+
+	CIField
+	{
+		name: 						"conf_level"
+		label: 						qsTr("Confidence")
+		info:						qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
 	}
 
 	Group 
 	{
-		CIField
+		title:						qsTr("Factor Levels")
+
+		DropDown
 		{
-			name: 				"conf_level"
-			label: 				qsTr("Confidence")
-			info:				qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
+			label: 						qsTr("Privileged group")
+			name: 						"privileged"
+			indexDefaultValue: 			0
+			addEmptyValue: 				true
+			placeholderText: 			qsTr("None")
+			source: 					[ { name: "protected", use: "levels" } ]
 		}
 
 		DropDown
 		{
-			label: 				qsTr("Privileged group")
-			name: 				"privileged"
-			indexDefaultValue: 	0
-			addEmptyValue: 		true
-			placeholderText: 	qsTr("None")
-			source: 			[ {name: "protected", use: "levels"} ]
-		}
-
-		DropDown
-		{
-			label: 				qsTr("Positive class")
-			name: 				"positive"
-			indexDefaultValue: 	0
-			addEmptyValue: 		true
-			placeholderText: 	qsTr("None")
-			source: 			[ {name: "target", use: "levels"} ]
+			label: 						qsTr("Positive class")
+			name: 						"positive"
+			indexDefaultValue: 			0
+			addEmptyValue: 				true
+			placeholderText: 			qsTr("None")
+			source: 					[ { name: "target", use: "levels" } ]
 		}
 	}
 
 	Section
 	{
-		columns:				1
-		title: 					qsTr("Fairness Metrics")
+		title: 							qsTr("Report")
+		columns: 						2
+
+		Group
+		{
+			title: 						qsTr("Tables")
+
+			CheckBox
+			{
+				text:					qsTr("Model performance")
+				name:					"performanceTable"
+			}
+		}
+
+		Group
+		{
+			title: 						qsTr("Plots")
+
+			CheckBox
+			{
+				text:					qsTr("Parity estimates")
+				name:					"parityPlot"
+			}
+
+			CheckBox
+			{
+				text:					qsTr("Prior and posterior distribution")
+				name:					"posteriorPlot"
+				enabled:				metric.value != "dp"
+			}
+		}
+	}
+
+	Section
+	{
+		columns:						1
+		title: 							qsTr("Advanced")
 
 		RadioButtonGroup 
 		{
-			name: 				"chooseMeasure"
+			name: 						"chooseMeasure"
+			title:						qsTr("Fairness metric")
 
 			RadioButton
 			{
-				name:			"chooseManual"
-				label:			"Manual"
-				checked:		true
+				id:						chooseManual
+				name:					"chooseManual"
+				label:					qsTr("Manual")
+				checked:				true
+				childrenOnSameRow: 		true
 
 				DropDown
 				{
 					id:					metric
-					label: 				qsTr("Fairness metric")
 					name: 				"metric"
+					visible:			chooseManual.checked
 					indexDefaultValue: 	0
 					values: [
 						{ label: qsTr("Predictive rate parity"),			value: "prp"},
@@ -128,13 +165,13 @@ Form
 
 			RadioButton
 			{
-				id:				chooseGuided
-				name:			"chooseGuided"
-				label:			"Decision-tree"
+				id:						chooseGuided
+				name:					"chooseGuided"
+				label:					qsTr("Decision-tree")
 
 				Row
 				{
-					visible:		chooseGuided.checked
+					visible:			chooseGuided.checked
 
 					RadioButtonGroup
 					{
@@ -183,7 +220,6 @@ Form
 							name:		"q2option1"
 							label: 		q1option1.checked ? qsTr("Yes"): qsTr("Absolute")
 							value:		q1option1.checked ? "yes": "abs"
-							checked:	true
 						}
 						
 						RadioButton
@@ -229,7 +265,6 @@ Form
 							name:		"q3option2"
 							label:		qsTr("Incorrectly")
 							value:		g3.visible ? "incorr": ""
-							checked:	true
 						}
 					}
 		
@@ -256,7 +291,6 @@ Form
 							name:		"q4option1"
 							label: 		q3option1.checked ? qsTr("True Positives"): qsTr("False Positives")
 							value: 		g3.visible ? (q3option1.checked ? "tp" : "fp") : ""
-							checked: 	true
 						}
 
 						RadioButton
@@ -275,41 +309,6 @@ Form
 						helpPage:		"auditQ2Helper"
 					}
 				}
-			}
-		}
-	}
-
-	Section
-	{
-		title: 					qsTr("Report")
-		columns: 				2
-
-		Group
-		{
-			title: 				qsTr("Tables")
-
-			CheckBox
-			{
-				text:			qsTr("Model performance")
-				name:			"performanceTable"
-			}
-		}
-
-		Group
-		{
-			title: 				qsTr("Plots")
-
-			CheckBox
-			{
-				text:			qsTr("Parity")
-				name:			"parityPlot"
-			}
-
-			CheckBox
-			{
-				text:			qsTr("Prior and posterior distribution")
-				name:			"posteriorPlot"
-				enabled:		metric.value != "dp"
 			}
 		}
 	}
