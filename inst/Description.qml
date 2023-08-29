@@ -87,7 +87,7 @@ Description
 	}
 	Analysis
 	{
-		title:			qsTr("Algorithmic Fairness")
-		func:			"auditModelFairness"
+		title:			qsTr("Model Fairness")
+		func:			"auditClassicalModelFairness"
 	}
 }

@@ -29,35 +29,35 @@ Form
 
 	VariablesForm
 	{
-		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
+		preferredHeight:		jaspTheme.smallDefaultVariablesFormHeight
 
 		AvailableVariablesList
 		{
-			name: 						"variablesFormFairness"
+			name: 				"variablesFormFairness"
 		}
 		AssignedVariablesList
 		{
-			id: 						actual
-			name: 						"target"
-			title: 						qsTr("Target")
-			singleVariable:				true
-			allowedColumns:				["nominal", "nominalText"]
+			id: 				actual
+			name: 				"target"
+			title: 				qsTr("Target")
+			singleVariable:		true
+			allowedColumns:		["nominal", "nominalText"]
 		}
 		AssignedVariablesList
 		{
-			id: 						predicted
-			name: 						"predictions"
-			title: 						qsTr("Predictions")
-			singleVariable:				true
-			allowedColumns:				["nominal", "nominalText"]
+			id: 				predicted
+			name: 				"predictions"
+			title: 				qsTr("Predictions")
+			singleVariable:		true
+			allowedColumns:		["nominal", "nominalText"]
 		}
 		AssignedVariablesList
 		{
-			id: 						group
-			name: 						"protected"
-			title: 						qsTr("Sensitive Attribute")
-			singleVariable:				true
-			allowedColumns:				["nominal", "nominalText"]
+			id: 				group
+			name: 				"protected"
+			title: 				qsTr("Sensitive Attribute")
+			singleVariable:		true
+			allowedColumns:		["nominal", "nominalText"]
 		}
 	}
 
@@ -66,19 +66,27 @@ Form
 
 	CIField
 	{
-		name: 							"conf_level"
-		label: 							qsTr("Confidence")
-		info:							qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
+		name: 					"conf_level"
+		label: 					qsTr("Confidence")
+		info:					qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
 	}
 
 	DropDown
 	{
+		id:						metric
 		label: 					qsTr("Fairness metric")
 		name: 					"metric"
 		indexDefaultValue: 		0
 		values: [
-			{ label: qsTr("Proportional parity"),		value: "pp"},
-			{ label: qsTr("Specificity parity"), 		value: "sp"}
+			{ label: qsTr("Predictive rate parity"),			value: "prp"},
+			{ label: qsTr("Demographic parity"),				value: "dp"},
+			{ label: qsTr("Proportional parity"),				value: "pp"},
+			{ label: qsTr("Accuracy parity"),					value: "ap"},
+			{ label: qsTr("False negative rate parity"),		value: "fnrp"},
+			{ label: qsTr("False positive rate parity"),		value: "fprp"},
+			{ label: qsTr("True positive rate parity"),			value: "tprp"},
+			{ label: qsTr("Negative predicted value parity"),	value: "npvp"},
+			{ label: qsTr("Specificity parity"), 				value: "sp"}
 		]
 	}
 
@@ -89,7 +97,7 @@ Form
 		indexDefaultValue: 		0
 		addEmptyValue: 			true
 		placeholderText: 		qsTr("None")
-		source: 				[{name: "protected", use: "levels"}]
+		source: 				[ {name: "protected", use: "levels"} ]
 	}
 
 	DropDown
@@ -99,40 +107,41 @@ Form
 		indexDefaultValue: 		0
 		addEmptyValue: 			true
 		placeholderText: 		qsTr("None")
-		source: 				[{name: "target", use: "levels"}]
+		source: 				[ {name: "target", use: "levels"} ]
 	}
 	}
 
 	Section
 	{
-		title: qsTr("Report")
-		columns: 2
+		title: 					qsTr("Report")
+		columns: 				2
 
 		Group
 		{
-			title: qsTr("Tables")
+			title: 				qsTr("Tables")
 
 			CheckBox
 			{
-				text:	qsTr("Model performance")
-				name:	"performanceTable"
+				text:			qsTr("Model performance")
+				name:			"performanceTable"
 			}
 		}
 
 		Group
 		{
-			title: qsTr("Plots")
+			title: 				qsTr("Plots")
 
 			CheckBox
 			{
-				text:	qsTr("Parity ratio")
-				name:	"parityPlot"
+				text:			qsTr("Parity")
+				name:			"parityPlot"
 			}
 
 			CheckBox
 			{
-				text:	qsTr("Prior and posterior distribution")
-				name:	"posteriorPlot"
+				text:			qsTr("Prior and posterior distribution")
+				name:			"posteriorPlot"
+				enabled:		metric.value != "dp"
 			}
 		}
 	}
