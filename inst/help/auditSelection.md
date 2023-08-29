@@ -83,7 +83,7 @@ Randomizes the order of the items in the population before the selection procedu
 ### References
 ---
 - AICPA (2019). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package version 0.6.6.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package version 0.7.0.
 
 ### R Packages
 ---

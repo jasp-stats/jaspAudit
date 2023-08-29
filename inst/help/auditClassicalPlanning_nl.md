@@ -83,7 +83,7 @@ De accountant beoordeelt het inherente risico, het interne beheersingsrisico en 
 ### Referenties
 ---
 - AICPA (2019). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K. (2023). jfa: Statistical Methods for Auditing. R-pakket versie 0.6.6.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R-pakket versie 0.7.0.
 - Stewart, T. (2012). <i>Technische aantekeningen bij de AICPA-auditgids Audit Sampling</i>. American Institute of Certified Public Accountants, New York.
 
 ### R-pakketten

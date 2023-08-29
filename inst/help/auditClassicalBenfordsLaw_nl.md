@@ -59,7 +59,7 @@ De wet van Benford stelt dat de verdeling van leidende cijfers in een populatie 
 
 ### Referenties
 ---
-- Derks, K. (2023). jfa: Statistical methods for auditing. R-pakket versie 0.6.6.
+- Derks, K. (2023). jfa: Statistical methods for auditing. R-pakket versie 0.7.0.
 
 ### R-pakketten
 ---

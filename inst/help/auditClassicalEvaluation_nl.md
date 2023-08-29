@@ -114,7 +114,7 @@ De accountant beoordeelt het inherente risico, het interne beheersingsrisico en 
 ### Referenties
 ---
 - AICPA (2019). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K. (2023). jfa: Statistical Methods for Auditing. R-pakket versie 0.6.6.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R-pakket versie 0.7.0.
 - Leslie, D. A., Teitlebaum, A. D., Anderson, R. J. (1979). <i>Dollar-unit Sampling: A Practical Guide for Auditors</i>. Toronto: Copp Clark Pitman.
 - Stringer, K. W. (1963) Practical aspects of statistical sampling in auditing. <i>Proceedings of Business and Economic Statistics Section</i>, American Statistical Association.
 - Touw, P., & Hoogduin, L. (2011). Statistiek voor audit en controlling.
