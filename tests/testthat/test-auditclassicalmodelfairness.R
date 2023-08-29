@@ -13,6 +13,7 @@ options$q2 <- "no"
 options$q3 <- ""
 options$q4 <- ""
 options$target <- "TwoYrRecidivism"
+options$bayesFactorType <- "BF10"
 set.seed(1)
 results <- runAnalysis("auditClassicalModelFairness", "compas.csv", options)
 

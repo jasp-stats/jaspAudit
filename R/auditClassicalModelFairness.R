@@ -113,9 +113,9 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   metric <- .jfaFairnessGetMetricFromQuestion(options)
   tb <- createJaspTable(title = gettextf("Model Fairness Summary - %1$s", metric[["mainTitle"]]))
   tb$position <- position
-  tb$dependOn(options = .jfaFairnessCommonOptions())
+  tb$dependOn(options = c(.jfaFairnessCommonOptions(), "bayesFactorType"))
   tb$addColumnInfo(name = "group", title = "", type = "string")
-  overTitle <- gettextf("%1$s%% CI", round(options[["conf_level"]] * 100, 3))
+  overTitle <- gettextf("%1$s%% Confidence Interval", round(options[["conf_level"]] * 100, 3))
   tb$addColumnInfo(name = "metric", title = metric[["title"]], type = "number")
   if (metric[["metric"]] != "dp") {
     tb$addColumnInfo(name = "metric_lb", title = gettext("Lower"), type = "number", overtitle = overTitle)
@@ -126,7 +126,12 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     tb$addColumnInfo(name = "parity_lb", title = gettext("Lower"), type = "number", overtitle = overTitle)
     tb$addColumnInfo(name = "parity_ub", title = gettext("Upper"), type = "number", overtitle = overTitle)
     tb$addColumnInfo(name = "p", title = gettext("p"), type = "pvalue")
-    tb$addColumnInfo(name = "bf", title = gettextf("BF%1$s", "\u2081\u2080"), type = "number")
+    bfTitle <- switch(options[["bayesFactorType"]],
+      "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
+      "BF01" = gettextf("BF%1$s", "\u2080\u2081"),
+      "logBF10" = gettextf("Log(BF%1$s)", "\u2080\u2081")
+    )
+    tb$addColumnInfo(name = "bf", title = bfTitle, type = "number")
   }
   jaspResults[["summaryTable"]] <- tb
   if (!ready) {
@@ -148,7 +153,12 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     tb[["parity_lb"]] <- result[["frequentist"]][["parity"]][["all"]][["lb"]]
     tb[["parity_ub"]] <- result[["frequentist"]][["parity"]][["all"]][["ub"]]
     tb[["p"]] <- append(result[["frequentist"]][["odds.ratio"]][["all"]][["p.value"]], NA, after = privilegedIndex - 1)
-    tb[["bf"]] <- append(result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]], NA, after = privilegedIndex - 1)
+    bfs <- switch(options[["bayesFactorType"]],
+      "BF10" = result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]],
+      "BF01" = 1 / result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]],
+      "logBF10" = log(result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]])
+    )
+    tb[["bf"]] <- append(bfs, NA, after = privilegedIndex - 1)
     tb$addFootnote(gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is equal to that of the privileged (P) group."))
   }
 }

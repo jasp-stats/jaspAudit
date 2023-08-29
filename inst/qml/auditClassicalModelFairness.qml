@@ -41,6 +41,7 @@ Form
 			title: 						qsTr("Target")
 			singleVariable:				true
 			allowedColumns:				["nominal", "nominalText"]
+			info:						qsTr("")
 		}
 		AssignedVariablesList
 		{
@@ -48,6 +49,7 @@ Form
 			title: 						qsTr("Predictions")
 			singleVariable:				true
 			allowedColumns:				["nominal", "nominalText"]
+			info:						qsTr("")
 		}
 		AssignedVariablesList
 		{
@@ -55,19 +57,21 @@ Form
 			title: 						qsTr("Sensitive Attribute")
 			singleVariable:				true
 			allowedColumns:				["nominal", "nominalText"]
+			info:						qsTr("")
 		}
 	}
 
 	CIField
 	{
-		name: 						"conf_level"
-		label: 						qsTr("Confidence")
-		info:						qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
+		name: 							"conf_level"
+		label: 							qsTr("Confidence")
+		info:							qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
 	}
 
 	Group 
 	{
-		title:						qsTr("Factor Levels")
+		title:							qsTr("Factor Levels")
+		info:							qsTr("")
 
 		DropDown
 		{
@@ -77,6 +81,7 @@ Form
 			addEmptyValue: 				true
 			placeholderText: 			qsTr("None")
 			source: 					[ { name: "protected", use: "levels" } ]
+			info:						qsTr("")
 		}
 
 		DropDown
@@ -87,6 +92,36 @@ Form
 			addEmptyValue: 				true
 			placeholderText: 			qsTr("None")
 			source: 					[ { name: "target", use: "levels" } ]
+			info:						qsTr("")
+		}
+	}
+
+	RadioButtonGroup
+	{
+		name:							"bayesFactorType"
+		title:							"Bayes Factor"
+		info:							qsTr("Choose which type of Bayes factor to display.")
+
+		RadioButton
+		{
+			name:						"BF10"
+			text:						qsTr("BF\u2081\u2080")
+			checked:					true
+			info:						qsTr("Bayes factor to quantify evidence for the alternative hypothesis relative to the null hypothesis.")
+		}
+
+		RadioButton
+		{
+			name:						"BF01"
+			text:						qsTr("BF\u2080\u2081")
+			info:						qsTr("Bayes factor to quantify evidence for the null hypothesis relative to the alternative hypothesis.")
+		}
+
+		RadioButton
+		{
+			name:						"logBF10"
+			text:						qsTr("Log(BF\u2081\u2080)")
+			info:						qsTr("Natural logarithm of BF10.")
 		}
 	}
 
@@ -94,26 +129,31 @@ Form
 	{
 		title: 							qsTr("Report")
 		columns: 						2
+		info:							qsTr("")
 
 		Group
 		{
 			title: 						qsTr("Tables")
+			info:						qsTr("")
 
 			CheckBox
 			{
 				text:					qsTr("Model performance")
 				name:					"performanceTable"
+				info:					qsTr("")
 			}
 		}
 
 		Group
 		{
 			title: 						qsTr("Plots")
+			info:						qsTr("")
 
 			CheckBox
 			{
 				text:					qsTr("Parity estimates")
 				name:					"parityPlot"
+				info:						qsTr("")
 			}
 
 			CheckBox
@@ -121,6 +161,7 @@ Form
 				text:					qsTr("Prior and posterior distribution")
 				name:					"posteriorPlot"
 				enabled:				metric.value != "dp"
+				info:					qsTr("")
 			}
 		}
 	}
@@ -129,11 +170,13 @@ Form
 	{
 		columns:						1
 		title: 							qsTr("Advanced")
+		info:							qsTr("")
 
 		RadioButtonGroup 
 		{
 			name: 						"chooseMeasure"
 			title:						qsTr("Fairness metric")
+			info:						qsTr("")
 
 			RadioButton
 			{
@@ -142,6 +185,7 @@ Form
 				label:					qsTr("Manual")
 				checked:				true
 				childrenOnSameRow: 		true
+				info:					qsTr("")
 
 				DropDown
 				{
@@ -168,10 +212,12 @@ Form
 				id:						chooseGuided
 				name:					"chooseGuided"
 				label:					qsTr("Decision-tree")
+				info:					qsTr("")
 
 				Row
 				{
 					visible:			chooseGuided.checked
+					Layout.leftMargin:  5 * preferencesModel.uiScale
 
 					RadioButtonGroup
 					{
@@ -206,13 +252,13 @@ Form
 				Row
 				{
 					visible:			chooseGuided.checked
+					Layout.leftMargin:  20 * preferencesModel.uiScale
 
 					RadioButtonGroup
 					{
 						id:				q2
 						name:			"q2"
 						title: 			q1option1.checked ? qsTr("2. Should all elements of the confusion matrix be considered?") : qsTr("2. Should the absolute values or the proportions of the favorable predictions be used?")
-
 
 						RadioButton
 						{
@@ -243,6 +289,7 @@ Form
 				{
 					id: 				g3
 					visible: 			chooseGuided.checked && (q1option1.checked && q2option2.value == "no" && q2option2.checked) ? true: false
+					Layout.leftMargin:  35 * preferencesModel.uiScale
 
 					RadioButtonGroup
 					{
@@ -278,6 +325,7 @@ Form
 				Row
 				{
 					visible: 			chooseGuided.checked && g3.visible ? true: false
+					Layout.leftMargin:  50 * preferencesModel.uiScale
 
 					RadioButtonGroup
 					{
