@@ -98,6 +98,35 @@ Form
 
 	RadioButtonGroup
 	{
+		title: 							qsTr("Alt. Hypothesis")
+		name: 							"alternative"
+		info:							qsTr("")
+
+		RadioButton
+		{
+			text: 						qsTr("Unprivileged \u2260 Privileged")
+			name: 						"two.sided"
+			checked:					true
+			info:						qsTr("")
+		}
+
+		RadioButton
+		{
+			text: 						qsTr("Unprivileged < Privileged")
+			name: 						"less"
+			info:						qsTr("")
+		}
+
+		RadioButton
+		{
+			text: 						qsTr("Unprivileged > Privileged")
+			name: 						"greater"
+			info:						qsTr("")
+		}
+	}
+
+	RadioButtonGroup
+	{
 		name:							"bayesFactorType"
 		title:							"Bayes Factor"
 		info:							qsTr("Choose which type of Bayes factor to display.")
@@ -171,6 +200,14 @@ Form
 		columns:						1
 		title: 							qsTr("Advanced")
 		info:							qsTr("")
+
+		IntegerField
+		{
+			name: 						"seed"
+			label: 						qsTr("Seed")
+			defaultValue: 				1
+			info:						qsTr("Selects the seed for the random number generator in order to reproduce results.")
+		}
 
 		RadioButtonGroup 
 		{

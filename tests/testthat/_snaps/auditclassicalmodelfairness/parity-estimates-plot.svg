@@ -99,6 +99,6 @@
 <text x='242.05' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='118.13px' lengthAdjust='spacingAndGlyphs'>Privileged class</text>
 <text x='405.46' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.90px' lengthAdjust='spacingAndGlyphs'>Expected</text>
 <text x='521.64' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.88px' lengthAdjust='spacingAndGlyphs'>Deviation</text>
-<text x='394.64' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='74.64px' lengthAdjust='spacingAndGlyphs'>parity-plot</text>
+<text x='394.64' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='153.07px' lengthAdjust='spacingAndGlyphs'>parity-estimates-plot</text>
 </g>
 </svg>

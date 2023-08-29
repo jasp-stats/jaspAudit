@@ -30,7 +30,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 .jfaFairnessCommonOptions <- function() {
   opt <- c(
     "target", "predictions", "protected", "metric", "conf_level", "privileged", "positive",
-    "chooseMeasure", "q1", "q2", "q3", "q4"
+    "chooseMeasure", "q1", "q2", "q3", "q4", "alternative"
   )
   return(opt)
 }
@@ -89,15 +89,16 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     return(jaspResults[["state"]]$object)
   } else {
     result <- list()
+    set.seed(options[["seed"]])
     result[["frequentist"]] <- jfa::model_fairness(dataset,
       protected = options[["protected"]], target = options[["target"]], predictions = options[["predictions"]],
       privileged = options[["privileged"]], positive = options[["positive"]],
-      metric = .jfaFairnessGetMetricFromQuestion(options)[["metric"]],
+      metric = .jfaFairnessGetMetricFromQuestion(options)[["metric"]], alternative = options[["alternative"]],
       conf.level = options[["conf_level"]], prior = FALSE
     )
     result[["bayesian"]] <- jfa::model_fairness(dataset, options[["protected"]], options[["target"]], options[["predictions"]],
       privileged = options[["privileged"]], positive = options[["positive"]],
-      metric = .jfaFairnessGetMetricFromQuestion(options)[["metric"]],
+      metric = .jfaFairnessGetMetricFromQuestion(options)[["metric"]], alternative = options[["alternative"]],
       conf.level = options[["conf_level"]], prior = TRUE
     )
     jaspResults[["state"]] <- createJaspState(result)
@@ -163,7 +164,12 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       "logBF10" = log(result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]])
     )
     tb[["bf"]] <- append(bfs, NA, after = privilegedIndex - 1)
-    tb$addFootnote(gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is equal to that of the privileged (P) group."))
+    message <- switch(options[["alternative"]],
+      "two.sided" = gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is equal to that of the privileged (P) group."),
+      "less" = gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is greater than that of the privileged (P) group."),
+      "greater" = gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is lower than that of the privileged (P) group.")
+    )
+    tb$addFootnote(message)
   }
 }
 

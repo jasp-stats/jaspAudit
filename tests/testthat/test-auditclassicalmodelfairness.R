@@ -14,14 +14,16 @@ options$q3 <- ""
 options$q4 <- ""
 options$target <- "TwoYrRecidivism"
 options$bayesFactorType <- "BF10"
+options$alternative <- "two.sided"
+options$seed <- 1
 set.seed(1)
 results <- runAnalysis("auditClassicalModelFairness", "compas.csv", options)
 
 
-test_that("Parity Plot matches", {
+test_that("Parity Estimates Plot matches", {
 	plotName <- results[["results"]][["parityPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "parity-plot")
+	jaspTools::expect_equal_plots(testPlot, "parity-estimates-plot")
 })
 
 test_that("Model Performance table results match", {
