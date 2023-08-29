@@ -150,8 +150,12 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   if (metric[["metric"]] != "dp") {
     tb[["metric_lb"]] <- result[["frequentist"]][["metric"]][["all"]][["lb"]]
     tb[["metric_ub"]] <- result[["frequentist"]][["metric"]][["all"]][["ub"]]
-    tb[["parity_lb"]] <- result[["frequentist"]][["parity"]][["all"]][["lb"]]
-    tb[["parity_ub"]] <- result[["frequentist"]][["parity"]][["all"]][["ub"]]
+    parity_lb <- result[["frequentist"]][["parity"]][["all"]][["lb"]]
+    parity_lb[privilegedIndex] <- NA
+    tb[["parity_lb"]] <- parity_lb
+    parity_ub <- result[["frequentist"]][["parity"]][["all"]][["ub"]]
+    parity_ub[privilegedIndex] <- NA
+    tb[["parity_ub"]] <- parity_ub
     tb[["p"]] <- append(result[["frequentist"]][["odds.ratio"]][["all"]][["p.value"]], NA, after = privilegedIndex - 1)
     bfs <- switch(options[["bayesFactorType"]],
       "BF10" = result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]],
