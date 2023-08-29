@@ -28,23 +28,48 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 }
 
 .jfaFairnessCommonOptions <- function() {
-  opt <- c("target", "predictions", "protected", "metric", "conf_level", "privileged", "positive")
+  opt <- c(
+    "target", "predictions", "protected", "metric", "conf_level", "privileged", "positive",
+    "chooseMeasure", "q1", "q2", "q3", "q4"
+  )
   return(opt)
 }
 
 .jfaFairnessGetMetricFromQuestion <- function(options) {
   out <- list()
-  out[["metric"]] <- options[["metric"]]
+  if (options[["chooseMeasure"]] == "chooseManual") {
+    out[["metric"]] <- options[["metric"]]
+  } else {
+    df <- data.frame(
+      id = c("dp", "pp", "prp", "pp", "ap", "fnrp", "fprp", "npvp", "sp", "mcc"),
+      q1 = c("no", "no", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes"),
+      q2 = c("abs", "prop", "yes", "no", "yes", "no", "no", "no", "no", "yes"),
+      q3 = c("", "", "", "corr", "", "incorr", "incorr", "corr", "corr", ""),
+      q4 = c("", "", "", "tp", "", "fn", "fp", "tn", "tn", "")
+    )
+    out[["metric"]] <- subset(df, (df$q1 == options[["q1"]] & df$q2 == options[["q2"]] & df$q3 == options[["q3"]] & df$q4 == options[["q4"]]))[["id"]]
+  }
   out[["title"]] <- switch(options[["metric"]],
     "pp" = "Proportion",
     "sp" = "Specificity",
-	"ap" = "Accuracy",
-	"fprp" = "False positive rate",
-	"fnrp" = "False negative rate",
-	"npvp" = "Negative predictive value",
-	"dp" = "Positively classified",
-	"prp" = "Precision",
-	"tprp" = "True positive rate"
+    "ap" = "Accuracy",
+    "fprp" = "False positive rate",
+    "fnrp" = "False negative rate",
+    "npvp" = "Negative predictive value",
+    "dp" = "Positively classified",
+    "prp" = "Precision",
+    "tprp" = "True positive rate"
+  )
+  out[["mainTitle"]] <- switch(options[["metric"]],
+    "pp" = "Proportional Parity",
+    "sp" = "Specificity Parity",
+    "ap" = "Accuracy Parity",
+    "fprp" = "False Positive Rate Parity",
+    "fnrp" = "False Negative Rate Parity",
+    "npvp" = "Negative Predictive Value Parity",
+    "dp" = "Demongraphic Parity",
+    "prp" = "Predictive Rate Parity",
+    "tprp" = "True Positive Rate Parity"
   )
   return(out)
 }
@@ -85,25 +110,25 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   if (!is.null(jaspResults[["summaryTable"]])) {
     return()
   }
-  tb <- createJaspTable(title = "Model Fairness Summary")
+  metric <- .jfaFairnessGetMetricFromQuestion(options)
+  tb <- createJaspTable(title = gettextf("Model Fairness Summary - %1$s", metric[["mainTitle"]]))
   tb$position <- position
   tb$dependOn(options = .jfaFairnessCommonOptions())
   tb$addColumnInfo(name = "group", title = "", type = "string")
-  metric <- .jfaFairnessGetMetricFromQuestion(options)
   overTitle <- gettextf("%1$s%% CI", round(options[["conf_level"]] * 100, 3))
   tb$addColumnInfo(name = "metric", title = metric[["title"]], type = "number")
   if (metric[["metric"]] != "dp") {
-  tb$addColumnInfo(name = "metric_lb", title = gettext("Lower"), type = "number", overtitle = overTitle)
-  tb$addColumnInfo(name = "metric_ub", title = gettext("Upper"), type = "number", overtitle = overTitle)
+    tb$addColumnInfo(name = "metric_lb", title = gettext("Lower"), type = "number", overtitle = overTitle)
+    tb$addColumnInfo(name = "metric_ub", title = gettext("Upper"), type = "number", overtitle = overTitle)
   }
   tb$addColumnInfo(name = "parity", title = gettext("Parity"), type = "number")
-    if (metric[["metric"]] != "dp") {
-  tb$addColumnInfo(name = "parity_lb", title = gettext("Lower"), type = "number", overtitle = overTitle)
-  tb$addColumnInfo(name = "parity_ub", title = gettext("Upper"), type = "number", overtitle = overTitle)
-  tb$addColumnInfo(name = "p", title = gettext("p"), type = "pvalue")
-  tb$addColumnInfo(name = "bf", title = gettextf("BF%1$s", "\u2081\u2080"), type = "number")
-  tb$addFootnote(gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is equal to that of the privileged (P) group."))
-	}
+  if (metric[["metric"]] != "dp") {
+    tb$addColumnInfo(name = "parity_lb", title = gettext("Lower"), type = "number", overtitle = overTitle)
+    tb$addColumnInfo(name = "parity_ub", title = gettext("Upper"), type = "number", overtitle = overTitle)
+    tb$addColumnInfo(name = "p", title = gettext("p"), type = "pvalue")
+    tb$addColumnInfo(name = "bf", title = gettextf("BF%1$s", "\u2081\u2080"), type = "number")
+    tb$addFootnote(gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is equal to that of the privileged (P) group."))
+  }
   jaspResults[["summaryTable"]] <- tb
   if (!ready) {
     return()
@@ -114,15 +139,15 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   rowNames[privilegedIndex] <- paste0(rowNames[privilegedIndex], " (P)")
   tb[["group"]] <- rowNames
   tb[["metric"]] <- result[["frequentist"]][["metric"]][["all"]][["estimate"]]
-tb[["parity"]] <- result[["frequentist"]][["parity"]][["all"]][["estimate"]]
-    if (metric[["metric"]] != "dp") {
-  tb[["metric_lb"]] <- result[["frequentist"]][["metric"]][["all"]][["lb"]]
-  tb[["metric_ub"]] <- result[["frequentist"]][["metric"]][["all"]][["ub"]]
-  tb[["parity_lb"]] <- result[["frequentist"]][["parity"]][["all"]][["lb"]]
-  tb[["parity_ub"]] <- result[["frequentist"]][["parity"]][["all"]][["ub"]]
-  tb[["p"]] <- append(result[["frequentist"]][["odds.ratio"]][["all"]][["p.value"]], NA, after = privilegedIndex - 1)
-  tb[["bf"]] <- append(result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]], NA, after = privilegedIndex - 1)
-	}
+  tb[["parity"]] <- result[["frequentist"]][["parity"]][["all"]][["estimate"]]
+  if (metric[["metric"]] != "dp") {
+    tb[["metric_lb"]] <- result[["frequentist"]][["metric"]][["all"]][["lb"]]
+    tb[["metric_ub"]] <- result[["frequentist"]][["metric"]][["all"]][["ub"]]
+    tb[["parity_lb"]] <- result[["frequentist"]][["parity"]][["all"]][["lb"]]
+    tb[["parity_ub"]] <- result[["frequentist"]][["parity"]][["all"]][["ub"]]
+    tb[["p"]] <- append(result[["frequentist"]][["odds.ratio"]][["all"]][["p.value"]], NA, after = privilegedIndex - 1)
+    tb[["bf"]] <- append(result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]], NA, after = privilegedIndex - 1)
+  }
 }
 
 .jfaFairnessPerformanceTable <- function(dataset, options, jaspResults, ready, position) {
