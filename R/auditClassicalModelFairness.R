@@ -30,7 +30,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 .jfaFairnessCommonOptions <- function() {
   opt <- c(
     "target", "predictions", "protected", "metric", "conf_level", "privileged", "positive",
-    "chooseMeasure", "q1", "q2", "q3", "q4", "alternative"
+    "chooseMeasure", "q1", "q2", "q3", "q4", "alternative", "seed"
   )
   return(opt)
 }
@@ -117,8 +117,10 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   tb$dependOn(options = c(.jfaFairnessCommonOptions(), "bayesFactorType"))
   tb$addColumnInfo(name = "group", title = "", type = "string")
   overTitle <- gettextf("%1$s%% Confidence Interval", round(options[["conf_level"]] * 100, 3))
-  tb$addColumnInfo(name = "metric", title = metric[["title"]], type = "number")
-  if (metric[["metric"]] != "dp") {
+  if (metric[["metric"]] == "dp") {
+    tb$addColumnInfo(name = "metric", title = metric[["title"]], type = "integer")
+  } else {
+    tb$addColumnInfo(name = "metric", title = metric[["title"]], type = "number")
     tb$addColumnInfo(name = "metric_lb", title = gettext("Lower"), type = "number", overtitle = overTitle)
     tb$addColumnInfo(name = "metric_ub", title = gettext("Upper"), type = "number", overtitle = overTitle)
   }
@@ -177,7 +179,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   if (!options[["performanceTable"]] || !is.null(jaspResults[["performanceTable"]])) {
     return()
   }
-  tb <- createJaspTable(title = "Model Performance")
+  tb <- createJaspTable(title = gettext("Model Performance"))
   tb$position <- position
   tb$dependOn(options = c(.jfaFairnessCommonOptions(), "performanceTable"))
   tb$addColumnInfo(name = "group", title = "", type = "string")

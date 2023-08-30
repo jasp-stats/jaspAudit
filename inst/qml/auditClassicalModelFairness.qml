@@ -154,6 +154,30 @@ Form
 		}
 	}
 
+	Group
+	{
+		title: 							qsTr("Display")
+		info:							qsTr("Specify options that have an effect on the look and feel of the audit report.")
+
+		Row
+		{
+			CheckBox
+			{
+				id: 					explanatoryText
+				text: 					qsTr("Explanatory text")
+				name: 					"explanatoryText"
+				checked: 				true
+				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
+			}
+
+			HelpButton
+			{
+				helpPage:				"Audit/explanatoryText"
+				toolTip: 				qsTr("Show explanatory text at each step of the analysis")
+			}
+		}
+	}
+
 	Section
 	{
 		title: 							qsTr("Report")
