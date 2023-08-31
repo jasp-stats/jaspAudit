@@ -41,7 +41,7 @@ Form
 			title: 						qsTr("Target")
 			singleVariable:				true
 			allowedColumns:				["nominal", "nominalText"]
-			info:						qsTr("")
+			info:						qsTr("info")
 		}
 		AssignedVariablesList
 		{
@@ -49,7 +49,7 @@ Form
 			title: 						qsTr("Predictions")
 			singleVariable:				true
 			allowedColumns:				["nominal", "nominalText"]
-			info:						qsTr("")
+			info:						qsTr("info")
 		}
 		AssignedVariablesList
 		{
@@ -57,7 +57,7 @@ Form
 			title: 						qsTr("Sensitive Attribute")
 			singleVariable:				true
 			allowedColumns:				["nominal", "nominalText"]
-			info:						qsTr("")
+			info:						qsTr("info")
 		}
 	}
 
@@ -71,7 +71,7 @@ Form
 	Group 
 	{
 		title:							qsTr("Factor Levels")
-		info:							qsTr("")
+		info:							qsTr("info")
 
 		DropDown
 		{
@@ -81,7 +81,7 @@ Form
 			addEmptyValue: 				true
 			placeholderText: 			qsTr("None")
 			source: 					[ { name: "protected", use: "levels" } ]
-			info:						qsTr("")
+			info:						qsTr("info")
 		}
 
 		DropDown
@@ -92,7 +92,7 @@ Form
 			addEmptyValue: 				true
 			placeholderText: 			qsTr("None")
 			source: 					[ { name: "target", use: "levels" } ]
-			info:						qsTr("")
+			info:						qsTr("info")
 		}
 	}
 
@@ -100,28 +100,28 @@ Form
 	{
 		title: 							qsTr("Alt. Hypothesis")
 		name: 							"alternative"
-		info:							qsTr("")
+		info:							qsTr("info")
 
 		RadioButton
 		{
 			text: 						qsTr("Unprivileged \u2260 Privileged")
 			name: 						"two.sided"
 			checked:					true
-			info:						qsTr("")
+			info:						qsTr("info")
 		}
 
 		RadioButton
 		{
 			text: 						qsTr("Unprivileged < Privileged")
 			name: 						"less"
-			info:						qsTr("")
+			info:						qsTr("info")
 		}
 
 		RadioButton
 		{
 			text: 						qsTr("Unprivileged > Privileged")
 			name: 						"greater"
-			info:						qsTr("")
+			info:						qsTr("info")
 		}
 	}
 
@@ -182,31 +182,31 @@ Form
 	{
 		title: 							qsTr("Report")
 		columns: 						2
-		info:							qsTr("")
+		info:							qsTr("info")
 
 		Group
 		{
 			title: 						qsTr("Tables")
-			info:						qsTr("")
+			info:						qsTr("info")
 
 			CheckBox
 			{
 				text:					qsTr("Model performance")
 				name:					"performanceTable"
-				info:					qsTr("")
+				info:					qsTr("info")
 			}
 		}
 
 		Group
 		{
 			title: 						qsTr("Plots")
-			info:						qsTr("")
+			info:						qsTr("info")
 
 			CheckBox
 			{
 				text:					qsTr("Parity estimates")
 				name:					"parityPlot"
-				info:						qsTr("")
+				info:						qsTr("info")
 			}
 
 			CheckBox
@@ -214,7 +214,7 @@ Form
 				text:					qsTr("Prior and posterior distribution")
 				name:					"posteriorPlot"
 				enabled:				metric.value != "dp"
-				info:					qsTr("")
+				info:					qsTr("info")
 			}
 		}
 	}
@@ -223,7 +223,7 @@ Form
 	{
 		columns:						1
 		title: 							qsTr("Advanced")
-		info:							qsTr("")
+		info:							qsTr("info")
 
 		IntegerField
 		{
@@ -237,7 +237,7 @@ Form
 		{
 			name: 						"chooseMeasure"
 			title:						qsTr("Fairness metric")
-			info:						qsTr("")
+			info:						qsTr("info")
 
 			RadioButton
 			{
@@ -246,7 +246,7 @@ Form
 				label:					qsTr("Manual")
 				checked:				true
 				childrenOnSameRow: 		true
-				info:					qsTr("")
+				info:					qsTr("info")
 
 				DropDown
 				{
@@ -273,7 +273,7 @@ Form
 				id:						chooseGuided
 				name:					"chooseGuided"
 				label:					qsTr("Decision-tree")
-				info:					qsTr("")
+				info:					qsTr("info")
 
 				Row
 				{
