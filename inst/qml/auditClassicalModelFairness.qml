@@ -26,6 +26,7 @@ import "./common"	as Common
 Form 
 {
 	columns: 							1
+	info:								qsTr("The model fairness analysis enables bias detection in algorithmic decision-making systems.")
 
 	VariablesForm
 	{
@@ -41,7 +42,7 @@ Form
 			title: 						qsTr("Target")
 			singleVariable:				true
 			allowedColumns:				["nominal", "nominalText"]
-			info:						qsTr("info")
+			info:						qsTr("In this column, the target (i.e., to be predicted) variable should be entered.")
 		}
 		AssignedVariablesList
 		{
@@ -49,7 +50,7 @@ Form
 			title: 						qsTr("Predictions")
 			singleVariable:				true
 			allowedColumns:				["nominal", "nominalText"]
-			info:						qsTr("info")
+			info:						qsTr("In this column, the predictions of the algorithm should be entered.")
 		}
 		AssignedVariablesList
 		{
@@ -57,7 +58,7 @@ Form
 			title: 						qsTr("Sensitive Attribute")
 			singleVariable:				true
 			allowedColumns:				["nominal", "nominalText"]
-			info:						qsTr("info")
+			info:						qsTr("In this column, the protected (i.e., sensitive) attribute should be entered.")
 		}
 	}
 
@@ -71,7 +72,7 @@ Form
 	Group 
 	{
 		title:							qsTr("Factor Levels")
-		info:							qsTr("info")
+		info:							qsTr("These options allow specification of the privileged group and the positive class.")
 
 		DropDown
 		{
@@ -81,7 +82,7 @@ Form
 			addEmptyValue: 				true
 			placeholderText: 			qsTr("None")
 			source: 					[ { name: "protected", use: "levels" } ]
-			info:						qsTr("info")
+			info:						qsTr("The privileged group refers to the class in the protected variable that historically or systematically experiences certain advantages, benefits, or privileges.")
 		}
 
 		DropDown
@@ -92,7 +93,7 @@ Form
 			addEmptyValue: 				true
 			placeholderText: 			qsTr("None")
 			source: 					[ { name: "target", use: "levels" } ]
-			info:						qsTr("info")
+			info:						qsTr("The positive class in the target variable.")
 		}
 	}
 
@@ -100,28 +101,28 @@ Form
 	{
 		title: 							qsTr("Alt. Hypothesis")
 		name: 							"alternative"
-		info:							qsTr("info")
+		info:							qsTr("Specify the alternative hypothesis.")
 
 		RadioButton
 		{
 			text: 						qsTr("Unprivileged \u2260 Privileged")
 			name: 						"two.sided"
 			checked:					true
-			info:						qsTr("info")
+			info:						qsTr("Test the alternative hypothesis that the fairness metric of an unprivileged group is not equal to the fairness metric in the privileged group.")
 		}
 
 		RadioButton
 		{
 			text: 						qsTr("Unprivileged < Privileged")
 			name: 						"less"
-			info:						qsTr("info")
+			info:						qsTr("Test the alternative hypothesis that the fairness metric of an unprivileged group is lower than the fairness metric in the privileged group.")
 		}
 
 		RadioButton
 		{
 			text: 						qsTr("Unprivileged > Privileged")
 			name: 						"greater"
-			info:						qsTr("info")
+			info:						qsTr("Test the alternative hypothesis that the fairness metric of an unprivileged group is higher than the fairness metric in the privileged group.")
 		}
 	}
 
@@ -182,31 +183,30 @@ Form
 	{
 		title: 							qsTr("Report")
 		columns: 						2
-		info:							qsTr("info")
 
 		Group
 		{
 			title: 						qsTr("Tables")
-			info:						qsTr("info")
+			info:						qsTr("Add additional tables about the evaluation to the report.")
 
 			CheckBox
 			{
 				text:					qsTr("Model performance")
 				name:					"performanceTable"
-				info:					qsTr("info")
+				info:					qsTr("Produces a table containing the performance measures for the classification, including support, accuracy, precision, recall and F1-score.")
 			}
 		}
 
 		Group
 		{
 			title: 						qsTr("Plots")
-			info:						qsTr("info")
+			info:						qsTr("Add additional figures about the evaluation to the report.")
 
 			CheckBox
 			{
 				text:					qsTr("Parity estimates")
 				name:					"parityPlot"
-				info:						qsTr("info")
+				info:					qsTr("Produces a plot showing the parity statistics for each unprivileged group against the privileged group.")
 			}
 
 			CheckBox
@@ -214,7 +214,7 @@ Form
 				text:					qsTr("Prior and posterior distribution")
 				name:					"posteriorPlot"
 				enabled:				metric.value != "dp"
-				info:					qsTr("info")
+				info:					qsTr("Produces a figure that shows the prior and posterior distribution.")
 			}
 		}
 	}
@@ -223,7 +223,6 @@ Form
 	{
 		columns:						1
 		title: 							qsTr("Advanced")
-		info:							qsTr("info")
 
 		IntegerField
 		{
@@ -237,7 +236,7 @@ Form
 		{
 			name: 						"chooseMeasure"
 			title:						qsTr("Fairness metric")
-			info:						qsTr("info")
+			info:						qsTr("Choose which fairness metric to compute.")
 
 			RadioButton
 			{
@@ -246,7 +245,7 @@ Form
 				label:					qsTr("Manual")
 				checked:				true
 				childrenOnSameRow: 		true
-				info:					qsTr("info")
+				info:					qsTr("Manually select a fairness metric from a list of possible options.")
 
 				DropDown
 				{
@@ -273,7 +272,7 @@ Form
 				id:						chooseGuided
 				name:					"chooseGuided"
 				label:					qsTr("Decision-tree")
-				info:					qsTr("info")
+				info:					qsTr("Use a guided decision-aid in choosing the fairness metric to apply.")
 
 				Row
 				{
