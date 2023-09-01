@@ -191,6 +191,13 @@ Form
 
 			CheckBox
 			{
+				text:					qsTr("Confusion matrix")
+				name:					"confusionTable"
+				info:					qsTr("Produces the confusion matrix for each group.")
+			}
+
+			CheckBox
+			{
 				text:					qsTr("Model performance")
 				name:					"performanceTable"
 				info:					qsTr("Produces a table containing the performance measures for the classification, including support, accuracy, precision, recall and F1-score.")

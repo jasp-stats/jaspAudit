@@ -22,9 +22,10 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   ready <- (options[["protected"]] != "" && options[["target"]] != "" && options[["predictions"]] != "" && options[["privileged"]] != "" && options[["positive"]] != "")
   dataset <- .jfaFairnessReadData(dataset, options, ready)
   .jfaFairnessSummaryTable(dataset, options, jaspResults, ready, position = 1)
-  .jfaFairnessPerformanceTable(dataset, options, jaspResults, ready, position = 2)
-  .jfaFairnessParityPlot(dataset, options, jaspResults, ready, position = 3)
-  .jfaFairnessPosteriorPlot(dataset, options, jaspResults, ready, position = 4)
+  .jfaFairnessConfusionTable(dataset, options, jaspResults, ready, position = 2)
+  .jfaFairnessPerformanceTable(dataset, options, jaspResults, ready, position = 3)
+  .jfaFairnessParityPlot(dataset, options, jaspResults, ready, position = 4)
+  .jfaFairnessPosteriorPlot(dataset, options, jaspResults, ready, position = 5)
 }
 
 .jfaFairnessCommonOptions <- function() {
@@ -200,6 +201,45 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   tb[["precision"]] <- result[["performance"]][["all"]][["precision"]]
   tb[["recall"]] <- result[["performance"]][["all"]][["recall"]]
   tb[["f1"]] <- result[["performance"]][["all"]][["f1.score"]]
+}
+
+.jfaFairnessConfusionTable <- function(dataset, options, jaspResults, ready, position) {
+  if (!options[["confusionTable"]] || !is.null(jaspResults[["confusionTable"]])) {
+    return()
+  }
+  tb <- createJaspTable(title = gettextf("Confusion Matrix - %1$s", options[["privileged"]]))
+  tb$position <- position
+  tb$dependOn(options = c(.jfaFairnessCommonOptions(), "confusionTable"))
+  if (ready) {
+    tb$addColumnInfo(name = "group", title = "", type = "string")
+    tb$addColumnInfo(name = "obs_name", title = "", type = "string")
+    tb$addColumnInfo(name = "varname_obs", title = "", type = "string")
+    factorLevels <- levels(dataset[, options[["target"]]])
+    tb[["obs_name"]] <- c(gettext("Observed"), rep("", length(factorLevels) - 1))
+    tb[["varname_obs"]] <- factorLevels
+    result <- .jfaFairnessState(dataset, options, jaspResults)[["frequentist"]]
+    tb[["group"]] <- options[["privileged"]]
+    confTable <- result[["confusion.matrix"]][[options[["privileged"]]]]$matrix
+    for (i in seq_along(colnames(confTable))) {
+      name <- paste("varname_pred", i, sep = "")
+      tb$addColumnInfo(name = name, title = colnames(confTable)[i], type = "integer", overtitle = gettext("Predicted"))
+      if (colnames(confTable)[i] %in% rownames(confTable)) {
+        tb[[name]] <- confTable[which(rownames(confTable) == colnames(confTable)[i]), ]
+      } else {
+        tb[[name]] <- rep(0, length(colnames(confTable)))
+      }
+    }
+  } else {
+    tb$addColumnInfo(name = "obs_name", title = "", type = "string")
+    tb$addColumnInfo(name = "varname_obs", title = "", type = "string")
+    tb$addColumnInfo(name = "varname_pred1", title = ".", type = "integer", overtitle = gettext("Predicted"))
+    tb$addColumnInfo(name = "varname_pred2", title = ".", type = "integer", overtitle = gettext("Predicted"))
+    tb[["obs_name"]] <- c(gettext("Observed"), "")
+    tb[["varname_obs"]] <- rep(".", 2)
+    tb[["varname_pred1"]] <- rep("", 2)
+    tb[["varname_pred2"]] <- rep("", 2)
+  }
+  jaspResults[["confusionTable"]] <- tb
 }
 
 .jfaFairnessParityPlot <- function(dataset, options, jaspResults, ready, position) {
