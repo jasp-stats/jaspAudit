@@ -31,7 +31,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 .jfaFairnessCommonOptions <- function() {
   opt <- c(
     "target", "predictions", "protected", "metric", "conf_level", "privileged", "positive",
-    "chooseMeasure", "q1", "q2", "q3", "q4", "alternative", "seed"
+    "chooseMeasure", "q1", "q2", "q3", "q4", "alternative", "seed", "concentration"
   )
   return(opt)
 }
@@ -100,7 +100,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     result[["bayesian"]] <- jfa::model_fairness(dataset, options[["protected"]], options[["target"]], options[["predictions"]],
       privileged = options[["privileged"]], positive = options[["positive"]],
       metric = .jfaFairnessGetMetricFromQuestion(options)[["metric"]], alternative = options[["alternative"]],
-      conf.level = options[["conf_level"]], prior = TRUE
+      conf.level = options[["conf_level"]], prior = options[["concentration"]]
     )
     jaspResults[["state"]] <- createJaspState(result)
     jaspResults[["state"]]$dependOn(options = .jfaFairnessCommonOptions())
@@ -145,28 +145,33 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     return()
   }
   result <- .jfaFairnessState(dataset, options, jaspResults)
-  privilegedIndex <- which(rownames(result[["frequentist"]][["metric"]][["all"]]) == options[["privileged"]])
-  rowNames <- rownames(result[["frequentist"]][["metric"]][["all"]])
-  rowNames[privilegedIndex] <- paste0(rowNames[privilegedIndex], " (P)")
+  metrics <- result[["frequentist"]][["metric"]][["all"]]
+  parity <- result[["frequentist"]][["parity"]][["all"]]
+  freqOddsRatio <- result[["frequentist"]][["odds.ratio"]][["all"]]
+  bayesOddsRatio <- result[["bayesian"]][["odds.ratio"]][["all"]]
+  # Put privileged group on top
+  privilegedIndex <- which(rownames(metrics) == options[["privileged"]])
+  metrics <- rbind(metrics[privilegedIndex, ], metrics[-privilegedIndex, ])
+  parity <- rbind(parity[privilegedIndex, ], parity[-privilegedIndex, ])
+  freqOddsRatio <- rbind(freqOddsRatio[privilegedIndex, ], freqOddsRatio[-privilegedIndex, ])
+  bayesOddsRatio <- rbind(bayesOddsRatio[privilegedIndex, ], bayesOddsRatio[-privilegedIndex, ])
+  rowNames <- rownames(metrics)
+  rowNames[1] <- paste0(rowNames[1], " (P)")
   tb[["group"]] <- rowNames
-  tb[["metric"]] <- result[["frequentist"]][["metric"]][["all"]][["estimate"]]
-  tb[["parity"]] <- result[["frequentist"]][["parity"]][["all"]][["estimate"]]
+  tb[["metric"]] <- metrics[["estimate"]]
+  tb[["parity"]] <- parity[["estimate"]]
   if (metric[["metric"]] != "dp") {
-    tb[["metric_lb"]] <- result[["frequentist"]][["metric"]][["all"]][["lb"]]
-    tb[["metric_ub"]] <- result[["frequentist"]][["metric"]][["all"]][["ub"]]
-    parity_lb <- result[["frequentist"]][["parity"]][["all"]][["lb"]]
-    parity_lb[privilegedIndex] <- NA
-    tb[["parity_lb"]] <- parity_lb
-    parity_ub <- result[["frequentist"]][["parity"]][["all"]][["ub"]]
-    parity_ub[privilegedIndex] <- NA
-    tb[["parity_ub"]] <- parity_ub
-    tb[["p"]] <- append(result[["frequentist"]][["odds.ratio"]][["all"]][["p.value"]], NA, after = privilegedIndex - 1)
+    tb[["metric_lb"]] <- metrics[["lb"]]
+    tb[["metric_ub"]] <- metrics[["ub"]]
+    tb[["parity_lb"]] <- c(NA, parity[["lb"]][-1])
+    tb[["parity_ub"]] <- c(NA, parity[["ub"]][-1])
+    tb[["p"]] <- c(NA, freqOddsRatio[["p.value"]])
     bfs <- switch(options[["bayesFactorType"]],
       "BF10" = result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]],
       "BF01" = 1 / result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]],
       "logBF10" = log(result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]])
     )
-    tb[["bf"]] <- append(bfs, NA, after = privilegedIndex - 1)
+    tb[["bf"]] <- c(NA, bfs)
     message <- switch(options[["alternative"]],
       "two.sided" = gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is equal to that of the privileged (P) group."),
       "less" = gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is greater than that of the privileged (P) group."),
@@ -207,27 +212,33 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   if (!options[["confusionTable"]] || !is.null(jaspResults[["confusionTable"]])) {
     return()
   }
-  tb <- createJaspTable(title = gettextf("Confusion Matrix - %1$s", options[["privileged"]]))
+  tb <- createJaspTable(title = gettext("Confusion Matrix"))
   tb$position <- position
-  tb$dependOn(options = c(.jfaFairnessCommonOptions(), "confusionTable"))
+  tb$dependOn(options = c(.jfaFairnessCommonOptions(), "confusionTable", "confusionTableProportions"))
   if (ready) {
     tb$addColumnInfo(name = "group", title = "", type = "string")
-    tb$addColumnInfo(name = "obs_name", title = "", type = "string")
-    tb$addColumnInfo(name = "varname_obs", title = "", type = "string")
+    tb$addColumnInfo(name = "varname_obs", title = gettext("Actual"), type = "string")
     factorLevels <- levels(dataset[, options[["target"]]])
-    tb[["obs_name"]] <- c(gettext("Observed"), rep("", length(factorLevels) - 1))
-    tb[["varname_obs"]] <- factorLevels
+    groupLevels <- levels(dataset[, options[["protected"]]])
+    group <- rep("", length(groupLevels) * length(factorLevels))
+    group[(seq_along(groupLevels) - 1) * length(factorLevels) + 1] <- groupLevels
+    tb[["group"]] <- group
     result <- .jfaFairnessState(dataset, options, jaspResults)[["frequentist"]]
-    tb[["group"]] <- options[["privileged"]]
-    confTable <- result[["confusion.matrix"]][[options[["privileged"]]]]$matrix
-    for (i in seq_along(colnames(confTable))) {
+    privConfTable <- result[["confusion.matrix"]][[options[["privileged"]]]]$matrix
+    tb[["varname_obs"]] <- rep(rownames(privConfTable), length(groupLevels))
+    colType <- if (options[["confusionTableProportions"]]) "number" else "integer"
+    for (i in seq_along(colnames(privConfTable))) {
       name <- paste("varname_pred", i, sep = "")
-      tb$addColumnInfo(name = name, title = colnames(confTable)[i], type = "integer", overtitle = gettext("Predicted"))
-      if (colnames(confTable)[i] %in% rownames(confTable)) {
-        tb[[name]] <- confTable[which(rownames(confTable) == colnames(confTable)[i]), ]
-      } else {
-        tb[[name]] <- rep(0, length(colnames(confTable)))
+      tb$addColumnInfo(name = name, title = colnames(privConfTable)[i], type = colType, overtitle = gettext("Predicted"))
+      col <- numeric()
+      for (j in seq_along(groupLevels)) {
+        values <- result[["confusion.matrix"]][[j]]$matrix[, i]
+        if (options[["confusionTableProportions"]]) {
+          values <- values / sum(result[["confusion.matrix"]][[j]]$matrix)
+        }
+        col <- c(col, values)
       }
+      tb[[name]] <- col
     }
   } else {
     tb$addColumnInfo(name = "obs_name", title = "", type = "string")

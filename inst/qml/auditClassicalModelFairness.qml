@@ -194,6 +194,12 @@ Form
 				text:					qsTr("Confusion matrix")
 				name:					"confusionTable"
 				info:					qsTr("Produces the confusion matrix for each group.")
+
+				CheckBox {
+					text:				qsTr("Display proportions")
+					name:				"confusionTableProportions"
+					info:				qsTr("Displays proportions in the confusion table.")
+				}
 			}
 
 			CheckBox
@@ -231,12 +237,27 @@ Form
 		columns:						1
 		title: 							qsTr("Advanced")
 
-		IntegerField
+		Group
 		{
-			name: 						"seed"
-			label: 						qsTr("Seed")
-			defaultValue: 				1
-			info:						qsTr("Selects the seed for the random number generator in order to reproduce results.")
+			title:						qsTr("Prior Distribution")
+
+			DoubleField
+			{
+				name: 					"concentration"
+				label: 					qsTr("Concentration")
+				defaultValue: 			1
+				decimals:				2
+				min:					1
+				info:					qsTr("Specifies the concentration parameter for the Dirichlet prior.")
+			}
+
+			IntegerField
+			{
+				name: 					"seed"
+				label: 					qsTr("Seed")
+				defaultValue: 			1
+				info:					qsTr("Selects the seed for the random number generator in order to reproduce results.")
+			}
 		}
 
 		RadioButtonGroup 
