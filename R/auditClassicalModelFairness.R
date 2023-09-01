@@ -172,6 +172,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       "greater" = gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is lower than that of the privileged (P) group.")
     )
     tb$addFootnote(message)
+    tb$addFootnote(gettextf("The Bayes factor is computed using a Dirichlet(%1$s%2$s, %1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = 1.", "\u03B1", "\u2081", "\u2082", "\u2083", "\u2084"), colName = "bf")
   }
 }
 
