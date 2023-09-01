@@ -326,6 +326,7 @@ Form
 							name:		"q2option1"
 							label: 		q1option1.checked ? qsTr("Yes"): qsTr("Absolute")
 							value:		q1option1.checked ? "yes": "abs"
+							checked: 	true
 						}
 						
 						RadioButton
@@ -334,7 +335,6 @@ Form
 							name:		"q2option2"
 							label: 		q1option1.checked ? qsTr("No"): qsTr("Proportional")
 							value:		q1option1.checked ? "no": "prop"
-							checked: 	true
 						}
 					}
 
