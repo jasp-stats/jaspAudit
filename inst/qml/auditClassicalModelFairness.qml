@@ -191,6 +191,21 @@ Form
 
 			CheckBox
 			{
+				text:					qsTr("Individual comparisons")
+				name:					"comparisonsTable"
+				info:					qsTr("Produces a table comparing the unprivileged groups against the privileged group.")
+				checked:				true
+			}
+
+			CheckBox
+			{
+				text:					qsTr("Model performance")
+				name:					"performanceTable"
+				info:					qsTr("Produces a table containing the performance measures for the classification, including support, accuracy, precision, recall and F1-score.")
+			}
+
+			CheckBox
+			{
 				text:					qsTr("Confusion matrix")
 				name:					"confusionTable"
 				info:					qsTr("Produces the confusion matrix for each group.")
@@ -200,13 +215,6 @@ Form
 					name:				"confusionTableProportions"
 					info:				qsTr("Displays proportions in the confusion table.")
 				}
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Model performance")
-				name:					"performanceTable"
-				info:					qsTr("Produces a table containing the performance measures for the classification, including support, accuracy, precision, recall and F1-score.")
 			}
 		}
 

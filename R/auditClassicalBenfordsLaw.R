@@ -58,7 +58,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   # ---
 
   # Create the conclusion paragraph
-  .jfaBenfordsLawAddConclusion(options, benfordsLawContainer, jaspResults, ready, position = 5)
+  .jfaBenfordsLawAddConclusion(options, benfordsLawContainer, jaspResults, ready, position = 3)
 
   # ---
 

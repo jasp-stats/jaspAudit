@@ -18,49 +18,13 @@ options$alternative <- "two.sided"
 options$seed <- 1
 options$concentration <- 1
 options$confusionTable <- TRUE
+options$comparisonsTable <- TRUE
 set.seed(1)
 results <- runAnalysis("auditClassicalModelFairness", "compas.csv", options)
 
 
-test_that("Confusion Matrix table results match", {
-  table <- results[["results"]][["confusionTable"]][["data"]]
-  jaspTools::expect_equal_tables(
-    table,
-    list(
-      "African_American", "no", 885, 629, "", "yes", 411, 1250, "Asian",
-      "no", 21, 2, "", "yes", 6, 2, "Caucasian", "no", 997, 284, "",
-      "yes", 434, 388, "Hispanic", "no", 259, 61, "", "yes", 101,
-      88, "Native_American", "no", 4, 2, "", "yes", 2, 3, "Other",
-      "no", 186, 33, "", "yes", 72, 52
-    )
-  )
-})
-
-test_that("Parity Estimates Plot matches", {
-  plotName <- results[["results"]][["parityPlot"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "parity-estimates-plot")
-})
-
-test_that("Model Performance table results match", {
-  table <- results[["results"]][["performanceTable"]][["data"]]
-  jaspTools::expect_equal_tables(
-    table,
-    list(
-      0.67244094488189, 0.706214689265537, "African_American", 0.665247472059606,
-      0.752558699578567, 3175, 0.741935483870968, 0.333333333333333,
-      "Asian", 0.5, 0.25, 31, 0.658582976699952, 0.519410977242303,
-      "Caucasian", 0.577380952380952, 0.472019464720195, 2103, 0.681728880157171,
-      0.520710059171598, "Hispanic", 0.590604026845638, 0.465608465608466,
-      509, 0.636363636363636, 0.6, "Native_American", 0.6, 0.6, 11,
-      0.693877551020408, 0.497607655502392, "Other", 0.611764705882353,
-      0.419354838709677, 343
-    )
-  )
-})
-
-test_that("Model Fairness Summary - Predictive Rate Parity table results match", {
-  table <- results[["results"]][["summaryTable"]][["data"]]
+test_that("<b>Table 2.</b> Comparisons to Privileged (P) Group results match", {
+  table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_comparisonsTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
     list(
@@ -76,6 +40,54 @@ test_that("Model Fairness Summary - Predictive Rate Parity table results match",
       1, 1.03917525773196, 0.253961962253867, 1.64060668362452, 0.101060279359127,
       "Other", 0.611764705882353, 0.499883743058991, 0.715621551172544,
       0.56209502916255, 1.05955124317768, 0.865778029215573, 1.23942701646379
+    )
+  )
+})
+
+test_that("<b>Table 4.</b> Confusion Matrix results match", {
+  table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_confusionTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      "African_American", "no", 885, 629, "", "yes", 411, 1250, "Asian",
+      "no", 21, 2, "", "yes", 6, 2, "Caucasian", "no", 997, 284, "",
+      "yes", 434, 388, "Hispanic", "no", 259, 61, "", "yes", 101,
+      88, "Native_American", "no", 4, 2, "", "yes", 2, 3, "Other",
+      "no", 186, 33, "", "yes", 72, 52
+    )
+  )
+})
+
+test_that("Parity Estimates Plot matches", {
+  plotName <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_parityPlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "parity-estimates-plot")
+})
+
+test_that("Model Performance table results match", {
+  table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_performanceTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      0.67244094488189, 0.706214689265537, "African_American", 0.665247472059606,
+      0.752558699578567, 3175, 0.741935483870968, 0.333333333333333,
+      "Asian", 0.5, 0.25, 31, 0.658582976699952, 0.519410977242303,
+      "Caucasian", 0.577380952380952, 0.472019464720195, 2103, 0.681728880157171,
+      0.520710059171598, "Hispanic", 0.590604026845638, 0.465608465608466,
+      509, 0.636363636363636, 0.6, "Native_American", 0.6, 0.6, 11,
+      0.693877551020408, 0.497607655502392, "Other", 0.611764705882353,
+      0.419354838709677, 343
+    )
+  )
+})
+
+test_that("<b>Table 1.</b> Model Fairness Summary - Predictive Rate Parity results match", {
+  table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_summaryTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(
+      0.000714070961957615, 5, "Ethnicity", 6172, 0.00209507283665478,
+      18.7989675485203
     )
   )
 })
