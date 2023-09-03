@@ -34,7 +34,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 
   .jfaTableNumberInit(jaspResults) # Initialize table numbers
 
-  # Create the goodness-of-fit table
+  # Create the omnibus test table
   .jfaFairnessSummaryTable(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 1)
 
   # Create the comparisons to privileged group table
@@ -138,7 +138,12 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   if (options[["explanatoryText"]] && is.null(jaspResults[["procedureContainer"]])) {
     procedureContainer <- createJaspContainer(title = gettext("<u>Procedure</u>"))
     procedureContainer$position <- position
-    procedureText <- gettextf("The goal of this procedure is to determine to what extent there occurs discrimination in the predictions of an algorithm, and to test this relation with a type-I error of %1$s%%.", round((1 - options[["conf_level"]]) * 100, 3))
+    procedureText <- gettextf(
+      "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards sensitive groups in the data, and to test this relation with a type-I error of %1$s%%. Considering the positive class (<i>%2$s</i>), fairness or discrimination can be quantified using various fairness metrics and their ratio when compared to the privileged (<i>%3$s</i>) group.",
+      round((1 - options[["conf_level"]]) * 100, 3),
+      if (options[["positive"]] == "") "..." else options[["positive"]],
+      if (options[["privileged"]] == "") "..." else options[["privileged"]]
+    )
     procedureContainer[["procedureParagraph"]] <- createJaspHtml(procedureText, "p")
     procedureContainer[["procedureParagraph"]]$position <- 1
     procedureContainer$dependOn(options = c(.jfaFairnessCommonOptions(), "explanatoryText"))
@@ -184,9 +189,10 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   if (!is.null(fairnessContainer[["summaryTable"]])) {
     return()
   }
+
   metric <- .jfaFairnessGetMetricFromQuestion(options)
   title <- gettextf(
-    "<b>Table %1$i.</b> Model Fairness Summary - %2$s",
+    "<b>Table %1$i.</b> Omnibus Test - %2$s",
     jaspResults[["tabNumber"]]$object,
     metric[["mainTitle"]]
   )
@@ -206,8 +212,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     )
     tb$addColumnInfo(name = "bf", title = bfTitle, type = "number")
   }
-  tb[["group"]] <- options[["protected"]]
-  tb$addFootnote(gettext("The null hypothesis specifies that the fairness metrics are equal across groups."))
+  tb$addFootnote(gettextf("The null hypothesis specifies that the %1$s is equal across sensitive groups.", tolower(metric[["title"]])))
   fairnessContainer[["summaryTable"]] <- tb
   if (!ready) {
     if ((options[["target"]] != "" && options[["predictions"]] != "" && options[["protected"]] != "") && (options[["privileged"]] == "" || options[["positive"]] == "")) {
@@ -216,6 +221,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     return()
   }
   result <- .jfaFairnessState(dataset, options, jaspResults)
+  tb[["group"]] <- options[["protected"]]
   tb[["n"]] <- result[["frequentist"]][["n"]]
   if (metric[["metric"]] != "dp") {
     tb[["value"]] <- result[["frequentist"]][["statistic"]]
@@ -268,20 +274,22 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       tb$addColumnInfo(name = "bf", title = bfTitle, type = "number")
     }
     fairnessContainer[["comparisonsTable"]] <- tb
+    message <- switch(options[["alternative"]],
+      "two.sided" = gettextf("The null hypothesis specifies that the %1$s of an unprivileged group is equal to that of the privileged (P) group.", tolower(metric[["title"]])),
+      "less" = gettextf("The null hypothesis specifies that the %1$s of an unprivileged group is greater than that of the privileged (P) group.", tolower(metric[["title"]])),
+      "greater" = gettextf("The null hypothesis specifies that the %1$s of an unprivileged group is lower than that of the privileged (P) group.", tolower(metric[["title"]]))
+    )
+    tb$addFootnote(message)
     if (!ready) {
       return()
     }
     result <- .jfaFairnessState(dataset, options, jaspResults)
     metrics <- result[["frequentist"]][["metric"]][["all"]]
     parity <- result[["frequentist"]][["parity"]][["all"]]
-    freqOddsRatio <- result[["frequentist"]][["odds.ratio"]][["all"]]
-    bayesOddsRatio <- result[["bayesian"]][["odds.ratio"]][["all"]]
     # Put privileged group on top
     privilegedIndex <- which(rownames(metrics) == options[["privileged"]])
     metrics <- rbind(metrics[privilegedIndex, ], metrics[-privilegedIndex, ])
     parity <- rbind(parity[privilegedIndex, ], parity[-privilegedIndex, ])
-    freqOddsRatio <- rbind(freqOddsRatio[privilegedIndex, ], freqOddsRatio[-privilegedIndex, ])
-    bayesOddsRatio <- rbind(bayesOddsRatio[privilegedIndex, ], bayesOddsRatio[-privilegedIndex, ])
     rowNames <- rownames(metrics)
     rowNames[1] <- paste0(rowNames[1], " (P)")
     tb[["group"]] <- rowNames
@@ -292,20 +300,14 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       tb[["metric_ub"]] <- metrics[["ub"]]
       tb[["parity_lb"]] <- c(NA, parity[["lb"]][-1])
       tb[["parity_ub"]] <- c(NA, parity[["ub"]][-1])
-      tb[["p"]] <- c(NA, freqOddsRatio[["p.value"]])
+      tb[["p"]] <- c(NA, result[["frequentist"]][["odds.ratio"]][["all"]][["p.value"]])
       bfs <- switch(options[["bayesFactorType"]],
         "BF10" = result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]],
         "BF01" = 1 / result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]],
         "logBF10" = log(result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]])
       )
       tb[["bf"]] <- c(NA, bfs)
-      message <- switch(options[["alternative"]],
-        "two.sided" = gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is equal to that of the privileged (P) group."),
-        "less" = gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is greater than that of the privileged (P) group."),
-        "greater" = gettext("The null hypothesis specifies that the fairness metric of an unprivileged group is lower than that of the privileged (P) group.")
-      )
-      tb$addFootnote(message)
-      tb$addFootnote(gettextf("The Bayes factor is computed using a Dirichlet(%1$s%2$s, %1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = 1.", "\u03B1", "\u2081", "\u2082", "\u2083", "\u2084"), colName = "bf")
+      tb$addFootnote(gettextf("Bayes factors are computed using a Dirichlet(%1$s%2$s, %1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = 1.", "\u03B1", "\u2081", "\u2082", "\u2083", "\u2084"), colName = "bf")
     }
   }
 }
@@ -347,6 +349,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   }
 
   .jfaTableNumberUpdate(jaspResults)
+
   if (is.null(fairnessContainer[["confusionTable"]])) {
     title <- gettextf(
       "<b>Table %i.</b> Confusion Matrix",
@@ -400,6 +403,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   }
 
   .jfaFigureNumberUpdate(jaspResults)
+
   if (is.null(fairnessContainer[["parityPlot"]])) {
     plot <- createJaspPlot(title = gettext("Parity Estimates Plot"), width = 530, height = 350)
     plot$position <- positionInContainer
@@ -429,6 +433,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   }
 
   .jfaFigureNumberUpdate(jaspResults)
+
   if (is.null(fairnessContainer[["posteriorPlot"]])) {
     plot <- createJaspPlot(title = gettext("Prior and Posterior Distribution Plot"), width = 530, height = 350)
     plot$position <- positionInContainer
@@ -467,7 +472,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   pvalue <- format.pval(state[["frequentist"]][["p.value"]], eps = 0.001)
   pvalue <- if (rejectnull) gettextf("%1$s < %2$s", pvalue, "\u03B1") else gettextf("%1$s >= %2$s", pvalue, "\u03B1")
 
-  caption <- gettextf("The <i>p</i> value is %1$s and the null hypothesis of equal fairness metrics %2$s.", pvalue, conclusion)
+  caption <- gettextf("The <i>p</i> value is %1$s and the null hypothesis of equal %2$s across sensitive groups %3$s.", pvalue, tolower(.jfaFairnessGetMetricFromQuestion(options)[["title"]]), conclusion)
   caption <- gettextf("%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis.", caption, format(state[["bayesian"]][["bf"]], digits = 3))
 
   container[["conclusionParagraph"]] <- createJaspHtml(caption, "p")
