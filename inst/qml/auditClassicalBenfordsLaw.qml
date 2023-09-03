@@ -211,5 +211,26 @@ Form
 		}
 	}
 
+	Section
+	{
+		columns:					1
+		title: 						qsTr("Advanced")
+
+		Group
+		{
+			title:					qsTr("Prior Distribution")
+
+			DoubleField
+			{
+				name: 				"concentration"
+				label: 				qsTr("Concentration")
+				defaultValue: 		1
+				decimals:			2
+				min:				1
+				info:				qsTr("Specifies the concentration parameter for the Dirichlet prior.")
+			}
+		}
+	}
+
 	Common.DownloadReport { }
 }

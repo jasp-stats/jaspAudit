@@ -141,7 +141,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     "values",
     "confidence",
     "digits",
-    "distribution"
+    "distribution",
+    "concentration"
   ))
 
   jaspResults[["benfordsLawContainer"]] <- benfordsLawContainer
@@ -164,7 +165,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       check = options[["digits"]],
       reference = options[["distribution"]],
       conf.level = options[["confidence"]],
-      prior = TRUE
+      prior = options[["concentration"]]
     )
     estimates <- test$estimates
     estimates$bf10 <- btest$estimates$bf10
@@ -189,7 +190,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "values",
       "confidence",
       "digits",
-      "distribution"
+      "distribution",
+      "concentration"
     ))
     return(benfordsLawContainer[["result"]]$object)
   } else {

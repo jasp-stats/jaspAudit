@@ -8,6 +8,7 @@ options$digits <- "first"
 options$bayesFactorType <- "BF10"
 options$matchTable <- TRUE
 options$match <- 9
+options$concentration <- 1
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalBenfordsLaw", "sinoForest.csv", options)
 
