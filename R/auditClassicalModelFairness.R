@@ -307,7 +307,8 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
         "logBF10" = log(result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]])
       )
       tb[["bf"]] <- c(NA, bfs)
-      tb$addFootnote(gettextf("Bayes factors are computed using a Dirichlet(%1$s%2$s, %1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = 1.", "\u03B1", "\u2081", "\u2082", "\u2083", "\u2084"), colName = "bf")
+      tb$addFootnote(gettext("p-values are uncorrected for multiple comparisons."), colName = "p")
+      tb$addFootnote(gettextf("Bayes factors are uncorrected and are computed using a Dirichlet(%1$s%2$s, %1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = 1.", "\u03B1", "\u2081", "\u2082", "\u2083", "\u2084"), colName = "bf")
     }
   }
 }
