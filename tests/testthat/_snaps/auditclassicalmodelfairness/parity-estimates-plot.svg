@@ -86,19 +86,19 @@
 <text x='447.12' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='65.21px' lengthAdjust='spacingAndGlyphs'>Hispanic</text>
 <text x='552.07' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='129.47px' lengthAdjust='spacingAndGlyphs'>Native_American</text>
 <text x='657.03' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='42.52px' lengthAdjust='spacingAndGlyphs'>Other</text>
-<text x='394.64' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='116.25px' lengthAdjust='spacingAndGlyphs'>Protected class</text>
+<text x='394.64' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='64.26px' lengthAdjust='spacingAndGlyphs'>Ethnicity</text>
 <text transform='translate(16.68,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='154.97px' lengthAdjust='spacingAndGlyphs'>Predictive rate parity</text>
-<rect x='191.28' y='20.71' width='406.71' height='39.31' style='stroke-width: 0.75; stroke: none;' />
-<rect x='191.28' y='20.71' width='406.71' height='39.31' style='stroke-width: 10.67; stroke: none;' />
-<rect x='205.23' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='205.94' y='26.90' width='26.93' height='26.93' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #1E90FF;' />
-<rect x='368.64' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='369.35' y='26.90' width='26.93' height='26.93' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #D3D3D3;' />
-<rect x='484.82' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='485.53' y='26.90' width='26.93' height='26.93' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #B22222;' />
-<text x='242.05' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='118.13px' lengthAdjust='spacingAndGlyphs'>Privileged class</text>
-<text x='405.46' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.90px' lengthAdjust='spacingAndGlyphs'>Expected</text>
-<text x='521.64' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.88px' lengthAdjust='spacingAndGlyphs'>Deviation</text>
+<rect x='188.92' y='20.71' width='411.45' height='39.31' style='stroke-width: 0.75; stroke: none;' />
+<rect x='188.92' y='20.71' width='411.45' height='39.31' style='stroke-width: 10.67; stroke: none;' />
+<rect x='202.87' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<rect x='203.57' y='26.90' width='26.93' height='26.93' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #1E90FF;' />
+<rect x='371.01' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<rect x='371.72' y='26.90' width='26.93' height='26.93' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #D3D3D3;' />
+<rect x='487.19' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<rect x='487.90' y='26.90' width='26.93' height='26.93' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #B22222;' />
+<text x='239.68' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='122.86px' lengthAdjust='spacingAndGlyphs'>Privileged group</text>
+<text x='407.82' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.90px' lengthAdjust='spacingAndGlyphs'>Expected</text>
+<text x='524.01' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.88px' lengthAdjust='spacingAndGlyphs'>Deviation</text>
 <text x='394.64' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='153.07px' lengthAdjust='spacingAndGlyphs'>parity-estimates-plot</text>
 </g>
 </svg>
