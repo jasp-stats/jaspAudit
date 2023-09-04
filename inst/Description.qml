@@ -83,7 +83,7 @@ Description
 	GroupTitle
 	{
 		title:			qsTr("Algorithm Auditing")
-		icon:			"audit-workflow.svg"
+		icon:			"audit-algorithms.svg"
 	}
 	Analysis
 	{
