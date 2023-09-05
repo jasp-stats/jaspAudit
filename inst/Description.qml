@@ -16,7 +16,7 @@ Description
 	GroupTitle
 	{
 		title:			qsTr("Audit Sampling")
-		icon:			"audit-selection.svg"
+		icon:			"audit-sampling.svg"
 	}
 	Analysis
 	{
@@ -66,7 +66,7 @@ Description
 	GroupTitle
 	{
 		title:			qsTr("Data Auditing")
-		icon:			"audit-number-analysis.svg"
+		icon:			"audit-data.svg"
 	}
 	Analysis
 	{
