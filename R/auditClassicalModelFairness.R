@@ -139,7 +139,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     procedureContainer <- createJaspContainer(title = gettext("<u>Procedure</u>"))
     procedureContainer$position <- position
     procedureText <- gettextf(
-      "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards sensitive groups in the data, and to test this relation with a type-I error of %1$s%%. Considering the positive class (<i>%2$s</i>), fairness or discrimination can be quantified using various fairness metrics and their ratio when compared to the privileged (<i>%3$s</i>) group.",
+      "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute, and to test this fairness with a type-I error of %1$s%%. Considering the positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified using so-called fairness metrics. The ratio of a fairness metric of an unprivileged group compared to the privileged (<i>%3$s</i>) group is called parity.",
       round((1 - options[["conf_level"]]) * 100, 3),
       if (options[["positive"]] == "") "..." else options[["positive"]],
       if (options[["privileged"]] == "") "..." else options[["privileged"]]
@@ -211,7 +211,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       "logBF10" = gettextf("Log(BF%1$s)", "\u2080\u2081")
     )
     tb$addColumnInfo(name = "bf", title = bfTitle, type = "number")
-    tb$addFootnote(gettextf("The null hypothesis specifies that the %1$s is equal across sensitive groups.", tolower(metric[["title"]])))
+    tb$addFootnote(gettextf("The null hypothesis specifies that the %1$s is equal across protected groups.", tolower(metric[["title"]])))
   }
   fairnessContainer[["summaryTable"]] <- tb
   if (!ready) {
@@ -307,7 +307,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
         "logBF10" = log(result[["bayesian"]][["odds.ratio"]][["all"]][["bf10"]])
       )
       tb[["bf"]] <- c(NA, bfs)
-      tb$addFootnote(gettext("p-values are uncorrected for multiple comparisons are are computed using Fisher's exact test."), colName = "p")
+      tb$addFootnote(gettext("<i>p</i>-values are uncorrected for multiple comparisons and are based on Fisher's exact test."), colName = "p")
       tb$addFootnote(gettextf("Bayes factors are uncorrected and are computed using a Dirichlet(%1$s%2$s, %1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = 1.", "\u03B1", "\u2081", "\u2082", "\u2083", "\u2084"), colName = "bf")
     }
   }
@@ -474,7 +474,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   pvalue <- format.pval(state[["frequentist"]][["p.value"]], eps = 0.001)
   pvalue <- if (rejectnull) gettextf("%1$s < %2$s", pvalue, "\u03B1") else gettextf("%1$s >= %2$s", pvalue, "\u03B1")
 
-  caption <- gettextf("The <i>p</i> value is %1$s and the null hypothesis of equal %2$s across sensitive groups %3$s.", pvalue, tolower(.jfaFairnessGetMetricFromQuestion(options)[["title"]]), conclusion)
+  caption <- gettextf("The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across protected groups %3$s.", pvalue, tolower(.jfaFairnessGetMetricFromQuestion(options)[["title"]]), conclusion)
   caption <- gettextf("%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis.", caption, format(1 / state[["bayesian"]][["bf"]], digits = 3))
 
   container[["conclusionParagraph"]] <- createJaspHtml(caption, "p")

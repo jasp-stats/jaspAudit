@@ -208,8 +208,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   }
 
   title <- gettextf(
-    "<b>Table %i.</b> Goodness-of-fit Test",
-    jaspResults[["tabNumber"]]$object
+    "<b>Table %1$i.</b> Omnibus Test - %2$s",
+    jaspResults[["tabNumber"]]$object,
+    switch(options[["distribution"]], "benford" = "Benford's Law", "uniform" = "Uniform Distribution")
   )
   bftitle <- switch(options[["bayesFactorType"]],
     "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
@@ -303,6 +304,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "logBF10" = gettextf("Log(BF%1$s)", "\u2081\u2080")
     )
     tb$addColumnInfo(name = "bf", title = bftitle, type = "number")
+    tb$addFootnote(gettextf("The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s.", switch(options[["distribution"]], "benford" = gettext("Benford's law"), "uniform" = gettext("the uniform distribution"))))
 
     benfordsLawContainer[["benfordsLawTable"]] <- tb
 
@@ -340,7 +342,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "BF01" = 1 / state[["estimates"]]$bf10,
       "logBF10" = log(state[["estimates"]]$bf10)
     )
-    tb$addFootnote(gettext("Confidence intervals, <i>p</i>-values and Bayes factors are based on independent binomial distributions."))
+    tb$addFootnote(gettext("Confidence intervals and <i>p</i>-values are based on independent binomial distributions."), colName = "pval")
+    tb$addFootnote(gettext("Bayes factors are computed using a beta(1, 1) prior."), colName = "bf")
   }
 }
 
@@ -465,9 +468,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   )
 
   caption <- switch(options[["digits"]],
-    "first" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
-    "firsttwo" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
-    "last" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion)
+    "first" = gettextf("The <i>p</i>-value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
+    "firsttwo" = gettextf("The <i>p</i>-value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
+    "last" = gettextf("The <i>p</i>-value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion)
   )
   caption <- gettextf("%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis.", caption, format(1 / exp(state[["logBF10"]]), digits = 3))
 
