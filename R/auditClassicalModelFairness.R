@@ -58,6 +58,9 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   # Create the prior and posterior plot
   .jfaFairnessPosteriorPlot(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 7)
 
+  # Create the prior and posterior plot
+  .jfaFairnessRobustnessPlot(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 9)
+
   # ---
 
   # Create the conclusion paragraph
@@ -453,6 +456,35 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = fairnessContainer[["posteriorPlot"]])
     fairnessContainer[["posteriorPlotText"]] <- caption
+  }
+}
+
+.jfaFairnessRobustnessPlot <- function(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer) {
+  metric <- .jfaFairnessGetMetricFromQuestion(options)
+  if (!options[["robustnessPlot"]] || metric[["metric"]] == "dp") {
+    return()
+  }
+
+  .jfaFigureNumberUpdate(jaspResults)
+
+  if (is.null(fairnessContainer[["robustnessPlot"]])) {
+    plot <- createJaspPlot(title = gettext("Bayes Factor Robustness Plot"), width = 530, height = 350)
+    plot$position <- positionInContainer
+    plot$dependOn(options = c(.jfaFairnessCommonOptions(), "robustnessPlot"))
+    fairnessContainer[["robustnessPlot"]] <- plot
+    if (!ready) {
+      return()
+    }
+    result <- .jfaFairnessState(dataset, options, jaspResults)[["bayesian"]]
+    plot$plotObject <- plot(result, type = "robustness") +
+      jaspGraphs::geom_rangeframe() +
+      jaspGraphs::themeJaspRaw(legend.position = "top")
+  }
+  if (options[["explanatoryText"]]) {
+    caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The robustness of the Bayes factor to the prior distribution.", jaspResults[["figNumber"]]$object), "p")
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = fairnessContainer[["robustnessPlot"]])
+    fairnessContainer[["robustnessPlotText"]] <- caption
   }
 }
 

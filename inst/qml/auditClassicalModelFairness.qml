@@ -237,6 +237,14 @@ Form
 				enabled:				metric.value != "dp"
 				info:					qsTr("Produces a figure that shows the prior and posterior distribution.")
 			}
+
+			CheckBox
+			{
+				text:					qsTr("Bayes factor robustness check")
+				name:					"robustnessPlot"
+				enabled:				metric.value != "dp"
+				info:					qsTr("Produces a figure that shows the robustness of the Bayes factor to the prior distribution.")
+			}
 		}
 	}
 

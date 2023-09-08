@@ -210,7 +210,10 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   title <- gettextf(
     "<b>Table %1$i.</b> Omnibus Test - %2$s",
     jaspResults[["tabNumber"]]$object,
-    switch(options[["distribution"]], "benford" = "Benford's Law", "uniform" = "Uniform Distribution")
+    switch(options[["distribution"]],
+      "benford" = "Benford's Law",
+      "uniform" = "Uniform Distribution"
+    )
   )
   bftitle <- switch(options[["bayesFactorType"]],
     "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
@@ -304,7 +307,10 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "logBF10" = gettextf("Log(BF%1$s)", "\u2081\u2080")
     )
     tb$addColumnInfo(name = "bf", title = bftitle, type = "number")
-    tb$addFootnote(gettextf("The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s.", switch(options[["distribution"]], "benford" = gettext("Benford's law"), "uniform" = gettext("the uniform distribution"))))
+    tb$addFootnote(gettextf("The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s.", switch(options[["distribution"]],
+      "benford" = gettext("Benford's law"),
+      "uniform" = gettext("the uniform distribution")
+    )))
 
     benfordsLawContainer[["benfordsLawTable"]] <- tb
 
