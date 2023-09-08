@@ -460,7 +460,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   .jfaFigureNumberUpdate(jaspResults)
 
   if (is.null(benfordsLawContainer[["robustnessPlot"]])) {
-    fg <- createJaspPlot(title = gettext("Bayes Factor Robustness Plot"), width = 530, height = 350)
+    fg <- createJaspPlot(title = gettext("Bayes Factor Robustness Plot"), width = 530, height = 450)
     fg$position <- positionInContainer
     fg$dependOn(options = "robustnessPlot")
     benfordsLawContainer[["robustnessPlot"]] <- fg
@@ -470,8 +470,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
     fg$plotObject <- plot(state[["bobject"]], type = "robustness") +
       jaspGraphs::geom_rangeframe() +
-      jaspGraphs::themeJaspRaw(legend.position = "top") +
-      ggplot2::theme(legend.text = ggplot2::element_text(size = 12))
+      jaspGraphs::themeJaspRaw(legend.position = "top")
   }
   if (options[["explanatoryText"]]) {
     caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The robustness of the Bayes factor to the prior distribution.", jaspResults[["figNumber"]]$object), "p")

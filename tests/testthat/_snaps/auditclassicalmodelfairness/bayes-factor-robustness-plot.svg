@@ -96,23 +96,23 @@
 <text transform='translate(16.68,348.62) rotate(-90)' style='font-size: 17.00px; font-family: sans;' textLength='11.34px' lengthAdjust='spacingAndGlyphs'>B</text>
 <text transform='translate(16.68,337.28) rotate(-90)' style='font-size: 17.00px; font-family: sans;' textLength='10.38px' lengthAdjust='spacingAndGlyphs'>F</text>
 <text transform='translate(19.83,326.90) rotate(-90)' style='font-size: 11.90px; font-family: sans;' textLength='13.24px' lengthAdjust='spacingAndGlyphs'>10</text>
-<rect x='261.33' y='20.71' width='281.02' height='120.47' style='stroke-width: 0.75; stroke: none;' />
-<rect x='261.33' y='20.71' width='281.02' height='120.47' style='stroke-width: 10.67; stroke: none;' />
-<rect x='269.80' y='20.71' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<circle cx='283.98' cy='34.88' r='2.49' style='stroke-width: 0.71; fill: #FF0000;' />
-<rect x='269.80' y='49.05' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<circle cx='283.98' cy='63.23' r='2.49' style='stroke-width: 0.71; fill: #D3D3D3;' />
-<rect x='269.80' y='77.40' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<circle cx='283.98' cy='91.57' r='2.49' style='stroke-width: 0.71; fill: #000000;' />
-<rect x='269.80' y='105.75' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<circle cx='283.98' cy='119.92' r='2.49' style='stroke-width: 0.71; fill: #FFFFFF;' />
-<rect x='269.80' y='134.09' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<circle cx='283.98' cy='148.27' r='2.49' style='stroke-width: 0.71; fill: #EEE8CD;' />
-<text x='306.62' y='39.01' style='font-size: 12.00px; font-family: sans;' textLength='235.74px' lengthAdjust='spacingAndGlyphs'>max. BF:                        8.62e+10 at α = 101</text>
-<text x='306.62' y='67.36' style='font-size: 12.00px; font-family: sans;' textLength='179.73px' lengthAdjust='spacingAndGlyphs'>user prior:                      BF = 2.12</text>
-<text x='306.62' y='95.70' style='font-size: 12.00px; font-family: sans;' textLength='179.73px' lengthAdjust='spacingAndGlyphs'>uniform prior:                 BF = 2.12</text>
-<text x='306.62' y='124.05' style='font-size: 12.00px; font-family: sans;' textLength='175.77px' lengthAdjust='spacingAndGlyphs'>concentrated prior:        BF = 929</text>
-<text x='306.62' y='152.40' style='font-size: 12.00px; font-family: sans;' textLength='209.15px' lengthAdjust='spacingAndGlyphs'>ultraconcentrated prior: BF = 33417152</text>
+<rect x='212.22' y='20.71' width='379.24' height='120.47' style='stroke-width: 0.75; stroke: none;' />
+<rect x='212.22' y='20.71' width='379.24' height='120.47' style='stroke-width: 10.67; stroke: none;' />
+<rect x='220.69' y='20.71' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<circle cx='234.86' cy='34.88' r='2.49' style='stroke-width: 0.71; fill: #FF0000;' />
+<rect x='220.69' y='49.05' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<circle cx='234.86' cy='63.23' r='2.49' style='stroke-width: 0.71; fill: #D3D3D3;' />
+<rect x='220.69' y='77.40' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<circle cx='234.86' cy='91.57' r='2.49' style='stroke-width: 0.71; fill: #000000;' />
+<rect x='220.69' y='105.75' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<circle cx='234.86' cy='119.92' r='2.49' style='stroke-width: 0.71; fill: #FFFFFF;' />
+<rect x='220.69' y='134.09' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<circle cx='234.86' cy='148.27' r='2.49' style='stroke-width: 0.71; fill: #EEE8CD;' />
+<text x='257.51' y='40.73' style='font-size: 17.00px; font-family: sans;' textLength='333.96px' lengthAdjust='spacingAndGlyphs'>max. BF:                        8.62e+10 at α = 101</text>
+<text x='257.51' y='69.08' style='font-size: 17.00px; font-family: sans;' textLength='254.62px' lengthAdjust='spacingAndGlyphs'>user prior:                      BF = 2.12</text>
+<text x='257.51' y='97.42' style='font-size: 17.00px; font-family: sans;' textLength='254.62px' lengthAdjust='spacingAndGlyphs'>uniform prior:                 BF = 2.12</text>
+<text x='257.51' y='125.77' style='font-size: 17.00px; font-family: sans;' textLength='249.01px' lengthAdjust='spacingAndGlyphs'>concentrated prior:        BF = 929</text>
+<text x='257.51' y='154.12' style='font-size: 17.00px; font-family: sans;' textLength='296.30px' lengthAdjust='spacingAndGlyphs'>ultraconcentrated prior: BF = 33417152</text>
 <text x='401.84' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='215.47px' lengthAdjust='spacingAndGlyphs'>bayes-factor-robustness-plot</text>
 </g>
 </svg>
