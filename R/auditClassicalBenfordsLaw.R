@@ -55,6 +55,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   # Create the observed and predicted probabilities plot
   .jfaBenfordsLawPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 4)
 
+  # Create the Bayes factor robustness plot
+  .jfaBenfordsLawRobustnessPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 4)
+
   # ---
 
   # Create the conclusion paragraph
@@ -171,6 +174,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     estimates$bf10 <- btest$estimates$bf10
     result <- list(
       object = test,
+      bobject = btest,
       digits = as.numeric(test$digits),
       relFrequencies = as.numeric(test$observed) / as.numeric(test$n),
       inBenford = as.numeric(test$expected) / as.numeric(test$n),
@@ -419,7 +423,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     )
 
     fg$position <- positionInContainer
-    fg$dependOn(options = c("benfordsLawPlot"))
+    fg$dependOn(options = "benfordsLawPlot")
 
     benfordsLawContainer[["benfordsLawPlot"]] <- fg
 
@@ -443,6 +447,36 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = benfordsLawContainer[["benfordsLawPlot"]])
     benfordsLawContainer[["benfordsLawPlotText"]] <- caption
+  }
+}
+
+.jfaBenfordsLawRobustnessPlot <- function(
+    dataset, options, benfordsLawContainer,
+    jaspResults, ready, positionInContainer) {
+  if (!options[["robustnessPlot"]]) {
+    return()
+  }
+
+  .jfaFigureNumberUpdate(jaspResults)
+
+  if (is.null(benfordsLawContainer[["robustnessPlot"]])) {
+    fg <- createJaspPlot(title = gettext("Bayes Factor Robustness Plot"), width = 530, height = 350)
+    fg$position <- positionInContainer
+    fg$dependOn(options = "robustnessPlot")
+    benfordsLawContainer[["robustnessPlot"]] <- fg
+    if (!ready) {
+      return()
+    }
+    state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
+    fg$plotObject <- plot(state[["bobject"]], type = "robustness") +
+      jaspGraphs::geom_rangeframe() +
+      jaspGraphs::themeJaspRaw(legend.position = "top")
+  }
+  if (options[["explanatoryText"]]) {
+    caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The robustness of the Bayes factor to the prior distribution.", jaspResults[["figNumber"]]$object), "p")
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = benfordsLawContainer[["robustnessPlot"]])
+    benfordsLawContainer[["robustnessPlotText"]] <- caption
   }
 }
 

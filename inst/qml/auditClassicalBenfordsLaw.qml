@@ -208,6 +208,13 @@ Form
 				name:				"benfordsLawPlot"
 				info:				qsTr("Produces a figure that shows the observed distribution of digits in the population compared to the expected distribution under the Benford's law or the uniform distribution.")
 			}
+
+			CheckBox
+			{
+				text:				qsTr("Bayes factor robustness check")
+				name:				"robustnessPlot"
+				info:				qsTr("Produces a figure that shows the robustness of the Bayes factor to the prior distribution.")
+			}
 		}
 	}
 
