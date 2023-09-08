@@ -9,6 +9,7 @@ options$bayesFactorType <- "BF10"
 options$matchTable <- TRUE
 options$match <- 9
 options$concentration <- 1
+options$robustnessPlot <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalBenfordsLaw", "sinoForest.csv", options)
 
@@ -71,4 +72,10 @@ test_that("<b>Table 3.</b> Rows Matched to Leading Digit 9 results match", {
       925929000, 737, 96, 758, 9336
     )
   )
+})
+
+test_that("Bayes Factor Robustness Plot matches", {
+  plotName <- results[["results"]][["benfordsLawContainer"]][["collection"]][["benfordsLawContainer_robustnessPlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "bayes-factor-robustness-plot")
 })

@@ -478,7 +478,8 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     result <- .jfaFairnessState(dataset, options, jaspResults)[["bayesian"]]
     plot$plotObject <- plot(result, type = "robustness") +
       jaspGraphs::geom_rangeframe() +
-      jaspGraphs::themeJaspRaw(legend.position = "top")
+      jaspGraphs::themeJaspRaw(legend.position = "top") +
+      ggplot2::theme(legend.text = ggplot2::element_text(size = 12))
   }
   if (options[["explanatoryText"]]) {
     caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The robustness of the Bayes factor to the prior distribution.", jaspResults[["figNumber"]]$object), "p")

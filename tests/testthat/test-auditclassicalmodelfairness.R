@@ -19,6 +19,7 @@ options$seed <- 1
 options$concentration <- 1
 options$confusionTable <- TRUE
 options$comparisonsTable <- TRUE
+options$robustnessPlot <- TRUE
 set.seed(1)
 results <- runAnalysis("auditClassicalModelFairness", "compas.csv", options)
 
@@ -79,6 +80,12 @@ test_that("Model Performance table results match", {
       0.419354838709677, 343
     )
   )
+})
+
+test_that("Bayes Factor Robustness Plot matches", {
+  plotName <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_robustnessPlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "bayes-factor-robustness-plot")
 })
 
 test_that("<b>Table 1.</b> Omnibus Test - Predictive Rate Parity results match", {
