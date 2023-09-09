@@ -10,6 +10,7 @@ options$matchTable <- TRUE
 options$match <- 9
 options$concentration <- 1
 options$robustnessPlot <- TRUE
+options$sequentialPlot <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalBenfordsLaw", "sinoForest.csv", options)
 
@@ -78,4 +79,10 @@ test_that("Bayes Factor Robustness Plot matches", {
   plotName <- results[["results"]][["benfordsLawContainer"]][["collection"]][["benfordsLawContainer_robustnessPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "bayes-factor-robustness-plot")
+})
+
+test_that("Sequential Analysis Plot matches", {
+  plotName <- results[["results"]][["benfordsLawContainer"]][["collection"]][["benfordsLawContainer_sequentialPlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "sequential-analysis-plot")
 })
