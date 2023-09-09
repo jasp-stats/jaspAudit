@@ -245,6 +245,13 @@ Form
 				enabled:				metric.value != "dp"
 				info:					qsTr("Produces a figure that shows the robustness of the Bayes factor to the prior distribution.")
 			}
+
+			CheckBox
+			{
+				text:					qsTr("Sequential analysis")
+				name:					"sequentialPlot"
+				info:					qsTr("Produces a figure that shows the Bayes factor as a function of the sample size.")
+			}
 		}
 	}
 

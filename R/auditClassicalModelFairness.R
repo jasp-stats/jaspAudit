@@ -58,8 +58,11 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   # Create the prior and posterior plot
   .jfaFairnessPosteriorPlot(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 7)
 
-  # Create the prior and posterior plot
+  # Create the Bayes factor robustness plot
   .jfaFairnessRobustnessPlot(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 9)
+
+  # Create the sequential analysis plot
+  .jfaFairnessSequentialPlot(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 11)
 
   # ---
 
@@ -485,6 +488,35 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = fairnessContainer[["robustnessPlot"]])
     fairnessContainer[["robustnessPlotText"]] <- caption
+  }
+}
+
+.jfaFairnessSequentialPlot <- function(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer) {
+  metric <- .jfaFairnessGetMetricFromQuestion(options)
+  if (!options[["sequentialPlot"]] || metric[["metric"]] == "dp") {
+    return()
+  }
+
+  .jfaFigureNumberUpdate(jaspResults)
+
+  if (is.null(fairnessContainer[["sequentialPlot"]])) {
+    plot <- createJaspPlot(title = gettext("Sequential Analysis Plot"), width = 530, height = 450)
+    plot$position <- positionInContainer
+    plot$dependOn(options = c(.jfaFairnessCommonOptions(), "sequentialPlot"))
+    fairnessContainer[["sequentialPlot"]] <- plot
+    if (!ready) {
+      return()
+    }
+    result <- .jfaFairnessState(dataset, options, jaspResults)[["bayesian"]]
+    plot$plotObject <- plot(result, type = "sequential") +
+      jaspGraphs::geom_rangeframe() +
+      jaspGraphs::themeJaspRaw(legend.position = "top")
+  }
+  if (options[["explanatoryText"]]) {
+    caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The results of a sequential analysis using the Bayes factor. The figure provides insight into how the statistical evidence from these data accumulates over time and under different prior specifications.", jaspResults[["figNumber"]]$object), "p")
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = fairnessContainer[["sequentialPlot"]])
+    fairnessContainer[["sequentialPlotText"]] <- caption
   }
 }
 
