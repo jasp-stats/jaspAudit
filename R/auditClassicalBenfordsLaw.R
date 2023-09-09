@@ -56,7 +56,10 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   .jfaBenfordsLawPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 4)
 
   # Create the Bayes factor robustness plot
-  .jfaBenfordsLawRobustnessPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 4)
+  .jfaBenfordsLawRobustnessPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 6)
+
+  # Create the sequential analysis plot
+  .jfaBenfordsLawSequentialPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 8)
 
   # ---
 
@@ -450,9 +453,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   }
 }
 
-.jfaBenfordsLawRobustnessPlot <- function(
-    dataset, options, benfordsLawContainer,
-    jaspResults, ready, positionInContainer) {
+.jfaBenfordsLawRobustnessPlot <- function(dataset, options, benfordsLawContainer,
+                                          jaspResults, ready, positionInContainer) {
   if (!options[["robustnessPlot"]]) {
     return()
   }
@@ -473,10 +475,39 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       jaspGraphs::themeJaspRaw(legend.position = "top")
   }
   if (options[["explanatoryText"]]) {
-    caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The robustness of the Bayes factor to the prior distribution.", jaspResults[["figNumber"]]$object), "p")
+    caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The results of a robustness check for the Bayes factor. The figure illustrates the impact of different specifications (i.e., concentration parameters) of the Dirichlet prior on the Bayes factor values, providing insights into the robustness of the statistical evidence to the choice of prior distribution.", jaspResults[["figNumber"]]$object), "p")
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = benfordsLawContainer[["robustnessPlot"]])
     benfordsLawContainer[["robustnessPlotText"]] <- caption
+  }
+}
+
+.jfaBenfordsLawSequentialPlot <- function(dataset, options, benfordsLawContainer,
+                                          jaspResults, ready, positionInContainer) {
+  if (!options[["sequentialPlot"]]) {
+    return()
+  }
+
+  .jfaFigureNumberUpdate(jaspResults)
+
+  if (is.null(benfordsLawContainer[["sequentialPlot"]])) {
+    fg <- createJaspPlot(title = gettext("Sequential Analysis Plot"), width = 530, height = 350)
+    fg$position <- positionInContainer
+    fg$dependOn(options = "sequentialPlot")
+    benfordsLawContainer[["sequentialPlot"]] <- fg
+    if (!ready) {
+      return()
+    }
+    state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
+    fg$plotObject <- plot(state[["bobject"]], type = "sequential") +
+      jaspGraphs::geom_rangeframe() +
+      jaspGraphs::themeJaspRaw(legend.position = "top")
+  }
+  if (options[["explanatoryText"]]) {
+    caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The results of a sequential analysis using the Bayes factor. The figure provides insight into how the statistical evidence from these data accumulates over time and under different prior specifications.", jaspResults[["figNumber"]]$object), "p")
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = benfordsLawContainer[["sequentialPlot"]])
+    benfordsLawContainer[["sequentialPlotText"]] <- caption
   }
 }
 

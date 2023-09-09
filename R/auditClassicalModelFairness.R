@@ -481,7 +481,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       jaspGraphs::themeJaspRaw(legend.position = "top")
   }
   if (options[["explanatoryText"]]) {
-    caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The robustness of the Bayes factor to the prior distribution.", jaspResults[["figNumber"]]$object), "p")
+    caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The results of a robustness check for the Bayes factor. The figure illustrates the impact of different specifications (i.e., concentration parameters) of the Dirichlet prior on the Bayes factor values, providing insights into the robustness of the statistical evidence to the choice of prior distribution.", jaspResults[["figNumber"]]$object), "p")
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = fairnessContainer[["robustnessPlot"]])
     fairnessContainer[["robustnessPlotText"]] <- caption
