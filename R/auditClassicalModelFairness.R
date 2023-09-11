@@ -442,7 +442,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   .jfaFigureNumberUpdate(jaspResults)
 
   if (is.null(fairnessContainer[["posteriorPlot"]])) {
-    plot <- createJaspPlot(title = gettext("Prior and Posterior Distribution Plot"), width = 730, height = 350)
+    plot <- createJaspPlot(title = gettext("Prior and Posterior Distribution Plot"), width = 530, height = 350)
     plot$position <- positionInContainer
     plot$dependOn(options = c(.jfaFairnessCommonOptions(), "posteriorPlot"))
     fairnessContainer[["posteriorPlot"]] <- plot
@@ -452,7 +452,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     result <- .jfaFairnessState(dataset, options, jaspResults)[["bayesian"]]
     plot$plotObject <- plot(result, type = "posterior") +
       jaspGraphs::geom_rangeframe() +
-      jaspGraphs::themeJaspRaw(legend.position = "right")
+      jaspGraphs::themeJaspRaw(legend.position = if (length(result[["unprivileged"]]) > 1) "top" else c(0.8, 0.8))
   }
   if (options[["explanatoryText"]]) {
     caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The prior and posterior distributions on the log odds ratio for each unprivileged group compared to the privileged group (%2$s).", jaspResults[["figNumber"]]$object, options[["privileged"]]), "p")
