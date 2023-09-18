@@ -46,7 +46,7 @@ The organization of the analyses within the Audit module in JASP is as follows:
 
 Please find the module's changelog by clicking [here](https://github.com/jasp-stats/jaspAudit/blob/master/NEWS.md). This changelog provides a detailed record of all the modifications and updates made to the module. It can be useful to stay up-to-date with the latest changes and bug fixes, or to check if a particular issue has been addressed.
 
-### Analyses
+### Sections
 
 #### Audit Sampling <img src='https://github.com/koenderks/jaspAudit/raw/algoAudit/inst/icons/audit-sampling.svg' width='149' height='173' align='right'/>
 
@@ -54,7 +54,7 @@ The **Audit Sampling** section of the module makes it easy for an auditor to pla
 
 #### Data Auditing <img src='https://github.com/koenderks/jaspAudit/raw/algoAudit/inst/icons/audit-data.svg' width='149' height='173' align='right'/>
 
-The **Data Auditing** section of the module provides statistical methods for auditing data, including (Bayesian) tests of digit distributions and tests for repeated values. 
+The **Data Auditing** section of the module provides statistical methods for auditing data, including (Bayesian) tests of digit distributions and tests for repeated values. These methods can be used to identify anomalies in a set of numbers, but do not provide conclusive results in terms of whether a data set is likely tampered with.
 
 #### Algorithmic Auditing <img src='https://github.com/koenderks/jaspAudit/raw/algoAudit/inst/icons/audit-algorithms.svg' width='149' height='173' align='right'/>
 
