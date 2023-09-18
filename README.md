@@ -54,11 +54,11 @@ The **Audit Sampling** section of the module makes it easy for an auditor to pla
 
 #### Data Auditing <img src='https://github.com/koenderks/jaspAudit/raw/algoAudit/inst/icons/audit-data.svg' width='149' height='173' align='right'/>
 
-The **Data Auditing** section of the module provides statistical methods for auditing data, including (Bayesian) tests of digit distributions and tests for repeated values. These methods can be used to identify anomalies in a set of numbers, but do not provide conclusive results in terms of whether a data set is likely tampered with.
+The **Data Auditing** section of the module provides statistical methods for auditing data, including (Bayesian) tests of digit distributions and tests for repeated values. These methods can be used to identify anomalies in a set of numbers, but do not provide conclusive results in terms of whether a data set is likely tampered with. For instance, non-conformance to Benford's law can only be seen as an indication of possible data manupulation. Unlike Benford's law, the other analysis is this section examines the entire number at once, not only the first or last digit(s).
 
 #### Algorithmic Auditing <img src='https://github.com/koenderks/jaspAudit/raw/algoAudit/inst/icons/audit-algorithms.svg' width='149' height='173' align='right'/>
 
-The **Algorithm Auditing** section of the module includes methods for auditing algorithms on the aspect of fairness and discrimination.
+The **Algorithm Auditing** section of the module includes methods for auditing algorithms on the aspect of fairness and discrimination. For instance, the fairness metrics analysis aims to assess fairness in algorithmic decision-making systems by computing and testing the equality of one of several model-agnostic fairness metrics between protected classes. The metrics are computed based on a set of true labels and the predictions of an algorithm.
 
 ### Translations
 
