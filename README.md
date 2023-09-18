@@ -26,22 +26,20 @@ The organization of the analyses within the Audit module in JASP is as follows:
 
 ```
 --- Audit
-    -- Workflow
+    -- Audit Sampling
        - Sampling Workflow
        - Bayesian Sampling Workflow
-    -- Planning
        - Planning
        - Bayesian Planning
-    -- Selection
        - Selection
-    -- Evaluation
        - Evaluation
        - Bayesian Evaluation
-    -- Digit Analysis
-       - Benford's Law
-       - Repeated Values Analysis
-    -- Other
        - True Value Estimation
+    -- Data Auditing
+       - Benford's Law
+       - Repeated Values
+    -- Algorithm Auditing
+       - Fairness Metrics
 ```
 
 ### Changelog
@@ -50,41 +48,17 @@ Please find the module's changelog by clicking [here](https://github.com/jasp-st
 
 ### Analyses
 
-#### (Bayesian) Sampling Workflow
+#### Audit Sampling <img src='https://github.com/koenderks/jaspAudit/raw/algoAudit/inst/icons/audit-sampling.svg' width='149' height='173' align='right'/>
 
-The sampling workflow is a four-stage procedure that facilitates the process of planning, selecting, annotating,and evaluating statistical audit samples. To enhance ease of use, the workflow employs automated selection of the most suitable options based on the nature of the data and the audit question being addressed. The final outcome of the Sampling Workflow is a report that can be downloaded and that comprises statistical results along with their corresponding interpretation.
+The **Audit Sampling** section of the module makes it easy for an auditor to plan a statistical sample, select the sample from the population, and evaluate the misstatement in the sample compliant with international auditing standards. The analyses also provide auditors with easy documentation of their sampling procedure and statistical results. This comprehensive approach not only streamlines the audit process but also enhances transparency and efficiency.
 
-<p align="center">
-  <img src='https://github.com/jasp-stats/jaspAudit/raw/master/inst/help/img/workflow.png' width='500' height='50'>
-</p>
+#### Data Auditing <img src='https://github.com/koenderks/jaspAudit/raw/algoAudit/inst/icons/audit-data.svg' width='149' height='173' align='right'/>
 
-#### (Bayesian) Planning
+The **Data Auditing** section of the module provides statistical methods for auditing data, including (Bayesian) tests of digit distributions and tests for repeated values. 
 
-The planning analysis enables the user to determine the minimum sample size required for a statistical audit sample, based on a set of specified sampling objectives. By defining one or multiple objectives, the minimum sample size can be calculated to provide a specified level of assurance about the population misstatement, assuming that the actual sample follows the intended sampling plan.
+#### Algorithmic Auditing <img src='https://github.com/koenderks/jaspAudit/raw/algoAudit/inst/icons/audit-algorithms.svg' width='149' height='173' align='right'/>
 
-<p align="center">
-  <img src='https://github.com/jasp-stats/jaspAudit/raw/master/inst/help/img/workflowPlanning.png' width='500' height='50'>
-</p>
-
-#### Selection
-
-The selection analysis facilitates the utilization of the most frequently employed sampling techniques in auditing. This analysis provides the user with the capability to choose a specified number of sampling units from the population through the implementation of one of three available sampling algorithms: fixed interval sampling, cell sampling, and random sampling. The sampling units can be in the form of items (rows) or monetary units, and the generated sample can be saved and exported to a file for additional annotation and documentation.
-
-<p align="center">
-  <img src='https://github.com/jasp-stats/jaspAudit/raw/master/inst/help/img/workflowSelection.png' width='500' height='50'>
-</p>
-
-#### (Bayesian) Evaluation
-
-The evaluation analysis facilitates inference about the misstatement based on a sample data or summary statistics of the sample. The analysis incorporates a plethora of statistical techniques to estimate or test the population misstatement.
-
-<p align="center">
-  <img src='https://github.com/jasp-stats/jaspAudit/raw/master/inst/help/img/workflowEvaluation.png' width='500' height='50'>
-</p>
-
-#### Digit Analysis
-
-The two forms of digit analysis, namely Benford's law and repeated values, furnish the capability for identifying irregular digit patterns within numerical data.
+The **Algorithm Auditing** section of the module includes methods for auditing algorithms on the aspect of fairness and discrimination.
 
 ### Translations
 
