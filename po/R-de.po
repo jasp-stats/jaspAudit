@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-09-02 03:26\n"
-"PO-Revision-Date: 2023-09-23 16:10+0000\n"
-"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"PO-Revision-Date: 2023-10-05 04:08+0000\n"
+"Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
 "Language: de\n"
@@ -1104,7 +1104,6 @@ msgstr "festes Intervall"
 msgid "cell"
 msgstr "Zelle"
 
-#, fuzzy
 msgid "sieve"
 msgstr "Sieb"
 
@@ -1368,7 +1367,6 @@ msgstr "Inhärentes Risiko"
 msgid "Control risk"
 msgstr "Kontrollrisiko"
 
-#, fuzzy
 msgid "Analytical risk"
 msgstr "Analytisches Risiko"
 
@@ -1586,8 +1584,8 @@ msgid ""
 "random sampling."
 msgstr ""
 "Sie können keine intervallbasierte Auswahlmethode verwenden, da die "
-"Stichprobengröße die Grundgesamtheit von %1$ überschreitet. Bitte ändern Sie "
-"die Auswahlmethode auf Zufallsstichprobe."
+"Stichprobengröße die Grundgesamtheit von %1$s überschreitet. Bitte ändern "
+"Sie die Auswahlmethode auf Zufallsstichprobe."
 
 msgid ""
 "Starting point is outside the range of the selection interval of 1 to %1$s. "
