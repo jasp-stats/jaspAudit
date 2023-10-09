@@ -77,25 +77,14 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 .jfaFairnessCommonOptions <- function() {
   opt <- c(
     "target", "predictions", "protected", "metric", "conf_level", "privileged", "positive",
-    "chooseMeasure", "q1", "q2", "q3", "q4", "alternative", "seed", "concentration"
+    "alternative", "seed", "concentration"
   )
   return(opt)
 }
 
 .jfaFairnessGetMetricFromQuestion <- function(options) {
   out <- list()
-#   if (options[["chooseMeasure"]] == "chooseManual") {
   out[["metric"]] <- options[["metric"]]
-#   } else {
-#     df <- data.frame(
-#       id = c("dp", "pp", "prp", "pp", "ap", "fnrp", "fprp", "npvp", "sp", "prp"), # last one was mcc
-#       q1 = c("no", "no", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes"),
-#       q2 = c("abs", "prop", "yes", "no", "yes", "no", "no", "no", "no", "yes"),
-#       q3 = c("", "", "", "corr", "", "incorr", "incorr", "corr", "corr", ""),
-#       q4 = c("", "", "", "tp", "", "fn", "fp", "tn", "tn", "")
-#     )
-#     out[["metric"]] <- df[["id"]][df$q1 == options[["q1"]] & df$q2 == options[["q2"]] & df$q3 == options[["q3"]] & df$q4 == options[["q4"]]][1]
-#   }
   out[["title"]] <- switch(out[["metric"]],
     "pp" = "Proportion",
     "sp" = "Specificity",
@@ -327,7 +316,11 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   .jfaTableNumberUpdate(jaspResults)
 
   if (is.null(fairnessContainer[["performanceTable"]])) {
-    tb <- createJaspTable(title = gettext("Model Performance"))
+    title <- gettextf(
+      "<b>Table %i.</b> Model Performance",
+      jaspResults[["tabNumber"]]$object
+    )
+    tb <- createJaspTable(title = title)
     tb$position <- positionInContainer
     tb$dependOn(options = c(.jfaFairnessCommonOptions(), "performanceTable"))
     tb$addColumnInfo(name = "group", title = "", type = "string")

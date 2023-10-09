@@ -1,7 +1,6 @@
 context("[Audit] Model Fairness")
 
 options <- analysisOptions("auditClassicalModelFairness")
-options$chooseMeasure <- "chooseManual"
 options$parityPlot <- TRUE
 options$performanceTable <- TRUE
 options$positive <- "yes"
