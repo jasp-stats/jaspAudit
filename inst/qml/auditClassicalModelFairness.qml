@@ -62,11 +62,32 @@ Form
 		}
 	}
 
-	CIField
+	Group
 	{
-		name: 							"conf_level"
-		label: 							qsTr("Confidence")
-		info:							qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
+		CIField
+		{
+			name: 							"conf_level"
+			label: 							qsTr("Confidence")
+			info:							qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
+		}
+		
+		DropDown
+		{
+			name: 							"metric"
+			label: 							qsTr("Metric")
+			indexDefaultValue: 				0
+			values: [
+				{ label: qsTr("Predictive rate parity"),			value: "prp"},
+				{ label: qsTr("Demographic parity"),				value: "dp"},
+				{ label: qsTr("Proportional parity"),				value: "pp"},
+				{ label: qsTr("Accuracy parity"),					value: "ap"},
+				{ label: qsTr("False negative rate parity"),		value: "fnrp"},
+				{ label: qsTr("False positive rate parity"),		value: "fprp"},
+				{ label: qsTr("True positive rate parity"),			value: "tprp"},
+				{ label: qsTr("Negative predicted value parity"),	value: "npvp"},
+				{ label: qsTr("Specificity parity"), 				value: "sp"}
+			]
+		}
 	}
 
 	Group 
@@ -283,193 +304,193 @@ Form
 			}
 		}
 
-		RadioButtonGroup 
-		{
-			name: 						"chooseMeasure"
-			title:						qsTr("Fairness metric")
-			info:						qsTr("Choose which fairness metric to compute.")
+		// RadioButtonGroup 
+		// {
+		// 	name: 						"chooseMeasure"
+		// 	title:						qsTr("Fairness metric")
+		// 	info:						qsTr("Choose which fairness metric to compute.")
 
-			RadioButton
-			{
-				id:						chooseManual
-				name:					"chooseManual"
-				label:					qsTr("Manual")
-				checked:				true
-				childrenOnSameRow: 		true
-				info:					qsTr("Manually select a fairness metric from a list of possible options.")
+		// 	RadioButton
+		// 	{
+		// 		id:						chooseManual
+		// 		name:					"chooseManual"
+		// 		label:					qsTr("Manual")
+		// 		checked:				true
+		// 		childrenOnSameRow: 		true
+		// 		info:					qsTr("Manually select a fairness metric from a list of possible options.")
 
-				DropDown
-				{
-					id:					metric
-					name: 				"metric"
-					visible:			chooseManual.checked
-					indexDefaultValue: 	0
-					values: [
-						{ label: qsTr("Predictive rate parity"),			value: "prp"},
-						{ label: qsTr("Demographic parity"),				value: "dp"},
-						{ label: qsTr("Proportional parity"),				value: "pp"},
-						{ label: qsTr("Accuracy parity"),					value: "ap"},
-						{ label: qsTr("False negative rate parity"),		value: "fnrp"},
-						{ label: qsTr("False positive rate parity"),		value: "fprp"},
-						{ label: qsTr("True positive rate parity"),			value: "tprp"},
-						{ label: qsTr("Negative predicted value parity"),	value: "npvp"},
-						{ label: qsTr("Specificity parity"), 				value: "sp"}
-					]
-				}
-			}
+		// 		DropDown
+		// 		{
+		// 			id:					metric
+		// 			name: 				"metric"
+		// 			visible:			chooseManual.checked
+		// 			indexDefaultValue: 	0
+		// 			values: [
+		// 				{ label: qsTr("Predictive rate parity"),			value: "prp"},
+		// 				{ label: qsTr("Demographic parity"),				value: "dp"},
+		// 				{ label: qsTr("Proportional parity"),				value: "pp"},
+		// 				{ label: qsTr("Accuracy parity"),					value: "ap"},
+		// 				{ label: qsTr("False negative rate parity"),		value: "fnrp"},
+		// 				{ label: qsTr("False positive rate parity"),		value: "fprp"},
+		// 				{ label: qsTr("True positive rate parity"),			value: "tprp"},
+		// 				{ label: qsTr("Negative predicted value parity"),	value: "npvp"},
+		// 				{ label: qsTr("Specificity parity"), 				value: "sp"}
+		// 			]
+		// 		}
+		// 	}
 
-			RadioButton
-			{
-				id:						chooseGuided
-				name:					"chooseGuided"
-				label:					qsTr("Decision-tree")
-				info:					qsTr("Use a guided decision-aid in choosing the fairness metric to apply.")
+		// 	RadioButton
+		// 	{
+		// 		id:						chooseGuided
+		// 		name:					"chooseGuided"
+		// 		label:					qsTr("Decision-tree")
+		// 		info:					qsTr("Use a guided decision-aid in choosing the fairness metric to apply.")
 
-				Row
-				{
-					visible:			chooseGuided.checked
-					Layout.leftMargin:  5 * preferencesModel.uiScale
+		// 		Row
+		// 		{
+		// 			visible:			chooseGuided.checked
+		// 			Layout.leftMargin:  5 * preferencesModel.uiScale
 
-					RadioButtonGroup
-					{
-						id: 			q1
-						name:			"q1"
-						title:			qsTr("1. Should the ground truth labels be considered?")
+		// 			RadioButtonGroup
+		// 			{
+		// 				id: 			q1
+		// 				name:			"q1"
+		// 				title:			qsTr("1. Should the ground truth labels be considered?")
 						
-						RadioButton
-						{
-							id:			q1option1
-							label:		qsTr("Yes")
-							name:		"q1option1"
-							checked:	true
-							value:		"yes"
-						}
-						RadioButton
-						{
-							id:			q1option2
-							label: 		qsTr("No")
-							name:		"q1option1"
-							value:		"no"
-						}
-					}
+		// 				RadioButton
+		// 				{
+		// 					id:			q1option1
+		// 					label:		qsTr("Yes")
+		// 					name:		"q1option1"
+		// 					checked:	true
+		// 					value:		"yes"
+		// 				}
+		// 				RadioButton
+		// 				{
+		// 					id:			q1option2
+		// 					label: 		qsTr("No")
+		// 					name:		"q1option1"
+		// 					value:		"no"
+		// 				}
+		// 			}
 					
-					HelpButton
-					{
-						toolTip:		qsTr("Click to learn more about Q1.")
-						helpPage:		"auditFairness"
-					}
-				}
+		// 			HelpButton
+		// 			{
+		// 				toolTip:		qsTr("Click to learn more about Q1.")
+		// 				helpPage:		"auditFairness"
+		// 			}
+		// 		}
 
-				Row
-				{
-					visible:			chooseGuided.checked
-					Layout.leftMargin:  20 * preferencesModel.uiScale
+		// 		Row
+		// 		{
+		// 			visible:			chooseGuided.checked
+		// 			Layout.leftMargin:  20 * preferencesModel.uiScale
 
-					RadioButtonGroup
-					{
-						id:				q2
-						name:			"q2"
-						title: 			q1option1.checked ? qsTr("2. Should all elements of the confusion matrix be considered?") : qsTr("2. Should the absolute values or the proportions of the favorable predictions be used?")
+		// 			RadioButtonGroup
+		// 			{
+		// 				id:				q2
+		// 				name:			"q2"
+		// 				title: 			q1option1.checked ? qsTr("2. Should all elements of the confusion matrix be considered?") : qsTr("2. Should the absolute values or the proportions of the favorable predictions be used?")
 
-						RadioButton
-						{
-							id:			q2option1
-							name:		"q2option1"
-							label: 		q1option1.checked ? qsTr("Yes"): qsTr("Absolute")
-							value:		q1option1.checked ? "yes": "abs"
-							checked: 	true
-						}
+		// 				RadioButton
+		// 				{
+		// 					id:			q2option1
+		// 					name:		"q2option1"
+		// 					label: 		q1option1.checked ? qsTr("Yes"): qsTr("Absolute")
+		// 					value:		q1option1.checked ? "yes": "abs"
+		// 					checked: 	true
+		// 				}
 						
-						RadioButton
-						{
-							id:			q2option2
-							name:		"q2option2"
-							label: 		q1option1.checked ? qsTr("No"): qsTr("Proportional")
-							value:		q1option1.checked ? "no": "prop"
-						}
-					}
+		// 				RadioButton
+		// 				{
+		// 					id:			q2option2
+		// 					name:		"q2option2"
+		// 					label: 		q1option1.checked ? qsTr("No"): qsTr("Proportional")
+		// 					value:		q1option1.checked ? "no": "prop"
+		// 				}
+		// 			}
 
-					HelpButton
-					{
-						toolTip:		qsTr("Click to learn more about Q2.")
-						helpPage:		"auditQ2Helper"
-					}
-				}
+		// 			HelpButton
+		// 			{
+		// 				toolTip:		qsTr("Click to learn more about Q2.")
+		// 				helpPage:		"auditQ2Helper"
+		// 			}
+		// 		}
 
-				Row
-				{
-					id: 				g3
-					visible: 			chooseGuided.checked && (q1option1.checked && q2option2.value == "no" && q2option2.checked) ? true: false
-					Layout.leftMargin:  35 * preferencesModel.uiScale
+		// 		Row
+		// 		{
+		// 			id: 				g3
+		// 			visible: 			chooseGuided.checked && (q1option1.checked && q2option2.value == "no" && q2option2.checked) ? true: false
+		// 			Layout.leftMargin:  35 * preferencesModel.uiScale
 
-					RadioButtonGroup
-					{
-						id: 			q3
-						name: 			"q3"
-						title: 			qsTr("3. Should we focus on correctly or incorrectly classified instances?")
+		// 			RadioButtonGroup
+		// 			{
+		// 				id: 			q3
+		// 				name: 			"q3"
+		// 				title: 			qsTr("3. Should we focus on correctly or incorrectly classified instances?")
 	
-						RadioButton
-						{
-							id:			q3option1
-							name:		"q3option1"
-							label: 		qsTr("Correctly")
-							value:		g3.visible ? "corr": ""
-							checked: 	true
-						}
+		// 				RadioButton
+		// 				{
+		// 					id:			q3option1
+		// 					name:		"q3option1"
+		// 					label: 		qsTr("Correctly")
+		// 					value:		g3.visible ? "corr": ""
+		// 					checked: 	true
+		// 				}
 
-						RadioButton
-						{
-							id:			q3option2
-							name:		"q3option2"
-							label:		qsTr("Incorrectly")
-							value:		g3.visible ? "incorr": ""
-						}
-					}
+		// 				RadioButton
+		// 				{
+		// 					id:			q3option2
+		// 					name:		"q3option2"
+		// 					label:		qsTr("Incorrectly")
+		// 					value:		g3.visible ? "incorr": ""
+		// 				}
+		// 			}
 		
-					HelpButton
-					{
-						toolTip:		qsTr("Click to learn more about Q3.")
-						helpPage:		"auditQ2Helper"
-					}
-				}
+		// 			HelpButton
+		// 			{
+		// 				toolTip:		qsTr("Click to learn more about Q3.")
+		// 				helpPage:		"auditQ2Helper"
+		// 			}
+		// 		}
 
-				Row
-				{
-					visible: 			chooseGuided.checked && g3.visible ? true: false
-					Layout.leftMargin:  50 * preferencesModel.uiScale
+		// 		Row
+		// 		{
+		// 			visible: 			chooseGuided.checked && g3.visible ? true: false
+		// 			Layout.leftMargin:  50 * preferencesModel.uiScale
 
-					RadioButtonGroup
-					{
-						id: 			q4
-						name:			"q4"
-						title: 			q3option1.checked ? qsTr("4. Should we focus on true positive or true negative rates?") : qsTr("4. Should we focus on false positive or false negative rates?")
+		// 			RadioButtonGroup
+		// 			{
+		// 				id: 			q4
+		// 				name:			"q4"
+		// 				title: 			q3option1.checked ? qsTr("4. Should we focus on true positive or true negative rates?") : qsTr("4. Should we focus on false positive or false negative rates?")
 	
-						RadioButton
-						{
-							id:			q4option1
-							name:		"q4option1"
-							label: 		q3option1.checked ? qsTr("True Positives"): qsTr("False Positives")
-							value: 		g3.visible ? (q3option1.checked ? "tp" : "fp") : ""
-						}
+		// 				RadioButton
+		// 				{
+		// 					id:			q4option1
+		// 					name:		"q4option1"
+		// 					label: 		q3option1.checked ? qsTr("True Positives"): qsTr("False Positives")
+		// 					value: 		g3.visible ? (q3option1.checked ? "tp" : "fp") : ""
+		// 				}
 
-						RadioButton
-						{
-							id:			q4option2
-							name:		"q4option2"
-							label: 		q3option1.checked ? qsTr("True Negatives"): qsTr("False Negatives")
-							value: 		g3.visible ? (q3option1.checked ? "tn" : "fn") : ""
-							checked: 	true
-						}
-					}
+		// 				RadioButton
+		// 				{
+		// 					id:			q4option2
+		// 					name:		"q4option2"
+		// 					label: 		q3option1.checked ? qsTr("True Negatives"): qsTr("False Negatives")
+		// 					value: 		g3.visible ? (q3option1.checked ? "tn" : "fn") : ""
+		// 					checked: 	true
+		// 				}
+		// 			}
 		
-					HelpButton
-					{
-						toolTip:		qsTr("Click to learn more about Q4.")
-						helpPage:		"auditQ2Helper"
-					}
-				}
-			}
-		}
+		// 			HelpButton
+		// 			{
+		// 				toolTip:		qsTr("Click to learn more about Q4.")
+		// 				helpPage:		"auditQ2Helper"
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 
 	Common.DownloadReport { }

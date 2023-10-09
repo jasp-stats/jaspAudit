@@ -84,18 +84,18 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 
 .jfaFairnessGetMetricFromQuestion <- function(options) {
   out <- list()
-  if (options[["chooseMeasure"]] == "chooseManual") {
-    out[["metric"]] <- options[["metric"]]
-  } else {
-    df <- data.frame(
-      id = c("dp", "pp", "prp", "pp", "ap", "fnrp", "fprp", "npvp", "sp", "prp"), # last one was mcc
-      q1 = c("no", "no", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes"),
-      q2 = c("abs", "prop", "yes", "no", "yes", "no", "no", "no", "no", "yes"),
-      q3 = c("", "", "", "corr", "", "incorr", "incorr", "corr", "corr", ""),
-      q4 = c("", "", "", "tp", "", "fn", "fp", "tn", "tn", "")
-    )
-    out[["metric"]] <- df[["id"]][df$q1 == options[["q1"]] & df$q2 == options[["q2"]] & df$q3 == options[["q3"]] & df$q4 == options[["q4"]]][1]
-  }
+#   if (options[["chooseMeasure"]] == "chooseManual") {
+  out[["metric"]] <- options[["metric"]]
+#   } else {
+#     df <- data.frame(
+#       id = c("dp", "pp", "prp", "pp", "ap", "fnrp", "fprp", "npvp", "sp", "prp"), # last one was mcc
+#       q1 = c("no", "no", "yes", "yes", "yes", "yes", "yes", "yes", "yes", "yes"),
+#       q2 = c("abs", "prop", "yes", "no", "yes", "no", "no", "no", "no", "yes"),
+#       q3 = c("", "", "", "corr", "", "incorr", "incorr", "corr", "corr", ""),
+#       q4 = c("", "", "", "tp", "", "fn", "fp", "tn", "tn", "")
+#     )
+#     out[["metric"]] <- df[["id"]][df$q1 == options[["q1"]] & df$q2 == options[["q2"]] & df$q3 == options[["q3"]] & df$q4 == options[["q4"]]][1]
+#   }
   out[["title"]] <- switch(out[["metric"]],
     "pp" = "Proportion",
     "sp" = "Specificity",
