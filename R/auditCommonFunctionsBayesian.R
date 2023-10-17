@@ -92,7 +92,7 @@
     if (stage == "planning" && !options[["plotPriorWithPosterior"]]) {
       p <- plot(parentState[["prior"]])
     } else {
-      p <- plot(parentState)
+      p <- plot(parentState, type = "posterior")
     }
 
     p <- p +

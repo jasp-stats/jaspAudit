@@ -2035,7 +2035,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       return()
     }
 
-    fg$plotObject <- plot(parentState) +
+    fg$plotObject <- plot(parentState, type = "posterior") +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "none")
   }

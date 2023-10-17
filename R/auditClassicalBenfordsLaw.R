@@ -436,7 +436,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
     state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
 
-    fg$plotObject <- plot(state[["object"]]) +
+    fg$plotObject <- plot(state[["object"]], type = "estimates") +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "top")
   }
