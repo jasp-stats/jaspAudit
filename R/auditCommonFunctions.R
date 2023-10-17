@@ -2035,7 +2035,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       return()
     }
 
-    fg$plotObject <- plot(parentState) +
+    fg$plotObject <- plot(parentState, type = "posterior") +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "none")
   }
@@ -2466,7 +2466,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       )
 
       if (options[["separateMisstatement"]] && options[["values"]] != "") {
-        result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior, prevOptions, prevState, parentContainer)
+        result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior, prevOptions, parentContainer)
         return(result)
       }
     } else {
@@ -2490,7 +2490,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       })
     } else if (options[["annotation"]] == "continuous") {
       method <- options[["method"]]
-      if (method == "stringer" && options[["lta"]]) {
+      if (method == "stringer.binomial" && options[["lta"]]) {
         method <- "stringer.lta"
       }
       result <- try({
@@ -2673,23 +2673,36 @@ gettextf <- function(fmt, ..., domain = NULL) {
         )
       })
     } else if (all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1))) {
-      result <- try({
-        jfa::evaluation(
-          conf.level = conf_level, materiality = materiality,
-          n = nrow(sample), x = length(which(sample[[options[["values.audit"]]]] == 1)),
-          method = options[["method"]], N.units = N_units,
-          prior = prior,
-          alternative = options[["area"]]
-        )
-      })
+      if (options[["stratum"]] == "") {
+        result <- try({
+          jfa::evaluation(
+            conf.level = conf_level, materiality = materiality,
+            n = nrow(sample), x = length(which(sample[[options[["values.audit"]]]] == 1)),
+            method = options[["method"]], N.units = N_units,
+            prior = prior, alternative = options[["area"]]
+          )
+        })
+      } else {
+        N.units <- if (options[["dataType"]] == "pdata") as.numeric(table(.readDataSetToEnd(columns.as.factor = options[["stratum"]]))) else NULL
+        result <- try({
+          jfa::evaluation(
+            conf.level = conf_level, materiality = materiality,
+            n = as.numeric(table(sample[, options[["stratum"]]])),
+            x = as.numeric(table(sample[, options[["values.audit"]]], sample[, options[["stratum"]]])[2, ]),
+            method = options[["method"]], N.units = N.units,
+            prior = prior, alternative = options[["area"]],
+            pooling = if (options[["bayesian"]]) if (options[["pooling"]]) "partial" else "none" else "none"
+          )
+        })
+      }
     } else {
       method <- options[["method"]]
-      if (options[["method"]] == "stringer" && options[["lta"]]) {
+      if (options[["method"]] == "stringer.binomial" && options[["lta"]]) {
         method <- "stringer.lta"
       }
 
       if (options[["separateMisstatement"]] && options[["values"]] != "" && options[["values.audit"]] != "") {
-        result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior, planningOptions, selectionState, evaluationContainer)
+        result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior, planningOptions, evaluationContainer)
         return(result)
       } else {
         result <- try({
@@ -2777,7 +2790,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "poisson" = gettext("The results are computed using the Poisson distribution."),
       "binomial" = gettext("The results are computed using the binomial distribution."),
       "hypergeometric" = gettext("The results are computed using the hypergeometric distribution."),
-      "stringer" = gettext("The results are computed using the Stringer method."),
+      "stringer.binomial" = gettext("The results are computed using the Stringer method."),
       "regression" = gettext("The results are computed using the regression estimator."),
       "direct" = gettext("The results are computed using the direct estimator."),
       "difference" = gettext("The results are computed using the difference estimator."),
@@ -2793,7 +2806,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
 
   # Custom message for stringer bound with LTA
-  if (options[["method"]] == "stringer" && options[["lta"]]) {
+  if (options[["method"]] == "stringer.binomial" && options[["lta"]]) {
     message <- gettext("The results are computed using the Stringer method with LTA adjustment.")
   }
 
@@ -3532,7 +3545,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   return(result)
 }
 
-.jfaSeparatedMisstatementEvaluationState <- function(options, sample, prior, prevOptions, prevState, parentContainer) {
+.jfaSeparatedMisstatementEvaluationState <- function(options, sample, prior, prevOptions, parentContainer) {
   k <- length(which(sample[[options[["values"]]]] != sample[[options[["values.audit"]]]]))
   if (options[["workflow"]]) {
     n <- sum(sample[[options[["indicator_col"]]]])

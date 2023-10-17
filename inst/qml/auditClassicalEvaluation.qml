@@ -98,7 +98,7 @@ Form
 			RadioButton
 			{
 				id: 			stringer
-				name: 			"stringer"
+				name: 			"stringer.binomial"
 				text: 			qsTr("Stringer")
 				enabled: 		!data.use_stats && variables.use_book && variables.use_real
 

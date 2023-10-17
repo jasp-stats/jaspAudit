@@ -152,7 +152,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     table$addColumnInfo(name = "pvalue2", title = "p", type = "pvalue", overtitle = gettext("Entropy"))
   }
 
-  table$addFootnote(gettextf("The displayed <i>p</i> value is one-sided and is computed on the basis of %1$s samples.", options[["noSamples"]]))
+  table$addFootnote(gettextf("The displayed <i>p</i>-value is one-sided and is computed on the basis of %1$s samples.", options[["noSamples"]]))
 
   numberBunchingContainer[["numberBunchingTestTable"]] <- table
 
@@ -239,7 +239,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     table$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
     table$addColumnInfo(name = "pvalue", title = "p", type = "pvalue")
 
-    table$addFootnote(gettextf("The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r</i> = 0.", "\u2080"))
+    table$addFootnote(gettextf("The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> = 0.", "\u2080"))
 
     numberBunchingContainer[["correlationTable"]] <- table
 
@@ -546,7 +546,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
   pvalue <- format.pval(state[["pvalueAvgFrequency"]], eps = 0.001)
   pvalue <- if (rejectnull) gettextf("%1$s < \u03B1", pvalue) else gettextf("%1$s >= \u03B1", pvalue)
 
-  conclusionText <- gettextf("The <i>p</i> value is %1$s and the null hypothesis that the data do not contain an unexpected amount of repeated values %2$s.", pvalue, conclusion)
+  conclusionText <- gettextf("The <i>p</i>-value is %1$s and the null hypothesis that the data do not contain an unexpected amount of repeated values %2$s.", pvalue, conclusion)
 
   conclusionContainer[["conclusionParagraph"]] <- createJaspHtml(conclusionText, "p")
   conclusionContainer[["conclusionParagraph"]]$position <- 1

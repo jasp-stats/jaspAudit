@@ -6,7 +6,7 @@ Description
 	name				: "jaspAudit"
 	title				: qsTr("Audit")
 	description			: qsTr("Statistical methods for auditing")
-	version			: "0.18.1"
+	version				: "0.18.1"
 	author				: "Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille and Ruud Wetzels"
 	maintainer			: "Koen Derks <k.derks@nyenrode.nl>"
 	website				: "www.github.com/koenderks/jfa"
@@ -15,8 +15,8 @@ Description
 
 	GroupTitle
 	{
-		title:			qsTr("Workflow")
-		icon:			"audit-workflow.svg"
+		title:			qsTr("Audit Sampling")
+		icon:			"audit-sampling.svg"
 	}
 	Analysis
 	{
@@ -27,12 +27,6 @@ Description
 	{
 		title:			qsTr("Bayesian Sampling Workflow")
 		func:			"auditBayesianWorkflow"
-	}
-
-	GroupTitle
-	{
-		title:			qsTr("Planning")
-		icon:			"audit-planning.svg"
 	}
 	Analysis
 	{
@@ -46,22 +40,10 @@ Description
 		func:			"auditBayesianPlanning"
 		requiresData:	false
 	}
-
-	GroupTitle
-	{
-		title:			qsTr("Selection")
-		icon:			"audit-selection.svg"
-	}
 	Analysis
 	{
 		title:			qsTr("Selection")
 		func:			"auditSelection"
-	}
-
-	GroupTitle
-	{
-		title:			qsTr("Evaluation")
-		icon:			"audit-evaluation.svg"
 	}
 	Analysis
 	{
@@ -75,11 +57,16 @@ Description
 		func:			"auditBayesianEvaluation"
 		requiresData:	false
 	}
-
+	Analysis
+	{
+		title:			qsTr("True Value Estimation")
+		func:			"auditClassicalEstimation"
+	}
+	
 	GroupTitle
 	{
-		title:			qsTr("Digit Analysis")
-		icon:			"audit-number-analysis.svg"
+		title:			qsTr("Data Auditing")
+		icon:			"audit-data.svg"
 	}
 	Analysis
 	{
@@ -95,12 +82,12 @@ Description
 
 	GroupTitle
 	{
-		title:			qsTr("Other")
-		icon:			"audit-other.svg"
+		title:			qsTr("Algorithm Auditing")
+		icon:			"audit-algorithms.svg"
 	}
 	Analysis
 	{
-		title:			qsTr("True Value Estimation")
-		func:			"auditClassicalEstimation"
+		title:			qsTr("Fairness Metrics")
+		func:			"auditClassicalModelFairness"
 	}
 }

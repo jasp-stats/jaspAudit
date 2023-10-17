@@ -97,7 +97,7 @@ De verwachte fouten zijn de toelaatbare fouten die in de steekproef kunnen worde
 ### Referenties
 ---
 - AICPA (2019). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K. (2023). jfa: Statistical Methods for Auditing. R-pakket versie 0.6.6.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R-pakket versie 0.7.0.
 - Dyer, D., & Pierce, R. L. (1993). On the choice of the prior distribution in hypergeometric sampling. <i>Communications in Statistics-Theory and Methods</i>, 22(8), 2125-2146.
 - Stewart, T. R. (2013). A Bayesian audit assurance model with application to the component materiality problem in group audits (Doctoral dissertation).
 - de Swart, J., Wille, J., & Majoor, B. (2013). Het 'Push Left'-Principe als Motor van Data Analytics in de Accountantscontrole. <i>Maandblad voor Accountancy en Bedrijfseconomie</i>, 87, 425-432.

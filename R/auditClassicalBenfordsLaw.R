@@ -55,10 +55,16 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   # Create the observed and predicted probabilities plot
   .jfaBenfordsLawPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 4)
 
+  # Create the Bayes factor robustness plot
+  .jfaBenfordsLawRobustnessPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 6)
+
+  # Create the sequential analysis plot
+  .jfaBenfordsLawSequentialPlot(dataset, options, benfordsLawContainer, jaspResults, ready, positionInContainer = 8)
+
   # ---
 
   # Create the conclusion paragraph
-  .jfaBenfordsLawAddConclusion(options, benfordsLawContainer, jaspResults, ready, position = 5)
+  .jfaBenfordsLawAddConclusion(options, benfordsLawContainer, jaspResults, ready, position = 3)
 
   # ---
 
@@ -141,7 +147,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     "values",
     "confidence",
     "digits",
-    "distribution"
+    "distribution",
+    "concentration"
   ))
 
   jaspResults[["benfordsLawContainer"]] <- benfordsLawContainer
@@ -164,12 +171,13 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       check = options[["digits"]],
       reference = options[["distribution"]],
       conf.level = options[["confidence"]],
-      prior = TRUE
+      prior = options[["concentration"]]
     )
     estimates <- test$estimates
     estimates$bf10 <- btest$estimates$bf10
     result <- list(
       object = test,
+      bobject = btest,
       digits = as.numeric(test$digits),
       relFrequencies = as.numeric(test$observed) / as.numeric(test$n),
       inBenford = as.numeric(test$expected) / as.numeric(test$n),
@@ -189,7 +197,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "values",
       "confidence",
       "digits",
-      "distribution"
+      "distribution",
+      "concentration"
     ))
     return(benfordsLawContainer[["result"]]$object)
   } else {
@@ -206,8 +215,12 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   }
 
   title <- gettextf(
-    "<b>Table %i.</b> Goodness-of-fit Test",
-    jaspResults[["tabNumber"]]$object
+    "<b>Table %1$i.</b> Omnibus Test - %2$s",
+    jaspResults[["tabNumber"]]$object,
+    switch(options[["distribution"]],
+      "benford" = "Benford's Law",
+      "uniform" = "Uniform Distribution"
+    )
   )
   bftitle <- switch(options[["bayesFactorType"]],
     "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
@@ -257,7 +270,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     "logBF10" = state[["logBF10"]]
   )
 
-  message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = 1.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089")
+  message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = %4$s.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089", options[["concentration"]])
   tb$addFootnote(message, colName = "bf")
 }
 
@@ -301,6 +314,10 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "logBF10" = gettextf("Log(BF%1$s)", "\u2081\u2080")
     )
     tb$addColumnInfo(name = "bf", title = bftitle, type = "number")
+    tb$addFootnote(gettextf("The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s.", switch(options[["distribution"]],
+      "benford" = gettext("Benford's law"),
+      "uniform" = gettext("the uniform distribution")
+    )))
 
     benfordsLawContainer[["benfordsLawTable"]] <- tb
 
@@ -338,7 +355,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "BF01" = 1 / state[["estimates"]]$bf10,
       "logBF10" = log(state[["estimates"]]$bf10)
     )
-    tb$addFootnote(gettext("Confidence intervals, <i>p</i>-values and Bayes factors are based on independent binomial distributions."))
+    tb$addFootnote(gettext("Confidence intervals and <i>p</i>-values are based on independent binomial distributions."), colName = "pval")
+    tb$addFootnote(gettext("Bayes factors are computed using a beta(1, 1) prior."), colName = "bf")
   }
 }
 
@@ -408,7 +426,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     )
 
     fg$position <- positionInContainer
-    fg$dependOn(options = c("benfordsLawPlot"))
+    fg$dependOn(options = "benfordsLawPlot")
 
     benfordsLawContainer[["benfordsLawPlot"]] <- fg
 
@@ -418,7 +436,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
     state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
 
-    fg$plotObject <- plot(state[["object"]]) +
+    fg$plotObject <- plot(state[["object"]], type = "estimates") +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "top")
   }
@@ -432,6 +450,64 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = benfordsLawContainer[["benfordsLawPlot"]])
     benfordsLawContainer[["benfordsLawPlotText"]] <- caption
+  }
+}
+
+.jfaBenfordsLawRobustnessPlot <- function(dataset, options, benfordsLawContainer,
+                                          jaspResults, ready, positionInContainer) {
+  if (!options[["robustnessPlot"]]) {
+    return()
+  }
+
+  .jfaFigureNumberUpdate(jaspResults)
+
+  if (is.null(benfordsLawContainer[["robustnessPlot"]])) {
+    fg <- createJaspPlot(title = gettext("Bayes Factor Robustness Plot"), width = 530, height = 450)
+    fg$position <- positionInContainer
+    fg$dependOn(options = "robustnessPlot")
+    benfordsLawContainer[["robustnessPlot"]] <- fg
+    if (!ready) {
+      return()
+    }
+    state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
+    fg$plotObject <- plot(state[["bobject"]], type = "robustness") +
+      jaspGraphs::geom_rangeframe() +
+      jaspGraphs::themeJaspRaw(legend.position = "top")
+  }
+  if (options[["explanatoryText"]]) {
+    caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The results of a robustness check using the Bayes factor. The figure illustrates the impact of different specifications (i.e., concentration parameters) of the Dirichlet prior on the Bayes factor values, providing insights into the robustness of the statistical evidence to the choice of prior distribution.", jaspResults[["figNumber"]]$object), "p")
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = benfordsLawContainer[["robustnessPlot"]])
+    benfordsLawContainer[["robustnessPlotText"]] <- caption
+  }
+}
+
+.jfaBenfordsLawSequentialPlot <- function(dataset, options, benfordsLawContainer,
+                                          jaspResults, ready, positionInContainer) {
+  if (!options[["sequentialPlot"]]) {
+    return()
+  }
+
+  .jfaFigureNumberUpdate(jaspResults)
+
+  if (is.null(benfordsLawContainer[["sequentialPlot"]])) {
+    fg <- createJaspPlot(title = gettext("Sequential Analysis Plot"), width = 530, height = 350)
+    fg$position <- positionInContainer
+    fg$dependOn(options = "sequentialPlot")
+    benfordsLawContainer[["sequentialPlot"]] <- fg
+    if (!ready) {
+      return()
+    }
+    state <- .jfaBenfordsLawState(dataset, options, benfordsLawContainer, ready)
+    fg$plotObject <- plot(state[["bobject"]], type = "sequential") +
+      jaspGraphs::geom_rangeframe() +
+      jaspGraphs::themeJaspRaw(legend.position = "top")
+  }
+  if (options[["explanatoryText"]]) {
+    caption <- createJaspHtml(gettextf("<b>Figure %i.</b> The results of a sequential analysis using the Bayes factor. The figure provides insight into how the statistical evidence from these data accumulates over time and under different prior specifications.", jaspResults[["figNumber"]]$object), "p")
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = benfordsLawContainer[["sequentialPlot"]])
+    benfordsLawContainer[["sequentialPlotText"]] <- caption
   }
 }
 
@@ -463,9 +539,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   )
 
   caption <- switch(options[["digits"]],
-    "first" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
-    "firsttwo" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
-    "last" = gettextf("The <i>p</i> value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion)
+    "first" = gettextf("The <i>p</i>-value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
+    "firsttwo" = gettextf("The <i>p</i>-value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion),
+    "last" = gettextf("The <i>p</i>-value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s %3$s.", pvalue, distribution, conclusion)
   )
   caption <- gettextf("%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis.", caption, format(1 / exp(state[["logBF10"]]), digits = 3))
 

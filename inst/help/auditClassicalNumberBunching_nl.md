@@ -63,7 +63,7 @@ Om te bepalen of de gegevens een buitensporige hoeveelheid herhaling vertonen, w
 
 ### Referenties
 ---
-- Derks, K. (2023). jfa: Statistical methods for auditing. R-pakket versie 0.6.6.
+- Derks, K. (2023). jfa: Statistical methods for auditing. R-pakket versie 0.7.0.
 - Simohnsohn, U. (2019, 25 mei). Number-Bunching: een nieuw hulpmiddel voor forensische gegevensanalyse. Opgehaald uit [http://datacolada.org/77](http://datacolada.org/77).
 
 ### R-pakketten

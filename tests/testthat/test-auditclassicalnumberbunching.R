@@ -12,7 +12,7 @@ options$shuffle <- "lasttwo"
 options$summaryTable <- TRUE
 options$numberBunchingSimulationPlots <- TRUE
 options$numberBunchingHistogram <- TRUE
-options$noHeads <- 13
+options$noHeads <- 0
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalNumberBunching", "numberBunching1.csv", options)
 
@@ -31,7 +31,6 @@ test_that("<b>Table 2.</b> Assumption Checks results match", {
 })
 
 test_that("Histogram of Individual Values plot matches", {
-  skip("Need to figure out why this fails")
   plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingHistogram"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "histogram-of-individual-values")
@@ -453,7 +452,7 @@ options$shuffle <- "lasttwo"
 options$summaryTable <- TRUE
 options$numberBunchingSimulationPlots <- TRUE
 options$numberBunchingHistogram <- TRUE
-options$noHeads <- 13
+options$noHeads <- 0
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalNumberBunching", "numberBunching2.csv", options)
 
@@ -472,7 +471,6 @@ test_that("<b>Table 2.</b> Assumption Checks results match", {
 })
 
 test_that("Histogram of Individual Values plot matches", {
-  skip("Need to figure out why this fails")
   plotName <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingHistogram"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "histogram-of-individual-values-2")

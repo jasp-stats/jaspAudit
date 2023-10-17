@@ -208,6 +208,41 @@ Form
 				name:				"benfordsLawPlot"
 				info:				qsTr("Produces a figure that shows the observed distribution of digits in the population compared to the expected distribution under the Benford's law or the uniform distribution.")
 			}
+
+			CheckBox
+			{
+				text:				qsTr("Bayes factor robustness check")
+				name:				"robustnessPlot"
+				info:				qsTr("Produces a figure that shows the robustness of the Bayes factor to the prior distribution.")
+			}
+
+			CheckBox
+			{
+				text:				qsTr("Sequential analysis")
+				name:				"sequentialPlot"
+				info:				qsTr("Produces a figure that shows the Bayes factor as a function of the sample size.")
+			}
+		}
+	}
+
+	Section
+	{
+		columns:					1
+		title: 						qsTr("Advanced")
+
+		Group
+		{
+			title:					qsTr("Prior Distribution")
+
+			DoubleField
+			{
+				name: 				"concentration"
+				label: 				qsTr("Concentration")
+				defaultValue: 		1
+				decimals:			2
+				min:				1
+				info:				qsTr("Specifies the concentration parameter for the Dirichlet prior.")
+			}
 		}
 	}
 

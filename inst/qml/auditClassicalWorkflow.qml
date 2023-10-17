@@ -432,7 +432,7 @@ Form
 				RadioButton
 				{
 					id: 							stringer
-					name: 							"stringer"
+					name: 							"stringer.binomial"
 					text: 							qsTr("Stringer")
 					enabled: 						values.use_book && annotation.use_values && interval.use_right
 
