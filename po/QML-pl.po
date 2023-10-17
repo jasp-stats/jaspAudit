@@ -2781,31 +2781,3 @@ msgid ""
 "Selects the seed for the random number generator in order to reproduce "
 "results."
 msgstr ""
-
-msgctxt "ShowAndExportDesign|"
-msgid "Display design"
-msgstr ""
-
-msgctxt "ShowAndExportDesign|"
-msgid "Coded units"
-msgstr ""
-
-msgctxt "ShowAndExportDesign|"
-msgid "Sort by run order"
-msgstr ""
-
-msgctxt "ShowAndExportDesign|"
-msgid "Sort by standard order"
-msgstr ""
-
-msgctxt "ShowAndExportDesign|"
-msgid "Save as:"
-msgstr ""
-
-msgctxt "ShowAndExportDesign|"
-msgid "e.g. design.csv"
-msgstr ""
-
-msgctxt "ShowAndExportDesign|"
-msgid "Export design"
-msgstr ""
