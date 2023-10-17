@@ -63,7 +63,7 @@ To determine whether the data show an excessive amount of bunching, the null hyp
 
 ### References
 ---
-- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package version 0.7.0.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package (latest version). https://cran.r-project.org/package=jfa
 - Simohnsohn, U. (2019, May 25). Number-Bunching: A New Tool for Forensic Data Analysis. Retrieved from [http://datacolada.org/77](http://datacolada.org/77).
 
 ### R Packages

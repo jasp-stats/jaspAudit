@@ -1,4 +1,6 @@
-# Version 0.18.0
+# Version 0.18.1
+
+**New features**
 
 - Added algorithm auditing section to the module with one analysis: Fairness metrics.
 - Add robustness and sensitivity plots to Benford's law along with the possibility to adjust the prior distribution.

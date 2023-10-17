@@ -117,7 +117,7 @@ The auditor assesses inherent risk, internal control risk and analytical risk ge
 ### References
 ---
 - AICPA (2019). <i>Audit Guide: Audit Sampling</i>. American Institute of Certified Public Accountants.
-- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package version 0.7.0.
+- Derks, K. (2023). jfa: Statistical Methods for Auditing. R package (latest version). https://cran.r-project.org/package=jfa
 - Leslie, D. A., Teitlebaum, A. D., Anderson, R. J. (1979). <i>Dollar-unit Sampling: A Practical Guide for Auditors</i>. Toronto: Copp Clark Pitman.
 - Stringer, K. W. (1963) Practical aspects of statistical sampling in auditing. <i>Proceedings of Business and Economic Statistics Section</i>, American Statistical Association.
 - Touw, P., & Hoogduin, L. (2011). Statistiek voor audit en controlling.
