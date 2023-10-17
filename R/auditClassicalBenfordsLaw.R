@@ -270,7 +270,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     "logBF10" = state[["logBF10"]]
   )
 
-  message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = 1.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089")
+  message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = %4$s.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089", options[["concentration"]])
   tb$addFootnote(message, colName = "bf")
 }
 

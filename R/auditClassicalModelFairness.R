@@ -227,7 +227,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       "BF01" = 1 / result[["bayesian"]][["bf"]],
       "logBF10" = log(result[["bayesian"]][["bf"]])
     )
-    tb$addFootnote(gettextf("The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) prior with %1$s = 1.", "\u03B1", "\u2081", "\u1D62"), colName = "bf")
+    tb$addFootnote(gettextf("The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) prior with %1$s = %4$s.", "\u03B1", "\u2081", "\u1D62", options[["concentration"]]), colName = "bf")
   }
 }
 
@@ -303,7 +303,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       )
       tb[["bf"]] <- c(NA, bfs)
       tb$addFootnote(gettext("<i>p</i>-values are uncorrected for multiple comparisons and are based on Fisher's exact test."), colName = "p")
-      tb$addFootnote(gettextf("Bayes factors are uncorrected and are computed using a Dirichlet(%1$s%2$s, %1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = 1.", "\u03B1", "\u2081", "\u2082", "\u2083", "\u2084"), colName = "bf")
+      tb$addFootnote(gettextf("Bayes factors are uncorrected and are computed using a Dirichlet(%1$s%2$s, %1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = %6$s.", "\u03B1", "\u2081", "\u2082", "\u2083", "\u2084", options[["concentration"]]), colName = "bf")
     }
   }
 }
