@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2023-09-02 03:26\n"
+"POT-Creation-Date: 2023-10-17 08:52\n"
 "PO-Revision-Date: 2023-04-21 21:08+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -106,7 +106,8 @@ msgstr "<u>ベンフォードの法則を評価する</u>"
 msgid "<u>Assessing the Uniform Distribution</u>"
 msgstr "<u>一様分布の評価</u>"
 
-msgid "<b>Table %i.</b> Goodness-of-fit Test"
+#, fuzzy
+msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
 msgstr "<b>表 %i.</b> 適合度検定"
 
 msgid "BF%1$s"
@@ -142,9 +143,10 @@ msgstr ""
 "帰無仮説は、データセットの最後の桁（1-9）が %1$s に従って分布しているとを指定"
 "する"
 
+#, fuzzy
 msgid ""
 "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with "
-"%2$s = 1."
+"%2$s = %4$s."
 msgstr ""
 "ベイズファクターは、%2$s = 1のDirichlet(%1$s,...,%2$s%3$s)事前分布を使用して"
 "計算されます."
@@ -182,10 +184,24 @@ msgstr "下限"
 msgid "Upper"
 msgstr "上限"
 
+#, fuzzy
 msgid ""
-"Confidence intervals, <i>p</i>-values and Bayes factors are based on "
-"independent binomial distributions."
+"The null hypothesis specifies that the relative frequency of a digit is "
+"equal to its expected relative frequency under %1$s."
 msgstr ""
+"帰無仮説は、データセットの最後の桁（1-9）が %1$s に従って分布しているとを指定"
+"する"
+
+msgid ""
+"Confidence intervals and <i>p</i>-values are based on independent binomial "
+"distributions."
+msgstr ""
+
+#, fuzzy
+msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgstr ""
+"ベイズファクターは、%2$s = 1のDirichlet(%1$s,...,%2$s%3$s)事前分布を使用して"
+"計算されます."
 
 #, fuzzy
 msgid "Leading Digit"
@@ -237,6 +253,26 @@ msgstr ""
 "各桁の観測された割合。%2$s に従って分布するデータセットの場合、青い点は灰色の"
 "バーの上部付近にあります。"
 
+msgid "Bayes Factor Robustness Plot"
+msgstr ""
+
+msgid ""
+"<b>Figure %i.</b> The results of a robustness check using the Bayes factor. "
+"The figure illustrates the impact of different specifications (i.e., "
+"concentration parameters) of the Dirichlet prior on the Bayes factor values, "
+"providing insights into the robustness of the statistical evidence to the "
+"choice of prior distribution."
+msgstr ""
+
+msgid "Sequential Analysis Plot"
+msgstr ""
+
+msgid ""
+"<b>Figure %i.</b> The results of a sequential analysis using the Bayes "
+"factor. The figure provides insight into how the statistical evidence from "
+"these data accumulates over time and under different prior specifications."
+msgstr ""
+
 msgid "<u>Conclusion</u>"
 msgstr "<u>結論</u>"
 
@@ -254,7 +290,7 @@ msgstr ""
 
 #, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the first digits in "
+"The <i>p</i>-value is %1$s and the null hypothesis that the first digits in "
 "the data set are distributed according to %2$s %3$s."
 msgstr ""
 "<i>p</i>値は%1$sであり、データセットの最初の桁が%2$s <b>%3$s</b>に従って分配"
@@ -262,7 +298,7 @@ msgstr ""
 
 #, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the first two digits "
+"The <i>p</i>-value is %1$s and the null hypothesis that the first two digits "
 "in the data set are distributed according to %2$s %3$s."
 msgstr ""
 "4]p</i>の値は%1$sであり、データセットの最初の2桁が%2$s<b>%3$s</b>に従って分布"
@@ -270,7 +306,7 @@ msgstr ""
 
 #, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the last digits in "
+"The <i>p</i>-value is %1$s and the null hypothesis that the last digits in "
 "the data set are distributed according to %2$s %3$s."
 msgstr ""
 "<i>p</i>値は%1$sであり、データセットの最初の桁が%2$s <b>%3$s</b>に従って分配"
@@ -497,6 +533,139 @@ msgid ""
 msgstr ""
 
 msgid ""
+"The goal of this procedure is to determine to what extent the predictions of "
+"an algorithm are fair towards protected groups on a sensitive attribute, and "
+"to test this fairness with a type-I error of %1$s%%. Considering the "
+"positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified "
+"using so-called fairness metrics. The ratio of a fairness metric of an "
+"unprivileged group compared to the privileged (<i>%3$s</i>) group is called "
+"parity."
+msgstr ""
+
+#, fuzzy
+msgid "<u>Assessing Model Fairness</u>"
+msgstr "<u>ベンフォードの法則を評価する</u>"
+
+msgid "n"
+msgstr "n"
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the %1$s is equal across protected groups."
+msgstr ""
+"帰無仮説は、データセットの最後の桁（1-9）が %1$s に従って分布しているとを指定"
+"する"
+
+msgid ""
+"Please specify a privileged group and positive class to start the analysis."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) "
+"prior with %1$s = %4$s."
+msgstr ""
+"ベイズファクターは、%2$s = 1のDirichlet(%1$s,...,%2$s%3$s)事前分布を使用して"
+"計算されます."
+
+#, fuzzy
+msgid "<b>Table %i.</b> Comparisons to Privileged (P) Group"
+msgstr "<b>表 %i.</b> 記述統計"
+
+msgid "Parity"
+msgstr ""
+
+msgid "p"
+msgstr "p"
+
+msgid ""
+"The null hypothesis specifies that the %1$s of an unprivileged group is "
+"equal to that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the %1$s of an unprivileged group is "
+"greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the %1$s of an unprivileged group is "
+"lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
+"Fisher's exact test."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"Bayes factors are uncorrected and are computed using a Dirichlet(%1$s%2$s, "
+"%1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = %6$s."
+msgstr ""
+"ベイズファクターは、%2$s = 1のDirichlet(%1$s,...,%2$s%3$s)事前分布を使用して"
+"計算されます."
+
+#, fuzzy
+msgid "<b>Table %i.</b> Model Performance"
+msgstr "<b>表 %i.</b> 記述統計"
+
+msgid "Support"
+msgstr ""
+
+msgid "Accuracy"
+msgstr ""
+
+msgid "Precision"
+msgstr ""
+
+msgid "Recall"
+msgstr ""
+
+msgid "F1 Score"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Table %i.</b> Confusion Matrix"
+msgstr "<b>表 %i.</b> 記述統計"
+
+msgid "Actual"
+msgstr ""
+
+msgid "Predicted"
+msgstr ""
+
+msgid "Observed"
+msgstr "観測された"
+
+msgid "Parity Estimates Plot"
+msgstr ""
+
+msgid ""
+"<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of %2$s "
+"from each unprivileged group to the privileged %3$s group) for all groups in "
+"the data. The closer the parity lies to one, the less discrimination occurs "
+"in the algorithm."
+msgstr ""
+
+#, fuzzy
+msgid "Prior and Posterior Distribution Plot"
+msgstr "事後分布"
+
+msgid ""
+"<b>Figure %i.</b> The prior and posterior distributions on the log odds "
+"ratio for each unprivileged group compared to the privileged group (%2$s)."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across "
+"protected groups %3$s."
+msgstr ""
+"<i>p</i>値は%1$sであり、データセットの最初の桁が%2$s <b>%3$s</b>に従って分配"
+"されるという帰無仮説です。"
+
+msgid ""
 "This procedure analyzes the frequency with which values get repeated within "
 "a data set to statistically identify whether the data were likely tampered "
 "with. Unlike Benford's law, and its generalizations, this approach examines "
@@ -527,7 +696,7 @@ msgid "Entropy"
 msgstr ""
 
 msgid ""
-"The displayed <i>p</i> value is one-sided and is computed on the basis of "
+"The displayed <i>p</i>-value is one-sided and is computed on the basis of "
 "%1$s samples."
 msgstr ""
 
@@ -536,7 +705,7 @@ msgid "<b>Table %i.</b> Assumption Checks"
 msgstr "<b>表 %i.</b> 記述統計"
 
 msgid ""
-"The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r</i> "
+"The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> "
 "= 0."
 msgstr ""
 
@@ -580,7 +749,7 @@ msgstr ""
 
 #, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the data do not "
+"The <i>p</i>-value is %1$s and the null hypothesis that the data do not "
 "contain an unexpected amount of repeated values %2$s."
 msgstr ""
 "<i>p</i>値は%1$sであり、データセットの最初の桁が%2$s <b>%3$s</b>に従って分配"
@@ -1399,9 +1568,6 @@ msgstr ""
 msgid "%1$s%% Lower bound"
 msgstr ""
 
-msgid "Precision"
-msgstr ""
-
 msgid "p-value"
 msgstr "p値"
 
@@ -1662,8 +1828,8 @@ msgstr ""
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr ""
 
-#~ msgid "Observed"
-#~ msgstr "観測された"
+#~ msgid "<b>Table %i.</b> Goodness-of-fit Test"
+#~ msgstr "<b>表 %i.</b> 適合度検定"
 
 #~ msgid "Probability"
 #~ msgstr "確率"
@@ -1700,9 +1866,3 @@ msgstr ""
 #, fuzzy
 #~ msgid "<i>S</i>"
 #~ msgstr "<i>p</i>値"
-
-#~ msgid "n"
-#~ msgstr "n"
-
-#~ msgid "p"
-#~ msgstr "p"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.1\n"
-"POT-Creation-Date: 2023-09-23 03:26\n"
+"POT-Creation-Date: 2023-10-17 08:52\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "<u>Assessing the Uniform Distribution</u>"
 msgstr ""
 
-msgid "<b>Table %i.</b> Goodness-of-fit Test"
+msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
 msgstr ""
 
 msgid "BF%1$s"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "The null hypothesis specifies that the last digits (1 - 9) in the data set are distributed according to %1$s."
 msgstr ""
 
-msgid "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = 1."
+msgid "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = %4$s."
 msgstr ""
 
 msgid "<b>Table %i.</b> Frequency Table"
@@ -97,7 +97,13 @@ msgstr ""
 msgid "Upper"
 msgstr ""
 
-msgid "Confidence intervals, <i>p</i>-values and Bayes factors are based on independent binomial distributions."
+msgid "The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s."
+msgstr ""
+
+msgid "Confidence intervals and <i>p</i>-values are based on independent binomial distributions."
+msgstr ""
+
+msgid "Bayes factors are computed using a beta(1, 1) prior."
 msgstr ""
 
 msgid "Leading Digit"
@@ -136,6 +142,18 @@ msgstr ""
 msgid "<b>Figure %i.</b> The observed relative frequencies of each digit in the data set compared to the expected relative frequencies under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars."
 msgstr ""
 
+msgid "Bayes Factor Robustness Plot"
+msgstr ""
+
+msgid "<b>Figure %i.</b> The results of a robustness check using the Bayes factor. The figure illustrates the impact of different specifications (i.e., concentration parameters) of the Dirichlet prior on the Bayes factor values, providing insights into the robustness of the statistical evidence to the choice of prior distribution."
+msgstr ""
+
+msgid "Sequential Analysis Plot"
+msgstr ""
+
+msgid "<b>Figure %i.</b> The results of a sequential analysis using the Bayes factor. The figure provides insight into how the statistical evidence from these data accumulates over time and under different prior specifications."
+msgstr ""
+
 msgid "<u>Conclusion</u>"
 msgstr ""
 
@@ -151,13 +169,13 @@ msgstr ""
 msgid "%1$s >= %2$s"
 msgstr ""
 
-msgid "The <i>p</i> value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s %3$s."
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s %3$s."
 msgstr ""
 
-msgid "The <i>p</i> value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s %3$s."
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s %3$s."
 msgstr ""
 
-msgid "The <i>p</i> value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s %3$s."
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s %3$s."
 msgstr ""
 
 msgid "%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis."
@@ -316,6 +334,93 @@ msgstr ""
 msgid "<b>Figure 1.</b> Scatter plot of the book values in the selection and their audit values. Red dots indicate observations that did not match their original book value. If these red dots lie in the bottom part of the graph, the book values are overstated. If these red dots lie in the upper part of the graph, they are understated. The value <i>r</i> is the Pearson correlation coefficient of the book values and the audit values, an indicator of the strength of the linear relationship between the two variables."
 msgstr ""
 
+msgid "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute, and to test this fairness with a type-I error of %1$s%%. Considering the positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified using so-called fairness metrics. The ratio of a fairness metric of an unprivileged group compared to the privileged (<i>%3$s</i>) group is called parity."
+msgstr ""
+
+msgid "<u>Assessing Model Fairness</u>"
+msgstr ""
+
+msgid "n"
+msgstr ""
+
+msgid "The null hypothesis specifies that the %1$s is equal across protected groups."
+msgstr ""
+
+msgid "Please specify a privileged group and positive class to start the analysis."
+msgstr ""
+
+msgid "The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) prior with %1$s = %4$s."
+msgstr ""
+
+msgid "<b>Table %i.</b> Comparisons to Privileged (P) Group"
+msgstr ""
+
+msgid "Parity"
+msgstr ""
+
+msgid "p"
+msgstr ""
+
+msgid "The null hypothesis specifies that the %1$s of an unprivileged group is equal to that of the privileged (P) group."
+msgstr ""
+
+msgid "The null hypothesis specifies that the %1$s of an unprivileged group is greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid "The null hypothesis specifies that the %1$s of an unprivileged group is lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid "<i>p</i>-values are uncorrected for multiple comparisons and are based on Fisher's exact test."
+msgstr ""
+
+msgid "Bayes factors are uncorrected and are computed using a Dirichlet(%1$s%2$s, %1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = %6$s."
+msgstr ""
+
+msgid "<b>Table %i.</b> Model Performance"
+msgstr ""
+
+msgid "Support"
+msgstr ""
+
+msgid "Accuracy"
+msgstr ""
+
+msgid "Precision"
+msgstr ""
+
+msgid "Recall"
+msgstr ""
+
+msgid "F1 Score"
+msgstr ""
+
+msgid "<b>Table %i.</b> Confusion Matrix"
+msgstr ""
+
+msgid "Actual"
+msgstr ""
+
+msgid "Predicted"
+msgstr ""
+
+msgid "Observed"
+msgstr ""
+
+msgid "Parity Estimates Plot"
+msgstr ""
+
+msgid "<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of %2$s from each unprivileged group to the privileged %3$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm."
+msgstr ""
+
+msgid "Prior and Posterior Distribution Plot"
+msgstr ""
+
+msgid "<b>Figure %i.</b> The prior and posterior distributions on the log odds ratio for each unprivileged group compared to the privileged group (%2$s)."
+msgstr ""
+
+msgid "The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across protected groups %3$s."
+msgstr ""
+
 msgid "This procedure analyzes the frequency with which values get repeated within a data set to statistically identify whether the data were likely tampered with. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit.\n\nTo determine whether the data show an excessive amount of repeated values, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested with a type-I error of %1$s. To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions."
 msgstr ""
 
@@ -334,13 +439,13 @@ msgstr ""
 msgid "Entropy"
 msgstr ""
 
-msgid "The displayed <i>p</i> value is one-sided and is computed on the basis of %1$s samples."
+msgid "The displayed <i>p</i>-value is one-sided and is computed on the basis of %1$s samples."
 msgstr ""
 
 msgid "<b>Table %i.</b> Assumption Checks"
 msgstr ""
 
-msgid "The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r</i> = 0."
+msgid "The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> = 0."
 msgstr ""
 
 msgid "Percentage"
@@ -376,7 +481,7 @@ msgstr ""
 msgid "%1$s >= α"
 msgstr ""
 
-msgid "The <i>p</i> value is %1$s and the null hypothesis that the data do not contain an unexpected amount of repeated values %2$s."
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the data do not contain an unexpected amount of repeated values %2$s."
 msgstr ""
 
 msgid "percentage"
@@ -935,9 +1040,6 @@ msgid "%1$s%% Upper bound"
 msgstr ""
 
 msgid "%1$s%% Lower bound"
-msgstr ""
-
-msgid "Precision"
 msgstr ""
 
 msgid "p-value"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-09-02 03:26\n"
+"POT-Creation-Date: 2023-10-17 08:52\n"
 "PO-Revision-Date: 2023-09-04 07:59+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -113,8 +113,9 @@ msgstr "<u>Het Evalueren van de Wet van Benford</u>"
 msgid "<u>Assessing the Uniform Distribution</u>"
 msgstr "<u>Het Evalueren van de Uniforme Verdeling</u>"
 
-msgid "<b>Table %i.</b> Goodness-of-fit Test"
-msgstr "<b>Tabel %i.</b> Passingstoets"
+#, fuzzy
+msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
+msgstr "<b>Tabel %1$i.</b> %2$s"
 
 msgid "BF%1$s"
 msgstr "BF%1$s"
@@ -149,9 +150,10 @@ msgstr ""
 "De nulhypothese specificeert dat de verdeling van de laatste cijfers (1 - 9) "
 "in de gegevens overeenstemt met %1$s."
 
+#, fuzzy
 msgid ""
 "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with "
-"%2$s = 1."
+"%2$s = %4$s."
 msgstr ""
 "De Bayes factor is berekend met behulp van een Dirichlet(%1$s,...,%2$s%3$s) "
 "prior met %2$s = 1."
@@ -189,12 +191,25 @@ msgstr "Onder"
 msgid "Upper"
 msgstr "Boven"
 
+#, fuzzy
 msgid ""
-"Confidence intervals, <i>p</i>-values and Bayes factors are based on "
-"independent binomial distributions."
+"The null hypothesis specifies that the relative frequency of a digit is "
+"equal to its expected relative frequency under %1$s."
+msgstr ""
+"De nulhypothese specificeert dat de verdeling van de laatste cijfers (1 - 9) "
+"in de gegevens overeenstemt met %1$s."
+
+#, fuzzy
+msgid ""
+"Confidence intervals and <i>p</i>-values are based on independent binomial "
+"distributions."
 msgstr ""
 "Betrouwbaarheidsintervallen, <i>p</i>-waardes en Bayes factors zijn "
 "gebaseerd op onafhankelijke binomiale verdelingen."
+
+#, fuzzy
+msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgstr "De resultaten zijn berekend door middel van de betaverdeling."
 
 msgid "Leading Digit"
 msgstr "Leidend Cijfer"
@@ -244,6 +259,26 @@ msgstr ""
 "dichter de blauwe stippen rond de bovenkant van de grijze staven liggen, hoe "
 "meer de gegevens overeenstemmen met %2$s."
 
+msgid "Bayes Factor Robustness Plot"
+msgstr ""
+
+msgid ""
+"<b>Figure %i.</b> The results of a robustness check using the Bayes factor. "
+"The figure illustrates the impact of different specifications (i.e., "
+"concentration parameters) of the Dirichlet prior on the Bayes factor values, "
+"providing insights into the robustness of the statistical evidence to the "
+"choice of prior distribution."
+msgstr ""
+
+msgid "Sequential Analysis Plot"
+msgstr ""
+
+msgid ""
+"<b>Figure %i.</b> The results of a sequential analysis using the Bayes "
+"factor. The figure provides insight into how the statistical evidence from "
+"these data accumulates over time and under different prior specifications."
+msgstr ""
+
 msgid "<u>Conclusion</u>"
 msgstr "<u>Conclusies</u>"
 
@@ -259,22 +294,25 @@ msgstr "%1$s < %2$s"
 msgid "%1$s >= %2$s"
 msgstr "%1$s >= %2$s"
 
+#, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the first digits in "
+"The <i>p</i>-value is %1$s and the null hypothesis that the first digits in "
 "the data set are distributed according to %2$s %3$s."
 msgstr ""
 "De <i>p</i> waarde is %1$s en de nulhypothese dat de eerste cijfers in de "
 "gegevens zijn verdeeld volgens %2$s %3$s."
 
+#, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the first two digits "
+"The <i>p</i>-value is %1$s and the null hypothesis that the first two digits "
 "in the data set are distributed according to %2$s %3$s."
 msgstr ""
 "De <i>p</i> waarde is %1$s en de nulhypothese dat de eerste twee cijfers in "
 "de gegevens zijn verdeeld volgens %2$s %3$s."
 
+#, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the last digits in "
+"The <i>p</i>-value is %1$s and the null hypothesis that the last digits in "
 "the data set are distributed according to %2$s %3$s."
 msgstr ""
 "De <i>p</i> waarde is %1$s en de nulhypothese dat de laatste cijfers in de "
@@ -562,6 +600,144 @@ msgstr ""
 "de twee variabelen."
 
 msgid ""
+"The goal of this procedure is to determine to what extent the predictions of "
+"an algorithm are fair towards protected groups on a sensitive attribute, and "
+"to test this fairness with a type-I error of %1$s%%. Considering the "
+"positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified "
+"using so-called fairness metrics. The ratio of a fairness metric of an "
+"unprivileged group compared to the privileged (<i>%3$s</i>) group is called "
+"parity."
+msgstr ""
+
+#, fuzzy
+msgid "<u>Assessing Model Fairness</u>"
+msgstr "<u>Herhaalde waarden beoordelen</u>"
+
+msgid "n"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the %1$s is equal across protected groups."
+msgstr ""
+"De nulhypothese specificeert dat de verdeling van de laatste cijfers (1 - 9) "
+"in de gegevens overeenstemt met %1$s."
+
+msgid ""
+"Please specify a privileged group and positive class to start the analysis."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) "
+"prior with %1$s = %4$s."
+msgstr ""
+"De Bayes factor is berekend met behulp van een Dirichlet(%1$s,...,%2$s%3$s) "
+"prior met %2$s = 1."
+
+#, fuzzy
+msgid "<b>Table %i.</b> Comparisons to Privileged (P) Group"
+msgstr "<b>Tabel %i.</b> Correcties op Populatie"
+
+msgid "Parity"
+msgstr ""
+
+msgid "p"
+msgstr "p"
+
+msgid ""
+"The null hypothesis specifies that the %1$s of an unprivileged group is "
+"equal to that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the %1$s of an unprivileged group is "
+"greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the %1$s of an unprivileged group is "
+"lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
+"Fisher's exact test."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"Bayes factors are uncorrected and are computed using a Dirichlet(%1$s%2$s, "
+"%1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = %6$s."
+msgstr ""
+"De Bayes factor is berekend met behulp van een Dirichlet(%1$s,...,%2$s%3$s) "
+"prior met %2$s = 1."
+
+#, fuzzy
+msgid "<b>Table %i.</b> Model Performance"
+msgstr "<b>Tabel %i.</b> Gelijkwaardige Voorafgaande Steekproef"
+
+msgid "Support"
+msgstr "Ondersteuning"
+
+msgid "Accuracy"
+msgstr ""
+
+msgid "Precision"
+msgstr "Nauwkeurigheid"
+
+msgid "Recall"
+msgstr ""
+
+msgid "F1 Score"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Table %i.</b> Confusion Matrix"
+msgstr "<b>Tabel %i.</b> Correcties op Populatie"
+
+msgid "Actual"
+msgstr ""
+
+#, fuzzy
+msgid "Predicted"
+msgstr "Voorspelde fouten"
+
+msgid "Observed"
+msgstr "Geobserveerd"
+
+#, fuzzy
+msgid "Parity Estimates Plot"
+msgstr "Schattingen"
+
+msgid ""
+"<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of %2$s "
+"from each unprivileged group to the privileged %3$s group) for all groups in "
+"the data. The closer the parity lies to one, the less discrimination occurs "
+"in the algorithm."
+msgstr ""
+
+#, fuzzy
+msgid "Prior and Posterior Distribution Plot"
+msgstr "Prior- en Posterior-verdeling"
+
+#, fuzzy
+msgid ""
+"<b>Figure %i.</b> The prior and posterior distributions on the log odds "
+"ratio for each unprivileged group compared to the privileged group (%2$s)."
+msgstr ""
+"<b>Figuur %1$i.</b> De prior- en posterior-verdeling (%2$s) voor de fout in "
+"de populatie."
+
+#, fuzzy
+msgid ""
+"The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across "
+"protected groups %3$s."
+msgstr ""
+"De <i>p</i>-waarde is %1$s en de nulhypothese dat de gegevens geen "
+"onverwachte hoeveelheid herhaalde waarden bevatten %2$s."
+
+msgid ""
 "This procedure analyzes the frequency with which values get repeated within "
 "a data set to statistically identify whether the data were likely tampered "
 "with. Unlike Benford's law, and its generalizations, this approach examines "
@@ -601,8 +777,9 @@ msgstr "Frequentie"
 msgid "Entropy"
 msgstr "Entropie"
 
+#, fuzzy
 msgid ""
-"The displayed <i>p</i> value is one-sided and is computed on the basis of "
+"The displayed <i>p</i>-value is one-sided and is computed on the basis of "
 "%1$s samples."
 msgstr ""
 "De weergegeven <i>p</i>-waarde is eenzijdig en is berekend op basis van %1$s "
@@ -611,8 +788,9 @@ msgstr ""
 msgid "<b>Table %i.</b> Assumption Checks"
 msgstr "<b>Tabel %i.</b> Aannamecontrole"
 
+#, fuzzy
 msgid ""
-"The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r</i> "
+"The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> "
 "= 0."
 msgstr ""
 "De weergegeven <i>p</i> waarde is voor een tweezijdige toets tegen H%1$s: "
@@ -659,8 +837,9 @@ msgstr "%1$s < α"
 msgid "%1$s >= α"
 msgstr "%1$s >= α"
 
+#, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the data do not "
+"The <i>p</i>-value is %1$s and the null hypothesis that the data do not "
 "contain an unexpected amount of repeated values %2$s."
 msgstr ""
 "De <i>p</i>-waarde is %1$s en de nulhypothese dat de gegevens geen "
@@ -1739,9 +1918,6 @@ msgstr "%1$s%% Bovengrens"
 msgid "%1$s%% Lower bound"
 msgstr "%1$s%% Ondergrens"
 
-msgid "Precision"
-msgstr "Nauwkeurigheid"
-
 msgid "p-value"
 msgstr "p-waarde"
 
@@ -2033,6 +2209,9 @@ msgstr "Niet-parametrisch"
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr "%1$s %2$s vs. %3$s %2$s."
 
+#~ msgid "<b>Table %i.</b> Goodness-of-fit Test"
+#~ msgstr "<b>Tabel %i.</b> Passingstoets"
+
 #~ msgid ""
 #~ "The translation of the categories High, Medium and Low to probabilities "
 #~ "is done using the default settings shown in the table below. To learn "
@@ -2044,9 +2223,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 #~ "Voor meer informatie over deze standaardinstellingen en hoe deze kunnen "
 #~ "worden aangepast, zie het helpbestand van deze analyse of kijk onder het "
 #~ "kopje <i>Audit Risico Model</i>."
-
-#~ msgid "Observed"
-#~ msgstr "Geobserveerd"
 
 #~ msgid ""
 #~ "<b>Objectives:</b> You have not achieved your initial sampling "
@@ -2106,12 +2282,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "Predicted samples before an error"
 #~ msgstr "Voorspelde steken voor een fout"
-
-#~ msgid "Predicted errors"
-#~ msgstr "Voorspelde fouten"
-
-#~ msgid "<b>Table %i.</b> Equivalent Prior Sample"
-#~ msgstr "<b>Tabel %i.</b> Gelijkwaardige Voorafgaande Steekproef"
 
 #~ msgid "Equivalent sample size"
 #~ msgstr "Gelijkwaardige steekproefomvang"
@@ -2456,9 +2626,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 #~ msgid "%1$s%% Credible region for %2$s"
 #~ msgstr "%1$s%% Geloofwaardigheidsregio voor %2$s"
 
-#~ msgid "Support"
-#~ msgstr "Ondersteuning"
-
 #~ msgid "Prior and Posterior Distribution over Unknown Misstatement"
 #~ msgstr "Prior en Posterior Verdeling over Ongeziene Fout"
 
@@ -2577,6 +2744,3 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 #~ msgstr ""
 #~ "Van de populatie van <b>%1$s</b> observaties, waren <b>%2$s</b> "
 #~ "observaties geselecteerd met de <b>%3$s</b> methode."
-
-#~ msgid "p"
-#~ msgstr "p"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2023-09-02 03:26\n"
+"POT-Creation-Date: 2023-10-17 08:52\n"
 "PO-Revision-Date: 2023-10-06 15:40+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -116,8 +116,9 @@ msgstr "<u>Juzgar la ley de Benford</u>"
 msgid "<u>Assessing the Uniform Distribution</u>"
 msgstr "<u>Juzgar la Distribución Uniforme</u>"
 
-msgid "<b>Table %i.</b> Goodness-of-fit Test"
-msgstr "<b>Tabla %i.</b> Contraste de la Bondad del Ajuste"
+#, fuzzy
+msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
+msgstr "<b>Tabla %1$i.</b> %2$s"
 
 msgid "BF%1$s"
 msgstr "FB%1$s"
@@ -152,9 +153,10 @@ msgstr ""
 "La hipótesis nula indica que los últimos dígitos (1 - 9) en el conjunto de "
 "datos, se distribuyen conforme a %1$s."
 
+#, fuzzy
 msgid ""
 "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with "
-"%2$s = 1."
+"%2$s = %4$s."
 msgstr ""
 "El factor de Bayes se calcula utilizando una previa de Dirichlet(%1$s,...,"
 "%2$s%3$s) con %2$s = 1."
@@ -192,12 +194,25 @@ msgstr "Inferior"
 msgid "Upper"
 msgstr "Superior"
 
+#, fuzzy
 msgid ""
-"Confidence intervals, <i>p</i>-values and Bayes factors are based on "
-"independent binomial distributions."
+"The null hypothesis specifies that the relative frequency of a digit is "
+"equal to its expected relative frequency under %1$s."
+msgstr ""
+"La hipótesis nula indica que los últimos dígitos (1 - 9) en el conjunto de "
+"datos, se distribuyen conforme a %1$s."
+
+#, fuzzy
+msgid ""
+"Confidence intervals and <i>p</i>-values are based on independent binomial "
+"distributions."
 msgstr ""
 "Los intervalos de confianza, valores <i>p</i> y factores de Bayes están "
 "basados en distribuciones Binomiales independientes."
+
+#, fuzzy
+msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgstr "Los resultados se calculan utilizando la distribución Beta."
 
 msgid "Leading Digit"
 msgstr "Dígito inicial"
@@ -247,6 +262,26 @@ msgstr ""
 "%2$s. Para conjuntos de datos distribuidos conforme a %2$s, los puntos "
 "azules estarán cerca de la cima de las barras grises."
 
+msgid "Bayes Factor Robustness Plot"
+msgstr ""
+
+msgid ""
+"<b>Figure %i.</b> The results of a robustness check using the Bayes factor. "
+"The figure illustrates the impact of different specifications (i.e., "
+"concentration parameters) of the Dirichlet prior on the Bayes factor values, "
+"providing insights into the robustness of the statistical evidence to the "
+"choice of prior distribution."
+msgstr ""
+
+msgid "Sequential Analysis Plot"
+msgstr ""
+
+msgid ""
+"<b>Figure %i.</b> The results of a sequential analysis using the Bayes "
+"factor. The figure provides insight into how the statistical evidence from "
+"these data accumulates over time and under different prior specifications."
+msgstr ""
+
 msgid "<u>Conclusion</u>"
 msgstr "<u>Conclusión</u>"
 
@@ -262,22 +297,25 @@ msgstr "%1$s < %2$s"
 msgid "%1$s >= %2$s"
 msgstr "%1$s >= %2$s"
 
+#, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the first digits in "
+"The <i>p</i>-value is %1$s and the null hypothesis that the first digits in "
 "the data set are distributed according to %2$s %3$s."
 msgstr ""
 "El valor <i>p</i> es %1$s, y la hipótesis nula que los primeros dígitos del "
 "conjunto de datos se distribuyen conforme a %2$s %3$s."
 
+#, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the first two digits "
+"The <i>p</i>-value is %1$s and the null hypothesis that the first two digits "
 "in the data set are distributed according to %2$s %3$s."
 msgstr ""
 "El valor <i>p</i> es %1$s, y la hipótesis nula que los dos primeros dígitos "
 "del conjunto de datos se distribuyen conforme a %2$s %3$s."
 
+#, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the last digits in "
+"The <i>p</i>-value is %1$s and the null hypothesis that the last digits in "
 "the data set are distributed according to %2$s %3$s."
 msgstr ""
 "El valor <i>p</i> es %1$s, y la hipótesis nula que los últimos dígitos del "
@@ -572,6 +610,145 @@ msgstr ""
 "un indicador del grado de relación lineal entre las dos variables."
 
 msgid ""
+"The goal of this procedure is to determine to what extent the predictions of "
+"an algorithm are fair towards protected groups on a sensitive attribute, and "
+"to test this fairness with a type-I error of %1$s%%. Considering the "
+"positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified "
+"using so-called fairness metrics. The ratio of a fairness metric of an "
+"unprivileged group compared to the privileged (<i>%3$s</i>) group is called "
+"parity."
+msgstr ""
+
+#, fuzzy
+msgid "<u>Assessing Model Fairness</u>"
+msgstr "<u>Evaluando valores repetidos</u>"
+
+msgid "n"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the %1$s is equal across protected groups."
+msgstr ""
+"La hipótesis nula indica que los últimos dígitos (1 - 9) en el conjunto de "
+"datos, se distribuyen conforme a %1$s."
+
+msgid ""
+"Please specify a privileged group and positive class to start the analysis."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) "
+"prior with %1$s = %4$s."
+msgstr ""
+"El factor de Bayes se calcula utilizando una previa de Dirichlet(%1$s,...,"
+"%2$s%3$s) con %2$s = 1."
+
+#, fuzzy
+msgid "<b>Table %i.</b> Comparisons to Privileged (P) Group"
+msgstr "<b>Tabla %i.</b> Correcciones de la Población"
+
+msgid "Parity"
+msgstr ""
+
+msgid "p"
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the %1$s of an unprivileged group is "
+"equal to that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the %1$s of an unprivileged group is "
+"greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the %1$s of an unprivileged group is "
+"lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
+"Fisher's exact test."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"Bayes factors are uncorrected and are computed using a Dirichlet(%1$s%2$s, "
+"%1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = %6$s."
+msgstr ""
+"El factor de Bayes se calcula utilizando una previa de Dirichlet(%1$s,...,"
+"%2$s%3$s) con %2$s = 1."
+
+#, fuzzy
+msgid "<b>Table %i.</b> Model Performance"
+msgstr "<b>Tabla %i.</b> Muestra Previa Equivalente"
+
+#, fuzzy
+msgid "Support"
+msgstr "Apoyo %1$s"
+
+msgid "Accuracy"
+msgstr ""
+
+msgid "Precision"
+msgstr "Precisión"
+
+msgid "Recall"
+msgstr ""
+
+msgid "F1 Score"
+msgstr ""
+
+#, fuzzy
+msgid "<b>Table %i.</b> Confusion Matrix"
+msgstr "<b>Tabla %i.</b> Correcciones de la Población"
+
+msgid "Actual"
+msgstr ""
+
+#, fuzzy
+msgid "Predicted"
+msgstr "Errores predichos"
+
+msgid "Observed"
+msgstr "Observado"
+
+#, fuzzy
+msgid "Parity Estimates Plot"
+msgstr "Estimaciones"
+
+msgid ""
+"<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of %2$s "
+"from each unprivileged group to the privileged %3$s group) for all groups in "
+"the data. The closer the parity lies to one, the less discrimination occurs "
+"in the algorithm."
+msgstr ""
+
+#, fuzzy
+msgid "Prior and Posterior Distribution Plot"
+msgstr "Distribución Previa y Posterior"
+
+#, fuzzy
+msgid ""
+"<b>Figure %i.</b> The prior and posterior distributions on the log odds "
+"ratio for each unprivileged group compared to the privileged group (%2$s)."
+msgstr ""
+"<b>Figura %1$i.</b> La distribución previa y posterior (%2$s) sobre la "
+"inexactitud en la población."
+
+#, fuzzy
+msgid ""
+"The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across "
+"protected groups %3$s."
+msgstr ""
+"El valor <i>p</i> es %1$s, y la hipótesis nula que los datos no tienen una "
+"cantidad inesperada de valores %2$s repetidos."
+
+msgid ""
 "This procedure analyzes the frequency with which values get repeated within "
 "a data set to statistically identify whether the data were likely tampered "
 "with. Unlike Benford's law, and its generalizations, this approach examines "
@@ -610,8 +787,9 @@ msgstr "Frecuencia"
 msgid "Entropy"
 msgstr "Entropía"
 
+#, fuzzy
 msgid ""
-"The displayed <i>p</i> value is one-sided and is computed on the basis of "
+"The displayed <i>p</i>-value is one-sided and is computed on the basis of "
 "%1$s samples."
 msgstr ""
 "El valor <i>p</i> mostrado es unilateral, y se calcula en base a %1$s "
@@ -620,8 +798,9 @@ msgstr ""
 msgid "<b>Table %i.</b> Assumption Checks"
 msgstr "<b>Tabla %i.</b> Comprobaciones de Supuestos"
 
+#, fuzzy
 msgid ""
-"The displayed <i>p</i> value is for a two-sided test against H%1$s: <i>r</i> "
+"The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> "
 "= 0."
 msgstr ""
 "El valor <i>p</i> mostrado es para un contraste bilateral frente a H%1$s: "
@@ -670,8 +849,9 @@ msgstr "%1$s < α"
 msgid "%1$s >= α"
 msgstr "%1$s >= α"
 
+#, fuzzy
 msgid ""
-"The <i>p</i> value is %1$s and the null hypothesis that the data do not "
+"The <i>p</i>-value is %1$s and the null hypothesis that the data do not "
 "contain an unexpected amount of repeated values %2$s."
 msgstr ""
 "El valor <i>p</i> es %1$s, y la hipótesis nula que los datos no tienen una "
@@ -1740,9 +1920,6 @@ msgstr "Límite superior de %1$s%%"
 msgid "%1$s%% Lower bound"
 msgstr "Límite inferior del %1$s%%"
 
-msgid "Precision"
-msgstr "Precisión"
-
 msgid "p-value"
 msgstr "Valor p"
 
@@ -2029,6 +2206,9 @@ msgstr "No paramétrico"
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr "%1$s %2$s vs. %3$s %2$s."
 
+#~ msgid "<b>Table %i.</b> Goodness-of-fit Test"
+#~ msgstr "<b>Tabla %i.</b> Contraste de la Bondad del Ajuste"
+
 #~ msgid ""
 #~ "The translation of the categories High, Medium and Low to probabilities "
 #~ "is done using the default settings shown in the table below. To learn "
@@ -2040,9 +2220,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 #~ "tabla de abajo. Para saber más sobre estos valores predeterminados y como "
 #~ "ajustarlos, consulte el archivo de ayuda para este análisis o vaya a la "
 #~ "sección <i>Modelo de Riesgo de Auditoría</i>."
-
-#~ msgid "Observed"
-#~ msgstr "Observado"
 
 #~ msgid ""
 #~ "<b>Objectives:</b> You have not achieved your initial sampling "
@@ -2102,12 +2279,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "Predicted samples before an error"
 #~ msgstr "Muestras predichas antes de un fallo"
-
-#~ msgid "Predicted errors"
-#~ msgstr "Errores predichos"
-
-#~ msgid "<b>Table %i.</b> Equivalent Prior Sample"
-#~ msgstr "<b>Tabla %i.</b> Muestra Previa Equivalente"
 
 #~ msgid "Equivalent sample size"
 #~ msgstr "Tamaño de muestra equivalente"

@@ -13,10 +13,6 @@ msgid "Audit"
 msgstr "Audit"
 
 msgctxt "Description|"
-msgid "Workflow"
-msgstr "Workflow"
-
-msgctxt "Description|"
 msgid "Sampling Workflow"
 msgstr "Steekproef Workflow"
 
@@ -43,10 +39,6 @@ msgstr "Evaluatie"
 msgctxt "Description|"
 msgid "Bayesian Evaluation"
 msgstr "Bayesiaanse Evaluatie"
-
-msgctxt "Description|"
-msgid "Other"
-msgstr "Overig"
 
 msgctxt "Description|"
 msgid "Benford's Law"
@@ -279,10 +271,6 @@ msgstr "Ratioschatter"
 msgctxt "auditClassicalWorkflow|"
 msgid "Regression estimator"
 msgstr "Regressieschatter"
-
-msgctxt "Description|"
-msgid "Digit Analysis"
-msgstr "Cijferanalyse"
 
 msgctxt "Description|"
 msgid "Repeated Values"
@@ -2836,3 +2824,442 @@ msgstr ""
 msgctxt "AuditRiskModel|"
 msgid "The percentage that corresponds with the analytical risk probability."
 msgstr "Het percentage dat overeenkomt met het cijferanalyserisico."
+
+msgctxt "Description|"
+msgid "Audit Sampling"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Data Auditing"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Algorithm Auditing"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Fairness Metrics"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Bayes factor robustness check"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid ""
+"Produces a figure that shows the robustness of the Bayes factor to the prior "
+"distribution."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Sequential analysis"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid ""
+"Produces a figure that shows the Bayes factor as a function of the sample "
+"size."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Advanced"
+msgstr "Geavanceerd"
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Prior Distribution"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Concentration"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Specifies the concentration parameter for the Dirichlet prior."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"The model fairness analysis enables bias detection in algorithmic decision-"
+"making systems."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Target"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"In this column, the target (i.e., to be predicted) variable should be "
+"entered."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Predictions"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "In this column, the predictions of the algorithm should be entered."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Sensitive Attribute"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"In this column, the protected (i.e., sensitive) attribute should be entered."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Confidence"
+msgstr "Betrouwbaarheid"
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"The confidence level used. The confidence level is the complement of the "
+"audit risk: the risk that the user is willing to take to give an incorrect "
+"judgment about the population. For example, if you want to use an audit risk "
+"of 5%, this equals 95% confidence."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Metric"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Predictive rate parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Demographic parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Proportional parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Accuracy parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "False negative rate parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "False positive rate parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "True positive rate parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Negative predicted value parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Specificity parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Factor Levels"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"These options allow specification of the privileged group and the positive "
+"class."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Privileged group"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "None"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"The privileged group refers to the class in the protected variable that "
+"historically or systematically experiences certain advantages, benefits, or "
+"privileges."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Positive class"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "The positive class in the target variable."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Alt. Hypothesis"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Specify the alternative hypothesis."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Unprivileged ≠ Privileged"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is not equal to the fairness metric in the privileged group."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Unprivileged < Privileged"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is lower than the fairness metric in the privileged group."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Unprivileged > Privileged"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is higher than the fairness metric in the privileged group."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Choose which type of Bayes factor to display."
+msgstr "Kies welk type Bayes-factor u wilt weergeven."
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "BF₁₀"
+msgstr "BF₁₀"
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Bayes factor to quantify evidence for the alternative hypothesis relative to "
+"the null hypothesis."
+msgstr ""
+"Bayes-factor om het bewijs voor de alternatieve hypothese ten opzichte van "
+"de nulhypothese te kwantificeren."
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "BF₀₁"
+msgstr "BF₀₁"
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Bayes factor to quantify evidence for the null hypothesis relative to the "
+"alternative hypothesis."
+msgstr ""
+"Bayes-factor om het bewijs voor de nulhypothese ten opzichte van de "
+"alternatieve hypothese te kwantificeren."
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Log(BF₁₀)"
+msgstr "Log(BF₁₀)"
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Natural logarithm of BF10."
+msgstr "Natuurlijk logaritme van BF10."
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Display"
+msgstr "Weergave"
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Specify options that have an effect on the look and feel of the audit report."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Explanatory text"
+msgstr "Toelichtende tekst"
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"When checked, enables explanatory text in the analysis to help interpret the "
+"procedure and the statistical results."
+msgstr ""
+"Indien aangevinkt, wordt in de analyse een verklarende tekst opgenomen om de "
+"procedure en de statistische resultaten te helpen interpreteren."
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr "Geef toelichtende tekst weer bij iedere stap van de analyse"
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Report"
+msgstr "Rapport"
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Tables"
+msgstr "Tabellen"
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Add additional tables about the evaluation to the report."
+msgstr "Voeg extra tabellen over de evaluatie toe aan het rapport."
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Individual comparisons"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Produces a table comparing the unprivileged groups against the privileged "
+"group."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Model performance"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Produces a table containing the performance measures for the classification, "
+"including support, accuracy, precision, recall and F1-score."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Confusion matrix"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Produces the confusion matrix for each group."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Display proportions"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Displays proportions in the confusion table."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Plots"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Add additional figures about the evaluation to the report."
+msgstr "Voeg extra figuren over de evaluatie toe aan het rapport."
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Parity estimates"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Produces a plot showing the parity statistics for each unprivileged group "
+"against the privileged group."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Prior and posterior distribution"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Produces a figure that shows the prior and posterior distribution."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Bayes factor robustness check"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Produces a figure that shows the robustness of the Bayes factor to the prior "
+"distribution."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Sequential analysis"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Produces a figure that shows the Bayes factor as a function of the sample "
+"size."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Advanced"
+msgstr "Geavanceerd"
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Prior Distribution"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Concentration"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Specifies the concentration parameter for the Dirichlet prior."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid "Seed"
+msgstr "Toevalsgenerator beginwaarde"
+
+#, fuzzy
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Selects the seed for the random number generator in order to reproduce "
+"results."
+msgstr ""
+"Selecteert de seed voor de willekeurige getallengenerator om de resultaten "
+"te reproduceren."
+
+msgctxt "ShowAndExportDesign|"
+msgid "Display design"
+msgstr ""
+
+msgctxt "ShowAndExportDesign|"
+msgid "Coded units"
+msgstr ""
+
+msgctxt "ShowAndExportDesign|"
+msgid "Sort by run order"
+msgstr ""
+
+msgctxt "ShowAndExportDesign|"
+msgid "Sort by standard order"
+msgstr ""
+
+msgctxt "ShowAndExportDesign|"
+msgid "Save as:"
+msgstr ""
+
+msgctxt "ShowAndExportDesign|"
+msgid "e.g. design.csv"
+msgstr ""
+
+msgctxt "ShowAndExportDesign|"
+msgid "Export design"
+msgstr ""
