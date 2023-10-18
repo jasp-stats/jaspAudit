@@ -50,11 +50,13 @@ test_that("<b>Table 4.</b> Confusion Matrix results match", {
   jaspTools::expect_equal_tables(
     table,
     list(
-      "African_American", "no", 885, 629, "", "yes", 411, 1250, "Asian",
-      "no", 21, 2, "", "yes", 6, 2, "Caucasian", "no", 997, 284, "",
-      "yes", 434, 388, "Hispanic", "no", 259, 61, "", "yes", 101,
-      88, "Native_American", "no", 4, 2, "", "yes", 2, 3, "Other",
-      "no", 186, 33, "", "yes", 72, 52
+      "African_American", 0.665247472059606, "no", 885, 629, "", "",
+      "yes", 411, 1250, "Asian", 0.5, "no", 21, 2, "", "", "yes",
+      6, 2, "Caucasian", 0.577380952380952, "no", 997, 284, "", "",
+      "yes", 434, 388, "Hispanic", 0.590604026845638, "no", 259, 61,
+      "", "", "yes", 101, 88, "Native_American", 0.6, "no", 4, 2,
+      "", "", "yes", 2, 3, "Other", 0.611764705882353, "no", 186,
+      33, "", "", "yes", 72, 52
     )
   )
 })
