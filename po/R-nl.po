@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-10-18 07:24\n"
-"PO-Revision-Date: 2023-10-17 11:04+0000\n"
+"PO-Revision-Date: 2023-10-18 07:33+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
@@ -601,61 +601,59 @@ msgstr ""
 "de auditwaardes, een indicator van de sterkte van de lineaire relatie tussen "
 "de twee variabelen."
 
-#, fuzzy
 msgid "Proportion"
-msgstr "Correctie"
+msgstr "Proportie"
 
 msgid "Specificity"
-msgstr ""
+msgstr "Specificiteit"
 
 msgid "Accuracy"
 msgstr "Nauwkeurigheid"
 
 msgid "False positive rate"
-msgstr ""
+msgstr "Fout-positieven"
 
 msgid "False negative rate"
-msgstr ""
+msgstr "Fout-negatieven"
 
 msgid "Negative predictive value"
-msgstr ""
+msgstr "Negatief voorspellende waarde"
 
 msgid "Positively classified"
-msgstr ""
+msgstr "Positief geclassificeerd"
 
 msgid "Precision"
 msgstr "Nauwkeurigheid"
 
 msgid "True positive rate"
-msgstr ""
+msgstr "Terecht-positieven"
 
 msgid "Proportional Parity"
-msgstr ""
+msgstr "Proportionele Pariteit"
 
 msgid "Specificity Parity"
-msgstr ""
+msgstr "Specificiteitspariteit"
 
-#, fuzzy
 msgid "Accuracy Parity"
-msgstr "Nauwkeurigheid"
+msgstr "Nauwkeurigheidspariteit"
 
 msgid "False Positive Rate Parity"
-msgstr ""
+msgstr "Fout-positieve Pariteit"
 
 msgid "False Negative Rate Parity"
-msgstr ""
+msgstr "Fout-negatieve Pariteit"
 
 msgid "Negative Predictive Value Parity"
-msgstr ""
+msgstr "Negatieve Voorspelde Waarde Pariteit"
 
 msgid "Demographic Parity"
-msgstr ""
+msgstr "Demographische Pariteit"
 
 msgid "Predictive Rate Parity"
-msgstr ""
+msgstr "Voorspelde Proportie Pariteit"
 
 msgid "True Positive Rate Parity"
-msgstr ""
+msgstr "Terecht-positieve Pariteit"
 
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
@@ -772,10 +770,14 @@ msgid ""
 "positive class is incorrectly predicted, and false positives (FP) are cells "
 "in which the negative class is incorrectly predicted."
 msgstr ""
+"Terecht-positieven (TP) zijn cellen waarbij de positieve klasse (<i>%1$s</i>)"
+" correct wordt voorspeld, terwijl terecht-negatieven (TN) cellen zijn "
+"waarbij de negatieve klasse correct wordt voorspeld. Fout-negatieven (FN) "
+"zijn cellen waarbij de positieve klasse onjuist is voorspeld en fout-"
+"positieven (FP) zijn cellen waarbij de negatieve klasse onjuist is voorspeld."
 
-#, fuzzy
 msgid "%1$s = %2$s."
-msgstr "%1$s = %2$s"
+msgstr "%1$s = %2$s."
 
 msgid "Observed"
 msgstr "Geobserveerd"
