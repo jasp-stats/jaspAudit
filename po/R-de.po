@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-10-17 08:52\n"
+"POT-Creation-Date: 2023-10-18 07:24\n"
 "PO-Revision-Date: 2023-10-05 04:08+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -608,6 +608,61 @@ msgstr ""
 "Auditwerte, ein Indikator der Stärke der linearen Beziehung zwischen den "
 "beiden Variablen."
 
+#, fuzzy
+msgid "Proportion"
+msgstr "Korrektur"
+
+msgid "Specificity"
+msgstr ""
+
+msgid "Accuracy"
+msgstr ""
+
+msgid "False positive rate"
+msgstr ""
+
+msgid "False negative rate"
+msgstr ""
+
+msgid "Negative predictive value"
+msgstr ""
+
+msgid "Positively classified"
+msgstr ""
+
+msgid "Precision"
+msgstr "Genauigkeit"
+
+msgid "True positive rate"
+msgstr ""
+
+msgid "Proportional Parity"
+msgstr ""
+
+msgid "Specificity Parity"
+msgstr ""
+
+msgid "Accuracy Parity"
+msgstr ""
+
+msgid "False Positive Rate Parity"
+msgstr ""
+
+msgid "False Negative Rate Parity"
+msgstr ""
+
+msgid "Negative Predictive Value Parity"
+msgstr ""
+
+msgid "Demographic Parity"
+msgstr ""
+
+msgid "Predictive Rate Parity"
+msgstr ""
+
+msgid "True Positive Rate Parity"
+msgstr ""
+
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
 "an algorithm are fair towards protected groups on a sensitive attribute, and "
@@ -689,12 +744,6 @@ msgstr "<b>Tabelle %i.</b> Äquivalente Prior-Stichprobe"
 msgid "Support"
 msgstr "Träger"
 
-msgid "Accuracy"
-msgstr ""
-
-msgid "Precision"
-msgstr "Genauigkeit"
-
 msgid "Recall"
 msgstr ""
 
@@ -711,6 +760,18 @@ msgstr ""
 #, fuzzy
 msgid "Predicted"
 msgstr "Vorhergesagte Fehler"
+
+msgid ""
+"True positives (TP) are cells in which the positive class (<i>%1$s</i>) is "
+"correctly predicted, while true negatives (TN) are cells where the negative "
+"class is correctly predicted. False negatives (FN) are cells in which the "
+"positive class is incorrectly predicted, and false positives (FP) are cells "
+"in which the negative class is incorrectly predicted."
+msgstr ""
+
+#, fuzzy
+msgid "%1$s = %2$s."
+msgstr "%1$s = %2$s"
 
 msgid "Observed"
 msgstr "Beobachtet"

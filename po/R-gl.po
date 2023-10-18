@@ -6,11 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-10-17 08:52\n"
+"POT-Creation-Date: 2023-10-18 07:24\n"
 "PO-Revision-Date: 2023-10-17 19:07+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-r/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
+"r/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -163,8 +163,8 @@ msgid ""
 "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with "
 "%2$s = %4$s."
 msgstr ""
-"O factor de Bayes calcúlase utilizando unha previa de "
-"Dirichlet(%1$s,...,%2$s%3$s) con %2$s = %4$s."
+"O factor de Bayes calcúlase utilizando unha previa de Dirichlet(%1$s,...,"
+"%2$s%3$s) con %2$s = %4$s."
 
 msgid "<b>Table %i.</b> Frequency Table"
 msgstr "<b>Táboa %i.</b> Táboa de Frecuencias"
@@ -617,6 +617,69 @@ msgstr ""
 "dos valores contables e os valores de auditoría, un indicador do grao de "
 "relación linear entre as dúas variables."
 
+#, fuzzy
+msgid "Proportion"
+msgstr "Proporcións"
+
+msgid "Specificity"
+msgstr "Especificidade"
+
+msgid "Accuracy"
+msgstr "Precisión"
+
+#, fuzzy
+msgid "False positive rate"
+msgstr "Todo positivo"
+
+#, fuzzy
+msgid "False negative rate"
+msgstr "Todo negativo"
+
+#, fuzzy
+msgid "Negative predictive value"
+msgstr "Valores efectivos negativos"
+
+msgid "Positively classified"
+msgstr ""
+
+msgid "Precision"
+msgstr "Precisión"
+
+#, fuzzy
+msgid "True positive rate"
+msgstr "Todo positivo"
+
+#, fuzzy
+msgid "Proportional Parity"
+msgstr "Proporcións"
+
+#, fuzzy
+msgid "Specificity Parity"
+msgstr "Especificidade"
+
+#, fuzzy
+msgid "Accuracy Parity"
+msgstr "Precisión"
+
+msgid "False Positive Rate Parity"
+msgstr ""
+
+msgid "False Negative Rate Parity"
+msgstr ""
+
+msgid "Negative Predictive Value Parity"
+msgstr ""
+
+msgid "Demographic Parity"
+msgstr ""
+
+#, fuzzy
+msgid "Predictive Rate Parity"
+msgstr "Precisión de predicións"
+
+msgid "True Positive Rate Parity"
+msgstr ""
+
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
 "an algorithm are fair towards protected groups on a sensitive attribute, and "
@@ -642,7 +705,8 @@ msgstr "n"
 
 msgid ""
 "The null hypothesis specifies that the %1$s is equal across protected groups."
-msgstr "A hipótese nula indica que %1$s é igual ao longo dos grupos protexidos."
+msgstr ""
+"A hipótese nula indica que %1$s é igual ao longo dos grupos protexidos."
 
 msgid ""
 "Please specify a privileged group and positive class to start the analysis."
@@ -654,8 +718,8 @@ msgid ""
 "The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) "
 "prior with %1$s = %4$s."
 msgstr ""
-"O factor de Bayes calcúlase utilizando unha previa de "
-"Dirichlet(%1$s,...,%2$s%3$s) con %1$s = %4$s."
+"O factor de Bayes calcúlase utilizando unha previa de Dirichlet(%1$s,...,"
+"%2$s%3$s) con %1$s = %4$s."
 
 msgid "<b>Table %i.</b> Comparisons to Privileged (P) Group"
 msgstr "<b>Táboa %i.</b> Comparacións co Grupo Privilexiado (P)"
@@ -707,12 +771,6 @@ msgstr "<b>Táboa %i.</b> Comportamento do modelo"
 msgid "Support"
 msgstr "Apoio"
 
-msgid "Accuracy"
-msgstr "Precisión"
-
-msgid "Precision"
-msgstr "Precisión"
-
 msgid "Recall"
 msgstr "Exhaustividade"
 
@@ -728,6 +786,18 @@ msgstr "Actual"
 msgid "Predicted"
 msgstr "Predito"
 
+msgid ""
+"True positives (TP) are cells in which the positive class (<i>%1$s</i>) is "
+"correctly predicted, while true negatives (TN) are cells where the negative "
+"class is correctly predicted. False negatives (FN) are cells in which the "
+"positive class is incorrectly predicted, and false positives (FP) are cells "
+"in which the negative class is incorrectly predicted."
+msgstr ""
+
+#, fuzzy
+msgid "%1$s = %2$s."
+msgstr "%1$s = %2$s"
+
 msgid "Observed"
 msgstr "Observado"
 
@@ -740,8 +810,8 @@ msgid ""
 "the data. The closer the parity lies to one, the less discrimination occurs "
 "in the algorithm."
 msgstr ""
-"<b>Figura %1$i.</b> Estatísticos da paridade estimada (i.e. o cociente de %2$"
-"s de cada grupo non privilexiado co grupo privilexiado %3$s) para tódolos "
+"<b>Figura %1$i.</b> Estatísticos da paridade estimada (i.e. o cociente de "
+"%2$s de cada grupo non privilexiado co grupo privilexiado %3$s) para tódolos "
 "grupos dos datos. Canto máis próxima estea a paridade de un, se produce unha "
 "menor discriminación no algoritmo."
 
@@ -3866,9 +3936,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 #~ msgid "Cumulative forest plot"
 #~ msgstr "Gráfica acumulativa de bosque"
 
-#~ msgid "All positive"
-#~ msgstr "Todo positivo"
-
 #~ msgid "Lower bound:"
 #~ msgstr "Límite inferior:"
 
@@ -3937,9 +4004,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "Effect sizes per study"
 #~ msgstr "Magnitudes dos efectos por estudio"
-
-#~ msgid "All negative"
-#~ msgstr "Todo negativo"
 
 #~ msgid "Sequential plot"
 #~ msgstr "Gráfica secuencial"
@@ -4048,9 +4112,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "vs. rest"
 #~ msgstr "vs. Resto"
-
-#~ msgid "Predictive accuracy"
-#~ msgstr "Precisión de predicións"
 
 #~ msgid "Marginal"
 #~ msgstr "Marxinal"
@@ -4598,9 +4659,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 #~ msgid "Performance Diagnostics"
 #~ msgstr "Diagnósticos do comportamento"
 
-#~ msgid "Proportions"
-#~ msgstr "Proporcións"
-
 #~ msgid "Backward"
 #~ msgstr "Cara atrás"
 
@@ -4657,9 +4715,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "Residual Type"
 #~ msgstr "Tipo de erros"
-
-#~ msgid "Specificity"
-#~ msgstr "Especificidade"
 
 #~ msgid "CFA"
 #~ msgstr "CFA"
@@ -5250,9 +5305,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "Prior Information"
 #~ msgstr "Información previa"
-
-#~ msgid "Negative Ist values"
-#~ msgstr "Valores efectivos negativos"
 
 #~ msgid "Annotation Method"
 #~ msgstr "Método de anotación"

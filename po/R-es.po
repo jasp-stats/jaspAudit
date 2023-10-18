@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2023-10-17 08:52\n"
+"POT-Creation-Date: 2023-10-18 07:24\n"
 "PO-Revision-Date: 2023-10-17 19:07+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -156,8 +156,8 @@ msgid ""
 "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with "
 "%2$s = %4$s."
 msgstr ""
-"El factor de Bayes se calcula utilizando una previa de "
-"Dirichlet(%1$s,...,%2$s%3$s) con %2$s = %4$s."
+"El factor de Bayes se calcula utilizando una previa de Dirichlet(%1$s,...,"
+"%2$s%3$s) con %2$s = %4$s."
 
 msgid "<b>Table %i.</b> Frequency Table"
 msgstr "<b>Tabla %i.</b> Tabla de Frecuencias"
@@ -268,8 +268,8 @@ msgid ""
 "choice of prior distribution."
 msgstr ""
 "<b>Figura %i.</b> Los resultados de la comprobación de robustez usando el "
-"factor de Bayes. La figura ilustra el impacto de distintas especificaciones ("
-"i.e. parámetros de concentración) de la previa de Dirichlet sobre los "
+"factor de Bayes. La figura ilustra el impacto de distintas especificaciones "
+"(i.e. parámetros de concentración) de la previa de Dirichlet sobre los "
 "valores de los factores de Bayes, proporcionando comprensión sobre la "
 "robustez de la evidencia estadística para la elección de la distribución "
 "previa."
@@ -611,6 +611,62 @@ msgstr ""
 "correlación de Pearson de los valores contables y los valores de auditoría, "
 "un indicador del grado de relación lineal entre las dos variables."
 
+#, fuzzy
+msgid "Proportion"
+msgstr "Corrección"
+
+msgid "Specificity"
+msgstr ""
+
+msgid "Accuracy"
+msgstr "Precisión"
+
+msgid "False positive rate"
+msgstr ""
+
+msgid "False negative rate"
+msgstr ""
+
+msgid "Negative predictive value"
+msgstr ""
+
+msgid "Positively classified"
+msgstr ""
+
+msgid "Precision"
+msgstr "Precisión"
+
+msgid "True positive rate"
+msgstr ""
+
+msgid "Proportional Parity"
+msgstr ""
+
+msgid "Specificity Parity"
+msgstr ""
+
+#, fuzzy
+msgid "Accuracy Parity"
+msgstr "Precisión"
+
+msgid "False Positive Rate Parity"
+msgstr ""
+
+msgid "False Negative Rate Parity"
+msgstr ""
+
+msgid "Negative Predictive Value Parity"
+msgstr ""
+
+msgid "Demographic Parity"
+msgstr ""
+
+msgid "Predictive Rate Parity"
+msgstr ""
+
+msgid "True Positive Rate Parity"
+msgstr ""
+
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
 "an algorithm are fair towards protected groups on a sensitive attribute, and "
@@ -649,8 +705,8 @@ msgid ""
 "The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) "
 "prior with %1$s = %4$s."
 msgstr ""
-"El factor de Bayes se calcula utilizando una previa de "
-"Dirichlet(%1$s,...,%2$s%3$s) con %1$s = %4$s."
+"El factor de Bayes se calcula utilizando una previa de Dirichlet(%1$s,...,"
+"%2$s%3$s) con %1$s = %4$s."
 
 msgid "<b>Table %i.</b> Comparisons to Privileged (P) Group"
 msgstr "<b>Tabla %i.</b> Comparaciones con el Grupo Privilegiado (P)"
@@ -702,12 +758,6 @@ msgstr "<b>Tabla %i.</b> Comportamiento del modelo"
 msgid "Support"
 msgstr "Apoyo"
 
-msgid "Accuracy"
-msgstr "Precisión"
-
-msgid "Precision"
-msgstr "Precisión"
-
 msgid "Recall"
 msgstr "Exhaustividad"
 
@@ -723,6 +773,18 @@ msgstr "Actual"
 msgid "Predicted"
 msgstr "Predicho"
 
+msgid ""
+"True positives (TP) are cells in which the positive class (<i>%1$s</i>) is "
+"correctly predicted, while true negatives (TN) are cells where the negative "
+"class is correctly predicted. False negatives (FN) are cells in which the "
+"positive class is incorrectly predicted, and false positives (FP) are cells "
+"in which the negative class is incorrectly predicted."
+msgstr ""
+
+#, fuzzy
+msgid "%1$s = %2$s."
+msgstr "%1$s = %2$s"
+
 msgid "Observed"
 msgstr "Observado"
 
@@ -735,9 +797,9 @@ msgid ""
 "the data. The closer the parity lies to one, the less discrimination occurs "
 "in the algorithm."
 msgstr ""
-"<b>Figura %1$i.</b> Estadísticos de la paridad estimada (i.e. el ratio de %2$"
-"s de cada grupo no privilegiado con el grupo privilegiado %3$s) para todos "
-"los grupos de los datos. Cuanto más próxima esté la paridad de uno, se "
+"<b>Figura %1$i.</b> Estadísticos de la paridad estimada (i.e. el ratio de "
+"%2$s de cada grupo no privilegiado con el grupo privilegiado %3$s) para "
+"todos los grupos de los datos. Cuanto más próxima esté la paridad de uno, se "
 "produce una menor discriminación en el algoritmo."
 
 msgid "Prior and Posterior Distribution Plot"

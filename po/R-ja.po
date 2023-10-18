@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2023-10-17 08:52\n"
+"POT-Creation-Date: 2023-10-18 07:24\n"
 "PO-Revision-Date: 2023-04-21 21:08+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -532,6 +532,60 @@ msgid ""
 "variables."
 msgstr ""
 
+msgid "Proportion"
+msgstr ""
+
+msgid "Specificity"
+msgstr ""
+
+msgid "Accuracy"
+msgstr ""
+
+msgid "False positive rate"
+msgstr ""
+
+msgid "False negative rate"
+msgstr ""
+
+msgid "Negative predictive value"
+msgstr ""
+
+msgid "Positively classified"
+msgstr ""
+
+msgid "Precision"
+msgstr ""
+
+msgid "True positive rate"
+msgstr ""
+
+msgid "Proportional Parity"
+msgstr ""
+
+msgid "Specificity Parity"
+msgstr ""
+
+msgid "Accuracy Parity"
+msgstr ""
+
+msgid "False Positive Rate Parity"
+msgstr ""
+
+msgid "False Negative Rate Parity"
+msgstr ""
+
+msgid "Negative Predictive Value Parity"
+msgstr ""
+
+msgid "Demographic Parity"
+msgstr ""
+
+msgid "Predictive Rate Parity"
+msgstr ""
+
+msgid "True Positive Rate Parity"
+msgstr ""
+
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
 "an algorithm are fair towards protected groups on a sensitive attribute, and "
@@ -613,12 +667,6 @@ msgstr "<b>表 %i.</b> 記述統計"
 msgid "Support"
 msgstr ""
 
-msgid "Accuracy"
-msgstr ""
-
-msgid "Precision"
-msgstr ""
-
 msgid "Recall"
 msgstr ""
 
@@ -633,6 +681,17 @@ msgid "Actual"
 msgstr ""
 
 msgid "Predicted"
+msgstr ""
+
+msgid ""
+"True positives (TP) are cells in which the positive class (<i>%1$s</i>) is "
+"correctly predicted, while true negatives (TN) are cells where the negative "
+"class is correctly predicted. False negatives (FN) are cells in which the "
+"positive class is incorrectly predicted, and false positives (FP) are cells "
+"in which the negative class is incorrectly predicted."
+msgstr ""
+
+msgid "%1$s = %2$s."
 msgstr ""
 
 msgid "Observed"
