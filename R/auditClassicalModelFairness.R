@@ -383,6 +383,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
         }
         tb[[name]] <- col
       }
+      tb$addFootnote(gettextf("The factor level '%1$s' is used as the positive class.", options[["positive"]]))
     } else {
       tb$addColumnInfo(name = "obs_name", title = "", type = "string")
       tb$addColumnInfo(name = "varname_obs", title = "", type = "string")
