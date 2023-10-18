@@ -73,6 +73,7 @@ Form
 
 		DropDown
 		{
+			id:							metric
 			name: 						"metric"
 			label: 						qsTr("Metric")
 			indexDefaultValue: 			0

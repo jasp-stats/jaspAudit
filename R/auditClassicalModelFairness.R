@@ -383,7 +383,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
         }
         tb[[name]] <- col
       }
-      tb$addFootnote(gettextf("The factor level '%1$s' is used as the positive class.", options[["positive"]]))
+      tb$addFootnote(gettextf("True positives are cells in which the positive class (<i>%1$s</i>) is correctly predicted, while true negatives are cells where the negative class is correctly predicted. False negatives are cells in which the positive class is incorrectly predicted, and false positives are cells in which the negative class is incorrectly predicted.", options[["positive"]]))
     } else {
       tb$addColumnInfo(name = "obs_name", title = "", type = "string")
       tb$addColumnInfo(name = "varname_obs", title = "", type = "string")
