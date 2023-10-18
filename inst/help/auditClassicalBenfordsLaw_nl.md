@@ -37,6 +37,8 @@ De wet van Benford stelt dat de verdeling van leidende cijfers in een populatie 
 
 - Figuren
   - Geobserveerd vs. verwacht: Produceert een plot die de waargenomen verdeling van cijfers in de populatie vergelijkt met de verwachte verdeling onder de wet van Benford of de uniforme verdeling.  
+  - Bayes factor robuustheid check: Produceert een figuur die de robuustheid van de Bayes factor ten opzichte van de prior-verdeling laat zien.
+  - Sequentiële analyse: Produceert een figuur die de Bayes factor toont als functie van de steekproefgrootte.
 
 ### Uitvoer
 ---

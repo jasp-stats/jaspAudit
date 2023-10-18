@@ -36,7 +36,9 @@ Benford's law states that the distribution of leading digits in a population nat
     - Digit: Digit(s) to match.
 
 - Plots
-  - Observed vs. expected: Produces a plot that shows the observed distribution of digits in the population compared to the expected distribution under the Benford's law or the uniform distribution.  
+  - Observed vs. expected: Produces a plot that shows the observed distribution of digits in the population compared to the expected distribution under the Benford's law or the uniform distribution.
+  - Bayes factor robustness check: Produces a figure that shows the robustness of the Bayes factor to the prior distribution.
+  - Sequential analysis: Produces a figure that shows the Bayes factor as a function of the sample size.
 
 ### Output
 ---

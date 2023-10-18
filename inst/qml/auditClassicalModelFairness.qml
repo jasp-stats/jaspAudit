@@ -26,7 +26,7 @@ import "./common"	as Common
 Form 
 {
 	columns: 							1
-	info:								qsTr("The model fairness analysis enables bias detection in algorithmic decision-making systems.")
+	info:								qsTr("The fairness metrics analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. The ratio of two fairness metrics is called parity, which is a well-known concept in algorithmic fairness.")
 
 	VariablesForm
 	{
@@ -66,16 +66,17 @@ Form
 	{
 		CIField
 		{
-			name: 							"conf_level"
-			label: 							qsTr("Confidence")
-			info:							qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
+			name: 						"conf_level"
+			label: 						qsTr("Confidence")
+			info:						qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
 		}
 
 		DropDown
 		{
-			name: 							"metric"
-			label: 							qsTr("Metric")
-			indexDefaultValue: 				0
+			id:							metric
+			name: 						"metric"
+			label: 						qsTr("Metric")
+			indexDefaultValue: 			0
 			values: [
 				{ label: qsTr("Predictive rate parity"),			value: "prp"},
 				{ label: qsTr("Demographic parity"),				value: "dp"},
@@ -87,6 +88,7 @@ Form
 				{ label: qsTr("Negative predicted value parity"),	value: "npvp"},
 				{ label: qsTr("Specificity parity"), 				value: "sp"}
 			]
+			info:						qsTr("The type of fairness metric to compute and perform inference on.")
 		}
 	}
 

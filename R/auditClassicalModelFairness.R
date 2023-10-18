@@ -86,26 +86,37 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   out <- list()
   out[["metric"]] <- options[["metric"]]
   out[["title"]] <- switch(out[["metric"]],
-    "pp" = "Proportion",
-    "sp" = "Specificity",
-    "ap" = "Accuracy",
-    "fprp" = "False positive rate",
-    "fnrp" = "False negative rate",
-    "npvp" = "Negative predictive value",
-    "dp" = "Positively classified",
-    "prp" = "Precision",
-    "tprp" = "True positive rate"
+    "pp" = gettext("Proportion"),
+    "sp" = gettext("Specificity"),
+    "ap" = gettext("Accuracy"),
+    "fprp" = gettext("False positive rate"),
+    "fnrp" = gettext("False negative rate"),
+    "npvp" = gettext("Negative predictive value"),
+    "dp" = gettext("Positively classified"),
+    "prp" = gettext("Precision"),
+    "tprp" = gettext("True positive rate")
   )
   out[["mainTitle"]] <- switch(out[["metric"]],
-    "pp" = "Proportional Parity",
-    "sp" = "Specificity Parity",
-    "ap" = "Accuracy Parity",
-    "fprp" = "False Positive Rate Parity",
-    "fnrp" = "False Negative Rate Parity",
-    "npvp" = "Negative Predictive Value Parity",
-    "dp" = "Demographic Parity",
-    "prp" = "Predictive Rate Parity",
-    "tprp" = "True Positive Rate Parity"
+    "pp" = gettext("Proportional Parity"),
+    "sp" = gettext("Specificity Parity"),
+    "ap" = gettext("Accuracy Parity"),
+    "fprp" = gettext("False Positive Rate Parity"),
+    "fnrp" = gettext("False Negative Rate Parity"),
+    "npvp" = gettext("Negative Predictive Value Parity"),
+    "dp" = gettext("Demographic Parity"),
+    "prp" = gettext("Predictive Rate Parity"),
+    "tprp" = gettext("True Positive Rate Parity")
+  )
+  out[["formula"]] <- switch(out[["metric"]],
+    "pp" = "(TP + FP) / (TP + FP + TN + FN)",
+    "sp" = "TN / (TN + FP)",
+    "ap" = "(TP + TN) / (TP + FP + TN + FN)",
+    "fprp" = "FP / (TN + FP)",
+    "fnrp" = "FN / (TP + FN)",
+    "npvp" = "TN / (TN + FN)",
+    "dp" = "TP + FP",
+    "prp" = "TP / (TP + FP)",
+    "tprp" = "TP / (TP + FN)"
   )
   return(out)
 }
@@ -383,6 +394,16 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
         }
         tb[[name]] <- col
       }
+      tb$addColumnInfo(name = "metric", title = .jfaFairnessGetMetricFromQuestion(options)[["title"]], type = if (.jfaFairnessGetMetricFromQuestion(options)[["metric"]] == "dp") "integer" else "number")
+      est <- result[["metric"]][["all"]][["estimate"]]
+      after <- 1
+      for (i in seq_along(groupLevels)) {
+        est <- append(est, rep(NA, length(factorLevels) - 1), after = after)
+        after <- after + length(factorLevels)
+      }
+      tb[["metric"]] <- est
+      tb$addFootnote(gettextf("True positives (TP) are cells in which the positive class (<i>%1$s</i>) is correctly predicted, while true negatives (TN) are cells where the negative class is correctly predicted. False negatives (FN) are cells in which the positive class is incorrectly predicted, and false positives (FP) are cells in which the negative class is incorrectly predicted.", options[["positive"]]))
+      tb$addFootnote(gettextf("%1$s = %2$s.", .jfaFairnessGetMetricFromQuestion(options)[["title"]], .jfaFairnessGetMetricFromQuestion(options)[["formula"]]), colName = "metric")
     } else {
       tb$addColumnInfo(name = "obs_name", title = "", type = "string")
       tb$addColumnInfo(name = "varname_obs", title = "", type = "string")
