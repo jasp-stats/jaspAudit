@@ -37,7 +37,7 @@ RadioButtonGroup
 		id: 					population
 		name: 					"pdata"
 		label:					qsTr("Population")
-		enabled:				mainWindow.dataAvailable
+		enabled:				dataSetInfo.dataAvailable
 		info:					qsTr("Use the population as input data.")
 	}
 
@@ -46,8 +46,8 @@ RadioButtonGroup
 		id: 					sample
 		name: 					"data"
 		label:					qsTr("Sample")
-		checked: 				mainWindow.dataAvailable
-		enabled:				mainWindow.dataAvailable
+		checked: 				dataSetInfo.dataAvailable
+		enabled:				dataSetInfo.dataAvailable
 		info:					qsTr("Use a sample of the population as input data.")
 	}
 
@@ -56,7 +56,7 @@ RadioButtonGroup
 		id: 					stats
 		name: 					"stats"
 		label:					qsTr("Summary statistics")
-		checked: 				!mainWindow.dataAvailable
+		checked: 				!dataSetInfo.dataAvailable
 		info:					qsTr("Use summary statistics from a sample as input data.")
 
 		Group
