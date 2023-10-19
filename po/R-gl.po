@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-18 07:24\n"
-"PO-Revision-Date: 2023-10-17 19:07+0000\n"
+"PO-Revision-Date: 2023-10-18 15:29+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"r/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-r/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -617,9 +617,8 @@ msgstr ""
 "dos valores contables e os valores de auditoría, un indicador do grao de "
 "relación linear entre as dúas variables."
 
-#, fuzzy
 msgid "Proportion"
-msgstr "Proporcións"
+msgstr "Proporción"
 
 msgid "Specificity"
 msgstr "Especificidade"
@@ -627,58 +626,50 @@ msgstr "Especificidade"
 msgid "Accuracy"
 msgstr "Precisión"
 
-#, fuzzy
 msgid "False positive rate"
-msgstr "Todo positivo"
+msgstr "Proporción de falsos positivos"
 
-#, fuzzy
 msgid "False negative rate"
-msgstr "Todo negativo"
+msgstr "Proporción de falsos negativos"
 
-#, fuzzy
 msgid "Negative predictive value"
-msgstr "Valores efectivos negativos"
+msgstr "Valor preditivo negativo"
 
 msgid "Positively classified"
-msgstr ""
+msgstr "Clasificado positivamente"
 
 msgid "Precision"
 msgstr "Precisión"
 
-#, fuzzy
 msgid "True positive rate"
-msgstr "Todo positivo"
+msgstr "Proporción de verdadeiros positivos"
 
-#, fuzzy
 msgid "Proportional Parity"
-msgstr "Proporcións"
+msgstr "Paridade proporcional"
 
-#, fuzzy
 msgid "Specificity Parity"
-msgstr "Especificidade"
+msgstr "Paridade da especificidade"
 
-#, fuzzy
 msgid "Accuracy Parity"
-msgstr "Precisión"
+msgstr "Paridade da precisión"
 
 msgid "False Positive Rate Parity"
-msgstr ""
+msgstr "Paridade da razón de falsos positivos"
 
 msgid "False Negative Rate Parity"
-msgstr ""
+msgstr "Paridade da razón de falsos negativos"
 
 msgid "Negative Predictive Value Parity"
-msgstr ""
+msgstr "Paridade do valor preditivo negativo"
 
 msgid "Demographic Parity"
-msgstr ""
+msgstr "Paridade demográfica"
 
-#, fuzzy
 msgid "Predictive Rate Parity"
-msgstr "Precisión de predicións"
+msgstr "Paridade da razón preditiva"
 
 msgid "True Positive Rate Parity"
-msgstr ""
+msgstr "Paridade da razón de verdadeiros positivos"
 
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
@@ -793,10 +784,15 @@ msgid ""
 "positive class is incorrectly predicted, and false positives (FP) are cells "
 "in which the negative class is incorrectly predicted."
 msgstr ""
+"Verdadeiros Positivos (VP, TP) refírese a celas nas que a clase positiva "
+"(<i>%1$s</i>) está predita correctamente, mentres que Verdadeiros Negativos ("
+"VN, TN) refírese a celas nas que a clase negativa está predita "
+"correctamente. Falsos Negativos (FN) refírese a celas nas que a clase "
+"positiva está predita incorrectamente, e Falsos Positivos (FP) refírese a "
+"celas nas que a clase negativa está predita incorrectamente."
 
-#, fuzzy
 msgid "%1$s = %2$s."
-msgstr "%1$s = %2$s"
+msgstr "%1$s = %2$s."
 
 msgid "Observed"
 msgstr "Observado"
