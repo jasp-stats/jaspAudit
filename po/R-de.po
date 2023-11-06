@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-10-18 07:24\n"
-"PO-Revision-Date: 2023-10-05 04:08+0000\n"
+"PO-Revision-Date: 2023-11-06 09:19+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.2-dev\n"
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Prozedur</u>"
@@ -117,9 +117,8 @@ msgstr "<u>Prüfung des Benfordschen Gesetzes</u>"
 msgid "<u>Assessing the Uniform Distribution</u>"
 msgstr "<u>Prüfung der Uniformen Verteilung</u>"
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
-msgstr "<b>Tabelle %1$i.</b> %2$s"
+msgstr "<b>Tabelle %1$i.</b> Omnibus-Test - %2$s"
 
 msgid "BF%1$s"
 msgstr "BF%1$s"
@@ -154,13 +153,12 @@ msgstr ""
 "Die Nullhypothese gibt an, dass die letzten Ziffern (1 - 9) im Datensatz "
 "gemäß %1$s verteilt sind."
 
-#, fuzzy
 msgid ""
 "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with "
 "%2$s = %4$s."
 msgstr ""
 "Der Bayesfaktor wird mit einem Dirichlet(%1$s,...,%2$s%3$s)-Prior mit %2$s = "
-"1 berechnet."
+"%4$s berechnet."
 
 msgid "<b>Table %i.</b> Frequency Table"
 msgstr "<b>Tabelle %i.</b> Häufigkeitstabelle"
@@ -195,25 +193,22 @@ msgstr "Untergrenze"
 msgid "Upper"
 msgstr "Obergrenze"
 
-#, fuzzy
 msgid ""
 "The null hypothesis specifies that the relative frequency of a digit is "
 "equal to its expected relative frequency under %1$s."
 msgstr ""
-"Die Nullhypothese gibt an, dass die letzten Ziffern (1 - 9) im Datensatz "
-"gemäß %1$s verteilt sind."
+"Die Nullhypothese gibt an, dass die relative Häufigkeit einer Ziffer gleich "
+"ihrer erwarteten relativen Häufigkeit unter %1$s ist."
 
-#, fuzzy
 msgid ""
 "Confidence intervals and <i>p</i>-values are based on independent binomial "
 "distributions."
 msgstr ""
-"Konfidenzintervalle, <i>p</i>-Werte und Bayesfaktoren basieren auf "
-"unabhängigen Binomialverteilungen."
+"Konfidenzintervalle und <i>p</i>-Werte basieren auf unabhängigen "
+"Binomialverteilungen."
 
-#, fuzzy
 msgid "Bayes factors are computed using a beta(1, 1) prior."
-msgstr "Die Ergebnisse sind mit der Beta-Verteilung berechnet."
+msgstr "Die Bayesfaktoren sind mit einem Beta(1, 1)-Prior berechnet."
 
 msgid "Leading Digit"
 msgstr "Führende Ziffer"
@@ -264,7 +259,7 @@ msgstr ""
 "in der Nähe des oberen Randes der grauen Balken."
 
 msgid "Bayes Factor Robustness Plot"
-msgstr ""
+msgstr "Bayesfaktor-Robustheitsdiagramm"
 
 msgid ""
 "<b>Figure %i.</b> The results of a robustness check using the Bayes factor. "
@@ -273,15 +268,24 @@ msgid ""
 "providing insights into the robustness of the statistical evidence to the "
 "choice of prior distribution."
 msgstr ""
+"<b>Abbildung %i.</b> Die Ergebnisse einer Robustheitsprüfung mit dem "
+"Bayesfaktor. Die Abbildung zeigt die Auswirkungen verschiedener "
+"Spezifikationen (d.h. Konzentrationsparameter) des Dirichlet-Priors auf die "
+"Bayesfaktorwerte, und bietet so Einblicke in die Robustheit der "
+"statistischen Evidenz bei der Auswahl der Prior-Verteilung."
 
 msgid "Sequential Analysis Plot"
-msgstr ""
+msgstr "Diagramm Sequenzielle Analyse"
 
 msgid ""
 "<b>Figure %i.</b> The results of a sequential analysis using the Bayes "
 "factor. The figure provides insight into how the statistical evidence from "
 "these data accumulates over time and under different prior specifications."
 msgstr ""
+"<b>Abbildung %i.</b> Die Ergebnisse einer sequentiellen Analyse mit dem "
+"Bayesfaktor. Die Abbildung bietet Einblick in die Art und Weise, wie sich "
+"die statistische Evidenz dieser Daten über die Zeit und unter verschiedenen "
+"Prior-Spezifikationen ansammelt."
 
 msgid "<u>Conclusion</u>"
 msgstr "<u>Schlussfolgerung</u>"
@@ -298,29 +302,26 @@ msgstr "%1$s < %2$s"
 msgid "%1$s >= %2$s"
 msgstr "%1$s >= %2$s"
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis that the first digits in "
 "the data set are distributed according to %2$s %3$s."
 msgstr ""
 "Der <i>p</i>-Wert ist %1$s und die Nullhypothese, dass die ersten Ziffern "
-"des Datensatzes gemäß %2$s verteilt sind %3$s."
+"des Datensatzes gemäß %2$s %3$s verteilt sind."
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis that the first two digits "
 "in the data set are distributed according to %2$s %3$s."
 msgstr ""
 "Der <i>p</i>-Wert ist %1$s und die Nullhypothese, dass die ersten beiden "
-"Stellen des Datensatzes gemäß %2$s verteilt sind %3$s."
+"Ziffern des Datensatzes gemäß %2$s %3$s verteilt sind."
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis that the last digits in "
 "the data set are distributed according to %2$s %3$s."
 msgstr ""
 "Der <i>p</i>-Wert ist %1$s und die Nullhypothese, dass die letzten Ziffern "
-"des Datensatzes gemäß %2$s verteilt sind %3$s."
+"des Datensatzes gemäß %2$s %3$s verteilt sind."
 
 msgid ""
 "%1$s The Bayes factor indicates that the data are %2$s times more likely to "
@@ -610,31 +611,31 @@ msgstr ""
 
 #, fuzzy
 msgid "Proportion"
-msgstr "Korrektur"
+msgstr "Anteil"
 
 msgid "Specificity"
-msgstr ""
+msgstr "Spezifizität"
 
 msgid "Accuracy"
-msgstr ""
+msgstr "Genauigkeit"
 
 msgid "False positive rate"
-msgstr ""
+msgstr "Falsch-positiv-Rate"
 
 msgid "False negative rate"
-msgstr ""
+msgstr "Falsch-negativ-Rate"
 
 msgid "Negative predictive value"
-msgstr ""
+msgstr "Negativer Vorhersagewert"
 
 msgid "Positively classified"
-msgstr ""
+msgstr "Positiv klassifiziert"
 
 msgid "Precision"
 msgstr "Genauigkeit"
 
 msgid "True positive rate"
-msgstr ""
+msgstr "Richtig-positiv-Rate"
 
 msgid "Proportional Parity"
 msgstr ""
@@ -672,39 +673,44 @@ msgid ""
 "unprivileged group compared to the privileged (<i>%3$s</i>) group is called "
 "parity."
 msgstr ""
+"Ziel dieses Verfahrens ist es, zu bestimmen, inwieweit die Vorhersagen eines "
+"Algorithmus gegenüber geschützten Gruppen bezüglich eines sensitiven "
+"Attributs fair sind, und diese Fairness mit einem Typ-I-Fehler von %1$s%% zu "
+"testen. Unter Betrachtung der positiven Klasse (<i>%2$s</i>) kann Fairness - "
+"oder Diskriminierung - mit sogenannten Fairness-Metriken quantifiziert "
+"werden. Das Verhältnis einer Fairness-Metrik von einer unprivilegierten "
+"Gruppe im Vergleich zu der privilegierten (<i>%3$s</i>) Gruppe wird Parität "
+"genannt."
 
-#, fuzzy
 msgid "<u>Assessing Model Fairness</u>"
-msgstr "<u>Prüfung wiederholter Werte</u>"
+msgstr "<u>Prüfung Modell-Fairness</u>"
 
 msgid "n"
 msgstr "n"
 
-#, fuzzy
 msgid ""
 "The null hypothesis specifies that the %1$s is equal across protected groups."
 msgstr ""
-"Die Nullhypothese gibt an, dass die letzten Ziffern (1 - 9) im Datensatz "
-"gemäß %1$s verteilt sind."
+"Die Nullhypothese gibt an, dass die %1$s über geschützte Gruppen gleich ist."
 
 msgid ""
 "Please specify a privileged group and positive class to start the analysis."
 msgstr ""
+"Bitte geben Sie eine privilegierte Gruppe und positive Klasse an, um die "
+"Analyse zu starten."
 
-#, fuzzy
 msgid ""
 "The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) "
 "prior with %1$s = %4$s."
 msgstr ""
-"Der Bayesfaktor wird mit einem Dirichlet(%1$s,...,%2$s%3$s)-Prior mit %2$s = "
-"1 berechnet."
+"Der Bayesfaktor ist mit einem Dirichlet(%1$s%2$s, ..., %1$s%3$s)-Prior mit "
+"%1$s = %4$s berechnet."
 
-#, fuzzy
 msgid "<b>Table %i.</b> Comparisons to Privileged (P) Group"
-msgstr "<b>Tabelle %i.</b> Korrekturen an Grundgesamtheit"
+msgstr "<b>Tabelle %i.</b> Vergleiche mit privilegierter (P) Gruppe"
 
 msgid "Parity"
-msgstr ""
+msgstr "Parität"
 
 msgid "p"
 msgstr "p"
@@ -713,33 +719,39 @@ msgid ""
 "The null hypothesis specifies that the %1$s of an unprivileged group is "
 "equal to that of the privileged (P) group."
 msgstr ""
+"Die Nullhypothese gibt an, dass %1$s einer unprivilegierten Gruppe gleich "
+"der privilegierten (P) Gruppe sind."
 
 msgid ""
 "The null hypothesis specifies that the %1$s of an unprivileged group is "
 "greater than, or equal to, that of the privileged (P) group."
 msgstr ""
+"Die Nullhypothese gibt an, dass %1$s einer unprivilegierten Gruppe größer "
+"oder gleich der privilegierten (P) Gruppe sind."
 
 msgid ""
 "The null hypothesis specifies that the %1$s of an unprivileged group is "
 "lower than, or equal to, that of the privileged (P) group."
 msgstr ""
+"Die Nullhypothese gibt an, dass %1$s einer unprivilegierten Gruppe kleiner "
+"oder gleich der privilegierten (P) Gruppe sind."
 
 msgid ""
 "<i>p</i>-values are uncorrected for multiple comparisons and are based on "
 "Fisher's exact test."
 msgstr ""
+"<i>p</i>-Werte sind für Mehrfachvergleiche unkorrigiert und basieren auf "
+"Fishers genauem Test."
 
-#, fuzzy
 msgid ""
 "Bayes factors are uncorrected and are computed using a Dirichlet(%1$s%2$s, "
 "%1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = %6$s."
 msgstr ""
-"Der Bayesfaktor wird mit einem Dirichlet(%1$s,...,%2$s%3$s)-Prior mit %2$s = "
-"1 berechnet."
+"Der Bayesfaktoren sind unkorrigiert und mit einem Dirichlet(%1$s%2$s, %1$s%3$"
+"s, %1$s%4$s, %1$s%5$s)-Prior mit %1$s = %6$s berechnet."
 
-#, fuzzy
 msgid "<b>Table %i.</b> Model Performance"
-msgstr "<b>Tabelle %i.</b> Äquivalente Prior-Stichprobe"
+msgstr "<b>Tabelle %i.</b> Modell-Leistung"
 
 msgid "Support"
 msgstr "Träger"
@@ -750,16 +762,14 @@ msgstr ""
 msgid "F1 Score"
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %i.</b> Confusion Matrix"
-msgstr "<b>Tabelle %i.</b> Korrekturen an Grundgesamtheit"
+msgstr "<b>Tabelle %i.</b> Konfusionsmatrix"
 
 msgid "Actual"
-msgstr ""
+msgstr "Tatsächlich"
 
-#, fuzzy
 msgid "Predicted"
-msgstr "Vorhergesagte Fehler"
+msgstr "Vorhergesagt"
 
 msgid ""
 "True positives (TP) are cells in which the positive class (<i>%1$s</i>) is "
