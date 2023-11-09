@@ -2385,14 +2385,6 @@ msgctxt "Description|"
 msgid "Data Auditing"
 msgstr ""
 
-msgctxt "Description|"
-msgid "Algorithm Auditing"
-msgstr ""
-
-msgctxt "Description|"
-msgid "Fairness Metrics"
-msgstr ""
-
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Bayes factor robustness check"
 msgstr ""

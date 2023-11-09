@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.1\n"
-"POT-Creation-Date: 2023-10-18 07:24\n"
+"POT-Creation-Date: 2023-11-09 15:50\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -911,6 +911,9 @@ msgid "The minimum sample size is based on the beta-binomial distribution (N = %
 msgstr ""
 
 msgid "The minimum sample size (%1$s) is larger than the number of units in the population (%2$s)."
+msgstr ""
+
+msgid "Based on this sample size, the selection interval spans %1$s units."
 msgstr ""
 
 msgid "The value %1$s is automatically used as a starting point for the fixed interval selection."

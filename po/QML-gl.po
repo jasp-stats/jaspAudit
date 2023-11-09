@@ -2823,14 +2823,6 @@ msgctxt "Description|"
 msgid "Data Auditing"
 msgstr "Auditoría dos datos"
 
-msgctxt "Description|"
-msgid "Algorithm Auditing"
-msgstr "Auditoría do algoritmo"
-
-msgctxt "Description|"
-msgid "Fairness Metrics"
-msgstr "Métricas de xustiza"
-
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Bayes factor robustness check"
 msgstr "Comprobación da robustez do factor de Bayes"

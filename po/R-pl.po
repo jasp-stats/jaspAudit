@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.0\n"
-"POT-Creation-Date: 2023-10-18 07:24\n"
+"POT-Creation-Date: 2023-11-09 15:50\n"
 "PO-Revision-Date: 2023-09-20 11:21+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1355,6 +1355,9 @@ msgstr ""
 msgid ""
 "The minimum sample size (%1$s) is larger than the number of units in the "
 "population (%2$s)."
+msgstr ""
+
+msgid "Based on this sample size, the selection interval spans %1$s units."
 msgstr ""
 
 msgid ""

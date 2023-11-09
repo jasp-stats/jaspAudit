@@ -2833,14 +2833,6 @@ msgctxt "Description|"
 msgid "Data Auditing"
 msgstr "Data Auditen"
 
-msgctxt "Description|"
-msgid "Algorithm Auditing"
-msgstr "Algoritmes Auditen"
-
-msgctxt "Description|"
-msgid "Fairness Metrics"
-msgstr "Eerlijkheidsstatistieken"
-
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Bayes factor robustness check"
 msgstr "Bayes factor robuustheid check"

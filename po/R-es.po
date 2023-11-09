@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2023-10-18 07:24\n"
+"POT-Creation-Date: 2023-11-09 15:50\n"
 "PO-Revision-Date: 2023-10-18 15:29+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1742,6 +1742,9 @@ msgid ""
 msgstr ""
 "El tamaño mínimo (%1$s) de la muestra es mayor que el número de unidades de "
 "la población (%2$s)."
+
+msgid "Based on this sample size, the selection interval spans %1$s units."
+msgstr ""
 
 msgid ""
 "The value %1$s is automatically used as a starting point for the fixed "
