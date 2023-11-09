@@ -1742,6 +1742,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   if (parentState[["n"]] > parentState[["N.units"]]) {
     table$addFootnote(gettextf("The minimum sample size (%1$s) is larger than the number of units in the population (%2$s).", parentState[["n"]], ceiling(parentState[["N.units"]])), symbol = "\u26A0")
+  } else {
+    table$addFootnote(gettextf("Based on this sample size, the selection interval spans %1$s units.", round(parentState[["N.units"]] / parentState[["n"]], 2)), colName = "n")
   }
 
   if (options[["bayesian"]] && options[["separateMisstatement"]] && options[["values"]] != "") {
