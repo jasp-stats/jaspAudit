@@ -80,14 +80,14 @@ Description
 		func:			"auditClassicalNumberBunching"
 	}
 
-	GroupTitle
-	{
-		title:			qsTr("Algorithm Auditing")
-		icon:			"audit-algorithms.svg"
-	}
-	Analysis
-	{
-		title:			qsTr("Fairness Metrics")
-		func:			"auditClassicalModelFairness"
-	}
+	// GroupTitle
+	// {
+	// 	title:			qsTr("Algorithm Auditing")
+	// 	icon:			"audit-algorithms.svg"
+	// }
+	// Analysis
+	// {
+	// 	title:			qsTr("Fairness Metrics")
+	// 	func:			"auditClassicalModelFairness"
+	// }
 }
