@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-11-09 15:50\n"
+"POT-Creation-Date: 2023-11-10 09:56\n"
 "PO-Revision-Date: 2022-08-28 23:22+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -1621,6 +1621,9 @@ msgstr ""
 #, fuzzy
 msgid "%% of population size"
 msgstr "O tamanho da população <i>N</i>"
+
+msgid "using seed %1$s"
+msgstr ""
 
 msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."
 msgstr ""

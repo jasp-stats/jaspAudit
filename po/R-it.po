@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.3\n"
-"POT-Creation-Date: 2023-11-09 15:50\n"
+"POT-Creation-Date: 2023-11-10 09:56\n"
 "PO-Revision-Date: 2022-06-19 11:19+0000\n"
 "Last-Translator: Giovanni Schettino <giannischettino00@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1417,6 +1417,9 @@ msgid "%% of population value"
 msgstr ""
 
 msgid "%% of population size"
+msgstr ""
+
+msgid "using seed %1$s"
 msgstr ""
 
 msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."

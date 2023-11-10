@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-11-09 15:50\n"
+"POT-Creation-Date: 2023-11-10 09:56\n"
 "PO-Revision-Date: 2023-11-09 15:53+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1857,6 +1857,9 @@ msgstr "%% van de populatiewaarde"
 
 msgid "%% of population size"
 msgstr "%% van de populatieomvang"
+
+msgid "using seed %1$s"
+msgstr ""
 
 msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."
 msgstr ""

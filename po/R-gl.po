@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-11-09 15:50\n"
+"POT-Creation-Date: 2023-11-10 09:56\n"
 "PO-Revision-Date: 2023-10-18 15:29+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -1855,6 +1855,9 @@ msgstr "%% do valor poboacional"
 
 msgid "%% of population size"
 msgstr "%% do tamaño da poboación"
+
+msgid "using seed %1$s"
+msgstr ""
 
 msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."
 msgstr ""
