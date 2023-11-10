@@ -2217,9 +2217,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (is.null(parentState)) {
     return()
   }
-
+  
+  seedMessage <- gettextf(" using seed %1$s", options[["seed"]])
   message <- switch(options[["sampling_method"]],
-    "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected%3$s.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else if (!is.null(parentState[["start"]])) parentState[["start"]] else options[["start"]], if (options[["startMethod"]] == "randomStart") gettextf(" using seed %1$s", options[["seed"]]) else ""),
+    "interval" = gettextf("From each of the intervals of size %1$s, unit %2$s is selected%3$s.", round(parentState[["interval"]], 2), if (!is.null(prevState[["start"]])) prevState[["start"]] else if (!is.null(parentState[["start"]])) parentState[["start"]] else options[["start"]], if (options[["startMethod"]] == "randomStart") seedMessage else ""),
     "cell" = gettextf("The sample is drawn with seed %1$s and intervals of size %2$s.", options[["seed"]], round(parentState[["interval"]], 2)),
     "random" = gettextf("The sample is drawn with seed %1$s.", options[["seed"]]),
     "sieve" = gettextf("The random numbers are generated with seed %1$s.", options[["seed"]])
