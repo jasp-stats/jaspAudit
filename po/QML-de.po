@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "PO-Revision-Date: 2023-11-11 03:26+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-qml/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-"
+"qml/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1056,22 +1056,18 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Compute the entropy of the data."
 msgstr "Berechne die Entropie der Daten."
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Indicate which decimals are shuffled in the analysis."
 msgstr "Geben Sie an, welche Dezimalstellen in der Analyse permutiert werden."
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last decimal digit is shuffled."
 msgstr "Die letzte Dezimalziffer wird permutiert."
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last two decimal digits are shuffled."
 msgstr "Die letzten beiden Dezimalziffern werden permutiert."
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "All decimal digits are shuffled."
 msgstr "Alle Dezimalziffern werden permutiert."
@@ -1079,7 +1075,8 @@ msgstr "Alle Dezimalziffern werden permutiert."
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
 "Specify options that have an effect on the look and feel of the audit report."
-msgstr "Optionen angeben, die das Erscheinungsbild des Prüfberichts ändern."
+msgstr ""
+"Geben Sie Optionen an, die das Erscheinungsbild des Prüfberichts ändern."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
@@ -2949,7 +2946,6 @@ msgstr ""
 "Bayesfaktor um die Evidenz für die Nullhypothese relativ zur "
 "Alternativhypothese zu quantifizieren."
 
-#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Log(BF₁₀)"
 msgstr "Log(BF₁₀)"
