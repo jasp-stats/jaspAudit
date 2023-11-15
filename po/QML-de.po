@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-11-11 03:26+0000\n"
+"PO-Revision-Date: 2023-11-13 18:36+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"qml/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1550,7 +1550,6 @@ msgid ""
 "Width of the one-sided confidence interval for the population correlation."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Plots"
 msgstr "Diagramme"
@@ -1559,7 +1558,6 @@ msgctxt "EvaluationOutput|"
 msgid "Add additional figures about the evaluation to the report."
 msgstr "Dem Bericht weitere Diagramme zur Evaluation hinzufügen."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Sampling objectives"
 msgstr "Stichprobenziele"
@@ -1585,7 +1583,6 @@ msgid ""
 "Produces a figure that shows the posterior and the posterior distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Additional info"
 msgstr "Weitere Infos"
@@ -1595,6 +1592,8 @@ msgid ""
 "Add additional information to the figure, namely a visualization of the "
 "Bayes factor and the estimates in text."
 msgstr ""
+"Hinzufügen zusätzlicher Informationen, nämlich eine Visualisierung des "
+"Bayesfaktors und der Schätzungen im Text."
 
 #, fuzzy
 msgctxt "EvaluationOutput|"
@@ -1606,13 +1605,13 @@ msgid ""
 "Produces a figure that shows the predictions of the posterior distribution "
 "on the data level."
 msgstr ""
+"Erstellt ein Diagramm, das die Vorhersagen der Posterior-Verteilung auf der "
+"Datenebene zeigt."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Scatter plot"
 msgstr "Streudiagramm"
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid ""
 "Produces a scatter plot comparing the book values in the sample against "
@@ -1623,31 +1622,29 @@ msgstr ""
 "Prüfwerten verglichen werden. Posten, bei denen diese beiden Werte nicht "
 "übereinstimmen, sind rot gefärbt."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Display correlation"
 msgstr "Korrelation anzeigen"
 
 msgctxt "EvaluationOutput|"
 msgid "Add a correlation line to the figure."
-msgstr ""
+msgstr "Dem Diagramm eine Korrelationsgeraden hinzufügen."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Display item ID's"
 msgstr "Posten-IDs anzeigen"
 
 msgctxt "EvaluationOutput|"
 msgid "Display the row number of the misstated items in the figure."
-msgstr ""
+msgstr "Die Zeilennummer der falschangegebenen Posten im Diagramm anzeigen."
 
 msgctxt "EvaluationVariablesList|"
 msgid "Selection Counter (optional)"
-msgstr ""
+msgstr "Auswahlzähler (optional)"
 
 msgctxt "EvaluationVariablesList|"
 msgid "Selection Counter (required)"
-msgstr ""
+msgstr "Auswahlzähler (erforderlich)"
 
 msgctxt "EvaluationVariablesList|"
 msgid ""
