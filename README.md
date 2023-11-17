@@ -8,6 +8,7 @@
 
 - 05/07/2019 - [JASP for Audit: Bayesian Tools for the Auditing Practice](https://jasp-stats.org/2019/07/25/jasp-for-audit-bayesian-tools-for-the-auditing-practice/)
 - 30/11/2021 - [Benford's Law: Using JASP to Test Whether a Data Set Occurred Naturally](https://jasp-stats.org/2021/11/30/benfords-law-jasp/)
+- 15/11/2023 - [De steekproefomvang ontmaskerd](https://www.accountant.nl/vaktechniek/2023/11/de-steekproefomvang-ontmaskerd---deel-5/)
 
 ## Articles
 
