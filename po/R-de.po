@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-11-10 09:56\n"
-"PO-Revision-Date: 2023-11-18 03:27+0000\n"
-"Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
+"PO-Revision-Date: 2023-11-18 20:24+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
 "Language: de\n"
@@ -609,6 +609,7 @@ msgstr ""
 "Auditwerte, ein Indikator der Stärke der linearen Beziehung zwischen den "
 "beiden Variablen."
 
+#, fuzzy
 msgid "Proportion"
 msgstr "Anteil"
 
@@ -778,9 +779,8 @@ msgid ""
 "in which the negative class is incorrectly predicted."
 msgstr ""
 
-#, fuzzy
 msgid "%1$s = %2$s."
-msgstr "%1$s = %2$s"
+msgstr "%1$s = %2$s."
 
 msgid "Observed"
 msgstr "Beobachtet"
