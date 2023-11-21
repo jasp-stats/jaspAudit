@@ -2619,7 +2619,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
       planningState <- jfa::planning(
         conf.level = options[["conf_level"]], materiality = materiality, min.precision = min_precision,
-        expected = evaluationOptions[["expected_val"]], N.units = evaluationOptions[["N.units"]], prior = prior
+        expected = evaluationOptions[["expected_val"]], N.units = sum(evaluationOptions[["N.units"]]), prior = prior
       )
 
       planningState[["n"]] <- if (options[["dataType"]] == "stats") options[["n"]] else nrow(dataset)
