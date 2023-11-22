@@ -2995,7 +2995,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
   errors <- sample[sample[[options[["values"]]]] != sample[[options[["values.audit"]]]], ]
   if (nrow(errors) == 0) {
-    table$addFootnote(message = gettext("No misstatements were identified in the sample."))
+    tb$addFootnote(message = gettext("No misstatements were identified in the sample."))
     return()
   }
 
