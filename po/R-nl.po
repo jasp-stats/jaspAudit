@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-11-10 09:56\n"
+"POT-Creation-Date: 2023-12-08 10:27\n"
 "PO-Revision-Date: 2023-11-10 10:00+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -156,6 +156,11 @@ msgstr ""
 "De Bayes factor is berekend met behulp van een Dirichlet(%1$s,...,%2$s%3$s) "
 "prior met %2$s = %4$s."
 
+msgid ""
+"<b>Warning.</b> The <i>p</i>-value may be unreliable due to some expected "
+"counts being lower than 5."
+msgstr ""
+
 msgid "<b>Table %i.</b> Frequency Table"
 msgstr "<b>Tabel %i.</b> Frequentietabel"
 
@@ -174,14 +179,14 @@ msgstr "Wet van Benford"
 msgid "Uniform distribution"
 msgstr "Uniforme verdeling"
 
-msgid "%1$s%% Confidence Interval"
-msgstr "%1$s%% Betrouwbaarheidsinterval"
-
 msgid "Count"
 msgstr "Aantal"
 
 msgid "Relative frequency"
 msgstr "Relatieve frequentie"
+
+msgid "%1$s%% Confidence Interval"
+msgstr "%1$s%% Betrouwbaarheidsinterval"
 
 msgid "Lower"
 msgstr "Onder"
@@ -196,6 +201,10 @@ msgstr ""
 "De nulhypothese specificeert dat de relatieve frequentie van een cijfer "
 "overeenkomt met zijn relatieve frequentie onder %1$s."
 
+msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgstr ""
+"De resultaten zijn berekend door middel van een beta(1, 1) prior-verdeling."
+
 msgid ""
 "Confidence intervals and <i>p</i>-values are based on independent binomial "
 "distributions."
@@ -203,9 +212,11 @@ msgstr ""
 "Betrouwbaarheidsintervallen en <i>p</i>-waardes zijn gebaseerd op "
 "onafhankelijke binomiale verdelingen."
 
-msgid "Bayes factors are computed using a beta(1, 1) prior."
+#, fuzzy
+msgid "The <i>p</i>-values are based on independent binomial distributions."
 msgstr ""
-"De resultaten zijn berekend door middel van een beta(1, 1) prior-verdeling."
+"Betrouwbaarheidsintervallen en <i>p</i>-waardes zijn gebaseerd op "
+"onafhankelijke binomiale verdelingen."
 
 msgid "Leading Digit"
 msgstr "Leidend Cijfer"

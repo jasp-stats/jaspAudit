@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-11-10 09:56\n"
+"POT-Creation-Date: 2023-12-08 10:27\n"
 "PO-Revision-Date: 2023-11-18 20:24+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -160,6 +160,11 @@ msgstr ""
 "Der Bayesfaktor wird mit einem Dirichlet(%1$s,...,%2$s%3$s)-Prior mit %2$s = "
 "%4$s berechnet."
 
+msgid ""
+"<b>Warning.</b> The <i>p</i>-value may be unreliable due to some expected "
+"counts being lower than 5."
+msgstr ""
+
 msgid "<b>Table %i.</b> Frequency Table"
 msgstr "<b>Tabelle %i.</b> Häufigkeitstabelle"
 
@@ -178,14 +183,14 @@ msgstr "Benfordsches Gesetz"
 msgid "Uniform distribution"
 msgstr "Uniforme Verteilung"
 
-msgid "%1$s%% Confidence Interval"
-msgstr "%1$s%% Konfidenzintervall"
-
 msgid "Count"
 msgstr "Anzahl"
 
 msgid "Relative frequency"
 msgstr "Relative Häufigkeit"
+
+msgid "%1$s%% Confidence Interval"
+msgstr "%1$s%% Konfidenzintervall"
 
 msgid "Lower"
 msgstr "Untergrenze"
@@ -200,6 +205,9 @@ msgstr ""
 "Die Nullhypothese gibt an, dass die relative Häufigkeit einer Ziffer gleich "
 "ihrer erwarteten relativen Häufigkeit unter %1$s ist."
 
+msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgstr "Die Bayesfaktoren sind mit einem Beta(1, 1)-Prior berechnet."
+
 msgid ""
 "Confidence intervals and <i>p</i>-values are based on independent binomial "
 "distributions."
@@ -207,8 +215,11 @@ msgstr ""
 "Konfidenzintervalle und <i>p</i>-Werte basieren auf unabhängigen "
 "Binomialverteilungen."
 
-msgid "Bayes factors are computed using a beta(1, 1) prior."
-msgstr "Die Bayesfaktoren sind mit einem Beta(1, 1)-Prior berechnet."
+#, fuzzy
+msgid "The <i>p</i>-values are based on independent binomial distributions."
+msgstr ""
+"Konfidenzintervalle und <i>p</i>-Werte basieren auf unabhängigen "
+"Binomialverteilungen."
 
 msgid "Leading Digit"
 msgstr "Führende Ziffer"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.0\n"
-"POT-Creation-Date: 2023-11-10 09:56\n"
+"POT-Creation-Date: 2023-12-08 10:27\n"
 "PO-Revision-Date: 2023-12-02 03:24+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -113,6 +113,11 @@ msgid ""
 "%2$s = %4$s."
 msgstr ""
 
+msgid ""
+"<b>Warning.</b> The <i>p</i>-value may be unreliable due to some expected "
+"counts being lower than 5."
+msgstr ""
+
 msgid "<b>Table %i.</b> Frequency Table"
 msgstr "<b>Tabela %i.</b> Tabela częstości"
 
@@ -131,15 +136,15 @@ msgstr ""
 msgid "Uniform distribution"
 msgstr "Rozkład jednostajny"
 
-#, fuzzy
-msgid "%1$s%% Confidence Interval"
-msgstr "%1$s%% przedział ufności"
-
 msgid "Count"
 msgstr "Liczebności"
 
 msgid "Relative frequency"
 msgstr ""
+
+#, fuzzy
+msgid "%1$s%% Confidence Interval"
+msgstr "%1$s%% przedział ufności"
 
 msgid "Lower"
 msgstr "Dolny"
@@ -152,12 +157,15 @@ msgid ""
 "equal to its expected relative frequency under %1$s."
 msgstr ""
 
+msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgstr ""
+
 msgid ""
 "Confidence intervals and <i>p</i>-values are based on independent binomial "
 "distributions."
 msgstr ""
 
-msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgid "The <i>p</i>-values are based on independent binomial distributions."
 msgstr ""
 
 msgid "Leading Digit"

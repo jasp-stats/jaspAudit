@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.2\n"
-"POT-Creation-Date: 2023-11-18 03:29\n"
+"POT-Creation-Date: 2023-12-08 10:27\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,6 +64,9 @@ msgstr ""
 msgid "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = %4$s."
 msgstr ""
 
+msgid "<b>Warning.</b> The <i>p</i>-value may be unreliable due to some expected counts being lower than 5."
+msgstr ""
+
 msgid "<b>Table %i.</b> Frequency Table"
 msgstr ""
 
@@ -82,13 +85,13 @@ msgstr ""
 msgid "Uniform distribution"
 msgstr ""
 
-msgid "%1$s%% Confidence Interval"
-msgstr ""
-
 msgid "Count"
 msgstr ""
 
 msgid "Relative frequency"
+msgstr ""
+
+msgid "%1$s%% Confidence Interval"
 msgstr ""
 
 msgid "Lower"
@@ -100,10 +103,13 @@ msgstr ""
 msgid "The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s."
 msgstr ""
 
+msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgstr ""
+
 msgid "Confidence intervals and <i>p</i>-values are based on independent binomial distributions."
 msgstr ""
 
-msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgid "The <i>p</i>-values are based on independent binomial distributions."
 msgstr ""
 
 msgid "Leading Digit"

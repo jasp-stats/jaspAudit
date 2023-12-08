@@ -3238,3 +3238,8 @@ msgstr ""
 msgctxt "auditClassicalModelFairness|"
 msgid "The type of fairness metric to compute and perform inference on."
 msgstr "O tipo de métrica de xustiza a calcular e para realizar a inferencia."
+
+#, fuzzy
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Confidence interval"
+msgstr "Intervalo de confianza"

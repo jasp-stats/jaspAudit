@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-11-10 09:56\n"
+"POT-Creation-Date: 2023-12-08 10:27\n"
 "PO-Revision-Date: 2022-08-28 23:22+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -166,6 +166,11 @@ msgid ""
 "%2$s = %4$s."
 msgstr ""
 
+msgid ""
+"<b>Warning.</b> The <i>p</i>-value may be unreliable due to some expected "
+"counts being lower than 5."
+msgstr ""
+
 #, fuzzy
 msgid "<b>Table %i.</b> Frequency Table"
 msgstr "<b>Tabela %i.</b> Estatísticas de frequência"
@@ -186,15 +191,15 @@ msgstr "Lei de Benford"
 msgid "Uniform distribution"
 msgstr "Distribuição cumulativa empírica"
 
-#, fuzzy
-msgid "%1$s%% Confidence Interval"
-msgstr "Intervalo de Confiança %1$s%%"
-
 msgid "Count"
 msgstr "Contagem"
 
 msgid "Relative frequency"
 msgstr ""
+
+#, fuzzy
+msgid "%1$s%% Confidence Interval"
+msgstr "Intervalo de Confiança %1$s%%"
 
 msgid "Lower"
 msgstr "Inferior"
@@ -210,12 +215,15 @@ msgstr ""
 "A hipótese nula especifica que os últimos dígitos (1 - 9) no conjunto de "
 "dados são distribuídos de acordo com %1$s."
 
+msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgstr ""
+
 msgid ""
 "Confidence intervals and <i>p</i>-values are based on independent binomial "
 "distributions."
 msgstr ""
 
-msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgid "The <i>p</i>-values are based on independent binomial distributions."
 msgstr ""
 
 #, fuzzy
