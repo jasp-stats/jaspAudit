@@ -273,7 +273,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = %4$s.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089", options[["concentration"]])
   tb$addFootnote(message, colName = "bf")
   if (any(state[["expected"]] < 5)) {
-    warning <- gettext("<b>Warning:</b> The p-value may be unreliable due to some expected counts being lower than 5.")
+    warning <- gettext("<b>Warning.</b> The <i>p</i>-value may be unreliable due to some expected counts being lower than 5.")
     tb$addFootnote(warning, colName = "pvalue")
   }
 }
@@ -294,7 +294,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
     tb <- createJaspTable(title)
     tb$position <- positionInContainer
-    tb$dependOn(options = "summaryTable")
+    tb$dependOn(options = c("summaryTable", "confidenceInterval"))
     dtitle <- switch(options[["digits"]],
       "first" = gettext("Leading digit"),
       "firsttwo" = gettext("Leading digits"),
@@ -304,13 +304,15 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "benford" = gettext("Benford's law"),
       "uniform" = gettext("Uniform distribution")
     )
-    otitle <- gettextf("%1$s%% Confidence Interval", paste0(round(options[["confidence"]] * 100, 3)))
     tb$addColumnInfo(name = "digit", title = dtitle, type = "integer")
     tb$addColumnInfo(name = "count", title = gettext("Count"), type = "integer")
     tb$addColumnInfo(name = "exp", title = etitle, type = "number")
     tb$addColumnInfo(name = "obs", title = gettext("Relative frequency"), type = "number")
-    tb$addColumnInfo(name = "lb", title = gettext("Lower"), type = "number", overtitle = otitle)
-    tb$addColumnInfo(name = "ub", title = gettext("Upper"), type = "number", overtitle = otitle)
+    if (options[["confidenceInterval"]]) {
+      otitle <- gettextf("%1$s%% Confidence Interval", paste0(round(options[["confidence"]] * 100, 3)))
+      tb$addColumnInfo(name = "lb", title = gettext("Lower"), type = "number", overtitle = otitle)
+      tb$addColumnInfo(name = "ub", title = gettext("Upper"), type = "number", overtitle = otitle)
+    }
     tb$addColumnInfo(name = "pval", title = "p", type = "pvalue")
     bftitle <- switch(options[["bayesFactorType"]],
       "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
@@ -339,10 +341,12 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
         "benford" = log10(1 + 1 / digits),
         "uniform" = 1 / length(digits)
       )
-      tb[["lb"]] <- rep(".", length(digits))
-      tb[["ub"]] <- rep(".", length(digits))
       tb[["pval"]] <- rep(".", length(digits))
       tb[["bf"]] <- rep(".", length(digits))
+      if (options[["confidenceInterval"]]) {
+        tb[["lb"]] <- rep(".", length(digits))
+        tb[["ub"]] <- rep(".", length(digits))
+      }
       return()
     }
 
@@ -350,8 +354,6 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     tb[["digit"]] <- state[["digits"]]
     tb[["count"]] <- state[["observed"]]
     tb[["obs"]] <- state[["relFrequencies"]]
-    tb[["lb"]] <- state[["estimates"]]$lb
-    tb[["ub"]] <- state[["estimates"]]$ub
     tb[["exp"]] <- state[["inBenford"]]
     tb[["pval"]] <- state[["estimates"]]$p.value
     tb[["bf"]] <- switch(options[["bayesFactorType"]],
@@ -359,8 +361,14 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "BF01" = 1 / state[["estimates"]]$bf10,
       "logBF10" = log(state[["estimates"]]$bf10)
     )
-    tb$addFootnote(gettext("Confidence intervals and <i>p</i>-values are based on independent binomial distributions."), colName = "pval")
     tb$addFootnote(gettext("Bayes factors are computed using a beta(1, 1) prior."), colName = "bf")
+    if (options[["confidenceInterval"]]) {
+      tb[["lb"]] <- state[["estimates"]]$lb
+      tb[["ub"]] <- state[["estimates"]]$ub
+      tb$addFootnote(gettext("Confidence intervals and <i>p</i>-values are based on independent binomial distributions."), colName = "pval")
+    } else {
+      tb$addFootnote(gettext("The <i>p</i>-values are based on independent binomial distributions."), colName = "pval")
+    }
   }
 }
 
