@@ -30,15 +30,15 @@ test_that("<b>Table 2.</b> Comparisons to Privileged (P) Group results match", {
     table,
     list(
       "", "Caucasian (P)", 0.577380952380952, 0.539016994145188, 0.615062397142818,
-      "", 1, "", "", 198.549842057554, "African_American", 0.665247472059606,
+      "", 1, "", "", 231.16495878369, "African_American", 0.665247472059606,
       0.643398855100595, 0.68657904230498, 5.45234228945624e-05, 1.15218118872179,
-      1.11434028512268, 1.1891265887344, 0.561245249135516, "Asian",
+      1.11434028512268, 1.1891265887344, 0.0246144155687338, "Asian",
       0.5, 0.067585986488543, 0.932414013511457, 1, 0.865979381443299,
-      0.117056141547167, 1.61490262133943, 0.116105171751779, "Hispanic",
+      0.117056141547167, 1.61490262133943, 0.103700796473506, "Hispanic",
       0.590604026845638, 0.507146644057434, 0.670384316336254, 0.783925669127255,
-      1.02290181969141, 0.878357074243804, 1.16107799118032, 0.486603937230201,
+      1.02290181969141, 0.878357074243804, 1.16107799118032, 0.0255337438083833,
       "Native_American", 0.6, 0.146632799634673, 0.947255049473683,
-      1, 1.03917525773196, 0.253961962253867, 1.64060668362452, 0.16786922937182,
+      1, 1.03917525773196, 0.253961962253867, 1.64060668362452, 0.101060279359127,
       "Other", 0.611764705882353, 0.499883743058991, 0.715621551172544,
       0.56209502916255, 1.05955124317768, 0.865778029215573, 1.23942701646379
     )
@@ -67,7 +67,7 @@ test_that("Parity Estimates Plot matches", {
   jaspTools::expect_equal_plots(testPlot, "parity-estimates-plot")
 })
 
-test_that("Model Performance table results match", {
+test_that("<b>Table 3.</b> Model Performance results match", {
   table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_performanceTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
@@ -100,6 +100,9 @@ test_that("<b>Table 1.</b> Omnibus Test - Predictive Rate Parity results match",
   table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(2.12400857583797, 5, "Ethnicity", 6172, 0.00209507283665478, 18.7989675485203)
+    list(
+      0.000714070961957615, 5, "Ethnicity", 6172, 0.00209507283665478,
+      18.7989675485203
+    )
   )
 })

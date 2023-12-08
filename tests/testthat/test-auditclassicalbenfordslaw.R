@@ -9,6 +9,7 @@ options$bayesFactorType <- "BF10"
 options$matchTable <- TRUE
 options$match <- 9
 options$concentration <- 1
+options$confidenceInterval <- TRUE
 options$robustnessPlot <- TRUE
 options$sequentialPlot <- TRUE
 set.seed(1)
