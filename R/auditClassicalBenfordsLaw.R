@@ -272,6 +272,10 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
   message <- gettextf("The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = %4$s.", "\u03B1\u2081", "\u03B1", if (options[["digits"]] == "first" || options[["digits"]] == "last") "\u2089" else "\u2089\u2089", options[["concentration"]])
   tb$addFootnote(message, colName = "bf")
+  if (any(state[["expected"]] < 5)) {
+    warning <- gettext("<b>Warning:</b> The p-value may be unreliable due to some expected counts being lower than 5.")
+    tb$addFootnote(warning, colName = "pvalue")
+  }
 }
 
 .jfaBenfordsLawDescriptivesTable <- function(dataset, options, benfordsLawContainer,
