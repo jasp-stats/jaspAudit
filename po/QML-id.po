@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-12-27 16:06+0000\n"
+"Last-Translator: Rania Rahida <raniarahida@gmail.com>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/id/>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.4-dev\n"
 "X-Language: id\n"
 "X-Qt-Contexts: true\n"
 
@@ -145,14 +151,13 @@ msgctxt "auditBayesianWorkflow|"
 msgid "4. Evaluation"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Variable"
 msgstr "Variabel"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Reference"
-msgstr ""
+msgstr "Referensi"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Benford's law"
@@ -162,17 +167,14 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Uniform distribution"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Display"
 msgstr "Tampilan"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Explanatory text"
 msgstr "Teks penjelasan"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Confidence"
 msgstr "Kepercayaan"
@@ -183,28 +185,27 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Digits"
-msgstr ""
+msgstr "Digit"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First"
-msgstr ""
+msgstr "Pertama"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First and second"
-msgstr ""
+msgstr "Pertama dan kedua"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Last"
-msgstr ""
+msgstr "Terakhir"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Tables"
 msgstr "Tabel"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Frequency table"
-msgstr ""
+msgstr "Tabel frekuensi"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₁₀"
@@ -235,17 +236,14 @@ msgctxt "auditClassicalEstimation|"
 msgid "Audit Values"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Confidence"
 msgstr "Kepercayaan"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Display"
 msgstr "Tampilan"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Explanatory text"
 msgstr "Teks penjelasan"
@@ -254,17 +252,14 @@ msgctxt "auditClassicalEstimation|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "No. items"
 msgstr "No. Item"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "No. units"
 msgstr "No. unit"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Tables"
 msgstr "Tabel"
@@ -277,7 +272,6 @@ msgctxt "auditClassicalEstimation|"
 msgid "for an uncertainty of:"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Method"
 msgstr "Metode"
@@ -302,12 +296,10 @@ msgctxt "auditClassicalEstimation|"
 msgid "Plots"
 msgstr "Plot"
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Scatter plot"
 msgstr "Plot Sebar"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Method"
 msgstr "Metode"
@@ -368,17 +360,14 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Entropy"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Display"
 msgstr "Tampilan"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory text"
 msgstr "Teks penjelasan"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
 msgstr "Kepercayaan"
@@ -403,19 +392,17 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "All"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tables"
 msgstr "Tabel"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Assumption checks"
 msgstr "Pengecekan asumsi"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Frequency table"
-msgstr ""
+msgstr "Tabel frekuensi"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Plots"
@@ -439,7 +426,7 @@ msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Number of samples"
-msgstr ""
+msgstr "Jumlah sampel"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Seed"
@@ -554,7 +541,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Regression estimator"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditSelection|"
 msgid "Sample size"
 msgstr "Ukuran sampel"
@@ -577,11 +563,11 @@ msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Advanced"
-msgstr ""
+msgstr "Lanjutan"
 
 msgctxt "auditBayesianPlanning|"
 msgid ""
@@ -600,11 +586,11 @@ msgstr ""
 
 msgctxt "auditBayesianPlanning|"
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Advanced"
-msgstr ""
+msgstr "Lanjutan"
 
 msgctxt "auditBayesianWorkflow|"
 msgid ""
@@ -637,19 +623,19 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Advanced"
-msgstr ""
+msgstr "Lanjutan"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Add variables to sample"
-msgstr ""
+msgstr "Menambahkan variabel ke sampel"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Sample List"
-msgstr ""
+msgstr "Daftar Sampel"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
@@ -744,7 +730,7 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Add additional tables about the analysis to the report."
@@ -764,7 +750,7 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Digit"
-msgstr ""
+msgstr "Angka"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "For which digit should matched rows be displayed?"
