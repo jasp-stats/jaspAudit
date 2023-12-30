@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-12-27 16:06+0000\n"
-"Last-Translator: Rania Rahida <raniarahida@gmail.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-qml/id/>\n"
-"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.4-dev\n"
 "X-Language: id\n"
 "X-Qt-Contexts: true\n"
 
@@ -380,9 +374,10 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Shuffle Decimal Digits"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last"
-msgstr ""
+msgstr "Terakhir"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last two"
@@ -838,9 +833,10 @@ msgid ""
 "of 5%, this equals 95% confidence."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Add additional tables about the analysis to the report."
@@ -878,13 +874,15 @@ msgid ""
 "about this analysis."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Advanced"
-msgstr ""
+msgstr "Lanjutan"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
@@ -954,9 +952,10 @@ msgid ""
 "of 5%, this equals 95% confidence."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Add additional tables about the analysis to the report."
@@ -995,9 +994,10 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Indicate how many items labels to display."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Advanced"
-msgstr ""
+msgstr "Lanjutan"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Adjust advanced options for this analysis."
@@ -1036,13 +1036,15 @@ msgid ""
 "information about this analysis."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Advanced"
-msgstr ""
+msgstr "Lanjutan"
 
 msgctxt "auditClassicalWorkflow|"
 msgid ""
@@ -1073,21 +1075,25 @@ msgid ""
 "![Audit sampling workflow](%HELP_FOLDER%/img/workflow.png)"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Advanced"
-msgstr ""
+msgstr "Lanjutan"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Add variables to sample"
-msgstr ""
+msgstr "Menambahkan variabel ke sampel"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Sample List"
-msgstr ""
+msgstr "Daftar Sampel"
 
 msgctxt "auditSelection|"
 msgid ""
@@ -1111,9 +1117,10 @@ msgid ""
 "values are provided, the ideal sampling units to use are monetary units."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditSelection|"
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
 msgctxt "Display|"
 msgid "Format Output"
@@ -2448,9 +2455,10 @@ msgid ""
 "size."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Advanced"
-msgstr ""
+msgstr "Lanjutan"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Prior Distribution"
@@ -2672,9 +2680,10 @@ msgctxt "auditClassicalModelFairness|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
 #, fuzzy
 msgctxt "auditClassicalModelFairness|"
@@ -2767,9 +2776,10 @@ msgid ""
 "size."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Advanced"
-msgstr ""
+msgstr "Lanjutan"
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Prior Distribution"
