@@ -252,7 +252,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   if (is.null(fairnessContainer[["comparisonsTable"]])) {
     metric <- .jfaFairnessGetMetricFromQuestion(options)
     title <- gettextf(
-      "<b>Table %i$1.</b> Comparisons to Privileged (P) Group",
+      "<b>Table %1$i.</b> Comparisons to Privileged (P) Group",
       jaspResults[["tabNumber"]]$object
     )
     tb <- createJaspTable(title = title)
@@ -328,7 +328,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 
   if (is.null(fairnessContainer[["performanceTable"]])) {
     title <- gettextf(
-      "<b>Table %i$1.</b> Model Performance",
+      "<b>Table %1$i.</b> Model Performance",
       jaspResults[["tabNumber"]]$object
     )
     tb <- createJaspTable(title = title)
@@ -363,7 +363,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 
   if (is.null(fairnessContainer[["confusionTable"]])) {
     title <- gettextf(
-      "<b>Table %i$1.</b> Confusion Matrix",
+      "<b>Table %1$i.</b> Confusion Matrix",
       jaspResults[["tabNumber"]]$object
     )
     tb <- createJaspTable(title = title)
@@ -469,7 +469,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       jaspGraphs::themeJaspRaw(legend.position = if (length(result[["unprivileged"]]) > 1) "top" else c(0.8, 0.8))
   }
   if (options[["explanatoryText"]]) {
-    caption <- createJaspHtml(gettextf("<b>Figure %i$1.</b> The prior and posterior distributions on the log odds ratio for each unprivileged group compared to the privileged group (%2$s).", jaspResults[["figNumber"]]$object, options[["privileged"]]), "p")
+    caption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> The prior and posterior distributions on the log odds ratio for each unprivileged group compared to the privileged group (%2$s).", jaspResults[["figNumber"]]$object, options[["privileged"]]), "p")
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = fairnessContainer[["posteriorPlot"]])
     fairnessContainer[["posteriorPlotText"]] <- caption
@@ -498,7 +498,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       jaspGraphs::themeJaspRaw(legend.position = "top")
   }
   if (options[["explanatoryText"]]) {
-    caption <- createJaspHtml(gettextf("<b>Figure %i$1.</b> The results of a robustness check using the Bayes factor. The figure illustrates the impact of different specifications (i.e., concentration parameters) of the Dirichlet prior on the Bayes factor values, providing insights into the robustness of the statistical evidence to the choice of prior distribution.", jaspResults[["figNumber"]]$object), "p")
+    caption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> The results of a robustness check using the Bayes factor. The figure illustrates the impact of different specifications (i.e., concentration parameters) of the Dirichlet prior on the Bayes factor values, providing insights into the robustness of the statistical evidence to the choice of prior distribution.", jaspResults[["figNumber"]]$object), "p")
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = fairnessContainer[["robustnessPlot"]])
     fairnessContainer[["robustnessPlotText"]] <- caption
@@ -527,7 +527,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       jaspGraphs::themeJaspRaw(legend.position = "top")
   }
   if (options[["explanatoryText"]]) {
-    caption <- createJaspHtml(gettextf("<b>Figure %i$1.</b> The results of a sequential analysis using the Bayes factor. The figure provides insight into how the statistical evidence from these data accumulates over time and under different prior specifications.", jaspResults[["figNumber"]]$object), "p")
+    caption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> The results of a sequential analysis using the Bayes factor. The figure provides insight into how the statistical evidence from these data accumulates over time and under different prior specifications.", jaspResults[["figNumber"]]$object), "p")
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = fairnessContainer[["sequentialPlot"]])
     fairnessContainer[["sequentialPlotText"]] <- caption

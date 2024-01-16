@@ -3391,7 +3391,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   .jfaTableNumberUpdate(jaspResults)
 
   title <- gettextf(
-    "<b>Table %i$1.</b> Corrections to Population",
+    "<b>Table %1$i.</b> Corrections to Population",
     jaspResults[["tabNumber"]]$object
   )
   table <- createJaspTable(title)
