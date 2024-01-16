@@ -252,7 +252,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   if (is.null(fairnessContainer[["comparisonsTable"]])) {
     metric <- .jfaFairnessGetMetricFromQuestion(options)
     title <- gettextf(
-      "<b>Table %i.</b> Comparisons to Privileged (P) Group",
+      "<b>Table %i$1.</b> Comparisons to Privileged (P) Group",
       jaspResults[["tabNumber"]]$object
     )
     tb <- createJaspTable(title = title)
@@ -328,7 +328,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 
   if (is.null(fairnessContainer[["performanceTable"]])) {
     title <- gettextf(
-      "<b>Table %i.</b> Model Performance",
+      "<b>Table %i$1.</b> Model Performance",
       jaspResults[["tabNumber"]]$object
     )
     tb <- createJaspTable(title = title)
@@ -363,7 +363,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 
   if (is.null(fairnessContainer[["confusionTable"]])) {
     title <- gettextf(
-      "<b>Table %i.</b> Confusion Matrix",
+      "<b>Table %i$1.</b> Confusion Matrix",
       jaspResults[["tabNumber"]]$object
     )
     tb <- createJaspTable(title = title)

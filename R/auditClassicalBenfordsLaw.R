@@ -288,7 +288,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
   if (is.null(benfordsLawContainer[["benfordsLawTable"]])) {
     title <- gettextf(
-      "<b>Table %i.</b> Frequency Table",
+      "<b>Table %i$1.</b> Frequency Table",
       jaspResults[["tabNumber"]]$object
     )
 
@@ -387,7 +387,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "last" = gettext("Last Digit")
     )
     title <- gettextf(
-      "<b>Table %i.</b> Rows Matched to %2$s %3$s",
+      "<b>Table %i$1.</b> Rows Matched to %2$s %3$s",
       jaspResults[["tabNumber"]]$object,
       label_digit,
       options[["match"]]

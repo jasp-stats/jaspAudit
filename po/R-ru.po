@@ -113,7 +113,7 @@ msgid ""
 "counts being lower than 5."
 msgstr ""
 
-msgid "<b>Table %i.</b> Frequency Table"
+msgid "<b>Table %i$1.</b> Frequency Table"
 msgstr ""
 
 msgid "Leading digit"
@@ -171,7 +171,7 @@ msgstr ""
 msgid "Last Digit"
 msgstr ""
 
-msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
+msgid "<b>Table %i$1.</b> Rows Matched to %2$s %3$s"
 msgstr ""
 
 msgid "Row"
@@ -198,7 +198,7 @@ msgid "Observed vs. Expected Relative Frequencies"
 msgstr ""
 
 msgid ""
-"<b>Figure %i.</b> The observed relative frequencies of each digit in the "
+"<b>Figure %i$1.</b> The observed relative frequencies of each digit in the "
 "data set compared to the expected relative frequencies under %2$s. For data "
 "sets distributed according %2$s the blue dots will lie near the top of the "
 "grey bars."
@@ -208,7 +208,7 @@ msgid "Bayes Factor Robustness Plot"
 msgstr ""
 
 msgid ""
-"<b>Figure %i.</b> The results of a robustness check using the Bayes factor. "
+"<b>Figure %i$1.</b> The results of a robustness check using the Bayes factor. "
 "The figure illustrates the impact of different specifications (i.e., "
 "concentration parameters) of the Dirichlet prior on the Bayes factor values, "
 "providing insights into the robustness of the statistical evidence to the "
@@ -219,7 +219,7 @@ msgid "Sequential Analysis Plot"
 msgstr ""
 
 msgid ""
-"<b>Figure %i.</b> The results of a sequential analysis using the Bayes "
+"<b>Figure %i$1.</b> The results of a sequential analysis using the Bayes "
 "factor. The figure provides insight into how the statistical evidence from "
 "these data accumulates over time and under different prior specifications."
 msgstr ""
@@ -557,7 +557,7 @@ msgid ""
 "prior with %1$s = %4$s."
 msgstr ""
 
-msgid "<b>Table %i.</b> Comparisons to Privileged (P) Group"
+msgid "<b>Table %i$1.</b> Comparisons to Privileged (P) Group"
 msgstr ""
 
 msgid "Parity"
@@ -591,7 +591,7 @@ msgid ""
 "%1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = %6$s."
 msgstr ""
 
-msgid "<b>Table %i.</b> Model Performance"
+msgid "<b>Table %i$1.</b> Model Performance"
 msgstr ""
 
 msgid "Support"
@@ -603,7 +603,7 @@ msgstr ""
 msgid "F1 Score"
 msgstr ""
 
-msgid "<b>Table %i.</b> Confusion Matrix"
+msgid "<b>Table %i$1.</b> Confusion Matrix"
 msgstr ""
 
 msgid "Actual"
@@ -640,7 +640,7 @@ msgid "Prior and Posterior Distribution Plot"
 msgstr ""
 
 msgid ""
-"<b>Figure %i.</b> The prior and posterior distributions on the log odds "
+"<b>Figure %i$1.</b> The prior and posterior distributions on the log odds "
 "ratio for each unprivileged group compared to the privileged group (%2$s)."
 msgstr ""
 
@@ -665,7 +665,7 @@ msgstr ""
 msgid "<u>Assessing repeated values</u>"
 msgstr ""
 
-msgid "<b>Table %i.</b> Repeated Values Test"
+msgid "<b>Table %i$1.</b> Repeated Values Test"
 msgstr ""
 
 msgid "Average"
@@ -682,7 +682,7 @@ msgid ""
 "%1$s samples."
 msgstr ""
 
-msgid "<b>Table %i.</b> Assumption Checks"
+msgid "<b>Table %i$1.</b> Assumption Checks"
 msgstr ""
 
 msgid ""
@@ -1699,7 +1699,7 @@ msgid ""
 "lie above the diagonal they are understated. %2$s"
 msgstr ""
 
-msgid "<b>Table %i.</b> Corrections to Population"
+msgid "<b>Table %i$1.</b> Corrections to Population"
 msgstr ""
 
 msgid "Correction"
