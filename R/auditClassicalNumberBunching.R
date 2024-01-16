@@ -133,7 +133,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
   }
 
   tableTitle <- gettextf(
-    "<b>Table %i.</b> Repeated Values Test",
+    "<b>Table %1$i.</b> Repeated Values Test",
     jaspResults[["tabNumber"]]$object
   )
 
@@ -221,7 +221,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
 
   if (is.null(numberBunchingContainer[["correlationTable"]])) {
     tableTitle <- gettextf(
-      "<b>Table %i.</b> Assumption Checks",
+      "<b>Table %1$i.</b> Assumption Checks",
       jaspResults[["tabNumber"]]$object
     )
 
@@ -299,7 +299,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
 
   if (is.null(numberBunchingContainer[["numberBunchingTable"]])) {
     tableTitle <- gettextf(
-      "<b>Table %i.</b> Frequency Table",
+      "<b>Table %1$i.</b> Frequency Table",
       jaspResults[["tabNumber"]]$object
     )
 

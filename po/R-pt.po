@@ -126,7 +126,7 @@ msgstr "<u>Avaliando a Distribuição Uniforme</u>"
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
-msgstr "<b>Tabela %i.</b> Teste de valores repetidos"
+msgstr "<b>Tabela %1$i.</b> Teste de valores repetidos"
 
 msgid "BF%1$s"
 msgstr ""
@@ -172,8 +172,8 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "<b>Table %i.</b> Frequency Table"
-msgstr "<b>Tabela %i.</b> Estatísticas de frequência"
+msgid "<b>Table %1$i.</b> Frequency Table"
+msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
 
 msgid "Leading digit"
 msgstr "Dígito inicial"
@@ -239,8 +239,8 @@ msgid "Last Digit"
 msgstr "Último dígito"
 
 #, fuzzy
-msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
-msgstr "<b>Tabela %i.</b> Teste de valores repetidos"
+msgid "<b>Table %1$i.</b> Rows Matched to %2$s %3$s"
+msgstr "<b>Tabela %1$i.</b> Teste de valores repetidos"
 
 msgid "Row"
 msgstr ""
@@ -268,7 +268,7 @@ msgstr "Porcentagens observadas vs. porcentagens esperadas"
 
 #, fuzzy
 msgid ""
-"<b>Figure %i.</b> The observed relative frequencies of each digit in the "
+"<b>Figure %1$i.</b> The observed relative frequencies of each digit in the "
 "data set compared to the expected relative frequencies under %2$s. For data "
 "sets distributed according %2$s the blue dots will lie near the top of the "
 "grey bars."
@@ -282,7 +282,7 @@ msgid "Bayes Factor Robustness Plot"
 msgstr ""
 
 msgid ""
-"<b>Figure %i.</b> The results of a robustness check using the Bayes factor. "
+"<b>Figure %1$i.</b> The results of a robustness check using the Bayes factor. "
 "The figure illustrates the impact of different specifications (i.e., "
 "concentration parameters) of the Dirichlet prior on the Bayes factor values, "
 "providing insights into the robustness of the statistical evidence to the "
@@ -293,7 +293,7 @@ msgid "Sequential Analysis Plot"
 msgstr ""
 
 msgid ""
-"<b>Figure %i.</b> The results of a sequential analysis using the Bayes "
+"<b>Figure %1$i.</b> The results of a sequential analysis using the Bayes "
 "factor. The figure provides insight into how the statistical evidence from "
 "these data accumulates over time and under different prior specifications."
 msgstr ""
@@ -712,8 +712,8 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "<b>Table %i.</b> Comparisons to Privileged (P) Group"
-msgstr "<b>Tabela %i.</b> Estatísticas de frequência"
+msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
+msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
 
 msgid "Parity"
 msgstr ""
@@ -747,8 +747,8 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "<b>Table %i.</b> Model Performance"
-msgstr "<b>Tabela %i.</b> Estatísticas de frequência"
+msgid "<b>Table %1$i.</b> Model Performance"
+msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
 
 msgid "Support"
 msgstr ""
@@ -760,8 +760,8 @@ msgid "F1 Score"
 msgstr ""
 
 #, fuzzy
-msgid "<b>Table %i.</b> Confusion Matrix"
-msgstr "<b>Tabela %i.</b> Estatísticas de frequência"
+msgid "<b>Table %1$i.</b> Confusion Matrix"
+msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
 
 msgid "Actual"
 msgstr ""
@@ -801,7 +801,7 @@ msgid "Prior and Posterior Distribution Plot"
 msgstr "Distribuição posterior"
 
 msgid ""
-"<b>Figure %i.</b> The prior and posterior distributions on the log odds "
+"<b>Figure %1$i.</b> The prior and posterior distributions on the log odds "
 "ratio for each unprivileged group compared to the privileged group (%2$s)."
 msgstr ""
 
@@ -841,8 +841,8 @@ msgstr ""
 msgid "<u>Assessing repeated values</u>"
 msgstr "<u>Avaliando valores repetidos</u>"
 
-msgid "<b>Table %i.</b> Repeated Values Test"
-msgstr "<b>Tabela %i.</b> Teste de valores repetidos"
+msgid "<b>Table %1$i.</b> Repeated Values Test"
+msgstr "<b>Tabela %1$i.</b> Teste de valores repetidos"
 
 msgid "Average"
 msgstr "Média"
@@ -861,8 +861,8 @@ msgstr ""
 "Ambos os valores <i> p </i> são unilaterais e são calculados com base em% 1 "
 "$ s amostras."
 
-msgid "<b>Table %i.</b> Assumption Checks"
-msgstr "<b>Tabela %i.</b> Verificar pressupostos"
+msgid "<b>Table %1$i.</b> Assumption Checks"
+msgstr "<b>Tabela %1$i.</b> Verificar pressupostos"
 
 #, fuzzy
 msgid ""
@@ -1328,7 +1328,7 @@ msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
-msgstr "<b>Tabela %i.</b> Estatísticas de frequência"
+msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
 
 msgid "Population size"
 msgstr ""
@@ -1409,7 +1409,7 @@ msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Default Settings Audit Risk Model"
-msgstr "<b>Tabela %i.</b> Estatísticas de frequência"
+msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
 
 msgid "Inherent risk"
 msgstr ""
@@ -1690,7 +1690,7 @@ msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Selected Items"
-msgstr "<b>Tabela %i.</b> Teste de valores repetidos"
+msgstr "<b>Tabela %1$i.</b> Teste de valores repetidos"
 
 #, fuzzy
 msgid "Selected"
@@ -1698,7 +1698,7 @@ msgstr "Selecionada"
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Sample"
-msgstr "<b>Tabela %i.</b> Estatísticas de frequência"
+msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
 
 msgid "Valid cases"
 msgstr ""
@@ -1834,7 +1834,7 @@ msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Misstated Items"
-msgstr "<b>Tabela %i.</b> Teste de valores repetidos"
+msgstr "<b>Tabela %1$i.</b> Teste de valores repetidos"
 
 msgid "ID"
 msgstr ""
@@ -1934,8 +1934,8 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "<b>Table %i.</b> Corrections to Population"
-msgstr "<b>Tabela %i.</b> Estatísticas de frequência"
+msgid "<b>Table %1$i.</b> Corrections to Population"
+msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
 
 #, fuzzy
 msgid "Correction"
@@ -2030,8 +2030,8 @@ msgstr ""
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr "%1$s = %2$s %3$s %4$s"
 
-#~ msgid "<b>Table %i.</b> Goodness-of-fit Test"
-#~ msgstr "<b>Tabela %i.</b> Teste de aderência"
+#~ msgid "<b>Table %1$i.</b> Goodness-of-fit Test"
+#~ msgstr "<b>Tabela %1$i.</b> Teste de aderência"
 
 #, fuzzy
 #~ msgid "Expected"
@@ -2049,7 +2049,7 @@ msgstr "%1$s = %2$s %3$s %4$s"
 
 #, fuzzy
 #~ msgid "<b>Table %1$i.</b> Raw Sample"
-#~ msgstr "<b>Tabela %i.</b> Teste de valores repetidos"
+#~ msgstr "<b>Tabela %1$i.</b> Teste de valores repetidos"
 
 #, fuzzy
 #~ msgid "Transactions"

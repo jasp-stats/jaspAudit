@@ -108,7 +108,7 @@ msgstr "<u>一様分布の評価</u>"
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
-msgstr "<b>表 %i.</b> 適合度検定"
+msgstr "<b>表 %1$i.</b> 適合度検定"
 
 msgid "BF%1$s"
 msgstr "BF%1$s"
@@ -156,8 +156,8 @@ msgid ""
 "counts being lower than 5."
 msgstr ""
 
-msgid "<b>Table %i.</b> Frequency Table"
-msgstr "<b>表 %i.</b> 記述統計"
+msgid "<b>Table %1$i.</b> Frequency Table"
+msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid "Leading digit"
 msgstr "第一桁"
@@ -224,8 +224,8 @@ msgid "Last Digit"
 msgstr "最後の一桁"
 
 #, fuzzy
-msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
-msgstr "<b>表 %i.</b> 適合度検定"
+msgid "<b>Table %1$i.</b> Rows Matched to %2$s %3$s"
+msgstr "<b>表 %1$i.</b> 適合度検定"
 
 msgid "Row"
 msgstr ""
@@ -252,7 +252,7 @@ msgstr "観測値と期待される相対度数"
 
 #, fuzzy
 msgid ""
-"<b>Figure %i.</b> The observed relative frequencies of each digit in the "
+"<b>Figure %1$i.</b> The observed relative frequencies of each digit in the "
 "data set compared to the expected relative frequencies under %2$s. For data "
 "sets distributed according %2$s the blue dots will lie near the top of the "
 "grey bars."
@@ -265,7 +265,7 @@ msgid "Bayes Factor Robustness Plot"
 msgstr ""
 
 msgid ""
-"<b>Figure %i.</b> The results of a robustness check using the Bayes factor. "
+"<b>Figure %1$i.</b> The results of a robustness check using the Bayes factor. "
 "The figure illustrates the impact of different specifications (i.e., "
 "concentration parameters) of the Dirichlet prior on the Bayes factor values, "
 "providing insights into the robustness of the statistical evidence to the "
@@ -276,7 +276,7 @@ msgid "Sequential Analysis Plot"
 msgstr ""
 
 msgid ""
-"<b>Figure %i.</b> The results of a sequential analysis using the Bayes "
+"<b>Figure %1$i.</b> The results of a sequential analysis using the Bayes "
 "factor. The figure provides insight into how the statistical evidence from "
 "these data accumulates over time and under different prior specifications."
 msgstr ""
@@ -631,8 +631,8 @@ msgstr ""
 "計算されます."
 
 #, fuzzy
-msgid "<b>Table %i.</b> Comparisons to Privileged (P) Group"
-msgstr "<b>表 %i.</b> 記述統計"
+msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
+msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid "Parity"
 msgstr ""
@@ -669,8 +669,8 @@ msgstr ""
 "計算されます."
 
 #, fuzzy
-msgid "<b>Table %i.</b> Model Performance"
-msgstr "<b>表 %i.</b> 記述統計"
+msgid "<b>Table %1$i.</b> Model Performance"
+msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid "Support"
 msgstr ""
@@ -682,8 +682,8 @@ msgid "F1 Score"
 msgstr ""
 
 #, fuzzy
-msgid "<b>Table %i.</b> Confusion Matrix"
-msgstr "<b>表 %i.</b> 記述統計"
+msgid "<b>Table %1$i.</b> Confusion Matrix"
+msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid "Actual"
 msgstr ""
@@ -720,7 +720,7 @@ msgid "Prior and Posterior Distribution Plot"
 msgstr "事後分布"
 
 msgid ""
-"<b>Figure %i.</b> The prior and posterior distributions on the log odds "
+"<b>Figure %1$i.</b> The prior and posterior distributions on the log odds "
 "ratio for each unprivileged group compared to the privileged group (%2$s)."
 msgstr ""
 
@@ -750,8 +750,8 @@ msgid "<u>Assessing repeated values</u>"
 msgstr "<u>ベンフォードの法則を評価する</u>"
 
 #, fuzzy
-msgid "<b>Table %i.</b> Repeated Values Test"
-msgstr "<b>表 %i.</b> 適合度検定"
+msgid "<b>Table %1$i.</b> Repeated Values Test"
+msgstr "<b>表 %1$i.</b> 適合度検定"
 
 msgid "Average"
 msgstr ""
@@ -768,8 +768,8 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "<b>Table %i.</b> Assumption Checks"
-msgstr "<b>表 %i.</b> 記述統計"
+msgid "<b>Table %1$i.</b> Assumption Checks"
+msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid ""
 "The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> "
@@ -1225,7 +1225,7 @@ msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
-msgstr "<b>表 %i.</b> 記述統計"
+msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid "Population size"
 msgstr ""
@@ -1306,7 +1306,7 @@ msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Default Settings Audit Risk Model"
-msgstr "<b>表 %i.</b> 記述統計"
+msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid "Inherent risk"
 msgstr ""
@@ -1574,14 +1574,14 @@ msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Selected Items"
-msgstr "<b>表 %i.</b> 適合度検定"
+msgstr "<b>表 %1$i.</b> 適合度検定"
 
 msgid "Selected"
 msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Sample"
-msgstr "<b>表 %i.</b> 記述統計"
+msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid "Valid cases"
 msgstr ""
@@ -1698,7 +1698,7 @@ msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Stratum Evaluation Summary"
-msgstr "<b>表 %i.</b> 記述統計"
+msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid "Stratum"
 msgstr ""
@@ -1714,7 +1714,7 @@ msgstr ""
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Misstated Items"
-msgstr "<b>表 %i.</b> 適合度検定"
+msgstr "<b>表 %1$i.</b> 適合度検定"
 
 msgid "ID"
 msgstr ""
@@ -1808,8 +1808,8 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "<b>Table %i.</b> Corrections to Population"
-msgstr "<b>表 %i.</b> 記述統計"
+msgid "<b>Table %1$i.</b> Corrections to Population"
+msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid "Correction"
 msgstr ""
@@ -1901,8 +1901,8 @@ msgstr ""
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr ""
 
-#~ msgid "<b>Table %i.</b> Goodness-of-fit Test"
-#~ msgstr "<b>表 %i.</b> 適合度検定"
+#~ msgid "<b>Table %1$i.</b> Goodness-of-fit Test"
+#~ msgstr "<b>表 %1$i.</b> 適合度検定"
 
 #~ msgid "Probability"
 #~ msgstr "確率"
@@ -1912,7 +1912,7 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "<b>Table %1$i.</b> Raw Sample"
-#~ msgstr "<b>表 %i.</b> 適合度検定"
+#~ msgstr "<b>表 %1$i.</b> 適合度検定"
 
 #, fuzzy
 #~ msgid "Observed vs. Expected Percentages"

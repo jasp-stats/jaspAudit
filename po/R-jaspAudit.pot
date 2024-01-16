@@ -67,7 +67,7 @@ msgstr ""
 msgid "<b>Warning.</b> The <i>p</i>-value may be unreliable due to some expected counts being lower than 5."
 msgstr ""
 
-msgid "<b>Table %i.</b> Frequency Table"
+msgid "<b>Table %1$i.</b> Frequency Table"
 msgstr ""
 
 msgid "Leading digit"
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Last Digit"
 msgstr ""
 
-msgid "<b>Table %i.</b> Rows Matched to %2$s %3$s"
+msgid "<b>Table %1$i.</b> Rows Matched to %2$s %3$s"
 msgstr ""
 
 msgid "Row"
@@ -145,19 +145,19 @@ msgstr ""
 msgid "Observed vs. Expected Relative Frequencies"
 msgstr ""
 
-msgid "<b>Figure %i.</b> The observed relative frequencies of each digit in the data set compared to the expected relative frequencies under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars."
+msgid "<b>Figure %1$i.</b> The observed relative frequencies of each digit in the data set compared to the expected relative frequencies under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars."
 msgstr ""
 
 msgid "Bayes Factor Robustness Plot"
 msgstr ""
 
-msgid "<b>Figure %i.</b> The results of a robustness check using the Bayes factor. The figure illustrates the impact of different specifications (i.e., concentration parameters) of the Dirichlet prior on the Bayes factor values, providing insights into the robustness of the statistical evidence to the choice of prior distribution."
+msgid "<b>Figure %1$i.</b> The results of a robustness check using the Bayes factor. The figure illustrates the impact of different specifications (i.e., concentration parameters) of the Dirichlet prior on the Bayes factor values, providing insights into the robustness of the statistical evidence to the choice of prior distribution."
 msgstr ""
 
 msgid "Sequential Analysis Plot"
 msgstr ""
 
-msgid "<b>Figure %i.</b> The results of a sequential analysis using the Bayes factor. The figure provides insight into how the statistical evidence from these data accumulates over time and under different prior specifications."
+msgid "<b>Figure %1$i.</b> The results of a sequential analysis using the Bayes factor. The figure provides insight into how the statistical evidence from these data accumulates over time and under different prior specifications."
 msgstr ""
 
 msgid "<u>Conclusion</u>"
@@ -412,7 +412,7 @@ msgstr ""
 msgid "The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) prior with %1$s = %4$s."
 msgstr ""
 
-msgid "<b>Table %i.</b> Comparisons to Privileged (P) Group"
+msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
 msgstr ""
 
 msgid "Parity"
@@ -436,7 +436,7 @@ msgstr ""
 msgid "Bayes factors are uncorrected and are computed using a Dirichlet(%1$s%2$s, %1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = %6$s."
 msgstr ""
 
-msgid "<b>Table %i.</b> Model Performance"
+msgid "<b>Table %1$i.</b> Model Performance"
 msgstr ""
 
 msgid "Support"
@@ -448,7 +448,7 @@ msgstr ""
 msgid "F1 Score"
 msgstr ""
 
-msgid "<b>Table %i.</b> Confusion Matrix"
+msgid "<b>Table %1$i.</b> Confusion Matrix"
 msgstr ""
 
 msgid "Actual"
@@ -475,7 +475,7 @@ msgstr ""
 msgid "Prior and Posterior Distribution Plot"
 msgstr ""
 
-msgid "<b>Figure %i.</b> The prior and posterior distributions on the log odds ratio for each unprivileged group compared to the privileged group (%2$s)."
+msgid "<b>Figure %1$i.</b> The prior and posterior distributions on the log odds ratio for each unprivileged group compared to the privileged group (%2$s)."
 msgstr ""
 
 msgid "The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across protected groups %3$s."
@@ -487,7 +487,7 @@ msgstr ""
 msgid "<u>Assessing repeated values</u>"
 msgstr ""
 
-msgid "<b>Table %i.</b> Repeated Values Test"
+msgid "<b>Table %1$i.</b> Repeated Values Test"
 msgstr ""
 
 msgid "Average"
@@ -502,7 +502,7 @@ msgstr ""
 msgid "The displayed <i>p</i>-value is one-sided and is computed on the basis of %1$s samples."
 msgstr ""
 
-msgid "<b>Table %i.</b> Assumption Checks"
+msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr ""
 
 msgid "The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> = 0."
@@ -1249,7 +1249,7 @@ msgstr ""
 msgid "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and their corresponding audit values. Grey dots on the diagonal (dashed line) indicate matching book and audit values. Red dots off the diagonal indicate items whose audit value did not match their original book value. If these red dots lie below the diagonal, the items are overstated. If these red dots lie above the diagonal they are understated. %2$s"
 msgstr ""
 
-msgid "<b>Table %i.</b> Corrections to Population"
+msgid "<b>Table %1$i.</b> Corrections to Population"
 msgstr ""
 
 msgid "Correction"
