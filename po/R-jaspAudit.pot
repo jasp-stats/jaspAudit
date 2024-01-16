@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.3\n"
-"POT-Creation-Date: 2024-01-13 03:27\n"
+"POT-Creation-Date: 2024-01-16 09:54\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1187,9 +1187,6 @@ msgid "Counted"
 msgstr ""
 
 msgid "No misstatements were identified in the sample."
-msgstr ""
-
-msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr ""
 
 msgid "Pearson's r"
