@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-01-15 15:06+0000\n"
+"Last-Translator: Rania Rahida <raniarahida@gmail.com>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/id/>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.4-dev\n"
 "X-Language: id\n"
 "X-Qt-Contexts: true\n"
 
@@ -3111,6 +3117,8 @@ msgid ""
 "Produces a table containing the performance measures for the classification, "
 "including support, accuracy, precision, recall and F1-score."
 msgstr ""
+"Menghasilkan tabel yang berisi ukuran kinerja untuk klasifikasi, termasuk "
+"dukungan, akurasi, presisi, recall, dan skor F1."
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Confusion matrix"
@@ -3122,30 +3130,31 @@ msgstr ""
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Display proportions"
-msgstr ""
+msgstr "Proporsi tampilan"
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Displays proportions in the confusion table."
-msgstr ""
+msgstr "Menampilkan proporsi dalam tabel kebingungan."
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Plots"
 msgstr "Plot"
 
-#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Add additional figures about the evaluation to the report."
 msgstr "Tambahkan angka tambahan tentang evaluasi ke dalam laporan."
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Parity estimates"
-msgstr ""
+msgstr "Perkiraan paritas"
 
 msgctxt "auditClassicalModelFairness|"
 msgid ""
 "Produces a plot showing the parity statistics for each unprivileged group "
 "against the privileged group."
 msgstr ""
+"Menghasilkan plot yang menunjukkan statistik paritas untuk setiap kelompok "
+"yang tidak diistimewakan terhadap kelompok yang diistimewakan."
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Prior and posterior distribution"
@@ -3155,12 +3164,10 @@ msgctxt "auditClassicalModelFairness|"
 msgid "Produces a figure that shows the prior and posterior distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Bayes factor robustness check"
 msgstr "Pemeriksaan ketahanan faktor Bayes"
 
-#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid ""
 "Produces a figure that shows the robustness of the Bayes factor to the prior "
@@ -3169,12 +3176,10 @@ msgstr ""
 "Menghasilkan angka yang menunjukkan kekokohan faktor Bayes terhadap "
 "distribusi sebelumnya."
 
-#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Sequential analysis"
 msgstr "Analisis berurutan"
 
-#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid ""
 "Produces a figure that shows the Bayes factor as a function of the sample "
@@ -3183,7 +3188,6 @@ msgstr ""
 "Menghasilkan angka yang menunjukkan faktor Bayes sebagai fungsi dari ukuran "
 "sampel."
 
-#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Advanced"
 msgstr "Lanjutan"
@@ -3192,20 +3196,18 @@ msgctxt "auditClassicalModelFairness|"
 msgid "Prior Distribution"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Concentration"
 msgstr "Konsentrasi"
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Specifies the concentration parameter for the Dirichlet prior."
-msgstr ""
+msgstr "Menentukan parameter konsentrasi untuk Dirichlet sebelumnya."
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Seed"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid ""
 "Selects the seed for the random number generator in order to reproduce "
@@ -3221,12 +3223,17 @@ msgid ""
 "The ratio of two fairness metrics is called parity, which is a well-known "
 "concept in algorithmic fairness."
 msgstr ""
+"Analisis metrik keadilan memungkinkan pengguna untuk menilai keadilan dan "
+"diskriminasi terkait kelompok tertentu dalam data dalam sistem pengambilan "
+"keputusan algoritmik. Dengan mempertimbangkan kelas positif tertentu dalam "
+"data, keadilan -atau diskriminasi- dapat dikuantifikasi dengan menggunakan "
+"metrik keadilan model-agnostik. Rasio dari dua metrik keadilan disebut "
+"paritas, yang merupakan konsep terkenal dalam keadilan algoritmik."
 
 msgctxt "auditClassicalModelFairness|"
 msgid "The type of fairness metric to compute and perform inference on."
-msgstr ""
+msgstr "Jenis metrik keadilan untuk menghitung dan melakukan inferensi."
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Confidence interval"
 msgstr "Interval kepercayaan"
