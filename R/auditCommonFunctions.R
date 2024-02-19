@@ -1521,7 +1521,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (options[["prior_method"]] == "arm") {
       risks <- .jfaAuditRiskModelCalculation(options)
       if (risks[["dr"]] >= 1) {
-        parentContainer$setError(gettext("The detection risk is equal to or higher than 100%%. Please re-specify the percentages for the Inherent risk and/or Control risk and/or Analytical risk."))
+        parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify the percentages for the Inherent risk and/or Control risk and/or Analytical risk."))
         return()
       }
       confidence <- 1 - risks[["dr"]]
