@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-02-19 17:01+0000\n"
-"Last-Translator: robachowyk <kaya.robach@gmail.com>\n"
+"PO-Revision-Date: 2024-02-24 03:25+0000\n"
+"Last-Translator: Jean-Louis Warin <jlwkhi@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/fr/>\n"
 "Language: fr\n"
@@ -43,11 +43,11 @@ msgstr "Évaluation"
 
 msgctxt "Description|"
 msgid "Bayesian Evaluation"
-msgstr ""
+msgstr "Évaluation bayésienne"
 
 msgctxt "Description|"
 msgid "Benford's Law"
-msgstr ""
+msgstr "Loi de Benford"
 
 msgctxt "Description|"
 msgid "Repeated Values"
@@ -95,7 +95,7 @@ msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>Télécharger le rapport</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Selection</b>"
@@ -151,19 +151,19 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Variable"
-msgstr ""
+msgstr "Variable"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Reference"
-msgstr ""
+msgstr "Référence"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Benford's law"
-msgstr ""
+msgstr "Loi de Benford"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Uniform distribution"
-msgstr ""
+msgstr "Distribution uniforme"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Display"
@@ -179,7 +179,7 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Show explanatory text at each step of the analysis"
-msgstr ""
+msgstr "Afficher une explication à chaque étape de l'analyse"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Digits"
