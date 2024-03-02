@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-02-24 03:25+0000\n"
-"Last-Translator: Jean-Louis Warin <jlwkhi@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-qml/fr/>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Language: fr\n"
 "X-Qt-Contexts: true\n"
 
@@ -245,9 +239,10 @@ msgctxt "auditClassicalEstimation|"
 msgid "Explanatory text"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Show explanatory text at each step of the analysis"
-msgstr ""
+msgstr "Afficher une explication à chaque étape de l'analyse"
 
 msgctxt "auditClassicalEstimation|"
 msgid "No. items"
@@ -341,9 +336,10 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Regression estimator"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Variable"
-msgstr ""
+msgstr "Variable"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tests"
@@ -369,9 +365,10 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Show explanatory text at each step of the analysis"
-msgstr ""
+msgstr "Afficher une explication à chaque étape de l'analyse"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Shuffle Decimal Digits"
@@ -449,9 +446,10 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Poisson"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>Télécharger le rapport</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Selection</b>"
@@ -1143,9 +1141,10 @@ msgctxt "Display|"
 msgid "Display numbers as monetary units."
 msgstr ""
 
+#, fuzzy
 msgctxt "DownloadReport|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>Télécharger le rapport</b>"
 
 msgctxt "AddVariables|"
 msgid "Column name selection result"
@@ -2630,9 +2629,10 @@ msgid ""
 "procedure and the statistical results."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Show explanatory text at each step of the analysis"
-msgstr ""
+msgstr "Afficher une explication à chaque étape de l'analyse"
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Report"
