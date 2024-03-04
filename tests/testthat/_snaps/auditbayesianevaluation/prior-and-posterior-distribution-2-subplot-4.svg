@@ -18,7 +18,7 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
-<rect x='-0.000000000000064' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
+<rect x='0.00' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
 </g>
 <defs>
   <clipPath id='cpNTUuMTF8NzIwLjAwfDIwLjcxfDUxMC4xNA=='>
@@ -12072,14 +12072,14 @@
 <text x='689.78' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='23.63px' lengthAdjust='spacingAndGlyphs'>1.0</text>
 <text x='387.55' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='186.18px' lengthAdjust='spacingAndGlyphs'>Population misstatement</text>
 <text transform='translate(16.68,265.42) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='56.70px' lengthAdjust='spacingAndGlyphs'>Density</text>
-<rect x='522.03' y='81.89' width='129.98' height='76.12' style='stroke-width: 0.75; stroke: none;' />
-<rect x='522.03' y='81.89' width='129.98' height='76.12' style='stroke-width: 10.67; stroke: none;' />
-<rect x='527.51' y='95.83' width='42.52' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<line x1='531.76' y1='110.01' x2='565.78' y2='110.01' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<rect x='527.51' y='124.18' width='42.52' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<line x1='531.76' y1='138.35' x2='565.78' y2='138.35' style='stroke-width: 1.07; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text x='578.50' y='114.86' style='font-size: 17.00px; font-family: sans;' textLength='68.03px' lengthAdjust='spacingAndGlyphs'>Posterior</text>
-<text x='578.50' y='143.21' style='font-size: 17.00px; font-family: sans;' textLength='35.89px' lengthAdjust='spacingAndGlyphs'>Prior</text>
+<rect x='526.26' y='81.89' width='121.51' height='67.65' style='stroke-width: 0.75; stroke: none;' />
+<rect x='526.26' y='81.89' width='121.51' height='67.65' style='stroke-width: 10.67; stroke: none;' />
+<rect x='531.74' y='87.37' width='42.52' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<line x1='536.00' y1='101.54' x2='570.01' y2='101.54' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<rect x='531.74' y='115.71' width='42.52' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<line x1='536.00' y1='129.89' x2='570.01' y2='129.89' style='stroke-width: 1.07; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text x='574.26' y='106.39' style='font-size: 17.00px; font-family: sans;' textLength='68.03px' lengthAdjust='spacingAndGlyphs'>Posterior</text>
+<text x='574.26' y='134.74' style='font-size: 17.00px; font-family: sans;' textLength='35.89px' lengthAdjust='spacingAndGlyphs'>Prior</text>
 <text x='387.55' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='318.43px' lengthAdjust='spacingAndGlyphs'>prior-and-posterior-distribution-2-subplot-4</text>
 </g>
 </svg>

@@ -21086,17 +21086,17 @@
 <text x='690.64' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='37.82px' lengthAdjust='spacingAndGlyphs'>2500</text>
 <text x='397.01' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='84.13px' lengthAdjust='spacingAndGlyphs'>Book value</text>
 <text transform='translate(16.68,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='80.34px' lengthAdjust='spacingAndGlyphs'>Frequency</text>
-<rect x='158.04' y='20.71' width='477.94' height='39.31' style='stroke-width: 0.75; stroke: none;' />
-<rect x='158.04' y='20.71' width='477.94' height='39.31' style='stroke-width: 10.67; stroke: none;' />
-<rect x='171.99' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<circle cx='186.16' cy='40.36' r='5.33' style='stroke-width: 2.13; fill: #FF0000;' />
-<rect x='299.65' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<circle cx='313.83' cy='40.36' r='4.26' style='stroke-width: 2.13; fill: #1E90FF;' />
-<rect x='494.31' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<circle cx='508.48' cy='40.36' r='3.20' style='stroke-width: 2.13; fill: #FFA500;' />
-<text x='198.84' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='42.53px' lengthAdjust='spacingAndGlyphs'>Mean</text>
-<text x='326.51' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='109.52px' lengthAdjust='spacingAndGlyphs'>Mean ± St.dev</text>
-<text x='521.16' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='59.53px' lengthAdjust='spacingAndGlyphs'>Quartile</text>
+<rect x='160.28' y='20.71' width='473.45' height='39.31' style='stroke-width: 0.75; stroke: none;' />
+<rect x='160.28' y='20.71' width='473.45' height='39.31' style='stroke-width: 10.67; stroke: none;' />
+<rect x='171.24' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<circle cx='185.41' cy='40.36' r='5.33' style='stroke-width: 2.13; fill: #FF0000;' />
+<rect x='297.41' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<circle cx='311.59' cy='40.36' r='4.26' style='stroke-width: 2.13; fill: #1E90FF;' />
+<rect x='490.57' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<circle cx='504.74' cy='40.36' r='3.20' style='stroke-width: 2.13; fill: #FFA500;' />
+<text x='199.59' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='42.53px' lengthAdjust='spacingAndGlyphs'>Mean</text>
+<text x='325.76' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='109.52px' lengthAdjust='spacingAndGlyphs'>Mean ± St.dev</text>
+<text x='518.92' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='59.53px' lengthAdjust='spacingAndGlyphs'>Quartile</text>
 <text x='397.01' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='199.40px' lengthAdjust='spacingAndGlyphs'>distribution-of-book-values</text>
 </g>
 </svg>

@@ -64,14 +64,14 @@
 <text x='613.73' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='18.91px' lengthAdjust='spacingAndGlyphs'>60</text>
 <text x='686.77' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='18.91px' lengthAdjust='spacingAndGlyphs'>70</text>
 <text x='434.80' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='163.47px' lengthAdjust='spacingAndGlyphs'>Minimum sample size</text>
-<rect x='220.90' y='20.71' width='427.80' height='39.31' style='stroke-width: 0.75; stroke: none;' />
-<rect x='220.90' y='20.71' width='427.80' height='39.31' style='stroke-width: 10.67; stroke: none;' />
-<rect x='234.85' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='236.27' y='27.60' width='25.51' height='25.51' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF6666;' />
-<rect x='430.04' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='431.46' y='27.60' width='25.51' height='25.51' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #7FE58B;' />
+<rect x='232.36' y='20.71' width='404.88' height='39.31' style='stroke-width: 0.75; stroke: none;' />
+<rect x='232.36' y='20.71' width='404.88' height='39.31' style='stroke-width: 10.67; stroke: none;' />
+<rect x='243.32' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<rect x='244.73' y='27.60' width='25.51' height='25.51' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF6666;' />
+<rect x='427.05' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<rect x='428.47' y='27.60' width='25.51' height='25.51' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter; fill: #7FE58B;' />
 <text x='271.66' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='120.02px' lengthAdjust='spacingAndGlyphs'>Expected errors</text>
-<text x='466.86' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='146.47px' lengthAdjust='spacingAndGlyphs'>Expected error-free</text>
+<text x='455.40' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='146.47px' lengthAdjust='spacingAndGlyphs'>Expected error-free</text>
 <text x='434.80' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='332.61px' lengthAdjust='spacingAndGlyphs'>across-probability-distributions-current-beta-</text>
 </g>
 </svg>

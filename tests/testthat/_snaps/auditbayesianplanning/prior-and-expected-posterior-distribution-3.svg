@@ -18,7 +18,7 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
-<rect x='-0.000000000000064' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
+<rect x='0.00' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
 </g>
 <defs>
   <clipPath id='cpNzguNzR8NzIwLjAwfDIwLjcxfDUxMC4xNA=='>
@@ -670,14 +670,14 @@
 <text x='685.14' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='28.37px' lengthAdjust='spacingAndGlyphs'>100</text>
 <text x='399.37' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='194.69px' lengthAdjust='spacingAndGlyphs'>Population misstatements</text>
 <text transform='translate(16.68,265.42) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='79.38px' lengthAdjust='spacingAndGlyphs'>Probability</text>
-<rect x='526.76' y='81.89' width='129.98' height='76.12' style='stroke-width: 0.75; stroke: none;' />
-<rect x='526.76' y='81.89' width='129.98' height='76.12' style='stroke-width: 10.67; stroke: none;' />
-<rect x='532.24' y='95.83' width='42.52' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='532.95' y='96.54' width='41.10' height='26.93' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #A9A9A9; fill-opacity: 0.75;' />
-<rect x='532.24' y='124.18' width='42.52' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='532.95' y='124.89' width='41.10' height='26.93' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #D3D3D3; fill-opacity: 0.75;' />
-<text x='583.22' y='114.86' style='font-size: 17.00px; font-family: sans;' textLength='68.03px' lengthAdjust='spacingAndGlyphs'>Posterior</text>
-<text x='583.22' y='143.21' style='font-size: 17.00px; font-family: sans;' textLength='35.89px' lengthAdjust='spacingAndGlyphs'>Prior</text>
+<rect x='530.99' y='81.89' width='121.51' height='67.65' style='stroke-width: 0.75; stroke: none;' />
+<rect x='530.99' y='81.89' width='121.51' height='67.65' style='stroke-width: 10.67; stroke: none;' />
+<rect x='536.47' y='87.37' width='42.52' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<rect x='537.18' y='88.08' width='41.10' height='26.93' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #A9A9A9; fill-opacity: 0.75;' />
+<rect x='536.47' y='115.71' width='42.52' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<rect x='537.18' y='116.42' width='41.10' height='26.93' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #D3D3D3; fill-opacity: 0.75;' />
+<text x='578.99' y='106.39' style='font-size: 17.00px; font-family: sans;' textLength='68.03px' lengthAdjust='spacingAndGlyphs'>Posterior</text>
+<text x='578.99' y='134.74' style='font-size: 17.00px; font-family: sans;' textLength='35.89px' lengthAdjust='spacingAndGlyphs'>Prior</text>
 <text x='399.37' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='317.51px' lengthAdjust='spacingAndGlyphs'>prior-and-expected-posterior-distribution-3</text>
 </g>
 </svg>
