@@ -1350,7 +1350,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       ggplot2::guides(shape = ggplot2::guide_legend(override.aes = list(size = c(4, 3, 2), shape = c(21, 21, 21), fill = c("red", "dodgerblue1", "orange"), stroke = 1.5, color = "black")), order = 1) +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "top") +
-      ggplot2::theme(legend.text = ggplot2::element_text(margin = ggplot2::margin(l = -10, r = 50)))
+      ggplot2::theme(legend.text = ggplot2::element_text(margin = ggplot2::margin(r = 50)))
 
     figure$plotObject <- plot
   }

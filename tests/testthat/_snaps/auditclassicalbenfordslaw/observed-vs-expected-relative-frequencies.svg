@@ -18,7 +18,7 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
-<rect x='-0.000000000000064' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
+<rect x='0.00' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
 </g>
 <defs>
   <clipPath id='cpNzguNzR8NzIwLjAwfDcwLjk3fDUxMC4xNA=='>
@@ -125,17 +125,17 @@
 <text x='658.46' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='9.46px' lengthAdjust='spacingAndGlyphs'>9</text>
 <text x='399.37' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='96.41px' lengthAdjust='spacingAndGlyphs'>Leading digit</text>
 <text transform='translate(16.68,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='140.82px' lengthAdjust='spacingAndGlyphs'>Relative frequency</text>
-<rect x='150.97' y='20.71' width='496.81' height='39.31' style='stroke-width: 0.75; stroke: none;' />
-<rect x='150.97' y='20.71' width='496.81' height='39.31' style='stroke-width: 10.67; stroke: none;' />
-<rect x='164.91' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<circle cx='179.09' cy='40.36' r='7.82' style='stroke-width: 0.71; fill: #1E90FF;' />
-<rect x='328.75' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='333.16' y='30.59' width='19.54' height='19.54' style='stroke-width: 0.71; fill: #A9A9A9;' />
-<rect x='489.77' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<rect x='494.17' y='30.59' width='19.54' height='19.54' style='stroke-width: 0.71; fill: #B22222;' />
-<text x='196.75' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='73.73px' lengthAdjust='spacingAndGlyphs'>Observed</text>
-<text x='360.59' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.90px' lengthAdjust='spacingAndGlyphs'>Expected</text>
-<text x='521.60' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.88px' lengthAdjust='spacingAndGlyphs'>Deviation</text>
+<rect x='198.04' y='20.71' width='402.66' height='39.31' style='stroke-width: 0.75; stroke: none;' />
+<rect x='198.04' y='20.71' width='402.66' height='39.31' style='stroke-width: 10.67; stroke: none;' />
+<rect x='209.00' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<circle cx='223.17' cy='40.36' r='7.82' style='stroke-width: 0.71; fill: #1E90FF;' />
+<rect x='341.46' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<rect x='345.86' y='30.59' width='19.54' height='19.54' style='stroke-width: 0.71; fill: #A9A9A9;' />
+<rect x='471.09' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<rect x='475.49' y='30.59' width='19.54' height='19.54' style='stroke-width: 0.71; fill: #B22222;' />
+<text x='237.34' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='73.73px' lengthAdjust='spacingAndGlyphs'>Observed</text>
+<text x='369.80' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.90px' lengthAdjust='spacingAndGlyphs'>Expected</text>
+<text x='499.43' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='70.88px' lengthAdjust='spacingAndGlyphs'>Deviation</text>
 <text x='399.37' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='321.33px' lengthAdjust='spacingAndGlyphs'>observed-vs-expected-relative-frequencies</text>
 </g>
 </svg>
