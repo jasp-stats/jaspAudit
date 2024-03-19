@@ -2091,9 +2091,6 @@ msgstr "Cantidade"
 msgid "No misstatements were identified in the sample."
 msgstr "Non se identificaron inexactitudes na mostra."
 
-msgid "<b>Table %1$i.</b> Assumption Checks"
-msgstr "<b>Táboa %1$i.</b> Comprobacións de Supostos"
-
 msgid "Pearson's r"
 msgstr "R de Pearson"
 

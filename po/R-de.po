@@ -2107,9 +2107,6 @@ msgstr "Gezählt"
 msgid "No misstatements were identified in the sample."
 msgstr "In der Stichprobe wurden keine falschen Angaben festgestellt."
 
-msgid "<b>Table %1$i.</b> Assumption Checks"
-msgstr "<b>Tabelle %1$i.</b> Annahmeprüfungen"
-
 msgid "Pearson's r"
 msgstr "Pearsons r"
 

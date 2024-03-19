@@ -1729,9 +1729,6 @@ msgstr "カウント"
 msgid "No misstatements were identified in the sample."
 msgstr ""
 
-msgid "<b>Table %1$i.</b> Assumption Checks"
-msgstr ""
-
 msgid "Pearson's r"
 msgstr ""
 

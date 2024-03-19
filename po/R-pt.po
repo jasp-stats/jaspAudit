@@ -1850,9 +1850,6 @@ msgstr "Contagem"
 msgid "No misstatements were identified in the sample."
 msgstr ""
 
-msgid "<b>Table %1$i.</b> Assumption Checks"
-msgstr "<b>Table %1$i.</b> Verificar pressupostos"
-
 #, fuzzy
 msgid "Pearson's r"
 msgstr "r de Pearson"

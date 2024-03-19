@@ -2105,9 +2105,6 @@ msgstr "Weging"
 msgid "No misstatements were identified in the sample."
 msgstr "In de steekproef werden geen fouten aangetroffen."
 
-msgid "<b>Table %1$i.</b> Assumption Checks"
-msgstr "<b>Tabel %1$i.</b> Aannamecontrole"
-
 msgid "Pearson's r"
 msgstr "Pearson's r"
 
