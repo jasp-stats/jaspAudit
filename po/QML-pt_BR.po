@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-03-15 17:01+0000\n"
-"Last-Translator: Willian Chimura <chimura.willian@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-qml/pt_BR/>\n"
-"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Language: br_FR\n"
 "X-Qt-Contexts: true\n"
 
@@ -93,9 +87,10 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Report"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 msgctxt "auditBayesianPlanning|"
 msgid ""
@@ -120,9 +115,10 @@ msgctxt "auditBayesianPlanning|"
 msgid "Report"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 msgctxt "auditBayesianWorkflow|"
 msgid ""
@@ -475,9 +471,10 @@ msgid ""
 "size."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Prior Distribution"
@@ -678,9 +675,10 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Report"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Method"
@@ -1039,9 +1037,10 @@ msgid ""
 "size."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Prior Distribution"
@@ -1254,9 +1253,10 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Indicate how many items labels to display."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Adjust advanced options for this analysis."
@@ -1307,9 +1307,10 @@ msgctxt "auditClassicalPlanning|"
 msgid "Report"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 msgctxt "auditClassicalWorkflow|"
 msgid ""
@@ -1352,13 +1353,15 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Report"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>Baixar Relatório</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Selection</b>"
@@ -1526,9 +1529,10 @@ msgctxt "Display|"
 msgid "Display numbers as monetary units."
 msgstr ""
 
+#, fuzzy
 msgctxt "DownloadReport|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>Baixar Relatório</b>"
 
 msgctxt "AddVariables|"
 msgid "Column name selection result"
