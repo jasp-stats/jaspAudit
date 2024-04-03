@@ -162,7 +162,7 @@ Form
 
 			Group
 			{
-				Selection.Seed { enable: (randomize.use_randomize || !method.use_interval || method.use_random_start) && !algorithm.use_partial }
+				Selection.Seed { enable: (randomize.use_randomize || !method.use_interval || method.use_random_start) && !algorithm.use_partial && !pasteVariables.checked }
 				Selection.Randomize { id: randomize; enable: !pasteVariables.checked && !algorithm.use_partial && !rank.use_rank }
 				CheckBox
 				{

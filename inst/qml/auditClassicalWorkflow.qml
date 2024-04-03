@@ -76,7 +76,7 @@ Form
 			columns: 1
 			Planning.SamplingObjectives { id: objectives; enable: !pasteVariables.checked }
 			Planning.ExpectedErrors { enable: !pasteVariables.checked }
-			Planning.AuditRiskModel { enable: objectives.use_materiality }
+			Planning.AuditRiskModel { enable: objectives.use_materiality && !pasteVariables.checked }
 			Common.ExplanatoryText { }
 		}
 
@@ -170,7 +170,7 @@ Form
 
 			Group
 			{
-				Selection.Seed { enable: randomize.use_randomize || !method.use_interval || method.use_random_start }
+				Selection.Seed { enable: (randomize.use_randomize || !method.use_interval || method.use_random_start) && !pasteVariables.checked }
 				Selection.Randomize { id: randomize; enable: !pasteVariables.checked && !rank.use_rank }
 				CheckBox
 				{
