@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.3\n"
 "POT-Creation-Date: 2023-12-08 10:27\n"
-"PO-Revision-Date: 2024-03-19 16:49+0000\n"
-"Last-Translator: JASP Stats <b.boutin@uva.nl>\n"
+"PO-Revision-Date: 2024-04-11 14:01+0000\n"
+"Last-Translator: federicapicogna <picognafederica@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "it/>\n"
 "Language: it\n"
@@ -225,7 +225,7 @@ msgid "Last Digit"
 msgstr "Ultima Cifra"
 
 msgid "<b>Table %1$i.</b> Rows Matched to %2$s %3$s"
-msgstr ""
+msgstr "<b>Table %1$i.</b> Righe corrispondenti a %2$s %3$s"
 
 msgid "Row"
 msgstr "Riga"
@@ -695,7 +695,7 @@ msgid "Support"
 msgstr ""
 
 msgid "Recall"
-msgstr ""
+msgstr "Recall"
 
 msgid "F1 Score"
 msgstr ""
@@ -769,7 +769,7 @@ msgid "Average"
 msgstr ""
 
 msgid "Frequency"
-msgstr ""
+msgstr "Frequenza"
 
 msgid "Entropy"
 msgstr ""
@@ -1235,10 +1235,10 @@ msgid "Absolute value"
 msgstr ""
 
 msgid "Mean"
-msgstr ""
+msgstr "Media"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "Deviazione std."
 
 msgid "1"
 msgstr ""
@@ -1560,7 +1560,7 @@ msgid ""
 msgstr ""
 
 msgid "Total"
-msgstr ""
+msgstr "Totale"
 
 msgid "Top stratum"
 msgstr ""
@@ -1581,19 +1581,19 @@ msgid "Valid cases"
 msgstr ""
 
 msgid "Median"
-msgstr ""
+msgstr "Mediana"
 
 msgid "Variance"
-msgstr ""
+msgstr "Varianza"
 
 msgid "Range"
-msgstr ""
+msgstr "Campo di variazione"
 
 msgid "Minimum"
-msgstr ""
+msgstr "Minimo"
 
 msgid "Maximum"
-msgstr ""
+msgstr "Massimo"
 
 msgid ""
 "The audit result variable should contain only 0's (correct) and 1's "
@@ -1865,7 +1865,7 @@ msgid "Ratio %1$s"
 msgstr ""
 
 msgid "Mode"
-msgstr ""
+msgstr "Moda"
 
 msgid "Prior"
 msgstr ""
