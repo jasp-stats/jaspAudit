@@ -30,7 +30,7 @@ AssignedVariablesList
 	name:								"id"
 	title:								qsTr("Item ID (required)")
 	singleVariable:						true
-	allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
+	allowedColumns:						["nominal", "ordinal", "scale"]
 	allowAnalysisOwnComputedColumns:	false
 	info:								qsTr("A unique non-missing identifier for every item in the population. The row number of the items is sufficient.")
 }

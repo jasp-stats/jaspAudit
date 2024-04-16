@@ -41,7 +41,7 @@ Form
 			name: 						"target"
 			title: 						qsTr("Target")
 			singleVariable:				true
-			allowedColumns:				["nominal", "nominalText"]
+			allowedColumns:				["nominal"]
 			info:						qsTr("In this column, the target (i.e., to be predicted) variable should be entered.")
 		}
 		AssignedVariablesList
@@ -49,7 +49,7 @@ Form
 			name: 						"predictions"
 			title: 						qsTr("Predictions")
 			singleVariable:				true
-			allowedColumns:				["nominal", "nominalText"]
+			allowedColumns:				["nominal"]
 			info:						qsTr("In this column, the predictions of the algorithm should be entered.")
 		}
 		AssignedVariablesList
@@ -57,7 +57,7 @@ Form
 			name: 						"protected"
 			title: 						qsTr("Sensitive Attribute")
 			singleVariable:				true
-			allowedColumns:				["nominal", "nominalText"]
+			allowedColumns:				["nominal"]
 			info:						qsTr("In this column, the protected (i.e., sensitive) attribute should be entered.")
 		}
 	}
