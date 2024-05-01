@@ -59,7 +59,7 @@ Group
 	{
 		name: 				"alpha"
 		label:				qsTr("Prior parameter \u03B1")
-		min:				1
+		min:				0
 		defaultValue: 		1
 		visible:			prior_method.value == "param"
 		info:				qsTr("The \u03B1 parameter of the prior distribution.")

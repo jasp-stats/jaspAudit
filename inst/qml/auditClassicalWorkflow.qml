@@ -309,6 +309,7 @@ Form
 				colName:							"Filter"
 				defaultValue:						0
 				decimals:							10
+				Layout.preferredHeight:				500 * preferencesModel.uiScale
 			}
 		}
 
