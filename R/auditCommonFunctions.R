@@ -649,7 +649,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       input[["N.units"]] <- options[["n_units"]]
     }
 
-    input[["materiality_val"]] <- if (options[["materiality_type"]] == "materiality_rel") options[["materiality_rel_val"]] else options[["materiality_abs_val"]] / input[["N.units"]]
+    input[["materiality_val"]] <- if (options[["materiality_type"]] == "materiality_rel") options[["materiality_rel_val"]] else options[["materiality_abs_val"]] / sum(input[["N.units"]])
     input[["materiality_label"]] <- if (options[["materiality_type"]] == "materiality_rel") paste0(round(options[["materiality_rel_val"]] * 100, 2), "%") else format(options[["materiality_abs_val"]], scientific = FALSE)
 
     if (options[["bayesian"]]) {
