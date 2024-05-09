@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.0\n"
 "POT-Creation-Date: 2023-12-08 10:27\n"
-"PO-Revision-Date: 2024-03-30 03:26+0000\n"
+"PO-Revision-Date: 2024-05-08 18:04+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "pl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.5.4-rc\n"
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Procedura</u>"
@@ -142,7 +142,6 @@ msgstr "Liczebności"
 msgid "Relative frequency"
 msgstr ""
 
-#, fuzzy
 msgid "%1$s%% Confidence Interval"
 msgstr "%1$s%% przedział ufności"
 
@@ -664,9 +663,8 @@ msgid ""
 "in which the negative class is incorrectly predicted."
 msgstr ""
 
-#, fuzzy
 msgid "%1$s = %2$s."
-msgstr "%1$s = %2$i"
+msgstr "%1$s = %2$s."
 
 msgid "Observed"
 msgstr ""
