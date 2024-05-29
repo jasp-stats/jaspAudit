@@ -31,7 +31,7 @@ RadioButtonGroup
 
 	id: 					expected
 	name: 					"expected_type"
-	title: 					qsTr("Tolerable Misstatements in Sample")
+	title: 					qsTr("Expected Misstatements")
 	enabled:				enable
 	info:					qsTr("The expected misstatements are the tolerable misstatements that can be found in the sample while still achieving the conditions outlined in the sampling objectives. It is advised to set this value conservatively to minimize the probability of the observed misstatements exceeding the expected misstatements, which would imply that insufficient work has been done in the end.")
 

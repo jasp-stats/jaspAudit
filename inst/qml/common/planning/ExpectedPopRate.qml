@@ -26,9 +26,9 @@ Group
 {
 	property bool	enable:	true
 
-	title: 				qsTr("Expected Misstatement")
+	title: 				qsTr("Most Likely Misstatement")
 	enabled:			enable
-	info:				qsTr("The percentage of expected misstatements in the population.")
+	info:				qsTr("The a priori most likely misstatement rate in the population, which is incorporated into the prior distribution.")
 
 	PercentField
 	{
@@ -36,5 +36,6 @@ Group
 		text:			qsTr("Relative")
 		decimals: 		3
 		defaultValue: 	0
+		info:			qsTr("Enter the a priori most likely misstatement rate as a percentage.")
 	}
 }
