@@ -1557,7 +1557,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       if (jaspBase:::.extractErrorMessage(result) == "the sample size is larger than 'max'") {
         parentContainer$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
       } else if (jaspBase:::.extractErrorMessage(result) == "'expected' must be a single value < 'materiality'") {
-        parentContainer$setError(gettextf("The tolerable misstatements are larger than the performance materiality. If you used an absolute number of tolerable misstatements < 1, please use the 'relative' option.", options[["max"]]))
+        parentContainer$setError(gettext("The tolerable misstatements are larger than the performance materiality. If you used an absolute number of tolerable misstatements < 1, please use the 'relative' option."))
       } else {
         parentContainer$setError(gettextf("An error occurred: %1$s", jaspBase:::.extractErrorMessage(result)))
       }
