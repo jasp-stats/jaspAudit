@@ -703,7 +703,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     container$position <- position
     container$dependOn(options = c(
       "ir", "irCustom", "cr", "crCustom", "car", "carCustom", "conf_level", "n_units", "materiality_type",
-      "materiality_rel_val", "materiality_abs_val", "expected_type", "expected_rel_val",
+      "materiality_rel_val", "materiality_abs_val", "expected_type", "expected_rel_val", "expected_pop_rate",
       "expected_abs_val", "likelihood", "id", "values", "separateMisstatement",
       "min_precision_rel_val", "min_precision_test", "materiality_test", "by", "max", "prior_method",
       "n_prior", "x_prior", "alpha", "beta", "display"
@@ -839,13 +839,18 @@ gettextf <- function(fmt, ..., domain = NULL) {
         parentContainer$setError(gettext("You cannot incorporate this prior information into your analysis because you are not testing against a performance materiality."))
         return(TRUE)
       }
-      if (options[["bayesian"]] && options[["expected_type"]] == "expected_abs" && options[["prior_method"]] %in% c("impartial", "arm")) {
-        # Error if the prior construction method does not match the sampling objective
-        currentMethod <- switch(options[["prior_method"]],
-          "impartial" = gettext("an impartial prior distribution"),
-          "arm" = gettext("a prior distribution using risk assessments")
-        )
-        parentContainer$setError(gettextf("In order to construct %1$s, specify the expected errors as a percentage of the total population.", currentMethod))
+    #   if (options[["bayesian"]] && options[["expected_type"]] == "expected_abs" && options[["prior_method"]] %in% c("impartial", "arm")) {
+    #     # Error if the prior construction method does not match the sampling objective
+    #     currentMethod <- switch(options[["prior_method"]],
+    #       "impartial" = gettext("an impartial prior distribution"),
+    #       "arm" = gettext("a prior distribution using risk assessments")
+    #     )
+    #     parentContainer$setError(gettextf("In order to construct %1$s, specify the expected errors as a percentage of the total population.", currentMethod))
+    #     return(TRUE)
+    #   }
+      if (options[["bayesian"]] && options[["expected_pop_rate"]] >= parentOptions[["materiality_val"]] && options[["prior_method"]] %in% c("impartial", "arm") && options[["materiality_test"]]) {
+        # Error if the prior expected misstatement rate in the population is higher than the materiality
+        parentContainer$setError(gettext("The prior expected misstatement rate in the population is larger than the performance materiality."))
         return(TRUE)
       }
     }
@@ -1538,7 +1543,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     } else {
       prior <- jfa::auditPrior(
         method = options[["prior_method"]], conf.level = options[["conf_level"]],
-        materiality = materiality, expected = parentOptions[["expected_val"]],
+        materiality = materiality, expected = options[["expected_pop_rate"]],
         likelihood = options[["likelihood"]], N.units = N.units, ir = risks[["ir"]],
         cr = (risks[["cr"]] * risks[["car"]]), n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
@@ -1871,7 +1876,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
             # Create a prior distribution that incorporates the existing information
             prior <- jfa::auditPrior(
               conf.level = options[["conf_level"]], materiality = parentState[["materiality"]],
-              expected = parentOptions[["expected_val"]], likelihood = likelihoods[i],
+              expected = options[["expected_pop_rate"]], likelihood = likelihoods[i],
               N.units = N, ir = risks[["ir"]], cr = (risks[["cr"]] * risks[["car"]]), method = options[["prior_method"]],
               n = options[["n_prior"]], x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
             )
@@ -1944,7 +1949,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         if (options[["bayesian"]]) {
           # Create a prior distribution that incorporates the existing information
           prior <- jfa::auditPrior(
-            conf.level = options[["conf_level"]], materiality = materiality, expected = parentOptions[["expected_val"]],
+            conf.level = options[["conf_level"]], materiality = materiality, expected = options[["expected_pop_rate"]],
             likelihood = options[["likelihood"]], N.units = N, ir = risks[["ir"]], cr = (risks[["cr"]] * risks[["car"]]), method = options[["prior_method"]],
             n = options[["n_prior"]], x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
           )
@@ -2462,7 +2467,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (options[["bayesian"]]) {
       conf_level <- options[["conf_level"]]
       prior <- jfa::auditPrior(
-        conf.level = options[["conf_level"]], materiality = materiality, expected = prevOptions[["expected_val"]],
+        conf.level = options[["conf_level"]], materiality = materiality, expected = options[["expected_pop_rate"]],
         likelihood = options[["likelihood"]], N.units = prevOptions[["N.units"]], ir = risks[["ir"]], cr = (risks[["cr"]] * risks[["car"]]),
         method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]

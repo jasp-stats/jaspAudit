@@ -24,14 +24,13 @@ import JASP.Widgets
 
 RadioButtonGroup
 {
-	readonly	property bool	expected_is_relative:	expected_rel.checked
-				property bool	enable:					true
-				property bool	show_all:				false
-				property bool   enable_all:				false
+	property bool	enable:					true
+	property bool	show_all:				false
+	property bool   enable_all:				false
 
 	id: 					expected
 	name: 					"expected_type"
-	title: 					qsTr("Tolerable Misstatements in Sample")
+	title: 					qsTr("Expected Misstatement")
 	enabled:				enable
 	info:					qsTr("The expected misstatements are the tolerable misstatements that can be found in the sample while still achieving the conditions outlined in the sampling objectives. It is advised to set this value conservatively to minimize the probability of the observed misstatements exceeding the expected misstatements, which would imply that insufficient work has been done in the end.")
 
@@ -53,27 +52,6 @@ RadioButtonGroup
 			defaultValue: 	0
 			visible: 		expected_rel.checked
 			info:			qsTr("The percentage of expected misstatements in the sample.")
-		}
-	}
-
-	RadioButton
-	{
-		id: 				expected_abs
-		name: 				"expected_abs"
-		text: 				qsTr("Absolute")
-		childrenOnSameRow: 	true
-		info:				qsTr("Enter the expected misstatements as an absolute value.")
-
-		DoubleField
-		{
-			id:				expected_abs_val
-			name: 			"expected_abs_val"
-			enabled: 		expected_abs.checked
-			defaultValue: 	0
-			min: 			0
-			decimals: 		3
-			visible: 		expected_abs.checked
-			info:			qsTr("The number of expected misstatements in the sample.")
 		}
 	}
 

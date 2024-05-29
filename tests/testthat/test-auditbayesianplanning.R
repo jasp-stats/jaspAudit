@@ -25,6 +25,7 @@ options$max <- 5000
 options$by <- 1
 options$conf_level <- 0.95
 options$expected_rel_val <- 0
+options$expected_pop_rate <- 0
 options$materiality_type <- "materiality_rel"
 options$expected_type <- "expected_rel"
 options$likelihood <- "binomial"
@@ -105,6 +106,7 @@ options$ir <- "high"
 options$car <- "high"
 options$conf_level <- 0.95
 options$expected_rel_val <- 0
+options$expected_pop_rate <- 0
 options$explanatoryText <- TRUE
 options$display <- "number"
 options$max <- 5000
@@ -165,6 +167,7 @@ options$likelihood <- "hypergeometric"
 options$prior_method <- "param"
 options$conf_level <- 0.95
 options$expected_rel_val <- 0
+options$expected_pop_rate <- 0
 options$explanatoryText <- TRUE
 options$display <- "number"
 options$max <- 5000
