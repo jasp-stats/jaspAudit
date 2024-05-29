@@ -185,7 +185,7 @@ Form
 					defaultValue: 	100000
 					fieldWidth: 	100 * preferencesModel.uiScale
 					min: 			1
-					decimals: 		2
+					decimals: 		3
 					info:			qsTr("The value of the precision.")
 				}
 			}
