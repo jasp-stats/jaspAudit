@@ -46,6 +46,7 @@ Form
 			title: 					qsTr("Book Values")
 			singleVariable:			true
 			allowedColumns:			["scale"]
+			minNumericLevels:		1
 			enabled: 				!mpu.checked
 			info:					qsTr("A numeric variable that contains the book (recorded) values of the items in the population.")
 		}
@@ -57,6 +58,7 @@ Form
 			title: 					qsTr("Audit Values")
 			singleVariable: 		true
 			allowedColumns: 		["scale"]
+			minNumericLevels:		1
 			info:					qsTr("A numeric variable that contains the audited (true) values of the items in the population.")
 		}
 	}

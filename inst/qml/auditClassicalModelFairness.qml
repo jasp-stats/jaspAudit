@@ -42,6 +42,7 @@ Form
 			title: 						qsTr("Target")
 			singleVariable:				true
 			allowedColumns:				["nominal"]
+			minLevels:					2
 			info:						qsTr("In this column, the target (i.e., to be predicted) variable should be entered.")
 		}
 		AssignedVariablesList
@@ -50,6 +51,7 @@ Form
 			title: 						qsTr("Predictions")
 			singleVariable:				true
 			allowedColumns:				["nominal"]
+			minLevels:					2
 			info:						qsTr("In this column, the predictions of the algorithm should be entered.")
 		}
 		AssignedVariablesList
@@ -58,6 +60,7 @@ Form
 			title: 						qsTr("Sensitive Attribute")
 			singleVariable:				true
 			allowedColumns:				["nominal"]
+			minLevels:					2
 			info:						qsTr("In this column, the protected (i.e., sensitive) attribute should be entered.")
 		}
 	}

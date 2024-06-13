@@ -32,6 +32,7 @@ AssignedVariablesList
 	title: 								qsTr("Ranking Variable")
 	singleVariable:						true
 	allowedColumns:						["scale"]
+	minNumericLevels:					1
 	allowAnalysisOwnComputedColumns: 	false
 	enabled:							enable
 	debug:								true

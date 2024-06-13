@@ -32,6 +32,7 @@ AssignedVariablesList
 	title:								required ? qsTr("Book Value (required)") : qsTr("Book Value (optional)")
 	singleVariable:						true
 	allowedColumns:						["scale"]
+	minNumericLevels:					1
 	allowAnalysisOwnComputedColumns:	false
 	info:								qsTr("A numeric variable that contains the book (recorded) values of the items in the population.")
 }

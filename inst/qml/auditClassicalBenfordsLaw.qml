@@ -46,6 +46,7 @@ Form
 			title: 					qsTr("Variable")
 			singleVariable:			true
 			allowedColumns:			["scale"]
+			minNumericLevels:		1
 			info:					qsTr("In this box the variable is selected whose digits should be tested against the reference distribution. The value zero (0) will be omitted from the data.")
 		}
 	}
