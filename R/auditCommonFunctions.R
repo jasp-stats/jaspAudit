@@ -2182,7 +2182,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     data = as.data.frame(dataset), size = prevState[["n"]], units = units, method = options[["sampling_method"]],
     values = if (options[["values"]] != "") options[["values"]] else NULL,
     order = if (options[["rank"]] != "") options[["rank"]] else NULL,
-    start = start, replace = TRUE, randomize = options[["randomize"]]
+    start = start, replace = FALSE, randomize = options[["randomize"]]
   )
   return(jfaresult)
 }
