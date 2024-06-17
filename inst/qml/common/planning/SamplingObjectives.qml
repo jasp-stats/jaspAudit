@@ -70,7 +70,7 @@ Group
 					{
 						id:				materiality_relative_value
 						visible: 		materiality_relative.checked
-						decimals: 		2
+						decimals: 		3
 						defaultValue: 	1
 						min:			0.01
 						max:			99.99
@@ -119,7 +119,7 @@ Group
 			{
 				id:						min_precision_value
 				name: 					"min_precision_rel_val"
-				decimals: 				2
+				decimals: 				3
 				defaultValue: 			2
 				min:					0.1
 				max:					99.9

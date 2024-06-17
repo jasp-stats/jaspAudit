@@ -45,8 +45,10 @@ Form
 	Section
 	{
 		title: qsTr("Prior")
+		columns: 3
 		Planning.Likelihood { id: likelihood; bayesian: true; enable_hypergeometric: population.n_units > 0 }
-		Planning.PriorMethod { use_materiality: objectives.use_materiality }
+		Planning.PriorMethod { id: method; use_materiality: objectives.use_materiality }
+		Planning.ExpectedPopRate { enable: method.use_expected }
 	}
 
 	Section

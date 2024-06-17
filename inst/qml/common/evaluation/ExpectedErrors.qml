@@ -24,10 +24,9 @@ import JASP.Widgets
 
 RadioButtonGroup
 {
-	readonly	property bool	expected_is_relative:	expected_rel.checked
-				property bool	enable:					true
-				property bool	show_all:				false
-				property bool   enable_all:				false
+	property bool	enable:					true
+	property bool	show_all:				false
+	property bool   enable_all:				false
 
 	id: 					expected
 	name: 					"expected_type"
@@ -42,7 +41,7 @@ RadioButtonGroup
 		text: 				qsTr("Relative")
 		checked: 			true
 		childrenOnSameRow: 	true
-		info:				qsTr("Enter the expected misstatements as a percentage relative to the total size of the sample.")
+		info:				qsTr("Enter the expected misstatements as a percentage.")
 
 		PercentField
 		{
@@ -52,28 +51,7 @@ RadioButtonGroup
 			decimals: 		3
 			defaultValue: 	0
 			visible: 		expected_rel.checked
-			info:			qsTr("The percentage of expected misstatements in the sample.")
-		}
-	}
-
-	RadioButton
-	{
-		id: 				expected_abs
-		name: 				"expected_abs"
-		text: 				qsTr("Absolute")
-		childrenOnSameRow: 	true
-		info:				qsTr("Enter the expected misstatements as an absolute value.")
-
-		DoubleField
-		{
-			id:				expected_abs_val
-			name: 			"expected_abs_val"
-			enabled: 		expected_abs.checked
-			defaultValue: 	0
-			min: 			0
-			decimals: 		3
-			visible: 		expected_abs.checked
-			info:			qsTr("The number of expected misstatements in the sample.")
+			info:			qsTr("The percentage of expected misstatements in the population.")
 		}
 	}
 
@@ -83,6 +61,6 @@ RadioButtonGroup
 		text:				qsTr("All possible")
 		enabled:			enable_all
 		visible:			show_all
-		info:				qsTr("Do not make an assumption about the expected misstatements in the sample.")
+		info:				qsTr("Do not make an assumption about the expected misstatements in the population.")
 	}
 }

@@ -703,7 +703,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     container$position <- position
     container$dependOn(options = c(
       "ir", "irCustom", "cr", "crCustom", "car", "carCustom", "conf_level", "n_units", "materiality_type",
-      "materiality_rel_val", "materiality_abs_val", "expected_type", "expected_rel_val",
+      "materiality_rel_val", "materiality_abs_val", "expected_type", "expected_rel_val", "expected_pop_rate",
       "expected_abs_val", "likelihood", "id", "values", "separateMisstatement",
       "min_precision_rel_val", "min_precision_test", "materiality_test", "by", "max", "prior_method",
       "n_prior", "x_prior", "alpha", "beta", "display"
@@ -839,13 +839,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
         parentContainer$setError(gettext("You cannot incorporate this prior information into your analysis because you are not testing against a performance materiality."))
         return(TRUE)
       }
-      if (options[["bayesian"]] && options[["expected_type"]] == "expected_abs" && options[["prior_method"]] %in% c("impartial", "arm")) {
-        # Error if the prior construction method does not match the sampling objective
-        currentMethod <- switch(options[["prior_method"]],
-          "impartial" = gettext("an impartial prior distribution"),
-          "arm" = gettext("a prior distribution using risk assessments")
-        )
-        parentContainer$setError(gettextf("In order to construct %1$s, specify the expected errors as a percentage of the total population.", currentMethod))
+      if (options[["bayesian"]] && options[["expected_pop_rate"]] >= parentOptions[["materiality_val"]] && options[["prior_method"]] %in% c("impartial", "arm") && options[["materiality_test"]]) {
+        # Error if the prior expected misstatement rate in the population is higher than the materiality
+        parentContainer$setError(gettext("The prior expected misstatement rate in the population is larger than the performance materiality."))
         return(TRUE)
       }
     }
@@ -1538,7 +1534,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     } else {
       prior <- jfa::auditPrior(
         method = options[["prior_method"]], conf.level = options[["conf_level"]],
-        materiality = materiality, expected = parentOptions[["expected_val"]],
+        materiality = materiality, expected = options[["expected_pop_rate"]],
         likelihood = options[["likelihood"]], N.units = N.units, ir = risks[["ir"]],
         cr = (risks[["cr"]] * risks[["car"]]), n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
@@ -1560,6 +1556,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (isTryError(result)) {
       if (jaspBase:::.extractErrorMessage(result) == "the sample size is larger than 'max'") {
         parentContainer$setError(gettextf("You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly.", options[["max"]]))
+      } else if (jaspBase:::.extractErrorMessage(result) == "'expected' must be a single value < 'materiality'") {
+        parentContainer$setError(gettext("The tolerable misstatements are larger than the performance materiality. If you used an absolute number of tolerable misstatements < 1, please use the 'relative' option."))
       } else {
         parentContainer$setError(gettextf("An error occurred: %1$s", jaspBase:::.extractErrorMessage(result)))
       }
@@ -1871,7 +1869,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
             # Create a prior distribution that incorporates the existing information
             prior <- jfa::auditPrior(
               conf.level = options[["conf_level"]], materiality = parentState[["materiality"]],
-              expected = parentOptions[["expected_val"]], likelihood = likelihoods[i],
+              expected = options[["expected_pop_rate"]], likelihood = likelihoods[i],
               N.units = N, ir = risks[["ir"]], cr = (risks[["cr"]] * risks[["car"]]), method = options[["prior_method"]],
               n = options[["n_prior"]], x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
             )
@@ -1944,7 +1942,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         if (options[["bayesian"]]) {
           # Create a prior distribution that incorporates the existing information
           prior <- jfa::auditPrior(
-            conf.level = options[["conf_level"]], materiality = materiality, expected = parentOptions[["expected_val"]],
+            conf.level = options[["conf_level"]], materiality = materiality, expected = options[["expected_pop_rate"]],
             likelihood = options[["likelihood"]], N.units = N, ir = risks[["ir"]], cr = (risks[["cr"]] * risks[["car"]]), method = options[["prior_method"]],
             n = options[["n_prior"]], x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
           )
@@ -2184,7 +2182,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     data = as.data.frame(dataset), size = prevState[["n"]], units = units, method = options[["sampling_method"]],
     values = if (options[["values"]] != "") options[["values"]] else NULL,
     order = if (options[["rank"]] != "") options[["rank"]] else NULL,
-    start = start, replace = TRUE, randomize = options[["randomize"]]
+    start = start, replace = FALSE, randomize = options[["randomize"]]
   )
   return(jfaresult)
 }
@@ -2462,7 +2460,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (options[["bayesian"]]) {
       conf_level <- options[["conf_level"]]
       prior <- jfa::auditPrior(
-        conf.level = options[["conf_level"]], materiality = materiality, expected = prevOptions[["expected_val"]],
+        conf.level = options[["conf_level"]], materiality = materiality, expected = options[["expected_pop_rate"]],
         likelihood = options[["likelihood"]], N.units = prevOptions[["N.units"]], ir = risks[["ir"]], cr = (risks[["cr"]] * risks[["car"]]),
         method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
         alpha = options[["alpha"]], beta = options[["beta"]]
@@ -2605,11 +2603,21 @@ gettextf <- function(fmt, ..., domain = NULL) {
     } else if (options[["bayesian"]]) {
       risks <- .jfaAuditRiskModelCalculation(options)
       N_units <- if (evaluationOptions[["N.units"]][1] == 0) NULL else evaluationOptions[["N.units"]]
+      expected_pop_rate <- if (options[["prior_method"]] %in% c("impartial", "arm")) evaluationOptions[["expected_val"]] else 0
+
       prior <- jfa::auditPrior(
-        conf.level = options[["conf_level"]], materiality = materiality, expected = evaluationOptions[["expected_val"]],
-        likelihood = options[["method"]], N.units = sum(N_units), ir = risks[["ir"]],
-        cr = (risks[["cr"]] * risks[["car"]]), method = options[["prior_method"]], n = options[["n_prior"]], x = options[["x_prior"]],
-        alpha = options[["alpha"]], beta = options[["beta"]]
+        conf.level = options[["conf_level"]],
+        materiality = materiality,
+        expected = expected_pop_rate,
+        likelihood = options[["method"]],
+        N.units = sum(N_units),
+        ir = risks[["ir"]],
+        cr = (risks[["cr"]] * risks[["car"]]),
+        method = options[["prior_method"]],
+        n = options[["n_prior"]],
+        x = options[["x_prior"]],
+        alpha = options[["alpha"]],
+        beta = options[["beta"]]
       )
 
       if (options[["separateMisstatement"]] && options[["values"]] != "" && options[["values.audit"]] != "") {
@@ -2618,8 +2626,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
       }
 
       planningState <- jfa::planning(
-        conf.level = options[["conf_level"]], materiality = materiality, min.precision = min_precision,
-        expected = evaluationOptions[["expected_val"]], N.units = sum(evaluationOptions[["N.units"]]), prior = prior
+        conf.level = options[["conf_level"]],
+        materiality = materiality,
+        min.precision = min_precision,
+        expected = 0,
+        N.units = sum(evaluationOptions[["N.units"]]),
+        prior = prior
       )
 
       planningState[["n"]] <- if (options[["dataType"]] == "stats") options[["n"]] else nrow(dataset)
@@ -2659,9 +2671,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
     conf_level <- if (!options[["bayesian"]]) 1 - risks[["dr"]] else options[["conf_level"]]
 
     if (options[["bayesian"]]) {
+      expected_pop_rate <- if (options[["prior_method"]] %in% c("impartial", "arm")) planningOptions[["expected_val"]] else 0
       prior <- jfa::auditPrior(
         method = options[["prior_method"]], conf.level = conf_level, materiality = materiality,
-        expected = planningOptions[["expected_val"]], likelihood = options[["method"]],
+        expected = expected_pop_rate, likelihood = options[["method"]],
         N.units = N_units, ir = risks[["ir"]], cr = (risks[["cr"]] * risks[["car"]]), n = options[["n_prior"]],
         x = options[["x_prior"]], alpha = options[["alpha"]], beta = options[["beta"]]
       )

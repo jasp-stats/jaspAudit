@@ -20,6 +20,7 @@ options$rank <- ""
 options$plotPriorWithPosterior <- TRUE
 options$plotPosteriorWithPrior <- TRUE
 options$expected_rel_val <- 0.025
+options$expected_pop_rate <- 0.025
 options$expected_type <- "expected_rel"
 options$likelihood <- "poisson"
 options$materiality_abs_val <- 70161
