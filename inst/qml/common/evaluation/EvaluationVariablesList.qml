@@ -64,8 +64,7 @@ VariablesForm
 		name: 			"stratum"
 		title: 			qsTr("Stratum (optional)")
 		singleVariable: true
-		allowedColumns: ["nominal", "ordinal"]
-		minLevels:		2
+		allowedColumns: ["nominal"]
 		visible:		show_strata
 		info:			qsTr("A nominal variable that indicates to which subgroup (strata) of the population an item belongs.")
 	}
