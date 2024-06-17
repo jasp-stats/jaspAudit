@@ -46,6 +46,7 @@ Form
 			title: 						qsTr("Variable")
 			singleVariable:				true
 			allowedColumns:				["scale"]
+			minNumericLevels:			1
 			info:						qsTr("In this box the variable is selected whose digits should be analyzed for repeated values.")
 		}
 	}
