@@ -18,12 +18,6 @@
 # When making changes to this file always mention @koenderks as a
 # reviewer in the pull Request.
 
-# This is a temporary fix
-# TODO: remove it when R will solve this problem!
-gettextf <- function(fmt, ..., domain = NULL) {
-  return(sprintf(gettext(fmt, domain = domain), ...))
-}
-
 ################################################################################
 ################## The Audit Workflow ##########################################
 ################################################################################
