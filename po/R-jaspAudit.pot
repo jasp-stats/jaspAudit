@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.0\n"
-"POT-Creation-Date: 2024-06-10 08:10\n"
+"POT-Creation-Date: 2024-06-24 10:03\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -574,13 +574,7 @@ msgstr ""
 msgid "You cannot incorporate this prior information into your analysis because you are not testing against a performance materiality."
 msgstr ""
 
-msgid "an impartial prior distribution"
-msgstr ""
-
-msgid "a prior distribution using risk assessments"
-msgstr ""
-
-msgid "In order to construct %1$s, specify the expected errors as a percentage of the total population."
+msgid "The prior expected misstatement rate in the population is larger than the performance materiality."
 msgstr ""
 
 msgid "Selection Summary"
@@ -848,6 +842,9 @@ msgid "The detection risk is equal to or higher than 100%%. Please re-specify th
 msgstr ""
 
 msgid "You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly."
+msgstr ""
+
+msgid "The tolerable misstatements are larger than the performance materiality. If you used an absolute number of tolerable misstatements < 1, please use the 'relative' option."
 msgstr ""
 
 msgid "An error occurred: %1$s"

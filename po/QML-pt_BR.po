@@ -2775,3 +2775,34 @@ msgstr ""
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Confidence interval"
 msgstr ""
+
+msgctxt "ExpectedErrors|"
+msgid "Enter the expected misstatements as a percentage."
+msgstr ""
+
+msgctxt "ExpectedErrors|"
+msgid "The percentage of expected misstatements in the population."
+msgstr ""
+
+msgctxt "ExpectedErrors|"
+msgid ""
+"Do not make an assumption about the expected misstatements in the population."
+msgstr ""
+
+msgctxt "ExpectedPopRate|"
+msgid "Most Likely Misstatement"
+msgstr ""
+
+msgctxt "ExpectedPopRate|"
+msgid ""
+"The a priori most likely misstatement rate in the population, which is "
+"incorporated into the prior distribution."
+msgstr ""
+
+msgctxt "ExpectedPopRate|"
+msgid "Relative"
+msgstr ""
+
+msgctxt "ExpectedPopRate|"
+msgid "Enter the a priori most likely misstatement rate as a percentage."
+msgstr ""

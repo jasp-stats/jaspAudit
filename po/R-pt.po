@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-12-08 10:27\n"
+"POT-Creation-Date: 2024-06-24 10:03\n"
 "PO-Revision-Date: 2022-08-28 23:22+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -282,8 +282,8 @@ msgid "Bayes Factor Robustness Plot"
 msgstr ""
 
 msgid ""
-"<b>Figure %1$i.</b> The results of a robustness check using the Bayes factor. "
-"The figure illustrates the impact of different specifications (i.e., "
+"<b>Figure %1$i.</b> The results of a robustness check using the Bayes "
+"factor. The figure illustrates the impact of different specifications (i.e., "
 "concentration parameters) of the Dirichlet prior on the Bayes factor values, "
 "providing insights into the robustness of the statistical evidence to the "
 "choice of prior distribution."
@@ -960,16 +960,9 @@ msgid ""
 "are not testing against a performance materiality."
 msgstr ""
 
-#, fuzzy
-msgid "an impartial prior distribution"
-msgstr "Distribuição cumulativa empírica"
-
-msgid "a prior distribution using risk assessments"
-msgstr ""
-
 msgid ""
-"In order to construct %1$s, specify the expected errors as a percentage of "
-"the total population."
+"The prior expected misstatement rate in the population is larger than the "
+"performance materiality."
 msgstr ""
 
 #, fuzzy
@@ -1433,6 +1426,12 @@ msgid ""
 "You cannot achieve your current sampling objectives with this population. "
 "The resulting sample size exceeds the maximum of %1$s. Adjust the maximum "
 "option accordingly."
+msgstr ""
+
+msgid ""
+"The tolerable misstatements are larger than the performance materiality. If "
+"you used an absolute number of tolerable misstatements < 1, please use the "
+"'relative' option."
 msgstr ""
 
 msgid "An error occurred: %1$s"
@@ -2026,6 +2025,10 @@ msgstr ""
 #, fuzzy
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr "%1$s = %2$s %3$s %4$s"
+
+#, fuzzy
+#~ msgid "an impartial prior distribution"
+#~ msgstr "Distribuição cumulativa empírica"
 
 #~ msgid "<b>Table %1$i.</b> Goodness-of-fit Test"
 #~ msgstr "<b>Tabela %1$i.</b> Teste de aderência"
