@@ -117,7 +117,6 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "alexanderlynl",
       "RemoteRepo": "bstats",
-      "RemoteRef": "HEAD",
       "RemoteSha": "42d34c18df08d233825bae34fdc0dfa0cd70ce8c"
     },
     "cachem": {
@@ -398,7 +397,6 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspBase",
-      "RemoteRef": "HEAD",
       "RemoteSha": "7de02c442478e028fe2036e3b906059bf504c13e"
     },
     "jaspGraphs": {
@@ -409,7 +407,6 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspGraphs",
-      "RemoteRef": "HEAD",
       "RemoteSha": "e439c080e3841e0719c00ce35c376b34c833b546"
     },
     "jfa": {
@@ -420,7 +417,6 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "koenderks",
       "RemoteRepo": "jfa",
-      "RemoteRef": "HEAD",
       "RemoteSha": "7c3d5fbbdfaecac8f2c260850e3ccca092b6acba"
     },
     "jpeg": {
