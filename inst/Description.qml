@@ -84,15 +84,20 @@ Description
 		preloadData:	true
 	}
 
-	// GroupTitle
-	// {
-	// 	title:			qsTr("Algorithm Auditing")
-	// 	icon:			"audit-algorithms.svg"
-	// }
-	// Analysis
-	// {
-	//	title:			qsTr("Fairness Metrics")
-	//	func:			"auditClassicalModelFairness"
-	//	preloadData:	true
-	// }
+	GroupTitle
+	 {
+	 	title:			qsTr("Algorithm Auditing")
+		icon:			"audit-algorithms.svg"
+	 }
+	 Analysis
+	 {
+	 	title:			qsTr("Fairness Metrics")
+	 	func:			"auditClassicalModelFairness"
+		preloadData:	true
+	 }
+	  Analysis
+	 {
+	 	title:			qsTr("Fairness Measures Workflow")
+	 	func:			"exampleAnalysis"
+	 }
 }
