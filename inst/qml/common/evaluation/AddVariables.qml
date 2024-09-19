@@ -39,7 +39,7 @@ Group
 		value:		qsTr("selected")
 	}
 
-	ComputedColumnField
+	TextField
 	{
 		id: 		variable_col
 		name: 		"variable_col"
