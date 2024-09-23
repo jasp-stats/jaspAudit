@@ -18,7 +18,7 @@
 # When making changes to this file always mention @koenderks as a
 # reviewer in the pull Request.
 
-exampleAnalysis <- function(jaspResults, dataset, options, ...) {
+auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
 
   .showFairnessMetric(options, jaspResults)
 
