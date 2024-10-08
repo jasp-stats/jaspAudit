@@ -296,18 +296,12 @@
     sampleFilter <- numeric(selectionState[["N.items"]])
     rowNumber <- as.numeric(sample[["row"]])
     sampleFilter[rowNumber] <- as.numeric(sample[["times"]])
-    auditDataVariable <- rep(NA, selectionState[["N.items"]])
-    auditDataVariable[options[["performAudit"]][[1]]$rowIndices] <- options[["performAudit"]][[1]]$values
-
+    
     if (is.null(jaspResults[["indicator_col"]])) {
       jaspResults[["indicator_col"]] <- createJaspColumn(columnName = options[["indicator_col"]], dependencies = "indicator_col")
     }
-    if (is.null(jaspResults[["variable_col"]])) {
-      jaspResults[["variable_col"]] <- createJaspColumn(columnName = options[["variable_col"]], dependencies = "variable_col")
-    }
 
     jaspResults[["indicator_col"]]$setOrdinal(sampleFilter)
-    jaspResults[["variable_col"]]$setScale(auditDataVariable)
   }
 }
 
