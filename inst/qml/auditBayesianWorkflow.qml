@@ -286,13 +286,12 @@ Form
 					pasteVariables.checked 		= true
 					performAuditTable.colName   = names.variable_name
 					performAuditTable.extraCol	= names.indicator_name
-					
-					performAuditTable.filter = names.indicator_name + " > 0" 
-						+ (values.count > 0 &&  critical.use_negative && critical.use_inspect 
-						? (" | " + critical.use_name + " > 0")
-						: ""
-						)
-					
+
+					if(values.count > 0 && critical.use_negative && critical.use_inspect)
+						performAuditTable.filter = names.indicator_name + " > 0" + " | " + critical.use_name + " > 0" 
+					else
+						performAuditTable.filter = names.indicator_name + " > 0"
+			
 					performAuditTable.initialValuesSource = annotation.use_values ? "values" : ""
 				}
 			}
@@ -321,7 +320,6 @@ Form
 				Layout.fillWidth: 					true
 				modelType:							JASP.FilteredDataEntryModel
 				source:     						["id", "values", "variables"]
-				colName:    						"Filter"
 				defaultValue:						0
 				decimals:							10
 				Layout.preferredHeight:				500 * preferencesModel.uiScale
