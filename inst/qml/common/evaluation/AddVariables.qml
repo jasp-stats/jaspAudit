@@ -39,12 +39,13 @@ Group
 		value:		qsTr("selected")
 	}
 
-	TextField
+	CheckColumnIsFreeOrMineField
 	{
 		id: 		variable_col
 		name: 		"variable_col"
 		text: 		qsTr("Column name audit result")
 		fieldWidth: 120 * preferencesModel.uiScale
 		value: 		qsTr("auditResult")
+
 	}
 }
