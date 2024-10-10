@@ -286,22 +286,29 @@
 #####################################
 
 .jfaExecutionStage <- function(options, jaspResults) {
-  if (options[["pasteVariables"]]) {
-    # Add the two computed colums to the data set
-    planningOptions <- .jfaInputOptionsGather(options, dataset = NULL, jaspResults, stage = "planning", rawData = TRUE)
+  if (is.null(jaspResults[["indicator_col"]])) {
+    jaspResults[["indicator_col"]] <- createJaspColumn(columnName = options[["indicator_col"]], dependencies = "indicator_col")
+  }
+  if (options[["executionChecked"]]) {
     selectionState <- .jfaSelectionState(options, dataset, jaspResults[["planningState"]], jaspResults[["selectionContainer"]])
-
     sample <- selectionState[["sample"]]
     dataset <- .readDataSetToEnd(columns.as.numeric = options[["id"]])
     sampleFilter <- numeric(selectionState[["N.items"]])
     rowNumber <- as.numeric(sample[["row"]])
     sampleFilter[rowNumber] <- as.numeric(sample[["times"]])
-    
-    if (is.null(jaspResults[["indicator_col"]])) {
-      jaspResults[["indicator_col"]] <- createJaspColumn(columnName = options[["indicator_col"]], dependencies = "indicator_col")
-    }
-
     jaspResults[["indicator_col"]]$setOrdinal(sampleFilter)
+    if (options[["annotation"]] == "binary") { # Overwrite the empty column with 0's
+      auditDataVariable <- rep(NA, selectionState[["N.items"]])
+      if (is.null(jaspResults[["variable_col"]])) {
+        auditDataVariable[rowNumber] <- 0
+      } else {
+        auditDataVariable[options[["performAudit"]][[1]]$rowIndices] <- base::pmin(options[["performAudit"]][[1]]$values, 1)
+      }
+      if (options[["pasteVariables"]]) {
+        jaspResults[["variable_col"]] <- createJaspColumn(columnName = options[["variable_col"]], dependencies = "variable_col")
+        jaspResults[["variable_col"]]$setScale(auditDataVariable)
+      }
+    }
   }
 }
 
