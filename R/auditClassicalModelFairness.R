@@ -122,22 +122,18 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 }
 
 .jfaFairnessReadData <- function(dataset, options) {
-  if (!is.null(dataset)) {
-    return(dataset)
-  } else {
-    vars <- NULL
-    if (options[["target"]] != "") {
-      vars <- c(vars, options[["target"]])
-    }
-    if (options[["predictions"]] != "") {
-      vars <- c(vars, options[["predictions"]])
-    }
-    if (options[["protected"]] != "") {
-      vars <- c(vars, options[["protected"]])
-    }
-    dataset <- .readDataSetToEnd(columns.as.factor = vars)
-    return(dataset)
+  vars <- NULL
+  if (options[["target"]] != "") {
+    vars <- c(vars, options[["target"]])
   }
+  if (options[["predictions"]] != "") {
+    vars <- c(vars, options[["predictions"]])
+  }
+  if (options[["protected"]] != "") {
+    vars <- c(vars, options[["protected"]])
+  }
+  dataset <- jaspBase::excludeNaListwise(dataset, vars)
+  return(dataset)
 }
 
 .jfaFairnessAddProcedure <- function(options, jaspResults, position) {

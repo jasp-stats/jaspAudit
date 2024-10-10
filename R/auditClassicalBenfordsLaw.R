@@ -72,14 +72,11 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 }
 
 .jfaBenfordsLawReadData <- function(dataset, options) {
-  if (!is.null(dataset)) {
-    return(dataset)
-  }
   values <- options[["values"]]
   if (values == "") {
     values <- NULL
   }
-  dataset <- .readDataSetToEnd(columns.as.numeric = values, exclude.na.listwise = values)
+  dataset <- jaspBase::excludeNaListwise(dataset, values)
   return(dataset)
 }
 

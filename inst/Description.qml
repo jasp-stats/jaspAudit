@@ -6,10 +6,11 @@ Description
 	name				: "jaspAudit"
 	title				: qsTr("Audit")
 	description			: qsTr("Statistical methods for auditing")
-	version			: "0.19.0"
+	version				: "0.19.2"
 	author				: "Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille and Ruud Wetzels"
 	maintainer			: "Koen Derks <k.derks@nyenrode.nl>"
 	website				: "www.github.com/koenderks/jfa"
+	preloadData        : false
 	license				: "GPL (>= 3)"
 	icon				: "audit-module.svg"
 
@@ -61,6 +62,7 @@ Description
 	{
 		title:			qsTr("True Value Estimation")
 		func:			"auditClassicalEstimation"
+		preloadData:	true
 	}
 	
 	GroupTitle
@@ -72,12 +74,14 @@ Description
 	{
 		title:			qsTr("Benford's Law")
 		func:			"auditClassicalBenfordsLaw"
+		preloadData:	true
 	}
 	Analysis
 	{
 		menu:			qsTr("Repeated Values")
 		title:			qsTr("Repeated Values Analysis")
 		func:			"auditClassicalNumberBunching"
+		preloadData:	true
 	}
 
 	// GroupTitle
@@ -87,7 +91,8 @@ Description
 	// }
 	// Analysis
 	// {
-	// 	title:			qsTr("Fairness Metrics")
-	// 	func:			"auditClassicalModelFairness"
+	//	title:			qsTr("Fairness Metrics")
+	//	func:			"auditClassicalModelFairness"
+	//	preloadData:	true
 	// }
 }
