@@ -96,8 +96,8 @@ Description
 	// }
 	// Analysis
 	// {
-	// 	title:			qsTr("Fairness Metrics")
-	// 	func:			"auditClassicalModelFairness"
+	//	title:			qsTr("Fairness Metrics")
+	//	func:			"auditClassicalModelFairness"
 	//	preloadData:	true
 	// }
 }
