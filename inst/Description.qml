@@ -23,27 +23,23 @@ Description
 	{
 		title:			qsTr("Sampling Workflow")
 		func:			"auditClassicalWorkflow"
-		preloadData:	false
 	}
 	Analysis
 	{
 		title:			qsTr("Bayesian Sampling Workflow")
 		func:			"auditBayesianWorkflow"
-		preloadData:	false
 	}
 	Analysis
 	{
 		title:			qsTr("Planning")
 		func:			"auditClassicalPlanning"
 		requiresData:	false
-		preloadData:	false
 	}
 	Analysis
 	{
 		title:			qsTr("Bayesian Planning")
 		func:			"auditBayesianPlanning"
 		requiresData:	false
-		preloadData:	false
 	}
 	Analysis
 	{
@@ -55,14 +51,12 @@ Description
 		title:			qsTr("Evaluation")
 		func:			"auditClassicalEvaluation"
 		requiresData:	false
-		preloadData:	false
 	}
 	Analysis
 	{
 		title:			qsTr("Bayesian Evaluation")
 		func:			"auditBayesianEvaluation"
 		requiresData:	false
-		preloadData:	false
 	}
 	Analysis
 	{
