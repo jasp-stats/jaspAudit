@@ -72,9 +72,6 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 }
 
 .jfaBenfordsLawReadData <- function(dataset, options) {
-  if (!is.null(dataset)) {
-    return(dataset)
-  }
   values <- options[["values"]]
   if (values == "") {
     values <- NULL

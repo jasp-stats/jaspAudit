@@ -22,6 +22,9 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   # Create the procedure paragraph
   .jfaFairnessAddProcedure(options, jaspResults, position = 1)
 
+  # Read in the data
+  dataset <- .jfaFairnessReadData(dataset, options)
+
   # Ready for analysis
   ready <- (options[["protected"]] != "" && options[["target"]] != "" && options[["predictions"]] != "" && options[["privileged"]] != "" && options[["positive"]] != "")
 
@@ -116,6 +119,21 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     "tprp" = "TP / (TP + FN)"
   )
   return(out)
+}
+
+.jfaFairnessReadData <- function(dataset, options) {
+  vars <- NULL
+  if (options[["target"]] != "") {
+    vars <- c(vars, options[["target"]])
+  }
+  if (options[["predictions"]] != "") {
+    vars <- c(vars, options[["predictions"]])
+  }
+  if (options[["protected"]] != "") {
+    vars <- c(vars, options[["protected"]])
+  }
+  dataset <- jaspBase::excludeNaListwise(dataset, vars)
+  return(dataset)
 }
 
 .jfaFairnessAddProcedure <- function(options, jaspResults, position) {
