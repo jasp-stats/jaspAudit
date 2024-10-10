@@ -6,7 +6,7 @@ Description
 	name				: "jaspAudit"
 	title				: qsTr("Audit")
 	description			: qsTr("Statistical methods for auditing")
-	version			: "0.19.0"
+	version				: "0.19.0"
 	author				: "Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille and Ruud Wetzels"
 	maintainer			: "Koen Derks <k.derks@nyenrode.nl>"
 	website				: "www.github.com/koenderks/jfa"
@@ -22,23 +22,27 @@ Description
 	{
 		title:			qsTr("Sampling Workflow")
 		func:			"auditClassicalWorkflow"
+		preloadData:	false
 	}
 	Analysis
 	{
 		title:			qsTr("Bayesian Sampling Workflow")
 		func:			"auditBayesianWorkflow"
+		preloadData:	false
 	}
 	Analysis
 	{
 		title:			qsTr("Planning")
 		func:			"auditClassicalPlanning"
 		requiresData:	false
+		preloadData:	false
 	}
 	Analysis
 	{
 		title:			qsTr("Bayesian Planning")
 		func:			"auditBayesianPlanning"
 		requiresData:	false
+		preloadData:	false
 	}
 	Analysis
 	{
@@ -50,17 +54,20 @@ Description
 		title:			qsTr("Evaluation")
 		func:			"auditClassicalEvaluation"
 		requiresData:	false
+		preloadData:	false
 	}
 	Analysis
 	{
 		title:			qsTr("Bayesian Evaluation")
 		func:			"auditBayesianEvaluation"
 		requiresData:	false
+		preloadData:	false
 	}
 	Analysis
 	{
 		title:			qsTr("True Value Estimation")
 		func:			"auditClassicalEstimation"
+		preloadData:	true
 	}
 	
 	GroupTitle
@@ -72,12 +79,14 @@ Description
 	{
 		title:			qsTr("Benford's Law")
 		func:			"auditClassicalBenfordsLaw"
+		preloadData:	true
 	}
 	Analysis
 	{
 		menu:			qsTr("Repeated Values")
 		title:			qsTr("Repeated Values Analysis")
 		func:			"auditClassicalNumberBunching"
+		preloadData:	true
 	}
 
 	// GroupTitle
@@ -89,5 +98,6 @@ Description
 	// {
 	// 	title:			qsTr("Fairness Metrics")
 	// 	func:			"auditClassicalModelFairness"
+	//	preloadData:	true
 	// }
 }

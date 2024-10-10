@@ -64,10 +64,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 
   variables <- c(bookValues, auditValues)
 
-  dataset <- .readDataSetToEnd(
-    columns.as.numeric = variables,
-    exclude.na.listwise = variables
-  )
+  dataset <- jaspBase::excludeNaListwise(dataset, variables)
   return(dataset)
 }
 
