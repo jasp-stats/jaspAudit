@@ -297,18 +297,6 @@
     rowNumber <- as.numeric(sample[["row"]])
     sampleFilter[rowNumber] <- as.numeric(sample[["times"]])
     jaspResults[["indicator_col"]]$setOrdinal(sampleFilter)
-    if (options[["annotation"]] == "binary") { # Overwrite the empty column with 0's
-      auditDataVariable <- rep(NA, selectionState[["N.items"]])
-      if (is.null(jaspResults[["variable_col"]])) {
-        auditDataVariable[rowNumber] <- 0
-      } else {
-        auditDataVariable[options[["performAudit"]][[1]]$rowIndices] <- base::pmin(options[["performAudit"]][[1]]$values, 1)
-      }
-      if (options[["pasteVariables"]]) {
-        jaspResults[["variable_col"]] <- createJaspColumn(columnName = options[["variable_col"]], dependencies = "variable_col")
-        jaspResults[["variable_col"]]$setScale(auditDataVariable)
-      }
-    }
   }
 }
 

@@ -269,7 +269,7 @@ Form
 			Button
 			{
 				id: 								pasteButton
-				text: 								qsTr("<b>Fill Variables</b>")
+				text: 								qsTr("<b>Continue</b>")
 				enabled: 							names.indicator_name != "" && names.variable_name != "" && !pasteVariables.checked
 				anchors.right:						parent.right
 				onClicked:
