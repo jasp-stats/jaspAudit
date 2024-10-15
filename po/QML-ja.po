@@ -96,10 +96,6 @@ msgid "3. Execution"
 msgstr "3.実行"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "<b>Fill Variables</b>"
-msgstr "<b>変数を塗りつぶす</b>"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Evaluation</b>"
 msgstr "<b>評価へ</b>"
 
@@ -234,10 +230,6 @@ msgstr "<b>3. 実行</b>"
 msgctxt "auditClassicalWorkflow|"
 msgid "3. Execution"
 msgstr "3.実行"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Fill Variables</b>"
-msgstr "<b>変数を塗りつぶす</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Evaluation</b>"
@@ -2847,4 +2839,12 @@ msgstr "相対的"
 
 msgctxt "ExpectedPopRate|"
 msgid "Enter the a priori most likely misstatement rate as a percentage."
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Continue</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Continue</b>"
 msgstr ""

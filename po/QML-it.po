@@ -94,10 +94,6 @@ msgid "3. Execution"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
-msgid "<b>Fill Variables</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Evaluation</b>"
 msgstr ""
 
@@ -231,10 +227,6 @@ msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "3. Execution"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Fill Variables</b>"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
@@ -2793,4 +2785,12 @@ msgstr ""
 
 msgctxt "ExpectedPopRate|"
 msgid "Enter the a priori most likely misstatement rate as a percentage."
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Continue</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Continue</b>"
 msgstr ""

@@ -130,11 +130,6 @@ msgstr "3. Eksekusi"
 
 #, fuzzy
 msgctxt "auditBayesianWorkflow|"
-msgid "<b>Fill Variables</b>"
-msgstr "<b>Mengisi Variabel</b>"
-
-#, fuzzy
-msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
 msgstr "<b>Tandai item yang Anda pilih dengan nilai audit (benar)</b>"
 
@@ -503,10 +498,6 @@ msgstr "<b>3. Eksekusi</b>"
 msgctxt "auditClassicalWorkflow|"
 msgid "3. Execution"
 msgstr "3. Eksekusi"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Fill Variables</b>"
-msgstr "<b>Mengisi Variabel</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
@@ -3263,4 +3254,12 @@ msgstr "Relatif"
 
 msgctxt "ExpectedPopRate|"
 msgid "Enter the a priori most likely misstatement rate as a percentage."
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Continue</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Continue</b>"
 msgstr ""

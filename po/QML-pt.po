@@ -57,10 +57,6 @@ msgid "3. Execution"
 msgstr "3. Execução"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "<b>Fill Variables</b>"
-msgstr "<b>Variáveis de Preenchimento</b>"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Evaluation</b>"
 msgstr "<b>Para Avaliação</b>"
 
@@ -123,10 +119,6 @@ msgstr "<b>3. Execução</b>"
 msgctxt "auditClassicalWorkflow|"
 msgid "3. Execution"
 msgstr "3. Execução"
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Fill Variables</b>"
-msgstr "<b>Variáveis de Preenchimento</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Evaluation</b>"
@@ -2842,4 +2834,12 @@ msgstr "Relativo"
 
 msgctxt "ExpectedPopRate|"
 msgid "Enter the a priori most likely misstatement rate as a percentage."
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Continue</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Continue</b>"
 msgstr ""

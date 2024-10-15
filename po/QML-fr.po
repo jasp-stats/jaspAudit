@@ -120,10 +120,6 @@ msgid "3. Execution"
 msgstr "3. Exécution"
 
 msgctxt "auditBayesianWorkflow|"
-msgid "<b>Fill Variables</b>"
-msgstr "<b>Remplir Variables</b>"
-
-msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
 msgstr ""
 
@@ -486,11 +482,6 @@ msgstr "<b>3. Exécution</b>"
 msgctxt "auditClassicalWorkflow|"
 msgid "3. Execution"
 msgstr "3. Exécution"
-
-#, fuzzy
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Fill Variables</b>"
-msgstr "<b>Remplir Variables</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
@@ -2806,4 +2797,12 @@ msgstr ""
 
 msgctxt "ExpectedPopRate|"
 msgid "Enter the a priori most likely misstatement rate as a percentage."
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Continue</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Continue</b>"
 msgstr ""
