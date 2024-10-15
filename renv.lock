@@ -181,7 +181,7 @@
     },
     "data.table": {
       "Package": "data.table",
-      "Version": "1.16.0",
+      "Version": "1.16.2",
       "Source": "Repository"
     },
     "deSolve": {
@@ -211,7 +211,7 @@
     },
     "evaluate": {
       "Package": "evaluate",
-      "Version": "1.0.0",
+      "Version": "1.0.1",
       "Source": "Repository"
     },
     "evd": {
@@ -397,7 +397,7 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "koenderks",
       "RemoteRepo": "jfa",
-      "RemoteSha": "bb151e1590e15bab2549eba14e88b50e6ae5b944"
+      "RemoteSha": "7ffac52f98ae735e1bfe7794841e81e977626ba1"
     },
     "jpeg": {
       "Package": "jpeg",
