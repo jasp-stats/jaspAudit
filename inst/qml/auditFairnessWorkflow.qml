@@ -34,13 +34,13 @@ Form
 	{
 		title: qsTr("Selecting a Group Fairness Measure")
 		columns:1
-		expanded: true //in questo modo si mostra all'apertura la sezione 
+		expanded: true 
 
 		RadioButtonGroup
 	{
 		id: firstquestion
 		name: "firstquestion"
-		title:qsTr("Do you have the ground thruth information?")
+		title:qsTr("Is the information on the true values of the classification relevant in your context?")
 		
 
 		
@@ -257,7 +257,7 @@ Form
 			CheckBox
 			{
 				id: 					explanatoryText
-				text: 					qsTr("Explanatory text")
+				text: 					qsTr("Fairness measure explanatory text")
 				name: 					"explanatoryText"
 				checked: 				true
 				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
@@ -270,10 +270,220 @@ Form
 			}
 		}
 
+		CheckBox
+			{
+				id: 					workflowfigure
+				text: 					qsTr("Decision-Making Workflow Plot")
+				name: 					"workflowfigure"
+				checked: 				true
+				info:					qsTr("When checked, enables the representation of the decision-making workflow that is obtained after answering all the question within it.")
+			}
+
+	}
+
+	}
+
+	Section
+	{
+		title:qsTr("Fairness Measure Calculation")
+		columns:1
+		info:								qsTr("The fairness measures analysis enables the user to assess fairness and discrimination against specific groups in AI-predicted classification.")
+
+	VariablesForm
+	{
+		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
+
+		AvailableVariablesList
+		{
+			name: 						"variablesFormFairness"
+		}
+		AssignedVariablesList
+		{
+			name: 						"target"
+			title: 						qsTr("Target")
+			singleVariable:				true
+			allowedColumns:				["nominal"]
+			minLevels:					2
+			info:						qsTr("In this column, the target (i.e., to be predicted) variable should be entered.")
+		}
+		AssignedVariablesList
+		{
+			name: 						"predictions"
+			title: 						qsTr("Predictions")
+			singleVariable:				true
+			allowedColumns:				["nominal"]
+			minLevels:					2
+			info:						qsTr("In this column, the predictions of the algorithm should be entered.")
+		}
+		AssignedVariablesList
+		{
+			name: 						"protected"
+			title: 						qsTr("Sensitive Attribute")
+			singleVariable:				true
+			allowedColumns:				["nominal"]
+			minLevels:					2
+			info:						qsTr("In this column, the protected (i.e., sensitive) attribute should be entered.")
+		}
+	}
+
+		Group
+	{
+		CIField
+		{
+			name: 						"conf_level"
+			label: 						qsTr("Confidence")
+			info:						qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
+		}
+
+		Group{
+
+		columns: 2
+
+		DropDown
+		{
+
+			id:							metric
+			name: 						"metric"
+			label: 						qsTr("Metric")
+			indexDefaultValue: 			0
+			values: [
+				{ label: qsTr("Disparate Impact"),					value: "di"},
+				{ label: qsTr("Equalized Odds"),					value: "eodds"},
+				{ label: qsTr("False Positive Rate Parity"),		value: "fprp"},
+				{ label: qsTr("False Negative Rate Parity"),		value: "fnrp"},
+				{ label: qsTr("Predictive Rate Parity"),			value: "prp"},
+				{ label: qsTr("Equal Opportunity"),					value: "eo"},
+				{ label: qsTr("Specificity Parity"),				value: "sp"},
+				{ label: qsTr("Negative predicted value parity"),	value: "npvp"},
+				{ label: qsTr("Accuracy Parity"), 					value: "ap"}
+			]
+			info:						qsTr("The type of fairness metric to compute and perform inference on.")
+		}
+
+		HelpButton{
+				toolTip:	qsTr("Click to learn more about the available fairness measures")
+				helpPage:					"Audit/fairnessmeasurelist"
+			}
+
+	}
+
+	}
+
+	Group 
+	{
+		title:							qsTr("Factor Levels")
+		info:							qsTr("These options allow specification of the privileged group and the positive class.")
+
+		DropDown
+		{
+			label: 						qsTr("Privileged group")
+			name: 						"privileged"
+			indexDefaultValue: 			0
+			addEmptyValue: 				true
+			placeholderText: 			qsTr("None")
+			source: 					[ { name: "protected", use: "levels" } ]
+			info:						qsTr("The privileged group refers to the class in the protected variable that historically or systematically experiences certain advantages, benefits, or privileges.")
+		}
+
+		DropDown
+		{
+			label: 						qsTr("Positive class")
+			name: 						"positive"
+			indexDefaultValue: 			0
+			addEmptyValue: 				true
+			placeholderText: 			qsTr("None")
+			source: 					[ { name: "target", use: "levels" } ]
+			info:						qsTr("The positive class in the target variable.")
+		}
+
+		RadioButtonGroup
+	{
+		title: 							qsTr("Alt. Hypothesis")
+		name: 							"alternative"
+		info:							qsTr("Specify the alternative hypothesis.")
+
+		RadioButton
+		{
+			text: 						qsTr("Unprivileged \u2260 Privileged")
+			name: 						"two.sided"
+			checked:					true
+			info:						qsTr("Test the alternative hypothesis that the fairness metric of an unprivileged group is not equal to the fairness metric in the privileged group.")
+		}
+	}
+	}
+
+	Group
+	{
+		title: 							qsTr("Display")
+		info:							qsTr("Specify options that have an effect on the look and feel of the audit report.")
+
+		Row
+		{
+			CheckBox
+			{
+				id: 					analysisexplanatoryText
+				text: 					qsTr("Analysis explanatory text")
+				name: 					"analysisexplanatoryText"
+				checked: 				true
+				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
+			}
+
+			HelpButton
+			{
+				helpPage:				"Audit/explanatoryText"
+				toolTip: 				qsTr("Show explanatory text at each step of the analysis")
+			}
+		}
 	}
 
 	}
 
+	Section
+	{
+		title: 							qsTr("Report")
+		columns: 						1
+
+		Group
+		{
+			title: 						qsTr("Tables")
+			info:						qsTr("Add additional tables about the evaluation to the report.")
+
+			CheckBox
+			{
+				text:					qsTr("Individual comparisons")
+				name:					"comparisonsTable"
+				info:					qsTr("Produces a table comparing the unprivileged groups against the privileged group.")
+				checked:				true
+			}
+
+			CheckBox
+			{
+				text:					qsTr("Model performance")
+				name:					"performanceTable"
+				info:					qsTr("Produces a table containing the performance measures for the classification, including support, accuracy, precision, recall and F1-score.")
+			}
+
+			CheckBox
+			{
+				text:					qsTr("Confusion matrix")
+				name:					"confusionTable"
+				info:					qsTr("Produces the confusion matrix for each group.")
+				checked:				true
+
+				CheckBox {
+					text:				qsTr("Display proportions")
+					name:				"confusionTableProportions"
+					info:				qsTr("Displays proportions in the confusion table.")
+				}
+			}
+		}
+
+
+
+	}
+
+	
 }
+
 
 

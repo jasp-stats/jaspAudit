@@ -233,3 +233,6 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
 
   jaspResults[["selectedExplanationText"]] <- htmlText
 }
+
+
+
