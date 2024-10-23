@@ -84,6 +84,8 @@ Form
 			enable:			!data.use_stats
 			enable_pooling: variables.use_strata
 			enable_partial: !variables.use_strata && variables.use_id && variables.use_book && variables.use_real && ((population.n_items > 0 && population.n_units > 0) || data.use_population) && likelihood.use_binomial
+			hide_hurdle:	false
+			enable_hurdle:	!algorithm.use_partial && !variables.use_strata && variables.use_id && variables.use_book && variables.use_real && likelihood.use_binomial
 		}
 		Evaluation.IntervalType { bayesian: true; test: objectives.use_materiality }
 	}
