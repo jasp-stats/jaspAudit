@@ -2821,7 +2821,7 @@
       "poisson" = gettext("The results are computed using the gamma distribution."),
       "hypergeometric" = gettext("The results are computed using the beta-binomial distribution.")
     )
-    if (options[["hurdle"]] && options[["method"]] == "binomial") {
+    if (!options[["workflow"]] && options[["hurdle"]] && options[["method"]] == "binomial") {
        message <- gettext("The results are computed using the hurdle beta model")
     }
   }
