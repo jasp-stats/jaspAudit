@@ -740,7 +740,7 @@
       "min_precision_test", "min_precision_rel_val",
       "by", "prior_method", "prior_n", "prior_x", "alpha", "beta",
       "critical_items", "critical_negative", "critical_action",
-      "stratum", "pooling"
+      "stratum", "pooling", "hurdle"
     ))
 
     jaspResults[["evaluationContainer"]] <- container
@@ -2707,6 +2707,9 @@
       if (options[["method"]] == "stringer.binomial" && options[["lta"]]) {
         method <- "stringer.lta"
       }
+      if (options[["bayesian"]] && options[["hurdle"]] && options[["method"]] == "binomial") {
+        method <- "hurdle.beta"
+      }
 
       if (options[["separateMisstatement"]] && options[["values"]] != "" && options[["values.audit"]] != "") {
         result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior, planningOptions, evaluationContainer)
@@ -2818,6 +2821,9 @@
       "poisson" = gettext("The results are computed using the gamma distribution."),
       "hypergeometric" = gettext("The results are computed using the beta-binomial distribution.")
     )
+    if (options[["hurdle"]] && options[["method"]] == "binomial") {
+       message <- gettext("The results are computed using the hurdle beta model")
+    }
   }
 
   # Custom message for stringer bound with LTA

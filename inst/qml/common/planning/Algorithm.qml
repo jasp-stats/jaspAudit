@@ -25,10 +25,13 @@ Group
 {
 	readonly	property bool 	use_pooling:	pooling.checked
 	readonly	property bool 	use_partial:	partial.checked
+	readonly	property bool 	use_hurdle:		hurdle.checked
 				property bool	enable:			true
 				property bool	hide_pooling:	true
+				property bool	hide_hurdle:	true
 				property bool	enable_pooling:	true
 				property bool	enable_partial:	true
+				property bool	enable_hurdle:	true
 
 	title:				qsTr("Algorithm")
 	enabled:			enable
@@ -72,6 +75,28 @@ Group
 		{
 			toolTip: 	qsTr("Click to learn more about this algorithm")
 			helpPage:	"Audit/pooling"
+		}
+	}
+
+	Row
+	{
+		spacing: 		5 * preferencesModel.uiScale
+		enabled:		enable_hurdle
+		visible:		!hide_hurdle
+
+		CheckBox
+		{
+			id:			hurdle
+			text:		qsTr("Hurdle model")
+			name:		"hurdle"
+			enabled:	!partial.checked
+			info:		qsTr("This algoritm enables you to consider the individal taints.")
+		}
+
+		HelpButton
+		{
+			toolTip: 	qsTr("Click to learn more about this algorithm")
+			helpPage:	"Audit/hurdle"
 		}
 	}
 }
