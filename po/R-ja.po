@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
 "POT-Creation-Date: 2024-06-24 10:03\n"
-"PO-Revision-Date: 2024-10-22 22:15+0000\n"
+"PO-Revision-Date: 2024-11-06 22:00+0000\n"
 "Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-r/ja/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.2-dev\n"
+"X-Generator: Weblate 5.8.2\n"
 
 msgid "<u>Procedure</u>"
 msgstr "<u>手順</u>"
@@ -686,13 +686,13 @@ msgid "<b>Table %1$i.</b> Model Performance"
 msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid "Support"
-msgstr ""
+msgstr "サポート"
 
 msgid "Recall"
 msgstr "再現率"
 
 msgid "F1 Score"
-msgstr ""
+msgstr "F1スコア"
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Confusion Matrix"
