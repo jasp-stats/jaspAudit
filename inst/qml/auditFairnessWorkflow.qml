@@ -65,7 +65,7 @@ Form
 		{
 			text: 						qsTr("No")
 			name: 						"firstquestion_no"
-			checked:					True
+			checked:					true
 		}
 
 	
@@ -119,7 +119,7 @@ Form
 		{
 			text: 						qsTr("Both")
 			name: 						"secondquestion_both"
-			checked:					True
+			checked:					true
 		}
 	}
 
@@ -156,7 +156,7 @@ Form
 		{
 			text: 						qsTr("Well Defined")
 			name: 						"thirdquestion_wd"
-			checked:					True
+			checked:					true
 		}
 
 			HelpButton
@@ -180,7 +180,7 @@ Form
 		{
 			text: 						qsTr("False Positive")
 			name: 						"fourthquestion_caseA_FP"
-			checked:					True
+			checked:					true
 		}
 
 		RadioButton
@@ -201,7 +201,7 @@ Form
 		{
 			text: 						qsTr("False Positive")
 			name: 						"fourthquestion_caseB_FP"
-			checked:					True
+			checked:					true
 		}
 
 		RadioButton
@@ -227,7 +227,7 @@ Form
 		{
 			text: 						qsTr("False Positive")
 			name: 						"fourthquestion_caseC_FP"
-			checked:					True
+			checked:					true
 		}
 
 		RadioButton
@@ -334,38 +334,6 @@ Form
 			label: 						qsTr("Confidence")
 			info:						qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
 		}
-
-		Group{
-
-		columns: 2
-
-		DropDown
-		{
-
-			id:							metric
-			name: 						"metric"
-			label: 						qsTr("Metric")
-			indexDefaultValue: 			0
-			values: [
-				{ label: qsTr("Disparate Impact"),					value: "di"},
-				{ label: qsTr("Equalized Odds"),					value: "eodds"},
-				{ label: qsTr("False Positive Rate Parity"),		value: "fprp"},
-				{ label: qsTr("False Negative Rate Parity"),		value: "fnrp"},
-				{ label: qsTr("Predictive Rate Parity"),			value: "prp"},
-				{ label: qsTr("Equal Opportunity"),					value: "eo"},
-				{ label: qsTr("Specificity Parity"),				value: "sp"},
-				{ label: qsTr("Negative predicted value parity"),	value: "npvp"},
-				{ label: qsTr("Accuracy Parity"), 					value: "ap"}
-			]
-			info:						qsTr("The type of fairness metric to compute and perform inference on.")
-		}
-
-		HelpButton{
-				toolTip:	qsTr("Click to learn more about the available fairness measures")
-				helpPage:					"Audit/fairnessmeasurelist"
-			}
-
-	}
 
 	}
 
