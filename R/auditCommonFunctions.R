@@ -861,7 +861,7 @@
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk and/or Analytical risk, or the confidence."))
       return(TRUE)
-    } else if (!options[["workflow"]] && options[["dataType"]] != "pdata" && options[["materiality_type"]] == "materiality_abs" && options[["materiality_abs_val"]] >= options[["n_units"]]) {
+    } else if (options[["dataType"]] != "pdata" && options[["materiality_type"]] == "materiality_abs" && options[["materiality_abs_val"]] >= options[["n_units"]]) {
       # Error if the value of the performance materiality exceeds the total population value
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettextf("Analysis not possible: The materiality (%1$s) is higher than, or equal to the total value of the population (%2$s).", options[["materiality_abs_val"]], options[["n_units"]]))
