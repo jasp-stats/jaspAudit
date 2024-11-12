@@ -853,13 +853,18 @@
       return(TRUE)
     } else if (options[["dataType"]] %in% c("data", "pdata") && options[["id"]] != "" && !is.null(dataset) && nrow(dataset) != length(unique(dataset[[options[["id"]]]]))) {
       # Error if the transaction ID's are not unique
-      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Selection Summary"))
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettext("You must specify unique item ID's. The row numbers of the data set are sufficient."))
       return(TRUE)
     } else if (.jfaAuditRiskModelCalculation(options)[["dr"]] >= 1) {
       # Error if the detection risk of the analysis is higher than one
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettextf("The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk and/or Analytical risk, or the confidence."))
+      return(TRUE)
+    } else if (!options[["workflow"]] && options[["dataType"]] != "pdata" && options[["materiality_type"]] == "materiality_abs" && options[["materiality_abs_val"]] >= options[["n_units"]]) {
+      # Error if the value of the performance materiality exceeds the total population value
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
+      parentContainer$setError(gettext("Analysis not possible: The materiality is higher than, or equal to the total value of the population."))
       return(TRUE)
     } else {
       # No error in the evaluation options
