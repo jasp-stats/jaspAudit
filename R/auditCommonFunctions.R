@@ -864,7 +864,7 @@
     } else if (!options[["workflow"]] && options[["dataType"]] != "pdata" && options[["materiality_type"]] == "materiality_abs" && options[["materiality_abs_val"]] >= options[["n_units"]]) {
       # Error if the value of the performance materiality exceeds the total population value
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
-      parentContainer$setError(gettext("Analysis not possible: The materiality is higher than, or equal to the total value of the population."))
+      parentContainer$setError(gettextf("Analysis not possible: The materiality (%1$s) is higher than, or equal to the total value of the population (%2$s).", options[["materiality_abs_val"]], options[["n_units"]]))
       return(TRUE)
     } else {
       # No error in the evaluation options
