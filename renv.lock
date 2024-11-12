@@ -747,7 +747,7 @@
     },
     "inline": {
       "Package": "inline",
-      "Version": "0.3.19",
+      "Version": "0.3.20",
       "Source": "Repository",
       "Requirements": [
         "methods"
@@ -851,7 +851,7 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "koenderks",
       "RemoteRepo": "jfa",
-      "RemoteSha": "f3723cc21b9bd4266f81fa8ecdefdd43d2f190d4"
+      "RemoteSha": "ef09d6b989dd103e2a8aba71bd981e4b226b3621"
     },
     "jpeg": {
       "Package": "jpeg",
@@ -879,7 +879,7 @@
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.48",
+      "Version": "1.49",
       "Source": "Repository",
       "Requirements": [
         "R",
