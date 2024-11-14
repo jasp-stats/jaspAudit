@@ -52,9 +52,9 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
    q2 <- 3
    }
 
-   if(options[["thirdquestion"]]=="thirdquestion_enp"){
+   if(options[["thirdquestion"]]=="thirdquestion_positive"){
    q3 <- 1
-   }else if(options[["thirdquestion"]]=="thirdquestion_wd"){
+   }else if(options[["thirdquestion"]]=="thirdquestion_negative"){
    q3 <- 2
    }
 

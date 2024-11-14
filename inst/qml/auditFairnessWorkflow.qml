@@ -127,46 +127,22 @@ Form
 	{
 		id: thirdquestion
 		name: "thirdquestion"
-		title:qsTr("Can the negative class be considered as everything not positive or is it well defined?")
+		title:qsTr("What Is More Important: a Correct Classification of the Positive Class or a Correct Classification of the Negative Class?")
 		visible: secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 
-		Group{
-			
-			columns:2 
+			RadioButton
+		{
+			text: 						qsTr("The correct classification in the positive class")
+			name: 						"thirdquestion_positive"
+		}
 
 			RadioButton
 		{
-			text: 						qsTr("Everything Not Positive")
-			name: 						"thirdquestion_enp"
-		}
-
-		HelpButton
-		{
-			toolTip: 	qsTr("Click to learn more about an Everything Not Positive negative class")
-			helpPage:					"Audit/negativeclassENP"
-		}	
-
-		}
-		
-		Group{
-
-			columns:2
-
-			RadioButton
-		{
-			text: 						qsTr("Well Defined")
-			name: 						"thirdquestion_wd"
+			text: 						qsTr("The correct classification in the negative class")
+			name: 						"thirdquestion_negative"
 			checked:					true
 		}
 
-			HelpButton
-		{
-			toolTip: 	qsTr("Click to learn more about a Well Defined negative class")
-			helpPage:					"Audit/negativeclassWD"
-		}
-
-		}
-		
 	}
 
 	RadioButtonGroup
