@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2024-10-19 03:31\n"
+"POT-Creation-Date: 2024-11-16 03:33\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -593,6 +593,9 @@ msgid "The direct, difference, ratio, and regression bounds require that you spe
 msgstr ""
 
 msgid "The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk and/or Analytical risk, or the confidence."
+msgstr ""
+
+msgid "Analysis not possible: The materiality (%1$s) is higher than, or equal to the total value of the population (%2$s)."
 msgstr ""
 
 msgid "Select one or both sampling objectives to begin planning an audit sample.\n\n%1$s <b>Test against a performance materiality</b>\n\nEnable this objective if you want to test whether the total misstatement in the population exceeds a certain limit (i.e., the performance materiality) based on a sample. This approach allows you to plan a sample such that, when the sample meets your expectations, the maximum error is said to be below performance materiality. In the evaluation you will be able to quantify the evidence that your sample contains for or against the statement that the population misstatement does not exceed the performance materiality.\n\n%2$s <b>Obtain a minimum precision</b>\n\nEnable this objective if you want to obtain a minimum precision when estimating the total misstatement in the population based on a sample. This approach allows you to plan a sample such that, when the sample meets expectations, the accuracy of your estimate is below a tolerable percentage. In the evaluation you will be able to quantify the accuracy of your estimate of the population misstatement."

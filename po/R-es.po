@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2024-06-24 10:03\n"
+"POT-Creation-Date: 2024-11-16 03:33\n"
 "PO-Revision-Date: 2024-11-14 16:46+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1036,6 +1036,14 @@ msgstr ""
 "El riesgo de detección es igual a (o mayor que) 100%%. Por favor, vuelva a "
 "especificar sus valores para el Riesgo Inherente y/o Riesgo de Control y/o "
 "Riesgo Analítico, o la confianza."
+
+#, fuzzy
+msgid ""
+"Analysis not possible: The materiality (%1$s) is higher than, or equal to "
+"the total value of the population (%2$s)."
+msgstr ""
+"Análisis imposible: La materialidad es mayor que (o igual a) el valor total "
+"de las observaciones."
 
 msgid ""
 "Select one or both sampling objectives to begin planning an audit sample.\n"
