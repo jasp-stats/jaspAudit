@@ -56,7 +56,8 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
    q3 <- 1
    }else if(options[["thirdquestion"]]=="thirdquestion_negative"){
    q3 <- 2
-   }
+   }else if(options[["thirdquestion"]]=="thirdquestion_both"){
+   q3 <- 3
 
    if(options[["fourthquestion_caseA"]]=="fourthquestion_caseA_FP"){
    q4 <- 1
@@ -66,8 +67,6 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
    q4 <- 1
    }else if(options[["fourthquestion_caseB"]]=="fourthquestion_caseB_FN"){
    q4 <- 2 
-   }else if(options[["fourthquestion_caseB"]]=="fourthquestion_caseB_NOPREFERENCE"){
-   q4 <- 3
    }else if(options[["fourthquestion_caseC"]]=="fourthquestion_caseC_FP"){
    q4 <- 1   
    }else if(options[["fourthquestion_caseC"]]=="fourthquestion_caseC_FN"){
