@@ -302,17 +302,6 @@ Form
 		}
 	}
 
-		Group
-	{
-		CIField
-		{
-			name: 						"conf_level"
-			label: 						qsTr("Confidence")
-			info:						qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
-		}
-
-	}
-
 	Group 
 	{
 		title:							qsTr("Factor Levels")
@@ -339,21 +328,6 @@ Form
 			source: 					[ { name: "target", use: "levels" } ]
 			info:						qsTr("The positive class in the target variable.")
 		}
-
-		RadioButtonGroup
-	{
-		title: 							qsTr("Alt. Hypothesis")
-		name: 							"alternative"
-		info:							qsTr("Specify the alternative hypothesis.")
-
-		RadioButton
-		{
-			text: 						qsTr("Unprivileged \u2260 Privileged")
-			name: 						"two.sided"
-			checked:					true
-			info:						qsTr("Test the alternative hypothesis that the fairness metric of an unprivileged group is not equal to the fairness metric in the privileged group.")
-		}
-	}
 	}
 
 	Group
