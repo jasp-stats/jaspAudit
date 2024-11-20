@@ -217,9 +217,11 @@ Form
 
 			IntegerField
 			{
-				name: 					"seed"
-				label: 					qsTr("Seed")
-				defaultValue: 			1
+				name:					"seed"
+				label:					qsTr("Seed")
+				defaultValue:			Math.floor(Math.random() * 1000); // Init with random integer in [1,...,999]
+				min:					-999
+				max:					999
 				info:					qsTr("Selects the seed for the random number generator in order to reproduce results.")
 			}
 		}

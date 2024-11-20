@@ -26,12 +26,12 @@ IntegerField
 {
 	property bool	enable:	false
 
-	id: 			seed
-	text: 			qsTr("Seed")
-	name: 			"seed"
-	defaultValue: 	1
-	min: 			1
-	max: 			99999
+	id:				seed
+	text:			qsTr("Seed")
+	name:			"seed"
+	defaultValue:	Math.floor(Math.random() * 1000); // Init with random integer in [1,...,999]
+	min:			-999
+	max:			999
 	enabled:		enable
 	info:			qsTr("Selects the seed for the random number generator in order to reproduce results.")
 }
