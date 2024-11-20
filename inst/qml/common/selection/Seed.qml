@@ -29,7 +29,7 @@ IntegerField
 	id:				seed
 	text:			qsTr("Seed")
 	name:			"seed"
-	defaultValue:	Math.floor(Math.random() * 1000); // Init with random integer in [1,...,999]
+	defaultValue:	Math.floor(Math.random() * 1000) // Init with random integer in [1,...,999]
 	min:			-999
 	max:			999
 	enabled:		enable
