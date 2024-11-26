@@ -13,6 +13,7 @@ options$summaryTable <- TRUE
 options$numberBunchingSimulationPlots <- TRUE
 options$numberBunchingHistogram <- TRUE
 options$noHeads <- 0
+options$seed <- 1
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalNumberBunching", "numberBunching1.csv", options)
 
@@ -453,6 +454,7 @@ options$summaryTable <- TRUE
 options$numberBunchingSimulationPlots <- TRUE
 options$numberBunchingHistogram <- TRUE
 options$noHeads <- 0
+options$seed <- 1
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalNumberBunching", "numberBunching2.csv", options)
 
