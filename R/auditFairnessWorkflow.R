@@ -58,6 +58,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
    q3 <- 2
    }else if(options[["thirdquestion"]]=="thirdquestion_both"){
    q3 <- 3
+   }
 
    if(options[["fourthquestion_caseA"]]=="fourthquestion_caseA_FP"){
    q4 <- 1
@@ -233,9 +234,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
 
    state <- .determineFairnessMetric(options, jaspResults)
   details <- .determineExplanationText(options, state)
-  htmlText <- createJaspHtml(gettextf("Details regarding the fairness measure 
-
-  %1$s", details))
+  htmlText <- createJaspHtml(gettextf("Details regarding the fairness measure %1$s", details))
 
   htmlText$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC", "explanatoryText"))
 

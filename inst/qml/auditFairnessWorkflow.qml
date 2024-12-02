@@ -127,7 +127,7 @@ Form
 	{
 		id: thirdquestion
 		name: "thirdquestion"
-		title:qsTr("What Is More Important: a Correct Classification of the Positive Class or a Correct Classification of the Negative Class?")
+		title:qsTr("What Is More Important: a Correct Classification of the Positive Class, a Correct Classification of the Negative Class or Both?")
 		visible: secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 
 			RadioButton
@@ -140,6 +140,13 @@ Form
 		{
 			text: 						qsTr("The correct classification in the negative class")
 			name: 						"thirdquestion_negative"
+			checked:					true
+		}
+
+			RadioButton
+		{
+			text: 						qsTr("The correct classification in the positive class and in the negative class")
+			name: 						"thirdquestion_both"
 			checked:					true
 		}
 
@@ -186,11 +193,6 @@ Form
 			name: 						"fourthquestion_caseB_FN"
 		}
 
-		RadioButton
-		{
-			text: 						qsTr("I do not have a preference")
-			name: 						"fourthquestion_caseB_NOPREFERENCE"
-		}
 	}
 	RadioButtonGroup
 	{
