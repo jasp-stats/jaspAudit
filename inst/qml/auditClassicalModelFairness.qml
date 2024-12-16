@@ -25,7 +25,7 @@ import "./common"	as Common
 Form 
 {
 	columns: 							1
-	info:								qsTr("The fairness metrics analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. The ratio of two fairness metrics is called parity, which is a well-known concept in algorithmic fairness.")
+	info:								qsTr("The fairness measures analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. ")
 
 	VariablesForm
 	{
@@ -38,11 +38,11 @@ Form
 		AssignedVariablesList
 		{
 			name: 						"target"
-			title: 						qsTr("Target")
+			title: 						qsTr("Ground truth information")
 			singleVariable:				true
 			allowedColumns:				["nominal"]
 			minLevels:					2
-			info:						qsTr("In this column, the target (i.e., to be predicted) variable should be entered.")
+			info:						qsTr("In this column, the ground truth information (i.e., the target to be predicted) variable should be entered.")
 		}
 		AssignedVariablesList
 		{
@@ -77,7 +77,7 @@ Form
 		{
 			id:							metric
 			name: 						"metric"
-			label: 						qsTr("Metric")
+			label: 						qsTr("Fairness Measures")
 			indexDefaultValue: 			0
 			values: [
 				{ label: qsTr("Predictive rate parity"),			value: "prp"},
@@ -90,7 +90,7 @@ Form
 				{ label: qsTr("Negative predicted value parity"),	value: "npvp"},
 				{ label: qsTr("Specificity parity"), 				value: "sp"}
 			]
-			info:						qsTr("The type of fairness metric to compute and perform inference on.")
+			info:						qsTr("The type of fairness measure to compute and perform inference on.")
 		}
 	}
 
@@ -151,35 +151,6 @@ Form
 		}
 	}
 
-	RadioButtonGroup
-	{
-		name:							"bayesFactorType"
-		title:							"Bayes Factor"
-		info:							qsTr("Choose which type of Bayes factor to display.")
-
-		RadioButton
-		{
-			name:						"BF10"
-			text:						qsTr("BF\u2081\u2080")
-			checked:					true
-			info:						qsTr("Bayes factor to quantify evidence for the alternative hypothesis relative to the null hypothesis.")
-		}
-
-		RadioButton
-		{
-			name:						"BF01"
-			text:						qsTr("BF\u2080\u2081")
-			info:						qsTr("Bayes factor to quantify evidence for the null hypothesis relative to the alternative hypothesis.")
-		}
-
-		RadioButton
-		{
-			name:						"logBF10"
-			text:						qsTr("Log(BF\u2081\u2080)")
-			info:						qsTr("Natural logarithm of BF10.")
-		}
-	}
-
 	Group
 	{
 		title: 							qsTr("Display")
@@ -207,27 +178,12 @@ Form
 	Section
 	{
 		title: 							qsTr("Report")
-		columns: 						2
+		columns: 						1
 
 		Group
 		{
 			title: 						qsTr("Tables")
 			info:						qsTr("Add additional tables about the evaluation to the report.")
-
-			CheckBox
-			{
-				text:					qsTr("Individual comparisons")
-				name:					"comparisonsTable"
-				info:					qsTr("Produces a table comparing the unprivileged groups against the privileged group.")
-				checked:				true
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Model performance")
-				name:					"performanceTable"
-				info:					qsTr("Produces a table containing the performance measures for the classification, including support, accuracy, precision, recall and F1-score.")
-			}
 
 			CheckBox
 			{
@@ -243,41 +199,6 @@ Form
 			}
 		}
 
-		Group
-		{
-			title: 						qsTr("Plots")
-			info:						qsTr("Add additional figures about the evaluation to the report.")
-
-			CheckBox
-			{
-				text:					qsTr("Parity estimates")
-				name:					"parityPlot"
-				info:					qsTr("Produces a plot showing the parity statistics for each unprivileged group against the privileged group.")
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Prior and posterior distribution")
-				name:					"posteriorPlot"
-				enabled:				metric.value != "dp"
-				info:					qsTr("Produces a figure that shows the prior and posterior distribution.")
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Bayes factor robustness check")
-				name:					"robustnessPlot"
-				enabled:				metric.value != "dp"
-				info:					qsTr("Produces a figure that shows the robustness of the Bayes factor to the prior distribution.")
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Sequential analysis")
-				name:					"sequentialPlot"
-				info:					qsTr("Produces a figure that shows the Bayes factor as a function of the sample size.")
-			}
-		}
 	}
 
 	Section
@@ -287,17 +208,7 @@ Form
 
 		Group
 		{
-			title:						qsTr("Prior Distribution")
-
-			DoubleField
-			{
-				name: 					"concentration"
-				label: 					qsTr("Concentration")
-				defaultValue: 			1
-				decimals:				2
-				min:					1
-				info:					qsTr("Specifies the concentration parameter for the Dirichlet prior.")
-			}
+			title:						qsTr("Advanced")
 
 			IntegerField
 			{

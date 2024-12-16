@@ -20,13 +20,17 @@
 
 auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
    
+   # Display the selected fairness measure
   .showFairnessMetric(options, jaspResults)
 
+  # Display the theoretical information of the selected fairness measure
   .showExplanationText(options, jaspResults)
 
-    .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
+  .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
 
+  # Display the decision-making workflow plot
   .jfaPlot(options, jaspResults, positionInContainer = 3)
+
 }
 
 .determineFairnessMetric <- function(options, jaspResults)
@@ -40,39 +44,38 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
 
    if(options[["firstquestion"]]=="firstquestion_no"){
    q1 <- 2
-   }else {
-   q1 <- 1
+   }else{
+    q1 <- 1
+    if(options[["secondquestion"]]=="secondquestion_both"){
+    q2 <- 3
+   }else if (options[["secondquestion"]]=="secondquestion_incorrect") {
+    q2 <- 2 
+    if(options[["fourthquestion_caseC"]]=="fourthquestion_caseC_FP"){
+      q4 <- 1
+    }else if (options[["fourthquestion_caseC"]]=="fourthquestion_caseC_FN"){
+      q4 <- 2
+    }
+   }else if (options[["secondquestion"]]=="secondquestion_correct") {
+    q2 <- 1
+    if(options[["thirdquestion"]]=="thirdquestion_both") {
+      q3 <- 3
+    }else if(options[["thirdquestion"]]=="thirdquestion_positive"){
+      q3 <- 1
+      if(options[["fourthquestion_caseA"]]=="fourthquestion_caseA_FP"){
+        q4 <- 1 
+      }else if (options[["fourthquestion_caseA"]]=="fourthquestion_caseA_FN") {
+         q4 <- 2
+      }
+    }else if(options[["thirdquestion"]]=="thirdquestion_negative"){
+      q3 <- 2 
+      if(options[["fourthquestion_caseB"]]=="fourthquestion_caseB_FP"){
+        q4 <- 1
+      }else if(options[["fourthquestion_caseB"]]=="fourthquestion_caseB_FN"){
+        q4 <- 2
+      }
+    }
    }
-
-   if(options[["secondquestion"]]=="secondquestion_correct"){
-   q2 <- 1
-   }else if(options[["secondquestion"]]=="secondquestion_correct"){
-   q2 <- 2
-   }else if(options[["secondquestion"]]=="secondquestion_both"){
-   q2 <- 3
-   }
-
-   if(options[["thirdquestion"]]=="thirdquestion_positive"){
-   q3 <- 1
-   }else if(options[["thirdquestion"]]=="thirdquestion_negative"){
-   q3 <- 2
-   }else if(options[["thirdquestion"]]=="thirdquestion_both"){
-   q3 <- 3
-   }
-
-   if(options[["fourthquestion_caseA"]]=="fourthquestion_caseA_FP"){
-   q4 <- 1
-   }else if(options[["fourthquestion_caseA"]]=="fourthquestion_caseA_FN"){
-   q4 <- 2
-   }else if(options[["fourthquestion_caseB"]]=="fourthquestion_caseB_FP"){
-   q4 <- 1
-   }else if(options[["fourthquestion_caseB"]]=="fourthquestion_caseB_FN"){
-   q4 <- 2 
-   }else if(options[["fourthquestion_caseC"]]=="fourthquestion_caseC_FP"){
-   q4 <- 1   
-   }else if(options[["fourthquestion_caseC"]]=="fourthquestion_caseC_FN"){
-   q4 <- 2   
-   }
+  }
 
    metric <- jfa::fairness_selection(q1, q2, q3, q4)
    jaspResults[["state"]] <- createJaspState(metric)
@@ -138,14 +141,14 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
       Fairness Measure Formula:
       The Specificity Parity is based on the True Negative Rate. Therefore, the True Negative Rate, whose formula is TN/(TN+FP), is applied to both the privileged group and the unprivileged group. 
       FP indicates the number of False Positives, meaning the number of items with a true negative classification that AI classifies as positive, and TN indicates the number of True Negatives, meaning the number of items with a true negative classification that AI also classifies as negative.")
-   }else if (name =="Negative Predictive Rate Parity") {
+   }else if (name =="Negative Predictive Value Parity") {
       ExplanationText <- gettext("Fairness Definition: 
       AI is considered fair if it provides the same amount of correct negative predictions for both privileged and unprivileged groups. In other words, AI fairness is achieved when the same number of items from these two groups correctly experience no changes from the status quo. This change in status quo can refer to favorable outcomes, such as being selected for a job interview or receiving reimbursement for medical expenses. However, it can also represent negative outcomes, such as being deemed high risk for reoffending within two years of release or defaulting on a bank loan. 
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts. 
       The term negative predictions refers to one of the two possible predictions the AI can make: positive or negative. This is because we are working within the framework of binary classification, where there are only two possible classes for items to be categorized: positive or negative.
                    
       Fairness Measure Formula:
-      The Negative Predictive Rate Parity is based on the Negative Predictive Rate. Therefore, the Negative Predictive Rate, whose formula is TN/(TN+FN), is applied to both the privileged group and the unprivileged group. 
+      The Negative Predictive Value Parity is based on the Negative Predictive Value. Therefore, the Negative Predictive Values, whose formula is TN/(TN+FN), is applied to both the privileged group and the unprivileged group. 
       FN indicates the number of False Negatives, meaning the number of items with a true positive classification that the AI classifies as negative, and TN indicates the number of True Negatives, meaning the number of items with a true negative classification that AI also classifies as negative.")
    }else if(name =="Accuracy Parity"){
       ExplanationText <- gettext("Fairness Definition: 
@@ -201,7 +204,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   }
 
   if (options[["explanatoryText"]]) {
-    caption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> title", jaspResults[["figNumber"]]$object), "p")
+    caption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> Graphical representation of the decision-making workflow obtained after answering the questions. The label “FP” indicates “False Positives” and the label “FN indicates “False Negatives”.", jaspResults[["figNumber"]]$object), "p")
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = jaspResults[["workflowfigure"]])
     jaspResults[["workflowfigureText"]] <- caption

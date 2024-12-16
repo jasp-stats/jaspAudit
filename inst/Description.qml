@@ -91,7 +91,7 @@ Description
 	 }
 	 Analysis
 	 {
-	 	title:			qsTr("Fairness Metrics")
+	 	title:			qsTr("Fairness Measures Calculation")
 	 	func:			"auditClassicalModelFairness"
 		preloadData:	true
 	 }

@@ -157,7 +157,7 @@ Form
 		id: fourthquestion_caseA
 		name: "fourthquestion_caseA"
 		title:qsTr("What are the errors with the highest cost?")
-		visible: thirdquestion.value == "thirdquestion_enp" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
+		visible: thirdquestion.value == "thirdquestion_positive" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 
 		RadioButton
 		{
@@ -178,7 +178,7 @@ Form
 		id: fourthquestion_caseB
 		name: "fourthquestion_caseB"
 		title:qsTr("What are the errors with the highest cost?")
-		visible: thirdquestion.value == "thirdquestion_wd" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
+		visible: thirdquestion.value == "thirdquestion_negative" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 
 		RadioButton
 		{
@@ -238,13 +238,13 @@ Form
 				text: 					qsTr("Fairness measure explanatory text")
 				name: 					"explanatoryText"
 				checked: 				true
-				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
+				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the fairness measure and its formula.")
 			}
 
 			HelpButton
 			{
 				helpPage:				"Audit/ExplanatorytextFairnessDecisionWorkflow"
-				toolTip: 				qsTr("Show explanatory text for the selected fairness measure")
+				toolTip: 				qsTr("Provide explanatory text for the selected fairness measure to help in understanding the measure and its formula.")
 			}
 		}
 
@@ -254,155 +254,12 @@ Form
 				text: 					qsTr("Decision-Making Workflow Plot")
 				name: 					"workflowfigure"
 				checked: 				true
-				info:					qsTr("When checked, enables the representation of the decision-making workflow that is obtained after answering all the question within it.")
+				info:					qsTr("When checked, enables the representation of the decision-making workflow that is obtained after answering all the necessary question within it.")
 			}
 
 	}
 
-	}
-
-	Section
-	{
-		title:qsTr("Fairness Measure Calculation")
-		columns:1
-		info:								qsTr("The fairness measures analysis enables the user to assess fairness and discrimination against specific groups in AI-predicted classification.")
-
-	VariablesForm
-	{
-		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
-
-		AvailableVariablesList
-		{
-			name: 						"variablesFormFairness"
-		}
-		AssignedVariablesList
-		{
-			name: 						"target"
-			title: 						qsTr("Target")
-			singleVariable:				true
-			allowedColumns:				["nominal"]
-			minLevels:					2
-			info:						qsTr("In this column, the target (i.e., to be predicted) variable should be entered.")
-		}
-		AssignedVariablesList
-		{
-			name: 						"predictions"
-			title: 						qsTr("Predictions")
-			singleVariable:				true
-			allowedColumns:				["nominal"]
-			minLevels:					2
-			info:						qsTr("In this column, the predictions of the algorithm should be entered.")
-		}
-		AssignedVariablesList
-		{
-			name: 						"protected"
-			title: 						qsTr("Sensitive Attribute")
-			singleVariable:				true
-			allowedColumns:				["nominal"]
-			minLevels:					2
-			info:						qsTr("In this column, the protected (i.e., sensitive) attribute should be entered.")
-		}
-	}
-
-	Group 
-	{
-		title:							qsTr("Factor Levels")
-		info:							qsTr("These options allow specification of the privileged group and the positive class.")
-
-		DropDown
-		{
-			label: 						qsTr("Privileged group")
-			name: 						"privileged"
-			indexDefaultValue: 			0
-			addEmptyValue: 				true
-			placeholderText: 			qsTr("None")
-			source: 					[ { name: "protected", use: "levels" } ]
-			info:						qsTr("The privileged group refers to the class in the protected variable that historically or systematically experiences certain advantages, benefits, or privileges.")
-		}
-
-		DropDown
-		{
-			label: 						qsTr("Positive class")
-			name: 						"positive"
-			indexDefaultValue: 			0
-			addEmptyValue: 				true
-			placeholderText: 			qsTr("None")
-			source: 					[ { name: "target", use: "levels" } ]
-			info:						qsTr("The positive class in the target variable.")
-		}
-	}
-
-	Group
-	{
-		title: 							qsTr("Display")
-		info:							qsTr("Specify options that have an effect on the look and feel of the audit report.")
-
-		Row
-		{
-			CheckBox
-			{
-				id: 					analysisexplanatoryText
-				text: 					qsTr("Analysis explanatory text")
-				name: 					"analysisexplanatoryText"
-				checked: 				true
-				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
-			}
-
-			HelpButton
-			{
-				helpPage:				"Audit/explanatoryText"
-				toolTip: 				qsTr("Show explanatory text at each step of the analysis")
-			}
-		}
-	}
-
-	}
-
-	Section
-	{
-		title: 							qsTr("Report")
-		columns: 						1
-
-		Group
-		{
-			title: 						qsTr("Tables")
-			info:						qsTr("Add additional tables about the evaluation to the report.")
-
-			CheckBox
-			{
-				text:					qsTr("Individual comparisons")
-				name:					"comparisonsTable"
-				info:					qsTr("Produces a table comparing the unprivileged groups against the privileged group.")
-				checked:				true
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Model performance")
-				name:					"performanceTable"
-				info:					qsTr("Produces a table containing the performance measures for the classification, including support, accuracy, precision, recall and F1-score.")
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Confusion matrix")
-				name:					"confusionTable"
-				info:					qsTr("Produces the confusion matrix for each group.")
-				checked:				true
-
-				CheckBox {
-					text:				qsTr("Display proportions")
-					name:				"confusionTableProportions"
-					info:				qsTr("Displays proportions in the confusion table.")
-				}
-			}
-		}
-
-
-
-	}
-
-	
+	}	
 }
 
 
