@@ -1,0 +1,1778 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jaspAudit 0.19.2\n"
+"POT-Creation-Date: 2024-11-16 03:33\n"
+"PO-Revision-Date: 2025-01-04 03:29+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
+"ta/>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+msgid "<u>Procedure</u>"
+msgstr "<u> செயல்முறை </u>"
+
+msgid "Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first leading digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation."
+msgstr ""
+"பென்ஃபோர்டின் சட்டம் கூறுகிறது, இயற்கையாக நிகழும் பல எண் அவதானிப்புகளில், முன்னணி "
+"குறிப்பிடத்தக்க இலக்கமானது சிறியதாக இருக்கும். இந்த நடைமுறையின் குறிக்கோள் என்னவென்றால், "
+"தரவுத் தொகுப்பில் முதல் முன்னணி இலக்கங்கள் பென்ஃபோர்டின் சட்டத்தை எந்த அளவிற்கு பின்பற்றுகின்"
+"றன என்பதை தீர்மானிப்பதும், இந்த உறவை %1$s இன் வகை-ஐ பிழையுடன் சோதிப்பதும் ஆகும். "
+"பென்ஃபோர்டின் சட்டத்தின்படி விநியோகிக்கப்படாத தரவுகளுக்கு மேலும் வினவல் தேவைப்படலாம்."
+
+msgid "Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation."
+msgstr ""
+"பென்ஃபோர்டின் சட்டம் கூறுகிறது, இயற்கையாக நிகழும் பல எண் அவதானிப்புகளில், முன்னணி "
+"குறிப்பிடத்தக்க இலக்கமானது சிறியதாக இருக்கும். இந்த நடைமுறையின் குறிக்கோள் என்னவென்றால், "
+"தரவுத் தொகுப்பில் முதல் இரண்டு முன்னணி இலக்கங்கள் பென்ஃபோர்டின் சட்டத்தை எந்த அளவிற்கு "
+"பின்பற்றுகின்றன என்பதை தீர்மானிப்பதும், இந்த உறவை %1$s இன் வகை-ஐ பிழையுடன் சோதிப்பதும் "
+"ஆகும். பென்ஃபோர்டின் சட்டத்தின்படி விநியோகிக்கப்படாத தரவுகளுக்கு மேலும் வினவல் "
+"தேவைப்படலாம்."
+
+msgid "Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the last digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation."
+msgstr ""
+"பென்ஃபோர்டின் சட்டம் கூறுகிறது, இயற்கையாக நிகழும் பல எண் அவதானிப்புகளில், முன்னணி "
+"குறிப்பிடத்தக்க இலக்கமானது சிறியதாக இருக்கும். இந்த நடைமுறையின் குறிக்கோள் என்னவென்றால், "
+"தரவுத் தொகுப்பின் கடைசி இலக்கங்கள் பென்ஃபோர்டின் சட்டத்தை எந்த அளவிற்கு பின்பற்றுகின்றன "
+"என்பதைத் தீர்மானிப்பதும், இந்த உறவை %1$s இன் வகை-ஐ பிழையுடன் சோதிப்பதும் ஆகும். "
+"பென்ஃபோர்டின் சட்டத்தின்படி விநியோகிக்கப்படாத தரவுகளுக்கு மேலும் வினவல் தேவைப்படலாம்."
+
+msgid "The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation."
+msgstr ""
+"சீரான வழங்கல் ஏற்படக்கூடிய அனைத்து இலக்கங்களுக்கும் சமமான நிகழ்தகவை ஒதுக்குகிறது. இந்த "
+"நடைமுறையின் குறிக்கோள் என்னவென்றால், தரவுத் தொகுப்பில் முதல் முன்னணி இலக்கங்கள் சீரான "
+"விநியோகத்தை எந்த அளவிற்கு பின்பற்றுகின்றன என்பதை தீர்மானிப்பதும், இந்த உறவை %1$s இன் வகை-"
+"ஐ பிழையுடன் சோதிப்பதும் ஆகும். சீரான விநியோக அனுமானம் விரும்பத்தக்கதாக இருந்தால், சீரான "
+"தன்மையை மீறுவது மேலதிக விசாரணைக்கு காரணமாகும்."
+
+msgid "The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation."
+msgstr ""
+"சீரான வழங்கல் ஏற்படக்கூடிய அனைத்து இலக்கங்களுக்கும் சமமான நிகழ்தகவை ஒதுக்குகிறது. இந்த "
+"நடைமுறையின் குறிக்கோள் என்னவென்றால், தரவுத் தொகுப்பில் முதல் இரண்டு முன்னணி இலக்கங்கள் சீரான "
+"விநியோகத்தை எந்த அளவிற்கு பின்பற்றுகின்றன என்பதை தீர்மானிப்பதும், இந்த உறவை %1$s இன் வகை-"
+"ஐ பிழையுடன் சோதிப்பதும் ஆகும். சீரான விநியோக அனுமானம் விரும்பத்தக்கதாக இருந்தால், சீரான "
+"தன்மையை மீறுவது மேலதிக விசாரணைக்கு காரணமாகும்."
+
+msgid "The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the last digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation."
+msgstr ""
+"சீரான வழங்கல் ஏற்படக்கூடிய அனைத்து இலக்கங்களுக்கும் சமமான நிகழ்தகவை ஒதுக்குகிறது. இந்த "
+"நடைமுறையின் குறிக்கோள் என்னவென்றால், தரவுத் தொகுப்பின் கடைசி இலக்கங்கள் சீரான விநியோகத்தை "
+"எந்த அளவிற்கு பின்பற்றுகின்றன என்பதை தீர்மானிப்பதும், இந்த உறவை %1$s இன் வகை-I பிழையுடன் "
+"சோதிப்பதும் ஆகும். சீரான விநியோக அனுமானம் விரும்பத்தக்கதாக இருந்தால், சீரான தன்மையை "
+"மீறுவது மேலதிக விசாரணைக்கு காரணமாகும்."
+
+msgid "<u>Assessing Benford's Law</u>"
+msgstr "<u> பென்ஃபோர்டின் சட்டத்தை மதிப்பிடுதல் </u>"
+
+msgid "<u>Assessing the Uniform Distribution</u>"
+msgstr "<u> சீரான விநியோகத்தை மதிப்பிடுதல் </u>"
+
+msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
+msgstr "<b> அட்டவணை %1 $ i. </b> ஆம்னிபச் சோதனை - %2$s"
+
+msgid "BF%1$s"
+msgstr "BF%1$s"
+
+msgid "Log(BF%1$s)"
+msgstr "பதிவு (BF%1$s)"
+
+msgid "MAD"
+msgstr "பைத்தியம்"
+
+msgid "df"
+msgstr "டி.எஃப்"
+
+msgid "The null hypothesis specifies that the first digits (1 - 9) in the data set are distributed according to %1$s."
+msgstr ""
+"தரவு தொகுப்பில் முதல் இலக்கங்கள் (1 - 9) %1$s இன் படி விநியோகிக்கப்படுகின்றன என்பதை சுழி"
+"ய கருதுகோள் குறிப்பிடுகிறது."
+
+msgid "The null hypothesis specifies that the first two digits (10 - 99) in the data set are distributed according to %1$s."
+msgstr ""
+"தரவு தொகுப்பில் முதல் இரண்டு இலக்கங்கள் (10 - 99) %1$s இன் படி விநியோகிக்கப்படுகின்றன "
+"என்பதை சுழிய கருதுகோள் குறிப்பிடுகிறது."
+
+msgid "The null hypothesis specifies that the last digits (1 - 9) in the data set are distributed according to %1$s."
+msgstr ""
+"தரவு தொகுப்பில் கடைசி இலக்கங்கள் (1 - 9) %1$s இன் படி விநியோகிக்கப்படுகின்றன என்பதை "
+"சுழிய கருதுகோள் குறிப்பிடுகிறது."
+
+msgid "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = %4$s."
+msgstr ""
+"பேயச் காரணி%2$s =%4 $ s உடன் ஒரு டிரிச்லெட் (%1$s, ...,%2$s%3$s) ஐப் பயன்படுத்தி "
+"கணக்கிடப்படுகிறது."
+
+msgid "<b>Warning.</b> The <i>p</i>-value may be unreliable due to some expected counts being lower than 5."
+msgstr "<b> எச்சரிக்கை."
+
+msgid "<b>Table %1$i.</b> Frequency Table"
+msgstr "<b> அட்டவணை %1 $ i. </b> அதிர்வெண் அட்டவணை"
+
+msgid "Leading digit"
+msgstr "முன்னணி இலக்க"
+
+msgid "Leading digits"
+msgstr "முன்னணி இலக்கங்கள்"
+
+msgid "Last digit"
+msgstr "கடைசி இலக்க"
+
+msgid "Benford's law"
+msgstr "பென்ஃபோர்டின் சட்டம்"
+
+msgid "Uniform distribution"
+msgstr "சீரான வழங்கல்"
+
+msgid "Count"
+msgstr "எண்ணுங்கள்"
+
+msgid "Relative frequency"
+msgstr "உறவினர் அதிர்வெண்"
+
+msgid "%1$s%% Confidence Interval"
+msgstr "%1$s %% நம்பிக்கை இடைவெளி"
+
+msgid "Lower"
+msgstr "கீழ்"
+
+msgid "Upper"
+msgstr "மேல்"
+
+msgid "The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s."
+msgstr ""
+"ஒரு இலக்கத்தின் ஒப்பீட்டு அதிர்வெண் %1$s இன் கீழ் அதன் எதிர்பார்க்கப்படும் உறவினர் அதிர்வெண்ணுக்கு"
+" சமம் என்று சுழிய கருதுகோள் குறிப்பிடுகிறது."
+
+msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgstr "பேயச் காரணிகள் பீட்டா (1, 1) க்கு முன் கணக்கிடப்படுகின்றன."
+
+msgid "Confidence intervals and <i>p</i>-values are based on independent binomial distributions."
+msgstr ""
+"நம்பிக்கை இடைவெளிகள் மற்றும் <i> ப </i>-மதிப்புகள் சுயாதீனமான இருமுனை விநியோகங்களை "
+"அடிப்படையாகக் கொண்டவை."
+
+msgid "The <i>p</i>-values are based on independent binomial distributions."
+msgstr ""
+"<i> ப </i>-மதிப்புகள் சுயாதீனமான பைனோமியல் விநியோகங்களை அடிப்படையாகக் கொண்டவை."
+
+msgid "Leading Digit"
+msgstr "முன்னணி இலக்க"
+
+msgid "Leading Digits"
+msgstr "முன்னணி இலக்கங்கள்"
+
+msgid "Last Digit"
+msgstr "கடைசி இலக்க"
+
+msgid "<b>Table %1$i.</b> Rows Matched to %2$s %3$s"
+msgstr "<b> அட்டவணை %1 $ i. </b> வரிசைகள் %2$s %3$s உடன் பொருந்துகின்றன"
+
+msgid "Row"
+msgstr "நிரை"
+
+msgid "Value"
+msgstr "மதிப்பு"
+
+msgid "The requested digit must be between 1 - 9."
+msgstr "கோரப்பட்ட இலக்கமானது 1 - 9 க்கு இடையில் இருக்க வேண்டும்."
+
+msgid "<b>Warning.</b>"
+msgstr "<b> எச்சரிக்கை. </b>"
+
+msgid "The requested digit must be between 10 - 99."
+msgstr "கோரப்பட்ட இலக்கமானது 10 - 99 க்கு இடையில் இருக்க வேண்டும்."
+
+msgid "Displayed values are rounded to the number of decimals set in the global preferences."
+msgstr ""
+"காட்டப்படும் மதிப்புகள் உலகளாவிய விருப்பங்களில் அமைக்கப்பட்ட தசமங்களின் எண்ணிக்கையில் "
+"வட்டமானவை."
+
+msgid "Observed vs. Expected Relative Frequencies"
+msgstr "கவனிக்கப்பட்ட எதிராக எதிர்பார்க்கப்படும் உறவினர் அதிர்வெண்கள்"
+
+msgid "<b>Figure %1$i.</b> The observed relative frequencies of each digit in the data set compared to the expected relative frequencies under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars."
+msgstr ""
+"<b> படம் %1 $ i. %2$s இன் படி விநியோகிக்கப்பட்ட தரவுத் தொகுப்புகளுக்கு நீல புள்ளிகள் "
+"சாம்பல் பட்டிகளின் மேற்புறத்தில் இருக்கும்."
+
+msgid "Bayes Factor Robustness Plot"
+msgstr "பேயச் காரணி வலுவான சூழ்ச்சி"
+
+msgid "<b>Figure %1$i.</b> The results of a robustness check using the Bayes factor. The figure illustrates the impact of different specifications (i.e., concentration parameters) of the Dirichlet prior on the Bayes factor values, providing insights into the robustness of the statistical evidence to the choice of prior distribution."
+msgstr ""
+"<b> படம் %1 $ i. </b> பேயச் காரணியைப் பயன்படுத்தி ஒரு வலுவான காசோலையின் முடிவுகள். "
+"பேய்ச் காரணி மதிப்புகளில் டிரிச்லெட்டின் வெவ்வேறு விவரக்குறிப்புகளின் (அதாவது, செறிவு "
+"அளவுருக்கள்) தாக்கத்தை இந்த எண்ணிக்கை விளக்குகிறது, இது முந்தைய விநியோகத்தைத் "
+"தேர்ந்தெடுப்பதற்கான புள்ளிவிவர ஆதாரங்களின் வலுவான தன்மை பற்றிய நுண்ணறிவுகளை வழங்குகிறது."
+
+msgid "Sequential Analysis Plot"
+msgstr "தொடர்ச்சியான பகுப்பாய்வு சூழ்ச்சி"
+
+msgid "<b>Figure %1$i.</b> The results of a sequential analysis using the Bayes factor. The figure provides insight into how the statistical evidence from these data accumulates over time and under different prior specifications."
+msgstr ""
+"<b> படம் %1 $ i. </b> பேயச் காரணியைப் பயன்படுத்தி ஒரு தொடர்ச்சியான பகுப்பாய்வின் "
+"முடிவுகள். இந்த தரவுகளிலிருந்து புள்ளிவிவர சான்றுகள் காலப்போக்கில் மற்றும் வெவ்வேறு முன் "
+"விவரக்குறிப்புகளின் கீழ் எவ்வாறு குவிகின்றன என்பதைப் பற்றிய நுண்ணறிவை இந்த எண்ணிக்கை "
+"வழங்குகிறது."
+
+msgid "<u>Conclusion</u>"
+msgstr "<u> முடிவு </u>"
+
+msgid "is rejected"
+msgstr "நிராகரிக்கப்படுகிறது"
+
+msgid "is not rejected"
+msgstr "நிராகரிக்கப்படவில்லை"
+
+msgid "%1$s < %2$s"
+msgstr "%1$s < %2$s"
+
+msgid "%1$s >= %2$s"
+msgstr "%1$s> = %2$s"
+
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s %3$s."
+msgstr ""
+"<i> ப </i>-மதிப்பு %1$s மற்றும் தரவு தொகுப்பில் முதல் இலக்கங்கள் %2$s %3$s இன் படி "
+"விநியோகிக்கப்படுகின்றன என்ற சுழிய கருதுகோள்."
+
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s %3$s."
+msgstr ""
+"<i> ப </i>-மதிப்பு %1$s மற்றும் தரவு தொகுப்பில் முதல் இரண்டு இலக்கங்கள் %2$s %3$s இன் "
+"படி விநியோகிக்கப்படுகின்றன என்ற சுழிய கருதுகோள்."
+
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s %3$s."
+msgstr ""
+"<i> ப </i>-மதிப்பு %1$s மற்றும் தரவு தொகுப்பின் கடைசி இலக்கங்கள் %2$s %3$s இன் படி "
+"விநியோகிக்கப்படுகின்றன என்ற சுழிய கருதுகோள்."
+
+msgid "%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis."
+msgstr ""
+"%1$s மாற்று கருதுகோளின் கீழ் இருப்பதை விட சுழிய கருதுகோளின் கீழ் தரவு %2$s மடங்கு "
+"அதிகமாக இருப்பதைக் குறிக்கிறது."
+
+msgid "Direct estimator"
+msgstr "நேரடி மதிப்பீட்டாளர்"
+
+msgid "Difference estimator"
+msgstr "வேறுபாடு மதிப்பீட்டாளர்"
+
+msgid "Ratio estimator"
+msgstr "விகித மதிப்பீட்டாளர்"
+
+msgid "Regression estimator"
+msgstr "பின்னடைவு மதிப்பீட்டாளர்"
+
+msgid "Estimate %1$s"
+msgstr "மதிப்பீடு %1$s"
+
+msgid "Uncertainty"
+msgstr "நிச்சயமற்ற தன்மை"
+
+msgid "%1$s%% Confidence interval"
+msgstr "%1$s %% நம்பிக்கை இடைவெளி"
+
+msgid "Please specify the population size and your audit values."
+msgstr "மக்கள்தொகை அளவு மற்றும் உங்கள் தணிக்கை மதிப்புகளைக் குறிப்பிடவும்."
+
+msgid "Please specify the population size, population value and your sample variables."
+msgstr ""
+"மக்கள்தொகை அளவு, மக்கள் தொகை மதிப்பு மற்றும் உங்கள் மாதிரி மாறிகள் ஆகியவற்றைக் "
+"குறிப்பிடவும்."
+
+msgid "Displayed numbers may differ from exact outcomes due to rounding in the calculations."
+msgstr ""
+"கணக்கீடுகளில் ரவுண்டிங் காரணமாக காட்டப்படும் எண்கள் சரியான விளைவுகளிலிருந்து வேறுபடலாம்."
+
+msgid "The number of items in the population is lower than the number of items in the sample."
+msgstr ""
+"மக்கள்தொகையில் உள்ள பொருட்களின் எண்ணிக்கை மாதிரியில் உள்ள பொருட்களின் எண்ணிக்கையை விட "
+"குறைவாக உள்ளது."
+
+msgid "<u>Calculations</u>"
+msgstr "<u> கணக்கீடுகள் </u>"
+
+msgid "<i>The required information for the <b>direct</b> estimator consists of:</i>"
+msgstr ""
+"<i> <b> நேரடி </b> மதிப்பீட்டாளருக்கு தேவையான தகவல்கள் பின்வருமாறு: </i>"
+
+msgid "The population size <i>N</i>"
+msgstr "மக்கள்தொகை அளவு <i> n </i>"
+
+msgid "%1$s = %2$i"
+msgstr "%1$s = %2 $ i"
+
+msgid "The sample size <i>n</i>"
+msgstr "மாதிரி அளவு <i> n </i>"
+
+msgid "The mean of the sample audit values %1$s"
+msgstr "மாதிரி தணிக்கை மதிப்புகளின் சராசரி %1$s"
+
+msgid "%1$s = %2$s"
+msgstr "%1$s = %2$s"
+
+msgid "The standard deviation of the sample audit values %1$s"
+msgstr "மாதிரி தணிக்கை மதிப்புகளின் நிலையான விலகல் %1$s"
+
+msgid "The t-value <i>(df = n - 1)</i> corresponding to %1$s%% confidence %2$s%3$s%4$s"
+msgstr ""
+"T- மதிப்பு <i> (df = n - 1) </i>%1$s %% நம்பிக்கை%2$s%3$s%4 $ s உடன் தொடர்புடையது"
+
+msgid "The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence %3$s%4$s%5$s%6$s"
+msgstr ""
+"டி -மதிப்பு <i> (df =%1$s - 1) </i>%2$s %% நம்பிக்கை%3$s%4 $ s%5 $ s%6 $ s உடன் "
+"தொடர்புடையது"
+
+msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s"
+msgstr ""
+"%1$s\n"
+" %2$s\n"
+" %3$s\n"
+" %4 $ கள்\n"
+" %5 $ கள்"
+
+msgid "<i>This information allows for calculation of:</i>"
+msgstr "<i> இந்த செய்தி கணக்கிட அனுமதிக்கிறது: </i>"
+
+msgid "The point estimate of the true population value %1$s"
+msgstr "உண்மையான மக்கள்தொகை மதிப்பு %1$s இன் புள்ளி மதிப்பீடு"
+
+msgid "The uncertainty of the estimator %1$s%2$s%3$s"
+msgstr "மதிப்பீட்டாளரின் நிச்சயமற்ற தன்மை%1$s%2$s%3$s"
+
+msgid "The confidence interval around the point estimate %1$s"
+msgstr "புள்ளி மதிப்பீட்டைச் சுற்றியுள்ள நம்பிக்கை இடைவெளி %1$s"
+
+msgid "%1$s = %2$s %3$s %4$s"
+msgstr "%1$s = %2$s %3$s %4 $ s"
+
+msgid "%1$s\n                           %2$s\n                           %3$s"
+msgstr ""
+"%1$s\n"
+" %2$s\n"
+" %3$s"
+
+msgid "<i>The required information for the <b>difference</b> estimator consists of:</i>"
+msgstr ""
+"<i> <b> வேறுபாட்டிற்கு தேவையான தகவல்கள் </b> மதிப்பீட்டாளர் பின்வருமாறு: </i>"
+
+msgid "The sum of the population book values <i>B</i>"
+msgstr "மக்கள்தொகை புத்தக மதிப்புகளின் தொகை <i> பி </i>"
+
+msgid "The mean of the sample errors %1$s"
+msgstr "மாதிரி பிழைகளின் சராசரி %1$s"
+
+msgid "The standard deviation of the sample errors %1$s"
+msgstr "மாதிரி பிழைகளின் நிலையான விலகல் %1$s"
+
+msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s"
+msgstr ""
+"%1$s\n"
+" %2$s\n"
+" %3$s\n"
+" %4 $ கள்\n"
+" %5 $ கள்\n"
+" %6 $ கள்"
+
+msgid "%1$s\n                            %2$s\n                            %3$s"
+msgstr ""
+"%1$s\n"
+" %2$s\n"
+" %3$s"
+
+msgid "<i>The required information for the <b>ratio</b> estimator consists of:</i>"
+msgstr ""
+"<i> <b> விகிதத்திற்கு தேவையான தகவல்கள் </b> மதிப்பீட்டாளர் பின்வருமாறு: </i>"
+
+msgid "The mean of the sample book values %1$s"
+msgstr "மாதிரி புத்தக மதிப்புகளின் சராசரி %1$s"
+
+msgid "The standard deviation of the sample book values %1$s"
+msgstr "மாதிரி புத்தக மதிப்புகள் %1$s இன் நிலையான விலகல்"
+
+msgid "The correlation coefficient of the sample book values and audit values %1$s"
+msgstr ""
+"மாதிரி புத்தக மதிப்புகள் மற்றும் தணிக்கை மதிப்புகளின் தொடர்பு குணகம் %1$s"
+
+msgid "The correctness ratio %1$s"
+msgstr "சரியான விகிதம் %1$s"
+
+msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s\n                                %7$s\n                                %8$s\n                                %9$s\n                                %10$s"
+msgstr ""
+"%1$s\n"
+" %2$s\n"
+" %3$s\n"
+" %4 $ கள்\n"
+" %5 $ கள்\n"
+" %6 $ கள்\n"
+" %7 $ கள்\n"
+" %8 $ கள்\n"
+" %9 $ கள்\n"
+" %10 $ கள்"
+
+msgid "<i>The required information for the <b>regression</b> estimator consists of:</i>"
+msgstr ""
+"<i> <b> பின்னடைவுக்கு தேவையான தகவல்கள் </b> மதிப்பீட்டாளர் பின்வருமாறு: </i>"
+
+msgid "The regression coefficient of the sample book values and audit values %1$s"
+msgstr ""
+"மாதிரி புத்தக மதிப்புகள் மற்றும் தணிக்கை மதிப்புகளின் பின்னடைவு குணகம் %1$s"
+
+msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s\n                                %7$s\n                                %8$s\n                                %9$s"
+msgstr ""
+"%1$s\n"
+" %2$s\n"
+" %3$s\n"
+" %4 $ கள்\n"
+" %5 $ கள்\n"
+" %6 $ கள்\n"
+" %7 $ கள்\n"
+" %8 $ கள்\n"
+" %9 $ கள்"
+
+msgid "Required Sample Size"
+msgstr "தேவையான மாதிரி அளவு"
+
+msgid "Estimator"
+msgstr "மதிப்பீட்டாளர்"
+
+msgid "Required <i>n</i>"
+msgstr "தேவை <i> n </i>"
+
+msgid "Additional <i>n</i>"
+msgstr "கூடுதல் <i> n </i>"
+
+msgid "Correlation Plot"
+msgstr "தொடர்பு சூழ்ச்சி"
+
+msgid "Book value"
+msgstr "புத்தக மதிப்பு"
+
+msgid "Audit value"
+msgstr "தணிக்கை மதிப்பு"
+
+msgid "<b>Figure 1.</b> Scatter plot of the book values in the selection and their audit values. Red dots indicate observations that did not match their original book value. If these red dots lie in the bottom part of the graph, the book values are overstated. If these red dots lie in the upper part of the graph, they are understated. The value <i>r</i> is the Pearson correlation coefficient of the book values and the audit values, an indicator of the strength of the linear relationship between the two variables."
+msgstr ""
+"<b> படம் 1. </b> தேர்வில் புத்தக மதிப்புகளின் சிதறல் சூழ்ச்சி மற்றும் அவற்றின் தணிக்கை "
+"மதிப்புகள். சிவப்பு புள்ளிகள் அவற்றின் அசல் புத்தக மதிப்புடன் பொருந்தாத அவதானிப்புகளைக் "
+"குறிக்கின்றன. இந்த சிவப்பு புள்ளிகள் வரைபடத்தின் கீழ் பகுதியில் இருந்தால், புத்தக மதிப்புகள் "
+"மிகைப்படுத்தப்பட்டுள்ளன. இந்த சிவப்பு புள்ளிகள் வரைபடத்தின் மேல் பகுதியில் இருந்தால், அவை "
+"குறைத்து மதிப்பிடப்படுகின்றன. மதிப்பு <i> r </i> என்பது புத்தக மதிப்புகளின் பியர்சன் "
+"தொடர்பு குணகம் மற்றும் தணிக்கை மதிப்புகள் ஆகும், இது இரண்டு மாறிகள் இடையேயான நேரியல் "
+"உறவின் வலிமையின் குறிகாட்டியாகும்."
+
+msgid "Proportion"
+msgstr "விகிதம்"
+
+msgid "Specificity"
+msgstr "தனித்தன்மை"
+
+msgid "Accuracy"
+msgstr "துல்லியம்"
+
+msgid "False positive rate"
+msgstr "தவறான நேர்மறை விகிதம்"
+
+msgid "False negative rate"
+msgstr "தவறான எதிர்மறை வீதம்"
+
+msgid "Negative predictive value"
+msgstr "எதிர்மறை முன்கணிப்பு மதிப்பு"
+
+msgid "Positively classified"
+msgstr "நேர்மறையாக வகைப்படுத்தப்பட்டுள்ளது"
+
+msgid "Precision"
+msgstr "துல்லியம்"
+
+msgid "True positive rate"
+msgstr "உண்மையான நேர்மறை வீதம்"
+
+msgid "Proportional Parity"
+msgstr "விகிதாசார ஒரு நிகர்"
+
+msgid "Specificity Parity"
+msgstr "குறிப்பிட்ட ஒரு நிகர்"
+
+msgid "Accuracy Parity"
+msgstr "துல்லியம் ஒரு நிகர்"
+
+msgid "False Positive Rate Parity"
+msgstr "தவறான நேர்மறை வீத ஒரு நிகர்"
+
+msgid "False Negative Rate Parity"
+msgstr "தவறான எதிர்மறை வீத ஒரு நிகர்"
+
+msgid "Negative Predictive Value Parity"
+msgstr "எதிர்மறை முன்கணிப்பு மதிப்பு ஒரு நிகர்"
+
+msgid "Demographic Parity"
+msgstr "மக்கள்தொகை சமநிலை"
+
+msgid "Predictive Rate Parity"
+msgstr "முன்கணிப்பு வீத ஒரு நிகர்"
+
+msgid "True Positive Rate Parity"
+msgstr "உண்மையான நேர்மறை வீத ஒரு நிகர்"
+
+msgid "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute, and to test this fairness with a type-I error of %1$s%%. Considering the positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified using so-called fairness metrics. The ratio of a fairness metric of an unprivileged group compared to the privileged (<i>%3$s</i>) group is called parity."
+msgstr ""
+"இந்த நடைமுறையின் குறிக்கோள் என்னவென்றால், ஒரு வழிமுறையின் கணிப்புகள் எந்த அளவிற்கு "
+"பாதுகாக்கப்பட்ட குழுக்களுக்கு ஒரு உணர்திறன் பண்புக்கூறில் நியாயமானவை என்பதை தீர்மானிப்பதும்"
+", இந்த நியாயத்தை%1$s %% இன் வகை-ஐ பிழையுடன் சோதிப்பதும் ஆகும். நேர்மறையான வகுப்பைக் "
+"கருத்தில் கொண்டு (<i>%2$s </i>), நேர்மை-அல்லது பாகுபாடு- நியாயமான அளவீடுகள் என்று "
+"அழைக்கப்படுவதைப் பயன்படுத்தி அளவிடப்படலாம். சலுகை பெற்ற (<i>%3$s </i>) குழுவோடு "
+"ஒப்பிடும்போது ஒரு பிரபலமான குழுவின் நியாயமான மெட்ரிக்கின் விகிதம் சமநிலை என்று "
+"அழைக்கப்படுகிறது."
+
+msgid "<u>Assessing Model Fairness</u>"
+msgstr "<u> மாதிரி நியாயத்தை மதிப்பிடுதல் </u>"
+
+msgid "n"
+msgstr "n"
+
+msgid "The null hypothesis specifies that the %1$s is equal across protected groups."
+msgstr ""
+"பாதுகாக்கப்பட்ட குழுக்களில் %1$s சமம் என்று சுழிய கருதுகோள் குறிப்பிடுகிறது."
+
+msgid "Please specify a privileged group and positive class to start the analysis."
+msgstr ""
+"பகுப்பாய்வைத் தொடங்க ஒரு சலுகை பெற்ற குழு மற்றும் நேர்மறை வகுப்பைக் குறிப்பிடவும்."
+
+msgid "The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) prior with %1$s = %4$s."
+msgstr ""
+"%1$s = %4 $ s உடன் முன் ஒரு டிரிச்லெட் ( %1$s %2$s, ..., %1$s %3$s) ஐப் பயன்படுத்தி "
+"பேயச் காரணி கணக்கிடப்படுகிறது."
+
+msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
+msgstr "<b> அட்டவணை %1 $ i. </b> சலுகை பெற்ற (பி) குழுவுடன் ஒப்பீடுகள்"
+
+msgid "Parity"
+msgstr "ஒரு நிகர்"
+
+msgid "p"
+msgstr "ப"
+
+msgid "The null hypothesis specifies that the %1$s of an unprivileged group is equal to that of the privileged (P) group."
+msgstr ""
+"சுழிய கருதுகோள் ஒரு திறமையற்ற குழுவின் %1$s சலுகை பெற்ற (பி) குழுவிற்கு சமம் என்று "
+"குறிப்பிடுகிறது."
+
+msgid "The null hypothesis specifies that the %1$s of an unprivileged group is greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+"சுழிய கருதுகோள் ஒரு திறமையற்ற குழுவின் %1$s சலுகை பெற்ற (பி) குழுவின்தை விட "
+"அதிகமாகவோ அல்லது சமமாகவோ உள்ளது என்பதைக் குறிப்பிடுகிறது."
+
+msgid "The null hypothesis specifies that the %1$s of an unprivileged group is lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+"சுழிய கருதுகோள் ஒரு திறமையற்ற குழுவின் %1$s சலுகை பெற்ற (பி) குழுவின்தை விட "
+"குறைவாகவோ அல்லது சமமாகவோ உள்ளது என்பதைக் குறிப்பிடுகிறது."
+
+msgid "<i>p</i>-values are uncorrected for multiple comparisons and are based on Fisher's exact test."
+msgstr ""
+"<i> ப </i>-மதிப்புகள் பல ஒப்பீடுகளுக்கு சரி செய்யப்படவில்லை மற்றும் அவை ஃபிசரின் சரியான "
+"சோதனையை அடிப்படையாகக் கொண்டவை."
+
+msgid "Bayes factors are uncorrected and are computed using a Dirichlet(%1$s%2$s, %1$s%3$s, %1$s%4$s, %1$s%5$s) prior with %1$s = %6$s."
+msgstr ""
+"பேயச் காரணிகள் சரி செய்யப்படாதவை மற்றும் ஒரு டிரிச்லெட்டைப் பயன்படுத்தி கணக்கிடப்படுகின்றன "
+"(%1$s%2$s,%1$s%3$s,%1$s%4 $ s,%1$s%5 $ s)%உடன்% 1 $ s = %6 $ s."
+
+msgid "<b>Table %1$i.</b> Model Performance"
+msgstr "<b> அட்டவணை %1 $ i. </b> மாதிரி செயல்திறன்"
+
+msgid "Support"
+msgstr "உதவி"
+
+msgid "Recall"
+msgstr "நினைவுகூருங்கள்"
+
+msgid "F1 Score"
+msgstr "எஃப் 1 மதிப்பெண்"
+
+msgid "<b>Table %1$i.</b> Confusion Matrix"
+msgstr "<b> அட்டவணை %1 $ i. </b> குழப்ப மேட்ரிக்ச்"
+
+msgid "Actual"
+msgstr "உண்மையான"
+
+msgid "Predicted"
+msgstr "கணிக்கப்பட்டுள்ளது"
+
+msgid "True positives (TP) are cells in which the positive class (<i>%1$s</i>) is correctly predicted, while true negatives (TN) are cells where the negative class is correctly predicted. False negatives (FN) are cells in which the positive class is incorrectly predicted, and false positives (FP) are cells in which the negative class is incorrectly predicted."
+msgstr ""
+"உண்மையான நேர்மறைகள் (TP) என்பது நேர்மறையான வகுப்பு (<i>%1$s </i>) சரியாக "
+"கணிக்கப்பட்டுள்ளது, அதே நேரத்தில் உண்மையான எதிர்மறைகள் (TN) எதிர்மறை வகை சரியாக "
+"கணிக்கப்படும் செல்கள் ஆகும். தவறான எதிர்மறைகள் (எஃப்.என்) என்பது நேர்மறையான வகை தவறாக "
+"கணிக்கப்பட்டுள்ள செல்கள், மற்றும் தவறான நேர்மறைகள் (எஃப்.பி) எதிர்மறை வகை தவறாக "
+"கணிக்கப்படும் செல்கள்."
+
+msgid "%1$s = %2$s."
+msgstr "%1$s = %2$s."
+
+msgid "Observed"
+msgstr "கவனிக்கப்பட்டது"
+
+msgid "Parity Estimates Plot"
+msgstr "சமநிலை சூழ்ச்சி மதிப்பிடுகிறது"
+
+msgid "<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of %2$s from each unprivileged group to the privileged %3$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm."
+msgstr ""
+"<b> படம் %1 $ i. சமநிலை ஒன்றுக்கு நெருக்கமாக உள்ளது, குறைந்த பாகுபாடு வழிமுறையில் "
+"நிகழ்கிறது."
+
+msgid "Prior and Posterior Distribution Plot"
+msgstr "முன் மற்றும் பின்புற விநியோக சூழ்ச்சி"
+
+msgid "<b>Figure %1$i.</b> The prior and posterior distributions on the log odds ratio for each unprivileged group compared to the privileged group (%2$s)."
+msgstr "<b> படம் %1 $ i."
+
+msgid "The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across protected groups %3$s."
+msgstr ""
+"<i> ப </i>-மதிப்பு %1$s மற்றும் பாதுகாக்கப்பட்ட குழுக்களில் %3$s இல் சம %2$s இன் சுழிய "
+"கருதுகோள்."
+
+msgid "This procedure analyzes the frequency with which values get repeated within a data set to statistically identify whether the data were likely tampered with. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit.\n\nTo determine whether the data show an excessive amount of repeated values, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested with a type-I error of %1$s. To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions."
+msgstr ""
+"இந்த நடைமுறை ஒரு தரவுக்குள் மதிப்புகள் மீண்டும் நிகழும் அதிர்வெண்ணை பகுப்பாய்வு செய்கிறது, "
+"இது தரவு சேதப்படுத்தப்பட்டதா என்பதை புள்ளிவிவர ரீதியாக அடையாளம் காண. பென்ஃபோர்டின் சட்டம் "
+"மற்றும் அதன் பொதுமைப்படுத்துதல்களைப் போலல்லாமல், இந்த அணுகுமுறை முழு எண்ணையும் ஒரே "
+"நேரத்தில் ஆராய்கிறது, முதல் அல்லது கடைசி இலக்கத்தை மட்டுமல்ல.\n"
+"\n"
+" தரவு அதிகப்படியான மீண்டும் மீண்டும் மதிப்புகளைக் காட்டுகிறதா என்பதைத் தீர்மானிக்க, தரவுகளில்"
+" எதிர்பாராத அளவு மீண்டும் மீண்டும் மதிப்புகள் இல்லை என்ற சுழிய கருதுகோள் %1$s இன் வகை-I "
+"பிழையுடன் சோதிக்கப்படுகிறது. எதிர்பார்த்ததை அளவிட, இந்த சோதனைக்கு எண்களின் முழு பகுதிகள்"
+" அவற்றின் தசம பகுதிகளுடன் தொடர்புபடுத்தப்படவில்லை என்ற அனுமானம் தேவைப்படுகிறது."
+
+msgid "<u>Assessing repeated values</u>"
+msgstr "<u> மீண்டும் மீண்டும் மதிப்புகளை மதிப்பிடுதல் </u>"
+
+msgid "<b>Table %1$i.</b> Repeated Values Test"
+msgstr "<b> அட்டவணை %1 $ i. </b> மீண்டும் மீண்டும் மதிப்புகள் சோதனை"
+
+msgid "Average"
+msgstr "சராசரி"
+
+msgid "Frequency"
+msgstr "மீடிறன், மீள்திறன், நிகழ்வெண், நிகழ்வு"
+
+msgid "Entropy"
+msgstr "என்ட்ரோபி"
+
+msgid "The displayed <i>p</i>-value is one-sided and is computed on the basis of %1$s samples."
+msgstr ""
+"காட்டப்படும் <i> ப </i>-மதிப்பு ஒருதலைப்பட்சமானது மற்றும் %1$s மாதிரிகளின் அடிப்படையில் "
+"கணக்கிடப்படுகிறது."
+
+msgid "<b>Table %1$i.</b> Assumption Checks"
+msgstr "<b> அட்டவணை %1 $ i. </b> அனுமானம் காசோலைகள்"
+
+msgid "The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> = 0."
+msgstr ""
+"காட்டப்படும் <i> ப </i>-மதிப்பு என்பது h%1$s க்கு எதிராக இரு பக்க சோதனைக்கு: <i> r </"
+"i> = 0."
+
+msgid "Percentage"
+msgstr "விழுக்காடு"
+
+msgid "Observed vs. Expected Average Frequency"
+msgstr "கவனிக்கப்பட்ட எதிராக எதிர்பார்க்கப்படும் சராசரி அதிர்வெண்"
+
+msgid "Average frequency"
+msgstr "சராசரி அதிர்வெண்"
+
+msgid "Simulated frequency"
+msgstr "உருவகப்படுத்தப்பட்ட அதிர்வெண்"
+
+msgid "<b>Figure %i:</b> The expected average frequencies of values versus the observed average frequency in the data set."
+msgstr ""
+"<b> படம் %i: </b> தரவு தொகுப்பில் கவனிக்கப்பட்ட சராசரி அதிர்வெண்ணுக்கு எதிராக "
+"மதிப்புகளின் எதிர்பார்க்கப்படும் சராசரி அதிர்வெண்கள்."
+
+msgid "Observed vs. Expected Entropy"
+msgstr "கவனிக்கப்பட்ட எதிராக எதிர்பார்க்கப்படும் என்ட்ரோபி"
+
+msgid "<b>Figure %i:</b> The expected entropy of values versus the observed entropy in the data set."
+msgstr ""
+"<b> படம் %i: </b> தரவுத் தொகுப்பில் கவனிக்கப்பட்ட என்ட்ரோபிக்கு எதிராக மதிப்புகளின் "
+"எதிர்பார்க்கப்படும் என்ட்ரோபி."
+
+msgid "Histogram of Individual Values"
+msgstr "தனிப்பட்ட மதிப்புகளின் இச்டோகிராம்"
+
+msgid "<b>Figure %i:</b> Histogram of the individual values in the data set."
+msgstr ""
+"<b> படம் %i: </b> தரவு தொகுப்பில் உள்ள தனிப்பட்ட மதிப்புகளின் இச்டோகிராம்."
+
+msgid "%1$s < α"
+msgstr "%1$s <a"
+
+msgid "%1$s >= α"
+msgstr "%1$s> = அ"
+
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the data do not contain an unexpected amount of repeated values %2$s."
+msgstr ""
+"<i> ப </i>-மதிப்பு %1$s மற்றும் தரவுகளில் எதிர்பாராத அளவு மீண்டும் மீண்டும் மதிப்புகள் "
+"இல்லை என்ற சுழிய கருதுகோள் %2$s ஆகும்."
+
+msgid "percentage"
+msgstr "விழுக்காடு"
+
+msgid "amount"
+msgstr "தொகை"
+
+msgid "<u>Planning</u>"
+msgstr "<u> திட்டமிடல் </u>"
+
+msgid "<u>Selection</u>"
+msgstr "<u> தேர்வு </u>"
+
+msgid "<u>Evaluation</u>"
+msgstr "<u> மதிப்பீடு </u>"
+
+msgid "Analysis not possible: The materiality is higher than, or equal to the total value of the observations."
+msgstr ""
+"பகுப்பாய்வு சாத்தியமில்லை: பொருள் என்பது அவதானிப்புகளின் மொத்த மதிப்பை விட அதிகமாக "
+"உள்ளது அல்லது சமம்."
+
+msgid "Analysis not possible: The expected errors are equal to, or higher than, the number of units in the population."
+msgstr ""
+"பகுப்பாய்வு சாத்தியமில்லை: எதிர்பார்க்கப்படும் பிழைகள் மக்கள்தொகையில் உள்ள அலகுகளின் "
+"எண்ணிக்கைக்கு சமமானவை அல்லது அதிகமாக உள்ளன."
+
+msgid "Analysis not possible: The expected errors are higher than the performance materiality."
+msgstr ""
+"பகுப்பாய்வு சாத்தியமில்லை: எதிர்பார்க்கப்படும் பிழைகள் செயல்திறன் பொருளை விட அதிகமாக "
+"உள்ளன."
+
+msgid "The detection risk is equal to or higher than 100%%. Please re-specify the custom values for the Inherent risk and/or Control risk and/or Analytical risk, or the confidence."
+msgstr ""
+"கண்டறிதல் இடர் 100 %% ஐ விட சமம் அல்லது அதிகமாக உள்ளது. உள்ளார்ந்த இடர் மற்றும்/அல்லது "
+"கட்டுப்பாட்டு இடர் மற்றும்/அல்லது பகுப்பாய்வு இடர் அல்லது நம்பிக்கைக்கான தனிப்பயன் மதிப்புகளை "
+"மீண்டும் குறிப்பிடவும்."
+
+msgid "You cannot incorporate this prior information into your analysis because you are not testing against a performance materiality."
+msgstr ""
+"உங்கள் பகுப்பாய்வில் இந்த முந்தைய தகவலை நீங்கள் இணைக்க முடியாது, ஏனெனில் நீங்கள் ஒரு "
+"செயல்திறன் பொருளுக்கு எதிராக சோதிக்கவில்லை."
+
+msgid "The prior expected misstatement rate in the population is larger than the performance materiality."
+msgstr ""
+"மக்கள்தொகையில் முன் எதிர்பார்க்கப்படும் தவறான விளக்க விகிதம் செயல்திறன் பொருளை விட "
+"பெரியது."
+
+msgid "Selection Summary"
+msgstr "தேர்வு சுருக்கம்"
+
+msgid "You must specify unique item ID's. The row numbers of the data set are sufficient."
+msgstr ""
+"நீங்கள் தனித்துவமான உருப்படி ஐடியைக் குறிப்பிட வேண்டும். தரவு தொகுப்பின் வரிசை எண்கள் "
+"போதுமானவை."
+
+msgid "Evaluation Summary"
+msgstr "மதிப்பீட்டு சுருக்கம்"
+
+msgid "The hypergeometric upper bound requires that you specify the number of units in the population."
+msgstr ""
+"ஐப்பர்சோமெட்ரிக் மேல் எல்லைக்கு நீங்கள் மக்கள்தொகையில் உள்ள அலகுகளின் எண்ணிக்கையைக் குறிப்பிட "
+"வேண்டும்."
+
+msgid "The direct, difference, ratio, and regression bounds require that you specify the number of items and the number of units in the population."
+msgstr ""
+"நேரடி, வேறுபாடு, விகிதம் மற்றும் பின்னடைவு வரம்புகள் நீங்கள் பொருட்களின் எண்ணிக்கையையும் "
+"மக்கள்தொகையில் உள்ள அலகுகளின் எண்ணிக்கையையும் குறிப்பிட வேண்டும்."
+
+msgid "The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk and/or Analytical risk, or the confidence."
+msgstr ""
+"கண்டறிதல் இடர் 100 %% ஐ விட சமம் அல்லது அதிகமாக உள்ளது. உள்ளார்ந்த இடர் மற்றும்/அல்லது "
+"கட்டுப்பாட்டு இடர் மற்றும்/அல்லது பகுப்பாய்வு இடர் அல்லது நம்பிக்கைக்கு உங்கள் மதிப்புகளை "
+"மீண்டும் குறிப்பிடவும்."
+
+msgid "Analysis not possible: The materiality (%1$s) is higher than, or equal to the total value of the population (%2$s)."
+msgstr ""
+"பகுப்பாய்வு சாத்தியமில்லை: பொருள் (%1$s) மக்கள்தொகையின் மொத்த மதிப்பை விட அதிகமாக உள்ளது"
+" அல்லது சமம் (%2$s)."
+
+msgid "Select one or both sampling objectives to begin planning an audit sample.\n\n%1$s <b>Test against a performance materiality</b>\n\nEnable this objective if you want to test whether the total misstatement in the population exceeds a certain limit (i.e., the performance materiality) based on a sample. This approach allows you to plan a sample such that, when the sample meets your expectations, the maximum error is said to be below performance materiality. In the evaluation you will be able to quantify the evidence that your sample contains for or against the statement that the population misstatement does not exceed the performance materiality.\n\n%2$s <b>Obtain a minimum precision</b>\n\nEnable this objective if you want to obtain a minimum precision when estimating the total misstatement in the population based on a sample. This approach allows you to plan a sample such that, when the sample meets expectations, the accuracy of your estimate is below a tolerable percentage. In the evaluation you will be able to quantify the accuracy of your estimate of the population misstatement."
+msgstr ""
+"தணிக்கை மாதிரியைத் திட்டமிடத் தொடங்க ஒன்று அல்லது இரண்டு மாதிரி நோக்கங்களையும் "
+"தேர்ந்தெடுக்கவும்.\n"
+"\n"
+" %1$s <b> செயல்திறன் பொருளுக்கு எதிராக சோதனை </b>\n"
+"\n"
+" இந்த நோக்கத்தை இயக்கவும், மக்கள்தொகையில் மொத்த தவறான தன்மை ஒரு மாதிரியின் அடிப்படையில் "
+"ஒரு குறிப்பிட்ட வரம்பை (அதாவது, செயல்திறன் பொருள்) மீறுகிறதா என்பதை நீங்கள் சோதிக்க "
+"விரும்பினால். இந்த அணுகுமுறை ஒரு மாதிரியைத் திட்டமிட உங்களை அனுமதிக்கிறது, அதாவது "
+"மாதிரி உங்கள் எதிர்பார்ப்புகளை நிறைவு செய்யும் போது, அதிகபட்ச பிழை செயல்திறன் பொருளுக்கு"
+" கீழே இருப்பதாகக் கூறப்படுகிறது. மதிப்பீட்டில், உங்கள் மாதிரியில் மக்கள்தொகை தவறாகப் "
+"புரிந்துகொள்வது செயல்திறன் பொருளை விட அதிகமாக இல்லை என்ற அறிக்கைக்கு அல்லது எதிராக "
+"உங்கள் மாதிரியைக் கொண்டிருக்கும் ஆதாரங்களை நீங்கள் அளவிட முடியும்.\n"
+"\n"
+" %2$s <b> குறைந்தபட்ச துல்லியத்தைப் பெறுங்கள் </b>\n"
+"\n"
+" ஒரு மாதிரியின் அடிப்படையில் மக்கள்தொகையில் மொத்த தவறான விளக்கத்தை மதிப்பிடும்போது "
+"குறைந்தபட்ச துல்லியத்தைப் பெற விரும்பினால் இந்த நோக்கத்தை இயக்கவும். இந்த அணுகுமுறை ஒரு "
+"மாதிரியைத் திட்டமிட உங்களை அனுமதிக்கிறது, அதாவது மாதிரி எதிர்பார்ப்புகளை நிறைவு "
+"செய்யும் போது, உங்கள் மதிப்பீட்டின் துல்லியம் சகிக்கக்கூடிய சதவீதத்திற்கு கீழே இருக்கும். "
+"மதிப்பீட்டில், மக்கள் தொகை தவறாக மதிப்பிடுவதற்கான உங்கள் மதிப்பீட்டின் துல்லியத்தை நீங்கள் அளவி"
+"ட முடியும்."
+
+msgid "The objective of this sampling procedure is to show with %1$s confidence that the %2$s of misstatement in the population is lower than the performance materiality of %3$s."
+msgstr ""
+"இந்த மாதிரி நடைமுறையின் நோக்கம் %1$s நம்பிக்கையுடன் மக்கள்தொகையில் %2$s தவறாக "
+"மதிப்பிடுவது %3$s இன் செயல்திறன் பொருளைக் காட்டிலும் குறைவாக உள்ளது என்ற நம்பிக்கையைக் "
+"காண்பிப்பதாகும்."
+
+msgid "The objective of this sampling procedure is to estimate the misstatement in the population with %1$s confidence and a minimum precision of %2$s.\n\nThe quantity of interest is the misstatement θ in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audited (true) value."
+msgstr ""
+"இந்த மாதிரி நடைமுறையின் நோக்கம் மக்கள்தொகையில் தவறான விளக்கத்தை %1$s நம்பிக்கையுடனும், "
+"குறைந்தபட்சம் 2 $ s இன் துல்லியத்துடனும் மதிப்பிடுவதாகும்.\n"
+"\n"
+" வட்டி அளவு என்பது மக்கள்தொகையில் தவறான விளக்கமாகும். ஒரு பொருளின் முன்பதிவு செய்யப்பட்ட "
+"(பதிவுசெய்யப்பட்ட) மதிப்புக்கும் அதன் தணிக்கை செய்யப்பட்ட (உண்மை) மதிப்புக்கும் உள்ள வேறுபாடு"
+" என தவறாக மதிப்பிடுவது வரையறுக்கப்படுகிறது."
+
+msgid "The objective of this sampling procedure is to show with %1$s confidence and a precision of %3$s that the %2$s of misstatement in the population is lower than the performance materiality of %4$s."
+msgstr ""
+"இந்த மாதிரி நடைமுறையின் நோக்கம் %1$s நம்பிக்கையுடனும், %3$s இன் துல்லியத்துடனும் "
+"இருப்பதைக் காண்பிப்பதாகும், இது %4 $ s இன் செயல்திறன் பொருளைக் காட்டிலும் மக்கள்தொகையில் "
+"%2$s தவறாக நிறுவுதல் குறைவாக உள்ளது."
+
+msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "சகிக்க முடியாத தவறான விளக்கத்தின் h %1$s: %2$s %3$s %4 $ s"
+
+msgid "of exact misstatement H%1$s: %2$s = %3$s"
+msgstr "சரியான தவறான விளக்கத்தின் h %1$s: %2$s = %3$s"
+
+msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "சகித்துக்கொள்ளக்கூடிய தவறான விளக்கத்தின் h %1$s: %2$s %3$s %4 $ s"
+
+msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
+msgstr "சகித்துக்கொள்ளக்கூடிய தவறான விளக்கத்தின் h %1$s: %2$s < %3$s"
+
+msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "தவறான விளக்கம் h %1$s: %2$s %3$s %4 $ s"
+
+msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
+msgstr "சகிக்க முடியாத தவறான விளக்கத்தின் h %1$s: %2$s> %3$s"
+
+msgid "%1$s\n\nThe quantity of interest is the misstatement %2$s in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, two statistical hypotheses about %2$s are formulated:\n\n- The (null) hypothesis %3$s,\n- The (alternative) hypothesis %4$s.\n\nThe audit risk %5$s is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (i.e., %5$s < %6$s%%)."
+msgstr ""
+"%1$s\n"
+"\n"
+" வட்டி அளவு என்பது மக்கள்தொகையில் 2 ws s தவறான விளக்கமாகும். ஒரு பொருளின் முன்பதிவு "
+"செய்யப்பட்ட (பதிவுசெய்யப்பட்ட) மதிப்பு மற்றும் அதன் தணிக்கை (உண்மை) மதிப்புக்கு இடையிலான "
+"வேறுபாடு என தவறாக மதிப்பிடுவது வரையறுக்கப்படுகிறது. கொடுக்கப்பட்ட செயல்திறன் "
+"பொருளுக்கு எதிரான மக்கள் தொகை தவறான விளக்கத்தை சோதிக்கும் போது, %2$s பற்றிய இரண்டு "
+"புள்ளிவிவர கருதுகோள்கள் வடிவமைக்கப்பட்டுள்ளன:\n"
+"\n"
+" - (பூச்ய) கருதுகோள் %3$s,\n"
+" - (மாற்று) கருதுகோள் %4 $ s.\n"
+"\n"
+" தணிக்கை இடர் %5 $ s என்பது கருதுகோளை %3$s ஐ தவறாக நிராகரிக்கும் அபாயமாகும். ஒரு "
+"மாதிரியின் அடிப்படையில் இந்த கருதுகோளை நிராகரிக்க, மாதிரியிலிருந்து தகவல்கள் %5 $ s "
+"ஐ சரியான குறைந்த அளவிற்கு குறைக்க போதுமானதாக இருக்க வேண்டும் (அதாவது, %5 $ s < %6 $"
+" s %%)."
+
+msgid "%1$s\n\nIn a Bayesian analysis, the parameter %2$s is assigned a prior probability distribution that incorporates the available audit information about the misstatement in the population."
+msgstr ""
+"%1$s\n"
+"\n"
+" ஒரு பேய்சியன் பகுப்பாய்வில், %2$s அளவுரு ஒரு முன் நிகழ்தகவு விநியோகத்தை ஒதுக்குகிறது"
+", இது மக்கள்தொகையில் தவறாக மதிப்பிடுவது குறித்த கிடைக்கக்கூடிய தணிக்கை தகவல்களை "
+"உள்ளடக்கியது."
+
+msgid "a performance materiality of %1$s"
+msgstr "%1$s இன் செயல்திறன் பொருள்"
+
+msgid "the sample provides sufficient information to conclude that the misstatement in the population is below the performance materiality"
+msgstr ""
+"மக்கள்தொகையில் தவறான விளக்கமானது செயல்திறன் பொருளுக்கு கீழே உள்ளது என்ற முடிவுக்கு "
+"மாதிரி போதுமான தகவல்களை வழங்குகிறது"
+
+msgid "a minimum precision of %1$s"
+msgstr "%1$s இன் குறைந்தபட்ச துல்லியம்"
+
+msgid "the sample provides sufficient information to estimate the misstatement in the population with the minimum precision"
+msgstr ""
+"குறைந்தபட்ச துல்லியத்துடன் மக்கள்தொகையில் தவறான விளக்கத்தை மதிப்பிடுவதற்கு மாதிரி போதுமா"
+"ன தகவல்களை வழங்குகிறது"
+
+msgid "a performance materiality of %1$s and a minimum precision of %2$s"
+msgstr ""
+"%1$s இன் செயல்திறன் பொருள் மற்றும் குறைந்தபட்சம் 2 $ s இன் குறைந்தபட்ச துல்லியம்"
+
+msgid "the sample provides sufficient information to conclude that the misstatement in the population is below the performance materiality with the minimum precision"
+msgstr ""
+"மக்கள்தொகையில் தவறான விளக்கமானது குறைந்தபட்ச துல்லியத்துடன் செயல்திறன் பொருளுக்கு கீழே "
+"உள்ளது என்ற முடிவுக்கு மாதிரி போதுமான தகவல்களை வழங்குகிறது"
+
+msgid "Furthermore, the uncertainty regarding θ will only be extrapolated over the unseen part of the population. This requires the additional assumption that the population taints are homogeneous."
+msgstr ""
+"மேலும், the தொடர்பான நிச்சயமற்ற தன்மை மக்கள்தொகையில் காணப்படாத பகுதியை விட "
+"விரிவாக்கப்படும். மக்கள்தொகை கறைகள் ஒரே மாதிரியானவை என்ற கூடுதல் அனுமானம் இதற்கு "
+"தேவைப்படுகிறது."
+
+msgid "gamma"
+msgstr "காமா"
+
+msgid "beta"
+msgstr "பீட்டா"
+
+msgid "beta-binomial"
+msgstr "பீட்டா-பினோமியல்"
+
+msgid "The purpose of the planning stage is to find a minimum sample size so that, given a certain number of expected misstatements, the sample provides sufficient information to achieve the specified sampling objectives."
+msgstr ""
+"திட்டமிடல் கட்டத்தின் நோக்கம் குறைந்தபட்ச மாதிரி அளவைக் கண்டுபிடிப்பதாகும், இதனால் ஒரு "
+"குறிப்பிட்ட எண்ணிக்கையிலான எதிர்பார்க்கப்பட்ட தவறான விளக்கங்கள் கொடுக்கப்பட்டால், குறிப்பிட்ட "
+"மாதிரி நோக்கங்களை அடைய மாதிரி போதுமான தகவல்களை வழங்குகிறது."
+
+msgid "No assumptions are made about the most likely expected error in the sample."
+msgstr ""
+"மாதிரியில் பெரும்பாலும் எதிர்பார்க்கப்படும் பிழை குறித்து அனுமானங்கள் எதுவும் "
+"செய்யப்படவில்லை."
+
+msgid "The most likely expected error in the sample is expected to be %1$s."
+msgstr ""
+"மாதிரியில் பெரும்பாலும் எதிர்பார்க்கப்படும் பிழை %1$s ஆக இருக்கும் என்று "
+"எதிர்பார்க்கப்படுகிறது."
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
+msgstr ""
+"%1$s %2$s %3$s க்குத் தேவையான குறைந்தபட்ச மாதிரி அளவு, மாதிரியில் %4 $ s பிழைகள் உள்"
+"ளன என்று கருதி, %5 $ s ஆகும். இந்த மாதிரி அளவு %6 $ S விநியோகத்தை அடிப்படையாகக் "
+"கொண்டது, தவறான மதிப்பீட்டின் ஒவ்வொரு மதிப்பும் சமமாக இருக்கக்கூடும் என்ற முன்னோடி அனுமானம்"
+", மற்றும் கொடுக்கப்பட்ட பிழைகள்.\n"
+"\n"
+" இதன் விளைவாக, நோக்கம் கொண்ட மாதிரி மதிப்பீடு செய்யப்பட்டு, தணிக்கை செய்யப்பட்ட பொருட்களில் "
+"(விகிதாசார) தவறான விளக்கங்களின் தொகை %7 $ s, %8 $ s ஐ விட (அல்லது சமமாக) குறைவாக "
+"இருந்தால். %9 $ கள்"
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assessments of inherent risk (<i>%7$s</i>), control risk (<i>%8$s</i>) and analytical risk (<i>%9$s</i>) from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %10$s, %11$s. %12$s"
+msgstr ""
+"%1$s %2$s %3$s க்குத் தேவையான குறைந்தபட்ச மாதிரி அளவு, மாதிரியில் %4 $ s பிழைகள் உள்"
+"ளன என்று கருதி, %5 $ s ஆகும். இந்த மாதிரி அளவு%6 $ S விநியோகத்தை அடிப்படையாகக் "
+"கொண்டது, உள்ளார்ந்த இடர் (<i>%7 $ S </i>), கட்டுப்பாட்டு இடர் (<i>%8 $ S </i>) மற்றும் "
+"தணிக்கை இடர் மாதிரியிலிருந்து பகுப்பாய்வு இடர் (<i>%9 $ S </i>) மற்றும் கொடுக்கப்பட்ட "
+"எதிர்பார்க்கப்படும் பிழைகள்.\n"
+"\n"
+" இதன் விளைவாக, நோக்கம் கொண்ட மாதிரி மதிப்பீடு செய்யப்பட்டு, தணிக்கை செய்யப்பட்ட பொருட்களில் "
+"(விகிதாசார) தவறான விளக்கங்களின் தொகை %10 $ s, %11 $ s ஐ விட (அல்லது சமமாக) குறைவா"
+"க இருந்தால். %12 $ கள்"
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
+msgstr ""
+"%1$s %2$s %3$s க்குத் தேவையான குறைந்தபட்ச மாதிரி அளவு, மாதிரியில் %4 $ s பிழைகள் உள்"
+"ளன என்று கருதி, %5 $ s ஆகும். இந்த மாதிரி அளவு %6 $ s விநியோகத்தை அடிப்படையாகக் "
+"கொண்டது, சகித்துக்கொள்ளக்கூடிய தவறான விளக்கமானது சமமாக சகிக்க முடியாத தவறான "
+"விளக்கமாகவும், கொடுக்கப்பட்ட எதிர்பார்க்கப்படும் பிழைகள் என்றும் சமமாக ஏற்பட வாய்ப்புள்ளது என்"
+"ற முன்னோடி அனுமானம்.\n"
+"\n"
+" இதன் விளைவாக, நோக்கம் கொண்ட மாதிரி மதிப்பீடு செய்யப்பட்டு, தணிக்கை செய்யப்பட்ட பொருட்களில் "
+"(விகிதாசார) தவறான விளக்கங்களின் தொகை %7 $ s, %8 $ s ஐ விட (அல்லது சமமாக) குறைவாக "
+"இருந்தால். %9 $ கள்"
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that an earlier sample of %7$s transactions containing %8$s errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s"
+msgstr ""
+"%1$s %2$s %3$s க்குத் தேவையான குறைந்தபட்ச மாதிரி அளவு, மாதிரியில் %4 $ s பிழைகள் உள்"
+"ளன என்று கருதி, %5 $ s ஆகும். இந்த மாதிரி அளவு %6 $ S விநியோகத்தை அடிப்படையாகக் "
+"கொண்டது, %8 $ S பிழைகள் கொண்ட %7 $ S பரிவர்த்தனைகளின் முந்தைய மாதிரி காணப்படுகிறது, "
+"மற்றும் கொடுக்கப்பட்ட எதிர்பார்க்கப்படும் பிழைகள்.\n"
+"\n"
+" இதன் விளைவாக, நோக்கம் கொண்ட மாதிரி மதிப்பீடு செய்யப்பட்டு, தணிக்கை செய்யப்பட்ட பொருட்களில் "
+"(விகிதாசார) தவறான விளக்கங்களின் தொகை %9 $ s, %10 $ s ஐ விட (அல்லது சமமாக) குறைவா"
+"க இருந்தால். %11 $ கள்"
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the manually specified prior distribution, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
+msgstr ""
+"%1$s %2$s %3$s க்குத் தேவையான குறைந்தபட்ச மாதிரி அளவு, மாதிரியில் %4 $ s பிழைகள் உள்"
+"ளன என்று கருதி, %5 $ s ஆகும். இந்த மாதிரி அளவு %6 $ s வழங்கல், கைமுறையாக "
+"குறிப்பிடப்பட்ட முன் வழங்கல் மற்றும் கொடுக்கப்பட்ட எதிர்பார்க்கப்படும் பிழைகள் ஆகியவற்றை "
+"அடிப்படையாகக் கொண்டது.\n"
+"\n"
+" இதன் விளைவாக, நோக்கம் கொண்ட மாதிரி மதிப்பீடு செய்யப்பட்டு, தணிக்கை செய்யப்பட்ட பொருட்களில் "
+"(விகிதாசார) தவறான விளக்கங்களின் தொகை %7 $ s, %8 $ s ஐ விட (அல்லது சமமாக) குறைவாக "
+"இருந்தால். %9 $ கள்"
+
+msgid "random"
+msgstr "சீரற்ற"
+
+msgid "fixed interval"
+msgstr "நிலையான இடைவெளி"
+
+msgid "cell"
+msgstr "கலன்"
+
+msgid "sieve"
+msgstr "சல்லடை"
+
+msgid "book values (<i>%1$s</i>)"
+msgstr "புத்தக மதிப்புகள் (<i>%1$s </i>)"
+
+msgid "book values (<i>...</i>)"
+msgstr "புத்தக மதிப்புகள் (<i> ... </i>)"
+
+msgid "ID variable (<i>%1$s</i>)"
+msgstr "ஐடி மாறி (<i>%1$s </i>)"
+
+msgid "ID variable (<i>...</i>)"
+msgstr "ஐடி மாறி (<i> ... </i>)"
+
+msgid "<br><b>Warning:</b> A monetary unit sampling method was tried but failed."
+msgstr ""
+"<br> <b> எச்சரிக்கை: </b> ஒரு நாணய அலகு மாதிரி முறை முயற்சிக்கப்பட்டது, ஆனால் "
+"தோல்வியடைந்தது."
+
+msgid "%1$s record sampling"
+msgstr "%1$s பதிவு மாதிரி"
+
+msgid "%1$s monetary unit sampling"
+msgstr "%1$s நாணய அலகு மாதிரி"
+
+msgid "items"
+msgstr "உருப்படிகள்"
+
+msgid "monetary units"
+msgstr "நாணய அலகுகள்"
+
+msgid "randomized"
+msgstr "சீரற்ற"
+
+msgid "non-randomized"
+msgstr "சீரற்ற"
+
+msgid "The purpose of the selection stage is to statistically select a number of sampling units from the population. Sampling units can be individual items (rows) or individual monetary units. The sampling units are selected from the population according to the selection method. To learn more about the current selection method, look under the <i>Method</i> section.\n\nFrom the population of %1$s %2$s items, %3$s sampling units (%4$s) are selected from the %5$s using the %6$s method.%7$s"
+msgstr ""
+"தேர்வு கட்டத்தின் நோக்கம் மக்களிடமிருந்து பல மாதிரி அலகுகளை புள்ளிவிவர ரீதியாக "
+"தேர்ந்தெடுப்பதாகும். மாதிரி அலகுகள் தனிப்பட்ட உருப்படிகள் (வரிசைகள்) அல்லது தனிப்பட்ட நா"
+"ணய அலகுகளாக இருக்கலாம். தேர்வு முறையின்படி மாதிரி அலகுகள் மக்களிடமிருந்து "
+"தேர்ந்தெடுக்கப்படுகின்றன. தற்போதைய தேர்வு முறையைப் பற்றி மேலும் அறிய, <i> முறை </i> "
+"பிரிவின் கீழ் பாருங்கள்.\n"
+"\n"
+" %1$s %2$s உருப்படிகளின் மக்கள்தொகையில் இருந்து, %3$s மாதிரி அலகுகள் ( %4 $ s) %6 $ "
+"s முறையைப் பயன்படுத்தி %5 $ s இலிருந்து தேர்ந்தெடுக்கப்படுகின்றன. %7 $ s"
+
+msgid "%1$s\n\n<b>Note:</b> The selected sample (%2$s) contains fewer items than the planned sample size (%3$s) because some items are selected more than once. The items containing these %4$s extra selected sampling units will be counted multiple times in the evaluation."
+msgstr ""
+"%1$s\n"
+"\n"
+" <b> குறிப்பு: </b> தேர்ந்தெடுக்கப்பட்ட மாதிரி (%2$s) திட்டமிடப்பட்ட மாதிரி அளவை "
+"(%3$s) விட குறைவான உருப்படிகளைக் கொண்டுள்ளது, ஏனெனில் சில உருப்படிகள் ஒன்றுக்கு மேற்பட்"
+"ட முறை தேர்ந்தெடுக்கப்படுகின்றன. இந்த %4 $ s கூடுதல் தேர்ந்தெடுக்கப்பட்ட மாதிரி அலகுகளைக் "
+"கொண்ட உருப்படிகள் மதிப்பீட்டில் பல முறை கணக்கிடப்படும்."
+
+msgid "below"
+msgstr "கீழே"
+
+msgid "lower"
+msgstr "கீழ்"
+
+msgid "above"
+msgstr "மேலே"
+
+msgid "higher"
+msgstr "உயர்ந்த"
+
+msgid "<b>Objectives:</b> You have achieved your initial sampling objectives."
+msgstr ""
+"<b> குறிக்கோள்கள்: </b> உங்கள் ஆரம்ப மாதிரி நோக்கங்களை நீங்கள் அடைந்துவிட்டீர்கள்."
+
+msgid "<b>Objectives:</b> You have not achieved your initial sampling objectives."
+msgstr ""
+"<b> குறிக்கோள்கள்: </b> உங்கள் ஆரம்ப மாதிரி நோக்கங்களை நீங்கள் அடையவில்லை."
+
+msgid "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound for the misstatement is %3$s the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %4$s than the performance materiality. %5$s"
+msgstr ""
+"இந்த தணிக்கை மாதிரி நடைமுறையின் நோக்கம், மக்கள்தொகையில் தவறான விளக்கமானது குறிப்பிட்ட "
+"செயல்திறன் பொருளைக் காட்டிலும் குறைவாக உள்ளதா என்பதை %1$s நம்பிக்கையுடன் தீர்மானிப்பதாகும்"
+", இந்த விசயத்தில் %2$s. தற்போதைய தரவைப் பொறுத்தவரை, தவறான விளக்கத்திற்கான %1$s மேல் "
+"கட்டப்பட்டது %3$s செயல்திறன் பொருள்.\n"
+"\n"
+" இந்த முடிவுகளின் அடிப்படையில் முடிவு என்னவென்றால், மக்கள்தொகையில் தவறான விளக்கமானது "
+"செயல்திறன் பொருளை விட %4 $ s ஆகும். %5 $ கள்"
+
+msgid "The objective of this audit sampling procedure was to determine the misstatement in the population with %1$s confidence and a minimum precision of %2$s. For the current data, the obtained precision is %3$s than the minimum precision. \n\nThe conclusion on the basis of these results is that the misstatement in the population has been determined with at least %1$s confidence and a precision of %4$s. %5$s"
+msgstr ""
+"இந்த தணிக்கை மாதிரி நடைமுறையின் நோக்கம் மக்கள்தொகையில் தவறான விளக்கத்தை %1$s "
+"நம்பிக்கையுடனும், குறைந்தபட்சம் 2 $ s இன் துல்லியத்துடனும் தீர்மானிப்பதாகும். தற்போதைய தரவைப்"
+" பொறுத்தவரை, பெறப்பட்ட துல்லியம் குறைந்தபட்ச துல்லியத்தை விட %3$s ஆகும்.\n"
+"\n"
+" இந்த முடிவுகளின் அடிப்படையில் முடிவு என்னவென்றால், மக்கள்தொகையில் தவறான விளக்கமானது "
+"குறைந்தது %1$s நம்பிக்கையுடனும், %4 $ s துல்லியத்துடனும் தீர்மானிக்கப்பட்டுள்ளது. %5 $ கள்"
+
+msgid "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound for the misstatement is %4$s the performance materiality and the obtained precision is %5$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is %7$s than the performance materiality. %8$s"
+msgstr ""
+"இந்த தணிக்கை மாதிரி நடைமுறையின் நோக்கம் %1$s நம்பிக்கையுடன் தீர்மானிப்பதே, மற்றும் "
+"குறைந்தபட்சம் 2 $ s இன் துல்லியத்துடன், மக்கள்தொகையில் தவறான விளக்கமானது குறிப்பிட்ட "
+"செயல்திறன் பொருளைக் காட்டிலும் குறைவாக இருக்கிறதா, இந்த விசயத்தில் %3$s. தற்போதைய தரவைப்"
+" பொறுத்தவரை, தவறான மதிப்பீட்டிற்கான %1$s உச்சநிலை %4 $ s செயல்திறன் பொருள் மற்றும் "
+"பெறப்பட்ட துல்லியம் குறைந்தபட்ச துல்லியத்தை விட %5 $ s ஆகும்.\n"
+"\n"
+" இந்த முடிவுகளின் அடிப்படையில் முடிவு என்னவென்றால், %6 $ s துல்லியத்துடன், மக்கள்தொகையில் "
+"தவறான விளக்கமானது செயல்திறன் பொருளைக் காட்டிலும் %7 $ s ஆகும். %8 $ கள்"
+
+msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
+msgstr "<b> அட்டவணை %1 $ i. </b> புத்தக மதிப்புகளுக்கான விளக்க புள்ளிவிவரங்கள்"
+
+msgid "Population size"
+msgstr "மக்கள்தொகை அளவு"
+
+msgid "Absolute value"
+msgstr "முழுமையான மதிப்பு"
+
+msgid "Mean"
+msgstr "இடை, சராசரி"
+
+msgid "Std. deviation"
+msgstr "Std. விலகல்"
+
+msgid "1"
+msgstr "1"
+
+msgid "Quartile"
+msgstr "காலாண்டு"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "Distribution of Book Values"
+msgstr "புத்தக மதிப்புகளின் வழங்கல்"
+
+msgid "Mean ± St.dev"
+msgstr "சராசரி ± செயின்ட் டெவ்"
+
+msgid "<b>Figure %1$i.</b> The distribution of book values in the population. The red and blue dots respectively represent the mean and the values exactly one standard deviation from the mean. The orange dots represent the first, second (median) and third quartiles of the book values."
+msgstr ""
+"<b> படம் %1 $ i. </b> மக்கள்தொகையில் புத்தக மதிப்புகளின் வழங்கல். சிவப்பு மற்றும் நீல "
+"புள்ளிகள் முறையே சராசரி மற்றும் மதிப்புகள் சராசரியிலிருந்து ஒரு நிலையான விலகலைக் "
+"குறிக்கின்றன. ஆரஞ்சு புள்ளிகள் புத்தக மதிப்புகளின் முதல், இரண்டாவது (சராசரி) மற்றும் "
+"மூன்றாவது காலாண்டுகளை குறிக்கின்றன."
+
+msgid "High"
+msgstr "உயர்ந்த"
+
+msgid "Medium"
+msgstr "சராசரி"
+
+msgid "Low"
+msgstr "குறைந்த"
+
+msgid "<u>Audit Risk Model</u>"
+msgstr "<u> தணிக்கை இடர் மாதிரி </u>"
+
+msgid "The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk, control risk and analytical risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be %1$s, the control risk was determined to be %2$s and the analytical risk was determined to be %3$s. According to the Audit Risk Model, the required detection risk to maintain an audit risk of %4$s should be %5$s."
+msgstr ""
+"தணிக்கை இடர் மாதிரி என்பது உள்ளார்ந்த இடர், கட்டுப்பாட்டு இடர் மற்றும் பகுப்பாய்வு இடர் "
+"ஆகியவற்றின் முந்தைய மதிப்பீடுகளின் அடிப்படையில் மாதிரியிலிருந்து தேவையான தகவல்களைக் "
+"குறைப்பதற்கான ஒரு முறையாகும், அதே நேரத்தில் விரும்பிய தணிக்கை அபாயத்தை பராமரிக்கிறது."
+"\n"
+"\n"
+" மாதிரி நடைமுறைக்கு முன்னர், உள்ளார்ந்த இடர் %1$s ஆக தீர்மானிக்கப்பட்டது, கட்டுப்பாட்டு இடர் "
+"%2$s ஆக தீர்மானிக்கப்பட்டது மற்றும் பகுப்பாய்வு இடர் %3$s என தீர்மானிக்கப்பட்டது. தணிக்கை இடர்"
+" மாதிரியின் படி, %4 $ s தணிக்கை அபாயத்தை பராமரிக்க தேவையான கண்டறிதல் இடர் %5 $ s ஆக "
+"இருக்க வேண்டும்."
+
+msgid "Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x Analytical Risk (%4$s%%) x Detection risk (%5$s%%)"
+msgstr ""
+"தணிக்கை இடர் (%1$s %%) = உள்ளார்ந்த இடர் (%2$s %%) ஃச் கட்டுப்பாட்டு இடர் (%3$s %%) ஃச் "
+"பகுப்பாய்வு இடர் (%4 $ s %%) ஃச் கண்டறிதல் இடர் (%5 $ s %%)"
+
+msgid "At least one translation of the categories High, Medium and Low to probabilities is done according custom settings."
+msgstr ""
+"தனிப்பயன் அமைப்புகளின்படி உயர், நடுத்தர மற்றும் குறைந்த நிகழ்தகவுகளுக்கான வகைகளின் "
+"குறைந்தது ஒரு மொழிபெயர்ப்பு செய்யப்படுகிறது."
+
+msgid "The translation of the categories high, medium and low to probabilities is done using the default settings shown in the table below."
+msgstr ""
+"கீழேயுள்ள அட்டவணையில் காட்டப்பட்டுள்ள இயல்புநிலை அமைப்புகளைப் பயன்படுத்தி உயர், நடுத்தர "
+"மற்றும் குறைந்த வகைகளின் மொழிபெயர்ப்பு செய்யப்படுகிறது."
+
+msgid "<b>Table %1$i.</b> Default Settings Audit Risk Model"
+msgstr "<b> அட்டவணை %1 $ i. </b> இயல்புநிலை அமைப்புகள் தணிக்கை இடர் மாதிரி"
+
+msgid "Inherent risk"
+msgstr "உள்ளார்ந்த இடர்"
+
+msgid "Control risk"
+msgstr "ஆபத்தை கட்டுப்படுத்துங்கள்"
+
+msgid "Analytical risk"
+msgstr "பகுப்பாய்வு இடர்"
+
+msgid "= Selected"
+msgstr "= தேர்ந்தெடுக்கப்பட்டது"
+
+msgid "The detection risk is equal to or higher than 100%%. Please re-specify the percentages for the Inherent risk and/or Control risk and/or Analytical risk."
+msgstr ""
+"கண்டறிதல் இடர் 100 %% ஐ விட சமம் அல்லது அதிகமாக உள்ளது. உள்ளார்ந்த இடர் மற்றும்/அல்லது "
+"கட்டுப்பாட்டு இடர் மற்றும்/அல்லது பகுப்பாய்வு ஆபத்துக்கான சதவீதங்களை மீண்டும் குறிப்பிடவும்."
+
+msgid "You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly."
+msgstr ""
+"இந்த மக்கள்தொகையுடன் உங்கள் தற்போதைய மாதிரி நோக்கங்களை நீங்கள் அடைய முடியாது. இதன் விளைவா"
+"க மாதிரி அளவு அதிகபட்சம் 1 $ s ஐ விட அதிகமாக உள்ளது. அதற்கேற்ப அதிகபட்ச விருப்பத்தை "
+"சரிசெய்யவும்."
+
+msgid "The tolerable misstatements are larger than the performance materiality. If you used an absolute number of tolerable misstatements < 1, please use the 'relative' option."
+msgstr ""
+"சகித்துக்கொள்ளக்கூடிய தவறான விளக்கங்கள் செயல்திறன் பொருளை விட பெரியவை. நீங்கள் "
+"சகித்துக்கொள்ளக்கூடிய தவறான விளக்கங்களின் முழுமையான எண்ணிக்கையைப் பயன்படுத்தினால் <1, "
+"தயவுசெய்து 'உறவினர்' விருப்பத்தைப் பயன்படுத்தவும்."
+
+msgid "An error occurred: %1$s"
+msgstr "பிழை ஏற்பட்டது: %1$s"
+
+msgid "<b>Table %1$i.</b> Planning Summary"
+msgstr "<b> அட்டவணை %1 $ i. </b> திட்டமிடல் சுருக்கம்"
+
+msgid "Performance materiality"
+msgstr "செயல்திறன் பொருள்"
+
+msgid "Min. precision"
+msgstr "மணித்துளி. துல்லியம்"
+
+msgid "Detection risk"
+msgstr "கண்டறிதல் இடர்"
+
+msgid "Audit risk"
+msgstr "தணிக்கை இடர்"
+
+msgid "Tolerable misstatements"
+msgstr "சகிக்கக்கூடிய தவறான விளக்கங்கள்"
+
+msgid "Minimum sample size"
+msgstr "குறைந்தபட்ச மாதிரி அளவு"
+
+msgid "The minimum sample size is based on the Poisson distribution."
+msgstr "குறைந்தபட்ச மாதிரி அளவு பாய்சன் விநியோகத்தை அடிப்படையாகக் கொண்டது."
+
+msgid "The minimum sample size is based on the binomial distribution."
+msgstr "குறைந்தபட்ச மாதிரி அளவு இருசக்கர விநியோகத்தை அடிப்படையாகக் கொண்டது."
+
+msgid "The minimum sample size is based on the hypergeometric distribution."
+msgstr ""
+"குறைந்தபட்ச மாதிரி அளவு ஐப்பர்சோமெட்ரிக் விநியோகத்தை அடிப்படையாகக் கொண்டது."
+
+msgid "The minimum sample size is based on the gamma distribution."
+msgstr "குறைந்தபட்ச மாதிரி அளவு காமா விநியோகத்தை அடிப்படையாகக் கொண்டது."
+
+msgid "The minimum sample size is based on the beta distribution."
+msgstr "குறைந்தபட்ச மாதிரி அளவு பீட்டா விநியோகத்தை அடிப்படையாகக் கொண்டது."
+
+msgid "The minimum sample size is based on the beta-binomial distribution (N = %1$s)."
+msgstr ""
+"குறைந்தபட்ச மாதிரி அளவு பீட்டா-பினோமியல் விநியோகத்தை அடிப்படையாகக் கொண்டது (n = %1$s)."
+
+msgid "Either the materiality (if applicable) or the number of units in the population is defined as zero."
+msgstr ""
+"பொருள் (பொருந்தினால்) அல்லது மக்கள்தொகையில் உள்ள அலகுகளின் எண்ணிக்கை பூச்சியமாக "
+"வரையறுக்கப்படுகிறது."
+
+msgid "%1$s <b>Insufficient information.</b>"
+msgstr "%1$s <b> போதிய செய்தி. </B>"
+
+msgid "The minimum sample size is based on the Poisson distribution (%1$s = %2$s)."
+msgstr ""
+"குறைந்தபட்ச மாதிரி அளவு பாய்சன் விநியோகத்தை அடிப்படையாகக் கொண்டது ( %1$s = %2$s)."
+
+msgid "The minimum sample size is based on the binomial distribution (p = %1$s)"
+msgstr ""
+"குறைந்தபட்ச மாதிரி அளவு பைனோமியல் விநியோகத்தை அடிப்படையாகக் கொண்டது (பி = %1$s)"
+
+msgid "The minimum sample size is based on the hypergeometric distribution (N = %1$s, K = %2$s)."
+msgstr ""
+"குறைந்தபட்ச மாதிரி அளவு ஐப்பர்சோமெட்ரிக் விநியோகத்தை அடிப்படையாகக் கொண்டது (n = %1$s, "
+"k = %2$s)."
+
+msgid "The minimum sample size is based on the gamma distribution (%1$s = %2$s, %3$s = %4$s)"
+msgstr ""
+"குறைந்தபட்ச மாதிரி அளவு காமா விநியோகத்தை அடிப்படையாகக் கொண்டது ( %1$s = %2$s, %3$s "
+"= %4 $ s)"
+
+msgid "The minimum sample size is based on the beta distribution (%1$s = %2$s, %3$s = %4$s)."
+msgstr ""
+"குறைந்தபட்ச மாதிரி அளவு பீட்டா விநியோகத்தை அடிப்படையாகக் கொண்டது ( %1$s = %2$s, %3$s "
+"= %4 $ s)."
+
+msgid "The minimum sample size is based on the beta-binomial distribution (N = %1$s, %2$s = %3$s, %4$s = %5$s)."
+msgstr ""
+"குறைந்தபட்ச மாதிரி அளவு பீட்டா-பினோமியல் விநியோகத்தை அடிப்படையாகக் கொண்டது (n = %1$s, "
+"%2$s = %3$s, %4 $ s = %5 $ s)."
+
+msgid "The minimum sample size (%1$s) is larger than the number of units in the population (%2$s)."
+msgstr ""
+"குறைந்தபட்ச மாதிரி அளவு (%1$s) மக்கள்தொகையில் உள்ள அலகுகளின் எண்ணிக்கையை விட பெரியது "
+"(%2$s)."
+
+msgid "Based on this sample size, the selection interval spans %1$s units."
+msgstr ""
+"இந்த மாதிரி அளவின் அடிப்படையில், தேர்வு இடைவெளி %1$s அலகுகளை பரப்புகிறது."
+
+msgid "The value %1$s is automatically used as a starting point for the fixed interval selection."
+msgstr ""
+"%1$s மதிப்பு தானாகவே நிலையான இடைவெளி தேர்வுக்கான தொடக்க புள்ளியாக "
+"பயன்படுத்தப்படுகிறது."
+
+msgid "%1$s"
+msgstr "%1$s"
+
+msgid "Minimum Sample Sizes"
+msgstr "குறைந்தபட்ச மாதிரி அளவுகள்"
+
+msgid "Beta"
+msgstr "பீட்டா"
+
+msgid "Gamma"
+msgstr "காமா"
+
+msgid "Beta-binomial"
+msgstr "பீட்டா-பினோமியல்"
+
+msgid "Binomial"
+msgstr "ஈருறுப்பு"
+
+msgid "Poisson"
+msgstr "பாய்சன்"
+
+msgid "Hypergeometric"
+msgstr "ஐப்பர்சோமெட்ரிக்"
+
+msgid "Across Probability Distributions (Current: %1$s)"
+msgstr "நிகழ்தகவு விநியோகங்கள் முழுவதும் (நடப்பு: %1$s)"
+
+msgid "Expected error-free"
+msgstr "எதிர்பார்க்கப்படும் பிழை இல்லாதது"
+
+msgid "Expected errors"
+msgstr "எதிர்பார்க்கப்படும் பிழைகள்"
+
+msgid "An error occurred in a call to the jfa package: %1$s"
+msgstr "JFA தொகுப்புக்கான அழைப்பில் பிழை ஏற்பட்டது: %1$s"
+
+msgid "Across Expected Errors (Current: %1$s)"
+msgstr "எதிர்பார்த்த பிழைகள் (நடப்பு: %1$s)"
+
+msgid "You cannot achieve your current sampling objectives with up to three full misstatements this population."
+msgstr ""
+"இந்த மக்கள் தொகை மூன்று முழு தவறான விளக்கங்களுடன் உங்கள் தற்போதைய மாதிரி நோக்கங்களை நீங்கள் "
+"அடைய முடியாது."
+
+msgid "<b>Figure %1$i.</b> The first panel shows a comparison of the minimum sample sizes under different probability distributions. The bars represent the minimum sample sizes for the current expected errors in the sample. The number of expected errors in each bar is colored in red and the number of expected error-free items is colored in green. The second panel shows a comparison of the minimum sample sizes under different expected errors for the current probability distribution."
+msgstr ""
+"<b> படம் %1 $ i. </b> முதல் குழு வெவ்வேறு நிகழ்தகவு விநியோகங்களின் கீழ் குறைந்தபட்ச "
+"மாதிரி அளவுகளின் ஒப்பீட்டைக் காட்டுகிறது. மாதிரியில் தற்போதைய எதிர்பார்க்கப்படும் "
+"பிழைகளுக்கான குறைந்தபட்ச மாதிரி அளவுகளை பார்கள் குறிக்கின்றன. ஒவ்வொரு பட்டியிலும் "
+"எதிர்பார்க்கப்படும் பிழைகளின் எண்ணிக்கை சிவப்பு நிறத்தில் வண்ணம் பூசப்பட்டு எதிர்பார்க்கப்படும் "
+"பிழை இல்லாத பொருட்களின் எண்ணிக்கை பச்சை நிறத்தில் வண்ணம் பூசப்படுகிறது. இரண்டாவது குழு "
+"தற்போதைய நிகழ்தகவு விநியோகத்திற்கான வெவ்வேறு எதிர்பார்க்கப்படும் பிழைகளின் கீழ் குறைந்தபட்ச "
+"மாதிரி அளவுகளின் ஒப்பீட்டைக் காட்டுகிறது."
+
+msgid "Presumed %1$s Distribution"
+msgstr "%1$s வழங்கல் என்று கருதப்படுகிறது"
+
+msgid "<b>Figure %1$i.</b> The assumed %2$s distribution. The number of expected errors in the selection is colored in red. The total probability of the errors does not exceed the detection risk as specified through the audit risk model."
+msgstr ""
+"<b> படம் %1 $ i. </b> கருதப்பட்ட %2$s வழங்கல். தேர்வில் எதிர்பார்க்கப்படும் பிழைகளின் "
+"எண்ணிக்கை சிவப்பு நிறத்தில் உள்ளது. பிழைகளின் மொத்த நிகழ்தகவு தணிக்கை இடர் மாதிரி மூலம் "
+"குறிப்பிடப்பட்டுள்ளபடி கண்டறிதல் அபாயத்தை விட அதிகமாக இருக்காது."
+
+msgid "You cannot use an interval-based selection method because the sample size exceeds the population size of %1$s. Please change the selection method to random sampling."
+msgstr ""
+"நீங்கள் இடைவெளி அடிப்படையிலான தேர்வு முறையைப் பயன்படுத்த முடியாது, ஏனெனில் மாதிரி அளவு"
+" மக்கள் தொகை அளவை %1$s ஐ மீறுகிறது. தேர்வு முறையை சீரற்ற மாதிரியாக மாற்றவும்."
+
+msgid "Starting point is outside the range of the selection interval of 1 to %1$s. Please choose a starting point < %1$s."
+msgstr ""
+"தொடக்க புள்ளி 1 முதல் %1$s தேர்வு இடைவெளியின் வரம்பிற்கு வெளியே உள்ளது. தயவுசெய்து ஒரு"
+" தொடக்க புள்ளியைத் தேர்வுசெய்க < %1$s."
+
+msgid "<b>Table %1$i.</b> Selection Summary"
+msgstr "<b> அட்டவணை %1 $ i. </b> தேர்வு சுருக்கம்"
+
+msgid "No. units"
+msgstr "அலகுகள்"
+
+msgid "No. items"
+msgstr "உருப்படிகள்"
+
+msgid "Selection value"
+msgstr "தேர்வு மதிப்பு"
+
+msgid "%% of population value"
+msgstr "மக்கள்தொகை மதிப்பின் %%"
+
+msgid "%% of population size"
+msgstr "மக்கள்தொகை அளவின் %%"
+
+msgid "using seed %1$s"
+msgstr "விதை %1$s ஐப் பயன்படுத்துதல்"
+
+msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."
+msgstr ""
+"%1$s அளவு ஒவ்வொரு இடைவெளியிலிருந்தும், அலகு %2$s %3$s தேர்ந்தெடுக்கப்படுகிறது."
+
+msgid "The sample is drawn with seed %1$s and intervals of size %2$s."
+msgstr "விதை %1$s மற்றும் அளவு %2$s இன் இடைவெளிகளுடன் மாதிரி வரையப்படுகிறது."
+
+msgid "The sample is drawn with seed %1$s."
+msgstr "மாதிரி விதை %1$s உடன் வரையப்படுகிறது."
+
+msgid "The random numbers are generated with seed %1$s."
+msgstr "சீரற்ற எண்கள் விதை %1$s உடன் உருவாக்கப்படுகின்றன."
+
+msgid "The sample is not exported until the 'Synchronize' option is checked."
+msgstr ""
+"'ஒத்திசைவு' விருப்பம் சரிபார்க்கப்படும் வரை மாதிரி ஏற்றுமதி செய்யப்படாது."
+
+msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
+msgstr "<b> அட்டவணை %1 $ i. </b> பண இடைவெளி தேர்வு பற்றிய செய்தி"
+
+msgid "Items"
+msgstr "உருப்படிகள்"
+
+msgid "Selected items"
+msgstr "தேர்ந்தெடுக்கப்பட்ட உருப்படிகள்"
+
+msgid "Selected units"
+msgstr "தேர்ந்தெடுக்கப்பட்ட அலகுகள்"
+
+msgid "%% of total value"
+msgstr "மொத்த மதிப்பின் %%"
+
+msgid "twice the"
+msgstr "இரண்டு முறை"
+
+msgid "a single"
+msgstr "ஒரு ஒற்றை"
+
+msgid "The top stratum consists of all items with a book value larger than %1$s interval."
+msgstr ""
+"மேல் அடுக்கு %1$s இடைவெளியை விட பெரிய புத்தக மதிப்பைக் கொண்ட அனைத்து பொருட்களையும் "
+"கொண்டுள்ளது."
+
+msgid "Total"
+msgstr "மொத்தம்"
+
+msgid "Top stratum"
+msgstr "மேல் அடுக்கு"
+
+msgid "Bottom stratum"
+msgstr "கீழே உள்ள அடுக்கு"
+
+msgid "<b>Table %1$i.</b> Selected Items"
+msgstr "<b> அட்டவணை %1 $ i. </b> தேர்ந்தெடுக்கப்பட்ட உருப்படிகள்"
+
+msgid "Selected"
+msgstr "தேர்ந்தெடுக்கப்பட்டது"
+
+msgid "<b>Table %1$i.</b> Descriptive Statistics for Sample"
+msgstr "<b> அட்டவணை %1 $ i. </b> மாதிரிக்கான விளக்க புள்ளிவிவரங்கள்"
+
+msgid "Valid cases"
+msgstr "செல்லுபடியாகும் வழக்குகள்"
+
+msgid "Median"
+msgstr "இடைநடு"
+
+msgid "Variance"
+msgstr "மாறுபாட்டெண்"
+
+msgid "Range"
+msgstr "வீச்சு"
+
+msgid "Minimum"
+msgstr "சிறுமம்"
+
+msgid "Maximum"
+msgstr "பெருமம்"
+
+msgid "The audit result variable should contain only 0's (correct) and 1's (incorrect)."
+msgstr ""
+"தணிக்கை முடிவு மாறியில் 0 கள் (சரியான) மற்றும் 1 (தவறான) மட்டுமே இருக்க வேண்டும்."
+
+msgid "combined with the information in the prior distribution"
+msgstr "முந்தைய விநியோகத்தில் உள்ள தகவலுடன் இணைந்து"
+
+msgid "The purpose of the evaluation stage is to infer the misstatement θ in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely misstatement in the population of %6$s and a %7$s upper bound of %8$s."
+msgstr ""
+"மதிப்பீட்டு கட்டத்தின் நோக்கம் ஒரு மாதிரியின் அடிப்படையில் மக்கள்தொகையில் தவறான விளக்கத்தை "
+"ஊகிப்பதாகும்.\n"
+"\n"
+" மக்கள் தொகை %1$s உருப்படிகள் மற்றும் %2 ws s அலகுகளைக் கொண்டிருந்தது. மாதிரி %3$s "
+"மாதிரி அலகுகளைக் கொண்டிருந்தது, அவற்றில் மொத்தம் %4 $ S தவறாகக் கூறப்பட்டது. இந்த "
+"மாதிரியின் %5 $ s இன் தகவல்கள் %6 $ s மக்கள்தொகையில் பெரும்பாலும் தவறான விளக்கத்தை "
+"ஏற்படுத்துகின்றன மற்றும் %8 $ s இன் %7 $ s மேல் எல்லை."
+
+msgid "<b>Table %1$i.</b> Evaluation Summary"
+msgstr "<b> அட்டவணை %1 $ i. </b> மதிப்பீட்டு சுருக்கம்"
+
+msgid "Sample size"
+msgstr "மாதிரி அளவு"
+
+msgid "Misstatements"
+msgstr "தவறான விளக்கங்கள்"
+
+msgid "Taint"
+msgstr "கறை"
+
+msgid "Most likely misstatement"
+msgstr "பெரும்பாலும் தவறான விளக்கம்"
+
+msgid "%1$s%% Upper bound"
+msgstr "%1$s %% மேல் பிணைப்பு"
+
+msgid "%1$s%% Lower bound"
+msgstr "%1$s %% கீழ் எல்லை"
+
+msgid "p-value"
+msgstr "பி-மதிப்பு"
+
+msgid "The results are computed using the Poisson distribution."
+msgstr "பாய்சன் விநியோகத்தைப் பயன்படுத்தி முடிவுகள் கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the binomial distribution."
+msgstr "முடிவுகள் பைனோமியல் விநியோகத்தைப் பயன்படுத்தி கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the hypergeometric distribution."
+msgstr ""
+"ஐப்பர்சியோமெட்ரிக் விநியோகத்தைப் பயன்படுத்தி முடிவுகள் கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the Stringer method."
+msgstr "முடிவுகள் ச்ட்ரிங்கர் முறையைப் பயன்படுத்தி கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the regression estimator."
+msgstr "பின்னடைவு மதிப்பீட்டாளரைப் பயன்படுத்தி முடிவுகள் கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the direct estimator."
+msgstr "நேரடி மதிப்பீட்டாளரைப் பயன்படுத்தி முடிவுகள் கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the difference estimator."
+msgstr "வேறுபாடு மதிப்பீட்டாளரைப் பயன்படுத்தி முடிவுகள் கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the ratio estimator."
+msgstr "விகித மதிப்பீட்டாளரைப் பயன்படுத்தி முடிவுகள் கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the mean-per-unit estimator"
+msgstr "முடிவுகள் சராசரி-யூனிட் மதிப்பீட்டாளரைப் பயன்படுத்தி கணக்கிடப்படுகின்றன"
+
+msgid "The results are computed using the beta distribution."
+msgstr "பீட்டா விநியோகத்தைப் பயன்படுத்தி முடிவுகள் கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the gamma distribution."
+msgstr "காமா விநியோகத்தைப் பயன்படுத்தி முடிவுகள் கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the beta-binomial distribution."
+msgstr ""
+"பீட்டா-பினோமியல் விநியோகத்தைப் பயன்படுத்தி முடிவுகள் கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the Stringer method with LTA adjustment."
+msgstr ""
+"எல்.டி.ஏ சரிசெய்தலுடன் ச்ட்ரிங்கர் முறையைப் பயன்படுத்தி முடிவுகள் கணக்கிடப்படுகின்றன."
+
+msgid "The results are computed using the beta distribution and require the assumption that the population taints are homogeneous."
+msgstr ""
+"முடிவுகள் பீட்டா விநியோகத்தைப் பயன்படுத்தி கணக்கிடப்படுகின்றன மற்றும் மக்கள் தொகை கறைகள் ஒரே"
+" மாதிரியானவை என்ற அனுமானம் தேவைப்படுகிறது."
+
+msgid "The audit result column is empty."
+msgstr "தணிக்கை முடிவு நெடுவரிசை காலியாக உள்ளது."
+
+msgid "Either the materiality, the population size, or the population value is defined as zero, or one of the required variables is missing."
+msgstr ""
+"பொருள், மக்கள்தொகை அளவு அல்லது மக்கள்தொகை மதிப்பு பூச்சியமாக வரையறுக்கப்படுகிறது, அல்லது"
+" தேவையான மாறிகளில் ஒன்று காணவில்லை."
+
+msgid "<b>Table %1$i.</b> Stratum Evaluation Summary"
+msgstr "<b> அட்டவணை %1 $ i. </b> அடுக்கு மதிப்பீட்டு சுருக்கம்"
+
+msgid "Stratum"
+msgstr "அடுக்கு"
+
+msgid "%1$s%% Interval"
+msgstr "%1$s %% இடைவெளி"
+
+msgid "Information is shared between the strata in the population."
+msgstr "மக்கள்தொகையில் உள்ள அடுக்குகளுக்கு இடையில் செய்தி பகிரப்படுகிறது."
+
+msgid "The strata in the population are assumed to be independent."
+msgstr "மக்கள்தொகையில் உள்ள அடுக்குகள் சுதந்திரமானவை என்று கருதப்படுகிறது."
+
+msgid "<b>Table %1$i.</b> Misstated Items"
+msgstr "<b> அட்டவணை %1 $ i. </b> தவறாகக் கூறப்பட்ட உருப்படிகள்"
+
+msgid "ID"
+msgstr "ஐடி"
+
+msgid "Difference"
+msgstr "வேறுபாடு"
+
+msgid "Counted"
+msgstr "எண்ணப்பட்டது"
+
+msgid "No misstatements were identified in the sample."
+msgstr "மாதிரியில் தவறான விளக்கங்கள் எதுவும் அடையாளம் காணப்படவில்லை."
+
+msgid "Pearson's r"
+msgstr "பியர்சனின் ஆர்"
+
+msgid "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis H₋: ρ < 0"
+msgstr ""
+"NULL கருதுகோள்கள் H₀: ρ ≥ 0 மாற்று கருதுகோளுக்கு எதிராக சோதிக்கப்படுகிறது H₋: ρ <0"
+
+msgid "Book values - Taints"
+msgstr "புத்தக மதிப்புகள் - கறை"
+
+msgid "There were no misstatements found in the sample."
+msgstr "மாதிரியில் எந்த தவறான விளக்கங்களும் காணப்படவில்லை."
+
+msgid "An error occurred while calculating the correlation."
+msgstr "தொடர்பைக் கணக்கிடும்போது பிழை ஏற்பட்டது."
+
+msgid "Evaluation of Sampling Objectives"
+msgstr "மாதிரி நோக்கங்களின் மதிப்பீடு"
+
+msgid "An error occurred while creating this plot: The results contain NAs"
+msgstr ""
+"இந்த சதித்திட்டத்தை உருவாக்கும் போது பிழை ஏற்பட்டது: முடிவுகளில் NAS உள்ளது"
+
+msgid "Upper bound"
+msgstr "மேல் பிணைப்பு"
+
+msgid "Most likely error"
+msgstr "பெரும்பாலும் பிழை"
+
+msgid "Minimum precision"
+msgstr "குறைந்தபட்ச துல்லியம்"
+
+msgid "Obtained precision"
+msgstr "துல்லியத்தைப் பெற்றது"
+
+msgid "An error occurred while creating this plot: %1$s"
+msgstr "இந்த சதித்திட்டத்தை உருவாக்கும் போது பிழை ஏற்பட்டது: %1$s"
+
+msgid "<b>Figure %1$i.</b> Evaluation information for the current annotated selection. The materiality is compared with the maximum misstatement and the most likely misstatement. The most likely misstatement is the best estimate of the true misstatement in the population. The upper bound is an estimate of the maximum misstatement in the population."
+msgstr ""
+"<b> படம் %1 $ i. </b> தற்போதைய சிறுகுறிப்பு தேர்வுக்கான மதிப்பீட்டு செய்தி. பொருள் "
+"அதிகபட்ச தவறான விளக்கத்துடன் ஒப்பிடப்படுகிறது மற்றும் பெரும்பாலும் தவறான விளக்கத்துடன் "
+"ஒப்பிடப்படுகிறது. மக்கள்தொகையில் உண்மையான தவறான விளக்கத்தின் சிறந்த மதிப்பீடு பெரும்பாலும் "
+"தவறான விளக்கமாகும். மேல் எல்லை என்பது மக்கள்தொகையில் அதிகபட்ச தவறான விளக்கத்தின் "
+"மதிப்பீடாகும்."
+
+msgid "Estimates"
+msgstr "மதிப்பீடுகள்"
+
+msgid "<b>Figure %1$i.</b> Most likely estimates (points) and %2$s%% %3$s %4$s intervals for the misstatement in the population and in the individual strata, showing the range of plausible values for the misstatement after seeing the data."
+msgstr ""
+"<b> படம் %1 $ i. தரவைப் பார்த்த பிறகு தவறாக மதிப்பிடுவதற்கான நம்பத்தகுந்த மதிப்புகள்."
+
+msgid "Scatter Plot of Book and Audit Values"
+msgstr "நூல் மற்றும் தணிக்கை மதிப்புகளின் சிதறல் சூழ்ச்சி"
+
+msgid "Book value (%1$s)"
+msgstr "புத்தக மதிப்பு (%1$s)"
+
+msgid "Audit value (%1$s)"
+msgstr "தணிக்கை மதிப்பு (%1$s)"
+
+msgid "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and their corresponding audit values. Grey dots on the diagonal (dashed line) indicate matching book and audit values. Red dots off the diagonal indicate items whose audit value did not match their original book value. If these red dots lie below the diagonal, the items are overstated. If these red dots lie above the diagonal they are understated. %2$s"
+msgstr ""
+"<b> படம் %1 $ i. </b> தேர்வில் புத்தக மதிப்புகளின் சிதறல் சூழ்ச்சி மற்றும் அவற்றுடன் "
+"தொடர்புடைய தணிக்கை மதிப்புகள். மூலைவிட்ட (கோடு வரி) இல் சாம்பல் புள்ளிகள் பொருந்தக்கூடிய "
+"நூல் மற்றும் தணிக்கை மதிப்புகளைக் குறிக்கின்றன. மூலைவிட்டத்திலிருந்து சிவப்பு புள்ளிகள் "
+"அவற்றின் அசல் புத்தக மதிப்புடன் பொருந்தாத உருப்படிகளைக் குறிக்கின்றன. இந்த சிவப்பு புள்ளிகள்"
+" மூலைவிட்டத்திற்கு கீழே இருந்தால், உருப்படிகள் மிகைப்படுத்தப்பட்டுள்ளன. இந்த சிவப்பு புள்ளிகள்"
+" மூலைவிட்டத்திற்கு மேலே இருந்தால் அவை குறைத்து மதிப்பிடப்படுகின்றன. %2$s"
+
+msgid "<b>Table %1$i.</b> Corrections to Population"
+msgstr "<b> அட்டவணை %1 $ i. </b> மக்கள்தொகைக்கு திருத்தங்கள்"
+
+msgid "Correction"
+msgstr "திருத்தம்"
+
+msgid "The correction to achieve no misstatements is the upper bound%1$s."
+msgstr ""
+"எந்தவிதமான தவறான விளக்கங்களையும் அடைவதற்கான திருத்தம் என்பது மேல் பிணைப்பு%1$s ஆகும்."
+
+msgid "No misstatements with %1$s%% precision"
+msgstr "%1$s %% துல்லியத்துடன் தவறான விளக்கங்கள் இல்லை"
+
+msgid "No misstatements with %1$s%% confidence"
+msgstr "%1$s %% நம்பிக்கையுடன் தவறான விளக்கங்கள் இல்லை"
+
+msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
+msgstr "%1$s %% நம்பிக்கை மற்றும்%2$s %% துல்லியத்துடன் தவறான விளக்கங்கள் இல்லை"
+
+msgid "Created by JASP for Audit (Version %1$s) on %2$s at %3$s."
+msgstr ""
+"%3$s இல் %2$s இல் தணிக்கைக்கான JASP ஆல் உருவாக்கப்பட்டது (பதிப்பு %1$s)."
+
+msgid "Prior and Expected Posterior Distribution"
+msgstr "முன் மற்றும் எதிர்பார்க்கப்படும் பின்புற வழங்கல்"
+
+msgid "Prior Distribution"
+msgstr "முன் வழங்கல்"
+
+msgid "Prior and Posterior Distribution"
+msgstr "முன் மற்றும் பின்புற வழங்கல்"
+
+msgid "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on the population misstatement θ. The prior parameters (%3$s = %4$s, %5$s = %6$s) are derived from the prior information. The expected posterior distribution fulfills the conditions set in the sampling objectives."
+msgstr ""
+"<b> படம் %1 $ i. முந்தைய அளவுருக்கள் ( %3$s = %4 $ s, %5 $ s = %6 $ s) முந்தைய "
+"தகவல்களிலிருந்து பெறப்பட்டவை. எதிர்பார்க்கப்படும் பின்புற வழங்கல் மாதிரி நோக்கங்களில் "
+"அமைக்கப்பட்ட நிலைமைகளை நிறைவு செய்கிறது."
+
+msgid "<b>Figure %1$i.</b> The prior and posterior distribution (%2$s) on the misstatement in the population."
+msgstr "<b> படம் %1 $ i."
+
+msgid "Prior Predictive Distribution"
+msgstr "முன் முன்கணிப்பு வழங்கல்"
+
+msgid "Posterior Predictive Distribution"
+msgstr "பின்புற முன்கணிப்பு வழங்கல்"
+
+msgid "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays the predictions of the %2$s distribution for %4$s <i>n</i> = %5$s."
+msgstr "<b> படம் %1 $ i. %5 $ கள்."
+
+msgid "Descriptive Statistics for Prior and Expected Posterior Distribution"
+msgstr ""
+"முந்தைய மற்றும் எதிர்பார்க்கப்படும் பின்புற விநியோகத்திற்கான விளக்க புள்ளிவிவரங்கள்"
+
+msgid "Descriptive Statistics for Prior and Posterior Distribution"
+msgstr "முந்தைய மற்றும் பின்புற விநியோகத்திற்கான விளக்க புள்ளிவிவரங்கள்"
+
+msgid "<b>Table %1$i.</b> %2$s"
+msgstr "<b> அட்டவணை %1 $ i. </b> %2$s"
+
+msgid "Functional form"
+msgstr "செயல்பாட்டு வடிவம்"
+
+msgid "Support %1$s"
+msgstr "உதவி %1$s"
+
+msgid "Ratio %1$s"
+msgstr "விகிதம் %1$s"
+
+msgid "Mode"
+msgstr "பயன்முறை"
+
+msgid "Prior"
+msgstr "முன்"
+
+msgid "Posterior"
+msgstr "பின்புறம்"
+
+msgid "Shift"
+msgstr "உயர்த்து"
+
+msgid "Nonparametric"
+msgstr "ஒப்பற்ற"
+
+msgid "%1$s %2$s vs. %3$s %2$s."
+msgstr "%1$s %2$s vs. %3$s %2$s."
