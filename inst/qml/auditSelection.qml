@@ -20,7 +20,6 @@ import QtQuick
 import QtQuick.Layouts
 import JASP
 import JASP.Controls
-import JASP.Widgets
 
 import "./common" as Common
 import "./common/selection" as Selection
