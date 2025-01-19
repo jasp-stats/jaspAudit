@@ -740,7 +740,7 @@
       "min_precision_test", "min_precision_rel_val",
       "by", "prior_method", "prior_n", "prior_x", "alpha", "beta",
       "critical_items", "critical_negative", "critical_action",
-      "stratum", "pooling", "hurdle"
+      "stratum", "pooling", "hurdle", "mcmc.seed", "iter", "warmup", "chains"
     ))
 
     jaspResults[["evaluationContainer"]] <- container
