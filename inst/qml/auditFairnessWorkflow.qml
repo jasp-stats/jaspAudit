@@ -40,7 +40,7 @@ Form
 	{
 		id: firstquestion
 		name: "firstquestion"
-		title:qsTr("Is the information on the true values of the classification relevant in your context?")
+		title:qsTr("Is the ground thruth information relevant in your context?")
 		
 
 		
@@ -75,7 +75,7 @@ Form
 	{
 		id: secondquestion
 		name: "secondquestion"
-		title:qsTr("In what type of classification are you interested in")
+		title:qsTr("In which type of classification are you interested?")
 		// enabled: false, diventa grigio
 		visible: firstquestion.value == "firstquestion_yes"
 
@@ -85,7 +85,7 @@ Form
 
 		RadioButton
 		{
-			text: 						qsTr("Correct")
+			text: 						qsTr("Correct classification")
 			name: 						"secondquestion_correct"
 		}
 
@@ -103,7 +103,7 @@ Form
 
 		RadioButton
 		{
-			text: 						qsTr("Incorrect")
+			text: 						qsTr("Incorrect classification")
 			name: 						"secondquestion_incorrect"
 		}
 
@@ -117,7 +117,7 @@ Form
 
 		RadioButton
 		{
-			text: 						qsTr("Both")
+			text: 						qsTr("Both correct and incorrect classification")
 			name: 						"secondquestion_both"
 			checked:					true
 		}
@@ -127,25 +127,25 @@ Form
 	{
 		id: thirdquestion
 		name: "thirdquestion"
-		title:qsTr("What Is More Important: a Correct Classification of the Positive Class, a Correct Classification of the Negative Class or Both?")
+		title:qsTr("What is more important?")
 		visible: secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 
 			RadioButton
 		{
-			text: 						qsTr("The correct classification in the positive class")
+			text: 						qsTr("Correctly classifying in the positive class")
 			name: 						"thirdquestion_positive"
 		}
 
 			RadioButton
 		{
-			text: 						qsTr("The correct classification in the negative class")
+			text: 						qsTr("Correctly classifying in the negative class")
 			name: 						"thirdquestion_negative"
 			checked:					true
 		}
 
 			RadioButton
 		{
-			text: 						qsTr("The correct classification in the positive class and in the negative class")
+			text: 						qsTr("Correctly classifying in both the positive and negative classes")
 			name: 						"thirdquestion_both"
 			checked:					true
 		}
@@ -156,19 +156,19 @@ Form
 	{
 		id: fourthquestion_caseA
 		name: "fourthquestion_caseA"
-		title:qsTr("What are the errors with the highest cost?")
+		title:qsTr("What are the most costly errors?")
 		visible: thirdquestion.value == "thirdquestion_positive" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 
 		RadioButton
 		{
-			text: 						qsTr("False Positive")
+			text: 						qsTr("False positives")
 			name: 						"fourthquestion_caseA_FP"
 			checked:					true
 		}
 
 		RadioButton
 		{
-			text: 						qsTr("False Negative")
+			text: 						qsTr("False negatives")
 			name: 						"fourthquestion_caseA_FN"
 		}
 	}
@@ -177,19 +177,19 @@ Form
 	{
 		id: fourthquestion_caseB
 		name: "fourthquestion_caseB"
-		title:qsTr("What are the errors with the highest cost?")
+		title:qsTr("What are the most costly errors?")
 		visible: thirdquestion.value == "thirdquestion_negative" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 
 		RadioButton
 		{
-			text: 						qsTr("False Positive")
+			text: 						qsTr("False positives")
 			name: 						"fourthquestion_caseB_FP"
 			checked:					true
 		}
 
 		RadioButton
 		{
-			text: 						qsTr("False Negative")
+			text: 						qsTr("False negatives")
 			name: 						"fourthquestion_caseB_FN"
 		}
 
@@ -198,30 +198,28 @@ Form
 	{
 		id: fourthquestion_caseC
 		name: "fourthquestion_caseC"
-		title:qsTr("What are the errors with the highest cost?")
+		title:qsTr("What are the most costly errors?")
 		visible: secondquestion.value == "secondquestion_incorrect" & firstquestion.value == "firstquestion_yes"
 
 		RadioButton
 		{
-			text: 						qsTr("False Positive")
+			text: 						qsTr("False positives")
 			name: 						"fourthquestion_caseC_FP"
 			checked:					true
 		}
 
 		RadioButton
 		{
-			text: 						qsTr("False Negative")
+			text: 						qsTr("False negatives")
 			name: 						"fourthquestion_caseC_FN"
 		}
 	}
-
-
 
 	}
 
 	Section
 	{
-		title:qsTr("Additional Options")
+		title:qsTr("Report")
 		columns:1
 
 	
@@ -235,23 +233,23 @@ Form
 			CheckBox
 			{
 				id: 					explanatoryText
-				text: 					qsTr("Fairness measure explanatory text")
+				text: 					qsTr("Explanatory text")
 				name: 					"explanatoryText"
 				checked: 				true
-				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the fairness measure and its formula.")
+				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
 			}
 
 			HelpButton
 			{
-				helpPage:				"Audit/ExplanatorytextFairnessDecisionWorkflow"
-				toolTip: 				qsTr("Provide explanatory text for the selected fairness measure to help in understanding the measure and its formula.")
+				helpPage:				"Audit/explanatoryText"
+				toolTip: 				qsTr("Show explanatory text at each step of the analysis")
 			}
 		}
 
 		CheckBox
 			{
 				id: 					workflowfigure
-				text: 					qsTr("Decision-Making Workflow Plot")
+				text: 					qsTr("Decision-making workflow plot")
 				name: 					"workflowfigure"
 				checked: 				true
 				info:					qsTr("When checked, enables the representation of the decision-making workflow that is obtained after answering all the necessary question within it.")

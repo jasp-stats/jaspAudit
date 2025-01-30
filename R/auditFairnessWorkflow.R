@@ -19,21 +19,46 @@
 # reviewer in the pull Request.
 
 auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
+
+  .jfaFairnessProcedure(options, jaspResults, position = 1)
    
+  fairnessContainer <- .jfaFairnessStage(options, jaspResults, position = 1)
+
    # Display the selected fairness measure
-  .showFairnessMetric(options, jaspResults)
+  .showFairnessMetric(options, jaspResults, fairnessContainer, positionInContainer = 2)
 
   # Display the theoretical information of the selected fairness measure
-  .showExplanationText(options, jaspResults)
+  .showExplanationText(options, jaspResults, fairnessContainer, positionInContainer = 3)
 
   .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
 
   # Display the decision-making workflow plot
-  .jfaPlot(options, jaspResults, positionInContainer = 3)
+  .jfaPlot(options, jaspResults, fairnessContainer, positionInContainer = 4)
 
 }
 
-.determineFairnessMetric <- function(options, jaspResults)
+.jfaFairnessStage <- function(options, jaspResults, position) {
+  title <- gettext("<u>Obtaining a Fairness Measure</u>")
+  container <- createJaspContainer(title = title)
+  container$position <- position
+  container$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_casec"))
+  jaspResults[["fairnessContainer"]] <- container
+  return(container)
+}
+
+.jfaFairnessProcedure <- function(options, jaspResults, position) {
+  if (options[["explanatoryText"]] && is.null(jaspResults[["procedureContainer"]])) {
+    procedureContainer <- createJaspContainer(title = gettext("<u>Procedure</u>"))
+    procedureContainer$position <- position
+    procedureText <- gettextf("The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute. Fairness -ore discrimination- can be quantified using so-called fairness measures. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions.")
+    procedureContainer[["procedureParagraph"]] <- createJaspHtml(procedureText, "p")
+    procedureContainer[["procedureParagraph"]]$position <- 1
+    procedureContainer$dependOn(options = c("explanatoryText"))
+    jaspResults[["procedureContainer"]] <- procedureContainer
+  }
+}
+
+.determineFairnessMetric <- function(options, jaspResults, fairnessContainer, positionInContainer)
 {
 
    if (!is.null(jaspResults[["state"]])) {
@@ -76,118 +101,100 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
     }
    }
   }
-
    metric <- jfa::fairness_selection(q1, q2, q3, q4)
    jaspResults[["state"]] <- createJaspState(metric)
    jaspResults[["state"]]$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_casec"))
   return(metric)
 }
 
-.determineExplanationText <- function(options, metric){
+.determineExplanationText <- function(options, metric, fairnessContainer, positionInContainer){
 
    name <- metric$name
    if(!options[["explanatoryText"]]){
-    ExplanationText <- gettext("NOT requested.")
+    ExplanationText <- gettext(" ")
   }else {
    if(name == "Disparate Impact"){
-      ExplanationText <- gettext("Fairness Definition: 
-    AI is considered fair if it produces the same ratio of positive predictions for both privileged and unprivileged groups. In other words, AI fairness is achieved when the same ratio of items from these two groups experience a change from the status quo. This change in status quo can refer to favorable outcomes, such as being selected for a job interview or receiving reimbursement for medical expenses. However, it can also represent negative outcomes, such as being deemed high risk for reoffending within two years of release or defaulting on a bank loan. 
+      ExplanationText <- gettext("
+      <u>Fairness Definition:</u> 
+    The AI system is fair if its use results in the same ratio of items from two different groups experiencing a change in the status quo (i.e., being classified as Positive).
     The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts. 
-    The term positive prediction refers to one of the two possible predictions the AI can make: positive or negative. This is because we are working within the framework of binary classification, where there are only two possible classes for items to be categorized: positive or negative.
 
-    Fairness Measure Formula:
-    Disparate Impact is based on the Positive Rate. Therefore, the Positive Rate, whose formula is (TP+FP)/N, is applied to both the privileged group and the unprivileged group. 
-    TP indicates the number of True Positives, meaning the number of items with a true positive classification that the AI also classifies as positive, and FP indicates the number of False Positives, meaning the number of items with a true negative classification that the AI classifies as positive. N indicates the total number of items classified by AI. Then, the Positive Rate of the privileged group is divided by the Positive Rate of the unprivileged group (PP_privileged/PP_unprivileged). After calculating this ratio, Disparate Impact is obtained.
+    <u>Formula:</u>
+    Disparate Impact is obtained by dividing the Positive Rate of the unprivileged group by that of the privileged group. The Positive Rate is equal to (TP+FP)/N, where TP denotes True Positives (items correctly classified as positive), FP denotes False Positives (items incorrectly classified as positive), and N represents the total number of items classified by the AI.
     
-    Further Details:
-    The most common use of Disparate Impact is tied to the U.S. Equal Employment Opportunity Commission (EEOC) guidelines. Specifically, the EEOC established the 80% rule. Based on this rule, unlike other fairness measures, this one uses a fixed threshold, equal to 0.80, that is neither 0 nor 1 and does not involve statistical testing to assess AI fairness. Instead, the auditor directly compares the ratio of the positive rates between the two groups to the threshold value, where the positive rate is the model evaluation metric on which Disparate Impact is based. In fact, when the value of the Disparate Impact is higher than 0.80, the use of AI is fair. 
-    This deterministic approach is chosen because the measure is applied across the entire dataset, which usually has a large enough size that makes statistical significance less of a concern. However, this method has its limitations. The threshold value is not grounded in the properties of the measure, the nature of the data, or any other statistical considerations. The rule was originally based on the hiring rates in the U.S. employment context, which lacks theoretical rigor for broader applications. Additionally, when the ratio is close to the threshold, such as 0.79 or 0.81, drawing definitive conclusions about discrimination becomes uncertain.")
+    <u>Further Details:</u>
+    The most common use of Disparate Impact is linked to the U.S. Equal Employment Opportunity Commission (EEOC) guidelines, particularly the 80% rule. According to this rule, if Disparate Impact is higher than 0.80, there is no discrimination.
+    This method has limitations, as the threshold value is not based on the measure's properties, data characteristics, or statistical considerations. Originally derived from U.S. employment hiring rates, the rule lacks theoretical rigor for broader applications.
+      ")
    }else if(name == "Equalized Odds"){
-      ExplanationText <- gettext("Fairness Definition: 
-      AI is considered fair if it provides the same amount of correct and incorrect positive predictions for both privileged and unprivileged groups. In other words, AI fairness is achieved when the same number of items from these two groups experience correct and incorrect changes from the status quo. This change in status quo can refer to favorable outcomes, such as being selected for a job interview or receiving reimbursement for medical expenses. However, it can also represent negative outcomes, such as being deemed high risk for reoffending within two years of release or defaulting on a bank loan. 
+      ExplanationText <- gettext("<u>Fairness Definition:</u> 
+      The AI system is fair if its use results in the same number of items from different groups experiencing correct and incorrect changes in the status quo (i.e, being, correctly and incorrectly, classified as Positive).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts. 
-      The term positive predictions refers to one of the two possible predictions the AI can make: positive or negative. This is because we are working within the framework of binary classification, where there are only two possible classes for items to be categorized: positive or negative.
       
-      Fairness Measure Formula:
-      Equalized Odds is based on a combination of the True Positive Rate and the False Positive Rate. Therefore, both the True Positive Rate, whose formula is TP/(TP+FP), and the False Positive Rate, whose formula is FP/(TN+FP), are applied to both the privileged group and the unprivileged group. 
-      TP indicates the number of True Positives, meaning the number of items with a true positive classification that the AI also classifies as positive, TN indicates the number of True Negatives, meaning the number of items with a true negative classification that the AI also classifies as negative, and FP indicates the number of False Positives, meaning the number of items with a true negative classification that the AI classifies as positive.
+       <u>Formula:</u>
+      Equalized Odds combines the True Positive Rate (TPR) and the False Positive Rate (FPR). The TPR is calculated as TP/(TP+FP) and the FPR as FP/(TN+FP), applied to both privileged and unprivileged groups. Here, TP denotes True Positives (correctly classified positive items), TN denotes True Negatives (correctly classified negative items), and FP denotes False Positives (incorrectly classified positive items).
       
-      Further Details:
-      It is important to note that this is the only measure that focuses on both the correct classification of the positive class and the incorrect classification of the negative class. Its formula considers how many observations known to be true positives were correctly identified and classified by the AI, and among all observations known to be true negatives, how many were incorrectly identified and classified by the AI. For this reason, it is completely different from all other fairness measures.")
+      <u>Further Details: :</u>
+   It is important to note that this is the only measure in the decision-making workflow that addresses both the correct classification of the positive class and the incorrect classification of the negative class.")
    }else if(name == "Predictive Rate Parity"){
-      ExplanationText <- gettext("Fairness Definition: 
-      AI is considered fair if it provides the same amount of correct positive predictions for both privileged and unprivileged groups. In other words, AI fairness is achieved when the same number of items from these two groups correctly experience changes from the status quo. This change in status quo can refer to favorable outcomes, such as being selected for a job interview or receiving reimbursement for medical expenses. However, it can also represent negative outcomes, such as being deemed high risk for reoffending within two years of release or defaulting on a bank loan. 
+      ExplanationText <- gettext(" <u>Fairness Definition:</u> 
+      The AI system is fair if its use results in the same number of items from different groups experiencing correct changes in the status quo (i.e., being correctly classified as Positive).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts. 
-      The term positive predictions refers to one of the two possible predictions the AI can make: positive or negative. This is because we are working within the framework of binary classification, where there are only two possible classes for items to be categorized: positive or negative.
               
-      Fairness Measure Formula:
-      The Predictive Rate Parity is based on the Precision. Therefore, the Precision, whose formula is TP/(TP+FP), is applied to both the privileged group and the unprivileged group. 
-      TP indicates the number of True Positives, meaning the number of items with a true positive classification that AI also classifies as positive, and FP indicates the number of False Positives, meaning the number of items with a true negative classification that AI classifies as positive.")
+      <u>Formula:</u> 
+      Predictive Rate Parity is based on Precision, calculated as TP/(TP+FP), applied to both the privileged and unprivileged groups. Here, TP denotes True Positives (correctly classified positive items) and FP denotes False Positives (incorrectly classified positive items).")
    }else if (name == "Equal Opportunity"){
-      ExplanationText <- gettext("Fairness Definition: 
-      AI is considered fair if it provides the same amount of correct positive predictions for both privileged and unprivileged groups. In other words, AI fairness is achieved when the same number of items from these two groups correctly experience  changes from the status quo. This change in status quo can refer to favorable outcomes, such as being selected for a job interview or receiving reimbursement for medical expenses. However, it can also represent negative outcomes, such as being deemed high risk for reoffending within two years of release or defaulting on a bank loan. 
+      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      The AI system is fair if its use results in the same number of items from different groups experiencing correct changes in the status quo (i.e., being correctly classified as Positive).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts. 
-      The term positive predictions refers to one of the two possible predictions the AI can make: positive or negative. This is because we are working within the framework of binary classification, where there are only two possible classes for items to be categorized: positive or negative.
-               
-      Fairness Measure Formula:
-      Equal Opportunity is based on the True Positive Rate. Therefore, the True Positive Rate, whose formula is TP/(TP+FN), is applied to both the privileged group and the unprivileged group. 
-      TP indicates the number of True Positives, meaning the number of items with a true positive classification that AI also classifies as positive, and FN indicates the number of False Negatives, meaning the number of items with a true positive classification that AI classifies as negative.")
+        
+      <u>Formula:</u>
+      Equal Opportunity is based on the True Positive Rate, calculated as TP/(TP+FN), applied to both privileged and unprivileged groups. Here, TP denotes True Positives (correctly classified positive items) and FN denotes False Negatives (incorrectly classified negative items).")
    }else if (name =="Specificity Parity"){
-      ExplanationText <- gettext("Fairness Definition: 
-      AI is considered fair if it provides the same amount of correct negative predictions for both privileged and unprivileged groups. In other words, AI fairness is achieved when the same number of items from these two groups correctly experience  no changes from the status quo. This change in status quo can refer to favorable outcomes, such as being selected for a job interview or receiving reimbursement for medical expenses. However, it can also represent negative outcomes, such as being deemed high risk for reoffending within two years of release or defaulting on a bank loan. 
+      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      The AI system is fair if its use results in the same number of items from different groups correctly experiencing no changes in the status quo (i.e., being correctly classified as Negative).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts. 
-      The term negative predictions refers to one of the two possible predictions the AI can make: positive or negative. This is because we are working within the framework of binary classification, where there are only two possible classes for items to be categorized: positive or negative.
-                
-      Fairness Measure Formula:
-      The Specificity Parity is based on the True Negative Rate. Therefore, the True Negative Rate, whose formula is TN/(TN+FP), is applied to both the privileged group and the unprivileged group. 
-      FP indicates the number of False Positives, meaning the number of items with a true negative classification that AI classifies as positive, and TN indicates the number of True Negatives, meaning the number of items with a true negative classification that AI also classifies as negative.")
-   }else if (name =="Negative Predictive Value Parity") {
-      ExplanationText <- gettext("Fairness Definition: 
-      AI is considered fair if it provides the same amount of correct negative predictions for both privileged and unprivileged groups. In other words, AI fairness is achieved when the same number of items from these two groups correctly experience no changes from the status quo. This change in status quo can refer to favorable outcomes, such as being selected for a job interview or receiving reimbursement for medical expenses. However, it can also represent negative outcomes, such as being deemed high risk for reoffending within two years of release or defaulting on a bank loan. 
+      
+      <u>Formula:</u>
+      Specificity Parity is based on the True Negative Rate, calculated as TN/(TN+FP), applied to both privileged and unprivileged groups. Here, TN denotes True Negatives (correctly classified negative items) and FP denotes False Positives (incorrectly classified positive items).") 
+      }else if (name =="Negative Predictive Value Parity") {
+      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      The AI system is fair if its use results in the same number of items from different groups correctly experiencing no changes in the status quo (i.e., being correctly classified as Negative).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts. 
-      The term negative predictions refers to one of the two possible predictions the AI can make: positive or negative. This is because we are working within the framework of binary classification, where there are only two possible classes for items to be categorized: positive or negative.
-                   
-      Fairness Measure Formula:
-      The Negative Predictive Value Parity is based on the Negative Predictive Value. Therefore, the Negative Predictive Values, whose formula is TN/(TN+FN), is applied to both the privileged group and the unprivileged group. 
-      FN indicates the number of False Negatives, meaning the number of items with a true positive classification that the AI classifies as negative, and TN indicates the number of True Negatives, meaning the number of items with a true negative classification that AI also classifies as negative.")
+      
+      <u>Formula:</u>
+      Negative Predictive Value Parity is based on the Negative Predictive Value, calculated as TN/(TN+FN), applied to both privileged and unprivileged groups. Here, TN denotes True Negatives (correctly classified negative items) and FN denotes False Negatives (incorrectly classified negative items).")
    }else if(name =="Accuracy Parity"){
-      ExplanationText <- gettext("Fairness Definition: 
-      AI is considered fair if it provides the same amount of correct positive and correct negative predictions for both privileged and unprivileged groups. In other words, AI fairness is achieved when the same number of items from these two groups correctly experience changes and no changes from the status quo. This change in status quo can refer to favorable outcomes, such as being selected for a job interview or receiving reimbursement for medical expenses. However, it can also represent negative outcomes, such as being deemed high risk for reoffending within two years of release or defaulting on a bank loan. 
+      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      The AI system is fair if its use results in the same number of items from different groups correctly experiencing changes and correctly experiencing no changes in the status quo (i.e., being correctly classified as Positive and being correctly classified as Negative).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts. 
-      We refer to positive and negative predictions because, in the framework of binary classification, where there are only two possible classes for items to be categorized: positive or negative.
+      
+      <u>Formula:</u>
+      Accuracy Parity is based on Accuracy, calculated as (TP+TN)/N, applied to both privileged and unprivileged groups. Here, TP denotes True Positives (correctly classified positive items), TN denotes True Negatives (correctly classified negative items), and N represents the total number of items classified by the AI. The sum of TP and TN reflects the total number of correct classifications made by the AI.
                     
-      Fairness Measure Formula:
-      The Accuracy Parity is based on Accuracy. Therefore, the Accuracy, whose formula is (TP+TN)/N, is applied to both the privileged group and the unprivileged group. 
-      TP indicates the number of True Positives, meaning the number of items with a true positive classification that the AI also classifies as positive, and TN indicates the number of True Negatives, meaning the number of items with a true negative classification that the AI also classifies as negative. The sum of TP and TN is therefore the total number of correct classifications made by the AI. N indicates the total number of items classified by AI.
-                    
-      Further Details:
-      Accuracy Parity has, just like Accuracy as a model evaluation metric, a sever deficit when applied to cases were the positive class consists of just a small minority. Consider a scenario where 3% of the privileged group (90% of the population) commits fraud, compared to 6% of the unprivileged group (10% of the population). Without applying a fraud detection AI, the overall accuracy seems high at 96.7%, but this masks a disparity: accuracy for the unprivileged group is lower at 94%, while for the privileged group it is 97%.
-      It should be noted that, unlike all other measures, Accuracy Parity does not account for varying error costs related to misclassifications. If there is an increase in false negatives, false positives, or both, and there are associated costs that need to be minimized, Accuracy Parity will fail to detect these increases in errors, and as a result, it will not capture the associated rise in costs.")
+      <u>Further Details:</u>
+      Accuracy Parity, like Accuracy as a model evaluation metric, has a major flaw when applied to cases where the positive class is a small minority. For example, if 3% of the privileged group and 6% of the unprivileged group commit fraud, accuracy may seem high overall (96.7%), but masks disparities, with the unprivileged group having lower accuracy (94%) compared to the privileged group (97%). Unlike other measures, Accuracy Parity does not consider varying error costs. It fails to detect increases in false negatives or false positives, missing the associated rise in costs.")
    }else if(name =="False Positive Rate Parity") {
-      ExplanationText <- gettext("Fairness Definition: 
-      AI is considered fair if it provides the same amount of incorrect positive predictions for both privileged and unprivileged groups. In other words, AI fairness is achieved when the same number of items from these two groups incorrectly experience changes from the status quo. This change in status quo can refer to favorable outcomes, such as being selected for a job interview or receiving reimbursement for medical expenses. However, it can also represent negative outcomes, such as being deemed high risk for reoffending within two years of release or defaulting on a bank loan. 
+      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      The AI system is fair if its use results in the same number of items from different groups experiencing incorrect changes in the status quo (i.e., being incorrectly classified as Positive).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts. 
-      The term positive predictions refers to one of the two possible predictions the AI can make: positive or negative. This is because we are working within the framework of binary classification, where there are only two possible classes for items to be categorized: positive or negative.
-              
-      Fairness Measure Formula:
-      The False Positive Rate Parity is based on the False Positive Rate. Therefore, the False Positive Rate, whose formula is FP/(TN+FP), is applied to both the privileged group and the unprivileged group. 
-      FP indicates the number of False Positives, meaning the number of items with a true negative classification that AI classifies as positive, and TN indicates the number of True Negatives, meaning the number of items with a true negative classification that AI also classifies as negative. ")
+      
+      <u>Formula:</u>
+      False Positive Rate Parity is based on the False Positive Rate, calculated as FP/(TN+FP), applied to both privileged and unprivileged groups. Here, FP denotes False Positives (incorrectly classified positive items), and TN denotes True Negatives (correctly classified negative items).")
    }else if(name =="False Negative Rate Parity"){
-       ExplanationText <- gettext("Fairness Definition: 
-      AI is considered fair if it provides the same amount of incorrect negative predictions for both privileged and unprivileged groups. In other words, AI fairness is achieved when the same number of items from these two groups incorrectly experience no changes from the status quo. This change in status quo can refer to favorable outcomes, such as being selected for a job interview or receiving reimbursement for medical expenses. However, it can also represent negative outcomes, such as being deemed high risk for reoffending within two years of release or defaulting on a bank loan. 
+       ExplanationText <- gettext("<u>Fairness Definition:</u>
+      The AI system is fair if its use results in the same number of items from different groups incorrectly experiencing no changes in the status quo (i.e., being incorrectly classified as Negative).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts. 
-      The term negative predictions refers to one of the two possible predictions the AI can make: positive or negative. This is because we are working within the framework of binary classification, where there are only two possible classes for items to be categorized: positive or negative.
-              
-      Fairness Measure Formula:
-      The False Negative Rate Parity is based on the False Negative Rate. Therefore, the False Negative Rate, whose formula is FN/(TP+FN), is applied to both the privileged group and the unprivileged group. 
-      FN indicates the number of False Negatives, meaning the number of items with a true positive classification that the AI classifies as negative, and TP indicates the number of True Positives, meaning the number of items with a true positive classification that the AI also classifies as positive.")
+      
+      <u>Formula:</u>
+      False Negative Rate Parity is based on the False Negative Rate, calculated as FN/(TP+FN), applied to both privileged and unprivileged groups. Here, FN denotes False Negatives (incorrectly classified negative items), and TP denotes True Positives (correctly classified positive items).")
    }
    }
 
   return(ExplanationText) 
 }
 
-.jfaPlot <- function(options, jaspResults, positionInContainer) {
+.jfaPlot <- function(options, jaspResults, positionInContainer, metric, fairnessContainer) {
   if (!options[["workflowfigure"]]) {
     return()
   }
@@ -195,11 +202,11 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   .jfaFigureNumberUpdate(jaspResults)
 
   if (is.null(jaspResults[["workflowfigure"]])) {
-    plot <- createJaspPlot(title = gettext("Parity Estimates Plot"), width = 800, height = 800)
+    plot <- createJaspPlot(title = gettext("<u>Graphical Representation of the Decision-Making Workflow</u>"), width = 800, height = 800)
     plot$position <- positionInContainer
-    plot$dependOn(options = c("workflowfigure"))
+    plot$dependOn(options = c("workflowfigure", "firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC"))
     jaspResults[["workflowfigure"]] <- plot
-    result <- .determineFairnessMetric(options, jaspResults)
+    result <- .determineFairnessMetric(options, jaspResults, positionInContainer, fairnessContainer)
     plot$plotObject <- plot(result)
   }
 
@@ -211,37 +218,43 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   }
 }
 
-.showFairnessMetric <- function(options, jaspResults)
+.showFairnessMetric <- function(options, jaspResults, positionInContainer, fairnessContainer)
 {
 
   if(!is.null(jaspResults[["selectedFairnessMeatric"]])){
     return()
   }
 
-  state <- .determineFairnessMetric(options, jaspResults)
-  htmlText <- createJaspHtml(gettextf("The selected Fairness Metric is %1$s", state[["name"]]))
+  state <- .determineFairnessMetric(options, jaspResults, positionInContainer, fairnessContainer )
+
+  htmlText <- createJaspHtml(gettextf("<h2><b><u><small>Obtaining a Fairness Measure Tailored to the Context</small></u></b></h2>
+  
+  The most suitable fairness measure is %1$s", state[["name"]]))
 
   htmlText$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC"))
 
-  htmlText$position <- 2
+  htmlText$position <- positionInContainer
+
 
   jaspResults[["selectedFairnessMetric"]] <- htmlText
 }
 
-.showExplanationText <- function(options, jaspResults)
+.showExplanationText <- function(options, jaspResults, positionInContainer, fairnessContainer)
 {
 
   if(!is.null(jaspResults[["selectedExplanationText"]])){
     return()
   }
 
-   state <- .determineFairnessMetric(options, jaspResults)
-  details <- .determineExplanationText(options, state)
-  htmlText <- createJaspHtml(gettextf("Details regarding the fairness measure %1$s", details))
-
+  state <- .determineFairnessMetric(options, jaspResults, positionInContainer, fairnessContainer)
+  details <- .determineExplanationText(options, state, positionInContainer, fairnessContainer)
+  if(!options[["explanatoryText"]]){
+    return()
+  }else{
+  htmlText <- createJaspHtml(gettextf("<h2><b><u><small>Theoretical Details and Formulas of Fairness Measures</small></u></b></h2>
+   %1$s", details))
   htmlText$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC", "explanatoryText"))
-
-  htmlText$position <- 3
-
+  htmlText$position <- positionInContainer
   jaspResults[["selectedExplanationText"]] <- htmlText
+  }
 }

@@ -80,14 +80,14 @@ Form
 			label: 						qsTr("Fairness Measures")
 			indexDefaultValue: 			0
 			values: [
-				{ label: qsTr("Predictive rate parity"),			value: "prp"},
-				{ label: qsTr("Demographic parity"),				value: "dp"},
-				{ label: qsTr("Proportional parity"),				value: "pp"},
+				{ label: qsTr("Disparate Impact"),					value: "pp"},
+				{ label: qsTr("Equalized odds"), 					value: "eo"},
 				{ label: qsTr("Accuracy parity"),					value: "ap"},
-				{ label: qsTr("False negative rate parity"),		value: "fnrp"},
+				{ label: qsTr("Predictive rate parity"),			value: "prp"},
+				{ label: qsTr("Negative predictive value parity"),	value: "npvp"},
 				{ label: qsTr("False positive rate parity"),		value: "fprp"},
-				{ label: qsTr("True positive rate parity"),			value: "tprp"},
-				{ label: qsTr("Negative predicted value parity"),	value: "npvp"},
+				{ label: qsTr("False negative rate parity"),		value: "fnrp"},
+				{ label: qsTr("Equal opportunity"),					value: "tprp"},
 				{ label: qsTr("Specificity parity"), 				value: "sp"}
 			]
 			info:						qsTr("The type of fairness measure to compute and perform inference on.")
@@ -96,7 +96,7 @@ Form
 
 	Group 
 	{
-		title:							qsTr("Factor Levels")
+		title:							qsTr("Specify the Correct Options")
 		info:							qsTr("These options allow specification of the privileged group and the positive class.")
 
 		DropDown
@@ -127,6 +127,7 @@ Form
 		title: 							qsTr("Alt. Hypothesis")
 		name: 							"alternative"
 		info:							qsTr("Specify the alternative hypothesis.")
+		visible: 						metric.value != "pp"
 
 		RadioButton
 		{
@@ -150,6 +151,11 @@ Form
 			info:						qsTr("Test the alternative hypothesis that the fairness metric of an unprivileged group is higher than the fairness metric in the privileged group.")
 		}
 	}
+
+	Section
+	{
+		title: 							qsTr("Report")
+		columns: 						1
 
 	Group
 	{
@@ -175,11 +181,6 @@ Form
 		}
 	}
 
-	Section
-	{
-		title: 							qsTr("Report")
-		columns: 						1
-
 		Group
 		{
 			title: 						qsTr("Tables")
@@ -199,12 +200,7 @@ Form
 			}
 		}
 
-	}
 
-	Section
-	{
-		columns:						1
-		title: 							qsTr("Advanced")
 
 		Group
 		{
