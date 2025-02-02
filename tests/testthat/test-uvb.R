@@ -33,6 +33,7 @@ options$by <- 5
 options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
+options$tableSampleSort <- FALSE
 options$evaluationChecked <- TRUE
 options$values.audit <- "Soll"
 options$tableCorrections <- TRUE
@@ -205,6 +206,7 @@ options$by <- 5
 options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
+options$tableSampleSort <- FALSE
 options$evaluationChecked <- FALSE
 options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
@@ -325,6 +327,7 @@ options$by <- 5
 options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
+options$tableSampleSort <- FALSE
 options$evaluationChecked <- FALSE
 options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
@@ -427,6 +430,7 @@ options$by <- 15
 options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
+options$tableSampleSort <- FALSE
 options$evaluationChecked <- FALSE
 options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
@@ -545,6 +549,7 @@ options$by <- 5
 options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
+options$tableSampleSort <- FALSE
 options$evaluationChecked <- FALSE
 options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
@@ -648,6 +653,7 @@ options$by <- 5
 options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
+options$tableSampleSort <- FALSE
 options$evaluationChecked <- FALSE
 options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
@@ -755,6 +761,7 @@ options$by <- 5
 options$separateMisstatement <- TRUE
 options$samplingChecked <- TRUE
 options$tableSample <- TRUE
+options$tableSampleSort <- FALSE
 options$evaluationChecked <- FALSE
 options$tableCorrections <- TRUE
 options$tableAssumptions <- TRUE
