@@ -321,6 +321,7 @@ Form
 				source:     						["id", "values", "variables"]
 				defaultValue:						0
 				decimals:							10
+				minimum:							-Infinity
 				Layout.preferredHeight:				500 * preferencesModel.uiScale
 			}
 		}
