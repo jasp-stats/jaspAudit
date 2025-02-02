@@ -379,7 +379,7 @@
     .jfaTableStratum(options, sample, evaluationState, evaluationContainer, jaspResults, positionInContainer = 3)
   }
 
-  .jfaTableTaints(options, sample, evaluationContainer, jaspResults, positionInContainer = 4)
+  .jfaTableTaints(if (options[["workflow"]]) dataset else NULL, options, sample, evaluationContainer, jaspResults, positionInContainer = 4)
 
   if (options[["bayesian"]]) { # Create a table containing assumption checks
     .jfaTableAssumptions(options, sample, evaluationContainer, jaspResults, positionInContainer = 5)
@@ -388,8 +388,6 @@
   if (options[["bayesian"]]) { # Create a table containing information regarding the prior and posterior
     .jfaTablePriorPosterior(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, ready = NULL, positionInContainer = 6, stage = "evaluation")
   }
-
-  .jfaTableTaints(options, sample, evaluationContainer, jaspResults, positionInContainer = 5)
 
   # --- PLOTS
 
@@ -2970,7 +2968,7 @@
   tb[["precision"]] <- parentState[["strata"]]$precision
 }
 
-.jfaTableTaints <- function(options, sample, parentContainer, jaspResults, positionInContainer = 3) {
+.jfaTableTaints <- function(dataset, options, sample, parentContainer, jaspResults, positionInContainer = 3) {
   if (!options[["tableTaints"]] || options[["dataType"]] == "stats") {
     return()
   }
@@ -2992,6 +2990,11 @@
 
   if (options[["values.audit"]] == "" || options[["values"]] == "") {
     return()
+  }
+
+  # Add critical items if wanted
+  if (options[["workflow"]] && options[["critical_negative"]] && options[["critical_action"]] == "inspect") {
+    sample <- rbind(sample, subset(dataset, dataset[[options[["critical_name"]]]] != 0))
   }
 
   errors <- sample[sample[[options[["values"]]]] != sample[[options[["values.audit"]]]], ]
