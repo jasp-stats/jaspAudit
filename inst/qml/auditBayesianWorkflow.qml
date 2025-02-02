@@ -322,7 +322,7 @@ Form
 				defaultValue:						0
 				decimals:							10
 				minimum:							-Infinity
-				Layout.preferredHeight:				500 * preferencesModel.uiScale
+				Layout.preferredHeight:				250 * preferencesModel.uiScale
 			}
 		}
 
@@ -403,6 +403,10 @@ Form
 				enable_predictive: !likelihood.use_hypergeometric
 				enable_scatter: annotation.use_values
 				enable_estimates: true
+				show_overall_materiality: objectives.use_materiality
+				check_overall_materiality_abs: objectives.absolute_materiality
+				overall_materiality_rel: objectives.relative_value
+				overall_materiality_abs: objectives.absolute_value
 			}
 		}
 

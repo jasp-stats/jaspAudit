@@ -31,8 +31,12 @@ Group
 	property bool	enable_scatter:		false
 	property bool	enable_objectives:	false
 	property bool	enable_estimates:	false
+	property bool	show_overall_materiality: false
+	property bool	check_overall_materiality_abs: false
+	property real	overall_materiality_rel: 10
+	property real	overall_materiality_abs: 0
 
-	columns:				2
+	columns:				show_overall_materiality ? 3 : 2
 
 	Group
 	{
@@ -148,6 +152,67 @@ Group
 				text: 		qsTr("Display item ID's")
 				name:		"plotScatterId"
 				info:		qsTr("Display the row number of the misstated items in the figure.")
+			}
+		}
+	}
+
+	Group
+	{
+		title:				qsTr("Conclusion")
+		visible: 			show_overall_materiality
+
+		CheckBox
+		{
+			text:			qsTr("Use overall materiality")
+			name:			"overallMateriality"
+			info:			qsTr("Determine the conclusion based on the overall materiality instead of the performance materiality.")
+
+			RadioButtonGroup
+			{
+				name: 					"overallMaterialityType"
+				info:					qsTr("Specify how the overall materiality is defined.")
+
+				RadioButton
+				{
+					id:					overallMaterialityRelative
+					name: 				"overallMaterialityRelative"
+					text: 				qsTr("Relative")
+					checked:			!check_overall_materiality_abs
+					childrenOnSameRow: 	true
+					info:				qsTr("Specify the overall materiality as a percentage relative to the total number of units in the population.")
+
+					PercentField
+					{
+						name: 			"overallMaterialityPercentage"
+						visible: 		overallMaterialityRelative.checked
+						decimals: 		3
+						defaultValue: 	overall_materiality_rel
+						min:			0.01
+						max:			99.99
+						info:			qsTr("The percentage associated with the overall materiality.")
+					}
+				}
+
+				RadioButton
+				{
+					id: 				overallMaterialityAbsolute
+					name: 				"overallMaterialityAbsolute"
+					text: 				qsTr("Absolute")
+					checked:			check_overall_materiality_abs
+					childrenOnSameRow: 	true
+					info:				qsTr("Specify the overall materiality as an absolute value in monetary units.")
+
+					DoubleField
+					{
+						name: 			"overallMaterialityAmount"
+						visible: 		overallMaterialityAbsolute.checked
+						defaultValue: 	overall_materiality_abs
+						min: 			0
+						fieldWidth: 	90 * preferencesModel.uiScale
+						decimals: 		2
+						info:			qsTr("The value associated with the overall materiality.")
+					}
+				}
 			}
 		}
 	}

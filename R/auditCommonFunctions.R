@@ -433,7 +433,7 @@
   conclusionContainer <- createJaspContainer(title = gettext("<u>Conclusion</u>"))
   conclusionContainer$position <- 5
   conclusionContainer$dependOn(optionsFromObject = evaluationContainer)
-  conclusionContainer$dependOn(options = c("explanatoryText", "tableCorrections"))
+  conclusionContainer$dependOn(options = c("explanatoryText", "tableCorrections", "overallMateriality", "overallMaterialityType", "overallMaterialityPercentage", "overallMaterialityAmount"))
   jaspResults[["conclusionContainer"]] <- conclusionContainer
 
   .jfaAddExplanatoryText(options, stageOptions = NULL, stageContainer = NULL, stageState = NULL, jaspResults, stage = "conclusion", positionInContainer = 1, workflow = workflow)
@@ -1161,8 +1161,23 @@
       # Produce relevant terms conditional on the analysis result
       approveMateriality <- TRUE
       if (options[["materiality_test"]]) {
+        if (options[["workflow"]] && options[["overallMateriality"]]) { # Evaluate against global materiality
+          materialityType <- gettext("overall materiality")
+          if (options[["overallMaterialityType"]] == "overallMaterialityRelative") {
+            tolerableMisstatement <- options[["overallMaterialityPercentage"]]
+            materialityLabel <- paste0(round(tolerableMisstatement * 100, 3), "%")
+          } else {
+            tolerableMisstatement <- options[["overallMaterialityAmount"]] / evaluationState[["N.units"]]
+            materialityLabel <- format(options[["overallMaterialityAmount"]], scientific = FALSE)
+          }
+          overallMaterialityMessage <- gettextf("Furthermore, an overall materiality of %1$s was determined and is used to evaluate the population misstatement. ", materialityLabel)
+        } else { # Evaluate against performance materiality
+          materialityType <- gettext("performance materiality")
+          tolerableMisstatement <- planningOptions[["materiality_val"]]
+          overallMaterialityMessage <- ""
+        }
         ubCrit <- if (evaluationState[["method"]] %in% c("direct", "difference", "quotient", "regression")) evaluationState[["ub"]] / evaluationState[["N.units"]] else evaluationState[["ub"]]
-        if (ubCrit < planningOptions[["materiality_val"]]) {
+        if (ubCrit < tolerableMisstatement) {
           aboveBelowMateriality <- gettext("below")
           lowerHigherMateriality <- gettext("lower")
           approveMateriality <- TRUE
@@ -1189,10 +1204,12 @@
 
       if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
         message <- gettextf(
-          "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound for the misstatement is %3$s the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %4$s than the performance materiality. %5$s",
+          "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. %3$sFor the current data, the %1$s upper bound for the misstatement is %4$s the %5$s. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %6$s than the %5$s. %7$s",
           planningOptions[["conf_level_label"]],
           planningOptions[["materiality_label"]],
+          overallMaterialityMessage,
           aboveBelowMateriality,
+          materialityType,
           lowerHigherMateriality,
           additionalMessage
         )
@@ -1207,11 +1224,13 @@
         )
       } else if (options[["materiality_test"]] && options[["min_precision_test"]]) {
         message <- gettextf(
-          "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound for the misstatement is %4$s the performance materiality and the obtained precision is %5$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is %7$s than the performance materiality. %8$s",
+          "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. %4$sFor the current data, the %1$s upper bound for the misstatement is %5$s the %6$s and the obtained precision is %7$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %8$s, the misstatement in the population is %9$s than the %6$s. %10$s",
           planningOptions[["conf_level_label"]],
           paste0(options[["min_precision_rel_val"]] * 100, "%"),
           planningOptions[["materiality_label"]],
+          overallMaterialityMessage,
           aboveBelowMateriality,
+          materialityType,
           lowerHigherPrecision,
           paste0(round(evaluationState[["precision"]] * 100, 3), "%"),
           lowerHigherMateriality,
