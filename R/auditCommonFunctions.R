@@ -2310,7 +2310,7 @@
     title <- gettextf("<b>Table %1$i.</b> Selected Items", jaspResults[["tabNumber"]]$object)
     table <- createJaspTable(title)
     table$position <- positionInContainer
-    table$dependOn(options = c("tableBookDist", "tableDescriptives", "tableSample", "samplingChecked", "evaluationChecked"))
+    table$dependOn(options = c("tableBookDist", "tableDescriptives", "tableSample", "samplingChecked", "evaluationChecked", "tableSampleSort", "tableSampleSortOrder"))
 
     id <- .jfaReadVariableFromOptions(options, type = "id")
     values <- .jfaReadVariableFromOptions(options, type = "values")
@@ -2335,6 +2335,13 @@
     }
 
     selection <- as.data.frame(parentState[["sample"]])
+    if (options[["tableSampleSort"]] && options[["values"]] != "") {
+      if (options[["tableSampleSortOrder"]] == "descending") {
+        selection <- selection[order(-selection[[options[["values"]]]]), ]
+      } else {
+        selection <- selection[order(selection[[options[["values"]]]]), ]
+      }
+    }
 
     columns <- data.frame("Row" = selection[, "row"], "Selected" = selection[, "times"])
     colnames(columns) <- c(gettext("Row"), gettext("Selected"))

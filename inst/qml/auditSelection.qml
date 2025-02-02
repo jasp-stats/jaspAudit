@@ -67,7 +67,7 @@ Form
 	Section
 	{
 		title: qsTr("Report")
-		Selection.SelectionOutput { }
+		Selection.SelectionOutput { enable_order: values.count > 0 }
 	}
 
 	Selection.ExportSample { enable: id.count > 0 && sample_size.value > 0 }

@@ -197,7 +197,7 @@ Form
 		Section
 		{
 			title:									qsTr("Report")
-			Selection.SelectionOutput { }
+			Selection.SelectionOutput { enable_order: values.use_book }
 		}
 
 		Item
