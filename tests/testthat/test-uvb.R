@@ -61,6 +61,8 @@ options$indicator_col <- "SelectionResult"
 options$variable_col <- "AuditResult"
 options$annotation <- "continuous"
 options$randomize <- FALSE
+options$workflow <- TRUE
+options$overallMateriality <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditBayesianWorkflow", "Case2.csv", options)
 
@@ -233,6 +235,8 @@ options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
 options$annotation <- "continuous"
 options$randomize <- FALSE
+options$workflow <- TRUE
+options$overallMateriality <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase1.csv", options)
 
@@ -354,6 +358,8 @@ options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
 options$annotation <- "continuous"
 options$randomize <- FALSE
+options$workflow <- TRUE
+options$overallMateriality <- FALSE
 set.seed(1)
 results <- runAnalysis("auditBayesianWorkflow", "uvb-testcase2.csv", options)
 
@@ -457,6 +463,8 @@ options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
 options$annotation <- "continuous"
 options$randomize <- FALSE
+options$workflow <- TRUE
+options$overallMateriality <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase3.csv", options)
 
@@ -576,6 +584,8 @@ options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
 options$annotation <- "continuous"
 options$randomize <- FALSE
+options$workflow <- TRUE
+options$overallMateriality <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase4.csv", options)
 
@@ -680,6 +690,8 @@ options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
 options$annotation <- "continuous"
 options$randomize <- FALSE
+options$workflow <- TRUE
+options$overallMateriality <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase5.csv", options)
 
@@ -789,6 +801,8 @@ options$indicator_col <- "selected"
 options$variable_col <- "auditResult"
 options$annotation <- "continuous"
 options$randomize <- FALSE
+options$workflow <- TRUE
+options$overallMateriality <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditBayesianWorkflow", "uvb-testcase6.csv", options)
 

@@ -2769,12 +2769,16 @@
   table$dependOn(options = c(
     "tableBookDist", "tableDescriptives", "tableSample",
     "samplingChecked", "evaluationChecked", "display",
-    "values.audit", "ir", "irCustom", "cr", "crCustom", "car", "carCustom"
+    "values.audit", "ir", "irCustom", "cr", "crCustom", "car", "carCustom",
+    "overallMateriality", "overallMaterialityType", "overallMaterialityPercentage", "overallMaterialityAmount"
   ))
 
   columnType <- if (options[["display"]] == "percent") "string" else "number"
   table$addColumnInfo(name = "null", title = "", type = "string")
   if (options[["materiality_test"]]) {
+    if (options[["workflow"]] && options[["overallMateriality"]]) {
+      table$addColumnInfo(name = "overall", title = gettext("Overall materiality"), type = columnType)
+    }
     table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType)
   }
   if (options[["min_precision_test"]]) {
@@ -2873,6 +2877,13 @@
       "percent" = paste0(round(prevOptions[["materiality_val"]] * 100, 3), "%"),
       "amount" = prevOptions[["materiality_val"]] * parentState[["N.units"]]
     )
+    if (options[["workflow"]] && options[["overallMateriality"]]) {
+      table[["overall"]] <- switch(options[["display"]],
+        "number" = if (options[["overallMaterialityType"]] == "overallMaterialityAbsolute") options[["overallMaterialityAmount"]] / parentState[["N.units"]] else options[["overallMaterialityPercentage"]],
+        "percent" = if (options[["overallMaterialityType"]] == "overallMaterialityAbsolute") paste0(round(options[["overallMaterialityAmount"]] / parentState[["N.units"]] * 100, 3), "%") else paste0(round(options[["overallMaterialityPercentage"]] * 100, 3), "%"),
+        "amount" = if (options[["overallMaterialityType"]] == "overallMaterialityAbsolute") options[["overallMaterialityAmount"]] else options[["overallMaterialityPercentage"]] * parentState[["N.units"]]
+      )
+    }
   }
 
   if (options[["min_precision_test"]]) {

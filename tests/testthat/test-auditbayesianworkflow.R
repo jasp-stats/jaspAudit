@@ -62,6 +62,8 @@ options$plotPriorPredictive <- FALSE
 options$plotPosteriorPredictive <- FALSE
 options$plotEstimates <- FALSE
 options$tableCorrections <- FALSE
+options$workflow <- TRUE
+options$overallMateriality <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditBayesianWorkflow", "test-workflow.csv", options)
 
