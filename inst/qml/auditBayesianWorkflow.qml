@@ -396,7 +396,6 @@ Form
 			Evaluation.EvaluationOutput
 			{
 				bayesian: true
-				enable_taints: values.use_book
 				enable_corrections: values.use_book
 				enable_assumptions: algorithm.use_partial
 				enable_objectives: objectives.use_materiality || objectives.use_precision

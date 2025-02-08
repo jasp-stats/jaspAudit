@@ -61,7 +61,7 @@ Form
 		Evaluation.EvaluationOutput
 		{
 			bayesian: true
-			enable_taints: !data.use_stats && variables.use_book && variables.use_real
+			enable_taints: !data.use_stats
 			enable_corrections: population.n_units > 0 || data.use_population
 			enable_assumptions: algorithm.use_partial
 			enable_objectives: objectives.use_materiality || objectives.use_precision

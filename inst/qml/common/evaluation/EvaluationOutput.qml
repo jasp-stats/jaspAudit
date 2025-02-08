@@ -24,7 +24,7 @@ import JASP.Controls
 Group
 {
 	property bool	bayesian:			false
-	property bool	enable_taints:		false
+	property bool	enable_taints:		true
 	property bool	enable_corrections:	false
 	property bool	enable_assumptions:	false
 	property bool	enable_predictive:	false

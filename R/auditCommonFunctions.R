@@ -3006,15 +3006,29 @@
   tb$position <- positionInContainer
   tb$dependOn(options = "tableTaints")
 
+  if (options[["workflow"]]) {
+    binary <- options[["annotation"]] == "binary"
+  } else {
+    if (options[["values.audit"]] == "") {
+      binary <- FALSE
+    } else {
+      binary <- all(sample[[options[["values.audit"]]]] %in% c(0, 1))
+    }
+  }
+
   tb$addColumnInfo(name = "id", title = gettext("ID"), type = "string")
-  tb$addColumnInfo(name = "values", title = gettext("Book value"), type = "number")
-  tb$addColumnInfo(name = "values.audit", title = gettext("Audit value"), type = "number")
-  tb$addColumnInfo(name = "diff", title = gettext("Difference"), type = "number")
+  if (options[["values"]] != "") {
+    tb$addColumnInfo(name = "values", title = gettext("Book value"), type = "number")
+  }
+  if (!binary) {
+    tb$addColumnInfo(name = "values.audit", title = gettext("Audit value"), type = "number")
+    tb$addColumnInfo(name = "diff", title = gettext("Difference"), type = "number")
+  }
   tb$addColumnInfo(name = "taint", title = gettext("Taint"), type = "number")
   tb$addColumnInfo(name = "times", title = gettext("Counted"), type = "string")
   parentContainer[["tableTaints"]] <- tb
 
-  if (options[["values.audit"]] == "" || options[["values"]] == "") {
+  if (options[["values.audit"]] == "") {
     return()
   }
 
@@ -3023,15 +3037,16 @@
     sample <- rbind(sample, subset(dataset, dataset[[options[["critical_name"]]]] != 0))
   }
 
-  errors <- sample[sample[[options[["values"]]]] != sample[[options[["values.audit"]]]], ]
+  if (!binary) {
+    errors <- sample[sample[[options[["values"]]]] != sample[[options[["values.audit"]]]], ]
+  } else {
+    errors <- sample[sample[[options[["values.audit"]]]] == 1, ]
+  }
   if (nrow(errors) == 0) {
     tb$addFootnote(message = gettext("No misstatements were identified in the sample."))
     return()
   }
 
-  id <- errors[[options[["id"]]]]
-  ist <- errors[[options[["values"]]]]
-  soll <- errors[[options[["values.audit"]]]]
   if (options[["workflow"]]) {
     times <- errors[[options[["indicator_col"]]]]
   } else {
@@ -3041,11 +3056,22 @@
       times <- errors[[options[["times"]]]]
     }
   }
+
+  id <- errors[[options[["id"]]]]
   tb[["id"]] <- c(id, gettext("Total"))
-  tb[["values"]] <- c(ist, NA)
-  tb[["values.audit"]] <- c(soll, NA)
-  tb[["diff"]] <- c(ist - soll, sum(ist - soll))
-  tb[["taint"]] <- c((ist - soll) / ist, sum(((ist - soll) / ist) * times))
+  if (options[["values"]] != "") {
+    ist <- errors[[options[["values"]]]]
+    tb[["values"]] <- c(ist, NA)
+  }
+  if (!binary) {
+    soll <- errors[[options[["values.audit"]]]]
+    tb[["values.audit"]] <- c(soll, NA)
+    tb[["diff"]] <- c(ist - soll, sum(ist - soll))
+    tb[["taint"]] <- c((ist - soll) / ist, sum(((ist - soll) / ist) * times))
+  } else {
+    taints <- errors[[options[["values.audit"]]]]
+    tb[["taint"]] <- c(taints, sum(taints * times))
+  }
   tb[["times"]] <- c(paste0("x", times), NA)
 }
 
