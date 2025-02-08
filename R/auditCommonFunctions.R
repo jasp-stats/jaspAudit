@@ -3169,7 +3169,11 @@
       width = 600, height = 300
     )
     figure$position <- positionInContainer
-    figure$dependOn(options = c("plotObjectives", "display"))
+    figure$dependOn(options = c(
+      "plotObjectives", "display",
+      "overallMateriality", "overallMaterialityType",
+      "overallMaterialityPercentage", "overallMaterialityAmount"
+    ))
 
     parentContainer[["plotObjectives"]] <- figure
 
@@ -3221,6 +3225,19 @@
         fill <- rev(c(objectiveColor, precisionColor, objectiveColor, boundColor, "#1380A1"))
       }
 
+      if (options[["materiality_test"]] && options[["workflow"]] && options[["overallMateriality"]]) {
+        if (options[["overallMaterialityType"]] == "overallMaterialityRelative") {
+          overall <- options[["overallMaterialityPercentage"]]
+        } else {
+          overall <- options[["overallMaterialityAmount"]] / prevOptions[["N.units"]]
+        }
+        label <- c(label, gettext("Overall materiality"))
+        values <- c(values, overall)
+        boundColor <- if (bound < overall) rgb(0, 1, .7, 1) else rgb(1, 0, 0, 1)
+        fill <- c(fill, "orange3")
+        fill[2] <- boundColor
+      }
+
       if (options[["display"]] == "amount") {
         values <- values * prevOptions[["N.units"]]
       }
@@ -3238,7 +3255,7 @@
 
       if (options[["display"]] == "amount") {
         yLabels <- format(yBreaks, scientific = FALSE)
-        valueLabels <- ceiling(values)
+        valueLabels <- round(values)
       } else {
         yLabels <- paste0(round(yBreaks * 100, 2), "%")
         valueLabels <- paste0(round(values * 100, 2), "%")
