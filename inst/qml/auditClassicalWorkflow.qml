@@ -396,6 +396,7 @@ Form
 					enable_scatter: annotation.use_values
 					enable_estimates: true
 					show_overall_materiality: objectives.use_materiality
+					enable_overall_materiality_abs: values.use_book
 					check_overall_materiality_abs: objectives.absolute_materiality
 					overall_materiality_rel: objectives.relative_value
 					overall_materiality_abs: objectives.absolute_value

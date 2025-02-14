@@ -32,6 +32,7 @@ Group
 	property bool	enable_objectives:	false
 	property bool	enable_estimates:	false
 	property bool	show_overall_materiality: false
+	property bool	enable_overall_materiality_abs: false
 	property bool	check_overall_materiality_abs: false
 	property real	overall_materiality_rel: 10
 	property real	overall_materiality_abs: 0
@@ -198,6 +199,7 @@ Group
 					id: 				overallMaterialityAbsolute
 					name: 				"overallMaterialityAbsolute"
 					text: 				qsTr("Absolute")
+					enabled:			enable_overall_materiality_abs
 					checked:			check_overall_materiality_abs
 					childrenOnSameRow: 	true
 					info:				qsTr("Specify the overall materiality as an absolute value in monetary units.")
