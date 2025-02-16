@@ -16,6 +16,7 @@ options$startMethod <- "fixedStart"
 options$randomize <- FALSE
 options$rank <- ""
 options$tableDescriptives <- FALSE
+options$tableSampleSort <- FALSE
 options$start <- 1
 options$name_indicator <- ""
 options$seed <- 1
@@ -136,6 +137,7 @@ options$n <- 200
 options$explanatoryText <- TRUE
 options$tableSample <- TRUE
 options$tableDescriptives <- FALSE
+options$tableSampleSort <- FALSE
 options$export_sample <- FALSE
 options$randomize <- FALSE
 options$file <- ""
@@ -248,6 +250,7 @@ options$values <- "Deductions"
 options$explanatoryText <- TRUE
 options$n <- 40
 options$tableDescriptives <- TRUE
+options$tableSampleSort <- FALSE
 options$randomize <- FALSE
 options$tableSample <- TRUE
 options$units <- "values"

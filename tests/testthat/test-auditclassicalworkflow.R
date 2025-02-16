@@ -52,6 +52,8 @@ options$tableAssumptions <- FALSE
 options$plotEstimates <- FALSE
 options$tableCorrections <- FALSE
 options$plotErrorDist <- FALSE
+options$workflow <- TRUE
+options$overallMateriality <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalWorkflow", "test-workflow.csv", options)
 

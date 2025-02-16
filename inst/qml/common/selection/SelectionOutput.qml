@@ -23,19 +23,47 @@ import JASP.Controls
 
 Group
 {
-	title: 		qsTr("Tables")
+	property bool	enable_order:	false
+
+	title:						qsTr("Tables")
 
 	CheckBox
 	{
-		text: 	qsTr("Selected items")
-		name: 	"tableSample"
-		info:	qsTr("Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.")
+		text:					qsTr("Descriptive statistics")
+		name:					"tableDescriptives"
+		info:					qsTr("Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.")
 	}
 
 	CheckBox
 	{
-		text: 	qsTr("Descriptive statistics")
-		name: 	"tableDescriptives"
-		info:	qsTr("Produces a table containing descriptive information about numerical variables in the selection. Statistics that are included are the mean, the median, the standard deviation, the variance, the minimum, the maximum, and the range.")
+		text:					qsTr("Selected items")
+		name:					"tableSample"
+		info:					qsTr("Produces a table containing the selected transactions along with any additional observations provided in the additional variables field.")
+
+		CheckBox 
+		{
+			text:				qsTr("Order by book value")
+			name:				"tableSampleSort"
+			info:				qstr("Order the selected transactions in the table from largest to smallest based on their book value.")
+			enabled:			enable_order
+
+			RadioButtonGroup
+			{
+				name:			"tableSampleSortOrder"
+				
+				RadioButton
+				{
+					text:		qsTr("Descending")
+					name:		"descending"
+					checked:	true
+				}
+
+				RadioButton
+				{
+					text:		qsTr("Ascending")
+					name:		"ascending"
+				}
+			}
+		}
 	}
 }

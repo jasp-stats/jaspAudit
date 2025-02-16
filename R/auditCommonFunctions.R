@@ -379,7 +379,7 @@
     .jfaTableStratum(options, sample, evaluationState, evaluationContainer, jaspResults, positionInContainer = 3)
   }
 
-  .jfaTableTaints(options, sample, evaluationContainer, jaspResults, positionInContainer = 4)
+  .jfaTableTaints(if (options[["workflow"]]) dataset else NULL, options, sample, evaluationContainer, jaspResults, positionInContainer = 4)
 
   if (options[["bayesian"]]) { # Create a table containing assumption checks
     .jfaTableAssumptions(options, sample, evaluationContainer, jaspResults, positionInContainer = 5)
@@ -388,8 +388,6 @@
   if (options[["bayesian"]]) { # Create a table containing information regarding the prior and posterior
     .jfaTablePriorPosterior(options, evaluationOptions, evaluationState, evaluationContainer, jaspResults, ready = NULL, positionInContainer = 6, stage = "evaluation")
   }
-
-  .jfaTableTaints(options, sample, evaluationContainer, jaspResults, positionInContainer = 5)
 
   # --- PLOTS
 
@@ -435,7 +433,7 @@
   conclusionContainer <- createJaspContainer(title = gettext("<u>Conclusion</u>"))
   conclusionContainer$position <- 5
   conclusionContainer$dependOn(optionsFromObject = evaluationContainer)
-  conclusionContainer$dependOn(options = c("explanatoryText", "tableCorrections"))
+  conclusionContainer$dependOn(options = c("explanatoryText", "tableCorrections", "overallMateriality", "overallMaterialityType", "overallMaterialityPercentage", "overallMaterialityAmount"))
   jaspResults[["conclusionContainer"]] <- conclusionContainer
 
   .jfaAddExplanatoryText(options, stageOptions = NULL, stageContainer = NULL, stageState = NULL, jaspResults, stage = "conclusion", positionInContainer = 1, workflow = workflow)
@@ -1163,8 +1161,23 @@
       # Produce relevant terms conditional on the analysis result
       approveMateriality <- TRUE
       if (options[["materiality_test"]]) {
+        if (options[["workflow"]] && options[["overallMateriality"]]) { # Evaluate against global materiality
+          materialityType <- gettext("overall materiality")
+          if (options[["overallMaterialityType"]] == "overallMaterialityRelative") {
+            tolerableMisstatement <- options[["overallMaterialityPercentage"]]
+            materialityLabel <- paste0(round(tolerableMisstatement * 100, 3), "%")
+          } else {
+            tolerableMisstatement <- options[["overallMaterialityAmount"]] / evaluationState[["N.units"]]
+            materialityLabel <- format(options[["overallMaterialityAmount"]], scientific = FALSE)
+          }
+          overallMaterialityMessage <- gettextf("Furthermore, an overall materiality of %1$s was determined and is used to evaluate the population misstatement. ", materialityLabel)
+        } else { # Evaluate against performance materiality
+          materialityType <- gettext("performance materiality")
+          tolerableMisstatement <- planningOptions[["materiality_val"]]
+          overallMaterialityMessage <- ""
+        }
         ubCrit <- if (evaluationState[["method"]] %in% c("direct", "difference", "quotient", "regression")) evaluationState[["ub"]] / evaluationState[["N.units"]] else evaluationState[["ub"]]
-        if (ubCrit < planningOptions[["materiality_val"]]) {
+        if (ubCrit < tolerableMisstatement) {
           aboveBelowMateriality <- gettext("below")
           lowerHigherMateriality <- gettext("lower")
           approveMateriality <- TRUE
@@ -1191,10 +1204,12 @@
 
       if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
         message <- gettextf(
-          "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound for the misstatement is %3$s the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %4$s than the performance materiality. %5$s",
+          "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. %3$sFor the current data, the %1$s upper bound for the misstatement is %4$s the %5$s. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %6$s than the %5$s. %7$s",
           planningOptions[["conf_level_label"]],
           planningOptions[["materiality_label"]],
+          overallMaterialityMessage,
           aboveBelowMateriality,
+          materialityType,
           lowerHigherMateriality,
           additionalMessage
         )
@@ -1209,11 +1224,13 @@
         )
       } else if (options[["materiality_test"]] && options[["min_precision_test"]]) {
         message <- gettextf(
-          "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound for the misstatement is %4$s the performance materiality and the obtained precision is %5$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is %7$s than the performance materiality. %8$s",
+          "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. %4$sFor the current data, the %1$s upper bound for the misstatement is %5$s the %6$s and the obtained precision is %7$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %8$s, the misstatement in the population is %9$s than the %6$s. %10$s",
           planningOptions[["conf_level_label"]],
           paste0(options[["min_precision_rel_val"]] * 100, "%"),
           planningOptions[["materiality_label"]],
+          overallMaterialityMessage,
           aboveBelowMateriality,
+          materialityType,
           lowerHigherPrecision,
           paste0(round(evaluationState[["precision"]] * 100, 3), "%"),
           lowerHigherMateriality,
@@ -2312,7 +2329,7 @@
     title <- gettextf("<b>Table %1$i.</b> Selected Items", jaspResults[["tabNumber"]]$object)
     table <- createJaspTable(title)
     table$position <- positionInContainer
-    table$dependOn(options = c("tableBookDist", "tableDescriptives", "tableSample", "samplingChecked", "evaluationChecked"))
+    table$dependOn(options = c("tableBookDist", "tableDescriptives", "tableSample", "samplingChecked", "evaluationChecked", "tableSampleSort", "tableSampleSortOrder"))
 
     id <- .jfaReadVariableFromOptions(options, type = "id")
     values <- .jfaReadVariableFromOptions(options, type = "values")
@@ -2337,6 +2354,13 @@
     }
 
     selection <- as.data.frame(parentState[["sample"]])
+    if (options[["tableSampleSort"]] && options[["values"]] != "") {
+      if (options[["tableSampleSortOrder"]] == "descending") {
+        selection <- selection[order(-selection[[options[["values"]]]]), ]
+      } else {
+        selection <- selection[order(selection[[options[["values"]]]]), ]
+      }
+    }
 
     columns <- data.frame("Row" = selection[, "row"], "Selected" = selection[, "times"])
     colnames(columns) <- c(gettext("Row"), gettext("Selected"))
@@ -2745,12 +2769,16 @@
   table$dependOn(options = c(
     "tableBookDist", "tableDescriptives", "tableSample",
     "samplingChecked", "evaluationChecked", "display",
-    "values.audit", "ir", "irCustom", "cr", "crCustom", "car", "carCustom"
+    "values.audit", "ir", "irCustom", "cr", "crCustom", "car", "carCustom",
+    "overallMateriality", "overallMaterialityType", "overallMaterialityPercentage", "overallMaterialityAmount"
   ))
 
   columnType <- if (options[["display"]] == "percent") "string" else "number"
   table$addColumnInfo(name = "null", title = "", type = "string")
   if (options[["materiality_test"]]) {
+    if (options[["workflow"]] && options[["overallMateriality"]]) {
+      table$addColumnInfo(name = "overall", title = gettext("Overall materiality"), type = columnType)
+    }
     table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType)
   }
   if (options[["min_precision_test"]]) {
@@ -2849,6 +2877,13 @@
       "percent" = paste0(round(prevOptions[["materiality_val"]] * 100, 3), "%"),
       "amount" = prevOptions[["materiality_val"]] * parentState[["N.units"]]
     )
+    if (options[["workflow"]] && options[["overallMateriality"]]) {
+      table[["overall"]] <- switch(options[["display"]],
+        "number" = if (options[["overallMaterialityType"]] == "overallMaterialityAbsolute") options[["overallMaterialityAmount"]] / parentState[["N.units"]] else options[["overallMaterialityPercentage"]],
+        "percent" = if (options[["overallMaterialityType"]] == "overallMaterialityAbsolute") paste0(round(options[["overallMaterialityAmount"]] / parentState[["N.units"]] * 100, 3), "%") else paste0(round(options[["overallMaterialityPercentage"]] * 100, 3), "%"),
+        "amount" = if (options[["overallMaterialityType"]] == "overallMaterialityAbsolute") options[["overallMaterialityAmount"]] else options[["overallMaterialityPercentage"]] * parentState[["N.units"]]
+      )
+    }
   }
 
   if (options[["min_precision_test"]]) {
@@ -2970,7 +3005,7 @@
   tb[["precision"]] <- parentState[["strata"]]$precision
 }
 
-.jfaTableTaints <- function(options, sample, parentContainer, jaspResults, positionInContainer = 3) {
+.jfaTableTaints <- function(dataset, options, sample, parentContainer, jaspResults, positionInContainer = 3) {
   if (!options[["tableTaints"]] || options[["dataType"]] == "stats") {
     return()
   }
@@ -2982,27 +3017,47 @@
   tb$position <- positionInContainer
   tb$dependOn(options = "tableTaints")
 
+  if (options[["workflow"]]) {
+    binary <- options[["annotation"]] == "binary"
+  } else {
+    if (options[["values.audit"]] == "") {
+      binary <- FALSE
+    } else {
+      binary <- all(sample[[options[["values.audit"]]]] %in% c(0, 1))
+    }
+  }
+
   tb$addColumnInfo(name = "id", title = gettext("ID"), type = "string")
-  tb$addColumnInfo(name = "values", title = gettext("Book value"), type = "number")
-  tb$addColumnInfo(name = "values.audit", title = gettext("Audit value"), type = "number")
-  tb$addColumnInfo(name = "diff", title = gettext("Difference"), type = "number")
+  if (options[["values"]] != "") {
+    tb$addColumnInfo(name = "values", title = gettext("Book value"), type = "number")
+  }
+  if (!binary) {
+    tb$addColumnInfo(name = "values.audit", title = gettext("Audit value"), type = "number")
+    tb$addColumnInfo(name = "diff", title = gettext("Difference"), type = "number")
+  }
   tb$addColumnInfo(name = "taint", title = gettext("Taint"), type = "number")
   tb$addColumnInfo(name = "times", title = gettext("Counted"), type = "string")
   parentContainer[["tableTaints"]] <- tb
 
-  if (options[["values.audit"]] == "" || options[["values"]] == "") {
+  if (options[["values.audit"]] == "") {
     return()
   }
 
-  errors <- sample[sample[[options[["values"]]]] != sample[[options[["values.audit"]]]], ]
+  # Add critical items if wanted
+  if (options[["workflow"]] && options[["critical_negative"]] && options[["critical_action"]] == "inspect") {
+    sample <- rbind(sample, subset(dataset, dataset[[options[["critical_name"]]]] != 0))
+  }
+
+  if (!binary) {
+    errors <- sample[sample[[options[["values"]]]] != sample[[options[["values.audit"]]]], ]
+  } else {
+    errors <- sample[sample[[options[["values.audit"]]]] == 1, ]
+  }
   if (nrow(errors) == 0) {
     tb$addFootnote(message = gettext("No misstatements were identified in the sample."))
     return()
   }
 
-  id <- errors[[options[["id"]]]]
-  ist <- errors[[options[["values"]]]]
-  soll <- errors[[options[["values.audit"]]]]
   if (options[["workflow"]]) {
     times <- errors[[options[["indicator_col"]]]]
   } else {
@@ -3012,11 +3067,22 @@
       times <- errors[[options[["times"]]]]
     }
   }
+
+  id <- errors[[options[["id"]]]]
   tb[["id"]] <- c(id, gettext("Total"))
-  tb[["values"]] <- c(ist, NA)
-  tb[["values.audit"]] <- c(soll, NA)
-  tb[["diff"]] <- c(ist - soll, sum(ist - soll))
-  tb[["taint"]] <- c((ist - soll) / ist, sum(((ist - soll) / ist) * times))
+  if (options[["values"]] != "") {
+    ist <- errors[[options[["values"]]]]
+    tb[["values"]] <- c(ist, NA)
+  }
+  if (!binary) {
+    soll <- errors[[options[["values.audit"]]]]
+    tb[["values.audit"]] <- c(soll, NA)
+    tb[["diff"]] <- c(ist - soll, sum(ist - soll))
+    tb[["taint"]] <- c((ist - soll) / ist, sum(((ist - soll) / ist) * times))
+  } else {
+    taints <- errors[[options[["values.audit"]]]]
+    tb[["taint"]] <- c(taints, sum(taints * times))
+  }
   tb[["times"]] <- c(paste0("x", times), NA)
 }
 
@@ -3103,7 +3169,11 @@
       width = 600, height = 300
     )
     figure$position <- positionInContainer
-    figure$dependOn(options = c("plotObjectives", "display"))
+    figure$dependOn(options = c(
+      "plotObjectives", "display",
+      "overallMateriality", "overallMaterialityType",
+      "overallMaterialityPercentage", "overallMaterialityAmount"
+    ))
 
     parentContainer[["plotObjectives"]] <- figure
 
@@ -3155,6 +3225,19 @@
         fill <- rev(c(objectiveColor, precisionColor, objectiveColor, boundColor, "#1380A1"))
       }
 
+      if (options[["materiality_test"]] && options[["workflow"]] && options[["overallMateriality"]]) {
+        if (options[["overallMaterialityType"]] == "overallMaterialityRelative") {
+          overall <- options[["overallMaterialityPercentage"]]
+        } else {
+          overall <- options[["overallMaterialityAmount"]] / prevOptions[["N.units"]]
+        }
+        label <- c(label, gettext("Overall materiality"))
+        values <- c(values, overall)
+        boundColor <- if (bound < overall) rgb(0, 1, .7, 1) else rgb(1, 0, 0, 1)
+        fill <- c(fill, "orange3")
+        fill[2] <- boundColor
+      }
+
       if (options[["display"]] == "amount") {
         values <- values * prevOptions[["N.units"]]
       }
@@ -3172,7 +3255,7 @@
 
       if (options[["display"]] == "amount") {
         yLabels <- format(yBreaks, scientific = FALSE)
-        valueLabels <- ceiling(values)
+        valueLabels <- round(values)
       } else {
         yLabels <- paste0(round(yBreaks * 100, 2), "%")
         valueLabels <- paste0(round(values * 100, 2), "%")

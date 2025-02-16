@@ -33,7 +33,7 @@ import "./common/evaluation" as Evaluation
 Form
 {
 	columns: 										2
-	info:											qsTr("The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population. When the auditor has access to the raw population data, they can use the *audit workflow* to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgment. The user can then sample these items from the population, inspect and audit these items, and perform statistical inference about the misstatement in the population. The sampling workflow guides the auditor through the audit process, making the correct choices of calculations along the way.\n\nPlease see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.\n\n### Workflow\n---\n- Planning: Calculate the minimum sample size to achieve your sampling objectives with the specified confidence.\n- Selection: Select the required sampling units from the population.\n- Execution: Annotate the selection with your assessment of the fairness of the selected items.\n- Evaluation: Make a population statement based on your annotated selection.\n\n![Audit sampling workflow](%HELP_FOLDER%/img/workflow.png)")
+	info:											qsTr("The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population. When the auditor has access to the raw population data, they can use the *audit workflow* to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgment. The user can then sample these items from the population, inspect and audit these items, and perform statistical inference about the misstatement in the population. The sampling workflow guides the auditor through the audit process, making the correct choices of calculations along the way.\n\nPlease see the manual of the Audit module (download [here](%1)) for more detailed information about this analysis.\n\n### Workflow\n---\n- Planning: Calculate the minimum sample size to achieve your sampling objectives with the specified confidence.\n- Selection: Select the required sampling units from the population.\n- Execution: Annotate the selection with your assessment of the fairness of the selected items.\n- Evaluation: Make a population statement based on your annotated selection.\n\n![Audit sampling workflow](%2)").arg("https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf").arg("%HELP_FOLDER%/img/workflow.png")
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: true; visible: false }
@@ -197,7 +197,7 @@ Form
 		Section
 		{
 			title:									qsTr("Report")
-			Selection.SelectionOutput { }
+			Selection.SelectionOutput { enable_order: values.use_book }
 		}
 
 		Item
@@ -321,7 +321,8 @@ Form
 				source:     						["id", "values", "variables"]
 				defaultValue:						0
 				decimals:							10
-				Layout.preferredHeight:				500 * preferencesModel.uiScale
+				minimum:							-Infinity
+				Layout.preferredHeight:				250 * preferencesModel.uiScale
 			}
 		}
 
@@ -395,13 +396,17 @@ Form
 			Evaluation.EvaluationOutput
 			{
 				bayesian: true
-				enable_taints: values.use_book
 				enable_corrections: values.use_book
 				enable_assumptions: algorithm.use_partial
 				enable_objectives: objectives.use_materiality || objectives.use_precision
 				enable_predictive: !likelihood.use_hypergeometric
 				enable_scatter: annotation.use_values
 				enable_estimates: true
+				show_overall_materiality: objectives.use_materiality
+				enable_overall_materiality_abs: values.use_book
+				check_overall_materiality_abs: objectives.absolute_materiality
+				overall_materiality_rel: objectives.relative_value
+				overall_materiality_abs: objectives.absolute_value
 			}
 		}
 
