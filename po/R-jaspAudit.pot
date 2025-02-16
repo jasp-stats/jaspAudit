@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2024-11-16 03:33\n"
+"POT-Creation-Date: 2025-02-16 08:42\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -739,6 +739,15 @@ msgstr ""
 msgid "%1$s\n\n<b>Note:</b> The selected sample (%2$s) contains fewer items than the planned sample size (%3$s) because some items are selected more than once. The items containing these %4$s extra selected sampling units will be counted multiple times in the evaluation."
 msgstr ""
 
+msgid "overall materiality"
+msgstr ""
+
+msgid "Furthermore, an overall materiality of %1$s was determined and is used to evaluate the population misstatement."
+msgstr ""
+
+msgid "performance materiality"
+msgstr ""
+
 msgid "below"
 msgstr ""
 
@@ -757,13 +766,13 @@ msgstr ""
 msgid "<b>Objectives:</b> You have not achieved your initial sampling objectives."
 msgstr ""
 
-msgid "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. For the current data, the %1$s upper bound for the misstatement is %3$s the performance materiality. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %4$s than the performance materiality. %5$s"
+msgid "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. %3$sFor the current data, the %1$s upper bound for the misstatement is %4$s the %5$s. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %6$s than the %5$s. %7$s"
 msgstr ""
 
 msgid "The objective of this audit sampling procedure was to determine the misstatement in the population with %1$s confidence and a minimum precision of %2$s. For the current data, the obtained precision is %3$s than the minimum precision. \n\nThe conclusion on the basis of these results is that the misstatement in the population has been determined with at least %1$s confidence and a precision of %4$s. %5$s"
 msgstr ""
 
-msgid "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. For the current data, the %1$s upper bound for the misstatement is %4$s the performance materiality and the obtained precision is %5$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %6$s, the misstatement in the population is %7$s than the performance materiality. %8$s"
+msgid "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. %4$sFor the current data, the %1$s upper bound for the misstatement is %5$s the %6$s and the obtained precision is %7$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %8$s, the misstatement in the population is %9$s than the %6$s. %10$s"
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
@@ -1088,6 +1097,9 @@ msgid "The purpose of the evaluation stage is to infer the misstatement θ in th
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Evaluation Summary"
+msgstr ""
+
+msgid "Overall materiality"
 msgstr ""
 
 msgid "Sample size"
