@@ -3204,7 +3204,7 @@
 
       if (options[["display"]] == "amount") {
         yLabels <- format(yBreaks, scientific = FALSE)
-        valueLabels <- round(values)
+        valueLabels <- format(round(values), scientific = FALSE)
       } else {
         yLabels <- paste0(round(yBreaks * 100, 2), "%")
         valueLabels <- paste0(round(values * 100, 2), "%")
@@ -3221,7 +3221,7 @@
           y = values, x = 1:length(values), label = valueLabels,
           size = 6, vjust = 0.5, hjust = -0.1
         ) +
-        ggplot2::scale_y_continuous(name = "", breaks = yBreaks, limits = yLimits, labels = yLabels) +
+        ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = yLimits, labels = yLabels) +
         jaspGraphs::geom_rangeframe(sides = "") +
         jaspGraphs::themeJaspRaw(legend.position = "none") +
         ggplot2::theme(
