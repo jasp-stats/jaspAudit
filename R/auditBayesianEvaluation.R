@@ -19,6 +19,11 @@
 # reviewer in the pull Request.
 
 auditBayesianEvaluation <- function(jaspResults, dataset, options, ...) {
+  set.seed(options[["mcmc.seed"]])
+  options(mc.iterations = options[["iter"]],
+          mc.warmup = options[["warmup"]],
+          mc.chains = options[["chains"]],
+          jfa.iterations = options[["iter"]])
   # For the evaluation constituents, see auditCommonFunctions.R
   .jfaEvaluationStage(options, jaspResults, workflow = FALSE)
   .jfaCreatedByText(jaspResults)
