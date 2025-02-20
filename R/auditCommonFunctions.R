@@ -1274,13 +1274,13 @@
     ))
 
     table$addColumnInfo(name = "N", title = gettext("Population size"), type = "integer")
-    table$addColumnInfo(name = "val", title = gettext("Value"), type = "number")
-    table$addColumnInfo(name = "absval", title = gettext("Absolute value"), type = "number")
-    table$addColumnInfo(name = "mean", title = gettext("Mean"), type = "number")
-    table$addColumnInfo(name = "sigma", title = gettext("Std. deviation"), type = "number")
-    table$addColumnInfo(name = "q1", title = gettext("1"), type = "number", overtitle = gettext("Quartile"))
-    table$addColumnInfo(name = "q2", title = gettext("2"), type = "number", overtitle = gettext("Quartile"))
-    table$addColumnInfo(name = "q3", title = gettext("3"), type = "number", overtitle = gettext("Quartile"))
+    table$addColumnInfo(name = "val", title = gettext("Value"), type = "number", format = "monetary")
+    table$addColumnInfo(name = "absval", title = gettext("Absolute value"), type = "number", format = "monetary")
+    table$addColumnInfo(name = "mean", title = gettext("Mean"), type = "number", format = "monetary")
+    table$addColumnInfo(name = "sigma", title = gettext("Std. deviation"), type = "number", format = "monetary")
+    table$addColumnInfo(name = "q1", title = gettext("1"), type = "number", overtitle = gettext("Quartile"), format = "monetary")
+    table$addColumnInfo(name = "q2", title = gettext("2"), type = "number", overtitle = gettext("Quartile"), format = "monetary")
+    table$addColumnInfo(name = "q3", title = gettext("3"), type = "number", overtitle = gettext("Quartile"), format = "monetary")
 
     parentContainer[["tableBookDist"]] <- table
 
