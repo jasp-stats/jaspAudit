@@ -2265,7 +2265,7 @@
 
     table$addColumnInfo(name = "stratum", title = "", type = "string")
     table$addColumnInfo(name = "N.items", title = gettext("Items"), type = "integer")
-    table$addColumnInfo(name = "N.units", title = gettext("Value"), type = "number")
+    table$addColumnInfo(name = "N.units", title = gettext("Value"), type = "number", format = "monetary")
     table$addColumnInfo(name = "n.items", title = gettext("Selected items"), type = "integer")
     table$addColumnInfo(name = "n.units", title = gettext("Selected units"), type = "integer")
     table$addColumnInfo(name = "value", title = gettext("Selection value"), type = "number", format = "monetary")
