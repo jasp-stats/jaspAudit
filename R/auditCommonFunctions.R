@@ -1610,14 +1610,15 @@
     "display"
   ))
   columnType <- if (options[["display"]] == "percent") "string" else "number"
+  columnFormat <- if (options[["display"]] == "amount") "monetary" else NULL
 
   # Add columns to table layout
   table$addColumnInfo(name = "null", title = "", type = "string")
   if (options[["materiality_test"]]) {
-    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType)
+    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType, format = columnFormat)
   }
   if (options[["min_precision_test"]]) {
-    table$addColumnInfo(name = "precision", title = gettext("Min. precision"), type = columnType)
+    table$addColumnInfo(name = "precision", title = gettext("Min. precision"), type = columnType, format = columnFormat)
   }
   if (options[["materiality_test"]] && options[["prior_method"]] == "arm") {
     table$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = columnType)
@@ -2209,7 +2210,7 @@
   table$addColumnInfo(name = "size", title = gettext("No. units"), type = "integer")
   table$addColumnInfo(name = "items", title = gettext("No. items"), type = "integer")
   if (options[["units"]] == "values") {
-    table$addColumnInfo(name = "value", title = gettext("Selection value"), type = "number")
+    table$addColumnInfo(name = "value", title = gettext("Selection value"), type = "number", format = "monetary")
     table$addColumnInfo(name = "percentage", title = gettextf("%% of population value"), type = "string")
   } else {
     table$addColumnInfo(name = "percentage", title = gettextf("%% of population size"), type = "string")
@@ -2267,7 +2268,7 @@
     table$addColumnInfo(name = "N.units", title = gettext("Value"), type = "number")
     table$addColumnInfo(name = "n.items", title = gettext("Selected items"), type = "integer")
     table$addColumnInfo(name = "n.units", title = gettext("Selected units"), type = "integer")
-    table$addColumnInfo(name = "value", title = gettext("Selection value"), type = "number")
+    table$addColumnInfo(name = "value", title = gettext("Selection value"), type = "number", format = "monetary")
     table$addColumnInfo(name = "percentage", title = gettextf("%% of total value"), type = "string")
 
     intervalFactor <- if (options[["sampling_method"]] == "cell") gettext("twice the") else gettext("a single")
@@ -2341,7 +2342,7 @@
       if (i %in% c(1, 2)) {
         table$addColumnInfo(name = variables[i], type = "integer", title = variables[i])
       } else if (variables[i] == options[["values"]] || variables[i] == options[["rank"]]) {
-        table$addColumnInfo(name = variables[i], type = "number", title = variables[i])
+        table$addColumnInfo(name = variables[i], type = "number", title = variables[i], format = "monetary")
       } else {
         table$addColumnInfo(name = variables[i], type = "string", title = variables[i])
       }
@@ -2774,20 +2775,21 @@
   ))
 
   columnType <- if (options[["display"]] == "percent") "string" else "number"
+  columnFormat <- if (options[["display"]] == "amount") "monetary" else NULL
   table$addColumnInfo(name = "null", title = "", type = "string")
   if (options[["materiality_test"]]) {
     if (options[["workflow"]] && options[["overallMateriality"]]) {
-      table$addColumnInfo(name = "overall", title = gettext("Overall materiality"), type = columnType)
+      table$addColumnInfo(name = "overall", title = gettext("Overall materiality"), type = columnType, format = columnFormat)
     }
-    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType)
+    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType, format = columnFormat)
   }
   if (options[["min_precision_test"]]) {
-    table$addColumnInfo(name = "min_precision", title = gettext("Min. precision"), type = columnType)
+    table$addColumnInfo(name = "min_precision", title = gettext("Min. precision"), type = columnType, format = columnFormat)
   }
   table$addColumnInfo(name = "n", title = gettext("Sample size"), type = "integer")
   table$addColumnInfo(name = "x", title = gettext("Misstatements"), type = "integer")
   table$addColumnInfo(name = "t", title = gettext("Taint"), type = columnType)
-  table$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = columnType)
+  table$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = columnType, format = columnFormat)
 
   if (!options[["bayesian"]]) {
     alpha <- .jfaAuditRiskModelCalculation(options)[["dr"]]
@@ -2796,16 +2798,16 @@
   }
 
   if (options[["area"]] == "less") {
-    table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round((1 - alpha) * 100, 2)), type = columnType)
+    table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round((1 - alpha) * 100, 2)), type = columnType, format = columnFormat)
   } else if (options[["area"]] == "greater") {
-    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", round((1 - alpha) * 100, 2)), type = columnType)
+    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", round((1 - alpha) * 100, 2)), type = columnType, format = columnFormat)
   } else {
     uppertitle <- round((1 - (1 - (1 - alpha)) / 2) * 100, 2)
-    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - uppertitle), type = columnType)
-    table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", uppertitle), type = columnType)
+    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - uppertitle), type = columnType, format = columnFormat)
+    table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", uppertitle), type = columnType, format = columnFormat)
   }
 
-  table$addColumnInfo(name = "precision", title = gettext("Precision"), type = columnType)
+  table$addColumnInfo(name = "precision", title = gettext("Precision"), type = columnType, format = columnFormat)
   if (!options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
     table$addColumnInfo(name = "p", title = gettext("p-value"), type = "pvalue")
   } else if (options[["bayesian"]] && options[["materiality_test"]]) {
@@ -3029,11 +3031,11 @@
 
   tb$addColumnInfo(name = "id", title = gettext("ID"), type = "string")
   if (options[["values"]] != "") {
-    tb$addColumnInfo(name = "values", title = gettext("Book value"), type = "number")
+    tb$addColumnInfo(name = "values", title = gettext("Book value"), type = "number", format = "monetary")
   }
   if (!binary) {
-    tb$addColumnInfo(name = "values.audit", title = gettext("Audit value"), type = "number")
-    tb$addColumnInfo(name = "diff", title = gettext("Difference"), type = "number")
+    tb$addColumnInfo(name = "values.audit", title = gettext("Audit value"), type = "number", format = "monetary")
+    tb$addColumnInfo(name = "diff", title = gettext("Difference"), type = "number", format = "monetary")
   }
   tb$addColumnInfo(name = "taint", title = gettext("Taint"), type = "number")
   tb$addColumnInfo(name = "times", title = gettext("Counted"), type = "string")
@@ -3482,9 +3484,10 @@
   table$position <- positionInContainer
   table$dependOn(options = c("tableCorrections", "display"))
   columnType <- if (options[["display"]] == "percent") "string" else "number"
+  columnFormat <- if (options[["display"]] == "amount") "monetary" else NULL
 
   table$addColumnInfo(name = "name", title = "", type = columnType)
-  table$addColumnInfo(name = "correction", title = gettext("Correction"), type = columnType)
+  table$addColumnInfo(name = "correction", title = gettext("Correction"), type = columnType, format = columnFormat)
 
   message <- if (!options[["materiality_test"]] && options[["min_precision_test"]]) " minus the minimum precision" else ""
   table$addFootnote(gettextf("The correction to achieve no misstatements is the upper bound%1$s.", message))
