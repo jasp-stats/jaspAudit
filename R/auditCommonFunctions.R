@@ -1397,10 +1397,6 @@
     "low" = tb[3, 4],
     "custom" = options[["carCustom"]]
   )
-  # Formulate decimal values as percentages
-  tb$ir <- paste0(round(tb$ir * 100, 4), "%")
-  tb$cr <- paste0(round(tb$cr * 100, 4), "%")
-  tb$car <- paste0(round(tb$car * 100, 4), "%")
   # Audit risk 		= Inherent risk x Control risk x Analytical risk x Detection risk
   # Detection risk 	= Audit risk / (Inherent risk x Control risk x Analytical risk)
   dr <- ar / (ir * cr * car)
@@ -1475,9 +1471,9 @@
     .jfaTableNumberUpdate(jaspResults)
     tb <- createJaspTable(gettextf("<b>Table %1$i.</b> Default Settings Audit Risk Model", jaspResults[["tabNumber"]]$object))
     tb$addColumnInfo(name = "category", title = "", type = "string")
-    tb$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = "string")
-    tb$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "string")
-    tb$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = "string")
+    tb$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = "number", format = "pc")
+    tb$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "number", format = "pc")
+    tb$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = "number", format = "pc")
     tb$position <- 4
     tb$addFootnote(gettext("= Selected"), colNames = "ir", rowNames = switch(options[["ir"]],
       "high" = "1",
@@ -1609,27 +1605,27 @@
     "by",
     "display"
   ))
-  columnType <- if (options[["display"]] == "percent") "string" else "number"
-  columnFormat <- if (options[["display"]] == "amount") "monetary" else NULL
+  columnFormat <- if (options[["display"]] == "percent") "pc" else "number"
+  expectedColumnType <- if (options[["expected_type"]] == "expected_all") "string" else "number"
 
   # Add columns to table layout
   table$addColumnInfo(name = "null", title = "", type = "string")
   if (options[["materiality_test"]]) {
-    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType, format = columnFormat)
+    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = "number", format = columnFormat)
   }
   if (options[["min_precision_test"]]) {
-    table$addColumnInfo(name = "precision", title = gettext("Min. precision"), type = columnType, format = columnFormat)
+    table$addColumnInfo(name = "precision", title = gettext("Min. precision"), type = "number", format = columnFormat)
   }
   if (options[["materiality_test"]] && options[["prior_method"]] == "arm") {
-    table$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = columnType)
-    table$addColumnInfo(name = "cr", title = gettext("Control risk"), type = columnType)
-    table$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = columnType)
-    table$addColumnInfo(name = "dr", title = gettext("Detection risk"), type = columnType)
+    table$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = "number", format = columnFormat)
+    table$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "number", format = columnFormat)
+    table$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = "number", format = columnFormat)
+    table$addColumnInfo(name = "dr", title = gettext("Detection risk"), type = "number", format = columnFormat)
   } else {
-    table$addColumnInfo(name = "ar", title = gettext("Audit risk"), type = columnType)
+    table$addColumnInfo(name = "ar", title = gettext("Audit risk"), type = "number", format = columnFormat)
   }
 
-  table$addColumnInfo(name = "x", title = gettext("Tolerable misstatements"), type = if (options[["expected_type"]] == "expected_all") "string" else "number")
+  table$addColumnInfo(name = "x", title = gettext("Tolerable misstatements"), type = expectedColumnType)
   table$addColumnInfo(name = "n", title = gettext("Minimum sample size"), type = "integer")
 
   parentContainer[["summaryTable"]] <- table
@@ -1655,26 +1651,17 @@
     row <- data.frame(x = ".", n = ".")
 
     if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
-      materiality <- if (options[["display"]] == "percent") paste0(round(parentOptions[["materiality_val"]] * 100, 2), "%") else parentOptions[["materiality_val"]]
-      row <- cbind(row, materiality = materiality)
+      row <- cbind(row, materiality = parentOptions[["materiality_val"]])
     } else if (!options[["materiality_test"]] && options[["min_precision_test"]]) {
-      min_precision <- if (options[["display"]] == "percent") paste0(round(options[["min_precision_rel_val"]] * 100, 2), "%") else parentOptions[["min_precision_rel_val"]]
-      row <- cbind(row, precision = min_precision)
+      row <- cbind(row, precision = parentOptions[["min_precision_rel_val"]])
     } else if (options[["materiality_test"]] && options[["min_precision_test"]]) {
-      materiality <- if (options[["display"]] == "percent") paste0(round(parentOptions[["materiality_val"]] * 100, 2), "%") else parentOptions[["materiality_val"]]
-      min_precision <- if (options[["display"]] == "percent") paste0(round(options[["min_precision_rel_val"]] * 100, 2), "%") else parentOptions[["min_precision_rel_val"]]
-      row <- cbind(row, materiality = materiality, precision = min_precision)
+      row <- cbind(row, materiality = parentOptions[["materiality_val"]], precision = parentOptions[["min_precision_rel_val"]])
     }
 
     if (options[["materiality_test"]] && options[["prior_method"]] == "arm") {
-      row <- cbind(row,
-        ir = if (options[["display"]] == "percent") paste0(round(risks[["ir"]] * 100, 2), "%") else risks[["ir"]],
-        cr = if (options[["display"]] == "percent") paste0(round(risks[["cr"]] * 100, 2), "%") else risks[["cr"]],
-        car = if (options[["display"]] == "percent") paste0(round(risks[["car"]] * 100, 2), "%") else risks[["car"]],
-        dr = if (options[["display"]] == "percent") paste0(round(risks[["dr"]] * 100, 2), "%") else risks[["dr"]]
-      )
+      row <- cbind(row, ir = risks[["ir"]], cr = risks[["cr"]], car = risks[["car"]], dr = risks[["dr"]])
     } else {
-      row <- cbind(row, ar = if (options[["display"]] == "percent") paste0(round(risks[["ar"]] * 100, 2), "%") else risks[["ar"]])
+      row <- cbind(row, ar = risks[["ar"]])
     }
 
     table$addRows(row)
@@ -1720,26 +1707,17 @@
   row <- data.frame(x = x, n = n)
 
   if (options[["materiality_test"]] && !options[["min_precision_test"]]) {
-    materiality <- if (options[["display"]] == "percent") paste0(round(parentOptions[["materiality_val"]] * 100, 2), "%") else parentOptions[["materiality_val"]]
-    row <- cbind(row, materiality = materiality)
+    row <- cbind(row, materiality = parentOptions[["materiality_val"]])
   } else if (!options[["materiality_test"]] && options[["min_precision_test"]]) {
-    min_precision <- if (options[["display"]] == "percent") paste0(round(options[["min_precision_rel_val"]] * 100, 2), "%") else parentOptions[["min_precision_rel_val"]]
-    row <- cbind(row, precision = min_precision)
+    row <- cbind(row, precision = parentOptions[["min_precision_rel_val"]])
   } else if (options[["materiality_test"]] && options[["min_precision_test"]]) {
-    materiality <- if (options[["display"]] == "percent") paste0(round(parentOptions[["materiality_val"]] * 100, 2), "%") else parentOptions[["materiality_val"]]
-    min_precision <- if (options[["display"]] == "percent") paste0(round(options[["min_precision_rel_val"]] * 100, 2), "%") else parentOptions[["min_precision_rel_val"]]
-    row <- cbind(row, materiality = materiality, precision = min_precision)
+    row <- cbind(row, materiality = parentOptions[["materiality_val"]], precision = parentOptions[["min_precision_rel_val"]])
   }
 
   if (options[["materiality_test"]] && options[["prior_method"]] == "arm") {
-    row <- cbind(row,
-      ir = if (options[["display"]] == "percent") paste0(round(risks[["ir"]] * 100, 2), "%") else risks[["ir"]],
-      cr = if (options[["display"]] == "percent") paste0(round(risks[["cr"]] * 100, 2), "%") else risks[["cr"]],
-      car = if (options[["display"]] == "percent") paste0(round(risks[["car"]] * 100, 2), "%") else risks[["car"]],
-      dr = if (options[["display"]] == "percent") paste0(round(risks[["dr"]] * 100, 2), "%") else risks[["dr"]]
-    )
+    row <- cbind(row, ir = risks[["ir"]], cr = risks[["cr"]], car = risks[["car"]], dr = risks[["dr"]])
   } else {
-    row <- cbind(row, ar = if (options[["display"]] == "percent") paste0(round(risks[["ar"]] * 100, 2), "%") else risks[["ar"]])
+    row <- cbind(row, ar = risks[["ar"]])
   }
 
   table$addRows(cbind(null = gettext("Value"), row))
@@ -2211,9 +2189,9 @@
   table$addColumnInfo(name = "items", title = gettext("No. items"), type = "integer")
   if (options[["units"]] == "values") {
     table$addColumnInfo(name = "value", title = gettext("Selection value"), type = "number", format = "monetary")
-    table$addColumnInfo(name = "percentage", title = gettextf("%% of population value"), type = "string")
+    table$addColumnInfo(name = "percentage", title = gettextf("%% of population value"), type = "number", format = "pc")
   } else {
-    table$addColumnInfo(name = "percentage", title = gettextf("%% of population size"), type = "string")
+    table$addColumnInfo(name = "percentage", title = gettextf("%% of population size"), type = "number", format = "pc")
   }
 
   parentContainer[["tableSelection"]] <- table
@@ -2240,7 +2218,7 @@
   if (options[["units"]] == "values") {
     row[["value"]] <- sum(abs(parentState[["sample"]][[options[["values"]]]]))
   }
-  row[["percentage"]] <- if (options[["units"]] == "values") paste0(round(row[["value"]] / parentState[["N.units"]] * 100, 2), "%") else paste0(round(parentState[["n.units"]] / parentState[["N.units"]] * 100, 2), "%")
+  row[["percentage"]] <- if (options[["units"]] == "values") row[["value"]] / parentState[["N.units"]] else parentState[["n.units"]] / parentState[["N.units"]]
 
   table$addRows(row)
 }
@@ -2269,7 +2247,7 @@
     table$addColumnInfo(name = "n.items", title = gettext("Selected items"), type = "integer")
     table$addColumnInfo(name = "n.units", title = gettext("Selected units"), type = "integer")
     table$addColumnInfo(name = "value", title = gettext("Selection value"), type = "number", format = "monetary")
-    table$addColumnInfo(name = "percentage", title = gettextf("%% of total value"), type = "string")
+    table$addColumnInfo(name = "percentage", title = gettextf("%% of total value"), type = "number", format = "pc")
 
     intervalFactor <- if (options[["sampling_method"]] == "cell") gettext("twice the") else gettext("a single")
     table$addFootnote(message = gettextf("The top stratum consists of all items with a book value larger than %1$s interval.", intervalFactor))
@@ -2309,9 +2287,9 @@
       n.items = c(nrow(top_stratum) + nrow(bottom_stratum_sample), nrow(top_stratum), nrow(bottom_stratum_sample)),
       value = c(bottom_stratum_value + top_stratum_value, top_stratum_value, bottom_stratum_value),
       percentage = c(
-        paste0(round((bottom_stratum_value + top_stratum_value) / parentState[["N.units"]] * 100, 2), "%"),
-        if (nrow(top_stratum) == 0) "0%" else "100%",
-        paste0(round(bottom_stratum_value / bottom_stratum_value_pop * 100, 2), "%")
+        (bottom_stratum_value + top_stratum_value) / parentState[["N.units"]],
+        if (nrow(top_stratum) == 0) 0 else 1,
+        bottom_stratum_value / bottom_stratum_value_pop
       )
     )
 
@@ -2774,22 +2752,25 @@
     "overallMateriality", "overallMaterialityType", "overallMaterialityPercentage", "overallMaterialityAmount"
   ))
 
-  columnType <- if (options[["display"]] == "percent") "string" else "number"
-  columnFormat <- if (options[["display"]] == "amount") "monetary" else NULL
+  columnFormat <- switch(options[["display"]],
+    "percent" = "pc",
+    "amount" = "monetary",
+    "number" = "number"
+  )
   table$addColumnInfo(name = "null", title = "", type = "string")
   if (options[["materiality_test"]]) {
     if (options[["workflow"]] && options[["overallMateriality"]]) {
-      table$addColumnInfo(name = "overall", title = gettext("Overall materiality"), type = columnType, format = columnFormat)
+      table$addColumnInfo(name = "overall", title = gettext("Overall materiality"), type = "number", format = columnFormat)
     }
-    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = columnType, format = columnFormat)
+    table$addColumnInfo(name = "materiality", title = gettext("Performance materiality"), type = "number", format = columnFormat)
   }
   if (options[["min_precision_test"]]) {
-    table$addColumnInfo(name = "min_precision", title = gettext("Min. precision"), type = columnType, format = columnFormat)
+    table$addColumnInfo(name = "min_precision", title = gettext("Min. precision"), type = "number", format = columnFormat)
   }
   table$addColumnInfo(name = "n", title = gettext("Sample size"), type = "integer")
   table$addColumnInfo(name = "x", title = gettext("Misstatements"), type = "integer")
-  table$addColumnInfo(name = "t", title = gettext("Taint"), type = columnType)
-  table$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = columnType, format = columnFormat)
+  table$addColumnInfo(name = "t", title = gettext("Taint"), type = "number")
+  table$addColumnInfo(name = "mle", title = gettext("Most likely misstatement"), type = "number", format = columnFormat)
 
   if (!options[["bayesian"]]) {
     alpha <- .jfaAuditRiskModelCalculation(options)[["dr"]]
@@ -2798,16 +2779,16 @@
   }
 
   if (options[["area"]] == "less") {
-    table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round((1 - alpha) * 100, 2)), type = columnType, format = columnFormat)
+    table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", round((1 - alpha) * 100, 2)), type = "number", format = columnFormat)
   } else if (options[["area"]] == "greater") {
-    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", round((1 - alpha) * 100, 2)), type = columnType, format = columnFormat)
+    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", round((1 - alpha) * 100, 2)), type = "number", format = columnFormat)
   } else {
     uppertitle <- round((1 - (1 - (1 - alpha)) / 2) * 100, 2)
-    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - uppertitle), type = columnType, format = columnFormat)
-    table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", uppertitle), type = columnType, format = columnFormat)
+    table$addColumnInfo(name = "lb", title = gettextf("%1$s%% Lower bound", 100 - uppertitle), type = "number", format = columnFormat)
+    table$addColumnInfo(name = "ub", title = gettextf("%1$s%% Upper bound", uppertitle), type = "number", format = columnFormat)
   }
 
-  table$addColumnInfo(name = "precision", title = gettext("Precision"), type = columnType, format = columnFormat)
+  table$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number", format = columnFormat)
   if (!options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
     table$addColumnInfo(name = "p", title = gettext("p-value"), type = "pvalue")
   } else if (options[["bayesian"]] && options[["materiality_test"]]) {
@@ -2871,74 +2852,34 @@
   table[["null"]] <- gettext("Value")
   table[["n"]] <- parentState[["n"]]
   table[["x"]] <- parentState[["x"]]
-  table[["t"]] <- if (options[["display"]] == "percent") paste0(round(parentState[["t"]] / parentState[["n"]] * 100, 3), "%") else parentState[["t"]]
+  table[["t"]] <- if (options[["display"]] == "percent") parentState[["t"]] / parentState[["n"]] else parentState[["t"]]
 
   if (options[["materiality_test"]]) {
-    table[["materiality"]] <- switch(options[["display"]],
-      "number" = prevOptions[["materiality_val"]],
-      "percent" = paste0(round(prevOptions[["materiality_val"]] * 100, 3), "%"),
-      "amount" = prevOptions[["materiality_val"]] * parentState[["N.units"]]
-    )
+    table[["materiality"]] <- if (options[["display"]] == "amount") prevOptions[["materiality_val"]] * parentState[["N.units"]] else prevOptions[["materiality_val"]]
     if (options[["workflow"]] && options[["overallMateriality"]]) {
-      table[["overall"]] <- switch(options[["display"]],
-        "number" = if (options[["overallMaterialityType"]] == "overallMaterialityAbsolute") options[["overallMaterialityAmount"]] / parentState[["N.units"]] else options[["overallMaterialityPercentage"]],
-        "percent" = if (options[["overallMaterialityType"]] == "overallMaterialityAbsolute") paste0(round(options[["overallMaterialityAmount"]] / parentState[["N.units"]] * 100, 3), "%") else paste0(round(options[["overallMaterialityPercentage"]] * 100, 3), "%"),
-        "amount" = if (options[["overallMaterialityType"]] == "overallMaterialityAbsolute") options[["overallMaterialityAmount"]] else options[["overallMaterialityPercentage"]] * parentState[["N.units"]]
-      )
+      if (options[["display"]] == "amount") {
+        table[["overall"]] <- if (options[["overallMaterialityType"]] == "overallMaterialityAbsolute") options[["overallMaterialityAmount"]] else options[["overallMaterialityPercentage"]] * parentState[["N.units"]]
+      } else {
+        table[["overall"]] <- if (options[["overallMaterialityType"]] == "overallMaterialityAbsolute") options[["overallMaterialityAmount"]] / parentState[["N.units"]] else options[["overallMaterialityPercentage"]]
+      }
     }
   }
 
   if (options[["min_precision_test"]]) {
-    table[["min_precision"]] <- switch(options[["display"]],
-      "number" = options[["min_precision_rel_val"]],
-      "percent" = paste0(round(options[["min_precision_rel_val"]] * 100, 3), "%"),
-      "amount" = options[["min_precision_rel_val"]] * parentState[["N.units"]]
-    )
+    table[["min_precision"]] <- if (options[["display"]] == "amount") options[["min_precision_rel_val"]] * parentState[["N.units"]] else options[["min_precision_rel_val"]]
   }
 
   if (parentState[["method"]] %in% c("direct", "difference", "quotient", "regression")) {
     # These methods method give estimates in monetary units, so to get decimal numbers we divide by N
-    table[["mle"]] <- switch(options[["display"]],
-      "number" = parentState[["mle"]] / parentState[["N.units"]],
-      "percent" = paste0(round(parentState[["mle"]] / parentState[["N.units"]] * 100, 3), "%"),
-      "amount" = parentState[["mle"]]
-    )
-    table[["lb"]] <- switch(options[["display"]],
-      "number" = parentState[["lb"]] / parentState[["N.units"]],
-      "percent" = paste0(round(parentState[["lb"]] / parentState[["N.units"]] * 100, 3), "%"),
-      "amount" = parentState[["lb"]]
-    )
-    table[["ub"]] <- switch(options[["display"]],
-      "number" = parentState[["ub"]] / parentState[["N.units"]],
-      "percent" = paste0(round(parentState[["ub"]] / parentState[["N.units"]] * 100, 3), "%"),
-      "amount" = parentState[["ub"]]
-    )
-    table[["precision"]] <- switch(options[["display"]],
-      "number" = parentState[["precision"]] / parentState[["N.units"]],
-      "percent" = paste0(round(parentState[["precision"]] / parentState[["N.units"]] * 100, 3), "%"),
-      "amount" = parentState[["precision"]]
-    )
+    table[["mle"]] <- if (options[["display"]] == "amount") parentState[["mle"]] else parentState[["mle"]] / parentState[["N.units"]]
+    table[["lb"]] <- if (options[["display"]] == "amount") parentState[["lb"]] else parentState[["lb"]] / parentState[["N.units"]]
+    table[["ub"]] <- if (options[["display"]] == "amount") parentState[["ub"]] else parentState[["ub"]] / parentState[["N.units"]]
+    table[["precision"]] <- if (options[["display"]] == "amount") parentState[["precision"]] else parentState[["precision"]] / parentState[["N.units"]]
   } else {
-    table[["mle"]] <- switch(options[["display"]],
-      "number" = parentState[["mle"]],
-      "percent" = paste0(round(parentState[["mle"]] * 100, 3), "%"),
-      "amount" = parentState[["mle"]] * parentState[["N.units"]]
-    )
-    table[["lb"]] <- switch(options[["display"]],
-      "number" = parentState[["lb"]],
-      "percent" = paste0(round(parentState[["lb"]] * 100, 3), "%"),
-      "amount" = parentState[["lb"]] * parentState[["N.units"]]
-    )
-    table[["ub"]] <- switch(options[["display"]],
-      "number" = parentState[["ub"]],
-      "percent" = paste0(round(parentState[["ub"]] * 100, 3), "%"),
-      "amount" = parentState[["ub"]] * parentState[["N.units"]]
-    )
-    table[["precision"]] <- switch(options[["display"]],
-      "number" = parentState[["precision"]],
-      "percent" = paste0(round(parentState[["precision"]] * 100, 3), "%"),
-      "amount" = parentState[["precision"]] * parentState[["N.units"]]
-    )
+    table[["mle"]] <- if (options[["display"]] == "amount") parentState[["mle"]] * parentState[["N.units"]] else parentState[["mle"]]
+    table[["lb"]] <- if (options[["display"]] == "amount") parentState[["lb"]] * parentState[["N.units"]] else parentState[["lb"]]
+    table[["ub"]] <- if (options[["display"]] == "amount") parentState[["ub"]] * parentState[["N.units"]] else parentState[["ub"]]
+    table[["precision"]] <- if (options[["display"]] == "amount") parentState[["precision"]] * parentState[["N.units"]] else parentState[["precision"]]
   }
 
   if (!options[["bayesian"]] && options[["materiality_test"]] && options[["method"]] %in% c("poisson", "binomial", "hypergeometric")) {
@@ -3483,11 +3424,14 @@
   table <- createJaspTable(title)
   table$position <- positionInContainer
   table$dependOn(options = c("tableCorrections", "display"))
-  columnType <- if (options[["display"]] == "percent") "string" else "number"
-  columnFormat <- if (options[["display"]] == "amount") "monetary" else NULL
+  columnFormat <- switch(options[["display"]],
+    "percent" = "pc",
+    "amount" = "monetary",
+    "number" = "number"
+  )
 
-  table$addColumnInfo(name = "name", title = "", type = columnType)
-  table$addColumnInfo(name = "correction", title = gettext("Correction"), type = columnType, format = columnFormat)
+  table$addColumnInfo(name = "name", title = "", type = "string")
+  table$addColumnInfo(name = "correction", title = gettext("Correction"), type = "number", format = columnFormat)
 
   message <- if (!options[["materiality_test"]] && options[["min_precision_test"]]) " minus the minimum precision" else ""
   table$addFootnote(gettextf("The correction to achieve no misstatements is the upper bound%1$s.", message))
@@ -3514,11 +3458,7 @@
     correction <- prevState[["ub"]]
   }
 
-  correction <- switch(options[["display"]],
-    "number" = correction,
-    "percent" = paste0(round(correction * 100, 3), "%"),
-    "amount" = correction * N
-  )
+  correction <- if (options[["display"]] == "amount") correction * N else correction
 
   rows <- data.frame(name = name, correction = correction)
   table$addRows(rows)

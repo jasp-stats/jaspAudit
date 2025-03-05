@@ -114,22 +114,22 @@ test_that("<b>Table 1.</b> Descriptive Statistics for Book Values results match"
   )
 })
 
-test_that("<b>Table 4.</b> Information about Monetary Interval Selection results match", {
+test_that("<b>Table 5.</b> Information about Monetary Interval Selection results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
     list(
-      3500, 1403220.82, 231, 231, "8.2%", "Total", 115090.76, 0, 0,
-      0, 0, "0%", "Top stratum", 0, 3500, 1403220.82, 231, 231, "8.2%",
-      "Bottom stratum", 115090.76
+      3500, 1403220.82, 231, 231, 0.082018993988416, "Total", 115090.76,
+      0, 0, 0, 0, 0, "Top stratum", 0, 3500, 1403220.82, 231, 231,
+      0.082018993988416, "Bottom stratum", 115090.76
     )
   )
 })
 
-test_that("<b>Table 3.</b> Selection Summary results match", {
+test_that("<b>Table 4.</b> Selection Summary results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(231, "8.2%", 231, 115090.76)
+    list(231, 0.082018993988416, 231, 115090.76)
   )
 })
