@@ -175,9 +175,9 @@ test_that("<b>Table 5.</b> Information about Monetary Interval Selection results
   jaspTools::expect_equal_tables(
     table,
     list(
-      3500, 1403220.82, 228, 228, "8.36%", "Total", 117311.64, 0, 0,
-      0, 0, "0%", "Top stratum", 0, 3500, 1403220.82, 228, 228, "8.36%",
-      "Bottom stratum", 117311.64
+      3500, 1403220.82, 228, 228, 0.0836016957046006, "Total", 117311.64,
+      0, 0, 0, 0, 0, "Top stratum", 0, 3500, 1403220.82, 228, 228,
+      0.0836016957046006, "Bottom stratum", 117311.64
     )
   )
 })
@@ -186,6 +186,6 @@ test_that("<b>Table 4.</b> Selection Summary results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(228, "8.36%", 228, 117311.64)
+    list(228, 0.0836016957046006, 228, 117311.64)
   )
 })

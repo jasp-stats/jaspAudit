@@ -71,7 +71,7 @@ test_that("<b>Table 7.</b> Corrections to Population results match", {
   table <- results[["results"]][["conclusionContainer"]][["collection"]][["conclusionContainer_tableCorrections"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list("17.276%", "No misstatements with 2% precision")
+    list(0.172763886786691, "No misstatements with 2% precision")
   )
 })
 
@@ -91,8 +91,8 @@ test_that("<b>Table 5.</b> Evaluation Summary results match", {
   jaspTools::expect_equal_tables(
     table,
     list(
-      "0%", "2%", "17.645%", 130, "Value", "1.631%", "18.037%", "19.276%",
-      68
+      0, 0.02, 0.176454604800287, 130, "Value", 0.0163092819864046,
+      0.180372217416923, 0.192763886786691, 68
     )
   )
 })
@@ -101,7 +101,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list("5%", 130, "Value", "2%", "0 - 130")
+    list(0.05, 130, "Value", 0.02, "0 - 130")
   )
 })
 
@@ -110,9 +110,9 @@ test_that("<b>Table 3.</b> Information about Monetary Interval Selection results
   jaspTools::expect_equal_tables(
     table,
     list(
-      238, 601292.058, 123, 130, "74.06%", "Total", 445302.2378, 32,
-      185700.846, 32, 39, "100%", "Top stratum", 185700.846, 206,
-      415591.212, 91, 91, "62.47%", "Bottom stratum", 259601.3918
+      238, 601292.058, 123, 130, 0.740575618579016, "Total", 445302.2378,
+      32, 185700.846, 32, 39, 1, "Top stratum", 185700.846, 206, 415591.212,
+      91, 91, 0.624655633478602, "Bottom stratum", 259601.3918
     )
   )
 })
@@ -171,7 +171,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(123, "74.06%", 130, 445302.2378)
+    list(123, 0.740575618579017, 130, 445302.2378)
   )
 })
 
@@ -245,7 +245,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list("5%", 75, "Value", "2%", "0 - 75")
+    list(0.05, 75, "Value", 0.02, "0 - 75")
   )
 })
 
@@ -254,9 +254,9 @@ test_that("<b>Table 3.</b> Information about Monetary Interval Selection results
   jaspTools::expect_equal_tables(
     table,
     list(
-      120, 443865.098571, 64, 75, "79.13%", "Total", 351213.1, 23, 206189.14,
-      23, 34, "100%", "Top stratum", 206189.14, 97, 237675.958571,
-      41, 41, "61.02%", "Bottom stratum", 145023.96
+      120, 443865.098571, 64, 75, 0.791260905916487, "Total", 351213.1,
+      23, 206189.14, 23, 34, 1, "Top stratum", 206189.14, 97, 237675.958571,
+      41, 41, 0.610175134548485, "Bottom stratum", 145023.96
     )
   )
 })
@@ -294,7 +294,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(64, "79.13%", 75, 351213.1)
+    list(64, 0.791260905916487, 75, 351213.1)
   )
 })
 
@@ -367,7 +367,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list("5%", 25, "Value", "2%", "0 - 25")
+    list(0.05, 25, "Value", 0.02, "0 - 25")
   )
 })
 
@@ -376,9 +376,9 @@ test_that("<b>Table 3.</b> Information about Monetary Interval Selection results
   jaspTools::expect_equal_tables(
     table,
     list(
-      17, 102270.276135, 8, 25, "97.13%", "Total", 99336.784375, 3,
-      84030.93125, 3, 20, "100%", "Top stratum", 84030.93125, 14,
-      18239.344885, 5, 5, "83.92%", "Bottom stratum", 15305.853125
+      17, 102270.276135, 8, 25, 0.971316282004287, "Total", 99336.784375,
+      3, 84030.93125, 3, 20, 1, "Top stratum", 84030.93125, 14, 18239.344885,
+      5, 5, 0.839166824329721, "Bottom stratum", 15305.853125
     )
   )
 })
@@ -399,7 +399,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(8, "97.13%", 25, 99336.784375)
+    list(8, 0.971316282004287, 25, 99336.784375)
   )
 })
 
@@ -473,7 +473,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list("5%", 60, "Value", "2%", "0 - 60")
+    list(0.05, 60, "Value", 0.02, "0 - 60")
   )
 })
 
@@ -482,9 +482,10 @@ test_that("<b>Table 3.</b> Information about Monetary Interval Selection results
   jaspTools::expect_equal_tables(
     table,
     list(
-      95, 617839.407382, 51, 60, "81.41%", "Total", 502960.443217, 24,
-      347324.50499, 24, 33, "100%", "Top stratum", 347324.50499, 71,
-      270514.902392, 27, 27, "57.53%", "Bottom stratum", 155635.938227
+      95, 617839.407382, 51, 60, 0.814063391243071, "Total", 502960.443217,
+      24, 347324.50499, 24, 33, 1, "Top stratum", 347324.50499, 71,
+      270514.902392, 27, 27, 0.575332215899403, "Bottom stratum",
+      155635.938227
     )
   )
 })
@@ -520,7 +521,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(51, "81.41%", 60, 502960.443217)
+    list(51, 0.814063391243071, 60, 502960.443217)
   )
 })
 
@@ -594,7 +595,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list("5%", 25, "Value", "2%", "0 - 25")
+    list(0.05, 25, "Value", 0.02, "0 - 25")
   )
 })
 
@@ -603,9 +604,9 @@ test_that("<b>Table 3.</b> Information about Monetary Interval Selection results
   jaspTools::expect_equal_tables(
     table,
     list(
-      20, 148905.79, 10, 25, "90.09%", "Total", 134145.85, 3, 107900,
-      3, 18, "100%", "Top stratum", 107900, 17, 41005.79, 7, 7, "64.01%",
-      "Bottom stratum", 26245.85
+      20, 148905.79, 10, 25, 0.900877326529747, "Total", 134145.85,
+      3, 107900, 3, 18, 1, "Top stratum", 107900, 17, 41005.79, 7,
+      7, 0.640052295053942, "Bottom stratum", 26245.85
     )
   )
 })
@@ -626,7 +627,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(10, "90.09%", 25, 134145.85)
+    list(10, 0.900877326529747, 25, 134145.85)
   )
 })
 
@@ -700,7 +701,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list("5%", 45, "Value", "2%", "0 - 45")
+    list(0.05, 45, "Value", 0.02, "0 - 45")
   )
 })
 
@@ -709,9 +710,9 @@ test_that("<b>Table 3.</b> Information about Monetary Interval Selection results
   jaspTools::expect_equal_tables(
     table,
     list(
-      38, 157198.31, 23, 45, "84.03%", "Total", 132101.57, 8, 107542.71,
-      8, 30, "100%", "Top stratum", 107542.71, 30, 49655.6, 15, 15,
-      "49.46%", "Bottom stratum", 24558.86
+      38, 157198.31, 23, 45, 0.84034981037646, "Total", 132101.57, 8,
+      107542.71, 8, 30, 1, "Top stratum", 107542.71, 30, 49655.6,
+      15, 15, 0.494583893860914, "Bottom stratum", 24558.86
     )
   )
 })
@@ -736,7 +737,7 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(23, "84.03%", 45, 132101.57)
+    list(23, 0.84034981037646, 45, 132101.57)
   )
 })
 
@@ -811,7 +812,7 @@ test_that("<b>Table 1.</b> Planning Summary results match", {
   table <- results[["results"]][["planningContainer"]][["collection"]][["planningContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list("5%", 25, "Value", "2%", "0 - 25")
+    list(0.05, 25, "Value", 0.02, "0 - 25")
   )
 })
 
@@ -820,9 +821,9 @@ test_that("<b>Table 3.</b> Information about Monetary Interval Selection results
   jaspTools::expect_equal_tables(
     table,
     list(
-      20, 148905.79, 10, 25, "90.09%", "Total", 134145.85, 3, 107900,
-      3, 18, "100%", "Top stratum", 107900, 17, 41005.79, 7, 7, "64.01%",
-      "Bottom stratum", 26245.85
+      20, 148905.79, 10, 25, 0.900877326529747, "Total", 134145.85,
+      3, 107900, 3, 18, 1, "Top stratum", 107900, 17, 41005.79, 7,
+      7, 0.640052295053942, "Bottom stratum", 26245.85
     )
   )
 })
@@ -844,6 +845,6 @@ test_that("<b>Table 2.</b> Selection Summary results match", {
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(10, "90.09%", 25, 134145.85)
+    list(10, 0.900877326529747, 25, 134145.85)
   )
 })

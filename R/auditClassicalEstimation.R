@@ -128,23 +128,27 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   regressionTable$addColumnInfo(
     name = "estimate",
     title = gettextf("Estimate %1$s", "W&#770"),
-    type = "number"
+    type = "number",
+    format = "monetary"
   )
   regressionTable$addColumnInfo(
     name = "uncertainty",
     title = gettext("Uncertainty"),
-    type = "number"
+    type = "number",
+    format = "monetary"
   )
   regressionTable$addColumnInfo(
     name = "lower",
     title = gettext("Lower"),
     type = "number",
+    format = "monetary",
     overtitle = gettextf("%1$s%% Confidence interval", round(options[["confidence"]] * 100, 2))
   )
   regressionTable$addColumnInfo(
     name = "upper",
     title = gettext("Upper"),
     type = "number",
+    format = "monetary",
     overtitle = gettextf("%1$s%% Confidence interval", round(options[["confidence"]] * 100, 2))
   )
 
@@ -761,17 +765,18 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   requiredSampleSizeTable$addColumnInfo(
     name = "uncertainty",
     title = gettext("Uncertainty"),
-    type = "string"
+    type = "number",
+    format = "monetary"
   )
   requiredSampleSizeTable$addColumnInfo(
     name = "n",
     title = gettext("Required <i>n</i>"),
-    type = "string"
+    type = "integer"
   )
   requiredSampleSizeTable$addColumnInfo(
     name = "nextra",
     title = gettext("Additional <i>n</i>"),
-    type = "string"
+    type = "integer"
   )
 
   requiredSampleSizeTable[["estimator"]] <- title

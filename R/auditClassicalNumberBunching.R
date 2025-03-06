@@ -310,7 +310,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
 
     table$addColumnInfo(name = "values", title = gettext("Value"), type = "integer")
     table$addColumnInfo(name = "counts", title = gettext("Count"), type = "integer")
-    table$addColumnInfo(name = "percentage", title = gettext("Percentage"), type = "string")
+    table$addColumnInfo(name = "percentage", title = gettext("Percentage"), type = "number", format = "pc")
 
     numberBunchingContainer[["numberBunchingTable"]] <- table
 
@@ -322,7 +322,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     tab <- table(variable)
     values <- as.numeric(names(tab))
     counts <- as.numeric(tab)
-    percentage <- paste0(round(counts / length(variable) * 100, 2), "%")
+    percentage <- counts / length(variable)
 
     row <- data.frame(
       values = values,
