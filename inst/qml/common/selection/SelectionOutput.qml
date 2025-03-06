@@ -44,7 +44,7 @@ Group
 		{
 			text:				qsTr("Order by book value")
 			name:				"tableSampleSort"
-			info:				qstr("Order the selected transactions in the table from largest to smallest based on their book value.")
+			info:				qsTr("Order the selected transactions in the table from largest to smallest based on their book value.")
 			enabled:			enable_order
 
 			RadioButtonGroup
