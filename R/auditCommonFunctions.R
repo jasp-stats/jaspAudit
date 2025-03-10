@@ -740,7 +740,7 @@
       "min_precision_test", "min_precision_rel_val",
       "by", "prior_method", "prior_n", "prior_x", "alpha", "beta",
       "critical_items", "critical_negative", "critical_action",
-      "stratum", "pooling"
+      "stratum", "pooling", "hurdle", "mcmc.seed", "iter", "warmup", "chains"
     ))
 
     jaspResults[["evaluationContainer"]] <- container
@@ -2707,6 +2707,9 @@
       if (options[["method"]] == "stringer.binomial" && options[["lta"]]) {
         method <- "stringer.lta"
       }
+      if (options[["bayesian"]] && options[["hurdle"]] && options[["method"]] == "binomial") {
+        method <- "hurdle.beta"
+      }
 
       if (options[["separateMisstatement"]] && options[["values"]] != "" && options[["values.audit"]] != "") {
         result <- .jfaSeparatedMisstatementEvaluationState(options, sample, prior, planningOptions, evaluationContainer)
@@ -2818,6 +2821,9 @@
       "poisson" = gettext("The results are computed using the gamma distribution."),
       "hypergeometric" = gettext("The results are computed using the beta-binomial distribution.")
     )
+    if (!options[["workflow"]] && options[["hurdle"]] && options[["method"]] == "binomial") {
+       message <- gettext("The results are computed using the hurdle beta model")
+    }
   }
 
   # Custom message for stringer bound with LTA
@@ -3198,7 +3204,7 @@
 
       if (options[["display"]] == "amount") {
         yLabels <- format(yBreaks, scientific = FALSE)
-        valueLabels <- round(values)
+        valueLabels <- format(round(values), scientific = FALSE)
       } else {
         yLabels <- paste0(round(yBreaks * 100, 2), "%")
         valueLabels <- paste0(round(values * 100, 2), "%")
@@ -3215,7 +3221,7 @@
           y = values, x = 1:length(values), label = valueLabels,
           size = 6, vjust = 0.5, hjust = -0.1
         ) +
-        ggplot2::scale_y_continuous(name = "", breaks = yBreaks, limits = yLimits, labels = yLabels) +
+        ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = yLimits, labels = yLabels) +
         jaspGraphs::geom_rangeframe(sides = "") +
         jaspGraphs::themeJaspRaw(legend.position = "none") +
         ggplot2::theme(
