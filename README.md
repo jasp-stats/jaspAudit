@@ -1,5 +1,3 @@
-<p align='center'><img src="man/figures/logo.svg" width="25%"/></p>
-
 # The Audit Module <img src='inst/icons/audit-module.svg' width='149' height='173' align='right'/>
 
 **JASP for Audit** (also known as the Audit module) is an add-on module for JASP that streamlines the process of statistical auditing. The Audit module offers a wide range of functionalities, including (but not limited to) planning, executing, evaluating, and documenting statistical audit samples. Specifically, it comprises analysis tools for determining sample sizes, selecting items using standard audit sampling methododology, and inferring the population misstatement based on the sample data or the summary statistics of the sample. Furthermore, the Audit module also includes tools for data auditing. The module provides Bayesian equivalents of most analyses, enabling users to incorporate pre-existing audit information into the statistical procedure. In all analyses, the Audit module provides comprehensive explanatory text that assists the auditor in understanding, documenting and communicating the statistical results.
@@ -12,7 +10,7 @@
 
 ## Articles
 
-In order to familiarize oneself with the Audit module, it is recommended to obtain and read the manual via this [download link](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf), or to view it online through this [link](https://github.com/jasp-stats/jaspAudit/blob/master/man/manual.pdf). A reference for the Audit module can be obtained from the accompanying academic article published in the *Journal of Open-Source Software*, which can be accessed through the following permanent link [https://doi.org/10.21105/joss.02733](https://doi.org/10.21105/joss.02733).
+In order to familiarize oneself with the Audit module, it is recommended to obtain and read the manual via this [download link](https://koenderks.github.io/jaum/JASP-for-Audit.pdf), or to view it online through this [link](https://koenderks.github.io/jaum/). A reference for the Audit module can be obtained from the accompanying academic article published in the *Journal of Open-Source Software*, which can be accessed through the following permanent link [https://doi.org/10.21105/joss.02733](https://doi.org/10.21105/joss.02733).
 
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.02733/status.svg)](https://doi.org/10.21105/joss.02733)
 

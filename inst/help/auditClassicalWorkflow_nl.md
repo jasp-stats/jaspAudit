@@ -3,7 +3,7 @@ Steekproefworkflow
 
 De taak van een auditor is een oordeel te vellen over de fout in een populatie. Als de gebruiker toegang heeft tot de ruwe populatiegegevens, kan deze de *audit workflow* gebruiken om te berekenen hoeveel steekproeven moeten worden geëvalueerd om een bepaalde betrouwbaarheid in zijn oordeel te krijgen. De gebruiker kan dan een steekproef nemen uit de populatie, deze posten inspecteren en controleren, en statistische conclusies trekken over de fout in de populatie. De steekproefworkflow leidt de gebruiker door het auditproces, waarbij onderweg de juiste berekeningskeuzes worden gemaakt.
 
-Zie de handleiding van de auditmodule (download [hier](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) voor meer gedetailleerde informatie over deze analyse.
+Zie de handleiding van de Audit module (lees [hier](https://koenderks.github.io/jaum/)) voor meer gedetailleerde informatie over deze analyse.
 
 ### Workflow
 ---
@@ -46,7 +46,7 @@ Wanneer de accountant over informatie beschikt die wijst op een laag risicoprofi
 
 *AR = IR x IBR x CAR x DR*
 
-De accountant beoordeelt het inherente risico, het interne beheersingsrisico en het cijferanalyserisico doorgaans op een driepuntsschaal bestaande uit hoog, gemiddeld en laag om het passende detectierisico te bepalen. Om het ARM te kunnen gebruiken, moeten deze categorische risicobeoordelingen worden omgezet in percentages. Standaard gebruikt de Auditmodule de percentages in onderstaande tabel, die zijn geïnspireerd door het <i>Handboek Auditing Rijksoverheid</i>. U kunt de percentages voor één of alle risico's handmatig aanpassen door in de keuzelijst onder de betreffende risicobeoordeling de optie Aangepast te selecteren.
+De accountant beoordeelt het inherente risico, het interne beheersingsrisico en het cijferanalyserisico doorgaans op een driepuntsschaal bestaande uit hoog, gemiddeld en laag om het passende detectierisico te bepalen. Om het ARM te kunnen gebruiken, moeten deze categorische risicobeoordelingen worden omgezet in percentages. Standaard gebruikt de Audit module de percentages in onderstaande tabel, die zijn geïnspireerd door het <i>Handboek Auditing Rijksoverheid</i>. U kunt de percentages voor één of alle risico's handmatig aanpassen door in de keuzelijst onder de betreffende risicobeoordeling de optie Aangepast te selecteren.
 
 | | Inherent risico (IR) | Intern beheersingsrisico (IBR) | Cijferanalyserisico (CAR) |
 | ---: | :---: | :---: | :---: |

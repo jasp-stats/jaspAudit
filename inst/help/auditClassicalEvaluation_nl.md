@@ -5,7 +5,7 @@ Met de evaluatieanalyse kan de gebruiker op basis van een steekproef conclusies 
 
 <img src="%HELP_FOLDER%/img/workflowEvaluation.png" />
 
-Zie de handleiding van de auditmodule (download [hier](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) voor meer gedetailleerde informatie over deze analyse.
+Zie de handleiding van de Audit module (lees [hier](https://koenderks.github.io/jaum/)) voor meer gedetailleerde informatie over deze analyse.
 
 ### Input
 ---
@@ -42,7 +42,7 @@ Wanneer de accountant over informatie beschikt die wijst op een laag risicoprofi
 
 *AR = IR x IBR x CAR x DR*
 
-De accountant beoordeelt het inherente risico, het interne beheersingsrisico en het cijferanalyserisico doorgaans op een driepuntsschaal bestaande uit hoog, gemiddeld en laag om het passende detectierisico te bepalen. Om het ARM te kunnen gebruiken, moeten deze categorische risicobeoordelingen worden omgezet in percentages. Standaard gebruikt de Auditmodule de percentages in onderstaande tabel, die zijn geïnspireerd door het <i>Handboek Auditing Rijksoverheid</i>. U kunt de percentages voor één of alle risico's handmatig aanpassen door in de keuzelijst onder de betreffende risicobeoordeling de optie Aangepast te selecteren.
+De accountant beoordeelt het inherente risico, het interne beheersingsrisico en het cijferanalyserisico doorgaans op een driepuntsschaal bestaande uit hoog, gemiddeld en laag om het passende detectierisico te bepalen. Om het ARM te kunnen gebruiken, moeten deze categorische risicobeoordelingen worden omgezet in percentages. Standaard gebruikt de Audit module de percentages in onderstaande tabel, die zijn geïnspireerd door het <i>Handboek Auditing Rijksoverheid</i>. U kunt de percentages voor één of alle risico's handmatig aanpassen door in de keuzelijst onder de betreffende risicobeoordeling de optie Aangepast te selecteren.
 
 | | Inherent risico (IR) | Intern beheersingsrisico (IBR) | Cijferanalyserisico (CAR) |
 | ---: | :---: | :---: | :---: |

@@ -5,7 +5,7 @@ The planning analysis allows the user to calculate a minimum sample size given a
 
 <img src="%HELP_FOLDER%/img/workflowPlanning.png" />
 
-Please see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.
+Please see the manual of the Audit module (read [here](https://koenderks.github.io/jaum/)) for more detailed information about this analysis.
 
 ### Input
 ---

@@ -27,7 +27,7 @@ import "./common/planning" as Planning
 Form 
 {
 	columns: 1
-	info: qsTr("The planning analysis allows the user to calculate a minimum sample size given a set of sampling objectives and summary statistics of the population. Note that when you have access to the raw population data you may want to use the audit workflow, an analysis that guides you through the sampling process.\n\n![Audit sampling workflow](%1)\n\nPlease see the manual of the Audit module (download [here](%2)) for more detailed information about this analysis.").arg("%HELP_FOLDER%/img/workflowPlanning.png").arg("https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf")
+	info: qsTr("The planning analysis allows the user to calculate a minimum sample size given a set of sampling objectives and summary statistics of the population. Note that when you have access to the raw population data you may want to use the audit workflow, an analysis that guides you through the sampling process.\n\n![Audit sampling workflow](%1)\n\nPlease see the manual of the Audit module (read [here](%2)) for more detailed information about this analysis.").arg("%HELP_FOLDER%/img/workflowPlanning.png").arg("https://koenderks.github.io/jaum/")
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }

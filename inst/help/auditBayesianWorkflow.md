@@ -3,7 +3,7 @@ Bayesian Sampling Workflow
 
 The task of an auditor is to make a judgment regarding the fairness of the presented transactions in a population. When the auditor has access to the raw population data, they can use the *audit workflow* to calculate how many samples need to be evaluated in order to meet a certain confidence in their judgment. The user can then sample these items from the population, inspect and audit these items, and perform statistical inference about the misstatement in the population. The sampling workflow guides the auditor through the audit process, making the correct choices of calculations along the way.
 
-Please see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.
+Please see the manual of the Audit module (read [here](https://koenderks.github.io/jaum/)) for more detailed information about this analysis.
 
 ### Workflow
 ---

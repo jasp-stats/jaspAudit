@@ -31,7 +31,7 @@ import "./common/evaluation" as Evaluation
 Form
 {
 	columns: 1
-	info: qsTr("The evaluation analysis allows the user to perform inference about the total misstatement in the population on the basis of an audit sample.\n\n![Audit sampling workflow](%1) Please see the manual of the Audit module (download [here](%2)) for more detailed information about this analysis.").arg("%HELP_FOLDER%/img/workflowEvaluation.png").arg("https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf")
+	info: qsTr("The evaluation analysis allows the user to perform inference about the total misstatement in the population on the basis of an audit sample.\n\n![Audit sampling workflow](%1) Please see the manual of the Audit module (read [here](%2)) for more detailed information about this analysis.").arg("%HELP_FOLDER%/img/workflowEvaluation.png").arg("https://koenderks.github.io/jaum/")
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }
