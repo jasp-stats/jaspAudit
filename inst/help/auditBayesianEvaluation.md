@@ -5,7 +5,7 @@ The Bayesian evaluation analysis allows the user to perform inference about the 
 
 <img src="%HELP_FOLDER%/img/workflowEvaluation.png" />
 
-Please see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.
+Please see the manual of the Audit module (read [here](https://koenderks.github.io/jaum/)) for more detailed information about this analysis.
 
 ### Input
 ---

@@ -5,7 +5,7 @@ Met de Bayesiaanse planningsanalyse kan de gebruiker een minimale steekproefomva
 
 <img src="%HELP_FOLDER%/img/workflowPlanning.png" />
 
-Raadpleeg de handleiding van de auditmodule (download [hier](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) voor meer gedetailleerde informatie over deze analyse.
+Raadpleeg de handleiding van de Audit module (lees [hier](https://koenderks.github.io/jaum/)) voor meer gedetailleerde informatie over deze analyse.
 
 ### Input
 ---

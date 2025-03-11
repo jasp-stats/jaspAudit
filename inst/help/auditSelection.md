@@ -5,7 +5,7 @@ The selection analysis allows the user to select a number of sampling units from
 
 <img src="%HELP_FOLDER%/img/workflowSelection.png" />
 
-Please see the manual of the Audit module (download [here](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) for more detailed information about this analysis.
+Please see the manual of the Audit module (read [here](https://koenderks.github.io/jaum/)) for more detailed information about this analysis.
 
 ### Input
 ---

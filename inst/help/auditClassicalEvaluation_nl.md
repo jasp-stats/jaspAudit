@@ -5,7 +5,7 @@ Met de evaluatieanalyse kan de gebruiker op basis van een steekproef conclusies 
 
 <img src="%HELP_FOLDER%/img/workflowEvaluation.png" />
 
-Zie de handleiding van de auditmodule (download [hier](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) voor meer gedetailleerde informatie over deze analyse.
+Zie de handleiding van de Audit module (lees [hier](https://koenderks.github.io/jaum/)) voor meer gedetailleerde informatie over deze analyse.
 
 ### Input
 ---

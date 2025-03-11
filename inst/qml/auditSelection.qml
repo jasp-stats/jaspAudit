@@ -27,7 +27,7 @@ import "./common/selection" as Selection
 Form 
 {
 	columns: 1
-	info: qsTr("The selection analysis allows the user to select a number of sampling units (items or monetary units) from a population using a variety of sampling methods (random sampling, cell sampling, fixed interval sampling) that are standard in an auditing context.\n\n![Audit sampling workflow](%1)\n\nPlease see the manual of the Audit module (download [here](%2)) for more detailed information about this analysis.").arg("%HELP_FOLDER%/img/workflowSelection.png").arg("https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf")
+	info: qsTr("The selection analysis allows the user to select a number of sampling units (items or monetary units) from a population using a variety of sampling methods (random sampling, cell sampling, fixed interval sampling) that are standard in an auditing context.\n\n![Audit sampling workflow](%1)\n\nPlease see the manual of the Audit module (read [here](%2)) for more detailed information about this analysis.").arg("%HELP_FOLDER%/img/workflowSelection.png").arg("https://koenderks.github.io/jaum/")
 
 	// Hidden option(s)
 	CheckBox { name: "workflow"; checked: false; visible: false }

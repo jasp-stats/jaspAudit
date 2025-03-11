@@ -3,7 +3,7 @@ Steekproefworkflow
 
 De taak van een auditor is een oordeel te vellen over de fout in een populatie. Als de gebruiker toegang heeft tot de ruwe populatiegegevens, kan deze de *audit workflow* gebruiken om te berekenen hoeveel steekproeven moeten worden geëvalueerd om een bepaalde betrouwbaarheid in zijn oordeel te krijgen. De gebruiker kan dan een steekproef nemen uit de populatie, deze posten inspecteren en controleren, en statistische conclusies trekken over de fout in de populatie. De steekproefworkflow leidt de gebruiker door het auditproces, waarbij onderweg de juiste berekeningskeuzes worden gemaakt.
 
-Zie de handleiding van de auditmodule (download [hier](https://github.com/jasp-stats/jaspAudit/raw/master/man/manual.pdf)) voor meer gedetailleerde informatie over deze analyse.
+Zie de handleiding van de Audit module (lees [hier](https://koenderks.github.io/jaum/)) voor meer gedetailleerde informatie over deze analyse.
 
 ### Workflow
 ---
