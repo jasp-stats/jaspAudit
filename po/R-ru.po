@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
 "POT-Creation-Date: 2025-02-16 08:42\n"
-"PO-Revision-Date: 2025-03-16 06:24+0000\n"
+"PO-Revision-Date: 2025-03-17 13:06+0000\n"
 "Last-Translator: MikeWinny <winny63@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "ru/>\n"
@@ -828,7 +828,7 @@ msgid "<b>Table %1$i.</b> Repeated Values Test"
 msgstr "<b>Таблица %1$i.</b> Проверка повторяющихся значений"
 
 msgid "Average"
-msgstr "Средний"
+msgstr "Среднее значение"
 
 msgid "Frequency"
 msgstr "Частота"
@@ -1487,7 +1487,7 @@ msgstr ""
 
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
 msgstr ""
-"<b>Таблица %1$i.</b> Описательная статистика для данных бухгалтерского учета"
+"<b>Таблица %1$i.</b> Описательные статистики для данных бухгалтерского учета"
 
 msgid "Population size"
 msgstr "Размер совокупности"
@@ -1525,18 +1525,23 @@ msgid ""
 "standard deviation from the mean. The orange dots represent the first, "
 "second (median) and third quartiles of the book values."
 msgstr ""
+"<b>Рисунок %1$i.</b> Распределение данных бухгалтерского учета в "
+"совокупности. Красная и синие точки, соответственно, представляют среднее "
+"значение и значения на одно стандартное отклонение от среднего. Оранжевые "
+"точки представляют первую, вторую (медиану) и третью квантиль данных "
+"бухгалтерского учета."
 
 msgid "High"
-msgstr ""
+msgstr "Высокий"
 
 msgid "Medium"
-msgstr ""
+msgstr "Средний"
 
 msgid "Low"
-msgstr ""
+msgstr "Низкий"
 
 msgid "<u>Audit Risk Model</u>"
-msgstr ""
+msgstr "<u>Модель аудиторского риска</u>"
 
 msgid ""
 "The Audit Risk Model is a method to reduce the required information from the "
@@ -1548,190 +1553,239 @@ msgid ""
 "determined to be %3$s. According to the Audit Risk Model, the required "
 "detection risk to maintain an audit risk of %4$s should be %5$s."
 msgstr ""
+"Модель аудиторского риска - это метод сокращения объема требуемой информации "
+"из выборки на основе более ранних оценок неотъемлемого риска, риска контроля "
+"и аналитического риска при сохранении желаемого уровня аудиторского риска.\n"
+"\n"
+"До проведения процедуры выборки было определено, что неотъемлемый риск "
+"составляет %1$s, риск контроля составляет %2$s и аналитический риск "
+"составляет %3$s. Согласно модели аудиторского риска, требуемый риск "
+"обнаружения для поддержания аудиторского риска на уровне %4$s должен быть "
+"равен %5$s."
 
 msgid ""
 "Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x "
 "Analytical Risk (%4$s%%) x Detection risk (%5$s%%)"
 msgstr ""
+"Аудиторский риск (%1$s%%) = Неотъемлемый риск (%2$s%%) x Риск контроля "
+"(%3$s%%) x Аналитический риск (%4$s%%) x Риск обнаружения (%5$s%%)"
 
 msgid ""
 "At least one translation of the categories High, Medium and Low to "
 "probabilities is done according custom settings."
 msgstr ""
+"В соответствии с пользовательскими настройками по крайней мере одна из "
+"категорий вероятностей ARM вместо качественной оценки как \"Высокая\", "
+"\"Средняя\" указана пользователем в количественном выражении."
 
 msgid ""
 "The translation of the categories high, medium and low to probabilities is "
 "done using the default settings shown in the table below."
 msgstr ""
+"Преобразование качественных категорий \"высокая\", \"средняя\" и \"низкая\" "
+"в количественные значения \"вероятности\" производится с использованием "
+"настроек по умолчанию, приведенных в таблице ниже."
 
 msgid "<b>Table %1$i.</b> Default Settings Audit Risk Model"
 msgstr ""
+"<b>Таблица %1$i.</b> Установки по умолчанию для модели аудиторского риска"
 
 msgid "Inherent risk"
-msgstr ""
+msgstr "Неотъемлемый риск"
 
 msgid "Control risk"
-msgstr ""
+msgstr "Риск контроля"
 
 msgid "Analytical risk"
-msgstr ""
+msgstr "Аналитический риск"
 
 msgid "= Selected"
-msgstr ""
+msgstr "= Выбран"
 
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify the "
 "percentages for the Inherent risk and/or Control risk and/or Analytical risk."
 msgstr ""
+"Риск обнаружения равен или выше 100%%. Пожалуйста, переопределите процентные "
+"уровни неотъемлемого риска и/или риска контроля и/или аналитического риска."
 
 msgid ""
 "You cannot achieve your current sampling objectives with this population. "
 "The resulting sample size exceeds the maximum of %1$s. Adjust the maximum "
 "option accordingly."
 msgstr ""
+"Вы не сможете достичь своих текущих целей по выборке для этой совокупности. "
+"Результирующий размер выборки превышает максимальное значение %1$s. "
+"Соответствующим образом откорректируйте параметр максимального значения."
 
 msgid ""
 "The tolerable misstatements are larger than the performance materiality. If "
 "you used an absolute number of tolerable misstatements < 1, please use the "
 "'relative' option."
 msgstr ""
+"Допустимые искажения превышают существенность. Если вы использовали "
+"абсолютное число допустимых искажений < 1, пожалуйста, используйте параметр "
+"\"относительное\"."
 
 msgid "An error occurred: %1$s"
-msgstr ""
+msgstr "Произошла ошибка: %1$s"
 
 msgid "<b>Table %1$i.</b> Planning Summary"
-msgstr ""
+msgstr "<b>Таблица %1$i.</b> Описание результатов планирования"
 
 msgid "Performance materiality"
-msgstr ""
+msgstr "Существенность"
 
 msgid "Min. precision"
-msgstr ""
+msgstr "Минимальная погрешность"
 
 msgid "Detection risk"
-msgstr ""
+msgstr "Риск обнаружения"
 
 msgid "Audit risk"
-msgstr ""
+msgstr "Аудиторский риск"
 
 msgid "Tolerable misstatements"
-msgstr ""
+msgstr "Приемлемые искажения"
 
 msgid "Minimum sample size"
-msgstr ""
+msgstr "Минимальный размер выборки"
 
 msgid "The minimum sample size is based on the Poisson distribution."
-msgstr ""
+msgstr "Минимальный размер выборки основан на распределении Пуассона."
 
 msgid "The minimum sample size is based on the binomial distribution."
-msgstr ""
+msgstr "Минимальный размер выборки основан на биномиальном распределении."
 
 msgid "The minimum sample size is based on the hypergeometric distribution."
 msgstr ""
+"Минимальный размер выборки основан на гипергеометрическом распределении."
 
 msgid "The minimum sample size is based on the gamma distribution."
-msgstr ""
+msgstr "Минимальный размер выборки основан на гамма-распределении."
 
 msgid "The minimum sample size is based on the beta distribution."
-msgstr ""
+msgstr "Минимальный размер выборки основан на бета-распределении."
 
 msgid ""
 "The minimum sample size is based on the beta-binomial distribution (N = "
 "%1$s)."
 msgstr ""
+"Минимальный размер выборки основан на бета-биномиальном распределении (N = "
+"%1$s)."
 
 msgid ""
 "Either the materiality (if applicable) or the number of units in the "
 "population is defined as zero."
 msgstr ""
+"Либо существенность (если применимо), либо количество единиц в совокупности "
+"определяются как нулевые."
 
 msgid "%1$s <b>Insufficient information.</b>"
-msgstr ""
+msgstr "%1$s <b>Недостаточная информация.</b>"
 
 msgid ""
 "The minimum sample size is based on the Poisson distribution (%1$s = %2$s)."
 msgstr ""
+"Минимальный размер выборки основан на распределении Пуассона (%1$s = %2$s)."
 
 msgid ""
 "The minimum sample size is based on the binomial distribution (p = %1$s)"
 msgstr ""
+"Минимальный размер выборки основан на биномиальном распределении (p = %1$s)"
 
 msgid ""
 "The minimum sample size is based on the hypergeometric distribution (N = "
 "%1$s, K = %2$s)."
 msgstr ""
+"Минимальный размер выборки основан на гипергеометрическом распределении (N = "
+"%1$s, K = %2$s)."
 
 msgid ""
 "The minimum sample size is based on the gamma distribution (%1$s = %2$s, "
 "%3$s = %4$s)"
 msgstr ""
+"Минимальный размер выборки основан на гамма-распределении (%1$s = %2$s, %3$s "
+"= %4$s)"
 
 msgid ""
 "The minimum sample size is based on the beta distribution (%1$s = %2$s, %3$s "
 "= %4$s)."
 msgstr ""
+"Минимальный размер выборки основан на бета-распределении (%1$s = %2$s, %3$s "
+"= %4$s)."
 
 msgid ""
 "The minimum sample size is based on the beta-binomial distribution (N = "
 "%1$s, %2$s = %3$s, %4$s = %5$s)."
 msgstr ""
+"Минимальный размер выборки основан на бета-биномиальном распределении (N = "
+"%1$s, %2$s = %3$s, %4$s = %5$s)."
 
 msgid ""
 "The minimum sample size (%1$s) is larger than the number of units in the "
 "population (%2$s)."
 msgstr ""
+"Минимальный размер выборки (%1$s) больше чем количество единиц выборки в "
+"совокупности (%2$s)."
 
 msgid "Based on this sample size, the selection interval spans %1$s units."
 msgstr ""
+"Исходя из этого размера выборки, интервал отбора составляет %1$s единиц "
+"выборки."
 
 msgid ""
 "The value %1$s is automatically used as a starting point for the fixed "
 "interval selection."
 msgstr ""
+"Значение %1$s автоматически используется в качестве начальной точки для "
+"выборки с фиксированным интервалом."
 
 msgid "%1$s"
 msgstr ""
 
 msgid "Minimum Sample Sizes"
-msgstr ""
+msgstr "Минимальный размер выборки"
 
 msgid "Beta"
-msgstr ""
+msgstr "Бета"
 
 msgid "Gamma"
-msgstr ""
+msgstr "Гамма"
 
 msgid "Beta-binomial"
-msgstr ""
+msgstr "Бета-биномиальное"
 
 msgid "Binomial"
-msgstr ""
+msgstr "Биномиальное"
 
 msgid "Poisson"
-msgstr ""
+msgstr "Пуассона"
 
 msgid "Hypergeometric"
-msgstr ""
+msgstr "Гипергеометрическое"
 
 msgid "Across Probability Distributions (Current: %1$s)"
-msgstr ""
+msgstr "Через распределение вероятностей (Текущее значение: %1$s)"
 
 msgid "Expected error-free"
-msgstr ""
+msgstr "Ожидаемое отсутствие ошибок"
 
 msgid "Expected errors"
-msgstr ""
+msgstr "Ожидаемые ошибки"
 
 msgid "An error occurred in a call to the jfa package: %1$s"
-msgstr ""
+msgstr "Произошла ошибка при вызове пакета jfa: %1$s"
 
 msgid "Across Expected Errors (Current: %1$s)"
-msgstr ""
+msgstr "Через ожидаемые ошибки (Текущее значение: %1$s)"
 
 msgid ""
 "You cannot achieve your current sampling objectives with up to three full "
 "misstatements this population."
 msgstr ""
+"Вы не сможете достичь своих текущих целей выборки при наличии до трех полных "
+"искажений в этой совокупности."
 
 msgid ""
 "<b>Figure %1$i.</b> The first panel shows a comparison of the minimum sample "
@@ -1742,9 +1796,16 @@ msgid ""
 "comparison of the minimum sample sizes under different expected errors for "
 "the current probability distribution."
 msgstr ""
+"<b>Рисунок %1$i.</b> На первой панели показано сравнение минимальных "
+"размеров выборки при различных распределениях вероятности. Столбцы "
+"представляют минимальные размеры выборки для текущих ожидаемых ошибок в "
+"выборке. Количество ожидаемых ошибок в каждой строке выделено красным "
+"цветом, а количество ожидаемых безошибочных элементов - зеленым. На второй "
+"панели показано сравнение минимальных размеров выборки при различных "
+"ожидаемых ошибках для текущего распределения вероятностей."
 
 msgid "Presumed %1$s Distribution"
-msgstr ""
+msgstr "Предполагаемое распределение %1$s"
 
 msgid ""
 "<b>Figure %1$i.</b> The assumed %2$s distribution. The number of expected "
@@ -1752,123 +1813,141 @@ msgid ""
 "errors does not exceed the detection risk as specified through the audit "
 "risk model."
 msgstr ""
+"<b>Figure %1$i.</b> Предполагаемое распределение %2$s. Количество ожидаемых "
+"ошибок в выборке окрашено красным цветом. Общая вероятность ошибок не "
+"превышает риск обнаружения, указанный в модели аудиторских рисков."
 
 msgid ""
 "You cannot use an interval-based selection method because the sample size "
 "exceeds the population size of %1$s. Please change the selection method to "
 "random sampling."
 msgstr ""
+"Вы не можете использовать метод отбора на основе интервалов, поскольку "
+"размер выборки превышает размер совокупности %1$s. Пожалуйста, измените "
+"метод формирования выборки на случайную выборку."
 
 msgid ""
 "Starting point is outside the range of the selection interval of 1 to %1$s. "
 "Please choose a starting point < %1$s."
 msgstr ""
+"Начальная точка вне интервала отбора от 1 до %1$s. Пожалуйста, выберите "
+"начальную точку < %1$s."
 
 msgid "<b>Table %1$i.</b> Selection Summary"
-msgstr ""
+msgstr "<b>Таблица %1$i.</b> Сводные данные результатов отбора"
 
 msgid "No. units"
-msgstr ""
+msgstr "Количество единиц выборки"
 
 msgid "No. items"
-msgstr ""
+msgstr "Количество элементов выборки"
 
 msgid "Selection value"
-msgstr ""
+msgstr "Сумма отобранных элементов"
 
 msgid "%% of population value"
-msgstr ""
+msgstr "%% от суммы элементов совокупности"
 
 msgid "%% of population size"
-msgstr ""
+msgstr "%% от размера совокупности"
 
 msgid "using seed %1$s"
-msgstr ""
+msgstr "используя инициирующий параметр (seed) %1$s"
 
 msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."
-msgstr ""
+msgstr "Из каждого интервала размером %1$s, выбрана %2$s единица выборки%3$s."
 
 msgid "The sample is drawn with seed %1$s and intervals of size %2$s."
 msgstr ""
+"Выборка осуществлена с инициирующим параметром (seed) %1$s и интервалами "
+"размером %2$s."
 
 msgid "The sample is drawn with seed %1$s."
-msgstr ""
+msgstr "Выборка осуществлена с инициирующим параметром (seed) %1$s."
 
 msgid "The random numbers are generated with seed %1$s."
 msgstr ""
+"Генерация случайных чисел осуществлена с инициирующим параметром (seed) %1$s."
 
 msgid "The sample is not exported until the 'Synchronize' option is checked."
 msgstr ""
+"Выборка не экспортируется до тех пор, пока не будет установлен флажок "
+"\"Синхронизировать\"."
 
 msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
 msgstr ""
+"<b>Таблица %1$i.</b> Информация о монетарной выборке на основе интервала"
 
 msgid "Items"
-msgstr ""
+msgstr "Объекты"
 
 msgid "Selected items"
-msgstr ""
+msgstr "Отобранные объекты"
 
 msgid "Selected units"
-msgstr ""
+msgstr "Отобранные единицы выборки"
 
 msgid "%% of total value"
-msgstr ""
+msgstr "%% от общей суммы"
 
 msgid "twice the"
-msgstr ""
+msgstr "в два раза больше"
 
 msgid "a single"
-msgstr ""
+msgstr "единственный"
 
 msgid ""
 "The top stratum consists of all items with a book value larger than %1$s "
 "interval."
 msgstr ""
+"Верхняя страта содержит все объекты с балансовой стоимостью превышающей %1$s "
+"интервал."
 
 msgid "Total"
-msgstr ""
+msgstr "Общий"
 
 msgid "Top stratum"
-msgstr ""
+msgstr "Верхняя страта"
 
 msgid "Bottom stratum"
-msgstr ""
+msgstr "Нижняя страта"
 
 msgid "<b>Table %1$i.</b> Selected Items"
-msgstr ""
+msgstr "<b>Таблица %1$i.</b> Отобранные объекты"
 
 msgid "Selected"
-msgstr ""
+msgstr "Отобранный"
 
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Sample"
-msgstr ""
+msgstr "<b>Таблица %1$i.</b> Описательные статистики выборки"
 
 msgid "Valid cases"
-msgstr ""
+msgstr "Корректные элементы"
 
 msgid "Median"
-msgstr ""
+msgstr "Медиана"
 
 msgid "Variance"
-msgstr ""
+msgstr "Дисперсия"
 
 msgid "Range"
-msgstr ""
+msgstr "Диапазон"
 
 msgid "Minimum"
-msgstr ""
+msgstr "Минимум"
 
 msgid "Maximum"
-msgstr ""
+msgstr "Максимум"
 
 msgid ""
 "The audit result variable should contain only 0's (correct) and 1's "
 "(incorrect)."
 msgstr ""
+"Переменная результата аудита должна содержать только значения 0 (корректное) "
+"или 1 (некорректное)."
 
 msgid "combined with the information in the prior distribution"
-msgstr ""
+msgstr "в сочетании с информацией, содержащейся в априорном распределении"
 
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "
@@ -1879,153 +1958,174 @@ msgid ""
 "information from this sample %5$s results in a most likely misstatement in "
 "the population of %6$s and a %7$s upper bound of %8$s."
 msgstr ""
+"Цель этапа оценки состоит в том, чтобы на основе выборки сделать вывод о "
+"значении искажения θ в совокупности.\n"
+"\n"
+"Совокупность состоит из %1$s объектов и %2$s единиц выборки. Выборка состоит "
+"из %3$s единиц выборки, из которых в общей сложности %4$s содержат "
+"искажения. Информация, полученная из этой выборки %5$s приводит к наиболее "
+"вероятному искажению совокупности, равной %6$s и %7$s верхней границей, "
+"равной %8$s."
 
 msgid "<b>Table %1$i.</b> Evaluation Summary"
-msgstr ""
+msgstr "<b>Таблица %1$i.</b> Сводные данные оценки"
 
 msgid "Overall materiality"
-msgstr ""
+msgstr "Общая существенность"
 
 msgid "Sample size"
-msgstr ""
+msgstr "Размер выборки"
 
 msgid "Misstatements"
-msgstr ""
+msgstr "Искажений"
 
 msgid "Taint"
-msgstr ""
+msgstr "Величина искажений"
 
 msgid "Most likely misstatement"
-msgstr ""
+msgstr "Наиболее вероятное искажение"
 
 msgid "%1$s%% Upper bound"
-msgstr ""
+msgstr "%1$s%% верхняя граница"
 
 msgid "%1$s%% Lower bound"
-msgstr ""
+msgstr "%1$s%% нижняя граница"
 
 msgid "p-value"
-msgstr ""
+msgstr "p-уровень значимости"
 
 msgid "The results are computed using the Poisson distribution."
-msgstr ""
+msgstr "Результат рассчитывался с использованием распределения Пуассона."
 
 msgid "The results are computed using the binomial distribution."
-msgstr ""
+msgstr "Результат рассчитывался с использованием биномиального распределения."
 
 msgid "The results are computed using the hypergeometric distribution."
 msgstr ""
+"Результат рассчитывался с использованием гипергеометрического распределения."
 
 msgid "The results are computed using the Stringer method."
-msgstr ""
+msgstr "Результат рассчитывался с использованием метода Стрингера."
 
 msgid "The results are computed using the regression estimator."
-msgstr ""
+msgstr "Результат рассчитывался с использованием регрессионного оценщика."
 
 msgid "The results are computed using the direct estimator."
-msgstr ""
+msgstr "Результат рассчитывался с использованием прямого оценщика."
 
 msgid "The results are computed using the difference estimator."
-msgstr ""
+msgstr "Результат рассчитывался с использованием оценщика разности."
 
 msgid "The results are computed using the ratio estimator."
-msgstr ""
+msgstr "Результат рассчитывался с использованием оценщика отношения."
 
 msgid "The results are computed using the mean-per-unit estimator"
-msgstr ""
+msgstr "Результат рассчитывался с использованием оценщика среднего на элемент"
 
 msgid "The results are computed using the beta distribution."
-msgstr ""
+msgstr "Результат рассчитывался с использованием бета-распределения."
 
 msgid "The results are computed using the gamma distribution."
-msgstr ""
+msgstr "Результат рассчитывался с использованием гамма-распределения."
 
 msgid "The results are computed using the beta-binomial distribution."
 msgstr ""
+"Результат рассчитывался с использованием бета-биномиального распределения."
 
 msgid "The results are computed using the Stringer method with LTA adjustment."
 msgstr ""
+"Результат рассчитывался с использованием метода Стрингера с "
+"LTA-корректировками."
 
 msgid ""
 "The results are computed using the beta distribution and require the "
 "assumption that the population taints are homogeneous."
 msgstr ""
+"Результаты рассчитывался с использованием бета-распределения и требуют "
+"предположения о том, что искажения в совокупности однородны."
 
 msgid "The audit result column is empty."
-msgstr ""
+msgstr "Столбец с результатами аудита пустой."
 
 msgid ""
 "Either the materiality, the population size, or the population value is "
 "defined as zero, or one of the required variables is missing."
 msgstr ""
+"Существенность, размер совокупности или сумма совокупности определены "
+"равными нулю, либо отсутствует одна из требуемых переменных."
 
 msgid "<b>Table %1$i.</b> Stratum Evaluation Summary"
-msgstr ""
+msgstr "<b>Таблица %1$i.</b> Сводные данные по оценке страты"
 
 msgid "Stratum"
-msgstr ""
+msgstr "Страта"
 
 msgid "%1$s%% Interval"
-msgstr ""
+msgstr "%1$s%% интервал"
 
 msgid "Information is shared between the strata in the population."
 msgstr ""
+"Осуществляется обмен информацией между различными стратами совокупности."
 
 msgid "The strata in the population are assumed to be independent."
-msgstr ""
+msgstr "Предполагается, что страты совокупности являются независимыми."
 
 msgid "<b>Table %1$i.</b> Misstated Items"
-msgstr ""
+msgstr "<b>Таблица %1$i.</b> Искаженные объекты"
 
 msgid "ID"
-msgstr ""
+msgstr "Идентификатор записи (ID)"
 
 msgid "Difference"
-msgstr ""
+msgstr "Разность"
 
 msgid "Counted"
-msgstr ""
+msgstr "Подсчитанный"
 
 msgid "No misstatements were identified in the sample."
-msgstr ""
+msgstr "В выборке не было выявлено никаких искажений."
 
 msgid "Pearson's r"
-msgstr ""
+msgstr "Коэффициент корреляции Пирсона r"
 
 msgid ""
 "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis "
 "H₋: ρ < 0"
 msgstr ""
+"Нулевая гипотеза H₀: ρ ≥ 0 проверяется в сравнении с альтернативной "
+"гипотезой H₋: ρ < 0"
 
 msgid "Book values - Taints"
-msgstr ""
+msgstr "Данные бухгалтерского учета - Искажения"
 
 msgid "There were no misstatements found in the sample."
-msgstr ""
+msgstr "В выборке не было обнаружено никаких искажений."
 
 msgid "An error occurred while calculating the correlation."
-msgstr ""
+msgstr "При расчете корреляции произошла ошибка."
 
 msgid "Evaluation of Sampling Objectives"
-msgstr ""
+msgstr "Оценка целей выборки"
 
 msgid "An error occurred while creating this plot: The results contain NAs"
 msgstr ""
+"При создании этого графика произошла ошибка: результаты содержат недоступные "
+"данные (NA)"
 
 msgid "Upper bound"
-msgstr ""
+msgstr "Верхняя граница"
 
 msgid "Most likely error"
-msgstr ""
+msgstr "Наиболее вероятная ошибка"
 
 msgid "Minimum precision"
-msgstr ""
+msgstr "Минимальная точность"
 
 msgid "Obtained precision"
-msgstr ""
+msgstr "Полученная точность"
 
 msgid "An error occurred while creating this plot: %1$s"
-msgstr ""
+msgstr "При создании этого графика произошла ошибка: %1$s"
 
 msgid ""
 "<b>Figure %1$i.</b> Evaluation information for the current annotated "
@@ -2034,9 +2134,14 @@ msgid ""
 "of the true misstatement in the population. The upper bound is an estimate "
 "of the maximum misstatement in the population."
 msgstr ""
+"<b>Рисунок %1$i.</b> Оценочная информация для текущей аннотированной "
+"выборки. Существенность сравнивается с максимальным искажением и наиболее "
+"вероятным искажением. Наиболее вероятное искажение - это наилучшая оценка "
+"истинного искажения в совокупности. Верхняя граница - это оценка "
+"максимального искажения в совокупности."
 
 msgid "Estimates"
-msgstr ""
+msgstr "Оценки"
 
 msgid ""
 "<b>Figure %1$i.</b> Most likely estimates (points) and %2$s%% %3$s %4$s "
@@ -2044,15 +2149,18 @@ msgid ""
 "strata, showing the range of plausible values for the misstatement after "
 "seeing the data."
 msgstr ""
+"<b>Рисунок %1$i.</b> Наиболее вероятные (точечные) оценки %2$s%% %3$s %4$s "
+"интервалы для искажения в совокупности и в отдельных стратах, показывающие "
+"диапазон вероятных значений искажения после просмотра данных."
 
 msgid "Scatter Plot of Book and Audit Values"
-msgstr ""
+msgstr "Точечная диаграмма сумм по данным бухгалтерского учета и аудита"
 
 msgid "Book value (%1$s)"
-msgstr ""
+msgstr "Сумма по данным бухгалтерского учета (%1$s)"
 
 msgid "Audit value (%1$s)"
-msgstr ""
+msgstr "Сумма по данным аудита (%1$s)"
 
 msgid ""
 "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
@@ -2062,36 +2170,44 @@ msgid ""
 "red dots lie below the diagonal, the items are overstated. If these red dots "
 "lie above the diagonal they are understated. %2$s"
 msgstr ""
+"<b>Рисунок %1$i.</b> Точечный график сумм по данным бухгалтерского учета в "
+"выборке и соответствующих им сумм по данным аудита. Серые точки по диагонали "
+"(пунктирная линия) указывают на совпадающие суммы по данным бухгалтерского "
+"учета и аудита. Красными точками по диагонали обозначены объекты, "
+"аудиторская стоимость которых не соответствовала их балансовой стоимости по "
+"данным бухгалтерского учета. Если эти красные точки расположены ниже "
+"диагонали, то сумма объектов завышена. Если эти красные точки расположены "
+"ниже диагонали, то сумма объектов занижена. %2$s"
 
 msgid "<b>Table %1$i.</b> Corrections to Population"
-msgstr ""
+msgstr "<b>Таблица %1$i.</b> Исправления для совокупности"
 
 msgid "Correction"
-msgstr ""
+msgstr "Исправления"
 
 msgid "The correction to achieve no misstatements is the upper bound%1$s."
-msgstr ""
+msgstr "Исправление для устранения искажений - это верхняя граница%1$s."
 
 msgid "No misstatements with %1$s%% precision"
-msgstr ""
+msgstr "Искажения отсутствуют с точностью %1$s%%"
 
 msgid "No misstatements with %1$s%% confidence"
-msgstr ""
+msgstr "Искажения отсутствуют с уровнем уверенности %1$s%%"
 
 msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
-msgstr ""
+msgstr "Искажения отсутствуют с уровнем уверенности %1$s%% и %2$s%% точностью"
 
 msgid "Created by JASP for Audit (Version %1$s) on %2$s at %3$s."
-msgstr ""
+msgstr "Создано с использованием JASP for Audit (Version %1$s) %2$s в %3$s."
 
 msgid "Prior and Expected Posterior Distribution"
-msgstr ""
+msgstr "Априорное и ожидаемое апостериорное распределения"
 
 msgid "Prior Distribution"
-msgstr ""
+msgstr "Априорное распределение"
 
 msgid "Prior and Posterior Distribution"
-msgstr ""
+msgstr "Априорное и апостериорное распределения"
 
 msgid ""
 "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on "
@@ -2099,55 +2215,67 @@ msgid ""
 "%6$s) are derived from the prior information. The expected posterior "
 "distribution fulfills the conditions set in the sampling objectives."
 msgstr ""
+"<b>Рисунок %1$i.</b> Априорное и апостериорное распределения (%2$s) "
+"искажения в совокупности θ. Параметры априорного распределения (%3$s = %4$s, "
+"%5$s = %6$s) являются производными от предшествующей информации. Ожидаемое "
+"апостериорное распределение удовлетворяет условиям, установленным в задачах "
+"выборки."
 
 msgid ""
 "<b>Figure %1$i.</b> The prior and posterior distribution (%2$s) on the "
 "misstatement in the population."
 msgstr ""
+"<b>Рисунок %1$i.</b> Априорное и апостериорное распределения (%2$s) "
+"искажения в совокупности."
 
 msgid "Prior Predictive Distribution"
-msgstr ""
+msgstr "Прогнозируемое априорное распределение"
 
 msgid "Posterior Predictive Distribution"
-msgstr ""
+msgstr "Прогнозируемое апостериорное распределение"
 
 msgid ""
 "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays "
 "the predictions of the %2$s distribution for %4$s <i>n</i> = %5$s."
 msgstr ""
+"<b>Рисунок %1$i.</b> %2$s прогнозируемое распределение равно %3$s и "
+"отображает прогнозы %2$s распределения для %4$s <i>n</i> = %5$s."
 
 msgid "Descriptive Statistics for Prior and Expected Posterior Distribution"
 msgstr ""
+"Описательные статистики для априорного и ожидаемого апостериорного "
+"распределений"
 
 msgid "Descriptive Statistics for Prior and Posterior Distribution"
-msgstr ""
+msgstr "Описательные статистики для априорного и апостериорного распределений"
 
 msgid "<b>Table %1$i.</b> %2$s"
-msgstr ""
+msgstr "<b>Таблица %1$i.</b> %2$s"
 
 msgid "Functional form"
-msgstr ""
+msgstr "Функциональная форма"
 
 msgid "Support %1$s"
-msgstr ""
+msgstr "Поддержка %1$s"
 
 msgid "Ratio %1$s"
-msgstr ""
+msgstr "Отношение %1$s"
 
 msgid "Mode"
-msgstr ""
+msgstr "Мода"
 
 msgid "Prior"
-msgstr ""
+msgstr "Априорное распределение"
 
 msgid "Posterior"
-msgstr ""
+msgstr "Апостериорное распределение"
 
+#, fuzzy
 msgid "Shift"
-msgstr ""
+msgstr "Shift"
 
 msgid "Nonparametric"
-msgstr ""
+msgstr "Непараметрический"
 
 msgid "%1$s %2$s vs. %3$s %2$s."
-msgstr ""
+msgstr "%1$s %2$s в сравнении с %3$s %2$s."
