@@ -1471,9 +1471,9 @@
     .jfaTableNumberUpdate(jaspResults)
     tb <- createJaspTable(gettextf("<b>Table %1$i.</b> Default Settings Audit Risk Model", jaspResults[["tabNumber"]]$object))
     tb$addColumnInfo(name = "category", title = "", type = "string")
-    tb$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = "number", format = "pc")
-    tb$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "number", format = "pc")
-    tb$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = "number", format = "pc")
+    tb$addColumnInfo(name = "ir", title = gettext("Inherent risk"), type = "number", format = "pc:0")
+    tb$addColumnInfo(name = "cr", title = gettext("Control risk"), type = "number", format = "pc:0")
+    tb$addColumnInfo(name = "car", title = gettext("Analytical risk"), type = "number", format = "pc:0")
     tb$position <- 4
     tb$addFootnote(gettext("= Selected"), colNames = "ir", rowNames = switch(options[["ir"]],
       "high" = "1",
