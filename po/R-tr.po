@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.3\n"
 "POT-Creation-Date: 2025-02-16 08:42\n"
-"PO-Revision-Date: 2024-03-13 23:01+0000\n"
-"Last-Translator: Tuğberk Melen <mebek66@gmail.com>\n"
+"PO-Revision-Date: 2025-03-19 23:04+0000\n"
+"Last-Translator: Uğur ÇELİK <prof_ugur@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "tr/>\n"
 "Language: tr\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Prosedür</u>"
@@ -86,7 +86,7 @@ msgid "Log(BF%1$s)"
 msgstr ""
 
 msgid "MAD"
-msgstr ""
+msgstr "OMS"
 
 msgid "df"
 msgstr ""
@@ -144,10 +144,10 @@ msgid "%1$s%% Confidence Interval"
 msgstr ""
 
 msgid "Lower"
-msgstr ""
+msgstr "Daha düşük"
 
 msgid "Upper"
-msgstr ""
+msgstr "Üst"
 
 msgid ""
 "The null hypothesis specifies that the relative frequency of a digit is "
@@ -675,7 +675,7 @@ msgid "Average"
 msgstr ""
 
 msgid "Frequency"
-msgstr ""
+msgstr "Frekans"
 
 msgid "Entropy"
 msgstr ""
@@ -1149,7 +1149,7 @@ msgid "Absolute value"
 msgstr ""
 
 msgid "Mean"
-msgstr ""
+msgstr "Ortalama"
 
 msgid "Std. deviation"
 msgstr ""
@@ -1480,7 +1480,7 @@ msgid ""
 msgstr ""
 
 msgid "Total"
-msgstr ""
+msgstr "Toplam"
 
 msgid "Top stratum"
 msgstr ""
@@ -1501,19 +1501,20 @@ msgid "Valid cases"
 msgstr ""
 
 msgid "Median"
-msgstr ""
+msgstr "Medyan"
 
 msgid "Variance"
-msgstr ""
+msgstr "Varyans"
 
+#, fuzzy
 msgid "Range"
-msgstr ""
+msgstr "Sıra"
 
 msgid "Minimum"
-msgstr ""
+msgstr "Minimum"
 
 msgid "Maximum"
-msgstr ""
+msgstr "Maksimum"
 
 msgid ""
 "The audit result variable should contain only 0's (correct) and 1's "
@@ -1788,7 +1789,7 @@ msgid "Ratio %1$s"
 msgstr ""
 
 msgid "Mode"
-msgstr ""
+msgstr "Mod"
 
 msgid "Prior"
 msgstr ""
