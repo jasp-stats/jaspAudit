@@ -864,6 +864,11 @@
       parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
       parentContainer$setError(gettextf("Analysis not possible: The materiality (%1$s) is higher than, or equal to the total value of the population (%2$s).", options[["materiality_abs_val"]], options[["n_units"]]))
       return(TRUE)
+    } else if (options[["bayesian"]] && !options[["workflow"]] && options[["method"]] == "binomial" && options[["hurdle"]] && ((options[["prior_method"]] == "arm" && options[["ir"]] == "high" && options[["cr"]] == "high" && options[["car"]] == "high") || (options[["prior_method"]] == "param" && (options[["alpha"]] == 0 || options[["beta"]] == 0)))) {
+      # Error if the prior for the hurdle model is improper
+      parentContainer[["errorMessage"]] <- createJaspTable(gettext("Evaluation Summary"))
+      parentContainer$setError(gettext("Analysis not possible: The hurdle model cannot be applied with this specific prior distribution because it is improper. Please specify a different prior distribution."))
+      return(TRUE)
     } else {
       # No error in the evaluation options
       return(FALSE)
