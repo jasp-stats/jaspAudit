@@ -34,6 +34,7 @@ options$min_precision_rel_val <- 0.02
 options$explanatoryText <- TRUE
 options$id <- ""
 options$stratum <- ""
+options$hurdle <- FALSE
 options$tableTaints <- FALSE
 options$tableAssumptions <- FALSE
 options$plotPosteriorInfo <- FALSE
@@ -123,6 +124,7 @@ options$car <- "high"
 options$n <- 0
 options$x <- 0
 options$stratum <- ""
+options$hurdle <- FALSE
 options$tableTaints <- FALSE
 options$tableAssumptions <- FALSE
 options$expected_rel_val <- 0
@@ -206,6 +208,7 @@ options$min_precision_rel_val <- 0.02
 options$explanatoryText <- TRUE
 options$stratum <- ""
 options$pooling <- FALSE
+options$hurdle <- FALSE
 options$n <- 0
 options$x <- 0
 options$tableTaints <- FALSE
