@@ -77,18 +77,18 @@ Form
 		{
 			id:							metric
 			name: 						"metric"
-			label: 						qsTr("Fairness Measures")
+			label: 						qsTr("Fairness Measure")
 			indexDefaultValue: 			0
 			values: [
-				{ label: qsTr("Disparate Impact"),					value: "pp"},
-				{ label: qsTr("Equalized odds"), 					value: "eo"},
-				{ label: qsTr("Accuracy parity"),					value: "ap"},
-				{ label: qsTr("Predictive rate parity"),			value: "prp"},
-				{ label: qsTr("Negative predictive value parity"),	value: "npvp"},
-				{ label: qsTr("False positive rate parity"),		value: "fprp"},
-				{ label: qsTr("False negative rate parity"),		value: "fnrp"},
-				{ label: qsTr("Equal opportunity"),					value: "tprp"},
-				{ label: qsTr("Specificity parity"), 				value: "sp"}
+				{ label: qsTr("predictive rate parity"),			value: "prp"},
+				{ label: qsTr("negative predictive value parity"),	value: "npvp"},
+				{ label: qsTr("false positive rate parity"),		value: "fprp"},
+				{ label: qsTr("false negative rate parity"),		value: "fnrp"},
+				{ label: qsTr("equal opportunity"),					value: "tprp"},
+				{ label: qsTr("specificity parity"), 				value: "sp"},
+				{ label: qsTr("disparate impact"),					value: "pp"},
+				{ label: qsTr("equalized odds"), 					value: "eo"},
+				{ label: qsTr("accuracy parity"),					value: "ap"}
 			]
 			info:						qsTr("The type of fairness measure to compute and perform inference on.")
 		}
@@ -152,12 +152,36 @@ Form
 		}
 	}
 
-	Section
-	{
-		title: 							qsTr("Report")
-		columns: 						1
+// RadioButtonGroup
+//	{
+//		name:							"bayesFactorType"
+//		title:							"Bayes Factor"
+//		info:							qsTr("Choose which type of Bayes factor to display.")
+//
+//		RadioButton
+//		{
+//			name:						"BF10"
+//			text:						qsTr("BF\u2081\u2080")
+//			checked:					true
+//			info:						qsTr("Bayes factor to quantify evidence for the alternative hypothesis relative to the null hypothesis.")
+//		}
+//
+//		RadioButton
+//		{
+//			name:						"BF01"
+//			text:						qsTr("BF\u2080\u2081")
+//			info:						qsTr("Bayes factor to quantify evidence for the null hypothesis relative to the alternative hypothesis.")
+//		}
+//
+//		RadioButton
+//		{
+//			name:						"logBF10"
+//			text:						qsTr("Log(BF\u2081\u2080)")
+//			info:						qsTr("Natural logarithm of BF10.")
+//		}
+//	}
 
-	Group
+		Group
 	{
 		title: 							qsTr("Display")
 		info:							qsTr("Specify options that have an effect on the look and feel of the audit report.")
@@ -181,6 +205,11 @@ Form
 		}
 	}
 
+	Section
+	{
+		title: 							qsTr("Report")
+		columns: 						2
+
 		Group
 		{
 			title: 						qsTr("Tables")
@@ -188,35 +217,107 @@ Form
 
 			CheckBox
 			{
+				text:					qsTr("Individual comparisons")
+				name:					"comparisonsTable"
+				info:					qsTr("Produces a table comparing the unprivileged groups against the privileged group.")
+			}
+
+//			CheckBox
+//			{
+//				text:					qsTr("Model performance")
+//				name:					"performanceTable"
+//				info:					qsTr("Produces a table containing the performance measures for the classification, including support, accuracy, precision, recall and F1-score.")
+//			}
+
+			CheckBox
+			{
 				text:					qsTr("Confusion matrix")
 				name:					"confusionTable"
 				info:					qsTr("Produces the confusion matrix for each group.")
+				checked: 				true
 
 				CheckBox {
 					text:				qsTr("Display proportions")
 					name:				"confusionTableProportions"
 					info:				qsTr("Displays proportions in the confusion table.")
 				}
+
+				CheckBox{
+					name:	"confusionTranspose"
+					text:	qsTr("Transpose matrix")
+					info:	qsTr("Transposes the confusion matrix.")
+				}
 			}
 		}
-
-
 
 		Group
 		{
-			title:						qsTr("Advanced")
+			title: 						qsTr("Plots")
+			info:						qsTr("Add additional figures about the evaluation to the report.")
 
-			IntegerField
+			CheckBox
 			{
-				name:					"seed"
-				label:					qsTr("Seed")
-				defaultValue:			Math.floor(Math.random() * 1000) // Init with random integer in [1,...,999]
-				min:					-999
-				max:					999
-				info:					qsTr("Selects the seed for the random number generator in order to reproduce results.")
+				text:					qsTr("Parity estimates")
+				name:					"parityPlot"
+				info:					qsTr("Produces a plot showing the parity statistics for each unprivileged group against the privileged group.")
 			}
+
+//			CheckBox
+//			{
+//				text:					qsTr("Prior and posterior distribution")
+//				name:					"posteriorPlot"
+//				enabled:				metric.value != "dp"
+//				info:					qsTr("Produces a figure that shows the prior and posterior distribution.")
+//			}
+//
+//			CheckBox
+//			{
+//				text:					qsTr("Bayes factor robustness check")
+//				name:					"robustnessPlot"
+//				enabled:				metric.value != "dp"
+//				info:					qsTr("Produces a figure that shows the robustness of the Bayes factor to the prior distribution.")
+//			}
+//
+//			CheckBox
+//			{
+//				text:					qsTr("Sequential analysis")
+//				name:					"sequentialPlot"
+//				info:					qsTr("Produces a figure that shows the Bayes factor as a function of the sample size.")
+//			}
+
 		}
 	}
+
+//	Section
+//	{
+//		columns:						1
+//		title: 							qsTr("Advanced")
+//
+//		Group
+//		{
+//			title:						qsTr("Prior Distribution")
+//
+//			DoubleField
+//			{
+//				name: 					"concentration"
+//				label: 					qsTr("Concentration")
+//				defaultValue: 			1
+//				decimals:				2
+//				min:					1
+//				info:					qsTr("Specifies the concentration parameter for the Dirichlet prior.")
+//			}
+//
+//			IntegerField
+//			{
+//				name:					"seed"
+//				label:					qsTr("Seed")
+//				defaultValue:			Math.floor(Math.random() * 1000) // Init with random integer in [1,...,999]
+//				min:					-999
+//				max:					999
+//				info:					qsTr("Selects the seed for the random number generator in order to reproduce results.")
+//			}
+//		}
+//	}
 
 	Common.DownloadReport { }
 }

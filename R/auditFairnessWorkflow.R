@@ -48,7 +48,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
 
 .jfaFairnessProcedure <- function(options, jaspResults, position) {
   if (options[["explanatoryText"]] && is.null(jaspResults[["procedureContainer"]])) {
-    procedureContainer <- createJaspContainer(title = gettext("<u>Procedure</u>"))
+    procedureContainer <- createJaspContainer(title = gettext("<u>Introduction</u>"))
     procedureContainer$position <- position
     procedureText <- gettextf("The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute. Fairness -ore discrimination- can be quantified using so-called fairness measures. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions.")
     procedureContainer[["procedureParagraph"]] <- createJaspHtml(procedureText, "p")
@@ -211,9 +211,10 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   }
 
   if (options[["explanatoryText"]]) {
-    caption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> Graphical representation of the decision-making workflow obtained after answering the questions. The label “FP” indicates “False Positives” and the label “FN indicates “False Negatives”.", jaspResults[["figNumber"]]$object), "p")
+    caption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> Graphical representation of the decision-making workflow obtained after answering the questions. The label “FP” indicates “False Positives” and the label “FN indicates “False Negatives”. The white rectangles indicate the followed path based on the answers provided to the necessary questions of the workflow, the gray rectangles represent the ignored path.", jaspResults[["figNumber"]]$object), "p")
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = jaspResults[["workflowfigure"]])
+    caption$dependOn(options = c("explanatoryText"))
     jaspResults[["workflowfigureText"]] <- caption
   }
 }
@@ -252,7 +253,10 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
     return()
   }else{
   htmlText <- createJaspHtml(gettextf("<h2><b><u><small>Theoretical Details and Formulas of Fairness Measures</small></u></b></h2>
-   %1$s", details))
+   %1$s
+   
+   <h2><b><u><small>Conclusion</small></u></b></h2>
+   After identifying the most appropriate fairness measure (<i>%2$s</i>) for the context through the decision-making workflow, it is essential to calculate its values using the available data in order to assess the fairness—or discrimination—of the AI.", details, state[["name"]]))
   htmlText$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC", "explanatoryText"))
   htmlText$position <- positionInContainer
   jaspResults[["selectedExplanationText"]] <- htmlText

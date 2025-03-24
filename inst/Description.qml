@@ -89,15 +89,16 @@ Description
 	 	title:			qsTr("Algorithm Auditing")
 		icon:			"audit-algorithms.svg"
 	 }
+	   Analysis
+	 {
+	 	title:			qsTr("Fairness Workflow")
+        func:			"auditFairnessWorkflow"
+	 }
 	 Analysis
 	 {
-	 	title:			qsTr("Fairness Measures Calculation")
+	 	menu:			qsTr("Evaluation")
+		title:			qsTr("Fairness Evaluation")
 	 	func:			"auditClassicalModelFairness"
 		preloadData:	true
-	 }
-	  Analysis
-	 {
-	 	title:			qsTr("Fairness Measures Workflow")
-        func:			"auditFairnessWorkflow"
 	 }
 }
