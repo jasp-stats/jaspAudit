@@ -67,7 +67,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   # ---
 
   # Create the conclusion paragraph
-  .jfaFairnessAddConclusion(options, fairnessContainer, jaspResults, ready, position = 3)
+  .jfaFairnessAddConclusion(options, fairnessContainer, jaspResults, ready, position = 13)
 
   # ---
 
@@ -369,10 +369,10 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     }
   }
 }else{
-container <- createJaspContainer(title = gettext("<u>Individual Comparison</u>"))
+container <- createJaspContainer(title = gettext("<u>Individual Comparisons</u>"))
 container$position <- positionInContainer
 container$dependOn(options = .jfaFairnessCommonOptions())
-jaspResults[["individualcomparison"]] <- container
+fairnessContainer[["individualcomparison"]] <- container
 
   if (is.null(fairnessContainer[["comparisonsTable"]])) {
   
@@ -612,7 +612,7 @@ jaspResults[["individualcomparison"]] <- container
       tb$addFootnote(gettextf("%1$s = %2$s.", .jfaFairnessGetMetricFromQuestion(options)[["title"]][[1]], .jfaFairnessGetMetricFromQuestion(options)[["formula"]][[1]]), colName = "fmetric") 
       tb$addFootnote(gettextf("%1$s = %2$s.", .jfaFairnessGetMetricFromQuestion(options)[["title"]][[2]], .jfaFairnessGetMetricFromQuestion(options)[["formula"]][[2]]), colName = "smetric") 
       }else {
-      tb$addColumnInfo(name = "metric", title = .jfaFairnessGetMetricFromQuestion(options)[["title"]], type = if (.jfaFairnessGetMetricFromQuestion(options)[["metric"]] == "pp") "integer" else "number")  
+      tb$addColumnInfo(name = "metric", title = .jfaFairnessGetMetricFromQuestion(options)[["title"]], type = "number")  
       est <- result[["metric"]][["all"]][["estimate"]]
       after <- 1
       for (i in seq_along(groupLevels)) {
@@ -683,7 +683,7 @@ jaspResults[["individualcomparison"]] <- container
 container <- createJaspContainer(title = gettext("<u>Parity Plot</u>"))
 container$position <- positionInContainer
 container$dependOn(options = .jfaFairnessCommonOptions())
-jaspResults[["parityplot"]] <- container
+fairnessContainer[["parityplot"]] <- container
 
 if (is.null(fairnessContainer[["parityPlot"]])) {
 

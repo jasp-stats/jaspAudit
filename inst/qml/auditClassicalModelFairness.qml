@@ -80,15 +80,15 @@ Form
 			label: 						qsTr("Fairness Measure")
 			indexDefaultValue: 			0
 			values: [
-				{ label: qsTr("predictive rate parity"),			value: "prp"},
-				{ label: qsTr("negative predictive value parity"),	value: "npvp"},
-				{ label: qsTr("false positive rate parity"),		value: "fprp"},
-				{ label: qsTr("false negative rate parity"),		value: "fnrp"},
-				{ label: qsTr("equal opportunity"),					value: "tprp"},
-				{ label: qsTr("specificity parity"), 				value: "sp"},
-				{ label: qsTr("disparate impact"),					value: "pp"},
-				{ label: qsTr("equalized odds"), 					value: "eo"},
-				{ label: qsTr("accuracy parity"),					value: "ap"}
+				{ label: qsTr("Predictive rate parity"),			value: "prp"},
+				{ label: qsTr("Negative predictive value parity"),	value: "npvp"},
+				{ label: qsTr("False positive rate parity"),		value: "fprp"},
+				{ label: qsTr("False negative rate parity"),		value: "fnrp"},
+				{ label: qsTr("Equal opportunity"),					value: "tprp"},
+				{ label: qsTr("Specificity parity"), 				value: "sp"},
+				{ label: qsTr("Disparate impact"),					value: "pp"},
+				{ label: qsTr("Equalized odds"), 					value: "eo"},
+				{ label: qsTr("Accuracy parity"),					value: "ap"}
 			]
 			info:						qsTr("The type of fairness measure to compute and perform inference on.")
 		}
