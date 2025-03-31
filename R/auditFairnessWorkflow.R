@@ -36,7 +36,6 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
 
   # Display the decision-making workflow plot
   .jfaPlot(options, jaspResults, FairnessMeasureContainer, positionInContainer = 3)
-
 }
 
 .jfaFairnessMeasureStage <- function(options, jaspResults, position) {
