@@ -186,12 +186,12 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     # set.seed(options[["seed"]])
     if (metric[["metric"]] != "eo") {
       tryResult <- try({
-      result[["frequentist"]] <- jfa::model_fairness(dataset,
-        protected = options[["protected"]], target = options[["target"]], predictions = options[["predictions"]],
-        privileged = options[["privileged"]], positive = options[["positive"]],
-        metric = .jfaFairnessGetMetricFromQuestion(options)[["metric"]], alternative = options[["alternative"]],
-        conf.level = options[["conf_level"]], prior = FALSE
-      )
+        result[["frequentist"]] <- jfa::model_fairness(dataset,
+          protected = options[["protected"]], target = options[["target"]], predictions = options[["predictions"]],
+          privileged = options[["privileged"]], positive = options[["positive"]],
+          metric = .jfaFairnessGetMetricFromQuestion(options)[["metric"]], alternative = options[["alternative"]],
+          conf.level = options[["conf_level"]], prior = FALSE
+        )
       })
       # result[["bayesian"]] <- jfa::model_fairness(dataset, options[["protected"]], options[["target"]], options[["predictions"]],
       #  privileged = options[["privileged"]], positive = options[["positive"]],
@@ -201,24 +201,24 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     } else {
       result[["frequentist"]] <- list()
       tryResult <- try({
-      result[["frequentist"]][["tp"]] <- jfa::model_fairness(dataset,
-        protected = options[["protected"]], target = options[["target"]], predictions = options[["predictions"]],
-        privileged = options[["privileged"]], positive = options[["positive"]],
-        metric = "tprp", alternative = options[["alternative"]],
-        conf.level = options[["conf_level"]], prior = FALSE
-      )
+        result[["frequentist"]][["tp"]] <- jfa::model_fairness(dataset,
+          protected = options[["protected"]], target = options[["target"]], predictions = options[["predictions"]],
+          privileged = options[["privileged"]], positive = options[["positive"]],
+          metric = "tprp", alternative = options[["alternative"]],
+          conf.level = options[["conf_level"]], prior = FALSE
+        )
       })
       tryResult <- try({
-      result[["frequentist"]][["fp"]] <- jfa::model_fairness(dataset,
-        protected = options[["protected"]], target = options[["target"]], predictions = options[["predictions"]],
-        privileged = options[["privileged"]], positive = options[["positive"]],
-        metric = "fprp", alternative = options[["alternative"]],
-        conf.level = options[["conf_level"]], prior = FALSE
-      )
+        result[["frequentist"]][["fp"]] <- jfa::model_fairness(dataset,
+          protected = options[["protected"]], target = options[["target"]], predictions = options[["predictions"]],
+          privileged = options[["privileged"]], positive = options[["positive"]],
+          metric = "fprp", alternative = options[["alternative"]],
+          conf.level = options[["conf_level"]], prior = FALSE
+        )
       })
     }
-    if(isTryError(tryResult)) {
-    jaspBase:::.quitAnalysis(gettextf("An error occurred: %1$s", jaspBase:::.extractErrorMessage(result)))
+    if (isTryError(tryResult)) {
+      jaspBase:::.quitAnalysis(gettextf("An error occurred: %1$s", jaspBase:::.extractErrorMessage(result)))
     }
     jaspResults[["state"]] <- createJaspState(result)
     jaspResults[["state"]]$dependOn(options = .jfaFairnessCommonOptions())
@@ -496,7 +496,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   }
 }
 
- .jfaFairnessPerformanceTable <- function(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer) {
+.jfaFairnessPerformanceTable <- function(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer) {
   if (!options[["performanceTable"]]) {
     return()
   }
@@ -521,27 +521,27 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     if (!ready) {
       return()
     }
-      metric <- .jfaFairnessGetMetricFromQuestion(options)
+    metric <- .jfaFairnessGetMetricFromQuestion(options)
 
-  if (metric[["metric"]] != "eo") {
-    result <- .jfaFairnessState(dataset, options, jaspResults)[["frequentist"]]
-    tb[["group"]] <- rownames(result[["performance"]][["all"]])
-    tb[["support"]] <- result[["performance"]][["all"]][["support"]]
-    tb[["accuracy"]] <- result[["performance"]][["all"]][["accuracy"]]
-    tb[["precision"]] <- result[["performance"]][["all"]][["precision"]]
-    tb[["recall"]] <- result[["performance"]][["all"]][["recall"]]
-    tb[["f1"]] <- result[["performance"]][["all"]][["f1.score"]]
-  }else{
-    result <- .jfaFairnessState(dataset, options, jaspResults)[["frequentist"]][["fp"]]
-    tb[["group"]] <- rownames(result[["performance"]][["all"]])
-    tb[["support"]] <- result[["performance"]][["all"]][["support"]]
-    tb[["accuracy"]] <- result[["performance"]][["all"]][["accuracy"]]
-    tb[["precision"]] <- result[["performance"]][["all"]][["precision"]]
-    tb[["recall"]] <- result[["performance"]][["all"]][["recall"]]
-    tb[["f1"]] <- result[["performance"]][["all"]][["f1.score"]]
+    if (metric[["metric"]] != "eo") {
+      result <- .jfaFairnessState(dataset, options, jaspResults)[["frequentist"]]
+      tb[["group"]] <- rownames(result[["performance"]][["all"]])
+      tb[["support"]] <- result[["performance"]][["all"]][["support"]]
+      tb[["accuracy"]] <- result[["performance"]][["all"]][["accuracy"]]
+      tb[["precision"]] <- result[["performance"]][["all"]][["precision"]]
+      tb[["recall"]] <- result[["performance"]][["all"]][["recall"]]
+      tb[["f1"]] <- result[["performance"]][["all"]][["f1.score"]]
+    } else {
+      result <- .jfaFairnessState(dataset, options, jaspResults)[["frequentist"]][["fp"]]
+      tb[["group"]] <- rownames(result[["performance"]][["all"]])
+      tb[["support"]] <- result[["performance"]][["all"]][["support"]]
+      tb[["accuracy"]] <- result[["performance"]][["all"]][["accuracy"]]
+      tb[["precision"]] <- result[["performance"]][["all"]][["precision"]]
+      tb[["recall"]] <- result[["performance"]][["all"]][["recall"]]
+      tb[["f1"]] <- result[["performance"]][["all"]][["f1.score"]]
+    }
   }
-  }
- }
+}
 
 .jfaFairnessConfusionTable <- function(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer) {
   if (!options[["confusionTable"]]) {
