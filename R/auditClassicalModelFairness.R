@@ -77,8 +77,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 .jfaFairnessCommonOptions <- function() {
   opt <- c(
     "target", "predictions", "protected", "metric", "conf_level", "privileged", "positive",
-    "alternative"
-    # , "seed", "concentration"
+    "alternative", "seed", "concentration"
   )
   return(opt)
 }
