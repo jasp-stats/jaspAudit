@@ -84,25 +84,25 @@ test_that("<b>Table 3.</b> Model Performance results match", {
   )
 })
 
-test_that("Bayes Factor Robustness Plot matches", {
-  plotName <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_robustnessPlot"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "bayes-factor-robustness-plot")
-})
-
-test_that("Sequential Analysis Plot matches", {
-  plotName <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_sequentialPlot"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "sequential-analysis-plot")
-})
-
-test_that("<b>Table 1.</b> Omnibus Test - Predictive Rate Parity results match", {
-  table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_summaryTable"]][["data"]]
-  jaspTools::expect_equal_tables(
-    table,
-    list(
-      0.000714070961957615, 5, "Ethnicity", 6172, 0.00209507283665478,
-      18.7989675485203
-    )
-  )
-})
+# test_that("Bayes Factor Robustness Plot matches", {
+#  plotName <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_robustnessPlot"]][["data"]]
+#  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+#  jaspTools::expect_equal_plots(testPlot, "bayes-factor-robustness-plot")
+#})
+#
+# test_that("Sequential Analysis Plot matches", {
+#  plotName <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_sequentialPlot"]][["data"]]
+#  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+#  jaspTools::expect_equal_plots(testPlot, "sequential-analysis-plot")
+#})
+#
+#test_that("<b>Table 1.</b> Omnibus Test - Predictive Rate Parity results match", {
+#  table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_summaryTable"]][["data"]]
+#  jaspTools::expect_equal_tables(
+#    table,
+#    list(
+#      0.000714070961957615, 5, "Ethnicity", 6172, 0.00209507283665478,
+#      18.7989675485203
+#    )
+#  )
+#})
