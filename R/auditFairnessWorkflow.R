@@ -22,27 +22,27 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   # Create the procedure paragraph
   .jfaFairnessProcedure(options, jaspResults, position = 1)
 
-  FairnessMeasureContainer <- .jfaFairnessMeasureStage(options, jaspResults, position = 2)
+  fairnessMeasureContainer <- .jfaFairnessMeasureStage(options, jaspResults, position = 2)
 
   # Display the selected fairness measure
-  .showFairnessMetric(options, jaspResults, FairnessMeasureContainer, positionInContainer = 1)
+  .showFairnessMetric(options, jaspResults, fairnessMeasureContainer, positionInContainer = 1)
 
   # Display the theoretical information of the selected fairness measure
-  .showExplanationText(options, jaspResults, FairnessMeasureContainer, positionInContainer = 2)
+  .showWorkflowExplanationText(options, jaspResults, fairnessMeasureContainer, positionInContainer = 2)
 
   # --- PLOTS
 
   .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
 
   # Display the decision-making workflow plot
-  .jfaPlot(options, jaspResults, FairnessMeasureContainer, positionInContainer = 3)
+  .jfaworkflowPlot(options, jaspResults, fairnessMeasureContainer, positionInContainer = 3)
 }
 
 .jfaFairnessMeasureStage <- function(options, jaspResults, position) {
   fairnessContainer <- createJaspContainer(title = gettext("<u>Obtaining a Fairness Measure</u>"))
   fairnessContainer$position <- position
   fairnessContainer$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_casec"))
-  jaspResults[["FairnessMeasureContainer"]] <- fairnessContainer
+  jaspResults[["fairnessMeasureContainer"]] <- fairnessContainer
   return(fairnessContainer)
 }
 
@@ -58,7 +58,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   }
 }
 
-.determineFairnessMetric <- function(options, jaspResults, FairnessMeasureContainer, positionInContainer) {
+.determineFairnessMetric <- function(options, jaspResults, fairnessMeasureContainer, positionInContainer) {
   if (!is.null(jaspResults[["state"]])) {
     return(jaspResults[["state"]]$object)
   }
@@ -105,13 +105,13 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   return(metric)
 }
 
-.determineExplanationText <- function(options, metric, FairnessMeasureContainer, positionInContainer, jaspResults) {
+.determineWorkflowExplanationText <- function(options, metric, fairnessMeasureContainer, positionInContainer, jaspResults) {
   name <- metric$name
   if (!options[["explanatoryText"]]) {
-    ExplanationText <- gettext(" ")
+    explanationText <- ""
   } else {
     if (name == "Disparate Impact") {
-      ExplanationText <- gettextf("
+      explanationText <- gettextf("
       <u>Fairness Definition:</u>
     The algorithm is fair if its use results in the same ratio of items from two different groups experiencing a change in the status quo (i.e., being classified as positive).
     The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.
@@ -124,7 +124,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
     This method has limitations, as the threshold value is not based on the measure's properties, data characteristics, or statistical considerations. Originally derived from U.S. employment hiring rates, the rule lacks theoretical rigor for broader applications.
       ")
     } else if (name == "Equalized Odds") {
-      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      explanationText <- gettext("<u>Fairness Definition:</u>
       The algorithm is fair if its use results in the same number of items from different groups experiencing correct and incorrect changes in the status quo (i.e, being, correctly and incorrectly, classified as positive).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.
 
@@ -134,35 +134,35 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
       <u>Further Details: :</u>
    It is important to note that this is the only measure in the decision-making workflow that addresses both the correct classification of the positive class and the incorrect classification of the negative class.")
     } else if (name == "Predictive Rate Parity") {
-      ExplanationText <- gettext(" <u>Fairness Definition:</u>
+      explanationText <- gettext(" <u>Fairness Definition:</u>
       The algorithm is fair if its use results in the same number of items from different groups experiencing correct changes in the status quo (i.e., being correctly classified as positive).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.
 
       <u>Formula:</u>
       Predictive rate parity is based on precision, calculated as TP/(TP+FP), applied to both the privileged and unprivileged groups. Here, TP denotes true positives (correctly classified positive items) and FP denotes false positives (incorrectly classified positive items).")
     } else if (name == "Equal Opportunity") {
-      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      explanationText <- gettext("<u>Fairness Definition:</u>
       The algorithm is fair if its use results in the same number of items from different groups experiencing correct changes in the status quo (i.e., being correctly classified as positive).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.
 
       <u>Formula:</u>
       Equal opportunity is based on the true positive rate, calculated as TP/(TP+FN), applied to both privileged and unprivileged groups. Here, TP denotes true positives (correctly classified positive items) and FN denotes false negatives (incorrectly classified negative items).")
     } else if (name == "Specificity Parity") {
-      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      explanationText <- gettext("<u>Fairness Definition:</u>
       The algorithm is fair if its use results in the same number of items from different groups correctly experiencing no changes in the status quo (i.e., being correctly classified as negative).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.
 
       <u>Formula:</u>
       Specificity parity is based on the true negative rate, calculated as TN/(TN+FP), applied to both privileged and unprivileged groups. Here, TN denotes true negatives (correctly classified negative items) and FP denotes false positives (incorrectly classified positive items).")
     } else if (name == "Negative Predictive Value Parity") {
-      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      explanationText <- gettext("<u>Fairness Definition:</u>
       The algorithm is fair if its use results in the same number of items from different groups correctly experiencing no changes in the status quo (i.e., being correctly classified as negative).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.
 
       <u>Formula:</u>
       Negative predictive value parity is based on the negative predictive value, calculated as TN/(TN+FN), applied to both privileged and unprivileged groups. Here, TN denotes true negatives (correctly classified negative items) and FN denotes false negatives (incorrectly classified negative items).")
     } else if (name == "Accuracy Parity") {
-      ExplanationText <- gettextf("<u>Fairness Definition:</u>
+      explanationText <- gettextf("<u>Fairness Definition:</u>
       The algorithm is fair if its use results in the same number of items from different groups correctly experiencing changes and correctly experiencing no changes in the status quo (i.e., being correctly classified as positive and being correctly classified as negative).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.
 
@@ -172,14 +172,14 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
       <u>Further Details:</u>
       Accuracy parity, like accuracy as a model evaluation metric, has a major flaw when applied to cases where the positive class is a small minority. For example, if 3%% of the privileged group and 6%% of the unprivileged group commit fraud, accuracy may seem high overall (96.7%%), but masks disparities, with the unprivileged group having lower accuracy (94%) compared to the privileged group (97%%). Unlike other measures, accuracy parity does not consider varying error costs. It fails to detect increases in false negatives or false positives, missing the associated rise in costs.")
     } else if (name == "False Positive Rate Parity") {
-      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      explanationText <- gettext("<u>Fairness Definition:</u>
       The algorithm is fair if its use results in the same number of items from different groups experiencing incorrect changes in the status quo (i.e., being incorrectly classified as positive).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.
 
       <u>Formula:</u>
       False positive rate parity is based on the false positive rate, calculated as FP/(TN+FP), applied to both privileged and unprivileged groups. Here, FP denotes false positives (incorrectly classified positive items), and TN denotes true negatives (correctly classified negative items).")
     } else if (name == "False Negative Rate Parity") {
-      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      explanationText <- gettext("<u>Fairness Definition:</u>
       The algorithm is fair if its use results in the same number of items from different groups incorrectly experiencing no changes in the status quo (i.e., being incorrectly classified as negative).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.
 
@@ -187,39 +187,39 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
       False negative rate parity is based on the false negative rate, calculated as FN/(TP+FN), applied to both privileged and unprivileged groups. Here, FN denotes false negatives (incorrectly classified negative items), and TP denotes true positives (correctly classified positive items).")
     }
   }
-  return(ExplanationText)
+  return(explanationText)
 }
 
-.jfaPlot <- function(options, jaspResults, positionInContainer, FairnessMeasureContainer) {
+.jfaworkflowPlot <- function(options, jaspResults, positionInContainer, fairnessMeasureContainer) {
   if (!options[["workflowfigure"]]) {
     return()
   }
 
   .jfaFigureNumberUpdate(jaspResults)
 
-  if (is.null(FairnessMeasureContainer[["workflowfigure"]])) {
+  if (is.null(fairnessMeasureContainer[["workflowfigure"]])) {
     plot <- createJaspPlot(title = gettext("<u>Graphical Representation of the Decision-Making Workflow</u>"), width = 800, height = 800)
     plot$position <- positionInContainer
     plot$dependOn(options = c("workflowfigure", "firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC"))
-    FairnessMeasureContainer[["workflowfigure"]] <- plot
-    result <- .determineFairnessMetric(options, jaspResults, positionInContainer, FairnessMeasureContainer)
+    fairnessMeasureContainer[["workflowfigure"]] <- plot
+    result <- .determineFairnessMetric(options, jaspResults, positionInContainer, fairnessMeasureContainer)
     plot$plotObject <- plot(result)
   }
 
   if (options[["explanatoryText"]]) {
     caption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> Graphical representation of the decision-making workflow obtained after answering the questions. The label “FP” indicates “False Positives” and the label “FN indicates “False Negatives”. The white rectangles indicate the followed path based on the answers provided to the necessary questions of the workflow, the gray rectangles represent the ignored path.", jaspResults[["figNumber"]]$object), "p")
     caption$position <- positionInContainer + 1
-    caption$dependOn(optionsFromObject = FairnessMeasureContainer[["workflowfigure"]])
-    FairnessMeasureContainer[["workflowfigureText"]] <- caption
+    caption$dependOn(optionsFromObject = fairnessMeasureContainer[["workflowfigure"]])
+    fairnessMeasureContainer[["workflowfigureText"]] <- caption
   }
 }
 
-.showFairnessMetric <- function(options, jaspResults, positionInContainer, FairnessMeasureContainer) {
-  if (!is.null(FairnessMeasureContainer[["selectedFairnessMeatric"]])) {
+.showFairnessMetric <- function(options, jaspResults, positionInContainer, fairnessMeasureContainer) {
+  if (!is.null(fairnessMeasureContainer[["selectedFairnessMeatric"]])) {
     return()
   }
 
-  state <- .determineFairnessMetric(options, jaspResults, positionInContainer, FairnessMeasureContainer)
+  state <- .determineFairnessMetric(options, jaspResults, positionInContainer, fairnessMeasureContainer)
 
   htmlText <- createJaspHtml(gettextf("The most suitable fairness measure is %1$s.", state[["name"]]))
 
@@ -227,26 +227,26 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
 
   htmlText$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC"))
 
-  FairnessMeasureContainer[["selectedFairnessMetric"]] <- htmlText
+  fairnessMeasureContainer[["selectedFairnessMetric"]] <- htmlText
 }
 
-.showExplanationText <- function(options, jaspResults, positionInContainer, FairnessMeasureContainer) {
-  if (!is.null(FairnessMeasureContainer[["selectedExplanationText"]])) {
+.showWorkflowExplanationText <- function(options, jaspResults, positionInContainer, fairnessMeasureContainer) {
+  if (!is.null(fairnessMeasureContainer[["selectedExplanationText"]])) {
     return()
   }
-  state <- .determineFairnessMetric(options, jaspResults, positionInContainer, FairnessMeasureContainer)
+  state <- .determineFairnessMetric(options, jaspResults, positionInContainer, fairnessMeasureContainer)
 
-  details <- .determineExplanationText(options, state, positionInContainer, FairnessMeasureContainer, jaspResults)
+  details <- .determineWorkflowExplanationText(options, state, positionInContainer, fairnessMeasureContainer, jaspResults)
 
   if (!options[["explanatoryText"]]) {
     return()
   } else {
-    htmlText <- createJaspHtml(gettextf("%1$s", details))
+    htmlText <- createJaspHtml(details)
 
     htmlText$position <- positionInContainer
 
     htmlText$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC", "explanatoryText"))
 
-    FairnessMeasureContainer[["selectedExplanationText"]] <- htmlText
+    fairnessMeasureContainer[["selectedExplanationText"]] <- htmlText
   }
 }
