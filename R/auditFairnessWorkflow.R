@@ -36,6 +36,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
 
   # Display the decision-making workflow plot
   .jfaPlot(options, jaspResults, FairnessMeasureContainer, positionInContainer = 3)
+
 }
 
 .jfaFairnessMeasureStage <- function(options, jaspResults, position) {
@@ -111,7 +112,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
     ExplanationText <- gettext(" ")
   } else {
     if (name == "Disparate Impact") {
-      ExplanationText <- gettext("
+      ExplanationText <- gettextf("
       <u>Fairness Definition:</u>
     The algorithm is fair if its use results in the same ratio of items from two different groups experiencing a change in the status quo (i.e., being classified as positive).
     The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.
@@ -120,7 +121,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
     Disparate impact is obtained by dividing the positive rate of the unprivileged group by that of the privileged group. The positive rate is equal to (TP+FP)/N, where TP denotes true positives (items correctly classified as positive), FP denotes false positives (items incorrectly classified as positive), and N represents the total number of items classified by the AI.
 
     <u>Further Details:</u>
-    The most common use of disparate impact is linked to the U.S. Equal Employment Opportunity Commission (EEOC) guidelines, particularly the 80% rule. According to this rule, if disparate impact is higher than 0.80, there is no discrimination.
+    The most common use of disparate impact is linked to the U.S. Equal Employment Opportunity Commission (EEOC) guidelines, particularly the 80%% rule. According to this rule, if disparate impact is higher than 0.80, there is no discrimination.
     This method has limitations, as the threshold value is not based on the measure's properties, data characteristics, or statistical considerations. Originally derived from U.S. employment hiring rates, the rule lacks theoretical rigor for broader applications.
       ")
     } else if (name == "Equalized Odds") {
@@ -162,7 +163,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
       <u>Formula:</u>
       Negative predictive value parity is based on the negative predictive value, calculated as TN/(TN+FN), applied to both privileged and unprivileged groups. Here, TN denotes true negatives (correctly classified negative items) and FN denotes false negatives (incorrectly classified negative items).")
     } else if (name == "Accuracy Parity") {
-      ExplanationText <- gettext("<u>Fairness Definition:</u>
+      ExplanationText <- gettextf("<u>Fairness Definition:</u>
       The algorithm is fair if its use results in the same number of items from different groups correctly experiencing changes and correctly experiencing no changes in the status quo (i.e., being correctly classified as positive and being correctly classified as negative).
       The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.
 
@@ -170,7 +171,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
       Accuracy parity is based on accuracy, calculated as (TP+TN)/N, applied to both privileged and unprivileged groups. Here, TP denotes true positives (correctly classified positive items), TN denotes true negatives (correctly classified negative items), and N represents the total number of items classified by the AI. The sum of TP and TN reflects the total number of correct classifications made by the AI.
 
       <u>Further Details:</u>
-      Accuracy parity, like accuracy as a model evaluation metric, has a major flaw when applied to cases where the positive class is a small minority. For example, if 3% of the privileged group and 6% of the unprivileged group commit fraud, accuracy may seem high overall (96.7%), but masks disparities, with the unprivileged group having lower accuracy (94%) compared to the privileged group (97%). Unlike other measures, accuracy parity does not consider varying error costs. It fails to detect increases in false negatives or false positives, missing the associated rise in costs.")
+      Accuracy parity, like accuracy as a model evaluation metric, has a major flaw when applied to cases where the positive class is a small minority. For example, if 3%% of the privileged group and 6%% of the unprivileged group commit fraud, accuracy may seem high overall (96.7%%), but masks disparities, with the unprivileged group having lower accuracy (94%) compared to the privileged group (97%%). Unlike other measures, accuracy parity does not consider varying error costs. It fails to detect increases in false negatives or false positives, missing the associated rise in costs.")
     } else if (name == "False Positive Rate Parity") {
       ExplanationText <- gettext("<u>Fairness Definition:</u>
       The algorithm is fair if its use results in the same number of items from different groups experiencing incorrect changes in the status quo (i.e., being incorrectly classified as positive).
