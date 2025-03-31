@@ -44,7 +44,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   .jfaFairnessPerformanceTable(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 3)
 
   # Create the confusion matrix table
-  .jfaFairnessConfusionTable(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 3)
+  .jfaFairnessConfusionTable(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 4)
 
   # ---
 
@@ -53,7 +53,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
 
   # Create the parity plot
-  .jfaFairnessParityPlot(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 4)
+  .jfaFairnessParityPlot(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 5)
 
   # Create the prior and posterior plot
   # .jfaFairnessPosteriorPlot(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer = 7)
