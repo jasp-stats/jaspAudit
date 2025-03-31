@@ -38,7 +38,7 @@ Form
 		AssignedVariablesList
 		{
 			name: 						"target"
-			title: 						qsTr("Ground truth information")
+			title: 						qsTr("Ground Truth Information")
 			singleVariable:				true
 			allowedColumns:				["nominal"]
 			minLevels:					2
@@ -96,7 +96,7 @@ Form
 
 	Group 
 	{
-		title:							qsTr("Specify the Correct Options")
+		title:							qsTr("Levels")
 		info:							qsTr("These options allow specification of the privileged group and the positive class.")
 
 		DropDown
@@ -127,7 +127,6 @@ Form
 		title: 							qsTr("Alt. Hypothesis")
 		name: 							"alternative"
 		info:							qsTr("Specify the alternative hypothesis.")
-		visible: 						metric.value != "pp"
 
 		RadioButton
 		{
@@ -222,12 +221,12 @@ Form
 				info:					qsTr("Produces a table comparing the unprivileged groups against the privileged group.")
 			}
 
-//			CheckBox
-//			{
-//				text:					qsTr("Model performance")
-//				name:					"performanceTable"
-//				info:					qsTr("Produces a table containing the performance measures for the classification, including support, accuracy, precision, recall and F1-score.")
-//			}
+			CheckBox
+			{
+				text:					qsTr("Model performance")
+				name:					"performanceTable"
+				info:					qsTr("Produces a table containing the performance measures for the classification, including support, accuracy, precision, recall and F1-score.")
+			}
 
 			CheckBox
 			{

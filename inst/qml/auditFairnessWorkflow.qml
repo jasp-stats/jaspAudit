@@ -28,7 +28,8 @@ import "./common/planning" as Planning
 Form 
 {
 
-	columns:1
+	columns:							1
+	info:								qsTr("The fairness measures analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions.")
 
 	Section
 	{
@@ -41,6 +42,7 @@ Form
 		id: firstquestion
 		name: "firstquestion"
 		title:qsTr("Is the ground thruth information relevant in your context?")
+		info: 						qsTr("In this question, it must be specified whether the ground truth information (i.e., the target to be predicted) is relevant or not for the analysis context.")
 		
 
 		
@@ -51,6 +53,7 @@ Form
 		{
 			text: 						qsTr("Yes")
 			name: 						"firstquestion_yes"
+			info:						qsTr("This option is selected if it is useful to know whether the classification is done correctly or not.")
 		}
 
 		HelpButton
@@ -66,6 +69,7 @@ Form
 			text: 						qsTr("No")
 			name: 						"firstquestion_no"
 			checked:					true
+			info:						qsTr("This option is selected if the interest is in the algorithm predicted classification only.")
 		}
 
 	
@@ -78,6 +82,7 @@ Form
 		title:qsTr("In which type of classification are you interested?")
 		// enabled: false, diventa grigio
 		visible: firstquestion.value == "firstquestion_yes"
+		info:						qsTr("In this question, it must be specified whether the focus is on correct classifications, incorrect classifications, or both.")
 
 		Group{
 
@@ -87,6 +92,7 @@ Form
 		{
 			text: 						qsTr("Correct classification")
 			name: 						"secondquestion_correct"
+			info:						qsTr("This option is selected if the interest is in the algorithm's correct classifications of items.")
 		}
 
 		HelpButton
@@ -105,6 +111,8 @@ Form
 		{
 			text: 						qsTr("Incorrect classification")
 			name: 						"secondquestion_incorrect"
+			info:						qsTr("This option is selected if the interest is in the algorithm's incorrect classifications of items.")
+
 		}
 
 		HelpButton
@@ -117,9 +125,11 @@ Form
 
 		RadioButton
 		{
-			text: 						qsTr("Both correct and incorrect classification")
+			text: 						qsTr("Both")
 			name: 						"secondquestion_both"
 			checked:					true
+			info:						qsTr("This option is selected if the interest is in both the algorithm's correct and incorrect classifications of items.")
+
 		}
 	}
 
@@ -129,25 +139,32 @@ Form
 		name: "thirdquestion"
 		title:qsTr("What is more important?")
 		visible: secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
+		info:						qsTr("In this question, it must be specified whether the focus is on correctly classifying items into the positive class, the negative class, or both.")
+
 
 			RadioButton
 		{
-			text: 						qsTr("Correctly classifying in the positive class")
+			text: 						qsTr("Correctly classifying the positive class")
 			name: 						"thirdquestion_positive"
+			info:						qsTr("This option is selected if the interest is on correctly classifying items into the positive class.")
 		}
 
 			RadioButton
 		{
-			text: 						qsTr("Correctly classifying in the negative class")
+			text: 						qsTr("Correctly classifying the negative class")
 			name: 						"thirdquestion_negative"
 			checked:					true
+			info:						qsTr("This option is selected if the interest is on correctly classifying items into the negative class.")
+
 		}
 
 			RadioButton
 		{
-			text: 						qsTr("Correctly classifying in both the positive and negative classes")
+			text: 						qsTr("Both")
 			name: 						"thirdquestion_both"
 			checked:					true
+			info:						qsTr("This option is selected if the interest is on correctly classifying items into both the positive and the negative class.")
+
 		}
 
 	}
@@ -158,18 +175,23 @@ Form
 		name: "fourthquestion_caseA"
 		title:qsTr("What are the most costly errors?")
 		visible: thirdquestion.value == "thirdquestion_positive" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
+		info:						qsTr("In this question, it must be specified which classification errors (incorrect classification of items in the positive class or incorrect classification of items in the negative class) result in the greatest losses (economic, social, etc.).")
+
 
 		RadioButton
 		{
 			text: 						qsTr("False positives")
 			name: 						"fourthquestion_caseA_FP"
 			checked:					true
+			info:						qsTr("This option is selected if false positives (incorrectly classifying an item in the positive class when it belongs to the negative class) result in greater losses.")
 		}
 
 		RadioButton
 		{
 			text: 						qsTr("False negatives")
 			name: 						"fourthquestion_caseA_FN"
+			info:						qsTr("This option is selected if false negatives (incorrectly classifying an item in the negative class when it belongs to the positive class) result in greater losses.")
+
 		}
 	}
 
@@ -215,15 +237,7 @@ Form
 		}
 	}
 
-	}
-
-	Section
-	{
-		title:qsTr("Report")
-		columns:1
-
-	
-	Group
+			Group
 	{
 		title: 							qsTr("Display")
 		info:							qsTr("Specify options that have an effect on the look and feel of the audit report.")
@@ -236,7 +250,7 @@ Form
 				text: 					qsTr("Explanatory text")
 				name: 					"explanatoryText"
 				checked: 				true
-				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
+				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the fairness measures.")
 			}
 
 			HelpButton
@@ -245,8 +259,21 @@ Form
 				toolTip: 				qsTr("Show explanatory text at each step of the analysis")
 			}
 		}
+	}
 
-		CheckBox
+	}
+
+	Section
+	{
+		title:qsTr("Report")
+		columns:1
+
+		Group
+		{
+			title: 						qsTr("Plots")
+			info:						qsTr("Add additional figures about the evaluation to the report.")
+
+			CheckBox
 			{
 				id: 					workflowfigure
 				text: 					qsTr("Decision-making workflow plot")
@@ -254,10 +281,11 @@ Form
 				checked: 				true
 				info:					qsTr("When checked, enables the representation of the decision-making workflow that is obtained after answering all the necessary question within it.")
 			}
+		
+		}
 
 	}
 
-	}	
 }
 
 
