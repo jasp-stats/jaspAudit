@@ -150,7 +150,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       )
     } else if (metric[["metric"]] == "pp") {
       procedureText <- gettextf(
-        "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute. Considering the positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified using so-called fairness measures. Calculating a fairness measure implies determining the value of the model evaluation metric, on which the fairness measure is based, for both the privileged and unprivileged groups.",
+        "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute. Considering the positive class (<i>%1$s</i>), fairness -or discrimination- can be quantified using so-called fairness measures. Calculating a fairness measure implies determining the value of the model evaluation metric, on which the fairness measure is based, for both the privileged and unprivileged groups.",
         if (options[["positive"]] == "") "..." else options[["positive"]],
         if (options[["privileged"]] == "") "..." else options[["privileged"]]
       )
