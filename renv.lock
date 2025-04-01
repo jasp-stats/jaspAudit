@@ -45,7 +45,7 @@
     },
     "QuickJSR": {
       "Package": "QuickJSR",
-      "Version": "1.6.0",
+      "Version": "1.7.0",
       "Source": "Repository",
       "Requirements": []
     },
@@ -105,7 +105,7 @@
     },
     "SuppDists": {
       "Package": "SuppDists",
-      "Version": "1.1-9.8",
+      "Version": "1.1-9.9",
       "Source": "Repository",
       "Requirements": [
         "R"
@@ -426,7 +426,7 @@
     },
     "gdtools": {
       "Package": "gdtools",
-      "Version": "0.4.1",
+      "Version": "0.4.2",
       "Source": "Repository",
       "Requirements": [
         "R",
@@ -557,7 +557,7 @@
     },
     "hypergeo": {
       "Package": "hypergeo",
-      "Version": "1.2-13",
+      "Version": "1.2-14",
       "Source": "Repository",
       "Requirements": [
         "R",
@@ -612,7 +612,7 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspBase",
-      "RemoteSha": "f4a421a06455df773de46e4729b6d502e138b18a"
+      "RemoteSha": "31bc23b340ebb9298c03b67108de300cdc3f9f57"
     },
     "jaspGraphs": {
       "Package": "jaspGraphs",
@@ -635,7 +635,7 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspGraphs",
-      "RemoteSha": "f86629c03425cf7322460fe3e52670f7acddefd4"
+      "RemoteSha": "24db07dff35e3587155e8a4954f3fbdf88b2ac96"
     },
     "jfa": {
       "Package": "jfa",
@@ -680,7 +680,7 @@
     },
     "jsonlite": {
       "Package": "jsonlite",
-      "Version": "1.9.1",
+      "Version": "2.0.0",
       "Source": "Repository",
       "Requirements": [
         "methods"
@@ -820,7 +820,7 @@
     },
     "officer": {
       "Package": "officer",
-      "Version": "0.6.7",
+      "Version": "0.6.8",
       "Source": "Repository",
       "Requirements": [
         "cli",
@@ -860,7 +860,7 @@
     },
     "pkgbuild": {
       "Package": "pkgbuild",
-      "Version": "1.4.6",
+      "Version": "1.4.7",
       "Source": "Repository",
       "Requirements": [
         "R",
@@ -1016,7 +1016,7 @@
     },
     "rvg": {
       "Package": "rvg",
-      "Version": "0.3.4",
+      "Version": "0.3.5",
       "Source": "Repository",
       "Requirements": [
         "R",
@@ -1099,7 +1099,7 @@
     },
     "stringi": {
       "Package": "stringi",
-      "Version": "1.8.4",
+      "Version": "1.8.7",
       "Source": "Repository",
       "Requirements": [
         "R",
