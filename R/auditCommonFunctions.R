@@ -738,7 +738,7 @@
       "dataType", "n", "x", "method", "area", "lta",
       "display", "priorType", "separateMisstatement",
       "min_precision_test", "min_precision_rel_val",
-      "by", "prior_method", "prior_n", "prior_x", "alpha", "beta",
+      "by", "prior_method", "n_prior", "x_prior", "alpha", "beta",
       "critical_items", "critical_negative", "critical_action",
       "stratum", "pooling", "hurdle", "mcmc.seed", "iter", "warmup", "chains"
     ))
