@@ -349,7 +349,7 @@
 }
 
 .jfaPlotOptStop <- function(options, jaspResults, parentState, parentContainer, positionInContainer, sample, evaluationOptions) {
-  if (!options[["seqPlot"]] || options[["dataType"]] == "stats" || !options[["materiality_test"]] || options[["stratum"]] != "" || options[["separateMisstatement"]]) {
+  if (!options[["seqPlot"]] || options[["dataType"]] == "stats" || !options[["materiality_test"]] || options[["stratum"]] != "" || options[["separateMisstatement"]] || options[["hurdle"]]) {
     return()
   }
 
@@ -382,7 +382,7 @@
     }
 
     if (is.infinite(parentState[["posterior"]][["hypotheses"]][["bf.h1"]])) {
-      fg$setError <- gettext("Plot not possible: The Bayes factor is infinite.")
+      fg$setError(gettext("Plot not possible: The Bayes factor is infinite."))
     } else {
       fg$plotObject <- plot(parentState, type = "sequential") +
         ggplot2::theme(
