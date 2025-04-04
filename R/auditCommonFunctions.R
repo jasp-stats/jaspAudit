@@ -416,7 +416,7 @@
 
   # Create a plot with the sequential updating of the Bayes factor
   if (options[["bayesian"]] && !options[["workflow"]]) {
-    .jfaPlotOptStop(options, jaspResults, evaluationState, evaluationContainer, positionInContainer = 17, sample, evaluationOptions)
+    .jfaPlotSequentialAnalysis(options, jaspResults, evaluationState, evaluationContainer, positionInContainer = 17, sample, evaluationOptions)
   }
 
   # Add the conclusion stage
@@ -2832,7 +2832,7 @@
       "hypergeometric" = gettext("The results are computed using the beta-binomial distribution.")
     )
     if (!options[["workflow"]] && options[["hurdle"]] && options[["method"]] == "binomial") {
-       message <- gettext("The results are computed using the hurdle beta model")
+      message <- gettext("The results are computed using the hurdle beta model")
     }
   }
 

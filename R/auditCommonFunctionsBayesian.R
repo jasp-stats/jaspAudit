@@ -348,21 +348,19 @@
   }
 }
 
-.jfaPlotOptStop <- function(options, jaspResults, parentState, parentContainer, positionInContainer, sample, evaluationOptions) {
-  if (!options[["seqPlot"]] || options[["dataType"]] == "stats" || !options[["materiality_test"]] || options[["stratum"]] != "" || options[["separateMisstatement"]] || options[["hurdle"]]) {
+.jfaPlotSequentialAnalysis <- function(options, jaspResults, parentState, parentContainer, positionInContainer, sample, evaluationOptions) {
+  if (!options[["plotSequentialAnalysis"]] || options[["dataType"]] == "stats" || !options[["materiality_test"]] || options[["stratum"]] != "" || options[["separateMisstatement"]] || options[["hurdle"]]) {
     return()
   }
 
   .jfaFigureNumberUpdate(jaspResults)
 
-  if (is.null(parentContainer[["seqPlot"]])) {
+  if (is.null(parentContainer[["sequentialAnalysisPlot"]])) {
     fg <- createJaspPlot(title = gettext("Sequential Analysis"), width = 530, height = 400)
     fg$position <- positionInContainer
-    fg$dependOn(options = c(
-      "seqPlot"
-    ))
+    fg$dependOn(options = "plotSequentialAnalysis")
 
-    parentContainer[["seqPlot"]] <- fg
+    parentContainer[["sequentialAnalysisPlot"]] <- fg
 
     if (is.null(parentState) || parentContainer$getError()) {
       return()
@@ -386,7 +384,7 @@
     } else {
       fg$plotObject <- plot(parentState, type = "sequential") +
         ggplot2::theme(
-          legend.position = "bottom", plot.margin = ggplot2::unit(c(1, 1, 2, 1), "lines"), axis.ticks.y.right = ggplot2::element_blank(),
+          plot.margin = ggplot2::unit(c(1, 1, 2, 1), "lines"), axis.ticks.y.right = ggplot2::element_blank(),
           axis.text.y.right = ggplot2::element_blank(), axis.title.y.right = ggplot2::element_blank()
         ) +
         ggplot2::geom_segment(x = Inf, xend = Inf, y = -Inf, yend = Inf, color = "white") +
@@ -397,13 +395,13 @@
 
   if (options[["explanatoryText"]]) {
     caption <- createJaspHtml(gettextf(
-      "<b>Figure %1$i.</b> Monitoring the Bayes factor throughout data collection.",
+      "<b>Figure %1$i.</b> The evolution of the Bayes factor as a function of the sample size. The figure illustrates how the evidence accumulates sequentially.",
       jaspResults[["figNumber"]]$object
     ), "p")
     caption$position <- positionInContainer + 1
-    caption$dependOn(optionsFromObject = parentContainer[["seqPlot"]])
+    caption$dependOn(optionsFromObject = parentContainer[["sequentialAnalysisPlot"]])
     caption$dependOn(options = "explanatoryText")
-    parentContainer[["seqPlotText"]] <- caption
+    parentContainer[["sequentialAnalysisPlotText"]] <- caption
   }
 }
 

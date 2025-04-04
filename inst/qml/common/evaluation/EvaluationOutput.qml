@@ -112,10 +112,10 @@ Group
 		CheckBox
 		{
 			text:			qsTr("Sequential analysis")
-			name:			"seqPlot"
+			name:			"plotSequentialAnalysis"
 			visible: 		show_seqbf
 			enabled:		enable_seqbf	
-			info: 			qsTr("Produces a figure showing how the Bayes factor evolves throughout data collection.")	
+			info: 			qsTr("Produces a figure showing how the Bayes factor evolves as a function of the sample size.")	
 		}
 
 		CheckBox
