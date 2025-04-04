@@ -82,7 +82,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   return(opt)
 }
 
-.jfaFairnessGetMetricFromQuestion <- function(options) {
+.jfaGetFairnessMetricInfo <- function(options) {
   out <- list()
   out[["metric"]] <- options[["metric"]]
   out[["title"]] <- switch(out[["metric"]],
@@ -140,7 +140,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   if (options[["explanatoryText"]] && is.null(jaspResults[["procedureContainer"]])) {
     procedureContainer <- createJaspContainer(title = gettext("<u>Procedure</u>"))
     procedureContainer$position <- position
-    metric <- .jfaFairnessGetMetricFromQuestion(options)
+    metric <- .jfaGetFairnessMetricInfo(options)
     if (metric[["metric"]] == "eo") {
       procedureText <- gettextf(
         "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute, and to test this fairness with a type-I error of %1$s%%. Considering the positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified using so-called fairness measures. Calculating a fairness measure involves determining the value of the model evaluation metric on which the fairness measure is based for both the privileged ((<i>%3$s</i>)) and unprivileged groups. In this specific case, Equalized Odds is not based on a single model evaluation metric but rather on two: the true positive rate and the false positive rate. Therefore, using Equalized Odds requires applying two statistical tests to check for any significant differences between the values that the two model evaluation metrics take for each of the two groups. The two tests conducted are Pearson's chi-squared tests. Only if the null hypothesis is rejected for both tests can we conclude that the algorithm is fair.", round((1 - options[["conf_level"]]) * 100, 3),
@@ -175,20 +175,20 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     return(jaspResults[["state"]]$object)
   } else {
     result <- list()
-    metric <- .jfaFairnessGetMetricFromQuestion(options)
-    # set.seed(options[["seed"]])
+    metric <- .jfaGetFairnessMetricInfo(options)
+    set.seed(options[["seed"]])
     if (metric[["metric"]] != "eo") {
       tryResult <- try({
         result[["frequentist"]] <- jfa::model_fairness(dataset,
           protected = options[["protected"]], target = options[["target"]], predictions = options[["predictions"]],
           privileged = options[["privileged"]], positive = options[["positive"]],
-          metric = .jfaFairnessGetMetricFromQuestion(options)[["metric"]], alternative = options[["alternative"]],
+          metric = .jfaGetFairnessMetricInfo(options)[["metric"]], alternative = options[["alternative"]],
           conf.level = options[["conf_level"]], prior = FALSE
         )
       })
       # result[["bayesian"]] <- jfa::model_fairness(dataset, options[["protected"]], options[["target"]], options[["predictions"]],
       #  privileged = options[["privileged"]], positive = options[["positive"]],
-      #  metric = .jfaFairnessGetMetricFromQuestion(options)[["metric"]], alternative = options[["alternative"]],
+      #  metric = .jfaGetFairnessMetricInfo(options)[["metric"]], alternative = options[["alternative"]],
       #  conf.level = options[["conf_level"]], prior = options[["concentration"]]
       # )
     } else {
@@ -221,7 +221,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 
 .jfaFairnessSummaryTable <- function(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer) {
   .jfaTableNumberUpdate(jaspResults)
-  metric <- .jfaFairnessGetMetricFromQuestion(options)
+  metric <- .jfaGetFairnessMetricInfo(options)
   if (!is.null(fairnessContainer[["summaryTable"]])) {
     return()
   }
@@ -232,37 +232,25 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   )
   tb <- createJaspTable(title = title)
   tb$position <- positionInContainer
-  tb$dependOn(options = c(.jfaFairnessCommonOptions()))
+  tb$dependOn(options = .jfaFairnessCommonOptions())
   tb$addColumnInfo(name = "group", title = "", type = "string")
-  if (metric[["metric"]] != "pp") {
-    if (metric[["metric"]] != "eo") {
-      tb$addColumnInfo(name = "n", title = gettext("n"), type = "integer")
-      tb$addColumnInfo(name = "value", title = "X\u00B2", type = "number")
-      tb$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
-      tb$addColumnInfo(name = "p", title = "p", type = "pvalue")
-      # bfTitle <- switch(options[["bayesFactorType"]],
-      #  "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
-      #  "BF01" = gettextf("BF%1$s", "\u2080\u2081"),
-      #  "logBF10" = gettextf("Log(BF%1$s)", "\u2080\u2081")
-      # )
-      # tb$addColumnInfo(name = "bf", title = bfTitle, type = "number")
-      tb$addFootnote(gettextf("The null hypothesis specifies that the %1$s is equal across protected groups.", tolower(metric[["title"]])))
-    } else {
-      tb$addColumnInfo(name = "metric", title = "metric", type = "string")
-      tb$addColumnInfo(name = "n", title = gettext("n"), type = "integer")
-      tb$addColumnInfo(name = "value", title = "X\u00B2", type = "number")
-      tb$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
-      tb$addColumnInfo(name = "p", title = "p", type = "pvalue")
-      tb$addFootnote(gettextf("The null hypothesis specifies that the %1$s is equal across protected groups.", tolower(metric[["title"]])))
-    }
-  } else {
-    tb$addColumnInfo(name = "n", title = gettext("n"), type = "integer")
-    tb$addColumnInfo(name = "value", title = "X\u00B2", type = "number")
-    tb$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
-    tb$addColumnInfo(name = "p", title = "p", type = "pvalue")
-    tb$addColumnInfo(name = "ratio", title = gettext("Protected-to-Privileged Positive Rate Ratio"), type = "number")
-    tb$addFootnote(gettextf("The null hypothesis specifies that the %1$s is equal across protected groups.", tolower(metric[["title"]])))
-    tb$addFootnote(gettextf("The use of Disparate Impact is often associated with the so-called 80-percent rule. According to this rule, the protected-to-privileged positive rate ratio is compared against a decision threshold of 0.80. If the value of the ratio is lower than 0.80 then the algorithm is unfair against the unprivileged group(s)"), colName = "ratio")
+  tb$addColumnInfo(name = "n", title = gettext("n"), type = "integer")
+  tb$addColumnInfo(name = "value", title = "X\u00B2", type = "number")
+  tb$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
+  tb$addColumnInfo(name = "p", title = "p", type = "pvalue")
+  tb$addFootnote(gettextf("The null hypothesis specifies that the %1$s is equal across protected groups.", tolower(metric[["title"]])))
+# bfTitle <- switch(options[["bayesFactorType"]],
+# "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
+# "BF01" = gettextf("BF%1$s", "\u2080\u2081"),
+# "logBF10" = gettextf("Log(BF%1$s)", "\u2080\u2081")
+# )
+# tb$addColumnInfo(name = "bf", title = bfTitle, type = "number")
+  if(metric[["metric"]] == "pp"){
+   tb$addColumnInfo(name = "ratio", title = gettext("Protected-to-Privileged Positive Rate Ratio"), type = "number")
+   tb$addFootnote(gettextf("The use of Disparate Impact is often associated with the so-called 80-percent rule. According to this rule, the protected-to-privileged positive rate ratio is compared against a decision threshold of 0.80. If the value of the ratio is lower than 0.80 then the algorithm is unfair against the unprivileged group(s)"), colName = "ratio")
+  }
+  if(metric[["metric"]] == "eo"){
+   tb$addColumnInfo(name = "metric", title = "metric", type = "string")
   }
   fairnessContainer[["summaryTable"]] <- tb
   if (!ready) {
@@ -275,31 +263,24 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   if (metric[["metric"]] != "eo") {
     tb[["group"]] <- options[["protected"]]
     tb[["n"]] <- result[["frequentist"]][["n"]]
+    tb[["value"]] <- result[["frequentist"]][["statistic"]]
+    tb[["df"]] <- result[["frequentist"]][["parameter"]]
+    tb[["p"]] <- result[["frequentist"]][["p.value"]]
+#    tb[["bf"]] <- switch(options[["bayesFactorType"]],
+#      "BF10" = result[["bayesian"]][["bf"]],
+#      "BF01" = 1 / result[["bayesian"]][["bf"]],
+#      "logBF10" = log(result[["bayesian"]][["bf"]])
+#    )
+#    tb$addFootnote(gettextf("The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) prior with %1$s = %4$s.", "\u03B1", "\u2081", "\u1D62", options[["concentration"]]), colName = "bf")
   } else {
     tb[["metric"]] <- c("TPR", "FPR")
     tb[["group"]] <- c(options[["protected"]], "")
     tb[["n"]] <- c(result[["frequentist"]][["tp"]][["n"]], result[["frequentist"]][["fp"]][["n"]])
+    tb[["value"]] <- c(result[["frequentist"]][["tp"]][["statistic"]], tb[["value"]] <- result[["frequentist"]][["fp"]][["statistic"]])
+    tb[["df"]] <- c(result[["frequentist"]][["tp"]][["parameter"]], result[["frequentist"]][["fp"]][["parameter"]])
+    tb[["p"]] <- c(result[["frequentist"]][["tp"]][["p.value"]], result[["frequentist"]][["fp"]][["p.value"]])
   }
-  if (metric[["metric"]] != "pp") {
-    if (metric[["metric"]] != "eo") {
-      tb[["value"]] <- result[["frequentist"]][["statistic"]]
-      tb[["df"]] <- result[["frequentist"]][["parameter"]]
-      tb[["p"]] <- result[["frequentist"]][["p.value"]]
-      # tb[["bf"]] <- switch(options[["bayesFactorType"]],
-      #  "BF10" = result[["bayesian"]][["bf"]],
-      #  "BF01" = 1 / result[["bayesian"]][["bf"]],
-      #  "logBF10" = log(result[["bayesian"]][["bf"]])
-      # )
-      # tb$addFootnote(gettextf("The Bayes factor is computed using a Dirichlet(%1$s%2$s, ..., %1$s%3$s) prior with %1$s = %4$s.", "\u03B1", "\u2081", "\u1D62", options[["concentration"]]), colName = "bf")
-    } else {
-      tb[["value"]] <- c(result[["frequentist"]][["tp"]][["statistic"]], tb[["value"]] <- result[["frequentist"]][["fp"]][["statistic"]])
-      tb[["df"]] <- c(result[["frequentist"]][["tp"]][["parameter"]], result[["frequentist"]][["fp"]][["parameter"]])
-      tb[["p"]] <- c(result[["frequentist"]][["tp"]][["p.value"]], result[["frequentist"]][["fp"]][["p.value"]])
-    }
-  } else {
-    tb[["value"]] <- result[["frequentist"]][["statistic"]]
-    tb[["df"]] <- result[["frequentist"]][["parameter"]]
-    tb[["p"]] <- result[["frequentist"]][["p.value"]]
+  if(metric[["metric"]] == "pp"){
     tb[["ratio"]] <- result[["frequentist"]][["parity"]][["all"]][2, "estimate"]
   }
 }
@@ -309,7 +290,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     return()
   }
 
-  metric <- .jfaFairnessGetMetricFromQuestion(options)
+  metric <- .jfaGetFairnessMetricInfo(options)
 
   if (metric[["metric"]] != "eo") {
     .jfaTableNumberUpdate(jaspResults)
@@ -321,7 +302,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       )
       tb <- createJaspTable(title = title)
       tb$position <- positionInContainer
-      tb$dependOn(options = c(.jfaFairnessCommonOptions(), "bayesFactorType"))
+      tb$dependOn(options =.jfaFairnessCommonOptions())
       tb$addColumnInfo(name = "group", title = "", type = "string")
       overTitle <- gettextf("%1$s%% Confidence Interval", round(options[["conf_level"]] * 100, 3))
       if (metric[["metric"]] == "dp") {
@@ -413,7 +394,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       )
       tb1$addFootnote(message)
 
-      container[["table1"]] <- tb1
+      container[["comparisonsTableTPR"]] <- tb1
 
       .jfaTableNumberUpdate(jaspResults)
 
@@ -440,7 +421,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       )
       tb2$addFootnote(message)
 
-      container[["table2"]] <- tb2
+      container[["comparisonsTablefpr"]] <- tb2
 
       if (!ready) {
         return()
@@ -514,7 +495,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     if (!ready) {
       return()
     }
-    metric <- .jfaFairnessGetMetricFromQuestion(options)
+    metric <- .jfaGetFairnessMetricInfo(options)
 
     if (metric[["metric"]] != "eo") {
       result <- .jfaFairnessState(dataset, options, jaspResults)[["frequentist"]]
@@ -540,7 +521,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   if (!options[["confusionTable"]]) {
     return()
   }
-  metric <- .jfaFairnessGetMetricFromQuestion(options)
+  metric <- .jfaGetFairnessMetricInfo(options)
   .jfaTableNumberUpdate(jaspResults)
 
   if (is.null(fairnessContainer[["confusionTable"]])) {
@@ -613,8 +594,8 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
         }
       }
       if (metric[["metric"]] == "eo") {
-        tb$addColumnInfo(name = "fmetric", title = .jfaFairnessGetMetricFromQuestion(options)[["title"]][[1]], type = if (.jfaFairnessGetMetricFromQuestion(options)[["metric"]] == "pp") "integer" else "number")
-        tb$addColumnInfo(name = "smetric", title = .jfaFairnessGetMetricFromQuestion(options)[["title"]][[2]], type = if (.jfaFairnessGetMetricFromQuestion(options)[["metric"]] == "pp") "integer" else "number")
+        tb$addColumnInfo(name = "fmetric", title = .jfaGetFairnessMetricInfo(options)[["title"]][[1]], type = if (.jfaGetFairnessMetricInfo(options)[["metric"]] == "pp") "integer" else "number")
+        tb$addColumnInfo(name = "smetric", title = .jfaGetFairnessMetricInfo(options)[["title"]][[2]], type = if (.jfaGetFairnessMetricInfo(options)[["metric"]] == "pp") "integer" else "number")
         result <- .jfaFairnessState(dataset, options, jaspResults)[["frequentist"]][["tp"]]
         est <- result[["metric"]][["all"]][["estimate"]]
         after <- 1
@@ -632,10 +613,10 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
         }
         tb[["smetric"]] <- estb
         tb$addFootnote(gettextf("True Positives (TP) are cells in which the positive class (<i>%1$s</i>) is correctly predicted, while True Negatives (TN) are cells where the negative class is correctly predicted. False Negatives (FN) are cells in which the positive class is incorrectly predicted, and False Positives (FP) are cells in which the negative class is incorrectly predicted.", options[["positive"]]))
-        tb$addFootnote(gettextf("%1$s = %2$s", .jfaFairnessGetMetricFromQuestion(options)[["title"]][[1]], .jfaFairnessGetMetricFromQuestion(options)[["formula"]][[1]]), colName = "fmetric")
-        tb$addFootnote(gettextf("%1$s = %2$s", .jfaFairnessGetMetricFromQuestion(options)[["title"]][[2]], .jfaFairnessGetMetricFromQuestion(options)[["formula"]][[2]]), colName = "smetric")
+        tb$addFootnote(gettextf("%1$s = %2$s", .jfaGetFairnessMetricInfo(options)[["title"]][[1]], .jfaGetFairnessMetricInfo(options)[["formula"]][[1]]), colName = "fmetric")
+        tb$addFootnote(gettextf("%1$s = %2$s", .jfaGetFairnessMetricInfo(options)[["title"]][[2]], .jfaGetFairnessMetricInfo(options)[["formula"]][[2]]), colName = "smetric")
       } else {
-        tb$addColumnInfo(name = "metric", title = .jfaFairnessGetMetricFromQuestion(options)[["title"]], type = "number")
+        tb$addColumnInfo(name = "metric", title = .jfaGetFairnessMetricInfo(options)[["title"]], type = "number")
         est <- result[["metric"]][["all"]][["estimate"]]
         after <- 1
         for (i in seq_along(groupLevels)) {
@@ -644,7 +625,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
         }
         tb[["metric"]] <- est
         tb$addFootnote(gettextf("True Positives (TP) are cells in which the positive class (<i>%1$s</i>) is correctly predicted, while True Negatives (TN) are cells where the negative class is correctly predicted. False Negatives (FN) are cells in which the positive class is incorrectly predicted, and False Positives (FP) are cells in which the negative class is incorrectly predicted.", options[["positive"]]))
-        tb$addFootnote(gettextf("%1$s = %2$s", .jfaFairnessGetMetricFromQuestion(options)[["title"]], .jfaFairnessGetMetricFromQuestion(options)[["formula"]]), colName = "metric")
+        tb$addFootnote(gettextf("%1$s = %2$s", .jfaGetFairnessMetricInfo(options)[["title"]], .jfaGetFairnessMetricInfo(options)[["formula"]]), colName = "metric")
       }
     } else {
       if (!options[["confusionTranspose"]]) {
@@ -676,7 +657,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     return()
   }
 
-  metric <- .jfaFairnessGetMetricFromQuestion(options)
+  metric <- .jfaGetFairnessMetricInfo(options)
 
   if (metric[["metric"]] != "eo") {
     .jfaFigureNumberUpdate(jaspResults)
@@ -696,7 +677,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
     }
 
     if (options[["explanatoryText"]]) {
-      caption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of %2$s from each unprivileged group to the privileged %3$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm.", jaspResults[["figNumber"]]$object, tolower(.jfaFairnessGetMetricFromQuestion(options)[["title"]]), options[["privileged"]]), "p")
+      caption <- createJaspHtml(gettextf("<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of %2$s from each unprivileged group to the privileged %3$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm.", jaspResults[["figNumber"]]$object, tolower(.jfaGetFairnessMetricInfo(options)[["title"]]), options[["privileged"]]), "p")
       caption$position <- positionInContainer + 1
       caption$dependOn(optionsFromObject = fairnessContainer[["parityPlot"]])
       fairnessContainer[["parityPlotText"]] <- caption
@@ -755,7 +736,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
   }
 }
 # .jfaFairnessPosteriorPlot <- function(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer) {
-#  metric <- .jfaFairnessGetMetricFromQuestion(options)
+#  metric <- .jfaGetFairnessMetricInfo(options)
 #  if (!options[["posteriorPlot"]] || metric[["metric"]] == "dp") {
 #    return()
 #  }
@@ -784,7 +765,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 # }
 
 # .jfaFairnessRobustnessPlot <- function(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer) {
-#  metric <- .jfaFairnessGetMetricFromQuestion(options)
+#  metric <- .jfaGetFairnessMetricInfo(options)
 #  if (!options[["robustnessPlot"]] || metric[["metric"]] == "dp") {
 #    return()
 #  }
@@ -813,7 +794,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 # }
 
 # .jfaFairnessSequentialPlot <- function(dataset, options, fairnessContainer, jaspResults, ready, positionInContainer) {
-#  metric <- .jfaFairnessGetMetricFromQuestion(options)
+#  metric <- .jfaGetFairnessMetricInfo(options)
 #  if (!options[["sequentialPlot"]] || metric[["metric"]] == "dp") {
 #    return()
 #  }
@@ -843,7 +824,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
 
 .jfaFairnessAddConclusion <- function(options, fairnessContainer, jaspResults,
                                       ready, position) {
-  metric <- .jfaFairnessGetMetricFromQuestion(options)
+  metric <- .jfaGetFairnessMetricInfo(options)
   if (!is.null(jaspResults[["conclusionContainer"]]) || !ready || !options[["explanatoryText"]]) {
     return()
   } else {
@@ -861,7 +842,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       pvalue2 <- format.pval(state[["frequentist"]][["fp"]][["p.value"]], eps = 0.001)
       pvalue1 <- if (rejectnulla) gettextf("%1$s < %2$s", pvalue1, "\u03B1") else gettextf("%1$s >= %2$s", pvalue1, "\u03B1")
       pvalue2 <- if (rejectnullb) gettextf("%1$s < %2$s", pvalue2, "\u03B1") else gettextf("%1$s >= %2$s", pvalue2, "\u03B1")
-      caption <- gettextf("The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s and %4$s across protected groups %5$s. %6$s ", pvalue1, pvalue2, tolower(.jfaFairnessGetMetricFromQuestion(options)[["title"]][[1]]), tolower(.jfaFairnessGetMetricFromQuestion(options)[["title"]][[2]]), conclusion, conclusion2)
+      caption <- gettextf("The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s and %4$s across protected groups %5$s. %6$s ", pvalue1, pvalue2, tolower(.jfaGetFairnessMetricInfo(options)[["title"]][[1]]), tolower(.jfaGetFairnessMetricInfo(options)[["title"]][[2]]), conclusion, conclusion2)
     } else {
       state <- .jfaFairnessState(dataset = NULL, options, jaspResults)
       rejectnull <- state[["frequentist"]][["p.value"]] < (1 - options[["conf_level"]])
@@ -870,7 +851,7 @@ auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
       pvalue <- format.pval(state[["frequentist"]][["p.value"]], eps = 0.001)
       pvalue <- if (rejectnull) gettextf("%1$s < %2$s", pvalue, "\u03B1") else gettextf("%1$s >= %2$s", pvalue, "\u03B1")
 
-      caption <- gettextf("The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across protected groups %3$s. %4$s ", pvalue, tolower(.jfaFairnessGetMetricFromQuestion(options)[["title"]]), conclusion, conclusion2)
+      caption <- gettextf("The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across protected groups %3$s. %4$s ", pvalue, tolower(.jfaGetFairnessMetricInfo(options)[["title"]]), conclusion, conclusion2)
       # caption <- gettextf("%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis.", caption, format(1 / state[["bayesian"]][["bf"]], digits = 3))
     }
     container[["conclusionParagraph"]] <- createJaspHtml(caption, "p")

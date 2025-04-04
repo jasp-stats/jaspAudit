@@ -20,7 +20,7 @@
 
 auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   # Create the procedure paragraph
-  .jfaFairnessProcedure(options, jaspResults, position = 1)
+  .jfaFairnessIntroduction(options, jaspResults, position = 1)
 
   fairnessMeasureContainer <- .jfaFairnessMeasureStage(options, jaspResults, position = 2)
 
@@ -35,26 +35,26 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
 
   # Display the decision-making workflow plot
-  .jfaworkflowPlot(options, jaspResults, fairnessMeasureContainer, positionInContainer = 3)
+  .jfaWorkflowPlot(options, jaspResults, fairnessMeasureContainer, positionInContainer = 3)
 }
 
 .jfaFairnessMeasureStage <- function(options, jaspResults, position) {
   fairnessContainer <- createJaspContainer(title = gettext("<u>Obtaining a Fairness Measure</u>"))
   fairnessContainer$position <- position
-  fairnessContainer$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_casec"))
+  fairnessContainer$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC"))
   jaspResults[["fairnessMeasureContainer"]] <- fairnessContainer
   return(fairnessContainer)
 }
 
-.jfaFairnessProcedure <- function(options, jaspResults, position) {
-  if (options[["explanatoryText"]] && is.null(jaspResults[["FairnessProcedureContainer"]])) {
-    FairnessProcedureContainer <- createJaspContainer(title = gettext("<u>Introduction</u>"))
-    FairnessProcedureContainer$position <- position
+.jfaFairnessIntroduction <- function(options, jaspResults, position) {
+  if (options[["explanatoryText"]] && is.null(jaspResults[["fairnessIntroductionContainer"]])) {
+    fairnessIntroductionContainer <- createJaspContainer(title = gettext("<u>Introduction</u>"))
+    fairnessIntroductionContainer$position <- position
     procedureText <- gettextf("The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute. Fairness -ore discrimination- can be quantified using so-called fairness measures. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions.")
-    FairnessProcedureContainer[["FairnessProcedureParagraph"]] <- createJaspHtml(procedureText, "p")
-    FairnessProcedureContainer[["FairnessProcedureParagraph"]]$position <- 1
-    FairnessProcedureContainer$dependOn(options = c("explanatoryText"))
-    jaspResults[["FairnessProcedureContainer"]] <- FairnessProcedureContainer
+    fairnessIntroductionContainer[["fairnessIntroductionParagraph"]] <- createJaspHtml(procedureText, "p")
+    fairnessIntroductionContainer[["fairnessIntroductionParagraph"]]$position <- 1
+    fairnessIntroductionContainer$dependOn(options = "explanatoryText")
+    jaspResults[["fairnessIntroductionContainer"]] <- fairnessIntroductionContainer
   }
 }
 
@@ -101,7 +101,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   }
   metric <- jfa::fairness_selection(q1, q2, q3, q4)
   jaspResults[["state"]] <- createJaspState(metric)
-  jaspResults[["state"]]$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_casec"))
+  jaspResults[["state"]]$dependOn(options = c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC"))
   return(metric)
 }
 
@@ -190,7 +190,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   return(explanationText)
 }
 
-.jfaworkflowPlot <- function(options, jaspResults, positionInContainer, fairnessMeasureContainer) {
+.jfaWorkflowPlot <- function(options, jaspResults, positionInContainer, fairnessMeasureContainer) {
   if (!options[["workflowfigure"]]) {
     return()
   }
@@ -198,7 +198,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   .jfaFigureNumberUpdate(jaspResults)
 
   if (is.null(fairnessMeasureContainer[["workflowfigure"]])) {
-    plot <- createJaspPlot(title = gettext("<u>Graphical Representation of the Decision-Making Workflow</u>"), width = 800, height = 800)
+    plot <- createJaspPlot(title = gettext("<u>Fairness Measure Decision Workflow Plot</u>"), width = 800, height = 800)
     plot$position <- positionInContainer
     plot$dependOn(options = c("workflowfigure", "firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC"))
     fairnessMeasureContainer[["workflowfigure"]] <- plot

@@ -37,6 +37,7 @@ The fairness metrics analysis enables the user to assess fairness and discrimina
 
 - Plots
   - Parity estimates: Produces a plot showing the parity statistics for each unprivileged group against the privileged group.
+  
 
 ### References
 ---

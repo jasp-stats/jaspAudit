@@ -25,8 +25,7 @@ import "./common"	as Common
 Form 
 {
 	columns: 							1
-	info:								qsTr("The fairness measures analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. ")
-
+	info:								qsTr("The fairness measures analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. The ratio of two fairness metrics is called parity, which is a well-known concept in algorithmic fairness.")
 	VariablesForm
 	{
 		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
@@ -77,7 +76,7 @@ Form
 		{
 			id:							metric
 			name: 						"metric"
-			label: 						qsTr("Fairness Measure")
+			label: 						qsTr("Fairness measure")
 			indexDefaultValue: 			0
 			values: [
 				{ label: qsTr("Predictive rate parity"),			value: "prp"},
@@ -90,7 +89,7 @@ Form
 				{ label: qsTr("Equalized odds"), 					value: "eo"},
 				{ label: qsTr("Accuracy parity"),					value: "ap"}
 			]
-			info:						qsTr("The type of fairness measure to compute and perform inference on.")
+			info:						qsTr("From this dropdown menu, it is possible to select the fairness metric to be calculated. While you can choose any desired metric, we recommend selecting the fairness measure indicated by the decision-making workflow as the most suitable for the context and the data under analysis.")
 		}
 	}
 
@@ -235,13 +234,15 @@ Form
 				info:					qsTr("Produces the confusion matrix for each group.")
 				checked: 				true
 
-				CheckBox {
+				CheckBox 
+				{
 					text:				qsTr("Display proportions")
 					name:				"confusionTableProportions"
 					info:				qsTr("Displays proportions in the confusion table.")
 				}
 
-				CheckBox{
+				CheckBox
+				{
 					name:	"confusionTranspose"
 					text:	qsTr("Transpose matrix")
 					info:	qsTr("Transposes the confusion matrix.")

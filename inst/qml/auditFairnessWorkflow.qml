@@ -22,9 +22,6 @@ import JASP
 import JASP.Controls
 import JASP.Widgets
 
-import "./common" as Common
-import "./common/planning" as Planning
-
 Form 
 {
 
@@ -41,27 +38,15 @@ Form
 	{
 		id: firstquestion
 		name: "firstquestion"
+
 		title:qsTr("Is the ground thruth information relevant in your context?")
-		info: 						qsTr("In this question, it must be specified whether the ground truth information (i.e., the target to be predicted) is relevant or not for the analysis context.")
-		
-
-		
-		Group{
-		columns:2
-
+		info: 						qsTr("In this question, it must be specified whether the ground truth information (i.e., the target to be predicted) is relevant or not for the analysis context. In the context of item classification, the term ground truth information refers to the true classification of items, obtained from reliable sources or domain experts. ")
+	
 		RadioButton
 		{
 			text: 						qsTr("Yes")
 			name: 						"firstquestion_yes"
 			info:						qsTr("This option is selected if it is useful to know whether the classification is done correctly or not.")
-		}
-
-		HelpButton
-		{
-			toolTip: 	qsTr("Click to learn more about the ground thruth information")
-			helpPage:					"Audit/groundtruthinformation"
-		}
-
 		}
 
 		RadioButton
@@ -71,22 +56,16 @@ Form
 			checked:					true
 			info:						qsTr("This option is selected if the interest is in the algorithm predicted classification only.")
 		}
-
-	
 	}
 
 	RadioButtonGroup
 	{
 		id: secondquestion
 		name: "secondquestion"
+
 		title:qsTr("In which type of classification are you interested?")
-		// enabled: false, diventa grigio
 		visible: firstquestion.value == "firstquestion_yes"
-		info:						qsTr("In this question, it must be specified whether the focus is on correct classifications, incorrect classifications, or both.")
-
-		Group{
-
-		columns:2
+		info:						qsTr("In this question, it must be specified whether the focus is on correct classifications, incorrect classifications, or both. The focus is on the items' correct classification when evaluating the reliability of the audit process in accurately identifying situations that conform to established rules and procedures. The focus is on the items' incorrect classification when addressing potential anomalies or irregularities, or when identifying areas for improvement within the audit process. ")
 
 		RadioButton
 		{
@@ -95,33 +74,11 @@ Form
 			info:						qsTr("This option is selected if the interest is in the algorithm's correct classifications of items.")
 		}
 
-		HelpButton
-		{
-			toolTip: 	qsTr("Click to learn more about the correct classification")
-			helpPage:					"Audit/correctclassification"
-		}
-
-		}
-
-		Group{	
-
-		columns:2
-
 		RadioButton
 		{
 			text: 						qsTr("Incorrect classification")
 			name: 						"secondquestion_incorrect"
 			info:						qsTr("This option is selected if the interest is in the algorithm's incorrect classifications of items.")
-
-		}
-
-		HelpButton
-		{
-			toolTip: 	qsTr("Click to learn more about the incorrect classification")
-			helpPage:					"Audit/incorrectclassification"
-		}
-
-		}
 
 		RadioButton
 		{
@@ -129,7 +86,6 @@ Form
 			name: 						"secondquestion_both"
 			checked:					true
 			info:						qsTr("This option is selected if the interest is in both the algorithm's correct and incorrect classifications of items.")
-
 		}
 	}
 
@@ -137,6 +93,7 @@ Form
 	{
 		id: thirdquestion
 		name: "thirdquestion"
+
 		title:qsTr("What is more important?")
 		visible: secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 		info:						qsTr("In this question, it must be specified whether the focus is on correctly classifying items into the positive class, the negative class, or both.")
@@ -155,7 +112,6 @@ Form
 			name: 						"thirdquestion_negative"
 			checked:					true
 			info:						qsTr("This option is selected if the interest is on correctly classifying items into the negative class.")
-
 		}
 
 			RadioButton
@@ -164,15 +120,14 @@ Form
 			name: 						"thirdquestion_both"
 			checked:					true
 			info:						qsTr("This option is selected if the interest is on correctly classifying items into both the positive and the negative class.")
-
 		}
-
 	}
 
 	RadioButtonGroup
 	{
 		id: fourthquestion_caseA
 		name: "fourthquestion_caseA"
+
 		title:qsTr("What are the most costly errors?")
 		visible: thirdquestion.value == "thirdquestion_positive" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 		info:						qsTr("In this question, it must be specified which classification errors (incorrect classification of items in the positive class or incorrect classification of items in the negative class) result in the greatest losses (economic, social, etc.).")
@@ -191,7 +146,6 @@ Form
 			text: 						qsTr("False negatives")
 			name: 						"fourthquestion_caseA_FN"
 			info:						qsTr("This option is selected if false negatives (incorrectly classifying an item in the negative class when it belongs to the positive class) result in greater losses.")
-
 		}
 	}
 
@@ -199,6 +153,7 @@ Form
 	{
 		id: fourthquestion_caseB
 		name: "fourthquestion_caseB"
+
 		title:qsTr("What are the most costly errors?")
 		visible: thirdquestion.value == "thirdquestion_negative" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 
@@ -214,12 +169,13 @@ Form
 			text: 						qsTr("False negatives")
 			name: 						"fourthquestion_caseB_FN"
 		}
-
 	}
+
 	RadioButtonGroup
 	{
 		id: fourthquestion_caseC
 		name: "fourthquestion_caseC"
+		
 		title:qsTr("What are the most costly errors?")
 		visible: secondquestion.value == "secondquestion_incorrect" & firstquestion.value == "firstquestion_yes"
 
@@ -260,8 +216,7 @@ Form
 			}
 		}
 	}
-
-	}
+}
 
 	Section
 	{
@@ -280,12 +235,9 @@ Form
 				name: 					"workflowfigure"
 				checked: 				true
 				info:					qsTr("When checked, enables the representation of the decision-making workflow that is obtained after answering all the necessary question within it.")
-			}
-		
+			}	
 		}
-
 	}
-
 }
 
 
