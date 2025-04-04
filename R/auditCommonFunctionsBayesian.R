@@ -348,6 +348,65 @@
   }
 }
 
+.jfaPlotOptStop <- function(options, jaspResults, parentState, parentContainer, positionInContainer, sample, evaluationOptions) {
+  if (!options[["seqPlot"]] || options[["dataType"]] == "stats" || !options[["materiality_test"]] || options[["stratum"]] != "" || options[["separateMisstatement"]]) {
+    return()
+  }
+
+  .jfaFigureNumberUpdate(jaspResults)
+
+  if (is.null(parentContainer[["seqPlot"]])) {
+    fg <- createJaspPlot(title = gettext("Sequential Analysis"), width = 530, height = 400)
+    fg$position <- positionInContainer
+    fg$dependOn(options = c(
+      "seqPlot"
+    ))
+
+    parentContainer[["seqPlot"]] <- fg
+
+    if (is.null(parentState) || parentContainer$getError()) {
+      return()
+    }
+
+    if (all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1))) {
+      binaryData <- data.frame(book = rep(1, nrow(sample)), audit = ifelse(sample[[options[["values.audit"]]]] == 0, 1, 0))
+      binaryData$times <- sample[[options[["times"]]]]
+      result <-
+        jfa::evaluation(
+          conf.level = parentState[["conf.level"]], materiality = parentState[["materiality"]],
+          data = binaryData, values = "book", values.audit = "audit",
+          method = parentState[["method"]], prior = parentState[["prior"]], alternative = parentState[["alternative"]],
+          N.units = parentState[["N.units"]], times = if (options[["times"]] != "") "times" else NULL
+        )
+      parentState <- result
+    }
+
+    if (is.infinite(parentState[["posterior"]][["hypotheses"]][["bf.h1"]])) {
+      fg$setError <- gettext("Plot not possible: The Bayes factor is infinite.")
+    } else {
+      fg$plotObject <- plot(parentState, type = "sequential") +
+        ggplot2::theme(
+          legend.position = "bottom", plot.margin = ggplot2::unit(c(1, 1, 2, 1), "lines"), axis.ticks.y.right = ggplot2::element_blank(),
+          axis.text.y.right = ggplot2::element_blank(), axis.title.y.right = ggplot2::element_blank()
+        ) +
+        ggplot2::geom_segment(x = Inf, xend = Inf, y = -Inf, yend = Inf, color = "white") +
+        jaspGraphs::geom_rangeframe() +
+        jaspGraphs::themeJaspRaw(legend.position = "none")
+    }
+  }
+
+  if (options[["explanatoryText"]]) {
+    caption <- createJaspHtml(gettextf(
+      "<b>Figure %1$i.</b> Monitoring the Bayes factor throughout data collection.",
+      jaspResults[["figNumber"]]$object
+    ), "p")
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = parentContainer[["seqPlot"]])
+    caption$dependOn(options = "explanatoryText")
+    parentContainer[["seqPlotText"]] <- caption
+  }
+}
+
 ################################################################################
 ################## End Bayesian functions ######################################
 ################################################################################
