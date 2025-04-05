@@ -1,16 +1,10 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-04-02 18:57+0000\n"
-"Last-Translator: Иван Рудаков <riv@polygene.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-qml/ru/>\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
 "X-Language: ru\n"
 "X-Qt-Contexts: true\n"
 
@@ -1190,9 +1184,10 @@ msgid ""
 "Width of the one-sided confidence interval for the population correlation."
 msgstr ""
 
+#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "EvaluationOutput|"
 msgid "Add additional figures about the evaluation to the report."
@@ -1677,9 +1672,10 @@ msgid ""
 "in the data set."
 msgstr ""
 
+#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "PlanningOutput|"
 msgid "Add additional figures about the planning to the report."
@@ -2504,9 +2500,10 @@ msgctxt "auditClassicalModelFairness|"
 msgid "Displays proportions in the confusion table."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "auditClassicalModelFairness|"
 msgid "Add additional figures about the evaluation to the report."
@@ -2844,4 +2841,54 @@ msgid ""
 "\n"
 "Please see the manual of the Audit module (read [here](%2)) for more "
 "detailed information about this analysis."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Hurdle model"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "This algoritm enables you to consider the individal taints."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "MCMC Options"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Options to customize the MCMC sampling process."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Warmup"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the number of warmup MCMC iterations."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the total number of MCMC iterations."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Chains"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the number of MCMC chains."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Seed"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid ""
+"Selects the seed for the random number generator in order to reproduce "
+"results."
 msgstr ""

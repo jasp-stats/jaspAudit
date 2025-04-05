@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-04-04 15:07+0000\n"
-"Last-Translator: Uğur ÇELİK <prof_ugur@hotmail.com>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-qml/tr/>\n"
-"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
 "X-Language: tr\n"
 "X-Qt-Contexts: true\n"
 
@@ -241,9 +235,10 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Number of samples"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Seed"
-msgstr ""
+msgstr "Başlangıç sayısı(Tohum)"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tables"
@@ -2565,9 +2560,10 @@ msgctxt "auditClassicalModelFairness|"
 msgid "Specifies the concentration parameter for the Dirichlet prior."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalModelFairness|"
 msgid "Seed"
-msgstr ""
+msgstr "Başlangıç sayısı(Tohum)"
 
 msgctxt "auditClassicalModelFairness|"
 msgid ""
@@ -2843,4 +2839,55 @@ msgid ""
 "\n"
 "Please see the manual of the Audit module (read [here](%2)) for more "
 "detailed information about this analysis."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Hurdle model"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "This algoritm enables you to consider the individal taints."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "MCMC Options"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Options to customize the MCMC sampling process."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Warmup"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the number of warmup MCMC iterations."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the total number of MCMC iterations."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Chains"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the number of MCMC chains."
+msgstr ""
+
+#, fuzzy
+msgctxt "Algorithm|"
+msgid "Seed"
+msgstr "Başlangıç sayısı(Tohum)"
+
+msgctxt "Algorithm|"
+msgid ""
+"Selects the seed for the random number generator in order to reproduce "
+"results."
 msgstr ""

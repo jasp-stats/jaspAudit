@@ -10,6 +10,14 @@ msgid "Audit"
 msgstr ""
 
 msgctxt "Description|"
+msgid "Statistical methods for auditing"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Audit Sampling"
+msgstr ""
+
+msgctxt "Description|"
 msgid "Sampling Workflow"
 msgstr ""
 
@@ -38,227 +46,15 @@ msgid "Bayesian Evaluation"
 msgstr ""
 
 msgctxt "Description|"
+msgid "True Value Estimation"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Data Auditing"
+msgstr ""
+
+msgctxt "Description|"
 msgid "Benford's Law"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>1. Planning</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "1. Planning"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Beta"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Gamma"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Beta-binomial"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>Download Report</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>To Selection</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>2. Selection</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "2. Selection"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>Reset Workflow</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>To Execution</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>3. Execution</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "3. Execution"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>To Evaluation</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>4. Evaluation</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "4. Evaluation"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Variable"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Uniform distribution"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Confidence"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Tables"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Plots"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Confidence"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Tables"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Required sample size"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "for an uncertainty of:"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Plots"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "LTA adjustment"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Direct estimator"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Difference estimator"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Ratio estimator"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Regression estimator"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Binomial"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Poisson"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Hypergeometric"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>1. Planning</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "1. Planning"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Binomial"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Poisson"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Hypergeometric"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Download Report</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>To Selection</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>2. Selection</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "2. Selection"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Reset Workflow</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>To Execution</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>3. Execution</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "3. Execution"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>To Evaluation</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>4. Evaluation</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "4. Evaluation"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "LTA adjustment"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Direct estimator"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Difference estimator"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Ratio estimator"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Regression estimator"
 msgstr ""
 
 msgctxt "Description|"
@@ -269,264 +65,20 @@ msgctxt "Description|"
 msgid "Repeated Values Analysis"
 msgstr ""
 
-msgctxt "Description|"
-msgid "True Value Estimation"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Direct estimator"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Difference estimator"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Ratio estimator"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Regression estimator"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Confidence"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Variable"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Tests"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Average frequency"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Entropy"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Shuffle Decimal Digits"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Number of samples"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Seed"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Tables"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Assumption checks"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Frequency table"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Plots"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Label"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "with highest occurrence"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Benford's law"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "BF₁₀"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "BF₀₁"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Log(BF₁₀)"
+#, qt-format
+msgctxt "auditBayesianEvaluation|"
+msgid ""
+"The Bayesian evaluation analysis allows the user to perform inference about "
+"the total misstatement in the population on the basis of an audit sample.\n"
+"\n"
+"![Audit sampling workflow](%1)\n"
+"\n"
+"Please see the manual of the Audit module (read [here](%2)) for more "
+"detailed information about this analysis."
 msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior"
-msgstr ""
-
-msgctxt "auditBayesianPlanning|"
-msgid "Prior"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "Prior"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>Annotate your selected items with their audit (true) values.</b>"
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Reference"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Display"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Explanatory text"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Digits"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "First"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "First and second"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Last"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Frequency table"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Observed vs. expected"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Book Values"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Audit Values"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Display"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Explanatory text"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "No. items"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "No. units"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Method"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Scatter plot"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Method"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Stringer"
-msgstr ""
-
-msgctxt "auditClassicalEvaluation|"
-msgid "Mean-per-unit estimator"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Display"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Explanatory text"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Last"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Last two"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "All"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Observed vs. expected"
-msgstr ""
-
-msgctxt "auditClassicalNumberBunching|"
-msgid "Histogram"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Method"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Annotate your selected items with their audit (true) values.</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Stringer"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "Mean-per-unit estimator"
-msgstr ""
-
-msgctxt "auditSelection|"
-msgid "Sample size"
-msgstr ""
-
-msgctxt "Description|"
-msgid "Statistical methods for auditing"
 msgstr ""
 
 msgctxt "auditBayesianEvaluation|"
@@ -537,6 +89,25 @@ msgctxt "auditBayesianEvaluation|"
 msgid "Advanced"
 msgstr ""
 
+#, qt-format
+msgctxt "auditBayesianPlanning|"
+msgid ""
+"The Bayesian planning analysis allows the user to calculate a minimum sample "
+"size given a set of sampling objectives and summary statistics of the "
+"population. Note that when you have access to the raw population data you "
+"may want to use the audit workflow, an analysis that guides you through the "
+"sampling process.\n"
+"\n"
+"![Audit sampling workflow](%1)\n"
+"\n"
+"Please see the manual of the Audit module (read [here](%2)) for more "
+"detailed information about this analysis."
+msgstr ""
+
+msgctxt "auditBayesianPlanning|"
+msgid "Prior"
+msgstr ""
+
 msgctxt "auditBayesianPlanning|"
 msgid "Report"
 msgstr ""
@@ -545,12 +116,69 @@ msgctxt "auditBayesianPlanning|"
 msgid "Advanced"
 msgstr ""
 
+#, qt-format
+msgctxt "auditBayesianWorkflow|"
+msgid ""
+"The task of an auditor is to make a judgment regarding the fairness of the "
+"presented transactions in a population. When the auditor has access to the "
+"raw population data, they can use the *audit workflow* to calculate how many "
+"samples need to be evaluated in order to meet a certain confidence in their "
+"judgment. The user can then sample these items from the population, inspect "
+"and audit these items, and perform statistical inference about the "
+"misstatement in the population. The sampling workflow guides the auditor "
+"through the audit process, making the correct choices of calculations along "
+"the way.\n"
+"\n"
+"Please see the manual of the Audit module (read [here](%1)) for more "
+"detailed information about this analysis.\n"
+"\n"
+"### Workflow\n"
+"---\n"
+"- Planning: Calculate the minimum sample size to achieve your sampling "
+"objectives with the specified confidence.\n"
+"- Selection: Select the required sampling units from the population.\n"
+"- Execution: Annotate the selection with your assessment of the fairness of "
+"the selected items.\n"
+"- Evaluation: Make a population statement based on your annotated "
+"selection.\n"
+"\n"
+"![Audit sampling workflow](%2)"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>1. Planning</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "1. Planning"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Prior"
+msgstr ""
+
 msgctxt "auditBayesianWorkflow|"
 msgid "Report"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Advanced"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Download Report</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>To Selection</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>2. Selection</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "2. Selection"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
@@ -558,7 +186,59 @@ msgid "Add variables to sample"
 msgstr ""
 
 msgctxt "auditBayesianWorkflow|"
+msgid "<b>Reset Workflow</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>To Execution</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>3. Execution</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "3. Execution"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Continue</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
 msgid "Sample List"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Annotate your selected items with their audit (true) values.</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>To Evaluation</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "<b>4. Evaluation</b>"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "4. Evaluation"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Beta-binomial"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Beta"
+msgstr ""
+
+msgctxt "auditBayesianWorkflow|"
+msgid "Gamma"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -574,9 +254,29 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
+msgid "Variable"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "In this box the variable is selected whose digits should be tested against "
 "the reference distribution. The value zero (0) will be omitted from the data."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Confidence"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid ""
+"The confidence level used. The confidence level is the complement of the "
+"audit risk: the risk that the user is willing to take to give an incorrect "
+"judgment about the population. For example, if you want to use an audit risk "
+"of 5%, this equals 95% confidence."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Reference"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -584,7 +284,15 @@ msgid "Choose the distribution to test against."
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
+msgid "Benford's law"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
 msgid "Test the specified digits against Benford's law."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Uniform distribution"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -592,7 +300,15 @@ msgid "Test the specified digits against the uniform distribution."
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
+msgid "Digits"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
 msgid "Specify which digits to extract from the data and test."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "First"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -602,9 +318,17 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
+msgid "First and second"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Extract and test the first and second digit of the items against the "
 "specified reference distribution."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Last"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -618,9 +342,17 @@ msgid "Choose which type of Bayes factor to display."
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
+msgid "BF₁₀"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Bayes factor to quantify evidence for the alternative hypothesis relative to "
 "the null hypothesis."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "BF₀₁"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -630,12 +362,24 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
+msgid "Log(BF₁₀)"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
 msgid "Natural logarithm of BF10."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Display"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Specify options that have an effect on the look and feel of the audit report."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Explanatory text"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -645,11 +389,7 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
-msgid ""
-"The confidence level used. The confidence level is the complement of the "
-"audit risk: the risk that the user is willing to take to give an incorrect "
-"judgment about the population. For example, if you want to use an audit risk "
-"of 5%, this equals 95% confidence."
+msgid "Show explanatory text at each step of the analysis"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -657,11 +397,23 @@ msgid "Report"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
 msgid "Add additional tables about the analysis to the report."
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
+msgid "Frequency table"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
 msgid "Produces a table showing the relative frequency of the digits."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Confidence interval"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -681,7 +433,15 @@ msgid "For which digit should matched rows be displayed?"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
 msgid "Add additional figures about the analysis to the report."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Observed vs. expected"
 msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -691,6 +451,42 @@ msgid ""
 "the uniform distribution."
 msgstr ""
 
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Bayes factor robustness check"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid ""
+"Produces a figure that shows the robustness of the Bayes factor to the prior "
+"distribution."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Sequential analysis"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid ""
+"Produces a figure that shows the Bayes factor as a function of the sample "
+"size."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Advanced"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Prior Distribution"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Concentration"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Specifies the concentration parameter for the Dirichlet prior."
+msgstr ""
+
 msgctxt "auditClassicalEstimation|"
 msgid ""
 "The estimation analysis allows the user to estimate the true value of a "
@@ -698,9 +494,17 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
+msgid "Book Values"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
 msgid ""
 "A numeric variable that contains the book (recorded) values of the items in "
 "the population."
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Audit Values"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
@@ -714,7 +518,15 @@ msgid "Population (required)"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
+msgid "No. items"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
 msgid "The total number of items (rows) in the population."
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "No. units"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
@@ -724,7 +536,15 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
 msgid "The type of method used to estimate the true value of the population."
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Direct estimator"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
@@ -732,7 +552,15 @@ msgid "The direct estimator."
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
+msgid "Difference estimator"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
 msgid "The difference estimator."
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Ratio estimator"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
@@ -740,7 +568,15 @@ msgid "The ratio estimator."
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
+msgid "Regression estimator"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
 msgid "The regression estimator."
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Display"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
@@ -749,9 +585,17 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
+msgid "Explanatory text"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
 msgid ""
 "When checked, enables explanatory text in the analysis to help interpret the "
 "procedure and the statistical results."
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Confidence"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
@@ -763,11 +607,23 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
 msgid "Report"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
 msgid "Add additional tables about the analysis to the report."
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Required sample size"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
@@ -777,11 +633,23 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
+msgid "for an uncertainty of:"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
 msgid "The value of the precision."
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
 msgid "Add additional figures about the analysis to the report."
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Scatter plot"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
@@ -791,12 +659,405 @@ msgid ""
 "colored in red."
 msgstr ""
 
+#, qt-format
+msgctxt "auditClassicalEvaluation|"
+msgid ""
+"The evaluation analysis allows the user to perform inference about the total "
+"misstatement in the population on the basis of an audit sample.\n"
+"\n"
+"![Audit sampling workflow](%1) Please see the manual of the Audit module "
+"(read [here](%2)) for more detailed information about this analysis."
+msgstr ""
+
 msgctxt "auditClassicalEvaluation|"
 msgid "Report"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Advanced"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Hypergeometric"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Binomial"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Poisson"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Stringer"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "LTA adjustment"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Mean-per-unit estimator"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Direct estimator"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Difference estimator"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Ratio estimator"
+msgstr ""
+
+msgctxt "auditClassicalEvaluation|"
+msgid "Regression estimator"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"The fairness metrics analysis enables the user to assess fairness and "
+"discrimination regarding specific groups in the data in algorithmic decision-"
+"making systems. Considering a certain positive class in the data, fairness -"
+"or discrimination- can be quantified using model-agnostic fairness metrics. "
+"The ratio of two fairness metrics is called parity, which is a well-known "
+"concept in algorithmic fairness."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Target"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"In this column, the target (i.e., to be predicted) variable should be "
+"entered."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Predictions"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "In this column, the predictions of the algorithm should be entered."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Sensitive Attribute"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"In this column, the protected (i.e., sensitive) attribute should be entered."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Confidence"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"The confidence level used. The confidence level is the complement of the "
+"audit risk: the risk that the user is willing to take to give an incorrect "
+"judgment about the population. For example, if you want to use an audit risk "
+"of 5%, this equals 95% confidence."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Metric"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Predictive rate parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Demographic parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Proportional parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Accuracy parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "False negative rate parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "False positive rate parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "True positive rate parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Negative predicted value parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Specificity parity"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "The type of fairness metric to compute and perform inference on."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Factor Levels"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"These options allow specification of the privileged group and the positive "
+"class."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Privileged group"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "None"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"The privileged group refers to the class in the protected variable that "
+"historically or systematically experiences certain advantages, benefits, or "
+"privileges."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Positive class"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "The positive class in the target variable."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Alt. Hypothesis"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Specify the alternative hypothesis."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Unprivileged ≠ Privileged"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is not equal to the fairness metric in the privileged group."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Unprivileged < Privileged"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is lower than the fairness metric in the privileged group."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Unprivileged > Privileged"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is higher than the fairness metric in the privileged group."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Choose which type of Bayes factor to display."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "BF₁₀"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Bayes factor to quantify evidence for the alternative hypothesis relative to "
+"the null hypothesis."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "BF₀₁"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Bayes factor to quantify evidence for the null hypothesis relative to the "
+"alternative hypothesis."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Log(BF₁₀)"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Natural logarithm of BF10."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Display"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Specify options that have an effect on the look and feel of the audit report."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Explanatory text"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"When checked, enables explanatory text in the analysis to help interpret the "
+"procedure and the statistical results."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Report"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Add additional tables about the evaluation to the report."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Individual comparisons"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Produces a table comparing the unprivileged groups against the privileged "
+"group."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Model performance"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Produces a table containing the performance measures for the classification, "
+"including support, accuracy, precision, recall and F1-score."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Confusion matrix"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Produces the confusion matrix for each group."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Display proportions"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Displays proportions in the confusion table."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Add additional figures about the evaluation to the report."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Parity estimates"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Produces a plot showing the parity statistics for each unprivileged group "
+"against the privileged group."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Prior and posterior distribution"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Produces a figure that shows the prior and posterior distribution."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Bayes factor robustness check"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Produces a figure that shows the robustness of the Bayes factor to the prior "
+"distribution."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Sequential analysis"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Produces a figure that shows the Bayes factor as a function of the sample "
+"size."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Advanced"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Prior Distribution"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Concentration"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Specifies the concentration parameter for the Dirichlet prior."
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid "Seed"
+msgstr ""
+
+msgctxt "auditClassicalModelFairness|"
+msgid ""
+"Selects the seed for the random number generator in order to reproduce "
+"results."
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
@@ -815,9 +1076,17 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "Variable"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid ""
 "In this box the variable is selected whose digits should be analyzed for "
 "repeated values."
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Tests"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
@@ -825,7 +1094,15 @@ msgid "Indicate which type of quantity is calculated from the data."
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "Average frequency"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid "Compute the average frequency of the data."
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Entropy"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
@@ -833,7 +1110,15 @@ msgid "Compute the entropy of the data."
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "Shuffle Decimal Digits"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid "Indicate which decimals are shuffled in the analysis."
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Last"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
@@ -841,11 +1126,23 @@ msgid "Last decimal digit is shuffled."
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "Last two"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid "Last two decimal digits are shuffled."
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "All"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid "All decimal digits are shuffled."
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Display"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
@@ -854,9 +1151,17 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "Explanatory text"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid ""
 "When checked, enables explanatory text in the analysis to help interpret the "
 "procedure and the statistical results."
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Confidence"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
@@ -868,11 +1173,23 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "Show explanatory text at each step of the analysis"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid "Report"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid "Add additional tables about the analysis to the report."
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Assumption checks"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
@@ -885,13 +1202,25 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "Frequency table"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid ""
 "Produces a table containing the count and the percentage for every unique "
 "value in the data set."
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid "Add additional figures about the analysis to the report."
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Observed vs. expected"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
@@ -901,7 +1230,19 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "Histogram"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid "Produces a histogram with a single bin for each observed value."
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Label"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "with highest occurrence"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
@@ -925,7 +1266,15 @@ msgid "Options related to the bootstrapping procedure of the p-value."
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
+msgid "Number of samples"
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
 msgid "The number of samples to use for simulating the p value."
+msgstr ""
+
+msgctxt "auditClassicalNumberBunching|"
+msgid "Seed"
 msgstr ""
 
 msgctxt "auditClassicalNumberBunching|"
@@ -934,6 +1283,21 @@ msgid ""
 "results."
 msgstr ""
 
+#, qt-format
+msgctxt "auditClassicalPlanning|"
+msgid ""
+"The planning analysis allows the user to calculate a minimum sample size "
+"given a set of sampling objectives and summary statistics of the population. "
+"Note that when you have access to the raw population data you may want to "
+"use the audit workflow, an analysis that guides you through the sampling "
+"process.\n"
+"\n"
+"![Audit sampling workflow](%1)\n"
+"\n"
+"Please see the manual of the Audit module (read [here](%2)) for more "
+"detailed information about this analysis."
+msgstr ""
+
 msgctxt "auditClassicalPlanning|"
 msgid "Report"
 msgstr ""
@@ -942,12 +1306,65 @@ msgctxt "auditClassicalPlanning|"
 msgid "Advanced"
 msgstr ""
 
+#, qt-format
+msgctxt "auditClassicalWorkflow|"
+msgid ""
+"The task of an auditor is to make a judgment regarding the fairness of the "
+"presented transactions in a population. When the auditor has access to the "
+"raw population data, they can use the *audit workflow* to calculate how many "
+"samples need to be evaluated in order to meet a certain confidence in their "
+"judgment. The user can then sample these items from the population, inspect "
+"and audit these items, and perform statistical inference about the "
+"misstatement in the population. The sampling workflow guides the auditor "
+"through the audit process, making the correct choices of calculations along "
+"the way.\n"
+"\n"
+"Please see the manual of the Audit module (read [here](%1)) for more "
+"detailed information about this analysis.\n"
+"\n"
+"### Workflow\n"
+"---\n"
+"- Planning: Calculate the minimum sample size to achieve your sampling "
+"objectives with the specified confidence.\n"
+"- Selection: Select the required sampling units from the population.\n"
+"- Execution: Annotate the selection with your assessment of the fairness of "
+"the selected items.\n"
+"- Evaluation: Make a population statement based on your annotated "
+"selection.\n"
+"\n"
+"![Audit sampling workflow](%2)"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>1. Planning</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "1. Planning"
+msgstr ""
+
 msgctxt "auditClassicalWorkflow|"
 msgid "Report"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Advanced"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Download Report</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>To Selection</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>2. Selection</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "2. Selection"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
@@ -955,7 +1372,109 @@ msgid "Add variables to sample"
 msgstr ""
 
 msgctxt "auditClassicalWorkflow|"
+msgid "<b>Reset Workflow</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>To Execution</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>3. Execution</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "3. Execution"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Continue</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
 msgid "Sample List"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Annotate your selected items with their audit (true) values.</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>To Evaluation</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "<b>4. Evaluation</b>"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "4. Evaluation"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Method"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Hypergeometric"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Binomial"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Poisson"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Stringer"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "LTA adjustment"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Mean-per-unit estimator"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Direct estimator"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Difference estimator"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Ratio estimator"
+msgstr ""
+
+msgctxt "auditClassicalWorkflow|"
+msgid "Regression estimator"
+msgstr ""
+
+#, qt-format
+msgctxt "auditSelection|"
+msgid ""
+"The selection analysis allows the user to select a number of sampling units "
+"(items or monetary units) from a population using a variety of sampling "
+"methods (random sampling, cell sampling, fixed interval sampling) that are "
+"standard in an auditing context.\n"
+"\n"
+"![Audit sampling workflow](%1)\n"
+"\n"
+"Please see the manual of the Audit module (read [here](%2)) for more "
+"detailed information about this analysis."
+msgstr ""
+
+msgctxt "auditSelection|"
+msgid "Sample size"
 msgstr ""
 
 msgctxt "auditSelection|"
@@ -1261,6 +1780,50 @@ msgctxt "EvaluationOutput|"
 msgid "Display the row number of the misstated items in the figure."
 msgstr ""
 
+msgctxt "EvaluationOutput|"
+msgid "Conclusion"
+msgstr ""
+
+msgctxt "EvaluationOutput|"
+msgid "Use overall materiality"
+msgstr ""
+
+msgctxt "EvaluationOutput|"
+msgid ""
+"Determine the conclusion based on the overall materiality instead of the "
+"performance materiality."
+msgstr ""
+
+msgctxt "EvaluationOutput|"
+msgid "Specify how the overall materiality is defined."
+msgstr ""
+
+msgctxt "EvaluationOutput|"
+msgid "Relative"
+msgstr ""
+
+msgctxt "EvaluationOutput|"
+msgid ""
+"Specify the overall materiality as a percentage relative to the total number "
+"of units in the population."
+msgstr ""
+
+msgctxt "EvaluationOutput|"
+msgid "The percentage associated with the overall materiality."
+msgstr ""
+
+msgctxt "EvaluationOutput|"
+msgid "Absolute"
+msgstr ""
+
+msgctxt "EvaluationOutput|"
+msgid "Specify the overall materiality as an absolute value in monetary units."
+msgstr ""
+
+msgctxt "EvaluationOutput|"
+msgid "The value associated with the overall materiality."
+msgstr ""
+
 msgctxt "EvaluationVariablesList|"
 msgid "Selection Counter (optional)"
 msgstr ""
@@ -1284,6 +1847,41 @@ msgctxt "EvaluationVariablesList|"
 msgid ""
 "A nominal variable that indicates to which subgroup (strata) of the "
 "population an item belongs."
+msgstr ""
+
+msgctxt "ExpectedErrors|"
+msgid "Expected Misstatements"
+msgstr ""
+
+msgctxt "ExpectedErrors|"
+msgid ""
+"The expected misstatements are the tolerable misstatements that can be found "
+"in the sample while still achieving the conditions outlined in the sampling "
+"objectives. It is advised to set this value conservatively to minimize the "
+"probability of the observed misstatements exceeding the expected "
+"misstatements, which would imply that insufficient work has been done in the "
+"end."
+msgstr ""
+
+msgctxt "ExpectedErrors|"
+msgid "Relative"
+msgstr ""
+
+msgctxt "ExpectedErrors|"
+msgid "Enter the expected misstatements as a percentage."
+msgstr ""
+
+msgctxt "ExpectedErrors|"
+msgid "The percentage of expected misstatements in the population."
+msgstr ""
+
+msgctxt "ExpectedErrors|"
+msgid "All possible"
+msgstr ""
+
+msgctxt "ExpectedErrors|"
+msgid ""
+"Do not make an assumption about the expected misstatements in the population."
 msgstr ""
 
 msgctxt "IntervalType|"
@@ -1397,8 +1995,85 @@ msgid ""
 "across different subgroups in the population (strata)."
 msgstr ""
 
+msgctxt "Algorithm|"
+msgid "Hurdle model"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "This algoritm enables you to consider the individal taints."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "MCMC Options"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Options to customize the MCMC sampling process."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Warmup"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the number of warmup MCMC iterations."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Iterations"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the total number of MCMC iterations."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Chains"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the number of MCMC chains."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Seed"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid ""
+"Selects the seed for the random number generator in order to reproduce "
+"results."
+msgstr ""
+
 msgctxt "AuditRiskModel|"
 msgid "Audit Risk Model"
+msgstr ""
+
+msgctxt "AuditRiskModel|"
+msgid ""
+"When the auditor has information that indicates a low-risk profile on the "
+"population, they can use this information to reduce their required sample "
+"size via the Audit Risk Model (ARM) provided that there are no errors in the "
+"population. According to the ARM, the audit risk (AR) is a function of the "
+"inherent risk (IR), the internal control risk (CR), the analytical risk "
+"(CAR) and the detection risk (DR).\n"
+"\n"
+"*AR = IR x CR x CAR x DR*\n"
+"\n"
+"The auditor assesses inherent risk, internal control risk and analytical "
+"risk generally on a 3-point scale consisting of high, medium and low to "
+"determine the appropriate detection risk. To use the ARM, these categorical "
+"risk assessments must be mapped to probabilities. By default, the Audit "
+"module uses the percentages shown in the table below, which are inspired by "
+"the <i>Handboek Auditing Rijksoverheid</i>. You can manually adjust the "
+"percentages associated with one or all of the risks by selecting the Custom "
+"option in the drop-down list under the corresponding risk assessment.\n"
+"\n"
+"|  | Inherent risk (IR) | Control risk (CR) | Analytical risk (CAR) |\n"
+"| ---: | :---: | :---: | :---: |\n"
+"| High | 100% | 100% | 100% |\n"
+"| Medium | 63% | 52% | 50% |\n"
+"| Low | 40% | 34% | 25% |"
 msgstr ""
 
 msgctxt "AuditRiskModel|"
@@ -1448,6 +2123,21 @@ msgctxt "AuditRiskModel|"
 msgid "The percentage that corresponds with the control risk probability."
 msgstr ""
 
+msgctxt "AuditRiskModel|"
+msgid "Analytical risk"
+msgstr ""
+
+msgctxt "AuditRiskModel|"
+msgid ""
+"A category or probability for the analytical risk. Analytical risk is "
+"defined as the the risk that a material misstatement will not be discovered "
+"by the auditor through analytical procedures."
+msgstr ""
+
+msgctxt "AuditRiskModel|"
+msgid "The percentage that corresponds with the analytical risk probability."
+msgstr ""
+
 msgctxt "CriticalItems|"
 msgid "Critical Items"
 msgstr ""
@@ -1495,24 +2185,6 @@ msgid "Removes the critical items in the analysis."
 msgstr ""
 
 msgctxt "ExpectedErrors|"
-msgid "Expected Misstatements"
-msgstr ""
-
-msgctxt "ExpectedErrors|"
-msgid ""
-"The expected misstatements are the tolerable misstatements that can be found "
-"in the sample while still achieving the conditions outlined in the sampling "
-"objectives. It is advised to set this value conservatively to minimize the "
-"probability of the observed misstatements exceeding the expected "
-"misstatements, which would imply that insufficient work has been done in the "
-"end."
-msgstr ""
-
-msgctxt "ExpectedErrors|"
-msgid "Relative"
-msgstr ""
-
-msgctxt "ExpectedErrors|"
 msgid ""
 "Enter the expected misstatements as a percentage relative to the total size "
 "of the sample."
@@ -1535,12 +2207,26 @@ msgid "The number of expected misstatements in the sample."
 msgstr ""
 
 msgctxt "ExpectedErrors|"
-msgid "All possible"
-msgstr ""
-
-msgctxt "ExpectedErrors|"
 msgid ""
 "Do not make an assumption about the expected misstatements in the sample."
+msgstr ""
+
+msgctxt "ExpectedPopRate|"
+msgid "Most Likely Misstatement"
+msgstr ""
+
+msgctxt "ExpectedPopRate|"
+msgid ""
+"The a priori most likely misstatement rate in the population, which is "
+"incorporated into the prior distribution."
+msgstr ""
+
+msgctxt "ExpectedPopRate|"
+msgid "Relative"
+msgstr ""
+
+msgctxt "ExpectedPopRate|"
+msgid "Enter the a priori most likely misstatement rate as a percentage."
 msgstr ""
 
 msgctxt "Iterations|"
@@ -2107,10 +2793,6 @@ msgid "Selects which sampling unit is selected from each interval."
 msgstr ""
 
 msgctxt "SelectionMethod|"
-msgid "Set a starting point using to a user-specified value."
-msgstr ""
-
-msgctxt "SelectionMethod|"
 msgid "Random"
 msgstr ""
 
@@ -2118,6 +2800,14 @@ msgctxt "SelectionMethod|"
 msgid ""
 "Set a starting point via random number generation according to a user-"
 "specified seed."
+msgstr ""
+
+msgctxt "SelectionMethod|"
+msgid "Custom"
+msgstr ""
+
+msgctxt "SelectionMethod|"
+msgid "Set a starting point using to a user-specified value."
 msgstr ""
 
 msgctxt "SelectionMethod|"
@@ -2158,16 +2848,6 @@ msgid "Tables"
 msgstr ""
 
 msgctxt "SelectionOutput|"
-msgid "Selected items"
-msgstr ""
-
-msgctxt "SelectionOutput|"
-msgid ""
-"Produces a table containing the selected transactions along with any "
-"additional observations provided in the additional variables field."
-msgstr ""
-
-msgctxt "SelectionOutput|"
 msgid "Descriptive statistics"
 msgstr ""
 
@@ -2179,532 +2859,18 @@ msgid ""
 "the range."
 msgstr ""
 
-msgctxt "SelectionMethod|"
-msgid "Custom"
+msgctxt "SelectionOutput|"
+msgid "Selected items"
 msgstr ""
 
-msgctxt "AuditRiskModel|"
-msgid "Analytical risk"
-msgstr ""
-
-msgctxt "AuditRiskModel|"
+msgctxt "SelectionOutput|"
 msgid ""
-"A category or probability for the analytical risk. Analytical risk is "
-"defined as the the risk that a material misstatement will not be discovered "
-"by the auditor through analytical procedures."
-msgstr ""
-
-msgctxt "AuditRiskModel|"
-msgid "The percentage that corresponds with the analytical risk probability."
-msgstr ""
-
-msgctxt "Description|"
-msgid "Audit Sampling"
-msgstr ""
-
-msgctxt "Description|"
-msgid "Data Auditing"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Bayes factor robustness check"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid ""
-"Produces a figure that shows the robustness of the Bayes factor to the prior "
-"distribution."
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Sequential analysis"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid ""
-"Produces a figure that shows the Bayes factor as a function of the sample "
-"size."
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Advanced"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Prior Distribution"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Concentration"
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Specifies the concentration parameter for the Dirichlet prior."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Target"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"In this column, the target (i.e., to be predicted) variable should be "
-"entered."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Predictions"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "In this column, the predictions of the algorithm should be entered."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Sensitive Attribute"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"In this column, the protected (i.e., sensitive) attribute should be entered."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Confidence"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"The confidence level used. The confidence level is the complement of the "
-"audit risk: the risk that the user is willing to take to give an incorrect "
-"judgment about the population. For example, if you want to use an audit risk "
-"of 5%, this equals 95% confidence."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Metric"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Predictive rate parity"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Demographic parity"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Proportional parity"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Accuracy parity"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "False negative rate parity"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "False positive rate parity"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "True positive rate parity"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Negative predicted value parity"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Specificity parity"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Factor Levels"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"These options allow specification of the privileged group and the positive "
-"class."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Privileged group"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "None"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"The privileged group refers to the class in the protected variable that "
-"historically or systematically experiences certain advantages, benefits, or "
-"privileges."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Positive class"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "The positive class in the target variable."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Alt. Hypothesis"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Specify the alternative hypothesis."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Unprivileged ≠ Privileged"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is not equal to the fairness metric in the privileged group."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Unprivileged < Privileged"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is lower than the fairness metric in the privileged group."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Unprivileged > Privileged"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is higher than the fairness metric in the privileged group."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Choose which type of Bayes factor to display."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "BF₁₀"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Bayes factor to quantify evidence for the alternative hypothesis relative to "
-"the null hypothesis."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "BF₀₁"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Bayes factor to quantify evidence for the null hypothesis relative to the "
-"alternative hypothesis."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Log(BF₁₀)"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Natural logarithm of BF10."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Display"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Specify options that have an effect on the look and feel of the audit report."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Explanatory text"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"When checked, enables explanatory text in the analysis to help interpret the "
-"procedure and the statistical results."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Report"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Tables"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Add additional tables about the evaluation to the report."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Individual comparisons"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Produces a table comparing the unprivileged groups against the privileged "
-"group."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Model performance"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Produces a table containing the performance measures for the classification, "
-"including support, accuracy, precision, recall and F1-score."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Confusion matrix"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Produces the confusion matrix for each group."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Display proportions"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Displays proportions in the confusion table."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Plots"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Add additional figures about the evaluation to the report."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Parity estimates"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Produces a plot showing the parity statistics for each unprivileged group "
-"against the privileged group."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Prior and posterior distribution"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Produces a figure that shows the prior and posterior distribution."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Bayes factor robustness check"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Produces a figure that shows the robustness of the Bayes factor to the prior "
-"distribution."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Sequential analysis"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Produces a figure that shows the Bayes factor as a function of the sample "
-"size."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Advanced"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Prior Distribution"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Concentration"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Specifies the concentration parameter for the Dirichlet prior."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "Seed"
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"Selects the seed for the random number generator in order to reproduce "
-"results."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid ""
-"The fairness metrics analysis enables the user to assess fairness and "
-"discrimination regarding specific groups in the data in algorithmic decision-"
-"making systems. Considering a certain positive class in the data, fairness -"
-"or discrimination- can be quantified using model-agnostic fairness metrics. "
-"The ratio of two fairness metrics is called parity, which is a well-known "
-"concept in algorithmic fairness."
-msgstr ""
-
-msgctxt "auditClassicalModelFairness|"
-msgid "The type of fairness metric to compute and perform inference on."
-msgstr ""
-
-msgctxt "auditClassicalBenfordsLaw|"
-msgid "Confidence interval"
-msgstr ""
-
-msgctxt "ExpectedErrors|"
-msgid "Enter the expected misstatements as a percentage."
-msgstr ""
-
-msgctxt "ExpectedErrors|"
-msgid "The percentage of expected misstatements in the population."
-msgstr ""
-
-msgctxt "ExpectedErrors|"
-msgid ""
-"Do not make an assumption about the expected misstatements in the population."
-msgstr ""
-
-msgctxt "ExpectedPopRate|"
-msgid "Most Likely Misstatement"
-msgstr ""
-
-msgctxt "ExpectedPopRate|"
-msgid ""
-"The a priori most likely misstatement rate in the population, which is "
-"incorporated into the prior distribution."
-msgstr ""
-
-msgctxt "ExpectedPopRate|"
-msgid "Relative"
-msgstr ""
-
-msgctxt "ExpectedPopRate|"
-msgid "Enter the a priori most likely misstatement rate as a percentage."
-msgstr ""
-
-msgctxt "auditBayesianWorkflow|"
-msgid "<b>Continue</b>"
-msgstr ""
-
-msgctxt "auditClassicalWorkflow|"
-msgid "<b>Continue</b>"
-msgstr ""
-
-msgctxt "AuditRiskModel|"
-msgid ""
-"When the auditor has information that indicates a low-risk profile on the "
-"population, they can use this information to reduce their required sample "
-"size via the Audit Risk Model (ARM) provided that there are no errors in the "
-"population. According to the ARM, the audit risk (AR) is a function of the "
-"inherent risk (IR), the internal control risk (CR), the analytical risk "
-"(CAR) and the detection risk (DR).\n"
-"\n"
-"*AR = IR x CR x CAR x DR*\n"
-"\n"
-"The auditor assesses inherent risk, internal control risk and analytical "
-"risk generally on a 3-point scale consisting of high, medium and low to "
-"determine the appropriate detection risk. To use the ARM, these categorical "
-"risk assessments must be mapped to probabilities. By default, the Audit "
-"module uses the percentages shown in the table below, which are inspired by "
-"the <i>Handboek Auditing Rijksoverheid</i>. You can manually adjust the "
-"percentages associated with one or all of the risks by selecting the Custom "
-"option in the drop-down list under the corresponding risk assessment.\n"
-"\n"
-"|  | Inherent risk (IR) | Control risk (CR) | Analytical risk (CAR) |\n"
-"| ---: | :---: | :---: | :---: |\n"
-"| High | 100% | 100% | 100% |\n"
-"| Medium | 63% | 52% | 50% |\n"
-"| Low | 40% | 34% | 25% |"
-msgstr ""
-
-msgctxt "EvaluationOutput|"
-msgid "Conclusion"
-msgstr ""
-
-msgctxt "EvaluationOutput|"
-msgid "Use overall materiality"
-msgstr ""
-
-msgctxt "EvaluationOutput|"
-msgid ""
-"Determine the conclusion based on the overall materiality instead of the "
-"performance materiality."
-msgstr ""
-
-msgctxt "EvaluationOutput|"
-msgid "Specify how the overall materiality is defined."
-msgstr ""
-
-msgctxt "EvaluationOutput|"
-msgid "Relative"
-msgstr ""
-
-msgctxt "EvaluationOutput|"
-msgid ""
-"Specify the overall materiality as a percentage relative to the total number "
-"of units in the population."
-msgstr ""
-
-msgctxt "EvaluationOutput|"
-msgid "The percentage associated with the overall materiality."
-msgstr ""
-
-msgctxt "EvaluationOutput|"
-msgid "Absolute"
-msgstr ""
-
-msgctxt "EvaluationOutput|"
-msgid "Specify the overall materiality as an absolute value in monetary units."
-msgstr ""
-
-msgctxt "EvaluationOutput|"
-msgid "The value associated with the overall materiality."
+"Produces a table containing the selected transactions along with any "
+"additional observations provided in the additional variables field."
 msgstr ""
 
 msgctxt "SelectionOutput|"
 msgid "Order by book value"
-msgstr ""
-
-msgctxt "SelectionOutput|"
-msgid "Descending"
-msgstr ""
-
-msgctxt "SelectionOutput|"
-msgid "Ascending"
 msgstr ""
 
 msgctxt "SelectionOutput|"
@@ -2713,176 +2879,10 @@ msgid ""
 "on their book value."
 msgstr ""
 
-#, qt-format
-msgctxt "auditBayesianEvaluation|"
-msgid ""
-"The Bayesian evaluation analysis allows the user to perform inference about "
-"the total misstatement in the population on the basis of an audit sample.\n"
-"\n"
-"![Audit sampling workflow](%1)\n"
-"\n"
-"Please see the manual of the Audit module (read [here](%2)) for more "
-"detailed information about this analysis."
+msgctxt "SelectionOutput|"
+msgid "Descending"
 msgstr ""
 
-#, qt-format
-msgctxt "auditBayesianPlanning|"
-msgid ""
-"The Bayesian planning analysis allows the user to calculate a minimum sample "
-"size given a set of sampling objectives and summary statistics of the "
-"population. Note that when you have access to the raw population data you "
-"may want to use the audit workflow, an analysis that guides you through the "
-"sampling process.\n"
-"\n"
-"![Audit sampling workflow](%1)\n"
-"\n"
-"Please see the manual of the Audit module (read [here](%2)) for more "
-"detailed information about this analysis."
-msgstr ""
-
-#, qt-format
-msgctxt "auditBayesianWorkflow|"
-msgid ""
-"The task of an auditor is to make a judgment regarding the fairness of the "
-"presented transactions in a population. When the auditor has access to the "
-"raw population data, they can use the *audit workflow* to calculate how many "
-"samples need to be evaluated in order to meet a certain confidence in their "
-"judgment. The user can then sample these items from the population, inspect "
-"and audit these items, and perform statistical inference about the "
-"misstatement in the population. The sampling workflow guides the auditor "
-"through the audit process, making the correct choices of calculations along "
-"the way.\n"
-"\n"
-"Please see the manual of the Audit module (read [here](%1)) for more "
-"detailed information about this analysis.\n"
-"\n"
-"### Workflow\n"
-"---\n"
-"- Planning: Calculate the minimum sample size to achieve your sampling "
-"objectives with the specified confidence.\n"
-"- Selection: Select the required sampling units from the population.\n"
-"- Execution: Annotate the selection with your assessment of the fairness of "
-"the selected items.\n"
-"- Evaluation: Make a population statement based on your annotated "
-"selection.\n"
-"\n"
-"![Audit sampling workflow](%2)"
-msgstr ""
-
-#, qt-format
-msgctxt "auditClassicalEvaluation|"
-msgid ""
-"The evaluation analysis allows the user to perform inference about the total "
-"misstatement in the population on the basis of an audit sample.\n"
-"\n"
-"![Audit sampling workflow](%1) Please see the manual of the Audit module "
-"(read [here](%2)) for more detailed information about this analysis."
-msgstr ""
-
-#, qt-format
-msgctxt "auditClassicalPlanning|"
-msgid ""
-"The planning analysis allows the user to calculate a minimum sample size "
-"given a set of sampling objectives and summary statistics of the population. "
-"Note that when you have access to the raw population data you may want to "
-"use the audit workflow, an analysis that guides you through the sampling "
-"process.\n"
-"\n"
-"![Audit sampling workflow](%1)\n"
-"\n"
-"Please see the manual of the Audit module (read [here](%2)) for more "
-"detailed information about this analysis."
-msgstr ""
-
-#, qt-format
-msgctxt "auditClassicalWorkflow|"
-msgid ""
-"The task of an auditor is to make a judgment regarding the fairness of the "
-"presented transactions in a population. When the auditor has access to the "
-"raw population data, they can use the *audit workflow* to calculate how many "
-"samples need to be evaluated in order to meet a certain confidence in their "
-"judgment. The user can then sample these items from the population, inspect "
-"and audit these items, and perform statistical inference about the "
-"misstatement in the population. The sampling workflow guides the auditor "
-"through the audit process, making the correct choices of calculations along "
-"the way.\n"
-"\n"
-"Please see the manual of the Audit module (read [here](%1)) for more "
-"detailed information about this analysis.\n"
-"\n"
-"### Workflow\n"
-"---\n"
-"- Planning: Calculate the minimum sample size to achieve your sampling "
-"objectives with the specified confidence.\n"
-"- Selection: Select the required sampling units from the population.\n"
-"- Execution: Annotate the selection with your assessment of the fairness of "
-"the selected items.\n"
-"- Evaluation: Make a population statement based on your annotated "
-"selection.\n"
-"\n"
-"![Audit sampling workflow](%2)"
-msgstr ""
-
-#, qt-format
-msgctxt "auditSelection|"
-msgid ""
-"The selection analysis allows the user to select a number of sampling units "
-"(items or monetary units) from a population using a variety of sampling "
-"methods (random sampling, cell sampling, fixed interval sampling) that are "
-"standard in an auditing context.\n"
-"\n"
-"![Audit sampling workflow](%1)\n"
-"\n"
-"Please see the manual of the Audit module (read [here](%2)) for more "
-"detailed information about this analysis."
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid "Hurdle model"
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid "This algoritm enables you to consider the individal taints."
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid "MCMC Options"
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid "Options to customize the MCMC sampling process."
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid "Warmup"
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid "Sets the number of warmup MCMC iterations."
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid "Iterations"
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid "Sets the total number of MCMC iterations."
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid "Chains"
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid "Sets the number of MCMC chains."
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid "Seed"
-msgstr ""
-
-msgctxt "Algorithm|"
-msgid ""
-"Selects the seed for the random number generator in order to reproduce "
-"results."
+msgctxt "SelectionOutput|"
+msgid "Ascending"
 msgstr ""

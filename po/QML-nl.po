@@ -3326,3 +3326,55 @@ msgstr ""
 "\n"
 "Raadpleeg de handleiding van de Audit module (lees [hier](%2)) voor meer "
 "gedetailleerde informatie over deze analyse."
+
+msgctxt "Algorithm|"
+msgid "Hurdle model"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "This algoritm enables you to consider the individal taints."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "MCMC Options"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Options to customize the MCMC sampling process."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Warmup"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the number of warmup MCMC iterations."
+msgstr ""
+
+#, fuzzy
+msgctxt "Algorithm|"
+msgid "Iterations"
+msgstr "Iteraties"
+
+msgctxt "Algorithm|"
+msgid "Sets the total number of MCMC iterations."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Chains"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the number of MCMC chains."
+msgstr ""
+
+#, fuzzy
+msgctxt "Algorithm|"
+msgid "Seed"
+msgstr "Toevalsgenerator beginwaarde"
+
+msgctxt "Algorithm|"
+msgid ""
+"Selects the seed for the random number generator in order to reproduce "
+"results."
+msgstr ""

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2025-02-16 08:42\n"
+"POT-Creation-Date: 2025-04-05 03:34\n"
 "PO-Revision-Date: 2025-01-07 10:14+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1003,6 +1003,12 @@ msgid ""
 msgstr ""
 "பகுப்பாய்வு சாத்தியமில்லை: பொருள் (%1$s) மக்கள்தொகையின் மொத்த மதிப்பை விட அதிகமாக "
 "உள்ளது அல்லது சமம் (%2$s)."
+
+msgid ""
+"Analysis not possible: The hurdle model cannot be applied with this specific "
+"prior distribution because it is improper. Please specify a different prior "
+"distribution."
+msgstr ""
 
 msgid ""
 "Select one or both sampling objectives to begin planning an audit sample.\n"
@@ -2009,6 +2015,10 @@ msgstr "காமா விநியோகத்தைப் பயன்பட�
 
 msgid "The results are computed using the beta-binomial distribution."
 msgstr "பீட்டா-பினோமியல் விநியோகத்தைப் பயன்படுத்தி முடிவுகள் கணக்கிடப்படுகின்றன."
+
+#, fuzzy
+msgid "The results are computed using the hurdle beta model"
+msgstr "முடிவுகள் ச்ட்ரிங்கர் முறையைப் பயன்படுத்தி கணக்கிடப்படுகின்றன."
 
 msgid "The results are computed using the Stringer method with LTA adjustment."
 msgstr ""

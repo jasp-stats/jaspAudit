@@ -3294,3 +3294,58 @@ msgstr ""
 "\n"
 "Por favor, consulta o manual do módulo de Auditoría (ler [aquí](%2)) para "
 "obter información máis detallada sobre esta análise."
+
+msgctxt "Algorithm|"
+msgid "Hurdle model"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "This algoritm enables you to consider the individal taints."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "MCMC Options"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Options to customize the MCMC sampling process."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Warmup"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the number of warmup MCMC iterations."
+msgstr ""
+
+#, fuzzy
+msgctxt "Algorithm|"
+msgid "Iterations"
+msgstr "Iteracións"
+
+msgctxt "Algorithm|"
+msgid "Sets the total number of MCMC iterations."
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Chains"
+msgstr ""
+
+msgctxt "Algorithm|"
+msgid "Sets the number of MCMC chains."
+msgstr ""
+
+#, fuzzy
+msgctxt "Algorithm|"
+msgid "Seed"
+msgstr "Semente"
+
+#, fuzzy
+msgctxt "Algorithm|"
+msgid ""
+"Selects the seed for the random number generator in order to reproduce "
+"results."
+msgstr ""
+"Selecciona a semente do xerador de números aleatorios para reproducir os "
+"resultados."

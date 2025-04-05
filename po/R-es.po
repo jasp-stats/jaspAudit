@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2025-02-16 08:42\n"
+"POT-Creation-Date: 2025-04-05 03:34\n"
 "PO-Revision-Date: 2025-02-17 23:40+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1045,6 +1045,12 @@ msgstr ""
 "total de la población (%2$s)."
 
 msgid ""
+"Analysis not possible: The hurdle model cannot be applied with this specific "
+"prior distribution because it is improper. Please specify a different prior "
+"distribution."
+msgstr ""
+
+msgid ""
 "Select one or both sampling objectives to begin planning an audit sample.\n"
 "\n"
 "%1$s <b>Test against a performance materiality</b>\n"
@@ -2073,6 +2079,10 @@ msgstr "Los resultados se calculan utilizando la distribución Gamma."
 
 msgid "The results are computed using the beta-binomial distribution."
 msgstr "Los resultados se calculan utilizando la distribución Beta-Binomial."
+
+#, fuzzy
+msgid "The results are computed using the hurdle beta model"
+msgstr "Los resultados se calculan utilizando el método de Stringer."
 
 msgid "The results are computed using the Stringer method with LTA adjustment."
 msgstr ""

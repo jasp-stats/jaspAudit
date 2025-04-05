@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.0\n"
-"POT-Creation-Date: 2025-02-16 08:42\n"
+"POT-Creation-Date: 2025-04-05 03:34\n"
 "PO-Revision-Date: 2024-07-19 01:36+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -856,6 +856,12 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Analysis not possible: The hurdle model cannot be applied with this specific "
+"prior distribution because it is improper. Please specify a different prior "
+"distribution."
+msgstr ""
+
+msgid ""
 "Select one or both sampling objectives to begin planning an audit sample.\n"
 "\n"
 "%1$s <b>Test against a performance materiality</b>\n"
@@ -1640,6 +1646,10 @@ msgstr "Wyniki zostały obliczone z wykorzystaniem rozkładu gamma."
 
 msgid "The results are computed using the beta-binomial distribution."
 msgstr ""
+
+#, fuzzy
+msgid "The results are computed using the hurdle beta model"
+msgstr "Wyniki zostały obliczone z wykorzystaniem rozkładu beta."
 
 msgid "The results are computed using the Stringer method with LTA adjustment."
 msgstr ""

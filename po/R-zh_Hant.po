@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.1\n"
-"POT-Creation-Date: 2025-02-16 08:42\n"
+"POT-Creation-Date: 2025-04-05 03:34\n"
 "PO-Revision-Date: 2025-02-23 11:09+0000\n"
 "Last-Translator: 陳寬裕 <pf.kuan.yu.chen@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -814,6 +814,12 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Analysis not possible: The hurdle model cannot be applied with this specific "
+"prior distribution because it is improper. Please specify a different prior "
+"distribution."
+msgstr ""
+
+msgid ""
 "Select one or both sampling objectives to begin planning an audit sample.\n"
 "\n"
 "%1$s <b>Test against a performance materiality</b>\n"
@@ -1594,6 +1600,9 @@ msgid "The results are computed using the gamma distribution."
 msgstr ""
 
 msgid "The results are computed using the beta-binomial distribution."
+msgstr ""
+
+msgid "The results are computed using the hurdle beta model"
 msgstr ""
 
 msgid "The results are computed using the Stringer method with LTA adjustment."
