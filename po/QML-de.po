@@ -3193,3 +3193,12 @@ msgid ""
 msgstr ""
 "Wählt den Startwert für den Zufallszahlengenerator aus, um Ergebnisse zu "
 "reproduzieren."
+
+msgctxt "EvaluationOutput|"
+msgid "Sequential analysis"
+msgstr ""
+
+msgctxt "EvaluationOutput|"
+msgid ""
+"Produces a figure showing the Bayes factor as a function of the sample size."
+msgstr ""

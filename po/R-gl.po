@@ -6,11 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-04-05 03:34\n"
+"POT-Creation-Date: 2025-04-05 09:51\n"
 "PO-Revision-Date: 2025-04-05 09:49+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-r/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
+"r/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2316,6 +2316,19 @@ msgstr "Non paramétrico"
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr "%1$s %2$s vs. %3$s %2$s."
 
+#, fuzzy
+msgid "Sequential Analysis"
+msgstr "Análise secuencial"
+
+msgid "Plot not possible: The Bayes factor is infinite."
+msgstr ""
+
+msgid ""
+"<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n). "
+"The figure illustrates how the evidence for the hypothesis H₁ versus the "
+"hypothesis H₀ accumulates."
+msgstr ""
+
 #~ msgid "an impartial prior distribution"
 #~ msgstr "unha distribución previa imparcial"
 
@@ -4549,9 +4562,6 @@ msgstr "%1$s %2$s vs. %3$s %2$s."
 
 #~ msgid "Prior and posterior mass"
 #~ msgstr "Masa previa e posterior"
-
-#~ msgid "Sequential analysis"
-#~ msgstr "Análise secuencial"
 
 #~ msgid "Exclude cases per dependent variable"
 #~ msgstr "Excluír casos por variable dependente"

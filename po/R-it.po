@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.3\n"
-"POT-Creation-Date: 2025-04-05 03:34\n"
+"POT-Creation-Date: 2025-04-05 09:51\n"
 "PO-Revision-Date: 2024-06-30 10:00+0000\n"
 "Last-Translator: Marco Capozzi <giammarcous@yahoo.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -1909,4 +1909,17 @@ msgid "Nonparametric"
 msgstr ""
 
 msgid "%1$s %2$s vs. %3$s %2$s."
+msgstr ""
+
+#, fuzzy
+msgid "Sequential Analysis"
+msgstr "Grafico di Analisi Sequenziale"
+
+msgid "Plot not possible: The Bayes factor is infinite."
+msgstr ""
+
+msgid ""
+"<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n). "
+"The figure illustrates how the evidence for the hypothesis H₁ versus the "
+"hypothesis H₀ accumulates."
 msgstr ""

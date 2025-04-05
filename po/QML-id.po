@@ -3236,3 +3236,13 @@ msgid ""
 "Selects the seed for the random number generator in order to reproduce "
 "results."
 msgstr "Memilih seed untuk generator angka acak untuk mereproduksi hasil."
+
+#, fuzzy
+msgctxt "EvaluationOutput|"
+msgid "Sequential analysis"
+msgstr "Analisis berurutan"
+
+msgctxt "EvaluationOutput|"
+msgid ""
+"Produces a figure showing the Bayes factor as a function of the sample size."
+msgstr ""

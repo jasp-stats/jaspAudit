@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-05 03:34\n"
+"POT-Creation-Date: 2025-04-05 09:51\n"
 "PO-Revision-Date: 2025-03-22 10:53+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -2337,6 +2337,19 @@ msgstr "Nichtparametrisch"
 
 msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr "%1$s %2$s vs. %3$s %2$s."
+
+#, fuzzy
+msgid "Sequential Analysis"
+msgstr "Diagramm Sequenzielle Analyse"
+
+msgid "Plot not possible: The Bayes factor is infinite."
+msgstr ""
+
+msgid ""
+"<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n). "
+"The figure illustrates how the evidence for the hypothesis H₁ versus the "
+"hypothesis H₀ accumulates."
+msgstr ""
 
 #~ msgid "an impartial prior distribution"
 #~ msgstr "eine unparteiische Prior-Verteilung"
