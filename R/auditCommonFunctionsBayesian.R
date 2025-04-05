@@ -348,6 +348,58 @@
   }
 }
 
+.jfaPlotSequentialAnalysisEvaluation <- function(options, jaspResults, parentState, parentContainer, positionInContainer, sample, evaluationOptions) {
+  if (!options[["plotSequentialAnalysis"]] || options[["dataType"]] == "stats" || !options[["materiality_test"]] || options[["stratum"]] != "" || options[["separateMisstatement"]] || options[["hurdle"]]) {
+    return()
+  }
+
+  .jfaFigureNumberUpdate(jaspResults)
+
+  if (is.null(parentContainer[["sequentialAnalysisPlot"]])) {
+    fg <- createJaspPlot(title = gettext("Sequential Analysis"), width = 600, height = 400)
+    fg$position <- positionInContainer
+    fg$dependOn(options = "plotSequentialAnalysis")
+
+    parentContainer[["sequentialAnalysisPlot"]] <- fg
+
+    if (is.null(parentState) || parentContainer$getError()) {
+      return()
+    }
+
+    if (all(unique(sample[[options[["values.audit"]]]]) %in% c(0, 1))) {
+      binaryData <- data.frame(book = rep(1, nrow(sample)), audit = ifelse(sample[[options[["values.audit"]]]] == 0, 1, 0))
+      binaryData$times <- sample[[options[["times"]]]]
+      result <-
+        jfa::evaluation(
+          conf.level = parentState[["conf.level"]], materiality = parentState[["materiality"]],
+          data = binaryData, values = "book", values.audit = "audit",
+          method = parentState[["method"]], prior = parentState[["prior"]], alternative = parentState[["alternative"]],
+          N.units = parentState[["N.units"]], times = if (options[["times"]] != "") "times" else NULL
+        )
+      parentState <- result
+    }
+
+    if (is.infinite(parentState[["posterior"]][["hypotheses"]][["bf.h1"]])) {
+      fg$setError(gettext("Plot not possible: The Bayes factor is infinite."))
+    } else {
+      fg$plotObject <- plot(parentState, type = "sequential") +
+        jaspGraphs::geom_rangeframe() +
+        jaspGraphs::themeJaspRaw()
+    }
+  }
+
+  if (options[["explanatoryText"]]) {
+    caption <- createJaspHtml(gettextf(
+      "<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n). The figure illustrates how the evidence for the hypothesis H\u2081 versus the hypothesis H\u2080 accumulates.",
+      jaspResults[["figNumber"]]$object
+    ), "p")
+    caption$position <- positionInContainer + 1
+    caption$dependOn(optionsFromObject = parentContainer[["sequentialAnalysisPlot"]])
+    caption$dependOn(options = "explanatoryText")
+    parentContainer[["sequentialAnalysisPlotText"]] <- caption
+  }
+}
+
 ################################################################################
 ################## End Bayesian functions ######################################
 ################################################################################

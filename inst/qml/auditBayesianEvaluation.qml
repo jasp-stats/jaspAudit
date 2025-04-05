@@ -68,6 +68,8 @@ Form
 			enable_predictive: !likelihood.use_hypergeometric
 			enable_scatter: !data.use_stats
 			enable_estimates: true
+			show_seqbf: true
+			enable_seqbf: !data.use_stats && !algorithm.use_partial && !variables.use_strata && !algorithm.use_hurdle
 		}
 		Common.Display { show_monetary: true; enable_monetary: population.n_units > 0 || data.use_population }
 	}

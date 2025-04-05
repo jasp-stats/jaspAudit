@@ -414,6 +414,11 @@
   # Create a plot containing the correlation between the book and audit values
   .jfaPlotScatter(options, sample, evaluationOptions, evaluationContainer, jaspResults, positionInContainer = 15)
 
+  # Create a plot with the sequential updating of the Bayes factor
+  if (options[["bayesian"]] && !options[["workflow"]]) {
+    .jfaPlotSequentialAnalysisEvaluation(options, jaspResults, evaluationState, evaluationContainer, positionInContainer = 17, sample, evaluationOptions)
+  }
+
   # Add the conclusion stage
   .jfaConclusionStage(options, jaspResults, workflow)
 }
@@ -2827,7 +2832,7 @@
       "hypergeometric" = gettext("The results are computed using the beta-binomial distribution.")
     )
     if (!options[["workflow"]] && options[["hurdle"]] && options[["method"]] == "binomial") {
-       message <- gettext("The results are computed using the hurdle beta model")
+      message <- gettext("The results are computed using the hurdle beta model")
     }
   }
 

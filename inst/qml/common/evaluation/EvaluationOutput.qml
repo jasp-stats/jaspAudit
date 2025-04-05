@@ -31,6 +31,8 @@ Group
 	property bool	enable_scatter:		false
 	property bool	enable_objectives:	false
 	property bool	enable_estimates:	false
+	property bool	show_seqbf:			false
+	property bool	enable_seqbf:		false
 	property bool	show_overall_materiality: false
 	property bool	enable_overall_materiality_abs: false
 	property bool	check_overall_materiality_abs: false
@@ -105,6 +107,15 @@ Group
 			name: 			"plotEstimates"
 			enabled:		enable_estimates
 			info:			qsTr("Produces a figure showing the range of plausible values for the misstatement for the population and all subpopulations (if applicable).")
+		}
+
+		CheckBox
+		{
+			text:			qsTr("Sequential analysis")
+			name:			"plotSequentialAnalysis"
+			visible: 		show_seqbf
+			enabled:		enable_seqbf	
+			info: 			qsTr("Produces a figure showing the Bayes factor as a function of the sample size.")	
 		}
 
 		CheckBox
