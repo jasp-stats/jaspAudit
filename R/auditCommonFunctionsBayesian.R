@@ -348,7 +348,7 @@
   }
 }
 
-.jfaPlotSequentialAnalysis <- function(options, jaspResults, parentState, parentContainer, positionInContainer, sample, evaluationOptions) {
+.jfaPlotSequentialAnalysisEvaluation <- function(options, jaspResults, parentState, parentContainer, positionInContainer, sample, evaluationOptions) {
   if (!options[["plotSequentialAnalysis"]] || options[["dataType"]] == "stats" || !options[["materiality_test"]] || options[["stratum"]] != "" || options[["separateMisstatement"]] || options[["hurdle"]]) {
     return()
   }
@@ -356,7 +356,7 @@
   .jfaFigureNumberUpdate(jaspResults)
 
   if (is.null(parentContainer[["sequentialAnalysisPlot"]])) {
-    fg <- createJaspPlot(title = gettext("Sequential Analysis"), width = 530, height = 400)
+    fg <- createJaspPlot(title = gettext("Sequential Analysis"), width = 600, height = 400)
     fg$position <- positionInContainer
     fg$dependOn(options = "plotSequentialAnalysis")
 
@@ -383,19 +383,14 @@
       fg$setError(gettext("Plot not possible: The Bayes factor is infinite."))
     } else {
       fg$plotObject <- plot(parentState, type = "sequential") +
-        ggplot2::theme(
-          plot.margin = ggplot2::unit(c(1, 1, 2, 1), "lines"), axis.ticks.y.right = ggplot2::element_blank(),
-          axis.text.y.right = ggplot2::element_blank(), axis.title.y.right = ggplot2::element_blank()
-        ) +
-        ggplot2::geom_segment(x = Inf, xend = Inf, y = -Inf, yend = Inf, color = "white") +
         jaspGraphs::geom_rangeframe() +
-        jaspGraphs::themeJaspRaw(legend.position = "none")
+        jaspGraphs::themeJaspRaw()
     }
   }
 
   if (options[["explanatoryText"]]) {
     caption <- createJaspHtml(gettextf(
-      "<b>Figure %1$i.</b> The evolution of the Bayes factor as a function of the sample size. The figure illustrates how the evidence accumulates sequentially.",
+      "<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n). The figure illustrates how the evidence for the hypothesis H\u2081 versus the hypothesis H\u2080 accumulates.",
       jaspResults[["figNumber"]]$object
     ), "p")
     caption$position <- positionInContainer + 1

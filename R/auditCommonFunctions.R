@@ -416,7 +416,7 @@
 
   # Create a plot with the sequential updating of the Bayes factor
   if (options[["bayesian"]] && !options[["workflow"]]) {
-    .jfaPlotSequentialAnalysis(options, jaspResults, evaluationState, evaluationContainer, positionInContainer = 17, sample, evaluationOptions)
+    .jfaPlotSequentialAnalysisEvaluation(options, jaspResults, evaluationState, evaluationContainer, positionInContainer = 17, sample, evaluationOptions)
   }
 
   # Add the conclusion stage
