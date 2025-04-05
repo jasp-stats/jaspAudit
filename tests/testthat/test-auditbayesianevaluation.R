@@ -104,6 +104,7 @@ options$plotPosteriorPredictive <- FALSE
 options$plotPosteriorWithPrior <- TRUE
 options$plotEstimates <- FALSE
 options$plotPosterior <- TRUE
+options$plotSequentialAnalysis <- TRUE
 options$min_precision_rel_val <- 0.02
 options$plotScatter <- FALSE
 options$tableCorrections <- FALSE
@@ -124,6 +125,7 @@ options$car <- "high"
 options$n <- 0
 options$x <- 0
 options$stratum <- ""
+options$times <- ""
 options$hurdle <- FALSE
 options$tableTaints <- FALSE
 options$tableAssumptions <- FALSE
@@ -157,6 +159,12 @@ test_that("Prior and Posterior Distribution plot matches", {
   jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-2")
 })
 
+test_that("Sequential Analysis plot matches", {
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_sequentialAnalysisPlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "sequential-analysis-1")
+})
+
 test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distribution results match", {
   table <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_tablePriorPosterior"]][["data"]]
   jaspTools::expect_equal_tables(
@@ -188,6 +196,7 @@ options$tablePriorPosterior <- TRUE
 options$plotPosteriorWithPrior <- TRUE
 options$plotPosterior <- TRUE
 options$plotObjectives <- TRUE
+options$plotSequentialAnalysis <- TRUE
 options$cr <- "medium"
 options$expected_rel_val <- 0.005
 options$materiality_type <- "materiality_val"
@@ -243,6 +252,12 @@ test_that("Prior and Posterior Distribution plot matches", {
   plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_plotPriorAndPosterior"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "prior-and-posterior-distribution-3")
+})
+
+test_that("Sequential Analysis plot matches", {
+  plotName <- results[["results"]][["evaluationContainer"]][["collection"]][["evaluationContainer_sequentialAnalysisPlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "sequential-analysis-2")
 })
 
 test_that("<b>Table 2.</b> Descriptive Statistics for Prior and Posterior Distribution results match", {
