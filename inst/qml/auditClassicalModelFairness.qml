@@ -25,8 +25,7 @@ import "./common"	as Common
 Form 
 {
 	columns: 							1
-	info:								qsTr("The fairness metrics analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. The ratio of two fairness metrics is called parity, which is a well-known concept in algorithmic fairness.")
-
+	info:								qsTr("The fairness measures analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. The ratio of two fairness metrics is called parity, which is a well-known concept in algorithmic fairness.")
 	VariablesForm
 	{
 		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
@@ -38,11 +37,11 @@ Form
 		AssignedVariablesList
 		{
 			name: 						"target"
-			title: 						qsTr("Target")
+			title: 						qsTr("Ground Truth Information")
 			singleVariable:				true
 			allowedColumns:				["nominal"]
 			minLevels:					2
-			info:						qsTr("In this column, the target (i.e., to be predicted) variable should be entered.")
+			info:						qsTr("In this column, the ground truth information (i.e., the target to be predicted) variable should be entered.")
 		}
 		AssignedVariablesList
 		{
@@ -77,26 +76,26 @@ Form
 		{
 			id:							metric
 			name: 						"metric"
-			label: 						qsTr("Metric")
+			label: 						qsTr("Fairness measure")
 			indexDefaultValue: 			0
 			values: [
 				{ label: qsTr("Predictive rate parity"),			value: "prp"},
-				{ label: qsTr("Demographic parity"),				value: "dp"},
-				{ label: qsTr("Proportional parity"),				value: "pp"},
-				{ label: qsTr("Accuracy parity"),					value: "ap"},
-				{ label: qsTr("False negative rate parity"),		value: "fnrp"},
+				{ label: qsTr("Negative predictive value parity"),	value: "npvp"},
 				{ label: qsTr("False positive rate parity"),		value: "fprp"},
-				{ label: qsTr("True positive rate parity"),			value: "tprp"},
-				{ label: qsTr("Negative predicted value parity"),	value: "npvp"},
-				{ label: qsTr("Specificity parity"), 				value: "sp"}
+				{ label: qsTr("False negative rate parity"),		value: "fnrp"},
+				{ label: qsTr("Equal opportunity"),					value: "tprp"},
+				{ label: qsTr("Specificity parity"), 				value: "sp"},
+				{ label: qsTr("Disparate impact"),					value: "pp"},
+				{ label: qsTr("Equalized odds"), 					value: "eo"},
+				{ label: qsTr("Accuracy parity"),					value: "ap"}
 			]
-			info:						qsTr("The type of fairness metric to compute and perform inference on.")
+			info:						qsTr("From this dropdown menu, it is possible to select the fairness metric to be calculated. While you can choose any desired metric, we recommend selecting the fairness measure indicated by the decision-making workflow as the most suitable for the context and the data under analysis.")
 		}
 	}
 
 	Group 
 	{
-		title:							qsTr("Factor Levels")
+		title:							qsTr("Levels")
 		info:							qsTr("These options allow specification of the privileged group and the positive class.")
 
 		DropDown
@@ -151,36 +150,36 @@ Form
 		}
 	}
 
-	RadioButtonGroup
-	{
-		name:							"bayesFactorType"
-		title:							"Bayes Factor"
-		info:							qsTr("Choose which type of Bayes factor to display.")
+// RadioButtonGroup
+//	{
+//		name:							"bayesFactorType"
+//		title:							"Bayes Factor"
+//		info:							qsTr("Choose which type of Bayes factor to display.")
+//
+//		RadioButton
+//		{
+//			name:						"BF10"
+//			text:						qsTr("BF\u2081\u2080")
+//			checked:					true
+//			info:						qsTr("Bayes factor to quantify evidence for the alternative hypothesis relative to the null hypothesis.")
+//		}
+//
+//		RadioButton
+//		{
+//			name:						"BF01"
+//			text:						qsTr("BF\u2080\u2081")
+//			info:						qsTr("Bayes factor to quantify evidence for the null hypothesis relative to the alternative hypothesis.")
+//		}
+//
+//		RadioButton
+//		{
+//			name:						"logBF10"
+//			text:						qsTr("Log(BF\u2081\u2080)")
+//			info:						qsTr("Natural logarithm of BF10.")
+//		}
+//	}
 
-		RadioButton
-		{
-			name:						"BF10"
-			text:						qsTr("BF\u2081\u2080")
-			checked:					true
-			info:						qsTr("Bayes factor to quantify evidence for the alternative hypothesis relative to the null hypothesis.")
-		}
-
-		RadioButton
-		{
-			name:						"BF01"
-			text:						qsTr("BF\u2080\u2081")
-			info:						qsTr("Bayes factor to quantify evidence for the null hypothesis relative to the alternative hypothesis.")
-		}
-
-		RadioButton
-		{
-			name:						"logBF10"
-			text:						qsTr("Log(BF\u2081\u2080)")
-			info:						qsTr("Natural logarithm of BF10.")
-		}
-	}
-
-	Group
+		Group
 	{
 		title: 							qsTr("Display")
 		info:							qsTr("Specify options that have an effect on the look and feel of the audit report.")
@@ -219,7 +218,6 @@ Form
 				text:					qsTr("Individual comparisons")
 				name:					"comparisonsTable"
 				info:					qsTr("Produces a table comparing the unprivileged groups against the privileged group.")
-				checked:				true
 			}
 
 			CheckBox
@@ -234,11 +232,20 @@ Form
 				text:					qsTr("Confusion matrix")
 				name:					"confusionTable"
 				info:					qsTr("Produces the confusion matrix for each group.")
+				checked: 				true
 
-				CheckBox {
+				CheckBox 
+				{
 					text:				qsTr("Display proportions")
 					name:				"confusionTableProportions"
 					info:				qsTr("Displays proportions in the confusion table.")
+				}
+
+				CheckBox
+				{
+					name:	"confusionTranspose"
+					text:	qsTr("Transpose matrix")
+					info:	qsTr("Transposes the confusion matrix.")
 				}
 			}
 		}
@@ -255,61 +262,62 @@ Form
 				info:					qsTr("Produces a plot showing the parity statistics for each unprivileged group against the privileged group.")
 			}
 
-			CheckBox
-			{
-				text:					qsTr("Prior and posterior distribution")
-				name:					"posteriorPlot"
-				enabled:				metric.value != "dp"
-				info:					qsTr("Produces a figure that shows the prior and posterior distribution.")
-			}
+//			CheckBox
+//			{
+//				text:					qsTr("Prior and posterior distribution")
+//				name:					"posteriorPlot"
+//				enabled:				metric.value != "dp"
+//				info:					qsTr("Produces a figure that shows the prior and posterior distribution.")
+//			}
+//
+//			CheckBox
+//			{
+//				text:					qsTr("Bayes factor robustness check")
+//				name:					"robustnessPlot"
+//				enabled:				metric.value != "dp"
+//				info:					qsTr("Produces a figure that shows the robustness of the Bayes factor to the prior distribution.")
+//			}
+//
+//			CheckBox
+//			{
+//				text:					qsTr("Sequential analysis")
+//				name:					"sequentialPlot"
+//				info:					qsTr("Produces a figure that shows the Bayes factor as a function of the sample size.")
+//			}
 
-			CheckBox
-			{
-				text:					qsTr("Bayes factor robustness check")
-				name:					"robustnessPlot"
-				enabled:				metric.value != "dp"
-				info:					qsTr("Produces a figure that shows the robustness of the Bayes factor to the prior distribution.")
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Sequential analysis")
-				name:					"sequentialPlot"
-				info:					qsTr("Produces a figure that shows the Bayes factor as a function of the sample size.")
-			}
 		}
 	}
 
-	Section
-	{
-		columns:						1
-		title: 							qsTr("Advanced")
-
-		Group
-		{
-			title:						qsTr("Prior Distribution")
-
-			DoubleField
-			{
-				name: 					"concentration"
-				label: 					qsTr("Concentration")
-				defaultValue: 			1
-				decimals:				2
-				min:					1
-				info:					qsTr("Specifies the concentration parameter for the Dirichlet prior.")
-			}
-
-			IntegerField
-			{
-				name:					"seed"
-				label:					qsTr("Seed")
-				defaultValue:			Math.floor(Math.random() * 1000) // Init with random integer in [1,...,999]
-				min:					-999
-				max:					999
-				info:					qsTr("Selects the seed for the random number generator in order to reproduce results.")
-			}
-		}
-	}
+//	Section
+//	{
+//		columns:						1
+//		title: 							qsTr("Advanced")
+//
+//		Group
+//		{
+//			title:						qsTr("Prior Distribution")
+//
+//			DoubleField
+//			{
+//				name: 					"concentration"
+//				label: 					qsTr("Concentration")
+//				defaultValue: 			1
+//				decimals:				2
+//				min:					1
+//				info:					qsTr("Specifies the concentration parameter for the Dirichlet prior.")
+//			}
+//
+//			IntegerField
+//			{
+//				name:					"seed"
+//				label:					qsTr("Seed")
+//				defaultValue:			Math.floor(Math.random() * 1000) // Init with random integer in [1,...,999]
+//				min:					-999
+//				max:					999
+//				info:					qsTr("Selects the seed for the random number generator in order to reproduce results.")
+//			}
+//		}
+//	}
 
 	Common.DownloadReport { }
 }
