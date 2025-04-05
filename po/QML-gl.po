@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2025-04-05 09:49+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/gl/>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
 "X-Qt-Contexts: true\n"
@@ -3297,51 +3303,48 @@ msgstr ""
 
 msgctxt "Algorithm|"
 msgid "Hurdle model"
-msgstr ""
+msgstr "Modelo de Atrancos"
 
 msgctxt "Algorithm|"
 msgid "This algoritm enables you to consider the individal taints."
-msgstr ""
+msgstr "Este algoritmo te permite ter en conta os borróns individuais."
 
 msgctxt "Algorithm|"
 msgid "MCMC Options"
-msgstr ""
+msgstr "Opcións de MCMC"
 
 msgctxt "Algorithm|"
 msgid "Options to customize the MCMC sampling process."
-msgstr ""
+msgstr "Opcións para personalizar o proceso de mostraxe de MCMC."
 
 msgctxt "Algorithm|"
 msgid "Warmup"
-msgstr ""
+msgstr "Quecemento"
 
 msgctxt "Algorithm|"
 msgid "Sets the number of warmup MCMC iterations."
-msgstr ""
+msgstr "Establece o número de iteracións de MCMC de quecemento."
 
-#, fuzzy
 msgctxt "Algorithm|"
 msgid "Iterations"
 msgstr "Iteracións"
 
 msgctxt "Algorithm|"
 msgid "Sets the total number of MCMC iterations."
-msgstr ""
+msgstr "Establece o número total de iteracións de MCMC."
 
 msgctxt "Algorithm|"
 msgid "Chains"
-msgstr ""
+msgstr "Cadeas"
 
 msgctxt "Algorithm|"
 msgid "Sets the number of MCMC chains."
-msgstr ""
+msgstr "Establece o número de cadeas de MCMC."
 
-#, fuzzy
 msgctxt "Algorithm|"
 msgid "Seed"
 msgstr "Semente"
 
-#, fuzzy
 msgctxt "Algorithm|"
 msgid ""
 "Selects the seed for the random number generator in order to reproduce "
