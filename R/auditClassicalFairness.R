@@ -18,7 +18,7 @@
 # When making changes to this file always mention @koenderks as a
 # reviewer in the pull Request.
 
-auditClassicalModelFairness <- function(jaspResults, dataset, options, ...) {
+auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
   # Create the procedure paragraph
   .jfaFairnessAddProcedure(options, jaspResults, position = 1)
 

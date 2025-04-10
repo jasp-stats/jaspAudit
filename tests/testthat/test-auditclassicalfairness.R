@@ -1,6 +1,6 @@
 context("[Audit] Model Fairness")
 
-options <- analysisOptions("auditClassicalModelFairness")
+options <- analysisOptions("auditClassicalFairness")
 options$parityPlot <- TRUE
 options$performanceTable <- TRUE
 options$positive <- "yes"
@@ -21,7 +21,7 @@ options$comparisonsTable <- TRUE
 options$robustnessPlot <- TRUE
 options$sequentialPlot <- TRUE
 set.seed(1)
-results <- runAnalysis("auditClassicalModelFairness", "compas.csv", options)
+results <- runAnalysis("auditClassicalFairness", "compas.csv", options)
 
 test_that("<b>Table 2.</b> Comparisons to Privileged (P) Group results match", {
   table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_comparisonsTable"]][["data"]]

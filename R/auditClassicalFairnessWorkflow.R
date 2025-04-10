@@ -18,9 +18,9 @@
 # When making changes to this file always mention @koenderks as a
 # reviewer in the pull Request.
 
-auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
+auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   # Create the procedure paragraph
-  .jfaFairnessIntroduction(options, jaspResults, position = 1)
+  .jfaFairnessWorkflowIntroduction(options, jaspResults, position = 1)
 
   fairnessMeasureContainer <- .jfaFairnessMeasureStage(options, jaspResults, position = 2)
 
@@ -46,7 +46,7 @@ auditFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   return(fairnessContainer)
 }
 
-.jfaFairnessIntroduction <- function(options, jaspResults, position) {
+.jfaFairnessWorkflowIntroduction <- function(options, jaspResults, position) {
   if (options[["explanatoryText"]] && is.null(jaspResults[["fairnessIntroductionContainer"]])) {
     fairnessIntroductionContainer <- createJaspContainer(title = gettext("<u>Introduction</u>"))
     fairnessIntroductionContainer$position <- position
