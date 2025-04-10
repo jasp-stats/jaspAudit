@@ -1,4 +1,4 @@
-"TwoYrRecidivism","AgeAboveFoutryFive","AgeBelowTwentyFive","Gender","Misdemeanor","Ethnicity","Predicted"
+"TwoYrRecidivism","AgeAboveFourtyFive","AgeBelowTwentyFive","Gender","Misdemeanor","Ethnicity","Predicted"
 "no","no","no","Male","yes","Other","no"
 "yes","no","no","Male","no","Caucasian","yes"
 "no","no","no","Female","yes","Caucasian","no"

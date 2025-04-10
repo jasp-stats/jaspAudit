@@ -193,7 +193,7 @@ Form
 		}
 	}
 
-			Group
+	Group
 	{
 		title: 							qsTr("Display")
 		info:							qsTr("Specify options that have an effect on the look and feel of the audit report.")
