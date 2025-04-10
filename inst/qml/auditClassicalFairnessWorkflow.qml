@@ -29,7 +29,8 @@ Form
 
 	Section
 	{
-		title: 							qsTr("Selecting a Group Fairness Measure")
+		id:								planningPhase
+		title: 							planningPhase.expanded ? qsTr("<b>1. Selecting a Fairness Measure</b>") : qsTr("1. Selecting a Fairness Measure")
 		columns:						1
 		expanded: 						true 
 
@@ -208,25 +209,24 @@ Form
 				}
 			}
 		}
-	}
 
-	Section
-	{
-		title:							qsTr("Report")
-		columns:						1
-
-		Group
+		Section
 		{
-			title: 						qsTr("Plots")
-			info:						qsTr("Add additional figures about the evaluation to the report.")
+			title:						qsTr("Report")
+			columns:					1
 
-			CheckBox
+			Group
 			{
-				text: 					qsTr("Decision-making workflow")
-				name: 					"workflowfigure"
-				checked: 				true
-				info:					qsTr("Produces a figure showing the resulting path through the decision-making workflow.")
-			}	
+				title: 					qsTr("Plots")
+				info:					qsTr("Add additional figures about the evaluation to the report.")
+
+				CheckBox
+				{
+					text: 				qsTr("Decision-making workflow")
+					name: 				"workflowPlot"
+					info:				qsTr("Produces a figure showing the resulting path through the decision-making workflow.")
+				}	
+			}
 		}
 	}
 }
