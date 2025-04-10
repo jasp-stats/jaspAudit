@@ -1,4 +1,4 @@
-context("[Audit] Model Fairness")
+context("[Audit] Classical Fairness Evaluation")
 
 options <- analysisOptions("auditClassicalFairness")
 options$parityPlot <- TRUE
