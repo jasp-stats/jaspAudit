@@ -150,34 +150,35 @@ Form
 		}
 	}
 
-// RadioButtonGroup
-//	{
-//		name:							"bayesFactorType"
-//		title:							"Bayes Factor"
-//		info:							qsTr("Choose which type of Bayes factor to display.")
-//
-//		RadioButton
-//		{
-//			name:						"BF10"
-//			text:						qsTr("BF\u2081\u2080")
-//			checked:					true
-//			info:						qsTr("Bayes factor to quantify evidence for the alternative hypothesis relative to the null hypothesis.")
-//		}
-//
-//		RadioButton
-//		{
-//			name:						"BF01"
-//			text:						qsTr("BF\u2080\u2081")
-//			info:						qsTr("Bayes factor to quantify evidence for the null hypothesis relative to the alternative hypothesis.")
-//		}
-//
-//		RadioButton
-//		{
-//			name:						"logBF10"
-//			text:						qsTr("Log(BF\u2081\u2080)")
-//			info:						qsTr("Natural logarithm of BF10.")
-//		}
-//	}
+	RadioButtonGroup
+	{
+		name:							"bayesFactorType"
+		title:							"Bayes Factor"
+		info:							qsTr("Choose which type of Bayes factor to display.")
+		debug:							true
+
+		RadioButton
+		{
+			name:						"BF10"
+			text:						qsTr("BF\u2081\u2080")
+			checked:					true
+			info:						qsTr("Bayes factor to quantify evidence for the alternative hypothesis relative to the null hypothesis.")
+		}
+
+		RadioButton
+		{
+			name:						"BF01"
+			text:						qsTr("BF\u2080\u2081")
+			info:						qsTr("Bayes factor to quantify evidence for the null hypothesis relative to the alternative hypothesis.")
+		}
+
+		RadioButton
+		{
+			name:						"logBF10"
+			text:						qsTr("Log(BF\u2081\u2080)")
+			info:						qsTr("Natural logarithm of BF10.")
+		}
+	}
 
 		Group
 	{
@@ -243,9 +244,9 @@ Form
 
 				CheckBox
 				{
-					name:	"confusionTranspose"
-					text:	qsTr("Transpose matrix")
-					info:	qsTr("Transposes the confusion matrix.")
+					name:				"confusionTranspose"
+					text:				qsTr("Transpose matrix")
+					info:				qsTr("Transposes the confusion matrix.")
 				}
 			}
 		}
@@ -262,62 +263,64 @@ Form
 				info:					qsTr("Produces a plot showing the parity statistics for each unprivileged group against the privileged group.")
 			}
 
-//			CheckBox
-//			{
-//				text:					qsTr("Prior and posterior distribution")
-//				name:					"posteriorPlot"
-//				enabled:				metric.value != "dp"
-//				info:					qsTr("Produces a figure that shows the prior and posterior distribution.")
-//			}
-//
-//			CheckBox
-//			{
-//				text:					qsTr("Bayes factor robustness check")
-//				name:					"robustnessPlot"
-//				enabled:				metric.value != "dp"
-//				info:					qsTr("Produces a figure that shows the robustness of the Bayes factor to the prior distribution.")
-//			}
-//
-//			CheckBox
-//			{
-//				text:					qsTr("Sequential analysis")
-//				name:					"sequentialPlot"
-//				info:					qsTr("Produces a figure that shows the Bayes factor as a function of the sample size.")
-//			}
+			CheckBox
+			{
+				text:					qsTr("Prior and posterior distribution")
+				name:					"posteriorPlot"
+				info:					qsTr("Produces a figure that shows the prior and posterior distribution.")
+				debug:					true
+			}
+
+			CheckBox
+			{
+				text:					qsTr("Bayes factor robustness check")
+				name:					"robustnessPlot"
+				info:					qsTr("Produces a figure that shows the robustness of the Bayes factor to the prior distribution.")
+				debug:					true
+			}
+
+			CheckBox
+			{
+				text:					qsTr("Sequential analysis")
+				name:					"sequentialPlot"
+				info:					qsTr("Produces a figure that shows the Bayes factor as a function of the sample size.")
+				debug:					true
+			}
 
 		}
 	}
 
-//	Section
-//	{
-//		columns:						1
-//		title: 							qsTr("Advanced")
-//
-//		Group
-//		{
-//			title:						qsTr("Prior Distribution")
-//
-//			DoubleField
-//			{
-//				name: 					"concentration"
-//				label: 					qsTr("Concentration")
-//				defaultValue: 			1
-//				decimals:				2
-//				min:					1
-//				info:					qsTr("Specifies the concentration parameter for the Dirichlet prior.")
-//			}
-//
-//			IntegerField
-//			{
-//				name:					"seed"
-//				label:					qsTr("Seed")
-//				defaultValue:			Math.floor(Math.random() * 1000) // Init with random integer in [1,...,999]
-//				min:					-999
-//				max:					999
-//				info:					qsTr("Selects the seed for the random number generator in order to reproduce results.")
-//			}
-//		}
-//	}
+	Section
+	{
+		columns:						1
+		title: 							qsTr("Advanced")
+		debug:							true
+
+		Group
+		{
+			title:						qsTr("Prior Distribution")
+
+			DoubleField
+			{
+				name: 					"concentration"
+				label: 					qsTr("Concentration")
+				defaultValue: 			1
+				decimals:				2
+				min:					1
+				info:					qsTr("Specifies the concentration parameter for the Dirichlet prior.")
+			}
+
+			IntegerField
+			{
+				name:					"seed"
+				label:					qsTr("Seed")
+				defaultValue:			Math.floor(Math.random() * 1000) // Init with random integer in [1,...,999]
+				min:					-999
+				max:					999
+				info:					qsTr("Selects the seed for the random number generator in order to reproduce results.")
+			}
+		}
+	}
 
 	Common.DownloadReport { }
 }

@@ -92,13 +92,13 @@ Description
 	   Analysis
 	 {
 	 	title:			qsTr("Fairness Workflow")
-        func:			"auditFairnessWorkflow"
+		func:			"auditClassicalFairnessWorkflow"
 	 }
 	 Analysis
 	 {
 	 	menu:			qsTr("Evaluation")
 		title:			qsTr("Fairness Evaluation")
-	 	func:			"auditClassicalModelFairness"
+		func:			"auditClassicalFairness"
 		preloadData:	true
 	 }
 }
