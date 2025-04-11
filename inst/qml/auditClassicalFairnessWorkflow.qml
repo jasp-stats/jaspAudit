@@ -69,7 +69,7 @@ Form
 			name:						"secondquestion"
 			title:						qsTr("In which type of classification are you interested?")
 			visible:					firstquestion.value == "firstquestion_yes"
-			info:						qsTr("In this question, it must be specified whether the focus is on correct classifications, incorrect classifications, or both. The focus is on the items' correct classification when evaluating the reliability of the audit process in accurately identifying situations that conform to established rules and procedures. The focus is on the items' incorrect classification when addressing potential anomalies or irregularities, or when identifying areas for improvement within the audit process. ")
+			info:						qsTr("In this question, it must be specified whether the focus is on correct classifications, incorrect classifications, or both. The focus is on the items' correct classification when evaluating the reliability of the audit process in accurately identifying situations that conform to established rules and procedures. The focus is on the items' incorrect classification when addressing potential anomalies or irregularities, or when identifying areas for improvement within the audit process.")
 			enabled:					!evaluationChecked.checked
 
 			RadioButton
