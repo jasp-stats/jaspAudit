@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2025-04-11 09:57+0000\n"
+"Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-qml/"
+"nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
 "X-Language: nl\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -3002,15 +3008,15 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Algorithm Auditing"
-msgstr ""
+msgstr "Algoritme Auditen"
 
 msgctxt "Description|"
 msgid "Fairness Workflow"
-msgstr ""
+msgstr "Eerlijkheidsworkflow"
 
 msgctxt "Description|"
 msgid "Fairness Evaluation"
-msgstr ""
+msgstr "Eerlijkheidsevaluatie"
 
 msgctxt "auditClassicalFairness|"
 msgid ""
@@ -3021,58 +3027,58 @@ msgid ""
 "The ratio of two fairness metrics is called parity, which is a well-known "
 "concept in algorithmic fairness."
 msgstr ""
+"De eerlijkheidsanalyse stelt de gebruiker in staat om eerlijkheid en "
+"discriminatie met betrekking tot specifieke groepen in de gegevens in "
+"algoritmische besluitvormingssystemen te beoordelen. Als je een bepaalde "
+"positieve klasse in de gegevens beschouwt, kan eerlijkheid -of discriminatie-"
+" worden gekwantificeerd met modelagnostische eerlijkheidsmetrieken. De "
+"verhouding van twee eerlijkheidsmetrieken wordt pariteit genoemd, een bekend "
+"concept in algoritmische eerlijkheid."
 
 msgctxt "auditClassicalFairness|"
 msgid "Fairness measure"
-msgstr ""
+msgstr "Eerlijkheidsmaat"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Predictive rate parity"
 msgstr "Voorspelde proportie pariteit"
 
 msgctxt "auditClassicalFairness|"
 msgid "Negative predictive value parity"
-msgstr ""
+msgstr "Negatieve voorspelde waarde pariteit"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "False positive rate parity"
 msgstr "Fout-positieve proportie pariteit"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "False negative rate parity"
 msgstr "Fout-negatieve proportie pariteit"
 
 msgctxt "auditClassicalFairness|"
 msgid "Equal opportunity"
-msgstr ""
+msgstr "Gelijke kansen"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Specificity parity"
 msgstr "Specificiteitspariteit"
 
 msgctxt "auditClassicalFairness|"
 msgid "Disparate impact"
-msgstr ""
+msgstr "Ongelijke impact"
 
 msgctxt "auditClassicalFairness|"
 msgid "Equalized odds"
-msgstr ""
+msgstr "Gelijke kansverhoudingen"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Accuracy parity"
 msgstr "Nauwkeurigheidspariteit"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Report"
 msgstr "Rapport"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Advanced"
 msgstr "Geavanceerd"
