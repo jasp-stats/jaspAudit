@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
-"POT-Creation-Date: 2025-04-11 09:59\n"
+"POT-Creation-Date: 2025-04-11 15:05\n"
 "PO-Revision-Date: 2025-04-10 05:00+0000\n"
 "Last-Translator: MikeWinny <winny63@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -2614,8 +2614,33 @@ msgstr "Последовательный анализ"
 msgid "Plot not possible: The Bayes factor is infinite."
 msgstr "Отобразить график невозможно. Коэффициент Байеса равен бесконечности."
 
+#, fuzzy
 msgid ""
-"<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n). "
+"<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n)."
+msgstr ""
+"<b>Рисунок %1$i.</b> Априорное и апостериорное распределения (%2$s) "
+"искажения в совокупности."
+
+#, fuzzy
+msgid ""
+"The figure illustrates how the evidence for the hypothesis H₁ (i.e. H₋) "
+"versus the hypothesis H₀ (i.e. H₊) accumulates."
+msgstr ""
+"<b>Рисунок %1$i.</b> Коэффициент Байеса как функция от размера выборки (n). "
+"Рисунок иллюстрирует как накапливается доказательство в пользу гипотезы H₁ "
+"по сравнению с гипотезой H₀."
+
+#, fuzzy
+msgid ""
+"The figure illustrates how the evidence for the hypothesis H₁ (i.e. H₊) "
+"versus the hypothesis H₀ (i.e. H₋) accumulates."
+msgstr ""
+"<b>Рисунок %1$i.</b> Коэффициент Байеса как функция от размера выборки (n). "
+"Рисунок иллюстрирует как накапливается доказательство в пользу гипотезы H₁ "
+"по сравнению с гипотезой H₀."
+
+#, fuzzy
+msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ versus the "
 "hypothesis H₀ accumulates."
 msgstr ""

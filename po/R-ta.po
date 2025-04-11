@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2025-04-11 09:59\n"
+"POT-Creation-Date: 2025-04-11 15:05\n"
 "PO-Revision-Date: 2025-01-07 10:14+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -2543,8 +2543,23 @@ msgstr "தொடர்ச்சியான பகுப்பாய்வு �
 msgid "Plot not possible: The Bayes factor is infinite."
 msgstr ""
 
+#, fuzzy
 msgid ""
-"<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n). "
+"<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n)."
+msgstr ""
+"<b>படம் %1$i.</b> மக்கள்தொகையில் தவறான அறிக்கையின் முன் மற்றும் பின் விநியோகம் (%2$s)."
+
+msgid ""
+"The figure illustrates how the evidence for the hypothesis H₁ (i.e. H₋) "
+"versus the hypothesis H₀ (i.e. H₊) accumulates."
+msgstr ""
+
+msgid ""
+"The figure illustrates how the evidence for the hypothesis H₁ (i.e. H₊) "
+"versus the hypothesis H₀ (i.e. H₋) accumulates."
+msgstr ""
+
+msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ versus the "
 "hypothesis H₀ accumulates."
 msgstr ""
