@@ -93,6 +93,7 @@ Description
 	 {
 	 	title:			qsTr("Fairness Workflow")
 		func:			"auditClassicalFairnessWorkflow"
+		preloadData:	true
 	 }
 	 Analysis
 	 {

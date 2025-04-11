@@ -7,19 +7,20 @@ options$positive <- "yes"
 options$predictions <- "Predicted"
 options$privileged <- "Caucasian"
 options$protected <- "Ethnicity"
-options$q1 <- "yes"
-options$q2 <- "no"
-options$q3 <- ""
-options$q4 <- ""
 options$target <- "TwoYrRecidivism"
 options$bayesFactorType <- "BF10"
 options$alternative <- "two.sided"
+options$conf_level <- 0.95
+options$explanatoryText <- TRUE
 options$seed <- 1
 options$concentration <- 1
 options$confusionTable <- TRUE
+options$confusionTableTransposed <- FALSE
+options$confusionTableProportions <- FALSE
 options$comparisonsTable <- TRUE
-options$robustnessPlot <- TRUE
-options$sequentialPlot <- TRUE
+options$robustnessPlot <- FALSE
+options$sequentialPlot <- FALSE
+options$posteriorPlot <- FALSE
 set.seed(1)
 results <- runAnalysis("auditClassicalFairness", "compas.csv", options)
 
@@ -43,7 +44,6 @@ test_that("<b>Table 2.</b> Comparisons to Privileged (P) Group results match", {
   )
 })
 
-# Commented out because BF is not enabled
 # test_that("<b>Table 2.</b> Comparisons to Privileged (P) Group results match", {
 #   table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_comparisonsTable"]][["data"]]
 #   jaspTools::expect_equal_tables(
@@ -115,14 +115,11 @@ test_that("<b>Table 3.</b> Model Performance results match", {
 #  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
 #  jaspTools::expect_equal_plots(testPlot, "sequential-analysis-plot")
 # })
-#
-# test_that("<b>Table 1.</b> Omnibus Test - Predictive Rate Parity results match", {
-#  table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_summaryTable"]][["data"]]
-#  jaspTools::expect_equal_tables(
-#    table,
-#    list(
-#      0.000714070961957615, 5, "Ethnicity", 6172, 0.00209507283665478,
-#      18.7989675485203
-#    )
-#  )
-# })
+
+test_that("<b>Table 1.</b> Omnibus Test - Predictive rate parity results match", {
+  table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_summaryTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(5, "Ethnicity", 6172, 0.00209507283665478, 18.7989675485203)
+  )
+})

@@ -49,7 +49,8 @@ The organization of the analyses within the Audit module in JASP is as follows:
        - Benford's Law
        - Repeated Values
     -- Algorithm Auditing
-       - Fairness Metrics
+       - Fairness Workflow
+       - Evaluation
 ```
 
 ### Audit Sampling <img src='inst/icons/audit-sampling.svg' width='149' height='173' align='right'/>

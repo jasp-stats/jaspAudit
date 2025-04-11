@@ -20,26 +20,32 @@ import QtQuick
 import QtQuick.Layouts
 import JASP
 import JASP.Controls
-import JASP.Widgets
+
+import "./common" as Common
+import "./common/fairness" as Fairness
 
 Form 
 {
-	columns:							1
+	columns: 1
 	info:								qsTr("The fairness measures analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions.")
+
+	// Hidden option(s)
+	CheckBox { name: "workflow"; checked: true; visible: false }
 
 	Section
 	{
-		id:								planningPhase
-		title: 							planningPhase.expanded ? qsTr("<b>1. Selecting a Fairness Measure</b>") : qsTr("1. Selecting a Fairness Measure")
+		id:								selectionStage
+		title: 							selectionStage.expanded ? qsTr("<b>1. Selection</b>") : qsTr("1. Selection")
 		columns:						1
-		expanded: 						true 
+		expanded:						!evaluationChecked.checked
 
 		RadioButtonGroup
 		{
 			id:							firstquestion
 			name:						"firstquestion"
 			title:						qsTr("Is the ground thruth information relevant in your context?")
-			info:						qsTr("In this question, it must be specified whether the ground truth information (i.e., the target to be predicted) is relevant or not for the analysis context. In the context of item classification, the term ground truth information refers to the true classification of items, obtained from reliable sources or domain experts. ")
+			info:						qsTr("In this question, it must be specified whether the ground truth information (i.e., the target to be predicted) is relevant or not for the analysis context. In the context of item classification, the term ground truth information refers to the true classification of items, obtained from reliable sources or domain experts.")
+			enabled:					!evaluationChecked.checked
 	
 			RadioButton
 			{
@@ -64,6 +70,7 @@ Form
 			title:						qsTr("In which type of classification are you interested?")
 			visible:					firstquestion.value == "firstquestion_yes"
 			info:						qsTr("In this question, it must be specified whether the focus is on correct classifications, incorrect classifications, or both. The focus is on the items' correct classification when evaluating the reliability of the audit process in accurately identifying situations that conform to established rules and procedures. The focus is on the items' incorrect classification when addressing potential anomalies or irregularities, or when identifying areas for improvement within the audit process. ")
+			enabled:					!evaluationChecked.checked
 
 			RadioButton
 			{
@@ -95,6 +102,7 @@ Form
 			title:						qsTr("What is more important?")
 			visible:					secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 			info:						qsTr("In this question, it must be specified whether the focus is on correctly classifying items into the positive class, the negative class, or both.")
+			enabled:					!evaluationChecked.checked
 
 			RadioButton
 			{
@@ -127,6 +135,7 @@ Form
 			title:						qsTr("What are the most costly errors?")
 			visible:					thirdquestion.value == "thirdquestion_positive" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 			info:						qsTr("In this question, it must be specified which classification errors (incorrect classification of items in the positive class or incorrect classification of items in the negative class) result in the greatest losses (economic, social, etc.).")
+			enabled:					!evaluationChecked.checked
 
 			RadioButton
 			{
@@ -150,6 +159,7 @@ Form
 			name:						"fourthquestion_caseB"
 			title:						qsTr("What are the most costly errors?")
 			visible:					thirdquestion.value == "thirdquestion_negative" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
+			enabled:					!evaluationChecked.checked
 
 			RadioButton
 			{
@@ -171,6 +181,7 @@ Form
 			name:						"fourthquestion_caseC"
 			title:						qsTr("What are the most costly errors?")
 			visible:					secondquestion.value == "secondquestion_incorrect" & firstquestion.value == "firstquestion_yes"
+			enabled:					!evaluationChecked.checked
 
 			RadioButton
 			{
@@ -186,34 +197,11 @@ Form
 			}
 		}
 
-		Group
-		{
-			title: 						qsTr("Display")
-			info:						qsTr("Specify options that have an effect on the look and feel of the audit report.")
-
-			Row
-			{
-				CheckBox
-				{
-					id: 				explanatoryText
-					text: 				qsTr("Explanatory text")
-					name: 				"explanatoryText"
-					checked: 			true
-					info:				qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the fairness measures.")
-				}
-
-				HelpButton
-				{
-					helpPage:			"Audit/explanatoryText"
-					toolTip: 			qsTr("Show explanatory text at each step of the analysis")
-				}
-			}
-		}
+		Common.ExplanatoryText { }
 
 		Section
 		{
 			title:						qsTr("Report")
-			columns:					1
 
 			Group
 			{
@@ -228,8 +216,69 @@ Form
 				}	
 			}
 		}
+
+		Item
+		{
+			Layout.preferredHeight: 	toEvaluation.height
+			Layout.fillWidth: 			true
+			Layout.columnSpan:			1
+
+			Button
+			{
+				anchors.right:	 		toEvaluation.left
+				anchors.rightMargin:	jaspTheme.generalAnchorMargin
+				text:					qsTr("<b>Download Report</b>")
+				onClicked: 				form.exportResults()
+			}
+
+			CheckBox
+			{
+				id: 					evaluationChecked
+				name: 					"evaluationChecked"
+				anchors.right:			toEvaluation.left
+				width:					0
+				visible: 				false
+				checked: 				false
+			}
+
+			Button
+			{
+				id: 					toEvaluation
+				anchors.right:			parent.right
+				text: 					qsTr("<b>To Evaluation</b>")
+				enabled: 				!evaluationChecked.checked
+				onClicked:				evaluationChecked.checked = true
+			}
+		}
+	}
+
+	Section
+	{
+		id:								evaluationStage
+		title: 							evaluationStage.expanded ? qsTr("<b>2. Evaluation</b>") : qsTr("2. Evaluation")
+		columns:						1
+		enabled: 						evaluationChecked.checked
+		expanded: 						evaluationChecked.checked
+		
+		Fairness.FairnessVariablesList { }
+		Fairness.ConfidenceLevel { }
+		Fairness.Levels { }
+		Fairness.Hypotheses { }
+		Fairness.BayesFactorType { }
+
+		Section
+		{
+			title: qsTr("Report")
+			Fairness.FairnessOutput { }
+		}
+
+		Section
+		{
+			title: qsTr("Advanced")
+			debug: true
+			Fairness.PriorDistribution { }
+		}
+
+		Common.DownloadReport { }
 	}
 }
-
-
-
