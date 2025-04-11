@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2025-04-11 09:59\n"
-"PO-Revision-Date: 2025-04-11 10:02+0000\n"
+"PO-Revision-Date: 2025-04-11 15:02+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-r/gl/>\n"
@@ -635,10 +635,10 @@ msgid "Accuracy"
 msgstr "Precisión"
 
 msgid "False positive rate"
-msgstr "Proporción de falsos positivos"
+msgstr "Proporción de positivos falsos"
 
 msgid "False negative rate"
-msgstr "Proporción de falsos negativos"
+msgstr "Proporción de negativos falsos"
 
 msgid "Negative predictive value"
 msgstr "Valor preditivo negativo"
@@ -650,7 +650,7 @@ msgid "Precision"
 msgstr "Precisión"
 
 msgid "True positive rate"
-msgstr "Proporción de verdadeiros positivos"
+msgstr "Proporción de positivos verdadeiros"
 
 msgid "Specificity parity"
 msgstr "Paridade da especificidade"
@@ -740,7 +740,7 @@ msgstr ""
 "(<i>%3$s</i>) e o non privilexiado. En consecuencia, realízase unha proba "
 "estatística para comprobar calquera diferenza significativa entre os valores "
 "que toman as dúas métricas de avaliación do modelo, para cada un dos dous "
-"grupos. A proba que se utiliza é a proba Khi-cadrado de Pearson."
+"grupos. A proba que se utiliza é Khi-cadrado de Pearson."
 
 msgid "<u>Assessing Model Fairness</u>"
 msgstr "<u>Avaliando a xustiza do modelo</u>"
@@ -800,6 +800,9 @@ msgid ""
 "privileged positve rate ratio is lower than 0.80 then the algorithm is "
 "considered unfair against the unprivileged group(s)."
 msgstr ""
+"Dacordo coa 'regra do 80 por cen', se o valor da proporción positiva "
+"protexido-a-privilexiado é menor que 0.80, entón o algoritmo se considera "
+"inxusto contra o(s) grupo(s) non privilexiado(s)."
 
 msgid ""
 "<i>p</i>-values are uncorrected for multiple comparisons and are based on "
@@ -808,27 +811,26 @@ msgstr ""
 "Os valores <i>p</i> non están corrixidos para comparacións múltiples, e "
 "baséanse na proba exacta de Fisher."
 
-#, fuzzy
 msgid "<u>Individual Comparisons</u>"
-msgstr "Modelos individuais"
+msgstr "<u>Comparacións individuais</u>"
 
-#, fuzzy
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - True Positive Rate"
-msgstr "<b>Táboa %1$i.</b> Comparacións co Grupo Privilexiado (P)"
+msgstr ""
+"<b>Táboa %1$i.</b> Comparacións co Grupo Privilexiado (P) - Proporción de "
+"positivos verdadeiros"
 
-#, fuzzy
 msgid "True Positive Rate"
-msgstr "Proporción de verdadeiros positivos"
+msgstr "Proporción de positivos verdadeiros"
 
-#, fuzzy
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
-msgstr "<b>Táboa %1$i.</b> Comparacións co Grupo Privilexiado (P)"
+msgstr ""
+"<b>Táboa %1$i.</b> Comparacións co Grupo Privilexiado (P) - Proporción de "
+"positivos falsos"
 
-#, fuzzy
 msgid "False Positive Rate"
-msgstr "Proporción de falsos positivos"
+msgstr "Proporción de positivos falsos"
 
 msgid "<b>Table %1$i.</b> Model Performance"
 msgstr "<b>Táboa %1$i.</b> Comportamento do modelo"
@@ -851,7 +853,6 @@ msgstr "Observado"
 msgid "Predicted"
 msgstr "Predito"
 
-#, fuzzy
 msgid ""
 "True Positives (TP) are cells in which the positive class (<i>%1$s</i>) is "
 "correctly predicted, while True Negatives (TN) are cells where the negative "
@@ -860,11 +861,11 @@ msgid ""
 "in which the negative class is incorrectly predicted."
 msgstr ""
 "Verdadeiros Positivos (VP, TP) refírese a celas nas que a clase positiva "
-"(<i>%1$s</i>) está predita correctamente, mentres que Verdadeiros Negativos "
-"(VN, TN) refírese a celas nas que a clase negativa está predita "
+"(<i>%1$s</i>) está predita correctamente, mentres que Verdadeiros Negativos ("
+"VN, TN) refírese a celas nas que a clase negativa está predita "
 "correctamente. Falsos Negativos (FN) refírese a celas nas que a clase "
-"positiva está predita incorrectamente, e Falsos Positivos (FP) refírese a "
-"celas nas que a clase negativa está predita incorrectamente."
+"negativa está predita incorrectamente, e Falsos Positivos (FP) refírese a "
+"celas nas que a clase positiva está predita incorrectamente."
 
 msgid "Parity Estimates Plot"
 msgstr "Gráfica de estimacións de paridades"
@@ -880,17 +881,17 @@ msgstr ""
 "grupos dos datos. Canto máis próxima estea a paridade de un, se produce unha "
 "menor discriminación no algoritmo."
 
-#, fuzzy
 msgid "<u>Parity Estimates Plots</u>"
-msgstr "Gráfica de estimacións de paridades"
+msgstr "<u>Gráfica de estimacións de paridades</u>"
 
-#, fuzzy
 msgid "Parity Estimates Plot - True Positive Rate Parity"
-msgstr "Paridade da razón de verdadeiros positivos"
+msgstr ""
+"Gráfica de estimacións de paridades - Paridade da razón de positivos "
+"verdadeiros"
 
-#, fuzzy
 msgid "Parity Estimates Plot - False Positive Rate Parity"
-msgstr "Paridade da razón de falsos positivos"
+msgstr ""
+"Gráfica de estimacións de paridades - Paridade da razón de positivos falsos"
 
 #, fuzzy
 msgid ""
@@ -927,21 +928,19 @@ msgid ""
 "group(s)."
 msgstr ""
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s "
 "and %4$s across protected groups %5$s. %6$s"
 msgstr ""
-"O valor <i>p</i> é %1$s, e a hipótese nula de igualdade de %2$s ao longo dos "
-"grupos protexidos %3$s."
+"Os valores <i>p</i> son %1$s e %2$s, e a hipótese nula de igualdade de %3$s "
+"e %4$s nos grupos protexidos %5$s. %6$s"
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across "
 "protected groups %3$s. %4$s"
 msgstr ""
-"O valor <i>p</i> é %1$s, e a hipótese nula de igualdade de %2$s ao longo dos "
-"grupos protexidos %3$s."
+"O valor <i>p</i> é %1$s, e a hipótese nula de igualdade de %2$s nos grupos "
+"protexidos %3$s. %4$s"
 
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "

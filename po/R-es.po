@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2025-04-11 09:59\n"
-"PO-Revision-Date: 2025-04-11 09:57+0000\n"
+"PO-Revision-Date: 2025-04-11 15:02+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "es/>\n"
@@ -630,10 +630,10 @@ msgid "Accuracy"
 msgstr "Precisión"
 
 msgid "False positive rate"
-msgstr "Proporción de falsos positivos"
+msgstr "Ratio de positivos falsos"
 
 msgid "False negative rate"
-msgstr "Proporción de falsos negativos"
+msgstr "Ratio de negativos falsos"
 
 msgid "Negative predictive value"
 msgstr "Valor predictivo negativo"
@@ -645,7 +645,7 @@ msgid "Precision"
 msgstr "Precisión"
 
 msgid "True positive rate"
-msgstr "Proporción de verdaderos positivos"
+msgstr "Ratio de positivos verdaderos"
 
 msgid "Specificity parity"
 msgstr "Paridad de la especificidad"
@@ -712,7 +712,6 @@ msgstr ""
 "cuando se rechaza la hipótesis nula en ambos contrastes, podemos concluir "
 "que el algoritmo es justo."
 
-#, fuzzy
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
 "an algorithm are fair towards protected groups on a sensitive attribute, and "
@@ -728,11 +727,16 @@ msgid ""
 msgstr ""
 "El objetivo de este procedimiento es determinar hasta qué punto las "
 "predicciones de un algoritmo son justas para grupos protegidos respecto a un "
-"atributo sensible, y contrastar su justicia con un error tipo I del %1$s%%. "
-"Considerando la clase positiva (<i>%2$s</i>), la justicia -o discriminación- "
-"se puede cuantificar usando las denominadas métricas de justicia. El ratio "
-"de una métrica de justicia de un grupo no privilegiado comparada con la del "
-"grupo privilegiado (<i>%3$s</i>) se denomina paridad."
+"atributo sensible, y contrastar su justicia con un error tipo I de %1$s%%. "
+"Considerando la clase positiva (<i>%2$s</i>), la justicia -o la "
+"discriminación- se puede cuantificar usando las denominadas métricas de "
+"justicia. Calcular una métrica de justicia implica determinar el valor de la "
+"métrica de evaluación del modelo, sobre la que se basa la métrica de "
+"justicia para los dos grupos, el privilegiado (<i>%3$s</i>) y el no "
+"privilegiado. En consecuencia, se realiza un contraste estadístico para "
+"probar cualquier diferencia significativa entre los valores que toman las "
+"dos métricas de evaluación del modelo, para cada uno de los dos grupos. El "
+"contraste utilizado es el Chi-cuadrado de Pearson."
 
 msgid "<u>Assessing Model Fairness</u>"
 msgstr "<u>Evaluando la justicia del modelo</u>"
@@ -741,7 +745,7 @@ msgid "An error occurred: %1$s"
 msgstr "Ocurrió un fallo: %1$s"
 
 msgid "Metric"
-msgstr ""
+msgstr "Métrica"
 
 msgid "n"
 msgstr "n"
@@ -792,6 +796,9 @@ msgid ""
 "privileged positve rate ratio is lower than 0.80 then the algorithm is "
 "considered unfair against the unprivileged group(s)."
 msgstr ""
+"De acuerdo con la 'regla del 80 por ciento', si el valor de la proporción "
+"positiva protegido-a-privilegiado es menor que 0.80, entonces el algoritmo "
+"se considera injusto contra grupo(s) no privilegiado(s)."
 
 msgid ""
 "<i>p</i>-values are uncorrected for multiple comparisons and are based on "
@@ -800,27 +807,26 @@ msgstr ""
 "Los valores <i>p</i> no están corregidos para comparaciones múltiples, y se "
 "basan en el contraste exacto de Fisher."
 
-#, fuzzy
 msgid "<u>Individual Comparisons</u>"
-msgstr "<u>Evaluación</u>"
+msgstr "<u>Comparaciones individuales</u>"
 
-#, fuzzy
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - True Positive Rate"
-msgstr "<b>Tabla %1$i.</b> Comparaciones con el Grupo Privilegiado (P)"
+msgstr ""
+"<b>Tabla %1$i.</b> Comparaciones con el Grupo Privilegiado (P) - Ratio de "
+"positivos verdaderos"
 
-#, fuzzy
 msgid "True Positive Rate"
-msgstr "Proporción de verdaderos positivos"
+msgstr "Ratio de positivos verdaderos"
 
-#, fuzzy
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
-msgstr "<b>Tabla %1$i.</b> Comparaciones con el Grupo Privilegiado (P)"
+msgstr ""
+"<b>Tabla %1$i.</b> Comparaciones con el Grupo Privilegiado (P) - Proporción "
+"de positivos verdaderos"
 
-#, fuzzy
 msgid "False Positive Rate"
-msgstr "Proporción de falsos positivos"
+msgstr "Ratio de positivos falsos"
 
 msgid "<b>Table %1$i.</b> Model Performance"
 msgstr "<b>Tabla %1$i.</b> Comportamiento del modelo"
@@ -843,7 +849,6 @@ msgstr "Observado"
 msgid "Predicted"
 msgstr "Predicho"
 
-#, fuzzy
 msgid ""
 "True Positives (TP) are cells in which the positive class (<i>%1$s</i>) is "
 "correctly predicted, while True Negatives (TN) are cells where the negative "
@@ -855,8 +860,8 @@ msgstr ""
 "positiva (<i>%1$s</i>) está predicha correctamente, mientras que Verdaderos "
 "Negativos (VN, TN) se refiere a celdas en las que la clase negativa está "
 "predicha correctamente. Falsos Negativos (FN) se refiere a celdas en las que "
-"la clase positiva está predicha incorrectamente, y Falsos Positivos (FP) se "
-"refiere a celdas en las que la clase negativa está predicha incorrectamente."
+"la clase negativa está predicha incorrectamente, y Falsos Positivos (FP) se "
+"refiere a celdas en las que la clase positiva está predicha incorrectamente."
 
 msgid "Parity Estimates Plot"
 msgstr "Gráfico de estimaciones de paridades"
@@ -872,17 +877,17 @@ msgstr ""
 "todos los grupos de los datos. Cuanto más próxima esté la paridad de uno, se "
 "produce una menor discriminación en el algoritmo."
 
-#, fuzzy
 msgid "<u>Parity Estimates Plots</u>"
-msgstr "Gráfico de estimaciones de paridades"
+msgstr "<u>Gráfico de estimaciones de paridades</u>"
 
-#, fuzzy
 msgid "Parity Estimates Plot - True Positive Rate Parity"
-msgstr "Paridad del ratio de verdaderos negativos"
+msgstr ""
+"Gráfico de estimaciones de paridades - Paridad del ratio de positivos "
+"verdaderos"
 
-#, fuzzy
 msgid "Parity Estimates Plot - False Positive Rate Parity"
-msgstr "Paridad del ratio de falsos positivos"
+msgstr ""
+"Gráfico de estimaciones de paridades - Paridad del ratio de positivos falsos"
 
 #, fuzzy
 msgid ""
@@ -919,21 +924,19 @@ msgid ""
 "group(s)."
 msgstr ""
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s "
 "and %4$s across protected groups %5$s. %6$s"
 msgstr ""
-"El valor <i>p</i> es %1$s, y la hipótesis nula de igualdad de %2$s a través "
-"de los grupos protegidos %3$s."
+"Los valores <i>p</i> son %1$s y %2$s, y la hipótesis nula de igualdad de %3$"
+"s y %4$s en los grupos protegidos %5$s. %6$s"
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across "
 "protected groups %3$s. %4$s"
 msgstr ""
-"El valor <i>p</i> es %1$s, y la hipótesis nula de igualdad de %2$s a través "
-"de los grupos protegidos %3$s."
+"El valor <i>p</i> es %1$s, y la hipótesis nula de igualdad de %2$s en los "
+"grupos protegidos %3$s. %4$s"
 
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
