@@ -44,7 +44,8 @@ Form
 			id:							firstquestion
 			name:						"firstquestion"
 			title:						qsTr("Is the ground thruth information relevant in your context?")
-			info:						qsTr("In this question, it must be specified whether the ground truth information (i.e., the target to be predicted) is relevant or not for the analysis context. In the context of item classification, the term ground truth information refers to the true classification of items, obtained from reliable sources or domain experts. ")
+			info:						qsTr("In this question, it must be specified whether the ground truth information (i.e., the target to be predicted) is relevant or not for the analysis context. In the context of item classification, the term ground truth information refers to the true classification of items, obtained from reliable sources or domain experts.")
+			enabled:					!evaluationChecked.checked
 	
 			RadioButton
 			{
@@ -69,6 +70,7 @@ Form
 			title:						qsTr("In which type of classification are you interested?")
 			visible:					firstquestion.value == "firstquestion_yes"
 			info:						qsTr("In this question, it must be specified whether the focus is on correct classifications, incorrect classifications, or both. The focus is on the items' correct classification when evaluating the reliability of the audit process in accurately identifying situations that conform to established rules and procedures. The focus is on the items' incorrect classification when addressing potential anomalies or irregularities, or when identifying areas for improvement within the audit process. ")
+			enabled:					!evaluationChecked.checked
 
 			RadioButton
 			{
@@ -100,6 +102,7 @@ Form
 			title:						qsTr("What is more important?")
 			visible:					secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 			info:						qsTr("In this question, it must be specified whether the focus is on correctly classifying items into the positive class, the negative class, or both.")
+			enabled:					!evaluationChecked.checked
 
 			RadioButton
 			{
@@ -132,6 +135,7 @@ Form
 			title:						qsTr("What are the most costly errors?")
 			visible:					thirdquestion.value == "thirdquestion_positive" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
 			info:						qsTr("In this question, it must be specified which classification errors (incorrect classification of items in the positive class or incorrect classification of items in the negative class) result in the greatest losses (economic, social, etc.).")
+			enabled:					!evaluationChecked.checked
 
 			RadioButton
 			{
@@ -155,6 +159,7 @@ Form
 			name:						"fourthquestion_caseB"
 			title:						qsTr("What are the most costly errors?")
 			visible:					thirdquestion.value == "thirdquestion_negative" & secondquestion.value == "secondquestion_correct" & firstquestion.value == "firstquestion_yes"
+			enabled:					!evaluationChecked.checked
 
 			RadioButton
 			{
@@ -176,6 +181,7 @@ Form
 			name:						"fourthquestion_caseC"
 			title:						qsTr("What are the most costly errors?")
 			visible:					secondquestion.value == "secondquestion_incorrect" & firstquestion.value == "firstquestion_yes"
+			enabled:					!evaluationChecked.checked
 
 			RadioButton
 			{

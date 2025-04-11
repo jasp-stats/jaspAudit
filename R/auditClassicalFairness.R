@@ -74,11 +74,12 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
   .jfaCreatedByText(jaspResults)
 }
 
-.jfaFairnessCommonOptions <- function() {
-  opt <- c(
-    "target", "predictions", "protected", "metric", "conf_level", "privileged", "positive",
-    "alternative", "seed", "concentration"
-  )
+.jfaFairnessCommonOptions <- function(stage) {
+  if (stage == "selection") {
+    opt <- c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC")
+  } else if (stage == "evaluation") {
+    opt <- c("target", "predictions", "protected", "metric", "conf_level", "privileged", "positive", "alternative", "seed", "concentration")
+  }
   return(opt)
 }
 
@@ -160,7 +161,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
     }
     procedureContainer[["procedureParagraph"]] <- createJaspHtml(procedureText, "p")
     procedureContainer[["procedureParagraph"]]$position <- 1
-    procedureContainer$dependOn(options = c(.jfaFairnessCommonOptions(), "explanatoryText"))
+    procedureContainer$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "explanatoryText"))
     jaspResults[["procedureContainer"]] <- procedureContainer
   }
 }
@@ -169,7 +170,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
   title <- gettext("<u>Assessing Model Fairness</u>")
   container <- createJaspContainer(title = title)
   container$position <- position
-  container$dependOn(options = .jfaFairnessCommonOptions())
+  container$dependOn(options = .jfaFairnessCommonOptions("evaluation"))
   jaspResults[["fairnessContainer"]] <- container
   return(container)
 }
@@ -229,7 +230,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
       jaspBase:::.quitAnalysis(gettextf("An error occurred: %1$s", jaspBase:::.extractErrorMessage(tryResult)))
     }
     jaspResults[["state"]] <- createJaspState(result)
-    jaspResults[["state"]]$dependOn(options = .jfaFairnessCommonOptions())
+    jaspResults[["state"]]$dependOn(options = .jfaFairnessCommonOptions("evaluation"))
     return(result)
   }
 }
@@ -247,7 +248,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
   )
   tb <- createJaspTable(title = title)
   tb$position <- positionInContainer
-  tb$dependOn(options = .jfaFairnessCommonOptions())
+  tb$dependOn(options = .jfaFairnessCommonOptions("evaluation"))
   tb$addColumnInfo(name = "group", title = "", type = "string")
   if (metric[["metric"]] == "eo") {
     tb$addColumnInfo(name = "metric", title = gettext("Metric"), type = "string")
@@ -310,7 +311,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
       )
       tb <- createJaspTable(title = title)
       tb$position <- positionInContainer
-      tb$dependOn(options = .jfaFairnessCommonOptions())
+      tb$dependOn(options = .jfaFairnessCommonOptions("evaluation"))
       tb$addColumnInfo(name = "group", title = "", type = "string")
       overTitle <- gettextf("%1$s%% Confidence Interval", round(options[["conf_level"]] * 100, 3))
       tb$addColumnInfo(name = "metric", title = metric[["title"]], type = "number")
@@ -368,7 +369,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
   } else {
     container <- createJaspContainer(title = gettext("<u>Individual Comparisons</u>"))
     container$position <- positionInContainer
-    container$dependOn(options = .jfaFairnessCommonOptions())
+    container$dependOn(options = .jfaFairnessCommonOptions("evaluation"))
     fairnessContainer[["individualComparisonContainer"]] <- container
 
     if (is.null(container[["comparisonsTableTpr"]])) {
@@ -380,7 +381,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
       )
       tb1 <- createJaspTable(title = title)
       tb1$position <- positionInContainer
-      tb1$dependOn(options = c(.jfaFairnessCommonOptions(), "bayesFactorType"))
+      tb1$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "bayesFactorType"))
       tb1$addColumnInfo(name = "group", title = "", type = "string")
       overTitle <- gettextf("%1$s%% Confidence Interval", round(options[["conf_level"]] * 100, 3))
       tb1$addColumnInfo(name = "metric", title = gettext("True Positive Rate"), type = "number")
@@ -407,7 +408,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
       )
       tb2 <- createJaspTable(title = title)
       tb2$position <- positionInContainer
-      tb2$dependOn(options = c(.jfaFairnessCommonOptions(), "bayesFactorType"))
+      tb2$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "bayesFactorType"))
       tb2$addColumnInfo(name = "group", title = "", type = "string")
       overTitle <- gettextf("%1$s%% Confidence Interval", round(options[["conf_level"]] * 100, 3))
       tb2$addColumnInfo(name = "metric", title = gettext("False Positive Rate"), type = "number")
@@ -485,7 +486,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
     )
     tb <- createJaspTable(title = title)
     tb$position <- positionInContainer
-    tb$dependOn(options = c(.jfaFairnessCommonOptions(), "performanceTable"))
+    tb$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "performanceTable"))
     tb$addColumnInfo(name = "group", title = "", type = "string")
     tb$addColumnInfo(name = "support", title = gettext("Support"), type = "integer")
     tb$addColumnInfo(name = "accuracy", title = gettext("Accuracy"), type = "number")
@@ -526,7 +527,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
     )
     tb <- createJaspTable(title = title)
     tb$position <- positionInContainer
-    tb$dependOn(options = c(.jfaFairnessCommonOptions(), "confusionTable", "confusionTableProportions", "confusionTableTransposed"))
+    tb$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "confusionTable", "confusionTableProportions", "confusionTableTransposed"))
 
     if (ready) {
       if (!options[["confusionTableTransposed"]]) {
@@ -660,7 +661,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
     if (is.null(fairnessContainer[["parityPlot"]])) {
       plot <- createJaspPlot(title = gettext("Parity Estimates Plot"), width = 530, height = 350)
       plot$position <- positionInContainer
-      plot$dependOn(options = c(.jfaFairnessCommonOptions(), "parityPlot"))
+      plot$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "parityPlot"))
       fairnessContainer[["parityPlot"]] <- plot
       if (!ready) {
         return()
@@ -680,7 +681,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
   } else {
     container <- createJaspContainer(title = gettext("<u>Parity Estimates Plots</u>"))
     container$position <- positionInContainer
-    container$dependOn(options = .jfaFairnessCommonOptions())
+    container$dependOn(options = .jfaFairnessCommonOptions("evaluation"))
     fairnessContainer[["parityPlotContainer"]] <- container
 
     if (is.null(container[["parityPlotTpr"]])) {
@@ -688,7 +689,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
 
       plot1 <- createJaspPlot(title = gettext("Parity Estimates Plot - True Positive Rate Parity"), width = 530, height = 350)
       plot1$position <- positionInContainer
-      plot1$dependOn(options = c(.jfaFairnessCommonOptions(), "parityPlot"))
+      plot1$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "parityPlot"))
       container[["parityPlotTpr"]] <- plot1
 
       .jfaFigureNumberUpdate(jaspResults)
@@ -702,7 +703,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
 
       plot2 <- createJaspPlot(title = gettext("Parity Estimates Plot - False Positive Rate Parity"), width = 530, height = 350)
       plot2$position <- positionInContainer + 1
-      plot2$dependOn(options = c(.jfaFairnessCommonOptions(), "parityPlot"))
+      plot2$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "parityPlot"))
       container[["parityPlotFpr"]] <- plot2
 
       if (options[["explanatoryText"]]) {
@@ -738,7 +739,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
   if (is.null(fairnessContainer[["posteriorPlot"]])) {
     plot <- createJaspPlot(title = gettext("Prior and Posterior Distribution Plot"), width = 530, height = 350)
     plot$position <- positionInContainer
-    plot$dependOn(options = c(.jfaFairnessCommonOptions(), "posteriorPlot"))
+    plot$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "posteriorPlot"))
     fairnessContainer[["posteriorPlot"]] <- plot
     if (!ready) {
       return()
@@ -767,7 +768,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
   if (is.null(fairnessContainer[["robustnessPlot"]])) {
     plot <- createJaspPlot(title = gettext("Bayes Factor Robustness Plot"), width = 530, height = 450)
     plot$position <- positionInContainer
-    plot$dependOn(options = c(.jfaFairnessCommonOptions(), "robustnessPlot"))
+    plot$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "robustnessPlot"))
     fairnessContainer[["robustnessPlot"]] <- plot
     if (!ready) {
       return()
@@ -796,7 +797,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
   if (is.null(fairnessContainer[["sequentialPlot"]])) {
     plot <- createJaspPlot(title = gettext("Sequential Analysis Plot"), width = 530, height = 450)
     plot$position <- positionInContainer
-    plot$dependOn(options = c(.jfaFairnessCommonOptions(), "sequentialPlot"))
+    plot$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "sequentialPlot"))
     fairnessContainer[["sequentialPlot"]] <- plot
     if (!ready) {
       return()
@@ -822,7 +823,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
   } else {
     container <- createJaspContainer(title = gettext("<u>Conclusion</u>"))
     container$position <- position
-    container$dependOn(options = c(.jfaFairnessCommonOptions(), "explanatoryText"))
+    container$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "explanatoryText"))
     if (metric[["metric"]] == "eo") {
       state <- .jfaFairnessState(dataset = NULL, options, jaspResults)
       rejectnulla <- state[["frequentist"]][["tp"]][["p.value"]] < (1 - options[["conf_level"]])
@@ -848,7 +849,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
     }
     container[["conclusionParagraph"]] <- createJaspHtml(caption, "p")
     container[["conclusionParagraph"]]$position <- 1
-    container$dependOn(options = c(.jfaFairnessCommonOptions(), "explanatoryText"))
+    container$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "explanatoryText"))
 
     jaspResults[["conclusionContainer"]] <- container
   }

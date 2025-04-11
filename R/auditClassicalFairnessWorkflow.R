@@ -88,15 +88,6 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   .jfaCreatedByText(jaspResults)
 }
 
-.jfaFairnessWorkflowCommonOptions <- function(stage) {
-  if (stage == "selection") {
-    opt <- c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC")
-  } else if (stage == "evaluation") {
-    opt <- .jfaFairnessCommonOptions()
-  }
-  return(opt)
-}
-
 .jfaFairnessWorkflowContainer <- function(stage, options, jaspResults, position) {
   if (stage == "procedure") {
     if (!is.null(jaspResults[["procedureContainer"]])) {
@@ -118,7 +109,7 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
     } else {
       container <- createJaspContainer(title = gettext("<u>Selection</u>"))
       container$position <- position
-      container$dependOn(options = .jfaFairnessWorkflowCommonOptions("selection"))
+      container$dependOn(options = .jfaFairnessCommonOptions("selection"))
       jaspResults[["selectionContainer"]] <- container
     }
   } else if (stage == "evaluation") {
@@ -127,7 +118,7 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
     } else {
       container <- createJaspContainer(title = gettext("<u>Evaluation</u>"))
       container$position <- position
-      container$dependOn(options = .jfaFairnessWorkflowCommonOptions("evaluation"))
+      container$dependOn(options = .jfaFairnessCommonOptions("evaluation"))
       jaspResults[["evaluationContainer"]] <- container
     }
   }
@@ -175,7 +166,7 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   }
   metric <- jfa::fairness_selection(q1, q2, q3, q4)
   jaspResults[["selectionState"]] <- createJaspState(metric)
-  jaspResults[["selectionState"]]$dependOn(options = .jfaFairnessWorkflowCommonOptions("selection"))
+  jaspResults[["selectionState"]]$dependOn(options = .jfaFairnessCommonOptions("selection"))
   return(jaspResults[["selectionState"]]$object)
 }
 
@@ -187,7 +178,7 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   details <- .jfaCreateFairnessWorkflowExplanationText(options, state)
   text <- createJaspHtml(details)
   text$position <- positionInContainer
-  text$dependOn(options = c("explanatoryText", .jfaFairnessWorkflowCommonOptions("selection")))
+  text$dependOn(options = c("explanatoryText", .jfaFairnessCommonOptions("selection")))
   container[["selectedFairnessMeasureText"]] <- text
 }
 
@@ -228,7 +219,7 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   if (is.null(container[["fairnessWorkflowPlot"]])) {
     fg <- createJaspPlot(title = gettext("Decision-Making Workflow Plot"), width = 800, height = 800)
     fg$position <- positionInContainer
-    fg$dependOn(options = c("workflowPlot", .jfaFairnessWorkflowCommonOptions("selection")))
+    fg$dependOn(options = c("workflowPlot", .jfaFairnessCommonOptions("selection")))
     container[["fairnessWorkflowPlot"]] <- fg
     state <- .jfaClassicalFairnessWorkflowSelectionState(options, jaspResults)
     fg$plotObject <- plot(state)
