@@ -20,51 +20,123 @@
 
 auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   # Create the procedure paragraph
-  .jfaFairnessWorkflowProcedureContainer(options, jaspResults, position = 1)
+  .jfaFairnessWorkflowContainer("procedure", options, jaspResults, position = 1)
 
-  selectionContainer <- .jfaFairnessWorkflowSelectionContainer(options, jaspResults, position = 2)
+  # Make the selection container
+  selectionContainer <- .jfaFairnessWorkflowContainer("selection", options, jaspResults, position = 2)
 
   # Display the theoretical information of the selected fairness measure
-  .jfaSelectedFairnessMetric(options, jaspResults, selectionContainer, positionInContainer = 2)
+  .jfaClassicalFairnessWorkflowSelectionStage(options, jaspResults, selectionContainer, positionInContainer = 2)
 
   # --- PLOTS
 
   .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
 
   # Display the decision-making workflow plot
-  .jfaWorkflowPlot(options, jaspResults, selectionContainer, positionInContainer = 3)
+  .jfaClassicalFairnessWorkflowSelectionPlot(options, jaspResults, selectionContainer, positionInContainer = 3)
+
+  if (!options[["evaluationChecked"]]) {
+    return()
+  }
+
+  # Read in the data
+  dataset <- .jfaFairnessReadData(dataset, options)
+
+  # Make the evaluation container
+  evaluationContainer <- .jfaFairnessWorkflowContainer("evaluation", options, jaspResults, position = 3)
+
+  # Ready for analysis
+  ready <- (options[["protected"]] != "" && options[["target"]] != "" && options[["predictions"]] != "" && options[["privileged"]] != "" && options[["positive"]] != "")
+
+  # --- TABLES
+
+  .jfaTableNumberInit(jaspResults) # Initialize table numbers
+
+  # Create the omnibus test table
+  .jfaFairnessSummaryTable(dataset, options, evaluationContainer, jaspResults, ready, positionInContainer = 1)
+
+  # Create the comparisons to privileged group table
+  .jfaFairnessComparisonsTable(dataset, options, evaluationContainer, jaspResults, ready, positionInContainer = 2)
+
+  # Create the model performance table
+  .jfaFairnessPerformanceTable(dataset, options, evaluationContainer, jaspResults, ready, positionInContainer = 3)
+
+  # Create the confusion matrix table
+  .jfaFairnessConfusionTable(dataset, options, evaluationContainer, jaspResults, ready, positionInContainer = 4)
+
+  # --- PLOTS
+
+  # Create the parity plot
+  .jfaFairnessParityPlot(dataset, options, evaluationContainer, jaspResults, ready, positionInContainer = 5)
+
+  # Create the prior and posterior plot
+  .jfaFairnessPosteriorPlot(dataset, options, evaluationContainer, jaspResults, ready, positionInContainer = 7)
+
+  # Create the Bayes factor robustness plot
+  .jfaFairnessRobustnessPlot(dataset, options, evaluationContainer, jaspResults, ready, positionInContainer = 9)
+
+  # Create the sequential analysis plot
+  .jfaFairnessSequentialPlot(dataset, options, evaluationContainer, jaspResults, ready, positionInContainer = 11)
+
+  # ---
+
+  # Create the conclusion paragraph
+  .jfaFairnessAddConclusion(options, evaluationContainer, jaspResults, ready, position = 13)
+
+  # ---
+
+  .jfaCreatedByText(jaspResults)
 }
 
 .jfaFairnessWorkflowCommonOptions <- function(stage) {
   if (stage == "selection") {
     opt <- c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC")
+  } else if (stage == "evaluation") {
+    opt <- .jfaFairnessCommonOptions()
   }
   return(opt)
 }
 
-.jfaFairnessWorkflowProcedureContainer <- function(options, jaspResults, position) {
-  if (options[["explanatoryText"]] && is.null(jaspResults[["procedureContainer"]])) {
-    container <- createJaspContainer(title = gettext("<u>Procedure</u>"))
-    container$position <- position
-    text <- gettextf("The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute. Fairness -ore discrimination- can be quantified using so-called fairness measures. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions.")
-    container[["procedureText"]] <- createJaspHtml(text, "p")
-    container[["procedureText"]]$position <- 1
-    container$dependOn(options = "explanatoryText")
-    jaspResults[["procedureContainer"]] <- container
+.jfaFairnessWorkflowContainer <- function(stage, options, jaspResults, position) {
+  if (stage == "procedure") {
+    if (!is.null(jaspResults[["procedureContainer"]])) {
+      return(jaspResults[["procedureContainer"]])
+    } else {
+      if (options[["explanatoryText"]]) {
+        container <- createJaspContainer(title = gettext("<u>Procedure</u>"))
+        container$position <- position
+        text <- gettextf("The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute. Fairness -ore discrimination- can be quantified using so-called fairness measures. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions.")
+        container[["procedureText"]] <- createJaspHtml(text, "p")
+        container[["procedureText"]]$position <- 1
+        container$dependOn(options = "explanatoryText")
+        jaspResults[["procedureContainer"]] <- container
+      }
+    }
+  } else if (stage == "selection") {
+    if (!is.null(jaspResults[["selectionContainer"]])) {
+      return(jaspResults[["selectionContainer"]])
+    } else {
+      container <- createJaspContainer(title = gettext("<u>Selection</u>"))
+      container$position <- position
+      container$dependOn(options = .jfaFairnessWorkflowCommonOptions("selection"))
+      jaspResults[["selectionContainer"]] <- container
+    }
+  } else if (stage == "evaluation") {
+    if (!is.null(jaspResults[["evaluationContainer"]])) {
+      return(jaspResults[["evaluationContainer"]])
+    } else {
+      container <- createJaspContainer(title = gettext("<u>Evaluation</u>"))
+      container$position <- position
+      container$dependOn(options = .jfaFairnessWorkflowCommonOptions("evaluation"))
+      jaspResults[["evaluationContainer"]] <- container
+    }
   }
-}
-
-.jfaFairnessWorkflowSelectionContainer <- function(options, jaspResults, position) {
-  container <- createJaspContainer(title = gettext("<u>Selection</u>"))
-  container$position <- position
-  container$dependOn(options = .jfaFairnessWorkflowCommonOptions("selection"))
-  jaspResults[["selectionContainer"]] <- container
   return(container)
 }
 
 .jfaClassicalFairnessWorkflowSelectionState <- function(options, jaspResults) {
-  if (!is.null(jaspResults[["state"]])) {
-    return(jaspResults[["state"]]$object)
+  if (!is.null(jaspResults[["selectionState"]])) {
+    return(jaspResults[["selectionState"]]$object)
   }
   metric <- q1 <- q2 <- q3 <- q4 <- NULL
   if (options[["firstquestion"]] == "firstquestion_no") {
@@ -102,12 +174,12 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
     }
   }
   metric <- jfa::fairness_selection(q1, q2, q3, q4)
-  jaspResults[["state"]] <- createJaspState(metric)
-  jaspResults[["state"]]$dependOn(options = .jfaFairnessWorkflowCommonOptions("selection"))
-  return(jaspResults[["state"]]$object)
+  jaspResults[["selectionState"]] <- createJaspState(metric)
+  jaspResults[["selectionState"]]$dependOn(options = .jfaFairnessWorkflowCommonOptions("selection"))
+  return(jaspResults[["selectionState"]]$object)
 }
 
-.jfaSelectedFairnessMetric <- function(options, jaspResults, container, positionInContainer) {
+.jfaClassicalFairnessWorkflowSelectionStage <- function(options, jaspResults, container, positionInContainer) {
   if (!is.null(container[["selectedFairnessMeasureText"]])) {
     return()
   }
@@ -148,7 +220,7 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   return(message)
 }
 
-.jfaWorkflowPlot <- function(options, jaspResults, container, positionInContainer) {
+.jfaClassicalFairnessWorkflowSelectionPlot <- function(options, jaspResults, container, positionInContainer) {
   if (!options[["workflowPlot"]]) {
     return()
   }

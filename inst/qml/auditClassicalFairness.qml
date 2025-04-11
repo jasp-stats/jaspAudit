@@ -28,6 +28,9 @@ Form
 	columns: 1
 	info: qsTr("The fairness measures analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. The ratio of two fairness metrics is called parity, which is a well-known concept in algorithmic fairness.")
 
+	// Hidden option(s)
+	CheckBox { name: "workflow"; checked: false; visible: false }
+
 	Fairness.FairnessVariablesList { }
 
 	Group

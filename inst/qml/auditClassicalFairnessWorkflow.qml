@@ -29,6 +29,9 @@ Form
 	columns: 1
 	info:								qsTr("The fairness measures analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions.")
 
+	// Hidden option(s)
+	CheckBox { name: "workflow"; checked: true; visible: false }
+
 	Section
 	{
 		id:								selectionStage

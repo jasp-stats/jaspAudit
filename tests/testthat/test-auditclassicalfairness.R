@@ -117,7 +117,9 @@ test_that("<b>Table 3.</b> Model Performance results match", {
 # })
 
 test_that("<b>Table 1.</b> Omnibus Test - Predictive rate parity results match", {
-	table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_summaryTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(5, "Ethnicity", 6172, 0.00209507283665478, 18.7989675485203))
+  table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_summaryTable"]][["data"]]
+  jaspTools::expect_equal_tables(
+    table,
+    list(5, "Ethnicity", 6172, 0.00209507283665478, 18.7989675485203)
+  )
 })
