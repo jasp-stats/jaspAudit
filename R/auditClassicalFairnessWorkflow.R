@@ -96,7 +96,7 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
       if (options[["explanatoryText"]]) {
         container <- createJaspContainer(title = gettext("<u>Procedure</u>"))
         container$position <- position
-        text <- gettextf("The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute. Fairness -ore discrimination- can be quantified using so-called fairness measures. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions.")
+        text <- gettextf("The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute. Fairness -or discrimination- can be quantified using so-called fairness measures. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions.")
         container[["procedureText"]] <- createJaspHtml(text, "p")
         container[["procedureText"]]$position <- 1
         container$dependOn(options = "explanatoryText")
