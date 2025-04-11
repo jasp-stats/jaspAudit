@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2025-04-11 08:55\n"
-"PO-Revision-Date: 2025-04-05 15:57+0000\n"
+"PO-Revision-Date: 2025-04-11 09:57+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
@@ -627,9 +627,8 @@ msgstr "Fout-negatieven"
 msgid "Negative predictive value"
 msgstr "Negatief voorspellende waarde"
 
-#, fuzzy
 msgid "Positive rate"
-msgstr "Terecht-positieven"
+msgstr "Proportie positieven"
 
 msgid "Precision"
 msgstr "Nauwkeurigheid"
@@ -637,38 +636,32 @@ msgstr "Nauwkeurigheid"
 msgid "True positive rate"
 msgstr "Terecht-positieven"
 
-#, fuzzy
 msgid "Specificity parity"
 msgstr "Specificiteitspariteit"
 
-#, fuzzy
 msgid "Accuracy parity"
 msgstr "Nauwkeurigheidspariteit"
 
-#, fuzzy
 msgid "False positive rate parity"
-msgstr "Fout-positieve Pariteit"
+msgstr "Fout-positieve proportie pariteit"
 
-#, fuzzy
 msgid "False negative rate parity"
-msgstr "Fout-negatieve Pariteit"
+msgstr "Fout-negatieve proportie pariteit"
 
-#, fuzzy
 msgid "Negative predictive value parity"
-msgstr "Negatieve Voorspelde Waarde Pariteit"
+msgstr "Negatieve voorspelde waarde pariteit"
 
 msgid "Disparate impact"
-msgstr ""
+msgstr "Ongelijke impact"
 
-#, fuzzy
 msgid "Predictive rate parity"
-msgstr "Voorspelde Proportie Pariteit"
+msgstr "Voorspelde proportie pariteit"
 
 msgid "Equal opportunity"
-msgstr ""
+msgstr "Gelijke kansen"
 
 msgid "Equalized odds"
-msgstr ""
+msgstr "Gelijke kansverhoudingen"
 
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
@@ -720,7 +713,7 @@ msgid "An error occurred: %1$s"
 msgstr "Foutmelding: %1$s"
 
 msgid "Metric"
-msgstr ""
+msgstr "Metriek"
 
 msgid "n"
 msgstr "n"
@@ -771,6 +764,9 @@ msgid ""
 "privileged positve rate ratio is lower than 0.80 then the algorithm is "
 "considered unfair against the unprivileged group(s)."
 msgstr ""
+"Volgens de '80 procent-regel' wordt het algoritme als oneerlijk beschouwd "
+"ten opzichte van de niet-bevoorrechte groep(en) als de waarde van de "
+"verhouding beschermd/bevoorrecht positief lager is dan 0,80%."
 
 msgid ""
 "<i>p</i>-values are uncorrected for multiple comparisons and are based on "
@@ -779,27 +775,26 @@ msgstr ""
 "<i>p</i>-waarden zijn niet gecorrigeerd voor meerdere vergelijkingen en zijn "
 "gebaseerd op Fisher's exacte toets."
 
-#, fuzzy
 msgid "<u>Individual Comparisons</u>"
-msgstr "<u>Evaluatie</u>"
+msgstr "<u>Individuele Vergelijkingen</u>"
 
-#, fuzzy
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - True Positive Rate"
-msgstr "<b>Tabel %1$i.</b> Vergelijkingen met Bevoorrechte (P) Groep"
+msgstr ""
+"<b>Tabel %1$i.</b> Vergelijkingen met Bevoorrechte (P) Groep - Terecht-"
+"positief Proportie"
 
-#, fuzzy
 msgid "True Positive Rate"
-msgstr "Terecht-positieven"
+msgstr "Terecht-positieven Proportie"
 
-#, fuzzy
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
-msgstr "<b>Tabel %1$i.</b> Vergelijkingen met Bevoorrechte (P) Groep"
+msgstr ""
+"<b>Tabel %1$i.</b> Vergelijkingen met Bevoorrechte (P) Groep - Fout-positief "
+"proportie"
 
-#, fuzzy
 msgid "False Positive Rate"
-msgstr "Fout-positieven"
+msgstr "Fout-positieven Proportie"
 
 msgid "<b>Table %1$i.</b> Model Performance"
 msgstr "<b>Tabel %1$i.</b> Model Prestatie"
@@ -822,7 +817,6 @@ msgstr "Geobserveerd"
 msgid "Predicted"
 msgstr "Voorspeld"
 
-#, fuzzy
 msgid ""
 "True Positives (TP) are cells in which the positive class (<i>%1$s</i>) is "
 "correctly predicted, while True Negatives (TN) are cells where the negative "
@@ -830,8 +824,8 @@ msgid ""
 "positive class is incorrectly predicted, and False Positives (FP) are cells "
 "in which the negative class is incorrectly predicted."
 msgstr ""
-"Terecht-positieven (TP) zijn cellen waarbij de positieve klasse (<i>%1$s</"
-"i>) correct wordt voorspeld, terwijl terecht-negatieven (TN) cellen zijn "
+"Terecht-positieven (TP) zijn cellen waarbij de positieve klasse (<i>%1$s</i>)"
+" correct wordt voorspeld, terwijl terecht-negatieven (TN) cellen zijn "
 "waarbij de negatieve klasse correct wordt voorspeld. Fout-negatieven (FN) "
 "zijn cellen waarbij de positieve klasse onjuist is voorspeld en fout-"
 "positieven (FP) zijn cellen waarbij de negatieve klasse onjuist is voorspeld."
@@ -850,13 +844,11 @@ msgstr ""
 "voor alle groepen in de gegevens. Hoe dichter de pariteit bij één ligt, hoe "
 "minder discriminatie er in het algoritme optreedt."
 
-#, fuzzy
 msgid "<u>Parity Estimates Plots</u>"
-msgstr "Pariteitsschattingen"
+msgstr "<u>Figuren met Pariteitsschattingen</u>"
 
-#, fuzzy
 msgid "Parity Estimates Plot - True Positive Rate Parity"
-msgstr "Terecht-positieve Pariteit"
+msgstr "Figuur met Pariteitsschattingen - Terecht-positief Proportie Pariteit"
 
 #, fuzzy
 msgid ""
@@ -870,9 +862,8 @@ msgstr ""
 "voor alle groepen in de gegevens. Hoe dichter de pariteit bij één ligt, hoe "
 "minder discriminatie er in het algoritme optreedt."
 
-#, fuzzy
 msgid "Parity Estimates Plot - False Positive Rate Parity"
-msgstr "Fout-positieve Pariteit"
+msgstr "Figuur met Pariteitsschattingen - Fout-positieven Proportie Pariteit"
 
 #, fuzzy
 msgid ""
