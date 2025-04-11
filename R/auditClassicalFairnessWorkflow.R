@@ -20,29 +20,29 @@
 
 auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   # Create the procedure paragraph
-  .jfaFairnessWorkflowProcedure(options, jaspResults, position = 1)
+  .jfaFairnessWorkflowProcedureContainer(options, jaspResults, position = 1)
 
-  planningContainer <- .jfaFairnessWorkflowPlanningContainer(options, jaspResults, position = 2)
+  selectionContainer <- .jfaFairnessWorkflowSelectionContainer(options, jaspResults, position = 2)
 
   # Display the theoretical information of the selected fairness measure
-  .jfaSelectedFairnessMetric(options, jaspResults, planningContainer, positionInContainer = 2)
+  .jfaSelectedFairnessMetric(options, jaspResults, selectionContainer, positionInContainer = 2)
 
   # --- PLOTS
 
   .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
 
   # Display the decision-making workflow plot
-  .jfaWorkflowPlot(options, jaspResults, planningContainer, positionInContainer = 3)
+  .jfaWorkflowPlot(options, jaspResults, selectionContainer, positionInContainer = 3)
 }
 
 .jfaFairnessWorkflowCommonOptions <- function(stage) {
-  if (stage == "planning") {
+  if (stage == "selection") {
     opt <- c("firstquestion", "secondquestion", "thirdquestion", "fourthquestion_caseA", "fourthquestion_caseB", "fourthquestion_caseC")
   }
   return(opt)
 }
 
-.jfaFairnessWorkflowProcedure <- function(options, jaspResults, position) {
+.jfaFairnessWorkflowProcedureContainer <- function(options, jaspResults, position) {
   if (options[["explanatoryText"]] && is.null(jaspResults[["procedureContainer"]])) {
     container <- createJaspContainer(title = gettext("<u>Procedure</u>"))
     container$position <- position
@@ -54,15 +54,15 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   }
 }
 
-.jfaFairnessWorkflowPlanningContainer <- function(options, jaspResults, position) {
-  container <- createJaspContainer(title = gettext("<u>Selecting a Fairness Measure</u>"))
+.jfaFairnessWorkflowSelectionContainer <- function(options, jaspResults, position) {
+  container <- createJaspContainer(title = gettext("<u>Selection</u>"))
   container$position <- position
-  container$dependOn(options = .jfaFairnessWorkflowCommonOptions("planning"))
-  jaspResults[["planningContainer"]] <- container
+  container$dependOn(options = .jfaFairnessWorkflowCommonOptions("selection"))
+  jaspResults[["selectionContainer"]] <- container
   return(container)
 }
 
-.jfaClassicalFairnessWorkflowPlanningState <- function(options, jaspResults) {
+.jfaClassicalFairnessWorkflowSelectionState <- function(options, jaspResults) {
   if (!is.null(jaspResults[["state"]])) {
     return(jaspResults[["state"]]$object)
   }
@@ -103,7 +103,7 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   }
   metric <- jfa::fairness_selection(q1, q2, q3, q4)
   jaspResults[["state"]] <- createJaspState(metric)
-  jaspResults[["state"]]$dependOn(options = .jfaFairnessWorkflowCommonOptions("planning"))
+  jaspResults[["state"]]$dependOn(options = .jfaFairnessWorkflowCommonOptions("selection"))
   return(jaspResults[["state"]]$object)
 }
 
@@ -111,11 +111,11 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   if (!is.null(container[["selectedFairnessMeasureText"]])) {
     return()
   }
-  state <- .jfaClassicalFairnessWorkflowPlanningState(options, jaspResults)
+  state <- .jfaClassicalFairnessWorkflowSelectionState(options, jaspResults)
   details <- .jfaCreateFairnessWorkflowExplanationText(options, state)
   text <- createJaspHtml(details)
   text$position <- positionInContainer
-  text$dependOn(options = c("explanatoryText", .jfaFairnessWorkflowCommonOptions("planning")))
+  text$dependOn(options = c("explanatoryText", .jfaFairnessWorkflowCommonOptions("selection")))
   container[["selectedFairnessMeasureText"]] <- text
 }
 
@@ -156,9 +156,9 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   if (is.null(container[["fairnessWorkflowPlot"]])) {
     fg <- createJaspPlot(title = gettext("Decision-Making Workflow Plot"), width = 800, height = 800)
     fg$position <- positionInContainer
-    fg$dependOn(options = c("workflowPlot", .jfaFairnessWorkflowCommonOptions("planning")))
+    fg$dependOn(options = c("workflowPlot", .jfaFairnessWorkflowCommonOptions("selection")))
     container[["fairnessWorkflowPlot"]] <- fg
-    state <- .jfaClassicalFairnessWorkflowPlanningState(options, jaspResults)
+    state <- .jfaClassicalFairnessWorkflowSelectionState(options, jaspResults)
     fg$plotObject <- plot(state)
   }
   if (options[["explanatoryText"]]) {

@@ -20,64 +20,26 @@ import QtQuick.Layouts
 import JASP
 import JASP.Controls
 
-import "./common"	as Common
+import "./common" as Common
+import "./common/fairness" as Fairness
 
 Form 
 {
-	columns: 							1
-	info:								qsTr("The fairness measures analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. The ratio of two fairness metrics is called parity, which is a well-known concept in algorithmic fairness.")
-	VariablesForm
-	{
-		preferredHeight:				jaspTheme.smallDefaultVariablesFormHeight
+	columns: 1
+	info: qsTr("The fairness measures analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. The ratio of two fairness metrics is called parity, which is a well-known concept in algorithmic fairness.")
 
-		AvailableVariablesList
-		{
-			name: 						"variablesFormFairness"
-		}
-		AssignedVariablesList
-		{
-			name: 						"target"
-			title: 						qsTr("Ground Truth Information")
-			singleVariable:				true
-			allowedColumns:				["nominal"]
-			minLevels:					2
-			info:						qsTr("In this column, the ground truth information (i.e., the target to be predicted) variable should be entered.")
-		}
-		AssignedVariablesList
-		{
-			name: 						"predictions"
-			title: 						qsTr("Predictions")
-			singleVariable:				true
-			allowedColumns:				["nominal"]
-			minLevels:					2
-			info:						qsTr("In this column, the predictions of the algorithm should be entered.")
-		}
-		AssignedVariablesList
-		{
-			name: 						"protected"
-			title: 						qsTr("Sensitive Attribute")
-			singleVariable:				true
-			allowedColumns:				["nominal"]
-			minLevels:					2
-			info:						qsTr("In this column, the protected (i.e., sensitive) attribute should be entered.")
-		}
-	}
+	Fairness.FairnessVariablesList { }
 
 	Group
 	{
-		CIField
-		{
-			name: 						"conf_level"
-			label: 						qsTr("Confidence")
-			info:						qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
-		}
+		Fairness.ConfidenceLevel { }
 
 		DropDown
 		{
-			id:							metric
-			name: 						"metric"
-			label: 						qsTr("Fairness measure")
-			indexDefaultValue: 			0
+			id:					metric
+			name: 				"metric"
+			label: 				qsTr("Fairness measure")
+			indexDefaultValue: 	0
 			values: [
 				{ label: qsTr("Predictive rate parity"),			value: "prp"},
 				{ label: qsTr("Negative predictive value parity"),	value: "npvp"},
@@ -89,237 +51,26 @@ Form
 				{ label: qsTr("Equalized odds"), 					value: "eo"},
 				{ label: qsTr("Accuracy parity"),					value: "ap"}
 			]
-			info:						qsTr("From this dropdown menu, it is possible to select the fairness metric to be calculated. While you can choose any desired metric, we recommend selecting the fairness measure indicated by the decision-making workflow as the most suitable for the context and the data under analysis.")
+			info: qsTr("Select the fairness metric for evaluating discrimination against the unprivileged group(s).")
 		}
 	}
 
-	Group 
+	Fairness.Levels { }
+	Fairness.Hypotheses { }
+	Fairness.BayesFactorType { }
+	Common.ExplanatoryText { }
+
+	Section
 	{
-		title:							qsTr("Levels")
-		info:							qsTr("These options allow specification of the privileged group and the positive class.")
-
-		DropDown
-		{
-			label: 						qsTr("Privileged group")
-			name: 						"privileged"
-			indexDefaultValue: 			0
-			addEmptyValue: 				true
-			placeholderText: 			qsTr("None")
-			source: 					[ { name: "protected", use: "levels" } ]
-			info:						qsTr("The privileged group refers to the class in the protected variable that historically or systematically experiences certain advantages, benefits, or privileges.")
-		}
-
-		DropDown
-		{
-			label: 						qsTr("Positive class")
-			name: 						"positive"
-			indexDefaultValue: 			0
-			addEmptyValue: 				true
-			placeholderText: 			qsTr("None")
-			source: 					[ { name: "target", use: "levels" } ]
-			info:						qsTr("The positive class in the target variable.")
-		}
-	}
-
-	RadioButtonGroup
-	{
-		title: 							qsTr("Alt. Hypothesis")
-		name: 							"alternative"
-		info:							qsTr("Specify the alternative hypothesis.")
-
-		RadioButton
-		{
-			text: 						qsTr("Unprivileged \u2260 Privileged")
-			name: 						"two.sided"
-			checked:					true
-			info:						qsTr("Test the alternative hypothesis that the fairness metric of an unprivileged group is not equal to the fairness metric in the privileged group.")
-		}
-
-		RadioButton
-		{
-			text: 						qsTr("Unprivileged < Privileged")
-			name: 						"less"
-			info:						qsTr("Test the alternative hypothesis that the fairness metric of an unprivileged group is lower than the fairness metric in the privileged group.")
-		}
-
-		RadioButton
-		{
-			text: 						qsTr("Unprivileged > Privileged")
-			name: 						"greater"
-			info:						qsTr("Test the alternative hypothesis that the fairness metric of an unprivileged group is higher than the fairness metric in the privileged group.")
-		}
-	}
-
-	RadioButtonGroup
-	{
-		name:							"bayesFactorType"
-		title:							"Bayes Factor"
-		info:							qsTr("Choose which type of Bayes factor to display.")
-		debug:							true
-
-		RadioButton
-		{
-			name:						"BF10"
-			text:						qsTr("BF\u2081\u2080")
-			checked:					true
-			info:						qsTr("Bayes factor to quantify evidence for the alternative hypothesis relative to the null hypothesis.")
-		}
-
-		RadioButton
-		{
-			name:						"BF01"
-			text:						qsTr("BF\u2080\u2081")
-			info:						qsTr("Bayes factor to quantify evidence for the null hypothesis relative to the alternative hypothesis.")
-		}
-
-		RadioButton
-		{
-			name:						"logBF10"
-			text:						qsTr("Log(BF\u2081\u2080)")
-			info:						qsTr("Natural logarithm of BF10.")
-		}
-	}
-
-		Group
-	{
-		title: 							qsTr("Display")
-		info:							qsTr("Specify options that have an effect on the look and feel of the audit report.")
-
-		Row
-		{
-			CheckBox
-			{
-				id: 					explanatoryText
-				text: 					qsTr("Explanatory text")
-				name: 					"explanatoryText"
-				checked: 				true
-				info:					qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the statistical results.")
-			}
-
-			HelpButton
-			{
-				helpPage:				"Audit/explanatoryText"
-				toolTip: 				qsTr("Show explanatory text at each step of the analysis")
-			}
-		}
+		title: qsTr("Report")
+		Fairness.FairnessOutput { }
 	}
 
 	Section
 	{
-		title: 							qsTr("Report")
-		columns: 						2
-
-		Group
-		{
-			title: 						qsTr("Tables")
-			info:						qsTr("Add additional tables about the evaluation to the report.")
-
-			CheckBox
-			{
-				text:					qsTr("Individual comparisons")
-				name:					"comparisonsTable"
-				info:					qsTr("Produces a table comparing the unprivileged groups against the privileged group.")
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Model performance")
-				name:					"performanceTable"
-				info:					qsTr("Produces a table containing the performance measures for the classification, including support, accuracy, precision, recall and F1-score.")
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Confusion matrix")
-				name:					"confusionTable"
-				info:					qsTr("Produces the confusion matrix for each group.")
-				checked: 				true
-
-				CheckBox 
-				{
-					text:				qsTr("Display proportions")
-					name:				"confusionTableProportions"
-					info:				qsTr("Displays proportions in the confusion table.")
-				}
-
-				CheckBox
-				{
-					name:				"confusionTranspose"
-					text:				qsTr("Transpose matrix")
-					info:				qsTr("Transposes the confusion matrix.")
-				}
-			}
-		}
-
-		Group
-		{
-			title: 						qsTr("Plots")
-			info:						qsTr("Add additional figures about the evaluation to the report.")
-
-			CheckBox
-			{
-				text:					qsTr("Parity estimates")
-				name:					"parityPlot"
-				info:					qsTr("Produces a plot showing the parity statistics for each unprivileged group against the privileged group.")
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Prior and posterior distribution")
-				name:					"posteriorPlot"
-				info:					qsTr("Produces a figure that shows the prior and posterior distribution.")
-				debug:					true
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Bayes factor robustness check")
-				name:					"robustnessPlot"
-				info:					qsTr("Produces a figure that shows the robustness of the Bayes factor to the prior distribution.")
-				debug:					true
-			}
-
-			CheckBox
-			{
-				text:					qsTr("Sequential analysis")
-				name:					"sequentialPlot"
-				info:					qsTr("Produces a figure that shows the Bayes factor as a function of the sample size.")
-				debug:					true
-			}
-
-		}
-	}
-
-	Section
-	{
-		columns:						1
-		title: 							qsTr("Advanced")
-		debug:							true
-
-		Group
-		{
-			title:						qsTr("Prior Distribution")
-
-			DoubleField
-			{
-				name: 					"concentration"
-				label: 					qsTr("Concentration")
-				defaultValue: 			1
-				decimals:				2
-				min:					1
-				info:					qsTr("Specifies the concentration parameter for the Dirichlet prior.")
-			}
-
-			IntegerField
-			{
-				name:					"seed"
-				label:					qsTr("Seed")
-				defaultValue:			Math.floor(Math.random() * 1000) // Init with random integer in [1,...,999]
-				min:					-999
-				max:					999
-				info:					qsTr("Selects the seed for the random number generator in order to reproduce results.")
-			}
-		}
+		title: qsTr("Advanced")
+		debug: true
+		Fairness.PriorDistribution { }
 	}
 
 	Common.DownloadReport { }

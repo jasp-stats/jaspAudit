@@ -526,10 +526,10 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
     )
     tb <- createJaspTable(title = title)
     tb$position <- positionInContainer
-    tb$dependOn(options = c(.jfaFairnessCommonOptions(), "confusionTable", "confusionTableProportions", "confusionTranspose"))
+    tb$dependOn(options = c(.jfaFairnessCommonOptions(), "confusionTable", "confusionTableProportions", "confusionTableTransposed"))
 
     if (ready) {
-      if (!options[["confusionTranspose"]]) {
+      if (!options[["confusionTableTransposed"]]) {
         tb$addColumnInfo(name = "group", title = "", type = "string")
         tb$addColumnInfo(name = "varname_obs", title = gettext("Observed"), type = "string")
         factorLevels <- levels(dataset[, options[["target"]]])
@@ -623,7 +623,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
         tb$addFootnote(gettextf("%1$s = %2$s", .jfaGetFairnessMetricInfo(options)[["title"]], .jfaGetFairnessMetricInfo(options)[["formula"]]), colName = "metric")
       }
     } else {
-      if (!options[["confusionTranspose"]]) {
+      if (!options[["confusionTableTransposed"]]) {
         tb$addColumnInfo(name = "obs_name", title = "", type = "string")
         tb$addColumnInfo(name = "varname_obs", title = "", type = "string")
         tb$addColumnInfo(name = "varname_pred1", title = ".", type = "integer", overtitle = gettext("Predicted"))

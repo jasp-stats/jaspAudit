@@ -20,19 +20,21 @@ import QtQuick
 import QtQuick.Layouts
 import JASP
 import JASP.Controls
-import JASP.Widgets
+
+import "./common" as Common
+import "./common/fairness" as Fairness
 
 Form 
 {
-	columns:							1
+	columns: 1
 	info:								qsTr("The fairness measures analysis enables the user to assess fairness and discrimination regarding specific groups in the data in algorithmic decision-making systems. Considering a certain positive class in the data, fairness -or discrimination- can be quantified using model-agnostic fairness metrics. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions.")
 
 	Section
 	{
-		id:								planningPhase
-		title: 							planningPhase.expanded ? qsTr("<b>1. Selecting a Fairness Measure</b>") : qsTr("1. Selecting a Fairness Measure")
+		id:								selectionStage
+		title: 							selectionStage.expanded ? qsTr("<b>1. Selection</b>") : qsTr("1. Selection")
 		columns:						1
-		expanded: 						true 
+		expanded:						!evaluationChecked.checked
 
 		RadioButtonGroup
 		{
@@ -186,34 +188,11 @@ Form
 			}
 		}
 
-		Group
-		{
-			title: 						qsTr("Display")
-			info:						qsTr("Specify options that have an effect on the look and feel of the audit report.")
-
-			Row
-			{
-				CheckBox
-				{
-					id: 				explanatoryText
-					text: 				qsTr("Explanatory text")
-					name: 				"explanatoryText"
-					checked: 			true
-					info:				qsTr("When checked, enables explanatory text in the analysis to help interpret the procedure and the fairness measures.")
-				}
-
-				HelpButton
-				{
-					helpPage:			"Audit/explanatoryText"
-					toolTip: 			qsTr("Show explanatory text at each step of the analysis")
-				}
-			}
-		}
+		Common.ExplanatoryText { }
 
 		Section
 		{
 			title:						qsTr("Report")
-			columns:					1
 
 			Group
 			{
@@ -228,8 +207,69 @@ Form
 				}	
 			}
 		}
+
+		Item
+		{
+			Layout.preferredHeight: 	toEvaluation.height
+			Layout.fillWidth: 			true
+			Layout.columnSpan:			1
+
+			Button
+			{
+				anchors.right:	 		toEvaluation.left
+				anchors.rightMargin:	jaspTheme.generalAnchorMargin
+				text:					qsTr("<b>Download Report</b>")
+				onClicked: 				form.exportResults()
+			}
+
+			CheckBox
+			{
+				id: 					evaluationChecked
+				name: 					"evaluationChecked"
+				anchors.right:			toEvaluation.left
+				width:					0
+				visible: 				false
+				checked: 				false
+			}
+
+			Button
+			{
+				id: 					toEvaluation
+				anchors.right:			parent.right
+				text: 					qsTr("<b>To Evaluation</b>")
+				enabled: 				!evaluationChecked.checked
+				onClicked:				evaluationChecked.checked = true
+			}
+		}
+	}
+
+	Section
+	{
+		id:								evaluationStage
+		title: 							evaluationStage.expanded ? qsTr("<b>2. Evaluation</b>") : qsTr("2. Evaluation")
+		columns:						1
+		enabled: 						evaluationChecked.checked
+		expanded: 						evaluationChecked.checked
+		
+		Fairness.FairnessVariablesList { }
+		Fairness.ConfidenceLevel { }
+		Fairness.Levels { }
+		Fairness.Hypotheses { }
+		Fairness.BayesFactorType { }
+
+		Section
+		{
+			title: qsTr("Report")
+			Fairness.FairnessOutput { }
+		}
+
+		Section
+		{
+			title: qsTr("Advanced")
+			debug: true
+			Fairness.PriorDistribution { }
+		}
+
+		Common.DownloadReport { }
 	}
 }
-
-
-
