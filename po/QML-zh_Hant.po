@@ -2584,45 +2584,6 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalFairness|"
-msgid "Ground Truth Information"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"In this column, the ground truth information (i.e., the target to be "
-"predicted) variable should be entered."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Predictions"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "In this column, the predictions of the algorithm should be entered."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Sensitive Attribute"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"In this column, the protected (i.e., sensitive) attribute should be entered."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Confidence"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"The confidence level used. The confidence level is the complement of the "
-"audit risk: the risk that the user is willing to take to give an incorrect "
-"judgment about the population. For example, if you want to use an audit risk "
-"of 5%, this equals 95% confidence."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
 msgid "Fairness measure"
 msgstr ""
 
@@ -2663,265 +2624,11 @@ msgid "Accuracy parity"
 msgstr ""
 
 msgctxt "auditClassicalFairness|"
-msgid ""
-"From this dropdown menu, it is possible to select the fairness metric to be "
-"calculated. While you can choose any desired metric, we recommend selecting "
-"the fairness measure indicated by the decision-making workflow as the most "
-"suitable for the context and the data under analysis."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Levels"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"These options allow specification of the privileged group and the positive "
-"class."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Privileged group"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "None"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"The privileged group refers to the class in the protected variable that "
-"historically or systematically experiences certain advantages, benefits, or "
-"privileges."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Positive class"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "The positive class in the target variable."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Alt. Hypothesis"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Specify the alternative hypothesis."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Unprivileged ≠ Privileged"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is not equal to the fairness metric in the privileged group."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Unprivileged < Privileged"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is lower than the fairness metric in the privileged group."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Unprivileged > Privileged"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is higher than the fairness metric in the privileged group."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Choose which type of Bayes factor to display."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "BF₁₀"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Bayes factor to quantify evidence for the alternative hypothesis relative to "
-"the null hypothesis."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "BF₀₁"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Bayes factor to quantify evidence for the null hypothesis relative to the "
-"alternative hypothesis."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Log(BF₁₀)"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Natural logarithm of BF10."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Display"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Specify options that have an effect on the look and feel of the audit report."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Explanatory text"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"When checked, enables explanatory text in the analysis to help interpret the "
-"procedure and the statistical results."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
 msgid "Report"
 msgstr ""
 
 msgctxt "auditClassicalFairness|"
-msgid "Tables"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Add additional tables about the evaluation to the report."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Individual comparisons"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a table comparing the unprivileged groups against the privileged "
-"group."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Model performance"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a table containing the performance measures for the classification, "
-"including support, accuracy, precision, recall and F1-score."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Confusion matrix"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Produces the confusion matrix for each group."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Display proportions"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Displays proportions in the confusion table."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Transpose matrix"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Transposes the confusion matrix."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Plots"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Add additional figures about the evaluation to the report."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Parity estimates"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a plot showing the parity statistics for each unprivileged group "
-"against the privileged group."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Prior and posterior distribution"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Produces a figure that shows the prior and posterior distribution."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Bayes factor robustness check"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a figure that shows the robustness of the Bayes factor to the prior "
-"distribution."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Sequential analysis"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a figure that shows the Bayes factor as a function of the sample "
-"size."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
 msgid "Advanced"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Prior Distribution"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Concentration"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Specifies the concentration parameter for the Dirichlet prior."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Seed"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Selects the seed for the random number generator in order to reproduce "
-"results."
 msgstr ""
 
 msgctxt "auditClassicalFairnessWorkflow|"
@@ -2938,24 +2645,7 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalFairnessWorkflow|"
-msgid "<b>1. Selecting a Fairness Measure</b>"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid "1. Selecting a Fairness Measure"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Is the ground thruth information relevant in your context?"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid ""
-"In this question, it must be specified whether the ground truth information "
-"(i.e., the target to be predicted) is relevant or not for the analysis "
-"context. In the context of item classification, the term ground truth "
-"information refers to the true classification of items, obtained from "
-"reliable sources or domain experts. "
 msgstr ""
 
 msgctxt "auditClassicalFairnessWorkflow|"
@@ -3094,29 +2784,6 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalFairnessWorkflow|"
-msgid "Display"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid ""
-"Specify options that have an effect on the look and feel of the audit report."
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid "Explanatory text"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid ""
-"When checked, enables explanatory text in the analysis to help interpret the "
-"procedure and the fairness measures."
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Report"
 msgstr ""
 
@@ -3136,4 +2803,309 @@ msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
 "Produces a figure showing the resulting path through the decision-making "
 "workflow."
+msgstr ""
+
+msgctxt "auditClassicalFairness|"
+msgid ""
+"Select the fairness metric for evaluating discrimination against the "
+"unprivileged group(s)."
+msgstr ""
+
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>1. Selection</b>"
+msgstr ""
+
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "1. Selection"
+msgstr ""
+
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid ""
+"In this question, it must be specified whether the ground truth information "
+"(i.e., the target to be predicted) is relevant or not for the analysis "
+"context. In the context of item classification, the term ground truth "
+"information refers to the true classification of items, obtained from "
+"reliable sources or domain experts."
+msgstr ""
+
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>Download Report</b>"
+msgstr ""
+
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>To Evaluation</b>"
+msgstr ""
+
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>2. Evaluation</b>"
+msgstr ""
+
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "2. Evaluation"
+msgstr ""
+
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "Advanced"
+msgstr ""
+
+msgctxt "BayesFactorType|"
+msgid "Choose which type of Bayes factor to display."
+msgstr ""
+
+msgctxt "BayesFactorType|"
+msgid "BF₁₀"
+msgstr ""
+
+msgctxt "BayesFactorType|"
+msgid ""
+"Bayes factor to quantify evidence for the alternative hypothesis relative to "
+"the null hypothesis."
+msgstr ""
+
+msgctxt "BayesFactorType|"
+msgid "BF₀₁"
+msgstr ""
+
+msgctxt "BayesFactorType|"
+msgid ""
+"Bayes factor to quantify evidence for the null hypothesis relative to the "
+"alternative hypothesis."
+msgstr ""
+
+msgctxt "BayesFactorType|"
+msgid "Log(BF₁₀)"
+msgstr ""
+
+msgctxt "BayesFactorType|"
+msgid "Natural logarithm of BF10."
+msgstr ""
+
+msgctxt "ConfidenceLevel|"
+msgid "Confidence"
+msgstr ""
+
+msgctxt "ConfidenceLevel|"
+msgid ""
+"The confidence level used. The confidence level is the complement of the "
+"audit risk: the risk that the user is willing to take to give an incorrect "
+"judgment about the population. For example, if you want to use an audit risk "
+"of 5%, this equals 95% confidence."
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Add additional tables about the evaluation to the report."
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Individual comparisons"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a table comparing the unprivileged groups against the privileged "
+"group."
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Model performance"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a table containing the performance measures for the classification, "
+"including support, accuracy, precision, recall and F1-score."
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Confusion matrix"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Produces the confusion matrix for each group."
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Display proportions"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Displays proportions in the confusion table."
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Transpose matrix"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Transposes the confusion matrix."
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Add additional figures about the evaluation to the report."
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Parity estimates"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a plot showing the parity statistics for each unprivileged group "
+"against the privileged group."
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Prior and posterior distribution"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Produces a figure that shows the prior and posterior distribution."
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Bayes factor robustness check"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a figure that shows the robustness of the Bayes factor to the prior "
+"distribution."
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Sequential analysis"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a figure that shows the Bayes factor as a function of the sample "
+"size."
+msgstr ""
+
+msgctxt "FairnessVariablesList|"
+msgid "Ground Truth Information"
+msgstr ""
+
+msgctxt "FairnessVariablesList|"
+msgid ""
+"In this column, the ground truth information (i.e., the target to be "
+"predicted) variable should be entered."
+msgstr ""
+
+msgctxt "FairnessVariablesList|"
+msgid "Predictions"
+msgstr ""
+
+msgctxt "FairnessVariablesList|"
+msgid "In this column, the predictions of the algorithm should be entered."
+msgstr ""
+
+msgctxt "FairnessVariablesList|"
+msgid "Sensitive Attribute"
+msgstr ""
+
+msgctxt "FairnessVariablesList|"
+msgid ""
+"In this column, the protected (i.e., sensitive) attribute should be entered."
+msgstr ""
+
+msgctxt "Hypotheses|"
+msgid "Alt. Hypothesis"
+msgstr ""
+
+msgctxt "Hypotheses|"
+msgid "Specify the alternative hypothesis."
+msgstr ""
+
+msgctxt "Hypotheses|"
+msgid "Unprivileged ≠ Privileged"
+msgstr ""
+
+msgctxt "Hypotheses|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is not equal to the fairness metric in the privileged group."
+msgstr ""
+
+msgctxt "Hypotheses|"
+msgid "Unprivileged < Privileged"
+msgstr ""
+
+msgctxt "Hypotheses|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is lower than the fairness metric in the privileged group."
+msgstr ""
+
+msgctxt "Hypotheses|"
+msgid "Unprivileged > Privileged"
+msgstr ""
+
+msgctxt "Hypotheses|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is higher than the fairness metric in the privileged group."
+msgstr ""
+
+msgctxt "Levels|"
+msgid "Levels"
+msgstr ""
+
+msgctxt "Levels|"
+msgid ""
+"These options allow specification of the privileged group and the positive "
+"class."
+msgstr ""
+
+msgctxt "Levels|"
+msgid "Privileged group"
+msgstr ""
+
+msgctxt "Levels|"
+msgid "None"
+msgstr ""
+
+msgctxt "Levels|"
+msgid ""
+"The privileged group refers to the class in the protected variable that "
+"historically or systematically experiences certain advantages, benefits, or "
+"privileges."
+msgstr ""
+
+msgctxt "Levels|"
+msgid "Positive class"
+msgstr ""
+
+msgctxt "Levels|"
+msgid "The positive class in the target variable."
+msgstr ""
+
+msgctxt "PriorDistribution|"
+msgid "Prior Distribution"
+msgstr ""
+
+msgctxt "PriorDistribution|"
+msgid "Concentration"
+msgstr ""
+
+msgctxt "PriorDistribution|"
+msgid "Specifies the concentration parameter for the Dirichlet prior."
+msgstr ""
+
+msgctxt "PriorDistribution|"
+msgid "Seed"
+msgstr ""
+
+msgctxt "PriorDistribution|"
+msgid ""
+"Selects the seed for the random number generator in order to reproduce "
+"results."
 msgstr ""

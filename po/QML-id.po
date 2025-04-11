@@ -2887,52 +2887,6 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalFairness|"
-msgid "Ground Truth Information"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"In this column, the ground truth information (i.e., the target to be "
-"predicted) variable should be entered."
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Predictions"
-msgstr "Prediksi"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "In this column, the predictions of the algorithm should be entered."
-msgstr "Pada kolom ini, prediksi algoritme harus dimasukkan."
-
-msgctxt "auditClassicalFairness|"
-msgid "Sensitive Attribute"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"In this column, the protected (i.e., sensitive) attribute should be entered."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Confidence"
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"The confidence level used. The confidence level is the complement of the "
-"audit risk: the risk that the user is willing to take to give an incorrect "
-"judgment about the population. For example, if you want to use an audit risk "
-"of 5%, this equals 95% confidence."
-msgstr ""
-"Tingkat keyakinan yang digunakan. Tingkat keyakinan adalah pelengkap dari "
-"risiko audit: risiko yang bersedia diambil oleh pengguna untuk memberikan "
-"penilaian yang salah tentang populasi. Sebagai contoh, jika Anda ingin "
-"menggunakan risiko audit sebesar 5%, ini sama dengan 95% tingkat kepercayaan."
-
-msgctxt "auditClassicalFairness|"
 msgid "Fairness measure"
 msgstr ""
 
@@ -2977,185 +2931,6 @@ msgctxt "auditClassicalFairness|"
 msgid "Accuracy parity"
 msgstr "Paritas akurasi"
 
-msgctxt "auditClassicalFairness|"
-msgid ""
-"From this dropdown menu, it is possible to select the fairness metric to be "
-"calculated. While you can choose any desired metric, we recommend selecting "
-"the fairness measure indicated by the decision-making workflow as the most "
-"suitable for the context and the data under analysis."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Levels"
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"These options allow specification of the privileged group and the positive "
-"class."
-msgstr ""
-"Opsi-opsi ini memungkinkan spesifikasi kelompok istimewa dan kelas positif."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Privileged group"
-msgstr "Kelompok yang memiliki hak istimewa"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "None"
-msgstr "Tidak ada"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"The privileged group refers to the class in the protected variable that "
-"historically or systematically experiences certain advantages, benefits, or "
-"privileges."
-msgstr ""
-"Kelompok istimewa mengacu pada kelas dalam variabel yang dilindungi yang "
-"secara historis atau sistematis mengalami keuntungan, manfaat, atau hak "
-"istimewa tertentu."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Positive class"
-msgstr "Kelas positif"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "The positive class in the target variable."
-msgstr "Kelas positif dalam variabel target."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Alt. Hypothesis"
-msgstr "Alt. Hipotesis"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Specify the alternative hypothesis."
-msgstr "Tentukan hipotesis alternatif."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Unprivileged ≠ Privileged"
-msgstr "Tidak diistimewakan ≠ Diistimewakan"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is not equal to the fairness metric in the privileged group."
-msgstr ""
-"Menguji hipotesis alternatif bahwa metrik keadilan dari kelompok yang tidak "
-"diistimewakan tidak sama dengan metrik keadilan pada kelompok yang "
-"diistimewakan."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Unprivileged < Privileged"
-msgstr "Tidak memiliki hak istimewa < Hak istimewa"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is lower than the fairness metric in the privileged group."
-msgstr ""
-"Menguji hipotesis alternatif bahwa metrik keadilan dari kelompok yang tidak "
-"diistimewakan lebih rendah daripada metrik keadilan pada kelompok yang "
-"diistimewakan."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Unprivileged > Privileged"
-msgstr "Tidak diistimewakan > Diistimewakan"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is higher than the fairness metric in the privileged group."
-msgstr ""
-"Menguji hipotesis alternatif bahwa metrik keadilan dari kelompok yang tidak "
-"diistimewakan lebih tinggi daripada metrik keadilan pada kelompok yang "
-"diistimewakan."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Choose which type of Bayes factor to display."
-msgstr "Pilih jenis faktor Bayes yang akan ditampilkan."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "BF₁₀"
-msgstr "BF₁₀"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Bayes factor to quantify evidence for the alternative hypothesis relative to "
-"the null hypothesis."
-msgstr ""
-"Faktor Bayes untuk mengukur bukti untuk hipotesis alternatif relatif "
-"terhadap hipotesis nol."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "BF₀₁"
-msgstr "BF₀₁"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Bayes factor to quantify evidence for the null hypothesis relative to the "
-"alternative hypothesis."
-msgstr ""
-"Faktor Bayes untuk mengukur bukti untuk hipotesis nol relatif terhadap "
-"hipotesis alternatif."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Log(BF₁₀)"
-msgstr "Log(BF₁₀)"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Natural logarithm of BF10."
-msgstr "Logaritma alami dari BF10."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Display"
-msgstr "Tampilan"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Specify options that have an effect on the look and feel of the audit report."
-msgstr "Tentukan opsi yang berpengaruh pada tampilan dan nuansa laporan audit."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Explanatory text"
-msgstr "Teks penjelasan"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"When checked, enables explanatory text in the analysis to help interpret the "
-"procedure and the statistical results."
-msgstr ""
-"Ketika dicentang, memungkinkan teks penjelasan dalam analisis untuk membantu "
-"menginterpretasikan prosedur dan hasil statistik."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr "Menampilkan teks penjelasan di setiap langkah analisis"
-
 #, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Report"
@@ -3163,157 +2938,8 @@ msgstr "Laporan"
 
 #, fuzzy
 msgctxt "auditClassicalFairness|"
-msgid "Tables"
-msgstr "Tabel"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Add additional tables about the evaluation to the report."
-msgstr "Menambahkan tabel tambahan tentang evaluasi ke dalam laporan."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Individual comparisons"
-msgstr "Perbandingan individu"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a table comparing the unprivileged groups against the privileged "
-"group."
-msgstr ""
-"Menghasilkan tabel yang membandingkan kelompok yang tidak diistimewakan "
-"dengan kelompok yang diistimewakan."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Model performance"
-msgstr "Performa model"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a table containing the performance measures for the classification, "
-"including support, accuracy, precision, recall and F1-score."
-msgstr ""
-"Menghasilkan tabel yang berisi ukuran kinerja untuk klasifikasi, termasuk "
-"dukungan, akurasi, presisi, recall, dan skor F1."
-
-msgctxt "auditClassicalFairness|"
-msgid "Confusion matrix"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Produces the confusion matrix for each group."
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Display proportions"
-msgstr "Proporsi tampilan"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Displays proportions in the confusion table."
-msgstr "Menampilkan proporsi dalam tabel kebingungan."
-
-msgctxt "auditClassicalFairness|"
-msgid "Transpose matrix"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Transposes the confusion matrix."
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Plots"
-msgstr "Plot"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Add additional figures about the evaluation to the report."
-msgstr "Tambahkan angka tambahan tentang evaluasi ke dalam laporan."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Parity estimates"
-msgstr "Perkiraan paritas"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a plot showing the parity statistics for each unprivileged group "
-"against the privileged group."
-msgstr ""
-"Menghasilkan plot yang menunjukkan statistik paritas untuk setiap kelompok "
-"yang tidak diistimewakan terhadap kelompok yang diistimewakan."
-
-msgctxt "auditClassicalFairness|"
-msgid "Prior and posterior distribution"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Produces a figure that shows the prior and posterior distribution."
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Bayes factor robustness check"
-msgstr "Pemeriksaan ketahanan faktor Bayes"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a figure that shows the robustness of the Bayes factor to the prior "
-"distribution."
-msgstr ""
-"Menghasilkan angka yang menunjukkan kekokohan faktor Bayes terhadap "
-"distribusi sebelumnya."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Sequential analysis"
-msgstr "Analisis berurutan"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a figure that shows the Bayes factor as a function of the sample "
-"size."
-msgstr ""
-"Menghasilkan angka yang menunjukkan faktor Bayes sebagai fungsi dari ukuran "
-"sampel."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
 msgid "Advanced"
 msgstr "Lanjutan"
-
-msgctxt "auditClassicalFairness|"
-msgid "Prior Distribution"
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Concentration"
-msgstr "Konsentrasi"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Specifies the concentration parameter for the Dirichlet prior."
-msgstr "Menentukan parameter konsentrasi untuk Dirichlet sebelumnya."
-
-msgctxt "auditClassicalFairness|"
-msgid "Seed"
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Selects the seed for the random number generator in order to reproduce "
-"results."
-msgstr "Memilih seed untuk generator angka acak untuk mereproduksi hasil."
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
@@ -3329,24 +2955,7 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalFairnessWorkflow|"
-msgid "<b>1. Selecting a Fairness Measure</b>"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid "1. Selecting a Fairness Measure"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Is the ground thruth information relevant in your context?"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid ""
-"In this question, it must be specified whether the ground truth information "
-"(i.e., the target to be predicted) is relevant or not for the analysis "
-"context. In the context of item classification, the term ground truth "
-"information refers to the true classification of items, obtained from "
-"reliable sources or domain experts. "
 msgstr ""
 
 msgctxt "auditClassicalFairnessWorkflow|"
@@ -3486,33 +3095,6 @@ msgstr ""
 
 #, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
-msgid "Display"
-msgstr "Tampilan"
-
-#, fuzzy
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid ""
-"Specify options that have an effect on the look and feel of the audit report."
-msgstr "Tentukan opsi yang berpengaruh pada tampilan dan nuansa laporan audit."
-
-#, fuzzy
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid "Explanatory text"
-msgstr "Teks penjelasan"
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid ""
-"When checked, enables explanatory text in the analysis to help interpret the "
-"procedure and the fairness measures."
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr "Menampilkan teks penjelasan di setiap langkah analisis"
-
-#, fuzzy
-msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Report"
 msgstr "Laporan"
 
@@ -3535,3 +3117,389 @@ msgid ""
 "Produces a figure showing the resulting path through the decision-making "
 "workflow."
 msgstr ""
+
+msgctxt "auditClassicalFairness|"
+msgid ""
+"Select the fairness metric for evaluating discrimination against the "
+"unprivileged group(s)."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>1. Selection</b>"
+msgstr "<b>2. Seleksi</b> {1.?}"
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "1. Selection"
+msgstr "2. Seleksi {1.?}"
+
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid ""
+"In this question, it must be specified whether the ground truth information "
+"(i.e., the target to be predicted) is relevant or not for the analysis "
+"context. In the context of item classification, the term ground truth "
+"information refers to the true classification of items, obtained from "
+"reliable sources or domain experts."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>Download Report</b>"
+msgstr "<b>Unduh Laporan</b>"
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>To Evaluation</b>"
+msgstr "<b>Untuk Evaluasi</b>"
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>2. Evaluation</b>"
+msgstr "<b>4. Evaluasi</b> {2.?}"
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "2. Evaluation"
+msgstr "4. Evaluasi {2.?}"
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "Advanced"
+msgstr "Lanjutan"
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid "Choose which type of Bayes factor to display."
+msgstr "Pilih jenis faktor Bayes yang akan ditampilkan."
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid "BF₁₀"
+msgstr "BF₁₀"
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid ""
+"Bayes factor to quantify evidence for the alternative hypothesis relative to "
+"the null hypothesis."
+msgstr ""
+"Faktor Bayes untuk mengukur bukti untuk hipotesis alternatif relatif "
+"terhadap hipotesis nol."
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid "BF₀₁"
+msgstr "BF₀₁"
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid ""
+"Bayes factor to quantify evidence for the null hypothesis relative to the "
+"alternative hypothesis."
+msgstr ""
+"Faktor Bayes untuk mengukur bukti untuk hipotesis nol relatif terhadap "
+"hipotesis alternatif."
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid "Log(BF₁₀)"
+msgstr "Log(BF₁₀)"
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid "Natural logarithm of BF10."
+msgstr "Logaritma alami dari BF10."
+
+msgctxt "ConfidenceLevel|"
+msgid "Confidence"
+msgstr ""
+
+#, fuzzy
+msgctxt "ConfidenceLevel|"
+msgid ""
+"The confidence level used. The confidence level is the complement of the "
+"audit risk: the risk that the user is willing to take to give an incorrect "
+"judgment about the population. For example, if you want to use an audit risk "
+"of 5%, this equals 95% confidence."
+msgstr ""
+"Tingkat keyakinan yang digunakan. Tingkat keyakinan adalah pelengkap dari "
+"risiko audit: risiko yang bersedia diambil oleh pengguna untuk memberikan "
+"penilaian yang salah tentang populasi. Sebagai contoh, jika Anda ingin "
+"menggunakan risiko audit sebesar 5%, ini sama dengan 95% tingkat kepercayaan."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Tables"
+msgstr "Tabel"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Add additional tables about the evaluation to the report."
+msgstr "Menambahkan tabel tambahan tentang evaluasi ke dalam laporan."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Individual comparisons"
+msgstr "Perbandingan individu"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a table comparing the unprivileged groups against the privileged "
+"group."
+msgstr ""
+"Menghasilkan tabel yang membandingkan kelompok yang tidak diistimewakan "
+"dengan kelompok yang diistimewakan."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Model performance"
+msgstr "Performa model"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a table containing the performance measures for the classification, "
+"including support, accuracy, precision, recall and F1-score."
+msgstr ""
+"Menghasilkan tabel yang berisi ukuran kinerja untuk klasifikasi, termasuk "
+"dukungan, akurasi, presisi, recall, dan skor F1."
+
+msgctxt "FairnessOutput|"
+msgid "Confusion matrix"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Produces the confusion matrix for each group."
+msgstr ""
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Display proportions"
+msgstr "Proporsi tampilan"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Displays proportions in the confusion table."
+msgstr "Menampilkan proporsi dalam tabel kebingungan."
+
+msgctxt "FairnessOutput|"
+msgid "Transpose matrix"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Transposes the confusion matrix."
+msgstr ""
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Plots"
+msgstr "Plot"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Add additional figures about the evaluation to the report."
+msgstr "Tambahkan angka tambahan tentang evaluasi ke dalam laporan."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Parity estimates"
+msgstr "Perkiraan paritas"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a plot showing the parity statistics for each unprivileged group "
+"against the privileged group."
+msgstr ""
+"Menghasilkan plot yang menunjukkan statistik paritas untuk setiap kelompok "
+"yang tidak diistimewakan terhadap kelompok yang diistimewakan."
+
+msgctxt "FairnessOutput|"
+msgid "Prior and posterior distribution"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Produces a figure that shows the prior and posterior distribution."
+msgstr ""
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Bayes factor robustness check"
+msgstr "Pemeriksaan ketahanan faktor Bayes"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a figure that shows the robustness of the Bayes factor to the prior "
+"distribution."
+msgstr ""
+"Menghasilkan angka yang menunjukkan kekokohan faktor Bayes terhadap "
+"distribusi sebelumnya."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Sequential analysis"
+msgstr "Analisis berurutan"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a figure that shows the Bayes factor as a function of the sample "
+"size."
+msgstr ""
+"Menghasilkan angka yang menunjukkan faktor Bayes sebagai fungsi dari ukuran "
+"sampel."
+
+msgctxt "FairnessVariablesList|"
+msgid "Ground Truth Information"
+msgstr ""
+
+msgctxt "FairnessVariablesList|"
+msgid ""
+"In this column, the ground truth information (i.e., the target to be "
+"predicted) variable should be entered."
+msgstr ""
+
+#, fuzzy
+msgctxt "FairnessVariablesList|"
+msgid "Predictions"
+msgstr "Prediksi"
+
+#, fuzzy
+msgctxt "FairnessVariablesList|"
+msgid "In this column, the predictions of the algorithm should be entered."
+msgstr "Pada kolom ini, prediksi algoritme harus dimasukkan."
+
+msgctxt "FairnessVariablesList|"
+msgid "Sensitive Attribute"
+msgstr ""
+
+msgctxt "FairnessVariablesList|"
+msgid ""
+"In this column, the protected (i.e., sensitive) attribute should be entered."
+msgstr ""
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid "Alt. Hypothesis"
+msgstr "Alt. Hipotesis"
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid "Specify the alternative hypothesis."
+msgstr "Tentukan hipotesis alternatif."
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid "Unprivileged ≠ Privileged"
+msgstr "Tidak diistimewakan ≠ Diistimewakan"
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is not equal to the fairness metric in the privileged group."
+msgstr ""
+"Menguji hipotesis alternatif bahwa metrik keadilan dari kelompok yang tidak "
+"diistimewakan tidak sama dengan metrik keadilan pada kelompok yang "
+"diistimewakan."
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid "Unprivileged < Privileged"
+msgstr "Tidak memiliki hak istimewa < Hak istimewa"
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is lower than the fairness metric in the privileged group."
+msgstr ""
+"Menguji hipotesis alternatif bahwa metrik keadilan dari kelompok yang tidak "
+"diistimewakan lebih rendah daripada metrik keadilan pada kelompok yang "
+"diistimewakan."
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid "Unprivileged > Privileged"
+msgstr "Tidak diistimewakan > Diistimewakan"
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is higher than the fairness metric in the privileged group."
+msgstr ""
+"Menguji hipotesis alternatif bahwa metrik keadilan dari kelompok yang tidak "
+"diistimewakan lebih tinggi daripada metrik keadilan pada kelompok yang "
+"diistimewakan."
+
+msgctxt "Levels|"
+msgid "Levels"
+msgstr ""
+
+#, fuzzy
+msgctxt "Levels|"
+msgid ""
+"These options allow specification of the privileged group and the positive "
+"class."
+msgstr ""
+"Opsi-opsi ini memungkinkan spesifikasi kelompok istimewa dan kelas positif."
+
+#, fuzzy
+msgctxt "Levels|"
+msgid "Privileged group"
+msgstr "Kelompok yang memiliki hak istimewa"
+
+#, fuzzy
+msgctxt "Levels|"
+msgid "None"
+msgstr "Tidak ada"
+
+#, fuzzy
+msgctxt "Levels|"
+msgid ""
+"The privileged group refers to the class in the protected variable that "
+"historically or systematically experiences certain advantages, benefits, or "
+"privileges."
+msgstr ""
+"Kelompok istimewa mengacu pada kelas dalam variabel yang dilindungi yang "
+"secara historis atau sistematis mengalami keuntungan, manfaat, atau hak "
+"istimewa tertentu."
+
+#, fuzzy
+msgctxt "Levels|"
+msgid "Positive class"
+msgstr "Kelas positif"
+
+#, fuzzy
+msgctxt "Levels|"
+msgid "The positive class in the target variable."
+msgstr "Kelas positif dalam variabel target."
+
+msgctxt "PriorDistribution|"
+msgid "Prior Distribution"
+msgstr ""
+
+#, fuzzy
+msgctxt "PriorDistribution|"
+msgid "Concentration"
+msgstr "Konsentrasi"
+
+#, fuzzy
+msgctxt "PriorDistribution|"
+msgid "Specifies the concentration parameter for the Dirichlet prior."
+msgstr "Menentukan parameter konsentrasi untuk Dirichlet sebelumnya."
+
+msgctxt "PriorDistribution|"
+msgid "Seed"
+msgstr ""
+
+#, fuzzy
+msgctxt "PriorDistribution|"
+msgid ""
+"Selects the seed for the random number generator in order to reproduce "
+"results."
+msgstr "Memilih seed untuk generator angka acak untuk mereproduksi hasil."

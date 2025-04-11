@@ -3003,55 +3003,6 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalFairness|"
-msgid "Ground Truth Information"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid ""
-"In this column, the ground truth information (i.e., the target to be "
-"predicted) variable should be entered."
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Predictions"
-msgstr "Predicións"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "In this column, the predictions of the algorithm should be entered."
-msgstr "Nesta columna débense introducir as predicións do algoritmo."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Sensitive Attribute"
-msgstr "Atributo sensible"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"In this column, the protected (i.e., sensitive) attribute should be entered."
-msgstr "Nesta columna débese introducir o atributo protexido (i.e. sensible)."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Confidence"
-msgstr "Confianza"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"The confidence level used. The confidence level is the complement of the "
-"audit risk: the risk that the user is willing to take to give an incorrect "
-"judgment about the population. For example, if you want to use an audit risk "
-"of 5%, this equals 95% confidence."
-msgstr ""
-"Nivel de confianza utilizado. O nivel de confianza é o complementario do "
-"risco de auditoría: o risco que o usuario está disposto a asumir ao "
-"proporcionar un xuízo incorrecto sobre a poboación. Por exemplo, se desexas "
-"utilizar un risco de auditoría do 5%, isto equivale a unha confianza do 95%."
-
-msgctxt "auditClassicalFairness|"
 msgid "Fairness measure"
 msgstr ""
 
@@ -3096,183 +3047,6 @@ msgctxt "auditClassicalFairness|"
 msgid "Accuracy parity"
 msgstr "Paridade da precisión"
 
-msgctxt "auditClassicalFairness|"
-msgid ""
-"From this dropdown menu, it is possible to select the fairness metric to be "
-"calculated. While you can choose any desired metric, we recommend selecting "
-"the fairness measure indicated by the decision-making workflow as the most "
-"suitable for the context and the data under analysis."
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Levels"
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"These options allow specification of the privileged group and the positive "
-"class."
-msgstr ""
-"Estas opcións permiten especificar o grupo privilexiado e a clase positiva."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Privileged group"
-msgstr "Grupo privilexiado"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "None"
-msgstr "Ningunha"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"The privileged group refers to the class in the protected variable that "
-"historically or systematically experiences certain advantages, benefits, or "
-"privileges."
-msgstr ""
-"O grupo privilexiado refírese á clase na variable protexida que histórica ou "
-"sistemáticamente experimenta certas avantaxes, beneficios ou privilexios."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Positive class"
-msgstr "Clase positiva"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "The positive class in the target variable."
-msgstr "A clase positiva na variable obxectivo."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Alt. Hypothesis"
-msgstr "Hipótese alternativa"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Specify the alternative hypothesis."
-msgstr "Especificar a hipótese alternativa."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Unprivileged ≠ Privileged"
-msgstr "Non privilexiado ≠ Privilexiado"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is not equal to the fairness metric in the privileged group."
-msgstr ""
-"Proba a hipótese alternativa de que a métrica de xustiza dun grupo non "
-"privilexiado, non é igual á métrica de xustiza no grupo privilexiado."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Unprivileged < Privileged"
-msgstr "Non privilexiado < Privilexiado"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is lower than the fairness metric in the privileged group."
-msgstr ""
-"Proba a hipótese alternativa de que a métrica de xustiza dun grupo non "
-"privilexiado, é menor que a métrica de xustiza no grupo privilexiado."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Unprivileged > Privileged"
-msgstr "Non privilexiado > Privilexiado"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Test the alternative hypothesis that the fairness metric of an unprivileged "
-"group is higher than the fairness metric in the privileged group."
-msgstr ""
-"Proba a hipótese alternativa de que a métrica de xustiza dun grupo non "
-"privilexiado, é maior que a métrica de xustiza no grupo privilexiado."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Choose which type of Bayes factor to display."
-msgstr "Escolle o tipo de Factor de Bayes a presentar."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "BF₁₀"
-msgstr "FB₁₀"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Bayes factor to quantify evidence for the alternative hypothesis relative to "
-"the null hypothesis."
-msgstr ""
-"Factor de Bayes para cuantificar a evidencia da hipótese alternativa en "
-"relación á hipótese nula."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "BF₀₁"
-msgstr "FB₀₁"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Bayes factor to quantify evidence for the null hypothesis relative to the "
-"alternative hypothesis."
-msgstr ""
-"Factor de Bayes para cuantificar a evidencia da hipótese nula en relación á "
-"hipótese alternativa."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Log(BF₁₀)"
-msgstr "Log(FB₁₀)"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Natural logarithm of BF10."
-msgstr "Logaritmo neperiano de FB10."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Display"
-msgstr "Presentar"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Specify options that have an effect on the look and feel of the audit report."
-msgstr ""
-"Especificar as opcións que teñan efecto sobre a apariencia do Informe de "
-"Auditoría."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Explanatory text"
-msgstr "Texto explicativo"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"When checked, enables explanatory text in the analysis to help interpret the "
-"procedure and the statistical results."
-msgstr ""
-"Cando se marque habilita un texto explicativo na análise, para axudar a "
-"interpretar o procedemento e os resultados estatísticos."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr "Amosar o texto explicativo en cada etapa da análise"
-
 #, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Report"
@@ -3280,163 +3054,8 @@ msgstr "Informe"
 
 #, fuzzy
 msgctxt "auditClassicalFairness|"
-msgid "Tables"
-msgstr "Táboas"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Add additional tables about the evaluation to the report."
-msgstr "Engadir táboas adicionais sobre a avaliación, ao informe."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Individual comparisons"
-msgstr "Comparacións individuais"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a table comparing the unprivileged groups against the privileged "
-"group."
-msgstr ""
-"Xera unha táboa comparando os grupos non privilexiados co grupo privilexiado."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Model performance"
-msgstr "Capacidade do modelo"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a table containing the performance measures for the classification, "
-"including support, accuracy, precision, recall and F1-score."
-msgstr ""
-"Xera unha táboa que contén as medidas da capacidade para a clasificación, "
-"incluíndo apoio, precisión, exhaustividade e puntuación F1."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Confusion matrix"
-msgstr "Matriz de desarranxo"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Produces the confusion matrix for each group."
-msgstr "Xera a matriz de desarranxo para cada grupo."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Display proportions"
-msgstr "Presentar as proporcións"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Displays proportions in the confusion table."
-msgstr "Presenta as proporcións na táboa de desarranxo."
-
-msgctxt "auditClassicalFairness|"
-msgid "Transpose matrix"
-msgstr ""
-
-msgctxt "auditClassicalFairness|"
-msgid "Transposes the confusion matrix."
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Plots"
-msgstr "Gráficas"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Add additional figures about the evaluation to the report."
-msgstr "Engade imaxes adicionais sobre a avaliación, ao informe."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Parity estimates"
-msgstr "Estimacións de paridade"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a plot showing the parity statistics for each unprivileged group "
-"against the privileged group."
-msgstr ""
-"Xera unha gráfica que amosa os estatísticos de paridade para cada grupo non "
-"privilexiado fronte ao grupo privilexiado."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Prior and posterior distribution"
-msgstr "Distribución previa e posterior"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Produces a figure that shows the prior and posterior distribution."
-msgstr "Xera unha gráfica que amosa a distribución previa e posterior."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Bayes factor robustness check"
-msgstr "Comprobación da robustez do Factor de Bayes"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a figure that shows the robustness of the Bayes factor to the prior "
-"distribution."
-msgstr ""
-"Xera unha figura que amosa a robustez do Factor de Bayes á distribución "
-"previa."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Sequential analysis"
-msgstr "Análise secuencial"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Produces a figure that shows the Bayes factor as a function of the sample "
-"size."
-msgstr ""
-"Xera unha figura que amosa o Factor de Bayes como función do tamaño mostral."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
 msgid "Advanced"
 msgstr "Avanzado"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Prior Distribution"
-msgstr "Distribución previa"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Concentration"
-msgstr "Concentración"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Specifies the concentration parameter for the Dirichlet prior."
-msgstr "Especifica o parámetro de concentración para a previa de Dirichlet."
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid "Seed"
-msgstr "Semente"
-
-#, fuzzy
-msgctxt "auditClassicalFairness|"
-msgid ""
-"Selects the seed for the random number generator in order to reproduce "
-"results."
-msgstr ""
-"Selecciona a semente do xerador de números aleatorios para reproducir os "
-"resultados."
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
@@ -3452,24 +3071,7 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalFairnessWorkflow|"
-msgid "<b>1. Selecting a Fairness Measure</b>"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid "1. Selecting a Fairness Measure"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Is the ground thruth information relevant in your context?"
-msgstr ""
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid ""
-"In this question, it must be specified whether the ground truth information "
-"(i.e., the target to be predicted) is relevant or not for the analysis "
-"context. In the context of item classification, the term ground truth "
-"information refers to the true classification of items, obtained from "
-"reliable sources or domain experts. "
 msgstr ""
 
 msgctxt "auditClassicalFairnessWorkflow|"
@@ -3609,35 +3211,6 @@ msgstr ""
 
 #, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
-msgid "Display"
-msgstr "Presentar"
-
-#, fuzzy
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid ""
-"Specify options that have an effect on the look and feel of the audit report."
-msgstr ""
-"Especificar as opcións que teñan efecto sobre a apariencia do Informe de "
-"Auditoría."
-
-#, fuzzy
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid "Explanatory text"
-msgstr "Texto explicativo"
-
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid ""
-"When checked, enables explanatory text in the analysis to help interpret the "
-"procedure and the fairness measures."
-msgstr ""
-
-#, fuzzy
-msgctxt "auditClassicalFairnessWorkflow|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr "Amosar o texto explicativo en cada etapa da análise"
-
-#, fuzzy
-msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Report"
 msgstr "Informe"
 
@@ -3660,3 +3233,394 @@ msgid ""
 "Produces a figure showing the resulting path through the decision-making "
 "workflow."
 msgstr ""
+
+msgctxt "auditClassicalFairness|"
+msgid ""
+"Select the fairness metric for evaluating discrimination against the "
+"unprivileged group(s)."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>1. Selection</b>"
+msgstr "<b>2. Selección</b> {1.?}"
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "1. Selection"
+msgstr "2. Selección {1.?}"
+
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid ""
+"In this question, it must be specified whether the ground truth information "
+"(i.e., the target to be predicted) is relevant or not for the analysis "
+"context. In the context of item classification, the term ground truth "
+"information refers to the true classification of items, obtained from "
+"reliable sources or domain experts."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>Download Report</b>"
+msgstr "<b>Descargar Informe</b>"
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>To Evaluation</b>"
+msgstr "<b>A Avaliación</b>"
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "<b>2. Evaluation</b>"
+msgstr "<b>4. Avaliación</b> {2.?}"
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "2. Evaluation"
+msgstr "4. Avaliación {2.?}"
+
+#, fuzzy
+msgctxt "auditClassicalFairnessWorkflow|"
+msgid "Advanced"
+msgstr "Avanzado"
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid "Choose which type of Bayes factor to display."
+msgstr "Escolle o tipo de Factor de Bayes a presentar."
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid "BF₁₀"
+msgstr "FB₁₀"
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid ""
+"Bayes factor to quantify evidence for the alternative hypothesis relative to "
+"the null hypothesis."
+msgstr ""
+"Factor de Bayes para cuantificar a evidencia da hipótese alternativa en "
+"relación á hipótese nula."
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid "BF₀₁"
+msgstr "FB₀₁"
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid ""
+"Bayes factor to quantify evidence for the null hypothesis relative to the "
+"alternative hypothesis."
+msgstr ""
+"Factor de Bayes para cuantificar a evidencia da hipótese nula en relación á "
+"hipótese alternativa."
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid "Log(BF₁₀)"
+msgstr "Log(FB₁₀)"
+
+#, fuzzy
+msgctxt "BayesFactorType|"
+msgid "Natural logarithm of BF10."
+msgstr "Logaritmo neperiano de FB10."
+
+#, fuzzy
+msgctxt "ConfidenceLevel|"
+msgid "Confidence"
+msgstr "Confianza"
+
+#, fuzzy
+msgctxt "ConfidenceLevel|"
+msgid ""
+"The confidence level used. The confidence level is the complement of the "
+"audit risk: the risk that the user is willing to take to give an incorrect "
+"judgment about the population. For example, if you want to use an audit risk "
+"of 5%, this equals 95% confidence."
+msgstr ""
+"Nivel de confianza utilizado. O nivel de confianza é o complementario do "
+"risco de auditoría: o risco que o usuario está disposto a asumir ao "
+"proporcionar un xuízo incorrecto sobre a poboación. Por exemplo, se desexas "
+"utilizar un risco de auditoría do 5%, isto equivale a unha confianza do 95%."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Tables"
+msgstr "Táboas"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Add additional tables about the evaluation to the report."
+msgstr "Engadir táboas adicionais sobre a avaliación, ao informe."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Individual comparisons"
+msgstr "Comparacións individuais"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a table comparing the unprivileged groups against the privileged "
+"group."
+msgstr ""
+"Xera unha táboa comparando os grupos non privilexiados co grupo privilexiado."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Model performance"
+msgstr "Capacidade do modelo"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a table containing the performance measures for the classification, "
+"including support, accuracy, precision, recall and F1-score."
+msgstr ""
+"Xera unha táboa que contén as medidas da capacidade para a clasificación, "
+"incluíndo apoio, precisión, exhaustividade e puntuación F1."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Confusion matrix"
+msgstr "Matriz de desarranxo"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Produces the confusion matrix for each group."
+msgstr "Xera a matriz de desarranxo para cada grupo."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Display proportions"
+msgstr "Presentar as proporcións"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Displays proportions in the confusion table."
+msgstr "Presenta as proporcións na táboa de desarranxo."
+
+msgctxt "FairnessOutput|"
+msgid "Transpose matrix"
+msgstr ""
+
+msgctxt "FairnessOutput|"
+msgid "Transposes the confusion matrix."
+msgstr ""
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Plots"
+msgstr "Gráficas"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Add additional figures about the evaluation to the report."
+msgstr "Engade imaxes adicionais sobre a avaliación, ao informe."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Parity estimates"
+msgstr "Estimacións de paridade"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a plot showing the parity statistics for each unprivileged group "
+"against the privileged group."
+msgstr ""
+"Xera unha gráfica que amosa os estatísticos de paridade para cada grupo non "
+"privilexiado fronte ao grupo privilexiado."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Prior and posterior distribution"
+msgstr "Distribución previa e posterior"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Produces a figure that shows the prior and posterior distribution."
+msgstr "Xera unha gráfica que amosa a distribución previa e posterior."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Bayes factor robustness check"
+msgstr "Comprobación da robustez do Factor de Bayes"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a figure that shows the robustness of the Bayes factor to the prior "
+"distribution."
+msgstr ""
+"Xera unha figura que amosa a robustez do Factor de Bayes á distribución "
+"previa."
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid "Sequential analysis"
+msgstr "Análise secuencial"
+
+#, fuzzy
+msgctxt "FairnessOutput|"
+msgid ""
+"Produces a figure that shows the Bayes factor as a function of the sample "
+"size."
+msgstr ""
+"Xera unha figura que amosa o Factor de Bayes como función do tamaño mostral."
+
+msgctxt "FairnessVariablesList|"
+msgid "Ground Truth Information"
+msgstr ""
+
+msgctxt "FairnessVariablesList|"
+msgid ""
+"In this column, the ground truth information (i.e., the target to be "
+"predicted) variable should be entered."
+msgstr ""
+
+#, fuzzy
+msgctxt "FairnessVariablesList|"
+msgid "Predictions"
+msgstr "Predicións"
+
+#, fuzzy
+msgctxt "FairnessVariablesList|"
+msgid "In this column, the predictions of the algorithm should be entered."
+msgstr "Nesta columna débense introducir as predicións do algoritmo."
+
+#, fuzzy
+msgctxt "FairnessVariablesList|"
+msgid "Sensitive Attribute"
+msgstr "Atributo sensible"
+
+#, fuzzy
+msgctxt "FairnessVariablesList|"
+msgid ""
+"In this column, the protected (i.e., sensitive) attribute should be entered."
+msgstr "Nesta columna débese introducir o atributo protexido (i.e. sensible)."
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid "Alt. Hypothesis"
+msgstr "Hipótese alternativa"
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid "Specify the alternative hypothesis."
+msgstr "Especificar a hipótese alternativa."
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid "Unprivileged ≠ Privileged"
+msgstr "Non privilexiado ≠ Privilexiado"
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is not equal to the fairness metric in the privileged group."
+msgstr ""
+"Proba a hipótese alternativa de que a métrica de xustiza dun grupo non "
+"privilexiado, non é igual á métrica de xustiza no grupo privilexiado."
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid "Unprivileged < Privileged"
+msgstr "Non privilexiado < Privilexiado"
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is lower than the fairness metric in the privileged group."
+msgstr ""
+"Proba a hipótese alternativa de que a métrica de xustiza dun grupo non "
+"privilexiado, é menor que a métrica de xustiza no grupo privilexiado."
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid "Unprivileged > Privileged"
+msgstr "Non privilexiado > Privilexiado"
+
+#, fuzzy
+msgctxt "Hypotheses|"
+msgid ""
+"Test the alternative hypothesis that the fairness metric of an unprivileged "
+"group is higher than the fairness metric in the privileged group."
+msgstr ""
+"Proba a hipótese alternativa de que a métrica de xustiza dun grupo non "
+"privilexiado, é maior que a métrica de xustiza no grupo privilexiado."
+
+msgctxt "Levels|"
+msgid "Levels"
+msgstr ""
+
+#, fuzzy
+msgctxt "Levels|"
+msgid ""
+"These options allow specification of the privileged group and the positive "
+"class."
+msgstr ""
+"Estas opcións permiten especificar o grupo privilexiado e a clase positiva."
+
+#, fuzzy
+msgctxt "Levels|"
+msgid "Privileged group"
+msgstr "Grupo privilexiado"
+
+#, fuzzy
+msgctxt "Levels|"
+msgid "None"
+msgstr "Ningunha"
+
+#, fuzzy
+msgctxt "Levels|"
+msgid ""
+"The privileged group refers to the class in the protected variable that "
+"historically or systematically experiences certain advantages, benefits, or "
+"privileges."
+msgstr ""
+"O grupo privilexiado refírese á clase na variable protexida que histórica ou "
+"sistemáticamente experimenta certas avantaxes, beneficios ou privilexios."
+
+#, fuzzy
+msgctxt "Levels|"
+msgid "Positive class"
+msgstr "Clase positiva"
+
+#, fuzzy
+msgctxt "Levels|"
+msgid "The positive class in the target variable."
+msgstr "A clase positiva na variable obxectivo."
+
+#, fuzzy
+msgctxt "PriorDistribution|"
+msgid "Prior Distribution"
+msgstr "Distribución previa"
+
+#, fuzzy
+msgctxt "PriorDistribution|"
+msgid "Concentration"
+msgstr "Concentración"
+
+#, fuzzy
+msgctxt "PriorDistribution|"
+msgid "Specifies the concentration parameter for the Dirichlet prior."
+msgstr "Especifica o parámetro de concentración para a previa de Dirichlet."
+
+#, fuzzy
+msgctxt "PriorDistribution|"
+msgid "Seed"
+msgstr "Semente"
+
+#, fuzzy
+msgctxt "PriorDistribution|"
+msgid ""
+"Selects the seed for the random number generator in order to reproduce "
+"results."
+msgstr ""
+"Selecciona a semente do xerador de números aleatorios para reproducir os "
+"resultados."
