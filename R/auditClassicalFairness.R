@@ -311,7 +311,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
       )
       tb <- createJaspTable(title = title)
       tb$position <- positionInContainer
-      tb$dependOn(options = .jfaFairnessCommonOptions("evaluation"))
+      tb$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "comparisonsTable", "confusionTable", "performanceTable"))
       tb$addColumnInfo(name = "group", title = "", type = "string")
       overTitle <- gettextf("%1$s%% Confidence Interval", round(options[["conf_level"]] * 100, 3))
       tb$addColumnInfo(name = "metric", title = metric[["title"]], type = "number")
@@ -369,7 +369,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
   } else {
     container <- createJaspContainer(title = gettext("<u>Individual Comparisons</u>"))
     container$position <- positionInContainer
-    container$dependOn(options = .jfaFairnessCommonOptions("evaluation"))
+    container$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "comparisonsTable", "confusionTable", "performanceTable"))
     fairnessContainer[["individualComparisonContainer"]] <- container
 
     if (is.null(container[["comparisonsTableTpr"]])) {
@@ -486,7 +486,7 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
     )
     tb <- createJaspTable(title = title)
     tb$position <- positionInContainer
-    tb$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "performanceTable"))
+    tb$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "performanceTable", "confusionTable", "comparisonsTable"))
     tb$addColumnInfo(name = "group", title = "", type = "string")
     tb$addColumnInfo(name = "support", title = gettext("Support"), type = "integer")
     tb$addColumnInfo(name = "accuracy", title = gettext("Accuracy"), type = "number")
@@ -527,9 +527,10 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
     )
     tb <- createJaspTable(title = title)
     tb$position <- positionInContainer
-    tb$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "confusionTable", "confusionTableProportions", "confusionTableTransposed"))
-
-    if (ready) {
+    tb$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "confusionTable", "confusionTableProportions", "confusionTableTransposed", "performanceTable", "comparisonsTable"))
+    fairnessContainer[["confusionTable"]] <- tb
+    
+	if (ready) {
       if (!options[["confusionTableTransposed"]]) {
         tb$addColumnInfo(name = "group", title = "", type = "string")
         tb$addColumnInfo(name = "varname_obs", title = gettext("Observed"), type = "string")
@@ -644,7 +645,6 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
         tb[["varname_obs2"]] <- rep("", 2)
       }
     }
-    fairnessContainer[["confusionTable"]] <- tb
   }
 }
 
