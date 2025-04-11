@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2025-04-11 08:55\n"
-"PO-Revision-Date: 2025-04-05 14:20+0000\n"
+"PO-Revision-Date: 2025-04-11 09:57+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"r/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-r/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -643,9 +643,8 @@ msgstr "Proporción de falsos negativos"
 msgid "Negative predictive value"
 msgstr "Valor preditivo negativo"
 
-#, fuzzy
 msgid "Positive rate"
-msgstr "Proporción de verdadeiros positivos"
+msgstr "Proporción de positivos"
 
 msgid "Precision"
 msgstr "Precisión"
@@ -653,40 +652,32 @@ msgstr "Precisión"
 msgid "True positive rate"
 msgstr "Proporción de verdadeiros positivos"
 
-#, fuzzy
 msgid "Specificity parity"
 msgstr "Paridade da especificidade"
 
-#, fuzzy
 msgid "Accuracy parity"
 msgstr "Paridade da precisión"
 
-#, fuzzy
 msgid "False positive rate parity"
-msgstr "Paridade da razón de falsos positivos"
+msgstr "Paridade da proporción de falsos positivos"
 
-#, fuzzy
 msgid "False negative rate parity"
-msgstr "Paridade da razón de falsos negativos"
+msgstr "Paridade da proporción de falsos negativos"
 
-#, fuzzy
 msgid "Negative predictive value parity"
 msgstr "Paridade do valor preditivo negativo"
 
-#, fuzzy
 msgid "Disparate impact"
-msgstr "Gráficas separadas"
+msgstr "Impacto dispar"
 
-#, fuzzy
 msgid "Predictive rate parity"
-msgstr "Paridade da razón preditiva"
+msgstr "Paridade da proporción preditiva"
 
-#, fuzzy
 msgid "Equal opportunity"
-msgstr "Proporcións iguais"
+msgstr "Oportunidade igual"
 
 msgid "Equalized odds"
-msgstr ""
+msgstr "Probabilidades igualadas"
 
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
@@ -707,6 +698,24 @@ msgid ""
 "null hypothesis is rejected for both tests can we conclude that the "
 "algorithm is fair."
 msgstr ""
+"O obxectivo deste procedemento é determinar ata que punto as predicións dun "
+"algoritmo son xustas para grupos protexidos respecto a un atributo sensible, "
+"e probar a súa xustiza cun erro tipo I do %1$s%%. Considerando a clase "
+"positiva (<i>%2$s</i>), a xustiza -ou a discriminación- pódese cuantificar "
+"usando as denominadas métricas de xustiza. Calcular unha métrica de xustiza "
+"implica determinar o valor da métrica de avaliación do modelo sobre a que se "
+"basea a métrica de xustiza para os dous grupos, o privilexiado (<i>%3$s</i>) "
+"e o non privilexiado.\n"
+"\n"
+"Neste caso concreto, as probabilidades igualadas non se basean nunha única "
+"métrica de avaliación do modelo, senón máis ben en dúas: a proporción de "
+"positivos verdadeiros e a proporción de positivos falsos. Por iso, usar "
+"probabilidades igualadas require aplicar dúas probas estatísticas para "
+"comprobar calquera diferenza significativa entre os valores que toman as "
+"dúas métricas de avaliación do modelo, para cada un dos dous grupos. As dúas "
+"probas realizadas son probas Khi-cadrado de Pearson. Unicamente cando se "
+"rexeita a hipótese nula en ámbalas dúas probas, podemos concluír que o "
+"algoritmo é xusto."
 
 #, fuzzy
 msgid ""
