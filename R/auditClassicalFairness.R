@@ -529,8 +529,8 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
     tb$position <- positionInContainer
     tb$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "confusionTable", "confusionTableProportions", "confusionTableTransposed", "performanceTable", "comparisonsTable"))
     fairnessContainer[["confusionTable"]] <- tb
-    
-	if (ready) {
+
+    if (ready) {
       if (!options[["confusionTableTransposed"]]) {
         tb$addColumnInfo(name = "group", title = "", type = "string")
         tb$addColumnInfo(name = "varname_obs", title = gettext("Observed"), type = "string")
@@ -679,51 +679,45 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
       fairnessContainer[["parityPlotText"]] <- caption
     }
   } else {
-    container <- createJaspContainer(title = gettext("<u>Parity Estimates Plots</u>"))
-    container$position <- positionInContainer
-    container$dependOn(options = .jfaFairnessCommonOptions("evaluation"))
-    fairnessContainer[["parityPlotContainer"]] <- container
+    if (is.null(fairnessContainer[["parityPlotContainer"]])) {
+      container <- createJaspContainer(title = gettext("<u>Parity Estimates Plots</u>"))
+      container$position <- positionInContainer
+      container$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "parityPlot"))
+      fairnessContainer[["parityPlotContainer"]] <- container
 
-    if (is.null(container[["parityPlotTpr"]])) {
-      .jfaFigureNumberUpdate(jaspResults)
+      fg1 <- createJaspPlot(title = gettext("Parity Estimates Plot - True Positive Rate Parity"), width = 530, height = 350)
+      fg1$position <- 1
+      container[["parityPlotTpr"]] <- fg1
 
-      plot1 <- createJaspPlot(title = gettext("Parity Estimates Plot - True Positive Rate Parity"), width = 530, height = 350)
-      plot1$position <- positionInContainer
-      plot1$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "parityPlot"))
-      container[["parityPlotTpr"]] <- plot1
-
-      .jfaFigureNumberUpdate(jaspResults)
-
-      if (options[["explanatoryText"]]) {
-        caption1 <- createJaspHtml(gettextf("<b>Figure 1.</b> Estimated parity statistics (i.e., the ratio of true positive rate from each unprivileged group to the privileged %1$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm.", options[["privileged"]]), "p")
-        caption1$position <- plot1$position + 1
-        caption1$dependOn(optionsFromObject = fairnessContainer[["parityPlotTpr"]])
-        container[["parityPlotTprText"]] <- caption1
-      }
-
-      plot2 <- createJaspPlot(title = gettext("Parity Estimates Plot - False Positive Rate Parity"), width = 530, height = 350)
-      plot2$position <- positionInContainer + 1
-      plot2$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "parityPlot"))
-      container[["parityPlotFpr"]] <- plot2
-
-      if (options[["explanatoryText"]]) {
-        caption2 <- createJaspHtml(gettextf("<b>Figure 2.</b> Estimated parity statistics (i.e., the ratio of false positive rate from each unprivileged group to the privileged %1$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm.", options[["privileged"]]), "p")
-        caption2$position <- plot2$position + 1
-        caption2$dependOn(optionsFromObject = fairnessContainer[["parityPlotFpr"]])
-        container[["parityPlotFprText"]] <- caption2
-      }
+      fg2 <- createJaspPlot(title = gettext("Parity Estimates Plot - False Positive Rate Parity"), width = 530, height = 350)
+      fg2$position <- 3
+      container[["parityPlotFpr"]] <- fg2
 
       if (!ready) {
         return()
       }
 
       result <- .jfaFairnessState(dataset, options, jaspResults)
-      plot1$plotObject <- plot(result[["frequentist"]][["tp"]], type = "estimates") +
+      fg1$plotObject <- plot(result[["frequentist"]][["tp"]], type = "estimates") +
         jaspGraphs::geom_rangeframe() +
         jaspGraphs::themeJaspRaw(legend.position = "top")
-      plot2$plotObject <- plot(result[["frequentist"]][["fp"]], type = "estimates") +
+      fg2$plotObject <- plot(result[["frequentist"]][["fp"]], type = "estimates") +
         jaspGraphs::geom_rangeframe() +
         jaspGraphs::themeJaspRaw(legend.position = "top")
+    }
+
+    if (options[["explanatoryText"]]) {
+      .jfaFigureNumberUpdate(jaspResults)
+      caption_fg1 <- createJaspHtml(gettextf("<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of true positive rate from each unprivileged group to the privileged %2$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm.", jaspResults[["figNumber"]]$object, options[["privileged"]]), "p")
+      caption_fg1$position <- 2
+      caption_fg1$dependOn(optionsFromObject = fairnessContainer[["parityPlotTpr"]])
+      fairnessContainer[["parityPlotContainer"]][["parityPlotTprText"]] <- caption_fg1
+
+      .jfaFigureNumberUpdate(jaspResults)
+      caption_fg2 <- createJaspHtml(gettextf("<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of true positive rate from each unprivileged group to the privileged %2$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm.", jaspResults[["figNumber"]]$object, options[["privileged"]]), "p")
+      caption_fg2$position <- 4
+      caption_fg2$dependOn(optionsFromObject = fairnessContainer[["parityPlotFpr"]])
+      fairnessContainer[["parityPlotContainer"]][["parityPlotFprText"]] <- caption_fg2
     }
   }
 }
