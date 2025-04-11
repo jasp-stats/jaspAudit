@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2025-04-11 08:55\n"
+"POT-Creation-Date: 2025-04-11 09:59\n"
 "PO-Revision-Date: 2025-04-11 09:57+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -881,25 +881,13 @@ msgid "Parity Estimates Plot - True Positive Rate Parity"
 msgstr "Paridad del ratio de verdaderos negativos"
 
 #, fuzzy
-msgid ""
-"<b>Figure 1.</b> Estimated parity statistics (i.e., the ratio of true "
-"positive rate from each unprivileged group to the privileged %1$s group) for "
-"all groups in the data. The closer the parity lies to one, the less "
-"discrimination occurs in the algorithm."
-msgstr ""
-"<b>Figura %1$i.</b> Estadísticos de la paridad estimada (i.e. el ratio de "
-"%2$s de cada grupo no privilegiado con el grupo privilegiado %3$s) para "
-"todos los grupos de los datos. Cuanto más próxima esté la paridad de uno, se "
-"produce una menor discriminación en el algoritmo."
-
-#, fuzzy
 msgid "Parity Estimates Plot - False Positive Rate Parity"
 msgstr "Paridad del ratio de falsos positivos"
 
 #, fuzzy
 msgid ""
-"<b>Figure 2.</b> Estimated parity statistics (i.e., the ratio of false "
-"positive rate from each unprivileged group to the privileged %1$s group) for "
+"<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of true "
+"positive rate from each unprivileged group to the privileged %2$s group) for "
 "all groups in the data. The closer the parity lies to one, the less "
 "discrimination occurs in the algorithm."
 msgstr ""
@@ -2646,6 +2634,18 @@ msgstr ""
 "<b>Imagen %1$i.</b> El factor de Bayes como función del tamaño muestral (n). "
 "La imagen ilustra como se acumula la evidencia de la hipótesis H₁ frente a "
 "la hipótesis H₀."
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Figure 2.</b> Estimated parity statistics (i.e., the ratio of false "
+#~ "positive rate from each unprivileged group to the privileged %1$s group) "
+#~ "for all groups in the data. The closer the parity lies to one, the less "
+#~ "discrimination occurs in the algorithm."
+#~ msgstr ""
+#~ "<b>Figura %1$i.</b> Estadísticos de la paridad estimada (i.e. el ratio de "
+#~ "%2$s de cada grupo no privilegiado con el grupo privilegiado %3$s) para "
+#~ "todos los grupos de los datos. Cuanto más próxima esté la paridad de uno, "
+#~ "se produce una menor discriminación en el algoritmo."
 
 #, fuzzy
 #~ msgid "<u>Selecting a Fairness Measure</u>"

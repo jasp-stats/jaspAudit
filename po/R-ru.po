@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
-"POT-Creation-Date: 2025-04-11 08:55\n"
+"POT-Creation-Date: 2025-04-11 09:59\n"
 "PO-Revision-Date: 2025-04-10 05:00+0000\n"
 "Last-Translator: MikeWinny <winny63@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -869,25 +869,13 @@ msgid "Parity Estimates Plot - True Positive Rate Parity"
 msgstr "Паритет истинно положительной классификации"
 
 #, fuzzy
-msgid ""
-"<b>Figure 1.</b> Estimated parity statistics (i.e., the ratio of true "
-"positive rate from each unprivileged group to the privileged %1$s group) for "
-"all groups in the data. The closer the parity lies to one, the less "
-"discrimination occurs in the algorithm."
-msgstr ""
-"<b>Рисунок %1$i.</b> Статистика оценки паритета (то есть отношения %2$s из "
-"каждой непривилегированной группы с привилегированной %3$s группой) для всех "
-"групп данных. Чем ближе значение паритета к единице, тем меньше различий "
-"обнаружено в алгоритме."
-
-#, fuzzy
 msgid "Parity Estimates Plot - False Positive Rate Parity"
 msgstr "Паритет ложно положительных классификаций"
 
 #, fuzzy
 msgid ""
-"<b>Figure 2.</b> Estimated parity statistics (i.e., the ratio of false "
-"positive rate from each unprivileged group to the privileged %1$s group) for "
+"<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of true "
+"positive rate from each unprivileged group to the privileged %2$s group) for "
 "all groups in the data. The closer the parity lies to one, the less "
 "discrimination occurs in the algorithm."
 msgstr ""
@@ -2634,6 +2622,18 @@ msgstr ""
 "<b>Рисунок %1$i.</b> Коэффициент Байеса как функция от размера выборки (n). "
 "Рисунок иллюстрирует как накапливается доказательство в пользу гипотезы H₁ "
 "по сравнению с гипотезой H₀."
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Figure 2.</b> Estimated parity statistics (i.e., the ratio of false "
+#~ "positive rate from each unprivileged group to the privileged %1$s group) "
+#~ "for all groups in the data. The closer the parity lies to one, the less "
+#~ "discrimination occurs in the algorithm."
+#~ msgstr ""
+#~ "<b>Рисунок %1$i.</b> Статистика оценки паритета (то есть отношения %2$s "
+#~ "из каждой непривилегированной группы с привилегированной %3$s группой) "
+#~ "для всех групп данных. Чем ближе значение паритета к единице, тем меньше "
+#~ "различий обнаружено в алгоритме."
 
 #, fuzzy
 #~ msgid "<u>Selecting a Fairness Measure</u>"

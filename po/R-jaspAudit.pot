@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2025-04-11 08:55\n"
+"POT-Creation-Date: 2025-04-11 09:59\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -490,13 +490,10 @@ msgstr ""
 msgid "Parity Estimates Plot - True Positive Rate Parity"
 msgstr ""
 
-msgid "<b>Figure 1.</b> Estimated parity statistics (i.e., the ratio of true positive rate from each unprivileged group to the privileged %1$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm."
-msgstr ""
-
 msgid "Parity Estimates Plot - False Positive Rate Parity"
 msgstr ""
 
-msgid "<b>Figure 2.</b> Estimated parity statistics (i.e., the ratio of false positive rate from each unprivileged group to the privileged %1$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm."
+msgid "<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of true positive rate from each unprivileged group to the privileged %2$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm."
 msgstr ""
 
 msgid "Prior and Posterior Distribution Plot"
