@@ -555,7 +555,7 @@
     stratum <- .jfaReadVariableFromOptions(options, type = "stratum")
     variables <- c(id, values, values.audit, times, stratum)
   }
-  if (!is.null(variables)) {
+  if (!is.null(variables) && !is.null(id)) {
     if (!is.null(.jfaReadVariableFromOptions(options, type = "stratum"))) {
       dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id & variables != stratum)], columns.as.factor = stratum, exclude.na.listwise = variables)
     } else {
