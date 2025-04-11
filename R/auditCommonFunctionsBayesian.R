@@ -389,13 +389,23 @@
   }
 
   if (options[["explanatoryText"]]) {
-    caption <- createJaspHtml(gettextf(
-      "<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n). The figure illustrates how the evidence for the hypothesis H\u2081 versus the hypothesis H\u2080 accumulates.",
+
+    message <- gettextf(
+      "<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n).",
       jaspResults[["figNumber"]]$object
-    ), "p")
+    )
+
+    messageHypotheses <- switch(options[["area"]],
+        "less" = gettext("The figure illustrates how the evidence for the hypothesis H\u2081 (i.e. H\u208B) versus the hypothesis H\u2080 (i.e. H\u208A) accumulates."),
+        "greater" = gettext("The figure illustrates how the evidence for the hypothesis H\u2081 (i.e. H\u208A) versus the hypothesis H\u2080 (i.e. H\u208B) accumulates."),
+        "two.sided" = gettext("The figure illustrates how the evidence for the hypothesis H\u2081 versus the hypothesis H\u2080 accumulates."),
+      )
+
+    caption <- createJaspHtml(paste(message, messageHypotheses), "p")
+
     caption$position <- positionInContainer + 1
     caption$dependOn(optionsFromObject = parentContainer[["sequentialAnalysisPlot"]])
-    caption$dependOn(options = "explanatoryText")
+    caption$dependOn(options = c("explanatoryText", "area"))
     parentContainer[["sequentialAnalysisPlotText"]] <- caption
   }
 }
