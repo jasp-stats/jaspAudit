@@ -2490,6 +2490,8 @@ msgid ""
 "Produces a table containing the selected transactions along with any "
 "additional observations provided in the additional variables field."
 msgstr ""
+"Создает таблицу, содержащую выбранные транзакции вместе с любыми "
+"дополнительными наблюдениями, указанными в поле Дополнительные переменные."
 
 #, fuzzy
 msgctxt "SelectionOutput|"
