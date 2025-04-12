@@ -28,7 +28,7 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   # Display the theoretical information of the selected fairness measure
   .jfaClassicalFairnessWorkflowSelectionStage(options, jaspResults, selectionContainer, positionInContainer = 2)
 
-  # --- PLOTS
+  # --- SELECTION PLOTS
 
   .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
 
@@ -48,7 +48,7 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   # Ready for analysis
   ready <- (options[["protected"]] != "" && options[["target"]] != "" && options[["predictions"]] != "" && options[["privileged"]] != "" && options[["positive"]] != "")
 
-  # --- TABLES
+  # --- EVALUATION TABLES
 
   .jfaTableNumberInit(jaspResults) # Initialize table numbers
 
@@ -64,7 +64,7 @@ auditClassicalFairnessWorkflow <- function(jaspResults, dataset, options, ...) {
   # Create the confusion matrix table
   .jfaFairnessConfusionTable(dataset, options, evaluationContainer, jaspResults, ready, positionInContainer = 4)
 
-  # --- PLOTS
+  # --- EVALUATION PLOTS
 
   # Create the parity plot
   .jfaFairnessParityPlot(dataset, options, evaluationContainer, jaspResults, ready, positionInContainer = 5)
