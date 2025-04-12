@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2025-04-11 15:09\n"
+"POT-Creation-Date: 2025-04-12 09:36\n"
 "PO-Revision-Date: 2025-04-12 03:32+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -761,6 +761,13 @@ msgstr ""
 "Por favor, especifica un grupo privilegiado y clase positiva, para comenzar "
 "el análisis."
 
+msgid ""
+"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
+"Fisher's exact test."
+msgstr ""
+"Los valores <i>p</i> no están corregidos para comparaciones múltiples, y se "
+"basan en el contraste exacto de Fisher."
+
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
 msgstr "<b>Tabla %1$i.</b> Comparaciones con el Grupo Privilegiado (P)"
 
@@ -800,13 +807,6 @@ msgstr ""
 "positiva protegido-a-privilegiado es menor que 0.80, entonces el algoritmo "
 "se considera injusto contra grupo(s) no privilegiado(s)."
 
-msgid ""
-"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
-"Fisher's exact test."
-msgstr ""
-"Los valores <i>p</i> no están corregidos para comparaciones múltiples, y se "
-"basan en el contraste exacto de Fisher."
-
 msgid "<u>Individual Comparisons</u>"
 msgstr "<u>Comparaciones individuales</u>"
 
@@ -819,6 +819,30 @@ msgstr ""
 msgid "True Positive Rate"
 msgstr "Ratio de positivos verdaderos"
 
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is equal to that of the privileged (P) group."
+msgstr ""
+"La hipótesis nula indica que el %1$s de un grupo no privilegiado es igual al "
+"de un grupo privilegiado (P)."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+"La hipótesis nula indica que el %1$s de un grupo no privilegiado es mayor "
+"que (o igual) al de un grupo privilegiado (P)."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+"La hipótesis nula indica que el %1$s de un grupo no privilegiado es menor "
+"que (o igual) al de un grupo privilegiado (P)."
+
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
 msgstr ""
@@ -827,6 +851,32 @@ msgstr ""
 
 msgid "False Positive Rate"
 msgstr "Ratio de positivos falsos"
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is equal to that of the privileged (P) group."
+msgstr ""
+"La hipótesis nula indica que el %1$s de un grupo no privilegiado es igual al "
+"de un grupo privilegiado (P)."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is greater than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+"La hipótesis nula indica que el %1$s de un grupo no privilegiado es mayor "
+"que (o igual) al de un grupo privilegiado (P)."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is lower than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+"La hipótesis nula indica que el %1$s de un grupo no privilegiado es menor "
+"que (o igual) al de un grupo privilegiado (P)."
 
 msgid "<b>Table %1$i.</b> Model Performance"
 msgstr "<b>Tabla %1$i.</b> Comportamiento del modelo"
@@ -912,19 +962,19 @@ msgstr ""
 "la razón de probabilidades para cada grupo no privilegiado comparado con el "
 "grupo privilegiado (%2$s)."
 
+#, fuzzy
 msgid ""
-"As the two values are significantly different from each other, we can "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are significantly different from each other, we can conclude "
+"that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 "Como los dos valores son significativamente distintos entre si, podemos "
 "concluir que este algoritmo en concreto es injusto contra grupo(s) no "
 "privilegiado(s)."
 
+#, fuzzy
 msgid ""
-"As the two values are not significantly different from each other, we cannot "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are not significantly different from each other, we cannot "
+"conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 "Como los dos valores no son significativamente distintos entre si, no "
 "podemos concluir que este algoritmo en concreto sea injusto contra grupo(s) "

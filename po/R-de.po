@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-11 15:09\n"
+"POT-Creation-Date: 2025-04-12 09:36\n"
 "PO-Revision-Date: 2025-03-22 10:53+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -743,6 +743,13 @@ msgstr ""
 "Bitte geben Sie eine privilegierte Gruppe und positive Klasse an, um die "
 "Analyse zu starten."
 
+msgid ""
+"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
+"Fisher's exact test."
+msgstr ""
+"<i>p</i>-Werte sind für Mehrfachvergleiche unkorrigiert und basieren auf "
+"Fishers genauem Test."
+
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
 msgstr "<b>Tabelle %1$i.</b> Vergleiche mit privilegierter (P) Gruppe"
 
@@ -779,13 +786,6 @@ msgid ""
 "considered unfair against the unprivileged group(s)."
 msgstr ""
 
-msgid ""
-"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
-"Fisher's exact test."
-msgstr ""
-"<i>p</i>-Werte sind für Mehrfachvergleiche unkorrigiert und basieren auf "
-"Fishers genauem Test."
-
 #, fuzzy
 msgid "<u>Individual Comparisons</u>"
 msgstr "<u>Evaluation</u>"
@@ -801,12 +801,62 @@ msgstr "Richtig-positiv-Rate"
 
 #, fuzzy
 msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is equal to that of the privileged (P) group."
+msgstr ""
+"Die Nullhypothese gibt an, dass %1$s einer unprivilegierten Gruppe gleich "
+"der privilegierten (P) Gruppe sind."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+"Die Nullhypothese gibt an, dass %1$s einer unprivilegierten Gruppe größer "
+"oder gleich der privilegierten (P) Gruppe sind."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+"Die Nullhypothese gibt an, dass %1$s einer unprivilegierten Gruppe kleiner "
+"oder gleich der privilegierten (P) Gruppe sind."
+
+#, fuzzy
+msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
 msgstr "<b>Tabelle %1$i.</b> Vergleiche mit privilegierter (P) Gruppe"
 
 #, fuzzy
 msgid "False Positive Rate"
 msgstr "Falsch-positiv-Rate"
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is equal to that of the privileged (P) group."
+msgstr ""
+"Die Nullhypothese gibt an, dass %1$s einer unprivilegierten Gruppe gleich "
+"der privilegierten (P) Gruppe sind."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is greater than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+"Die Nullhypothese gibt an, dass %1$s einer unprivilegierten Gruppe größer "
+"oder gleich der privilegierten (P) Gruppe sind."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is lower than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+"Die Nullhypothese gibt an, dass %1$s einer unprivilegierten Gruppe kleiner "
+"oder gleich der privilegierten (P) Gruppe sind."
 
 msgid "<b>Table %1$i.</b> Model Performance"
 msgstr "<b>Tabelle %1$i.</b> Modell-Leistung"
@@ -893,15 +943,13 @@ msgstr ""
 "privilegierten Gruppe (%2$s)."
 
 msgid ""
-"As the two values are significantly different from each other, we can "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are significantly different from each other, we can conclude "
+"that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
 msgid ""
-"As the two values are not significantly different from each other, we cannot "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are not significantly different from each other, we cannot "
+"conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
 #, fuzzy

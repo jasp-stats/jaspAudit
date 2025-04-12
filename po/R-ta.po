@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2025-04-11 15:09\n"
+"POT-Creation-Date: 2025-04-12 09:36\n"
 "PO-Revision-Date: 2025-01-07 10:14+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -713,6 +713,13 @@ msgid ""
 "Please specify a privileged group and positive class to start the analysis."
 msgstr "பகுப்பாய்வைத் தொடங்க ஒரு சலுகை பெற்ற குழு மற்றும் நேர்மறை வகுப்பைக் குறிப்பிடவும்."
 
+msgid ""
+"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
+"Fisher's exact test."
+msgstr ""
+"<i> ப </i>-மதிப்புகள் பல ஒப்பீடுகளுக்கு சரி செய்யப்படவில்லை மற்றும் அவை ஃபிசரின் சரியான "
+"சோதனையை அடிப்படையாகக் கொண்டவை."
+
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
 msgstr "<b>அட்டவணை %1$i.</b> சலுகை பெற்ற (பி) குழுவுடன் ஒப்பீடுகள்"
 
@@ -749,13 +756,6 @@ msgid ""
 "considered unfair against the unprivileged group(s)."
 msgstr ""
 
-msgid ""
-"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
-"Fisher's exact test."
-msgstr ""
-"<i> ப </i>-மதிப்புகள் பல ஒப்பீடுகளுக்கு சரி செய்யப்படவில்லை மற்றும் அவை ஃபிசரின் சரியான "
-"சோதனையை அடிப்படையாகக் கொண்டவை."
-
 #, fuzzy
 msgid "<u>Individual Comparisons</u>"
 msgstr "<u> மதிப்பீடு </u>"
@@ -771,12 +771,62 @@ msgstr "உண்மையான நேர்மறை வீதம்"
 
 #, fuzzy
 msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is equal to that of the privileged (P) group."
+msgstr ""
+"சுழிய கருதுகோள் ஒரு திறமையற்ற குழுவின் %1$s சலுகை பெற்ற (பி) குழுவிற்கு சமம் என்று "
+"குறிப்பிடுகிறது."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+"சுழிய கருதுகோள் ஒரு திறமையற்ற குழுவின் %1$s சலுகை பெற்ற (பி) குழுவின்தை விட "
+"அதிகமாகவோ அல்லது சமமாகவோ உள்ளது என்பதைக் குறிப்பிடுகிறது."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+"சுழிய கருதுகோள் ஒரு திறமையற்ற குழுவின் %1$s சலுகை பெற்ற (பி) குழுவின்தை விட "
+"குறைவாகவோ அல்லது சமமாகவோ உள்ளது என்பதைக் குறிப்பிடுகிறது."
+
+#, fuzzy
+msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
 msgstr "<b>அட்டவணை %1$i.</b> சலுகை பெற்ற (பி) குழுவுடன் ஒப்பீடுகள்"
 
 #, fuzzy
 msgid "False Positive Rate"
 msgstr "தவறான நேர்மறை விகிதம்"
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is equal to that of the privileged (P) group."
+msgstr ""
+"சுழிய கருதுகோள் ஒரு திறமையற்ற குழுவின் %1$s சலுகை பெற்ற (பி) குழுவிற்கு சமம் என்று "
+"குறிப்பிடுகிறது."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is greater than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+"சுழிய கருதுகோள் ஒரு திறமையற்ற குழுவின் %1$s சலுகை பெற்ற (பி) குழுவின்தை விட "
+"அதிகமாகவோ அல்லது சமமாகவோ உள்ளது என்பதைக் குறிப்பிடுகிறது."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is lower than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+"சுழிய கருதுகோள் ஒரு திறமையற்ற குழுவின் %1$s சலுகை பெற்ற (பி) குழுவின்தை விட "
+"குறைவாகவோ அல்லது சமமாகவோ உள்ளது என்பதைக் குறிப்பிடுகிறது."
 
 msgid "<b>Table %1$i.</b> Model Performance"
 msgstr "<b>அட்டவணை %1$i.</b> மாதிரி செயல்திறன்"
@@ -862,15 +912,13 @@ msgstr ""
 "குழுவிற்கும் பதிவு முரண்பாடுகளின் விகிதத்தில் முன் மற்றும் பின் விநியோகங்கள்."
 
 msgid ""
-"As the two values are significantly different from each other, we can "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are significantly different from each other, we can conclude "
+"that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
 msgid ""
-"As the two values are not significantly different from each other, we cannot "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are not significantly different from each other, we cannot "
+"conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
 #, fuzzy

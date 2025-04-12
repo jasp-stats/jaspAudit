@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.3\n"
-"POT-Creation-Date: 2025-04-11 15:09\n"
+"POT-Creation-Date: 2025-04-12 09:36\n"
 "PO-Revision-Date: 2025-04-04 15:07+0000\n"
 "Last-Translator: Uğur ÇELİK <prof_ugur@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -605,6 +605,11 @@ msgid ""
 "Please specify a privileged group and positive class to start the analysis."
 msgstr ""
 
+msgid ""
+"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
+"Fisher's exact test."
+msgstr ""
+
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
 msgstr ""
 
@@ -635,11 +640,6 @@ msgid ""
 "considered unfair against the unprivileged group(s)."
 msgstr ""
 
-msgid ""
-"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
-"Fisher's exact test."
-msgstr ""
-
 msgid "<u>Individual Comparisons</u>"
 msgstr ""
 
@@ -651,10 +651,42 @@ msgid "True Positive Rate"
 msgstr ""
 
 msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is equal to that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
 msgstr ""
 
 msgid "False Positive Rate"
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is equal to that of the privileged (P) group."
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is greater than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is lower than, or equal to, that of the privileged (P) "
+"group."
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Model Performance"
@@ -721,15 +753,13 @@ msgid ""
 msgstr ""
 
 msgid ""
-"As the two values are significantly different from each other, we can "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are significantly different from each other, we can conclude "
+"that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
 msgid ""
-"As the two values are not significantly different from each other, we cannot "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are not significantly different from each other, we cannot "
+"conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
 msgid ""

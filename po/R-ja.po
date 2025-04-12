@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2025-04-11 15:09\n"
+"POT-Creation-Date: 2025-04-12 09:36\n"
 "PO-Revision-Date: 2024-11-06 22:00+0000\n"
 "Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -663,6 +663,11 @@ msgid ""
 "Please specify a privileged group and positive class to start the analysis."
 msgstr ""
 
+msgid ""
+"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
+"Fisher's exact test."
+msgstr ""
+
 #, fuzzy
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
 msgstr "<b>表 %1$i.</b> 記述統計"
@@ -694,11 +699,6 @@ msgid ""
 "considered unfair against the unprivileged group(s)."
 msgstr ""
 
-msgid ""
-"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
-"Fisher's exact test."
-msgstr ""
-
 msgid "<u>Individual Comparisons</u>"
 msgstr ""
 
@@ -712,11 +712,58 @@ msgstr ""
 
 #, fuzzy
 msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is equal to that of the privileged (P) group."
+msgstr ""
+"帰無仮説は、データセットの最後の桁（1-9）が %1$s に従って分布しているとを指定"
+"する."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+"帰無仮説は、データセットの最後の桁（1-9）が %1$s に従って分布しているとを指定"
+"する."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+"帰無仮説は、データセットの最後の桁（1-9）が %1$s に従って分布しているとを指定"
+"する."
+
+#, fuzzy
+msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
 msgstr "<b>表 %1$i.</b> 記述統計"
 
 msgid "False Positive Rate"
 msgstr ""
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is equal to that of the privileged (P) group."
+msgstr ""
+"帰無仮説は、データセットの最後の桁（1-9）が %1$s に従って分布しているとを指定"
+"する."
+
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is greater than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is lower than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+"帰無仮説は、データセットの最後の桁（1-9）が %1$s に従って分布しているとを指定"
+"する."
 
 #, fuzzy
 msgid "<b>Table %1$i.</b> Model Performance"
@@ -785,15 +832,13 @@ msgid ""
 msgstr ""
 
 msgid ""
-"As the two values are significantly different from each other, we can "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are significantly different from each other, we can conclude "
+"that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
 msgid ""
-"As the two values are not significantly different from each other, we cannot "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are not significantly different from each other, we cannot "
+"conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
 #, fuzzy

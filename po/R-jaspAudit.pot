@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2025-04-11 15:09\n"
+"POT-Creation-Date: 2025-04-12 09:36\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -415,6 +415,9 @@ msgstr ""
 msgid "Please specify a privileged group and positive class to start the analysis."
 msgstr ""
 
+msgid "<i>p</i>-values are uncorrected for multiple comparisons and are based on Fisher's exact test."
+msgstr ""
+
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
 msgstr ""
 
@@ -436,9 +439,6 @@ msgstr ""
 msgid "According to the '80 percent rule', if the value of the protected-to-privileged positve rate ratio is lower than 0.80 then the algorithm is considered unfair against the unprivileged group(s)."
 msgstr ""
 
-msgid "<i>p</i>-values are uncorrected for multiple comparisons and are based on Fisher's exact test."
-msgstr ""
-
 msgid "<u>Individual Comparisons</u>"
 msgstr ""
 
@@ -448,10 +448,28 @@ msgstr ""
 msgid "True Positive Rate"
 msgstr ""
 
+msgid "The null hypothesis specifies that the true positive rate of an unprivileged group is equal to that of the privileged (P) group."
+msgstr ""
+
+msgid "The null hypothesis specifies that the true positive rate of an unprivileged group is greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid "The null hypothesis specifies that the true positive rate of an unprivileged group is lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
 msgstr ""
 
 msgid "False Positive Rate"
+msgstr ""
+
+msgid "The null hypothesis specifies that the false positive rate of an unprivileged group is equal to that of the privileged (P) group."
+msgstr ""
+
+msgid "The null hypothesis specifies that the false positive rate of an unprivileged group is greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+
+msgid "The null hypothesis specifies that the false positive rate of an unprivileged group is lower than, or equal to, that of the privileged (P) group."
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Model Performance"
@@ -502,10 +520,10 @@ msgstr ""
 msgid "<b>Figure %1$i.</b> The prior and posterior distributions on the log odds ratio for each unprivileged group compared to the privileged group (%2$s)."
 msgstr ""
 
-msgid "As the two values are significantly different from each other, we can conclude that this specific algorithm is unfair against the unprivileged group(s)."
+msgid "As the measures are significantly different from each other, we can conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
-msgid "As the two values are not significantly different from each other, we cannot conclude that this specific algorithm is unfair against the unprivileged group(s)."
+msgid "As the measures are not significantly different from each other, we cannot conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
 msgid "The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s and %4$s across protected groups %5$s. %6$s"

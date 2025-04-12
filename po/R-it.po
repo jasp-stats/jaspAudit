@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.3\n"
-"POT-Creation-Date: 2025-04-11 15:09\n"
+"POT-Creation-Date: 2025-04-12 09:36\n"
 "PO-Revision-Date: 2024-06-30 10:00+0000\n"
 "Last-Translator: Marco Capozzi <giammarcous@yahoo.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -684,6 +684,11 @@ msgid ""
 "Please specify a privileged group and positive class to start the analysis."
 msgstr ""
 
+msgid ""
+"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
+"Fisher's exact test."
+msgstr ""
+
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
 msgstr ""
 
@@ -714,11 +719,6 @@ msgid ""
 "considered unfair against the unprivileged group(s)."
 msgstr ""
 
-msgid ""
-"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
-"Fisher's exact test."
-msgstr ""
-
 msgid "<u>Individual Comparisons</u>"
 msgstr ""
 
@@ -730,6 +730,30 @@ msgstr ""
 msgid "True Positive Rate"
 msgstr "Tasso di Veri positivi"
 
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is equal to that of the privileged (P) group."
+msgstr ""
+"L'ipotesi nulla specifica che la frequenza relativa di una cifra sia uguale "
+"alla sua frequenza relativa attesa al di sotto di %1$s."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+"L'ipotesi nulla specifica che la frequenza relativa di una cifra sia uguale "
+"alla sua frequenza relativa attesa al di sotto di %1$s."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+"L'ipotesi nulla specifica che la frequenza relativa di una cifra sia uguale "
+"alla sua frequenza relativa attesa al di sotto di %1$s."
+
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
 msgstr ""
@@ -737,6 +761,29 @@ msgstr ""
 #, fuzzy
 msgid "False Positive Rate"
 msgstr "Tasso di Falsi positivi"
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is equal to that of the privileged (P) group."
+msgstr ""
+"L'ipotesi nulla specifica che la frequenza relativa di una cifra sia uguale "
+"alla sua frequenza relativa attesa al di sotto di %1$s."
+
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is greater than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is lower than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+"L'ipotesi nulla specifica che la frequenza relativa di una cifra sia uguale "
+"alla sua frequenza relativa attesa al di sotto di %1$s."
 
 msgid "<b>Table %1$i.</b> Model Performance"
 msgstr ""
@@ -804,15 +851,13 @@ msgid ""
 msgstr ""
 
 msgid ""
-"As the two values are significantly different from each other, we can "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are significantly different from each other, we can conclude "
+"that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
 msgid ""
-"As the two values are not significantly different from each other, we cannot "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are not significantly different from each other, we cannot "
+"conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
 #, fuzzy

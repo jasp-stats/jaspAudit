@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-11 15:09\n"
+"POT-Creation-Date: 2025-04-12 09:36\n"
 "PO-Revision-Date: 2025-04-12 03:32+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -751,6 +751,13 @@ msgid ""
 msgstr ""
 "Geef een bevoorrechte groep en positieve klasse op om de analyse te starten."
 
+msgid ""
+"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
+"Fisher's exact test."
+msgstr ""
+"<i>p</i>-waarden zijn niet gecorrigeerd voor meerdere vergelijkingen en zijn "
+"gebaseerd op Fisher's exacte toets."
+
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
 msgstr "<b>Tabel %1$i.</b> Vergelijkingen met Bevoorrechte (P) Groep"
 
@@ -790,13 +797,6 @@ msgstr ""
 "ten opzichte van de niet-bevoorrechte groep(en) als de waarde van de "
 "verhouding beschermd/bevoorrecht positief lager is dan 0,80."
 
-msgid ""
-"<i>p</i>-values are uncorrected for multiple comparisons and are based on "
-"Fisher's exact test."
-msgstr ""
-"<i>p</i>-waarden zijn niet gecorrigeerd voor meerdere vergelijkingen en zijn "
-"gebaseerd op Fisher's exacte toets."
-
 msgid "<u>Individual Comparisons</u>"
 msgstr "<u>Individuele Vergelijkingen</u>"
 
@@ -809,6 +809,30 @@ msgstr ""
 msgid "True Positive Rate"
 msgstr "Terecht-positieven Proportie"
 
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is equal to that of the privileged (P) group."
+msgstr ""
+"De nulhypothese specificeert dat de %1$s van een niet-bevoorrechte groep "
+"gelijk is aan die van de bevoorrechte groep (P)."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is greater than, or equal to, that of the privileged (P) group."
+msgstr ""
+"De nulhypothese specificeert dat de %1$s van een niet-bevoorrechte groep "
+"groter of gelijk is aan die van de bevoorrechte groep (P)."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the true positive rate of an unprivileged "
+"group is lower than, or equal to, that of the privileged (P) group."
+msgstr ""
+"De nulhypothese specificeert dat de %1$s van een niet-bevoorrechte groep "
+"lager of gelijk is aan die van de bevoorrechte groep (P)."
+
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
 msgstr ""
@@ -817,6 +841,32 @@ msgstr ""
 
 msgid "False Positive Rate"
 msgstr "Fout-positieven Proportie"
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is equal to that of the privileged (P) group."
+msgstr ""
+"De nulhypothese specificeert dat de %1$s van een niet-bevoorrechte groep "
+"gelijk is aan die van de bevoorrechte groep (P)."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is greater than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+"De nulhypothese specificeert dat de %1$s van een niet-bevoorrechte groep "
+"groter of gelijk is aan die van de bevoorrechte groep (P)."
+
+#, fuzzy
+msgid ""
+"The null hypothesis specifies that the false positive rate of an "
+"unprivileged group is lower than, or equal to, that of the privileged (P) "
+"group."
+msgstr ""
+"De nulhypothese specificeert dat de %1$s van een niet-bevoorrechte groep "
+"lager of gelijk is aan die van de bevoorrechte groep (P)."
 
 msgid "<b>Table %1$i.</b> Model Performance"
 msgstr "<b>Tabel %1$i.</b> Model Prestatie"
@@ -897,19 +947,19 @@ msgstr ""
 "voor elke niet-bevoorrechte groep vergeleken met de bevoorrechte groep "
 "(%2$s)."
 
+#, fuzzy
 msgid ""
-"As the two values are significantly different from each other, we can "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are significantly different from each other, we can conclude "
+"that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 "Omdat de twee waarden significant van elkaar verschillen, kunnen we "
 "concluderen dat dit specifieke algoritme oneerlijk is tegenover de niet-"
 "bevoorrechte groep(en)."
 
+#, fuzzy
 msgid ""
-"As the two values are not significantly different from each other, we cannot "
-"conclude that this specific algorithm is unfair against the unprivileged "
-"group(s)."
+"As the measures are not significantly different from each other, we cannot "
+"conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 "Omdat de twee waarden niet significant van elkaar verschillen, kunnen we "
 "niet concluderen dat dit specifieke algoritme oneerlijk is tegenover de niet-"
