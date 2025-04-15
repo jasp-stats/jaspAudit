@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-04-14 01:01+0000\n"
+"PO-Revision-Date: 2025-04-16 08:05+0000\n"
 "Last-Translator: MikeWinny <winny63@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/ru/>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.11.1-dev\n"
 "X-Language: ru\n"
 "X-Qt-Contexts: true\n"
 
@@ -358,17 +358,14 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Benford's law"
 msgstr "Закон Бенфорда"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₁₀"
 msgstr "BF₁₀"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₀₁"
 msgstr "BF₀₁"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Log(BF₁₀)"
 msgstr "Log(BF₁₀)"
@@ -1135,7 +1132,6 @@ msgctxt "AddVariables|"
 msgid "Column name selection result"
 msgstr "Название колонки результата отбора"
 
-#, fuzzy
 msgctxt "AddVariables|"
 msgid "selected"
 msgstr "selected"
@@ -1144,7 +1140,6 @@ msgctxt "AddVariables|"
 msgid "Column name audit result"
 msgstr "Название колонки результата аудита"
 
-#, fuzzy
 msgctxt "AddVariables|"
 msgid "auditResult"
 msgstr "auditResult"
@@ -1330,7 +1325,6 @@ msgid ""
 msgstr ""
 "Ширина одностороннего доверительного интервала для корреляции в совокупности."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Plots"
 msgstr "Графики"
@@ -1897,7 +1891,6 @@ msgstr ""
 "Формирует таблицу, содержащую описательные статистики колонки набора данных, "
 "содержащей значения бухгалтерского учета."
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Plots"
 msgstr "Графики"
@@ -3303,10 +3296,9 @@ msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Plots"
 msgstr "Графики"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Add additional figures about the evaluation to the report."
-msgstr "Добавьте в отчет дополнительные диаграммы об оценке."
+msgstr "Добавляет в отчет дополнительные диаграммы об оценке."
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Decision-making workflow"
@@ -3378,7 +3370,6 @@ msgctxt "BayesFactorType|"
 msgid "Choose which type of Bayes factor to display."
 msgstr "Выберите, какой тип коэффициента Байеса будет отображен в отчете."
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "BF₁₀"
 msgstr "BF₁₀"
@@ -3392,7 +3383,6 @@ msgstr ""
 "Коэффициент Байеса для количественной оценки подтверждения альтернативной "
 "гипотезы относительно нулевой гипотезы."
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "BF₀₁"
 msgstr "BF₀₁"
@@ -3406,7 +3396,6 @@ msgstr ""
 "Коэффициент Байеса для количественной оценки подтверждения нулевой гипотезы "
 "относительно альтернативной гипотезы."
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "Log(BF₁₀)"
 msgstr "Log(BF₁₀)"
@@ -3434,7 +3423,6 @@ msgstr ""
 "хотите использовать аудиторский риск, равный 5%, это эквивалентно 95% уровню "
 "достоверности."
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Tables"
 msgstr "Таблицы"
@@ -3493,15 +3481,13 @@ msgctxt "FairnessOutput|"
 msgid "Transposes the confusion matrix."
 msgstr "Транспонировать матрицу неточностей."
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Plots"
 msgstr "Графики"
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Add additional figures about the evaluation to the report."
-msgstr "Добавьте в отчет дополнительные диаграммы об оценке."
+msgstr "Добавляет в отчет дополнительные диаграммы об оценке."
 
 msgctxt "FairnessOutput|"
 msgid "Parity estimates"
@@ -3671,7 +3657,6 @@ msgctxt "PriorDistribution|"
 msgid "Specifies the concentration parameter for the Dirichlet prior."
 msgstr "Определяет параметр концентрации для априорного распределения Дирихле."
 
-#, fuzzy
 msgctxt "PriorDistribution|"
 msgid "Seed"
 msgstr "Инициирующее значение"
