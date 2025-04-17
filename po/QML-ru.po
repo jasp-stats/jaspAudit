@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-04-16 08:05+0000\n"
+"PO-Revision-Date: 2025-04-17 10:35+0000\n"
 "Last-Translator: MikeWinny <winny63@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/ru/>\n"
@@ -2130,7 +2130,6 @@ msgctxt "SamplingObjectives|"
 msgid "Specify how the performance materiality is defined."
 msgstr "Укажите, как определяется процедурная существенность."
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Relative"
 msgstr "Относительное"
@@ -2147,7 +2146,6 @@ msgctxt "SamplingObjectives|"
 msgid "The percentage associated with the performance materiality."
 msgstr "Процент, связанный с процедурной существенностью."
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Absolute"
 msgstr "Абсолютное"
@@ -2353,7 +2351,6 @@ msgctxt "SamplingUnits|"
 msgid "Click to learn more about this method"
 msgstr "Нажмите, чтобы узнать больше об этом методе"
 
-#, fuzzy
 msgctxt "SamplingUnits|"
 msgid "Monetary units"
 msgstr "Денежные единицы"
@@ -2368,7 +2365,6 @@ msgstr ""
 "единиц выборки. Этот метод предпочтителен, если вы хотите включить в выборку "
 "больше элементов с высокой стоимостью."
 
-#, fuzzy
 msgctxt "Seed|"
 msgid "Seed"
 msgstr "Инициирующее значение"
@@ -2487,7 +2483,6 @@ msgstr ""
 "Создает таблицу, содержащую выбранные транзакции вместе с любыми "
 "дополнительными наблюдениями, указанными в поле Дополнительные переменные."
 
-#, fuzzy
 msgctxt "SelectionOutput|"
 msgid "Descriptive statistics"
 msgstr "Описательные статистики"
@@ -2503,10 +2498,9 @@ msgstr ""
 "выборке. Статистические данные включают в себя: среднее значение, медиану, "
 "стандартное отклонение, дисперсию, минимум, максимум и диапазон."
 
-#, fuzzy
 msgctxt "SelectionMethod|"
 msgid "Custom"
-msgstr "Настраиваемый"
+msgstr "Настраиваемое"
 
 msgctxt "AuditRiskModel|"
 msgid "Analytical risk"
@@ -2604,7 +2598,6 @@ msgstr ""
 "Априори наиболее вероятный уровень искажений в генеральной совокупности, "
 "который учитывается при априорном распределении."
 
-#, fuzzy
 msgctxt "ExpectedPopRate|"
 msgid "Relative"
 msgstr "Относительное"
@@ -2693,7 +2686,6 @@ msgctxt "EvaluationOutput|"
 msgid "Specify how the overall materiality is defined."
 msgstr "Укажите, как определяется общая существенность."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Relative"
 msgstr "Относительное"
@@ -2710,7 +2702,6 @@ msgctxt "EvaluationOutput|"
 msgid "The percentage associated with the overall materiality."
 msgstr "Процент, связанный с общей существенностью."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Absolute"
 msgstr "Абсолютное"
@@ -3094,12 +3085,10 @@ msgctxt "auditClassicalFairness|"
 msgid "Accuracy parity"
 msgstr "Паритет точности"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Report"
 msgstr "Отчет"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Advanced"
 msgstr "Дополнительные параметры"
@@ -3286,12 +3275,10 @@ msgstr ""
 "отнесение объекта к отрицательному классу, когда он относится к "
 "положительному классу) приводят к большим потерям."
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Report"
 msgstr "Отчет"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Plots"
 msgstr "Графики"
@@ -3342,12 +3329,10 @@ msgstr ""
 "относится к достоверной классификации объектов, полученной из надежных "
 "источников или от экспертов в предметной области."
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>Download Report</b>"
-msgstr "<b>Выгрузить отчет</b>"
+msgstr "<b>Скачать отчет</b>"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>To Evaluation</b>"
 msgstr "<b>К оценке</b>"
@@ -3360,21 +3345,18 @@ msgctxt "auditClassicalFairnessWorkflow|"
 msgid "2. Evaluation"
 msgstr "2. Оценка"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Advanced"
 msgstr "Дополнительные параметры"
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "Choose which type of Bayes factor to display."
-msgstr "Выберите, какой тип коэффициента Байеса будет отображен в отчете."
+msgstr "Выберите, какой тип коэффициента Байеса будет отображен."
 
 msgctxt "BayesFactorType|"
 msgid "BF₁₀"
 msgstr "BF₁₀"
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid ""
 "Bayes factor to quantify evidence for the alternative hypothesis relative to "
@@ -3387,7 +3369,6 @@ msgctxt "BayesFactorType|"
 msgid "BF₀₁"
 msgstr "BF₀₁"
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid ""
 "Bayes factor to quantify evidence for the null hypothesis relative to the "
@@ -3404,12 +3385,10 @@ msgctxt "BayesFactorType|"
 msgid "Natural logarithm of BF10."
 msgstr "Натуральный логарифм BF10."
 
-#, fuzzy
 msgctxt "ConfidenceLevel|"
 msgid "Confidence"
 msgstr "Достоверность"
 
-#, fuzzy
 msgctxt "ConfidenceLevel|"
 msgid ""
 "The confidence level used. The confidence level is the complement of the "
@@ -3427,7 +3406,6 @@ msgctxt "FairnessOutput|"
 msgid "Tables"
 msgstr "Таблицы"
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Add additional tables about the evaluation to the report."
 msgstr "Добавляет в отчет дополнительные таблицы с результатами оценки."
@@ -3464,7 +3442,6 @@ msgctxt "FairnessOutput|"
 msgid "Produces the confusion matrix for each group."
 msgstr "Создает матрицу неточностей для каждой группы."
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Display proportions"
 msgstr "Пропорции отображения"
@@ -3661,13 +3638,12 @@ msgctxt "PriorDistribution|"
 msgid "Seed"
 msgstr "Инициирующее значение"
 
-#, fuzzy
 msgctxt "PriorDistribution|"
 msgid ""
 "Selects the seed for the random number generator in order to reproduce "
 "results."
 msgstr ""
-"Задайте инициирующее значение для генератора случайных чисел с целью "
+"Выберите инициирующее значение для генератора случайных чисел с целью "
 "получения повторяемых результатов."
 
 msgctxt "auditClassicalFairnessWorkflow|"
