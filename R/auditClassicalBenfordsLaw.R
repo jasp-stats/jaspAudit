@@ -215,8 +215,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     "<b>Table %1$i.</b> Omnibus Test - %2$s",
     jaspResults[["tabNumber"]]$object,
     switch(options[["distribution"]],
-      "benford" = "Benford's Law",
-      "uniform" = "Uniform Distribution"
+      "benford" = gettext("Benford's Law"),
+      "uniform" = gettext("Uniform Distribution")
     )
   )
   bftitle <- switch(options[["bayesFactorType"]],
@@ -237,8 +237,8 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   tb$addColumnInfo(name = "bf", title = bftitle, type = "number")
 
   distribution <- switch(options[["distribution"]],
-    "benford" = "Benford's law",
-    "uniform" = "the uniform distribution"
+    "benford" = gettext("Benford's law"),
+    "uniform" = gettext("the uniform distribution")
   )
   message <- switch(options[["digits"]],
     "first" = gettextf("The null hypothesis specifies that the first digits (1 - 9) in the data set are distributed according to %1$s.", distribution),
