@@ -232,7 +232,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   tb$addColumnInfo(name = "test", title = "", type = "string")
   tb$addColumnInfo(name = "N", title = "n", type = "integer")
   tb$addColumnInfo(name = "mad", title = gettext("MAD"), type = "number")
-  tb$addColumnInfo(name = "value", title = "X\u00B2", type = "string")
+  tb$addColumnInfo(name = "value", title = "X\u00B2", type = "number")
   tb$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
   tb$addColumnInfo(name = "pvalue", title = "p", type = "pvalue")
   tb$addColumnInfo(name = "bf", title = bftitle, type = "number")
@@ -259,7 +259,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
   tb[["test"]] <- options[["values"]]
   tb[["N"]] <- state[["N"]]
   tb[["mad"]] <- state[["mad"]]
-  tb[["value"]] <- round(state[["chiSquare"]], 3)
+  tb[["value"]] <- state[["chiSquare"]]
   tb[["df"]] <- state[["df"]]
   tb[["pvalue"]] <- state[["pvalue"]]
   tb[["bf"]] <- switch(options[["bayesFactorType"]],
