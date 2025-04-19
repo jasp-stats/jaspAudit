@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-04-19 06:33\n"
+"POT-Creation-Date: 2025-04-19 07:13\n"
 "PO-Revision-Date: 2025-04-13 00:02+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -122,6 +122,14 @@ msgstr "<u>Xulgar a lei de Benford</u>"
 
 msgid "<u>Assessing the Uniform Distribution</u>"
 msgstr "<u>Xulgar a Distribución Uniforme</u>"
+
+#, fuzzy
+msgid "Benford's Law"
+msgstr "Lei de Benford"
+
+#, fuzzy
+msgid "Uniform Distribution"
+msgstr "Distribución Uniforme"
 
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
 msgstr "<b>Táboa %1$i.</b> Proba ómnibus - %2$s"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.3\n"
-"POT-Creation-Date: 2025-04-19 06:33\n"
+"POT-Creation-Date: 2025-04-19 07:13\n"
 "PO-Revision-Date: 2024-06-30 10:00+0000\n"
 "Last-Translator: Marco Capozzi <giammarcous@yahoo.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -111,6 +111,14 @@ msgstr "<u>Valutazione della Legge di Benford</u>"
 
 msgid "<u>Assessing the Uniform Distribution</u>"
 msgstr "<u>Valutazione della Distribuzione Uniforme</u>"
+
+#, fuzzy
+msgid "Benford's Law"
+msgstr "La legge di Benford"
+
+#, fuzzy
+msgid "Uniform Distribution"
+msgstr "Distribuzione uniforme"
 
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
 msgstr "<b>Tabella %1$i.</b> Test Omnicomprensivo - %2$s"

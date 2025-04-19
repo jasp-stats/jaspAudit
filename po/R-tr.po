@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.3\n"
-"POT-Creation-Date: 2025-04-19 06:33\n"
+"POT-Creation-Date: 2025-04-19 07:13\n"
 "PO-Revision-Date: 2025-04-04 15:07+0000\n"
 "Last-Translator: Uğur ÇELİK <prof_ugur@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -97,6 +97,12 @@ msgid "<u>Assessing Benford's Law</u>"
 msgstr ""
 
 msgid "<u>Assessing the Uniform Distribution</u>"
+msgstr ""
+
+msgid "Benford's Law"
+msgstr ""
+
+msgid "Uniform Distribution"
 msgstr ""
 
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"

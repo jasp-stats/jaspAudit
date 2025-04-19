@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
-"POT-Creation-Date: 2025-04-19 06:33\n"
+"POT-Creation-Date: 2025-04-19 07:13\n"
 "PO-Revision-Date: 2025-04-14 21:12+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -115,6 +115,14 @@ msgstr "<u>Оценка соответствия закону Бенфорда</
 
 msgid "<u>Assessing the Uniform Distribution</u>"
 msgstr "<u>Оценка соответствия равномерному распределению</u>"
+
+#, fuzzy
+msgid "Benford's Law"
+msgstr "Закон Бенфорда"
+
+#, fuzzy
+msgid "Uniform Distribution"
+msgstr "Равномерное распределение"
 
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
 msgstr "<b>Таблица %1$i.</b> Комплексное тестирование (омнибус) - %2$s"

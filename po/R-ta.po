@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2025-04-19 06:33\n"
+"POT-Creation-Date: 2025-04-19 07:13\n"
 "PO-Revision-Date: 2025-01-07 10:14+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -107,6 +107,14 @@ msgstr "<u> பென்ஃபோர்டின் சட்டத்தை ம
 
 msgid "<u>Assessing the Uniform Distribution</u>"
 msgstr "<u> சீரான விநியோகத்தை மதிப்பிடுதல் </u>"
+
+#, fuzzy
+msgid "Benford's Law"
+msgstr "பென்ஃபோர்டின் சட்டம்"
+
+#, fuzzy
+msgid "Uniform Distribution"
+msgstr "சீரான வழங்கல்"
 
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
 msgstr "<b>அட்டவணை %1$i.</b> ஆம்னிபச் சோதனை - %2$s"
