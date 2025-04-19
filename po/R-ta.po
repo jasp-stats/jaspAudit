@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2025-04-12 09:36\n"
+"POT-Creation-Date: 2025-04-19 06:33\n"
 "PO-Revision-Date: 2025-01-07 10:14+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -123,6 +123,13 @@ msgstr "பைத்தியம்"
 msgid "df"
 msgstr "டி.எஃப்"
 
+msgid "Benford's law"
+msgstr "பென்ஃபோர்டின் சட்டம்"
+
+#, fuzzy
+msgid "the uniform distribution"
+msgstr "சீரான வழங்கல்"
+
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
 "are distributed according to %1$s."
@@ -169,9 +176,6 @@ msgstr "முன்னணி இலக்கங்கள்"
 
 msgid "Last digit"
 msgstr "கடைசி இலக்க"
-
-msgid "Benford's law"
-msgstr "பென்ஃபோர்டின் சட்டம்"
 
 msgid "Uniform distribution"
 msgstr "சீரான வழங்கல்"

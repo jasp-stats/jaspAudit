@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.1\n"
-"POT-Creation-Date: 2025-04-12 09:36\n"
+"POT-Creation-Date: 2025-04-19 06:33\n"
 "PO-Revision-Date: 2025-02-23 11:09+0000\n"
 "Last-Translator: 陳寬裕 <pf.kuan.yu.chen@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -91,6 +91,12 @@ msgstr "絕對差中位數"
 msgid "df"
 msgstr "自由度"
 
+msgid "Benford's law"
+msgstr ""
+
+msgid "the uniform distribution"
+msgstr ""
+
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
 "are distributed according to %1$s."
@@ -126,9 +132,6 @@ msgid "Leading digits"
 msgstr ""
 
 msgid "Last digit"
-msgstr ""
-
-msgid "Benford's law"
 msgstr ""
 
 msgid "Uniform distribution"

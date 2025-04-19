@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2025-04-12 09:36\n"
+"POT-Creation-Date: 2025-04-19 06:33\n"
 "PO-Revision-Date: 2024-11-06 22:00+0000\n"
 "Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -122,6 +122,13 @@ msgstr "中央絶対偏差"
 msgid "df"
 msgstr "df"
 
+msgid "Benford's law"
+msgstr "ベンフォードの法則"
+
+#, fuzzy
+msgid "the uniform distribution"
+msgstr "一様分布"
+
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
 "are distributed according to %1$s."
@@ -167,9 +174,6 @@ msgstr "第一桁"
 
 msgid "Last digit"
 msgstr "最後の一桁"
-
-msgid "Benford's law"
-msgstr "ベンフォードの法則"
 
 msgid "Uniform distribution"
 msgstr "一様分布"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.3\n"
-"POT-Creation-Date: 2025-04-12 09:36\n"
+"POT-Creation-Date: 2025-04-19 06:33\n"
 "PO-Revision-Date: 2025-04-04 15:07+0000\n"
 "Last-Translator: Uğur ÇELİK <prof_ugur@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -114,6 +114,12 @@ msgstr "OMS"
 msgid "df"
 msgstr ""
 
+msgid "Benford's law"
+msgstr ""
+
+msgid "the uniform distribution"
+msgstr ""
+
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
 "are distributed according to %1$s."
@@ -149,9 +155,6 @@ msgid "Leading digits"
 msgstr ""
 
 msgid "Last digit"
-msgstr ""
-
-msgid "Benford's law"
 msgstr ""
 
 msgid "Uniform distribution"

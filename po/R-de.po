@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-12 09:36\n"
+"POT-Creation-Date: 2025-04-19 06:33\n"
 "PO-Revision-Date: 2025-03-22 10:53+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -132,6 +132,13 @@ msgstr "MAD"
 msgid "df"
 msgstr "df"
 
+msgid "Benford's law"
+msgstr "Benfordsches Gesetz"
+
+#, fuzzy
+msgid "the uniform distribution"
+msgstr "Uniforme Verteilung"
+
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
 "are distributed according to %1$s."
@@ -178,9 +185,6 @@ msgstr "Führende Ziffern"
 
 msgid "Last digit"
 msgstr "Letzte Ziffer"
-
-msgid "Benford's law"
-msgstr "Benfordsches Gesetz"
 
 msgid "Uniform distribution"
 msgstr "Uniforme Verteilung"

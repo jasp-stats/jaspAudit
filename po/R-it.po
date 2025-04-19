@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.3\n"
-"POT-Creation-Date: 2025-04-12 09:36\n"
+"POT-Creation-Date: 2025-04-19 06:33\n"
 "PO-Revision-Date: 2024-06-30 10:00+0000\n"
 "Last-Translator: Marco Capozzi <giammarcous@yahoo.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -127,6 +127,13 @@ msgstr "MAD"
 msgid "df"
 msgstr "Gradi di libertà"
 
+msgid "Benford's law"
+msgstr "La legge di Benford"
+
+#, fuzzy
+msgid "the uniform distribution"
+msgstr "Distribuzione uniforme"
+
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
 "are distributed according to %1$s."
@@ -173,9 +180,6 @@ msgstr "Cifre principali"
 
 msgid "Last digit"
 msgstr "Ultima cifra"
-
-msgid "Benford's law"
-msgstr "La legge di Benford"
 
 msgid "Uniform distribution"
 msgstr "Distribuzione uniforme"
