@@ -48,13 +48,13 @@ test_that("<b>Table 2.</b> Frequency Table results match", {
   )
 })
 
-test_that("<b>Table 1.</b> Goodness-of-fit Test results match", {
+test_that("<b>Table 1.</b> Omnibus Test - Benford's Law results match", {
   table <- results[["results"]][["benfordsLawContainer"]][["collection"]][["benfordsLawContainer_benfordsLawTestTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
     list(
       772, 1.44934296706826e-07, 8, 0.00659813521950867, 0.468206381300368,
-      "value", 7.652
+      "value", 7.65174269894998
     )
   )
 })
