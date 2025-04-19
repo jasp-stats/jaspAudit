@@ -211,13 +211,14 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     return()
   }
 
+  title_dist <- switch(options[["distribution"]],
+    "benford" = gettext("Benford's Law"),
+    "uniform" = gettext("Uniform Distribution")
+  )
   title <- gettextf(
     "<b>Table %1$i.</b> Omnibus Test - %2$s",
     jaspResults[["tabNumber"]]$object,
-    switch(options[["distribution"]],
-      "benford" = gettext("Benford's Law"),
-      "uniform" = gettext("Uniform Distribution")
-    )
+    title_dist
   )
   bftitle <- switch(options[["bayesFactorType"]],
     "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
