@@ -321,10 +321,11 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       "logBF10" = gettextf("Log(BF%1$s)", "\u2081\u2080")
     )
     tb$addColumnInfo(name = "bf", title = bftitle, type = "number")
-    tb$addFootnote(gettextf("The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s.", switch(options[["distribution"]],
+    messageTitle <- switch(options[["distribution"]],
       "benford" = gettext("Benford's law"),
       "uniform" = gettext("the uniform distribution")
-    )))
+    )
+    tb$addFootnote(gettextf("The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s.", messageTitle))
 
     benfordsLawContainer[["benfordsLawTable"]] <- tb
 
