@@ -292,7 +292,7 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
 
     tb <- createJaspTable(title)
     tb$position <- positionInContainer
-    tb$dependOn(options = c("summaryTable", "confidenceInterval"))
+    tb$dependOn(options = c("summaryTable", "confidenceInterval", "expectedCounts"))
     dtitle <- switch(options[["digits"]],
       "first" = gettext("Leading digit"),
       "firsttwo" = gettext("Leading digits"),
@@ -304,13 +304,16 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     )
     tb$addColumnInfo(name = "digit", title = dtitle, type = "integer")
     tb$addColumnInfo(name = "count", title = gettext("Count"), type = "integer")
-    tb$addColumnInfo(name = "exp", title = etitle, type = "number")
     tb$addColumnInfo(name = "obs", title = gettext("Relative frequency"), type = "number")
     if (options[["confidenceInterval"]]) {
       otitle <- gettextf("%1$s%% Confidence Interval", paste0(round(options[["confidence"]] * 100, 3)))
       tb$addColumnInfo(name = "lb", title = gettext("Lower"), type = "number", overtitle = otitle)
       tb$addColumnInfo(name = "ub", title = gettext("Upper"), type = "number", overtitle = otitle)
     }
+    if (options[["expectedCounts"]]) {
+      tb$addColumnInfo(name = "exp_count", title = gettext("Expected count"), type = "number")
+    }
+    tb$addColumnInfo(name = "exp", title = etitle, type = "number")
     tb$addColumnInfo(name = "pval", title = "p", type = "pvalue")
     bftitle <- switch(options[["bayesFactorType"]],
       "BF10" = gettextf("BF%1$s", "\u2081\u2080"),
@@ -335,6 +338,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
       tb[["digit"]] <- digits
       tb[["count"]] <- rep(".", length(digits))
       tb[["obs"]] <- rep(".", length(digits))
+      if (options[["expectedCounts"]]) {
+        tb[["exp_count"]] <- rep(".", length(digits))
+      }
       tb[["exp"]] <- switch(options[["distribution"]],
         "benford" = log10(1 + 1 / digits),
         "uniform" = 1 / length(digits)
@@ -352,6 +358,9 @@ auditClassicalBenfordsLaw <- function(jaspResults, dataset, options, ...) {
     tb[["digit"]] <- state[["digits"]]
     tb[["count"]] <- state[["observed"]]
     tb[["obs"]] <- state[["relFrequencies"]]
+    if (options[["expectedCounts"]]) {
+      tb[["exp_count"]] <- state[["expected"]]
+    }
     tb[["exp"]] <- state[["inBenford"]]
     tb[["pval"]] <- state[["estimates"]]$p.value
     tb[["bf"]] <- switch(options[["bayesFactorType"]],

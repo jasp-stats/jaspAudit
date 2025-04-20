@@ -182,6 +182,14 @@ Form
 				{
 					text:			qsTr("Confidence interval")
 					name:			"confidenceInterval"
+					info:			qsTr("Produces the confidence interval for the point estimate of the relative frequencies.")
+				}
+
+				CheckBox
+				{
+					text:			qsTr("Expected counts")
+					name:			"expectedCounts"
+					info:			qsTr("Produces the expected counts of the digits under the reference distribution.")
 				}
 			}
 
