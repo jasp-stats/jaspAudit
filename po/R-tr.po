@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.3\n"
-"POT-Creation-Date: 2025-04-19 07:13\n"
+"POT-Creation-Date: 2025-04-20 08:44\n"
 "PO-Revision-Date: 2025-04-04 15:07+0000\n"
 "Last-Translator: Uğur ÇELİK <prof_ugur@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -180,6 +180,9 @@ msgstr "Daha düşük"
 
 msgid "Upper"
 msgstr "Üst"
+
+msgid "Expected count"
+msgstr ""
 
 msgid ""
 "The null hypothesis specifies that the relative frequency of a digit is "

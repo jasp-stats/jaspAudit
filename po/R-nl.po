@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-19 07:13\n"
+"POT-Creation-Date: 2025-04-20 08:44\n"
 "PO-Revision-Date: 2025-04-19 11:44+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -28,8 +28,8 @@ msgstr ""
 "De wet van Benford houdt in dat in veel natuurlijk voorkomende verzamelingen "
 "van getallen het eerste significante cijfer waarschijnlijk klein is. Het "
 "doel van deze procedure is om vast te stellen in hoeverre de eerste cijfers "
-"in de gegevens de wet van Benford volgen, en deze relatie te toetsen met %1$"
-"s betrouwbaarheid. Data die niet aan de wet van Benford voldoen moeten "
+"in de gegevens de wet van Benford volgen, en deze relatie te toetsen met "
+"%1$s betrouwbaarheid. Data die niet aan de wet van Benford voldoen moeten "
 "wellicht aan verdere controle onderworpen worden."
 
 msgid ""
@@ -204,6 +204,10 @@ msgstr "Onder"
 
 msgid "Upper"
 msgstr "Boven"
+
+#, fuzzy
+msgid "Expected count"
+msgstr "Verwacht"
 
 msgid ""
 "The null hypothesis specifies that the relative frequency of a digit is "
@@ -2969,9 +2973,6 @@ msgstr ""
 
 #~ msgid "Tolerable errors"
 #~ msgstr "Toelaatbare fouten"
-
-#~ msgid "Expected"
-#~ msgstr "Verwacht"
 
 #~ msgid "Errors"
 #~ msgstr "Fouten"

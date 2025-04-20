@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.1\n"
-"POT-Creation-Date: 2025-04-19 07:13\n"
+"POT-Creation-Date: 2025-04-20 08:44\n"
 "PO-Revision-Date: 2025-02-23 11:09+0000\n"
 "Last-Translator: 陳寬裕 <pf.kuan.yu.chen@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -157,6 +157,9 @@ msgstr "下界"
 
 msgid "Upper"
 msgstr "上界"
+
+msgid "Expected count"
+msgstr ""
 
 msgid ""
 "The null hypothesis specifies that the relative frequency of a digit is "

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2025-04-19 07:13\n"
+"POT-Creation-Date: 2025-04-20 08:44\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,6 +107,9 @@ msgid "Lower"
 msgstr ""
 
 msgid "Upper"
+msgstr ""
+
+msgid "Expected count"
 msgstr ""
 
 msgid "The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s."

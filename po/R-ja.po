@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2025-04-19 07:13\n"
+"POT-Creation-Date: 2025-04-20 08:44\n"
 "PO-Revision-Date: 2024-11-06 22:00+0000\n"
 "Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -200,6 +200,9 @@ msgstr "下限"
 
 msgid "Upper"
 msgstr "上限"
+
+msgid "Expected count"
+msgstr ""
 
 msgid ""
 "The null hypothesis specifies that the relative frequency of a digit is "

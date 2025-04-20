@@ -3658,3 +3658,18 @@ msgstr ""
 "incorrecta de elementos cuando se abordan potenciales anomalías o "
 "irregularidades, o cuando se identifican áreas de mejora dentro del proceso "
 "de auditoría."
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid ""
+"Produces the confidence interval for the point estimate of the relative "
+"frequencies."
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid "Expected counts"
+msgstr ""
+
+msgctxt "auditClassicalBenfordsLaw|"
+msgid ""
+"Produces the expected counts of the digits under the reference distribution."
+msgstr ""

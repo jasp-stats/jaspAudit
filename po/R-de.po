@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-19 07:13\n"
+"POT-Creation-Date: 2025-04-20 08:44\n"
 "PO-Revision-Date: 2025-03-22 10:53+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -211,6 +211,10 @@ msgstr "Untergrenze"
 
 msgid "Upper"
 msgstr "Obergrenze"
+
+#, fuzzy
+msgid "Expected count"
+msgstr "Erwartet"
 
 msgid ""
 "The null hypothesis specifies that the relative frequency of a digit is "
@@ -2785,9 +2789,6 @@ msgstr ""
 
 #~ msgid "Tolerable errors"
 #~ msgstr "Tolerierbare Fehler"
-
-#~ msgid "Expected"
-#~ msgstr "Erwartet"
 
 #~ msgid "Errors"
 #~ msgstr "Fehler"
