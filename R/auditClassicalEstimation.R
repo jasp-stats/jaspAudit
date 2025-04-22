@@ -43,7 +43,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 
   # --- PLOTS
 
-  # Correlation plot
+  # Scatter plot
   .jfaEstimationCorrelationPlot(dataset, options, jaspResults, ready, position = 4)
 
   # ---
@@ -818,7 +818,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     return()
   }
 
-  correlationPlot <- createJaspPlot(plot = NULL, title = gettext("Correlation Plot"), width = 500, height = 400)
+  correlationPlot <- createJaspPlot(plot = NULL, title = gettext("Scatter Plot"), width = 500, height = 400)
   correlationPlot$position <- position
   correlationPlot$dependOn(options = c(
     "correlationPlot",
