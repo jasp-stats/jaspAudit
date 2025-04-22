@@ -43,7 +43,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 
   # --- PLOTS
 
-  # Correlation plot
+  # Scatter plot
   .jfaEstimationCorrelationPlot(dataset, options, jaspResults, ready, position = 4)
 
   # ---
@@ -107,10 +107,10 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   }
 
   title <- switch(options[["estimator"]],
-    "mpu"         = gettext("Direct estimator"),
-    "difference"  = gettext("Difference estimator"),
-    "ratio"       = gettext("Ratio estimator"),
-    "regression"  = gettext("Regression estimator")
+    "mpu"         = gettext("Direct Estimator"),
+    "difference"  = gettext("Difference Estimator"),
+    "ratio"       = gettext("Ratio Estimator"),
+    "regression"  = gettext("Regression Estimator")
   )
 
   regressionTable <- createJaspTable(title)
@@ -133,7 +133,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   )
   regressionTable$addColumnInfo(
     name = "uncertainty",
-    title = gettext("Uncertainty"),
+    title = gettext("Precision"),
     type = "number",
     format = "monetary"
   )
@@ -208,7 +208,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
       (N / sqrt(n)) *
       sqrt((N - n) / (N - 1)), 2)
 
-    result <- list(sW = sW)
+    result <- list(sW = sW, n = n, uncertainty = uncertainty)
   } else if (options[["estimator"]] == "difference") {
     B <- round(options[["populationValue"]], 2)
 
@@ -231,7 +231,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     uncertainty <- round(qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
       sE * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
 
-    result <- list(sE = sE)
+    result <- list(sE = sE, n = n, uncertainty = uncertainty)
   } else if (options[["estimator"]] == "ratio") {
     B <- round(options[["populationValue"]], 2)
     meanB <- round(mean(dataset[[options[["bookValues"]]]]), 2)
@@ -258,7 +258,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     uncertainty <- round(qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
       s * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
 
-    result <- list(s = s)
+    result <- list(s = s, n = n, uncertainty = uncertainty)
   } else if (options[["estimator"]] == "regression") {
     B <- round(options[["populationValue"]], 2)
     meanB <- round(mean(dataset[[options[["bookValues"]]]]), 2)
@@ -289,7 +289,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     uncertainty <- round(qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
       s * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
 
-    result <- list(sW = sW, r = r)
+    result <- list(sW = sW, r = r, n = n, uncertainty = uncertainty)
   }
 
   row <- data.frame(
@@ -362,7 +362,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
       }
 
       uncertainty <- gettextf(
-        "The uncertainty of the estimator %1$s%2$s%3$s",
+        "The precision of the estimator %1$s%2$s%3$s",
         "<i>U = t<sub>",
         round(1 - options[["confidence"]], 2),
         "/2</sub> \u00D7 s<sub>w</sub> \u00D7 <sup>N</sup>&frasl;<sub>\u221A n</sub> \u00D7 \u221A (<sup>N - n</sup>&frasl;<sub>N - 1</sub>)</i>"
@@ -458,7 +458,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
       }
 
       uncertainty <- gettextf(
-        "The uncertainty of the estimator %1$s%2$s%3$s",
+        "The precision of the estimator %1$s%2$s%3$s",
         "<i>U = t<sub>",
         round(1 - options[["confidence"]], 2),
         "/2</sub> \u00D7 s<sub>e</sub> \u00D7 <sup>N</sup>&frasl;<sub>\u221A n</sub> \u00D7 \u221A (<sup>N - n</sup>&frasl;<sub>N - 1</sub>)</i>"
@@ -583,7 +583,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
       }
 
       uncertainty <- gettextf(
-        "The uncertainty of the estimator %1$s%2$s%3$s",
+        "The precision of the estimator %1$s%2$s%3$s",
         "<i>U = t<sub>",
         round(1 - options[["confidence"]], 2),
         "/2</sub> \u00D7 \u221A(s<sub>w</sub><sup>2</sup> - 2 \u00D7 q<sub>bw</sub> \u00D7 r<sub>bw</sub> \u00D7 s<sub>b</sub> \u00D7 s<sub>w</sub> + q<sub>bw</sub><sup>2</sup> \u00D7 s<sub>b</sub><sup>2</sup>) \u00D7 <sup>N</sup>&frasl;<sub>\u221A n</sub> \u00D7 \u221A (<sup>N - n</sup>&frasl;<sub>N - 1</sub>)</i>"
@@ -699,7 +699,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
       }
 
       uncertainty <- gettextf(
-        "The uncertainty of the estimator %1$s%2$s%3$s",
+        "The precision of the estimator %1$s%2$s%3$s",
         "<i>U = t<sub>",
         round(1 - options[["confidence"]], 2),
         "/2</sub> \u00D7 s<sub>w</sub> \u00D7 \u221A(1 - r<sub>bw</sub><sup>2</sup>) \u00D7 <sup>N</sup>&frasl;<sub>\u221A n</sub> \u00D7 \u221A (<sup>N - n</sup>&frasl;<sub>N - 1</sub>)</i>"
@@ -737,13 +737,6 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     return()
   }
 
-  title <- switch(options[["estimator"]],
-    "mpu"         = gettext("Direct"),
-    "difference"  = gettext("Difference"),
-    "ratio"       = gettext("Ratio"),
-    "regression"  = gettext("Regression")
-  )
-
   requiredSampleSizeTable <- createJaspTable(gettext("Required Sample Size"))
   requiredSampleSizeTable$position <- position
   requiredSampleSizeTable$dependOn(options = c(
@@ -758,13 +751,19 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   ))
 
   requiredSampleSizeTable$addColumnInfo(
-    name = "estimator",
-    title = gettext("Estimator"),
-    type = "string"
+    name = "realUncertainty",
+    title = gettext("Achieved precision"),
+    type = "number",
+    format = "monetary"
+  )
+  requiredSampleSizeTable$addColumnInfo(
+    name = "ncurrent",
+    title = gettext("Current <i>n</i>"),
+    type = "integer"
   )
   requiredSampleSizeTable$addColumnInfo(
     name = "uncertainty",
-    title = gettext("Uncertainty"),
+    title = gettext("Required precision"),
     type = "number",
     format = "monetary"
   )
@@ -779,13 +778,16 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     type = "integer"
   )
 
-  requiredSampleSizeTable[["estimator"]] <- title
   E <- options[["requiredUncertainty"]]
   requiredSampleSizeTable[["uncertainty"]] <- E
 
   jaspResults[["requiredSampleSizeTable"]] <- requiredSampleSizeTable
 
   if (!ready) {
+    requiredSampleSizeTable[["ncurrent"]] <- "."
+    requiredSampleSizeTable[["realUncertainty"]] <- "."
+    requiredSampleSizeTable[["n"]] <- "."
+    requiredSampleSizeTable[["nextra"]] <- "."
     return()
   }
 
@@ -802,11 +804,10 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   }
   n2 <- ceiling(options[["populationSize"]] / (1 + gamma))
 
+  requiredSampleSizeTable[["ncurrent"]] <- result[["n"]]
+  requiredSampleSizeTable[["realUncertainty"]] <- result[["uncertainty"]]
   requiredSampleSizeTable[["n"]] <- n2
-  nExtra <- n2 - nrow(dataset)
-  if (nExtra < 1) {
-    nExtra <- 0
-  }
+  nExtra <- max(0, n2 - nrow(dataset))
   requiredSampleSizeTable[["nextra"]] <- nExtra
 }
 
@@ -817,7 +818,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     return()
   }
 
-  correlationPlot <- createJaspPlot(plot = NULL, title = gettext("Correlation Plot"), width = 500, height = 400)
+  correlationPlot <- createJaspPlot(plot = NULL, title = gettext("Scatter Plot"), width = 500, height = 400)
   correlationPlot$position <- position
   correlationPlot$dependOn(options = c(
     "correlationPlot",
