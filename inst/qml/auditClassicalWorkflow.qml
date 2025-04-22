@@ -379,7 +379,7 @@ Form
 				name: 								"evaluationVariables"
 				source: 							"variablesFormPlanning"
 			}
-			Evaluation.AuditVariable { binary: annotation.use_values }
+			Evaluation.AuditVariable { binary: !annotation.use_values }
 		}
 
 		Section

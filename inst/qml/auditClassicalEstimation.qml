@@ -42,7 +42,7 @@ Form
 		{
 			id: 					bookValues
 			name: 					"bookValues"
-			title: 					qsTr("Book Values")
+			title: 					qsTr("Book Value")
 			singleVariable:			true
 			allowedColumns:			["scale"]
 			minNumericLevels:		1
@@ -54,7 +54,7 @@ Form
 		{
 			id: 					auditValues
 			name: 					"auditValues"
-			title: 					qsTr("Audit Values")
+			title: 					qsTr("Audit Value")
 			singleVariable: 		true
 			allowedColumns: 		["scale"]
 			minNumericLevels:		1
@@ -179,8 +179,7 @@ Form
 				DoubleField
 				{
 					name: 			"requiredUncertainty"
-					visible: 		requiredSampleSize.checked
-					text: 			qsTr("for an uncertainty of:")
+					text: 			qsTr("Uncertainty")
 					defaultValue: 	100000
 					fieldWidth: 	100 * preferencesModel.uiScale
 					min: 			1
