@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2025-04-22 13:52\n"
-"PO-Revision-Date: 2025-04-22 13:50+0000\n"
+"PO-Revision-Date: 2025-04-22 13:55+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
@@ -350,19 +350,15 @@ msgstr ""
 "%1$s De Bayes factor geeft aan dat de data %2$s maal waarschijnlijker zijn "
 "onder de nulhypothese dan onder de alternatieve hypothese."
 
-#, fuzzy
 msgid "Direct Estimator"
-msgstr "Directe schatter"
+msgstr "Directe Schatter"
 
-#, fuzzy
 msgid "Difference Estimator"
 msgstr "Verschilschatter"
 
-#, fuzzy
 msgid "Ratio Estimator"
 msgstr "Quotiëntschatter"
 
-#, fuzzy
 msgid "Regression Estimator"
 msgstr "Regressieschatter"
 
@@ -457,7 +453,6 @@ msgstr "<i>Met deze informatie worden de volgende zaken berekend:</i>"
 msgid "The point estimate of the true population value %1$s"
 msgstr "De puntschatting van de werkelijke waarde van de populatie %1$s"
 
-#, fuzzy
 msgid "The precision of the estimator %1$s%2$s%3$s"
 msgstr "De onnauwkeurigheid van de schatter %1$s%2$s%3$s"
 
@@ -592,13 +587,11 @@ msgstr ""
 msgid "Required Sample Size"
 msgstr "Vereiste Steekproefomvang"
 
-#, fuzzy
 msgid "Achieved precision"
-msgstr "Verkregen nauwkeurigheid"
+msgstr "Behaalde onnauwkeurigheid"
 
-#, fuzzy
 msgid "Current <i>n</i>"
-msgstr "Vereiste <i>n</i>"
+msgstr "Huidige <i>n</i>"
 
 msgid "Required precision"
 msgstr "Vereiste precisie"
@@ -610,7 +603,7 @@ msgid "Additional <i>n</i>"
 msgstr "Aanvullende <i>n</i>"
 
 msgid "Scatter Plot"
-msgstr ""
+msgstr "Spreidingsdiagram"
 
 msgid "Book value"
 msgstr "Boekwaardes"
