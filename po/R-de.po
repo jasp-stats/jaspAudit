@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-22 12:30\n"
+"POT-Creation-Date: 2025-04-22 13:52\n"
 "PO-Revision-Date: 2025-03-22 10:53+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -356,24 +356,28 @@ msgstr ""
 "%1$s Der Bayesfaktor gibt an, dass die Daten %2$s mal wahrscheinlicher unter "
 "der Nullhypothese als unter der Alternativhypothese auftreten."
 
-msgid "Direct estimator"
+#, fuzzy
+msgid "Direct Estimator"
 msgstr "Direkter Schätzer"
 
-msgid "Difference estimator"
+#, fuzzy
+msgid "Difference Estimator"
 msgstr "Differenzschätzer"
 
-msgid "Ratio estimator"
+#, fuzzy
+msgid "Ratio Estimator"
 msgstr "Quotient-Schätzer"
 
-msgid "Regression estimator"
+#, fuzzy
+msgid "Regression Estimator"
 msgstr "Regressionsschätzer"
 
 #, fuzzy
 msgid "Point estimate"
 msgstr "Direkter Schätzer"
 
-msgid "Uncertainty"
-msgstr "Unsicherheit"
+msgid "Precision"
+msgstr "Genauigkeit"
 
 msgid "%1$s%% Confidence interval"
 msgstr "%1$s%% Konfidenzintervall"
@@ -463,7 +467,8 @@ msgstr "<i>Diese Information erlaubt die Berechnung von:</i>"
 msgid "The point estimate of the true population value %1$s"
 msgstr "Die Punktschätzung des wahren Werts der Grundgesamtheit %1$s"
 
-msgid "The uncertainty of the estimator %1$s%2$s%3$s"
+#, fuzzy
+msgid "The precision of the estimator %1$s%2$s%3$s"
 msgstr "Die Unsicherheit des Schätzers %1$s%2$s%3$s"
 
 msgid "The confidence interval around the point estimate %1$s"
@@ -596,25 +601,19 @@ msgstr ""
 "                                %8$s\n"
 "                                %9$s"
 
-msgid "Direct"
-msgstr ""
-
-msgid "Difference"
-msgstr "Differenz"
-
-#, fuzzy
-msgid "Ratio"
-msgstr "Verhältnis %1$s"
-
-#, fuzzy
-msgid "Regression"
-msgstr "Regressionsschätzer"
-
 msgid "Required Sample Size"
 msgstr "Benötigter Stichprobenumfang"
 
-msgid "Estimator"
-msgstr "Schätzer"
+#, fuzzy
+msgid "Achieved precision"
+msgstr "Erreichte Genauigkeit"
+
+#, fuzzy
+msgid "Current <i>n</i>"
+msgstr "Benötigtes <i>n</i>"
+
+msgid "Required precision"
+msgstr "Erforderliche Präzision"
 
 msgid "Required <i>n</i>"
 msgstr "Benötigtes <i>n</i>"
@@ -622,8 +621,8 @@ msgstr "Benötigtes <i>n</i>"
 msgid "Additional <i>n</i>"
 msgstr "Zusätzliches <i>n</i>"
 
-msgid "Correlation Plot"
-msgstr "Streudiagramm"
+msgid "Scatter Plot"
+msgstr ""
 
 msgid "Book value"
 msgstr "Buchwert"
@@ -668,9 +667,6 @@ msgstr "Negativer Vorhersagewert"
 #, fuzzy
 msgid "Positive rate"
 msgstr "Richtig-positiv-Rate"
-
-msgid "Precision"
-msgstr "Genauigkeit"
 
 msgid "True positive rate"
 msgstr "Richtig-positiv-Rate"
@@ -2491,6 +2487,9 @@ msgstr "<b>Tabelle %1$i.</b> Falsch angegebene Posten"
 msgid "ID"
 msgstr "ID"
 
+msgid "Difference"
+msgstr "Differenz"
+
 msgid "Counted"
 msgstr "Gezählt"
 
@@ -2719,6 +2718,23 @@ msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ versus the "
 "hypothesis H₀ accumulates."
 msgstr ""
+
+#~ msgid "Uncertainty"
+#~ msgstr "Unsicherheit"
+
+#, fuzzy
+#~ msgid "Ratio"
+#~ msgstr "Verhältnis %1$s"
+
+#, fuzzy
+#~ msgid "Regression"
+#~ msgstr "Regressionsschätzer"
+
+#~ msgid "Estimator"
+#~ msgstr "Schätzer"
+
+#~ msgid "Correlation Plot"
+#~ msgstr "Streudiagramm"
 
 #~ msgid "Estimate %1$s"
 #~ msgstr "Schätzung %1$s"
@@ -3037,9 +3053,6 @@ msgstr ""
 #~ "erreicht werden. Die resultierende Stichprobengröße übersteigt den "
 #~ "Gesamtwert der Grundgesamtheit. Passen Sie Ihre Stichprobenziele oder -"
 #~ "variablen entsprechend an."
-
-#~ msgid "Required precision"
-#~ msgstr "Erforderliche Präzision"
 
 #~ msgid "Expected posterior odds"
 #~ msgstr "Erwartete a-posteriori Chancen"

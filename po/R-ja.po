@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2025-04-22 12:30\n"
+"POT-Creation-Date: 2025-04-22 13:52\n"
 "PO-Revision-Date: 2024-11-06 22:00+0000\n"
 "Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -336,24 +336,28 @@ msgid ""
 "occur under the null hypothesis than under the alternative hypothesis."
 msgstr ""
 
-msgid "Direct estimator"
+#, fuzzy
+msgid "Direct Estimator"
 msgstr "直接推定量"
 
-msgid "Difference estimator"
+#, fuzzy
+msgid "Difference Estimator"
 msgstr "差分推定量"
 
-msgid "Ratio estimator"
+#, fuzzy
+msgid "Ratio Estimator"
 msgstr "比率推定量"
 
-msgid "Regression estimator"
+#, fuzzy
+msgid "Regression Estimator"
 msgstr "回帰推定量"
 
 #, fuzzy
 msgid "Point estimate"
 msgstr "直接推定量"
 
-msgid "Uncertainty"
-msgstr "不確実性"
+msgid "Precision"
+msgstr ""
 
 msgid "%1$s%% Confidence interval"
 msgstr "%1$s%% 信頼区間"
@@ -433,7 +437,8 @@ msgstr "<i>この情報は以下の計算を可能にします:</i>"
 msgid "The point estimate of the true population value %1$s"
 msgstr "真の母集団値 %1$s の点推定値"
 
-msgid "The uncertainty of the estimator %1$s%2$s%3$s"
+#, fuzzy
+msgid "The precision of the estimator %1$s%2$s%3$s"
 msgstr "推定量 %1$s%2$s%3$s の不確実性"
 
 msgid "The confidence interval around the point estimate %1$s"
@@ -540,23 +545,16 @@ msgid ""
 "                                %9$s"
 msgstr ""
 
-msgid "Direct"
-msgstr ""
-
-msgid "Difference"
-msgstr "差"
-
-msgid "Ratio"
-msgstr ""
-
-#, fuzzy
-msgid "Regression"
-msgstr "回帰推定量"
-
 msgid "Required Sample Size"
 msgstr ""
 
-msgid "Estimator"
+msgid "Achieved precision"
+msgstr ""
+
+msgid "Current <i>n</i>"
+msgstr ""
+
+msgid "Required precision"
 msgstr ""
 
 msgid "Required <i>n</i>"
@@ -565,7 +563,7 @@ msgstr ""
 msgid "Additional <i>n</i>"
 msgstr ""
 
-msgid "Correlation Plot"
+msgid "Scatter Plot"
 msgstr ""
 
 msgid "Book value"
@@ -601,9 +599,6 @@ msgid "Negative predictive value"
 msgstr ""
 
 msgid "Positive rate"
-msgstr ""
-
-msgid "Precision"
 msgstr ""
 
 msgid "True positive rate"
@@ -2086,6 +2081,9 @@ msgstr "<b>表 %1$i.</b> 適合度検定"
 msgid "ID"
 msgstr ""
 
+msgid "Difference"
+msgstr "差"
+
 #, fuzzy
 msgid "Counted"
 msgstr "カウント"
@@ -2285,6 +2283,13 @@ msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ versus the "
 "hypothesis H₀ accumulates."
 msgstr ""
+
+#~ msgid "Uncertainty"
+#~ msgstr "不確実性"
+
+#, fuzzy
+#~ msgid "Regression"
+#~ msgstr "回帰推定量"
 
 #~ msgid "Estimate %1$s"
 #~ msgstr "推定 %1$s"

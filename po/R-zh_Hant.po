@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.1\n"
-"POT-Creation-Date: 2025-04-22 12:30\n"
+"POT-Creation-Date: 2025-04-22 13:52\n"
 "PO-Revision-Date: 2025-02-23 11:09+0000\n"
 "Last-Translator: 陳寬裕 <pf.kuan.yu.chen@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -274,22 +274,26 @@ msgid ""
 "occur under the null hypothesis than under the alternative hypothesis."
 msgstr ""
 
-msgid "Direct estimator"
-msgstr ""
+#, fuzzy
+msgid "Direct Estimator"
+msgstr "估計式"
 
-msgid "Difference estimator"
-msgstr ""
+#, fuzzy
+msgid "Difference Estimator"
+msgstr "估計式"
 
-msgid "Ratio estimator"
-msgstr ""
+#, fuzzy
+msgid "Ratio Estimator"
+msgstr "估計式"
 
-msgid "Regression estimator"
-msgstr ""
+#, fuzzy
+msgid "Regression Estimator"
+msgstr "估計式"
 
 msgid "Point estimate"
 msgstr ""
 
-msgid "Uncertainty"
+msgid "Precision"
 msgstr ""
 
 msgid "%1$s%% Confidence interval"
@@ -362,7 +366,7 @@ msgstr ""
 msgid "The point estimate of the true population value %1$s"
 msgstr ""
 
-msgid "The uncertainty of the estimator %1$s%2$s%3$s"
+msgid "The precision of the estimator %1$s%2$s%3$s"
 msgstr ""
 
 msgid "The confidence interval around the point estimate %1$s"
@@ -457,23 +461,17 @@ msgid ""
 "                                %9$s"
 msgstr ""
 
-msgid "Direct"
-msgstr ""
-
-msgid "Difference"
-msgstr ""
-
-msgid "Ratio"
-msgstr ""
-
-msgid "Regression"
-msgstr ""
-
 msgid "Required Sample Size"
 msgstr ""
 
-msgid "Estimator"
-msgstr "估計式"
+msgid "Achieved precision"
+msgstr ""
+
+msgid "Current <i>n</i>"
+msgstr ""
+
+msgid "Required precision"
+msgstr ""
 
 msgid "Required <i>n</i>"
 msgstr ""
@@ -481,7 +479,7 @@ msgstr ""
 msgid "Additional <i>n</i>"
 msgstr ""
 
-msgid "Correlation Plot"
+msgid "Scatter Plot"
 msgstr ""
 
 msgid "Book value"
@@ -517,9 +515,6 @@ msgid "Negative predictive value"
 msgstr ""
 
 msgid "Positive rate"
-msgstr ""
-
-msgid "Precision"
 msgstr ""
 
 msgid "True positive rate"
@@ -1950,6 +1945,9 @@ msgid "<b>Table %1$i.</b> Misstated Items"
 msgstr ""
 
 msgid "ID"
+msgstr ""
+
+msgid "Difference"
 msgstr ""
 
 msgid "Counted"

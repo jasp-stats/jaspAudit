@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.0\n"
-"POT-Creation-Date: 2025-04-22 12:30\n"
+"POT-Creation-Date: 2025-04-22 13:52\n"
 "PO-Revision-Date: 2024-07-19 01:36+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -279,23 +279,27 @@ msgid ""
 "occur under the null hypothesis than under the alternative hypothesis."
 msgstr ""
 
-msgid "Direct estimator"
-msgstr ""
+#, fuzzy
+msgid "Direct Estimator"
+msgstr "Estymator"
 
-msgid "Difference estimator"
-msgstr ""
+#, fuzzy
+msgid "Difference Estimator"
+msgstr "Różnica"
 
-msgid "Ratio estimator"
-msgstr ""
+#, fuzzy
+msgid "Ratio Estimator"
+msgstr "Estymator"
 
-msgid "Regression estimator"
-msgstr ""
+#, fuzzy
+msgid "Regression Estimator"
+msgstr "Estymator"
 
 #, fuzzy
 msgid "Point estimate"
 msgstr "Oszacowania"
 
-msgid "Uncertainty"
+msgid "Precision"
 msgstr ""
 
 msgid "%1$s%% Confidence interval"
@@ -373,7 +377,7 @@ msgstr ""
 msgid "The point estimate of the true population value %1$s"
 msgstr ""
 
-msgid "The uncertainty of the estimator %1$s%2$s%3$s"
+msgid "The precision of the estimator %1$s%2$s%3$s"
 msgstr ""
 
 msgid "The confidence interval around the point estimate %1$s"
@@ -499,23 +503,19 @@ msgstr ""
 "                                %8$s\n"
 "                                %9$s"
 
-msgid "Direct"
-msgstr ""
-
-msgid "Difference"
-msgstr "Różnica"
-
-msgid "Ratio"
-msgstr ""
-
-msgid "Regression"
-msgstr ""
-
 msgid "Required Sample Size"
 msgstr "Wymagana wielkość próby"
 
-msgid "Estimator"
-msgstr "Estymator"
+msgid "Achieved precision"
+msgstr ""
+
+#, fuzzy
+msgid "Current <i>n</i>"
+msgstr "Wymagane <i>n</i>"
+
+#, fuzzy
+msgid "Required precision"
+msgstr "Wymagana wielkość próby"
 
 msgid "Required <i>n</i>"
 msgstr "Wymagane <i>n</i>"
@@ -523,8 +523,8 @@ msgstr "Wymagane <i>n</i>"
 msgid "Additional <i>n</i>"
 msgstr "Dodatkowe <i>n</i>"
 
-msgid "Correlation Plot"
-msgstr "Wykres korelacji"
+msgid "Scatter Plot"
+msgstr ""
 
 msgid "Book value"
 msgstr ""
@@ -559,9 +559,6 @@ msgid "Negative predictive value"
 msgstr ""
 
 msgid "Positive rate"
-msgstr ""
-
-msgid "Precision"
 msgstr ""
 
 msgid "True positive rate"
@@ -2005,6 +2002,9 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
+msgid "Difference"
+msgstr "Różnica"
+
 msgid "Counted"
 msgstr ""
 
@@ -2198,6 +2198,9 @@ msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ versus the "
 "hypothesis H₀ accumulates."
 msgstr ""
+
+#~ msgid "Correlation Plot"
+#~ msgstr "Wykres korelacji"
 
 #~ msgid "%1$s = %2$s."
 #~ msgstr "%1$s = %2$s."

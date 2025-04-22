@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.3\n"
-"POT-Creation-Date: 2025-04-22 12:30\n"
+"POT-Creation-Date: 2025-04-22 13:52\n"
 "PO-Revision-Date: 2025-04-04 15:07+0000\n"
 "Last-Translator: Uğur ÇELİK <prof_ugur@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -297,22 +297,22 @@ msgid ""
 "occur under the null hypothesis than under the alternative hypothesis."
 msgstr ""
 
-msgid "Direct estimator"
+msgid "Direct Estimator"
 msgstr ""
 
-msgid "Difference estimator"
+msgid "Difference Estimator"
 msgstr ""
 
-msgid "Ratio estimator"
+msgid "Ratio Estimator"
 msgstr ""
 
-msgid "Regression estimator"
+msgid "Regression Estimator"
 msgstr ""
 
 msgid "Point estimate"
 msgstr ""
 
-msgid "Uncertainty"
+msgid "Precision"
 msgstr ""
 
 msgid "%1$s%% Confidence interval"
@@ -385,7 +385,7 @@ msgstr ""
 msgid "The point estimate of the true population value %1$s"
 msgstr ""
 
-msgid "The uncertainty of the estimator %1$s%2$s%3$s"
+msgid "The precision of the estimator %1$s%2$s%3$s"
 msgstr ""
 
 msgid "The confidence interval around the point estimate %1$s"
@@ -480,22 +480,16 @@ msgid ""
 "                                %9$s"
 msgstr ""
 
-msgid "Direct"
-msgstr ""
-
-msgid "Difference"
-msgstr ""
-
-msgid "Ratio"
-msgstr ""
-
-msgid "Regression"
-msgstr ""
-
 msgid "Required Sample Size"
 msgstr ""
 
-msgid "Estimator"
+msgid "Achieved precision"
+msgstr ""
+
+msgid "Current <i>n</i>"
+msgstr ""
+
+msgid "Required precision"
 msgstr ""
 
 msgid "Required <i>n</i>"
@@ -504,7 +498,7 @@ msgstr ""
 msgid "Additional <i>n</i>"
 msgstr ""
 
-msgid "Correlation Plot"
+msgid "Scatter Plot"
 msgstr ""
 
 msgid "Book value"
@@ -540,9 +534,6 @@ msgid "Negative predictive value"
 msgstr ""
 
 msgid "Positive rate"
-msgstr ""
-
-msgid "Precision"
 msgstr ""
 
 msgid "True positive rate"
@@ -1974,6 +1965,9 @@ msgid "<b>Table %1$i.</b> Misstated Items"
 msgstr ""
 
 msgid "ID"
+msgstr ""
+
+msgid "Difference"
 msgstr ""
 
 msgid "Counted"

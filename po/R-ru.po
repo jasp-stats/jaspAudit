@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
-"POT-Creation-Date: 2025-04-22 12:30\n"
+"POT-Creation-Date: 2025-04-22 13:52\n"
 "PO-Revision-Date: 2025-04-21 16:31+0000\n"
 "Last-Translator: MikeWinny <winny63@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -355,24 +355,28 @@ msgstr ""
 "%1$s Коэффициент Байеса указывает на то, что данные являются в %2$s более "
 "вероятными при нулевой гипотезе, чем при альтернативной гипотезе."
 
-msgid "Direct estimator"
+#, fuzzy
+msgid "Direct Estimator"
 msgstr "Прямой оценщик"
 
-msgid "Difference estimator"
+#, fuzzy
+msgid "Difference Estimator"
 msgstr "Оценщик разности"
 
-msgid "Ratio estimator"
+#, fuzzy
+msgid "Ratio Estimator"
 msgstr "Оценщик отношения"
 
-msgid "Regression estimator"
+#, fuzzy
+msgid "Regression Estimator"
 msgstr "Регрессионный оценщик"
 
 #, fuzzy
 msgid "Point estimate"
 msgstr "Прямой оценщик"
 
-msgid "Uncertainty"
-msgstr "Неопределенность"
+msgid "Precision"
+msgstr "Погрешность"
 
 msgid "%1$s%% Confidence interval"
 msgstr "%1$s%% доверительный интервал"
@@ -461,7 +465,8 @@ msgstr "<i>Эта информация позволяет рассчитать:<
 msgid "The point estimate of the true population value %1$s"
 msgstr "Точечная оценка истинного значения суммы совокупности %1$s"
 
-msgid "The uncertainty of the estimator %1$s%2$s%3$s"
+#, fuzzy
+msgid "The precision of the estimator %1$s%2$s%3$s"
 msgstr "Неопределенность оценщика %1$s%2$s%3$s"
 
 msgid "The confidence interval around the point estimate %1$s"
@@ -593,25 +598,20 @@ msgstr ""
 "                                %8$s\n"
 "                                %9$s"
 
-msgid "Direct"
-msgstr ""
-
-msgid "Difference"
-msgstr "Разность"
-
-#, fuzzy
-msgid "Ratio"
-msgstr "Отношение %1$s"
-
-#, fuzzy
-msgid "Regression"
-msgstr "Регрессионный оценщик"
-
 msgid "Required Sample Size"
 msgstr "Требуемый размер выборки"
 
-msgid "Estimator"
-msgstr "Оценщик"
+#, fuzzy
+msgid "Achieved precision"
+msgstr "Полученная погрешность"
+
+#, fuzzy
+msgid "Current <i>n</i>"
+msgstr "Требуемое <i>n</i>"
+
+#, fuzzy
+msgid "Required precision"
+msgstr "Полученная погрешность"
 
 msgid "Required <i>n</i>"
 msgstr "Требуемое <i>n</i>"
@@ -619,8 +619,8 @@ msgstr "Требуемое <i>n</i>"
 msgid "Additional <i>n</i>"
 msgstr "Дополнительное <i>n</i>"
 
-msgid "Correlation Plot"
-msgstr "График корреляции"
+msgid "Scatter Plot"
+msgstr ""
 
 msgid "Book value"
 msgstr "Балансовая стоимость"
@@ -664,9 +664,6 @@ msgstr "Негативно предсказанное значение"
 
 msgid "Positive rate"
 msgstr "Частота позитивных результатов"
-
-msgid "Precision"
-msgstr "Погрешность"
 
 msgid "True positive rate"
 msgstr "Частота истинно-позитивных результатов"
@@ -2675,6 +2672,9 @@ msgstr "<b>Таблица %1$i.</b> Искаженные объекты"
 msgid "ID"
 msgstr "Идентификатор записи (ID)"
 
+msgid "Difference"
+msgstr "Разность"
+
 msgid "Counted"
 msgstr "Подсчитанный"
 
@@ -2907,6 +2907,23 @@ msgid ""
 msgstr ""
 "На рисунке показано, как накапливается доказательство гипотезы H₁ по "
 "отношению к гипотезе H₀."
+
+#~ msgid "Uncertainty"
+#~ msgstr "Неопределенность"
+
+#, fuzzy
+#~ msgid "Ratio"
+#~ msgstr "Отношение %1$s"
+
+#, fuzzy
+#~ msgid "Regression"
+#~ msgstr "Регрессионный оценщик"
+
+#~ msgid "Estimator"
+#~ msgstr "Оценщик"
+
+#~ msgid "Correlation Plot"
+#~ msgstr "График корреляции"
 
 #~ msgid "Estimate %1$s"
 #~ msgstr "Оценка %1$s"

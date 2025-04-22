@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.3\n"
-"POT-Creation-Date: 2025-04-22 12:30\n"
+"POT-Creation-Date: 2025-04-22 13:52\n"
 "PO-Revision-Date: 2024-06-30 10:00+0000\n"
 "Last-Translator: Marco Capozzi <giammarcous@yahoo.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -344,24 +344,28 @@ msgstr ""
 "%1$s Il fattore di Bayes indica che i dati sono %2$s volte più probabili "
 "sotto l'ipotesi nulla rispetto all'ipotesi alternativa."
 
-msgid "Direct estimator"
+#, fuzzy
+msgid "Direct Estimator"
 msgstr "Stimatore diretto"
 
-msgid "Difference estimator"
+#, fuzzy
+msgid "Difference Estimator"
 msgstr "Stimatore della differenza"
 
-msgid "Ratio estimator"
+#, fuzzy
+msgid "Ratio Estimator"
 msgstr "Stimatore del rapporto"
 
-msgid "Regression estimator"
+#, fuzzy
+msgid "Regression Estimator"
 msgstr "Stimatore di regressione"
 
 #, fuzzy
 msgid "Point estimate"
 msgstr "Stimatore diretto"
 
-msgid "Uncertainty"
-msgstr "Incertezza"
+msgid "Precision"
+msgstr "Precisione"
 
 msgid "%1$s%% Confidence interval"
 msgstr "Intervallo di confidenza del %1$s%%"
@@ -444,7 +448,8 @@ msgstr "<i>Queste informazioni consentono il calcolo di:</i>"
 msgid "The point estimate of the true population value %1$s"
 msgstr "La stima puntuale del vero valore della popolazione %1$s"
 
-msgid "The uncertainty of the estimator %1$s%2$s%3$s"
+#, fuzzy
+msgid "The precision of the estimator %1$s%2$s%3$s"
 msgstr "L'incertezza dello stimatore %1$s%2$s%3$s"
 
 msgid "The confidence interval around the point estimate %1$s"
@@ -548,24 +553,19 @@ msgid ""
 "                                %9$s"
 msgstr ""
 
-msgid "Direct"
-msgstr ""
-
-msgid "Difference"
-msgstr ""
-
-msgid "Ratio"
-msgstr ""
-
-#, fuzzy
-msgid "Regression"
-msgstr "Stimatore di regressione"
-
 msgid "Required Sample Size"
 msgstr "Dimensione del campione richiesta"
 
-msgid "Estimator"
-msgstr "Stimatore"
+msgid "Achieved precision"
+msgstr ""
+
+#, fuzzy
+msgid "Current <i>n</i>"
+msgstr "Richiesto <i>n</i>"
+
+#, fuzzy
+msgid "Required precision"
+msgstr "Dimensione del campione richiesta"
 
 msgid "Required <i>n</i>"
 msgstr "Richiesto <i>n</i>"
@@ -573,8 +573,8 @@ msgstr "Richiesto <i>n</i>"
 msgid "Additional <i>n</i>"
 msgstr "Addizionale <i>n</i>"
 
-msgid "Correlation Plot"
-msgstr "Grafico di Correlazione"
+msgid "Scatter Plot"
+msgstr ""
 
 msgid "Book value"
 msgstr "Valore contabile"
@@ -611,9 +611,6 @@ msgstr "Valore Predittivo negativo"
 #, fuzzy
 msgid "Positive rate"
 msgstr "Tasso di Veri positivi"
-
-msgid "Precision"
-msgstr "Precisione"
 
 msgid "True positive rate"
 msgstr "Tasso di Veri positivi"
@@ -2087,6 +2084,9 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
+msgid "Difference"
+msgstr ""
+
 msgid "Counted"
 msgstr ""
 
@@ -2281,6 +2281,19 @@ msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ versus the "
 "hypothesis H₀ accumulates."
 msgstr ""
+
+#~ msgid "Uncertainty"
+#~ msgstr "Incertezza"
+
+#, fuzzy
+#~ msgid "Regression"
+#~ msgstr "Stimatore di regressione"
+
+#~ msgid "Estimator"
+#~ msgstr "Stimatore"
+
+#~ msgid "Correlation Plot"
+#~ msgstr "Grafico di Correlazione"
 
 #~ msgid "Estimate %1$s"
 #~ msgstr "Stima %1$s"

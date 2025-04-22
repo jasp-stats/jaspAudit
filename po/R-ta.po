@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2025-04-22 12:30\n"
+"POT-Creation-Date: 2025-04-22 13:52\n"
 "PO-Revision-Date: 2025-01-07 10:14+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -344,24 +344,28 @@ msgstr ""
 "%1$s மாற்று கருதுகோளின் கீழ் இருப்பதை விட சுழிய கருதுகோளின் கீழ் தரவு %2$s மடங்கு "
 "அதிகமாக இருப்பதைக் குறிக்கிறது."
 
-msgid "Direct estimator"
+#, fuzzy
+msgid "Direct Estimator"
 msgstr "நேரடி மதிப்பீட்டாளர்"
 
-msgid "Difference estimator"
+#, fuzzy
+msgid "Difference Estimator"
 msgstr "வேறுபாடு மதிப்பீட்டாளர்"
 
-msgid "Ratio estimator"
+#, fuzzy
+msgid "Ratio Estimator"
 msgstr "விகித மதிப்பீட்டாளர்"
 
-msgid "Regression estimator"
+#, fuzzy
+msgid "Regression Estimator"
 msgstr "பின்னடைவு மதிப்பீட்டாளர்"
 
 #, fuzzy
 msgid "Point estimate"
 msgstr "நேரடி மதிப்பீட்டாளர்"
 
-msgid "Uncertainty"
-msgstr "நிச்சயமற்ற தன்மை"
+msgid "Precision"
+msgstr "துல்லியம்"
 
 msgid "%1$s%% Confidence interval"
 msgstr "%1$s %% நம்பிக்கை இடைவெளி"
@@ -445,7 +449,8 @@ msgstr "<i> இந்த செய்தி கணக்கிட அனும�
 msgid "The point estimate of the true population value %1$s"
 msgstr "உண்மையான மக்கள்தொகை மதிப்பு %1$s இன் புள்ளி மதிப்பீடு"
 
-msgid "The uncertainty of the estimator %1$s%2$s%3$s"
+#, fuzzy
+msgid "The precision of the estimator %1$s%2$s%3$s"
 msgstr "மதிப்பீட்டாளரின் நிச்சயமற்ற தன்மை%1$s%2$s%3$s"
 
 msgid "The confidence interval around the point estimate %1$s"
@@ -571,25 +576,20 @@ msgstr ""
 "                                %8$s\n"
 "                                %9$s"
 
-msgid "Direct"
-msgstr ""
-
-msgid "Difference"
-msgstr "வேறுபாடு"
-
-#, fuzzy
-msgid "Ratio"
-msgstr "விகிதம் %1$s"
-
-#, fuzzy
-msgid "Regression"
-msgstr "பின்னடைவு மதிப்பீட்டாளர்"
-
 msgid "Required Sample Size"
 msgstr "தேவையான மாதிரி அளவு"
 
-msgid "Estimator"
-msgstr "மதிப்பீட்டாளர்"
+#, fuzzy
+msgid "Achieved precision"
+msgstr "துல்லியத்தைப் பெற்றது"
+
+#, fuzzy
+msgid "Current <i>n</i>"
+msgstr "தேவை <i> n </i>"
+
+#, fuzzy
+msgid "Required precision"
+msgstr "துல்லியத்தைப் பெற்றது"
 
 msgid "Required <i>n</i>"
 msgstr "தேவை <i> n </i>"
@@ -597,8 +597,8 @@ msgstr "தேவை <i> n </i>"
 msgid "Additional <i>n</i>"
 msgstr "கூடுதல் <i> n </i>"
 
-msgid "Correlation Plot"
-msgstr "தொடர்பு சூழ்ச்சி"
+msgid "Scatter Plot"
+msgstr ""
 
 msgid "Book value"
 msgstr "புத்தக மதிப்பு"
@@ -642,9 +642,6 @@ msgstr "எதிர்மறை முன்கணிப்பு மதிப�
 #, fuzzy
 msgid "Positive rate"
 msgstr "உண்மையான நேர்மறை வீதம்"
-
-msgid "Precision"
-msgstr "துல்லியம்"
 
 msgid "True positive rate"
 msgstr "உண்மையான நேர்மறை வீதம்"
@@ -2419,6 +2416,9 @@ msgstr "<b>அட்டவணை %1$i.</b> தவறாகக் கூறப்
 msgid "ID"
 msgstr "ஐடி"
 
+msgid "Difference"
+msgstr "வேறுபாடு"
+
 msgid "Counted"
 msgstr "எண்ணப்பட்டது"
 
@@ -2638,6 +2638,23 @@ msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ versus the "
 "hypothesis H₀ accumulates."
 msgstr ""
+
+#~ msgid "Uncertainty"
+#~ msgstr "நிச்சயமற்ற தன்மை"
+
+#, fuzzy
+#~ msgid "Ratio"
+#~ msgstr "விகிதம் %1$s"
+
+#, fuzzy
+#~ msgid "Regression"
+#~ msgstr "பின்னடைவு மதிப்பீட்டாளர்"
+
+#~ msgid "Estimator"
+#~ msgstr "மதிப்பீட்டாளர்"
+
+#~ msgid "Correlation Plot"
+#~ msgstr "தொடர்பு சூழ்ச்சி"
 
 #~ msgid "Estimate %1$s"
 #~ msgstr "மதிப்பீடு %1$s"

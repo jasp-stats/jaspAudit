@@ -3146,10 +3146,10 @@ msgctxt "auditClassicalEstimation|"
 msgid "Audit Value"
 msgstr ""
 
-msgctxt "auditClassicalEstimation|"
-msgid "Uncertainty"
-msgstr ""
-
 msgctxt "AuditVariable|"
 msgid "Audit Value (required)"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Precision"
 msgstr ""
