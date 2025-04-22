@@ -738,10 +738,10 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   }
 
   title <- switch(options[["estimator"]],
-    "mpu"         = "Direct",
-    "difference"  = "Difference",
-    "ratio"       = "Ratio",
-    "regression"  = "Regression"
+    "mpu"         = gettext("Direct"),
+    "difference"  = gettext("Difference"),
+    "ratio"       = gettext("Ratio"),
+    "regression"  = gettext("Regression")
   )
 
   requiredSampleSizeTable <- createJaspTable(gettext("Required Sample Size"))
