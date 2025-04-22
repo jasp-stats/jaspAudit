@@ -127,7 +127,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 
   regressionTable$addColumnInfo(
     name = "estimate",
-    title = gettextf("Estimate %1$s", "W&#770"),
+    title = gettext("Point estimate"),
     type = "number",
     format = "monetary"
   )
