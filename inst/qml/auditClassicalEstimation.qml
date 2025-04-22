@@ -179,7 +179,7 @@ Form
 				DoubleField
 				{
 					name: 			"requiredUncertainty"
-					text: 			qsTr("Uncertainty")
+					text: 			qsTr("Precision")
 					defaultValue: 	100000
 					fieldWidth: 	100 * preferencesModel.uiScale
 					min: 			1
