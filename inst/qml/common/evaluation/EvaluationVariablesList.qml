@@ -45,7 +45,7 @@ VariablesForm
 
 	Selection.IdVariable { id: id }
 	Selection.BookVariable { id: values }
-	Evaluation.AuditVariable { id: audit_values; binary: true }
+	Evaluation.AuditVariable { id: audit_values; binary: !values.use_book }
 
 	AssignedVariablesList
 	{

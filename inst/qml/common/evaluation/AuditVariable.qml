@@ -28,7 +28,7 @@ AssignedVariablesList
 
 	id: 			audit_values
 	name: 			"values.audit"
-	title: 			binary ? qsTr("Audit Result (required)") : qsTr("Audit Values (required)")
+	title: 			binary ? qsTr("Audit Result (required)") : qsTr("Audit Value (required)")
 	singleVariable: true
 	allowedColumns: ["nominal", "scale"]
 	info:			qsTr("A numeric variable that contains the audited (true) values of the items in the population, or a binary variable that contains a 0 (correct item) or a 1 (misstated item) for each row.")
