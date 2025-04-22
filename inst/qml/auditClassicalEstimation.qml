@@ -180,7 +180,7 @@ Form
 				{
 					name: 			"requiredUncertainty"
 					visible: 		requiredSampleSize.checked
-					text: 			qsTr("for an uncertainty of:")
+					text: 			qsTr("Uncertainty")
 					defaultValue: 	100000
 					fieldWidth: 	100 * preferencesModel.uiScale
 					min: 			1
