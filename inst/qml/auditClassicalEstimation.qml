@@ -179,7 +179,6 @@ Form
 				DoubleField
 				{
 					name: 			"requiredUncertainty"
-					visible: 		requiredSampleSize.checked
 					text: 			qsTr("Uncertainty")
 					defaultValue: 	100000
 					fieldWidth: 	100 * preferencesModel.uiScale
