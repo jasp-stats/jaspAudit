@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.19.2\n"
-"POT-Creation-Date: 2025-04-20 08:44\n"
+"POT-Creation-Date: 2025-04-22 12:30\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Regression estimator"
 msgstr ""
 
-msgid "Estimate %1$s"
+msgid "Point estimate"
 msgstr ""
 
 msgid "Uncertainty"
@@ -326,6 +326,18 @@ msgid "The regression coefficient of the sample book values and audit values %1$
 msgstr ""
 
 msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s\n                                %7$s\n                                %8$s\n                                %9$s"
+msgstr ""
+
+msgid "Direct"
+msgstr ""
+
+msgid "Difference"
+msgstr ""
+
+msgid "Ratio"
+msgstr ""
+
+msgid "Regression"
 msgstr ""
 
 msgid "Required Sample Size"
@@ -1295,9 +1307,6 @@ msgid "<b>Table %1$i.</b> Misstated Items"
 msgstr ""
 
 msgid "ID"
-msgstr ""
-
-msgid "Difference"
 msgstr ""
 
 msgid "Counted"

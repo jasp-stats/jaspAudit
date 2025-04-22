@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-20 08:44\n"
+"POT-Creation-Date: 2025-04-22 12:30\n"
 "PO-Revision-Date: 2025-04-22 12:29+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -362,8 +362,9 @@ msgstr "Ratioschatter"
 msgid "Regression estimator"
 msgstr "Regressieschatter"
 
-msgid "Estimate %1$s"
-msgstr "Schatting %1$s"
+#, fuzzy
+msgid "Point estimate"
+msgstr "Directe schatter"
 
 msgid "Uncertainty"
 msgstr "Onzekerheid"
@@ -583,6 +584,20 @@ msgstr ""
 "                                %7$s\n"
 "                                %8$s\n"
 "                                %9$s"
+
+msgid "Direct"
+msgstr ""
+
+msgid "Difference"
+msgstr "Verschil"
+
+#, fuzzy
+msgid "Ratio"
+msgstr "Verhouding %1$s"
+
+#, fuzzy
+msgid "Regression"
+msgstr "Regressieschatter"
 
 msgid "Required Sample Size"
 msgstr "Vereiste Steekproefomvang"
@@ -2650,9 +2665,6 @@ msgstr "<b>Tabel %1$i.</b> Foute Posten"
 msgid "ID"
 msgstr "ID"
 
-msgid "Difference"
-msgstr "Verschil"
-
 msgid "Counted"
 msgstr "Weging"
 
@@ -2883,6 +2895,9 @@ msgid ""
 msgstr ""
 "De figuur illustreert hoe het bewijs voor de hypothese H₁ zich opstapelt ten "
 "opzichte van de hypothese H₀."
+
+#~ msgid "Estimate %1$s"
+#~ msgstr "Schatting %1$s"
 
 #, fuzzy
 #~ msgid ""

@@ -138,10 +138,6 @@ msgid "Required sample size"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
-msgid "for an uncertainty of:"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
 msgid "Plots"
 msgstr ""
 
@@ -419,14 +415,6 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Observed vs. expected"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Book Values"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Audit Values"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
@@ -1062,10 +1050,6 @@ msgstr ""
 
 msgctxt "AuditVariable|"
 msgid "Audit Result (required)"
-msgstr ""
-
-msgctxt "AuditVariable|"
-msgid "Audit Values (required)"
 msgstr ""
 
 msgctxt "AuditVariable|"
@@ -3119,4 +3103,20 @@ msgstr ""
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Produces the expected counts of the digits under the reference distribution."
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Audit Value"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Uncertainty"
+msgstr ""
+
+msgctxt "AuditVariable|"
+msgid "Audit Value (required)"
 msgstr ""

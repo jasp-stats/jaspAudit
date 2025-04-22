@@ -6,11 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-04-20 08:44\n"
+"POT-Creation-Date: 2025-04-22 12:30\n"
 "PO-Revision-Date: 2025-04-21 16:31+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
-"jaspaudit-r/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
+"r/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -371,8 +371,9 @@ msgstr "Estimador do cociente"
 msgid "Regression estimator"
 msgstr "Estimador da regresión"
 
-msgid "Estimate %1$s"
-msgstr "Estimar %1$s"
+#, fuzzy
+msgid "Point estimate"
+msgstr "Estimacións combinadas"
 
 msgid "Uncertainty"
 msgstr "Incerteza"
@@ -599,6 +600,19 @@ msgstr ""
 "                                %7$s\n"
 "                                %8$s\n"
 "                                %9$s"
+
+msgid "Direct"
+msgstr "Directo"
+
+msgid "Difference"
+msgstr "Diferenza"
+
+#, fuzzy
+msgid "Ratio"
+msgstr "Rotación"
+
+msgid "Regression"
+msgstr "Regresión"
 
 msgid "Required Sample Size"
 msgstr "Tamaño de Mostra Requirido"
@@ -2633,9 +2647,6 @@ msgstr "<b>Táboa %1$i.</b> Elementos Inexactos"
 msgid "ID"
 msgstr "ID"
 
-msgid "Difference"
-msgstr "Diferenza"
-
 msgid "Counted"
 msgstr "Cantidade"
 
@@ -2863,6 +2874,9 @@ msgid ""
 msgstr ""
 "A imaxe ilustra como se acumula a evidencia da hipótese H₁ fronte á hipótese "
 "H₀."
+
+#~ msgid "Estimate %1$s"
+#~ msgstr "Estimar %1$s"
 
 #, fuzzy
 #~ msgid ""
@@ -3763,9 +3777,6 @@ msgstr ""
 
 #~ msgid "One-sided"
 #~ msgstr "Dunha cola"
-
-#~ msgid "Pooled estimates"
-#~ msgstr "Estimacións combinadas"
 
 #~ msgid "Iterations"
 #~ msgstr "Iteracións"
@@ -5005,9 +5016,6 @@ msgstr ""
 
 #~ msgid "Latent variables"
 #~ msgstr "Variables latentes"
-
-#~ msgid "Regression"
-#~ msgstr "Regresión"
 
 #~ msgid "Additional output"
 #~ msgstr "Saída adicional de resultados"
@@ -8021,9 +8029,6 @@ msgstr ""
 #~ msgid "Maximum treedepth"
 #~ msgstr "Máxima profundidade da árbore"
 
-#~ msgid "Direct"
-#~ msgstr "Directo"
-
 #~ msgid "for an uncertainty of:"
 #~ msgstr "para unha incerteza de:"
 
@@ -8435,9 +8440,6 @@ msgstr ""
 
 #~ msgid "Weighted least squares"
 #~ msgstr "Mínimos Cadrados Ponderados"
-
-#~ msgid "Rotation"
-#~ msgstr "Rotación"
 
 #~ msgid "Principal axis factoring"
 #~ msgstr "Factorización do eixe principal"

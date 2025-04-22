@@ -234,14 +234,6 @@ msgid "Observed vs. expected"
 msgstr "Yang diamati vs. yang diharapkan"
 
 msgctxt "auditClassicalEstimation|"
-msgid "Book Values"
-msgstr "Nilai Buku"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Audit Values"
-msgstr "Nilai Audit"
-
-msgctxt "auditClassicalEstimation|"
 msgid "Confidence"
 msgstr "Kepercayaan"
 
@@ -272,10 +264,6 @@ msgstr "Tabel"
 msgctxt "auditClassicalEstimation|"
 msgid "Required sample size"
 msgstr "Ukuran sampel yang diperlukan"
-
-msgctxt "auditClassicalEstimation|"
-msgid "for an uncertainty of:"
-msgstr "untuk suatu ketidakpastian:"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Method"
@@ -1173,10 +1161,6 @@ msgstr ""
 msgctxt "AuditVariable|"
 msgid "Audit Result (required)"
 msgstr "Hasil Audit (wajib)"
-
-msgctxt "AuditVariable|"
-msgid "Audit Values (required)"
-msgstr "Nilai Audit (wajib)"
 
 msgctxt "AuditVariable|"
 msgid ""
@@ -3517,4 +3501,20 @@ msgstr ""
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Produces the expected counts of the digits under the reference distribution."
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Audit Value"
+msgstr ""
+
+msgctxt "auditClassicalEstimation|"
+msgid "Uncertainty"
+msgstr ""
+
+msgctxt "AuditVariable|"
+msgid "Audit Value (required)"
 msgstr ""

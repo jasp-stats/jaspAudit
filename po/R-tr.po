@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.3\n"
-"POT-Creation-Date: 2025-04-20 08:44\n"
+"POT-Creation-Date: 2025-04-22 12:30\n"
 "PO-Revision-Date: 2025-04-04 15:07+0000\n"
 "Last-Translator: Uğur ÇELİK <prof_ugur@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -309,7 +309,7 @@ msgstr ""
 msgid "Regression estimator"
 msgstr ""
 
-msgid "Estimate %1$s"
+msgid "Point estimate"
 msgstr ""
 
 msgid "Uncertainty"
@@ -478,6 +478,18 @@ msgid ""
 "                                %7$s\n"
 "                                %8$s\n"
 "                                %9$s"
+msgstr ""
+
+msgid "Direct"
+msgstr ""
+
+msgid "Difference"
+msgstr ""
+
+msgid "Ratio"
+msgstr ""
+
+msgid "Regression"
 msgstr ""
 
 msgid "Required Sample Size"
@@ -1962,9 +1974,6 @@ msgid "<b>Table %1$i.</b> Misstated Items"
 msgstr ""
 
 msgid "ID"
-msgstr ""
-
-msgid "Difference"
 msgstr ""
 
 msgid "Counted"

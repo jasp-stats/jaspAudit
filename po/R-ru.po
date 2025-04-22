@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
-"POT-Creation-Date: 2025-04-20 08:44\n"
+"POT-Creation-Date: 2025-04-22 12:30\n"
 "PO-Revision-Date: 2025-04-21 16:31+0000\n"
 "Last-Translator: MikeWinny <winny63@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -367,8 +367,9 @@ msgstr "Оценщик отношения"
 msgid "Regression estimator"
 msgstr "Регрессионный оценщик"
 
-msgid "Estimate %1$s"
-msgstr "Оценка %1$s"
+#, fuzzy
+msgid "Point estimate"
+msgstr "Прямой оценщик"
 
 msgid "Uncertainty"
 msgstr "Неопределенность"
@@ -591,6 +592,20 @@ msgstr ""
 "                                %7$s\n"
 "                                %8$s\n"
 "                                %9$s"
+
+msgid "Direct"
+msgstr ""
+
+msgid "Difference"
+msgstr "Разность"
+
+#, fuzzy
+msgid "Ratio"
+msgstr "Отношение %1$s"
+
+#, fuzzy
+msgid "Regression"
+msgstr "Регрессионный оценщик"
 
 msgid "Required Sample Size"
 msgstr "Требуемый размер выборки"
@@ -2660,9 +2675,6 @@ msgstr "<b>Таблица %1$i.</b> Искаженные объекты"
 msgid "ID"
 msgstr "Идентификатор записи (ID)"
 
-msgid "Difference"
-msgstr "Разность"
-
 msgid "Counted"
 msgstr "Подсчитанный"
 
@@ -2895,6 +2907,9 @@ msgid ""
 msgstr ""
 "На рисунке показано, как накапливается доказательство гипотезы H₁ по "
 "отношению к гипотезе H₀."
+
+#~ msgid "Estimate %1$s"
+#~ msgstr "Оценка %1$s"
 
 #, fuzzy
 #~ msgid ""

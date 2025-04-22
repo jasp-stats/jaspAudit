@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-20 08:44\n"
+"POT-Creation-Date: 2025-04-22 12:30\n"
 "PO-Revision-Date: 2022-08-28 23:22+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -372,8 +372,9 @@ msgstr "Estimador de razão"
 msgid "Regression estimator"
 msgstr "Estimador de regressão"
 
-msgid "Estimate %1$s"
-msgstr "Estimativa %1$s"
+#, fuzzy
+msgid "Point estimate"
+msgstr "Estimador direto"
 
 msgid "Uncertainty"
 msgstr "Incerteza"
@@ -594,6 +595,21 @@ msgstr ""
 "                                %7$s\n"
 "                                %8$s\n"
 "                                %9$s"
+
+msgid "Direct"
+msgstr ""
+
+#, fuzzy
+msgid "Difference"
+msgstr "Estimador de diferença"
+
+#, fuzzy
+msgid "Ratio"
+msgstr "para %1"
+
+#, fuzzy
+msgid "Regression"
+msgstr "Estimador de regressão"
 
 msgid "Required Sample Size"
 msgstr "Tamanho de amostra necessária"
@@ -2187,10 +2203,6 @@ msgid "ID"
 msgstr ""
 
 #, fuzzy
-msgid "Difference"
-msgstr "Estimador de diferença"
-
-#, fuzzy
 msgid "Counted"
 msgstr "Contagem"
 
@@ -2398,6 +2410,9 @@ msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ versus the "
 "hypothesis H₀ accumulates."
 msgstr ""
+
+#~ msgid "Estimate %1$s"
+#~ msgstr "Estimativa %1$s"
 
 #, fuzzy
 #~ msgid "<u>Selecting a Fairness Measure</u>"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-20 08:44\n"
+"POT-Creation-Date: 2025-04-22 12:30\n"
 "PO-Revision-Date: 2025-03-22 10:53+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -368,8 +368,9 @@ msgstr "Quotient-Schätzer"
 msgid "Regression estimator"
 msgstr "Regressionsschätzer"
 
-msgid "Estimate %1$s"
-msgstr "Schätzung %1$s"
+#, fuzzy
+msgid "Point estimate"
+msgstr "Direkter Schätzer"
 
 msgid "Uncertainty"
 msgstr "Unsicherheit"
@@ -594,6 +595,20 @@ msgstr ""
 "                                %7$s\n"
 "                                %8$s\n"
 "                                %9$s"
+
+msgid "Direct"
+msgstr ""
+
+msgid "Difference"
+msgstr "Differenz"
+
+#, fuzzy
+msgid "Ratio"
+msgstr "Verhältnis %1$s"
+
+#, fuzzy
+msgid "Regression"
+msgstr "Regressionsschätzer"
 
 msgid "Required Sample Size"
 msgstr "Benötigter Stichprobenumfang"
@@ -2476,9 +2491,6 @@ msgstr "<b>Tabelle %1$i.</b> Falsch angegebene Posten"
 msgid "ID"
 msgstr "ID"
 
-msgid "Difference"
-msgstr "Differenz"
-
 msgid "Counted"
 msgstr "Gezählt"
 
@@ -2707,6 +2719,9 @@ msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ versus the "
 "hypothesis H₀ accumulates."
 msgstr ""
+
+#~ msgid "Estimate %1$s"
+#~ msgstr "Schätzung %1$s"
 
 #, fuzzy
 #~ msgid ""

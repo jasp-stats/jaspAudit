@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2025-04-20 08:44\n"
+"POT-Creation-Date: 2025-04-22 12:30\n"
 "PO-Revision-Date: 2025-04-21 16:31+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -366,8 +366,9 @@ msgstr "Estimador de la proporción"
 msgid "Regression estimator"
 msgstr "Estimador de la regresión"
 
-msgid "Estimate %1$s"
-msgstr "Estimar %1$s"
+#, fuzzy
+msgid "Point estimate"
+msgstr "Estimador directo"
 
 msgid "Uncertainty"
 msgstr "Incertidumbre"
@@ -594,6 +595,20 @@ msgstr ""
 "                                %7$s\n"
 "                                %8$s\n"
 "                                %9$s"
+
+msgid "Direct"
+msgstr ""
+
+msgid "Difference"
+msgstr "Diferencia"
+
+#, fuzzy
+msgid "Ratio"
+msgstr "Proporción %1$s"
+
+#, fuzzy
+msgid "Regression"
+msgstr "Estimador de la regresión"
 
 msgid "Required Sample Size"
 msgstr "Tamaño de Muestra Requerido"
@@ -2655,9 +2670,6 @@ msgstr "<b>Tabla %1$i.</b> Elementos Inexactos"
 msgid "ID"
 msgstr "ID"
 
-msgid "Difference"
-msgstr "Diferencia"
-
 msgid "Counted"
 msgstr "Cantidad"
 
@@ -2887,6 +2899,9 @@ msgid ""
 msgstr ""
 "La imagen ilustra como se acumula la evidencia de la hipótesis H₁ frente a "
 "la hipótesis H₀."
+
+#~ msgid "Estimate %1$s"
+#~ msgstr "Estimar %1$s"
 
 #, fuzzy
 #~ msgid ""

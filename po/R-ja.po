@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.3.1\n"
-"POT-Creation-Date: 2025-04-20 08:44\n"
+"POT-Creation-Date: 2025-04-22 12:30\n"
 "PO-Revision-Date: 2024-11-06 22:00+0000\n"
 "Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/jaspaudit-"
@@ -348,8 +348,9 @@ msgstr "比率推定量"
 msgid "Regression estimator"
 msgstr "回帰推定量"
 
-msgid "Estimate %1$s"
-msgstr "推定 %1$s"
+#, fuzzy
+msgid "Point estimate"
+msgstr "直接推定量"
 
 msgid "Uncertainty"
 msgstr "不確実性"
@@ -538,6 +539,19 @@ msgid ""
 "                                %8$s\n"
 "                                %9$s"
 msgstr ""
+
+msgid "Direct"
+msgstr ""
+
+msgid "Difference"
+msgstr "差"
+
+msgid "Ratio"
+msgstr ""
+
+#, fuzzy
+msgid "Regression"
+msgstr "回帰推定量"
 
 msgid "Required Sample Size"
 msgstr ""
@@ -2072,9 +2086,6 @@ msgstr "<b>表 %1$i.</b> 適合度検定"
 msgid "ID"
 msgstr ""
 
-msgid "Difference"
-msgstr "差"
-
 #, fuzzy
 msgid "Counted"
 msgstr "カウント"
@@ -2274,6 +2285,9 @@ msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ versus the "
 "hypothesis H₀ accumulates."
 msgstr ""
+
+#~ msgid "Estimate %1$s"
+#~ msgstr "推定 %1$s"
 
 #, fuzzy
 #~ msgid "<u>Selecting a Fairness Measure</u>"
