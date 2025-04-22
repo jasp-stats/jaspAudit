@@ -42,7 +42,7 @@ Form
 		{
 			id: 					bookValues
 			name: 					"bookValues"
-			title: 					qsTr("Book Values")
+			title: 					qsTr("Book Value")
 			singleVariable:			true
 			allowedColumns:			["scale"]
 			minNumericLevels:		1
@@ -54,7 +54,7 @@ Form
 		{
 			id: 					auditValues
 			name: 					"auditValues"
-			title: 					qsTr("Audit Values")
+			title: 					qsTr("Audit Value")
 			singleVariable: 		true
 			allowedColumns: 		["scale"]
 			minNumericLevels:		1
