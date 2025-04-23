@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
 "POT-Creation-Date: 2025-04-22 13:52\n"
-"PO-Revision-Date: 2025-04-21 16:31+0000\n"
+"PO-Revision-Date: 2025-04-23 07:43+0000\n"
 "Last-Translator: MikeWinny <winny63@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "ru/>\n"
@@ -371,9 +371,8 @@ msgstr "Оценщик отношения"
 msgid "Regression Estimator"
 msgstr "Регрессионный оценщик"
 
-#, fuzzy
 msgid "Point estimate"
-msgstr "Прямой оценщик"
+msgstr "Точечная оценка"
 
 msgid "Precision"
 msgstr "Погрешность"
@@ -465,9 +464,8 @@ msgstr "<i>Эта информация позволяет рассчитать:<
 msgid "The point estimate of the true population value %1$s"
 msgstr "Точечная оценка истинного значения суммы совокупности %1$s"
 
-#, fuzzy
 msgid "The precision of the estimator %1$s%2$s%3$s"
-msgstr "Неопределенность оценщика %1$s%2$s%3$s"
+msgstr "Погрешность оценщика %1$s%2$s%3$s"
 
 msgid "The confidence interval around the point estimate %1$s"
 msgstr "Доверительный интервал вокруг точечной оценки %1$s"
@@ -609,9 +607,8 @@ msgstr "Полученная погрешность"
 msgid "Current <i>n</i>"
 msgstr "Требуемое <i>n</i>"
 
-#, fuzzy
 msgid "Required precision"
-msgstr "Полученная погрешность"
+msgstr "Требуемая погрешность"
 
 msgid "Required <i>n</i>"
 msgstr "Требуемое <i>n</i>"
@@ -620,7 +617,7 @@ msgid "Additional <i>n</i>"
 msgstr "Дополнительное <i>n</i>"
 
 msgid "Scatter Plot"
-msgstr ""
+msgstr "Точечная диаграмма"
 
 msgid "Book value"
 msgstr "Балансовая стоимость"
