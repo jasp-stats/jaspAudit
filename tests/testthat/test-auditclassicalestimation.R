@@ -15,7 +15,7 @@ test_that("Regression Estimator table results match", {
   table <- results[["results"]][["regressionTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(754494.24, 723938.11, 30556.13, 785050.37)
+    list(754494.24, 728909.89, 25584.35, 780078.59)
   )
 })
 
@@ -23,6 +23,6 @@ test_that("Required Sample Size table results match", {
   table <- results[["results"]][["requiredSampleSizeTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(73, 50, 23, 30556.13, 25000)
+    list(53, 50, 3, 25584.35, 25000)
   )
 })

@@ -241,7 +241,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     r <- round(cor(
       dataset[[options[["bookValues"]]]],
       dataset[[options[["auditValues"]]]]
-    ), 2)
+    ), 3)
 
     q <- round(meanW / meanB, 4)
     s <- sqrt(sW^2 - 2 * q * r * sB * sW + q^2 * sB^2)
@@ -267,14 +267,14 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     r <- round(cor(
       dataset[[options[["bookValues"]]]],
       dataset[[options[["auditValues"]]]]
-    ), 2)
+    ), 3)
 
     b1 <- round((sum(dataset[[options[["bookValues"]]]] *
       dataset[[options[["auditValues"]]]]) -
       n * meanB * meanW) /
       (sum(dataset[[options[["bookValues"]]]]^2) -
         (sum(dataset[[options[["bookValues"]]]])^2) /
-          n), 2)
+          n), 3)
     s <- sW * sqrt(1 - r^2)
 
     pointEstimate <- round(N * meanW + b1 * (B - N * meanB), 2)
@@ -529,7 +529,7 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 
       calc8 <- gettextf("The correlation coefficient of the sample book values and audit values %1$s", "<i>r<sub>bw</sub></i>")
       if (ready) {
-        r <- round(cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]]), 2)
+        r <- round(cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]]), 3)
         calc8 <- gettextf("%1$s = %2$s", calc8, r)
       }
 
@@ -646,13 +646,13 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 
       calc7 <- gettextf("The correlation coefficient of the sample book values and audit values %1$s", "<i>r<sub>bw</sub></i>")
       if (ready) {
-        r <- round(cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]]), 2)
+        r <- round(cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]]), 3)
         calc7 <- gettextf("%1$s = %2$s", calc7, r)
       }
 
       calc8 <- gettextf("The regression coefficient of the sample book values and audit values %1$s", "<i>b<sub>1</sub></i>")
       if (ready) {
-        b1 <- round((sum(dataset[[options[["bookValues"]]]] * dataset[[options[["auditValues"]]]]) - n * meanB * meanW) / (sum(dataset[[options[["bookValues"]]]]^2) - (sum(dataset[[options[["bookValues"]]]])^2) / n), 2)
+        b1 <- round((sum(dataset[[options[["bookValues"]]]] * dataset[[options[["auditValues"]]]]) - n * meanB * meanW) / (sum(dataset[[options[["bookValues"]]]]^2) - (sum(dataset[[options[["bookValues"]]]])^2) / n), 3)
         calc8 <- gettextf("%1$s = %2$s", calc8, b1)
       }
 
