@@ -164,7 +164,9 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     return()
   }
 
-  regressionTable$addFootnote(gettext("Displayed numbers may differ from exact outcomes due to rounding in the calculations."))
+  if (options[["explanatoryText"]]) {
+    regressionTable$addFootnote(gettext("The displayed numbers are exact and may differ slightly from the rounded numbers in the explanatory text."))
+  }
   if (nrow(dataset) > options[["populationSize"]]) {
     regressionTable$addFootnote(symbol = gettext("<b>Warning.</b>"), gettext("The number of items in the population is lower than the number of items in the sample."))
   }
@@ -172,123 +174,52 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
     regressionTable$addFootnote(symbol = gettext("<b>Warning.</b>"), gettext("The number of items in the population is lower than the number of items in the sample."))
   }
 
-  dataset <- na.omit(dataset)
-
   N <- options[["populationSize"]]
   n <- nrow(dataset)
 
   if (options[["estimator"]] == "mpu") {
-    meanW <- round(mean(dataset[[options[["auditValues"]]]]), 2)
-    sW <- round(sd(dataset[[options[["auditValues"]]]]), 2)
-
-    pointEstimate <- round(N * meanW, 2)
-    lowerCI <- round(pointEstimate -
-      qt(
-        p = (1 - (1 - options[["confidence"]]) / 2),
-        df = n - 1
-      ) *
-        sW *
-        (N / sqrt(n)) *
-        sqrt((N - n) / (N - 1)), 2)
-
-    upperCI <- round(pointEstimate +
-      qt(
-        p = (1 - (1 - options[["confidence"]]) / 2),
-        df = n - 1
-      ) *
-        sW *
-        (N / sqrt(n)) *
-        sqrt((N - n) / (N - 1)), 2)
-
-    uncertainty <- round(qt(
-      p = (1 - (1 - options[["confidence"]]) / 2),
-      df = n - 1
-    ) *
-      sW *
-      (N / sqrt(n)) *
-      sqrt((N - n) / (N - 1)), 2)
-
+    meanW <- mean(dataset[[options[["auditValues"]]]])
+    sW <- sd(dataset[[options[["auditValues"]]]])
+    pointEstimate <- N * meanW
+    uncertainty <- qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) * sW * (N / sqrt(n)) * sqrt((N - n) / (N - 1))
+    lowerCI <- pointEstimate - uncertainty
+    upperCI <- pointEstimate + uncertainty
     result <- list(sW = sW, n = n, uncertainty = uncertainty)
   } else if (options[["estimator"]] == "difference") {
-    B <- round(options[["populationValue"]], 2)
-
-    meanE <- round(mean(dataset[[options[["bookValues"]]]] -
-      dataset[[options[["auditValues"]]]]), 2)
-
-    sE <- round(sd(dataset[[options[["bookValues"]]]] -
-      dataset[[options[["auditValues"]]]]), 2)
-
-    pointEstimate <- round(B - N * meanE, 2)
-
-    lowerCI <- round(pointEstimate -
-      qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
-        sE * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
-
-    upperCI <- round(pointEstimate +
-      qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
-        sE * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
-
-    uncertainty <- round(qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
-      sE * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
-
+    B <- options[["populationValue"]]
+    meanE <- mean(dataset[[options[["bookValues"]]]] - dataset[[options[["auditValues"]]]])
+    sE <- sd(dataset[[options[["bookValues"]]]] - dataset[[options[["auditValues"]]]])
+    pointEstimate <- B - N * meanE
+    uncertainty <- qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) * sE * (N / sqrt(n)) * sqrt((N - n) / (N - 1))
+    lowerCI <- pointEstimate - uncertainty
+    upperCI <- pointEstimate + uncertainty
     result <- list(sE = sE, n = n, uncertainty = uncertainty)
   } else if (options[["estimator"]] == "ratio") {
-    B <- round(options[["populationValue"]], 2)
-    meanB <- round(mean(dataset[[options[["bookValues"]]]]), 2)
-    sB <- round(sd(dataset[[options[["bookValues"]]]]), 2)
-    meanW <- round(mean(dataset[[options[["auditValues"]]]]), 2)
-    sW <- round(sd(dataset[[options[["auditValues"]]]]), 2)
-    r <- round(cor(
-      dataset[[options[["bookValues"]]]],
-      dataset[[options[["auditValues"]]]]
-    ), 3)
-
-    q <- round(meanW / meanB, 4)
+    B <- options[["populationValue"]]
+    meanB <- mean(dataset[[options[["bookValues"]]]])
+    sB <- sd(dataset[[options[["bookValues"]]]])
+    meanW <- mean(dataset[[options[["auditValues"]]]])
+    sW <- sd(dataset[[options[["auditValues"]]]])
+    r <- cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]])
+    q <- meanW / meanB
     s <- sqrt(sW^2 - 2 * q * r * sB * sW + q^2 * sB^2)
-    pointEstimate <- round(q * B, 2)
-
-    lowerCI <- round(pointEstimate -
-      qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
-        s * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
-
-    upperCI <- round(pointEstimate +
-      qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
-        s * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
-
-    uncertainty <- round(qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
-      s * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
-
+    pointEstimate <- q * B
+    uncertainty <- qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) * s * (N / sqrt(n)) * sqrt((N - n) / (N - 1))
+    lowerCI <- pointEstimate - uncertainty
+    upperCI <- pointEstimate + uncertainty
     result <- list(s = s, n = n, uncertainty = uncertainty)
   } else if (options[["estimator"]] == "regression") {
-    B <- round(options[["populationValue"]], 2)
-    meanB <- round(mean(dataset[[options[["bookValues"]]]]), 2)
-    meanW <- round(mean(dataset[[options[["auditValues"]]]]), 2)
-    sW <- round(sd(dataset[[options[["auditValues"]]]]), 2)
-    r <- round(cor(
-      dataset[[options[["bookValues"]]]],
-      dataset[[options[["auditValues"]]]]
-    ), 3)
-
-    b1 <- round((sum(dataset[[options[["bookValues"]]]] *
-      dataset[[options[["auditValues"]]]]) -
-      n * meanB * meanW) /
-      (sum(dataset[[options[["bookValues"]]]]^2) -
-        (sum(dataset[[options[["bookValues"]]]])^2) /
-          n), 3)
+    B <- options[["populationValue"]]
+    meanB <- mean(dataset[[options[["bookValues"]]]])
+    meanW <- mean(dataset[[options[["auditValues"]]]])
+    sW <- sd(dataset[[options[["auditValues"]]]])
+    r <- cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]])
+    b1 <- (sum(dataset[[options[["bookValues"]]]] * dataset[[options[["auditValues"]]]]) - n * meanB * meanW) / (sum(dataset[[options[["bookValues"]]]]^2) - (sum(dataset[[options[["bookValues"]]]])^2) / n)
     s <- sW * sqrt(1 - r^2)
-
-    pointEstimate <- round(N * meanW + b1 * (B - N * meanB), 2)
-    lowerCI <- round(pointEstimate -
-      qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
-        s * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
-
-    upperCI <- round(pointEstimate +
-      qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
-        s * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
-
-    uncertainty <- round(qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) *
-      s * (N / sqrt(n)) * sqrt((N - n) / (N - 1)), 2)
-
+    pointEstimate <- N * meanW + b1 * (B - N * meanB)
+    uncertainty <- qt(p = (1 - (1 - options[["confidence"]]) / 2), df = n - 1) * s * (N / sqrt(n)) * sqrt((N - n) / (N - 1))
+    lowerCI <- pointEstimate - uncertainty
+    upperCI <- pointEstimate + uncertainty
     result <- list(sW = sW, r = r, n = n, uncertainty = uncertainty)
   }
 
@@ -300,7 +231,6 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
   )
 
   regressionTable$addRows(row)
-
   jaspResults[["result"]] <- createJaspState(result)
 }
 
@@ -327,13 +257,13 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 
       calc3 <- gettextf("The mean of the sample audit values %1$s", "<i>w&#772</i>")
       if (options[["auditValues"]] != "") {
-        meanW <- round(mean(dataset[[options[["auditValues"]]]]), 2)
+        meanW <- round(mean(dataset[[options[["auditValues"]]]]), 3)
         calc3 <- gettextf("%1$s = %2$s", calc3, meanW)
       }
 
       calc4 <- gettextf("The standard deviation of the sample audit values %1$s", "<i>s<sub>w</sub></i>")
       if (options[["auditValues"]] != "") {
-        sW <- round(sd(dataset[[options[["auditValues"]]]]), 2)
+        sW <- round(sd(dataset[[options[["auditValues"]]]]), 3)
         calc4 <- gettextf("%1$s = %2$s", calc4, sW)
       }
 
@@ -403,19 +333,19 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 
       calc3 <- gettext("The sum of the population book values <i>B</i>")
       if (options[["populationValue"]] != 0) {
-        B <- round(options[["populationValue"]], 2)
+        B <- round(options[["populationValue"]], 3)
         calc3 <- gettextf("%1$s = %2$s", calc3, B)
       }
 
       calc4 <- gettextf("The mean of the sample errors %1$s", "<i>e&#772</i>")
       if (ready) {
-        meanE <- round(mean(dataset[[options[["bookValues"]]]] - dataset[[options[["auditValues"]]]]), 2)
+        meanE <- round(mean(dataset[[options[["bookValues"]]]] - dataset[[options[["auditValues"]]]]), 3)
         calc4 <- gettextf("%1$s = %2$s", calc4, meanE)
       }
 
       calc5 <- gettextf("The standard deviation of the sample errors %1$s", "<i>s<sub>e</sub></i>")
       if (ready) {
-        sE <- round(sd(dataset[[options[["bookValues"]]]] - dataset[[options[["auditValues"]]]]), 2)
+        sE <- round(sd(dataset[[options[["bookValues"]]]] - dataset[[options[["auditValues"]]]]), 3)
         calc5 <- gettextf("%1$s = %2$s", calc5, sE)
       }
 
@@ -499,43 +429,43 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 
       calc3 <- gettext("The sum of the population book values <i>B</i>")
       if (options[["populationValue"]] != 0) {
-        B <- round(options[["populationValue"]], 2)
+        B <- round(options[["populationValue"]], 3)
         calc3 <- gettextf("%1$s = %2$s", calc3, B)
       }
 
       calc4 <- gettextf("The mean of the sample book values %1$s", "<i>b&#772</i>")
       if (options[["bookValues"]] != "") {
-        meanB <- round(mean(dataset[[options[["bookValues"]]]]), 2)
+        meanB <- round(mean(dataset[[options[["bookValues"]]]]), 3)
         calc4 <- gettextf("%1$s = %2$s", calc4, meanB)
       }
 
       calc5 <- gettextf("The standard deviation of the sample book values %1$s", "<i>s<sub>b</sub></i>")
       if (options[["bookValues"]] != "") {
-        sB <- round(sd(dataset[[options[["bookValues"]]]]), 2)
+        sB <- round(sd(dataset[[options[["bookValues"]]]]), 3)
         calc5 <- gettextf("%1$s = %2$s", calc5, sB)
       }
 
       calc6 <- gettextf("The mean of the sample audit values %1$s", "<i>w&#772</i>")
       if (options[["auditValues"]] != "") {
-        meanW <- round(mean(dataset[[options[["auditValues"]]]]), 2)
+        meanW <- round(mean(dataset[[options[["auditValues"]]]]), 3)
         calc6 <- gettextf("%1$s = %2$s", calc6, meanW)
       }
 
       calc7 <- gettextf("The standard deviation of the sample audit values %1$s", "<i>s<sub>w</sub></i>")
       if (options[["auditValues"]] != "") {
-        sW <- round(sd(dataset[[options[["auditValues"]]]]), 2)
+        sW <- round(sd(dataset[[options[["auditValues"]]]]), 3)
         calc7 <- gettextf("%1$s = %2$s", calc7, sW)
       }
 
       calc8 <- gettextf("The correlation coefficient of the sample book values and audit values %1$s", "<i>r<sub>bw</sub></i>")
       if (ready) {
-        r <- round(cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]]), 3)
+        r <- round(cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]]), 5)
         calc8 <- gettextf("%1$s = %2$s", calc8, r)
       }
 
       calc9 <- gettextf("The correctness ratio %1$s", "<i>q<sub>bw</sub></i>")
       if (ready) {
-        q <- round(meanW / meanB, 4)
+        q <- round(meanW / meanB, 5)
         calc9 <- gettextf("%1$s = %2$s", calc9, q)
       }
 
@@ -622,37 +552,37 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 
       calc3 <- gettext("The sum of the population book values <i>B</i>")
       if (options[["populationValue"]] != 0) {
-        B <- round(options[["populationValue"]], 2)
+        B <- round(options[["populationValue"]], 3)
         calc3 <- gettextf("%1$s = %2$s", calc3, B)
       }
 
       calc4 <- gettextf("The mean of the sample book values %1$s", "<i>b&#772</i>")
       if (options[["bookValues"]] != "") {
-        meanB <- round(mean(dataset[[options[["bookValues"]]]]), 2)
+        meanB <- round(mean(dataset[[options[["bookValues"]]]]), 3)
         calc4 <- gettextf("%1$s = %2$s", calc4, meanB)
       }
 
       calc5 <- gettextf("The mean of the sample audit values %1$s", "<i>w&#772</i>")
       if (options[["auditValues"]] != "") {
-        meanW <- round(mean(dataset[[options[["auditValues"]]]]), 2)
+        meanW <- round(mean(dataset[[options[["auditValues"]]]]), 3)
         calc5 <- gettextf("%1$s = %2$s", calc5, meanW)
       }
 
       calc6 <- gettextf("The standard deviation of the sample audit values %1$s", "<i>s<sub>w</sub></i>")
       if (options[["auditValues"]] != "") {
-        sW <- round(sd(dataset[[options[["auditValues"]]]]), 2)
+        sW <- round(sd(dataset[[options[["auditValues"]]]]), 3)
         calc6 <- gettextf("%1$s = %2$s", calc6, sW)
       }
 
       calc7 <- gettextf("The correlation coefficient of the sample book values and audit values %1$s", "<i>r<sub>bw</sub></i>")
       if (ready) {
-        r <- round(cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]]), 3)
+        r <- round(cor(dataset[[options[["bookValues"]]]], dataset[[options[["auditValues"]]]]), 5)
         calc7 <- gettextf("%1$s = %2$s", calc7, r)
       }
 
       calc8 <- gettextf("The regression coefficient of the sample book values and audit values %1$s", "<i>b<sub>1</sub></i>")
       if (ready) {
-        b1 <- round((sum(dataset[[options[["bookValues"]]]] * dataset[[options[["auditValues"]]]]) - n * meanB * meanW) / (sum(dataset[[options[["bookValues"]]]]^2) - (sum(dataset[[options[["bookValues"]]]])^2) / n), 3)
+        b1 <- round((sum(dataset[[options[["bookValues"]]]] * dataset[[options[["auditValues"]]]]) - n * meanB * meanW) / (sum(dataset[[options[["bookValues"]]]]^2) - (sum(dataset[[options[["bookValues"]]]])^2) / n), 5)
         calc8 <- gettextf("%1$s = %2$s", calc8, b1)
       }
 
