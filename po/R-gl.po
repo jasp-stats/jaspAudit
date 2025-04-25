@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2025-04-23 07:45\n"
-"PO-Revision-Date: 2025-04-21 16:31+0000\n"
+"PO-Revision-Date: 2025-04-24 14:02+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
-"r/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-r/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -359,25 +359,20 @@ msgstr ""
 "%1$s O factor de Bayes indica que é %2$s veces máis probable que os datos se "
 "produzan baixo a hipótese nula que baixo a hipótese alternativa."
 
-#, fuzzy
 msgid "Direct Estimator"
 msgstr "Estimador directo"
 
-#, fuzzy
 msgid "Difference Estimator"
 msgstr "Estimador da diferenza"
 
-#, fuzzy
 msgid "Ratio Estimator"
 msgstr "Estimador do cociente"
 
-#, fuzzy
 msgid "Regression Estimator"
 msgstr "Estimador da regresión"
 
-#, fuzzy
 msgid "Point estimate"
-msgstr "Estimacións combinadas"
+msgstr "Estimación puntual"
 
 msgid "Precision"
 msgstr "Precisión"
@@ -400,6 +395,8 @@ msgid ""
 "The displayed numbers are exact and may differ slightly from the rounded "
 "numbers in the explanatory text."
 msgstr ""
+"Os números presentados son exactos e poden diferir lixeiramente dos números "
+"arredondados do texto explicativo."
 
 msgid ""
 "The number of items in the population is lower than the number of items in "
@@ -467,9 +464,8 @@ msgstr "<i>Esta información permite o cálculo de:</i>"
 msgid "The point estimate of the true population value %1$s"
 msgstr "A estimación puntual do valor poboacional verdadeiro %1$s"
 
-#, fuzzy
 msgid "The precision of the estimator %1$s%2$s%3$s"
-msgstr "A incerteza do estimador %1$s%2$s%3$s"
+msgstr "A precisión do estimador %1$s%2$s%3$s"
 
 msgid "The confidence interval around the point estimate %1$s"
 msgstr "O intervalo de confianza arredor da estimación puntual %1$s"
@@ -607,13 +603,11 @@ msgstr ""
 msgid "Required Sample Size"
 msgstr "Tamaño de Mostra Requirido"
 
-#, fuzzy
 msgid "Achieved precision"
-msgstr "Precisión obtida"
+msgstr "Precisión acadada"
 
-#, fuzzy
 msgid "Current <i>n</i>"
-msgstr "Requirido <i>n</i>"
+msgstr "Actual <i>n</i>"
 
 msgid "Required precision"
 msgstr "Precisión requirida"
@@ -624,9 +618,8 @@ msgstr "Requirido <i>n</i>"
 msgid "Additional <i>n</i>"
 msgstr "Adicional <i>n</i>"
 
-#, fuzzy
 msgid "Scatter Plot"
-msgstr "Gráficas de dispersión"
+msgstr "Gráfica de dispersión"
 
 msgid "Book value"
 msgstr "Valor contable"
