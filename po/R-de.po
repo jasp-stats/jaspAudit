@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2025-04-23 07:45\n"
-"PO-Revision-Date: 2025-03-22 10:53+0000\n"
+"PO-Revision-Date: 2025-04-28 09:03+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Prozedur</u>"
@@ -933,9 +933,8 @@ msgstr ""
 "für alle Gruppen in den Daten. Je näher die Parität bei eins liegt, desto "
 "weniger Diskriminierung findet im Algorithmus statt."
 
-#, fuzzy
 msgid "<u>Parity Estimates Plots</u>"
-msgstr "Diagramm Paritätsschätzungen"
+msgstr "<u>Diagramme Paritätsschätzungen</u>"
 
 #, fuzzy
 msgid "Parity Estimates Plot - True Positive Rate Parity"
@@ -977,21 +976,19 @@ msgid ""
 "conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s "
 "and %4$s across protected groups %5$s. %6$s"
 msgstr ""
-"Der <i>p</i>-Wert ist %1$s und die Nullhypothese von gleichen %2$s über "
-"geschützte Gruppen %3$s."
+"Die <i>p</i>-Werte sind %1$s und %2$s und die Nullhypothese von gleichen %3$"
+"s und %4$s über geschützte Gruppen %5$s. %6$s"
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across "
 "protected groups %3$s. %4$s"
 msgstr ""
 "Der <i>p</i>-Wert ist %1$s und die Nullhypothese von gleichen %2$s über "
-"geschützte Gruppen %3$s."
+"geschützte Gruppen %3$s. %4$s"
 
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
@@ -2438,9 +2435,8 @@ msgstr "Die Ergebnisse sind mit der Gamma-Verteilung berechnet."
 msgid "The results are computed using the beta-binomial distribution."
 msgstr "Die Ergebnisse sind mit der Beta-Binomialen-Verteilung berechnet."
 
-#, fuzzy
 msgid "The results are computed using the hurdle beta model"
-msgstr "Die Ergebnisse sind mit der Stringer-Methode berechnet."
+msgstr "Die Ergebnisse sind mit dem Hürden-Beta-Modell berechnet"
 
 msgid "The results are computed using the Stringer method with LTA adjustment."
 msgstr ""
