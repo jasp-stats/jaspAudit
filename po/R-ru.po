@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
 "POT-Creation-Date: 2025-04-23 07:45\n"
-"PO-Revision-Date: 2025-04-26 03:33+0000\n"
+"PO-Revision-Date: 2025-05-07 09:01+0000\n"
 "Last-Translator: MikeWinny <winny63@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "ru/>\n"
@@ -355,19 +355,15 @@ msgstr ""
 "%1$s Коэффициент Байеса указывает на то, что данные являются в %2$s более "
 "вероятными при нулевой гипотезе, чем при альтернативной гипотезе."
 
-#, fuzzy
 msgid "Direct Estimator"
 msgstr "Прямой оценщик"
 
-#, fuzzy
 msgid "Difference Estimator"
 msgstr "Оценщик разности"
 
-#, fuzzy
 msgid "Ratio Estimator"
 msgstr "Оценщик отношения"
 
-#, fuzzy
 msgid "Regression Estimator"
 msgstr "Регрессионный оценщик"
 
@@ -599,13 +595,11 @@ msgstr ""
 msgid "Required Sample Size"
 msgstr "Требуемый размер выборки"
 
-#, fuzzy
 msgid "Achieved precision"
-msgstr "Полученная погрешность"
+msgstr "Достигнутая погрешность"
 
-#, fuzzy
 msgid "Current <i>n</i>"
-msgstr "Требуемое <i>n</i>"
+msgstr "Текущее значение <i>n</i>"
 
 msgid "Required precision"
 msgstr "Требуемая погрешность"
@@ -2401,7 +2395,7 @@ msgid ""
 "errors does not exceed the detection risk as specified through the audit "
 "risk model."
 msgstr ""
-"<b>Figure %1$i.</b> Предполагаемое распределение %2$s. Количество ожидаемых "
+"<b>Рисунок %1$i.</b> Предполагаемое распределение %2$s. Количество ожидаемых "
 "ошибок в выборке окрашено красным цветом. Общая вероятность ошибок не "
 "превышает риск обнаружения, указанный в модели аудиторских рисков."
 
