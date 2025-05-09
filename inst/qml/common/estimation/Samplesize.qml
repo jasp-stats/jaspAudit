@@ -21,40 +21,20 @@ import QtQuick.Layouts
 import JASP
 import JASP.Controls
 
-import "./common" as Common
-import "./common/estimation" as Estimation
-
-Form
+CheckBox
 {
-	columns:						1
-	info:							qsTr("The estimation analysis allows the user to estimate the true value of a population on the basis of a sample.")
+	text:	 			qsTr("Required sample size")
+	name: 				"requiredSampleSizeTable"
+	info:				qsTr("Produces a table showing the required sample size to achive a desired precision.")
 
-	Estimation.VariablesFormEstimation { }
-	Estimation.Confidence { }
-	Estimation.Population { disableValues: estimator.useMpu }
-	Estimation.Estimator { id: estimator }
-	Common.ExplanatoryText { }
-
-	Section
+	DoubleField
 	{
-		title:						qsTr("Report")
-		columns:					2
-
-		Group
-		{
-			title: 					qsTr("Tables")
-			info:					qsTr("Add additional tables about the analysis to the report.")
-			Estimation.Samplesize { }
-		}
-
-		Group
-		{
-			title: 					qsTr("Plots")
-			info:					qsTr("Add additional figures about the analysis to the report.")
-			Estimation.Scatterplot { disable: estimator.useMpu }
-		}
-
+		name: 			"requiredUncertainty"
+		text: 			qsTr("Precision")
+		defaultValue: 	100000
+		fieldWidth: 	100 * preferencesModel.uiScale
+		min: 			1
+		decimals: 		3
+		info:			qsTr("The value of the precision.")
 	}
-
-	Common.DownloadReport { }
 }
