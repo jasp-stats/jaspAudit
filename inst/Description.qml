@@ -19,10 +19,6 @@ Description
 		title:			qsTr("Audit Sampling")
 		icon:			"audit-sampling.svg"
 	}
-	GroupTitleSmall
-	{
-		title:			qsTr("Workflow")
-	}
 	Analysis
 	{
 		title:			qsTr("Sampling Workflow")
