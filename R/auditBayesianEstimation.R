@@ -199,7 +199,7 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
     })
 
     if (jaspBase:::isTryError(pTry)) {
-      jf$setError(gettext("Plotting not possible: %1$s", jaspBase:::.extractErrorMessage(pTry)))
+      jf$setError(gettextf("Plotting not possible: %1$s", jaspBase:::.extractErrorMessage(pTry)))
       return()
     }
 
