@@ -47,7 +47,7 @@ Form
 				name: 				"priorMu"
 				text: 				qsTr("Prior mean \u03BC")
 				defaultValue: 		0
-				min: 				0
+				negativeValues:		true
 				decimals: 			2
 				info:				qsTr("The prior parameter for the mean.")
 			}
