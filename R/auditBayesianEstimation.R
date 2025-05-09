@@ -100,7 +100,7 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
 
   tb <- createJaspTable(title)
   tb$position <- position
-  tb$addColumnInfo(name = "estimate", title = gettext("Point estimate"), type = "number", format = "monetary")
+  tb$addColumnInfo(name = "estimate", title = gettext("Posterior mode"), type = "number", format = "monetary")
   tb$addColumnInfo(name = "uncertainty", title = gettext("Precision"), type = "number", format = "monetary")
   tb$addColumnInfo(name = "lower", title = gettext("Lower"), type = "number", format = "monetary", overtitle = overTitle)
   tb$addColumnInfo(name = "upper", title = gettext("Upper"), type = "number", format = "monetary", overtitle = overTitle)
@@ -147,54 +147,62 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
 
     result <- jaspResults[["state"]]$object
 
-    if (options[["priorKappa"]] == 0 || options[["priorNu"]] == 0) {
-      xseq <- seq(extraDistr::qlst(0.0001, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma),
-        extraDistr::qlst(0.9999, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma),
-        length.out = 1000
-      )
-      plotdata <- data.frame(x = xseq, y = extraDistr::dlst(xseq, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma), type = rep("Posterior", length(xseq)))
-      xBreaks <- pretty(plotdata$x, min.n = 4)
-      yBreaks <- pretty(c(0, plotdata$y), min.n = 4)
-      p <- ggplot2::ggplot(data = plotdata, mapping = ggplot2::aes(x = x, y = y, linetype = factor(type))) +
-        ggplot2::geom_line() +
-        ggplot2::scale_x_continuous(name = gettext("True population value"), limits = range(xBreaks), breaks = xBreaks) +
-        ggplot2::scale_y_continuous(name = gettext("Density"), limits = range(yBreaks), breaks = yBreaks) +
-        ggplot2::scale_linetype_manual(name = NULL, values = 1) +
-        jaspGraphs::geom_rangeframe() +
-        jaspGraphs::themeJaspRaw(legend.position = c(0.8, 0.9)) +
-        ggplot2::theme(
-          axis.ticks.y = ggplot2::element_blank(),
-          axis.text.y = ggplot2::element_blank()
+    pTry <- try({
+      if (options[["priorKappa"]] == 0 || options[["priorNu"]] == 0 || options[["priorSigma2"]] == 0) {
+        xseq <- seq(extraDistr::qlst(0.0001, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma),
+          extraDistr::qlst(0.9999, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma),
+          length.out = 1000
         )
-    } else {
-      xseq <- seq(
-        min(c(extraDistr::qlst(0.0001, df = result$prior$nu, mu = result$prior$mu, sigma = result$prior$sigma), extraDistr::qlst(0.0001, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma))),
-        max(c(extraDistr::qlst(0.9999, df = result$prior$nu, mu = result$prior$mu, sigma = result$prior$sigma), extraDistr::qlst(0.9999, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma))),
-        length.out = 1000
-      )
-      plotdata <- data.frame(
-        x = c(rep(xseq, 2)),
-        y = c(
-          extraDistr::dlst(xseq, df = result$prior$nu, mu = result$prior$mu, sigma = result$prior$sigma),
-          extraDistr::dlst(xseq, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma)
-        ),
-        type = c(rep(c("Prior", "Posterior"), each = length(xseq)))
-      )
-      plotdata$type <- factor(plotdata$type, levels = c("Posterior", "Prior"))
-      xBreaks <- pretty(plotdata$x, min.n = 4)
-      yBreaks <- pretty(c(0, plotdata$y), min.n = 4)
-      p <- ggplot2::ggplot(data = plotdata, mapping = ggplot2::aes(x = x, y = y, linetype = type)) +
-        ggplot2::geom_line() +
-        ggplot2::scale_x_continuous(name = gettext("True population value"), limits = range(xBreaks), breaks = xBreaks) +
-        ggplot2::scale_y_continuous(name = gettext("Density"), limits = range(yBreaks), breaks = yBreaks) +
-        ggplot2::scale_linetype_manual(name = NULL, values = c(1, 2)) +
-        jaspGraphs::geom_rangeframe() +
-        jaspGraphs::themeJaspRaw(legend.position = c(0.8, 0.9)) +
-        ggplot2::theme(
-          axis.ticks.y = ggplot2::element_blank(),
-          axis.text.y = ggplot2::element_blank()
+        plotdata <- data.frame(x = xseq, y = extraDistr::dlst(xseq, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma), type = rep("Posterior", length(xseq)))
+        xBreaks <- pretty(plotdata$x, min.n = 4)
+        yBreaks <- pretty(c(0, plotdata$y), min.n = 4)
+        p <- ggplot2::ggplot(data = plotdata, mapping = ggplot2::aes(x = x, y = y, linetype = factor(type))) +
+          ggplot2::geom_line() +
+          ggplot2::scale_x_continuous(name = gettext("True population value"), limits = range(xBreaks), breaks = xBreaks) +
+          ggplot2::scale_y_continuous(name = gettext("Density"), limits = range(yBreaks), breaks = yBreaks) +
+          ggplot2::scale_linetype_manual(name = NULL, values = 1) +
+          jaspGraphs::geom_rangeframe() +
+          jaspGraphs::themeJaspRaw(legend.position = c(0.8, 0.9)) +
+          ggplot2::theme(
+            axis.ticks.y = ggplot2::element_blank(),
+            axis.text.y = ggplot2::element_blank()
+          )
+      } else {
+        xseq <- seq(
+          min(c(extraDistr::qlst(0.0001, df = result$prior$nu, mu = result$prior$mu, sigma = result$prior$sigma), extraDistr::qlst(0.0001, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma))),
+          max(c(extraDistr::qlst(0.9999, df = result$prior$nu, mu = result$prior$mu, sigma = result$prior$sigma), extraDistr::qlst(0.9999, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma))),
+          length.out = 1000
         )
+        plotdata <- data.frame(
+          x = c(rep(xseq, 2)),
+          y = c(
+            extraDistr::dlst(xseq, df = result$prior$nu, mu = result$prior$mu, sigma = result$prior$sigma),
+            extraDistr::dlst(xseq, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma)
+          ),
+          type = c(rep(c("Prior", "Posterior"), each = length(xseq)))
+        )
+        plotdata$type <- factor(plotdata$type, levels = c("Posterior", "Prior"))
+        xBreaks <- pretty(plotdata$x, min.n = 4)
+        yBreaks <- pretty(c(0, plotdata$y), min.n = 4)
+        p <- ggplot2::ggplot(data = plotdata, mapping = ggplot2::aes(x = x, y = y, linetype = type)) +
+          ggplot2::geom_line() +
+          ggplot2::scale_x_continuous(name = gettext("True population value"), limits = range(xBreaks), breaks = xBreaks) +
+          ggplot2::scale_y_continuous(name = gettext("Density"), limits = range(yBreaks), breaks = yBreaks) +
+          ggplot2::scale_linetype_manual(name = NULL, values = c(1, 2)) +
+          jaspGraphs::geom_rangeframe() +
+          jaspGraphs::themeJaspRaw(legend.position = c(0.8, 0.9)) +
+          ggplot2::theme(
+            axis.ticks.y = ggplot2::element_blank(),
+            axis.text.y = ggplot2::element_blank()
+          )
+      }
+    })
+
+    if (jaspBase:::isTryError(pTry)) {
+      jf$setError(gettext("Plotting not possible: %1$s", jaspBase:::.extractErrorMessage(pTry)))
+      return()
     }
+
     fg$plotObject <- p
   }
 
