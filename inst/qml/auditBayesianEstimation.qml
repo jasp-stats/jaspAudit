@@ -27,7 +27,7 @@ import "./common/estimation" as Estimation
 Form
 {
 	columns:						1
-	info:							qsTr("The estimation analysis allows the user to estimate the true value of a population on the basis of a sample.")
+	info:							qsTr("The Bayesian estimation analysis allows the user to estimate the true value of a population on the basis of a sample.")
 
 	Estimation.VariablesFormEstimation { }
 	Estimation.Confidence { }
@@ -37,21 +37,70 @@ Form
 
 	Section
 	{
-		title:						qsTr("Report")
-		columns:					2
+		title:						qsTr("Prior")
+		columns:					1
 
 		Group
 		{
-			title: 					qsTr("Tables")
-			info:					qsTr("Add additional tables about the analysis to the report.")
-			Estimation.Samplesize { }
+			DoubleField
+			{
+				name: 				"priorMu"
+				text: 				qsTr("Prior mean \u03BC")
+				defaultValue: 		0
+				min: 				0
+				decimals: 			2
+				info:				qsTr("The prior parameter for the mean.")
+			}
+
+			DoubleField
+			{
+				name: 				"priorKappa"
+				text: 				qsTr("Prior mean weight \u03BA")
+				defaultValue: 		0
+				min: 				0
+				decimals: 			2
+				info:				qsTr("The prior parameter for the implicit sample size of the mean.")
+			}
+
+			DoubleField
+			{
+				name: 				"priorSigma2"
+				text: 				qsTr("Prior variance \u03C32")
+				defaultValue: 		0
+				min: 				0
+				decimals: 			2
+				info:				qsTr("The prior parameter for the variance.")
+			}
+
+			DoubleField
+			{
+				name: 				"priorNu"
+				text: 				qsTr("Prior variance weight \u03BD")
+				defaultValue: 		0
+				min: 				0
+				decimals: 			2
+				info:				qsTr("The prior parameter for the implicit sample size of the variance.")
+			}
 		}
+	}
+
+	Section
+	{
+		title:						qsTr("Report")
+		columns:					1
 
 		Group
 		{
 			title: 					qsTr("Plots")
 			info:					qsTr("Add additional figures about the analysis to the report.")
 			Estimation.Scatterplot { disable: estimator.useMpu }
+
+			CheckBox
+			{
+				text: 		qsTr("Prior and posterior")
+				name: 		"priorAndPosteriorPlot"
+				info:		qsTr("Produces a figure showing the prior and posterior distributions for the true population value.")
+			}
 		}
 
 	}

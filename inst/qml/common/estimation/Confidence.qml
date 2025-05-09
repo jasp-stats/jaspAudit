@@ -21,40 +21,9 @@ import QtQuick.Layouts
 import JASP
 import JASP.Controls
 
-import "./common" as Common
-import "./common/estimation" as Estimation
-
-Form
+CIField
 {
-	columns:						1
-	info:							qsTr("The estimation analysis allows the user to estimate the true value of a population on the basis of a sample.")
-
-	Estimation.VariablesFormEstimation { }
-	Estimation.Confidence { }
-	Estimation.Population { disableValues: estimator.useMpu }
-	Estimation.Estimator { id: estimator }
-	Common.ExplanatoryText { }
-
-	Section
-	{
-		title:						qsTr("Report")
-		columns:					2
-
-		Group
-		{
-			title: 					qsTr("Tables")
-			info:					qsTr("Add additional tables about the analysis to the report.")
-			Estimation.Samplesize { }
-		}
-
-		Group
-		{
-			title: 					qsTr("Plots")
-			info:					qsTr("Add additional figures about the analysis to the report.")
-			Estimation.Scatterplot { disable: estimator.useMpu }
-		}
-
-	}
-
-	Common.DownloadReport { }
+	name: 	"confidence"
+	label: 	qsTr("Confidence")
+	info:	qsTr("The confidence level used. The confidence level is the complement of the audit risk: the risk that the user is willing to take to give an incorrect judgment about the population. For example, if you want to use an audit risk of 5%, this equals 95% confidence.")
 }

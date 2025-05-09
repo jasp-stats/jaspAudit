@@ -21,40 +21,41 @@ import QtQuick.Layouts
 import JASP
 import JASP.Controls
 
-import "./common" as Common
-import "./common/estimation" as Estimation
-
-Form
+RadioButtonGroup
 {
-	columns:						1
-	info:							qsTr("The estimation analysis allows the user to estimate the true value of a population on the basis of a sample.")
+	readonly	property bool	useMpu: mpu.checked
 
-	Estimation.VariablesFormEstimation { }
-	Estimation.Confidence { }
-	Estimation.Population { disableValues: estimator.useMpu }
-	Estimation.Estimator { id: estimator }
-	Common.ExplanatoryText { }
+	name:			"estimator"
+	title: 			qsTr("Method")
+	info:			qsTr("The type of method used to estimate the true value of the population.")
 
-	Section
+	RadioButton
 	{
-		title:						qsTr("Report")
-		columns:					2
-
-		Group
-		{
-			title: 					qsTr("Tables")
-			info:					qsTr("Add additional tables about the analysis to the report.")
-			Estimation.Samplesize { }
-		}
-
-		Group
-		{
-			title: 					qsTr("Plots")
-			info:					qsTr("Add additional figures about the analysis to the report.")
-			Estimation.Scatterplot { disable: estimator.useMpu }
-		}
-
+		id:			mpu
+		name:		"mpu"
+		text:		qsTr("Direct estimator")
+		info:		qsTr("The Bayesian direct estimator.")
 	}
 
-	Common.DownloadReport { }
+	RadioButton
+	{
+		name:		"difference"
+		text:		qsTr("Difference estimator")
+		info:		qsTr("The Bayesian difference estimator.")
+	}
+
+	RadioButton
+	{
+		name:		"ratio"
+		text:		qsTr("Ratio estimator")
+		info:		qsTr("The Bayesian ratio estimator.")
+	}
+
+	RadioButton
+	{
+		name:		"regression"
+		text:		qsTr("Regression estimator")
+		checked:	true
+		info:		qsTr("The Bayesian regression estimator.")
+	}
 }
