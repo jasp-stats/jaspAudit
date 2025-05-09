@@ -64,6 +64,12 @@ Description
 		func:			"auditClassicalEstimation"
 		preloadData:	true
 	}
+	Analysis
+	{
+		title:			qsTr("Bayesian True Value Estimation")
+		func:			"auditBayesianEstimation"
+		preloadData:	true
+	}
 	
 	GroupTitle
 	{
