@@ -9,7 +9,7 @@ Description
 	version				: "0.20.0"
 	author				: "Koen Derks, Jacques de Swart, Eric-Jan Wagenmakers, Jan Wille and Ruud Wetzels"
 	maintainer			: "Koen Derks <k.derks@nyenrode.nl>"
-	website				: "www.github.com/koenderks/jfa"
+	website				: "www.github.com/koenderks/jaum"
 	preloadData			: false
 	license				: "GPL (>= 3)"
 	icon				: "audit-module.svg"
