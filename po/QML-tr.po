@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2025-05-16 23:05+0000\n"
+"Last-Translator: Ertuğrul Uyar <ertugruluyar.academic@gmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/tr/>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.12-dev\n"
 "X-Language: tr\n"
 "X-Qt-Contexts: true\n"
 
@@ -1275,7 +1281,7 @@ msgstr ""
 
 msgctxt "IntervalType|"
 msgid "Credible Interval (Alt. Hypothesis)"
-msgstr ""
+msgstr "Güvenilir Aralık (Alt. Hipotez)"
 
 msgctxt "IntervalType|"
 msgid "Confidence Interval (Alt. Hypothesis)"
@@ -1283,7 +1289,7 @@ msgstr ""
 
 msgctxt "IntervalType|"
 msgid "Credible Interval"
-msgstr ""
+msgstr "Güvenilir Aralık"
 
 msgctxt "IntervalType|"
 msgid "Confidence Interval"
@@ -2195,7 +2201,7 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Bayes factor robustness check"
-msgstr ""
+msgstr "Bayes faktörü sağlamlık kontrolü"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
@@ -2945,7 +2951,7 @@ msgstr ""
 
 msgctxt "FairnessOutput|"
 msgid "Bayes factor robustness check"
-msgstr ""
+msgstr "Bayes faktörü sağlamlık kontrolü"
 
 msgctxt "FairnessOutput|"
 msgid ""
