@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.3\n"
 "POT-Creation-Date: 2025-04-23 07:45\n"
-"PO-Revision-Date: 2025-04-04 15:07+0000\n"
-"Last-Translator: Uğur ÇELİK <prof_ugur@hotmail.com>\n"
+"PO-Revision-Date: 2025-05-16 23:05+0000\n"
+"Last-Translator: Ertuğrul Uyar <ertugruluyar.academic@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "tr/>\n"
 "Language: tr\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Prosedür</u>"
@@ -118,7 +118,7 @@ msgid "MAD"
 msgstr "OMS"
 
 msgid "df"
-msgstr ""
+msgstr "sd (serbestlik derecesi)"
 
 msgid "Benford's law"
 msgstr ""
@@ -176,7 +176,7 @@ msgid "%1$s%% Confidence Interval"
 msgstr ""
 
 msgid "Lower"
-msgstr "Daha düşük"
+msgstr "Alt"
 
 msgid "Upper"
 msgstr "Üst"
@@ -213,7 +213,7 @@ msgid "<b>Table %1$i.</b> Rows Matched to %2$s %3$s"
 msgstr ""
 
 msgid "Row"
-msgstr ""
+msgstr "Satır"
 
 msgid "Value"
 msgstr ""
@@ -1265,11 +1265,12 @@ msgid ""
 "the population taints are homogeneous."
 msgstr ""
 
+#, fuzzy
 msgid "gamma"
-msgstr ""
+msgstr "gama"
 
 msgid "beta"
-msgstr ""
+msgstr "beta"
 
 msgid "beta-binomial"
 msgstr ""
@@ -1836,9 +1837,8 @@ msgstr "Medyan"
 msgid "Variance"
 msgstr "Varyans"
 
-#, fuzzy
 msgid "Range"
-msgstr "Sıra"
+msgstr "Açıklık"
 
 msgid "Minimum"
 msgstr "Minimum"
