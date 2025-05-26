@@ -19,7 +19,7 @@ test_that("Direct Estimator table results match", {
   table <- results[["results"]][["summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(815398.066666667, 699530.415390775, 115867.651275891, 931265.717942558)
+    list(815398.066666667, 699135.90261438, 116262.164052287, 931660.230718954)
   )
 })
 
@@ -75,7 +75,7 @@ test_that("Ratio Estimator table results match", {
   table <- results[["results"]][["summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(760959.912828661, 748177.445523007, 12782.4673056537, 773742.380134315)
+    list(760959.912828661, 748133.92305051, 12825.9897781507, 773785.902606811)
   )
 })
 
@@ -98,6 +98,6 @@ test_that("Regression Estimator table results match", {
   table <- results[["results"]][["summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(757392.591641175, 744560.540015853, 12832.051625322, 770224.643266497)
+    list(757392.591641175, 744516.848715841, 12875.7429253338, 770268.334566509)
   )
 })

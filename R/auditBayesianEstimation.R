@@ -148,7 +148,7 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
     result <- jaspResults[["state"]]$object
 
     pTry <- try({
-      if (options[["priorKappa"]] == 0 || options[["priorNu"]] == 0 || options[["priorSigma2"]] == 0) {
+      if (options[["priorKappa"]] == 0 || options[["priorNu"]] <= 0 || options[["priorSigma2"]] == 0) {
         xseq <- seq(extraDistr::qlst(0.0001, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma),
           extraDistr::qlst(0.9999, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma),
           length.out = 1000
@@ -215,7 +215,7 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
   }
 }
 
-.jfaDirectBayes <- function(y, n, N, mu0 = 0, kappa0 = 0, nu0 = 0, sigma20 = 0, conf.level = 0.95) {
+.jfaDirectBayes <- function(y, n, N, mu0 = 0, kappa0 = 0, nu0 = -1, sigma20 = 0, conf.level = 0.95) {
   alpha <- (1 - conf.level) / 2
   mu_n <- (kappa0 * mu0 + n * mean(y)) / (kappa0 + n)
   kappa_n <- kappa0 + n
@@ -234,7 +234,7 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
   return(list(est = muY, lb = lb, ub = ub, unc = ub - muY, prior = list(nu = nu0, sigma = sigmaYprior, mu = muYprior), posterior = list(nu = nu_n, sigma = sigmaY, mu = muY)))
 }
 
-.jfaDifferenceBayes <- function(y, x, n, X, N, mu0 = 0, kappa0 = 0, nu0 = 0, sigma20 = 0, conf.level = 0.95) {
+.jfaDifferenceBayes <- function(y, x, n, X, N, mu0 = 0, kappa0 = 0, nu0 = -1, sigma20 = 0, conf.level = 0.95) {
   alpha <- (1 - conf.level) / 2
   e <- x - y
   mu_n <- (kappa0 * mu0 + n * mean(e)) / (kappa0 + n)
@@ -254,7 +254,7 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
   return(list(est = muY, lb = lb, ub = ub, unc = ub - muY, prior = list(nu = nu0, sigma = sigmaYprior, mu = muYprior), posterior = list(nu = nu_n, sigma = sigmaY, mu = muY)))
 }
 
-.jfaRatioBayes <- function(y, x, n, X, N, mu0 = 0, kappa0 = 0, nu0 = 0, sigma20 = 0, conf.level = 0.95) {
+.jfaRatioBayes <- function(y, x, n, X, N, mu0 = 0, kappa0 = 0, nu0 = -1, sigma20 = 0, conf.level = 0.95) {
   alpha <- (1 - conf.level) / 2
   q <- y / x
   mu_n <- (kappa0 * mu0 + n * mean(q)) / (kappa0 + n)
@@ -274,7 +274,7 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
   return(list(est = muY, lb = lb, ub = ub, unc = ub - muY, prior = list(nu = nu0, sigma = sigmaYprior, mu = muYprior), posterior = list(nu = nu_n, sigma = sigmaY, mu = muY)))
 }
 
-.jfaRegressionBayes <- function(y, x, n, X, N, mu0 = c(0, 0), Lambda0 = diag(2) * 0, nu0 = 0, sigma20 = 0, conf.level = 0.95) {
+.jfaRegressionBayes <- function(y, x, n, X, N, mu0 = c(0, 0), Lambda0 = diag(2) * 0, nu0 = -1, sigma20 = 0, conf.level = 0.95) {
   alpha <- (1 - conf.level) / 2
   D <- cbind(1, x)
   DtD <- t(D) %*% D
