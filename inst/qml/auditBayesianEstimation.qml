@@ -76,8 +76,9 @@ Form
 			{
 				name: 				"priorNu"
 				text: 				qsTr("Prior variance weight \u03BD")
-				defaultValue: 		0
-				min: 				0
+				defaultValue: 		-1
+				min: 				-1
+				negativeValues:		true
 				decimals: 			2
 				info:				qsTr("The prior parameter for the implicit sample size of the variance.")
 			}
