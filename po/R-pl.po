@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.0\n"
 "POT-Creation-Date: 2025-04-23 07:45\n"
-"PO-Revision-Date: 2025-05-31 03:35+0000\n"
+"PO-Revision-Date: 2025-06-01 21:05+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "pl/>\n"
@@ -509,13 +509,11 @@ msgstr "Wymagana wielkość próby"
 msgid "Achieved precision"
 msgstr ""
 
-#, fuzzy
 msgid "Current <i>n</i>"
-msgstr "Wymagane <i>n</i>"
+msgstr "Aktualne <i>n</i>"
 
-#, fuzzy
 msgid "Required precision"
-msgstr "Wymagana wielkość próby"
+msgstr "Wymagana precyzja"
 
 msgid "Required <i>n</i>"
 msgstr "Wymagane <i>n</i>"
@@ -524,7 +522,7 @@ msgid "Additional <i>n</i>"
 msgstr "Dodatkowe <i>n</i>"
 
 msgid "Scatter Plot"
-msgstr ""
+msgstr "Wykres rozrzutu"
 
 msgid "Book value"
 msgstr ""
