@@ -487,7 +487,7 @@
     "critical" = options[["critical_name"]],
     "stratum" = options[["stratum"]]
   )
-  if (!is.null(name) && name == "" && !(type %in% c("additional", "critical"))) {
+  if (!is.null(name) && any(name == "") && !(type %in% c("additional", "critical"))) {
     name <- NULL
   }
   return(name)
@@ -559,7 +559,11 @@
     if (!is.null(.jfaReadVariableFromOptions(options, type = "stratum"))) {
       dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id & variables != stratum)], columns.as.factor = stratum, exclude.na.listwise = variables)
     } else {
-      dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
+      if (stage == "selection" && !is.null(vars)) {
+        dataset <- .readDataSetToEnd(columns = c(id, vars), columns.as.numeric = variables[-which(variables %in% c(id, vars))], exclude.na.listwise = variables)
+      } else {
+        dataset <- .readDataSetToEnd(columns = id, columns.as.numeric = variables[which(variables != id)], exclude.na.listwise = variables)
+      }
     }
     dataset[[id]] <- as.character(dataset[[id]])
     if (stage == "evaluation" && !is.null(times) && !is.null(id) && !is.null(values.audit)) { # Apply sample filter only when required variables are given
