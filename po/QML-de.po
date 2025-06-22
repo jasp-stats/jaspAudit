@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2025-06-21 19:26+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1552,7 +1558,6 @@ msgctxt "AuditRiskModel|"
 msgid "Audit Risk Model"
 msgstr "Audit-Risiko-Modell"
 
-#, fuzzy
 msgctxt "AuditRiskModel|"
 msgid "Inherent risk"
 msgstr "Inhärentes Risiko"
@@ -1725,7 +1730,6 @@ msgctxt "Iterations|"
 msgid "Specify how the sample size is computed."
 msgstr "Geben Sie an, wie der Stichprobenumfang berechnet wird."
 
-#, fuzzy
 msgctxt "Iterations|"
 msgid "Increment"
 msgstr "Erhöhung"
@@ -1790,7 +1794,6 @@ msgstr ""
 "Bayesschen Analyse ist das Konjugat der hypergeometrischen "
 "Wahrscheinlichkeit die Beta-Binomiale Verteilung."
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Beta"
 msgstr "Beta"
@@ -1809,7 +1812,6 @@ msgid ""
 "binomial likelihood is the beta distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Gamma"
 msgstr "Gamma"
@@ -1828,7 +1830,6 @@ msgid ""
 "likelihood is the gamma distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Tables"
 msgstr "Tabellen"
@@ -1837,12 +1838,10 @@ msgctxt "PlanningOutput|"
 msgid "Add additional tables about the planning to the report."
 msgstr "Dem Bericht weitere Tabellen zur Planung hinzufügen."
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Prior and posterior"
 msgstr "Prior und Posterior"
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid ""
 "Produces a table that shows statistics for the prior distribution and the "
@@ -1851,7 +1850,6 @@ msgstr ""
 "Erzeugt eine Tabelle, die Statistiken für die Priorverteilung und die "
 "Posteriorverteilung zeigt."
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Descriptive statistics"
 msgstr "Deskriptive Statistiken"
@@ -1862,7 +1860,6 @@ msgid ""
 "in the data set."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Plots"
 msgstr "Diagramme"
@@ -1871,7 +1868,6 @@ msgctxt "PlanningOutput|"
 msgid "Add additional figures about the planning to the report."
 msgstr "Dem Bericht weitere Diagramme zur Planung hinzufügen."
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Compare sample sizes"
 msgstr "Stichprobenumfänge vergleichen"
@@ -1892,7 +1888,6 @@ msgid ""
 "input options and the calculated sample size."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Distribution of book values"
 msgstr "Verteilung der Buchwerte"
@@ -1933,7 +1928,6 @@ msgctxt "Population|"
 msgid "Population (optional)"
 msgstr ""
 
-#, fuzzy
 msgctxt "Population|"
 msgid "Population (required)"
 msgstr "Grundgesamtheit (erforderlich)"
@@ -1942,22 +1936,18 @@ msgctxt "Population|"
 msgid "Provide information about the population."
 msgstr ""
 
-#, fuzzy
 msgctxt "Population|"
 msgid "No. items"
 msgstr "Anz. Posten"
 
-#, fuzzy
 msgctxt "Population|"
 msgid "The total number of items (rows) in the population."
 msgstr "Die Gesamtzahl der Posten (Zeilen) in der Grundgesamtheit."
 
-#, fuzzy
 msgctxt "Population|"
 msgid "No. units"
 msgstr "Anz. Einheiten"
 
-#, fuzzy
 msgctxt "Population|"
 msgid ""
 "The total number of units in the population. Note that the units can be "
@@ -1975,12 +1965,10 @@ msgctxt "PriorMethod|"
 msgid "Choose how to construct the prior distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Method"
 msgstr "Methode"
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Default"
 msgstr "Standardeinstellung"
@@ -1989,17 +1977,14 @@ msgctxt "PriorMethod|"
 msgid "Parameters"
 msgstr ""
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Earlier sample"
 msgstr "Vorherige Stichprobe"
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Impartial"
 msgstr "Unparteiisch"
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Risk assessments"
 msgstr "Risikobewertungen"
@@ -2026,7 +2011,6 @@ msgctxt "PriorMethod|"
 msgid "The β parameter of the prior distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Sample size"
 msgstr "Stichprobenumfang"
@@ -2035,7 +2019,6 @@ msgctxt "PriorMethod|"
 msgid "The number of sampling units audited through an earlier sample."
 msgstr ""
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Misstatements"
 msgstr "Falschangaben"
@@ -2048,7 +2031,6 @@ msgctxt "SamplingObjectives|"
 msgid "Specify the options for the statistical procedure."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Sampling Objectives"
 msgstr "Ziele der Stichprobenziehung"
@@ -2057,7 +2039,6 @@ msgctxt "SamplingObjectives|"
 msgid "Specify the objectives for the sampling procedure."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Performance materiality"
 msgstr "Toleranzwesentlichkeit"
@@ -2087,7 +2068,6 @@ msgctxt "SamplingObjectives|"
 msgid "Specify how the performance materiality is defined."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Relative"
 msgstr "Relativ"
@@ -2102,7 +2082,6 @@ msgctxt "SamplingObjectives|"
 msgid "The percentage associated with the performance materiality."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Absolute"
 msgstr "Absolut"
@@ -2120,7 +2099,6 @@ msgctxt "SamplingObjectives|"
 msgid "Click to learn more about this objective"
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Minimum precision"
 msgstr "Minimale Genauigkeit"
