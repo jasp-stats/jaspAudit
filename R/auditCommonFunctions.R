@@ -580,7 +580,11 @@
 
   if (stage == "planning") {
     input[["conf_level"]] <- options[["conf_level"]]
-    input[["conf_level_label"]] <- paste0(round(input[["conf_level"]] * 100, 2), "%")
+    if (!options[["bayesian"]]) {
+      input[["conf_level_label"]] <- paste0(round((1 - .jfaAuditRiskModelCalculation(options)[["dr"]]) * 100, 2), "%")
+    } else {
+      input[["conf_level_label"]] <- paste0(round(input[["conf_level"]] * 100, 2), "%")
+    }
 
     if (!rawData) {
       input[["N.units"]] <- options[["n_units"]]
@@ -610,7 +614,11 @@
     input[["n.units"]] <- options[["n"]]
   } else if (stage == "evaluation") {
     input[["conf_level"]] <- options[["conf_level"]]
-    input[["conf_level_label"]] <- paste0(round(options[["conf_level"]] * 100, 2), "%")
+    if (!options[["bayesian"]]) {
+      input[["conf_level_label"]] <- paste0(round((1 - .jfaAuditRiskModelCalculation(options)[["dr"]]) * 100, 2), "%")
+    } else {
+      input[["conf_level_label"]] <- paste0(round(input[["conf_level"]] * 100, 2), "%")
+    }
     input[["likelihood"]] <- options[["method"]]
     # Take over N.units and N.items from population
     if (options[["dataType"]] == "pdata") {

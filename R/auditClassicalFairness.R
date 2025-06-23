@@ -818,17 +818,17 @@ auditClassicalFairness <- function(jaspResults, dataset, options, ...) {
     container$position <- position
     container$dependOn(options = c(.jfaFairnessCommonOptions("evaluation"), "explanatoryText"))
     if (metric[["metric"]] == "eo") {
-      reject_a <- state[["frequentist"]][["tp"]][["p.value"]] < (1 - options[["conf_level"]])
+      reject_a <- state[["frequentist"]][["tp"]][["p.value"]] < (1 - options[["conf_level"]]) && !is.na(state[["frequentist"]][["tp"]][["p.value"]])
       pval_a <- format.pval(state[["frequentist"]][["tp"]][["p.value"]], eps = 0.001)
       pval_a <- if (reject_a) paste0(pval_a, " < \u03B1") else paste0(pval_a, " >= \u03B1")
-      reject_b <- state[["frequentist"]][["fp"]][["p.value"]] < (1 - options[["conf_level"]])
+      reject_b <- state[["frequentist"]][["fp"]][["p.value"]] < (1 - options[["conf_level"]]) && !is.na(state[["frequentist"]][["fp"]][["p.value"]])
       pval_b <- format.pval(state[["frequentist"]][["fp"]][["p.value"]], eps = 0.001)
       pval_b <- if (reject_b) paste0(pval_b, " < \u03B1") else paste0(pval_b, " >= \u03B1")
       conclusion_part1 <- if (reject_a || reject_b) rejectedText else notRejectedText
       conclusion_part2 <- if (reject_a || reject_b) conclusionRejectedText else conclusionNotRejectedText
       caption <- gettextf("The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s and %4$s across protected groups %5$s. %6$s", pval_a, pval_b, tolower(metric[["title"]][[1]]), tolower(metric[["title"]][[2]]), conclusion_part1, conclusion_part2)
     } else {
-      rejectnull <- state[["frequentist"]][["p.value"]] < (1 - options[["conf_level"]])
+      rejectnull <- state[["frequentist"]][["p.value"]] < (1 - options[["conf_level"]]) && !is.na(state[["frequentist"]][["p.value"]])
       conclusion_part1 <- if (rejectnull) rejectedText else notRejectedText
       conclusion_part2 <- if (rejectnull) conclusionRejectedText else conclusionNotRejectedText
       pval <- format.pval(state[["frequentist"]][["p.value"]], eps = 0.001)
