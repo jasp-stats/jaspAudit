@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-08-05 15:02+0000\n"
+"PO-Revision-Date: 2025-08-06 07:43+0000\n"
 "Last-Translator: Wendel Paulo Silvestre <wpsilvestre@ucs.br>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/pt/>\n"
@@ -398,7 +398,6 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Explanatory text"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Mostrar texto explicativo em cada etapa da análise"
@@ -419,7 +418,6 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Last"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Frequency table"
 msgstr "Tabela de frequências"
@@ -436,7 +434,6 @@ msgctxt "auditClassicalEstimation|"
 msgid "Explanatory text"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Mostrar texto explicativo em cada etapa da análise"
@@ -477,7 +474,6 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory text"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Mostrar texto explicativo em cada etapa da análise"
@@ -2266,7 +2262,6 @@ msgid ""
 "incorporated into the prior distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "ExpectedPopRate|"
 msgid "Relative"
 msgstr "Relativo"
@@ -2328,7 +2323,6 @@ msgctxt "EvaluationOutput|"
 msgid "Specify how the overall materiality is defined."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Relative"
 msgstr "Relativo"
@@ -2343,7 +2337,6 @@ msgctxt "EvaluationOutput|"
 msgid "The percentage associated with the overall materiality."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Absolute"
 msgstr "Absoluto"
@@ -2538,10 +2531,9 @@ msgctxt "Algorithm|"
 msgid "Sets the number of MCMC chains."
 msgstr ""
 
-#, fuzzy
 msgctxt "Algorithm|"
 msgid "Seed"
-msgstr "Seed"
+msgstr "Semente"
 
 msgctxt "Algorithm|"
 msgid ""
@@ -2773,10 +2765,9 @@ msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Report"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Add additional figures about the evaluation to the report."
@@ -2798,15 +2789,13 @@ msgid ""
 "unprivileged group(s)."
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>1. Selection</b>"
-msgstr "<b>2. Seleção</b> {1.?}"
+msgstr "<b>1. Seleção</b>"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "1. Selection"
-msgstr "2. Seleção {1.?}"
+msgstr "1. Seleção"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
@@ -2821,20 +2810,17 @@ msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>Download Report</b>"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>To Evaluation</b>"
 msgstr "<b>Para Avaliação</b>"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>2. Evaluation</b>"
-msgstr "<b>4. Avaliação</b> {2.?}"
+msgstr "<b>2. Avaliação</b>"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "2. Evaluation"
-msgstr "4. Avaliação {2.?}"
+msgstr "2. Avaliação"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Advanced"
@@ -2872,7 +2858,6 @@ msgctxt "BayesFactorType|"
 msgid "Natural logarithm of BF10."
 msgstr ""
 
-#, fuzzy
 msgctxt "ConfidenceLevel|"
 msgid "Confidence"
 msgstr "Confiança"
@@ -2885,7 +2870,6 @@ msgid ""
 "of 5%, this equals 95% confidence."
 msgstr ""
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Tables"
 msgstr "Tabelas"
@@ -2938,10 +2922,9 @@ msgctxt "FairnessOutput|"
 msgid "Transposes the confusion matrix."
 msgstr ""
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
 msgctxt "FairnessOutput|"
 msgid "Add additional figures about the evaluation to the report."
@@ -3095,10 +3078,9 @@ msgctxt "PriorDistribution|"
 msgid "Specifies the concentration parameter for the Dirichlet prior."
 msgstr ""
 
-#, fuzzy
 msgctxt "PriorDistribution|"
 msgid "Seed"
-msgstr "Seed"
+msgstr "Semente"
 
 msgctxt "PriorDistribution|"
 msgid ""
