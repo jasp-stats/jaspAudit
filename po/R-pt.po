@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2025-04-23 07:45\n"
-"PO-Revision-Date: 2022-08-28 23:22+0000\n"
-"Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
+"PO-Revision-Date: 2025-08-06 07:43+0000\n"
+"Last-Translator: Wendel Paulo Silvestre <wpsilvestre@ucs.br>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-r/pt/>\n"
 "Language: pt\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -20,7 +20,6 @@ msgstr ""
 msgid "<u>Procedure</u>"
 msgstr "<u>Procedimento</u>"
 
-#, fuzzy
 msgid ""
 "Benford's law states that in many naturally occurring collections of "
 "numerical observations, the leading significant digit is likely to be small. "
@@ -33,11 +32,10 @@ msgstr ""
 "que ocorrem naturalmente, o dígito principal significativo provavelmente é "
 "pequeno. O objetivo deste procedimento é determinar até que ponto os "
 "primeiros dígitos iniciais no conjunto de dados seguem a lei de Benford e "
-"testar essa relação com um erro tipo I de <b>%1$s</b>. Os dados que não são "
+"testar essa relação com um erro tipo I de %1$s. Os dados que não são "
 "distribuídos de acordo com a lei de Benford podem precisar de investigação "
 "adicional."
 
-#, fuzzy
 msgid ""
 "Benford's law states that in many naturally occurring collections of "
 "numerical observations, the leading significant digit is likely to be small. "
@@ -50,11 +48,10 @@ msgstr ""
 "que ocorrem naturalmente, o dígito principal significativo provavelmente é "
 "pequeno. O objetivo deste procedimento é determinar até que ponto os dois "
 "primeiros dígitos iniciais no conjunto de dados seguem a lei de Benford e "
-"testar essa relação com um erro tipo I de <b>%1$s</b>. Os dados que não são "
+"testar essa relação com um erro tipo I de %1$s. Os dados que não são "
 "distribuídos de acordo com a lei de Benford podem precisar de investigação "
 "adicional."
 
-#, fuzzy
 msgid ""
 "Benford's law states that in many naturally occurring collections of "
 "numerical observations, the leading significant digit is likely to be small. "
@@ -67,10 +64,9 @@ msgstr ""
 "que ocorrem naturalmente, o dígito principal significativo provavelmente é "
 "pequeno. O objetivo deste procedimento é determinar até que ponto os últimos "
 "dígitos no conjunto de dados seguem a lei de Benford e testar essa relação "
-"com um erro tipo I de <b>%1$s</b>. Os dados que não são distribuídos de "
-"acordo com a lei de Benford podem precisar de investigação adicional."
+"com um erro tipo I de %1$s. Os dados que não são distribuídos de acordo com "
+"a lei de Benford podem precisar de investigação adicional."
 
-#, fuzzy
 msgid ""
 "The uniform distribution assigns equal probability to all possible digits "
 "that may occur. The goal of this procedure is to determine to what extent "
@@ -82,11 +78,10 @@ msgstr ""
 "A distribuição uniforme atribui probabilidade igual a todos os dígitos "
 "possíveis que podem ocorrer. O objetivo deste procedimento é determinar até "
 "que ponto os primeiros dígitos iniciais no conjunto de dados seguem a "
-"distribuição uniforme e testar essa relação com um erro tipo I de <b>%1$s</"
-"b>. Se a suposição de distribuição uniforme for desejável, a violação da "
+"distribuição uniforme e testar essa relação com um erro tipo I de %1$s. Se a "
+"suposição de distribuição uniforme for desejável, então a violação da "
 "uniformidade é motivo para investigação posterior."
 
-#, fuzzy
 msgid ""
 "The uniform distribution assigns equal probability to all possible digits "
 "that may occur. The goal of this procedure is to determine to what extent "
@@ -98,11 +93,10 @@ msgstr ""
 "A distribuição uniforme atribui probabilidade igual a todos os dígitos "
 "possíveis que podem ocorrer. O objetivo deste procedimento é determinar até "
 "que ponto os primeiros dois dígitos iniciais no conjunto de dados seguem a "
-"distribuição uniforme e testar essa relação com um erro tipo I de <b>%1$s</"
-"b>. Se a suposição de distribuição uniforme for desejável, a violação da "
+"distribuição uniforme e testar essa relação com um erro tipo I de %1$s. Se a "
+"suposição de distribuição uniforme for desejável, então a violação da "
 "uniformidade é motivo para investigação posterior."
 
-#, fuzzy
 msgid ""
 "The uniform distribution assigns equal probability to all possible digits "
 "that may occur. The goal of this procedure is to determine to what extent "
@@ -114,9 +108,9 @@ msgstr ""
 "A distribuição uniforme atribui probabilidade igual a todos os dígitos "
 "possíveis que podem ocorrer. O objetivo deste procedimento é determinar em "
 "que medida os últimos dígitos no conjunto de dados seguem a distribuição "
-"uniforme e testar essa relação com um erro tipo I de <b>%1$s</b>. Se a "
-"suposição de distribuição uniforme for desejável, a violação da uniformidade "
-"é motivo para investigação posterior."
+"uniforme e testar essa relação com um erro tipo I de %1$s. Se a suposição de "
+"distribuição uniforme for desejável, então a violação da uniformidade é "
+"motivo para investigação posterior."
 
 msgid "<u>Assessing Benford's Law</u>"
 msgstr "<u>Avaliando a Lei de Benford</u>"
@@ -124,26 +118,23 @@ msgstr "<u>Avaliando a Lei de Benford</u>"
 msgid "<u>Assessing the Uniform Distribution</u>"
 msgstr "<u>Avaliando a Distribuição Uniforme</u>"
 
-#, fuzzy
 msgid "Benford's Law"
 msgstr "Lei de Benford"
 
-#, fuzzy
 msgid "Uniform Distribution"
-msgstr "Distribuição cumulativa empírica"
+msgstr "Distribuição Uniforme"
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
-msgstr "<b>Tabela %1$i.</b> Teste de valores repetidos"
+msgstr "<b>Tabela %1$i.</b> Teste Omnibus - %2$s"
 
 msgid "BF%1$s"
-msgstr ""
+msgstr "BF%1$s"
 
 msgid "Log(BF%1$s)"
-msgstr ""
+msgstr "Log(BF%1$s)"
 
 msgid "MAD"
-msgstr ""
+msgstr "DAM"
 
 msgid "df"
 msgstr "gl"
@@ -151,16 +142,15 @@ msgstr "gl"
 msgid "Benford's law"
 msgstr "Lei de Benford"
 
-#, fuzzy
 msgid "the uniform distribution"
-msgstr "Distribuição cumulativa empírica"
+msgstr "a distribuição uniforme"
 
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
 "are distributed according to %1$s."
 msgstr ""
 "A hipótese nula especifica que os primeiros dígitos (1 - 9) no conjunto de "
-"dados são distribuídos de acordo com %1$s"
+"dados são distribuídos de acordo com %1$s."
 
 msgid ""
 "The null hypothesis specifies that the first two digits (10 - 99) in the "
@@ -186,9 +176,8 @@ msgid ""
 "counts being lower than 5."
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Frequency Table"
-msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
+msgstr "<b>Tabela %1$i.</b> Tabela de Frequência"
 
 msgid "Leading digit"
 msgstr "Dígito inicial"
@@ -199,9 +188,8 @@ msgstr "Dígitos iniciais"
 msgid "Last digit"
 msgstr "Último dígito"
 
-#, fuzzy
 msgid "Uniform distribution"
-msgstr "Distribuição cumulativa empírica"
+msgstr "Distribuição uniforme"
 
 msgid "Count"
 msgstr "Contagem"
@@ -209,7 +197,6 @@ msgstr "Contagem"
 msgid "Relative frequency"
 msgstr ""
 
-#, fuzzy
 msgid "%1$s%% Confidence Interval"
 msgstr "Intervalo de Confiança %1$s%%"
 
@@ -219,17 +206,15 @@ msgstr "Inferior"
 msgid "Upper"
 msgstr "Superior"
 
-#, fuzzy
 msgid "Expected count"
-msgstr "Modelo médio posterior"
+msgstr "Contagem esperada"
 
-#, fuzzy
 msgid ""
 "The null hypothesis specifies that the relative frequency of a digit is "
 "equal to its expected relative frequency under %1$s."
 msgstr ""
-"A hipótese nula especifica que os últimos dígitos (1 - 9) no conjunto de "
-"dados são distribuídos de acordo com %1$s."
+"A hipótese nula especifica que a frequência relativa de um dígito é igual à "
+"sua frequência relativa esperada sob %1$s."
 
 msgid "Bayes factors are computed using a beta(1, 1) prior."
 msgstr ""
@@ -242,24 +227,20 @@ msgstr ""
 msgid "The <i>p</i>-values are based on independent binomial distributions."
 msgstr ""
 
-#, fuzzy
 msgid "Leading Digit"
-msgstr "Dígito inicial"
+msgstr "Dígito Inicial"
 
-#, fuzzy
 msgid "Leading Digits"
-msgstr "Dígitos iniciais"
+msgstr "Dígitos Iniciais"
 
-#, fuzzy
 msgid "Last Digit"
-msgstr "Último dígito"
+msgstr "Último Dígito"
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Rows Matched to %2$s %3$s"
-msgstr "<b>Tabela %1$i.</b> Teste de valores repetidos"
+msgstr "<b>Tabela %1$i.</b> As linhas correspondem a %2$s %3$s"
 
 msgid "Row"
-msgstr ""
+msgstr "Linha"
 
 msgid "Value"
 msgstr "Valor"
@@ -278,21 +259,19 @@ msgid ""
 "preferences."
 msgstr ""
 
-#, fuzzy
 msgid "Observed vs. Expected Relative Frequencies"
-msgstr "Porcentagens observadas vs. porcentagens esperadas"
+msgstr "Frequências Relativas Observadas vs. Esperadas"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The observed relative frequencies of each digit in the "
 "data set compared to the expected relative frequencies under %2$s. For data "
 "sets distributed according %2$s the blue dots will lie near the top of the "
 "grey bars."
 msgstr ""
-"<b> Figura %i:</b> Porcentagens observadas de cada dígito no conjunto de "
-"dados em comparação com a porcentagem esperada em %2$s. Para conjuntos de "
-"dados distribuídos de acordo com %2$s, os pontos azuis ficarão próximos ao "
-"topo das barras cinza."
+"<b> Figura %i:</b> As frequências relativas observadas para cada dígito no "
+"conjunto de dados comparado com a frequência relativa esperada é inferior a "
+"%2$s. Para conjuntos de dados distribuídos de acordo com %2$s, os pontos "
+"azuis ficarão próximos ao topo das barras cinza."
 
 msgid "Bayes Factor Robustness Plot"
 msgstr ""
@@ -323,69 +302,58 @@ msgstr "é rejeitado"
 msgid "is not rejected"
 msgstr "não é rejeitado"
 
-#, fuzzy
 msgid "%1$s < %2$s"
-msgstr "%1$s = %2$s"
+msgstr "%1$s < %2$s"
 
-#, fuzzy
 msgid "%1$s >= %2$s"
-msgstr "%1$s = %2$s"
+msgstr "%1$s >= %2$s"
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis that the first digits in "
 "the data set are distributed according to %2$s %3$s."
 msgstr ""
-"O valor <i>p</i> é %1$s e a hipótese nula de que os primeiros dígitos no "
-"conjunto de dados são distribuídos de acordo com %2$s <b>%3$s</b>."
+"O valor-<i>p</i> é %1$s e a hipótese nula de que os primeiros dígitos no "
+"conjunto de dados são distribuídos de acordo com %2$s %3$s."
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis that the first two digits "
 "in the data set are distributed according to %2$s %3$s."
 msgstr ""
-"O valor <i>p</i> é %1$s e a hipótese nula de que os primeiros dois dígitos "
-"no conjunto de dados são distribuídos de acordo com %2$s <b>%3$s</b>."
+"O valor-<i>p</i> é %1$s e a hipótese nula de que os primeiros dois dígitos "
+"no conjunto de dados são distribuídos de acordo com %2$s %3$s."
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis that the last digits in "
 "the data set are distributed according to %2$s %3$s."
 msgstr ""
 "O valor <i>p</i> é %1$s e a hipótese nula de que os últimos dígitos no "
-"conjunto de dados são distribuídos de acordo com %2$s <b>%3$s</b>."
+"conjunto de dados são distribuídos de acordo com %2$s %3$s."
 
 msgid ""
 "%1$s The Bayes factor indicates that the data are %2$s times more likely to "
 "occur under the null hypothesis than under the alternative hypothesis."
 msgstr ""
 
-#, fuzzy
 msgid "Direct Estimator"
-msgstr "Estimador direto"
+msgstr "Estimador Direto"
 
-#, fuzzy
 msgid "Difference Estimator"
-msgstr "Estimador de diferença"
+msgstr "Estimador de Diferença"
 
-#, fuzzy
 msgid "Ratio Estimator"
-msgstr "Estimador de razão"
+msgstr "Estimador de Razão"
 
-#, fuzzy
 msgid "Regression Estimator"
-msgstr "Estimador de regressão"
+msgstr "Estimador de Regressão"
 
-#, fuzzy
 msgid "Point estimate"
-msgstr "Estimador direto"
+msgstr "Estimativa pontual"
 
-#, fuzzy
 msgid "Precision"
-msgstr "Regressão"
+msgstr "Precisão"
 
 msgid "%1$s%% Confidence interval"
-msgstr "Intervalo de Confiança %1$s%%"
+msgstr "Intervalo de confiança %1$s%%"
 
 msgid "Please specify the population size and your audit values."
 msgstr "Especifique o tamanho da população e seus valores de auditoria."
@@ -465,9 +433,8 @@ msgstr "<i>Esta informação permite o cálculo de:</i>"
 msgid "The point estimate of the true population value %1$s"
 msgstr "A estimativa pontual do verdadeiro valor da população %1$s"
 
-#, fuzzy
 msgid "The precision of the estimator %1$s%2$s%3$s"
-msgstr "A incerteza do estimador %1$s%2$s%3$s"
+msgstr "A precisão do estimador %1$s%2$s%3$s"
 
 msgid "The confidence interval around the point estimate %1$s"
 msgstr "O intervalo de confiança em torno da estimativa pontual %1$s"
@@ -488,6 +455,7 @@ msgid ""
 "<i>The required information for the <b>difference</b> estimator consists of:"
 "</i>"
 msgstr ""
+"<i>A informação requerida para o estimador <b>diferença</b> consiste:</i>"
 
 msgid "The sum of the population book values <i>B</i>"
 msgstr "A soma dos valores contábeis da população <i>B</i>"
@@ -603,17 +571,14 @@ msgstr ""
 msgid "Required Sample Size"
 msgstr "Tamanho de amostra necessária"
 
-#, fuzzy
 msgid "Achieved precision"
-msgstr "Regressão"
+msgstr "Precisão alcançada"
 
-#, fuzzy
 msgid "Current <i>n</i>"
-msgstr "Necessário <i>n</i>"
+msgstr "Atual <i>n</i>"
 
-#, fuzzy
 msgid "Required precision"
-msgstr "Regressão"
+msgstr "Precisão necessária"
 
 msgid "Required <i>n</i>"
 msgstr "Necessário <i>n</i>"
@@ -624,13 +589,11 @@ msgstr "Adicional <i>n</i>"
 msgid "Scatter Plot"
 msgstr ""
 
-#, fuzzy
 msgid "Book value"
 msgstr "Valores contábeis"
 
-#, fuzzy
 msgid "Audit value"
-msgstr "Valores de auditoria"
+msgstr "Auditar valor"
 
 msgid ""
 "<b>Figure 1.</b> Scatter plot of the book values in the selection and their "
@@ -655,7 +618,7 @@ msgid "Specificity"
 msgstr ""
 
 msgid "Accuracy"
-msgstr ""
+msgstr "Precisão"
 
 msgid "False positive rate"
 msgstr ""
@@ -733,9 +696,8 @@ msgid ""
 "test."
 msgstr ""
 
-#, fuzzy
 msgid "<u>Assessing Model Fairness</u>"
-msgstr "<u>Avaliando valores repetidos</u>"
+msgstr "<u>Avaliando a imparcialidade do modelo</u>"
 
 msgid "An error occurred: %1$s"
 msgstr "Ocorreu um erro :( %1$s"
@@ -746,12 +708,10 @@ msgstr ""
 msgid "n"
 msgstr ""
 
-#, fuzzy
 msgid ""
 "The null hypothesis specifies that the %1$s is equal across protected groups."
 msgstr ""
-"A hipótese nula especifica que os últimos dígitos (1 - 9) no conjunto de "
-"dados são distribuídos de acordo com %1$s."
+"A hipótese nula especifica que %1$s é igual entre todos os grupos protegidos."
 
 msgid ""
 "Please specify a privileged group and positive class to start the analysis."
@@ -762,9 +722,8 @@ msgid ""
 "Fisher's exact test."
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
-msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
+msgstr "<b>Tabela %1$i.</b> Comparações com o Grupo Privilegiado (P)"
 
 msgid "Parity"
 msgstr ""
@@ -796,53 +755,51 @@ msgstr ""
 msgid "<u>Individual Comparisons</u>"
 msgstr ""
 
-#, fuzzy
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - True Positive Rate"
-msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
+msgstr ""
+"<b>Tabela %1$i.</b> Comparações com o Grupo Privilegiado (P) - Taxa de "
+"Verdadeiros Positivos"
 
 msgid "True Positive Rate"
-msgstr ""
+msgstr "Taxa de Positivos Verdadeiros"
 
-#, fuzzy
 msgid ""
 "The null hypothesis specifies that the true positive rate of an unprivileged "
 "group is equal to that of the privileged (P) group."
 msgstr ""
-"A hipótese nula especifica que os últimos dígitos (1 - 9) no conjunto de "
-"dados são distribuídos de acordo com %1$s."
+"A hipótese nula especifica que a taxa de positivos verdadeiros de um grupo "
+"não privilegiado é igual àquela do grupo privilegiado (P)."
 
-#, fuzzy
 msgid ""
 "The null hypothesis specifies that the true positive rate of an unprivileged "
 "group is greater than, or equal to, that of the privileged (P) group."
 msgstr ""
-"A hipótese nula especifica que os últimos dígitos (1 - 9) no conjunto de "
-"dados são distribuídos de acordo com %1$s."
+"A hipótese nula especifica que a taxa de positivos verdadeiros de um grupo "
+"não privilegiado é maior do que ou igual àquela do grupo privilegiado (P)."
 
-#, fuzzy
 msgid ""
 "The null hypothesis specifies that the true positive rate of an unprivileged "
 "group is lower than, or equal to, that of the privileged (P) group."
 msgstr ""
-"A hipótese nula especifica que os últimos dígitos (1 - 9) no conjunto de "
-"dados são distribuídos de acordo com %1$s."
+"A hipótese nula especifica que a taxa de positivos verdadeiros de um grupo "
+"não privilegiado é menor que ou igual àquela do grupo privilegiado (P)."
 
-#, fuzzy
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
-msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
+msgstr ""
+"<b>Tabela %1$i.</b> Comparações com o Grupo Privilegiado (P) - Taxa de "
+"Falsos Positivos"
 
 msgid "False Positive Rate"
-msgstr ""
+msgstr "Taxa de Falsos Positivos"
 
-#, fuzzy
 msgid ""
 "The null hypothesis specifies that the false positive rate of an "
 "unprivileged group is equal to that of the privileged (P) group."
 msgstr ""
-"A hipótese nula especifica que os últimos dígitos (1 - 9) no conjunto de "
-"dados são distribuídos de acordo com %1$s."
+"A hipótese nula especifica que a taxa de falsos positivos de um grupo não "
+"privilegiado é igual àquela do grupo privilegiado (P)."
 
 msgid ""
 "The null hypothesis specifies that the false positive rate of an "
@@ -850,18 +807,16 @@ msgid ""
 "group."
 msgstr ""
 
-#, fuzzy
 msgid ""
 "The null hypothesis specifies that the false positive rate of an "
 "unprivileged group is lower than, or equal to, that of the privileged (P) "
 "group."
 msgstr ""
-"A hipótese nula especifica que os últimos dígitos (1 - 9) no conjunto de "
-"dados são distribuídos de acordo com %1$s."
+"A hipótese nula especifica que a taxa de falsos positivos de um grupo não "
+"privilegiado é menor que ou igual àquela do grupo privilegiado (P)."
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Model Performance"
-msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
+msgstr "<b>Tabela %1$i.</b> Desempenho do Modelo"
 
 msgid "Support"
 msgstr ""
@@ -872,16 +827,14 @@ msgstr ""
 msgid "F1 Score"
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Confusion Matrix"
-msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
+msgstr "<b>Tabela %1$i.</b> Matriz de Confusão"
 
 msgid "Observed"
 msgstr "Observado"
 
-#, fuzzy
 msgid "Predicted"
-msgstr "é rejeitado"
+msgstr "Previsto"
 
 msgid ""
 "True Positives (TP) are cells in which the positive class (<i>%1$s</i>) is "
@@ -891,9 +844,8 @@ msgid ""
 "in which the negative class is incorrectly predicted."
 msgstr ""
 
-#, fuzzy
 msgid "Parity Estimates Plot"
-msgstr "Estimativa %1$s"
+msgstr "Gráfico de Estimativas de Paridade"
 
 msgid ""
 "<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of %2$s "
@@ -902,13 +854,12 @@ msgid ""
 "in the algorithm."
 msgstr ""
 
-#, fuzzy
 msgid "<u>Parity Estimates Plots</u>"
-msgstr "Estimativa %1$s"
+msgstr "<u>Gráficos de estimativa de paridade</u>"
 
-#, fuzzy
 msgid "Parity Estimates Plot - True Positive Rate Parity"
-msgstr "Estimativa %1$s"
+msgstr ""
+"Gráfico de estimativas de paridade - Paridade da taxa de verdadeiro positivo"
 
 msgid "Parity Estimates Plot - False Positive Rate Parity"
 msgstr ""
@@ -920,9 +871,8 @@ msgid ""
 "discrimination occurs in the algorithm."
 msgstr ""
 
-#, fuzzy
 msgid "Prior and Posterior Distribution Plot"
-msgstr "Distribuição posterior"
+msgstr "Gráfico de Distribuição Anterior e Posterior"
 
 msgid ""
 "<b>Figure %1$i.</b> The prior and posterior distributions on the log odds "
@@ -939,21 +889,19 @@ msgid ""
 "conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s "
 "and %4$s across protected groups %5$s. %6$s"
 msgstr ""
-"O valor <i>p</i> é %1$s e a hipótese nula de que os últimos dígitos no "
-"conjunto de dados são distribuídos de acordo com %2$s <b>%3$s</b>."
+"Os valores-<i>p</i> são %1$s e%2$s e a hipótese nula é igual a %3$s e %4$s "
+"entre os grupos protegidos %5$s. %6$s"
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across "
 "protected groups %3$s. %4$s"
 msgstr ""
-"O valor <i>p</i> é %1$s e a hipótese nula de que os últimos dígitos no "
-"conjunto de dados são distribuídos de acordo com %2$s <b>%3$s</b>."
+"O valor-<i>p</i> é %1$s e a hipótese nula é igual a %2$s entre os grupos "
+"protegidos %3$s. %4$s"
 
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
@@ -1153,7 +1101,6 @@ msgid ""
 "the gray rectangles represent the ignored path."
 msgstr ""
 
-#, fuzzy
 msgid ""
 "This procedure analyzes the frequency with which values get repeated within "
 "a data set to statistically identify whether the data were likely tampered "
@@ -1174,9 +1121,9 @@ msgstr ""
 "\n"
 "Para determinar se os dados mostram uma quantidade excessiva de valores "
 "repetidos, a hipótese nula de que os dados não contêm uma quantidade "
-"inesperada de valores repetidos é testada com um erro tipo I de <b>%1$s </"
-"b>. Para quantificar o que é esperado, este teste requer a suposição de que "
-"as partes inteiras dos números não estão associadas às suas partes decimais."
+"inesperada de valores repetidos é testada com um erro tipo I de %1$s. Para "
+"quantificar o que é esperado, este teste requer a suposição de que as partes "
+"inteiras dos números não estão associadas às suas partes decimais."
 
 msgid "<u>Assessing repeated values</u>"
 msgstr "<u>Avaliando valores repetidos</u>"
@@ -1193,24 +1140,22 @@ msgstr "Frequência"
 msgid "Entropy"
 msgstr "Entropia"
 
-#, fuzzy
 msgid ""
 "The displayed <i>p</i>-value is one-sided and is computed on the basis of "
 "%1$s samples."
 msgstr ""
-"Ambos os valores <i> p </i> são unilaterais e são calculados com base em% 1 "
-"$ s amostras."
+"Os valores-<i>p</i> são unilaterais e são calculados com base em %1$s "
+"amostras."
 
 msgid "<b>Table %1$i.</b> Assumption Checks"
 msgstr "<b>Tabela %1$i.</b> Verificar pressupostos"
 
-#, fuzzy
 msgid ""
 "The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> "
 "= 0."
 msgstr ""
-"Ambos os valores <i> p </i> são unilaterais e são calculados com base em% 1 "
-"$ s amostras."
+"Os valores-<i>p</i> exibidos são para um teste bicaudal contra H%1$s: <i>r</"
+"i> = 0."
 
 msgid "Percentage"
 msgstr "Porcentagem"
@@ -1249,21 +1194,18 @@ msgstr "%1$s < α"
 msgid "%1$s >= α"
 msgstr "%1$s >= α"
 
-#, fuzzy
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis that the data do not "
 "contain an unexpected amount of repeated values %2$s."
 msgstr ""
-"O valor <i>p</i> é %1$s e a hipótese nula de que os últimos dígitos no "
-"conjunto de dados são distribuídos de acordo com %2$s <b>%3$s</b>."
+"O valor-<i>p</i> é %1$s e a hipótese nula de que os dados não contém um "
+"número inesperado de valores repetidos %2$s."
 
-#, fuzzy
 msgid "percentage"
-msgstr "Porcentagem"
+msgstr "porcentagem"
 
-#, fuzzy
 msgid "amount"
-msgstr "Contagem"
+msgstr "quantia"
 
 msgid "<u>Planning</u>"
 msgstr ""
@@ -1299,9 +1241,8 @@ msgid ""
 "performance materiality."
 msgstr ""
 
-#, fuzzy
 msgid "Selection Summary"
-msgstr "Selecionar tudo"
+msgstr "Resumo da seleção"
 
 msgid ""
 "You must specify unique item ID's. The row numbers of the data set are "
@@ -1382,28 +1323,23 @@ msgid ""
 "than the performance materiality of %4$s."
 msgstr ""
 
-#, fuzzy
 msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "Medidas Adicionais de Ajuste"
+msgstr "de distorção intolerável H%1$s: %2$s %3$s %4$s"
 
 msgid "of exact misstatement H%1$s: %2$s = %3$s"
 msgstr ""
 
-#, fuzzy
 msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "Medidas Adicionais de Ajuste"
+msgstr "de distorção tolerável H%1$s: %2$s %3$s %4$s"
 
-#, fuzzy
 msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
-msgstr "Medidas Adicionais de Ajuste"
+msgstr "de distorção tolerável H%1$s: %2$s < %3$s"
 
-#, fuzzy
 msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
-msgstr "%1$s = %2$s %3$s %4$s"
+msgstr "de nenhuma distorção H%1$s: %2$s %3$s %4$s"
 
-#, fuzzy
 msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
-msgstr "Medidas Adicionais de Ajuste"
+msgstr "de distorção intolerável H%1$s: %2$s > %3$s"
 
 msgid ""
 "%1$s\n"
@@ -1439,9 +1375,8 @@ msgid ""
 "in the population is below the performance materiality"
 msgstr ""
 
-#, fuzzy
 msgid "a minimum precision of %1$s"
-msgstr "Regressão"
+msgstr "uma precisão mínima de %1$s"
 
 msgid ""
 "the sample provides sufficient information to estimate the misstatement in "
@@ -1544,9 +1479,8 @@ msgstr ""
 msgid "random"
 msgstr "aleatório"
 
-#, fuzzy
 msgid "fixed interval"
-msgstr "Intervalo de Confiança"
+msgstr "intervalo fixo"
 
 msgid "cell"
 msgstr ""
@@ -1582,13 +1516,11 @@ msgstr ""
 msgid "monetary units"
 msgstr ""
 
-#, fuzzy
 msgid "randomized"
-msgstr "aleatório"
+msgstr "randomizado"
 
-#, fuzzy
 msgid "non-randomized"
-msgstr "aleatório"
+msgstr "não randomizado"
 
 msgid ""
 "The purpose of the selection stage is to statistically select a number of "
@@ -1673,9 +1605,8 @@ msgid ""
 "%8$s, the misstatement in the population is %9$s than the %6$s. %10$s"
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
-msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
+msgstr "<b>Tabela %1$i.</b> Estatísticas descritivas para valores contábeis"
 
 msgid "Population size"
 msgstr ""
@@ -1717,11 +1648,9 @@ msgstr ""
 msgid "High"
 msgstr ""
 
-#, fuzzy
 msgid "Medium"
-msgstr "Mediana"
+msgstr "Meio"
 
-#, fuzzy
 msgid "Low"
 msgstr "Inferior"
 
@@ -1754,9 +1683,9 @@ msgid ""
 "done using the default settings shown in the table below."
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Default Settings Audit Risk Model"
-msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
+msgstr ""
+"<b>Tabela %1$i.</b> Configurações Padrão para o Modelo de Risco de Auditoria"
 
 msgid "Inherent risk"
 msgstr ""
@@ -1767,9 +1696,8 @@ msgstr ""
 msgid "Analytical risk"
 msgstr ""
 
-#, fuzzy
 msgid "= Selected"
-msgstr "Selecionada"
+msgstr "= Selecionado"
 
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify the "
@@ -1794,9 +1722,8 @@ msgstr ""
 msgid "Performance materiality"
 msgstr ""
 
-#, fuzzy
 msgid "Min. precision"
-msgstr "Regressão"
+msgstr "Precisão mín."
 
 msgid "Detection risk"
 msgstr ""
@@ -1804,13 +1731,11 @@ msgstr ""
 msgid "Audit risk"
 msgstr ""
 
-#, fuzzy
 msgid "Tolerable misstatements"
-msgstr "Medidas Adicionais de Ajuste"
+msgstr "Declarações incorretas toleráveis"
 
-#, fuzzy
 msgid "Minimum sample size"
-msgstr "Tamanho da amostra"
+msgstr "Tamanho de amostra mínimo"
 
 msgid "The minimum sample size is based on the Poisson distribution."
 msgstr ""
@@ -1884,16 +1809,14 @@ msgstr ""
 msgid "%1$s"
 msgstr ""
 
-#, fuzzy
 msgid "Minimum Sample Sizes"
-msgstr "Tamanho de amostra necessária"
+msgstr "Tamanhos de Amostra Mínimos"
 
 msgid "Beta"
 msgstr ""
 
-#, fuzzy
 msgid "Gamma"
-msgstr "gamma"
+msgstr "Gama"
 
 msgid "Beta-binomial"
 msgstr ""
@@ -1916,9 +1839,8 @@ msgstr ""
 msgid "Expected errors"
 msgstr ""
 
-#, fuzzy
 msgid "An error occurred in a call to the jfa package: %1$s"
-msgstr "Ocorreu um erro :( %1$s"
+msgstr "Um erro ocorreu ao ligar ao pacote jfa: %1$s"
 
 msgid "Across Expected Errors (Current: %1$s)"
 msgstr ""
@@ -1938,9 +1860,8 @@ msgid ""
 "the current probability distribution."
 msgstr ""
 
-#, fuzzy
 msgid "Presumed %1$s Distribution"
-msgstr "Distribuição posterior"
+msgstr "Distribuição presumida %1$s"
 
 msgid ""
 "<b>Figure %1$i.</b> The assumed %2$s distribution. The number of expected "
@@ -1969,16 +1890,14 @@ msgstr ""
 msgid "No. items"
 msgstr ""
 
-#, fuzzy
 msgid "Selection value"
-msgstr "Selecionar tudo"
+msgstr "Valor de seleção"
 
 msgid "%% of population value"
 msgstr ""
 
-#, fuzzy
 msgid "%% of population size"
-msgstr "O tamanho da população <i>N</i>"
+msgstr "%% do tamanho da população"
 
 msgid "using seed %1$s"
 msgstr ""
@@ -1986,17 +1905,15 @@ msgstr ""
 msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."
 msgstr ""
 
-#, fuzzy
 msgid "The sample is drawn with seed %1$s and intervals of size %2$s."
-msgstr "O tamanho da amostra <i>n</i>"
+msgstr ""
+"A amostra foi retirada com semente %1$s e intervalos de tamanho de %2$s."
 
-#, fuzzy
 msgid "The sample is drawn with seed %1$s."
-msgstr "O tamanho da amostra <i>n</i>"
+msgstr "A amostra foi retirada com semente %1$s."
 
-#, fuzzy
 msgid "The random numbers are generated with seed %1$s."
-msgstr "O tamanho da amostra <i>n</i>"
+msgstr "Os números aleatórios são gerados com a semente %1$s."
 
 msgid "The sample is not exported until the 'Synchronize' option is checked."
 msgstr ""
@@ -2007,13 +1924,11 @@ msgstr ""
 msgid "Items"
 msgstr ""
 
-#, fuzzy
 msgid "Selected items"
-msgstr "Selecionada"
+msgstr "Itens selecionados"
 
-#, fuzzy
 msgid "Selected units"
-msgstr "Selecionada"
+msgstr "Unidades selecionadas"
 
 msgid "%% of total value"
 msgstr ""
@@ -2038,17 +1953,14 @@ msgstr ""
 msgid "Bottom stratum"
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Selected Items"
-msgstr "<b>Tabela %1$i.</b> Teste de valores repetidos"
+msgstr "<b>Tabela %1$i.</b> Itens Selecionados"
 
-#, fuzzy
 msgid "Selected"
 msgstr "Selecionada"
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Sample"
-msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
+msgstr "<b>Tabela %1$i.</b> Estatísticas descritivas para a amostra"
 
 msgid "Valid cases"
 msgstr ""
@@ -2073,9 +1985,8 @@ msgid ""
 "(incorrect)."
 msgstr ""
 
-#, fuzzy
 msgid "combined with the information in the prior distribution"
-msgstr "Distribuição cumulativa empírica"
+msgstr "combinado com as informações da distribuição anterior"
 
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "
@@ -2093,7 +2004,6 @@ msgstr ""
 msgid "Overall materiality"
 msgstr ""
 
-#, fuzzy
 msgid "Sample size"
 msgstr "Tamanho da amostra"
 
@@ -2109,9 +2019,8 @@ msgstr ""
 msgid "%1$s%% Upper bound"
 msgstr "limite superior %1$s%%"
 
-#, fuzzy
 msgid "%1$s%% Lower bound"
-msgstr "limite superior %1$s%%"
+msgstr "Limite inferior %1$s%%"
 
 msgid "p-value"
 msgstr "p-valor"
@@ -2171,16 +2080,14 @@ msgid ""
 "defined as zero, or one of the required variables is missing."
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Stratum Evaluation Summary"
-msgstr "<b>Table %1$i.</b> Verificar pressupostos"
+msgstr "<b>Table %1$i.</b> Resumo da Avaliação do Estrato"
 
 msgid "Stratum"
 msgstr ""
 
-#, fuzzy
 msgid "%1$s%% Interval"
-msgstr "Intervalo de Confiança %1$s%%"
+msgstr "Intervalo %1$s%%"
 
 msgid "Information is shared between the strata in the population."
 msgstr ""
@@ -2188,25 +2095,21 @@ msgstr ""
 msgid "The strata in the population are assumed to be independent."
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Misstated Items"
-msgstr "<b>Tabela %1$i.</b> Teste de valores repetidos"
+msgstr "<b>Tabela %1$i.</b> Itens com declarações incorretas"
 
 msgid "ID"
 msgstr ""
 
-#, fuzzy
 msgid "Difference"
-msgstr "Estimador de diferença"
+msgstr "Diferença"
 
-#, fuzzy
 msgid "Counted"
-msgstr "Contagem"
+msgstr "Contado"
 
 msgid "No misstatements were identified in the sample."
 msgstr ""
 
-#, fuzzy
 msgid "Pearson's r"
 msgstr "r de Pearson"
 
@@ -2215,9 +2118,8 @@ msgid ""
 "H₋: ρ < 0"
 msgstr ""
 
-#, fuzzy
 msgid "Book values - Taints"
-msgstr "Valores contábeis"
+msgstr "Valores contábeis - Taints"
 
 msgid "There were no misstatements found in the sample."
 msgstr ""
@@ -2237,9 +2139,8 @@ msgstr "Limite superior"
 msgid "Most likely error"
 msgstr ""
 
-#, fuzzy
 msgid "Minimum precision"
-msgstr "Regressão"
+msgstr "Precisão Mínima"
 
 msgid "Obtained precision"
 msgstr ""
@@ -2255,9 +2156,8 @@ msgid ""
 "of the maximum misstatement in the population."
 msgstr ""
 
-#, fuzzy
 msgid "Estimates"
-msgstr "Estimativa %1$s"
+msgstr "Estimativas"
 
 msgid ""
 "<b>Figure %1$i.</b> Most likely estimates (points) and %2$s%% %3$s %4$s "
@@ -2269,13 +2169,11 @@ msgstr ""
 msgid "Scatter Plot of Book and Audit Values"
 msgstr ""
 
-#, fuzzy
 msgid "Book value (%1$s)"
-msgstr "Valores contábeis"
+msgstr "Valores contábeis (%1$s)"
 
-#, fuzzy
 msgid "Audit value (%1$s)"
-msgstr "Valores de auditoria"
+msgstr "Valores de auditoria (%1$s)"
 
 msgid ""
 "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
@@ -2286,11 +2184,9 @@ msgid ""
 "lie above the diagonal they are understated. %2$s"
 msgstr ""
 
-#, fuzzy
 msgid "<b>Table %1$i.</b> Corrections to Population"
-msgstr "<b>Tabela %1$i.</b> Estatísticas de frequência"
+msgstr "<b>Tabela %1$i.</b> Correções à População"
 
-#, fuzzy
 msgid "Correction"
 msgstr "Correção"
 
@@ -2309,13 +2205,11 @@ msgstr ""
 msgid "Created by JASP for Audit (Version %1$s) on %2$s at %3$s."
 msgstr ""
 
-#, fuzzy
 msgid "Prior and Expected Posterior Distribution"
-msgstr "Distribuição posterior"
+msgstr "Distribuição Anterior e Posterior Esperada"
 
-#, fuzzy
 msgid "Prior Distribution"
-msgstr "Distribuição cumulativa empírica"
+msgstr "Distribuição Anterior"
 
 msgid "Prior and Posterior Distribution"
 msgstr ""
@@ -2332,13 +2226,11 @@ msgid ""
 "misstatement in the population."
 msgstr ""
 
-#, fuzzy
 msgid "Prior Predictive Distribution"
-msgstr "Distribuição posterior"
+msgstr "Distribuição Anterior Preditiva"
 
-#, fuzzy
 msgid "Posterior Predictive Distribution"
-msgstr "Distribuição posterior"
+msgstr "Distribuição Posterior Preditiva"
 
 msgid ""
 "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays "
@@ -2360,9 +2252,8 @@ msgstr ""
 msgid "Support %1$s"
 msgstr ""
 
-#, fuzzy
 msgid "Ratio %1$s"
-msgstr "para %1"
+msgstr "Razão %1$s"
 
 msgid "Mode"
 msgstr "Moda"
@@ -2379,12 +2270,11 @@ msgstr ""
 msgid "Nonparametric"
 msgstr ""
 
-#, fuzzy
 msgid "%1$s %2$s vs. %3$s %2$s."
-msgstr "%1$s = %2$s %3$s %4$s"
+msgstr "%1$s %2$s vs. %3$s %2$s."
 
 msgid "Sequential Analysis"
-msgstr ""
+msgstr "Análise Sequencial"
 
 msgid "Plot not possible: The Bayes factor is infinite."
 msgstr ""
