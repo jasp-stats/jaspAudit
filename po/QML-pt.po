@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2025-08-06 07:43+0000\n"
+"Last-Translator: Wendel Paulo Silvestre <wpsilvestre@ucs.br>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/pt/>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 "X-Language: pt\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -392,7 +398,6 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Explanatory text"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Mostrar texto explicativo em cada etapa da análise"
@@ -413,7 +418,6 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Last"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Frequency table"
 msgstr "Tabela de frequências"
@@ -430,7 +434,6 @@ msgctxt "auditClassicalEstimation|"
 msgid "Explanatory text"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Mostrar texto explicativo em cada etapa da análise"
@@ -471,7 +474,6 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory text"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Show explanatory text at each step of the analysis"
 msgstr "Mostrar texto explicativo em cada etapa da análise"
@@ -997,7 +999,6 @@ msgctxt "Display|"
 msgid "Display numbers as monetary units."
 msgstr ""
 
-#, fuzzy
 msgctxt "DownloadReport|"
 msgid "<b>Download Report</b>"
 msgstr "<b>Baixar relatório</b>"
@@ -1041,7 +1042,6 @@ msgctxt "Annotation|"
 msgid "Adds a column to specify the audit values of the items."
 msgstr ""
 
-#, fuzzy
 msgctxt "Annotation|"
 msgid "Correct / Incorrect"
 msgstr "Correto / Incorreto"
@@ -1076,7 +1076,6 @@ msgctxt "DataType|"
 msgid "The type of input data for the analysis."
 msgstr ""
 
-#, fuzzy
 msgctxt "DataType|"
 msgid "Population"
 msgstr "População"
@@ -1117,7 +1116,6 @@ msgctxt "DataType|"
 msgid "The number of misstatements that have been found in the sample."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Tables"
 msgstr "Tabelas"
@@ -1167,20 +1165,18 @@ msgid ""
 "book values and the taints."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Confidence interval"
-msgstr "Intervalo de Confiança"
+msgstr "Intervalo de confiança"
 
 msgctxt "EvaluationOutput|"
 msgid ""
 "Width of the one-sided confidence interval for the population correlation."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
 msgctxt "EvaluationOutput|"
 msgid "Add additional figures about the evaluation to the report."
@@ -1242,10 +1238,9 @@ msgid ""
 "colored in red."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Display correlation"
-msgstr "Correlação de exibição"
+msgstr "Exibir correlação"
 
 msgctxt "EvaluationOutput|"
 msgid "Add a correlation line to the figure."
@@ -1395,7 +1390,6 @@ msgid ""
 "across different subgroups in the population (strata)."
 msgstr ""
 
-#, fuzzy
 msgctxt "AuditRiskModel|"
 msgid "Audit Risk Model"
 msgstr "Modelo de Risco de Auditoria"
@@ -1404,17 +1398,14 @@ msgctxt "AuditRiskModel|"
 msgid "Inherent risk"
 msgstr ""
 
-#, fuzzy
 msgctxt "AuditRiskModel|"
 msgid "High"
 msgstr "Alto"
 
-#, fuzzy
 msgctxt "AuditRiskModel|"
 msgid "Medium"
 msgstr "Médio"
 
-#, fuzzy
 msgctxt "AuditRiskModel|"
 msgid "Low"
 msgstr "Baixo"
@@ -1480,7 +1471,6 @@ msgid ""
 "the data set."
 msgstr ""
 
-#, fuzzy
 msgctxt "CriticalItems|"
 msgid "Keep"
 msgstr "Manter"
@@ -1489,7 +1479,6 @@ msgctxt "CriticalItems|"
 msgid "Retains the critical items to be inspected as part of the sample."
 msgstr ""
 
-#, fuzzy
 msgctxt "CriticalItems|"
 msgid "Remove"
 msgstr "Remover"
@@ -1512,7 +1501,6 @@ msgid ""
 "end."
 msgstr ""
 
-#, fuzzy
 msgctxt "ExpectedErrors|"
 msgid "Relative"
 msgstr "Relativo"
@@ -1527,7 +1515,6 @@ msgctxt "ExpectedErrors|"
 msgid "The percentage of expected misstatements in the sample."
 msgstr ""
 
-#, fuzzy
 msgctxt "ExpectedErrors|"
 msgid "Absolute"
 msgstr "Absoluto"
@@ -1540,7 +1527,6 @@ msgctxt "ExpectedErrors|"
 msgid "The number of expected misstatements in the sample."
 msgstr ""
 
-#, fuzzy
 msgctxt "ExpectedErrors|"
 msgid "All possible"
 msgstr "Tudo possível"
@@ -1592,12 +1578,10 @@ msgid ""
 "data given the parameters of the model."
 msgstr ""
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Beta-binomial"
 msgstr "Beta-binomial"
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Hypergeometric"
 msgstr "Hipergeométrico"
@@ -1613,12 +1597,10 @@ msgid ""
 "is the beta-binomial distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Beta"
 msgstr "Beta"
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Binomial"
 msgstr "Binomial"
@@ -1633,12 +1615,10 @@ msgid ""
 "binomial likelihood is the beta distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Gamma"
-msgstr "Gamma"
+msgstr "Gama"
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Poisson"
 msgstr "Poisson"
@@ -1653,7 +1633,6 @@ msgid ""
 "likelihood is the gamma distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Tables"
 msgstr "Tabelas"
@@ -1682,10 +1661,9 @@ msgid ""
 "in the data set."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
 msgctxt "PlanningOutput|"
 msgid "Add additional figures about the planning to the report."
@@ -1797,7 +1775,6 @@ msgctxt "PriorMethod|"
 msgid "Parameters"
 msgstr ""
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Earlier sample"
 msgstr "Amostra anterior"
@@ -1852,7 +1829,6 @@ msgctxt "SamplingObjectives|"
 msgid "Specify the options for the statistical procedure."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Sampling Objectives"
 msgstr "Objetivos de Amostragem"
@@ -1890,7 +1866,6 @@ msgctxt "SamplingObjectives|"
 msgid "Specify how the performance materiality is defined."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Relative"
 msgstr "Relativo"
@@ -1905,7 +1880,6 @@ msgctxt "SamplingObjectives|"
 msgid "The percentage associated with the performance materiality."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Absolute"
 msgstr "Absoluto"
@@ -1948,7 +1922,6 @@ msgctxt "SamplingObjectives|"
 msgid "The percentage associated with the minimum precision."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Confidence"
 msgstr "Confiança"
@@ -2055,7 +2028,6 @@ msgid ""
 "respect to the values of this variable."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingUnits|"
 msgid "Sampling Units"
 msgstr "Unidades de Amostragem"
@@ -2089,10 +2061,9 @@ msgid ""
 "high value in the sample."
 msgstr ""
 
-#, fuzzy
 msgctxt "Seed|"
 msgid "Seed"
-msgstr "Seed"
+msgstr "Semente"
 
 msgctxt "Seed|"
 msgid ""
@@ -2109,7 +2080,6 @@ msgid ""
 "Choose the method by which sampling units are selected from the population."
 msgstr ""
 
-#, fuzzy
 msgctxt "SelectionMethod|"
 msgid "Fixed interval sampling"
 msgstr "Amostragem de intervalo fixo"
@@ -2147,7 +2117,6 @@ msgctxt "SelectionMethod|"
 msgid "Click to learn more about this method"
 msgstr ""
 
-#, fuzzy
 msgctxt "SelectionMethod|"
 msgid "Cell sampling"
 msgstr "Amostragem de células"
@@ -2159,7 +2128,6 @@ msgid ""
 "than twice the interval will always be included in the sample."
 msgstr ""
 
-#, fuzzy
 msgctxt "SelectionMethod|"
 msgid "Random sampling"
 msgstr "Amostragem aleatória"
@@ -2178,7 +2146,6 @@ msgctxt "SelectionMethod|"
 msgid "Performs modified sieve sampling."
 msgstr ""
 
-#, fuzzy
 msgctxt "SelectionOutput|"
 msgid "Tables"
 msgstr "Tabelas"
@@ -2268,10 +2235,9 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Specifies the concentration parameter for the Dirichlet prior."
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Confidence interval"
-msgstr "Intervalo de Confiança"
+msgstr "Intervalo de confiança"
 
 msgctxt "ExpectedErrors|"
 msgid "Enter the expected misstatements as a percentage."
@@ -2296,7 +2262,6 @@ msgid ""
 "incorporated into the prior distribution."
 msgstr ""
 
-#, fuzzy
 msgctxt "ExpectedPopRate|"
 msgid "Relative"
 msgstr "Relativo"
@@ -2358,7 +2323,6 @@ msgctxt "EvaluationOutput|"
 msgid "Specify how the overall materiality is defined."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Relative"
 msgstr "Relativo"
@@ -2373,7 +2337,6 @@ msgctxt "EvaluationOutput|"
 msgid "The percentage associated with the overall materiality."
 msgstr ""
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Absolute"
 msgstr "Absoluto"
@@ -2568,10 +2531,9 @@ msgctxt "Algorithm|"
 msgid "Sets the number of MCMC chains."
 msgstr ""
 
-#, fuzzy
 msgctxt "Algorithm|"
 msgid "Seed"
-msgstr "Seed"
+msgstr "Semente"
 
 msgctxt "Algorithm|"
 msgid ""
@@ -2803,10 +2765,9 @@ msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Report"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Add additional figures about the evaluation to the report."
@@ -2828,15 +2789,13 @@ msgid ""
 "unprivileged group(s)."
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>1. Selection</b>"
-msgstr "<b>2. Seleção</b> {1.?}"
+msgstr "<b>1. Seleção</b>"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "1. Selection"
-msgstr "2. Seleção {1.?}"
+msgstr "1. Seleção"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
@@ -2851,20 +2810,17 @@ msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>Download Report</b>"
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>To Evaluation</b>"
 msgstr "<b>Para Avaliação</b>"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>2. Evaluation</b>"
-msgstr "<b>4. Avaliação</b> {2.?}"
+msgstr "<b>2. Avaliação</b>"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "2. Evaluation"
-msgstr "4. Avaliação {2.?}"
+msgstr "2. Avaliação"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Advanced"
@@ -2902,7 +2858,6 @@ msgctxt "BayesFactorType|"
 msgid "Natural logarithm of BF10."
 msgstr ""
 
-#, fuzzy
 msgctxt "ConfidenceLevel|"
 msgid "Confidence"
 msgstr "Confiança"
@@ -2915,7 +2870,6 @@ msgid ""
 "of 5%, this equals 95% confidence."
 msgstr ""
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Tables"
 msgstr "Tabelas"
@@ -2968,10 +2922,9 @@ msgctxt "FairnessOutput|"
 msgid "Transposes the confusion matrix."
 msgstr ""
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
 msgctxt "FairnessOutput|"
 msgid "Add additional figures about the evaluation to the report."
@@ -3125,10 +3078,9 @@ msgctxt "PriorDistribution|"
 msgid "Specifies the concentration parameter for the Dirichlet prior."
 msgstr ""
 
-#, fuzzy
 msgctxt "PriorDistribution|"
 msgid "Seed"
-msgstr "Seed"
+msgstr "Semente"
 
 msgctxt "PriorDistribution|"
 msgid ""
