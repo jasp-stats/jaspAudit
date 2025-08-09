@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-08-06 07:43+0000\n"
+"PO-Revision-Date: 2025-08-10 17:01+0000\n"
 "Last-Translator: Wendel Paulo Silvestre <wpsilvestre@ucs.br>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-qml/pt/>\n"
@@ -176,11 +176,11 @@ msgstr "Tabelas"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
 msgctxt "Description|"
 msgid "Audit"
-msgstr "Auditoria"
+msgstr "Auditar"
 
 msgctxt "Description|"
 msgid "Sampling Workflow"
@@ -324,7 +324,7 @@ msgstr "Tabela de frequências"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Label"
