@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2025-09-10 09:02+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -2118,12 +2124,10 @@ msgctxt "SamplingObjectives|"
 msgid "The percentage associated with the minimum precision."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Confidence"
 msgstr "Konfidenz"
 
-#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid ""
 "The confidence level used. The confidence level is the complement of the "
@@ -2161,7 +2165,6 @@ msgstr ""
 "Eine numerische Variable, die die Buchwerte (eingetragene Werte) der Posten "
 "in der Grundgesamtheit enthält."
 
-#, fuzzy
 msgctxt "ExportSample|"
 msgid "Export"
 msgstr "Exportieren"
@@ -2170,10 +2173,9 @@ msgctxt "ExportSample|"
 msgid "Step 1: Column name selection result"
 msgstr ""
 
-#, fuzzy
 msgctxt "ExportSample|"
 msgid "e.g. selected"
-msgstr "z. B. ausgewählt"
+msgstr "z. B. Auswahl"
 
 msgctxt "ExportSample|"
 msgid ""
@@ -2186,7 +2188,6 @@ msgctxt "ExportSample|"
 msgid "Step 2: File name"
 msgstr ""
 
-#, fuzzy
 msgctxt "ExportSample|"
 msgid "e.g. sample.csv"
 msgstr "z. B. Stichprobe.csv"
@@ -2218,16 +2219,14 @@ msgid ""
 "number of the items is sufficient."
 msgstr ""
 
-#, fuzzy
 msgctxt "Randomize|"
 msgid "Randomize item order"
-msgstr "Zufällige Posten-Reihenfolge"
+msgstr "Posten-Reihenfolge randomisieren"
 
 msgctxt "Randomize|"
 msgid "Randomizes the items in the population before selection is performed."
 msgstr ""
 
-#, fuzzy
 msgctxt "RankVariable|"
 msgid "Ranking Variable"
 msgstr "Rangordnungsvariable"
@@ -2238,16 +2237,14 @@ msgid ""
 "respect to the values of this variable."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingUnits|"
 msgid "Sampling Units"
-msgstr "Stichprobeneinheiten"
+msgstr "Stichproben-Einheiten"
 
 msgctxt "SamplingUnits|"
 msgid "Choose which type of units are eligible for selection."
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingUnits|"
 msgid "Items"
 msgstr "Posten"
@@ -2262,7 +2259,6 @@ msgctxt "SamplingUnits|"
 msgid "Click to learn more about this method"
 msgstr ""
 
-#, fuzzy
 msgctxt "SamplingUnits|"
 msgid "Monetary units"
 msgstr "Geldeinheiten"
@@ -2278,7 +2274,6 @@ msgctxt "Seed|"
 msgid "Seed"
 msgstr "Startwert für Zufallszahlen"
 
-#, fuzzy
 msgctxt "Seed|"
 msgid ""
 "Selects the seed for the random number generator in order to reproduce "
@@ -2296,7 +2291,6 @@ msgid ""
 "Choose the method by which sampling units are selected from the population."
 msgstr ""
 
-#, fuzzy
 msgctxt "SelectionMethod|"
 msgid "Fixed interval sampling"
 msgstr "Festes-Intervall-Stichprobe"
@@ -2308,7 +2302,6 @@ msgid ""
 "the interval will always be included in the sample."
 msgstr ""
 
-#, fuzzy
 msgctxt "SelectionMethod|"
 msgid "Starting point"
 msgstr "Startpunkt"
@@ -2335,7 +2328,6 @@ msgctxt "SelectionMethod|"
 msgid "Click to learn more about this method"
 msgstr ""
 
-#, fuzzy
 msgctxt "SelectionMethod|"
 msgid "Cell sampling"
 msgstr "Zellen-Stichprobe"
@@ -2347,7 +2339,6 @@ msgid ""
 "than twice the interval will always be included in the sample."
 msgstr ""
 
-#, fuzzy
 msgctxt "SelectionMethod|"
 msgid "Random sampling"
 msgstr "Zufallsstichprobe"
@@ -2366,12 +2357,10 @@ msgctxt "SelectionMethod|"
 msgid "Performs modified sieve sampling."
 msgstr ""
 
-#, fuzzy
 msgctxt "SelectionOutput|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "SelectionOutput|"
 msgid "Selected items"
 msgstr "Ausgewählte Posten"
@@ -2382,7 +2371,6 @@ msgid ""
 "additional observations provided in the additional variables field."
 msgstr ""
 
-#, fuzzy
 msgctxt "SelectionOutput|"
 msgid "Descriptive statistics"
 msgstr "Deskriptive Statistiken"
@@ -2399,7 +2387,6 @@ msgstr ""
 "Median, die Standardabweichung, die Varianz, das Minimum, das Maximum und "
 "die Spannweite."
 
-#, fuzzy
 msgctxt "SelectionMethod|"
 msgid "Custom"
 msgstr "Benutzerdefiniert"
@@ -2468,7 +2455,6 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Specifies the concentration parameter for the Dirichlet prior."
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Confidence interval"
 msgstr "Konfidenzintervall"
