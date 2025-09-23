@@ -386,10 +386,10 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x)) +
       ggplot2::scale_x_continuous(name = gettext("Average frequency"), limits = range(xBreaks), breaks = xBreaks) +
       ggplot2::scale_y_continuous(name = gettext("Simulated frequency"), limits = range(yBreaks), breaks = yBreaks) +
-      ggplot2::geom_histogram(fill = "darkgray", color = "black", size = 1, breaks = hist(state[["bsAvgFreq"]], plot = F)$breaks) +
+      ggplot2::geom_histogram(fill = "darkgray", color = "black", linewidth = 1, breaks = hist(state[["bsAvgFreq"]], plot = F)$breaks) +
       ggplot2::geom_segment(
         x = state[["avgFrequency"]], xend = state[["avgFrequency"]], y = 0, yend = max(yBreaks),
-        linetype = "dashed", size = 1, color = "dodgerblue"
+        linetype = "dashed", linewidth = 1, color = "dodgerblue"
       ) +
       ggplot2::annotate(geom = "text", x = state[["avgFrequency"]], y = yBreaks[length(yBreaks) - 1] + (yBreaks[2] / 3 * 2), label = "Observed", color = "dodgerblue", size = 7, hjust = 1.2) +
       jaspGraphs::geom_rangeframe() +
@@ -446,10 +446,10 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x)) +
       ggplot2::scale_x_continuous(name = gettext("Entropy"), limits = range(xBreaks), breaks = xBreaks) +
       ggplot2::scale_y_continuous(name = gettext("Simulated frequency"), limits = range(yBreaks), breaks = yBreaks) +
-      ggplot2::geom_histogram(fill = "darkgray", color = "black", size = 1, breaks = hist(state[["bsEntropy"]], plot = F)$breaks) +
+      ggplot2::geom_histogram(fill = "darkgray", color = "black", linewidth = 1, breaks = hist(state[["bsEntropy"]], plot = F)$breaks) +
       ggplot2::geom_segment(
         x = state[["entropy"]], xend = state[["entropy"]], y = 0, yend = max(yBreaks),
-        linetype = "dashed", size = 1, color = "dodgerblue"
+        linetype = "dashed", linewidth = 1, color = "dodgerblue"
       ) +
       ggplot2::annotate(geom = "text", x = state[["entropy"]], y = yBreaks[length(yBreaks) - 1] + (yBreaks[2] / 3 * 2), label = "Observed", color = "dodgerblue", size = 7, hjust = -0.2) +
       jaspGraphs::geom_rangeframe() +
@@ -500,7 +500,7 @@ auditClassicalNumberBunching <- function(jaspResults, dataset, options, ...) {
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y)) +
       ggplot2::scale_x_continuous(name = options[["values"]], limits = range(xBreaks), breaks = xBreaks) +
       ggplot2::scale_y_continuous(name = gettext("Frequency"), limits = range(yBreaks), breaks = yBreaks) +
-      ggplot2::geom_bar(fill = "black", color = "black", size = 0.2, stat = "identity") +
+      ggplot2::geom_bar(fill = "black", color = "black", linewidth = 0.2, stat = "identity") +
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "none")
 

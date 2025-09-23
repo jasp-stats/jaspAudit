@@ -1361,7 +1361,7 @@
     plot <- ggplot2::ggplot(data = data.frame(values), mapping = ggplot2::aes(x = values, y = ..count..)) +
       ggplot2::scale_x_continuous(name = gettext("Book value"), breaks = xBreaks, limits = range(xBreaks)) +
       ggplot2::scale_y_continuous(name = gettext("Frequency"), breaks = yBreaks, limits = c(0, max(yBreaks))) +
-      ggplot2::geom_histogram(binwidth = (h$breaks[2] - h$breaks[1]), fill = "grey", col = "black", size = .7, center = ((h$breaks[2] - h$breaks[1]) / 2)) +
+      ggplot2::geom_histogram(binwidth = (h$breaks[2] - h$breaks[1]), fill = "grey", col = "black", linewidth = .7, center = ((h$breaks[2] - h$breaks[1]) / 2)) +
       ggplot2::geom_point(mapping = ggplot2::aes(x = quantiles[1], y = 0), shape = 21, fill = "orange", stroke = 1.5, size = 2) +
       ggplot2::geom_point(mapping = ggplot2::aes(x = quantiles[2], y = 0), shape = 21, fill = "orange", stroke = 1.5, size = 2) +
       ggplot2::geom_point(mapping = ggplot2::aes(x = quantiles[3], y = 0), shape = 21, fill = "orange", stroke = 1.5, size = 2) +
@@ -1908,7 +1908,7 @@
         yLimits <- c(0, ceiling(1.2 * max(n)))
 
         plot <- ggplot2::ggplot(data = dPlot, mapping = ggplot2::aes(x = x, y = y, fill = type)) +
-          ggplot2::geom_bar(stat = "identity", col = "black", size = 1) +
+          ggplot2::geom_bar(stat = "identity", col = "black", linewidth = 1) +
           ggplot2::scale_y_continuous(name = gettext("Minimum sample size"), breaks = yBreaks, limits = yLimits) +
           ggplot2::coord_flip() +
           ggplot2::annotate("text", y = k, x = rev(seq_along(n)), label = k, size = 6, vjust = 0.5, hjust = -0.25) +
@@ -1922,7 +1922,7 @@
             axis.ticks.x = ggplot2::element_blank(),
             axis.ticks.y = ggplot2::element_blank(),
             axis.text.y = ggplot2::element_text(hjust = 0),
-            panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", size = 0.5),
+            panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", linewidth = 0.5),
             legend.text = ggplot2::element_text(margin = ggplot2::margin(l = 0, r = 30))
           )
 
@@ -1972,7 +1972,7 @@
         dPlot$x <- factor(dPlot$x, levels = c("3", "2", "1", "0"))
 
         plot <- ggplot2::ggplot(data = dPlot, mapping = ggplot2::aes(x = x, y = y, fill = x)) +
-          ggplot2::geom_bar(stat = "identity", col = "black", size = 1) +
+          ggplot2::geom_bar(stat = "identity", col = "black", linewidth = 1) +
           ggplot2::scale_y_continuous(name = "", breaks = NULL, limits = c(0, 2.3)) +
           ggplot2::scale_x_discrete(name = "") +
           ggplot2::scale_fill_manual(values = c("red", "darkorange1", "orange", "#7FE58B")) +
@@ -1988,7 +1988,7 @@
             axis.ticks.x = ggplot2::element_blank(),
             axis.ticks.y = ggplot2::element_blank(),
             axis.text.y = ggplot2::element_text(hjust = 0),
-            panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", size = 0.5),
+            panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", linewidth = 0.5),
             legend.text = ggplot2::element_text(margin = ggplot2::margin(l = 0, r = 30))
           )
 
@@ -3235,7 +3235,7 @@
 
     if (!jaspBase::isTryError(plotError)) {
       plot <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y)) +
-        ggplot2::geom_bar(stat = "identity", col = "black", size = 1, fill = fill) +
+        ggplot2::geom_bar(stat = "identity", col = "black", linewidth = 1, fill = fill) +
         ggplot2::coord_flip() +
         ggplot2::xlab(NULL) +
         ggplot2::annotate(
@@ -3250,7 +3250,7 @@
           axis.ticks.x = ggplot2::element_blank(),
           axis.ticks.y = ggplot2::element_blank(),
           axis.text.y = ggplot2::element_text(hjust = 0),
-          panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", size = 0.5)
+          panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", linewidth = 0.5)
         )
 
       figure$plotObject <- plot
@@ -3328,7 +3328,7 @@
   x <- seq(xMin, xMax, length.out = 100)
   predY <- eval(parse(text = f))
 
-  plot <- plot + ggplot2::geom_line(data = data.frame(x, predY), mapping = ggplot2::aes(x = x, y = predY), size = lwd, lty = 1)
+  plot <- plot + ggplot2::geom_line(data = data.frame(x, predY), mapping = ggplot2::aes(x = x, y = predY), linewidth = lwd, lty = 1)
   return(plot)
 }
 
@@ -3381,7 +3381,7 @@
     plot <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = ist, y = soll)) +
       ggplot2::geom_line(
         data = data.frame(x = c(minTicks, maxTicks), y = c(minTicks, maxTicks)),
-        mapping = ggplot2::aes(x = x, y = y), size = 0.35, linetype = "dashed"
+        mapping = ggplot2::aes(x = x, y = y), linewidth = 0.35, linetype = "dashed"
       ) +
       ggplot2::scale_x_continuous(
         name = gettextf("Book value (%1$s)", prevOptions[["valuta"]]),
@@ -3409,8 +3409,8 @@
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "none") +
       ggplot2::theme(
-        panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", size = 0.5),
-        panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb", size = 0.5)
+        panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb", linewidth = 0.5),
+        panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb", linewidth = 0.5)
       )
 
     figure$plotObject <- plot
