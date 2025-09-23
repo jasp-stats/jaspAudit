@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2025-04-23 07:45\n"
-"PO-Revision-Date: 2025-04-28 09:03+0000\n"
+"PO-Revision-Date: 2025-09-22 14:01+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Prozedur</u>"
@@ -117,13 +117,11 @@ msgstr "<u>Prüfung des Benfordschen Gesetzes</u>"
 msgid "<u>Assessing the Uniform Distribution</u>"
 msgstr "<u>Prüfung der Uniformen Verteilung</u>"
 
-#, fuzzy
 msgid "Benford's Law"
 msgstr "Benfordsches Gesetz"
 
-#, fuzzy
 msgid "Uniform Distribution"
-msgstr "Uniforme Verteilung"
+msgstr "Gleichverteilung"
 
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
 msgstr "<b>Tabelle %1$i.</b> Omnibus-Test - %2$s"
@@ -143,9 +141,8 @@ msgstr "df"
 msgid "Benford's law"
 msgstr "Benfordsches Gesetz"
 
-#, fuzzy
 msgid "the uniform distribution"
-msgstr "Uniforme Verteilung"
+msgstr "die Gleichverteilung"
 
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
@@ -212,9 +209,8 @@ msgstr "Untergrenze"
 msgid "Upper"
 msgstr "Obergrenze"
 
-#, fuzzy
 msgid "Expected count"
-msgstr "Erwartet"
+msgstr "Erwartete Anzahl"
 
 msgid ""
 "The null hypothesis specifies that the relative frequency of a digit is "
@@ -356,25 +352,20 @@ msgstr ""
 "%1$s Der Bayesfaktor gibt an, dass die Daten %2$s mal wahrscheinlicher unter "
 "der Nullhypothese als unter der Alternativhypothese auftreten."
 
-#, fuzzy
 msgid "Direct Estimator"
 msgstr "Direkter Schätzer"
 
-#, fuzzy
 msgid "Difference Estimator"
 msgstr "Differenzschätzer"
 
-#, fuzzy
 msgid "Ratio Estimator"
 msgstr "Quotient-Schätzer"
 
-#, fuzzy
 msgid "Regression Estimator"
 msgstr "Regressionsschätzer"
 
-#, fuzzy
 msgid "Point estimate"
-msgstr "Direkter Schätzer"
+msgstr "Punktschätzer"
 
 msgid "Precision"
 msgstr "Genauigkeit"
@@ -397,6 +388,8 @@ msgid ""
 "The displayed numbers are exact and may differ slightly from the rounded "
 "numbers in the explanatory text."
 msgstr ""
+"Die angezeigten Zahlen sind exakt und können sich geringfügig von den "
+"gerundeten Zahlen im Erklärungstext unterscheiden."
 
 msgid ""
 "The number of items in the population is lower than the number of items in "
@@ -465,9 +458,8 @@ msgstr "<i>Diese Information erlaubt die Berechnung von:</i>"
 msgid "The point estimate of the true population value %1$s"
 msgstr "Die Punktschätzung des wahren Werts der Grundgesamtheit %1$s"
 
-#, fuzzy
 msgid "The precision of the estimator %1$s%2$s%3$s"
-msgstr "Die Unsicherheit des Schätzers %1$s%2$s%3$s"
+msgstr "Die Genauigkeit des Schätzers %1$s%2$s%3$s"
 
 msgid "The confidence interval around the point estimate %1$s"
 msgstr "Das Konfidenzintervall um die Punktschätzung %1$s"
@@ -602,13 +594,11 @@ msgstr ""
 msgid "Required Sample Size"
 msgstr "Benötigter Stichprobenumfang"
 
-#, fuzzy
 msgid "Achieved precision"
 msgstr "Erreichte Genauigkeit"
 
-#, fuzzy
 msgid "Current <i>n</i>"
-msgstr "Benötigtes <i>n</i>"
+msgstr "Derzeitiges <i>n</i>"
 
 msgid "Required precision"
 msgstr "Erforderliche Präzision"
@@ -620,7 +610,7 @@ msgid "Additional <i>n</i>"
 msgstr "Zusätzliches <i>n</i>"
 
 msgid "Scatter Plot"
-msgstr ""
+msgstr "Streudiagramm"
 
 msgid "Book value"
 msgstr "Buchwert"
@@ -662,39 +652,38 @@ msgstr "Falsch-negativ-Rate"
 msgid "Negative predictive value"
 msgstr "Negativer Vorhersagewert"
 
-#, fuzzy
 msgid "Positive rate"
-msgstr "Richtig-positiv-Rate"
+msgstr "Positiv-Rate"
 
 msgid "True positive rate"
 msgstr "Richtig-positiv-Rate"
 
 #, fuzzy
 msgid "Specificity parity"
-msgstr "Spezifizität"
+msgstr "Spezifizität-Parität"
 
 #, fuzzy
 msgid "Accuracy parity"
-msgstr "Genauigkeit"
+msgstr "Genauigkeit-Parität"
 
 #, fuzzy
 msgid "False positive rate parity"
-msgstr "Falsch-positiv-Rate"
+msgstr "Falsch-positiv-Rate Parität"
 
 #, fuzzy
 msgid "False negative rate parity"
-msgstr "Falsch-negativ-Rate"
+msgstr "Falsch-negativ-Rate Parität"
 
 #, fuzzy
 msgid "Negative predictive value parity"
-msgstr "Negativer Vorhersagewert"
+msgstr "Negativer Vorhersagewert Parität"
 
 msgid "Disparate impact"
 msgstr ""
 
 #, fuzzy
 msgid "Predictive rate parity"
-msgstr "Richtig-positiv-Rate"
+msgstr "Richtig-positiv-Rate Parität"
 
 msgid "Equal opportunity"
 msgstr ""
