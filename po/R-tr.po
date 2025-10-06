@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.3\n"
 "POT-Creation-Date: 2025-04-23 07:45\n"
-"PO-Revision-Date: 2025-09-15 01:03+0000\n"
-"Last-Translator: hakan dokumuş <dokumushakan@gmail.com>\n"
+"PO-Revision-Date: 2025-10-06 22:03+0000\n"
+"Last-Translator: Hamza Yalçin <h.yalcin08@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "tr/>\n"
 "Language: tr\n"
@@ -118,7 +118,7 @@ msgid "MAD"
 msgstr "OMS"
 
 msgid "df"
-msgstr "sd (serbestlik derecesi)"
+msgstr "sd"
 
 msgid "Benford's law"
 msgstr ""
@@ -216,7 +216,7 @@ msgid "Row"
 msgstr "Satır"
 
 msgid "Value"
-msgstr ""
+msgstr "Değer"
 
 msgid "The requested digit must be between 1 - 9."
 msgstr ""
@@ -525,7 +525,7 @@ msgid "Accuracy"
 msgstr ""
 
 msgid "False positive rate"
-msgstr ""
+msgstr "Yanlış pozitif oranı"
 
 msgid "False negative rate"
 msgstr ""
@@ -537,7 +537,7 @@ msgid "Positive rate"
 msgstr ""
 
 msgid "True positive rate"
-msgstr ""
+msgstr "Doğru pozitif oranı"
 
 msgid "Specificity parity"
 msgstr ""
@@ -610,7 +610,7 @@ msgid "Metric"
 msgstr ""
 
 msgid "n"
-msgstr ""
+msgstr "n"
 
 msgid ""
 "The null hypothesis specifies that the %1$s is equal across protected groups."
@@ -720,10 +720,10 @@ msgid "<b>Table %1$i.</b> Confusion Matrix"
 msgstr ""
 
 msgid "Observed"
-msgstr ""
+msgstr "Gözlemlenen"
 
 msgid "Predicted"
-msgstr ""
+msgstr "Tahmin Edilen"
 
 msgid ""
 "True Positives (TP) are cells in which the positive class (<i>%1$s</i>) is "
@@ -1514,13 +1514,13 @@ msgid ""
 msgstr ""
 
 msgid "High"
-msgstr ""
+msgstr "Yüksek"
 
 msgid "Medium"
 msgstr ""
 
 msgid "Low"
-msgstr ""
+msgstr "Düşük"
 
 msgid "<u>Audit Risk Model</u>"
 msgstr ""
@@ -1977,7 +1977,7 @@ msgid "No misstatements were identified in the sample."
 msgstr ""
 
 msgid "Pearson's r"
-msgstr ""
+msgstr "Pearson'ın r'si"
 
 msgid ""
 "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis "
@@ -2000,7 +2000,7 @@ msgid "An error occurred while creating this plot: The results contain NAs"
 msgstr ""
 
 msgid "Upper bound"
-msgstr ""
+msgstr "Üst sınır"
 
 msgid "Most likely error"
 msgstr ""
@@ -2125,10 +2125,10 @@ msgid "Mode"
 msgstr "Mod"
 
 msgid "Prior"
-msgstr ""
+msgstr "Önsel"
 
 msgid "Posterior"
-msgstr ""
+msgstr "Sonsal"
 
 msgid "Shift"
 msgstr ""
@@ -2140,7 +2140,7 @@ msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr ""
 
 msgid "Sequential Analysis"
-msgstr ""
+msgstr "Sıralı Analiz"
 
 msgid "Plot not possible: The Bayes factor is infinite."
 msgstr ""
