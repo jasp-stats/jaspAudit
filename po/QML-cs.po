@@ -1,18 +1,17 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-12 20:50+0000\n"
-"Last-Translator: Sofiia Buliienko <buliienko609@gmail.com>\n"
+"PO-Revision-Date: 2025-10-10 20:07+0000\n"
+"Last-Translator: Standa Ježek <standa.jezek@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/jasp/jaspaudit-qml/"
 "cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Qt-Contexts: true\n"
 "X-Language: cs\n"
-
 
 msgctxt "Description|"
 msgid "Audit"
@@ -324,7 +323,7 @@ msgstr "Důvěryhodnost"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Variable"
-msgstr "Variabilní"
+msgstr "Proměnná"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tests"
@@ -348,7 +347,7 @@ msgstr "Počet vzorků"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Seed"
-msgstr "pochyb"
+msgstr "semínko"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tables"
@@ -392,15 +391,15 @@ msgstr "Log(BF₁₀)"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior"
-msgstr "Předchozí"
+msgstr "Prior"
 
 msgctxt "auditBayesianPlanning|"
 msgid "Prior"
-msgstr "Předchozí"
+msgstr "Prior"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior"
-msgstr "Předchozí"
+msgstr "Prior"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
@@ -445,7 +444,7 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Frequency table"
-msgstr ""
+msgstr "Tabulka četností"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Observed vs. expected"
