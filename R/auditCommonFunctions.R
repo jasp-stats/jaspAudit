@@ -1778,7 +1778,7 @@
 }
 
 .jfaAddCriticalTransactions <- function(options, sample) {
-  if (options[["workflow"]] && options[["critical_negative"]] && options[["critical_action"]] == "inspect" && options[["critical_name"]] != "") {
+  if (options[["workflow"]] && options[["critical_negative"]] && options[["critical_action"]] == "inspect" && options[["critical_name"]] != "" && options[["values"]] != "") {
     values <- .jfaReadVariableFromOptions(options, type = "values")
     values_audit <- .jfaReadVariableFromOptions(options, type = "values.audit")
     values_critical <- .jfaReadVariableFromOptions(options, type = "critical")
@@ -2444,8 +2444,10 @@
 
   sampleFilter <- options[["indicator_col"]]
   auditResult <- options[["values.audit"]]
-  critical <- options[["critical_name"]]
-  variables <- c(sampleFilter, auditResult, critical)
+  variables <- c(sampleFilter, auditResult)
+  if (options[["values"]] != "") {
+    variables <- c(variables, options[["critical_name"]])
+  }
 
   if (!("" %in% variables)) {
     additionalColumns <- .readDataSetToEnd(columns.as.numeric = variables)
