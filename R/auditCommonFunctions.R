@@ -287,7 +287,7 @@
 
 .jfaExecutionStage <- function(options, jaspResults) {
   if (is.null(jaspResults[["indicator_col"]])) {
-    jaspResults[["indicator_col"]] <- createJaspColumn(columnName = options[["indicator_col"]], dependencies = "indicator_col")
+    jaspResults[["indicator_col"]] <- createJaspColumn(columnName = options[["indicator_col"]], dependencies = "indicator_col", computed = TRUE)
   }
   if (options[["executionChecked"]]) {
     selectionState <- .jfaSelectionState(options, dataset, jaspResults[["planningState"]], jaspResults[["selectionContainer"]])
@@ -1771,7 +1771,7 @@
   }
 
   if (is.null(jaspResults[["criticalTransactions"]])) {
-    jaspResults[["criticalTransactions"]] <- createJaspColumn(columnName = options[["critical_name"]], dependencies = "critical_name")
+    jaspResults[["criticalTransactions"]] <- createJaspColumn(columnName = options[["critical_name"]], dependencies = "critical_name", computed = TRUE)
   }
 
   jaspResults[["criticalTransactions"]]$setOrdinal(criticalTransactions)
@@ -2093,7 +2093,7 @@
     rows <- sample[["row"]]
     times <- sample[["times"]]
     indicator[rows] <- times
-    jaspResults[["name_indicator"]] <- createJaspColumn(columnName = options[["name_indicator"]])
+    jaspResults[["name_indicator"]] <- createJaspColumn(columnName = options[["name_indicator"]], computed = FALSE)
     jaspResults[["name_indicator"]]$dependOn(options = c(
       "id", "values", "variables", "rank", "sampling_method", "units",
       "start", "seed", "n", "export_sample", "name_indicator"
