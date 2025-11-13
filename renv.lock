@@ -563,7 +563,7 @@
     },
     "jaspBase": {
       "Package": "jaspBase",
-      "Version": "0.20.0",
+      "Version": "0.20.1",
       "Source": "GitHub",
       "Requirements": [
         "cli",
@@ -590,7 +590,7 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspBase",
-      "RemoteSha": "9dd637722c25bf0ea035ccaabf58ef9faf36b852"
+      "RemoteSha": "853327e220044f6086773ce55a4c81a8578438e3"
     },
     "jaspGraphs": {
       "Package": "jaspGraphs",
