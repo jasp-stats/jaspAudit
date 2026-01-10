@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-01-02 22:01+0000\n"
+"PO-Revision-Date: 2026-01-06 14:01+0000\n"
 "Last-Translator: Zev Oster <zevelijah@gmail.com>\n"
 "Language-Team: Tibetan <https://hosted.weblate.org/projects/jasp/jaspaudit-"
 "qml/bo/>\n"
@@ -12,29 +12,35 @@ msgstr ""
 "X-Generator: Weblate 5.15.1\n"
 "X-Qt-Contexts: true\n"
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Audit"
-msgstr ""
+msgstr "རྩིས་ཞིབ།"
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Sampling Workflow"
-msgstr ""
+msgstr "དཔེ་འདེམས་ལས་རྒྱུན།"
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Bayesian Sampling Workflow"
-msgstr ""
+msgstr "བྷེ་ཡེ་སིའི་དཔེ་འདེམས་ལས་རྒྱུན།"
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Planning"
-msgstr ""
+msgstr "འཆར་འགོད།"
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Bayesian Planning"
-msgstr ""
+msgstr "བྷེ་ཡེ་སིའི་འཆར་འགོད།"
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Selection"
-msgstr ""
+msgstr "འདེམས་སྒྲུག"
 
 msgctxt "Description|"
 msgid "Evaluation"
@@ -44,61 +50,75 @@ msgctxt "Description|"
 msgid "Bayesian Evaluation"
 msgstr ""
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Benford's Law"
-msgstr ""
+msgstr "Benford's Law"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>1. Planning</b>"
-msgstr ""
+msgstr "<b>༡. འཆར་འགོད།</b>"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "1. Planning"
-msgstr ""
+msgstr "༡. འཆར་འགོད།"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Gamma"
-msgstr ""
+msgstr "གྷ་མ།"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Beta-binomial"
-msgstr ""
+msgstr "Beta-binomial"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>སྙན་ཐོ་ཕབ་ལེན།</b>"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Selection</b>"
-msgstr ""
+msgstr "<b>འདེམས་སྒྲུག་ལ་སྐྱོད།</b>"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>2. Selection</b>"
-msgstr ""
+msgstr "<b>༢. འདེམས་སྒྲུག</b>"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "2. Selection"
-msgstr ""
+msgstr "༢. འདེམས་སྒྲུག"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Reset Workflow</b>"
-msgstr ""
+msgstr "<b>ལས་རྒྱུན་བསྐྱར་སྒྲིག</b>"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Execution</b>"
-msgstr ""
+msgstr "<b>ལག་བསྟར་ལ་སྐྱོད།</b>"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>3. Execution</b>"
-msgstr ""
+msgstr "<b>༣. ལག་བསྟར།</b>"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "3. Execution"
-msgstr ""
+msgstr "༣. ལག་བསྟར།"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Evaluation</b>"
@@ -112,45 +132,54 @@ msgctxt "auditBayesianWorkflow|"
 msgid "4. Evaluation"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Variable"
-msgstr ""
+msgstr "འགྱུར་ཚད།"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Uniform distribution"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Confidence"
-msgstr ""
+msgstr "ཡིད་རྟོན།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Tables"
-msgstr ""
+msgstr "རེའུ་མིག"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Plots"
-msgstr ""
+msgstr "དཔེ་རིས།"
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Confidence"
-msgstr ""
+msgstr "ཡིད་རྟོན།"
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Tables"
-msgstr ""
+msgstr "རེའུ་མིག"
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Required sample size"
-msgstr ""
+msgstr "དགོས་ངེས་ཀྱི་མ་དཔེའི་ཆེ་ཆུང་།"
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Plots"
-msgstr ""
+msgstr "དཔེ་རིས།"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "LTA adjustment"
-msgstr ""
+msgstr "LTA སྙོམ་སྒྲིག"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Direct estimator"
@@ -168,69 +197,85 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Regression estimator"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Binomial"
-msgstr ""
+msgstr "ཉིས་ཚན།"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Poisson"
-msgstr ""
+msgstr "པོ་སུང་།"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Hypergeometric"
-msgstr ""
+msgstr "Hypergeometric"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>1. Planning</b>"
-msgstr ""
+msgstr "<b>༡. འཆར་འགོད།</b>"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "1. Planning"
-msgstr ""
+msgstr "༡. འཆར་འགོད།"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Binomial"
-msgstr ""
+msgstr "ཉིས་ཚན།"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Poisson"
-msgstr ""
+msgstr "པོ་སུང་།"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Hypergeometric"
-msgstr ""
+msgstr "Hypergeometric"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>སྙན་ཐོ་ཕབ་ལེན།</b>"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Selection</b>"
-msgstr ""
+msgstr "<b>འདེམས་སྒྲུག་ལ་སྐྱོད།</b>"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>2. Selection</b>"
-msgstr ""
+msgstr "<b>༢. འདེམས་སྒྲུག</b>"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "2. Selection"
-msgstr ""
+msgstr "༢. འདེམས་སྒྲུག"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Reset Workflow</b>"
-msgstr ""
+msgstr "<b>ལས་རྒྱུན་བསྐྱར་སྒྲིག</b>"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Execution</b>"
-msgstr ""
+msgstr "<b>ལག་བསྟར་ལ་སྐྱོད།</b>"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>3. Execution</b>"
-msgstr ""
+msgstr "<b>༣. ལག་བསྟར།</b>"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "3. Execution"
-msgstr ""
+msgstr "༣. ལག་བསྟར།"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Evaluation</b>"
@@ -244,9 +289,10 @@ msgctxt "auditClassicalWorkflow|"
 msgid "4. Evaluation"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "LTA adjustment"
-msgstr ""
+msgstr "LTA སྙོམ་སྒྲིག"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Direct estimator"
@@ -264,13 +310,15 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Regression estimator"
 msgstr ""
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Repeated Values"
-msgstr ""
+msgstr "ཡང་བསྐྱར་གྱི་རིན་ཐང་།"
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Repeated Values Analysis"
-msgstr ""
+msgstr "ཡང་བསྐྱར་གྱི་རིན་ཐང་དབྱེ་ཞིབ།"
 
 msgctxt "Description|"
 msgid "True Value Estimation"
@@ -292,89 +340,109 @@ msgctxt "auditClassicalEstimation|"
 msgid "Regression estimator"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
-msgstr ""
+msgstr "ཡིད་རྟོན།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Variable"
-msgstr ""
+msgstr "འགྱུར་ཚད།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tests"
-msgstr ""
+msgstr "ཚོད་ལྟ།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Average frequency"
-msgstr ""
+msgstr "ཆ་སྙོམས་ཟློས་ཕྱོད།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Entropy"
-msgstr ""
+msgstr "Entropy"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Shuffle Decimal Digits"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Number of samples"
-msgstr ""
+msgstr "མ་དཔེའི་གྲངས།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Seed"
-msgstr ""
+msgstr "ས་བོན།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Tables"
-msgstr ""
+msgstr "རེའུ་མིག"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Assumption checks"
-msgstr ""
+msgstr "ཆ་འཇོག་ཞིབ་བཤེར།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Frequency table"
-msgstr ""
+msgstr "ཟློས་ཕྱོད་རེའུ་མིག"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Plots"
-msgstr ""
+msgstr "དཔེ་རིས།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Label"
-msgstr ""
+msgstr "ཁ་བྱང་།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "with highest occurrence"
-msgstr ""
+msgstr "ཆེས་མཐོ་བའི་འབྱུང་ཚད་དང་ལྡན་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Benford's law"
-msgstr ""
+msgstr "Benford's law"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₁₀"
-msgstr ""
+msgstr "BF₁₀"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₀₁"
-msgstr ""
+msgstr "BF₀₁"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Log(BF₁₀)"
-msgstr ""
+msgstr "Log(BF₁₀)"
 
+#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior"
-msgstr ""
+msgstr "སྔོན་ཚུད།"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Prior"
-msgstr ""
+msgstr "སྔོན་ཚུད།"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior"
-msgstr ""
+msgstr "སྔོན་ཚུད།"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
@@ -384,57 +452,70 @@ msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Reference"
-msgstr ""
+msgstr "ལུང་འདྲེན།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Display"
-msgstr ""
+msgstr "སྟོན་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "འགྲེལ་བརྗོད་ཡི་གེ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Show explanatory text at each step of the analysis"
-msgstr ""
+msgstr "དབྱེ་ཞིབ་ཀྱི་གོམ་རིམ་རེ་རེར་འགྲེལ་བརྗོད་ཡི་གེ་སྟོན་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Digits"
-msgstr ""
+msgstr "ཨང་ཀི།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First"
-msgstr ""
+msgstr "དང་པོ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First and second"
-msgstr ""
+msgstr "དང་པོ་དང་གཉིས་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Last"
-msgstr ""
+msgstr "མཐའ་མ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Frequency table"
-msgstr ""
+msgstr "ཟློས་ཕྱོད་རེའུ་མིག"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Observed vs. expected"
-msgstr ""
+msgstr "ལྟ་ཞིབ་བྱས་པ་དང་སྔོན་དཔག་བྱས་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Display"
-msgstr ""
+msgstr "སྟོན་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "འགྲེལ་བརྗོད་ཡི་གེ།"
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Show explanatory text at each step of the analysis"
-msgstr ""
+msgstr "དབྱེ་ཞིབ་ཀྱི་གོམ་རིམ་རེ་རེར་འགྲེལ་བརྗོད་ཡི་གེ་སྟོན་པ།"
 
 msgctxt "auditClassicalEstimation|"
 msgid "No. items"
@@ -444,61 +525,74 @@ msgctxt "auditClassicalEstimation|"
 msgid "No. units"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Method"
-msgstr ""
+msgstr "ཐབས་ལམ།"
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Scatter plot"
-msgstr ""
+msgstr "Scatter དཔེ་རིས།"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Method"
-msgstr ""
+msgstr "ཐབས་ལམ།"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Stringer"
-msgstr ""
+msgstr "Stringer"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Mean-per-unit estimator"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Display"
-msgstr ""
+msgstr "སྟོན་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "འགྲེལ་བརྗོད་ཡི་གེ།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Show explanatory text at each step of the analysis"
-msgstr ""
+msgstr "དབྱེ་ཞིབ་ཀྱི་གོམ་རིམ་རེ་རེར་འགྲེལ་བརྗོད་ཡི་གེ་སྟོན་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last"
-msgstr ""
+msgstr "མཐའ་མ།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last two"
-msgstr ""
+msgstr "མཐའ་མ་གཉིས།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "All"
-msgstr ""
+msgstr "ཚང་མ།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Observed vs. expected"
-msgstr ""
+msgstr "ལྟ་ཞིབ་བྱས་པ་དང་སྔོན་དཔག་བྱས་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Histogram"
-msgstr ""
+msgstr "Histogram"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Method"
-msgstr ""
+msgstr "ཐབས་ལམ།"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
@@ -508,53 +602,64 @@ msgctxt "auditClassicalWorkflow|"
 msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Stringer"
-msgstr ""
+msgstr "Stringer"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Mean-per-unit estimator"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditSelection|"
 msgid "Sample size"
-msgstr ""
+msgstr "མ་དཔེའི་ཆེ་ཆུང་།"
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Statistical methods for auditing"
-msgstr ""
+msgstr "རྩིས་ཞིབ་ཀྱི་སྡོམ་རྩིས་ཐབས་ལམ།"
 
+#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
+#, fuzzy
 msgctxt "auditBayesianEvaluation|"
 msgid "Advanced"
-msgstr ""
+msgstr "མཐོ་རིམ།"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
+#, fuzzy
 msgctxt "auditBayesianPlanning|"
 msgid "Advanced"
-msgstr ""
+msgstr "མཐོ་རིམ།"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Advanced"
-msgstr ""
+msgstr "མཐོ་རིམ།"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Add variables to sample"
-msgstr ""
+msgstr "མ་དཔེ་ལ་འགྱུར་ཚད་ཁ་སྣོན་བྱེད་པ།"
 
+#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Sample List"
-msgstr ""
+msgstr "མ་དཔེའི་ཐོ་གཞུང་།"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
@@ -574,21 +679,24 @@ msgid ""
 "the reference distribution. The value zero (0) will be omitted from the data."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Choose the distribution to test against."
-msgstr ""
+msgstr "ཚོད་ལྟ་བྱེད་རྒྱུའི་ཁྱབ་ཚུལ་འདེམས་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Test the specified digits against Benford's law."
-msgstr ""
+msgstr "གསལ་བཀོད་བྱས་པའི་ཨང་ཀི་དག་ Benford's law དང་བསྡུར་ནས་ཚོད་ལྟ་བྱེད་པ།"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Test the specified digits against the uniform distribution."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Specify which digits to extract from the data and test."
-msgstr ""
+msgstr "གཞི་གྲངས་ལས་ཨང་ཀི་གང་དག་ཕྱུང་ནས་ཚོད་ལྟ་བྱེད་དགོས་མིན་གསལ་བཀོད་བྱེད་པ།"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
@@ -608,30 +716,38 @@ msgid ""
 "distribution."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Choose which type of Bayes factor to display."
-msgstr ""
+msgstr "སྟོན་རྒྱུའི་ Bayes factor གྱི་རིགས་འདེམས་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Bayes factor to quantify evidence for the alternative hypothesis relative to "
 "the null hypothesis."
 msgstr ""
+"སྟོང་པའི་ཚོད་གཞག་དང་བསྡུར་ན་ཚོད་གཞག་གཞན་གྱི་དཔང་རྟགས་གྲངས་ཚད་འཇལ་བྱེད་ཀྱི་ Bayes factor།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Bayes factor to quantify evidence for the null hypothesis relative to the "
 "alternative hypothesis."
 msgstr ""
+"ཚོད་གཞག་གཞན་དང་བསྡུར་ན་སྟོང་པའི་ཚོད་གཞག་གི་དཔང་རྟགས་གྲངས་ཚད་འཇལ་བྱེད་ཀྱི་ Bayes factor།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Natural logarithm of BF10."
-msgstr ""
+msgstr "BF10 གི་རང་བྱུང་གི་ལོ་གྷ་རི་ཐམ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Specify options that have an effect on the look and feel of the audit report."
 msgstr ""
+"རྩིས་ཞིབ་སྙན་ཐོའི་བཟོ་ལྟ་དང་ཚོར་སྣང་ལ་ཤུགས་རྐྱེན་ཡོད་པའི་འདེམས་ཀ་དག་གསལ་བཀོད་བྱེད་པ།"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
@@ -639,6 +755,7 @@ msgid ""
 "procedure and the statistical results."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "The confidence level used. The confidence level is the complement of the "
@@ -646,34 +763,43 @@ msgid ""
 "judgment about the population. For example, if you want to use an audit risk "
 "of 5%, this equals 95% confidence."
 msgstr ""
+"བེད་སྤྱོད་བྱས་པའི་ཡིད་རྟོན་རིམ་པ། ཡིད་རྟོན་རིམ་པ་ནི་རྩིས་ཞིབ་ཉེན་ཁའི་ཁ་སྐོང་ཡིན།: བེད་སྤྱོད་པས་ཚོགས་པའི་སྐོར"
+"་ལ་ནོར་འཁྲུལ་གྱི་བརྡར་ཤ་གཅོད་པར་འཁུར་འདོད་པའི་ཉེན་ཁ། དཔེར་ན། གལ་ཏེ་ཁྱེད་ཀྱིས་ ༥% གི་རྩིས་ཞིབ་ཉེན་ཁ་"
+"བེད་སྤྱོད་འདོད་ན། འདི་ ༩༥% གི་ཡིད་རྟོན་དང་མཚུངས་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Add additional tables about the analysis to the report."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Produces a table showing the relative frequency of the digits."
-msgstr ""
+msgstr "ཨང་ཀིའི་ལྟོས་བཅས་ཟློས་ཕྱོད་སྟོན་པའི་རེའུ་མིག་ཅིག་བཟོ་བ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Matched rows"
-msgstr ""
+msgstr "མཐུན་པའི་ཕྲེང་།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Produces a table showing the rows matched to a certain digit."
-msgstr ""
+msgstr "ཨང་ཀི་ངེས་ཅན་ཞིག་དང་མཐུན་པའི་ཕྲེང་དག་སྟོན་པའི་རེའུ་མིག་ཅིག་བཟོ་བ།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Digit"
-msgstr ""
+msgstr "ཨང་ཀི།"
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "For which digit should matched rows be displayed?"
-msgstr ""
+msgstr "ཨང་ཀི་གང་གི་ཆེད་དུ་མཐུན་པའི་ཕྲེང་དག་སྟོན་དགོས།"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Add additional figures about the analysis to the report."
@@ -738,10 +864,12 @@ msgctxt "auditClassicalEstimation|"
 msgid "The regression estimator."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid ""
 "Specify options that have an effect on the look and feel of the audit report."
 msgstr ""
+"རྩིས་ཞིབ་སྙན་ཐོའི་བཟོ་ལྟ་དང་ཚོར་སྣང་ལ་ཤུགས་རྐྱེན་ཡོད་པའི་འདེམས་ཀ་དག་གསལ་བཀོད་བྱེད་པ།"
 
 msgctxt "auditClassicalEstimation|"
 msgid ""
@@ -749,6 +877,7 @@ msgid ""
 "procedure and the statistical results."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid ""
 "The confidence level used. The confidence level is the complement of the "
@@ -756,10 +885,14 @@ msgid ""
 "judgment about the population. For example, if you want to use an audit risk "
 "of 5%, this equals 95% confidence."
 msgstr ""
+"བེད་སྤྱོད་བྱས་པའི་ཡིད་རྟོན་རིམ་པ། ཡིད་རྟོན་རིམ་པ་ནི་རྩིས་ཞིབ་ཉེན་ཁའི་ཁ་སྐོང་ཡིན།: བེད་སྤྱོད་པས་ཚོགས་པའི་སྐོར"
+"་ལ་ནོར་འཁྲུལ་གྱི་བརྡར་ཤ་གཅོད་པར་འཁུར་འདོད་པའི་ཉེན་ཁ། དཔེར་ན། གལ་ཏེ་ཁྱེད་ཀྱིས་ ༥% གི་རྩིས་ཞིབ་ཉེན་ཁ་"
+"བེད་སྤྱོད་འདོད་ན། འདི་ ༩༥% གི་ཡིད་རྟོན་དང་མཚུངས་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalEstimation|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Add additional tables about the analysis to the report."
@@ -786,13 +919,15 @@ msgid ""
 "colored in red."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
+#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Advanced"
-msgstr ""
+msgstr "མཐོ་རིམ།"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
@@ -843,10 +978,12 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "All decimal digits are shuffled."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
 "Specify options that have an effect on the look and feel of the audit report."
 msgstr ""
+"རྩིས་ཞིབ་སྙན་ཐོའི་བཟོ་ལྟ་དང་ཚོར་སྣང་ལ་ཤུགས་རྐྱེན་ཡོད་པའི་འདེམས་ཀ་དག་གསལ་བཀོད་བྱེད་པ།"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
@@ -854,6 +991,7 @@ msgid ""
 "procedure and the statistical results."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
 "The confidence level used. The confidence level is the complement of the "
@@ -861,10 +999,14 @@ msgid ""
 "judgment about the population. For example, if you want to use an audit risk "
 "of 5%, this equals 95% confidence."
 msgstr ""
+"བེད་སྤྱོད་བྱས་པའི་ཡིད་རྟོན་རིམ་པ། ཡིད་རྟོན་རིམ་པ་ནི་རྩིས་ཞིབ་ཉེན་ཁའི་ཁ་སྐོང་ཡིན།: བེད་སྤྱོད་པས་ཚོགས་པའི་སྐོར"
+"་ལ་ནོར་འཁྲུལ་གྱི་བརྡར་ཤ་གཅོད་པར་འཁུར་འདོད་པའི་ཉེན་ཁ། དཔེར་ན། གལ་ཏེ་ཁྱེད་ཀྱིས་ ༥% གི་རྩིས་ཞིབ་ཉེན་ཁ་"
+"བེད་སྤྱོད་འདོད་ན། འདི་ ༩༥% གི་ཡིད་རྟོན་དང་མཚུངས་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Add additional tables about the analysis to the report."
@@ -903,9 +1045,10 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Indicate how many items labels to display."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Advanced"
-msgstr ""
+msgstr "མཐོ་རིམ།"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Adjust advanced options for this analysis."
@@ -929,29 +1072,35 @@ msgid ""
 "results."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
+#, fuzzy
 msgctxt "auditClassicalPlanning|"
 msgid "Advanced"
-msgstr ""
+msgstr "མཐོ་རིམ།"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Advanced"
-msgstr ""
+msgstr "མཐོ་རིམ།"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Add variables to sample"
-msgstr ""
+msgstr "མ་དཔེ་ལ་འགྱུར་ཚད་ཁ་སྣོན་བྱེད་པ།"
 
+#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Sample List"
-msgstr ""
+msgstr "མ་དཔེའི་ཐོ་གཞུང་།"
 
 msgctxt "auditSelection|"
 msgid ""
@@ -961,9 +1110,10 @@ msgid ""
 "values are provided, the ideal sampling units to use are monetary units."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditSelection|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
 msgctxt "Display|"
 msgid "Format Output"
@@ -997,9 +1147,10 @@ msgctxt "Display|"
 msgid "Display numbers as monetary units."
 msgstr ""
 
+#, fuzzy
 msgctxt "DownloadReport|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>སྙན་ཐོ་ཕབ་ལེན།</b>"
 
 msgctxt "AddVariables|"
 msgid "Column name selection result"
@@ -1098,9 +1249,10 @@ msgctxt "DataType|"
 msgid "Use summary statistics from a sample as input data."
 msgstr ""
 
+#, fuzzy
 msgctxt "DataType|"
 msgid "Sample size"
-msgstr ""
+msgstr "མ་དཔེའི་ཆེ་ཆུང་།"
 
 msgctxt "DataType|"
 msgid "The number of sampling units that have been audited."
@@ -1114,9 +1266,10 @@ msgctxt "DataType|"
 msgid "The number of misstatements that have been found in the sample."
 msgstr ""
 
+#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Tables"
-msgstr ""
+msgstr "རེའུ་མིག"
 
 msgctxt "EvaluationOutput|"
 msgid "Add additional tables about the evaluation to the report."
@@ -1153,9 +1306,10 @@ msgid ""
 "objectives have been met."
 msgstr ""
 
+#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Assumption checks"
-msgstr ""
+msgstr "ཆ་འཇོག་ཞིབ་བཤེར།"
 
 msgctxt "EvaluationOutput|"
 msgid ""
@@ -1172,9 +1326,10 @@ msgid ""
 "Width of the one-sided confidence interval for the population correlation."
 msgstr ""
 
+#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Plots"
-msgstr ""
+msgstr "དཔེ་རིས།"
 
 msgctxt "EvaluationOutput|"
 msgid "Add additional figures about the evaluation to the report."
@@ -1225,9 +1380,10 @@ msgid ""
 "on the data level."
 msgstr ""
 
+#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Scatter plot"
-msgstr ""
+msgstr "Scatter དཔེ་རིས།"
 
 msgctxt "EvaluationOutput|"
 msgid ""
@@ -1335,18 +1491,22 @@ msgid ""
 "Produces a one-sided lower bound for the misstatement in the population."
 msgstr ""
 
+#, fuzzy
 msgctxt "ExplanatoryText|"
 msgid "Display"
-msgstr ""
+msgstr "སྟོན་པ།"
 
+#, fuzzy
 msgctxt "ExplanatoryText|"
 msgid ""
 "Specify options that have an effect on the look and feel of the audit report."
 msgstr ""
+"རྩིས་ཞིབ་སྙན་ཐོའི་བཟོ་ལྟ་དང་ཚོར་སྣང་ལ་ཤུགས་རྐྱེན་ཡོད་པའི་འདེམས་ཀ་དག་གསལ་བཀོད་བྱེད་པ།"
 
+#, fuzzy
 msgctxt "ExplanatoryText|"
 msgid "Explanatory text"
-msgstr ""
+msgstr "འགྲེལ་བརྗོད་ཡི་གེ།"
 
 msgctxt "ExplanatoryText|"
 msgid ""
@@ -1576,13 +1736,15 @@ msgid ""
 "data given the parameters of the model."
 msgstr ""
 
+#, fuzzy
 msgctxt "Likelihood|"
 msgid "Beta-binomial"
-msgstr ""
+msgstr "Beta-binomial"
 
+#, fuzzy
 msgctxt "Likelihood|"
 msgid "Hypergeometric"
-msgstr ""
+msgstr "Hypergeometric"
 
 msgctxt "Likelihood|"
 msgid ""
@@ -1595,13 +1757,15 @@ msgid ""
 "is the beta-binomial distribution."
 msgstr ""
 
+#, fuzzy
 msgctxt "Likelihood|"
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
+#, fuzzy
 msgctxt "Likelihood|"
 msgid "Binomial"
-msgstr ""
+msgstr "ཉིས་ཚན།"
 
 msgctxt "Likelihood|"
 msgid ""
@@ -1613,13 +1777,15 @@ msgid ""
 "binomial likelihood is the beta distribution."
 msgstr ""
 
+#, fuzzy
 msgctxt "Likelihood|"
 msgid "Gamma"
-msgstr ""
+msgstr "གྷ་མ།"
 
+#, fuzzy
 msgctxt "Likelihood|"
 msgid "Poisson"
-msgstr ""
+msgstr "པོ་སུང་།"
 
 msgctxt "Likelihood|"
 msgid ""
@@ -1631,9 +1797,10 @@ msgid ""
 "likelihood is the gamma distribution."
 msgstr ""
 
+#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Tables"
-msgstr ""
+msgstr "རེའུ་མིག"
 
 msgctxt "PlanningOutput|"
 msgid "Add additional tables about the planning to the report."
@@ -1659,9 +1826,10 @@ msgid ""
 "in the data set."
 msgstr ""
 
+#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Plots"
-msgstr ""
+msgstr "དཔེ་རིས།"
 
 msgctxt "PlanningOutput|"
 msgid "Add additional figures about the planning to the report."
@@ -1761,9 +1929,10 @@ msgctxt "PriorMethod|"
 msgid "Choose how to construct the prior distribution."
 msgstr ""
 
+#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Method"
-msgstr ""
+msgstr "ཐབས་ལམ།"
 
 msgctxt "PriorMethod|"
 msgid "Default"
@@ -1807,9 +1976,10 @@ msgctxt "PriorMethod|"
 msgid "The β parameter of the prior distribution."
 msgstr ""
 
+#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Sample size"
-msgstr ""
+msgstr "མ་དཔེའི་ཆེ་ཆུང་།"
 
 msgctxt "PriorMethod|"
 msgid "The number of sampling units audited through an earlier sample."
@@ -1920,10 +2090,12 @@ msgctxt "SamplingObjectives|"
 msgid "The percentage associated with the minimum precision."
 msgstr ""
 
+#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid "Confidence"
-msgstr ""
+msgstr "ཡིད་རྟོན།"
 
+#, fuzzy
 msgctxt "SamplingObjectives|"
 msgid ""
 "The confidence level used. The confidence level is the complement of the "
@@ -1931,6 +2103,9 @@ msgid ""
 "judgment about the population. For example, if you want to use an audit risk "
 "of 5%, this equals 95% confidence."
 msgstr ""
+"བེད་སྤྱོད་བྱས་པའི་ཡིད་རྟོན་རིམ་པ། ཡིད་རྟོན་རིམ་པ་ནི་རྩིས་ཞིབ་ཉེན་ཁའི་ཁ་སྐོང་ཡིན།: བེད་སྤྱོད་པས་ཚོགས་པའི་སྐོར"
+"་ལ་ནོར་འཁྲུལ་གྱི་བརྡར་ཤ་གཅོད་པར་འཁུར་འདོད་པའི་ཉེན་ཁ། དཔེར་ན། གལ་ཏེ་ཁྱེད་ཀྱིས་ ༥% གི་རྩིས་ཞིབ་ཉེན་ཁ་"
+"བེད་སྤྱོད་འདོད་ན། འདི་ ༩༥% གི་ཡིད་རྟོན་དང་མཚུངས་པ།"
 
 msgctxt "AdditionalVariables|"
 msgid "Additional Variables (optional)"
@@ -2059,9 +2234,10 @@ msgid ""
 "high value in the sample."
 msgstr ""
 
+#, fuzzy
 msgctxt "Seed|"
 msgid "Seed"
-msgstr ""
+msgstr "ས་བོན།"
 
 msgctxt "Seed|"
 msgid ""
@@ -2144,9 +2320,10 @@ msgctxt "SelectionMethod|"
 msgid "Performs modified sieve sampling."
 msgstr ""
 
+#, fuzzy
 msgctxt "SelectionOutput|"
 msgid "Tables"
-msgstr ""
+msgstr "རེའུ་མིག"
 
 msgctxt "SelectionOutput|"
 msgid "Selected items"
@@ -2217,9 +2394,10 @@ msgid ""
 "size."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Advanced"
-msgstr ""
+msgstr "མཐོ་རིམ།"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Prior Distribution"
@@ -2529,9 +2707,10 @@ msgctxt "Algorithm|"
 msgid "Sets the number of MCMC chains."
 msgstr ""
 
+#, fuzzy
 msgctxt "Algorithm|"
 msgid "Seed"
-msgstr ""
+msgstr "ས་བོན།"
 
 msgctxt "Algorithm|"
 msgid ""
@@ -2610,13 +2789,15 @@ msgctxt "auditClassicalFairness|"
 msgid "Accuracy parity"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
+#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Advanced"
-msgstr ""
+msgstr "མཐོ་རིམ།"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
@@ -2759,13 +2940,15 @@ msgid ""
 "greater losses."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Report"
-msgstr ""
+msgstr "སྙན་ཐོ།"
 
+#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Plots"
-msgstr ""
+msgstr "དཔེ་རིས།"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Add additional figures about the evaluation to the report."
@@ -2804,9 +2987,10 @@ msgid ""
 "reliable sources or domain experts."
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>Download Report</b>"
-msgstr ""
+msgstr "<b>སྙན་ཐོ་ཕབ་ལེན།</b>"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>To Evaluation</b>"
@@ -2820,17 +3004,20 @@ msgctxt "auditClassicalFairnessWorkflow|"
 msgid "2. Evaluation"
 msgstr ""
 
+#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Advanced"
-msgstr ""
+msgstr "མཐོ་རིམ།"
 
+#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "Choose which type of Bayes factor to display."
-msgstr ""
+msgstr "སྟོན་རྒྱུའི་ Bayes factor གྱི་རིགས་འདེམས་པ།"
 
+#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "BF₁₀"
-msgstr ""
+msgstr "BF₁₀"
 
 #, fuzzy
 msgctxt "BayesFactorType|"
@@ -2838,12 +3025,12 @@ msgid ""
 "Bayes factor to quantify evidence for the alternative hypothesis relative to "
 "the null hypothesis."
 msgstr ""
-"མེད་པའི་ཚོད་དཔག་ (Null Hypothesis) ལ་ལྟོས་པའི་གཞན་པའི་ཚོད་དཔག་ (Alternative "
-"Hypothesis) གི་བདེན་དཔང་ཚད་འཇལ་བྱེད་པའི་བྷེ་ཡེ་སིའི་བསྡུར་ཚད།"
+"སྟོང་པའི་ཚོད་གཞག་དང་བསྡུར་ན་ཚོད་གཞག་གཞན་གྱི་དཔང་རྟགས་གྲངས་ཚད་འཇལ་བྱེད་ཀྱི་ Bayes factor།"
 
+#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "BF₀₁"
-msgstr ""
+msgstr "BF₀₁"
 
 #, fuzzy
 msgctxt "BayesFactorType|"
@@ -2851,21 +3038,23 @@ msgid ""
 "Bayes factor to quantify evidence for the null hypothesis relative to the "
 "alternative hypothesis."
 msgstr ""
-"གཞན་པའི་ཚོད་དཔག་ (Alternative Hypothesis) ལ་ལྟོས་པའི་མེད་པའི་ཚོད་དཔག་ (Null "
-"Hypothesis) གི་བདེན་དཔང་ཚད་འཇལ་བྱེད་པའི་བྷེ་ཡེ་སིའི་བསྡུར་ཚད།"
+"ཚོད་གཞག་གཞན་དང་བསྡུར་ན་སྟོང་པའི་ཚོད་གཞག་གི་དཔང་རྟགས་གྲངས་ཚད་འཇལ་བྱེད་ཀྱི་ Bayes factor།"
 
+#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "Log(BF₁₀)"
-msgstr ""
+msgstr "Log(BF₁₀)"
 
 msgctxt "BayesFactorType|"
 msgid "Natural logarithm of BF10."
 msgstr "BF10 རང་བྱུང་གི་ལོ་གྷ་རི་ཐམ། (Natural logarithm)"
 
+#, fuzzy
 msgctxt "ConfidenceLevel|"
 msgid "Confidence"
-msgstr ""
+msgstr "ཡིད་རྟོན།"
 
+#, fuzzy
 msgctxt "ConfidenceLevel|"
 msgid ""
 "The confidence level used. The confidence level is the complement of the "
@@ -2873,10 +3062,14 @@ msgid ""
 "judgment about the population. For example, if you want to use an audit risk "
 "of 5%, this equals 95% confidence."
 msgstr ""
+"བེད་སྤྱོད་བྱས་པའི་ཡིད་རྟོན་རིམ་པ། ཡིད་རྟོན་རིམ་པ་ནི་རྩིས་ཞིབ་ཉེན་ཁའི་ཁ་སྐོང་ཡིན།: བེད་སྤྱོད་པས་ཚོགས་པའི་སྐོར"
+"་ལ་ནོར་འཁྲུལ་གྱི་བརྡར་ཤ་གཅོད་པར་འཁུར་འདོད་པའི་ཉེན་ཁ། དཔེར་ན། གལ་ཏེ་ཁྱེད་ཀྱིས་ ༥% གི་རྩིས་ཞིབ་ཉེན་ཁ་"
+"བེད་སྤྱོད་འདོད་ན། འདི་ ༩༥% གི་ཡིད་རྟོན་དང་མཚུངས་པ།"
 
+#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Tables"
-msgstr ""
+msgstr "རེའུ་མིག"
 
 msgctxt "FairnessOutput|"
 msgid "Add additional tables about the evaluation to the report."
@@ -2926,9 +3119,10 @@ msgctxt "FairnessOutput|"
 msgid "Transposes the confusion matrix."
 msgstr ""
 
+#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Plots"
-msgstr ""
+msgstr "དཔེ་རིས།"
 
 msgctxt "FairnessOutput|"
 msgid "Add additional figures about the evaluation to the report."
@@ -3082,9 +3276,10 @@ msgctxt "PriorDistribution|"
 msgid "Specifies the concentration parameter for the Dirichlet prior."
 msgstr ""
 
+#, fuzzy
 msgctxt "PriorDistribution|"
 msgid "Seed"
-msgstr ""
+msgstr "ས་བོན།"
 
 msgctxt "PriorDistribution|"
 msgid ""
