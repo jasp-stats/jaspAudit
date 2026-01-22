@@ -21,40 +21,32 @@ import QtQuick.Layouts
 import JASP
 import JASP.Controls
 
-import "./common" as Common
-import "./common/estimation" as Estimation
-
-Form
+Group
 {
-	columns:						1
-	info:							qsTr("The estimation analysis allows the user to estimate the true value of a population on the basis of a sample.")
+	property bool	disableValues: false
 
-	Estimation.VariablesFormEstimation { }
-	Estimation.Confidence { }
-	Estimation.Population { disableValues: estimator.useMpu }
-	Estimation.Estimator { id: estimator }
-	Common.ExplanatoryText { }
+	title: 				qsTr("Population (required)")
 
-	Section
+	IntegerField
 	{
-		title:						qsTr("Report")
-		columns:					2
-
-		Group
-		{
-			title: 					qsTr("Tables")
-			info:					qsTr("Add additional tables about the analysis to the report.")
-			Estimation.Samplesize { }
-		}
-
-		Group
-		{
-			title: 					qsTr("Plots")
-			info:					qsTr("Add additional figures about the analysis to the report.")
-			Estimation.Scatterplot { disable: estimator.useMpu }
-		}
-
+		name: 			"populationSize"
+		text: 			qsTr("No. items")
+		fieldWidth: 	100 * preferencesModel.uiScale
+		defaultValue: 	0
+		min: 			0
+		info:			qsTr("The total number of items (rows) in the population.")
 	}
 
-	Common.DownloadReport { }
+	DoubleField
+	{
+		id: 			populationValue
+		name: 			"populationValue"
+		text: 			qsTr("No. units")
+		defaultValue: 	0
+		fieldWidth: 	100 * preferencesModel.uiScale
+		min: 			0
+		decimals: 		2
+		enabled:		!disableValues
+		info:			qsTr("The total number of units in the population. Note that the units can be items (rows) or monetary units (values) depending on the audit question.")
+	}
 }

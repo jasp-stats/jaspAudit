@@ -43,6 +43,8 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 
   # --- PLOTS
 
+  .jfaFigureNumberInit(jaspResults) # Initialize figure numbers
+
   # Scatter plot
   .jfaEstimationCorrelationPlot(dataset, options, jaspResults, ready, position = 4)
 
@@ -742,91 +744,93 @@ auditClassicalEstimation <- function(jaspResults, dataset, options, ...) {
 }
 
 .jfaEstimationCorrelationPlot <- function(dataset, options, jaspResults, ready, position) {
-  if (!is.null(jaspResults[["correlationPlot"]]) ||
-    !options[["correlationPlot"]] ||
-    options[["estimator"]] == "mpu") {
+  if (!options[["correlationPlot"]] || options[["estimator"]] == "mpu") {
     return()
   }
 
-  correlationPlot <- createJaspPlot(plot = NULL, title = gettext("Scatter Plot"), width = 500, height = 400)
-  correlationPlot$position <- position
-  correlationPlot$dependOn(options = c(
-    "correlationPlot",
-    "bookValues",
-    "auditValues",
-    "explanatoryText",
-    "estimator",
-    "populationValue",
-    "populationSize"
-  ))
+  .jfaFigureNumberUpdate(jaspResults)
 
-  jaspResults[["correlationPlot"]] <- correlationPlot
+  if (is.null(jaspResults[["correlationPlot"]])) {
+    correlationPlot <- createJaspPlot(plot = NULL, title = gettext("Scatter Plot"), width = 500, height = 400)
+    correlationPlot$position <- position
+    correlationPlot$dependOn(options = c(
+      "correlationPlot",
+      "bookValues",
+      "auditValues",
+      "explanatoryText",
+      "estimator",
+      "populationValue",
+      "populationSize"
+    ))
 
-  if (!ready) {
-    return()
+    jaspResults[["correlationPlot"]] <- correlationPlot
+
+    if (!ready) {
+      return()
+    }
+
+    d <- data.frame(xx = dataset[[options[["bookValues"]]]], yy = dataset[[options[["auditValues"]]]])
+    co <- cor(d$xx, d$yy, method = "pearson")
+    d <- na.omit(d)
+    d <- ceiling(d)
+    xVar <- d$xx
+    yVar <- d$yy
+
+    fit <- vector("list", 1) # vector("list", 4)
+    fit[[1]] <- lm(yy ~ poly(xx, 1, raw = TRUE), data = d)
+
+    bestModel <- 1 # which.min(Bic)
+
+    # format x labels
+    xticks <- jaspGraphs::getPrettyAxisBreaks(c(xVar, yVar))
+    xLabs <- vector("character", length(xticks))
+    xLabs <- format(xticks, digits = 3, scientific = FALSE)
+
+    # Format y labels
+    yticks <- xticks
+    yLabs <- vector("character", length(yticks))
+    yLabs <- format(yticks, digits = 3, scientific = FALSE)
+
+    co <- round(co, 2)
+
+    cols <- rep("gray", nrow(d))
+    cols[which(d$xx != d$yy)] <- "red"
+
+    p <- ggplot2::ggplot(data = d, mapping = ggplot2::aes(x = xx, y = yy)) +
+      ggplot2::scale_x_continuous(
+        name = gettext("Book value"),
+        breaks = xticks,
+        labels = xLabs,
+        limits = range(xticks)
+      ) +
+      ggplot2::scale_y_continuous(
+        name = gettext("Audit value"),
+        breaks = yticks,
+        labels = yLabs,
+        limits = range(yticks)
+      ) +
+      jaspGraphs::geom_point(size = 3, fill = cols)
+
+    p <- .jfaAddCorrelationLineToPlot(
+      fit = fit[[bestModel]],
+      plot = p,
+      xMin = xticks[1],
+      xMax = xticks[length(xticks)],
+      lwd = 1
+    )
+    p <- p + ggplot2::annotate("text",
+      x = xticks[1], y = (yticks[length(yticks)] - ((yticks[length(yticks)] - yticks[length(yticks) - 1]) / 2)),
+      label = paste0("italic(r) == ", co), size = 8, parse = TRUE, hjust = -0.5, vjust = 0.5
+    )
+    p <- p + ggplot2::theme(panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb"), panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb")) +
+      jaspGraphs::geom_rangeframe() +
+      jaspGraphs::themeJaspRaw(legend.position = "none")
+
+    correlationPlot$plotObject <- p
   }
-
-  d <- data.frame(xx = dataset[[options[["bookValues"]]]], yy = dataset[[options[["auditValues"]]]])
-  co <- cor(d$xx, d$yy, method = "pearson")
-  d <- na.omit(d)
-  d <- ceiling(d)
-  xVar <- d$xx
-  yVar <- d$yy
-
-  fit <- vector("list", 1) # vector("list", 4)
-  fit[[1]] <- lm(yy ~ poly(xx, 1, raw = TRUE), data = d)
-
-  bestModel <- 1 # which.min(Bic)
-
-  # format x labels
-  xticks <- jaspGraphs::getPrettyAxisBreaks(c(xVar, yVar))
-  xLabs <- vector("character", length(xticks))
-  xLabs <- format(xticks, digits = 3, scientific = FALSE)
-
-  # Format y labels
-  yticks <- xticks
-  yLabs <- vector("character", length(yticks))
-  yLabs <- format(yticks, digits = 3, scientific = FALSE)
-
-  co <- round(co, 2)
-
-  cols <- rep("gray", nrow(d))
-  cols[which(d$xx != d$yy)] <- "red"
-
-  p <- ggplot2::ggplot(data = d, mapping = ggplot2::aes(x = xx, y = yy)) +
-    ggplot2::scale_x_continuous(
-      name = gettext("Book value"),
-      breaks = xticks,
-      labels = xLabs,
-      limits = range(xticks)
-    ) +
-    ggplot2::scale_y_continuous(
-      name = gettext("Audit value"),
-      breaks = yticks,
-      labels = yLabs,
-      limits = range(yticks)
-    ) +
-    jaspGraphs::geom_point(size = 3, fill = cols)
-
-  p <- .jfaAddCorrelationLineToPlot(
-    fit = fit[[bestModel]],
-    plot = p,
-    xMin = xticks[1],
-    xMax = xticks[length(xticks)],
-    lwd = 1
-  )
-  p <- p + ggplot2::annotate("text",
-    x = xticks[1], y = (yticks[length(yticks)] - ((yticks[length(yticks)] - yticks[length(yticks) - 1]) / 2)),
-    label = paste0("italic(r) == ", co), size = 8, parse = TRUE, hjust = -0.5, vjust = 0.5
-  )
-  p <- p + ggplot2::theme(panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb"), panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb")) +
-    jaspGraphs::geom_rangeframe() +
-    jaspGraphs::themeJaspRaw(legend.position = "none")
-
-  correlationPlot$plotObject <- p
 
   if (options[["explanatoryText"]]) {
-    figure1 <- createJaspHtml(gettext("<b>Figure 1.</b> Scatter plot of the book values in the selection and their audit values. Red dots indicate observations that did not match their original book value. If these red dots lie in the bottom part of the graph, the book values are overstated. If these red dots lie in the upper part of the graph, they are understated. The value <i>r</i> is the Pearson correlation coefficient of the book values and the audit values, an indicator of the strength of the linear relationship between the two variables."), "p")
+    figure1 <- createJaspHtml(gettextf("<b>Figure %1$i.</b> Scatter plot of the book values in the selection and their audit values. Red dots indicate observations that did not match their original book value. If these red dots lie in the bottom part of the graph, the book values are overstated. If these red dots lie in the upper part of the graph, they are understated. The value <i>r</i> is the Pearson correlation coefficient of the book values and the audit values, an indicator of the strength of the linear relationship between the two variables.", jaspResults[["figNumber"]]$object), "p")
     figure1$position <- position + 1
     figure1$dependOn(optionsFromObject = correlationPlot)
     figure1$dependOn(options = "explanatoryText")
