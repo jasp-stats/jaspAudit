@@ -1,12 +1,12 @@
-context("Example: planningAndSelectingBayesian")
+context("Library: planningAndSelectingBayesian")
 
 # This test file was auto-generated from a JASP example file.
-# The JASP file is stored in the module's examples/ folder.
+# The JASP file is stored in tests/testthat/jaspfiles/library/.
 
 test_that("auditClassicalPlanning (analysis 1) results match", {
 
   # Load from JASP example file
-  jaspFile <- testthat::test_path("..", "..", "examples", "planningAndSelectingBayesian.jasp")
+  jaspFile <- testthat::test_path("jaspfiles", "library", "planningAndSelectingBayesian.jasp")
   opts <- jaspTools::analysisOptions(jaspFile)[[1]]
   dataset <- jaspTools::extractDatasetFromJASPFile(jaspFile)
 
@@ -29,7 +29,7 @@ test_that("auditClassicalPlanning (analysis 1) results match", {
 test_that("auditSelection (analysis 2) results match", {
 
   # Load from JASP example file
-  jaspFile <- testthat::test_path("..", "..", "examples", "planningAndSelectingBayesian.jasp")
+  jaspFile <- testthat::test_path("jaspfiles", "library", "planningAndSelectingBayesian.jasp")
   opts <- jaspTools::analysisOptions(jaspFile)[[2]]
   dataset <- jaspTools::extractDatasetFromJASPFile(jaspFile)
 
