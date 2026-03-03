@@ -1,12 +1,12 @@
-context("Example: sinoForest")
+context("Library: sinoForest")
 
 # This test file was auto-generated from a JASP example file.
-# The JASP file is stored in the module's examples/ folder.
+# The JASP file is stored in tests/testthat/jaspfiles/library/.
 
 test_that("auditClassicalBenfordsLaw results match", {
 
   # Load from JASP example file
-  jaspFile <- testthat::test_path("..", "..", "examples", "sinoForest.jasp")
+  jaspFile <- testthat::test_path("jaspfiles", "library", "sinoForest.jasp")
   opts <- jaspTools::analysisOptions(jaspFile)
   dataset <- jaspTools::extractDatasetFromJASPFile(jaspFile)
 

@@ -65,7 +65,7 @@ Form
 			enable_corrections: population.n_units > 0 || data.use_population
 			enable_assumptions: algorithm.use_partial
 			enable_objectives: objectives.use_materiality || objectives.use_precision
-			enable_predictive: !likelihood.use_hypergeometric
+			enable_predictive: data.use_stats ? (!likelihood.use_hypergeometric & population.n_units > 0) : !likelihood.use_hypergeometric
 			enable_scatter: !data.use_stats
 			enable_estimates: true
 			show_seqbf: true
