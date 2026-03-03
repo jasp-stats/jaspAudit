@@ -10,6 +10,9 @@ options$populationSize <- 1000
 options$populationValue <- 769458
 options$requiredSampleSizeTable <- TRUE
 options$requiredUncertainty <- 11000
+options$explanatoryText <- TRUE
+options$confidence <- 0.95
+options$correlationPlot <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalEstimation", "estimation.csv", options)
 
@@ -39,6 +42,9 @@ options$populationSize <- 1000
 options$populationValue <- 769458
 options$requiredSampleSizeTable <- TRUE
 options$requiredUncertainty <- 11000
+options$explanatoryText <- TRUE
+options$confidence <- 0.95
+options$correlationPlot <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalEstimation", "estimation.csv", options)
 
@@ -68,6 +74,9 @@ options$populationSize <- 1000
 options$populationValue <- 769458
 options$requiredSampleSizeTable <- TRUE
 options$requiredUncertainty <- 11000
+options$explanatoryText <- TRUE
+options$confidence <- 0.95
+options$correlationPlot <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalEstimation", "estimation.csv", options)
 
@@ -97,6 +106,9 @@ options$populationSize <- 1000
 options$populationValue <- 769458
 options$requiredSampleSizeTable <- TRUE
 options$requiredUncertainty <- 11000
+options$explanatoryText <- TRUE
+options$confidence <- 0.95
+options$correlationPlot <- FALSE
 set.seed(1)
 results <- jaspTools::runAnalysis("auditClassicalEstimation", "estimation.csv", options)
 
