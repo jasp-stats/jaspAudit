@@ -2120,7 +2120,11 @@
       colnames(export)[(length(colnames(export)) - length(unlist(options[["variables"]]))):length(colnames(export))] <- decodeColNames(unlist(options[["variables"]]))
     }
     export <- cbind(export, rep(NA, nrow(export)))
-    colnames(export)[length(colnames(export))] <- "auditResult"
+    auditResultName <- options[["variable_col"]]
+    if (is.null(auditResultName) || auditResultName == "") {
+      auditResultName <- "auditResult"
+    }
+    colnames(export)[length(colnames(export))] <- decodeColNames(auditResultName)
     utils::write.csv(x = export, file = options[["file"]], row.names = FALSE, na = "", quote = FALSE)
   }
 }
