@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2026-03-22 13:09+0000\n"
+"Last-Translator: Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/id/>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Language: id\n"
 "X-Qt-Contexts: true\n"
 
@@ -298,7 +304,6 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Poisson"
 msgstr "Poisson"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Binomial"
 msgstr "Binomial"
@@ -437,7 +442,6 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Poisson"
 msgstr "Poisson"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Binomial"
 msgstr "Binomial"
