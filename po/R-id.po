@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.95.5\n"
 "POT-Creation-Date: 2025-11-15 03:36\n"
-"PO-Revision-Date: 2026-03-21 04:04+0000\n"
+"PO-Revision-Date: 2026-03-24 01:10+0000\n"
 "Last-Translator: Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-r/id/>\n"
@@ -59,7 +59,7 @@ msgid "MAD"
 msgstr ""
 
 msgid "df"
-msgstr ""
+msgstr "df"
 
 msgid "Benford's law"
 msgstr ""
@@ -143,13 +143,13 @@ msgid "Row"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "Nilai"
 
 msgid "The requested digit must be between 1 - 9."
 msgstr ""
 
 msgid "<b>Warning.</b>"
-msgstr ""
+msgstr "<b>Peringatan.</b>"
 
 msgid "The requested digit must be between 10 - 99."
 msgstr ""
@@ -1181,13 +1181,13 @@ msgid "Valid cases"
 msgstr ""
 
 msgid "Median"
-msgstr ""
+msgstr "Median"
 
 msgid "Variance"
-msgstr ""
+msgstr "Varians"
 
 msgid "Range"
-msgstr ""
+msgstr "Rentang"
 
 msgid "Minimum"
 msgstr "Minimum"
@@ -1211,7 +1211,7 @@ msgid "Overall materiality"
 msgstr ""
 
 msgid "Sample size"
-msgstr ""
+msgstr "Ukuran sampel"
 
 msgid "Misstatements"
 msgstr ""
@@ -1304,7 +1304,7 @@ msgid "ID"
 msgstr ""
 
 msgid "Difference"
-msgstr ""
+msgstr "Perbedaan"
 
 msgid "Counted"
 msgstr ""
@@ -1394,7 +1394,7 @@ msgid "Prior and Expected Posterior Distribution"
 msgstr ""
 
 msgid "Prior Distribution"
-msgstr ""
+msgstr "Distribusi Priori"
 
 msgid "Prior and Posterior Distribution"
 msgstr ""
@@ -1433,7 +1433,7 @@ msgid "Ratio %1$s"
 msgstr ""
 
 msgid "Mode"
-msgstr ""
+msgstr "Mode"
 
 msgid "Prior"
 msgstr "Priori"
