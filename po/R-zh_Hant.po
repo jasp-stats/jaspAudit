@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.1\n"
 "POT-Creation-Date: 2025-04-23 07:45\n"
-"PO-Revision-Date: 2026-04-02 09:09+0000\n"
+"PO-Revision-Date: 2026-04-03 14:13+0000\n"
 "Last-Translator: 陳正昌 <chencc99@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspaudit-r/zh_Hant/>\n"
@@ -241,7 +241,7 @@ msgid ""
 msgstr ""
 
 msgid "Sequential Analysis Plot"
-msgstr ""
+msgstr "序列分析圖"
 
 msgid ""
 "<b>Figure %1$i.</b> The results of a sequential analysis using the Bayes "
@@ -1504,13 +1504,13 @@ msgid ""
 msgstr ""
 
 msgid "High"
-msgstr ""
+msgstr "上界"
 
 msgid "Medium"
 msgstr ""
 
 msgid "Low"
-msgstr ""
+msgstr "下界"
 
 msgid "<u>Audit Risk Model</u>"
 msgstr ""
@@ -1682,10 +1682,10 @@ msgid "Binomial"
 msgstr ""
 
 msgid "Poisson"
-msgstr ""
+msgstr "卜瓦松"
 
 msgid "Hypergeometric"
-msgstr ""
+msgstr "超幾何分布"
 
 msgid "Across Probability Distributions (Current: %1$s)"
 msgstr ""
@@ -1861,7 +1861,7 @@ msgid "Overall materiality"
 msgstr ""
 
 msgid "Sample size"
-msgstr ""
+msgstr "樣本數"
 
 msgid "Misstatements"
 msgstr ""
@@ -2130,7 +2130,7 @@ msgid "%1$s %2$s vs. %3$s %2$s."
 msgstr ""
 
 msgid "Sequential Analysis"
-msgstr ""
+msgstr "序列分析"
 
 msgid "Plot not possible: The Bayes factor is infinite."
 msgstr ""
