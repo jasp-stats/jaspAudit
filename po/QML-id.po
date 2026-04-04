@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2026-04-02 05:09+0000\n"
+"Last-Translator: Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/id/>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Language: id\n"
 "X-Qt-Contexts: true\n"
 
@@ -17,7 +23,7 @@ msgstr "Alur Kerja Pensampelan"
 
 msgctxt "Description|"
 msgid "Bayesian Sampling Workflow"
-msgstr ""
+msgstr "Alur Kerja Pensampelan Bayes"
 
 msgctxt "Description|"
 msgid "Planning"
@@ -29,7 +35,7 @@ msgstr "Perencanaan Bayesian"
 
 msgctxt "Description|"
 msgid "Selection"
-msgstr "Seleksi"
+msgstr "Pemilihan"
 
 msgctxt "Description|"
 msgid "Evaluation"
@@ -53,7 +59,7 @@ msgstr "Analisis Nilai Berulang"
 
 msgctxt "Description|"
 msgid "True Value Estimation"
-msgstr "Estimasi Nilai Sebenarnya"
+msgstr "Estimasi Nilai Benar"
 
 msgctxt "auditBayesianEvaluation|"
 msgid "Prior"
@@ -79,45 +85,38 @@ msgctxt "auditBayesianWorkflow|"
 msgid "Beta"
 msgstr "Beta"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Beta-binomial"
 msgstr "Binomial-beta"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "Prior"
-msgstr "Sebelumnya"
+msgstr "Priori"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Download Report</b>"
 msgstr "<b>Unduh Laporan</b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Selection</b>"
-msgstr "<b>Untuk Seleksi</b>"
+msgstr "<b>Untuk Pemilihan</b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>2. Selection</b>"
-msgstr "<b>2. Seleksi</b>"
+msgstr "<b>2. Pemilihan</b>"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "2. Selection"
-msgstr "2. Seleksi"
+msgstr "2. Pemilihan"
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Reset Workflow</b>"
-msgstr ""
+msgstr "<b>Atur Ulang Alur Kerja</b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Execution</b>"
 msgstr "<b>Untuk Eksekusi</b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>3. Execution</b>"
 msgstr "<b>3. Eksekusi</b>"
@@ -126,27 +125,22 @@ msgctxt "auditBayesianWorkflow|"
 msgid "3. Execution"
 msgstr "3. Eksekusi"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items with their audit (true) values.</b>"
-msgstr "<b>Tandai item yang Anda pilih dengan nilai audit (benar)</b>"
+msgstr "<b>Tandai item yang Anda pilih dengan nilai audit (benar).</b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Annotate your selected items as correct (0) or incorrect (1).</b>"
 msgstr "<b>Tandai item yang Anda pilih sebagai benar (0) atau salah (1).</b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>To Evaluation</b>"
 msgstr "<b>Untuk Evaluasi</b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>4. Evaluation</b>"
 msgstr "<b>4. Evaluasi</b>"
 
-#, fuzzy
 msgctxt "auditBayesianWorkflow|"
 msgid "4. Evaluation"
 msgstr "4. Evaluasi"
@@ -169,7 +163,7 @@ msgstr "Distribusi yang merata"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Display"
-msgstr "Tampilan"
+msgstr "Tampilkan"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Explanatory text"
@@ -185,7 +179,7 @@ msgstr "Menampilkan teks penjelasan di setiap langkah analisis"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Digits"
-msgstr "Digit"
+msgstr "Angka"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "First"
@@ -207,12 +201,10 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Frequency table"
 msgstr "Tabel frekuensi"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₁₀"
 msgstr "BF₁₀"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "BF₀₁"
 msgstr "BF₀₁"
@@ -221,10 +213,9 @@ msgctxt "auditClassicalBenfordsLaw|"
 msgid "Log(BF₁₀)"
 msgstr "Log(BF₁₀)"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Plots"
-msgstr "Plot"
+msgstr "Diagram"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Observed vs. expected"
@@ -236,7 +227,7 @@ msgstr "Kepercayaan"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Display"
-msgstr "Tampilan"
+msgstr "Tampilkan"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Explanatory text"
@@ -302,18 +293,17 @@ msgctxt "auditClassicalEvaluation|"
 msgid "Binomial"
 msgstr "Binomial"
 
-#, fuzzy
 msgctxt "auditClassicalEvaluation|"
 msgid "Hypergeometric"
-msgstr "Hipergeometrik"
+msgstr "Hipergeometris"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Stringer"
-msgstr ""
+msgstr "Stringer"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "LTA adjustment"
-msgstr ""
+msgstr "Penyesuaian LTA"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Mean-per-unit estimator"
@@ -353,7 +343,7 @@ msgstr "Entropi"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Display"
-msgstr "Tampilan"
+msgstr "Tampilkan"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Explanatory text"
@@ -369,7 +359,7 @@ msgstr "Menampilkan teks penjelasan di setiap langkah analisis"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Shuffle Decimal Digits"
-msgstr "Mengacak Angka Desimal"
+msgstr "Acak Angka Desimal"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last"
@@ -405,13 +395,12 @@ msgstr "Yang diamati vs. yang diharapkan"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Histogram"
-msgstr ""
+msgstr "Histogram"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "with highest occurrence"
 msgstr "dengan kejadian tertinggi"
@@ -422,7 +411,7 @@ msgstr "Jumlah sampel"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Seed"
-msgstr ""
+msgstr "Benih"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>1. Planning</b>"
@@ -440,10 +429,9 @@ msgctxt "auditClassicalWorkflow|"
 msgid "Binomial"
 msgstr "Binomial"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Hypergeometric"
-msgstr "Hipergeometrik"
+msgstr "Hipergeometris"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Download Report</b>"
@@ -455,20 +443,19 @@ msgstr "<b>Untuk Seleksi</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>2. Selection</b>"
-msgstr "<b>2. Seleksi</b>"
+msgstr "<b>2. Pemilihan</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "2. Selection"
-msgstr "2. Seleksi"
+msgstr "2. Pemilihan"
 
-#, fuzzy
 msgctxt "auditClassicalWorkflow|"
 msgid "Method"
 msgstr "Metode"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Reset Workflow</b>"
-msgstr ""
+msgstr "<b>Atur Ulang Alur Kerja</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>To Execution</b>"
@@ -504,11 +491,11 @@ msgstr "4. Evaluasi"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Stringer"
-msgstr ""
+msgstr "Stringer"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "LTA adjustment"
-msgstr ""
+msgstr "Penyesuaian LTA"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Mean-per-unit estimator"
@@ -587,7 +574,7 @@ msgid ""
 "In this box the variable is selected whose digits should be tested against "
 "the reference distribution. The value zero (0) will be omitted from the data."
 msgstr ""
-"Dalam kotak ini, variabel dipilih yang angka-angkanya harus diuji terhadap "
+"Dalam kotak ini, variabel dipilih yang angkanya harus diuji terhadap "
 "distribusi referensi. Nilai nol (0) akan dihilangkan dari data."
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -596,22 +583,22 @@ msgstr "Pilih distribusi yang akan diuji."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Test the specified digits against Benford's law."
-msgstr "Menguji angka-angka tertentu terhadap hukum Benford."
+msgstr "Menguji angka tertentu terhadap hukum Benford."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Test the specified digits against the uniform distribution."
-msgstr "Uji digit yang ditentukan terhadap distribusi yang seragam."
+msgstr "Uji angka yang ditentukan terhadap distribusi yang seragam."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Specify which digits to extract from the data and test."
-msgstr "Tentukan digit mana yang akan diekstrak dari data dan diuji."
+msgstr "Tentukan angka mana untuk diekstrak dari data dan diuji."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Extract and test the first digit of the items against the specified "
 "reference distribution."
 msgstr ""
-"Ekstrak dan uji digit pertama item terhadap distribusi referensi yang "
+"Ekstrak dan uji angka pertama item terhadap distribusi referensi yang "
 "ditentukan."
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -619,7 +606,7 @@ msgid ""
 "Extract and test the first and second digit of the items against the "
 "specified reference distribution."
 msgstr ""
-"Ekstrak dan uji digit pertama dan kedua item terhadap distribusi referensi "
+"Ekstrak dan uji angka pertama dan kedua item terhadap distribusi referensi "
 "yang ditentukan."
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -627,7 +614,7 @@ msgid ""
 "Extract and test the last digit of the items against the specified reference "
 "distribution."
 msgstr ""
-"Ekstrak dan uji digit terakhir item terhadap distribusi referensi yang "
+"Ekstrak dan uji angka terakhir item terhadap distribusi referensi yang "
 "ditentukan."
 
 msgctxt "auditClassicalBenfordsLaw|"
@@ -650,7 +637,6 @@ msgstr ""
 "Faktor Bayes untuk mengukur bukti untuk hipotesis nol relatif terhadap "
 "hipotesis alternatif."
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Natural logarithm of BF10."
 msgstr "Logaritma alami dari BF10."
@@ -690,7 +676,7 @@ msgstr "Menambahkan tabel tambahan tentang analisis ke dalam laporan."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Produces a table showing the relative frequency of the digits."
-msgstr "Menghasilkan tabel yang menunjukkan frekuensi relatif dari digit."
+msgstr "Menghasilkan tabel yang menunjukkan frekuensi relatif dari angka."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Matched rows"
@@ -707,7 +693,7 @@ msgstr "Angka"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "For which digit should matched rows be displayed?"
-msgstr "Untuk digit mana yang harus ditampilkan baris yang cocok?"
+msgstr "Untuk angka mana yang harus ditampilkan baris yang cocok?"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Add additional figures about the analysis to the report."
@@ -869,21 +855,21 @@ msgstr ""
 "Analisis ini menganalisis frekuensi pengulangan nilai dalam kumpulan data "
 "(disebut \"number-bunching\") untuk mengidentifikasi secara statistik apakah "
 "data tersebut kemungkinan besar telah dirusak. Tidak seperti hukum Benford, "
-"pendekatan ini memeriksa seluruh angka sekaligus, tidak hanya digit pertama "
+"pendekatan ini memeriksa seluruh angka sekaligus, tidak hanya angka pertama "
 "atau terakhir (Simonsohn, 2019).\n"
 "\n"
 "Untuk menentukan apakah data menunjukkan jumlah pengelompokan yang "
 "berlebihan, hipotesis nol bahwa data tidak mengandung jumlah nilai berulang "
 "yang tidak terduga akan diuji. Untuk mengukur apa yang diharapkan, pengujian "
-"ini membutuhkan asumsi bahwa bagian bilangan bulat dari angka-angka tersebut "
-"tidak terkait dengan bagian desimalnya."
+"ini membutuhkan asumsi bahwa bagian bilangan bulat dari angka tersebut tidak "
+"terkait dengan bagian desimalnya."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
 "In this box the variable is selected whose digits should be analyzed for "
 "repeated values."
 msgstr ""
-"Dalam kotak ini, variabel dipilih yang digitnya harus dianalisis untuk nilai "
+"Dalam kotak ini, variabel dipilih yang angkanya harus dianalisis untuk nilai "
 "yang berulang."
 
 msgctxt "auditClassicalNumberBunching|"
@@ -904,15 +890,15 @@ msgstr "Tunjukkan desimal mana yang dikocok dalam analisis."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last decimal digit is shuffled."
-msgstr "Digit desimal terakhir dikocok."
+msgstr "Angka desimal terakhir dikocok."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Last two decimal digits are shuffled."
-msgstr "Dua digit desimal terakhir dikocok."
+msgstr "Dua angka desimal terakhir dikocok."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "All decimal digits are shuffled."
-msgstr "Semua digit desimal dikocok."
+msgstr "Semua angka desimal dikocok."
 
 msgctxt "auditClassicalNumberBunching|"
 msgid ""
@@ -997,10 +983,9 @@ msgctxt "auditClassicalNumberBunching|"
 msgid "Adjust advanced options for this analysis."
 msgstr "Sesuaikan opsi lanjutan untuk analisis ini."
 
-#, fuzzy
 msgctxt "auditClassicalNumberBunching|"
 msgid "Bootstrap"
-msgstr "Langkah awal"
+msgstr "Bootstrap"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Options related to the bootstrapping procedure of the p-value."
@@ -1058,7 +1043,7 @@ msgstr "Laporan"
 
 msgctxt "Display|"
 msgid "Format Output"
-msgstr ""
+msgstr "Luaran Format"
 
 msgctxt "Display|"
 msgid "Choose how to display numbers in tables and figures."
@@ -1106,7 +1091,7 @@ msgstr "Nama kolom hasil audit"
 
 msgctxt "AddVariables|"
 msgid "auditResult"
-msgstr ""
+msgstr "auditResult"
 
 msgctxt "Annotation|"
 msgid "Annotation"
@@ -1114,7 +1099,7 @@ msgstr "Anotasi"
 
 msgctxt "Annotation|"
 msgid "Specify how to annotate your data set."
-msgstr "Tentukan cara membuat anotasi kumpulan data Anda."
+msgstr "Tentukan cara menandai rangkaian data Anda."
 
 msgctxt "Annotation|"
 msgid "Audit value"
@@ -1126,9 +1111,9 @@ msgid ""
 "approach is recommended (and automatically selected) when the items have a "
 "monetary value."
 msgstr ""
-"Beri keterangan pada item-item yang dipilih dengan nilai audit (sebenarnya). "
-"Pendekatan ini direkomendasikan (dan dipilih secara otomatis) ketika item "
-"memiliki nilai moneter."
+"Tanda item dalam pemilihan dengan nilai auditnya (benar). Pendekatan ini "
+"direkomendasikan (dan dipilih secara otomatis) ketika item memiliki nilai "
+"moneter."
 
 msgctxt "Annotation|"
 msgid "Adds a column to specify the audit values of the items."
@@ -1144,9 +1129,9 @@ msgid ""
 "approach is recommended (and automatically selected) when your items do not "
 "have a monetary value."
 msgstr ""
-"Beri keterangan pada item-item yang dipilih dengan benar (0) atau salah (1). "
-"Pendekatan ini direkomendasikan (dan dipilih secara otomatis) ketika item "
-"Anda tidak memiliki nilai uang."
+"Tandai item dalam pemilihan dengan benar (0) atau salah (1). Pendekatan ini "
+"direkomendasikan (dan dipilih secara otomatis) ketika item Anda tidak "
+"memiliki nilai moneter."
 
 msgctxt "Annotation|"
 msgid "Adds a column to specify the items as correct (0) or misstated (1)."
@@ -1155,7 +1140,7 @@ msgstr ""
 
 msgctxt "AuditVariable|"
 msgid "Audit Result (required)"
-msgstr "Hasil Audit (wajib)"
+msgstr "Hasil Audit (diperlukan)"
 
 msgctxt "AuditVariable|"
 msgid ""
@@ -1235,10 +1220,9 @@ msgstr ""
 "Menghasilkan tabel yang berisi item-item dalam sampel yang nilai yang "
 "dibukukan (tercatat) tidak sama dengan nilai audit (sebenarnya)."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Prior and posterior"
-msgstr "Prior dan posterior"
+msgstr "Priori dan posterior"
 
 msgctxt "EvaluationOutput|"
 msgid ""
@@ -1377,11 +1361,11 @@ msgstr "Menampilkan nomor baris dari item yang salah saji pada gambar."
 
 msgctxt "EvaluationVariablesList|"
 msgid "Selection Counter (optional)"
-msgstr "Penghitung Pilihan (opsional)"
+msgstr "Penghitung Pemilihan (opsional)"
 
 msgctxt "EvaluationVariablesList|"
 msgid "Selection Counter (required)"
-msgstr "Penghitung Pilihan (wajib)"
+msgstr "Penghitung Pemilihan (diperlukan)"
 
 msgctxt "EvaluationVariablesList|"
 msgid ""
@@ -1407,11 +1391,11 @@ msgstr ""
 
 msgctxt "IntervalType|"
 msgid "Credible Interval (Alt. Hypothesis)"
-msgstr "Interval Kredibel (Hipotesis Alternatif)"
+msgstr "Interval Kredibel (Hipotesis Alt.)"
 
 msgctxt "IntervalType|"
 msgid "Confidence Interval (Alt. Hypothesis)"
-msgstr "Interval Keyakinan (Hipotesis Alternatif)"
+msgstr "Interval Kepercayaan (Hipotesis Alt.)"
 
 msgctxt "IntervalType|"
 msgid "Credible Interval"
@@ -1419,7 +1403,7 @@ msgstr "Interval Kredibel"
 
 msgctxt "IntervalType|"
 msgid "Confidence Interval"
-msgstr "Interval Keyakinan"
+msgstr "Interval Kepercayaan"
 
 msgctxt "IntervalType|"
 msgid "Specify the type of interval and the alternative hypothesis."
@@ -1465,7 +1449,7 @@ msgstr "Menghasilkan batas bawah satu sisi untuk salah saji dalam populasi."
 
 msgctxt "ExplanatoryText|"
 msgid "Display"
-msgstr "Tampilan"
+msgstr "Tampilkan"
 
 msgctxt "ExplanatoryText|"
 msgid ""
@@ -1503,7 +1487,7 @@ msgid ""
 "the assumption that the taints in the sample are representative of the "
 "taints in the unseen part of the population."
 msgstr ""
-"Algoritme ini memungkinkan Anda untuk memisahkan salah saji yang diketahui "
+"Algoritma ini memungkinkan Anda untuk memisahkan salah saji yang diketahui "
 "dan yang tidak diketahui dalam populasi agar lebih efisien. Perhatikan bahwa "
 "hal ini memerlukan asumsi bahwa salah saji dalam sampel mewakili salah saji "
 "dalam bagian populasi yang tidak terlihat."
@@ -1521,8 +1505,8 @@ msgid ""
 "This algorithm enables you to share information about the misstatement "
 "across different subgroups in the population (strata)."
 msgstr ""
-"Algoritme ini memungkinkan Anda untuk berbagi informasi tentang salah saji "
-"di berbagai subkelompok dalam populasi (strata)."
+"Algoritma ini memungkinkan Anda untuk berbagi informasi tentang salah saji "
+"di berbagai subgrup dalam populasi (strata)."
 
 msgctxt "AuditRiskModel|"
 msgid "Audit Risk Model"
@@ -1544,7 +1528,6 @@ msgctxt "AuditRiskModel|"
 msgid "Low"
 msgstr "Rendah"
 
-#, fuzzy
 msgctxt "AuditRiskModel|"
 msgid "Custom"
 msgstr "Kustom"
@@ -1707,9 +1690,9 @@ msgid ""
 "its value. For example, an increment of 5 allows only sample sizes of 5, 10, "
 "15, 20, 25, etc."
 msgstr ""
-"Kenaikan memungkinkan Anda membatasi ukuran sampel yang memungkinkan ke "
-"kelipatan nilainya. Contohnya, kenaikan 5 hanya memungkinkan ukuran sampel "
-"5, 10, 15, 20, 25, dst."
+"Kenaikan mengizinkan Anda untuk membatasi ukuran sampel yang memungkinkan ke "
+"beberapa nilainya. Contohnya, kenaikan 5 mengizinkan hanya ukuran sampel 5, "
+"10, 15, 20, 25, dst."
 
 msgctxt "Iterations|"
 msgid "Maximum"
@@ -1723,21 +1706,19 @@ msgctxt "Likelihood|"
 msgid "Distribution"
 msgstr "Distribusi"
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Likelihood"
 msgstr "Kemungkinan"
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid ""
 "The likelihood is a function that relates the statistical model to the "
 "observed data. Specifically, it quantifies the probability of observing the "
 "data given the parameters of the model."
 msgstr ""
-"Likelihood adalah fungsi yang menghubungkan model statistik dengan data yang "
-"diamati. Secara khusus, fungsi ini mengukur probabilitas pengamatan data "
-"dengan parameter model."
+"Kemungkinan adalah fungsi yang menghubungkan model statistik dengan data "
+"yang diobservasi. Secara khusus, fungsi ini mengukur probabilitas observasi "
+"data diberikan parameter model."
 
 msgctxt "Likelihood|"
 msgid "Beta-binomial"
@@ -1745,7 +1726,7 @@ msgstr "Binomial-beta"
 
 msgctxt "Likelihood|"
 msgid "Hypergeometric"
-msgstr "Hipergeometrik"
+msgstr "Hipergeometris"
 
 msgctxt "Likelihood|"
 msgid ""
@@ -1789,7 +1770,6 @@ msgstr ""
 "transaksi yang benar (*n - k*). Dalam analisis Bayesian, prior konjugasi "
 "untuk kemungkinan binomial adalah distribusi beta."
 
-#, fuzzy
 msgctxt "Likelihood|"
 msgid "Gamma"
 msgstr "Gamma"
@@ -1869,7 +1849,7 @@ msgstr ""
 
 msgctxt "PlanningOutput|"
 msgid "Presumed data distribution"
-msgstr "Dugaan distribusi data"
+msgstr "Distribusi data dugaan"
 
 msgctxt "PlanningOutput|"
 msgid ""
@@ -1895,33 +1875,29 @@ msgctxt "PlanningOutput|"
 msgid "Produces a figure that shows the prior distribution."
 msgstr "Menghasilkan angka yang menunjukkan distribusi prior."
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Posterior distribution"
 msgstr "Distribusi posterior"
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid ""
 "Produces a figure that shows the prior distribution and the intended "
 "posterior distribution."
 msgstr ""
-"Menghasilkan angka yang menunjukkan distribusi prior dan distribusi "
-"posterior yang diinginkan."
+"Menghasilkan figur yang menunjukkan distribusi priori dan distribusi "
+"posterior yang dituju."
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid "Prior predictive distribution"
-msgstr "Distribusi prediksi prior"
+msgstr "Distribusi prediksi priori"
 
-#, fuzzy
 msgctxt "PlanningOutput|"
 msgid ""
 "Produces a figure that shows the predictions of the prior distribution on "
 "the data level for the intended sample."
 msgstr ""
-"Menghasilkan angka yang menunjukkan prediksi distribusi sebelumnya pada "
-"tingkat data untuk sampel yang dituju."
+"Menghasilkan figur yang menunjukkan prediksi distribusi priori pada tingkat "
+"data untuk sampel yang dituju."
 
 msgctxt "Population|"
 msgid "Population (optional)"
@@ -1960,10 +1936,9 @@ msgctxt "PriorMethod|"
 msgid "Elicitation"
 msgstr "Elisitasi"
 
-#, fuzzy
 msgctxt "PriorMethod|"
 msgid "Choose how to construct the prior distribution."
-msgstr "Pilih cara membangun distribusi sebelumnya."
+msgstr "Pilih cara membangun distribusi priori."
 
 msgctxt "PriorMethod|"
 msgid "Method"
@@ -1971,7 +1946,7 @@ msgstr "Metode"
 
 msgctxt "PriorMethod|"
 msgid "Default"
-msgstr ""
+msgstr "Bawaan"
 
 msgctxt "PriorMethod|"
 msgid "Parameters"
@@ -1999,19 +1974,19 @@ msgstr ""
 
 msgctxt "PriorMethod|"
 msgid "Prior parameter α"
-msgstr ""
+msgstr "Parameter α priori"
 
 msgctxt "PriorMethod|"
 msgid "The α parameter of the prior distribution."
-msgstr ""
+msgstr "Parameter α dari distribusi priori."
 
 msgctxt "PriorMethod|"
 msgid "Prior parameter β"
-msgstr ""
+msgstr "Parameter β priori"
 
 msgctxt "PriorMethod|"
 msgid "The β parameter of the prior distribution."
-msgstr ""
+msgstr "Parameter β dari distribusi priori."
 
 msgctxt "PriorMethod|"
 msgid "Sample size"
@@ -2210,10 +2185,9 @@ msgctxt "ExportSample|"
 msgid "Step 1: Column name selection result"
 msgstr "Langkah 1: Hasil pemilihan nama kolom"
 
-#, fuzzy
 msgctxt "ExportSample|"
 msgid "e.g. selected"
-msgstr "misalnya dipilih"
+msgstr "mis. dipilih"
 
 msgctxt "ExportSample|"
 msgid ""
@@ -2221,7 +2195,7 @@ msgid ""
 "new column to the data. The new column reflects how many times each "
 "transaction is included in the sample."
 msgstr ""
-"Ketika sebuah nama disediakan, tambahkan hasil dari analisis seleksi di "
+"Ketika sebuah nama disediakan, tambahkan hasil dari analisis pemilihan di "
 "kolom baru ke data. Kolom baru ini mencerminkan berapa kali setiap transaksi "
 "dimasukkan ke dalam sampel."
 
@@ -2254,7 +2228,7 @@ msgstr ""
 
 msgctxt "IdVariable|"
 msgid "Item ID (required)"
-msgstr ""
+msgstr "ID Item (diperlukan)"
 
 msgctxt "IdVariable|"
 msgid ""
@@ -2270,7 +2244,7 @@ msgstr "Mengacak urutan item"
 
 msgctxt "Randomize|"
 msgid "Randomizes the items in the population before selection is performed."
-msgstr "Mengacak item dalam populasi sebelum seleksi dilakukan."
+msgstr "Mengacak item dalam populasi sebelum pemilihan dilakukan."
 
 msgctxt "RankVariable|"
 msgid "Ranking Variable"
@@ -2290,7 +2264,7 @@ msgstr "Unit Pengambilan Sampel"
 
 msgctxt "SamplingUnits|"
 msgid "Choose which type of units are eligible for selection."
-msgstr "Pilih jenis unit yang memenuhi syarat untuk dipilih."
+msgstr "Pilih jenis unit yang memenuhi syarat untuk pemilihan."
 
 msgctxt "SamplingUnits|"
 msgid "Items"
@@ -2301,7 +2275,7 @@ msgid ""
 "Performs selection using the items (rows) in the population as sampling "
 "units."
 msgstr ""
-"Melakukan seleksi dengan menggunakan item (baris) dalam populasi sebagai "
+"Melakukan pemilihan dengan menggunakan item (baris) dalam populasi sebagai "
 "unit sampling."
 
 msgctxt "SamplingUnits|"
@@ -2318,35 +2292,32 @@ msgid ""
 "units. This method is preferred when you want to include more items with a "
 "high value in the sample."
 msgstr ""
-"Melakukan seleksi dengan menggunakan unit moneter dalam populasi sebagai "
+"Melakukan pemilihan dengan menggunakan unit moneter dalam populasi sebagai "
 "unit sampling. Metode ini lebih disukai jika Anda ingin memasukkan lebih "
 "banyak item dengan nilai tinggi ke dalam sampel."
 
 msgctxt "Seed|"
 msgid "Seed"
-msgstr ""
+msgstr "Benih"
 
-#, fuzzy
 msgctxt "Seed|"
 msgid ""
 "Selects the seed for the random number generator in order to reproduce "
 "results."
-msgstr "Memilih seed untuk generator angka acak untuk mereproduksi hasil."
+msgstr "Memilih benih untuk penghasil angka acak untuk mereproduksi hasil."
 
 msgctxt "SelectionMethod|"
 msgid "Selection Method"
-msgstr "Metode Seleksi"
+msgstr "Metode Pemilihan"
 
 msgctxt "SelectionMethod|"
 msgid ""
 "Choose the method by which sampling units are selected from the population."
-msgstr ""
-"Pilih metode yang digunakan untuk memilih unit pengambilan sampel dari "
-"populasi."
+msgstr "Pilih metode yang mana unit pensampelan dipilih dari populasi."
 
 msgctxt "SelectionMethod|"
 msgid "Fixed interval sampling"
-msgstr "Pengambilan sampel interval tetap"
+msgstr "Pensampelan interval tetap"
 
 msgctxt "SelectionMethod|"
 msgid ""
@@ -2354,7 +2325,7 @@ msgid ""
 "selecting a fixed unit in each interval. Any item with a value larger than "
 "the interval will always be included in the sample."
 msgstr ""
-"Melakukan seleksi dengan membagi populasi dalam interval yang sama dan "
+"Melakukan pemilihan dengan membagi populasi dalam interval yang sama dan "
 "memilih unit yang tetap di setiap interval. Setiap item dengan nilai yang "
 "lebih besar dari interval akan selalu disertakan dalam sampel."
 
@@ -2364,12 +2335,11 @@ msgstr "Titik awal"
 
 msgctxt "SelectionMethod|"
 msgid "Selects which sampling unit is selected from each interval."
-msgstr ""
-"Memilih unit pengambilan sampel mana yang dipilih dari setiap interval."
+msgstr "Memilih unit pensampelan mana yang dipilih dari setiap interval."
 
 msgctxt "SelectionMethod|"
 msgid "Set a starting point using to a user-specified value."
-msgstr "Tetapkan titik awal menggunakan nilai yang ditentukan pengguna."
+msgstr "Atur titik awal menggunakan nilai tertentukan pengguna."
 
 msgctxt "SelectionMethod|"
 msgid "Random"
@@ -2380,6 +2350,8 @@ msgid ""
 "Set a starting point via random number generation according to a user-"
 "specified seed."
 msgstr ""
+"Atur titik awal melalui penghasilan angka acak menurut benih pengguna "
+"tertentukan."
 
 msgctxt "SelectionMethod|"
 msgid "Click to learn more about this method"
@@ -2387,7 +2359,7 @@ msgstr "Klik untuk mempelajari lebih lanjut tentang metode ini"
 
 msgctxt "SelectionMethod|"
 msgid "Cell sampling"
-msgstr "Pengambilan sampel sel"
+msgstr "Pensampelan sel"
 
 msgctxt "SelectionMethod|"
 msgid ""
@@ -2395,13 +2367,13 @@ msgid ""
 "selecting a variable unit in each interval. Any item with a value larger "
 "than twice the interval will always be included in the sample."
 msgstr ""
-"Melakukan seleksi dengan membagi populasi dalam interval yang sama dan "
+"Melakukan pemilihan dengan membagi populasi dalam interval yang sama dan "
 "memilih unit variabel dalam setiap interval. Setiap item dengan nilai yang "
 "lebih besar dari dua kali interval akan selalu dimasukkan ke dalam sampel."
 
 msgctxt "SelectionMethod|"
 msgid "Random sampling"
-msgstr "Pengambilan sampel secara acak"
+msgstr "Pensampelan acak"
 
 msgctxt "SelectionMethod|"
 msgid ""
@@ -2413,11 +2385,11 @@ msgstr ""
 
 msgctxt "SelectionMethod|"
 msgid "Modified sieve sampling"
-msgstr "Pengambilan sampel saringan yang dimodifikasi"
+msgstr "Pensampelan saringan termodifikasi"
 
 msgctxt "SelectionMethod|"
 msgid "Performs modified sieve sampling."
-msgstr "Melakukan pengambilan sampel saringan yang dimodifikasi."
+msgstr "Melakukan pensampelam saringan termodifikasi."
 
 msgctxt "SelectionOutput|"
 msgid "Tables"
@@ -2474,11 +2446,11 @@ msgstr "Persentase yang sesuai dengan probabilitas risiko analitis."
 
 msgctxt "Description|"
 msgid "Audit Sampling"
-msgstr "Pengambilan Sampel Audit"
+msgstr "Pensampelan Audit"
 
 msgctxt "Description|"
 msgid "Data Auditing"
-msgstr "Audit Data"
+msgstr "Pengauditan Data"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Bayes factor robustness check"
@@ -2510,16 +2482,15 @@ msgstr "Lanjutan"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Prior Distribution"
-msgstr ""
+msgstr "Distribusi Priori"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Concentration"
 msgstr "Konsentrasi"
 
-#, fuzzy
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Specifies the concentration parameter for the Dirichlet prior."
-msgstr "Menentukan parameter konsentrasi untuk Dirichlet sebelumnya."
+msgstr "Menentukan parameter konsentrasi untuk priori Dirichlet."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Confidence interval"
@@ -2527,28 +2498,29 @@ msgstr "Interval kepercayaan"
 
 msgctxt "ExpectedErrors|"
 msgid "Enter the expected misstatements as a percentage."
-msgstr ""
+msgstr "Masukkan salah saji terharapkan sebagai persentase."
 
 msgctxt "ExpectedErrors|"
 msgid "The percentage of expected misstatements in the population."
-msgstr ""
+msgstr "Persentase dari salah saji terharapkan dalam populasi."
 
 msgctxt "ExpectedErrors|"
 msgid ""
 "Do not make an assumption about the expected misstatements in the population."
-msgstr ""
+msgstr "Jangan membuat asumsi tentang salah saji terharapkan dalam populasi."
 
 msgctxt "ExpectedPopRate|"
 msgid "Most Likely Misstatement"
-msgstr ""
+msgstr "Salah Saji Lebih Kemungkinan"
 
 msgctxt "ExpectedPopRate|"
 msgid ""
 "The a priori most likely misstatement rate in the population, which is "
 "incorporated into the prior distribution."
 msgstr ""
+"Tingkat salah saji lebih kemungkinan priori a dalam populasi, yang "
+"dimasukkan ke salam distribusi priori."
 
-#, fuzzy
 msgctxt "ExpectedPopRate|"
 msgid "Relative"
 msgstr "Relatif"
@@ -2556,14 +2528,15 @@ msgstr "Relatif"
 msgctxt "ExpectedPopRate|"
 msgid "Enter the a priori most likely misstatement rate as a percentage."
 msgstr ""
+"Masukkan tingkat salah saji lebih kemungkinan priori a sebagai persentase."
 
 msgctxt "auditBayesianWorkflow|"
 msgid "<b>Continue</b>"
-msgstr ""
+msgstr "<b>Lanjutkan</b>"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "<b>Continue</b>"
-msgstr ""
+msgstr "<b>Lanjutkan</b>"
 
 msgctxt "AuditRiskModel|"
 msgid ""
@@ -2594,23 +2567,24 @@ msgstr ""
 
 msgctxt "EvaluationOutput|"
 msgid "Conclusion"
-msgstr ""
+msgstr "Kesimpulan"
 
 msgctxt "EvaluationOutput|"
 msgid "Use overall materiality"
-msgstr ""
+msgstr "Gunakan materialitas keseluruhan"
 
 msgctxt "EvaluationOutput|"
 msgid ""
 "Determine the conclusion based on the overall materiality instead of the "
 "performance materiality."
 msgstr ""
+"Tentukan kesimpulan berdasarkan materialitas keseluruhan alih-alih "
+"materialitas kinerja."
 
 msgctxt "EvaluationOutput|"
 msgid "Specify how the overall materiality is defined."
-msgstr ""
+msgstr "Tentukan bagaimana materialitas keseluruhan didefinisikan."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Relative"
 msgstr "Relatif"
@@ -2620,12 +2594,13 @@ msgid ""
 "Specify the overall materiality as a percentage relative to the total number "
 "of units in the population."
 msgstr ""
+"Tentukan materialitas keseluruhan sebagai persentase dibandingkan jumlah "
+"total unit dalam populasi."
 
 msgctxt "EvaluationOutput|"
 msgid "The percentage associated with the overall materiality."
-msgstr ""
+msgstr "Persentase diasosiasikan dengan materialitas keseluruhan."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Absolute"
 msgstr "Absolut"
@@ -2633,28 +2608,31 @@ msgstr "Absolut"
 msgctxt "EvaluationOutput|"
 msgid "Specify the overall materiality as an absolute value in monetary units."
 msgstr ""
+"Tentukan materialitas keseluruhan sebagai nilai absolut dalam unit moneter."
 
 msgctxt "EvaluationOutput|"
 msgid "The value associated with the overall materiality."
-msgstr ""
+msgstr "Nilai diasosiasikan dengan materialitas keseluruhan."
 
 msgctxt "SelectionOutput|"
 msgid "Order by book value"
-msgstr ""
+msgstr "Urutkan berdasarkan nilai buku"
 
 msgctxt "SelectionOutput|"
 msgid "Descending"
-msgstr ""
+msgstr "Turun"
 
 msgctxt "SelectionOutput|"
 msgid "Ascending"
-msgstr ""
+msgstr "Naik"
 
 msgctxt "SelectionOutput|"
 msgid ""
 "Order the selected transactions in the table from largest to smallest based "
 "on their book value."
 msgstr ""
+"Urutkan transaksi terpilih dalam tabel dari terbesar hingga terkecil "
+"berdasarkan nilai bukunya."
 
 #, qt-format
 msgctxt "auditBayesianEvaluation|"
@@ -2782,77 +2760,77 @@ msgstr ""
 
 msgctxt "Algorithm|"
 msgid "Hurdle model"
-msgstr ""
+msgstr "Model hambatan"
 
 msgctxt "Algorithm|"
 msgid "This algoritm enables you to consider the individal taints."
 msgstr ""
+"Algoritma ini mengaktifkan Anda untuk mempertimbangkan taint individual."
 
 msgctxt "Algorithm|"
 msgid "MCMC Options"
-msgstr ""
+msgstr "Opsi MCMC"
 
 msgctxt "Algorithm|"
 msgid "Options to customize the MCMC sampling process."
-msgstr ""
+msgstr "Opsi untuk menyesuaikan proses pensampelan MCMC."
 
 msgctxt "Algorithm|"
 msgid "Warmup"
-msgstr ""
+msgstr "Pemanasan"
 
 msgctxt "Algorithm|"
 msgid "Sets the number of warmup MCMC iterations."
-msgstr ""
+msgstr "Mengatur jumlah iterasi MCMC pemanasan."
 
-#, fuzzy
 msgctxt "Algorithm|"
 msgid "Iterations"
 msgstr "Iterasi"
 
 msgctxt "Algorithm|"
 msgid "Sets the total number of MCMC iterations."
-msgstr ""
+msgstr "Mengatur jumlah total iterasi MCMC."
 
 msgctxt "Algorithm|"
 msgid "Chains"
-msgstr ""
+msgstr "Rantai"
 
 msgctxt "Algorithm|"
 msgid "Sets the number of MCMC chains."
-msgstr ""
+msgstr "Mengatur jumlah rantai MCMC."
 
 msgctxt "Algorithm|"
 msgid "Seed"
-msgstr ""
+msgstr "Benih"
 
-#, fuzzy
 msgctxt "Algorithm|"
 msgid ""
 "Selects the seed for the random number generator in order to reproduce "
 "results."
-msgstr "Memilih seed untuk generator angka acak untuk mereproduksi hasil."
+msgstr "Memilih benih untuk penghasil angka acak untuk mereproduksi hasil."
 
-#, fuzzy
 msgctxt "EvaluationOutput|"
 msgid "Sequential analysis"
-msgstr "Analisis berurutan"
+msgstr "Analisis sekuensial"
 
 msgctxt "EvaluationOutput|"
 msgid ""
 "Produces a figure showing the Bayes factor as a function of the sample size."
 msgstr ""
+"Menghasilkan figur menunjukkan faktor Bayes sebagai fungsi dari ukuran "
+"sampel."
 
 msgctxt "Description|"
 msgid "Algorithm Auditing"
-msgstr ""
+msgstr "Pengauditan Algoritma"
 
 msgctxt "Description|"
 msgid "Fairness Workflow"
-msgstr ""
+msgstr "Alur Kerja Keadilan"
 
 msgctxt "Description|"
 msgid "Fairness Evaluation"
-msgstr ""
+msgstr "Evaluasi Keadilan"
 
 msgctxt "auditClassicalFairness|"
 msgid ""
@@ -2866,55 +2844,48 @@ msgstr ""
 
 msgctxt "auditClassicalFairness|"
 msgid "Fairness measure"
-msgstr ""
+msgstr "Pengukuran keadilan"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Predictive rate parity"
-msgstr "Paritas tingkat prediktif"
+msgstr "Keseimbangan tingkat prediktif"
 
 msgctxt "auditClassicalFairness|"
 msgid "Negative predictive value parity"
-msgstr ""
+msgstr "Kesetaraan nilai prediktif negatif"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "False positive rate parity"
-msgstr "Paritas tingkat positif palsu"
+msgstr "Keseimbangan tingkat positif palsu"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "False negative rate parity"
-msgstr "Paritas tingkat negatif palsu"
+msgstr "Keseimbangan tingkat negatif palsu"
 
 msgctxt "auditClassicalFairness|"
 msgid "Equal opportunity"
-msgstr ""
+msgstr "Kesetaraan kesempatan"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Specificity parity"
-msgstr "Paritas spesifisitas"
+msgstr "Keseimbangan kekhususan"
 
 msgctxt "auditClassicalFairness|"
 msgid "Disparate impact"
-msgstr ""
+msgstr "Dampak tidak proporsional"
 
 msgctxt "auditClassicalFairness|"
 msgid "Equalized odds"
-msgstr ""
+msgstr "Ganjil persamaan"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Accuracy parity"
-msgstr "Paritas akurasi"
+msgstr "Keseimbangan akurasi"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Report"
 msgstr "Laporan"
 
-#, fuzzy
 msgctxt "auditClassicalFairness|"
 msgid "Advanced"
 msgstr "Lanjutan"
@@ -2938,7 +2909,7 @@ msgstr ""
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Yes"
-msgstr ""
+msgstr "Ya"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
@@ -2948,7 +2919,7 @@ msgstr ""
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "No"
-msgstr ""
+msgstr "Tidak"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
@@ -2982,7 +2953,7 @@ msgstr ""
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Both"
-msgstr ""
+msgstr "Keduanya"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
@@ -3060,46 +3031,45 @@ msgid ""
 "greater losses."
 msgstr ""
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Report"
 msgstr "Laporan"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Plots"
-msgstr "Plot"
+msgstr "Diagram"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Add additional figures about the evaluation to the report."
-msgstr "Tambahkan angka tambahan tentang evaluasi ke dalam laporan."
+msgstr "Tambahkan figur tambahan tentang evaluasi ke laporan."
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Decision-making workflow"
-msgstr ""
+msgstr "Alur kerja pengambilan keputusan"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
 "Produces a figure showing the resulting path through the decision-making "
 "workflow."
 msgstr ""
+"Menghasilkan figur menampilkan jalur penghasilan melalui alur kerja "
+"pengambilan keputusan."
 
 msgctxt "auditClassicalFairness|"
 msgid ""
 "Select the fairness metric for evaluating discrimination against the "
 "unprivileged group(s)."
 msgstr ""
+"Pilih metrik keadilan untuk mengevaluasi diskriminasi melawan grup tidak "
+"berhak."
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>1. Selection</b>"
-msgstr "<b>2. Seleksi</b> {1.?}"
+msgstr "<b>2. Pemilihan</b>"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "1. Selection"
-msgstr "2. Seleksi {1.?}"
+msgstr "1. Pemilihan"
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
@@ -3109,79 +3079,72 @@ msgid ""
 "information refers to the true classification of items, obtained from "
 "reliable sources or domain experts."
 msgstr ""
+"Di pertanyaan ini, itu harus ditentukan apakah informasi kebenaran lapangan "
+"(yaitu, target yang akan diprediksi) relevan atau tidak untuk konteks "
+"analisis. Dalam konteks klasifikasi item, informasi kebenaran lapangan "
+"istilah merujuk pada klasifikasi benar dari item, diambil dari sumber andal "
+"atau pakar domain."
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>Download Report</b>"
 msgstr "<b>Unduh Laporan</b>"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>To Evaluation</b>"
 msgstr "<b>Untuk Evaluasi</b>"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "<b>2. Evaluation</b>"
-msgstr "<b>4. Evaluasi</b> {2.?}"
+msgstr "<b>4. Evaluasi</b>"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "2. Evaluation"
-msgstr "4. Evaluasi {2.?}"
+msgstr "2. Evaluasi"
 
-#, fuzzy
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid "Advanced"
 msgstr "Lanjutan"
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "Choose which type of Bayes factor to display."
-msgstr "Pilih jenis faktor Bayes yang akan ditampilkan."
+msgstr "Pilih mana jenis faktor Bayes yang akan ditampilkan."
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "BF₁₀"
 msgstr "BF₁₀"
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid ""
 "Bayes factor to quantify evidence for the alternative hypothesis relative to "
 "the null hypothesis."
 msgstr ""
 "Faktor Bayes untuk mengukur bukti untuk hipotesis alternatif relatif "
-"terhadap hipotesis nol."
+"terhadap hipotesis null."
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "BF₀₁"
 msgstr "BF₀₁"
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid ""
 "Bayes factor to quantify evidence for the null hypothesis relative to the "
 "alternative hypothesis."
 msgstr ""
-"Faktor Bayes untuk mengukur bukti untuk hipotesis nol relatif terhadap "
+"Faktor Bayes untuk mengukur bukti untuk hipotesis null relatif terhadap "
 "hipotesis alternatif."
 
 msgctxt "BayesFactorType|"
 msgid "Log(BF₁₀)"
 msgstr "Log(BF₁₀)"
 
-#, fuzzy
 msgctxt "BayesFactorType|"
 msgid "Natural logarithm of BF10."
 msgstr "Logaritma alami dari BF10."
 
 msgctxt "ConfidenceLevel|"
 msgid "Confidence"
-msgstr ""
+msgstr "Kepercayaan"
 
-#, fuzzy
 msgctxt "ConfidenceLevel|"
 msgid ""
 "The confidence level used. The confidence level is the complement of the "
@@ -3189,286 +3152,247 @@ msgid ""
 "judgment about the population. For example, if you want to use an audit risk "
 "of 5%, this equals 95% confidence."
 msgstr ""
-"Tingkat keyakinan yang digunakan. Tingkat keyakinan adalah pelengkap dari "
-"risiko audit: risiko yang bersedia diambil oleh pengguna untuk memberikan "
-"penilaian yang salah tentang populasi. Sebagai contoh, jika Anda ingin "
-"menggunakan risiko audit sebesar 5%, ini sama dengan 95% tingkat kepercayaan."
+"Tingkat kepercayaan digunakan. Tingkat kepercayaan adalah komplemen risiko "
+"audit: risiko yang bersedia dilakukan pengguna untuk memberikan penilaian "
+"tidak benar tentang populasi. Contohnya, jika Anda ingin menggunakan risiko "
+"audit 5%, ini sama dengan 95% kepercayaan."
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Tables"
 msgstr "Tabel"
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Add additional tables about the evaluation to the report."
-msgstr "Menambahkan tabel tambahan tentang evaluasi ke dalam laporan."
+msgstr "Tambahkan tabel tambahan tentang evaluasi ke laporan."
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Individual comparisons"
 msgstr "Perbandingan individu"
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid ""
 "Produces a table comparing the unprivileged groups against the privileged "
 "group."
 msgstr ""
-"Menghasilkan tabel yang membandingkan kelompok yang tidak diistimewakan "
-"dengan kelompok yang diistimewakan."
+"Menghasilkan tabel membandingkan grup tidak berhak yang melawan grup berhak."
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Model performance"
-msgstr "Performa model"
+msgstr "Kinerja model"
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid ""
 "Produces a table containing the performance measures for the classification, "
 "including support, accuracy, precision, recall and F1-score."
 msgstr ""
-"Menghasilkan tabel yang berisi ukuran kinerja untuk klasifikasi, termasuk "
+"Menghasilkan tabel berisi ukuran kinerja untuk klasifikasi, mencakup "
 "dukungan, akurasi, presisi, recall, dan skor F1."
 
 msgctxt "FairnessOutput|"
 msgid "Confusion matrix"
-msgstr ""
+msgstr "Matriks kebingungan"
 
 msgctxt "FairnessOutput|"
 msgid "Produces the confusion matrix for each group."
-msgstr ""
+msgstr "Menghasilkan matriks kebingungan untuk setiap grup."
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Display proportions"
-msgstr "Proporsi tampilan"
+msgstr "Tampilkan proporsi"
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Displays proportions in the confusion table."
 msgstr "Menampilkan proporsi dalam tabel kebingungan."
 
 msgctxt "FairnessOutput|"
 msgid "Transpose matrix"
-msgstr ""
+msgstr "Balikkan matriks"
 
 msgctxt "FairnessOutput|"
 msgid "Transposes the confusion matrix."
-msgstr ""
+msgstr "Membalik matriks kebingungan."
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Plots"
-msgstr "Plot"
+msgstr "Diagram"
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Add additional figures about the evaluation to the report."
-msgstr "Tambahkan angka tambahan tentang evaluasi ke dalam laporan."
+msgstr "Tambahkan figur tambahan tentang evaluasi ke laporan."
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Parity estimates"
-msgstr "Perkiraan paritas"
+msgstr "Perkiraan keseimbangan"
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid ""
 "Produces a plot showing the parity statistics for each unprivileged group "
 "against the privileged group."
 msgstr ""
-"Menghasilkan plot yang menunjukkan statistik paritas untuk setiap kelompok "
-"yang tidak diistimewakan terhadap kelompok yang diistimewakan."
+"Menghasilkan diagram menampilkan statistik kesetaraan untuk setiap grup "
+"tidak berhak melawan grup berhak."
 
 msgctxt "FairnessOutput|"
 msgid "Prior and posterior distribution"
-msgstr ""
+msgstr "Distribusi priori dan posterior"
 
 msgctxt "FairnessOutput|"
 msgid "Produces a figure that shows the prior and posterior distribution."
-msgstr ""
+msgstr "Menghasilkan figur yang menampilkan distribusi priori dan posterior."
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Bayes factor robustness check"
-msgstr "Pemeriksaan ketahanan faktor Bayes"
+msgstr "Pemeriksaan kekuatan faktor Bayes"
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid ""
 "Produces a figure that shows the robustness of the Bayes factor to the prior "
 "distribution."
 msgstr ""
-"Menghasilkan angka yang menunjukkan kekokohan faktor Bayes terhadap "
-"distribusi sebelumnya."
+"Menghasilkan figur yang menunjukkan kekuatan faktor Bayes terhadap "
+"distribusi priori."
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid "Sequential analysis"
-msgstr "Analisis berurutan"
+msgstr "Analisis sekuensial"
 
-#, fuzzy
 msgctxt "FairnessOutput|"
 msgid ""
 "Produces a figure that shows the Bayes factor as a function of the sample "
 "size."
 msgstr ""
-"Menghasilkan angka yang menunjukkan faktor Bayes sebagai fungsi dari ukuran "
+"Menghasilkan figur yang menunjukkan faktor Bayes sebagai fungsi dari ukuran "
 "sampel."
 
 msgctxt "FairnessVariablesList|"
 msgid "Ground Truth Information"
-msgstr ""
+msgstr "Informasi Kebenaran Lapangan"
 
 msgctxt "FairnessVariablesList|"
 msgid ""
 "In this column, the ground truth information (i.e., the target to be "
 "predicted) variable should be entered."
 msgstr ""
+"Di kolom ini, variabel informasi kebenaran lapangan (yaitu, target yang akan "
+"diprediksi) harus dimasukkan."
 
-#, fuzzy
 msgctxt "FairnessVariablesList|"
 msgid "Predictions"
 msgstr "Prediksi"
 
-#, fuzzy
 msgctxt "FairnessVariablesList|"
 msgid "In this column, the predictions of the algorithm should be entered."
-msgstr "Pada kolom ini, prediksi algoritme harus dimasukkan."
+msgstr "Di kolom ini, prediksi dari algoritma harus dimasukkan."
 
 msgctxt "FairnessVariablesList|"
 msgid "Sensitive Attribute"
-msgstr ""
+msgstr "Atribut Sensitif"
 
 msgctxt "FairnessVariablesList|"
 msgid ""
 "In this column, the protected (i.e., sensitive) attribute should be entered."
-msgstr ""
+msgstr "Di kolom ini, atribut terlindungi (yaitu, sensitif) harus dimasukkan."
 
-#, fuzzy
 msgctxt "Hypotheses|"
 msgid "Alt. Hypothesis"
-msgstr "Alt. Hipotesis"
+msgstr "Hipotesis Alt."
 
-#, fuzzy
 msgctxt "Hypotheses|"
 msgid "Specify the alternative hypothesis."
 msgstr "Tentukan hipotesis alternatif."
 
-#, fuzzy
 msgctxt "Hypotheses|"
 msgid "Unprivileged ≠ Privileged"
-msgstr "Tidak diistimewakan ≠ Diistimewakan"
+msgstr "Tidak Berhak ≠ Berhak"
 
-#, fuzzy
 msgctxt "Hypotheses|"
 msgid ""
 "Test the alternative hypothesis that the fairness metric of an unprivileged "
 "group is not equal to the fairness metric in the privileged group."
 msgstr ""
-"Menguji hipotesis alternatif bahwa metrik keadilan dari kelompok yang tidak "
-"diistimewakan tidak sama dengan metrik keadilan pada kelompok yang "
-"diistimewakan."
+"Uji hipotesis alternatif bahwa metrik keadilan dari grup tidak berhak tidak "
+"sama dengan metrik keadilan pada grup berhak."
 
-#, fuzzy
 msgctxt "Hypotheses|"
 msgid "Unprivileged < Privileged"
-msgstr "Tidak memiliki hak istimewa < Hak istimewa"
+msgstr "Tidak Berhak < Berhak"
 
-#, fuzzy
 msgctxt "Hypotheses|"
 msgid ""
 "Test the alternative hypothesis that the fairness metric of an unprivileged "
 "group is lower than the fairness metric in the privileged group."
 msgstr ""
-"Menguji hipotesis alternatif bahwa metrik keadilan dari kelompok yang tidak "
-"diistimewakan lebih rendah daripada metrik keadilan pada kelompok yang "
-"diistimewakan."
+"Uji hipotesis alternatif bahwa metrik keadilan dari grup tidak berhak lebih "
+"rendah dari metrik keadilan pada grup berhak."
 
-#, fuzzy
 msgctxt "Hypotheses|"
 msgid "Unprivileged > Privileged"
-msgstr "Tidak diistimewakan > Diistimewakan"
+msgstr "Tidak Berhak > Berhak"
 
-#, fuzzy
 msgctxt "Hypotheses|"
 msgid ""
 "Test the alternative hypothesis that the fairness metric of an unprivileged "
 "group is higher than the fairness metric in the privileged group."
 msgstr ""
-"Menguji hipotesis alternatif bahwa metrik keadilan dari kelompok yang tidak "
-"diistimewakan lebih tinggi daripada metrik keadilan pada kelompok yang "
-"diistimewakan."
+"Uji hipotesis alternatif bahwa metrik keadilan dari grup tidak berhak lebih "
+"tinggi dari metrik keadilan pada grup berhak."
 
 msgctxt "Levels|"
 msgid "Levels"
-msgstr ""
+msgstr "Tingkat"
 
-#, fuzzy
 msgctxt "Levels|"
 msgid ""
 "These options allow specification of the privileged group and the positive "
 "class."
-msgstr ""
-"Opsi-opsi ini memungkinkan spesifikasi kelompok istimewa dan kelas positif."
+msgstr "Opsi ini mengizinkan spesifikasi grup berhak dan kelas positif."
 
-#, fuzzy
 msgctxt "Levels|"
 msgid "Privileged group"
-msgstr "Kelompok yang memiliki hak istimewa"
+msgstr "Grup berhak"
 
-#, fuzzy
 msgctxt "Levels|"
 msgid "None"
-msgstr "Tidak ada"
+msgstr "Tidak Ada"
 
-#, fuzzy
 msgctxt "Levels|"
 msgid ""
 "The privileged group refers to the class in the protected variable that "
 "historically or systematically experiences certain advantages, benefits, or "
 "privileges."
 msgstr ""
-"Kelompok istimewa mengacu pada kelas dalam variabel yang dilindungi yang "
-"secara historis atau sistematis mengalami keuntungan, manfaat, atau hak "
-"istimewa tertentu."
+"Grup berhak mengacu ke kelas dalam variabel terlindungi yang secara historis "
+"atau sistematis mengalami keuntungan, manfaat, atau hak istimewa tertentu."
 
-#, fuzzy
 msgctxt "Levels|"
 msgid "Positive class"
 msgstr "Kelas positif"
 
-#, fuzzy
 msgctxt "Levels|"
 msgid "The positive class in the target variable."
-msgstr "Kelas positif dalam variabel target."
+msgstr "Kelas positif di variabel target."
 
 msgctxt "PriorDistribution|"
 msgid "Prior Distribution"
-msgstr ""
+msgstr "Distribusi Priori"
 
-#, fuzzy
 msgctxt "PriorDistribution|"
 msgid "Concentration"
 msgstr "Konsentrasi"
 
-#, fuzzy
 msgctxt "PriorDistribution|"
 msgid "Specifies the concentration parameter for the Dirichlet prior."
-msgstr "Menentukan parameter konsentrasi untuk Dirichlet sebelumnya."
+msgstr "Menentukan parameter konsentrasi untuk priori Dirichlet."
 
 msgctxt "PriorDistribution|"
 msgid "Seed"
-msgstr ""
+msgstr "Benih"
 
-#, fuzzy
 msgctxt "PriorDistribution|"
 msgid ""
 "Selects the seed for the random number generator in order to reproduce "
 "results."
-msgstr "Memilih seed untuk generator angka acak untuk mereproduksi hasil."
+msgstr "Memilih benih untuk penghasil angka acak untuk mereproduksi hasil."
 
 msgctxt "auditClassicalFairnessWorkflow|"
 msgid ""
@@ -3480,34 +3404,44 @@ msgid ""
 "when addressing potential anomalies or irregularities, or when identifying "
 "areas for improvement within the audit process."
 msgstr ""
+"Di pertanyaan ini, itu harus ditentukan apakah fokus pada klasifikasi benar, "
+"klasifikasi tidak benar, atau keduanya. Fokus pada klasifikasi benar item "
+"ketika mengevaluasi keandalan dari proses audit dalam mengidentifikasi "
+"situasi secara akurat yang sesuai dengan aturan dan prosedur yang "
+"ditetapkan. Fokus pada klasifikasi tidak benar item ketika mengatasi anomali "
+"potensi atau ketidakreguler, atau ketika mengidentifikasi area untuk "
+"peningkatan dalam proses audit."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Produces the confidence interval for the point estimate of the relative "
 "frequencies."
 msgstr ""
+"Menghasilkan interval kepercayaan untuk estimasi titik dari frekuensi "
+"relatif."
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Expected counts"
-msgstr ""
+msgstr "Perhitungan terharap"
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid ""
 "Produces the expected counts of the digits under the reference distribution."
 msgstr ""
+"Menambahkan perhitungan terharap dari digit di bawah distribusi referensi."
 
 msgctxt "auditClassicalEstimation|"
 msgid "Book Value"
-msgstr ""
+msgstr "Nilai Buku"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Audit Value"
-msgstr ""
+msgstr "Nilai Audit"
 
 msgctxt "AuditVariable|"
 msgid "Audit Value (required)"
-msgstr ""
+msgstr "Nilai Audit (diperlukan)"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Precision"
-msgstr ""
+msgstr "Presisi"
