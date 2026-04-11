@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.95.5\n"
 "POT-Creation-Date: 2025-11-15 03:36\n"
-"PO-Revision-Date: 2026-03-24 01:10+0000\n"
+"PO-Revision-Date: 2026-04-11 04:07+0000\n"
 "Last-Translator: Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-r/id/>\n"
@@ -14,97 +14,143 @@ msgstr ""
 "X-Generator: Weblate 5.17-dev\n"
 
 msgid "<u>Procedure</u>"
-msgstr ""
+msgstr "<u>Prosedur</u>"
 
 msgid "Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first leading digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation."
 msgstr ""
+"Hukum Benford menyatakan bahwa dalam banyak kumpulan pengamatan numerik "
+"terjadi secara alami, angka signifikan pertama kemungkinan kecil. Tujuan "
+"dari prosedur ini adalah untuk menentukan sejauh mana angka pertama dalam "
+"rangkaian data mengikuti hukum Benford, dan menguji hubungan ini dengan "
+"galat jenis-I dari %1$s. Data yang tidak didistribusikan menurut hukum "
+"Benford mungkin memerlukan penyelidikan lebih lanjut."
 
 msgid "Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation."
 msgstr ""
+"Hukum Benford menyatakan bahwa dalam banyak kumpulan pengamatan numerik "
+"terjadi secara alami, angka signifikan pertama kemungkinan kecil. Tujuan "
+"dari prosedur ini adalah untuk menentukan sejauh mana dua angka pertama "
+"dalam rangkaian data mengikuti hukum Benford, dan menguji hubungan ini "
+"dengan galat jenis-I dari %1$s. Data yang tidak didistribusikan menurut "
+"hukum Benford mungkin memerlukan penyelidikan lebih lanjut."
 
 msgid "Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the last digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation."
 msgstr ""
+"Hukum Benford menyatakan bahwa dalam banyak kumpulan observasi numerik "
+"terjadi secara alami, angka signifikan pertama kemungkinan kecil. Tujuan "
+"dari prosedur ini adalah untuk menentukan sejauh mana angka akhir dalam "
+"rangkaian data mengikuti hukum Benford, dan menguji hubungan ini dengan "
+"galat jenis-I dari %1$s. Data yang tidak didistribusikan menurut hukum "
+"Benford mungkin memerlukan penyelidikan lebih lanjut."
 
 msgid "The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation."
 msgstr ""
+"Distribusi seragam menugaskan probabilitas sama ke semua angka kemungkinan "
+"yang mungkin muncul. Tujuan dari prosedur ini adalah untuk menentukan sejauh "
+"mana angka awal pertama dalam rangkaian data mengikuti distribusi seragam, "
+"dan untuk menguji hubungan ini dengan galat jenis-I dari %1$s. Jika asumsi "
+"distribusi seragam dapat diinginkan, maka pelanggaran seragamitas menjadi "
+"alasan untuk penyelidikan lebih lanjut."
 
 msgid "The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation."
 msgstr ""
+"Distribusi seragam menugaskan probabilitas sama ke semua angka kemungkinan "
+"yang mungkin muncul. Tujuan dari prosedur ini adalah untuk menentukan sejauh "
+"mana dua angka awal pertama dalam rangkaian data mengikuti distribusi "
+"seragam, dan untuk menguji hubungan ini dengan galat jenis-I dari %1$s. Jika "
+"asumsi distribusi seragam dapat diinginkan, maka pelanggaran seragamitas "
+"menjadi alasan untuk penyelidikan lebih lanjut."
 
 msgid "The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the last digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation."
 msgstr ""
+"Distribusi seragam menugaskan probabilitas sama ke semua angka kemungkinan "
+"yang mungkin muncul. Tujuan dari prosedur ini adalah untuk menentukan sejauh "
+"mana angka akhir dalam rangkaian data mengikuti distribusi seragam, dan "
+"untuk menguji hubungan ini dengan galat jenis-I dari %1$s. Jika asumsi "
+"distribusi seragam dapat diinginkan, maka pelanggaran seragamitas menjadi "
+"alasan untuk penyelidikan lebih lanjut."
 
 msgid "<u>Assessing Benford's Law</u>"
-msgstr ""
+msgstr "<u>Mengevaluasi Hukum Benford</u>"
 
 msgid "<u>Assessing the Uniform Distribution</u>"
-msgstr ""
+msgstr "<u>Mengevaluasi Distribusi Seragam</u>"
 
 msgid "Benford's Law"
-msgstr ""
+msgstr "Hukum Benford"
 
 msgid "Uniform Distribution"
-msgstr ""
+msgstr "Distribusi Seragam"
 
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
-msgstr ""
+msgstr "<b>Tabel %1$i.</b> Uji Omnibus - %2$s"
 
 msgid "BF%1$s"
-msgstr ""
+msgstr "BF%1$s"
 
 msgid "Log(BF%1$s)"
-msgstr ""
+msgstr "Log(BF%1$s)"
 
 msgid "MAD"
-msgstr ""
+msgstr "MAD"
 
 msgid "df"
 msgstr "df"
 
 msgid "Benford's law"
-msgstr ""
+msgstr "Hukum Benford"
 
 msgid "the uniform distribution"
-msgstr ""
+msgstr "distribusi seragam"
 
 msgid "The null hypothesis specifies that the first digits (1 - 9) in the data set are distributed according to %1$s."
 msgstr ""
+"Hipotesis null menetukan bahwa angka pertama (1 - 9) dalam rangkaian data "
+"didistribusikan menurut %1$s."
 
 msgid "The null hypothesis specifies that the first two digits (10 - 99) in the data set are distributed according to %1$s."
 msgstr ""
+"Hipotesis null menetukan bahwa dua angka pertama (10 - 99) dalam rangkaian "
+"data didistribusikan menurut %1$s."
 
 msgid "The null hypothesis specifies that the last digits (1 - 9) in the data set are distributed according to %1$s."
 msgstr ""
+"Hipotesis null menetukan bahwa angka akhir (1 - 9) dalam rangkaian data "
+"didistribusikan menurut %1$s."
 
 msgid "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = %4$s."
 msgstr ""
+"Faktor Bayes dihitung menggunakan priori Dirichlet(%1$s,...,%2$s%3$s) dengan "
+"%2$s = %4$s."
 
 msgid "<b>Warning.</b> The <i>p</i>-value may be unreliable due to some expected counts being lower than 5."
 msgstr ""
+"<b>Peringatan.</b> Nilai-<i>p</i> mungkin tidak dapat diandalkan karena "
+"beberapa penghitungan terharapkan lebih rendah dari 5."
 
 msgid "<b>Table %1$i.</b> Frequency Table"
-msgstr ""
+msgstr "<b>Tabel %1$i.</b> Tabel Frekuensi"
 
 msgid "Leading digit"
-msgstr ""
+msgstr "Angka awal"
 
 msgid "Leading digits"
-msgstr ""
+msgstr "Angka awal"
 
 msgid "Last digit"
-msgstr ""
+msgstr "Angka akhir"
 
 msgid "Uniform distribution"
-msgstr ""
+msgstr "Distribusi seragam"
 
 msgid "Count"
-msgstr ""
+msgstr "Hitung"
 
 msgid "Relative frequency"
-msgstr ""
+msgstr "Frekuensi relatif"
 
 msgid "%1$s%% Confidence Interval"
-msgstr ""
+msgstr "%1$s%% Interval Kepercayaan"
 
 msgid "Lower"
 msgstr "Bawah"
@@ -113,457 +159,644 @@ msgid "Upper"
 msgstr "Atas"
 
 msgid "Expected count"
-msgstr ""
+msgstr "Perhitungan terharapkan"
 
 msgid "The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s."
 msgstr ""
+"Hipotesis null menetukan bahwa frekuensi relevan dari angka sama dengan "
+"frekuensi relatif terharapkannya di bawah %1$s."
 
 msgid "Bayes factors are computed using a beta(1, 1) prior."
-msgstr ""
+msgstr "Faktor Bayes dihitung menggunakan priori beta(1, 1)."
 
 msgid "Confidence intervals and <i>p</i>-values are based on independent binomial distributions."
 msgstr ""
+"Interval kepercayaan dan nilai-<i>p</i> berdasarkan pada distribusi binomial "
+"independen."
 
 msgid "The <i>p</i>-values are based on independent binomial distributions."
-msgstr ""
+msgstr "Nilai-<i>p</i> berdasarkan distribusi binomial independen."
 
 msgid "Leading Digit"
-msgstr ""
+msgstr "Angka Awal"
 
 msgid "Leading Digits"
-msgstr ""
+msgstr "Angka Awal"
 
 msgid "Last Digit"
-msgstr ""
+msgstr "Angka Akhir"
 
 msgid "<b>Table %1$i.</b> Rows Matched to %2$s %3$s"
-msgstr ""
+msgstr "<b>Tabel %1$i.</b> Baris Cocok dengan %2$s %3$s"
 
 msgid "Row"
-msgstr ""
+msgstr "Baris"
 
 msgid "Value"
 msgstr "Nilai"
 
 msgid "The requested digit must be between 1 - 9."
-msgstr ""
+msgstr "Angka yang diminta harus berkisar antara 1 - 9."
 
 msgid "<b>Warning.</b>"
 msgstr "<b>Peringatan.</b>"
 
 msgid "The requested digit must be between 10 - 99."
-msgstr ""
+msgstr "Angka yang diminta harus berkisar antara 10 - 99."
 
 msgid "Displayed values are rounded to the number of decimals set in the global preferences."
 msgstr ""
+"Nilai yang ditampilkan dibulatkan dengan jumlah desimal diatur dalam "
+"preferensi global."
 
 msgid "Observed vs. Expected Relative Frequencies"
-msgstr ""
+msgstr "Frekuensi Terobservasi vs. Relatif Terharapkan"
 
 msgid "<b>Figure %1$i.</b> The observed relative frequencies of each digit in the data set compared to the expected relative frequencies under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars."
 msgstr ""
+"<b>Figur %1$i.</b> Frekuensi relatif terobservasi dari setiap angka dalam "
+"rangkaian data dibandingkan dengan frekuensi relatif terharapkan di bawah "
+"%2$s. Untuk rangkaian data didistribusikan menurut %2$s titik biru akan "
+"berada di bagian atas batang abu-abu."
 
 msgid "Bayes Factor Robustness Plot"
-msgstr ""
+msgstr "Diagram Kekuatan Faktor Bayes"
 
 msgid "<b>Figure %1$i.</b> The results of a robustness check using the Bayes factor. The figure illustrates the impact of different specifications (i.e., concentration parameters) of the Dirichlet prior on the Bayes factor values, providing insights into the robustness of the statistical evidence to the choice of prior distribution."
 msgstr ""
+"<b>Figur %1$i.</b> Hasil dari pemeriksaan kekuatan menggunakan faktor Bayes. "
+"Figur mengilustrasikan dampak dari spesifikasi berbeda (yaitu, parameter "
+"konsentrasi) priori Dirichet pada nilai faktor Bayes, memberikan wawasan ke "
+"dalam kekuatan dari bukti statistik terkait pilihan distribusi priori."
 
 msgid "Sequential Analysis Plot"
-msgstr ""
+msgstr "Diagram Analisis Sekuensial"
 
 msgid "<b>Figure %1$i.</b> The results of a sequential analysis using the Bayes factor. The figure provides insight into how the statistical evidence from these data accumulates over time and under different prior specifications."
 msgstr ""
+"<b>Figur %1$i.</b> Hasil dari analisis sekuensial menggunakan faktor Bayes. "
+"Figur memberikan wawasan tentang bagaimana bukti statistik dari data ini "
+"mengakumulasikan seiring waktu dan di bawah berbagai spesifikasi priori."
 
 msgid "<u>Conclusion</u>"
-msgstr ""
+msgstr "<u>Kesimpulan</u>"
 
 msgid "is rejected"
-msgstr ""
+msgstr "ditolak"
 
 msgid "is not rejected"
-msgstr ""
+msgstr "tidak ditolak"
 
 msgid "%1$s < %2$s"
-msgstr ""
+msgstr "%1$s < %2$s"
 
 msgid "%1$s >= %2$s"
-msgstr ""
+msgstr "%1$s >= %2$s"
 
 msgid "The <i>p</i>-value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s %3$s."
 msgstr ""
+"Nilai-<i>p</i> adalah %1$s dan hipotesis null yang angka pertama di "
+"rangkaian data didistribusikan menurut %2$s %3$s."
 
 msgid "The <i>p</i>-value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s %3$s."
 msgstr ""
+"Nilai-<i>p</i> adalah %1$s dan hipotesis null yang dua angka pertama di "
+"rangkaian data didistribusikan menurut %2$s %3$s."
 
 msgid "The <i>p</i>-value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s %3$s."
 msgstr ""
+"Nilai-<i>p</i> adalah %1$s dan hipotesis null yang angka terakhir di "
+"rangkaian data didistribusikan menurut %2$s %3$s."
 
 msgid "%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis."
 msgstr ""
+"%1$s Faktor Bayes mengindikasikan bahwa data %2$s kali lebih mungkin terjadi "
+"di bawah hipotesis null dari di bawah hipotesis alternatif."
 
 msgid "Direct Estimator"
-msgstr ""
+msgstr "Estimator Langsung"
 
 msgid "Difference Estimator"
-msgstr ""
+msgstr "Estimator Perbedaan"
 
 msgid "Ratio Estimator"
-msgstr ""
+msgstr "Estimator Rasio"
 
 msgid "Regression Estimator"
-msgstr ""
+msgstr "Estimator Regresi"
 
 msgid "Point estimate"
-msgstr ""
+msgstr "Estimasi titik"
 
 msgid "Precision"
-msgstr ""
+msgstr "Presisi"
 
 msgid "%1$s%% Confidence interval"
-msgstr ""
+msgstr "%1$s%% Interval kepercayaan"
 
 msgid "Please specify the population size and your audit values."
-msgstr ""
+msgstr "Silakan tentukan ukuran populasi dan nilai audit Anda."
 
 msgid "Please specify the population size, population value and your sample variables."
 msgstr ""
+"Silakan tentukan ukuran populasi, nilai populasi dan variabel sampel Anda."
 
 msgid "The displayed numbers are exact and may differ slightly from the rounded numbers in the explanatory text."
 msgstr ""
+"Nomor yang ditampilkan tepat dan mungkin sedikit berbeda dari nomor yang "
+"dibulatkan dalam teks penjelasan."
 
 msgid "The number of items in the population is lower than the number of items in the sample."
-msgstr ""
+msgstr "Jumlah item dalam populasi lebih rendah dari jumlah item dalam sampel."
 
 msgid "<u>Calculations</u>"
-msgstr ""
+msgstr "<u>Perhitungan</u>"
 
 msgid "<i>The required information for the <b>direct</b> estimator consists of:</i>"
 msgstr ""
+"<i>Informasi yang diperlukan untuk estimator <b>langsung</b> terdiri dari:</"
+"i>"
 
 msgid "The population size <i>N</i>"
-msgstr ""
+msgstr "Ukuran populasi <i>N</i>"
 
 msgid "%1$s = %2$i"
-msgstr ""
+msgstr "%1$s = %2$i"
 
 msgid "The sample size <i>n</i>"
-msgstr ""
+msgstr "Ukuran sampel <i>n</i>"
 
 msgid "The mean of the sample audit values %1$s"
-msgstr ""
+msgstr "Rerata dari nilai audit sampel %1$s"
 
 msgid "%1$s = %2$s"
-msgstr ""
+msgstr "%1$s = %2$s"
 
 msgid "The standard deviation of the sample audit values %1$s"
-msgstr ""
+msgstr "Deviasi standar dari nilai audit sampel %1$s"
 
 msgid "The t-value <i>(df = n - 1)</i> corresponding to %1$s%% confidence %2$s%3$s%4$s"
 msgstr ""
+"Nilai-t <i>(df = n - 1)</i> sesuai dengan %1$s%% kepercayaan %2$s%3$s%4$s"
 
 msgid "The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence %3$s%4$s%5$s%6$s"
 msgstr ""
+"Nilai-t <i>(df = %1$s - 1)</i> sesuai dengan %2$s%% kepercayaan "
+"%3$s%4$s%5$s%6$s"
 
 msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s"
 msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s"
 
 msgid "<i>This information allows for calculation of:</i>"
-msgstr ""
+msgstr "<i>Informasi ini mengizinkan perhitungan:</i>"
 
 msgid "The point estimate of the true population value %1$s"
-msgstr ""
+msgstr "Estimasi titik dari nilai populasi benar %1$s"
 
 msgid "The precision of the estimator %1$s%2$s%3$s"
-msgstr ""
+msgstr "Presisi dari estimator %1$s%2$s%3$s"
 
 msgid "The confidence interval around the point estimate %1$s"
-msgstr ""
+msgstr "Interval kepercayaam di sekitar estimasi titik %1$s"
 
 msgid "%1$s = %2$s %3$s %4$s"
-msgstr ""
+msgstr "%1$s = %2$s %3$s %4$s"
 
 msgid "%1$s\n                           %2$s\n                           %3$s"
 msgstr ""
+"%1$s\n"
+"                           %2$s\n"
+"                           %3$s"
 
 msgid "<i>The required information for the <b>difference</b> estimator consists of:</i>"
 msgstr ""
+"<i>Informasi yang diperlukan untuk estimator <b>perbedaan</b> terdiri dari:</"
+"i>"
 
 msgid "The sum of the population book values <i>B</i>"
-msgstr ""
+msgstr "Jumlah nilai buku populasi <i>B</i>"
 
 msgid "The mean of the sample errors %1$s"
-msgstr ""
+msgstr "Rerata galat sampel %1$s"
 
 msgid "The standard deviation of the sample errors %1$s"
-msgstr ""
+msgstr "Deviasi standar galat sampel %1$s"
 
 msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s"
 msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s"
 
 msgid "%1$s\n                            %2$s\n                            %3$s"
 msgstr ""
+"%1$s\n"
+"                            %2$s\n"
+"                            %3$s"
 
 msgid "<i>The required information for the <b>ratio</b> estimator consists of:</i>"
 msgstr ""
+"<i>Informasi yang diperlukan untuk estimator <b>rasio</b> terdiri dari:</i>"
 
 msgid "The mean of the sample book values %1$s"
-msgstr ""
+msgstr "Rerata nilai buku sampel %1$s"
 
 msgid "The standard deviation of the sample book values %1$s"
-msgstr ""
+msgstr "Deviasi standar nilai buku sampel %1$s"
 
 msgid "The correlation coefficient of the sample book values and audit values %1$s"
-msgstr ""
+msgstr "Koefisien korelasi nilai buku sampel dan nilai audit %1$s"
 
 msgid "The correctness ratio %1$s"
-msgstr ""
+msgstr "Rasio kebenaran %1$s"
 
 msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s\n                                %7$s\n                                %8$s\n                                %9$s\n                                %10$s"
 msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s\n"
+"                                %7$s\n"
+"                                %8$s\n"
+"                                %9$s\n"
+"                                %10$s"
 
 msgid "<i>The required information for the <b>regression</b> estimator consists of:</i>"
 msgstr ""
+"<i>Informasi yang diperlukan untuk estimator <b>regresi</b> terdiri dari:</i>"
 
 msgid "The regression coefficient of the sample book values and audit values %1$s"
-msgstr ""
+msgstr "Koefisien regresi nilai buku sampel dan nilai audit %1$s"
 
 msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s\n                                %7$s\n                                %8$s\n                                %9$s"
 msgstr ""
+"%1$s\n"
+"                                %2$s\n"
+"                                %3$s\n"
+"                                %4$s\n"
+"                                %5$s\n"
+"                                %6$s\n"
+"                                %7$s\n"
+"                                %8$s\n"
+"                                %9$s"
 
 msgid "Required Sample Size"
-msgstr ""
+msgstr "Ukuran Sampel Diperlukan"
 
 msgid "Achieved precision"
-msgstr ""
+msgstr "Presisi Dicapai"
 
 msgid "Current <i>n</i>"
-msgstr ""
+msgstr "<i>n</i> saat ini"
 
 msgid "Required precision"
-msgstr ""
+msgstr "Presisi Diperlukan"
 
 msgid "Required <i>n</i>"
-msgstr ""
+msgstr "<i>n</i> diperlukan"
 
 msgid "Additional <i>n</i>"
-msgstr ""
+msgstr "<i>n</i> tambahan"
 
 msgid "Scatter Plot"
-msgstr ""
+msgstr "Diagram Pencaran"
 
 msgid "Book value"
-msgstr ""
+msgstr "Nilai buku"
 
 msgid "Audit value"
-msgstr ""
+msgstr "Nilai audit"
 
 msgid "<b>Figure 1.</b> Scatter plot of the book values in the selection and their audit values. Red dots indicate observations that did not match their original book value. If these red dots lie in the bottom part of the graph, the book values are overstated. If these red dots lie in the upper part of the graph, they are understated. The value <i>r</i> is the Pearson correlation coefficient of the book values and the audit values, an indicator of the strength of the linear relationship between the two variables."
 msgstr ""
+"<b>Figur 1.</b> Diagram pencaran dari nilai buku dalam pemilihan dan nilai "
+"auditnya. Titik merah mengindikasikan observasi yang tidak cocok nilai buku "
+"aslinya. Jika titik merah ini terletak di bagian bawah grafik, nilai buku "
+"berlebihan. Jika titik merah ini terletak di bagian atas grafik, mereka "
+"berkurangan. Nilai <i>r</i> adalah koefisien korelasi Pearson dari nilai "
+"buku dan nilai audit, indikator kekuatan dari hubungan linear antara dua "
+"variabel."
 
 msgid "Specificity"
-msgstr ""
+msgstr "Kekhususan"
 
 msgid "Accuracy"
-msgstr ""
+msgstr "Akurasi"
 
 msgid "False positive rate"
-msgstr ""
+msgstr "Tingkat positif palsu"
 
 msgid "False negative rate"
-msgstr ""
+msgstr "Tingkat negatif palsu"
 
 msgid "Negative predictive value"
-msgstr ""
+msgstr "Nilai prediktif negatif"
 
 msgid "Positive rate"
-msgstr ""
+msgstr "Tingkat positif"
 
 msgid "True positive rate"
-msgstr ""
+msgstr "Tingkat positif benar"
 
 msgid "Specificity parity"
-msgstr ""
+msgstr "Keseimbangan kekhususan"
 
 msgid "Accuracy parity"
-msgstr ""
+msgstr "Keseimbangan akurasi"
 
 msgid "False positive rate parity"
-msgstr ""
+msgstr "Keseimbangan tingkat positif palsu"
 
 msgid "False negative rate parity"
-msgstr ""
+msgstr "Keseimbangan tingkat negatif palsu"
 
 msgid "Negative predictive value parity"
-msgstr ""
+msgstr "Kesetaraan nilai prediktif negatif"
 
 msgid "Disparate impact"
-msgstr ""
+msgstr "Dampak tidak proporsional"
 
 msgid "Predictive rate parity"
-msgstr ""
+msgstr "Keseimbangan tingkat prediktif"
 
 msgid "Equal opportunity"
-msgstr ""
+msgstr "Kesetaraan kesempatan"
 
 msgid "Equalized odds"
-msgstr ""
+msgstr "Ganjil persamaan"
 
 msgid "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute, and to test this fairness with a type-I error of %1$s%%. Considering the positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified using so-called fairness measures. Calculating a fairness measure involves determining the value of the model evaluation metric on which the fairness measure is based for both the privileged (<i>%3$s</i>) and unprivileged groups.\n\nIn this specific case, equalized odds is not based on a single model evaluation metric but rather on two: the true positive rate and the false positive rate. Therefore, using equalized odds requires applying two statistical tests to check for any significant differences between the values that the two model evaluation metrics take for each of the two groups. The two tests conducted are Pearson's chi-squared tests. Only if the null hypothesis is rejected for both tests can we conclude that the algorithm is fair."
 msgstr ""
+"Tujuan dari prosedur ini adalah untuk menentukan sejauh mana prediksi dari "
+"algoritma adil terhadap grup terlindungi pada atribut sensitif, dan untuk "
+"menguji keadilan ini dengan galat jenis-I dari %1$s%%. Mempertimbangkan "
+"kelas positif (<i>%2$s</i>), keadilan -atau diskriminasi- dapat diukur "
+"menggunakan yang disebut pengukuran keadilan. Menghitung pengukuran keadilan "
+"meliputi penentuan nilai dari metrik evaluasi model di mana pengukuran "
+"keadilan berdasarkan kedua grup berhak (<i>%3$s</i>) dan tidak berhak.\n"
+"\n"
+"Dalam kasus tertentu ini, ganjil yang sama tidak berdasarkan satu metrik "
+"evaluasi model melainkan dua: tingkat positif benar dan tingkat positif "
+"palsu. Oleh karena itu, menggunakan ganjil yang sama memerlukan penerapan "
+"dua uji statistik untuk memeriksa adanya perbedaan signifikan antara nilai "
+"yang memiliki dua metrik evaluasi model untuk setiap dua grup. Dua uji yang "
+"dikonduksikan adalah uji chi-kuadrat Pearson. Hanya jika hipotesis null "
+"ditolak untuk kedua uji kita dapat menyimpulkan bahwa algoritma adil."
 
 msgid "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute, and to test this fairness with a type-I error of %1$s%%. Considering the positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified using so-called fairness measures. Calculating a fairness measure implies determining the value of the model evaluation metric, on which the fairness measure is based, for both the privileged (<i>%3$s</i>) and unprivileged groups. Subsequently, a statistical test is conducted to check for any significant differences between the values that the model evaluation metric takes for each of the two groups. The used test is the Pearson's chi-squared test."
 msgstr ""
+"Tujuan dari prosedur ini adalah untuk menentukan sejauh mana prediksi dari "
+"algoritma adil terhadap grup terlindungi pada atribut sensitif, dan untuk "
+"menguji keadilan ini dengan galat jenis-I dari %1$s%%. Mempertimbangkan "
+"kelas positif (<i>%2$s</i>), keadilan -atau diskriminasi- dapat diukur "
+"menggunakan yang disebut pengukuran keadilan. Menghitung pengukuran keadilan "
+"meliputi penentuan nilai dari metrik evaluasi model, di mana pengukuran "
+"keadilan berdasarkan, kedua grup berhak (<i>%3$s</i>) dan tidak berhak. "
+"Kemudian, uji statistik dikonduksikan untuk memeriksa adanya perbedaan "
+"signifikan antara nilai yang memiliki metrik evaluasi model untuk setiap dua "
+"grup. Uji yang digunakan adalah uji chi-kuadrat Pearson."
 
 msgid "<u>Assessing Model Fairness</u>"
-msgstr ""
+msgstr "<u>Mengevaluasi Keadilan Model</u>"
 
 msgid "An error occurred: %1$s"
-msgstr ""
+msgstr "Terjadi galat: %1$s"
 
 msgid "Metric"
-msgstr ""
+msgstr "Metrik"
 
 msgid "n"
-msgstr ""
+msgstr "n"
 
 msgid "The null hypothesis specifies that the %1$s is equal across protected groups."
-msgstr ""
+msgstr "Hipotesis null menentukan bahwa %1$s sama melintasi grup terlindungi."
 
 msgid "Please specify a privileged group and positive class to start the analysis."
-msgstr ""
+msgstr "Silakan tentukan grup berhak dan kelas positif untuk memulai analisis."
 
 msgid "<i>p</i>-values are uncorrected for multiple comparisons and are based on Fisher's exact test."
 msgstr ""
+"Nilai-<i>p</i> tidak dikoreksikan untuk beberapa perbandingan dan "
+"berdasarkan uji tepat Fisher."
 
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
-msgstr ""
+msgstr "<b>Tabel %1$i.</b> Perbandingan dengan Grup Berhak (P)"
 
 msgid "Parity"
-msgstr ""
+msgstr "Kesetaraan"
 
 msgid "p"
 msgstr "p"
 
 msgid "The null hypothesis specifies that the %1$s of an unprivileged group is equal to that of the privileged (P) group."
 msgstr ""
+"Hipotesis null menentukan bahwa %1$s dari grup tidak berhak sama dengan yang "
+"dari grup berhak (P)."
 
 msgid "The null hypothesis specifies that the %1$s of an unprivileged group is greater than, or equal to, that of the privileged (P) group."
 msgstr ""
+"Hipotesis null menentukan bahwa %1$s dari grup tidak berhak lebih tinggi "
+"dari, atau sama dengan, yang dari grup berhak (P)."
 
 msgid "The null hypothesis specifies that the %1$s of an unprivileged group is lower than, or equal to, that of the privileged (P) group."
 msgstr ""
+"Hipotesis null menentukan bahwa %1$s dari grup tidak berhak lebih rendah "
+"dari, atau sama dengan, yang dari grup berhak (P)."
 
 msgid "According to the '80 percent rule', if the value of the protected-to-privileged positve rate ratio is lower than 0.80 then the algorithm is considered unfair against the unprivileged group(s)."
 msgstr ""
+"Menurut 'aturan 80 persen', jika nilai dari rasio tingkat positif "
+"terlindungi-ke-berhak lebih rendah dari 0.80 maka algoritma dianggap tidak "
+"adil terhadap grup tidak berhak."
 
 msgid "<u>Individual Comparisons</u>"
-msgstr ""
+msgstr "<u>Perbandingan Individual</u>"
 
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - True Positive Rate"
 msgstr ""
+"<b>Tabel %1$i.</b> Perbandingan dengan Grup Berhak (P) - Tingkat Positif "
+"Benar"
 
 msgid "True Positive Rate"
-msgstr ""
+msgstr "Tingkat Positif Benar"
 
 msgid "The null hypothesis specifies that the true positive rate of an unprivileged group is equal to that of the privileged (P) group."
 msgstr ""
+"Hipotesis null menentukan bahwa tingkat positif benar dari grup tidak berhak "
+"sama dengan yang grup berhak (P)."
 
 msgid "The null hypothesis specifies that the true positive rate of an unprivileged group is greater than, or equal to, that of the privileged (P) group."
 msgstr ""
+"Hipotesis null menentukan bahwa tingkat positif benar dari grup tidak berhak "
+"lebih tinggi dari, atau sama dengan, yang grup berhak (P)."
 
 msgid "The null hypothesis specifies that the true positive rate of an unprivileged group is lower than, or equal to, that of the privileged (P) group."
 msgstr ""
+"Hipotesis null menentukan bahwa tingkat positif benar dari grup tidak berhak "
+"lebih rendah dari, atau sama dengan, yang grup berhak (P)."
 
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
 msgstr ""
+"<b>Tabel %1$i.</b> Perbandingan dengan Grup Berhak (P) - Tingkat Positif "
+"Palsu"
 
 msgid "False Positive Rate"
-msgstr ""
+msgstr "Tingkat Positif Palsu"
 
 msgid "The null hypothesis specifies that the false positive rate of an unprivileged group is equal to that of the privileged (P) group."
 msgstr ""
+"Hipotesis null menentukan bahwa tingkat positif palsu dari grup tidak berhak "
+"sama dengan yang grup berhak (P)."
 
 msgid "The null hypothesis specifies that the false positive rate of an unprivileged group is greater than, or equal to, that of the privileged (P) group."
 msgstr ""
+"Hipotesis null menentukan bahwa tingkat positif palsu dari grup tidak berhak "
+"lebih tinggi dari, atau sama dengan, yang grup berhak (P)."
 
 msgid "The null hypothesis specifies that the false positive rate of an unprivileged group is lower than, or equal to, that of the privileged (P) group."
 msgstr ""
+"Hipotesis null menentukan bahwa tingkat positif palsu dari grup tidak berhak "
+"lebih rendah dari, atau sama dengan, yang grup berhak (P)."
 
 msgid "<b>Table %1$i.</b> Model Performance"
-msgstr ""
+msgstr "<b>Tabel %1$i.</b> Kinerja Model"
 
 msgid "Support"
-msgstr ""
+msgstr "Dukung"
 
 msgid "Recall"
-msgstr ""
+msgstr "Panggilan"
 
 msgid "F1 Score"
-msgstr ""
+msgstr "Skor F1"
 
 msgid "<b>Table %1$i.</b> Confusion Matrix"
-msgstr ""
+msgstr "<b>Tabel %1$i.</b> Matriks Kebingungan"
 
 msgid "Observed"
-msgstr ""
+msgstr "Terobservasi"
 
 msgid "Predicted"
-msgstr ""
+msgstr "Terprediksi"
 
 msgid "True Positives (TP) are cells in which the positive class (<i>%1$s</i>) is correctly predicted, while True Negatives (TN) are cells where the negative class is correctly predicted. False Negatives (FN) are cells in which the positive class is incorrectly predicted, and False Positives (FP) are cells in which the negative class is incorrectly predicted."
 msgstr ""
+"Positif Benar (TP) adalah sel di mana kelas positif (<i>%1$s</i>) secara "
+"benar diprediksi, sementara Negatif Benar (TN) adalah sel di mana kelas "
+"negatif secara benar diprediksi. Negatif Palsu (FN) adalah sel di mana kelas "
+"positif secara tidak benar diprediksi, dan Positif Palsu (FP) adalah sel di "
+"mana kelas negatif secara tidak benar diprediksi."
 
 msgid "Parity Estimates Plot"
-msgstr ""
+msgstr "Diagram Estimasi Kesetaraan"
 
 msgid "<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of %2$s from each unprivileged group to the privileged %3$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm."
 msgstr ""
+"<b>Figur %1$i.</b> Statistik kesetaraan terestimasi (yaitu, rasio %2$s dari "
+"setiap grup tidak berhak ke grup berhak %3$s) untuk semua grup dalam data. "
+"Semakin dekat nilai kesetaraan dengan satu, semakin sedikit diskriminasi "
+"yang terjadi dalam algoritma."
 
 msgid "<u>Parity Estimates Plots</u>"
-msgstr ""
+msgstr "<u>Diagram Estimasi Kesetaraan</u>"
 
 msgid "Parity Estimates Plot - True Positive Rate Parity"
-msgstr ""
+msgstr "Diagram Estimasi Kesetaraan - Kesetaraan Tingkat Positif Benar"
 
 msgid "Parity Estimates Plot - False Positive Rate Parity"
-msgstr ""
+msgstr "Diagram Estimasi Kesetaraan - Kesetaraan Tingkat Positif Palsu"
 
 msgid "<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of true positive rate from each unprivileged group to the privileged %2$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm."
 msgstr ""
+"<b>Figur %1$i.</b> Statistik kesetaraan terestimasi (yaitu, rasio dari "
+"positif benar dari setiap grup tidak berhak ke grup berhak %2$s) untuk semua "
+"grup dalam data. Semakin dekat nilai kesetaraan dengan satu, semakin sedikit "
+"diskriminasi yang terjadi dalam algoritma."
 
 msgid "Prior and Posterior Distribution Plot"
-msgstr ""
+msgstr "Diagram Distribusi Priori dan Posterior"
 
 msgid "<b>Figure %1$i.</b> The prior and posterior distributions on the log odds ratio for each unprivileged group compared to the privileged group (%2$s)."
 msgstr ""
+"<b>Figur %1$i.</b> Distribusi priori dan posterior pada rasio ganjil log "
+"untuk setiap grup tidak berhak dibandingkan dengan grup berhak (%2$s)."
 
 msgid "As the measures are significantly different from each other, we can conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
+"Karena ukuran secara signifikan berbeda dari satu sama lain, kita dapat "
+"menyimpulkan bahwa algoritma ini tidak adil terhadap grup tidak berhak."
 
 msgid "As the measures are not significantly different from each other, we cannot conclude that this algorithm is unfair against the unprivileged group(s)."
 msgstr ""
+"Karena ukuran secara signifikan berbeda dari satu sama lain, kita tidak "
+"dapat menyimpulkan bahwa algoritma ini tidak adil terhadap grup tidak berhak."
 
 msgid "The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s and %4$s across protected groups %5$s. %6$s"
 msgstr ""
+"Nilai-<i>p</i> adalah %1$s dan %2$s dan hipotesis null dari %3$s dan %4$s "
+"sama melintasi grup terlindungi %5$s. %6$s"
 
 msgid "The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across protected groups %3$s. %4$s"
 msgstr ""
+"Nilai-<i>p</i> adalah %1$s dan hipotesis null dari %2$s sama melintasi grup "
+"terlindungi %3$s. %4$s"
 
 msgid "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute. Fairness -or discrimination- can be quantified using so-called fairness measures. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions."
 msgstr ""
+"Tujuan dari prosedur ini adalah untuk menentukan sejauh mana prediksi dari "
+"algoritma adil terhadap grup terlindungi pada atribut sensitif. Keadilan -"
+"atau diskriminasi- dapat diukur menggunakan yang disebut pengukuran "
+"keadilan. Ada pengukuran keadilan bervariasi, dan pengukuran berbeda dapat "
+"mengarah kesimpulan berbeda tentang keadilan. Oleh karena itu, memilih "
+"pengukuran keadilan paling tepat untuk konteks termaksud krusial. Alur kerja "
+"pengambilan keputusan mengizinkan untuk menentukan pengukuran keadilan "
+"paling sesuai dengan menjawab pertanyaan diperlukan."
 
 msgid "<u>Selection</u>"
-msgstr ""
+msgstr "<u>Pemilihan</u>"
 
 msgid "<u>Evaluation</u>"
-msgstr ""
+msgstr "<u>Evaluasi</u>"
 
 msgid "The most suitable fairness measure is <b>%1$s</b>."
-msgstr ""
+msgstr "Pengukuran keadilan paling sesuai adalah <b>%1$s</b>."
 
 msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results in the same ratio of items from two different groups experiencing a change in the status quo (i.e., being classified as positive). The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.\n\n<u>Formula:</u>\nDisparate impact is obtained by dividing the positive rate of the unprivileged group by that of the privileged group. The positive rate is equal to (TP+FP)/N, where TP denotes true positives (items correctly classified as positive), FP denotes false positives (items incorrectly classified as positive), and N represents the total number of items classified by the algorithm.\n\n<u>Further Details:</u>\nThe most common use of disparate impact is linked to the U.S. Equal Employment Opportunity Commission (EEOC) guidelines, particularly the %1$s%% rule. According to this rule, if disparate impact is higher than 0.80, there is no discrimination. This method has limitations, as the threshold value is not based on the measure's properties, data characteristics, or statistical considerations. Originally derived from U.S. employment hiring rates, the rule lacks theoretical rigor for broader applications."
 msgstr ""
+"<u>Definisi Keadilan:</u>\n"
+"Algoritma adil jika penggunaannya menghasilkan dengan rasio item sama dari "
+"dua grup berbeda mengalami perubahan dalam status saat ini (yaitu, "
+"diklasifikasikan sebagai positif). Item istilah berkaitan dengan apa yang "
+"diklasifikasikan; item ini dapat berupa orang, seperti pelamar pekerjaan, "
+"atau objek, seperti rekening bank.\n"
+"\n"
+"<u>Rumus:</u>\n"
+"Dampak yang tidak proporsional diperoleh dengan membagi tingkat positif grup "
+"tidak berhak dengan tingkat positif grup berhak. Tingkat positif sama dengan "
+"(TP+FP)/N, di mana TP menunjukkan positif benar (item secara benar "
+"diklasifikasikan sebagai positif), FP menunjukkan positif palsu (item secara "
+"tidak benar diklasifikasikan sebagai positif), dan N merepresentasikan "
+"jumlah total item diklasifikasikan oleh algoritma.\n"
+"\n"
+"<u>Rincian Lebih Lanjut:</u>\n"
+"Penggunaan dampak yang tidak proporsional yang paling umum tertaut dengan "
+"pedoman Komisi Kesetaraan Kesempatan Kerja A.S. (EEOC), khususnya aturan "
+"%1$s%%. Menurut aturan ini, jika dampak yang tidak proporsional lebih tinggi "
+"dari 0.80, maka tidak ada diskriminasi. Metode ini memiliki keterbatasan, "
+"karena nilai ambang batasnya tidak berdasarkan properti pengukuran, "
+"karakteristik data, atau pertimbangan statistik. Awalnya diturunkan dari "
+"tingkat perekrutan tenaga kerja di A.S., aturan ini kurang memiliki "
+"ketelitian teoretis untuk penerapan yang lebih luas."
 
 msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results in the same number of items from different groups experiencing correct and incorrect changes in the status quo (i.e, being, correctly and incorrectly, classified as positive). The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.\n\n<u>Formula:</u>\nEqualized odds combines the true positive rate (TPR) and the false positive rate (FPR). The TPR is calculated as TP/(TP+FP) and the FPR as FP/(TN+FP), applied to both privileged and unprivileged groups. Here, TP denotes true positives (correctly classified positive items), TN denotes true negatives (correctly classified negative items), and FP denotes false positives (incorrectly classified positive items).\n\n<u>Further Details:</u>\nIt is important to note that this is the only measure in the decision-making workflow that addresses both the correct classification of the positive class and the incorrect classification of the negative class."
 msgstr ""
@@ -590,40 +823,60 @@ msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results 
 msgstr ""
 
 msgid "Decision-Making Workflow Plot"
-msgstr ""
+msgstr "Diagram Alur Kerja Pengambilan Keputusan"
 
 msgid "<b>Figure %1$i.</b> Graphical representation of the decision-making workflow. The label 'FP' indicates 'False Positives' and the label 'FN' indicates 'False Negatives'. The white rectangles indicate the followed path based on the answers provided to the necessary questions of the workflow, the gray rectangles represent the ignored path."
 msgstr ""
+"<b>Figur %1$i.</b> Representasi grafik dari alur kerja pengambilan "
+"keputusan. Label 'FP' mengindikasikan 'Positif Palsu' dan label 'FN' "
+"mengindikasikan 'Negatif Palsu'. Persegi panjang putih mengindikasikan jalur "
+"diikuti berdasarkan jawaban yang diberikan ke pertanyaan diperlukan dari "
+"alur kerja, persegi panjang abu-abu merepresentasikan jalur diabaikan."
 
 msgid "This procedure analyzes the frequency with which values get repeated within a data set to statistically identify whether the data were likely tampered with. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit.\n\nTo determine whether the data show an excessive amount of repeated values, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested with a type-I error of %1$s. To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions."
 msgstr ""
+"Prosedur ini menganalisiskan frekuensi dengan nilai mana yang dapat diulang "
+"dalam rangkaian data untuk secara statistik mengidentifikasi apakah data "
+"kemungkinan telah dimanipulasi. Berbeda dengan hukum Benford, dan "
+"penghasilannya, pendekatan ini meneliti seluruh angka sekaligus, bukan hanya "
+"digit pertama atau akhir.\n"
+"\n"
+"Untuk menentukan apakah data menampilkan jumlah lebih dari nilai berulang, "
+"hipotesis null yang data tidak berisi jumlah nilai berulang yang tidak "
+"terduga diuji dengan tingkat galat jenis-I %1$s. Untuk mengukur apa yang "
+"diduga, uji ini memerlukan asumsi yang porsi integer dari angka tidak "
+"diasosiasikan dengan porsi desimal mereka."
 
 msgid "<u>Assessing repeated values</u>"
-msgstr ""
+msgstr "<u>Mengevaluasi nilai berulang</u>"
 
 msgid "<b>Table %1$i.</b> Repeated Values Test"
-msgstr ""
+msgstr "<b>Tabel %1$i.</b> Uji Nilai Berulang"
 
 msgid "Average"
-msgstr ""
+msgstr "Rata-rata"
 
 msgid "Frequency"
-msgstr ""
+msgstr "Frekuensi"
 
 msgid "Entropy"
-msgstr ""
+msgstr "Entropi"
 
 msgid "The displayed <i>p</i>-value is one-sided and is computed on the basis of %1$s samples."
 msgstr ""
+"Nilai-<i>p</i> yang ditampilkan adalah satu sisi dan dihitung berdasarkan "
+"%1$s sampel."
 
 msgid "<b>Table %1$i.</b> Assumption Checks"
-msgstr ""
+msgstr "<b>Tabel %1$i.</b> Pemeriksaan Asumsi"
 
 msgid "The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> = 0."
 msgstr ""
+"Nilai-<i>p</i> yang ditampilkan adalah untuk uji dua sisi terhadap H%1$s: <i>"
+"r</i> = 0."
 
 msgid "Percentage"
-msgstr ""
+msgstr "Persentase"
 
 msgid "Observed vs. Expected Average Frequency"
 msgstr ""
