@@ -1,33 +1,41 @@
-# Version 0.18.1
+# jaspAudit Changelog
 
-**New features**
+> **HOW TO READ AND UPDATE THIS CHANGELOG:**
+> 
+> This document follows a modified [Keep a Changelog](https://keepachangelog.com/) format adapted for the R/JASP ecosystem. Releases are listed in reverse chronological order (newest first).
+> As an example see [jaspModuleTemplate](https://github.com/jasp-stats/jaspModuleTemplate/blob/master/NEWS.md)
+> * **Adding New Changes (For Contributors):** All new commits should be logged at the very top of the file under the `# jaspModuleTemplate (development version)` header. Place your bullet point under the appropriate category (`## Added`, `## Fixed`, etc.). 
+> * **Issue References:** Please reference the relevant GitHub Issue (if any) at the end of your line (e.g., `([Issue #19](https://github.com/jasp-stats/jaspModuleTemplate/issues/19)`). 
+> * **Format Categories:** >   * **Added:** New template features, QML examples, or build tools.
+>   * **Changed:** Updates to default configurations, boilerplate code, or dependencies. 
+>   * **Fixed:** Bug fixes in the build pipeline, R wrappers, or QML layouts.
+>   * **Deprecated / Removed:** Outdated template components or legacy code.
 
-- Added algorithm auditing section to the module with one analysis: Fairness metrics.
-- Add robustness and sensitivity plots to Benford's law along with the possibility to adjust the prior distribution.
 
-# Version 0.17.3
+---
 
-**New features**
+# jaspAudit (development version)
 
-- Added analytical risk as a constituent of the audit risk model.
 
-# Version 0.17.2
 
-**New features**
+---
 
-- Stratification has been implemented in the Bayesian evaluation analysis, enabling users to assess stratified audit samples using the techniques outlined in https://psyarxiv.com/byj2a/.
-- Default percentages associated with risk categories for the Audit Risk Model are displayed as a table in the output.
-- A table is now available in the Benford's law analysis that matches the first digit to its corresponding row.
+# jaspModuleTemplate 0.2.0
+## Added
+* Added NEWS.md
+* Added workflow to remind users to update their `NEWS.md`.
+* Added workflow to auto-bump version when user does not do so.
 
-**Bug fixes**
+---
 
-- None.
+# jaspModuleTemplate 0.1.0
 
-**Major changes**
+## Added
+* Initial examples to showcase JASP module development
 
-- Changed the default percentages for inherent risk from `medium: 60%` to `medium: 63%` and `low: 36%` to `low: 40%`.
-- Changed the default percentages for control risk from `medium: 60%` to `medium: 52%` and `low: 36%` to `low: 34%`.
+## Changed
+* Use best practices for checking input ([Issue #19](https://github.com/jasp-stats/jaspModuleTemplate/issues/19)).
+* The main results table now defaults to displaying 95% Confidence Intervals for effect sizes.
 
-**Minor changes**
-
-- It is now possible to specify values below 25% for the `Manual` categories in the Audit Risk Model.
+## Fixed
+* Remove deprecated dependencies from qml files ([Issue #14](https://github.com/jasp-stats/jaspModuleTemplate/issues/14)).
