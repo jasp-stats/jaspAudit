@@ -21,40 +21,12 @@ import QtQuick.Layouts
 import JASP
 import JASP.Controls
 
-import "./common" as Common
-import "./common/estimation" as Estimation
-
-Form
+CheckBox
 {
-	columns:						1
-	info:							qsTr("The estimation analysis allows the user to estimate the true value of a population on the basis of a sample.")
+	property bool	disable: false
 
-	Estimation.VariablesFormEstimation { }
-	Estimation.Confidence { }
-	Estimation.Population { disableValues: estimator.useMpu }
-	Estimation.Estimator { id: estimator }
-	Common.ExplanatoryText { }
-
-	Section
-	{
-		title:						qsTr("Report")
-		columns:					2
-
-		Group
-		{
-			title: 					qsTr("Tables")
-			info:					qsTr("Add additional tables about the analysis to the report.")
-			Estimation.Samplesize { }
-		}
-
-		Group
-		{
-			title: 					qsTr("Plots")
-			info:					qsTr("Add additional figures about the analysis to the report.")
-			Estimation.Scatterplot { disable: estimator.useMpu }
-		}
-
-	}
-
-	Common.DownloadReport { }
+	text: 		qsTr("Scatter plot")
+	name: 		"correlationPlot"
+	enabled: 	!disable
+	info:		qsTr("Produces a scatter plot comparing the book values in the sample against their audit values. Items for which these two values do not match are colored in red.")
 }

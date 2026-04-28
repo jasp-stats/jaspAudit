@@ -21,40 +21,36 @@ import QtQuick.Layouts
 import JASP
 import JASP.Controls
 
-import "./common" as Common
-import "./common/estimation" as Estimation
-
-Form
+VariablesForm
 {
-	columns:						1
-	info:							qsTr("The estimation analysis allows the user to estimate the true value of a population on the basis of a sample.")
+	id: 						variablesFormEstimation
+	preferredHeight: 			jaspTheme.smallDefaultVariablesFormHeight
 
-	Estimation.VariablesFormEstimation { }
-	Estimation.Confidence { }
-	Estimation.Population { disableValues: estimator.useMpu }
-	Estimation.Estimator { id: estimator }
-	Common.ExplanatoryText { }
-
-	Section
+	AvailableVariablesList
 	{
-		title:						qsTr("Report")
-		columns:					2
-
-		Group
-		{
-			title: 					qsTr("Tables")
-			info:					qsTr("Add additional tables about the analysis to the report.")
-			Estimation.Samplesize { }
-		}
-
-		Group
-		{
-			title: 					qsTr("Plots")
-			info:					qsTr("Add additional figures about the analysis to the report.")
-			Estimation.Scatterplot { disable: estimator.useMpu }
-		}
-
+		name: 					"variablesFormEstimation"
 	}
 
-	Common.DownloadReport { }
+	AssignedVariablesList
+	{
+		id: 					bookValues
+		name: 					"bookValues"
+		title: 					qsTr("Book Value")
+		singleVariable:			true
+		allowedColumns:			["scale"]
+		minNumericLevels:		1
+		enabled: 				!mpu.checked
+		info:					qsTr("A numeric variable that contains the book (recorded) values of the items in the population.")
+	}
+
+	AssignedVariablesList
+	{
+		id: 					auditValues
+		name: 					"auditValues"
+		title: 					qsTr("Audit Value")
+		singleVariable: 		true
+		allowedColumns: 		["scale"]
+		minNumericLevels:		1
+		info:					qsTr("A numeric variable that contains the audited (true) values of the items in the population.")
+	}
 }
