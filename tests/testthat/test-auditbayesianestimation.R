@@ -8,6 +8,7 @@ options$bookValues <- "Waarde"
 options$estimator <- "mpu"
 options$populationSize <- 1000
 options$populationValue <- 769458
+options$priorSetup <- "priorDefault"
 options$explanatoryText <- TRUE
 options$confidence <- 0.95
 options$correlationPlot <- FALSE
@@ -31,11 +32,12 @@ options$bookValues <- "Waarde"
 options$estimator <- "difference"
 options$populationSize <- 1000
 options$populationValue <- 769458
+options$priorSetup <- "priorCustom"
 options$explanatoryText <- TRUE
 options$confidence <- 0.95
 options$correlationPlot <- FALSE
 options$priorAndPosteriorPlot <- TRUE
-options$priorMu <- 30
+options$priorMu <- -30
 options$priorKappa <- 150
 options$priorNu <- 150
 options$priorSigma2 <- 5000
@@ -64,6 +66,7 @@ options$bookValues <- "Waarde"
 options$estimator <- "ratio"
 options$populationSize <- 1000
 options$populationValue <- 769458
+options$priorSetup <- "priorDefault"
 options$explanatoryText <- TRUE
 options$confidence <- 0.95
 options$correlationPlot <- FALSE
@@ -87,6 +90,7 @@ options$bookValues <- "Waarde"
 options$estimator <- "regression"
 options$populationSize <- 1000
 options$populationValue <- 769458
+options$priorSetup <- "priorDefault"
 options$explanatoryText <- TRUE
 options$confidence <- 0.95
 options$correlationPlot <- FALSE
@@ -98,6 +102,6 @@ test_that("Regression Estimator table results match", {
   table <- results[["results"]][["summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(757392.591641175, 744516.848715841, 12875.7429253338, 770268.334566509)
+    list(757392.591641175, 743545.415086767, 13847.176554408, 771239.768195583)
   )
 })

@@ -64,22 +64,49 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
     y <- dataset[[options[["auditValues"]]]]
     x <- dataset[[options[["bookValues"]]]]
     X <- options[["populationValue"]]
-    mu0 <- options[["priorMu"]]
-    kappa0 <- options[["priorKappa"]]
-    nu0 <- options[["priorNu"]]
-    sigma20 <- options[["priorSigma2"]]
+    if (options[["priorSetup"]] == "priorDefault") {
+      mu_0 <- switch(options[["estimator"]],
+        "mpu" = 0,
+        "difference" = 0,
+        "ratio" = 0,
+        "regression" = 0
+      )
+      kappa_0 <- switch(options[["estimator"]],
+        "mpu" = 0,
+        "difference" = 0,
+        "ratio" = 0,
+        "regression" = 0
+      )
+      nu_0 <- switch(options[["estimator"]],
+        "mpu" = -1,
+        "difference" = -1,
+        "ratio" = -1,
+        "regression" = -2
+      )
+      sigma2_0 <- switch(options[["estimator"]],
+        "mpu" = 0,
+        "difference" = 0,
+        "ratio" = 0,
+        "regression" = 0
+      )
+    } else {
+      mu_0 <- options[["priorMu"]]
+      kappa_0 <- options[["priorKappa"]]
+      nu_0 <- options[["priorNu"]]
+      sigma2_0 <- options[["priorSigma2"]]
+    }
     conf.level <- options[["confidence"]]
     if (options[["estimator"]] == "mpu") {
-      result <- .jfaDirectBayes(y, n, N, mu0, kappa0, nu0, sigma20, conf.level)
+      result <- .jfaDirectBayes(y, n, N, mu_0, kappa_0, nu_0, sigma2_0, conf.level)
     } else if (options[["estimator"]] == "difference") {
-      result <- .jfaDifferenceBayes(y, x, n, X, N, mu0, kappa0, nu0, sigma20, conf.level)
+      result <- .jfaDifferenceBayes(y, x, n, X, N, mu_0, kappa_0, nu_0, sigma2_0, conf.level)
     } else if (options[["estimator"]] == "ratio") {
-      result <- .jfaRatioBayes(y, x, n, X, N, mu0, kappa0, nu0, sigma20, conf.level)
+      result <- .jfaRatioBayes(y, x, n, X, N, mu_0, kappa_0, nu_0, sigma2_0, conf.level)
     } else if (options[["estimator"]] == "regression") {
-      result <- .jfaRegressionBayes(y, x, n, X, N, rep(mu0, 2), matrix(c(kappa0, 0, 0, kappa0), nrow = 2), nu0, sigma20, conf.level)
+      result <- .jfaRegressionBayes(y, x, n, X, N, rep(mu_0, 2), matrix(c(kappa_0, 0, 0, kappa_0), nrow = 2), nu_0, sigma2_0, conf.level)
     }
     jaspResults[["state"]] <- createJaspState(result)
-    jaspResults[["state"]]$dependOn(c("bookValues", "auditValues", "populationValue", "populationSize", "confidence", "estimator", "priorMu", "priorKappa", "priorSigma2", "priorNu"))
+    jaspResults[["state"]]$dependOn(c("bookValues", "auditValues", "populationValue", "populationSize", "confidence", "estimator", "priorSetup", "priorMu", "priorKappa", "priorSigma2", "priorNu"))
   } else {
     return(list())
   }
@@ -138,7 +165,7 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
   if (is.null(jaspResults[["posteriorPlot"]])) {
     fg <- createJaspPlot(plot = NULL, title = gettext("Prior and Posterior Distribution"), width = 500, height = 400)
     fg$position <- position
-    fg$dependOn(c("priorAndPosteriorPlot", "bookValues", "auditValues", "populationValue", "populationSize", "confidence", "estimator", "priorMu", "priorKappa", "priorSigma2", "priorNu"))
+    fg$dependOn(c("priorAndPosteriorPlot", "bookValues", "auditValues", "populationValue", "populationSize", "confidence", "estimator", "priorSetup", "priorMu", "priorKappa", "priorSigma2", "priorNu"))
     jaspResults[["posteriorPlot"]] <- fg
 
     if (!ready) {
@@ -148,7 +175,7 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
     result <- jaspResults[["state"]]$object
 
     pTry <- try({
-      if (options[["priorKappa"]] == 0 || options[["priorNu"]] <= 0 || options[["priorSigma2"]] == 0) {
+      if (options[["priorSetup"]] == "priorDefault" || (options[["priorKappa"]] == 0 || options[["priorNu"]] <= 0 || options[["priorSigma2"]] == 0)) {
         xseq <- seq(extraDistr::qlst(0.0001, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma),
           extraDistr::qlst(0.9999, df = result$posterior$nu, mu = result$posterior$mu, sigma = result$posterior$sigma),
           length.out = 1000
@@ -199,7 +226,7 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
     })
 
     if (jaspBase:::isTryError(pTry)) {
-      jf$setError(gettextf("Plotting not possible: %1$s", jaspBase:::.extractErrorMessage(pTry)))
+      fg$setError(gettextf("Plotting not possible: %1$s", jaspBase:::.extractErrorMessage(pTry)))
       return()
     }
 
@@ -215,93 +242,92 @@ auditBayesianEstimation <- function(jaspResults, dataset, options, ...) {
   }
 }
 
-.jfaDirectBayes <- function(y, n, N, mu0 = 0, kappa0 = 0, nu0 = -1, sigma20 = 0, conf.level = 0.95) {
+.jfaDirectBayes <- function(y, n, N, mu_0 = 0, kappa_0 = 0, nu_0 = -1, sigma2_0 = 0, conf.level = 0.95) {
   alpha <- (1 - conf.level) / 2
-  mu_n <- (kappa0 * mu0 + n * mean(y)) / (kappa0 + n)
-  kappa_n <- kappa0 + n
-  nu_n <- nu0 + n
-  sigma2_n <- (1 / nu_n) * (nu0 * sigma20 + (n - 1) * var(y) + (kappa0 * n) / (kappa0 + n) * (mean(y) - mu0)^2)
-  muY <- N * mu_n
-  sigmaY <- sqrt(sigma2_n * (N + N^2 / kappa_n))
-  if (kappa0 == 0 || nu0 == 0) {
-    sigmaYprior <- muYprior <- NULL
+  mu_n <- (kappa_0 * mu_0 + n * mean(y)) / (kappa_0 + n)
+  kappa_n <- kappa_0 + n
+  nu_n <- nu_0 + n
+  sigma2_n <- (1 / nu_n) * (nu_0 * sigma2_0 + (n - 1) * var(y) + (kappa_0 * n) / (kappa_0 + n) * (mean(y) - mu_0)^2)
+  mu_Y <- N * mu_n
+  sigma_Y <- sqrt(sigma2_n * (N + N^2 / kappa_n))
+  if (kappa_0 == 0 || nu_0 == 0) {
+    sigma_Y_prior <- mu_Y_prior <- NULL
   } else {
-    sigmaYprior <- sqrt(sigma20 * (N + N^2 / kappa0))
-    muYprior <- N * mu0
+    sigma_Y_prior <- sqrt(sigma2_0 * (N + N^2 / kappa_0))
+    mu_Y_prior <- N * mu_0
   }
-  lb <- extraDistr::qlst(alpha, df = nu_n, mu = muY, sigma = sigmaY)
-  ub <- extraDistr::qlst(1 - alpha, df = nu_n, mu = muY, sigma = sigmaY)
-  return(list(est = muY, lb = lb, ub = ub, unc = ub - muY, prior = list(nu = nu0, sigma = sigmaYprior, mu = muYprior), posterior = list(nu = nu_n, sigma = sigmaY, mu = muY)))
+  lb <- extraDistr::qlst(alpha, df = nu_n, mu = mu_Y, sigma = sigma_Y)
+  ub <- extraDistr::qlst(1 - alpha, df = nu_n, mu = mu_Y, sigma = sigma_Y)
+  return(list(est = mu_Y, lb = lb, ub = ub, unc = ub - mu_Y, prior = list(nu = nu_0, sigma = sigma_Y_prior, mu = mu_Y_prior), posterior = list(nu = nu_n, sigma = sigma_Y, mu = mu_Y)))
 }
 
-.jfaDifferenceBayes <- function(y, x, n, X, N, mu0 = 0, kappa0 = 0, nu0 = -1, sigma20 = 0, conf.level = 0.95) {
+.jfaDifferenceBayes <- function(y, x, n, X, N, mu_0 = 0, kappa_0 = 0, nu_0 = -1, sigma2_0 = 0, conf.level = 0.95) {
   alpha <- (1 - conf.level) / 2
-  e <- x - y
-  mu_n <- (kappa0 * mu0 + n * mean(e)) / (kappa0 + n)
-  kappa_n <- kappa0 + n
-  nu_n <- nu0 + n
-  sigma2_n <- (1 / nu_n) * (nu0 * sigma20 + (n - 1) * var(e) + (kappa0 * n) / (kappa0 + n) * (mean(e) - mu0)^2)
-  muY <- X - N * mu_n
-  sigmaY <- sqrt(sigma2_n * (N + N^2 / kappa_n))
-  if (kappa0 == 0 || nu0 == 0) {
-    sigmaYprior <- muYprior <- NULL
+  e <- y - x
+  mu_n <- (kappa_0 * mu_0 + n * mean(e)) / (kappa_0 + n)
+  kappa_n <- kappa_0 + n
+  nu_n <- nu_0 + n
+  sigma2_n <- (1 / nu_n) * (nu_0 * sigma2_0 + (n - 1) * var(e) + (kappa_0 * n) / (kappa_0 + n) * (mean(e) - mu_0)^2)
+  mu_Y <- X + N * mu_n
+  sigma_Y <- sqrt(sigma2_n * (N + N^2 / kappa_n))
+  if (kappa_0 == 0 || nu_0 == 0) {
+    sigma_Y_prior <- mu_Y_prior <- NULL
   } else {
-    sigmaYprior <- sqrt(sigma20 * (N + N^2 / kappa0))
-    muYprior <- X - N * mu0
+    sigma_Y_prior <- sqrt(sigma2_0 * (N + N^2 / kappa_0))
+    mu_Y_prior <- X + N * mu_0
   }
-  lb <- extraDistr::qlst(alpha, df = nu_n, mu = muY, sigma = sigmaY)
-  ub <- extraDistr::qlst(1 - alpha, df = nu_n, mu = muY, sigma = sigmaY)
-  return(list(est = muY, lb = lb, ub = ub, unc = ub - muY, prior = list(nu = nu0, sigma = sigmaYprior, mu = muYprior), posterior = list(nu = nu_n, sigma = sigmaY, mu = muY)))
+  lb <- extraDistr::qlst(alpha, df = nu_n, mu = mu_Y, sigma = sigma_Y)
+  ub <- extraDistr::qlst(1 - alpha, df = nu_n, mu = mu_Y, sigma = sigma_Y)
+  return(list(est = mu_Y, lb = lb, ub = ub, unc = ub - mu_Y, prior = list(nu = nu_0, sigma = sigma_Y_prior, mu = mu_Y_prior), posterior = list(nu = nu_n, sigma = sigma_Y, mu = mu_Y)))
 }
 
-.jfaRatioBayes <- function(y, x, n, X, N, mu0 = 0, kappa0 = 0, nu0 = -1, sigma20 = 0, conf.level = 0.95) {
+.jfaRatioBayes <- function(y, x, n, X, N, mu_0 = 0, kappa_0 = 0, nu_0 = -1, sigma2_0 = 0, conf.level = 0.95) {
   alpha <- (1 - conf.level) / 2
   q <- y / x
-  mu_n <- (kappa0 * mu0 + n * mean(q)) / (kappa0 + n)
-  kappa_n <- kappa0 + n
-  nu_n <- nu0 + n
-  sigma2_n <- (1 / nu_n) * (nu0 * sigma20 + (n - 1) * var(q) + (kappa0 * n) / (kappa0 + n) * (mean(q) - mu0)^2)
-  muY <- mu_n * X
-  sigmaY <- sqrt(sigma2_n * (X + X^2 / kappa_n))
-  if (kappa0 == 0 || nu0 == 0) {
-    sigmaYprior <- muYprior <- NULL
+  mu_n <- (kappa_0 * mu_0 + n * mean(q)) / (kappa_0 + n)
+  kappa_n <- kappa_0 + n
+  nu_n <- nu_0 + n
+  sigma2_n <- (1 / nu_n) * (nu_0 * sigma2_0 + (n - 1) * var(q) + (kappa_0 * n) / (kappa_0 + n) * (mean(q) - mu_0)^2)
+  mu_Y <- mu_n * X
+  sigma_Y <- sqrt(sigma2_n * (X + X^2 / kappa_n))
+  if (kappa_0 == 0 || nu_0 == 0) {
+    sigma_Y_prior <- mu_Y_prior <- NULL
   } else {
-    sigmaYprior <- sqrt(sigma20 * (N + N^2 / kappa0))
-    muYprior <- mu0 * X
+    sigma_Y_prior <- sqrt(sigma2_0 * (N + N^2 / kappa_0))
+    mu_Y_prior <- mu_0 * X
   }
-  lb <- extraDistr::qlst(alpha, df = nu_n, mu = muY, sigma = sigmaY)
-  ub <- extraDistr::qlst(1 - alpha, df = nu_n, mu = muY, sigma = sigmaY)
-  return(list(est = muY, lb = lb, ub = ub, unc = ub - muY, prior = list(nu = nu0, sigma = sigmaYprior, mu = muYprior), posterior = list(nu = nu_n, sigma = sigmaY, mu = muY)))
+  lb <- extraDistr::qlst(alpha, df = nu_n, mu = mu_Y, sigma = sigma_Y)
+  ub <- extraDistr::qlst(1 - alpha, df = nu_n, mu = mu_Y, sigma = sigma_Y)
+  return(list(est = mu_Y, lb = lb, ub = ub, unc = ub - mu_Y, prior = list(nu = nu_0, sigma = sigma_Y_prior, mu = mu_Y_prior), posterior = list(nu = nu_n, sigma = sigma_Y, mu = mu_Y)))
 }
 
-.jfaRegressionBayes <- function(y, x, n, X, N, mu0 = c(0, 0), Lambda0 = diag(2) * 0, nu0 = -1, sigma20 = 0, conf.level = 0.95) {
+.jfaRegressionBayes <- function(y, x, n, X, N, mu_0 = c(0, 0), Lambda_0 = diag(2) * 0, nu_0 = -2, sigma2_0 = 0, conf.level = 0.95) {
   alpha <- (1 - conf.level) / 2
   D <- cbind(1, x)
   DtD <- t(D) %*% D
   Dty <- t(D) %*% y
-  if (all(Lambda0 == 0)) {
+  if (all(Lambda_0 == 0)) {
     Lambda_n <- DtD
-    beta_n <- solve(Lambda_n) %*% Dty
+    mu_n <- solve(Lambda_n) %*% Dty
     quad_term <- 0
   } else {
-    Lambda_n <- DtD + Lambda0
-    beta_n <- solve(Lambda_n) %*% (Dty + Lambda0 %*% mu0)
-    beta0 <- solve(Lambda0) %*% (Dty + Lambda0 %*% mu0)
-    quad_term <- t(mu0 - beta_n) %*% Lambda0 %*% (mu0 - beta_n)
+    Lambda_n <- DtD + Lambda_0
+    mu_n <- solve(Lambda_n) %*% (Dty + Lambda_0 %*% mu_0)
+    quad_term <- t(mu0 - mu_n) %*% Lambda0 %*% (mu_0 - nu_n)
   }
-  nu_n <- nu0 + n
-  resid <- y - D %*% beta_n
-  sigma2_n <- (1 / nu_n) * (nu0 * sigma20 + sum(resid^2) + quad_term)
+  nu_n <- nu_0 + n
+  resid <- y - D %*% mu_n
+  sigma2_n <- (1 / nu_n) * (nu_0 * sigma2_0 + sum(resid^2) + quad_term)
   a <- c(N, X)
-  muY <- sum(a * beta_n)
-  sigmaY <- sqrt(sigma2_n * (t(a) %*% solve(Lambda_n) %*% a + 1))
-  if (all(Lambda0 == 0) || nu0 == 0) {
-    sigmaYprior <- muYprior <- NULL
+  mu_Y <- t(a) %*% mu_n
+  sigma_Y <- sqrt(sigma2_n * (t(a) %*% solve(Lambda_n) %*% a + N))
+  if (all(Lambda_0 == 0) || nu_0 == 0) {
+    sigma_Y_prior <- mu_Y_prior <- NULL
   } else {
-    sigmaYprior <- sqrt(sigma20 * (t(a) %*% solve(Lambda0) %*% a + 1))
-    muYprior <- sum(a * beta0)
+    sigma_Y_prior <- sqrt(sigma2_0 * (t(a) %*% solve(Lambda_0) %*% a + 1))
+    mu_Y_prior <- sum(a * beta_0)
   }
-  lb <- extraDistr::qlst(alpha, df = nu_n, mu = muY, sigma = sigmaY)
-  ub <- extraDistr::qlst(1 - alpha, df = nu_n, mu = muY, sigma = sigmaY)
-  return(list(est = muY, lb = lb, ub = ub, unc = ub - muY, prior = list(nu = nu0, sigma = sigmaYprior, mu = muYprior), posterior = list(nu = nu_n, sigma = sigmaY, mu = muY)))
+  lb <- extraDistr::qlst(alpha, df = nu_n, mu = mu_Y, sigma = sigma_Y)
+  ub <- extraDistr::qlst(1 - alpha, df = nu_n, mu = mu_Y, sigma = sigma_Y)
+  return(list(est = mu_Y, lb = lb, ub = ub, unc = ub - mu_Y, prior = list(nu = nu_0, sigma = sigma_Y_prior, mu = mu_Y_prior), posterior = list(nu = nu_n, sigma = sigma_Y, mu = mu_Y)))
 }
