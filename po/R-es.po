@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2026-04-29 05:22\n"
-"PO-Revision-Date: 2026-04-14 10:09+0000\n"
+"PO-Revision-Date: 2026-04-29 19:46+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "es/>\n"
@@ -11,31 +11,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
-#, fuzzy
 msgid "Bayesian Direct Estimator"
-msgstr "Estimador directo"
+msgstr "Estimador directo bayesiano"
 
-#, fuzzy
 msgid "Bayesian Difference Estimator"
-msgstr "Estimador de la diferencia"
+msgstr "Estimador bayesiano de la diferencia"
 
-#, fuzzy
 msgid "Bayesian Ratio Estimator"
-msgstr "Estimador de la proporción"
+msgstr "Estimador bayesiano de la proporción"
 
-#, fuzzy
 msgid "Bayesian Regression Estimator"
-msgstr "Estimador de la regresión"
+msgstr "Estimador bayesiano de la regresión"
 
-#, fuzzy
 msgid "%1$s%% Credible interval"
-msgstr "Intervalo con %1$s%% de Confianza"
+msgstr "Intervalo con %1$s%% de Credibilidad"
 
-#, fuzzy
 msgid "Posterior mode"
-msgstr "Posterior"
+msgstr "Moda posterior"
 
 msgid "Precision"
 msgstr "Precisión"
@@ -70,23 +64,21 @@ msgstr ""
 msgid "Prior and Posterior Distribution"
 msgstr "Distribución previa y posterior"
 
-#, fuzzy
 msgid "True population value"
-msgstr "%% del valor poblacional"
+msgstr "Valor verdadero poblacional"
 
 msgid "Density"
 msgstr "Densidad"
 
 msgid "Plotting not possible: %1$s"
-msgstr ""
+msgstr "No es posible hacer el gráfico: %1$s"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The prior and posterior distribution for the true "
 "population value."
 msgstr ""
-"<b>Figura %1$i.</b> La distribución previa y posterior (%2$s) sobre la "
-"inexactitud en la población."
+"<b>Figura %1$i.</b> La distribución previa y posterior para el valor "
+"verdadero poblacional."
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Procedimiento</u>"
@@ -641,7 +633,7 @@ msgstr ""
 "                                %9$s"
 
 msgid "Required Sample Size"
-msgstr "Tamaño de Muestra Requerido"
+msgstr "Tamaño de muestra requerido"
 
 msgid "Achieved precision"
 msgstr "Precisión alcanzada"
@@ -667,7 +659,6 @@ msgstr "Valor contable"
 msgid "Audit value"
 msgstr "Valor de auditoría"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
 "their audit values. Red dots indicate observations that did not match their "
@@ -685,7 +676,7 @@ msgstr ""
 "contables se sobreestiman. Si estos puntos rojos están en la parte de arriba "
 "del gráfico, se subestiman. El valor <i>r</i> es el coeficiente de "
 "correlación de Pearson de los valores contables y los valores de auditoría, "
-"un indicador del grado de relación lineal entre las dos variables."
+"un indicador de la fuerza de la relación lineal entre las dos variables."
 
 msgid "Specificity"
 msgstr "Especificidad"
