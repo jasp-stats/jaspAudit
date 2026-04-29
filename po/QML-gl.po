@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2026-04-29 19:46+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/jaspaudit-"
+"qml/gl/>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
 "X-Qt-Contexts: true\n"
@@ -234,7 +240,7 @@ msgstr "Estimador da diferenza"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Ratio estimator"
-msgstr "Estimador do cociente"
+msgstr "Estimador da proporción"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Regression estimator"
@@ -330,7 +336,7 @@ msgstr "Estimador da diferenza"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Ratio estimator"
-msgstr "Estimador do cociente"
+msgstr "Estimador da proporción"
 
 msgctxt "auditClassicalWorkflow|"
 msgid "Regression estimator"
@@ -3472,83 +3478,80 @@ msgstr "Valor de auditoría (requirido)"
 
 msgctxt "Description|"
 msgid "Bayesian True Value Estimation"
-msgstr ""
+msgstr "Estimación do valor verdadeiro baiesiano"
 
 msgctxt "auditBayesianEstimation|"
 msgid ""
 "The Bayesian estimation analysis allows the user to estimate the true value "
 "of a population on the basis of a sample."
 msgstr ""
+"A análise de estimación baiesiana permite ao usuario estimar o valor "
+"vardadeiro dunha poboación en base a unha mostra."
 
-#, fuzzy
 msgctxt "auditBayesianEstimation|"
 msgid "Prior"
 msgstr "Previo"
 
 msgctxt "auditBayesianEstimation|"
 msgid "Default parameters"
-msgstr ""
+msgstr "Parámetros predeterminados"
 
 msgctxt "auditBayesianEstimation|"
 msgid "Whether to use the default prior parameters"
-msgstr ""
+msgstr "Se se utilizan parámetros previos predeterminados"
 
 msgctxt "auditBayesianEstimation|"
 msgid "Custom parameters"
-msgstr ""
+msgstr "Parámetros personalizados"
 
 msgctxt "auditBayesianEstimation|"
 msgid "Whether to use custom prior parameters"
-msgstr ""
+msgstr "Se se utilizan parámetros previos personalizados"
 
 msgctxt "auditBayesianEstimation|"
 msgid "Prior mean μ"
-msgstr ""
+msgstr "Media previa μ"
 
 msgctxt "auditBayesianEstimation|"
 msgid "The prior parameter for the mean."
-msgstr ""
+msgstr "O parámetro previo da media."
 
 msgctxt "auditBayesianEstimation|"
 msgid "Prior mean weight κ"
-msgstr ""
+msgstr "Ponderación da media previa κ"
 
 msgctxt "auditBayesianEstimation|"
 msgid "The prior parameter for the implicit sample size of the mean."
-msgstr ""
+msgstr "O parámetro previo para o tamaño implícito mostral da media."
 
 msgctxt "auditBayesianEstimation|"
 msgid "Prior variance σ2"
-msgstr ""
+msgstr "Varianza previa σ2"
 
 msgctxt "auditBayesianEstimation|"
 msgid "The prior parameter for the variance."
-msgstr ""
+msgstr "O parámetro previo da varianza."
 
 msgctxt "auditBayesianEstimation|"
 msgid "Prior variance weight ν"
-msgstr ""
+msgstr "Ponderación da varianza previa ν"
 
 msgctxt "auditBayesianEstimation|"
 msgid "The prior parameter for the implicit sample size of the variance."
-msgstr ""
+msgstr "O parámetro previo para o tamaño implícito mostral da varianza."
 
-#, fuzzy
 msgctxt "auditBayesianEstimation|"
 msgid "Report"
 msgstr "Informe"
 
-#, fuzzy
 msgctxt "auditBayesianEstimation|"
 msgid "Plots"
 msgstr "Gráficas"
 
-#, fuzzy
 msgctxt "auditBayesianEstimation|"
 msgid "Add additional figures about the analysis to the report."
 msgstr "Engadir imaxes adicionais sobre a análise, ao informe."
 
-#, fuzzy
 msgctxt "auditBayesianEstimation|"
 msgid "Prior and posterior"
 msgstr "Previa e posterior"
@@ -3558,13 +3561,13 @@ msgid ""
 "Produces a figure showing the prior and posterior distributions for the true "
 "population value."
 msgstr ""
+"Xera unha imaxe que amosa as distribucións previa e posterior para o valor "
+"verdadeiro poboacional."
 
-#, fuzzy
 msgctxt "Confidence|"
 msgid "Confidence"
 msgstr "Confianza"
 
-#, fuzzy
 msgctxt "Confidence|"
 msgid ""
 "The confidence level used. The confidence level is the complement of the "
@@ -3577,59 +3580,51 @@ msgstr ""
 "proporcionar un xuízo incorrecto sobre a poboación. Por exemplo, se desexas "
 "utilizar un risco de auditoría do 5%, isto equivale a unha confianza do 95%."
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "Method"
 msgstr "Método"
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "The type of method used to estimate the true value of the population."
 msgstr ""
 "O tipo de método utilizado para estimar o valor verdadeiro da poboación."
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "Direct estimator"
 msgstr "Estimador directo"
 
 msgctxt "Estimator|"
 msgid "The Bayesian direct estimator."
-msgstr ""
+msgstr "O estimador directo baiesiano."
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "Difference estimator"
 msgstr "Estimador da diferenza"
 
 msgctxt "Estimator|"
 msgid "The Bayesian difference estimator."
-msgstr ""
+msgstr "O estimador baiesiano da diferenza."
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "Ratio estimator"
-msgstr "Estimador do cociente"
+msgstr "Estimador da proporción"
 
 msgctxt "Estimator|"
 msgid "The Bayesian ratio estimator."
-msgstr ""
+msgstr "O estimador baiesiano da proporción."
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "Regression estimator"
 msgstr "Estimador da regresión"
 
 msgctxt "Estimator|"
 msgid "The Bayesian regression estimator."
-msgstr ""
+msgstr "O estimador baiesiano da regresión."
 
-#, fuzzy
 msgctxt "Samplesize|"
 msgid "Required sample size"
 msgstr "Tamaño de mostra requirido"
 
-#, fuzzy
 msgctxt "Samplesize|"
 msgid ""
 "Produces a table showing the required sample size to achive a desired "
@@ -3638,22 +3633,18 @@ msgstr ""
 "Produce unha táboa que amosa o tamaño de mostra necesario para acadar unha "
 "precisión desexada."
 
-#, fuzzy
 msgctxt "Samplesize|"
 msgid "Precision"
 msgstr "Precisión"
 
-#, fuzzy
 msgctxt "Samplesize|"
 msgid "The value of the precision."
-msgstr "Valor da precisión."
+msgstr "O valor da precisión."
 
-#, fuzzy
 msgctxt "Scatterplot|"
 msgid "Scatter plot"
 msgstr "Gráfica de dispersión"
 
-#, fuzzy
 msgctxt "Scatterplot|"
 msgid ""
 "Produces a scatter plot comparing the book values in the sample against "
@@ -3664,12 +3655,10 @@ msgstr ""
 "mostra, cos seus valores auditados. Os elementos para os que non coinciden "
 "eses dous valores se colorean de vermello."
 
-#, fuzzy
 msgctxt "VariablesFormEstimation|"
 msgid "Book Value"
 msgstr "Valor Contable"
 
-#, fuzzy
 msgctxt "VariablesFormEstimation|"
 msgid ""
 "A numeric variable that contains the book (recorded) values of the items in "
@@ -3678,12 +3667,10 @@ msgstr ""
 "Unha variable numérica que contén os valores contables (rexistrados) dos "
 "elementos da poboación."
 
-#, fuzzy
 msgctxt "VariablesFormEstimation|"
 msgid "Audit Value"
 msgstr "Valor de auditoría"
 
-#, fuzzy
 msgctxt "VariablesFormEstimation|"
 msgid ""
 "A numeric variable that contains the audited (true) values of the items in "
