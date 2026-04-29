@@ -126,15 +126,7 @@ msgid "Plots"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
-msgid "Confidence"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
 msgid "Tables"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Required sample size"
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
@@ -269,22 +261,6 @@ msgctxt "Description|"
 msgid "True Value Estimation"
 msgstr ""
 
-msgctxt "auditClassicalEstimation|"
-msgid "Direct estimator"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Difference estimator"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Ratio estimator"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Regression estimator"
-msgstr ""
-
 msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
 msgstr ""
@@ -415,34 +391,6 @@ msgstr ""
 
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Observed vs. expected"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Display"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Explanatory text"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "No. items"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "No. units"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Method"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Scatter plot"
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
@@ -686,71 +634,6 @@ msgid ""
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
-msgid ""
-"A numeric variable that contains the book (recorded) values of the items in "
-"the population."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"A numeric variable that contains the audited (true) values of the items in "
-"the population."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Population (required)"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "The total number of items (rows) in the population."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"The total number of units in the population. Note that the units can be "
-"items (rows) or monetary units (values) depending on the audit question."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "The type of method used to estimate the true value of the population."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "The direct estimator."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "The difference estimator."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "The ratio estimator."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "The regression estimator."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"Specify options that have an effect on the look and feel of the audit report."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"When checked, enables explanatory text in the analysis to help interpret the "
-"procedure and the statistical results."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"The confidence level used. The confidence level is the complement of the "
-"audit risk: the risk that the user is willing to take to give an incorrect "
-"judgment about the population. For example, if you want to use an audit risk "
-"of 5%, this equals 95% confidence."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
 msgid "Report"
 msgstr ""
 
@@ -759,24 +642,7 @@ msgid "Add additional tables about the analysis to the report."
 msgstr ""
 
 msgctxt "auditClassicalEstimation|"
-msgid ""
-"Produces a table showing the required sample size to achive a desired "
-"precision."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "The value of the precision."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
 msgid "Add additional figures about the analysis to the report."
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"Produces a scatter plot comparing the book values in the sample against "
-"their audit values. Items for which these two values do not match are "
-"colored in red."
 msgstr ""
 
 msgctxt "auditClassicalEvaluation|"
@@ -3105,18 +2971,191 @@ msgid ""
 "Produces the expected counts of the digits under the reference distribution."
 msgstr ""
 
-msgctxt "auditClassicalEstimation|"
-msgid "Book Value"
-msgstr ""
-
-msgctxt "auditClassicalEstimation|"
-msgid "Audit Value"
-msgstr ""
-
 msgctxt "AuditVariable|"
 msgid "Audit Value (required)"
 msgstr ""
 
-msgctxt "auditClassicalEstimation|"
+msgctxt "Description|"
+msgid "Bayesian True Value Estimation"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid ""
+"The Bayesian estimation analysis allows the user to estimate the true value "
+"of a population on the basis of a sample."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Default parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Whether to use the default prior parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Custom parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Whether to use custom prior parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior mean μ"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the mean."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior mean weight κ"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the implicit sample size of the mean."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior variance σ2"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the variance."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior variance weight ν"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the implicit sample size of the variance."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Report"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Add additional figures about the analysis to the report."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior and posterior"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid ""
+"Produces a figure showing the prior and posterior distributions for the true "
+"population value."
+msgstr ""
+
+msgctxt "Confidence|"
+msgid "Confidence"
+msgstr ""
+
+msgctxt "Confidence|"
+msgid ""
+"The confidence level used. The confidence level is the complement of the "
+"audit risk: the risk that the user is willing to take to give an incorrect "
+"judgment about the population. For example, if you want to use an audit risk "
+"of 5%, this equals 95% confidence."
+msgstr ""
+
+msgctxt "Estimator|"
+msgid "Method"
+msgstr ""
+
+msgctxt "Estimator|"
+msgid "The type of method used to estimate the true value of the population."
+msgstr ""
+
+msgctxt "Estimator|"
+msgid "Direct estimator"
+msgstr ""
+
+msgctxt "Estimator|"
+msgid "The Bayesian direct estimator."
+msgstr ""
+
+msgctxt "Estimator|"
+msgid "Difference estimator"
+msgstr ""
+
+msgctxt "Estimator|"
+msgid "The Bayesian difference estimator."
+msgstr ""
+
+msgctxt "Estimator|"
+msgid "Ratio estimator"
+msgstr ""
+
+msgctxt "Estimator|"
+msgid "The Bayesian ratio estimator."
+msgstr ""
+
+msgctxt "Estimator|"
+msgid "Regression estimator"
+msgstr ""
+
+msgctxt "Estimator|"
+msgid "The Bayesian regression estimator."
+msgstr ""
+
+msgctxt "Samplesize|"
+msgid "Required sample size"
+msgstr ""
+
+msgctxt "Samplesize|"
+msgid ""
+"Produces a table showing the required sample size to achive a desired "
+"precision."
+msgstr ""
+
+msgctxt "Samplesize|"
 msgid "Precision"
+msgstr ""
+
+msgctxt "Samplesize|"
+msgid "The value of the precision."
+msgstr ""
+
+msgctxt "Scatterplot|"
+msgid "Scatter plot"
+msgstr ""
+
+msgctxt "Scatterplot|"
+msgid ""
+"Produces a scatter plot comparing the book values in the sample against "
+"their audit values. Items for which these two values do not match are "
+"colored in red."
+msgstr ""
+
+msgctxt "VariablesFormEstimation|"
+msgid "Book Value"
+msgstr ""
+
+msgctxt "VariablesFormEstimation|"
+msgid ""
+"A numeric variable that contains the book (recorded) values of the items in "
+"the population."
+msgstr ""
+
+msgctxt "VariablesFormEstimation|"
+msgid "Audit Value"
+msgstr ""
+
+msgctxt "VariablesFormEstimation|"
+msgid ""
+"A numeric variable that contains the audited (true) values of the items in "
+"the population."
 msgstr ""

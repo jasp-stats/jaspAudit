@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.1\n"
-"POT-Creation-Date: 2025-04-23 07:45\n"
+"POT-Creation-Date: 2026-04-29 05:22\n"
 "PO-Revision-Date: 2026-04-12 22:14+0000\n"
 "Last-Translator: 陳正昌 <chencc99@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -12,6 +12,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.17-dev\n"
+
+#, fuzzy
+msgid "Bayesian Direct Estimator"
+msgstr "估計式"
+
+#, fuzzy
+msgid "Bayesian Difference Estimator"
+msgstr "估計式"
+
+#, fuzzy
+msgid "Bayesian Ratio Estimator"
+msgstr "估計式"
+
+#, fuzzy
+msgid "Bayesian Regression Estimator"
+msgstr "估計式"
+
+msgid "%1$s%% Credible interval"
+msgstr ""
+
+#, fuzzy
+msgid "Posterior mode"
+msgstr "後驗"
+
+msgid "Precision"
+msgstr ""
+
+msgid "Lower"
+msgstr "下界"
+
+msgid "Upper"
+msgstr "上界"
+
+msgid "Please specify the population size and your audit values."
+msgstr ""
+
+msgid ""
+"Please specify the population size, population value and your sample "
+"variables."
+msgstr ""
+
+msgid "<b>Warning.</b>"
+msgstr ""
+
+msgid ""
+"The number of items in the population is lower than the number of items in "
+"the sample."
+msgstr ""
+
+msgid "Prior and Posterior Distribution"
+msgstr ""
+
+msgid "True population value"
+msgstr ""
+
+msgid "Density"
+msgstr ""
+
+msgid "Plotting not possible: %1$s"
+msgstr ""
+
+msgid ""
+"<b>Figure %1$i.</b> The prior and posterior distribution for the true "
+"population value."
+msgstr ""
 
 msgid "<u>Procedure</u>"
 msgstr ""
@@ -162,12 +227,6 @@ msgstr ""
 msgid "%1$s%% Confidence Interval"
 msgstr ""
 
-msgid "Lower"
-msgstr "下界"
-
-msgid "Upper"
-msgstr "上界"
-
 msgid "Expected count"
 msgstr ""
 
@@ -206,9 +265,6 @@ msgid "Value"
 msgstr "值"
 
 msgid "The requested digit must be between 1 - 9."
-msgstr ""
-
-msgid "<b>Warning.</b>"
 msgstr ""
 
 msgid "The requested digit must be between 10 - 99."
@@ -303,28 +359,12 @@ msgstr "估計式"
 msgid "Point estimate"
 msgstr ""
 
-msgid "Precision"
-msgstr ""
-
 msgid "%1$s%% Confidence interval"
-msgstr ""
-
-msgid "Please specify the population size and your audit values."
-msgstr ""
-
-msgid ""
-"Please specify the population size, population value and your sample "
-"variables."
 msgstr ""
 
 msgid ""
 "The displayed numbers are exact and may differ slightly from the rounded "
 "numbers in the explanatory text."
-msgstr ""
-
-msgid ""
-"The number of items in the population is lower than the number of items in "
-"the sample."
 msgstr ""
 
 msgid "<u>Calculations</u>"
@@ -499,8 +539,8 @@ msgid "Audit value"
 msgstr ""
 
 msgid ""
-"<b>Figure 1.</b> Scatter plot of the book values in the selection and their "
-"audit values. Red dots indicate observations that did not match their "
+"<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
+"their audit values. Red dots indicate observations that did not match their "
 "original book value. If these red dots lie in the bottom part of the graph, "
 "the book values are overstated. If these red dots lie in the upper part of "
 "the graph, they are understated. The value <i>r</i> is the Pearson "
@@ -2066,9 +2106,6 @@ msgstr ""
 
 msgid "Prior Distribution"
 msgstr "先驗分配"
-
-msgid "Prior and Posterior Distribution"
-msgstr ""
 
 msgid ""
 "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on "

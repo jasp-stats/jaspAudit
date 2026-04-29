@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-23 07:45\n"
+"POT-Creation-Date: 2026-04-29 05:22\n"
 "PO-Revision-Date: 2025-04-23 10:14+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -13,6 +13,79 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
 "X-Generator: Weblate 5.11.1-dev\n"
+
+#, fuzzy
+msgid "Bayesian Direct Estimator"
+msgstr "Directe Schatter"
+
+#, fuzzy
+msgid "Bayesian Difference Estimator"
+msgstr "Verschilschatter"
+
+#, fuzzy
+msgid "Bayesian Ratio Estimator"
+msgstr "Quotiëntschatter"
+
+#, fuzzy
+msgid "Bayesian Regression Estimator"
+msgstr "Regressieschatter"
+
+#, fuzzy
+msgid "%1$s%% Credible interval"
+msgstr "%1$s%% Betrouwbaarheidsinterval"
+
+#, fuzzy
+msgid "Posterior mode"
+msgstr "Posterior"
+
+msgid "Precision"
+msgstr "Onnauwkeurigheid"
+
+msgid "Lower"
+msgstr "Onder"
+
+msgid "Upper"
+msgstr "Boven"
+
+msgid "Please specify the population size and your audit values."
+msgstr "Specificeer a.u.b. de populatiegrootte en uw auditwaarden."
+
+msgid ""
+"Please specify the population size, population value and your sample "
+"variables."
+msgstr ""
+"Specificeer a.u.b. de populatiegrootte, de populatiewaarde en uw variabelen."
+
+msgid "<b>Warning.</b>"
+msgstr "<b>Waarschuwing.</b>"
+
+msgid ""
+"The number of items in the population is lower than the number of items in "
+"the sample."
+msgstr ""
+"Het aantal posten in de populatie is lager dan het aantal posten in de "
+"steekproef."
+
+msgid "Prior and Posterior Distribution"
+msgstr "Prior- en Posterior-verdeling"
+
+#, fuzzy
+msgid "True population value"
+msgstr "%% van de populatiewaarde"
+
+msgid "Density"
+msgstr "Dichtheid"
+
+msgid "Plotting not possible: %1$s"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"<b>Figure %1$i.</b> The prior and posterior distribution for the true "
+"population value."
+msgstr ""
+"<b>Figuur %1$i.</b> De prior- en posterior-verdeling (%2$s) voor de fout in "
+"de populatie."
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Procedure</u>"
@@ -199,12 +272,6 @@ msgstr "Relatieve frequentie"
 msgid "%1$s%% Confidence Interval"
 msgstr "%1$s%% Betrouwbaarheidsinterval"
 
-msgid "Lower"
-msgstr "Onder"
-
-msgid "Upper"
-msgstr "Boven"
-
 msgid "Expected count"
 msgstr "Verwacht aantal"
 
@@ -250,9 +317,6 @@ msgstr "Waarde"
 
 msgid "The requested digit must be between 1 - 9."
 msgstr "Het opgevraagde cijfer moet tussen 1 - 9 liggen."
-
-msgid "<b>Warning.</b>"
-msgstr "<b>Waarschuwing.</b>"
 
 msgid "The requested digit must be between 10 - 99."
 msgstr "Het opgevraagde cijfer moet tussen 10 - 99 liggen."
@@ -365,20 +429,8 @@ msgstr "Regressieschatter"
 msgid "Point estimate"
 msgstr "Puntschatting"
 
-msgid "Precision"
-msgstr "Onnauwkeurigheid"
-
 msgid "%1$s%% Confidence interval"
 msgstr "%1$s%% Betrouwbaarheidsinterval"
-
-msgid "Please specify the population size and your audit values."
-msgstr "Specificeer a.u.b. de populatiegrootte en uw auditwaarden."
-
-msgid ""
-"Please specify the population size, population value and your sample "
-"variables."
-msgstr ""
-"Specificeer a.u.b. de populatiegrootte, de populatiewaarde en uw variabelen."
 
 msgid ""
 "The displayed numbers are exact and may differ slightly from the rounded "
@@ -386,13 +438,6 @@ msgid ""
 msgstr ""
 "De weergegeven getallen zijn exacte getallen en kunnen enigszins afwijken "
 "van de afgeronde getallen in de toelichtende tekst."
-
-msgid ""
-"The number of items in the population is lower than the number of items in "
-"the sample."
-msgstr ""
-"Het aantal posten in de populatie is lager dan het aantal posten in de "
-"steekproef."
 
 msgid "<u>Calculations</u>"
 msgstr "<u>Berekeningen</u>"
@@ -611,9 +656,10 @@ msgstr "Boekwaardes"
 msgid "Audit value"
 msgstr "Auditwaardes"
 
+#, fuzzy
 msgid ""
-"<b>Figure 1.</b> Scatter plot of the book values in the selection and their "
-"audit values. Red dots indicate observations that did not match their "
+"<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
+"their audit values. Red dots indicate observations that did not match their "
 "original book value. If these red dots lie in the bottom part of the graph, "
 "the book values are overstated. If these red dots lie in the upper part of "
 "the graph, they are understated. The value <i>r</i> is the Pearson "
@@ -2784,9 +2830,6 @@ msgstr "Prior- en Verwachte Posterior-verdeling"
 msgid "Prior Distribution"
 msgstr "Prior-verdeling"
 
-msgid "Prior and Posterior Distribution"
-msgstr "Prior- en Posterior-verdeling"
-
 msgid ""
 "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on "
 "the population misstatement θ. The prior parameters (%3$s = %4$s, %5$s = "
@@ -3029,9 +3072,6 @@ msgstr ""
 
 #~ msgid "Unseen population misstatement %1$s"
 #~ msgstr "Ongeziene fout in de populatie (%1$s)"
-
-#~ msgid "Density"
-#~ msgstr "Dichtheid"
 
 #~ msgid "Population errors"
 #~ msgstr "Populatiefouten"

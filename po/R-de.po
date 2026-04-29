@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-23 07:45\n"
+"POT-Creation-Date: 2026-04-29 05:22\n"
 "PO-Revision-Date: 2025-09-22 14:01+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -13,6 +13,81 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
 "X-Generator: Weblate 5.14-dev\n"
+
+#, fuzzy
+msgid "Bayesian Direct Estimator"
+msgstr "Direkter Schätzer"
+
+#, fuzzy
+msgid "Bayesian Difference Estimator"
+msgstr "Differenzschätzer"
+
+#, fuzzy
+msgid "Bayesian Ratio Estimator"
+msgstr "Quotient-Schätzer"
+
+#, fuzzy
+msgid "Bayesian Regression Estimator"
+msgstr "Regressionsschätzer"
+
+#, fuzzy
+msgid "%1$s%% Credible interval"
+msgstr "%1$s%% Konfidenzintervall"
+
+#, fuzzy
+msgid "Posterior mode"
+msgstr "Posterior"
+
+msgid "Precision"
+msgstr "Genauigkeit"
+
+msgid "Lower"
+msgstr "Untergrenze"
+
+msgid "Upper"
+msgstr "Obergrenze"
+
+msgid "Please specify the population size and your audit values."
+msgstr ""
+"Bitte spezifizieren Sie die Größe der Grundgesamtheit und Ihre Auditwerte."
+
+msgid ""
+"Please specify the population size, population value and your sample "
+"variables."
+msgstr ""
+"Bitte spezifizieren Sie die Größe und Wert der Grundgesamtheit und Ihre "
+"Stichproben-Variablen."
+
+msgid "<b>Warning.</b>"
+msgstr "<b>Warnung.</b>"
+
+msgid ""
+"The number of items in the population is lower than the number of items in "
+"the sample."
+msgstr ""
+"Die Anzahl der Posten in der Grundgesamtheit ist geringer als die Anzahl der "
+"Posten in der Stichprobe."
+
+msgid "Prior and Posterior Distribution"
+msgstr "Prior- und Posterior-Verteilung"
+
+#, fuzzy
+msgid "True population value"
+msgstr "%% des Werts der Grundgesamtheit"
+
+msgid "Density"
+msgstr "Dichte"
+
+msgid "Plotting not possible: %1$s"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"<b>Figure %1$i.</b> The prior and posterior distribution for the true "
+"population value."
+msgstr ""
+"<b>Abbildung %1$i.</b> Die Prior- und Posterior-Verteilung (%2$s) für die "
+"Falschangabe in der Grundgesamtheit."
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Prozedur</u>"
@@ -203,12 +278,6 @@ msgstr "Relative Häufigkeit"
 msgid "%1$s%% Confidence Interval"
 msgstr "%1$s%% Konfidenzintervall"
 
-msgid "Lower"
-msgstr "Untergrenze"
-
-msgid "Upper"
-msgstr "Obergrenze"
-
 msgid "Expected count"
 msgstr "Erwartete Anzahl"
 
@@ -252,9 +321,6 @@ msgstr "Wert"
 
 msgid "The requested digit must be between 1 - 9."
 msgstr "Die gewünschte Ziffer muss zwischen 1 und 9 liegen."
-
-msgid "<b>Warning.</b>"
-msgstr "<b>Warnung.</b>"
 
 msgid "The requested digit must be between 10 - 99."
 msgstr "Die gewünschte Ziffer muss zwischen 10 und 99 liegen."
@@ -367,22 +433,8 @@ msgstr "Regressionsschätzer"
 msgid "Point estimate"
 msgstr "Punktschätzer"
 
-msgid "Precision"
-msgstr "Genauigkeit"
-
 msgid "%1$s%% Confidence interval"
 msgstr "%1$s%% Konfidenzintervall"
-
-msgid "Please specify the population size and your audit values."
-msgstr ""
-"Bitte spezifizieren Sie die Größe der Grundgesamtheit und Ihre Auditwerte."
-
-msgid ""
-"Please specify the population size, population value and your sample "
-"variables."
-msgstr ""
-"Bitte spezifizieren Sie die Größe und Wert der Grundgesamtheit und Ihre "
-"Stichproben-Variablen."
 
 msgid ""
 "The displayed numbers are exact and may differ slightly from the rounded "
@@ -390,13 +442,6 @@ msgid ""
 msgstr ""
 "Die angezeigten Zahlen sind exakt und können sich geringfügig von den "
 "gerundeten Zahlen im Erklärungstext unterscheiden."
-
-msgid ""
-"The number of items in the population is lower than the number of items in "
-"the sample."
-msgstr ""
-"Die Anzahl der Posten in der Grundgesamtheit ist geringer als die Anzahl der "
-"Posten in der Stichprobe."
 
 msgid "<u>Calculations</u>"
 msgstr "<u>Berechnungen</u>"
@@ -618,9 +663,10 @@ msgstr "Buchwert"
 msgid "Audit value"
 msgstr "Auditwert"
 
+#, fuzzy
 msgid ""
-"<b>Figure 1.</b> Scatter plot of the book values in the selection and their "
-"audit values. Red dots indicate observations that did not match their "
+"<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
+"their audit values. Red dots indicate observations that did not match their "
 "original book value. If these red dots lie in the bottom part of the graph, "
 "the book values are overstated. If these red dots lie in the upper part of "
 "the graph, they are understated. The value <i>r</i> is the Pearson "
@@ -969,8 +1015,8 @@ msgid ""
 "The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s "
 "and %4$s across protected groups %5$s. %6$s"
 msgstr ""
-"Die <i>p</i>-Werte sind %1$s und %2$s und die Nullhypothese von gleichen %3$"
-"s und %4$s über geschützte Gruppen %5$s. %6$s"
+"Die <i>p</i>-Werte sind %1$s und %2$s und die Nullhypothese von gleichen "
+"%3$s und %4$s über geschützte Gruppen %5$s. %6$s"
 
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across "
@@ -2602,9 +2648,6 @@ msgstr "Prior- und erwartete Posterior-Verteilung"
 msgid "Prior Distribution"
 msgstr "Prior-Verteilung"
 
-msgid "Prior and Posterior Distribution"
-msgstr "Prior- und Posterior-Verteilung"
-
 msgid ""
 "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on "
 "the population misstatement θ. The prior parameters (%3$s = %4$s, %5$s = "
@@ -2835,9 +2878,6 @@ msgstr ""
 
 #~ msgid "Unseen population misstatement %1$s"
 #~ msgstr "Unbeobachtete Falschangabe der Grundgesamtheit %1$s"
-
-#~ msgid "Density"
-#~ msgstr "Dichte"
 
 #~ msgid "Population errors"
 #~ msgstr "Fehler in der Grundgesamtheit"

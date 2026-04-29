@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.16.3\n"
-"POT-Creation-Date: 2025-04-23 07:45\n"
+"POT-Creation-Date: 2026-04-29 05:22\n"
 "PO-Revision-Date: 2024-06-30 10:00+0000\n"
 "Last-Translator: Marco Capozzi <giammarcous@yahoo.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -12,6 +12,76 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.7-dev\n"
+
+#, fuzzy
+msgid "Bayesian Direct Estimator"
+msgstr "Stimatore diretto"
+
+#, fuzzy
+msgid "Bayesian Difference Estimator"
+msgstr "Stimatore della differenza"
+
+#, fuzzy
+msgid "Bayesian Ratio Estimator"
+msgstr "Stimatore del rapporto"
+
+#, fuzzy
+msgid "Bayesian Regression Estimator"
+msgstr "Stimatore di regressione"
+
+#, fuzzy
+msgid "%1$s%% Credible interval"
+msgstr "Intervallo di confidenza del %1$s%%"
+
+msgid "Posterior mode"
+msgstr ""
+
+msgid "Precision"
+msgstr "Precisione"
+
+msgid "Lower"
+msgstr "Inferiore"
+
+msgid "Upper"
+msgstr "Superiore"
+
+msgid "Please specify the population size and your audit values."
+msgstr ""
+
+msgid ""
+"Please specify the population size, population value and your sample "
+"variables."
+msgstr ""
+"Per favore, specifica la dimensione della popolazione, il valore della "
+"popolazione e le variabili del tuo campione."
+
+msgid "<b>Warning.</b>"
+msgstr "<b>Avviso.</b>"
+
+msgid ""
+"The number of items in the population is lower than the number of items in "
+"the sample."
+msgstr ""
+"Il numero di elementi nella popolazione è inferiore al numero di elementi "
+"nel campione."
+
+msgid "Prior and Posterior Distribution"
+msgstr ""
+
+#, fuzzy
+msgid "True population value"
+msgstr "Tasso di Veri positivi"
+
+msgid "Density"
+msgstr ""
+
+msgid "Plotting not possible: %1$s"
+msgstr ""
+
+msgid ""
+"<b>Figure %1$i.</b> The prior and posterior distribution for the true "
+"population value."
+msgstr ""
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Procedimento</u>"
@@ -201,12 +271,6 @@ msgstr "Frequenza relativa"
 msgid "%1$s%% Confidence Interval"
 msgstr "Intervallo di confidenza del %1$s%%"
 
-msgid "Lower"
-msgstr "Inferiore"
-
-msgid "Upper"
-msgstr "Superiore"
-
 msgid "Expected count"
 msgstr ""
 
@@ -250,9 +314,6 @@ msgstr "Valore"
 
 msgid "The requested digit must be between 1 - 9."
 msgstr "La cifra richiesta deve essere compresa tra 1 - 9."
-
-msgid "<b>Warning.</b>"
-msgstr "<b>Avviso.</b>"
 
 msgid "The requested digit must be between 10 - 99."
 msgstr "La cifra richiesta deve essere compresa tra 10 - 99."
@@ -364,33 +425,13 @@ msgstr "Stimatore di regressione"
 msgid "Point estimate"
 msgstr "Stimatore diretto"
 
-msgid "Precision"
-msgstr "Precisione"
-
 msgid "%1$s%% Confidence interval"
 msgstr "Intervallo di confidenza del %1$s%%"
-
-msgid "Please specify the population size and your audit values."
-msgstr ""
-
-msgid ""
-"Please specify the population size, population value and your sample "
-"variables."
-msgstr ""
-"Per favore, specifica la dimensione della popolazione, il valore della "
-"popolazione e le variabili del tuo campione."
 
 msgid ""
 "The displayed numbers are exact and may differ slightly from the rounded "
 "numbers in the explanatory text."
 msgstr ""
-
-msgid ""
-"The number of items in the population is lower than the number of items in "
-"the sample."
-msgstr ""
-"Il numero di elementi nella popolazione è inferiore al numero di elementi "
-"nel campione."
 
 msgid "<u>Calculations</u>"
 msgstr "<u>Calcoli</u>"
@@ -581,8 +622,8 @@ msgid "Audit value"
 msgstr ""
 
 msgid ""
-"<b>Figure 1.</b> Scatter plot of the book values in the selection and their "
-"audit values. Red dots indicate observations that did not match their "
+"<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
+"their audit values. Red dots indicate observations that did not match their "
 "original book value. If these red dots lie in the bottom part of the graph, "
 "the book values are overstated. If these red dots lie in the upper part of "
 "the graph, they are understated. The value <i>r</i> is the Pearson "
@@ -2190,9 +2231,6 @@ msgid "Prior and Expected Posterior Distribution"
 msgstr ""
 
 msgid "Prior Distribution"
-msgstr ""
-
-msgid "Prior and Posterior Distribution"
 msgstr ""
 
 msgid ""

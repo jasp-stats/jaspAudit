@@ -129,16 +129,8 @@ msgid "Plots"
 msgstr "Figuren"
 
 msgctxt "auditClassicalEstimation|"
-msgid "Confidence"
-msgstr "Betrouwbaarheid"
-
-msgctxt "auditClassicalEstimation|"
 msgid "Tables"
 msgstr "Tabellen"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Required sample size"
-msgstr "Vereiste steekproefomvang"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Plots"
@@ -271,22 +263,6 @@ msgstr "Herhaalde Waardes Analyse"
 msgctxt "Description|"
 msgid "True Value Estimation"
 msgstr "Werkelijke Waarde Schatting"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Direct estimator"
-msgstr "Directe schatter"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Difference estimator"
-msgstr "Verschilschatter"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Ratio estimator"
-msgstr "Quotiëntschatter"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Regression estimator"
-msgstr "Regressieschatter"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
@@ -421,34 +397,6 @@ msgstr "Frequentietabel"
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Observed vs. expected"
 msgstr "Waargenomen vs. verwacht"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Display"
-msgstr "Weergave"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Explanatory text"
-msgstr "Toelichtende tekst"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr "Geef toelichtende tekst weer bij iedere stap van de analyse"
-
-msgctxt "auditClassicalEstimation|"
-msgid "No. items"
-msgstr "Aantal posten"
-
-msgctxt "auditClassicalEstimation|"
-msgid "No. units"
-msgstr "Aantal eenheden"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Method"
-msgstr "Methode"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Scatter plot"
-msgstr "Spreidingsdiagram"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Method"
@@ -731,88 +679,6 @@ msgstr ""
 "populatie schatten op basis van een steekproef."
 
 msgctxt "auditClassicalEstimation|"
-msgid ""
-"A numeric variable that contains the book (recorded) values of the items in "
-"the population."
-msgstr ""
-"Een numerieke variabele die de boek (geregistreerde) waarden van de items in "
-"de populatie bevat."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"A numeric variable that contains the audited (true) values of the items in "
-"the population."
-msgstr ""
-"Een numerieke variabele die de gecontroleerde (werkelijke) waarden van de "
-"posten in de populatie bevat."
-
-msgctxt "auditClassicalEstimation|"
-msgid "Population (required)"
-msgstr "Populatie (vereist)"
-
-msgctxt "auditClassicalEstimation|"
-msgid "The total number of items (rows) in the population."
-msgstr "Het totale aantal items (rijen) in de populatie."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"The total number of units in the population. Note that the units can be "
-"items (rows) or monetary units (values) depending on the audit question."
-msgstr ""
-"Het totale aantal eenheden in de populatie. De eenheden kunnen artikelen "
-"(rijen) of monetaire eenheden (waarden) zijn, afhankelijk van de audit vraag."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The type of method used to estimate the true value of the population."
-msgstr ""
-"Het type methode dat wordt gebruikt om de werkelijke waarde van de populatie "
-"te schatten."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The direct estimator."
-msgstr "De directe schatter."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The difference estimator."
-msgstr "De verschilschatter."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The ratio estimator."
-msgstr "De quotiëntschatter."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The regression estimator."
-msgstr "De regressieschatter."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"Specify options that have an effect on the look and feel of the audit report."
-msgstr ""
-"Specificeer opties die van invloed zijn op de look en feel van het "
-"auditrapport."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"When checked, enables explanatory text in the analysis to help interpret the "
-"procedure and the statistical results."
-msgstr ""
-"Indien aangevinkt, wordt in de analyse een verklarende tekst opgenomen om de "
-"procedure en de statistische resultaten te helpen interpreteren."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"The confidence level used. The confidence level is the complement of the "
-"audit risk: the risk that the user is willing to take to give an incorrect "
-"judgment about the population. For example, if you want to use an audit risk "
-"of 5%, this equals 95% confidence."
-msgstr ""
-"Het gebruikte betrouwbaarheidsniveau. Het betrouwbaarheidsniveau is het "
-"complement van het audiorisico: het risico dat de gebruiker bereid is te "
-"nemen om een onjuist oordeel over de populatie te geven. Als u bijvoorbeeld "
-"een audiorisico van 5% wilt hanteren, komt dit overeen met een "
-"betrouwbaarheidsniveau van 95%."
-
-msgctxt "auditClassicalEstimation|"
 msgid "Report"
 msgstr "Rapport"
 
@@ -821,30 +687,8 @@ msgid "Add additional tables about the analysis to the report."
 msgstr "Voeg extra tabellen over de analyse toe aan het rapport."
 
 msgctxt "auditClassicalEstimation|"
-msgid ""
-"Produces a table showing the required sample size to achive a desired "
-"precision."
-msgstr ""
-"Produceert een tabel met de vereiste steekproefgrootte om de gewenste "
-"onnauwkeurigheid te bereiken."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The value of the precision."
-msgstr "De waarde van de onnauwkeurigheid."
-
-msgctxt "auditClassicalEstimation|"
 msgid "Add additional figures about the analysis to the report."
 msgstr "Voeg extra figuren over de analyse toe aan het rapport."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"Produces a scatter plot comparing the book values in the sample against "
-"their audit values. Items for which these two values do not match are "
-"colored in red."
-msgstr ""
-"Produceert een scatter plot waarin de boekwaarden in de steekproef worden "
-"vergeleken met hun audiowaarden. Items waarvoor deze twee waarden niet "
-"overeenkomen, zijn rood gekleurd."
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Report"
@@ -3654,18 +3498,216 @@ msgstr ""
 "Produceert de verwachte aantallen van de cijfers onder de "
 "referentieverdeling."
 
-msgctxt "auditClassicalEstimation|"
-msgid "Book Value"
-msgstr "Boekwaarde"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Audit Value"
-msgstr "Auditwaarde"
-
 msgctxt "AuditVariable|"
 msgid "Audit Value (required)"
 msgstr "Auditwaarde (vereist)"
 
-msgctxt "auditClassicalEstimation|"
+msgctxt "Description|"
+msgid "Bayesian True Value Estimation"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid ""
+"The Bayesian estimation analysis allows the user to estimate the true value "
+"of a population on the basis of a sample."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianEstimation|"
+msgid "Prior"
+msgstr "Prior"
+
+msgctxt "auditBayesianEstimation|"
+msgid "Default parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Whether to use the default prior parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Custom parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Whether to use custom prior parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior mean μ"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the mean."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior mean weight κ"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the implicit sample size of the mean."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior variance σ2"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the variance."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior variance weight ν"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the implicit sample size of the variance."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianEstimation|"
+msgid "Report"
+msgstr "Rapport"
+
+msgctxt "auditBayesianEstimation|"
+msgid "Plots"
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianEstimation|"
+msgid "Add additional figures about the analysis to the report."
+msgstr "Voeg extra figuren over de analyse toe aan het rapport."
+
+#, fuzzy
+msgctxt "auditBayesianEstimation|"
+msgid "Prior and posterior"
+msgstr "Prior en posterior"
+
+msgctxt "auditBayesianEstimation|"
+msgid ""
+"Produces a figure showing the prior and posterior distributions for the true "
+"population value."
+msgstr ""
+
+#, fuzzy
+msgctxt "Confidence|"
+msgid "Confidence"
+msgstr "Betrouwbaarheid"
+
+msgctxt "Confidence|"
+msgid ""
+"The confidence level used. The confidence level is the complement of the "
+"audit risk: the risk that the user is willing to take to give an incorrect "
+"judgment about the population. For example, if you want to use an audit risk "
+"of 5%, this equals 95% confidence."
+msgstr ""
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "Method"
+msgstr "Methode"
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "The type of method used to estimate the true value of the population."
+msgstr ""
+"Het type methode dat wordt gebruikt om de werkelijke waarde van de populatie "
+"te schatten."
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "Direct estimator"
+msgstr "Directe schatter"
+
+msgctxt "Estimator|"
+msgid "The Bayesian direct estimator."
+msgstr ""
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "Difference estimator"
+msgstr "Verschilschatter"
+
+msgctxt "Estimator|"
+msgid "The Bayesian difference estimator."
+msgstr ""
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "Ratio estimator"
+msgstr "Quotiëntschatter"
+
+msgctxt "Estimator|"
+msgid "The Bayesian ratio estimator."
+msgstr ""
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "Regression estimator"
+msgstr "Regressieschatter"
+
+msgctxt "Estimator|"
+msgid "The Bayesian regression estimator."
+msgstr ""
+
+#, fuzzy
+msgctxt "Samplesize|"
+msgid "Required sample size"
+msgstr "Vereiste steekproefomvang"
+
+#, fuzzy
+msgctxt "Samplesize|"
+msgid ""
+"Produces a table showing the required sample size to achive a desired "
+"precision."
+msgstr ""
+"Produceert een tabel met de vereiste steekproefgrootte om de gewenste "
+"onnauwkeurigheid te bereiken."
+
+#, fuzzy
+msgctxt "Samplesize|"
 msgid "Precision"
 msgstr "Onnauwkeurigheid"
+
+#, fuzzy
+msgctxt "Samplesize|"
+msgid "The value of the precision."
+msgstr "De waarde van de onnauwkeurigheid."
+
+#, fuzzy
+msgctxt "Scatterplot|"
+msgid "Scatter plot"
+msgstr "Spreidingsdiagram"
+
+msgctxt "Scatterplot|"
+msgid ""
+"Produces a scatter plot comparing the book values in the sample against "
+"their audit values. Items for which these two values do not match are "
+"colored in red."
+msgstr ""
+
+#, fuzzy
+msgctxt "VariablesFormEstimation|"
+msgid "Book Value"
+msgstr "Boekwaarde"
+
+msgctxt "VariablesFormEstimation|"
+msgid ""
+"A numeric variable that contains the book (recorded) values of the items in "
+"the population."
+msgstr ""
+
+#, fuzzy
+msgctxt "VariablesFormEstimation|"
+msgid "Audit Value"
+msgstr "Auditwaarde"
+
+#, fuzzy
+msgctxt "VariablesFormEstimation|"
+msgid ""
+"A numeric variable that contains the audited (true) values of the items in "
+"the population."
+msgstr ""
+"Een numerieke variabele die de gecontroleerde (werkelijke) waarden van de "
+"posten in de populatie bevat."

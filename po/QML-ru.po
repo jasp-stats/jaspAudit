@@ -129,16 +129,8 @@ msgid "Plots"
 msgstr "Графики"
 
 msgctxt "auditClassicalEstimation|"
-msgid "Confidence"
-msgstr "Достоверность"
-
-msgctxt "auditClassicalEstimation|"
 msgid "Tables"
 msgstr "Таблицы"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Required sample size"
-msgstr "Требуемый размер выборки"
 
 msgctxt "auditClassicalEstimation|"
 msgid "Plots"
@@ -271,22 +263,6 @@ msgstr "Анализ повторяющихся значений"
 msgctxt "Description|"
 msgid "True Value Estimation"
 msgstr "Оценка истинного значения"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Direct estimator"
-msgstr "Прямой оценщик"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Difference estimator"
-msgstr "Разностный оценщик"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Ratio estimator"
-msgstr "Оценщик отношения"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Regression estimator"
-msgstr "Регрессионный оценщик"
 
 msgctxt "auditClassicalNumberBunching|"
 msgid "Confidence"
@@ -423,34 +399,6 @@ msgstr "Таблица частот"
 msgctxt "auditClassicalBenfordsLaw|"
 msgid "Observed vs. expected"
 msgstr "Наблюдения в сравнении с ожиданиями"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Display"
-msgstr "Отображение"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Explanatory text"
-msgstr "Пояснительный текст"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Show explanatory text at each step of the analysis"
-msgstr "Показывать пояснительный текст на каждом шаге анализа"
-
-msgctxt "auditClassicalEstimation|"
-msgid "No. items"
-msgstr "Количество элементов"
-
-msgctxt "auditClassicalEstimation|"
-msgid "No. units"
-msgstr "Количество единиц выборки"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Method"
-msgstr "Метод"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Scatter plot"
-msgstr "Точечная диаграмма"
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Method"
@@ -738,86 +686,6 @@ msgstr ""
 "совокупности на основе выборки."
 
 msgctxt "auditClassicalEstimation|"
-msgid ""
-"A numeric variable that contains the book (recorded) values of the items in "
-"the population."
-msgstr ""
-"Числовая переменная, содержащая значения стоимости элементов в совокупности "
-"по данным учета."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"A numeric variable that contains the audited (true) values of the items in "
-"the population."
-msgstr ""
-"Числовая переменная, содержащая (истинные) значения стоимости элементов в "
-"совокупности, полученные по данным аудита."
-
-msgctxt "auditClassicalEstimation|"
-msgid "Population (required)"
-msgstr "Совокупность (обязательный)"
-
-msgctxt "auditClassicalEstimation|"
-msgid "The total number of items (rows) in the population."
-msgstr "Общее количество элементов (строк) в совокупности."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"The total number of units in the population. Note that the units can be "
-"items (rows) or monetary units (values) depending on the audit question."
-msgstr ""
-"Общее количество единиц выборки в совокупности. Обратите внимание, что "
-"единицами измерения могут быть элементы (строки) или денежные единицы "
-"(значения) в зависимости от вопроса аудита."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The type of method used to estimate the true value of the population."
-msgstr "Метод, используемый для оценки истинной суммы совокупности."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The direct estimator."
-msgstr "Прямой оценщик."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The difference estimator."
-msgstr "Разностный оценщик."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The ratio estimator."
-msgstr "Оценщик отношения."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The regression estimator."
-msgstr "Регрессионный оценщик."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"Specify options that have an effect on the look and feel of the audit report."
-msgstr "Укажите параметры, которые влияют на внешний вид аудиторского отчета."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"When checked, enables explanatory text in the analysis to help interpret the "
-"procedure and the statistical results."
-msgstr ""
-"Если этот флажок установлен, в отчете по результатам анализа включается "
-"пояснительный текст, помогающий интерпретировать процедуру и статистические "
-"результаты."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"The confidence level used. The confidence level is the complement of the "
-"audit risk: the risk that the user is willing to take to give an incorrect "
-"judgment about the population. For example, if you want to use an audit risk "
-"of 5%, this equals 95% confidence."
-msgstr ""
-"Используемый уровень достоверности. Уровень достоверности является "
-"дополнением к аудиторскому риску: риску, на который пользователь готов "
-"пойти, чтобы вынести неверное суждение о совокупности. Например, если вы "
-"хотите использовать аудиторский риск, равный 5%, это эквивалентно 95% уровню "
-"достоверности."
-
-msgctxt "auditClassicalEstimation|"
 msgid "Report"
 msgstr "Отчет"
 
@@ -826,30 +694,8 @@ msgid "Add additional tables about the analysis to the report."
 msgstr "Добавляет в отчет дополнительные таблицы с результатами анализа."
 
 msgctxt "auditClassicalEstimation|"
-msgid ""
-"Produces a table showing the required sample size to achive a desired "
-"precision."
-msgstr ""
-"Формирует таблицу, содержащую объем выборки, требуемой для достижения "
-"желаемой погрешности."
-
-msgctxt "auditClassicalEstimation|"
-msgid "The value of the precision."
-msgstr "Величина погрешности."
-
-msgctxt "auditClassicalEstimation|"
 msgid "Add additional figures about the analysis to the report."
 msgstr "Добавить в отчет дополнительные иллюстрации к результатам анализа."
-
-msgctxt "auditClassicalEstimation|"
-msgid ""
-"Produces a scatter plot comparing the book values in the sample against "
-"their audit values. Items for which these two values do not match are "
-"colored in red."
-msgstr ""
-"Формирует точечную диаграмму, сравнивающую значения по данным учета со "
-"значениями по данным аудита. Элементы, в которых эти два значения не "
-"совпадают, окрашены в красный цвет."
 
 msgctxt "auditClassicalEvaluation|"
 msgid "Report"
@@ -3660,18 +3506,224 @@ msgstr ""
 "Вычисляет ожидаемое количество цифр в соответствии с эталонным "
 "распределением."
 
-msgctxt "auditClassicalEstimation|"
-msgid "Book Value"
-msgstr "Значение по данным учета"
-
-msgctxt "auditClassicalEstimation|"
-msgid "Audit Value"
-msgstr "Значение по данным аудита"
-
 msgctxt "AuditVariable|"
 msgid "Audit Value (required)"
 msgstr "Значение по данным аудита (обязательное)"
 
-msgctxt "auditClassicalEstimation|"
+msgctxt "Description|"
+msgid "Bayesian True Value Estimation"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid ""
+"The Bayesian estimation analysis allows the user to estimate the true value "
+"of a population on the basis of a sample."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianEstimation|"
+msgid "Prior"
+msgstr "Априорное распределение"
+
+msgctxt "auditBayesianEstimation|"
+msgid "Default parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Whether to use the default prior parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Custom parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Whether to use custom prior parameters"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior mean μ"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the mean."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior mean weight κ"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the implicit sample size of the mean."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior variance σ2"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the variance."
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "Prior variance weight ν"
+msgstr ""
+
+msgctxt "auditBayesianEstimation|"
+msgid "The prior parameter for the implicit sample size of the variance."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianEstimation|"
+msgid "Report"
+msgstr "Отчет"
+
+#, fuzzy
+msgctxt "auditBayesianEstimation|"
+msgid "Plots"
+msgstr "Графики"
+
+msgctxt "auditBayesianEstimation|"
+msgid "Add additional figures about the analysis to the report."
+msgstr ""
+
+#, fuzzy
+msgctxt "auditBayesianEstimation|"
+msgid "Prior and posterior"
+msgstr "Априорное и апостериорное распределения"
+
+msgctxt "auditBayesianEstimation|"
+msgid ""
+"Produces a figure showing the prior and posterior distributions for the true "
+"population value."
+msgstr ""
+
+#, fuzzy
+msgctxt "Confidence|"
+msgid "Confidence"
+msgstr "Достоверность"
+
+#, fuzzy
+msgctxt "Confidence|"
+msgid ""
+"The confidence level used. The confidence level is the complement of the "
+"audit risk: the risk that the user is willing to take to give an incorrect "
+"judgment about the population. For example, if you want to use an audit risk "
+"of 5%, this equals 95% confidence."
+msgstr ""
+"Используемый уровень достоверности. Уровень достоверности является "
+"дополнением к аудиторскому риску: риску, на который пользователь готов "
+"пойти, чтобы вынести неверное суждение о совокупности. Например, если вы "
+"хотите использовать аудиторский риск, равный 5%, это эквивалентно 95% уровню "
+"достоверности."
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "Method"
+msgstr "Метод"
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "The type of method used to estimate the true value of the population."
+msgstr "Метод, используемый для оценки истинной суммы совокупности."
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "Direct estimator"
+msgstr "Прямой оценщик"
+
+msgctxt "Estimator|"
+msgid "The Bayesian direct estimator."
+msgstr ""
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "Difference estimator"
+msgstr "Разностный оценщик"
+
+msgctxt "Estimator|"
+msgid "The Bayesian difference estimator."
+msgstr ""
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "Ratio estimator"
+msgstr "Оценщик отношения"
+
+msgctxt "Estimator|"
+msgid "The Bayesian ratio estimator."
+msgstr ""
+
+#, fuzzy
+msgctxt "Estimator|"
+msgid "Regression estimator"
+msgstr "Регрессионный оценщик"
+
+msgctxt "Estimator|"
+msgid "The Bayesian regression estimator."
+msgstr ""
+
+#, fuzzy
+msgctxt "Samplesize|"
+msgid "Required sample size"
+msgstr "Требуемый размер выборки"
+
+#, fuzzy
+msgctxt "Samplesize|"
+msgid ""
+"Produces a table showing the required sample size to achive a desired "
+"precision."
+msgstr ""
+"Формирует таблицу, содержащую объем выборки, требуемой для достижения "
+"желаемой погрешности."
+
+#, fuzzy
+msgctxt "Samplesize|"
 msgid "Precision"
 msgstr "Погрешность"
+
+#, fuzzy
+msgctxt "Samplesize|"
+msgid "The value of the precision."
+msgstr "Величина погрешности."
+
+#, fuzzy
+msgctxt "Scatterplot|"
+msgid "Scatter plot"
+msgstr "Точечная диаграмма"
+
+#, fuzzy
+msgctxt "Scatterplot|"
+msgid ""
+"Produces a scatter plot comparing the book values in the sample against "
+"their audit values. Items for which these two values do not match are "
+"colored in red."
+msgstr ""
+"Формирует точечную диаграмму, сравнивающую значения по данным учета со "
+"значениями по данным аудита. Элементы, в которых эти два значения не "
+"совпадают, окрашены в красный цвет."
+
+#, fuzzy
+msgctxt "VariablesFormEstimation|"
+msgid "Book Value"
+msgstr "Значение по данным учета"
+
+msgctxt "VariablesFormEstimation|"
+msgid ""
+"A numeric variable that contains the book (recorded) values of the items in "
+"the population."
+msgstr ""
+
+#, fuzzy
+msgctxt "VariablesFormEstimation|"
+msgid "Audit Value"
+msgstr "Значение по данным аудита"
+
+#, fuzzy
+msgctxt "VariablesFormEstimation|"
+msgid ""
+"A numeric variable that contains the audited (true) values of the items in "
+"the population."
+msgstr ""
+"Числовая переменная, содержащая (истинные) значения стоимости элементов в "
+"совокупности, полученные по данным аудита."

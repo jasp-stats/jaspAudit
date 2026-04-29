@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.17.2\n"
-"POT-Creation-Date: 2025-04-23 07:45\n"
+"POT-Creation-Date: 2026-04-29 05:22\n"
 "PO-Revision-Date: 2025-05-07 09:01+0000\n"
 "Last-Translator: MikeWinny <winny63@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
@@ -13,6 +13,82 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.12-dev\n"
+
+#, fuzzy
+msgid "Bayesian Direct Estimator"
+msgstr "Прямой оценщик"
+
+#, fuzzy
+msgid "Bayesian Difference Estimator"
+msgstr "Оценщик разности"
+
+#, fuzzy
+msgid "Bayesian Ratio Estimator"
+msgstr "Оценщик отношения"
+
+#, fuzzy
+msgid "Bayesian Regression Estimator"
+msgstr "Регрессионный оценщик"
+
+#, fuzzy
+msgid "%1$s%% Credible interval"
+msgstr "%1$s%% доверительный интервал"
+
+#, fuzzy
+msgid "Posterior mode"
+msgstr "Апостериорное распределение"
+
+msgid "Precision"
+msgstr "Погрешность"
+
+msgid "Lower"
+msgstr "Нижний"
+
+msgid "Upper"
+msgstr "Верхний"
+
+msgid "Please specify the population size and your audit values."
+msgstr ""
+"Пожалуйста, укажите размер совокупности и ваши значения для проведения "
+"аудита."
+
+msgid ""
+"Please specify the population size, population value and your sample "
+"variables."
+msgstr ""
+"Пожалуйста, укажите размер совокупности, общую сумму совокупности и "
+"переменные вашей выборки."
+
+msgid "<b>Warning.</b>"
+msgstr "<b>Предупреждение.</b>"
+
+msgid ""
+"The number of items in the population is lower than the number of items in "
+"the sample."
+msgstr ""
+"Количество элементов в генеральной совокупности меньше, чем количество "
+"элементов в выборке."
+
+msgid "Prior and Posterior Distribution"
+msgstr "Априорное и апостериорное распределения"
+
+#, fuzzy
+msgid "True population value"
+msgstr "%% от суммы элементов совокупности"
+
+msgid "Density"
+msgstr ""
+
+msgid "Plotting not possible: %1$s"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"<b>Figure %1$i.</b> The prior and posterior distribution for the true "
+"population value."
+msgstr ""
+"<b>Рисунок %1$i.</b> Априорное и апостериорное распределения (%2$s) "
+"искажения в совокупности."
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Процедура</u>"
@@ -202,12 +278,6 @@ msgstr "Относительная частота"
 msgid "%1$s%% Confidence Interval"
 msgstr "%1$s%% Доверительный интервал"
 
-msgid "Lower"
-msgstr "Нижний"
-
-msgid "Upper"
-msgstr "Верхний"
-
 msgid "Expected count"
 msgstr "Ожидаемое количество"
 
@@ -255,9 +325,6 @@ msgstr "Значение"
 
 msgid "The requested digit must be between 1 - 9."
 msgstr "Запрашиваемая цифра должна быть в диапазоне от 1 до 9."
-
-msgid "<b>Warning.</b>"
-msgstr "<b>Предупреждение.</b>"
 
 msgid "The requested digit must be between 10 - 99."
 msgstr "Запрашиваемое число должно быть в диапазоне от 10 до 99."
@@ -370,23 +437,8 @@ msgstr "Регрессионный оценщик"
 msgid "Point estimate"
 msgstr "Точечная оценка"
 
-msgid "Precision"
-msgstr "Погрешность"
-
 msgid "%1$s%% Confidence interval"
 msgstr "%1$s%% доверительный интервал"
-
-msgid "Please specify the population size and your audit values."
-msgstr ""
-"Пожалуйста, укажите размер совокупности и ваши значения для проведения "
-"аудита."
-
-msgid ""
-"Please specify the population size, population value and your sample "
-"variables."
-msgstr ""
-"Пожалуйста, укажите размер совокупности, общую сумму совокупности и "
-"переменные вашей выборки."
 
 msgid ""
 "The displayed numbers are exact and may differ slightly from the rounded "
@@ -394,13 +446,6 @@ msgid ""
 msgstr ""
 "Отображаемые цифры являются точными и могут незначительно отличаться от "
 "округленных цифр в пояснительном тексте."
-
-msgid ""
-"The number of items in the population is lower than the number of items in "
-"the sample."
-msgstr ""
-"Количество элементов в генеральной совокупности меньше, чем количество "
-"элементов в выборке."
 
 msgid "<u>Calculations</u>"
 msgstr "<u>Расчеты</u>"
@@ -619,9 +664,10 @@ msgstr "Балансовая стоимость"
 msgid "Audit value"
 msgstr "Стоимость по данным аудита"
 
+#, fuzzy
 msgid ""
-"<b>Figure 1.</b> Scatter plot of the book values in the selection and their "
-"audit values. Red dots indicate observations that did not match their "
+"<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
+"their audit values. Red dots indicate observations that did not match their "
 "original book value. If these red dots lie in the bottom part of the graph, "
 "the book values are overstated. If these red dots lie in the upper part of "
 "the graph, they are understated. The value <i>r</i> is the Pearson "
@@ -2793,9 +2839,6 @@ msgstr "Априорное и ожидаемое апостериорное ра
 
 msgid "Prior Distribution"
 msgstr "Априорное Распределение"
-
-msgid "Prior and Posterior Distribution"
-msgstr "Априорное и апостериорное распределения"
 
 msgid ""
 "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on "
