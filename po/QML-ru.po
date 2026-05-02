@@ -3708,11 +3708,13 @@ msgctxt "VariablesFormEstimation|"
 msgid "Book Value"
 msgstr "Значение по данным учета"
 
+#, fuzzy
 msgctxt "VariablesFormEstimation|"
 msgid ""
 "A numeric variable that contains the book (recorded) values of the items in "
 "the population."
 msgstr ""
+"Числовая переменная, содержащая учетные значения элементов в совокупности."
 
 #, fuzzy
 msgctxt "VariablesFormEstimation|"

@@ -3556,9 +3556,10 @@ msgctxt "Estimator|"
 msgid "The Bayesian direct estimator."
 msgstr ""
 
+#, fuzzy
 msgctxt "Estimator|"
 msgid "Difference estimator"
-msgstr ""
+msgstr "Estimator perbedaan"
 
 msgctxt "Estimator|"
 msgid "The Bayesian difference estimator."
