@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2026-04-29 05:22\n"
-"PO-Revision-Date: 2025-04-23 10:14+0000\n"
+"PO-Revision-Date: 2026-04-29 19:46+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
 "nl/>\n"
@@ -12,31 +12,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.11.1-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
-#, fuzzy
 msgid "Bayesian Direct Estimator"
-msgstr "Directe Schatter"
+msgstr "Bayesiaanse Directe Schatter"
 
-#, fuzzy
 msgid "Bayesian Difference Estimator"
-msgstr "Verschilschatter"
+msgstr "Bayesiaanse Verschilschatter"
 
-#, fuzzy
 msgid "Bayesian Ratio Estimator"
-msgstr "Quotiëntschatter"
+msgstr "Bayesiaanse Quotiëntschatter"
 
-#, fuzzy
 msgid "Bayesian Regression Estimator"
-msgstr "Regressieschatter"
+msgstr "Bayesiaanse Regressieschatter"
 
-#, fuzzy
 msgid "%1$s%% Credible interval"
-msgstr "%1$s%% Betrouwbaarheidsinterval"
+msgstr "%1$s%% Geloofwaardigheidsinterval"
 
-#, fuzzy
 msgid "Posterior mode"
-msgstr "Posterior"
+msgstr "Posterior modus"
 
 msgid "Precision"
 msgstr "Onnauwkeurigheid"
@@ -69,23 +63,21 @@ msgstr ""
 msgid "Prior and Posterior Distribution"
 msgstr "Prior- en Posterior-verdeling"
 
-#, fuzzy
 msgid "True population value"
-msgstr "%% van de populatiewaarde"
+msgstr "Werkelijke populatiewaarde"
 
 msgid "Density"
 msgstr "Dichtheid"
 
 msgid "Plotting not possible: %1$s"
-msgstr ""
+msgstr "Figuur maken niet mogelijk: %1$s"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The prior and posterior distribution for the true "
 "population value."
 msgstr ""
-"<b>Figuur %1$i.</b> De prior- en posterior-verdeling (%2$s) voor de fout in "
-"de populatie."
+"<b>Figuur %1$i.</b> De prior- en posterior-verdeling voor de werkelijke "
+"populatiewaarde."
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Procedure</u>"
@@ -656,7 +648,6 @@ msgstr "Boekwaardes"
 msgid "Audit value"
 msgstr "Auditwaardes"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
 "their audit values. Red dots indicate observations that did not match their "
@@ -2760,7 +2751,7 @@ msgid ""
 msgstr ""
 "<b>Figuur %1$i.</b> Evaluatie informatie voor de huidige geannoteerde "
 "selectie. De materialiteit wordt vergeleken met de maxiamale fout en de "
-"meest waarschijnlijke fout. De meest waarschijnlijke fout (MLE) is de beste "
+"meest waarschijnlijke fout. De meest waarschijnlijke fout is de beste "
 "schatting van de ware fout in de populatie. De bovengrens is een schatting "
 "van de maximale fout in de populatie."
 
