@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.95.5\n"
 "POT-Creation-Date: 2026-04-29 05:22\n"
-"PO-Revision-Date: 2026-04-29 00:22+0000\n"
-"Last-Translator: Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>\n"
+"PO-Revision-Date: 2026-05-17 06:11+0000\n"
+"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-r/id/>\n"
 "Language: id\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #, fuzzy
 msgid "Bayesian Direct Estimator"
@@ -41,10 +41,10 @@ msgid "Precision"
 msgstr "Presisi"
 
 msgid "Lower"
-msgstr "Bawah"
+msgstr "Batas Bawah"
 
 msgid "Upper"
-msgstr "Atas"
+msgstr "Batas Atas"
 
 msgid "Please specify the population size and your audit values."
 msgstr "Silakan tentukan ukuran populasi dan nilai audit Anda."
@@ -71,7 +71,7 @@ msgid "True population value"
 msgstr "%% dari nilai populasi"
 
 msgid "Density"
-msgstr ""
+msgstr "Densitas"
 
 msgid "Plotting not possible: %1$s"
 msgstr ""
@@ -261,7 +261,7 @@ msgid "Uniform distribution"
 msgstr "Distribusi seragam"
 
 msgid "Count"
-msgstr "Hitung"
+msgstr "Jumlah"
 
 msgid "Relative frequency"
 msgstr "Frekuensi relatif"
@@ -2069,10 +2069,10 @@ msgid "Absolute value"
 msgstr "Nilai absolut"
 
 msgid "Mean"
-msgstr "Rerata"
+msgstr "Rata-rata"
 
 msgid "Std. deviation"
-msgstr "Deviasi std."
+msgstr "Std. deviasi"
 
 msgid "1"
 msgstr "1"
@@ -2798,7 +2798,7 @@ msgid "Ratio %1$s"
 msgstr "Rasio %1$s"
 
 msgid "Mode"
-msgstr "Mode"
+msgstr "Modus"
 
 msgid "Prior"
 msgstr "Priori"
