@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.18.1\n"
 "POT-Creation-Date: 2026-04-29 05:22\n"
-"PO-Revision-Date: 2026-06-17 15:01+0000\n"
+"PO-Revision-Date: 2026-06-19 03:01+0000\n"
 "Last-Translator: 陳正昌 <chencc99@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspaudit-r/zh_Hant/>\n"
@@ -553,7 +553,7 @@ msgid "Specificity"
 msgstr ""
 
 msgid "Accuracy"
-msgstr ""
+msgstr "準確率"
 
 msgid "False positive rate"
 msgstr ""
@@ -694,7 +694,7 @@ msgid ""
 msgstr ""
 
 msgid "True Positive Rate"
-msgstr ""
+msgstr "偽陰性率"
 
 msgid ""
 "The null hypothesis specifies that the true positive rate of an unprivileged "
@@ -716,7 +716,7 @@ msgid ""
 msgstr ""
 
 msgid "False Positive Rate"
-msgstr ""
+msgstr "偽陽性率"
 
 msgid ""
 "The null hypothesis specifies that the false positive rate of an "
@@ -739,22 +739,22 @@ msgid "<b>Table %1$i.</b> Model Performance"
 msgstr ""
 
 msgid "Support"
-msgstr ""
+msgstr "支持"
 
 msgid "Recall"
 msgstr ""
 
 msgid "F1 Score"
-msgstr ""
+msgstr "F1 分數"
 
 msgid "<b>Table %1$i.</b> Confusion Matrix"
 msgstr ""
 
 msgid "Observed"
-msgstr "觀察次數"
+msgstr "觀測值"
 
 msgid "Predicted"
-msgstr "預測的"
+msgstr "預測值"
 
 msgid ""
 "True Positives (TP) are cells in which the positive class (<i>%1$s</i>) is "
@@ -1516,7 +1516,7 @@ msgid "Mean"
 msgstr "平均數"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "標準差"
 
 msgid "1"
 msgstr ""
