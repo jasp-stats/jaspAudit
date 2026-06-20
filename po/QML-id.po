@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2026-06-16 01:01+0000\n"
+"Last-Translator: Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
+"jaspaudit-qml/id/>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 "X-Language: id\n"
 "X-Qt-Contexts: true\n"
 
@@ -3439,93 +3445,95 @@ msgstr "Nilai Audit (diperlukan)"
 
 msgctxt "Description|"
 msgid "Bayesian True Value Estimation"
-msgstr ""
+msgstr "Estimasi Nilai Benar Bayes"
 
 msgctxt "auditBayesianEstimation|"
 msgid ""
 "The Bayesian estimation analysis allows the user to estimate the true value "
 "of a population on the basis of a sample."
 msgstr ""
+"Analisis estimasi Bayes mengizinkan pengguna untuk mengestimasi nilai benar "
+"dari populasi pada dasar sampel."
 
 msgctxt "auditBayesianEstimation|"
 msgid "Prior"
-msgstr ""
+msgstr "Priori"
 
 msgctxt "auditBayesianEstimation|"
 msgid "Default parameters"
-msgstr ""
+msgstr "Parameter bawaan"
 
 msgctxt "auditBayesianEstimation|"
 msgid "Whether to use the default prior parameters"
-msgstr ""
+msgstr "Apakah menggunakan parameter priori bawaan"
 
 msgctxt "auditBayesianEstimation|"
 msgid "Custom parameters"
-msgstr ""
+msgstr "Parameter kustom"
 
 msgctxt "auditBayesianEstimation|"
 msgid "Whether to use custom prior parameters"
-msgstr ""
+msgstr "Apakah menggunakan parameter priori kustom"
 
 msgctxt "auditBayesianEstimation|"
 msgid "Prior mean μ"
-msgstr ""
+msgstr "Rerata priori μ"
 
 msgctxt "auditBayesianEstimation|"
 msgid "The prior parameter for the mean."
-msgstr ""
+msgstr "Parameter priori untuk rerata."
 
 msgctxt "auditBayesianEstimation|"
 msgid "Prior mean weight κ"
-msgstr ""
+msgstr "Berat rerata priori κ"
 
 msgctxt "auditBayesianEstimation|"
 msgid "The prior parameter for the implicit sample size of the mean."
-msgstr ""
+msgstr "Parameter priori untuk ukuran sampel implisit dari rerata."
 
 msgctxt "auditBayesianEstimation|"
 msgid "Prior variance σ2"
-msgstr ""
+msgstr "Varians priori σ2"
 
 msgctxt "auditBayesianEstimation|"
 msgid "The prior parameter for the variance."
-msgstr ""
+msgstr "Parameter priori untuk varians."
 
 msgctxt "auditBayesianEstimation|"
 msgid "Prior variance weight ν"
-msgstr ""
+msgstr "Berat varians priori ν"
 
 msgctxt "auditBayesianEstimation|"
 msgid "The prior parameter for the implicit sample size of the variance."
-msgstr ""
+msgstr "Parameter priori untuk ukuran sampel implisit dari varians."
 
-#, fuzzy
 msgctxt "auditBayesianEstimation|"
 msgid "Report"
 msgstr "Laporan"
 
 msgctxt "auditBayesianEstimation|"
 msgid "Plots"
-msgstr ""
+msgstr "Diagram"
 
-#, fuzzy
 msgctxt "auditBayesianEstimation|"
 msgid "Add additional figures about the analysis to the report."
-msgstr "Tambahkan angka tambahan tentang analisis ke dalam laporan."
+msgstr "Tambahkan figur tambahan tentang analisis ke laporan."
 
 msgctxt "auditBayesianEstimation|"
 msgid "Prior and posterior"
-msgstr ""
+msgstr "Priori dan posterior"
 
 msgctxt "auditBayesianEstimation|"
 msgid ""
 "Produces a figure showing the prior and posterior distributions for the true "
 "population value."
 msgstr ""
+"Menghasilkan figur menampilkan distribusi priori dan posterior untuk nilai "
+"populasi benar."
 
 msgctxt "Confidence|"
 msgid "Confidence"
-msgstr ""
+msgstr "Kepercayaan"
 
 msgctxt "Confidence|"
 msgid ""
@@ -3534,118 +3542,103 @@ msgid ""
 "judgment about the population. For example, if you want to use an audit risk "
 "of 5%, this equals 95% confidence."
 msgstr ""
+"Tingkat kepercayaan digunakan. Tingkat kepercayaan adalah komplemen risiko "
+"audit: risiko yang bersedia dilakukan pengguna untuk memberikan penilaian "
+"tidak benar tentang populasi. Contohnya, jika Anda ingin menggunakan risiko "
+"audit 5%, ini sama dengan 95% kepercayaan."
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "Method"
 msgstr "Metode"
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "The type of method used to estimate the true value of the population."
 msgstr ""
-"Jenis metode yang digunakan untuk memperkirakan nilai sebenarnya dari "
-"populasi."
+"Jenis metode yang digunakan untuk mengestimasi nilai benar dari populasi."
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "Direct estimator"
 msgstr "Estimator langsung"
 
 msgctxt "Estimator|"
 msgid "The Bayesian direct estimator."
-msgstr ""
+msgstr "Estimator langsung Bayes."
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "Difference estimator"
 msgstr "Estimator perbedaan"
 
 msgctxt "Estimator|"
 msgid "The Bayesian difference estimator."
-msgstr ""
+msgstr "Estimator perbedaan Bayes."
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "Ratio estimator"
 msgstr "Estimator rasio"
 
 msgctxt "Estimator|"
 msgid "The Bayesian ratio estimator."
-msgstr ""
+msgstr "Estimator rasio Bayes."
 
-#, fuzzy
 msgctxt "Estimator|"
 msgid "Regression estimator"
 msgstr "Estimator regresi"
 
 msgctxt "Estimator|"
 msgid "The Bayesian regression estimator."
-msgstr ""
+msgstr "Estimator regresi Bayes."
 
-#, fuzzy
 msgctxt "Samplesize|"
 msgid "Required sample size"
-msgstr "Ukuran sampel yang diperlukan"
+msgstr "Ukuran sampel diperlukan"
 
-#, fuzzy
 msgctxt "Samplesize|"
 msgid ""
 "Produces a table showing the required sample size to achive a desired "
 "precision."
 msgstr ""
-"Menghasilkan tabel yang menunjukkan ukuran sampel yang diperlukan untuk "
-"mencapai presisi yang diinginkan."
+"Menghasilkan tabel menampilkan ukuran sampel diperlukan untuk mencapai "
+"presisi yang diinginkan."
 
-#, fuzzy
 msgctxt "Samplesize|"
 msgid "Precision"
 msgstr "Presisi"
 
-#, fuzzy
 msgctxt "Samplesize|"
 msgid "The value of the precision."
-msgstr "Nilai presisi."
+msgstr "Nilai dari presisi."
 
-#, fuzzy
 msgctxt "Scatterplot|"
 msgid "Scatter plot"
-msgstr "Plot Sebar"
+msgstr "Diagram pencaran"
 
-#, fuzzy
 msgctxt "Scatterplot|"
 msgid ""
 "Produces a scatter plot comparing the book values in the sample against "
 "their audit values. Items for which these two values do not match are "
 "colored in red."
 msgstr ""
-"Menghasilkan scatter plot yang membandingkan nilai buku dalam sampel dengan "
-"nilai audit. Item yang kedua nilainya tidak sesuai akan diberi warna merah."
+"Menghasilkan diagram pencaran membandingkan nilai buku dalam sampel dengan "
+"nilai auditnya. Item yang kedua nilainya tidak sesuai akan diwarnai merah."
 
-#, fuzzy
 msgctxt "VariablesFormEstimation|"
 msgid "Book Value"
 msgstr "Nilai Buku"
 
-#, fuzzy
 msgctxt "VariablesFormEstimation|"
 msgid ""
 "A numeric variable that contains the book (recorded) values of the items in "
 "the population."
 msgstr ""
-"Variabel numerik yang berisi nilai buku (tercatat) dari item-item dalam "
-"populasi."
+"Variabel numerik yang berisi nilai buku (direkam) dari item dalam populasi."
 
-#, fuzzy
 msgctxt "VariablesFormEstimation|"
 msgid "Audit Value"
 msgstr "Nilai Audit"
 
-#, fuzzy
 msgctxt "VariablesFormEstimation|"
 msgid ""
 "A numeric variable that contains the audited (true) values of the items in "
 "the population."
 msgstr ""
-"Variabel numerik yang berisi nilai yang telah diaudit (yang sebenarnya) dari "
-"item-item dalam populasi."
+"Variabel numerik yang berisi nilai diaudit (benar) dari item dalam populasi."
