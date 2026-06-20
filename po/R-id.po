@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.95.5\n"
 "POT-Creation-Date: 2026-04-29 05:22\n"
-"PO-Revision-Date: 2026-05-17 06:11+0000\n"
-"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
+"PO-Revision-Date: 2026-06-16 01:01+0000\n"
+"Last-Translator: Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
 "jaspaudit-r/id/>\n"
 "Language: id\n"
@@ -11,31 +11,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
-#, fuzzy
 msgid "Bayesian Direct Estimator"
-msgstr "Estimator Langsung"
+msgstr "Estimator Langsung Bayes"
 
-#, fuzzy
 msgid "Bayesian Difference Estimator"
-msgstr "Estimator Perbedaan"
+msgstr "Estimator Perbedaan Bayes"
 
-#, fuzzy
 msgid "Bayesian Ratio Estimator"
-msgstr "Estimator Rasio"
+msgstr "Estimator Rasio Bayes"
 
-#, fuzzy
 msgid "Bayesian Regression Estimator"
-msgstr "Estimator Regresi"
+msgstr "Estimator Regresi Bayes"
 
-#, fuzzy
 msgid "%1$s%% Credible interval"
-msgstr "%1$s%% Interval kepercayaan"
+msgstr "%1$s%% Interval kredibel"
 
-#, fuzzy
 msgid "Posterior mode"
-msgstr "Posterior"
+msgstr "Mode posterior"
 
 msgid "Precision"
 msgstr "Presisi"
@@ -66,23 +60,21 @@ msgstr "Jumlah item dalam populasi lebih rendah dari jumlah item dalam sampel."
 msgid "Prior and Posterior Distribution"
 msgstr "Distribusi Priori dan Posterior"
 
-#, fuzzy
 msgid "True population value"
-msgstr "%% dari nilai populasi"
+msgstr "Nilai populasi benar"
 
 msgid "Density"
 msgstr "Densitas"
 
 msgid "Plotting not possible: %1$s"
-msgstr ""
+msgstr "Pendiagraman tidak memungkinkan: %1$s"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> The prior and posterior distribution for the true "
 "population value."
 msgstr ""
-"<b>Figur %1$i.</b> Distribusi priori dan posterior (%2$s) pada salah saji "
-"dalam populasi."
+"<b>Figur %1$i.</b> Distribusi priori dan posterior untuk nilai populasi "
+"benar."
 
 msgid "<u>Procedure</u>"
 msgstr "<u>Prosedur</u>"
@@ -648,7 +640,6 @@ msgstr "Nilai buku"
 msgid "Audit value"
 msgstr "Nilai audit"
 
-#, fuzzy
 msgid ""
 "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
 "their audit values. Red dots indicate observations that did not match their "
@@ -659,10 +650,10 @@ msgid ""
 "indicator of the strength of the linear relationship between the two "
 "variables."
 msgstr ""
-"<b>Figur 1.</b> Diagram pencaran dari nilai buku dalam pemilihan dan nilai "
-"auditnya. Titik merah mengindikasikan observasi yang tidak cocok nilai buku "
-"aslinya. Jika titik merah ini terletak di bagian bawah grafik, nilai buku "
-"berlebihan. Jika titik merah ini terletak di bagian atas grafik, mereka "
+"<b>Figur %1$i.</b> Diagram pencaran dari nilai buku dalam pemilihan dan "
+"nilai auditnya. Titik merah mengindikasikan observasi yang tidak cocok nilai "
+"buku aslinya. Jika titik merah ini terletak di bagian bawah grafik, nilai "
+"buku berlebihan. Jika titik merah ini terletak di bagian atas grafik, mereka "
 "berkurangan. Nilai <i>r</i> adalah koefisien korelasi Pearson dari nilai "
 "buku dan nilai audit, indikator kekuatan dari hubungan linear antara dua "
 "variabel."
