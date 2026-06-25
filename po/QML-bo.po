@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-06-24 08:04+0000\n"
+"PO-Revision-Date: 2026-06-26 12:19+0000\n"
 "Last-Translator: Zev Oster <zevelijah@gmail.com>\n"
 "Language-Team: Tibetan <https://hosted.weblate.org/projects/jasp/jaspaudit-"
 "qml/bo/>\n"
