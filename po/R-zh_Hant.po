@@ -30,14 +30,14 @@ msgid "Bayesian Regression Estimator"
 msgstr "估計式"
 
 msgid "%1$s%% Credible interval"
-msgstr ""
+msgstr "%1$s%% 可信區間"
 
 #, fuzzy
 msgid "Posterior mode"
 msgstr "後驗"
 
 msgid "Precision"
-msgstr ""
+msgstr "精確度"
 
 msgid "Lower"
 msgstr "下界"
@@ -46,40 +46,40 @@ msgid "Upper"
 msgstr "上界"
 
 msgid "Please specify the population size and your audit values."
-msgstr ""
+msgstr "請指定母體規模及您的審計數值。"
 
 msgid ""
 "Please specify the population size, population value and your sample "
 "variables."
-msgstr ""
+msgstr "請指定母體規模、母體數值及您的樣本變數。"
 
 msgid "<b>Warning.</b>"
-msgstr ""
+msgstr "<b>警告。</b>"
 
 msgid ""
 "The number of items in the population is lower than the number of items in "
 "the sample."
-msgstr ""
+msgstr "母體中的項目數低於樣本中的項目數。"
 
 msgid "Prior and Posterior Distribution"
-msgstr ""
+msgstr "先驗與後驗分布"
 
 msgid "True population value"
-msgstr ""
+msgstr "真實母體值"
 
 msgid "Density"
 msgstr "密度"
 
 msgid "Plotting not possible: %1$s"
-msgstr ""
+msgstr "無法繪圖：%1$s"
 
 msgid ""
 "<b>Figure %1$i.</b> The prior and posterior distribution for the true "
 "population value."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 真實母體值的先驗與後驗分布。"
 
 msgid "<u>Procedure</u>"
-msgstr ""
+msgstr "<u>程序</u>"
 
 msgid ""
 "Benford's law states that in many naturally occurring collections of "
@@ -125,7 +125,7 @@ msgid ""
 "and to test this relation with a type-I error of %1$s. If the uniform "
 "distribution assumption is desirable, then violation of uniformity is cause "
 "for further investigation."
-msgstr ""
+msgstr "均勻分布賦予所有可能出現之數字相等的機率。此程序的目標在於判定資料集中首位數字遵循均勻分布的程度，並以類型一誤差率 %1$s 檢驗此關係。若均勻分布的假設是理想的，則偏離均勻即為進一步調查的原因。"
 
 msgid ""
 "The uniform distribution assigns equal probability to all possible digits "
@@ -134,7 +134,7 @@ msgid ""
 "distribution, and to test this relation with a type-I error of %1$s. If the "
 "uniform distribution assumption is desirable, then violation of uniformity "
 "is cause for further investigation."
-msgstr ""
+msgstr "均勻分布賦予所有可能出現之數字相等的機率。此程序的目標在於判定資料集中前兩位數字遵循均勻分布的程度，並以類型一誤差率 %1$s 檢驗此關係。若均勻分布的假設是理想的，則偏離均勻即為進一步調查的原因。"
 
 msgid ""
 "The uniform distribution assigns equal probability to all possible digits "
@@ -143,28 +143,28 @@ msgid ""
 "this relation with a type-I error of %1$s. If the uniform distribution "
 "assumption is desirable, then violation of uniformity is cause for further "
 "investigation."
-msgstr ""
+msgstr "均勻分布賦予所有可能出現之數字相等的機率。此程序的目標在於判定資料集中末位數字遵循均勻分布的程度，並以類型一誤差率 %1$s 檢驗此關係。若均勻分布的假設是理想的，則偏離均勻即為進一步調查的原因。"
 
 msgid "<u>Assessing Benford's Law</u>"
-msgstr ""
+msgstr "<u>評估本福德定律</u>"
 
 msgid "<u>Assessing the Uniform Distribution</u>"
-msgstr ""
+msgstr "<u>評估均勻分布</u>"
 
 msgid "Benford's Law"
-msgstr ""
+msgstr "本福德定律"
 
 msgid "Uniform Distribution"
-msgstr ""
+msgstr "均勻分布"
 
 msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 綜合檢定 - %2$s"
 
 msgid "BF%1$s"
-msgstr ""
+msgstr "BF%1$s"
 
 msgid "Log(BF%1$s)"
-msgstr ""
+msgstr "Log(BF%1$s)"
 
 msgid "MAD"
 msgstr "絕對差中位數"
@@ -173,90 +173,90 @@ msgid "df"
 msgstr "自由度"
 
 msgid "Benford's law"
-msgstr ""
+msgstr "本福德定律"
 
 msgid "the uniform distribution"
-msgstr ""
+msgstr "均勻分布"
 
 msgid ""
 "The null hypothesis specifies that the first digits (1 - 9) in the data set "
 "are distributed according to %1$s."
-msgstr ""
+msgstr "虛無假設指定資料集中首位數字（1 - 9）依 %1$s 分布。"
 
 msgid ""
 "The null hypothesis specifies that the first two digits (10 - 99) in the "
 "data set are distributed according to %1$s."
-msgstr ""
+msgstr "虛無假設指定資料集中前兩位數字（10 - 99）依 %1$s 分布。"
 
 msgid ""
 "The null hypothesis specifies that the last digits (1 - 9) in the data set "
 "are distributed according to %1$s."
-msgstr ""
+msgstr "虛無假設指定資料集中末位數字（1 - 9）依 %1$s 分布。"
 
 msgid ""
 "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with "
 "%2$s = %4$s."
-msgstr ""
+msgstr "貝氏因子是使用 Dirichlet(%1$s,...,%2$s%3$s) 先驗加以計算，其中 %2$s = %4$s。"
 
 msgid ""
 "<b>Warning.</b> The <i>p</i>-value may be unreliable due to some expected "
 "counts being lower than 5."
-msgstr ""
+msgstr "<b>警告。</b> 由於部分期望次數低於 5，<i>p</i> 值可能不可靠。"
 
 msgid "<b>Table %1$i.</b> Frequency Table"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 次數分配表"
 
 msgid "Leading digit"
-msgstr ""
+msgstr "首位數字"
 
 msgid "Leading digits"
-msgstr ""
+msgstr "前兩位數字"
 
 msgid "Last digit"
-msgstr ""
+msgstr "末位數字"
 
 msgid "Uniform distribution"
-msgstr ""
+msgstr "均勻分布"
 
 msgid "Count"
 msgstr "計數"
 
 msgid "Relative frequency"
-msgstr ""
+msgstr "相對次數"
 
 msgid "%1$s%% Confidence Interval"
-msgstr ""
+msgstr "%1$s%% 信賴區間"
 
 msgid "Expected count"
-msgstr ""
+msgstr "期望次數"
 
 msgid ""
 "The null hypothesis specifies that the relative frequency of a digit is "
 "equal to its expected relative frequency under %1$s."
-msgstr ""
+msgstr "虛無假設指定數字的相對次數等於其在 %1$s 下的期望相對次數。"
 
 msgid "Bayes factors are computed using a beta(1, 1) prior."
-msgstr ""
+msgstr "貝氏因子是使用 beta(1, 1) 先驗加以計算。"
 
 msgid ""
 "Confidence intervals and <i>p</i>-values are based on independent binomial "
 "distributions."
-msgstr ""
+msgstr "信賴區間和 <i>p</i> 值是以獨立的二項分布為基礎。"
 
 msgid "The <i>p</i>-values are based on independent binomial distributions."
-msgstr ""
+msgstr "<i>p</i> 值是以獨立的二項分布為基礎。"
 
 msgid "Leading Digit"
-msgstr ""
+msgstr "首位數字"
 
 msgid "Leading Digits"
-msgstr ""
+msgstr "前兩位數字"
 
 msgid "Last Digit"
-msgstr ""
+msgstr "末位數字"
 
 msgid "<b>Table %1$i.</b> Rows Matched to %2$s %3$s"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 與 %2$s %3$s 相符的列"
 
 msgid "Row"
 msgstr "列"
@@ -265,25 +265,25 @@ msgid "Value"
 msgstr "數值"
 
 msgid "The requested digit must be between 1 - 9."
-msgstr ""
+msgstr "要求檢驗的位數必須介於 1 - 9 之間。"
 
 msgid "The requested digit must be between 10 - 99."
-msgstr ""
+msgstr "要求檢驗的位數必須介於 10 - 99 之間。"
 
 msgid ""
 "Displayed values are rounded to the number of decimals set in the global "
 "preferences."
-msgstr ""
+msgstr "顯示的數值會四捨五入至全域偏好設定中所設定的小數位數。"
 
 msgid "Observed vs. Expected Relative Frequencies"
-msgstr ""
+msgstr "觀察到的相對次數與期望相對次數"
 
 msgid ""
 "<b>Figure %1$i.</b> The observed relative frequencies of each digit in the "
 "data set compared to the expected relative frequencies under %2$s. For data "
 "sets distributed according %2$s the blue dots will lie near the top of the "
 "grey bars."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 資料集中各數字的觀察相對次數，與 %2$s 下的期望相對次數之比較。對於依 %2$s 分布的資料集，藍點將位於灰色條形的頂端附近。"
 
 msgid "Bayes Factor Robustness Plot"
 msgstr "貝氏因子穩健性圖"
@@ -294,7 +294,7 @@ msgid ""
 "concentration parameters) of the Dirichlet prior on the Bayes factor values, "
 "providing insights into the robustness of the statistical evidence to the "
 "choice of prior distribution."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 使用貝氏因子進行穩健性檢核的結果。此圖說明 Dirichlet 先驗的不同規格（即集中參數）對貝氏因子值的影響，提供統計證據對先驗分布選擇之穩健性的洞見。"
 
 msgid "Sequential Analysis Plot"
 msgstr "序列分析圖"
@@ -303,42 +303,42 @@ msgid ""
 "<b>Figure %1$i.</b> The results of a sequential analysis using the Bayes "
 "factor. The figure provides insight into how the statistical evidence from "
 "these data accumulates over time and under different prior specifications."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 使用貝氏因子進行序列分析的結果。此圖呈現隨時間推移以及在各種先驗規格下，來自這些資料的統計證據如何累積。"
 
 msgid "<u>Conclusion</u>"
-msgstr ""
+msgstr "<u>結論</u>"
 
 msgid "is rejected"
-msgstr ""
+msgstr "被拒絕"
 
 msgid "is not rejected"
-msgstr ""
+msgstr "未被拒絕"
 
 msgid "%1$s < %2$s"
-msgstr ""
+msgstr "%1$s < %2$s"
 
 msgid "%1$s >= %2$s"
-msgstr ""
+msgstr "%1$s >= %2$s"
 
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis that the first digits in "
 "the data set are distributed according to %2$s %3$s."
-msgstr ""
+msgstr "<i>p</i> 值為 %1$s，且資料集中首位數字依 %2$s 分布的虛無假設 %3$s。"
 
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis that the first two digits "
 "in the data set are distributed according to %2$s %3$s."
-msgstr ""
+msgstr "<i>p</i> 值為 %1$s，且資料集中前兩位數字依 %2$s 分布的虛無假設 %3$s。"
 
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis that the last digits in "
 "the data set are distributed according to %2$s %3$s."
-msgstr ""
+msgstr "<i>p</i> 值為 %1$s，且資料集中末位數字依 %2$s 分布的虛無假設 %3$s。"
 
 msgid ""
 "%1$s The Bayes factor indicates that the data are %2$s times more likely to "
 "occur under the null hypothesis than under the alternative hypothesis."
-msgstr ""
+msgstr "%1$s 貝氏因子顯示，資料在虛無假設下發生的可能性是對立假設下的 %2$s 倍。"
 
 #, fuzzy
 msgid "Direct Estimator"
@@ -357,50 +357,50 @@ msgid "Regression Estimator"
 msgstr "估計式"
 
 msgid "Point estimate"
-msgstr ""
+msgstr "點估計"
 
 msgid "%1$s%% Confidence interval"
-msgstr ""
+msgstr "%1$s%% 信賴區間"
 
 msgid ""
 "The displayed numbers are exact and may differ slightly from the rounded "
 "numbers in the explanatory text."
-msgstr ""
+msgstr "顯示的數值為精確值，可能與說明文字中的四捨五入數值略有不同。"
 
 msgid "<u>Calculations</u>"
-msgstr ""
+msgstr "<u>計算</u>"
 
 msgid ""
 "<i>The required information for the <b>direct</b> estimator consists of:</i>"
-msgstr ""
+msgstr "<i><b>直接</b>估計式所需的資訊包括：</i>"
 
 msgid "The population size <i>N</i>"
-msgstr ""
+msgstr "母體規模 <i>N</i>"
 
 msgid "%1$s = %2$i"
-msgstr ""
+msgstr "%1$s = %2$i"
 
 msgid "The sample size <i>n</i>"
-msgstr ""
+msgstr "樣本規模 <i>n</i>"
 
 msgid "The mean of the sample audit values %1$s"
-msgstr ""
+msgstr "樣本審計數值的平均數 %1$s"
 
 msgid "%1$s = %2$s"
-msgstr ""
+msgstr "%1$s = %2$s"
 
 msgid "The standard deviation of the sample audit values %1$s"
-msgstr ""
+msgstr "樣本審計數值的標準差 %1$s"
 
 msgid ""
 "The t-value <i>(df = n - 1)</i> corresponding to %1$s%% confidence "
 "%2$s%3$s%4$s"
-msgstr ""
+msgstr "對應於 %1$s%% 信賴水準 %2$s%3$s%4$s 的 t 值 <i>(df = n - 1)</i>"
 
 msgid ""
 "The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence "
 "%3$s%4$s%5$s%6$s"
-msgstr ""
+msgstr "對應於 %2$s%% 信賴水準 %3$s%4$s%5$s%6$s 的 t 值 <i>(df = %1$s - 1)</i>"
 
 msgid ""
 "%1$s\n"
@@ -408,42 +408,42 @@ msgid ""
 "                                %3$s\n"
 "                                %4$s\n"
 "                                %5$s"
-msgstr ""
+msgstr "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s"
 
 msgid "<i>This information allows for calculation of:</i>"
-msgstr ""
+msgstr "<i>此資訊可用於計算：</i>"
 
 msgid "The point estimate of the true population value %1$s"
-msgstr ""
+msgstr "真實母體值的點估計 %1$s"
 
 msgid "The precision of the estimator %1$s%2$s%3$s"
-msgstr ""
+msgstr "估計式的精確度 %1$s%2$s%3$s"
 
 msgid "The confidence interval around the point estimate %1$s"
-msgstr ""
+msgstr "點估計周遭的信賴區間 %1$s"
 
 msgid "%1$s = %2$s %3$s %4$s"
-msgstr ""
+msgstr "%1$s = %2$s %3$s %4$s"
 
 msgid ""
 "%1$s\n"
 "                           %2$s\n"
 "                           %3$s"
-msgstr ""
+msgstr "%1$s\n                           %2$s\n                           %3$s"
 
 msgid ""
 "<i>The required information for the <b>difference</b> estimator consists of:"
 "</i>"
-msgstr ""
+msgstr "<i><b>差異</b>估計式所需的資訊包括：</i>"
 
 msgid "The sum of the population book values <i>B</i>"
-msgstr ""
+msgstr "母體帳面數值的總和 <i>B</i>"
 
 msgid "The mean of the sample errors %1$s"
-msgstr ""
+msgstr "樣本誤差的平均數 %1$s"
 
 msgid "The standard deviation of the sample errors %1$s"
-msgstr ""
+msgstr "樣本誤差的標準差 %1$s"
 
 msgid ""
 "%1$s\n"
@@ -452,30 +452,30 @@ msgid ""
 "                                %4$s\n"
 "                                %5$s\n"
 "                                %6$s"
-msgstr ""
+msgstr "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s"
 
 msgid ""
 "%1$s\n"
 "                            %2$s\n"
 "                            %3$s"
-msgstr ""
+msgstr "%1$s\n                            %2$s\n                            %3$s"
 
 msgid ""
 "<i>The required information for the <b>ratio</b> estimator consists of:</i>"
-msgstr ""
+msgstr "<i><b>比率</b>估計式所需的資訊包括：</i>"
 
 msgid "The mean of the sample book values %1$s"
-msgstr ""
+msgstr "樣本帳面數值的平均數 %1$s"
 
 msgid "The standard deviation of the sample book values %1$s"
-msgstr ""
+msgstr "樣本帳面數值的標準差 %1$s"
 
 msgid ""
 "The correlation coefficient of the sample book values and audit values %1$s"
-msgstr ""
+msgstr "樣本帳面數值與審計數值的相關係數 %1$s"
 
 msgid "The correctness ratio %1$s"
-msgstr ""
+msgstr "正確性比率 %1$s"
 
 msgid ""
 "%1$s\n"
@@ -488,16 +488,16 @@ msgid ""
 "                                %8$s\n"
 "                                %9$s\n"
 "                                %10$s"
-msgstr ""
+msgstr "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s\n                                %7$s\n                                %8$s\n                                %9$s\n                                %10$s"
 
 msgid ""
 "<i>The required information for the <b>regression</b> estimator consists of:"
 "</i>"
-msgstr ""
+msgstr "<i><b>迴歸</b>估計式所需的資訊包括：</i>"
 
 msgid ""
 "The regression coefficient of the sample book values and audit values %1$s"
-msgstr ""
+msgstr "樣本帳面數值與審計數值的迴歸係數 %1$s"
 
 msgid ""
 "%1$s\n"
@@ -509,34 +509,34 @@ msgid ""
 "                                %7$s\n"
 "                                %8$s\n"
 "                                %9$s"
-msgstr ""
+msgstr "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s\n                                %7$s\n                                %8$s\n                                %9$s"
 
 msgid "Required Sample Size"
-msgstr ""
+msgstr "所需樣本規模"
 
 msgid "Achieved precision"
-msgstr ""
+msgstr "達成之精確度"
 
 msgid "Current <i>n</i>"
-msgstr ""
+msgstr "目前 <i>n</i>"
 
 msgid "Required precision"
-msgstr ""
+msgstr "所需精確度"
 
 msgid "Required <i>n</i>"
-msgstr ""
+msgstr "所需 <i>n</i>"
 
 msgid "Additional <i>n</i>"
-msgstr ""
+msgstr "額外 <i>n</i>"
 
 msgid "Scatter Plot"
-msgstr ""
+msgstr "散佈圖"
 
 msgid "Book value"
-msgstr ""
+msgstr "帳面數值"
 
 msgid "Audit value"
-msgstr ""
+msgstr "審計數值"
 
 msgid ""
 "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
@@ -547,55 +547,55 @@ msgid ""
 "correlation coefficient of the book values and the audit values, an "
 "indicator of the strength of the linear relationship between the two "
 "variables."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 選取樣本中帳面數值及其審計數值的散佈圖。紅點表示未符合其原始帳面數值的觀察值。若這些紅點位於圖形底部，表示帳面數值被高估；若位於圖形頂部，則表示被低估。數值 <i>r</i> 為帳面數值與審計數值的皮爾森相關係數，用以表示兩變數之間線性關係的強度。"
 
 msgid "Specificity"
-msgstr ""
+msgstr "特異性"
 
 msgid "Accuracy"
 msgstr "準確率"
 
 msgid "False positive rate"
-msgstr ""
+msgstr "假陽性率"
 
 msgid "False negative rate"
-msgstr ""
+msgstr "假陰性率"
 
 msgid "Negative predictive value"
-msgstr ""
+msgstr "陰性預測值"
 
 msgid "Positive rate"
-msgstr ""
+msgstr "陽性率"
 
 msgid "True positive rate"
-msgstr ""
+msgstr "真陽性率"
 
 msgid "Specificity parity"
-msgstr ""
+msgstr "特異性平權"
 
 msgid "Accuracy parity"
-msgstr ""
+msgstr "準確度平權"
 
 msgid "False positive rate parity"
-msgstr ""
+msgstr "假陽性率平權"
 
 msgid "False negative rate parity"
-msgstr ""
+msgstr "假陰性率平權"
 
 msgid "Negative predictive value parity"
-msgstr ""
+msgstr "陰性預測值平權"
 
 msgid "Disparate impact"
-msgstr ""
+msgstr "差異影響"
 
 msgid "Predictive rate parity"
-msgstr ""
+msgstr "預測率平權"
 
 msgid "Equal opportunity"
-msgstr ""
+msgstr "平等機會"
 
 msgid "Equalized odds"
-msgstr ""
+msgstr "均衡機率"
 
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
@@ -615,7 +615,7 @@ msgid ""
 "groups. The two tests conducted are Pearson's chi-squared tests. Only if the "
 "null hypothesis is rejected for both tests can we conclude that the "
 "algorithm is fair."
-msgstr ""
+msgstr "此程序的目標在於判定演算法之預測在敏感屬性上對於受保護群體是否公平，並以類型一誤差率 %1$s%% 檢驗此公平性。考量陽性類別 (<i>%2$s</i>)，公平性（或歧視性）可使用所謂的公平性指標加以量化。計算公平性指標涉及同時判定受優惠 (<i>%3$s</i>) 與未受優惠兩組在作為公平性指標基礎之模型評估指標上的數值。\n\n在此特定案例中，均衡機率並非基於單一的模型評估指標，而是基於兩個：真陽性率與假陽性率。因此，使用均衡機率需要套用兩次統計檢定，以檢查此兩種模型評估指標在兩組間所取數值是否存在顯著差異。所進行的兩次檢定為皮爾森卡方檢定。唯有當兩次檢定的虛無假設都被拒絕時，才能推論該演算法是公平的。"
 
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
@@ -629,38 +629,38 @@ msgid ""
 "significant differences between the values that the model evaluation metric "
 "takes for each of the two groups. The used test is the Pearson's chi-squared "
 "test."
-msgstr ""
+msgstr "此程序的目標在於判定演算法之預測在敏感屬性上對於受保護群體是否公平，並以類型一誤差率 %1$s%% 檢驗此公平性。考量陽性類別 (<i>%2$s</i>)，公平性（或歧視性）可使用所謂的公平性指標加以量化。計算公平性指標涉及判定受優惠 (<i>%3$s</i>) 與未受優惠兩組在作為公平性指標基礎之模型評估指標上的數值。隨後進行統計檢定，以檢查此模型評估指標在兩組間所取數值是否存在顯著差異。所使用的檢定為皮爾森卡方檢定。"
 
 msgid "<u>Assessing Model Fairness</u>"
-msgstr ""
+msgstr "<u>評估模型公平性</u>"
 
 msgid "An error occurred: %1$s"
-msgstr ""
+msgstr "發生錯誤：%1$s"
 
 msgid "Metric"
-msgstr ""
+msgstr "指標"
 
 msgid "n"
 msgstr "n"
 
 msgid ""
 "The null hypothesis specifies that the %1$s is equal across protected groups."
-msgstr ""
+msgstr "虛無假設指定 %1$s 在各受保護群體之間相等。"
 
 msgid ""
 "Please specify a privileged group and positive class to start the analysis."
-msgstr ""
+msgstr "請指定一個受優惠群體及陽性類別以開始分析。"
 
 msgid ""
 "<i>p</i>-values are uncorrected for multiple comparisons and are based on "
 "Fisher's exact test."
-msgstr ""
+msgstr "<i>p</i> 值未針對多重比較進行校正，且是以費雪精確檢定為基礎。"
 
 msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 與受優惠 (P) 群體之比較"
 
 msgid "Parity"
-msgstr ""
+msgstr "平權"
 
 msgid "p"
 msgstr "p"
@@ -668,30 +668,30 @@ msgstr "p"
 msgid ""
 "The null hypothesis specifies that the %1$s of an unprivileged group is "
 "equal to that of the privileged (P) group."
-msgstr ""
+msgstr "虛無假設指定未受優惠群體的 %1$s 等於受優惠 (P) 群體之值。"
 
 msgid ""
 "The null hypothesis specifies that the %1$s of an unprivileged group is "
 "greater than, or equal to, that of the privileged (P) group."
-msgstr ""
+msgstr "虛無假設指定未受優惠群體的 %1$s 高於或等於受優惠 (P) 群體之值。"
 
 msgid ""
 "The null hypothesis specifies that the %1$s of an unprivileged group is "
 "lower than, or equal to, that of the privileged (P) group."
-msgstr ""
+msgstr "虛無假設指定未受優惠群體的 %1$s 低於或等於受優惠 (P) 群體之值。"
 
 msgid ""
 "According to the '80 percent rule', if the value of the protected-to-"
 "privileged positve rate ratio is lower than 0.80 then the algorithm is "
 "considered unfair against the unprivileged group(s)."
-msgstr ""
+msgstr "依據『80% 規則』，若受保護群體與受優惠群體之陽性率比率值低於 0.80，則該演算法被視為對未受優惠群體不公平。"
 
 msgid "<u>Individual Comparisons</u>"
-msgstr ""
+msgstr "<u>個別比較</u>"
 
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - True Positive Rate"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 與受優惠 (P) 群體之比較 - 真陽性率"
 
 msgid "True Positive Rate"
 msgstr "偽陰性率"
@@ -699,21 +699,21 @@ msgstr "偽陰性率"
 msgid ""
 "The null hypothesis specifies that the true positive rate of an unprivileged "
 "group is equal to that of the privileged (P) group."
-msgstr ""
+msgstr "虛無假設指定未受優惠群體的真陽性率等於受優惠 (P) 群體之值。"
 
 msgid ""
 "The null hypothesis specifies that the true positive rate of an unprivileged "
 "group is greater than, or equal to, that of the privileged (P) group."
-msgstr ""
+msgstr "虛無假設指定未受優惠群體的真陽性率高於或等於受優惠 (P) 群體之值。"
 
 msgid ""
 "The null hypothesis specifies that the true positive rate of an unprivileged "
 "group is lower than, or equal to, that of the privileged (P) group."
-msgstr ""
+msgstr "虛無假設指定未受優惠群體的真陽性率低於或等於受優惠 (P) 群體之值。"
 
 msgid ""
 "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 與受優惠 (P) 群體之比較 - 假陽性率"
 
 msgid "False Positive Rate"
 msgstr "偽陽性率"
@@ -721,34 +721,34 @@ msgstr "偽陽性率"
 msgid ""
 "The null hypothesis specifies that the false positive rate of an "
 "unprivileged group is equal to that of the privileged (P) group."
-msgstr ""
+msgstr "虛無假設指定未受優惠群體的假陽性率等於受優惠 (P) 群體之值。"
 
 msgid ""
 "The null hypothesis specifies that the false positive rate of an "
 "unprivileged group is greater than, or equal to, that of the privileged (P) "
 "group."
-msgstr ""
+msgstr "虛無假設指定未受優惠群體的假陽性率高於或等於受優惠 (P) 群體之值。"
 
 msgid ""
 "The null hypothesis specifies that the false positive rate of an "
 "unprivileged group is lower than, or equal to, that of the privileged (P) "
 "group."
-msgstr ""
+msgstr "虛無假設指定未受優惠群體的假陽性率低於或等於受優惠 (P) 群體之值。"
 
 msgid "<b>Table %1$i.</b> Model Performance"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 模型績效"
 
 msgid "Support"
 msgstr "支持"
 
 msgid "Recall"
-msgstr ""
+msgstr "召回率"
 
 msgid "F1 Score"
 msgstr "F1 分數"
 
 msgid "<b>Table %1$i.</b> Confusion Matrix"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 混淆矩陣"
 
 msgid "Observed"
 msgstr "觀測值"
@@ -762,61 +762,61 @@ msgid ""
 "class is correctly predicted. False Negatives (FN) are cells in which the "
 "positive class is incorrectly predicted, and False Positives (FP) are cells "
 "in which the negative class is incorrectly predicted."
-msgstr ""
+msgstr "真陽性 (TP) 是正確實地被預測為陽性類別 (<i>%1$s</i>) 的格子，而真陰性 (TN) 是負類別被正確預測的格子。假陰性 (FN) 是陽性類別被不正確預測的格子，假陽性 (FP) 是負類別被不正確預測的格子。"
 
 msgid "Parity Estimates Plot"
-msgstr ""
+msgstr "平權估計圖"
 
 msgid ""
 "<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of %2$s "
 "from each unprivileged group to the privileged %3$s group) for all groups in "
 "the data. The closer the parity lies to one, the less discrimination occurs "
 "in the algorithm."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 資料中所有群體之估計平權統計量（即各未受優惠群體相對於受優惠 %3$s 群體之 %2$s 比率）。平權愈接近一，表示演算法中發生的歧視愈少。"
 
 msgid "<u>Parity Estimates Plots</u>"
-msgstr ""
+msgstr "<u>平權估計圖</u>"
 
 msgid "Parity Estimates Plot - True Positive Rate Parity"
-msgstr ""
+msgstr "平權估計圖 - 真陽性率平權"
 
 msgid "Parity Estimates Plot - False Positive Rate Parity"
-msgstr ""
+msgstr "平權估計圖 - 假陽性率平權"
 
 msgid ""
 "<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of true "
 "positive rate from each unprivileged group to the privileged %2$s group) for "
 "all groups in the data. The closer the parity lies to one, the less "
 "discrimination occurs in the algorithm."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 資料中所有群體之估計平權統計量（即各未受優惠群體相對於受優惠 %2$s 群體之真陽性率比率）。平權愈接近一，表示演算法中發生的歧視愈少。"
 
 msgid "Prior and Posterior Distribution Plot"
-msgstr ""
+msgstr "先驗與後驗分布圖"
 
 msgid ""
 "<b>Figure %1$i.</b> The prior and posterior distributions on the log odds "
 "ratio for each unprivileged group compared to the privileged group (%2$s)."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 各未受優惠群體相對於受優惠群體 (%2$s) 之對數勝算比的先驗與後驗分布。"
 
 msgid ""
 "As the measures are significantly different from each other, we can conclude "
 "that this algorithm is unfair against the unprivileged group(s)."
-msgstr ""
+msgstr "由於各指標彼此顯著不同，我們可推論此演算法對未受優惠群體不公平。"
 
 msgid ""
 "As the measures are not significantly different from each other, we cannot "
 "conclude that this algorithm is unfair against the unprivileged group(s)."
-msgstr ""
+msgstr "由於各指標彼此未顯著不同，我們無法推論此演算法對未受優惠群體不公平。"
 
 msgid ""
 "The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s "
 "and %4$s across protected groups %5$s. %6$s"
-msgstr ""
+msgstr "<i>p</i> 值為 %1$s 及 %2$s，且各受保護群體間之 %3$s 與 %4$s 相等的虛無假設 %5$s。%6$s"
 
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across "
 "protected groups %3$s. %4$s"
-msgstr ""
+msgstr "<i>p</i> 值為 %1$s，且各受保護群體間之 %2$s 相等的虛無假設 %3$s。%4$s"
 
 msgid ""
 "The goal of this procedure is to determine to what extent the predictions of "
@@ -827,16 +827,16 @@ msgid ""
 "appropriate fairness measure for the context at hand is crucial. The "
 "decision-making workflow allows for determining the most suitable fairness "
 "measure by answering the necessary questions."
-msgstr ""
+msgstr "此程序的目標在於判定演算法之預測在敏感屬性上對於受保護群體是否公平。公平性（或歧視性）可使用所謂的公平性指標加以量化。公平性指標有許多種，而不同的指標可能導致關於公平性的不同結論。因此，針對當下情境選擇最適當的公平性指標至關重要。決策工作流程允許透過回答必要問題來決定最合適的公平性指標。"
 
 msgid "<u>Selection</u>"
-msgstr ""
+msgstr "<u>選擇</u>"
 
 msgid "<u>Evaluation</u>"
-msgstr ""
+msgstr "<u>評估</u>"
 
 msgid "The most suitable fairness measure is <b>%1$s</b>."
-msgstr ""
+msgstr "最合適的公平性指標為 <b>%1$s</b>。"
 
 msgid ""
 "<u>Definition of Fairness:</u>\n"
@@ -862,7 +862,7 @@ msgid ""
 "not based on the measure's properties, data characteristics, or statistical "
 "considerations. Originally derived from U.S. employment hiring rates, the "
 "rule lacks theoretical rigor for broader applications."
-msgstr ""
+msgstr "<u>公平性之定義：</u>\n該演算法若其使用導致來自兩個不同群體之項目經歷現狀改變（即被分類為陽性）的比率相同，即為公平。『項目』一詞指被分類的對象；這些項目可以是人（如求職者）或物件（如銀行帳戶）。\n\n<u>公式：</u>\n差異影響係將未受優惠群體之陽性率除以受優惠群體之陽性率而得。陽性率等於 (TP+FP)/N，其中 TP 表示真陽性（被正確分類為陽性的項目）、FP 表示假陽性（被不正確分類為陽性的項目）、N 表示演算法分類之項目總數。\n\n<u>進一步細節：</u>\n差異影響最常見的用途與美國平等就業機會委員會 (EEOC) 的指導方針有關，特別是 %1$s%% 規則。根據此規則，若差異影響高於 0.80，則不構成歧視。此方法有其限制，因為門檻值並非基於該指標的特性、資料特徵或統計考量。該規則最初源自美國雇用率，缺乏適用於更廣泛情境的理論嚴謹性。"
 
 msgid ""
 "<u>Definition of Fairness:</u>\n"
@@ -884,7 +884,7 @@ msgid ""
 "It is important to note that this is the only measure in the decision-making "
 "workflow that addresses both the correct classification of the positive "
 "class and the incorrect classification of the negative class."
-msgstr ""
+msgstr "<u>公平性之定義：</u>\n該演算法若其使用導致來自不同群體之項目經歷現狀之正確與不正確改變（即被正確與不正確地分類為陽性）的數量相同，即為公平。『項目』一詞指被分類的對象；這些項目可以是人（如求職者）或物件（如銀行帳戶）。\n\n<u>公式：</u>\n均衡機率結合了真陽性率 (TPR) 與假陽性率 (FPR)。TPR 計算為 TP/(TP+FP)，FPR 計算為 FP/(TN+FP)，並同時套用於受優惠與未受優惠群體。此處 TP 表示真陽性（被正確分類的陽性項目）、TN 表示真陰性（被正確分類的陰性項目）、FP 表示假陽性（被不正確分類的陽性項目）。\n\n<u>進一步細節：</u>\n請務必注意，這是決策工作流程中唯一同時處理陽性類別之正確分類與陰性類別之不正確分類的指標。"
 
 msgid ""
 "<u>Definition of Fairness:</u>\n"
@@ -899,7 +899,7 @@ msgid ""
 "applied to both the privileged and unprivileged groups. Here, TP denotes "
 "true positives (correctly classified positive items) and FP denotes false "
 "positives (incorrectly classified positive items)."
-msgstr ""
+msgstr "<u>公平性之定義：</u>\n該演算法若其使用導致來自不同群體之項目經歷現狀之正確改變（即被正確分類為陽性）的數量相同，即為公平。『項目』一詞指被分類的對象；這些項目可以是人（如求職者）或物件（如銀行帳戶）。\n\n<u>公式：</u>\n預測率平權以精確度為基礎，計算為 TP/(TP+FP)，並同時套用於受優惠與未受優惠群體。此處 TP 表示真陽性（被正確分類的陽性項目），FP 表示假陽性（被不正確分類的陽性項目）。"
 
 msgid ""
 "<u>Definition of Fairness:</u>\n"
@@ -914,7 +914,7 @@ msgid ""
 "(TP+FN), applied to both privileged and unprivileged groups. Here, TP "
 "denotes true positives (correctly classified positive items) and FN denotes "
 "false negatives (incorrectly classified negative items)."
-msgstr ""
+msgstr "<u>公平性之定義：</u>\n該演算法若其使用導致來自不同群體之項目經歷現狀之正確改變（即被正確分類為陽性）的數量相同，即為公平。『項目』一詞指被分類的對象；這些項目可以是人（如求職者）或物件（如銀行帳戶）。\n\n<u>公式：</u>\n平等機會以真陽性率為基礎，計算為 TP/(TP+FN)，並同時套用於受優惠與未受優惠群體。此處 TP 表示真陽性（被正確分類的陽性項目），FN 表示假陰性（被不正確分類的陰性項目）。"
 
 msgid ""
 "<u>Definition of Fairness:</u>\n"
@@ -929,7 +929,7 @@ msgid ""
 "(TN+FP), applied to both privileged and unprivileged groups. Here, TN "
 "denotes true negatives (correctly classified negative items) and FP denotes "
 "false positives (incorrectly classified positive items)."
-msgstr ""
+msgstr "<u>公平性之定義：</u>\n該演算法若其使用導致來自不同群體之項目正確地經歷現狀無改變（即被正確分類為陰性）的數量相同，即為公平。『項目』一詞指被分類的對象；這些項目可以是人（如求職者）或物件（如銀行帳戶）。\n\n<u>公式：</u>\n特異性平權以真陰性率為基礎，計算為 TN/(TN+FP)，並同時套用於受優惠與未受優惠群體。此處 TN 表示真陰性（被正確分類的陰性項目），FP 表示假陽性（被不正確分類的陽性項目）。"
 
 msgid ""
 "<u>Definition of Fairness:</u>\n"
@@ -945,7 +945,7 @@ msgid ""
 "groups. Here, TN denotes true negatives (correctly classified negative "
 "items) and FN denotes false negatives (incorrectly classified negative "
 "items)."
-msgstr ""
+msgstr "<u>公平性之定義：</u>\n該演算法若其使用導致來自不同群體之項目正確地經歷現狀無改變（即被正確分類為陰性）的數量相同，即為公平。『項目』一詞指被分類的對象；這些項目可以是人（如求職者）或物件（如銀行帳戶）。\n\n<u>公式：</u>\n陰性預測值平權以陰性預測值為基礎，計算為 TN/(TN+FN)，並同時套用於受優惠與未受優惠群體。此處 TN 表示真陰性（被正確分類的陰性項目），FN 表示假陰性（被不正確分類的陰性項目）。"
 
 msgid ""
 "<u>Definition of Fairness:</u>\n"
@@ -973,7 +973,7 @@ msgid ""
 "compared to the privileged group (%5$s%%). Unlike other measures, accuracy "
 "parity does not consider varying error costs. It fails to detect increases "
 "in false negatives or false positives, missing the associated rise in costs."
-msgstr ""
+msgstr "<u>公平性之定義：</u>\n該演算法若其使用導致來自不同群體之項目正確地經歷改變與正確地經歷現狀無改變（即被正確分類為陽性以及被正確分類為陰性）的數量相同，即為公平。『項目』一詞指被分類的對象；這些項目可以是人（如求職者）或物件（如銀行帳戶）。\n\n<u>公式：</u>\n準確度平權以準確度為基礎，計算為 (TP+TN)/N，並同時套用於受優惠與未受優惠群體。此處 TP 表示真陽性（被正確分類的陽性項目）、TN 表示真陰性（被正確分類的陰性項目）、N 表示演算法分類之項目總數。TP 與 TN 之和反映演算法所做之正確分類總數。\n\n<u>進一步細節：</u>\n準確度平權如同作為模型評估指標的準確度，當套用於陽性類別僅佔少數的案例時具有重大缺陷。例如，若受優惠群體中有 %1$s%%、未受優惠群體中有 %2$s%% 犯欺詐，整體準確度可能看似很高（%3$s%%），但掩蓋了差異，其中未受優惠群體之準確度（%4$s%%）低於受優惠群體（%5$s%%）。與其他指標不同，準確度平權未考量不同的誤差成本。它無法偵測假陰性或假陽性之增加，而遺漏了隨之而來的成本上升。"
 
 msgid ""
 "<u>Definition of Fairness:</u>\n"
@@ -988,7 +988,7 @@ msgid ""
 "as FP/(TN+FP), applied to both privileged and unprivileged groups. Here, FP "
 "denotes false positives (incorrectly classified positive items), and TN "
 "denotes true negatives (correctly classified negative items)."
-msgstr ""
+msgstr "<u>公平性之定義：</u>\n該演算法若其使用導致來自不同群體之項目經歷現狀之不正確改變（即被不正確分類為陽性）的數量相同，即為公平。『項目』一詞指被分類的對象；這些項目可以是人（如求職者）或物件（如銀行帳戶）。\n\n<u>公式：</u>\n假陽性率平權以假陽性率為基礎，計算為 FP/(TN+FP)，並同時套用於受優惠與未受優惠群體。此處 FP 表示假陽性（被不正確分類的陽性項目），TN 表示真陰性（被正確分類的陰性項目）。"
 
 msgid ""
 "<u>Definition of Fairness:</u>\n"
@@ -1003,10 +1003,10 @@ msgid ""
 "as FN/(TP+FN), applied to both privileged and unprivileged groups. Here, FN "
 "denotes false negatives (incorrectly classified negative items), and TP "
 "denotes true positives (correctly classified positive items)."
-msgstr ""
+msgstr "<u>公平性之定義：</u>\n該演算法若其使用導致來自不同群體之項目不正確地經歷現狀無改變（即被不正確分類為陰性）的數量相同，即為公平。『項目』一詞指被分類的對象；這些項目可以是人（如求職者）或物件（如銀行帳戶）。\n\n<u>公式：</u>\n假陰性率平權以假陰性率為基礎，計算為 FN/(TP+FN)，並同時套用於受優惠與未受優惠群體。此處 FN 表示假陰性（被不正確分類的陰性項目），TP 表示真陽性（被正確分類的陽性項目）。"
 
 msgid "Decision-Making Workflow Plot"
-msgstr ""
+msgstr "決策工作流程圖"
 
 msgid ""
 "<b>Figure %1$i.</b> Graphical representation of the decision-making "
@@ -1014,7 +1014,7 @@ msgid ""
 "indicates 'False Negatives'. The white rectangles indicate the followed path "
 "based on the answers provided to the necessary questions of the workflow, "
 "the gray rectangles represent the ignored path."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 決策工作流程之圖形表示。標籤『FP』表示『假陽性』，標籤『FN』表示『假陰性』。白色矩形表示依據對工作流程必要問題所給之答案而採用的路徑，灰色矩形表示被忽略的路徑。"
 
 msgid ""
 "This procedure analyzes the frequency with which values get repeated within "
@@ -1027,19 +1027,19 @@ msgid ""
 "repeated values is tested with a type-I error of %1$s. To quantify what is "
 "expected, this test requires the assumption that the integer portions of the "
 "numbers are not associated with their decimal portions."
-msgstr ""
+msgstr "此程序分析數值在資料集內重複出現的次數，以統計方式識別資料是否可能遭竄改。與本福德定律及其推廣不同，此方法一次檢視整個數字，而不僅是首位或末位數字。\n\n為判定資料是否顯示過多重複數值，會以類型一誤差率 %1$s 檢驗資料未包含異常數量重複數值之虛無假設。為量化何謂預期情況，此檢定需要假設數字的整數部分與其小數部分無關。"
 
 msgid "<u>Assessing repeated values</u>"
-msgstr ""
+msgstr "<u>評估重複數值</u>"
 
 msgid "<b>Table %1$i.</b> Repeated Values Test"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 重複數值檢定"
 
 msgid "Average"
-msgstr ""
+msgstr "平均"
 
 msgid "Frequency"
-msgstr ""
+msgstr "次數"
 
 msgid "Entropy"
 msgstr "熵"
@@ -1047,135 +1047,135 @@ msgstr "熵"
 msgid ""
 "The displayed <i>p</i>-value is one-sided and is computed on the basis of "
 "%1$s samples."
-msgstr ""
+msgstr "顯示的 <i>p</i> 值為單尾，並以 %1$s 個樣本為基礎計算。"
 
 msgid "<b>Table %1$i.</b> Assumption Checks"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 假設檢核"
 
 msgid ""
 "The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> "
 "= 0."
-msgstr ""
+msgstr "顯示的 <i>p</i> 值是針對 H%1$s: <i>r</i> = 0 之雙尾檢定。"
 
 msgid "Percentage"
-msgstr ""
+msgstr "百分比"
 
 msgid "Observed vs. Expected Average Frequency"
-msgstr ""
+msgstr "觀察到的平均次數與期望平均次數"
 
 msgid "Average frequency"
-msgstr ""
+msgstr "平均次數"
 
 msgid "Simulated frequency"
-msgstr ""
+msgstr "模擬次數"
 
 msgid ""
 "<b>Figure %i:</b> The expected average frequencies of values versus the "
 "observed average frequency in the data set."
-msgstr ""
+msgstr "<b>圖 %i：</b> 資料集中期望的各數值平均次數與觀察到的平均次數。"
 
 msgid "Observed vs. Expected Entropy"
-msgstr ""
+msgstr "觀察到的熵與期望熵"
 
 msgid ""
 "<b>Figure %i:</b> The expected entropy of values versus the observed entropy "
 "in the data set."
-msgstr ""
+msgstr "<b>圖 %i：</b> 資料集中期望的各數值熵與觀察到的熵。"
 
 msgid "Histogram of Individual Values"
-msgstr ""
+msgstr "個別數值之直方圖"
 
 msgid "<b>Figure %i:</b> Histogram of the individual values in the data set."
-msgstr ""
+msgstr "<b>圖 %i：</b> 資料集中個別數值之直方圖。"
 
 msgid "%1$s < α"
-msgstr ""
+msgstr "%1$s < α"
 
 msgid "%1$s >= α"
-msgstr ""
+msgstr "%1$s >= α"
 
 msgid ""
 "The <i>p</i>-value is %1$s and the null hypothesis that the data do not "
 "contain an unexpected amount of repeated values %2$s."
-msgstr ""
+msgstr "<i>p</i> 值為 %1$s，且資料未包含異常數量的重複數值之虛無假設 %2$s。"
 
 msgid "percentage"
-msgstr ""
+msgstr "百分比"
 
 msgid "amount"
-msgstr ""
+msgstr "數量"
 
 msgid "<u>Planning</u>"
-msgstr ""
+msgstr "<u>規劃</u>"
 
 msgid ""
 "Analysis not possible: The materiality is higher than, or equal to the total "
 "value of the observations."
-msgstr ""
+msgstr "無法分析：重大性高於或等於觀察值之總值。"
 
 msgid ""
 "Analysis not possible: The expected errors are equal to, or higher than, the "
 "number of units in the population."
-msgstr ""
+msgstr "無法分析：期望誤差等於或高於母體中的單位數。"
 
 msgid ""
 "Analysis not possible: The expected errors are higher than the performance "
 "materiality."
-msgstr ""
+msgstr "無法分析：期望誤差高於績效重大性。"
 
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify the "
 "custom values for the Inherent risk and/or Control risk and/or Analytical "
 "risk, or the confidence."
-msgstr ""
+msgstr "偵測風險等於或高於 100%%。請重新指定固有風險及／或控制風險及／或分析風險之自訂數值，或指定信賴水準。"
 
 msgid ""
 "You cannot incorporate this prior information into your analysis because you "
 "are not testing against a performance materiality."
-msgstr ""
+msgstr "由於您不是針對績效重大性進行檢定，因此無法將此先驗資訊納入您的分析。"
 
 msgid ""
 "The prior expected misstatement rate in the population is larger than the "
 "performance materiality."
-msgstr ""
+msgstr "母體中之期望先驗錯報率大於績效重大性。"
 
 msgid "Selection Summary"
-msgstr ""
+msgstr "選取摘要"
 
 msgid ""
 "You must specify unique item ID's. The row numbers of the data set are "
 "sufficient."
-msgstr ""
+msgstr "您必須指定唯一的項目 ID。資料集的列號即足夠。"
 
 msgid "Evaluation Summary"
-msgstr ""
+msgstr "評估摘要"
 
 msgid ""
 "The hypergeometric upper bound requires that you specify the number of units "
 "in the population."
-msgstr ""
+msgstr "超幾何上界要求您指定母體中的單位數。"
 
 msgid ""
 "The direct, difference, ratio, and regression bounds require that you "
 "specify the number of items and the number of units in the population."
-msgstr ""
+msgstr "直接、差異、比率及迴歸上界要求您指定母體中的項目數與單位數。"
 
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify your "
 "values for the Inherent risk and/or Control risk and/or Analytical risk, or "
 "the confidence."
-msgstr ""
+msgstr "偵測風險等於或高於 100%%。請重新指定固有風險及／或控制風險及／或分析風險之數值，或指定信賴水準。"
 
 msgid ""
 "Analysis not possible: The materiality (%1$s) is higher than, or equal to "
 "the total value of the population (%2$s)."
-msgstr ""
+msgstr "無法分析：重大性 (%1$s) 高於或等於母體之總值 (%2$s)。"
 
 msgid ""
 "Analysis not possible: The hurdle model cannot be applied with this specific "
 "prior distribution because it is improper. Please specify a different prior "
 "distribution."
-msgstr ""
+msgstr "無法分析：障礙模型無法與此特定的先驗分布搭配使用，因為它是非正規 (improper) 的。請指定不同的先驗分布。"
 
 msgid ""
 "Select one or both sampling objectives to begin planning an audit sample.\n"
@@ -1198,13 +1198,13 @@ msgid ""
 "expectations, the accuracy of your estimate is below a tolerable percentage. "
 "In the evaluation you will be able to quantify the accuracy of your estimate "
 "of the population misstatement."
-msgstr ""
+msgstr "請選擇一個或兩個抽樣目標以開始規劃審計樣本。\n\n%1$s <b>針對績效重大性進行檢定</b>\n\n若您想根據樣本檢定母體中之總錯報是否超過特定上限（即績效重大性），請啟用此目標。此方法允許您規劃一個樣本，使樣本符合您的期望時，最大誤差被判定為低於績效重大性。在評估中，您將能量化樣本所提供支持或反對『母體錯報未超過績效重大性』此陳述的證據。\n\n%2$s <b>取得最小精確度</b>\n\n若您想在根據樣本估計母體中之總錯報時取得最小精確度，請啟用此目標。此方法允許您規劃一個樣本，使樣本符合期望時，您估計之準確度低於可容忍的百分比。在評估中，您將能量化您對母體錯報之估計的準確度。"
 
 msgid ""
 "The objective of this sampling procedure is to show with %1$s confidence "
 "that the %2$s of misstatement in the population is lower than the "
 "performance materiality of %3$s."
-msgstr ""
+msgstr "此抽樣程序之目標在於以 %1$s 信賴水準顯示母體之%2$s錯報低於績效重大性 %3$s。"
 
 msgid ""
 "The objective of this sampling procedure is to estimate the misstatement in "
@@ -1213,31 +1213,31 @@ msgid ""
 "The quantity of interest is the misstatement θ in the population. "
 "Misstatement is defined as the difference between an item's booked "
 "(recorded) value and its audited (true) value."
-msgstr ""
+msgstr "此抽樣程序之目標在於以 %1$s 信賴水準及最小精確度 %2$s 估計母體錯報。\n\n感興趣之數量為母體中的錯報 θ。錯報定義為一項目之帳面（已記錄）數值與其審計（真實）數值之差異。"
 
 msgid ""
 "The objective of this sampling procedure is to show with %1$s confidence and "
 "a precision of %3$s that the %2$s of misstatement in the population is lower "
 "than the performance materiality of %4$s."
-msgstr ""
+msgstr "此抽樣程序之目標在於以 %1$s 信賴水準及 %3$s 之精確度，顯示母體之%2$s錯報低於績效重大性 %4$s。"
 
 msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
-msgstr ""
+msgstr "不可容忍錯報之 H%1$s：%2$s %3$s %4$s"
 
 msgid "of exact misstatement H%1$s: %2$s = %3$s"
-msgstr ""
+msgstr "精確錯報之 H%1$s：%2$s = %3$s"
 
 msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
-msgstr ""
+msgstr "可容忍錯報之 H%1$s：%2$s %3$s %4$s"
 
 msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
-msgstr ""
+msgstr "可容忍錯報之 H%1$s：%2$s < %3$s"
 
 msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
-msgstr ""
+msgstr "無錯報之 H%1$s：%2$s %3$s %4$s"
 
 msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
-msgstr ""
+msgstr "不可容忍錯報之 H%1$s：%2$s > %3$s"
 
 msgid ""
 "%1$s\n"
@@ -1255,7 +1255,7 @@ msgid ""
 "%3$s. To reject this hypothesis on the basis of a sample, the information "
 "from the sample must be sufficient to reduce %5$s to an appropriately low "
 "level (i.e., %5$s < %6$s%%)."
-msgstr ""
+msgstr "%1$s\n\n感興趣之數量為母體中的錯報 %2$s。錯報定義為一項目之帳面（已記錄）數值與其審計（真實）數值之差異。當針對給定之績效重大性檢定母體錯報時，會針對 %2$s 建立兩個統計假設：\n\n- （虛無）假設 %3$s，\n- （對立）假設 %4$s。\n\n審計風險 %5$s 是不正確地拒絕假設 %3$s 之風險。為根據樣本拒絕此假設，樣本中之資訊必須足以將 %5$s 降至適當低之水準（即 %5$s < %6$s%%）。"
 
 msgid ""
 "%1$s\n"
@@ -1263,60 +1263,60 @@ msgid ""
 "In a Bayesian analysis, the parameter %2$s is assigned a prior probability "
 "distribution that incorporates the available audit information about the "
 "misstatement in the population."
-msgstr ""
+msgstr "%1$s\n\n在貝氏分析中，參數 %2$s 被賦予一個整合了關於母體錯報之可用審計資訊的先驗機率分布。"
 
 msgid "a performance materiality of %1$s"
-msgstr ""
+msgstr "績效重大性 %1$s"
 
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
 "in the population is below the performance materiality"
-msgstr ""
+msgstr "樣本提供足夠資訊以推論母體錯報低於績效重大性"
 
 msgid "a minimum precision of %1$s"
-msgstr ""
+msgstr "最小精確度 %1$s"
 
 msgid ""
 "the sample provides sufficient information to estimate the misstatement in "
 "the population with the minimum precision"
-msgstr ""
+msgstr "樣本提供足夠資訊以最小精確度估計母體錯報"
 
 msgid "a performance materiality of %1$s and a minimum precision of %2$s"
-msgstr ""
+msgstr "績效重大性 %1$s 及最小精確度 %2$s"
 
 msgid ""
 "the sample provides sufficient information to conclude that the misstatement "
 "in the population is below the performance materiality with the minimum "
 "precision"
-msgstr ""
+msgstr "樣本提供足夠資訊以最小精確度推論母體錯報低於績效重大性"
 
 msgid ""
 "Furthermore, the uncertainty regarding θ will only be extrapolated over the "
 "unseen part of the population. This requires the additional assumption that "
 "the population taints are homogeneous."
-msgstr ""
+msgstr "此外，關於 θ 之不確定性僅會外推至母體之未見部分。這需要額外的假設，即母體污染值為同質。"
 
 msgid "gamma"
-msgstr ""
+msgstr "伽瑪"
 
 msgid "beta"
-msgstr ""
+msgstr "貝他"
 
 msgid "beta-binomial"
-msgstr ""
+msgstr "貝他-二項"
 
 msgid ""
 "The purpose of the planning stage is to find a minimum sample size so that, "
 "given a certain number of expected misstatements, the sample provides "
 "sufficient information to achieve the specified sampling objectives."
-msgstr ""
+msgstr "規劃階段之目的在於找出最小樣本規模，使在給定一定數目之期望錯報下，樣本提供足夠資訊以達成所指定之抽樣目標。"
 
 msgid ""
 "No assumptions are made about the most likely expected error in the sample."
-msgstr ""
+msgstr "針對樣本中最可能之期望誤差，不作任何假設。"
 
 msgid "The most likely expected error in the sample is expected to be %1$s."
-msgstr ""
+msgstr "樣本中最可能之期望誤差預期為 %1$s。"
 
 msgid ""
 "%1$s%2$s The minimum sample size that is required for %3$s, assuming the "
@@ -1327,7 +1327,7 @@ msgid ""
 "Consequently, if the intended sample is evaluated and the sum of "
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) %7$s, %8$s. %9$s"
-msgstr ""
+msgstr "%1$s%2$s 假定樣本包含 %4$s 個誤差，則 %3$s 所需之最小樣本規模為 %5$s。此樣本規模以 %6$s 分布、每個錯報數值皆同等可能之先驗假設，以及給定之期望誤差為基礎。\n\n因此，若對預定樣本進行評估，且受審項目中（比例）錯報之總和小於（或等於）%7$s，則 %8$s。%9$s"
 
 msgid ""
 "%1$s%2$s The minimum sample size that is required for %3$s, assuming the "
@@ -1339,7 +1339,7 @@ msgid ""
 "Consequently, if the intended sample is evaluated and the sum of "
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) %10$s, %11$s. %12$s"
-msgstr ""
+msgstr "%1$s%2$s 假定樣本包含 %4$s 個誤差，則 %3$s 所需之最小樣本規模為 %5$s。此樣本規模以 %6$s 分布、來自審計風險模型之固有風險 (<i>%7$s</i>)、控制風險 (<i>%8$s</i>) 與分析風險 (<i>%9$s</i>) 之先驗評估，以及給定之期望誤差為基礎。\n\n因此，若對預定樣本進行評估，且受審項目中（比例）錯報之總和小於（或等於）%10$s，則 %11$s。%12$s"
 
 msgid ""
 "%1$s%2$s The minimum sample size that is required for %3$s, assuming the "
@@ -1350,7 +1350,7 @@ msgid ""
 "Consequently, if the intended sample is evaluated and the sum of "
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) %7$s, %8$s. %9$s"
-msgstr ""
+msgstr "%1$s%2$s 假定樣本包含 %4$s 個誤差，則 %3$s 所需之最小樣本規模為 %5$s。此樣本規模以 %6$s 分布、可容忍錯報與不可容忍錯報同等可能發生之先驗假設，以及給定之期望誤差為基礎。\n\n因此，若對預定樣本進行評估，且受審項目中（比例）錯報之總和小於（或等於）%7$s，則 %8$s。%9$s"
 
 msgid ""
 "%1$s%2$s The minimum sample size that is required for %3$s, assuming the "
@@ -1361,7 +1361,7 @@ msgid ""
 "Consequently, if the intended sample is evaluated and the sum of "
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) %9$s, %10$s. %11$s"
-msgstr ""
+msgstr "%1$s%2$s 假定樣本包含 %4$s 個誤差，則 %3$s 所需之最小樣本規模為 %5$s。此樣本規模以 %6$s 分布、先前一個包含 %8$s 個誤差之 %7$s 筆交易樣本之先驗假設，以及給定之期望誤差為基礎。\n\n因此，若對預定樣本進行評估，且受審項目中（比例）錯報之總和小於（或等於）%9$s，則 %10$s。%11$s"
 
 msgid ""
 "%1$s%2$s The minimum sample size that is required for %3$s, assuming the "
@@ -1372,53 +1372,53 @@ msgid ""
 "Consequently, if the intended sample is evaluated and the sum of "
 "(proportional) misstatements in the audited items is lower than (or equal "
 "to) %7$s, %8$s. %9$s"
-msgstr ""
+msgstr "%1$s%2$s 假定樣本包含 %4$s 個誤差，則 %3$s 所需之最小樣本規模為 %5$s。此樣本規模以 %6$s 分布、手動指定之先驗分布，以及給定之期望誤差為基礎。\n\n因此，若對預定樣本進行評估，且受審項目中（比例）錯報之總和小於（或等於）%7$s，則 %8$s。%9$s"
 
 msgid "random"
-msgstr ""
+msgstr "隨機"
 
 msgid "fixed interval"
-msgstr ""
+msgstr "固定間隔"
 
 msgid "cell"
-msgstr ""
+msgstr "格子"
 
 msgid "sieve"
-msgstr ""
+msgstr "篩選"
 
 msgid "book values (<i>%1$s</i>)"
-msgstr ""
+msgstr "帳面數值 (<i>%1$s</i>)"
 
 msgid "book values (<i>...</i>)"
-msgstr ""
+msgstr "帳面數值 (<i>...</i>)"
 
 msgid "ID variable (<i>%1$s</i>)"
-msgstr ""
+msgstr "ID 變數 (<i>%1$s</i>)"
 
 msgid "ID variable (<i>...</i>)"
-msgstr ""
+msgstr "ID 變數 (<i>...</i>)"
 
 msgid ""
 "<br><b>Warning:</b> A monetary unit sampling method was tried but failed."
-msgstr ""
+msgstr "<br><b>警告：</b> 曾嘗試使用貨幣單位抽樣方法但失敗。"
 
 msgid "%1$s record sampling"
-msgstr ""
+msgstr "%1$s 記錄抽樣"
 
 msgid "%1$s monetary unit sampling"
-msgstr ""
+msgstr "%1$s 貨幣單位抽樣"
 
 msgid "items"
-msgstr ""
+msgstr "項目"
 
 msgid "monetary units"
-msgstr ""
+msgstr "貨幣單位"
 
 msgid "randomized"
-msgstr ""
+msgstr "隨機化"
 
 msgid "non-randomized"
-msgstr ""
+msgstr "非隨機化"
 
 msgid ""
 "The purpose of the selection stage is to statistically select a number of "
@@ -1429,7 +1429,7 @@ msgid ""
 "\n"
 "From the population of %1$s %2$s items, %3$s sampling units (%4$s) are "
 "selected from the %5$s using the %6$s method.%7$s"
-msgstr ""
+msgstr "選取階段之目的在於從母體中統計地選取一定數量之抽樣單位。抽樣單位可以是個別項目（列）或個別貨幣單位。抽樣單位依選取方法從母體中選取。欲進一步了解目前的選取方法，請參閱<i>方法</i>一節。\n\n從包含 %1$s %2$s 個項目之母體中，使用 %6$s 方法從 %5$s 中選取 %3$s 個抽樣單位 (%4$s)。%7$s"
 
 msgid ""
 "%1$s\n"
@@ -1438,37 +1438,37 @@ msgid ""
 "planned sample size (%3$s) because some items are selected more than once. "
 "The items containing these %4$s extra selected sampling units will be "
 "counted multiple times in the evaluation."
-msgstr ""
+msgstr "%1$s\n\n<b>注意：</b> 由於部分項目被選取多次，所選之樣本 (%2$s) 包含之項目少於規劃之樣本規模 (%3$s)。包含這些 %4$s 個額外選取抽樣單位之項目，會在評估中被多次計數。"
 
 msgid "overall materiality"
-msgstr ""
+msgstr "整體重大性"
 
 msgid ""
 "Furthermore, an overall materiality of %1$s was determined and is used to "
 "evaluate the population misstatement."
-msgstr ""
+msgstr "此外，已決定整體重大性為 %1$s，並用以評估母體錯報。"
 
 msgid "performance materiality"
-msgstr ""
+msgstr "績效重大性"
 
 msgid "below"
-msgstr ""
+msgstr "低於"
 
 msgid "lower"
-msgstr ""
+msgstr "較低"
 
 msgid "above"
-msgstr ""
+msgstr "高於"
 
 msgid "higher"
-msgstr ""
+msgstr "較高"
 
 msgid "<b>Objectives:</b> You have achieved your initial sampling objectives."
-msgstr ""
+msgstr "<b>目標：</b> 您已達成最初的抽樣目標。"
 
 msgid ""
 "<b>Objectives:</b> You have not achieved your initial sampling objectives."
-msgstr ""
+msgstr "<b>目標：</b> 您尚未達成最初的抽樣目標。"
 
 msgid ""
 "The objective of this audit sampling procedure was to determine with %1$s "
@@ -1478,7 +1478,7 @@ msgid ""
 "\n"
 "The conclusion on the basis of these results is that the misstatement in the "
 "population is %6$s than the %5$s. %7$s"
-msgstr ""
+msgstr "此審計抽樣程序之目標在於以 %1$s 信賴水準判定母體錯報是否低於所指定之績效重大性，本例中為 %2$s。%3$s就目前之資料而言，%1$s 之錯報上界 %4$s%5$s。\n\n基於這些結果之結論為，母體錯報%6$s於%5$s。%7$s"
 
 msgid ""
 "The objective of this audit sampling procedure was to determine the "
@@ -1489,7 +1489,7 @@ msgid ""
 "The conclusion on the basis of these results is that the misstatement in the "
 "population has been determined with at least %1$s confidence and a precision "
 "of %4$s. %5$s"
-msgstr ""
+msgstr "此審計抽樣程序之目標在於以 %1$s 信賴水準及最小精確度 %2$s 判定母體錯報。就目前之資料而言，所得之精確度%3$s於最小精確度。\n\n基於這些結果之結論為，母體錯報已至少以 %1$s 信賴水準及 %4$s 之精確度判定。%5$s"
 
 msgid ""
 "The objective of this audit sampling procedure was to determine with %1$s "
@@ -1501,16 +1501,16 @@ msgid ""
 "\n"
 "The conclusion on the basis of these results is that, with a precision of "
 "%8$s, the misstatement in the population is %9$s than the %6$s. %10$s"
-msgstr ""
+msgstr "此審計抽樣程序之目標在於以 %1$s 信賴水準及最小精確度 %2$s，判定母體錯報是否低於所指定之績效重大性，本例中為 %3$s。%4$s就目前之資料而言，%1$s 之錯報上界 %5$s%6$s，且所得之精確度%7$s於最小精確度。\n\n基於這些結果之結論為，以 %8$s 之精確度而言，母體錯報%9$s於%6$s。%10$s"
 
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 帳面數值之描述統計"
 
 msgid "Population size"
-msgstr ""
+msgstr "母體規模"
 
 msgid "Absolute value"
-msgstr ""
+msgstr "絕對值"
 
 msgid "Mean"
 msgstr "平均數"
@@ -1519,41 +1519,41 @@ msgid "Std. deviation"
 msgstr "標準差"
 
 msgid "1"
-msgstr ""
+msgstr "1"
 
 msgid "Quartile"
-msgstr ""
+msgstr "四分位數"
 
 msgid "2"
-msgstr ""
+msgstr "2"
 
 msgid "3"
-msgstr ""
+msgstr "3"
 
 msgid "Distribution of Book Values"
-msgstr ""
+msgstr "帳面數值之分布"
 
 msgid "Mean ± St.dev"
-msgstr ""
+msgstr "平均數 ± 標準差"
 
 msgid ""
 "<b>Figure %1$i.</b> The distribution of book values in the population. The "
 "red and blue dots respectively represent the mean and the values exactly one "
 "standard deviation from the mean. The orange dots represent the first, "
 "second (median) and third quartiles of the book values."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 母體中帳面數值之分布。紅點與藍點分別代表平均數以及距離平均數恰好一個標準差的數值。橘點代表帳面數值的第一、第二（中位數）與第三四分位數。"
 
 msgid "High"
 msgstr "上界"
 
 msgid "Medium"
-msgstr ""
+msgstr "中等"
 
 msgid "Low"
 msgstr "下界"
 
 msgid "<u>Audit Risk Model</u>"
-msgstr ""
+msgstr "<u>審計風險模型</u>"
 
 msgid ""
 "The Audit Risk Model is a method to reduce the required information from the "
@@ -1564,159 +1564,159 @@ msgid ""
 "%1$s, the control risk was determined to be %2$s and the analytical risk was "
 "determined to be %3$s. According to the Audit Risk Model, the required "
 "detection risk to maintain an audit risk of %4$s should be %5$s."
-msgstr ""
+msgstr "審計風險模型是一套方法，基於先前對固有風險、控制風險與分析風險之評估，在維持所欲審計風險的同時，減少樣本所需的資訊。\n\n在抽樣程序之前，固有風險被判定為 %1$s、控制風險被判定為 %2$s、分析風險被判定為 %3$s。根據審計風險模型，為維持 %4$s 之審計風險，所需之偵測風險應為 %5$s。"
 
 msgid ""
 "Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x "
 "Analytical Risk (%4$s%%) x Detection risk (%5$s%%)"
-msgstr ""
+msgstr "審計風險 (%1$s%%) = 固有風險 (%2$s%%) x 控制風險 (%3$s%%) x 分析風險 (%4$s%%) x 偵測風險 (%5$s%%)"
 
 msgid ""
 "At least one translation of the categories High, Medium and Low to "
 "probabilities is done according custom settings."
-msgstr ""
+msgstr "高、中、低類別轉化為機率之作法中，至少有一項是依自訂設定進行。"
 
 msgid ""
 "The translation of the categories high, medium and low to probabilities is "
 "done using the default settings shown in the table below."
-msgstr ""
+msgstr "高、中、低類別轉化為機率之作法，使用下表所示之預設設定。"
 
 msgid "<b>Table %1$i.</b> Default Settings Audit Risk Model"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 審計風險模型之預設設定"
 
 msgid "Inherent risk"
-msgstr ""
+msgstr "固有風險"
 
 msgid "Control risk"
-msgstr ""
+msgstr "控制風險"
 
 msgid "Analytical risk"
-msgstr ""
+msgstr "分析風險"
 
 msgid "= Selected"
-msgstr ""
+msgstr "= 已選取"
 
 msgid ""
 "The detection risk is equal to or higher than 100%%. Please re-specify the "
 "percentages for the Inherent risk and/or Control risk and/or Analytical risk."
-msgstr ""
+msgstr "偵測風險等於或高於 100%%。請重新指定固有風險及／或控制風險及／或分析風險之百分比。"
 
 msgid ""
 "You cannot achieve your current sampling objectives with this population. "
 "The resulting sample size exceeds the maximum of %1$s. Adjust the maximum "
 "option accordingly."
-msgstr ""
+msgstr "您無法以此母體達成目前的抽樣目標。所得之樣本規模超過上限 %1$s。請據此調整上限選項。"
 
 msgid ""
 "The tolerable misstatements are larger than the performance materiality. If "
 "you used an absolute number of tolerable misstatements < 1, please use the "
 "'relative' option."
-msgstr ""
+msgstr "可容忍錯報大於績效重大性。若您使用了少於 1 之絕對可容忍錯報數，請使用『相對』選項。"
 
 msgid "<b>Table %1$i.</b> Planning Summary"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 規劃摘要"
 
 msgid "Performance materiality"
-msgstr ""
+msgstr "績效重大性"
 
 msgid "Min. precision"
-msgstr ""
+msgstr "最小精確度"
 
 msgid "Detection risk"
-msgstr ""
+msgstr "偵測風險"
 
 msgid "Audit risk"
-msgstr ""
+msgstr "審計風險"
 
 msgid "Tolerable misstatements"
-msgstr ""
+msgstr "可容忍錯報"
 
 msgid "Minimum sample size"
-msgstr ""
+msgstr "最小樣本規模"
 
 msgid "The minimum sample size is based on the Poisson distribution."
-msgstr ""
+msgstr "最小樣本規模是以卜瓦松分布為基礎。"
 
 msgid "The minimum sample size is based on the binomial distribution."
-msgstr ""
+msgstr "最小樣本規模是以二項分布為基礎。"
 
 msgid "The minimum sample size is based on the hypergeometric distribution."
-msgstr ""
+msgstr "最小樣本規模是以超幾何分布為基礎。"
 
 msgid "The minimum sample size is based on the gamma distribution."
-msgstr ""
+msgstr "最小樣本規模是以伽瑪分布為基礎。"
 
 msgid "The minimum sample size is based on the beta distribution."
-msgstr ""
+msgstr "最小樣本規模是以貝他分布為基礎。"
 
 msgid ""
 "The minimum sample size is based on the beta-binomial distribution (N = "
 "%1$s)."
-msgstr ""
+msgstr "最小樣本規模是以貝他-二項分布（N = %1$s）為基礎。"
 
 msgid ""
 "Either the materiality (if applicable) or the number of units in the "
 "population is defined as zero."
-msgstr ""
+msgstr "重大性（如適用）或母體中之單位數被定義為零。"
 
 msgid "%1$s <b>Insufficient information.</b>"
-msgstr ""
+msgstr "%1$s <b>資訊不足。</b>"
 
 msgid ""
 "The minimum sample size is based on the Poisson distribution (%1$s = %2$s)."
-msgstr ""
+msgstr "最小樣本規模是以卜瓦松分布（%1$s = %2$s）為基礎。"
 
 msgid ""
 "The minimum sample size is based on the binomial distribution (p = %1$s)"
-msgstr ""
+msgstr "最小樣本規模是以二項分布（p = %1$s）為基礎"
 
 msgid ""
 "The minimum sample size is based on the hypergeometric distribution (N = "
 "%1$s, K = %2$s)."
-msgstr ""
+msgstr "最小樣本規模是以超幾何分布（N = %1$s、K = %2$s）為基礎。"
 
 msgid ""
 "The minimum sample size is based on the gamma distribution (%1$s = %2$s, "
 "%3$s = %4$s)"
-msgstr ""
+msgstr "最小樣本規模是以伽瑪分布（%1$s = %2$s、%3$s = %4$s）為基礎"
 
 msgid ""
 "The minimum sample size is based on the beta distribution (%1$s = %2$s, %3$s "
 "= %4$s)."
-msgstr ""
+msgstr "最小樣本規模是以貝他分布（%1$s = %2$s、%3$s = %4$s）為基礎。"
 
 msgid ""
 "The minimum sample size is based on the beta-binomial distribution (N = "
 "%1$s, %2$s = %3$s, %4$s = %5$s)."
-msgstr ""
+msgstr "最小樣本規模是以貝他-二項分布（N = %1$s、%2$s = %3$s、%4$s = %5$s）為基礎。"
 
 msgid ""
 "The minimum sample size (%1$s) is larger than the number of units in the "
 "population (%2$s)."
-msgstr ""
+msgstr "最小樣本規模 (%1$s) 大於母體中之單位數 (%2$s)。"
 
 msgid "Based on this sample size, the selection interval spans %1$s units."
-msgstr ""
+msgstr "根據此樣本規模，選取間隔涵蓋 %1$s 個單位。"
 
 msgid ""
 "The value %1$s is automatically used as a starting point for the fixed "
 "interval selection."
-msgstr ""
+msgstr "數值 %1$s 會自動用作固定間隔選取的起始點。"
 
 msgid "%1$s"
-msgstr ""
+msgstr "%1$s"
 
 msgid "Minimum Sample Sizes"
-msgstr ""
+msgstr "最小樣本規模"
 
 msgid "Beta"
-msgstr ""
+msgstr "貝他"
 
 msgid "Gamma"
-msgstr ""
+msgstr "伽瑪"
 
 msgid "Beta-binomial"
-msgstr ""
+msgstr "貝他-二項"
 
 msgid "Binomial"
 msgstr "二項式"
@@ -1728,24 +1728,24 @@ msgid "Hypergeometric"
 msgstr "超幾何分布"
 
 msgid "Across Probability Distributions (Current: %1$s)"
-msgstr ""
+msgstr "跨機率分布（目前：%1$s）"
 
 msgid "Expected error-free"
-msgstr ""
+msgstr "期望無誤差"
 
 msgid "Expected errors"
-msgstr ""
+msgstr "期望誤差"
 
 msgid "An error occurred in a call to the jfa package: %1$s"
-msgstr ""
+msgstr "呼叫 jfa 套件時發生錯誤：%1$s"
 
 msgid "Across Expected Errors (Current: %1$s)"
-msgstr ""
+msgstr "跨期望誤差（目前：%1$s）"
 
 msgid ""
 "You cannot achieve your current sampling objectives with up to three full "
 "misstatements this population."
-msgstr ""
+msgstr "您無法在此母體中於最多三個完整錯報的情況下達成目前的抽樣目標。"
 
 msgid ""
 "<b>Figure %1$i.</b> The first panel shows a comparison of the minimum sample "
@@ -1755,111 +1755,111 @@ msgid ""
 "expected error-free items is colored in green. The second panel shows a "
 "comparison of the minimum sample sizes under different expected errors for "
 "the current probability distribution."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 第一個面板比較不同機率分布下之最小樣本規模。長條代表樣本中目前期望誤差之最小樣本規模。每個長條中期望誤差之數量以紅色表示，期望無誤差項目之數量以綠色表示。第二個面板針對目前的機率分布，比較不同期望誤差下之最小樣本規模。"
 
 msgid "Presumed %1$s Distribution"
-msgstr ""
+msgstr "假定之 %1$s 分布"
 
 msgid ""
 "<b>Figure %1$i.</b> The assumed %2$s distribution. The number of expected "
 "errors in the selection is colored in red. The total probability of the "
 "errors does not exceed the detection risk as specified through the audit "
 "risk model."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 假定之 %2$s 分布。選取樣本中期望誤差之數量以紅色表示。誤差之總機率不超過透過審計風險模型所指定之偵測風險。"
 
 msgid ""
 "You cannot use an interval-based selection method because the sample size "
 "exceeds the population size of %1$s. Please change the selection method to "
 "random sampling."
-msgstr ""
+msgstr "您無法使用以間隔為基礎的選取方法，因為樣本規模超過母體規模 %1$s。請將選取方法改為隨機抽樣。"
 
 msgid ""
 "Starting point is outside the range of the selection interval of 1 to %1$s. "
 "Please choose a starting point < %1$s."
-msgstr ""
+msgstr "起始點位於 1 至 %1$s 之選取間隔之外。請選擇一個起始點 < %1$s。"
 
 msgid "<b>Table %1$i.</b> Selection Summary"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 選取摘要"
 
 msgid "No. units"
-msgstr ""
+msgstr "單位數"
 
 msgid "No. items"
-msgstr ""
+msgstr "項目數"
 
 msgid "Selection value"
-msgstr ""
+msgstr "選取值"
 
 msgid "%% of population value"
-msgstr ""
+msgstr "母體數值之 %%"
 
 msgid "%% of population size"
-msgstr ""
+msgstr "母體規模之 %%"
 
 msgid "using seed %1$s"
-msgstr ""
+msgstr "使用種子 %1$s"
 
 msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."
-msgstr ""
+msgstr "在大小為 %1$s 的各間隔中，選取單位 %2$s%3$s。"
 
 msgid "The sample is drawn with seed %1$s and intervals of size %2$s."
-msgstr ""
+msgstr "樣本是以種子 %1$s 及大小為 %2$s 之間隔抽取。"
 
 msgid "The sample is drawn with seed %1$s."
-msgstr ""
+msgstr "樣本是以種子 %1$s 抽取。"
 
 msgid "The random numbers are generated with seed %1$s."
-msgstr ""
+msgstr "隨機數是以種子 %1$s 產生。"
 
 msgid "The sample is not exported until the 'Synchronize' option is checked."
-msgstr ""
+msgstr "在勾選『同步』選項之前，不會匯出樣本。"
 
 msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 貨幣間隔選取之資訊"
 
 msgid "Items"
-msgstr ""
+msgstr "項目"
 
 msgid "Selected items"
-msgstr ""
+msgstr "已選取項目"
 
 msgid "Selected units"
-msgstr ""
+msgstr "已選取單位"
 
 msgid "%% of total value"
-msgstr ""
+msgstr "總值之 %%"
 
 msgid "twice the"
-msgstr ""
+msgstr "其兩倍"
 
 msgid "a single"
-msgstr ""
+msgstr "單一"
 
 msgid ""
 "The top stratum consists of all items with a book value larger than %1$s "
 "interval."
-msgstr ""
+msgstr "最上層由所有帳面數值大於 %1$s 間隔之項目組成。"
 
 msgid "Total"
 msgstr "總計"
 
 msgid "Top stratum"
-msgstr ""
+msgstr "最上層"
 
 msgid "Bottom stratum"
-msgstr ""
+msgstr "最下層"
 
 msgid "<b>Table %1$i.</b> Selected Items"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 已選取之項目"
 
 msgid "Selected"
-msgstr ""
+msgstr "已選取"
 
 msgid "<b>Table %1$i.</b> Descriptive Statistics for Sample"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 樣本之描述統計"
 
 msgid "Valid cases"
-msgstr ""
+msgstr "有效個案"
 
 msgid "Median"
 msgstr "中位數"
@@ -1879,10 +1879,10 @@ msgstr "最大值"
 msgid ""
 "The audit result variable should contain only 0's (correct) and 1's "
 "(incorrect)."
-msgstr ""
+msgstr "審計結果變數只能包含 0（正確）與 1（錯誤）。"
 
 msgid "combined with the information in the prior distribution"
-msgstr ""
+msgstr "結合先驗分布中的資訊"
 
 msgid ""
 "The purpose of the evaluation stage is to infer the misstatement θ in the "
@@ -1892,157 +1892,157 @@ msgid ""
 "of %3$s sampling units, of which a total of %4$s were misstated. The "
 "information from this sample %5$s results in a most likely misstatement in "
 "the population of %6$s and a %7$s upper bound of %8$s."
-msgstr ""
+msgstr "評估階段之目的在於根據樣本推論母體中之錯報 θ。\n\n母體包含 %1$s 個項目及 %2$s 個單位。樣本包含 %3$s 個抽樣單位，其中共有 %4$s 個被錯報。來自此樣本之資訊%5$s導致母體中之最可能錯報為 %6$s，以及 %7$s 上界為 %8$s。"
 
 msgid "<b>Table %1$i.</b> Evaluation Summary"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 評估摘要"
 
 msgid "Overall materiality"
-msgstr ""
+msgstr "整體重大性"
 
 msgid "Sample size"
 msgstr "樣本數"
 
 msgid "Misstatements"
-msgstr ""
+msgstr "錯報"
 
 msgid "Taint"
-msgstr ""
+msgstr "污染值"
 
 msgid "Most likely misstatement"
-msgstr ""
+msgstr "最可能錯報"
 
 msgid "%1$s%% Upper bound"
-msgstr ""
+msgstr "%1$s%% 上界"
 
 msgid "%1$s%% Lower bound"
-msgstr ""
+msgstr "%1$s%% 下界"
 
 msgid "p-value"
 msgstr "p值"
 
 msgid "The results are computed using the Poisson distribution."
-msgstr ""
+msgstr "結果是使用卜瓦松分布計算。"
 
 msgid "The results are computed using the binomial distribution."
-msgstr ""
+msgstr "結果是使用二項分布計算。"
 
 msgid "The results are computed using the hypergeometric distribution."
-msgstr ""
+msgstr "結果是使用超幾何分布計算。"
 
 msgid "The results are computed using the Stringer method."
-msgstr ""
+msgstr "結果是使用 Stringer 方法計算。"
 
 msgid "The results are computed using the regression estimator."
-msgstr ""
+msgstr "結果是使用迴歸估計式計算。"
 
 msgid "The results are computed using the direct estimator."
-msgstr ""
+msgstr "結果是使用直接估計式計算。"
 
 msgid "The results are computed using the difference estimator."
-msgstr ""
+msgstr "結果是使用差異估計式計算。"
 
 msgid "The results are computed using the ratio estimator."
-msgstr ""
+msgstr "結果是使用比率估計式計算。"
 
 msgid "The results are computed using the mean-per-unit estimator"
-msgstr ""
+msgstr "結果是使用每單位平均數估計式計算"
 
 msgid "The results are computed using the beta distribution."
-msgstr ""
+msgstr "結果是使用貝他分布計算。"
 
 msgid "The results are computed using the gamma distribution."
-msgstr ""
+msgstr "結果是使用伽瑪分布計算。"
 
 msgid "The results are computed using the beta-binomial distribution."
-msgstr ""
+msgstr "結果是使用貝他-二項分布計算。"
 
 msgid "The results are computed using the hurdle beta model"
-msgstr ""
+msgstr "結果是使用障礙貝他模型計算"
 
 msgid "The results are computed using the Stringer method with LTA adjustment."
-msgstr ""
+msgstr "結果是使用經過 LTA 調整之 Stringer 方法計算。"
 
 msgid ""
 "The results are computed using the beta distribution and require the "
 "assumption that the population taints are homogeneous."
-msgstr ""
+msgstr "結果是使用貝他分布計算，並要求母體污染值為同質之假設。"
 
 msgid "The audit result column is empty."
-msgstr ""
+msgstr "審計結果欄位為空。"
 
 msgid ""
 "Either the materiality, the population size, or the population value is "
 "defined as zero, or one of the required variables is missing."
-msgstr ""
+msgstr "重大性、母體規模或母體數值被定義為零，或缺少其中一個必要變數。"
 
 msgid "<b>Table %1$i.</b> Stratum Evaluation Summary"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 層級評估摘要"
 
 msgid "Stratum"
-msgstr ""
+msgstr "層級"
 
 msgid "%1$s%% Interval"
-msgstr ""
+msgstr "%1$s%% 區間"
 
 msgid "Information is shared between the strata in the population."
-msgstr ""
+msgstr "資訊在母體中各層級之間共享。"
 
 msgid "The strata in the population are assumed to be independent."
-msgstr ""
+msgstr "假定母體中的各層級是獨立的。"
 
 msgid "<b>Table %1$i.</b> Misstated Items"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 錯報項目"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Difference"
-msgstr ""
+msgstr "差異"
 
 msgid "Counted"
-msgstr ""
+msgstr "已計數"
 
 msgid "No misstatements were identified in the sample."
-msgstr ""
+msgstr "在樣本中未識別出任何錯報。"
 
 msgid "Pearson's r"
-msgstr ""
+msgstr "皮爾森 r"
 
 msgid ""
 "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis "
 "H₋: ρ < 0"
-msgstr ""
+msgstr "虛無假設 H₀: ρ ≥ 0 是針對對立假設 H₋: ρ < 0 進行檢定"
 
 msgid "Book values - Taints"
-msgstr ""
+msgstr "帳面數值 - 污染值"
 
 msgid "There were no misstatements found in the sample."
-msgstr ""
+msgstr "在樣本中未發現任何錯報。"
 
 msgid "An error occurred while calculating the correlation."
-msgstr ""
+msgstr "在計算相關係數時發生錯誤。"
 
 msgid "Evaluation of Sampling Objectives"
-msgstr ""
+msgstr "抽樣目標之評估"
 
 msgid "An error occurred while creating this plot: The results contain NAs"
-msgstr ""
+msgstr "在建立此圖形時發生錯誤：結果包含 NA"
 
 msgid "Upper bound"
 msgstr "上界"
 
 msgid "Most likely error"
-msgstr ""
+msgstr "最可能誤差"
 
 msgid "Minimum precision"
-msgstr ""
+msgstr "最小精確度"
 
 msgid "Obtained precision"
-msgstr ""
+msgstr "所得精確度"
 
 msgid "An error occurred while creating this plot: %1$s"
-msgstr ""
+msgstr "在建立此圖形時發生錯誤：%1$s"
 
 msgid ""
 "<b>Figure %1$i.</b> Evaluation information for the current annotated "
@@ -2050,26 +2050,26 @@ msgid ""
 "most likely misstatement. The most likely misstatement is the best estimate "
 "of the true misstatement in the population. The upper bound is an estimate "
 "of the maximum misstatement in the population."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 目前已註記選取樣本之評估資訊。重大性與最大錯報及最可能錯報相比較。最可能錯報是母體真實錯報之最佳估計。上界是母體最大錯報之估計。"
 
 msgid "Estimates"
-msgstr ""
+msgstr "估計值"
 
 msgid ""
 "<b>Figure %1$i.</b> Most likely estimates (points) and %2$s%% %3$s %4$s "
 "intervals for the misstatement in the population and in the individual "
 "strata, showing the range of plausible values for the misstatement after "
 "seeing the data."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 母體及各個別層級中錯報之最可能估計值（點）及 %2$s%% %3$s%4$s 區間，顯示看到資料後錯報之合理數值範圍。"
 
 msgid "Scatter Plot of Book and Audit Values"
-msgstr ""
+msgstr "帳面數值與審計數值之散佈圖"
 
 msgid "Book value (%1$s)"
-msgstr ""
+msgstr "帳面數值 (%1$s)"
 
 msgid "Audit value (%1$s)"
-msgstr ""
+msgstr "審計數值 (%1$s)"
 
 msgid ""
 "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and "
@@ -2078,31 +2078,31 @@ msgid ""
 "items whose audit value did not match their original book value. If these "
 "red dots lie below the diagonal, the items are overstated. If these red dots "
 "lie above the diagonal they are understated. %2$s"
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 選取樣本中帳面數值及其對應審計數值之散佈圖。對角線（虛線）上之灰點表示相符之帳面與審計數值。對角線外之紅點表示審計數值未符合其原始帳面數值之項目。若這些紅點位於對角線下方，則項目被高估；若位於對角線上方，則被低估。%2$s"
 
 msgid "<b>Table %1$i.</b> Corrections to Population"
-msgstr ""
+msgstr "<b>表 %1$i。</b> 對母體之更正"
 
 msgid "Correction"
-msgstr ""
+msgstr "更正"
 
 msgid "The correction to achieve no misstatements is the upper bound%1$s."
-msgstr ""
+msgstr "為達成無錯報之更正即為上界%1$s。"
 
 msgid "No misstatements with %1$s%% precision"
-msgstr ""
+msgstr "以 %1$s%% 精確度達成無錯報"
 
 msgid "No misstatements with %1$s%% confidence"
-msgstr ""
+msgstr "以 %1$s%% 信賴水準達成無錯報"
 
 msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
-msgstr ""
+msgstr "以 %1$s%% 信賴水準及 %2$s%% 精確度達成無錯報"
 
 msgid "Created by JASP for Audit (Version %1$s) on %2$s at %3$s."
-msgstr ""
+msgstr "由 JASP for Audit 建立（版本 %1$s），於 %2$s %3$s。"
 
 msgid "Prior and Expected Posterior Distribution"
-msgstr ""
+msgstr "先驗與期望後驗分布"
 
 msgid "Prior Distribution"
 msgstr "先驗分配"
@@ -2112,41 +2112,41 @@ msgid ""
 "the population misstatement θ. The prior parameters (%3$s = %4$s, %5$s = "
 "%6$s) are derived from the prior information. The expected posterior "
 "distribution fulfills the conditions set in the sampling objectives."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 母體錯報 θ 之先驗與期望後驗分布 (%2$s)。先驗參數（%3$s = %4$s、%5$s = %6$s）源自先驗資訊。期望後驗分布滿足抽樣目標中所設定之條件。"
 
 msgid ""
 "<b>Figure %1$i.</b> The prior and posterior distribution (%2$s) on the "
 "misstatement in the population."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 母體錯報之先驗與後驗分布 (%2$s)。"
 
 msgid "Prior Predictive Distribution"
-msgstr ""
+msgstr "先驗預測分布"
 
 msgid "Posterior Predictive Distribution"
-msgstr ""
+msgstr "後驗預測分布"
 
 msgid ""
 "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays "
 "the predictions of the %2$s distribution for %4$s <i>n</i> = %5$s."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> %2$s 預測分布為 %3$s，並顯示 %2$s 分布對 %4$s <i>n</i> = %5$s 之預測。"
 
 msgid "Descriptive Statistics for Prior and Expected Posterior Distribution"
-msgstr ""
+msgstr "先驗與期望後驗分布之描述統計"
 
 msgid "Descriptive Statistics for Prior and Posterior Distribution"
-msgstr ""
+msgstr "先驗與後驗分布之描述統計"
 
 msgid "<b>Table %1$i.</b> %2$s"
-msgstr ""
+msgstr "<b>表 %1$i。</b> %2$s"
 
 msgid "Functional form"
-msgstr ""
+msgstr "函數形式"
 
 msgid "Support %1$s"
-msgstr ""
+msgstr "支撐 %1$s"
 
 msgid "Ratio %1$s"
-msgstr ""
+msgstr "比率 %1$s"
 
 msgid "Mode"
 msgstr "眾數"
@@ -2158,38 +2158,38 @@ msgid "Posterior"
 msgstr "後驗"
 
 msgid "Shift"
-msgstr ""
+msgstr "平移"
 
 msgid "Nonparametric"
-msgstr ""
+msgstr "無母數"
 
 msgid "%1$s %2$s vs. %3$s %2$s."
-msgstr ""
+msgstr "%1$s %2$s 對比 %3$s %2$s。"
 
 msgid "Sequential Analysis"
 msgstr "序列分析"
 
 msgid "Plot not possible: The Bayes factor is infinite."
-msgstr ""
+msgstr "無法繪圖：貝氏因子為無限大。"
 
 msgid ""
 "<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n)."
-msgstr ""
+msgstr "<b>圖 %1$i。</b> 作為樣本規模 (n) 函數之貝氏因子。"
 
 msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ (i.e. H₋) "
 "versus the hypothesis H₀ (i.e. H₊) accumulates."
-msgstr ""
+msgstr "此圖說明證據如何隨假設 H₁（即 H₋）相對於假設 H₀（即 H₊）之比較而累積。"
 
 msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ (i.e. H₊) "
 "versus the hypothesis H₀ (i.e. H₋) accumulates."
-msgstr ""
+msgstr "此圖說明證據如何隨假設 H₁（即 H₊）相對於假設 H₀（即 H₋）之比較而累積。"
 
 msgid ""
 "The figure illustrates how the evidence for the hypothesis H₁ versus the "
 "hypothesis H₀ accumulates."
-msgstr ""
+msgstr "此圖說明證據如何隨假設 H₁ 相對於假設 H₀ 之比較而累積。"
 
 #~ msgid "Proportion"
 #~ msgstr "比例"
