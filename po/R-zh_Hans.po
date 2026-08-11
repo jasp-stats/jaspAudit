@@ -1,0 +1,1499 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jaspAudit 0.1\n"
+"Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
+"POT-Creation-Date: 2026-01-01 00:00+0000\n"
+"PO-Revision-Date: 2026-01-01 00:00+0000\n"
+"Last-Translator: JASP translators\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+
+msgid "Bayesian Direct Estimator"
+msgstr "贝叶斯直接估计量"
+
+msgid "Bayesian Difference Estimator"
+msgstr "贝叶斯差异估计量"
+
+msgid "Bayesian Ratio Estimator"
+msgstr "贝叶斯比率估计量"
+
+msgid "Bayesian Regression Estimator"
+msgstr "贝叶斯回归估计量"
+
+msgid "%1$s%% Credible interval"
+msgstr "%1$s%% 可信区间"
+
+msgid "Posterior mode"
+msgstr "后验众数"
+
+msgid "Precision"
+msgstr "精密度"
+
+msgid "Lower"
+msgstr "下限"
+
+msgid "Upper"
+msgstr "上限"
+
+msgid "Please specify the population size and your audit values."
+msgstr "请指定总体规模与您的审计值。"
+
+msgid "Please specify the population size, population value and your sample variables."
+msgstr "请指定总体规模、总体值以及您的样本变量。"
+
+msgid "<b>Warning.</b>"
+msgstr "<b>警告。</b>"
+
+msgid "The number of items in the population is lower than the number of items in the sample."
+msgstr "总体中的条目数低于样本中的条目数。"
+
+msgid "Prior and Posterior Distribution"
+msgstr "先验与后验分布"
+
+msgid "True population value"
+msgstr "真实总体值"
+
+msgid "Density"
+msgstr "密度"
+
+msgid "Plotting not possible: %1$s"
+msgstr "无法绘图：%1$s"
+
+msgid "<b>Figure %1$i.</b> The prior and posterior distribution for the true population value."
+msgstr "<b>图 %1$i。</b>真实总体值的先验与后验分布。"
+
+msgid "<u>Procedure</u>"
+msgstr "<u>过程</u>"
+
+msgid "Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first leading digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation."
+msgstr "本福特定律指出，在许多自然生成的数据集合中，首位有效数字往往较小。本过程的目标是确定数据集中的首位数字在多大程度上遵循本福特定律，并以 %1$s 的第一类错误率检验这一关系。不符合本福特定律分布的数据可能需要进一步调查。"
+
+msgid "Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation."
+msgstr "本福特定律指出，在许多自然生成的数据集合中，首位有效数字往往较小。本过程的目标是确定数据集中的前两位数字在多大程度上遵循本福特定律，并以 %1$s 的第一类错误率检验这一关系。不符合本福特定律分布的数据可能需要进一步调查。"
+
+msgid "Benford's law states that in many naturally occurring collections of numerical observations, the leading significant digit is likely to be small. The goal of this procedure is to determine to what extent the last digits in the data set follow Benford's law, and to test this relation with a type-I error of %1$s. Data that are not distributed according to Benford's law might need further investigation."
+msgstr "本福特定律指出，在许多自然生成的数据集合中，首位有效数字往往较小。本过程的目标是确定数据集中末位数字在多大程度上遵循本福特定律，并以 %1$s 的第一类错误率检验这一关系。不符合本福特定律分布的数据可能需要进一步调查。"
+
+msgid "The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation."
+msgstr "均匀分布对所有可能出现的数字赋予相同的概率。本过程的目标是确定数据集中的首位数字在多大程度上遵循均匀分布，并以 %1$s 的第一类错误率检验这一关系。如果均匀分布假设是可取的，那么违反均匀性即构成进一步调查的理由。"
+
+msgid "The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the first two leading digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation."
+msgstr "均匀分布对所有可能出现的数字赋予相同的概率。本过程的目标是确定数据集中的前两位数字在多大程度上遵循均匀分布，并以 %1$s 的第一类错误率检验这一关系。如果均匀分布假设是可取的，那么违反均匀性即构成进一步调查的理由。"
+
+msgid "The uniform distribution assigns equal probability to all possible digits that may occur. The goal of this procedure is to determine to what extent the last digits in the data set follow the uniform distribution, and to test this relation with a type-I error of %1$s. If the uniform distribution assumption is desirable, then violation of uniformity is cause for further investigation."
+msgstr "均匀分布对所有可能出现的数字赋予相同的概率。本过程的目标是确定数据集中末位数字在多大程度上遵循均匀分布，并以 %1$s 的第一类错误率检验这一关系。如果均匀分布假设是可取的，那么违反均匀性即构成进一步调查的理由。"
+
+msgid "<u>Assessing Benford's Law</u>"
+msgstr "<u>评估本福特定律</u>"
+
+msgid "<u>Assessing the Uniform Distribution</u>"
+msgstr "<u>评估均匀分布</u>"
+
+msgid "Benford's Law"
+msgstr "本福特定律"
+
+msgid "Uniform Distribution"
+msgstr "均匀分布"
+
+msgid "<b>Table %1$i.</b> Omnibus Test - %2$s"
+msgstr "<b>表 %1$i。</b>综合检验 - %2$s"
+
+msgid "BF%1$s"
+msgstr "BF%1$s"
+
+msgid "Log(BF%1$s)"
+msgstr "Log(BF%1$s)"
+
+msgid "MAD"
+msgstr "MAD"
+
+msgid "df"
+msgstr "df"
+
+msgid "Benford's law"
+msgstr "本福特定律"
+
+msgid "the uniform distribution"
+msgstr "均匀分布"
+
+msgid "The null hypothesis specifies that the first digits (1 - 9) in the data set are distributed according to %1$s."
+msgstr "原假设规定数据集中的首位数字（1 - 9）按照 %1$s 分布。"
+
+msgid "The null hypothesis specifies that the first two digits (10 - 99) in the data set are distributed according to %1$s."
+msgstr "原假设规定数据集中的前两位数字（10 - 99）按照 %1$s 分布。"
+
+msgid "The null hypothesis specifies that the last digits (1 - 9) in the data set are distributed according to %1$s."
+msgstr "原假设规定数据集中的末位数字（1 - 9）按照 %1$s 分布。"
+
+msgid "The Bayes factor is computed using a Dirichlet(%1$s,...,%2$s%3$s) prior with %2$s = %4$s."
+msgstr "贝叶斯因子使用 Dirichlet(%1$s,...,%2$s%3$s) 先验计算，其中 %2$s = %4$s。"
+
+msgid "<b>Warning.</b> The <i>p</i>-value may be unreliable due to some expected counts being lower than 5."
+msgstr "<b>警告。</b> 由于部分期望频数低于 5，<i>p</i>-值可能不可靠。"
+
+msgid "<b>Table %1$i.</b> Frequency Table"
+msgstr "<b>表 %1$i。</b>频数表"
+
+msgid "Leading digit"
+msgstr "首位数字"
+
+msgid "Leading digits"
+msgstr "前两位数字"
+
+msgid "Last digit"
+msgstr "末位数字"
+
+msgid "Uniform distribution"
+msgstr "均匀分布"
+
+msgid "Count"
+msgstr "频数"
+
+msgid "Relative frequency"
+msgstr "相对频率"
+
+msgid "%1$s%% Confidence Interval"
+msgstr "%1$s%% 置信区间"
+
+msgid "Expected count"
+msgstr "期望频数"
+
+msgid "The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s."
+msgstr "原假设规定某数字的相对频率等于其在 %1$s 下的期望相对频率。"
+
+msgid "Bayes factors are computed using a beta(1, 1) prior."
+msgstr "贝叶斯因子使用 beta(1, 1) 先验计算。"
+
+msgid "Confidence intervals and <i>p</i>-values are based on independent binomial distributions."
+msgstr "置信区间和 <i>p</i>-值基于独立的二项式分布。"
+
+msgid "The <i>p</i>-values are based on independent binomial distributions."
+msgstr "<i>p</i>-值基于独立的二项式分布。"
+
+msgid "Leading Digit"
+msgstr "首位数字"
+
+msgid "Leading Digits"
+msgstr "前两位数字"
+
+msgid "Last Digit"
+msgstr "末位数字"
+
+msgid "<b>Table %1$i.</b> Rows Matched to %2$s %3$s"
+msgstr "<b>表 %1$i。</b>匹配到 %2$s %3$s 的行"
+
+msgid "Row"
+msgstr "行"
+
+msgid "Value"
+msgstr "值"
+
+msgid "The requested digit must be between 1 - 9."
+msgstr "请求的数字必须在 1 - 9 之间。"
+
+msgid "The requested digit must be between 10 - 99."
+msgstr "请求的数字必须在 10 - 99 之间。"
+
+msgid "Displayed values are rounded to the number of decimals set in the global preferences."
+msgstr "显示的值按全局首选项中设置的小数位数进行四舍五入。"
+
+msgid "Observed vs. Expected Relative Frequencies"
+msgstr "观测与期望相对频率"
+
+msgid "<b>Figure %1$i.</b> The observed relative frequencies of each digit in the data set compared to the expected relative frequencies under %2$s. For data sets distributed according %2$s the blue dots will lie near the top of the grey bars."
+msgstr "<b>图 %1$i。</b>数据集中每个数字的观测相对频率与 %2$s 下的期望相对频率的比较。对于按照 %2$s 分布的数据集，蓝点将位于灰色条形区域的上部附近。"
+
+msgid "Bayes Factor Robustness Plot"
+msgstr "贝叶斯因子稳健性图"
+
+msgid "<b>Figure %1$i.</b> The results of a robustness check using the Bayes factor. The figure illustrates the impact of different specifications (i.e., concentration parameters) of the Dirichlet prior on the Bayes factor values, providing insights into the robustness of the statistical evidence to the choice of prior distribution."
+msgstr "<b>图 %1$i。</b>使用贝叶斯因子进行稳健性检验的结果。该图说明了 Dirichlet 先验的不同设定（即集中参数）对贝叶斯因子值的影响，从而了解统计证据对先验分布选择的稳健性。"
+
+msgid "Sequential Analysis Plot"
+msgstr "序贯分析图"
+
+msgid "<b>Figure %1$i.</b> The results of a sequential analysis using the Bayes factor. The figure provides insight into how the statistical evidence from these data accumulates over time and under different prior specifications."
+msgstr "<b>图 %1$i。</b>使用贝叶斯因子进行序贯分析的结果。该图展示了来自这些数据的统计证据如何随时间以及在不同先验设定下累积。"
+
+msgid "<u>Conclusion</u>"
+msgstr "<u>结论</u>"
+
+msgid "is rejected"
+msgstr "被拒绝"
+
+msgid "is not rejected"
+msgstr "未被拒绝"
+
+msgid "%1$s < %2$s"
+msgstr "%1$s < %2$s"
+
+msgid "%1$s >= %2$s"
+msgstr "%1$s >= %2$s"
+
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the first digits in the data set are distributed according to %2$s %3$s."
+msgstr "<i>p</i>-值为 %1$s，且关于数据集中的首位数字按照 %2$s 分布的原假设 %3$s。"
+
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the first two digits in the data set are distributed according to %2$s %3$s."
+msgstr "<i>p</i>-值为 %1$s，且关于数据集中的前两位数字按照 %2$s 分布的原假设 %3$s。"
+
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the last digits in the data set are distributed according to %2$s %3$s."
+msgstr "<i>p</i>-值为 %1$s，且关于数据集中的末位数字按照 %2$s 分布的原假设 %3$s。"
+
+msgid "%1$s The Bayes factor indicates that the data are %2$s times more likely to occur under the null hypothesis than under the alternative hypothesis."
+msgstr "%1$s 贝叶斯因子表明，数据在原假设下出现的可能性是对应备择假设的 %2$s 倍。"
+
+msgid "Direct Estimator"
+msgstr "直接估计量"
+
+msgid "Difference Estimator"
+msgstr "差异估计量"
+
+msgid "Ratio Estimator"
+msgstr "比率估计量"
+
+msgid "Regression Estimator"
+msgstr "回归估计量"
+
+msgid "Point estimate"
+msgstr "点估计"
+
+msgid "%1$s%% Confidence interval"
+msgstr "%1$s%% 置信区间"
+
+msgid "The displayed numbers are exact and may differ slightly from the rounded numbers in the explanatory text."
+msgstr "显示的数字是精确值，可能与说明性文本中四舍五入的数字略有不同。"
+
+msgid "<u>Calculations</u>"
+msgstr "<u>计算</u>"
+
+msgid "<i>The required information for the <b>direct</b> estimator consists of:</i>"
+msgstr "<i><b>直接</b>估计量所需的信息包括：</i>"
+
+msgid "The population size <i>N</i>"
+msgstr "总体规模 <i>N</i>"
+
+msgid "%1$s = %2$i"
+msgstr "%1$s = %2$i"
+
+msgid "The sample size <i>n</i>"
+msgstr "样本规模 <i>n</i>"
+
+msgid "The mean of the sample audit values %1$s"
+msgstr "样本审计值的均值 %1$s"
+
+msgid "%1$s = %2$s"
+msgstr "%1$s = %2$s"
+
+msgid "The standard deviation of the sample audit values %1$s"
+msgstr "样本审计值的标准差 %1$s"
+
+msgid "The t-value <i>(df = n - 1)</i> corresponding to %1$s%% confidence %2$s%3$s%4$s"
+msgstr "对应 %1$s%% 置信度的 t 值 <i>(df = n - 1)</i> %2$s%3$s%4$s"
+
+msgid "The t-value <i>(df = %1$s - 1)</i> corresponding to %2$s%% confidence %3$s%4$s%5$s%6$s"
+msgstr "对应 %2$s%% 置信度的 t 值 <i>(df = %1$s - 1)</i> %3$s%4$s%5$s%6$s"
+
+msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s"
+msgstr "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s"
+
+msgid "<i>This information allows for calculation of:</i>"
+msgstr "<i>这些信息允许进行以下计算：</i>"
+
+msgid "The point estimate of the true population value %1$s"
+msgstr "真实总体值的点估计 %1$s"
+
+msgid "The precision of the estimator %1$s%2$s%3$s"
+msgstr "估计量的精密度 %1$s%2$s%3$s"
+
+msgid "The confidence interval around the point estimate %1$s"
+msgstr "点估计周围的置信区间 %1$s"
+
+msgid "%1$s = %2$s %3$s %4$s"
+msgstr "%1$s = %2$s %3$s %4$s"
+
+msgid "%1$s\n                           %2$s\n                           %3$s"
+msgstr "%1$s\n                           %2$s\n                           %3$s"
+
+msgid "<i>The required information for the <b>difference</b> estimator consists of:</i>"
+msgstr "<i><b>差异</b>估计量所需的信息包括：</i>"
+
+msgid "The sum of the population book values <i>B</i>"
+msgstr "总体账面值之和 <i>B</i>"
+
+msgid "The mean of the sample errors %1$s"
+msgstr "样本误差的均值 %1$s"
+
+msgid "The standard deviation of the sample errors %1$s"
+msgstr "样本误差的标准差 %1$s"
+
+msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s"
+msgstr "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s"
+
+msgid "%1$s\n                            %2$s\n                            %3$s"
+msgstr "%1$s\n                            %2$s\n                            %3$s"
+
+msgid "<i>The required information for the <b>ratio</b> estimator consists of:</i>"
+msgstr "<i><b>比率</b>估计量所需的信息包括：</i>"
+
+msgid "The mean of the sample book values %1$s"
+msgstr "样本账面值的均值 %1$s"
+
+msgid "The standard deviation of the sample book values %1$s"
+msgstr "样本账面值的标准差 %1$s"
+
+msgid "The correlation coefficient of the sample book values and audit values %1$s"
+msgstr "样本账面值与审计值的相关系数 %1$s"
+
+msgid "The correctness ratio %1$s"
+msgstr "正确性比率 %1$s"
+
+msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s\n                                %7$s\n                                %8$s\n                                %9$s\n                                %10$s"
+msgstr "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s\n                                %7$s\n                                %8$s\n                                %9$s\n                                %10$s"
+
+msgid "<i>The required information for the <b>regression</b> estimator consists of:</i>"
+msgstr "<i><b>回归</b>估计量所需的信息包括：</i>"
+
+msgid "The regression coefficient of the sample book values and audit values %1$s"
+msgstr "样本账面值与审计值的回归系数 %1$s"
+
+msgid "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s\n                                %7$s\n                                %8$s\n                                %9$s"
+msgstr "%1$s\n                                %2$s\n                                %3$s\n                                %4$s\n                                %5$s\n                                %6$s\n                                %7$s\n                                %8$s\n                                %9$s"
+
+msgid "Required Sample Size"
+msgstr "所需样本规模"
+
+msgid "Achieved precision"
+msgstr "达到的精密度"
+
+msgid "Current <i>n</i>"
+msgstr "当前 <i>n</i>"
+
+msgid "Required precision"
+msgstr "所需精密度"
+
+msgid "Required <i>n</i>"
+msgstr "所需 <i>n</i>"
+
+msgid "Additional <i>n</i>"
+msgstr "额外 <i>n</i>"
+
+msgid "Scatter Plot"
+msgstr "散点图"
+
+msgid "Book value"
+msgstr "账面值"
+
+msgid "Audit value"
+msgstr "审计值"
+
+msgid "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and their audit values. Red dots indicate observations that did not match their original book value. If these red dots lie in the bottom part of the graph, the book values are overstated. If these red dots lie in the upper part of the graph, they are understated. The value <i>r</i> is the Pearson correlation coefficient of the book values and the audit values, an indicator of the strength of the linear relationship between the two variables."
+msgstr "<b>图 %1$i。</b>选择集中账面值与其审计值的散点图。红点表示未与其原始账面值匹配的观测值。如果这些红点位于图形下方部分，则表明账面值被高估；如果这些红点位于图形上方部分，则表明账面值被低估。值 <i>r</i> 是账面值与审计值的皮尔逊相关系数，用于衡量两个变量之间线性关系的强度。"
+
+msgid "Specificity"
+msgstr "特异性"
+
+msgid "Accuracy"
+msgstr "准确率"
+
+msgid "False positive rate"
+msgstr "假阳性率"
+
+msgid "False negative rate"
+msgstr "假阴性率"
+
+msgid "Negative predictive value"
+msgstr "阴性预测值"
+
+msgid "Positive rate"
+msgstr "阳性率"
+
+msgid "True positive rate"
+msgstr "真阳性率"
+
+msgid "Specificity parity"
+msgstr "特异性同型性"
+
+msgid "Accuracy parity"
+msgstr "准确率同型性"
+
+msgid "False positive rate parity"
+msgstr "假阳性率同型性"
+
+msgid "False negative rate parity"
+msgstr "假阴性率同型性"
+
+msgid "Negative predictive value parity"
+msgstr "阴性预测值同型性"
+
+msgid "Disparate impact"
+msgstr "不利影响"
+
+msgid "Predictive rate parity"
+msgstr "预测率同型性"
+
+msgid "Equal opportunity"
+msgstr "机会均等"
+
+msgid "Equalized odds"
+msgstr "等化几率"
+
+msgid "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute, and to test this fairness with a type-I error of %1$s%%. Considering the positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified using so-called fairness measures. Calculating a fairness measure involves determining the value of the model evaluation metric on which the fairness measure is based for both the privileged (<i>%3$s</i>) and unprivileged groups.\n\nIn this specific case, equalized odds is not based on a single model evaluation metric but rather on two: the true positive rate and the false positive rate. Therefore, using equalized odds requires applying two statistical tests to check for any significant differences between the values that the two model evaluation metrics take for each of the two groups. The two tests conducted are Pearson's chi-squared tests. Only if the null hypothesis is rejected for both tests can we conclude that the algorithm is fair."
+msgstr "本过程的目标是确定算法的预测在敏感属性方面对受保护群体公平的程度，并以 %1$s%% 的第一类错误率检验这种公平性。考虑阳性类别（<i>%2$s</i>），公平性——或歧视——可以使用所谓的公平性度量来衡量。计算公平性度量需要确定特权组（<i>%3$s</i>）和弱势组在基于公平性度量的模型评估指标上的取值。\n\n在本案例中，等化几率并非基于单一模型评估指标，而是基于两个：真阳性率和假阳性率。因此，使用等化几率需要对两组在两个模型评估指标得分上的任何显著差异进行两次统计检验。所进行的两次检验是皮尔逊卡方检验。只有当两次检验的原假设均被拒绝时，我们才能得出结论：该算法是公平的。"
+
+msgid "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute, and to test this fairness with a type-I error of %1$s%%. Considering the positive class (<i>%2$s</i>), fairness -or discrimination- can be quantified using so-called fairness measures. Calculating a fairness measure implies determining the value of the model evaluation metric, on which the fairness measure is based, for both the privileged (<i>%3$s</i>) and unprivileged groups. Subsequently, a statistical test is conducted to check for any significant differences between the values that the model evaluation metric takes for each of the two groups. The used test is the Pearson's chi-squared test."
+msgstr "本过程的目标是确定算法的预测在敏感属性方面对受保护群体公平的程度，并以 %1$s%% 的第一类错误率检验这种公平性。考虑阳性类别（<i>%2$s</i>），公平性——或歧视——可以使用所谓的公平性度量来衡量。计算公平性度量意味着确定特权组（<i>%3$s</i>）和弱势组在公平性度量所依据的模型评估指标上的取值。随后进行统计检验，以检查两组的模型评估指标得分之间是否存在显著差异。所用检验为皮尔逊卡方检验。"
+
+msgid "<u>Assessing Model Fairness</u>"
+msgstr "<u>评估模型公平性</u>"
+
+msgid "An error occurred: %1$s"
+msgstr "发生错误：%1$s"
+
+msgid "Metric"
+msgstr "指标"
+
+msgid "n"
+msgstr "n"
+
+msgid "The null hypothesis specifies that the %1$s is equal across protected groups."
+msgstr "原假设规定 %1$s 在各受保护群体间相等。"
+
+msgid "Please specify a privileged group and positive class to start the analysis."
+msgstr "请指定特权组和阳性类别以开始分析。"
+
+msgid "<i>p</i>-values are uncorrected for multiple comparisons and are based on Fisher's exact test."
+msgstr "<i>p</i>-值未对多重比较进行校正，基于费希尔精确检验。"
+
+msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group"
+msgstr "<b>表 %1$i。</b>与特权（P）组的比较"
+
+msgid "Parity"
+msgstr "同型性"
+
+msgid "p"
+msgstr "p"
+
+msgid "The null hypothesis specifies that the %1$s of an unprivileged group is equal to that of the privileged (P) group."
+msgstr "原假设规定弱势组的 %1$s 等于特权（P）组的 %1$s。"
+
+msgid "The null hypothesis specifies that the %1$s of an unprivileged group is greater than, or equal to, that of the privileged (P) group."
+msgstr "原假设规定弱势组的 %1$s 大于或等于特权（P）组的 %1$s。"
+
+msgid "The null hypothesis specifies that the %1$s of an unprivileged group is lower than, or equal to, that of the privileged (P) group."
+msgstr "原假设规定弱势组的 %1$s 低于或等于特权（P）组的 %1$s。"
+
+msgid "According to the '80 percent rule', if the value of the protected-to-privileged positve rate ratio is lower than 0.80 then the algorithm is considered unfair against the unprivileged group(s)."
+msgstr "根据“80% 规则”，如果受保护组与特权组的阳性率之比低于 0.80，则该算法被认为对弱势组不公平。"
+
+msgid "<u>Individual Comparisons</u>"
+msgstr "<u>个体比较</u>"
+
+msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - True Positive Rate"
+msgstr "<b>表 %1$i。</b>与特权（P）组的比较 - 真阳性率"
+
+msgid "True Positive Rate"
+msgstr "真阳性率"
+
+msgid "The null hypothesis specifies that the true positive rate of an unprivileged group is equal to that of the privileged (P) group."
+msgstr "原假设规定弱势组的真阳性率等于特权（P）组的真阳性率。"
+
+msgid "The null hypothesis specifies that the true positive rate of an unprivileged group is greater than, or equal to, that of the privileged (P) group."
+msgstr "原假设规定弱势组的真阳性率大于或等于特权（P）组的真阳性率。"
+
+msgid "The null hypothesis specifies that the true positive rate of an unprivileged group is lower than, or equal to, that of the privileged (P) group."
+msgstr "原假设规定弱势组的真阳性率低于或等于特权（P）组的真阳性率。"
+
+msgid "<b>Table %1$i.</b> Comparisons to Privileged (P) Group - False Positive Rate"
+msgstr "<b>表 %1$i。</b>与特权（P）组的比较 - 假阳性率"
+
+msgid "False Positive Rate"
+msgstr "假阳性率"
+
+msgid "The null hypothesis specifies that the false positive rate of an unprivileged group is equal to that of the privileged (P) group."
+msgstr "原假设规定弱势组的假阳性率等于特权（P）组的假阳性率。"
+
+msgid "The null hypothesis specifies that the false positive rate of an unprivileged group is greater than, or equal to, that of the privileged (P) group."
+msgstr "原假设规定弱势组的假阳性率大于或等于特权（P）组的假阳性率。"
+
+msgid "The null hypothesis specifies that the false positive rate of an unprivileged group is lower than, or equal to, that of the privileged (P) group."
+msgstr "原假设规定弱势组的假阳性率低于或等于特权（P）组的假阳性率。"
+
+msgid "<b>Table %1$i.</b> Model Performance"
+msgstr "<b>表 %1$i。</b>模型性能"
+
+msgid "Support"
+msgstr "支持度"
+
+msgid "Recall"
+msgstr "召回率"
+
+msgid "F1 Score"
+msgstr "F1 分数"
+
+msgid "<b>Table %1$i.</b> Confusion Matrix"
+msgstr "<b>表 %1$i。</b>混淆矩阵"
+
+msgid "Observed"
+msgstr "观测"
+
+msgid "Predicted"
+msgstr "预测"
+
+msgid "True Positives (TP) are cells in which the positive class (<i>%1$s</i>) is correctly predicted, while True Negatives (TN) are cells where the negative class is correctly predicted. False Negatives (FN) are cells in which the positive class is incorrectly predicted, and False Positives (FP) are cells in which the negative class is incorrectly predicted."
+msgstr "真阳性（TP）是阳性类别（<i>%1$s</i>）被正确预测的单元格，而真阴性（TN）是阴性类别被正确预测的单元格。假阴性（FN）是阳性类别被错误预测的单元格，假阳性（FP）是阴性类别被错误预测的单元格。"
+
+msgid "Parity Estimates Plot"
+msgstr "同型性估计图"
+
+msgid "<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of %2$s from each unprivileged group to the privileged %3$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm."
+msgstr "<b>图 %1$i。</b>数据中所有群体的同型性统计量估计值（即每个弱势组的 %2$s 与特权 %3$s 组之比）。同型性越接近 1，算法中的歧视程度越低。"
+
+msgid "<u>Parity Estimates Plots</u>"
+msgstr "<u>同型性估计图</u>"
+
+msgid "Parity Estimates Plot - True Positive Rate Parity"
+msgstr "同型性估计图 - 真阳性率同型性"
+
+msgid "Parity Estimates Plot - False Positive Rate Parity"
+msgstr "同型性估计图 - 假阳性率同型性"
+
+msgid "<b>Figure %1$i.</b> Estimated parity statistics (i.e., the ratio of true positive rate from each unprivileged group to the privileged %2$s group) for all groups in the data. The closer the parity lies to one, the less discrimination occurs in the algorithm."
+msgstr "<b>图 %1$i。</b>数据中所有群体的同型性统计量估计值（即每个弱势组的真阳性率与特权 %2$s 组之比）。同型性越接近 1，算法中的歧视程度越低。"
+
+msgid "Prior and Posterior Distribution Plot"
+msgstr "先验与后验分布图"
+
+msgid "<b>Figure %1$i.</b> The prior and posterior distributions on the log odds ratio for each unprivileged group compared to the privileged group (%2$s)."
+msgstr "<b>图 %1$i。</b>相对于特权组（%2$s），每个弱势组在对数比值比上的先验与后验分布。"
+
+msgid "As the measures are significantly different from each other, we can conclude that this algorithm is unfair against the unprivileged group(s)."
+msgstr "由于这些度量彼此显著不同，我们可以得出结论：该算法对弱势组不公平。"
+
+msgid "As the measures are not significantly different from each other, we cannot conclude that this algorithm is unfair against the unprivileged group(s)."
+msgstr "由于这些度量彼此之间无显著差异，我们不能得出该算法对弱势组不公平的结论。"
+
+msgid "The <i>p</i>-values are %1$s and %2$s and the null hypothesis of equal %3$s and %4$s across protected groups %5$s. %6$s"
+msgstr "<i>p</i>-值为 %1$s 和 %2$s，关于 %3$s 与 %4$s 在各受保护群体间相等的原假设 %5$s。%6$s"
+
+msgid "The <i>p</i>-value is %1$s and the null hypothesis of equal %2$s across protected groups %3$s. %4$s"
+msgstr "<i>p</i>-值为 %1$s，关于 %2$s 在各受保护群体间相等的原假设 %3$s。%4$s"
+
+msgid "The goal of this procedure is to determine to what extent the predictions of an algorithm are fair towards protected groups on a sensitive attribute. Fairness -or discrimination- can be quantified using so-called fairness measures. There are various fairness measures, and different measures can lead to different conclusions about fairness. Therefore, selecting the most appropriate fairness measure for the context at hand is crucial. The decision-making workflow allows for determining the most suitable fairness measure by answering the necessary questions."
+msgstr "本过程的目标是确定算法的预测在敏感属性方面对受保护群体公平的程度。公平性——或歧视——可以使用所谓的公平性度量来衡量。存在多种公平性度量，不同的度量可能导致关于公平性的不同结论。因此，针对当前情境选择最合适的公平性度量至关重要。决策工作流程允许通过回答必要的问题来确定最合适的公平性度量。"
+
+msgid "<u>Selection</u>"
+msgstr "<u>选择</u>"
+
+msgid "<u>Evaluation</u>"
+msgstr "<u>评估</u>"
+
+msgid "The most suitable fairness measure is <b>%1$s</b>."
+msgstr "最合适的公平性度量是 <b>%1$s</b>。"
+
+msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results in the same ratio of items from two different groups experiencing a change in the status quo (i.e., being classified as positive). The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.\n\n<u>Formula:</u>\nDisparate impact is obtained by dividing the positive rate of the unprivileged group by that of the privileged group. The positive rate is equal to (TP+FP)/N, where TP denotes true positives (items correctly classified as positive), FP denotes false positives (items incorrectly classified as positive), and N represents the total number of items classified by the algorithm.\n\n<u>Further Details:</u>\nThe most common use of disparate impact is linked to the U.S. Equal Employment Opportunity Commission (EEOC) guidelines, particularly the %1$s%% rule. According to this rule, if disparate impact is higher than 0.80, there is no discrimination. This method has limitations, as the threshold value is not based on the measure's properties, data characteristics, or statistical considerations. Originally derived from U.S. employment hiring rates, the rule lacks theoretical rigor for broader applications."
+msgstr "<u>公平性定义：</u>\n如果算法的使用使得来自两个不同群体的项目在原有状态发生变化（即被归类为阳性）上的比率相同，则称该算法是公平的。术语“项目”指被分类的对象；这些项目可以是人（如求职者），也可以是对象（如银行账户）。\n\n<u>公式：</u>\n不利影响通过将弱势组的阳性率除以特权组的阳性率得到。阳性率等于 (TP+FP)/N，其中 TP 表示真阳性（被正确归类为阳性的项目），FP 表示假阳性（被错误归类为阳性的项目），N 表示算法分类的项目总数。\n\n<u>更多细节：</u>\n不利影响最常见的用途与美国平等就业机会委员会（EEOC）的指南相关，尤其是 %1$s%% 规则。根据该规则，如果不利影响高于 0.80，则不存在歧视。该方法存在局限性，因为该阈值并非基于度量的性质、数据特征或统计考量。该规则最初源自美国的招聘比率，缺乏应用于更广泛场景的理论严谨性。"
+
+msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results in the same number of items from different groups experiencing correct and incorrect changes in the status quo (i.e, being, correctly and incorrectly, classified as positive). The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.\n\n<u>Formula:</u>\nEqualized odds combines the true positive rate (TPR) and the false positive rate (FPR). The TPR is calculated as TP/(TP+FP) and the FPR as FP/(TN+FP), applied to both privileged and unprivileged groups. Here, TP denotes true positives (correctly classified positive items), TN denotes true negatives (correctly classified negative items), and FP denotes false positives (incorrectly classified positive items).\n\n<u>Further Details:</u>\nIt is important to note that this is the only measure in the decision-making workflow that addresses both the correct classification of the positive class and the incorrect classification of the negative class."
+msgstr "<u>公平性定义：</u>\n如果算法的使用使得来自不同群体的项目在原有状态发生正确和错误的等量变化（即正、误分类为阳性）上数目相同，则称该算法是公平的。术语“项目”指被分类的对象；这些项目可以是人（如求职者），也可以是对象（如银行账户）。\n\n<u>公式：</u>\n等化几率结合了真阳性率（TPR）和假阳性率（FPR）。TPR 计算为 TP/(TP+FP)，FPR 计算为 FP/(TN+FP)，同时应用于特权组和弱势组。这里，TP 表示真阳性（被正确分类的阳性项目），TN 表示真阴性（被正确分类的阴性项目），FP 表示假阳性（被错误分类的阳性项目）。\n\n<u>更多细节：</u>\n需要注意的是，这是决策工作流程中唯一同时处理阳性类别的正确分类和阴性类别的错误分类的度量。"
+
+msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results in the same number of items from different groups experiencing correct changes in the status quo (i.e., being correctly classified as positive). The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.\n\n<u>Formula:</u>\nPredictive rate parity is based on precision, calculated as TP/(TP+FP), applied to both the privileged and unprivileged groups. Here, TP denotes true positives (correctly classified positive items) and FP denotes false positives (incorrectly classified positive items)."
+msgstr "<u>公平性定义：</u>\n如果算法的使用使得来自不同群体的项目在原有状态发生正确的等量变化（即被正确分类为阳性）上数目相同，则称该算法是公平的。术语“项目”指被分类的对象；这些项目可以是人（如求职者），也可以是对象（如银行账户）。\n\n<u>公式：</u>\n预测率同型性基于精确度，计算为 TP/(TP+FP)，同时应用于特权组和弱势组。这里，TP 表示真阳性（被正确分类的阳性项目），FP 表示假阳性（被错误分类的阳性项目）。"
+
+msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results in the same number of items from different groups experiencing correct changes in the status quo (i.e., being correctly classified as positive). The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.\n\n<u>Formula:</u>\nEqual opportunity is based on the true positive rate, calculated as TP/(TP+FN), applied to both privileged and unprivileged groups. Here, TP denotes true positives (correctly classified positive items) and FN denotes false negatives (incorrectly classified negative items)."
+msgstr "<u>公平性定义：</u>\n如果算法的使用使得来自不同群体的项目在原有状态发生正确的等量变化（即被正确分类为阳性）上数目相同，则称该算法是公平的。术语“项目”指被分类的对象；这些项目可以是人（如求职者），也可以是对象（如银行账户）。\n\n<u>公式：</u>\n机会均等基于真阳性率，计算为 TP/(TP+FN)，同时应用于特权组和弱势组。这里，TP 表示真阳性（被正确分类的阳性项目），FN 表示假阴性（被错误分类的阴性项目）。"
+
+msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results in the same number of items from different groups correctly experiencing no changes in the status quo (i.e., being correctly classified as negative). The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.\n\n<u>Formula:</u>\nSpecificity parity is based on the true negative rate, calculated as TN/(TN+FP), applied to both privileged and unprivileged groups. Here, TN denotes true negatives (correctly classified negative items) and FP denotes false positives (incorrectly classified positive items)."
+msgstr "<u>公平性定义：</u>\n如果算法的使用使得来自不同群体的项目在原有状态正确地不发生等量变化（即被正确分类为阴性）上数目相同，则称该算法是公平的。术语“项目”指被分类的对象；这些项目可以是人（如求职者），也可以是对象（如银行账户）。\n\n<u>公式：</u>\n特异性同型性基于真阴性率，计算为 TN/(TN+FP)，同时应用于特权组和弱势组。这里，TN 表示真阴性（被正确分类的阴性项目），FP 表示假阳性（被错误分类的阳性项目）。"
+
+msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results in the same number of items from different groups correctly experiencing no changes in the status quo (i.e., being correctly classified as negative). The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.\n\n<u>Formula:</u>\nNegative predictive value parity is based on the negative predictive value, calculated as TN/(TN+FN), applied to both privileged and unprivileged groups. Here, TN denotes true negatives (correctly classified negative items) and FN denotes false negatives (incorrectly classified negative items)."
+msgstr "<u>公平性定义：</u>\n如果算法的使用使得来自不同群体的项目在原有状态正确地不发生等量变化（即被正确分类为阴性）上数目相同，则称该算法是公平的。术语“项目”指被分类的对象；这些项目可以是人（如求职者），也可以是对象（如银行账户）。\n\n<u>公式：</u>\n阴性预测值同型性基于阴性预测值，计算为 TN/(TN+FN)，同时应用于特权组和弱势组。这里，TN 表示真阴性（被正确分类的阴性项目），FN 表示假阴性（被错误分类的阴性项目）。"
+
+msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results in the same number of items from different groups correctly experiencing changes and correctly experiencing no changes in the status quo (i.e., being correctly classified as positive and being correctly classified as negative). The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.\n\n<u>Formula:</u>\nAccuracy parity is based on accuracy, calculated as (TP+TN)/N, applied to both privileged and unprivileged groups. Here, TP denotes true positives (correctly classified positive items), TN denotes true negatives (correctly classified negative items), and N represents the total number of items classified by the algorithm. The sum of TP and TN reflects the total number of correct classifications made by the algorithm.\n\n<u>Further Details:</u>\nAccuracy parity, like accuracy as a model evaluation metric, has a major flaw when applied to cases where the positive class is a small minority. For example, if %1$s%% of the privileged group and %2$s%% of the unprivileged group commit fraud, accuracy may seem high overall (%3$s%%), but masks disparities, with the unprivileged group having lower accuracy (%4$s%%) compared to the privileged group (%5$s%%). Unlike other measures, accuracy parity does not consider varying error costs. It fails to detect increases in false negatives or false positives, missing the associated rise in costs."
+msgstr "<u>公平性定义：</u>\n如果算法的使用使得来自不同群体的项目在原有状态发生正确变化和正确地不发生等量变化（即既被正确分类为阳性，又被正确分类为阴性）上数目相同，则称该算法是公平的。术语“项目”指被分类的对象；这些项目可以是人（如求职者），也可以是对象（如银行账户）。\n\n<u>公式：</u>\n准确率同型性基于准确率，计算为 (TP+TN)/N，同时应用于特权组和弱势组。这里，TP 表示真阳性（被正确分类的阳性项目），TN 表示真阴性（被正确分类的阴性项目），N 表示算法分类的项目总数。TP 与 TN 之和反映算法做出的正确分类总数。\n\n<u>更多细节：</u>\n准确率同型性作为模型评估指标，与准确率一样，应用于阳性类别占极小比例的案例时存在重大缺陷。例如，如果特权组中 %1$s%% 和弱势组中 %2$s%% 的人实施欺诈，总体准确率可能看起来很高（%3$s%%），但这掩盖了差异：弱势组的准确率（%4$s%%）低于特权组（%5$s%%）。与其他度量不同，准确率同型性不考虑不同的错误成本。它无法检测假阴性或假阳性的增加，从而忽略了随之而来的成本上升。"
+
+msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results in the same number of items from different groups experiencing incorrect changes in the status quo (i.e., being incorrectly classified as positive). The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.\n\n<u>Formula:</u>\nFalse positive rate parity is based on the false positive rate, calculated as FP/(TN+FP), applied to both privileged and unprivileged groups. Here, FP denotes false positives (incorrectly classified positive items), and TN denotes true negatives (correctly classified negative items)."
+msgstr "<u>公平性定义：</u>\n如果算法的使用使得来自不同群体的项目在原有状态发生错误的等量变化（即被错误分类为阳性）上数目相同，则称该算法是公平的。术语“项目”指被分类的对象；这些项目可以是人（如求职者），也可以是对象（如银行账户）。\n\n<u>公式：</u>\n假阳性率同型性基于假阳性率，计算为 FP/(TN+FP)，同时应用于特权组和弱势组。这里，FP 表示假阳性（被错误分类的阳性项目），TN 表示真阴性（被正确分类的阴性项目）。"
+
+msgid "<u>Definition of Fairness:</u>\nThe algorithm is fair if its use results in the same number of items from different groups incorrectly experiencing no changes in the status quo (i.e., being incorrectly classified as negative). The term items refers to what is being classified; these items can be people, like job applicants, or objects, such as bank accounts.\n\n<u>Formula:</u>\nFalse negative rate parity is based on the false negative rate, calculated as FN/(TP+FN), applied to both privileged and unprivileged groups. Here, FN denotes false negatives (incorrectly classified negative items), and TP denotes true positives (correctly classified positive items)."
+msgstr "<u>公平性定义：</u>\n如果算法的使用使得来自不同群体的项目在原有状态错误地不发生等量变化（即被错误分类为阴性）上数目相同，则称该算法是公平的。术语“项目”指被分类的对象；这些项目可以是人（如求职者），也可以是对象（如银行账户）。\n\n<u>公式：</u>\n假阴性率同型性基于假阴性率，计算为 FN/(TP+FN)，同时应用于特权组和弱势组。这里，FN 表示假阴性（被错误分类的阴性项目），TP 表示真阳性（被正确分类的阳性项目）。"
+
+msgid "Decision-Making Workflow Plot"
+msgstr "决策工作流程图"
+
+msgid "<b>Figure %1$i.</b> Graphical representation of the decision-making workflow. The label 'FP' indicates 'False Positives' and the label 'FN' indicates 'False Negatives'. The white rectangles indicate the followed path based on the answers provided to the necessary questions of the workflow, the gray rectangles represent the ignored path."
+msgstr "<b>图 %1$i。</b>决策工作流程的图形表示。标签“FP”表示“假阳性”，“FN”表示“假阴性”。白色矩形表示根据对工作流程必要问题的回答所遵循的路径，灰色矩形表示被忽略的路径。"
+
+msgid "This procedure analyzes the frequency with which values get repeated within a data set to statistically identify whether the data were likely tampered with. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit.\n\nTo determine whether the data show an excessive amount of repeated values, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested with a type-I error of %1$s. To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions."
+msgstr "本过程分析数据集中值被重复出现的频率，以统计识别数据是否可能被篡改。与本福特定律及其推广不同，该方法一次性检查整个数字，而非仅查看首位或末位数字。\n\n为了确定数据是否显示出过多的值重复，以 %1$s 的第一类错误率检验数据不包含异常数量的重复值这一原假设。为了量化预期值，该检验需要假设数字的整数部分与其小数部分不相关。"
+
+msgid "<u>Assessing repeated values</u>"
+msgstr "<u>评估重复值</u>"
+
+msgid "<b>Table %1$i.</b> Repeated Values Test"
+msgstr "<b>表 %1$i。</b>重复值检验"
+
+msgid "Average"
+msgstr "平均"
+
+msgid "Frequency"
+msgstr "频率"
+
+msgid "Entropy"
+msgstr "熵"
+
+msgid "The displayed <i>p</i>-value is one-sided and is computed on the basis of %1$s samples."
+msgstr "显示的 <i>p</i>-值是一侧的，基于 %1$s 个样本计算。"
+
+msgid "<b>Table %1$i.</b> Assumption Checks"
+msgstr "<b>表 %1$i。</b>假设检验"
+
+msgid "The displayed <i>p</i>-value is for a two-sided test against H%1$s: <i>r</i> = 0."
+msgstr "显示的 <i>p</i>-值用于针对 H%1$s：<i>r</i> = 0 的双侧检验。"
+
+msgid "Percentage"
+msgstr "百分比"
+
+msgid "Observed vs. Expected Average Frequency"
+msgstr "观测与期望平均频率"
+
+msgid "Average frequency"
+msgstr "平均频率"
+
+msgid "Simulated frequency"
+msgstr "模拟频率"
+
+msgid "<b>Figure %i:</b> The expected average frequencies of values versus the observed average frequency in the data set."
+msgstr "<b>图 %i：</b>数据集中值的期望平均频率与观测平均频率。"
+
+msgid "Observed vs. Expected Entropy"
+msgstr "观测与期望熵"
+
+msgid "<b>Figure %i:</b> The expected entropy of values versus the observed entropy in the data set."
+msgstr "<b>图 %i：</b>数据集中值的期望熵与观测熵。"
+
+msgid "Histogram of Individual Values"
+msgstr "个体值直方图"
+
+msgid "<b>Figure %i:</b> Histogram of the individual values in the data set."
+msgstr "<b>图 %i：</b>数据集中个体值的直方图。"
+
+msgid "%1$s < α"
+msgstr "%1$s < α"
+
+msgid "%1$s >= α"
+msgstr "%1$s >= α"
+
+msgid "The <i>p</i>-value is %1$s and the null hypothesis that the data do not contain an unexpected amount of repeated values %2$s."
+msgstr "<i>p</i>-值为 %1$s，且数据不包含异常数量的重复值这一原假设 %2$s。"
+
+msgid "percentage"
+msgstr "百分比"
+
+msgid "amount"
+msgstr "数量"
+
+msgid "<u>Planning</u>"
+msgstr "<u>规划</u>"
+
+msgid "Analysis not possible: The materiality is higher than, or equal to the total value of the observations."
+msgstr "无法进行分析：重要性水平高于或等于观测总价值。"
+
+msgid "Analysis not possible: The expected errors are equal to, or higher than, the number of units in the population."
+msgstr "无法进行分析：期望误差等于或高于总体中的单位数。"
+
+msgid "Analysis not possible: The expected errors are higher than the performance materiality."
+msgstr "无法进行分析：期望误差高于绩效重要性水平。"
+
+msgid "The detection risk is equal to or higher than 100%%. Please re-specify the custom values for the Inherent risk and/or Control risk and/or Analytical risk, or the confidence."
+msgstr "检测风险等于或高于 100%%。请重新指定固有风险和/或控制风险和/或分析风险的自定义值，或置信度。"
+
+msgid "You cannot incorporate this prior information into your analysis because you are not testing against a performance materiality."
+msgstr "您无法将此先验信息纳入分析，因为您并非针对绩效重要性水平进行检验。"
+
+msgid "The prior expected misstatement rate in the population is larger than the performance materiality."
+msgstr "总体中先验期望错报率大于绩效重要性水平。"
+
+msgid "Selection Summary"
+msgstr "选择摘要"
+
+msgid "You must specify unique item ID's. The row numbers of the data set are sufficient."
+msgstr "您必须指定唯一的条目 ID。数据集的行号即可满足要求。"
+
+msgid "Evaluation Summary"
+msgstr "评估摘要"
+
+msgid "The hypergeometric upper bound requires that you specify the number of units in the population."
+msgstr "超几何上界要求您指定总体中的单位数。"
+
+msgid "The direct, difference, ratio, and regression bounds require that you specify the number of items and the number of units in the population."
+msgstr "直接、差异、比率和回归上界要求您指定总体中的条目数和单位数。"
+
+msgid "The detection risk is equal to or higher than 100%%. Please re-specify your values for the Inherent risk and/or Control risk and/or Analytical risk, or the confidence."
+msgstr "检测风险等于或高于 100%%。请重新指定固有风险和/或控制风险和/或分析风险的值，或置信度。"
+
+msgid "Analysis not possible: The materiality (%1$s) is higher than, or equal to the total value of the population (%2$s)."
+msgstr "无法进行分析：重要性水平（%1$s）高于或等于总体总价值（%2$s）。"
+
+msgid "Analysis not possible: The hurdle model cannot be applied with this specific prior distribution because it is improper. Please specify a different prior distribution."
+msgstr "无法进行分析：障碍模型无法与该特定的先验分布一起使用，因为它是不恰当的。请指定不同的先验分布。"
+
+msgid "Select one or both sampling objectives to begin planning an audit sample.\n\n%1$s <b>Test against a performance materiality</b>\n\nEnable this objective if you want to test whether the total misstatement in the population exceeds a certain limit (i.e., the performance materiality) based on a sample. This approach allows you to plan a sample such that, when the sample meets your expectations, the maximum error is said to be below performance materiality. In the evaluation you will be able to quantify the evidence that your sample contains for or against the statement that the population misstatement does not exceed the performance materiality.\n\n%2$s <b>Obtain a minimum precision</b>\n\nEnable this objective if you want to obtain a minimum precision when estimating the total misstatement in the population based on a sample. This approach allows you to plan a sample such that, when the sample meets expectations, the accuracy of your estimate is below a tolerable percentage. In the evaluation you will be able to quantify the accuracy of your estimate of the population misstatement."
+msgstr "选择一个或两个抽样目标以开始规划审计样本。\n\n%1$s <b>针对绩效重要性水平进行检验</b>\n\n如果您想检验总体的总错报是否超过某一限度（即绩效重要性水平），请启用此目标。该方法允许您规划一个样本，使得当样本符合您的预期时，最大误差被认为低于绩效重要性水平。在评估阶段，您将能够量化样本为总体错报不超过绩效重要性水平的陈述提供的支持或反对证据。\n\n%2$s <b>获得最小精密度</b>\n\n如果您希望在基于样本估计总体总错报时获得最小精密度，请启用此目标。该方法允许您规划一个样本，使得当样本符合预期时，您的估计精度低于可容忍的百分比。在评估阶段，您将能够量化您对总体错报估计的精度。"
+
+msgid "The objective of this sampling procedure is to show with %1$s confidence that the %2$s of misstatement in the population is lower than the performance materiality of %3$s."
+msgstr "本抽样过程的目标是以 %1$s 的置信度表明，总体中 %2$s 错报低于 %3$s 的绩效重要性水平。"
+
+msgid "The objective of this sampling procedure is to estimate the misstatement in the population with %1$s confidence and a minimum precision of %2$s.\n\nThe quantity of interest is the misstatement θ in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audited (true) value."
+msgstr "本抽样过程的目标是以 %1$s 的置信度和 %2$s 的最小精密度估计总体中的错报。\n\n感兴趣的量为总体中的错报 θ。错报定义为条目的账面（记录）值与其审计（真实）值之间的差异。"
+
+msgid "The objective of this sampling procedure is to show with %1$s confidence and a precision of %3$s that the %2$s of misstatement in the population is lower than the performance materiality of %4$s."
+msgstr "本抽样过程的目标是以 %1$s 的置信度和 %3$s 的精密度表明，总体中 %2$s 错报低于 %4$s 的绩效重要性水平。"
+
+msgid "of intolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "过度不可容忍错报 H%1$s：%2$s %3$s %4$s"
+
+msgid "of exact misstatement H%1$s: %2$s = %3$s"
+msgstr "精确错报 H%1$s：%2$s = %3$s"
+
+msgid "of tolerable misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "可容忍错报 H%1$s：%2$s %3$s %4$s"
+
+msgid "of tolerable misstatement H%1$s: %2$s < %3$s"
+msgstr "可容忍错报 H%1$s：%2$s < %3$s"
+
+msgid "of no misstatement H%1$s: %2$s %3$s %4$s"
+msgstr "无错报 H%1$s：%2$s %3$s %4$s"
+
+msgid "of intolerable misstatement H%1$s: %2$s > %3$s"
+msgstr "过度不可容忍错报 H%1$s：%2$s > %3$s"
+
+msgid "%1$s\n\nThe quantity of interest is the misstatement %2$s in the population. Misstatement is defined as the difference between an item's booked (recorded) value and its audit (true) value. When testing the population misstatement against a given performance materiality, two statistical hypotheses about %2$s are formulated:\n\n- The (null) hypothesis %3$s,\n- The (alternative) hypothesis %4$s.\n\nThe audit risk %5$s is the risk of incorrectly rejecting the hypothesis %3$s. To reject this hypothesis on the basis of a sample, the information from the sample must be sufficient to reduce %5$s to an appropriately low level (i.e., %5$s < %6$s%%)."
+msgstr "%1$s\n\n感兴趣的量为总体中的错报 %2$s。错报定义为条目的账面（记录）值与其审计（真实）值之间的差异。针对给定的绩效重要性水平检验总体错报时，关于 %2$s 提出了两个统计假设：\n\n- （原）假设 %3$s，\n- （备择）假设 %4$s。\n\n审计风险 %5$s 是错误拒绝假设 %3$s 的风险。为了在样本的基础上拒绝该假设，样本信息必须足以将 %5$s 降低到适当低的水平（即 %5$s < %6$s%%）。"
+
+msgid "%1$s\n\nIn a Bayesian analysis, the parameter %2$s is assigned a prior probability distribution that incorporates the available audit information about the misstatement in the population."
+msgstr "%1$s\n\n在贝叶斯分析中，参数 %2$s 被赋予一个纳入总体错报可用审计信息的先验概率分布。"
+
+msgid "a performance materiality of %1$s"
+msgstr "%1$s 的绩效重要性水平"
+
+msgid "the sample provides sufficient information to conclude that the misstatement in the population is below the performance materiality"
+msgstr "样本提供了足够的信息以得出结论：总体中的错报低于绩效重要性水平"
+
+msgid "a minimum precision of %1$s"
+msgstr "%1$s 的最小精密度"
+
+msgid "the sample provides sufficient information to estimate the misstatement in the population with the minimum precision"
+msgstr "样本提供了足够的信息以最小精密度估计总体中的错报"
+
+msgid "a performance materiality of %1$s and a minimum precision of %2$s"
+msgstr "%1$s 的绩效重要性水平和 %2$s 的最小精密度"
+
+msgid "the sample provides sufficient information to conclude that the misstatement in the population is below the performance materiality with the minimum precision"
+msgstr "样本提供了足够的信息以最小精密度得出结论：总体中的错报低于绩效重要性水平"
+
+msgid "Furthermore, the uncertainty regarding θ will only be extrapolated over the unseen part of the population. This requires the additional assumption that the population taints are homogeneous."
+msgstr "此外，关于 θ 的不确定性仅被外推至总体中未见的部分。这需要额外的假设，即总体污染比例是同质的。"
+
+msgid "gamma"
+msgstr "伽马"
+
+msgid "beta"
+msgstr "贝塔"
+
+msgid "beta-binomial"
+msgstr "贝塔-二项式"
+
+msgid "The purpose of the planning stage is to find a minimum sample size so that, given a certain number of expected misstatements, the sample provides sufficient information to achieve the specified sampling objectives."
+msgstr "规划阶段的目标是找出最小样本规模，使得在给定一定数量的期望错报的情况下，样本提供足够的信息以实现指定的抽样目标。"
+
+msgid "No assumptions are made about the most likely expected error in the sample."
+msgstr "对样本中最可能期望的误差不做任何假设。"
+
+msgid "The most likely expected error in the sample is expected to be %1$s."
+msgstr "样本中最可能期望的误差预计为 %1$s。"
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that every value of the misstatement is equally likely, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
+msgstr "%1$s%2$s 假设样本包含 %4$s 个误差，实现 %3$s 所需的最小样本规模为 %5$s。该样本规模基于 %6$s 分布、错报的每个值等可能的先验假设，以及给定的期望误差。\n\n因此，如果对预期样本进行评估，且被审计项目中（比例）错报的总和低于（或等于）%7$s，则 %8$s。%9$s"
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assessments of inherent risk (<i>%7$s</i>), control risk (<i>%8$s</i>) and analytical risk (<i>%9$s</i>) from the Audit Risk Model, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %10$s, %11$s. %12$s"
+msgstr "%1$s%2$s 假设样本包含 %4$s 个误差，实现 %3$s 所需的最小样本规模为 %5$s。该样本规模基于 %6$s 分布、审计风险模型中固有风险（<i>%7$s</i>）、控制风险（<i>%8$s</i>）和分析风险（<i>%9$s</i>）的先验评估，以及给定的期望误差。\n\n因此，如果对预期样本进行评估，且被审计项目中（比例）错报的总和低于（或等于）%10$s，则 %11$s。%12$s"
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that tolerable misstatement is equally likely to occur as intolerable misstatement, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
+msgstr "%1$s%2$s 假设样本包含 %4$s 个误差，实现 %3$s 所需的最小样本规模为 %5$s。该样本规模基于 %6$s 分布、可容忍错报与不可容忍错报发生可能性相等的先验假设，以及给定的期望误差。\n\n因此，如果对预期样本进行评估，且被审计项目中（比例）错报的总和低于（或等于）%7$s，则 %8$s。%9$s"
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the a priori assumption that an earlier sample of %7$s transactions containing %8$s errors is seen, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %9$s, %10$s. %11$s"
+msgstr "%1$s%2$s 假设样本包含 %4$s 个误差，实现 %3$s 所需的最小样本规模为 %5$s。该样本规模基于 %6$s 分布、已观察到包含 %8$s 个误差的 %7$s 笔较早交易的先验假设，以及给定的期望误差。\n\n因此，如果对预期样本进行评估，且被审计项目中（比例）错报的总和低于（或等于）%9$s，则 %10$s。%11$s"
+
+msgid "%1$s%2$s The minimum sample size that is required for %3$s, assuming the sample contains %4$s errors, is %5$s. This sample size is based on the %6$s distribution, the manually specified prior distribution, and the given expected errors.\n\nConsequently, if the intended sample is evaluated and the sum of (proportional) misstatements in the audited items is lower than (or equal to) %7$s, %8$s. %9$s"
+msgstr "%1$s%2$s 假设样本包含 %4$s 个误差，实现 %3$s 所需的最小样本规模为 %5$s。该样本规模基于 %6$s 分布、手动指定的先验分布，以及给定的期望误差。\n\n因此，如果对预期样本进行评估，且被审计项目中（比例）错报的总和低于（或等于）%7$s，则 %8$s。%9$s"
+
+msgid "random"
+msgstr "随机"
+
+msgid "fixed interval"
+msgstr "固定区间"
+
+msgid "cell"
+msgstr "单元"
+
+msgid "sieve"
+msgstr "筛选"
+
+msgid "book values (<i>%1$s</i>)"
+msgstr "账面值（<i>%1$s</i>）"
+
+msgid "book values (<i>...</i>)"
+msgstr "账面值（<i>...</i>）"
+
+msgid "ID variable (<i>%1$s</i>)"
+msgstr "ID 变量（<i>%1$s</i>）"
+
+msgid "ID variable (<i>...</i>)"
+msgstr "ID 变量（<i>...</i>）"
+
+msgid "<br><b>Warning:</b> A monetary unit sampling method was tried but failed."
+msgstr "<br><b>警告：</b>尝试的货币单位抽样方法失败。"
+
+msgid "%1$s record sampling"
+msgstr "%1$s 记录抽样"
+
+msgid "%1$s monetary unit sampling"
+msgstr "%1$s 货币单位抽样"
+
+msgid "items"
+msgstr "条目"
+
+msgid "monetary units"
+msgstr "货币单位"
+
+msgid "randomized"
+msgstr "随机化的"
+
+msgid "non-randomized"
+msgstr "非随机化的"
+
+msgid "The purpose of the selection stage is to statistically select a number of sampling units from the population. Sampling units can be individual items (rows) or individual monetary units. The sampling units are selected from the population according to the selection method. To learn more about the current selection method, look under the <i>Method</i> section.\n\nFrom the population of %1$s %2$s items, %3$s sampling units (%4$s) are selected from the %5$s using the %6$s method.%7$s"
+msgstr "选择阶段的目标是从总体中统计选择若干抽样单位。抽样单位可以是单个项目（行）或单个货币单位。抽样单位按照选择方法从总体中选出。要了解更多关于当前选择方法的信息，请参阅<i>方法</i>部分。\n\n从 %1$s 个 %2$s 条目的总体中，使用 %6$s 方法从 %5$s 选出 %3$s 个抽样单位（%4$s）。%7$s"
+
+msgid "%1$s\n\n<b>Note:</b> The selected sample (%2$s) contains fewer items than the planned sample size (%3$s) because some items are selected more than once. The items containing these %4$s extra selected sampling units will be counted multiple times in the evaluation."
+msgstr "%1$s\n\n<b>注意：</b>所选样本（%2$s）包含的项目数少于计划样本规模（%3$s），因为有些项目被选择多次。包含这些 %4$s 个额外选择的抽样单位的项目在评估中将被重复计数。"
+
+msgid "overall materiality"
+msgstr "整体重要性水平"
+
+msgid "Furthermore, an overall materiality of %1$s was determined and is used to evaluate the population misstatement."
+msgstr "此外，确定了 %1$s 的整体重要性水平，并用于评估总体错报。"
+
+msgid "performance materiality"
+msgstr "绩效重要性水平"
+
+msgid "below"
+msgstr "低于"
+
+msgid "lower"
+msgstr "较低"
+
+msgid "above"
+msgstr "高于"
+
+msgid "higher"
+msgstr "较高"
+
+msgid "<b>Objectives:</b> You have achieved your initial sampling objectives."
+msgstr "<b>目标：</b>您已实现最初的抽样目标。"
+
+msgid "<b>Objectives:</b> You have not achieved your initial sampling objectives."
+msgstr "<b>目标：</b>您尚未实现最初的抽样目标。"
+
+msgid "The objective of this audit sampling procedure was to determine with %1$s confidence whether the misstatement in the population is lower than the specified performance materiality, in this case %2$s. %3$sFor the current data, the %1$s upper bound for the misstatement is %4$s the %5$s. \n\nThe conclusion on the basis of these results is that the misstatement in the population is %6$s than the %5$s. %7$s"
+msgstr "本审计抽样过程的目标是以 %1$s 的置信度判断总体中的错报是否低于指定的绩效重要性水平（此处为 %2$s）。%3$s对于当前数据，错报的 %1$s 上界 %4$s%5$s。\n\n基于这些结果的结论是：总体中的错报 %6$s 于 %5$s。%7$s"
+
+msgid "The objective of this audit sampling procedure was to determine the misstatement in the population with %1$s confidence and a minimum precision of %2$s. For the current data, the obtained precision is %3$s than the minimum precision. \n\nThe conclusion on the basis of these results is that the misstatement in the population has been determined with at least %1$s confidence and a precision of %4$s. %5$s"
+msgstr "本审计抽样过程的目标是以 %1$s 的置信度和 %2$s 的最小精密度判断总体中的错报。对于当前数据，获得的精密度 %3$s 于最小精密度。\n\n基于这些结果的结论是：总体中的错报已至少以 %1$s 的置信度和 %4$s 的精密度确定。%5$s"
+
+msgid "The objective of this audit sampling procedure was to determine with %1$s confidence, and a minimum precision of %2$s, whether the misstatement in the population is lower than the specified performance materiality, in this case %3$s. %4$sFor the current data, the %1$s upper bound for the misstatement is %5$s the %6$s and the obtained precision is %7$s than the minimum precision. \n\nThe conclusion on the basis of these results is that, with a precision of %8$s, the misstatement in the population is %9$s than the %6$s. %10$s"
+msgstr "本审计抽样过程的目标是以 %1$s 的置信度和 %2$s 的最小精密度判断总体中的错报是否低于指定的绩效重要性水平（此处为 %3$s）。%4$s对于当前数据，错报的 %1$s 上界 %5$s%6$s，且获得的精密度 %7$s 于最小精密度。\n\n基于这些结果的结论是：以 %8$s 的精密度，总体中的错报 %9$s 于 %6$s。%10$s"
+
+msgid "<b>Table %1$i.</b> Descriptive Statistics for Book Values"
+msgstr "<b>表 %1$i。</b>账面值的描述性统计"
+
+msgid "Population size"
+msgstr "总体规模"
+
+msgid "Absolute value"
+msgstr "绝对值"
+
+msgid "Mean"
+msgstr "均值"
+
+msgid "Std. deviation"
+msgstr "标准差"
+
+msgid "1"
+msgstr "1"
+
+msgid "Quartile"
+msgstr "四分位数"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "Distribution of Book Values"
+msgstr "账面值分布"
+
+msgid "Mean ± St.dev"
+msgstr "均值 ± 标准差"
+
+msgid "<b>Figure %1$i.</b> The distribution of book values in the population. The red and blue dots respectively represent the mean and the values exactly one standard deviation from the mean. The orange dots represent the first, second (median) and third quartiles of the book values."
+msgstr "<b>图 %1$i。</b>总体中账面值的分布。红点和蓝点分别表示均值以及距均值恰好一个标准差的数值。橙点表示账面值的第一、第二（中位数）和第三四分位数。"
+
+msgid "High"
+msgstr "高"
+
+msgid "Medium"
+msgstr "中"
+
+msgid "Low"
+msgstr "低"
+
+msgid "<u>Audit Risk Model</u>"
+msgstr "<u>审计风险模型</u>"
+
+msgid "The Audit Risk Model is a method to reduce the required information from the sample on the basis of earlier assessments of inherent risk, control risk and analytical risk, while maintaining the desired audit risk.\n\nPrior to the sampling procedure, the inherent risk was determined to be %1$s, the control risk was determined to be %2$s and the analytical risk was determined to be %3$s. According to the Audit Risk Model, the required detection risk to maintain an audit risk of %4$s should be %5$s."
+msgstr "审计风险模型是一种基于对固有风险、控制风险和分析风险的先前评估来减少所需样本信息的方法，同时保持所需的审计风险。\n\n在抽样过程之前，固有风险被确定为 %1$s，控制风险被确定为 %2$s，分析风险被确定为 %3$s。根据审计风险模型，在审计风险 %4$s 下保持所需的检测风险应为 %5$s。"
+
+msgid "Audit risk (%1$s%%) = Inherent risk (%2$s%%) x Control risk (%3$s%%) x Analytical Risk (%4$s%%) x Detection risk (%5$s%%)"
+msgstr "审计风险（%1$s%%）= 固有风险（%2$s%%）x 控制风险（%3$s%%）x 分析风险（%4$s%%）x 检测风险（%5$s%%）"
+
+msgid "At least one translation of the categories High, Medium and Low to probabilities is done according custom settings."
+msgstr "至少有一种“高、中、低”类别到概率的换算按自定义设置进行。"
+
+msgid "The translation of the categories high, medium and low to probabilities is done using the default settings shown in the table below."
+msgstr "“高、中、低”类别到概率的换算使用下表中显示的默认设置进行。"
+
+msgid "<b>Table %1$i.</b> Default Settings Audit Risk Model"
+msgstr "<b>表 %1$i。</b>审计风险模型的默认设置"
+
+msgid "Inherent risk"
+msgstr "固有风险"
+
+msgid "Control risk"
+msgstr "控制风险"
+
+msgid "Analytical risk"
+msgstr "分析风险"
+
+msgid "= Selected"
+msgstr "= 已选择"
+
+msgid "The detection risk is equal to or higher than 100%%. Please re-specify the percentages for the Inherent risk and/or Control risk and/or Analytical risk."
+msgstr "检测风险等于或高于 100%%。请重新指定固有风险和/或控制风险和/或分析风险的百分比。"
+
+msgid "You cannot achieve your current sampling objectives with this population. The resulting sample size exceeds the maximum of %1$s. Adjust the maximum option accordingly."
+msgstr "您无法通过该总体实现当前的抽样目标。所得样本规模超过 %1$s 的上限。请相应调整上限选项。"
+
+msgid "The tolerable misstatements are larger than the performance materiality. If you used an absolute number of tolerable misstatements < 1, please use the 'relative' option."
+msgstr "可容忍错报大于绩效重要性水平。如果您使用的可容忍错报绝对数小于 1，请使用“相对”选项。"
+
+msgid "<b>Table %1$i.</b> Planning Summary"
+msgstr "<b>表 %1$i。</b>规划摘要"
+
+msgid "Performance materiality"
+msgstr "绩效重要性水平"
+
+msgid "Min. precision"
+msgstr "最小精密度"
+
+msgid "Detection risk"
+msgstr "检测风险"
+
+msgid "Audit risk"
+msgstr "审计风险"
+
+msgid "Tolerable misstatements"
+msgstr "可容忍错报"
+
+msgid "Minimum sample size"
+msgstr "最小样本规模"
+
+msgid "The minimum sample size is based on the Poisson distribution."
+msgstr "最小样本规模基于泊松分布。"
+
+msgid "The minimum sample size is based on the binomial distribution."
+msgstr "最小样本规模基于二项式分布。"
+
+msgid "The minimum sample size is based on the hypergeometric distribution."
+msgstr "最小样本规模基于超几何分布。"
+
+msgid "The minimum sample size is based on the gamma distribution."
+msgstr "最小样本规模基于伽马分布。"
+
+msgid "The minimum sample size is based on the beta distribution."
+msgstr "最小样本规模基于贝塔分布。"
+
+msgid "The minimum sample size is based on the beta-binomial distribution (N = %1$s)."
+msgstr "最小样本规模基于贝塔-二项式分布（N = %1$s）。"
+
+msgid "Either the materiality (if applicable) or the number of units in the population is defined as zero."
+msgstr "重要性水平（若适用）或总体中的单位数被定义为零。"
+
+msgid "%1$s <b>Insufficient information.</b>"
+msgstr "%1$s <b>信息不足。</b>"
+
+msgid "The minimum sample size is based on the Poisson distribution (%1$s = %2$s)."
+msgstr "最小样本规模基于泊松分布（%1$s = %2$s）。"
+
+msgid "The minimum sample size is based on the binomial distribution (p = %1$s)"
+msgstr "最小样本规模基于二项式分布（p = %1$s）"
+
+msgid "The minimum sample size is based on the hypergeometric distribution (N = %1$s, K = %2$s)."
+msgstr "最小样本规模基于超几何分布（N = %1$s，K = %2$s）。"
+
+msgid "The minimum sample size is based on the gamma distribution (%1$s = %2$s, %3$s = %4$s)"
+msgstr "最小样本规模基于伽马分布（%1$s = %2$s，%3$s = %4$s）"
+
+msgid "The minimum sample size is based on the beta distribution (%1$s = %2$s, %3$s = %4$s)."
+msgstr "最小样本规模基于贝塔分布（%1$s = %2$s，%3$s = %4$s）。"
+
+msgid "The minimum sample size is based on the beta-binomial distribution (N = %1$s, %2$s = %3$s, %4$s = %5$s)."
+msgstr "最小样本规模基于贝塔-二项式分布（N = %1$s，%2$s = %3$s，%4$s = %5$s）。"
+
+msgid "The minimum sample size (%1$s) is larger than the number of units in the population (%2$s)."
+msgstr "最小样本规模（%1$s）大于总体中的单位数（%2$s）。"
+
+msgid "Based on this sample size, the selection interval spans %1$s units."
+msgstr "基于该样本规模，选择区间跨越 %1$s 个单位。"
+
+msgid "The value %1$s is automatically used as a starting point for the fixed interval selection."
+msgstr "值 %1$s 自动用作固定区间选择的起点。"
+
+msgid "%1$s"
+msgstr "%1$s"
+
+msgid "Minimum Sample Sizes"
+msgstr "最小样本规模"
+
+msgid "Beta"
+msgstr "贝塔"
+
+msgid "Gamma"
+msgstr "伽马"
+
+msgid "Beta-binomial"
+msgstr "贝塔-二项式"
+
+msgid "Binomial"
+msgstr "二项式"
+
+msgid "Poisson"
+msgstr "泊松"
+
+msgid "Hypergeometric"
+msgstr "超几何"
+
+msgid "Across Probability Distributions (Current: %1$s)"
+msgstr "不同概率分布（当前：%1$s）"
+
+msgid "Expected error-free"
+msgstr "期望无误差"
+
+msgid "Expected errors"
+msgstr "期望误差"
+
+msgid "An error occurred in a call to the jfa package: %1$s"
+msgstr "调用 jfa 包时发生错误：%1$s"
+
+msgid "Across Expected Errors (Current: %1$s)"
+msgstr "不同期望误差（当前：%1$s）"
+
+msgid "You cannot achieve your current sampling objectives with up to three full misstatements this population."
+msgstr "您无法在该总体中使用最多三个完整错报实现当前的抽样目标。"
+
+msgid "<b>Figure %1$i.</b> The first panel shows a comparison of the minimum sample sizes under different probability distributions. The bars represent the minimum sample sizes for the current expected errors in the sample. The number of expected errors in each bar is colored in red and the number of expected error-free items is colored in green. The second panel shows a comparison of the minimum sample sizes under different expected errors for the current probability distribution."
+msgstr "<b>图 %1$i。</b>第一个面板比较了不同概率分布下的最小样本规模。条形表示样本中当前期望误差的最小样本规模。每个条形中期望误差的数量以红色着色，期望无误差项目的数量以绿色着色。第二个面板比较了当前概率分布下不同期望误差的最小样本规模。"
+
+msgid "Presumed %1$s Distribution"
+msgstr "假设的 %1$s 分布"
+
+msgid "<b>Figure %1$i.</b> The assumed %2$s distribution. The number of expected errors in the selection is colored in red. The total probability of the errors does not exceed the detection risk as specified through the audit risk model."
+msgstr "<b>图 %1$i。</b>假定的 %2$s 分布。选择中期望误差的数量以红色着色。误差的总概率不超过审计风险模型指定的检测风险。"
+
+msgid "You cannot use an interval-based selection method because the sample size exceeds the population size of %1$s. Please change the selection method to random sampling."
+msgstr "您无法使用基于区间的选择方法，因为样本规模超过 %1$s 的总体规模。请将选择方法改为随机抽样。"
+
+msgid "Starting point is outside the range of the selection interval of 1 to %1$s. Please choose a starting point < %1$s."
+msgstr "起点在 1 到 %1$s 的选择区间范围之外。请选择 < %1$s 的起点。"
+
+msgid "<b>Table %1$i.</b> Selection Summary"
+msgstr "<b>表 %1$i。</b>选择摘要"
+
+msgid "No. units"
+msgstr "单位数"
+
+msgid "No. items"
+msgstr "条目数"
+
+msgid "Selection value"
+msgstr "选择值"
+
+msgid "%% of population value"
+msgstr "占总体值的 %%"
+
+msgid "%% of population size"
+msgstr "占总体规模的 %%"
+
+msgid "using seed %1$s"
+msgstr "使用种子 %1$s"
+
+msgid "From each of the intervals of size %1$s, unit %2$s is selected%3$s."
+msgstr "从每个大小为 %1$s 的区间中，选出单位 %2$s%3$s。"
+
+msgid "The sample is drawn with seed %1$s and intervals of size %2$s."
+msgstr "样本以种子 %1$s 和大小为 %2$s 的区间抽取。"
+
+msgid "The sample is drawn with seed %1$s."
+msgstr "样本以种子 %1$s 抽取。"
+
+msgid "The random numbers are generated with seed %1$s."
+msgstr "随机数以种子 %1$s 生成。"
+
+msgid "The sample is not exported until the 'Synchronize' option is checked."
+msgstr "在勾选“同步”选项之前，样本不会被导出。"
+
+msgid "<b>Table %1$i.</b> Information about Monetary Interval Selection"
+msgstr "<b>表 %1$i。</b>关于货币区间选择的信息"
+
+msgid "Items"
+msgstr "项目"
+
+msgid "Selected items"
+msgstr "选定的项目"
+
+msgid "Selected units"
+msgstr "选定的单位"
+
+msgid "%% of total value"
+msgstr "占总价值的 %%"
+
+msgid "twice the"
+msgstr "两倍的"
+
+msgid "a single"
+msgstr "单一的"
+
+msgid "The top stratum consists of all items with a book value larger than %1$s interval."
+msgstr "顶层包含所有账面值大于 %1$s 个区间的项目。"
+
+msgid "Total"
+msgstr "总计"
+
+msgid "Top stratum"
+msgstr "顶层"
+
+msgid "Bottom stratum"
+msgstr "底层"
+
+msgid "<b>Table %1$i.</b> Selected Items"
+msgstr "<b>表 %1$i。</b>选定的项目"
+
+msgid "Selected"
+msgstr "已选择"
+
+msgid "<b>Table %1$i.</b> Descriptive Statistics for Sample"
+msgstr "<b>表 %1$i。</b>样本的描述性统计"
+
+msgid "Valid cases"
+msgstr "有效案例"
+
+msgid "Median"
+msgstr "中位数"
+
+msgid "Variance"
+msgstr "方差"
+
+msgid "Range"
+msgstr "范围"
+
+msgid "Minimum"
+msgstr "最小值"
+
+msgid "Maximum"
+msgstr "最大值"
+
+msgid "The audit result variable should contain only 0's (correct) and 1's (incorrect)."
+msgstr "审计结果变量应仅包含 0（正确）和 1（不正确）。"
+
+msgid "combined with the information in the prior distribution"
+msgstr "结合先验分布中的信息"
+
+msgid "The purpose of the evaluation stage is to infer the misstatement θ in the population on the basis of a sample.\n\nThe population consisted of %1$s items and %2$s units. The sample consisted of %3$s sampling units, of which a total of %4$s were misstated. The information from this sample %5$s results in a most likely misstatement in the population of %6$s and a %7$s upper bound of %8$s."
+msgstr "评估阶段的目标是基于样本推断总体中的错报 θ。\n\n总体由 %1$s 个项目、%2$s 个单位组成。样本由 %3$s 个抽样单位组成，其中总共 %4$s 个存在错报。该样本的信息 %5$s 得到总体中最可能的错报 %6$s 和 %7$s 上界 %8$s。"
+
+msgid "<b>Table %1$i.</b> Evaluation Summary"
+msgstr "<b>表 %1$i。</b>评估摘要"
+
+msgid "Overall materiality"
+msgstr "整体重要性水平"
+
+msgid "Sample size"
+msgstr "样本规模"
+
+msgid "Misstatements"
+msgstr "错报"
+
+msgid "Taint"
+msgstr "污染比例"
+
+msgid "Most likely misstatement"
+msgstr "最可能的错报"
+
+msgid "%1$s%% Upper bound"
+msgstr "%1$s%% 上界"
+
+msgid "%1$s%% Lower bound"
+msgstr "%1$s%% 下界"
+
+msgid "p-value"
+msgstr "p-值"
+
+msgid "The results are computed using the Poisson distribution."
+msgstr "结果使用泊松分布计算。"
+
+msgid "The results are computed using the binomial distribution."
+msgstr "结果使用二项式分布计算。"
+
+msgid "The results are computed using the hypergeometric distribution."
+msgstr "结果使用超几何分布计算。"
+
+msgid "The results are computed using the Stringer method."
+msgstr "结果使用 Stringer 方法计算。"
+
+msgid "The results are computed using the regression estimator."
+msgstr "结果使用回归估计量计算。"
+
+msgid "The results are computed using the direct estimator."
+msgstr "结果使用直接估计量计算。"
+
+msgid "The results are computed using the difference estimator."
+msgstr "结果使用差异估计量计算。"
+
+msgid "The results are computed using the ratio estimator."
+msgstr "结果使用比率估计量计算。"
+
+msgid "The results are computed using the mean-per-unit estimator"
+msgstr "结果使用平均每单位估计量计算。"
+
+msgid "The results are computed using the beta distribution."
+msgstr "结果使用贝塔分布计算。"
+
+msgid "The results are computed using the gamma distribution."
+msgstr "结果使用伽马分布计算。"
+
+msgid "The results are computed using the beta-binomial distribution."
+msgstr "结果使用贝塔-二项式分布计算。"
+
+msgid "The results are computed using the hurdle beta model"
+msgstr "结果使用障碍贝塔模型计算。"
+
+msgid "The results are computed using the Stringer method with LTA adjustment."
+msgstr "结果使用带 LTA 调整的 Stringer 方法计算。"
+
+msgid "The results are computed using the beta distribution and require the assumption that the population taints are homogeneous."
+msgstr "结果使用贝塔分布计算，并需要总体污染比例同质这一假设。"
+
+msgid "The audit result column is empty."
+msgstr "审计结果列为空。"
+
+msgid "Either the materiality, the population size, or the population value is defined as zero, or one of the required variables is missing."
+msgstr "重要性水平、总体规模或总体值之一被定义为零，或者缺少所需变量之一。"
+
+msgid "<b>Table %1$i.</b> Stratum Evaluation Summary"
+msgstr "<b>表 %1$i。</b>分层评估摘要"
+
+msgid "Stratum"
+msgstr "分层"
+
+msgid "%1$s%% Interval"
+msgstr "%1$s%% 区间"
+
+msgid "Information is shared between the strata in the population."
+msgstr "信息在总体各层之间共享。"
+
+msgid "The strata in the population are assumed to be independent."
+msgstr "假设总体各层相互独立。"
+
+msgid "<b>Table %1$i.</b> Misstated Items"
+msgstr "<b>表 %1$i。</b>存在错报的项目"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Difference"
+msgstr "差异"
+
+msgid "Counted"
+msgstr "计数"
+
+msgid "No misstatements were identified in the sample."
+msgstr "样本中未识别到错报。"
+
+msgid "Pearson's r"
+msgstr "皮尔逊 r"
+
+msgid "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis H₋: ρ < 0"
+msgstr "原假设 H₀：ρ ≥ 0 针对备择假设 H₋：ρ < 0 进行检验"
+
+msgid "Book values - Taints"
+msgstr "账面值 - 污染比例"
+
+msgid "There were no misstatements found in the sample."
+msgstr "样本中未发现错报。"
+
+msgid "An error occurred while calculating the correlation."
+msgstr "计算相关性时发生错误。"
+
+msgid "Evaluation of Sampling Objectives"
+msgstr "抽样目标评估"
+
+msgid "An error occurred while creating this plot: The results contain NAs"
+msgstr "创建此图时发生错误：结果包含 NA"
+
+msgid "Upper bound"
+msgstr "上界"
+
+msgid "Most likely error"
+msgstr "最可能的误差"
+
+msgid "Minimum precision"
+msgstr "最小精密度"
+
+msgid "Obtained precision"
+msgstr "获得的精密度"
+
+msgid "An error occurred while creating this plot: %1$s"
+msgstr "创建此图时发生错误：%1$s"
+
+msgid "<b>Figure %1$i.</b> Evaluation information for the current annotated selection. The materiality is compared with the maximum misstatement and the most likely misstatement. The most likely misstatement is the best estimate of the true misstatement in the population. The upper bound is an estimate of the maximum misstatement in the population."
+msgstr "<b>图 %1$i。</b>当前标注选择的评估信息。重要性水平与最大错报和最可能错报进行比较。最可能错报是对总体真实错报的最佳估计。上界是对总体最大错报的估计。"
+
+msgid "Estimates"
+msgstr "估计值"
+
+msgid "<b>Figure %1$i.</b> Most likely estimates (points) and %2$s%% %3$s %4$s intervals for the misstatement in the population and in the individual strata, showing the range of plausible values for the misstatement after seeing the data."
+msgstr "<b>图 %1$i。</b>总体及各分层错报的最可能估计值（点）和 %2$s%% %3$s %4$s 区间，展示了看到数据后错报的合理值范围。"
+
+msgid "Scatter Plot of Book and Audit Values"
+msgstr "账面值与审计值散点图"
+
+msgid "Book value (%1$s)"
+msgstr "账面值（%1$s）"
+
+msgid "Audit value (%1$s)"
+msgstr "审计值（%1$s）"
+
+msgid "<b>Figure %1$i.</b> Scatter plot of the book values in the selection and their corresponding audit values. Grey dots on the diagonal (dashed line) indicate matching book and audit values. Red dots off the diagonal indicate items whose audit value did not match their original book value. If these red dots lie below the diagonal, the items are overstated. If these red dots lie above the diagonal they are understated. %2$s"
+msgstr "<b>图 %1$i。</b>选择中账面值与其相应审计值的散点图。对角线（虚线）上的灰点表示账面值与审计值匹配。对角线外的红点表示审计值与其原始账面值不匹配的项目。如果这些红点位于对角线下方，则项目被高估；如果位于对角线上方，则被低估。%2$s"
+
+msgid "<b>Table %1$i.</b> Corrections to Population"
+msgstr "<b>表 %1$i。</b>对总体的修正"
+
+msgid "Correction"
+msgstr "修正"
+
+msgid "The correction to achieve no misstatements is the upper bound%1$s."
+msgstr "实现零错报的修正是上界%1$s。"
+
+msgid "No misstatements with %1$s%% precision"
+msgstr "以 %1$s%% 精密度实现零错报"
+
+msgid "No misstatements with %1$s%% confidence"
+msgstr "以 %1$s%% 置信度实现零错报"
+
+msgid "No misstatements with %1$s%% confidence and %2$s%% precision"
+msgstr "以 %1$s%% 置信度和 %2$s%% 精密度实现零错报"
+
+msgid "Created by JASP for Audit (Version %1$s) on %2$s at %3$s."
+msgstr "由 JASP 为审计（版本 %1$s）创建于 %2$s %3$s。"
+
+msgid "Prior and Expected Posterior Distribution"
+msgstr "先验与期望后验分布"
+
+msgid "Prior Distribution"
+msgstr "先验分布"
+
+msgid "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on the population misstatement θ. The prior parameters (%3$s = %4$s, %5$s = %6$s) are derived from the prior information. The expected posterior distribution fulfills the conditions set in the sampling objectives."
+msgstr "<b>图 %1$i。</b>总体错报 θ 上的先验与期望后验分布（%2$s）。先验参数（%3$s = %4$s，%5$s = %6$s）由先验信息得出。期望后验分布满足抽样目标中设定的条件。"
+
+msgid "<b>Figure %1$i.</b> The prior and posterior distribution (%2$s) on the misstatement in the population."
+msgstr "<b>图 %1$i。</b>错报上的先验与后验分布（%2$s）。"
+
+msgid "Prior Predictive Distribution"
+msgstr "先验预测分布"
+
+msgid "Posterior Predictive Distribution"
+msgstr "后验预测分布"
+
+msgid "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays the predictions of the %2$s distribution for %4$s <i>n</i> = %5$s."
+msgstr "<b>图 %1$i。</b>%2$s 预测分布为 %3$s，展示了 %2$s 分布对 %4$s <i>n</i> = %5$s 的预测。"
+
+msgid "Descriptive Statistics for Prior and Expected Posterior Distribution"
+msgstr "先验与期望后验分布的描述性统计"
+
+msgid "Descriptive Statistics for Prior and Posterior Distribution"
+msgstr "先验与后验分布的描述性统计"
+
+msgid "<b>Table %1$i.</b> %2$s"
+msgstr "<b>表 %1$i。</b>%2$s"
+
+msgid "Functional form"
+msgstr "函数形式"
+
+msgid "Support %1$s"
+msgstr "支持 %1$s"
+
+msgid "Ratio %1$s"
+msgstr "比率 %1$s"
+
+msgid "Mode"
+msgstr "众数"
+
+msgid "Prior"
+msgstr "先验"
+
+msgid "Posterior"
+msgstr "后验"
+
+msgid "Shift"
+msgstr "移位"
+
+msgid "Nonparametric"
+msgstr "非参数"
+
+msgid "%1$s %2$s vs. %3$s %2$s."
+msgstr "%1$s %2$s 对比 %3$s %2$s。"
+
+msgid "Sequential Analysis"
+msgstr "序贯分析"
+
+msgid "Plot not possible: The Bayes factor is infinite."
+msgstr "无法绘图：贝叶斯因子为无穷大。"
+
+msgid "<b>Figure %1$i.</b> The Bayes factor as a function of the sample size (n)."
+msgstr "<b>图 %1$i。</b>作为样本规模（n）函数的贝叶斯因子。"
+
+msgid "The figure illustrates how the evidence for the hypothesis H₁ (i.e. H₋) versus the hypothesis H₀ (i.e. H₊) accumulates."
+msgstr "该图说明假设 H₁（即 H₋）相对于假设 H₀（即 H₊）的证据如何累积。"
+
+msgid "The figure illustrates how the evidence for the hypothesis H₁ (i.e. H₊) versus the hypothesis H₀ (i.e. H₋) accumulates."
+msgstr "该图说明假设 H₁（即 H₊）相对于假设 H₀（即 H₋）的证据如何累积。"
+
+msgid "The figure illustrates how the evidence for the hypothesis H₁ versus the hypothesis H₀ accumulates."
+msgstr "该图说明假设 H₁ 相对于假设 H₀ 的证据如何累积。"
