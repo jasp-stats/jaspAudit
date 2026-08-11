@@ -41,6 +41,11 @@
   ### SELECTION STAGE ###
   .jfaSelectionStage(options, jaspResults, workflow = TRUE)
 
+  ready <- .jfaReadyForNextStageCheck(options, jaspResults, stage = "selection")
+  if (!ready) {
+    return()
+  } # Stop if "To Execution" is not pressed or an error occurred in selection
+
   ### EXECUTION STAGE ###
   .jfaExecutionStage(options, jaspResults)
 
@@ -290,12 +295,25 @@
     jaspResults[["indicator_col"]] <- createJaspColumn(columnName = options[["indicator_col"]], dependencies = "indicator_col", computed = TRUE)
   }
   if (options[["executionChecked"]]) {
-    selectionState <- .jfaSelectionState(options, dataset, jaspResults[["planningState"]], jaspResults[["selectionContainer"]])
-    sample <- selectionState[["sample"]]
     dataset <- .readDataSetToEnd(columns.as.numeric = options[["id"]])
-    sampleFilter <- numeric(selectionState[["N.items"]])
+    sampleFilter <- numeric(nrow(dataset))
+
+    selectionState <- .jfaSelectionState(options, dataset, jaspResults[["planningState"]], jaspResults[["selectionContainer"]])
+    if (is.null(selectionState)) {
+      jaspResults[["indicator_col"]]$setOrdinal(sampleFilter)
+      return()
+    }
+
+    sample <- selectionState[["sample"]]
+    if (is.null(sample) || is.null(sample[["row"]]) || is.null(sample[["times"]])) {
+      jaspResults[["indicator_col"]]$setOrdinal(sampleFilter)
+      return()
+    }
+
     rowNumber <- as.numeric(sample[["row"]])
-    sampleFilter[rowNumber] <- as.numeric(sample[["times"]])
+    sampleTimes <- as.numeric(sample[["times"]])
+    valid <- !is.na(rowNumber) & rowNumber >= 1 & rowNumber <= nrow(dataset)
+    sampleFilter[rowNumber[valid]] <- sampleTimes[valid]
     jaspResults[["indicator_col"]]$setOrdinal(sampleFilter)
   }
 }
@@ -901,7 +919,8 @@
     # Check whether the "To selection" button is pressed and no error occurred in the previous stage
     ready <- options[["samplingChecked"]] && !jaspResults[["planningContainer"]]$getError() && (options[["materiality_test"]] || options[["min_precision_test"]])
   } else if (stage == "selection") {
-    # No check for selection
+    # Check whether the "To execution" button is pressed and no error occurred in the previous stage
+    ready <- options[["executionChecked"]] && !jaspResults[["planningContainer"]]$getError() && !jaspResults[["selectionContainer"]]$getError()
   } else if (stage == "execution") {
     # Check whether the "To evaluation" button is pressed and no error occurred in the previous stage
     ready <- options[["evaluationChecked"]] && !jaspResults[["planningContainer"]]$getError() && !jaspResults[["selectionContainer"]]$getError()
