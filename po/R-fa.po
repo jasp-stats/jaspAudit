@@ -2,14 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspAudit 0.96.5\n"
 "POT-Creation-Date: 2026-04-29 05:22\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-09-14 02:36+0000\n"
+"Last-Translator: Sohrab Delshad <sdel4030@gmail.com>\n"
+"Language-Team: Persian <https://hosted.weblate.org/projects/jasp/jaspaudit-r/"
+"fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "Bayesian Direct Estimator"
 msgstr ""
@@ -33,10 +35,10 @@ msgid "Precision"
 msgstr ""
 
 msgid "Lower"
-msgstr ""
+msgstr "پایین"
 
 msgid "Upper"
-msgstr ""
+msgstr "بالا"
 
 msgid "Please specify the population size and your audit values."
 msgstr ""
@@ -57,7 +59,7 @@ msgid "True population value"
 msgstr ""
 
 msgid "Density"
-msgstr ""
+msgstr "چگالی"
 
 msgid "Plotting not possible: %1$s"
 msgstr ""
@@ -108,10 +110,10 @@ msgid "Log(BF%1$s)"
 msgstr ""
 
 msgid "MAD"
-msgstr ""
+msgstr "انحراف مطلق میانه"
 
 msgid "df"
-msgstr ""
+msgstr "درجه آزادی"
 
 msgid "Benford's law"
 msgstr ""
@@ -189,7 +191,7 @@ msgid "Row"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "مقدار"
 
 msgid "The requested digit must be between 1 - 9."
 msgstr ""
@@ -474,7 +476,7 @@ msgid "Parity"
 msgstr ""
 
 msgid "p"
-msgstr ""
+msgstr "p"
 
 msgid "The null hypothesis specifies that the %1$s of an unprivileged group is equal to that of the privileged (P) group."
 msgstr ""
@@ -528,7 +530,7 @@ msgid "Support"
 msgstr ""
 
 msgid "Recall"
-msgstr ""
+msgstr "یادآوری"
 
 msgid "F1 Score"
 msgstr ""
@@ -927,7 +929,7 @@ msgid "Absolute value"
 msgstr ""
 
 msgid "Mean"
-msgstr ""
+msgstr "میانگین"
 
 msgid "Std. deviation"
 msgstr ""
@@ -1242,7 +1244,7 @@ msgid "Overall materiality"
 msgstr ""
 
 msgid "Sample size"
-msgstr ""
+msgstr "اندازه نمونه"
 
 msgid "Misstatements"
 msgstr ""
@@ -1260,7 +1262,7 @@ msgid "%1$s%% Lower bound"
 msgstr ""
 
 msgid "p-value"
-msgstr ""
+msgstr "p-مقدار"
 
 msgid "The results are computed using the Poisson distribution."
 msgstr ""
@@ -1425,7 +1427,7 @@ msgid "Prior and Expected Posterior Distribution"
 msgstr ""
 
 msgid "Prior Distribution"
-msgstr ""
+msgstr "توزیع پیشین"
 
 msgid "<b>Figure %1$i.</b> The prior and expected posterior distribution (%2$s) on the population misstatement θ. The prior parameters (%3$s = %4$s, %5$s = %6$s) are derived from the prior information. The expected posterior distribution fulfills the conditions set in the sampling objectives."
 msgstr ""
@@ -1437,7 +1439,7 @@ msgid "Prior Predictive Distribution"
 msgstr ""
 
 msgid "Posterior Predictive Distribution"
-msgstr ""
+msgstr "توزیع پیشگوی پسین"
 
 msgid "<b>Figure %1$i.</b> The %2$s predictive distribution is %3$s and displays the predictions of the %2$s distribution for %4$s <i>n</i> = %5$s."
 msgstr ""
