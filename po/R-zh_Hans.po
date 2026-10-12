@@ -488,7 +488,7 @@ msgid "The null hypothesis specifies that the %1$s of an unprivileged group is l
 msgstr "原假设规定弱势组的 %1$s 低于或等于特权（P）组的 %1$s。"
 
 msgid "According to the '80 percent rule', if the value of the protected-to-privileged positve rate ratio is lower than 0.80 then the algorithm is considered unfair against the unprivileged group(s)."
-msgstr "根据“80% 规则”，如果受保护组与特权组的阳性率之比低于 0.80，则该算法被认为对弱势组不公平。"
+msgstr "根据“80%% 规则”，如果受保护组与特权组的阳性率之比低于 0.80，则该算法被认为对弱势组不公平。"
 
 msgid "<u>Individual Comparisons</u>"
 msgstr "<u>个体比较</u>"
