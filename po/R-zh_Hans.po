@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: jaspAudit 0.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2026-01-01 00:00+0000\n"
-"PO-Revision-Date: 2026-01-01 00:00+0000\n"
-"Last-Translator: JASP translators\n"
-"Language-Team: Chinese (Simplified)\n"
+"PO-Revision-Date: 2026-10-25 11:51+0000\n"
+"Last-Translator: Shun Wang <shuonwang@gmail.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/jasp/jaspaudit-r/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
+"X-Generator: Weblate 2026.11.dev0\n"
 
 msgid "Bayesian Direct Estimator"
 msgstr "贝叶斯直接估计量"
@@ -152,7 +153,7 @@ msgid "Uniform distribution"
 msgstr "均匀分布"
 
 msgid "Count"
-msgstr "频数"
+msgstr "计数"
 
 msgid "Relative frequency"
 msgstr "相对频率"
@@ -161,7 +162,7 @@ msgid "%1$s%% Confidence Interval"
 msgstr "%1$s%% 置信区间"
 
 msgid "Expected count"
-msgstr "期望频数"
+msgstr "期望计数"
 
 msgid "The null hypothesis specifies that the relative frequency of a digit is equal to its expected relative frequency under %1$s."
 msgstr "原假设规定某数字的相对频率等于其在 %1$s 下的期望相对频率。"
@@ -1085,7 +1086,7 @@ msgid "Beta"
 msgstr "贝塔"
 
 msgid "Gamma"
-msgstr "伽马"
+msgstr "伽马系数"
 
 msgid "Beta-binomial"
 msgstr "贝塔-二项式"
@@ -1094,7 +1095,7 @@ msgid "Binomial"
 msgstr "二项式"
 
 msgid "Poisson"
-msgstr "泊松"
+msgstr "泊松 (Poisson)"
 
 msgid "Hypergeometric"
 msgstr "超几何"
@@ -1226,7 +1227,7 @@ msgid "Minimum"
 msgstr "最小值"
 
 msgid "Maximum"
-msgstr "最大值"
+msgstr "最大"
 
 msgid "The audit result variable should contain only 0's (correct) and 1's (incorrect)."
 msgstr "审计结果变量应仅包含 0（正确）和 1（不正确）。"
@@ -1244,7 +1245,7 @@ msgid "Overall materiality"
 msgstr "整体重要性水平"
 
 msgid "Sample size"
-msgstr "样本规模"
+msgstr "样本量"
 
 msgid "Misstatements"
 msgstr "错报"
@@ -1337,7 +1338,7 @@ msgid "ID"
 msgstr "ID"
 
 msgid "Difference"
-msgstr "差异"
+msgstr "差值"
 
 msgid "Counted"
 msgstr "计数"
@@ -1346,7 +1347,7 @@ msgid "No misstatements were identified in the sample."
 msgstr "样本中未识别到错报。"
 
 msgid "Pearson's r"
-msgstr "皮尔逊 r"
+msgstr "Pearson 相关系数"
 
 msgid "The null hypotheses H₀: ρ ≥ 0 is tested against the alternative hypothesis H₋: ρ < 0"
 msgstr "原假设 H₀：ρ ≥ 0 针对备择假设 H₋：ρ < 0 进行检验"
