@@ -287,17 +287,43 @@
 
 .jfaExecutionStage <- function(options, jaspResults) {
   if (is.null(jaspResults[["indicator_col"]])) {
-    jaspResults[["indicator_col"]] <- createJaspColumn(columnName = options[["indicator_col"]], dependencies = "indicator_col", computed = TRUE)
+    jaspResults[["indicator_col"]] <- createJaspColumn(
+      columnName   = options[["indicator_col"]],
+      dependencies = c("indicator_col", "executionChecked"),
+      computed     = TRUE
+    )
   }
-  if (options[["executionChecked"]]) {
-    selectionState <- .jfaSelectionState(options, dataset, jaspResults[["planningState"]], jaspResults[["selectionContainer"]])
-    sample <- selectionState[["sample"]]
-    dataset <- .readDataSetToEnd(columns.as.numeric = options[["id"]])
-    sampleFilter <- numeric(selectionState[["N.items"]])
-    rowNumber <- as.numeric(sample[["row"]])
-    sampleFilter[rowNumber] <- as.numeric(sample[["times"]])
-    jaspResults[["indicator_col"]]$setOrdinal(sampleFilter)
+
+  if (!options[["executionChecked"]]) {
+    return()
   }
+
+  selectionContainer <- jaspResults[["selectionContainer"]]
+  if (is.null(selectionContainer) || is.null(selectionContainer[["selectionState"]])) {
+    return()
+  }
+
+  selectionState <- selectionContainer[["selectionState"]]$object
+  if (is.null(selectionState)) {
+    return()
+  }
+
+  sample <- selectionState[["sample"]]
+  if (is.null(sample)) {
+    return()
+  }
+
+  dataset <- .readDataSetToEnd(columns.as.numeric = options[["id"]])
+  sampleFilter <- numeric(nrow(dataset))
+  rowNumber <- as.numeric(sample[["row"]])
+  times <- as.numeric(sample[["times"]])
+  valid <- !is.na(rowNumber) & !is.na(times) & rowNumber >= 1 & rowNumber <= length(sampleFilter)
+
+  if (sum(valid) > 0) {
+    sampleFilter[rowNumber[valid]] <- times[valid]
+  }
+
+  jaspResults[["indicator_col"]]$setOrdinal(sampleFilter)
 }
 
 #####################################
