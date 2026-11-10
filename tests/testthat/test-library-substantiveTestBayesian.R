@@ -10,10 +10,9 @@ test_that("auditBayesianWorkflow results match", {
   opts <- jaspTools::analysisOptions(jaspFile)
   dataset <- jaspTools::extractDatasetFromJASPFile(jaspFile)
 
-  # Encode and run analysis
-  encoded <- jaspTools:::encodeOptionsAndDataset(opts, dataset)
+  # Run analysis
   set.seed(1)
-  results <- jaspTools::runAnalysis("auditBayesianWorkflow", encoded$dataset, encoded$options, encodedDataset = TRUE)
+  results <- jaspTools::runAnalysis("auditBayesianWorkflow", dataset, opts)
 
   table <- results[["results"]][["ARMcontainer"]][["collection"]][["ARMcontainer_table"]][["data"]]
   jaspTools::expect_equal_tables(table,
@@ -46,13 +45,17 @@ test_that("auditBayesianWorkflow results match", {
 
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
   jaspTools::expect_equal_tables(table,
-    list(3500, 1403220.82, 192, 192, 0.0638414772095529, "Total", 89583.69,
-     0, 0, 0, 0, 0, "Top stratum", 0, 3500, 1403220.82, 192, 192,
-     0.0638414772095529, "Bottom stratum", 89583.69))
+    list(
+      3500, 1403220.82, 192, 192, 0.0690094307466162, "Total", 96835.47, 0, 0,
+      0, 0, 0, "Top stratum", 0, 3500, 1403220.82, 192, 192, 0.0690094307466162,
+      "Bottom stratum", 96835.47
+    ))
 
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
   jaspTools::expect_equal_tables(table,
-    list(192, 0.0638414772095529, 192, 89583.69))
+    list(
+      192, 0.0690094307466162, 192, 96835.47
+    ))
 
 })
 

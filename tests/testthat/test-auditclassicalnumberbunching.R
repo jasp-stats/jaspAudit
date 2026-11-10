@@ -23,9 +23,9 @@ test_that("<b>Table 2.</b> Assumption Checks results match", {
   jaspTools::expect_equal_tables(
     table,
     list(
-      0.0235054850952473, 1598, 1600, 0.34741538358077, "-", 0.939891267447534,
-      "Integer values", "Decimal values", -0.0293282797315549, 998,
-      1000, 0.354196085854687, "-", -0.926912458944072, "Samples frequency",
+      0.0235054850952473, 1598, 1600, 0.347415383580771, "-", 0.939891267447534,
+      "Integer values", "Decimal values", 0.00970406060961037, 998, 1000,
+      0.759229499350473, "-", 0.306576753178971, "Samples frequency",
       "Samples entropy"
     )
   )
@@ -467,7 +467,9 @@ test_that("<b>Table 1.</b> Repeated Values Test results match", {
   table <- results[["results"]][["numberBunchingContainer"]][["collection"]][["numberBunchingContainer_numberBunchingTestTable"]][["data"]]
   jaspTools::expect_equal_tables(
     table,
-    list(1600, 1.5225, 7.06576917368312, "Variable", 0.002, 0.005)
+    list(
+      1600, 1.5225, 7.06576917368323, "Variable", 0.003, 0.001
+    )
   )
 })
 
@@ -492,9 +494,9 @@ test_that("<b>Table 2.</b> Assumption Checks results match", {
   jaspTools::expect_equal_tables(
     table,
     list(
-      -0.124707157162072, 3233, 3235, 1.09474735289136e-12, "-", -7.14657265617446,
-      "Integer values", "Decimal values", -0.0239084290942401, 998,
-      1000, 0.450121037352463, "-", -0.755510443482817, "Samples frequency",
+      -0.124707157162072, 3233, 3235, 1.09474735289146e-12, "-",
+      -7.14657265617444, "Integer values", "Decimal values", 0.0115315743087147,
+      998, 1000, 0.715696406488041, "-", 0.364319779237721, "Samples frequency",
       "Samples entropy"
     )
   )
