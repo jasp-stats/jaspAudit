@@ -718,7 +718,7 @@
     },
     "jfa": {
       "Package": "jfa",
-      "Version": "0.7.4",
+      "Version": "0.7.5",
       "Source": "GitHub",
       "Requirements": [
         "R",
@@ -747,7 +747,7 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "koenderks",
       "RemoteRepo": "jfa",
-      "RemoteSha": "f64948adc1f2d55b977828a0748f9fad255b5125"
+      "RemoteSha": "95a33abc722d312ed752930fc4d72a5f60c6de2e"
     },
     "jquerylib": {
       "Package": "jquerylib",
