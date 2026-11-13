@@ -199,7 +199,7 @@ options$plotObjectives <- TRUE
 options$plotSequentialAnalysis <- TRUE
 options$cr <- "medium"
 options$expected_rel_val <- 0.005
-options$materiality_type <- "materiality_val"
+options$materiality_type <- "materiality_abs"
 options$method <- "binomial"
 options$prior_method <- "default"
 options$area <- "less"

@@ -10,10 +10,9 @@ test_that("auditClassicalBenfordsLaw results match", {
   opts <- jaspTools::analysisOptions(jaspFile)
   dataset <- jaspTools::extractDatasetFromJASPFile(jaspFile)
 
-  # Encode and run analysis
-  encoded <- jaspTools:::encodeOptionsAndDataset(opts, dataset)
+  # Run analysis
   set.seed(1)
-  results <- jaspTools::runAnalysis("auditClassicalBenfordsLaw", encoded$dataset, encoded$options, encodedDataset = TRUE)
+  results <- jaspTools::runAnalysis("auditClassicalBenfordsLaw", dataset, opts)
 
   plotName <- results[["results"]][["benfordsLawContainer"]][["collection"]][["benfordsLawContainer_benfordsLawPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
@@ -36,8 +35,10 @@ test_that("auditClassicalBenfordsLaw results match", {
 
   table <- results[["results"]][["benfordsLawContainer"]][["collection"]][["benfordsLawContainer_benfordsLawTestTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
-    list(772, 1.44934296706826e-07, 8, 0.00659813521950867, 0.468206381300368,
-     "jaspColumn1", 7.65174269894998))
+    list(
+      772, 1.44934296706826e-07, 8, 0.00659813521950867, 0.468206381300368,
+      "value", 7.65174269894998
+    ))
 
 })
 

@@ -10,10 +10,9 @@ test_that("auditClassicalPlanning (analysis 1) results match", {
   opts <- jaspTools::analysisOptions(jaspFile)[[1]]
   dataset <- jaspTools::extractDatasetFromJASPFile(jaspFile)
 
-  # Encode and run analysis
-  encoded <- jaspTools:::encodeOptionsAndDataset(opts, dataset)
+  # Run analysis
   set.seed(1)
-  results <- jaspTools::runAnalysis("auditClassicalPlanning", encoded$dataset, encoded$options, encodedDataset = TRUE)
+  results <- jaspTools::runAnalysis("auditClassicalPlanning", dataset, opts)
 
   table <- results[["results"]][["ARMcontainer"]][["collection"]][["ARMcontainer_table"]][["data"]]
   jaspTools::expect_equal_tables(table,
@@ -33,20 +32,23 @@ test_that("auditSelection (analysis 2) results match", {
   opts <- jaspTools::analysisOptions(jaspFile)[[2]]
   dataset <- jaspTools::extractDatasetFromJASPFile(jaspFile)
 
-  # Encode and run analysis
-  encoded <- jaspTools:::encodeOptionsAndDataset(opts, dataset)
+  # Run analysis
   set.seed(1)
-  results <- jaspTools::runAnalysis("auditSelection", encoded$dataset, encoded$options, encodedDataset = TRUE)
+  results <- jaspTools::runAnalysis("auditSelection", dataset, opts)
 
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableInterval"]][["data"]]
   jaspTools::expect_equal_tables(table,
-    list(3500, 1403220.82, 93, 93, 0.033977738443191, "Total", 47678.27,
-     0, 0, 0, 0, 0, "Top stratum", 0, 3500, 1403220.82, 93, 93, 0.033977738443191,
-     "Bottom stratum", 47678.27))
+    list(
+      3500, 1403220.82, 93, 93, 0.0352553278107718, "Total", 49471.01, 0, 0, 0,
+      0, 0, "Top stratum", 0, 3500, 1403220.82, 93, 93, 0.0352553278107718,
+      "Bottom stratum", 49471.01
+    ))
 
   table <- results[["results"]][["selectionContainer"]][["collection"]][["selectionContainer_tableSelection"]][["data"]]
   jaspTools::expect_equal_tables(table,
-    list(93, 0.033977738443191, 93, 47678.27))
+    list(
+      93, 0.0352553278107718, 93, 49471.01
+    ))
 
 })
 

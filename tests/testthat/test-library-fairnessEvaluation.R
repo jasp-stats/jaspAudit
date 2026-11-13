@@ -10,10 +10,9 @@ test_that("auditClassicalFairness results match", {
   opts <- jaspTools::analysisOptions(jaspFile)
   dataset <- jaspTools::extractDatasetFromJASPFile(jaspFile)
 
-  # Encode and run analysis
-  encoded <- jaspTools:::encodeOptionsAndDataset(opts, dataset)
+  # Run analysis
   set.seed(1)
-  results <- jaspTools::runAnalysis("auditClassicalFairness", encoded$dataset, encoded$options, encodedDataset = TRUE)
+  results <- jaspTools::runAnalysis("auditClassicalFairness", dataset, opts)
 
   table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_comparisonsTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
@@ -41,7 +40,8 @@ test_that("auditClassicalFairness results match", {
 
   table <- results[["results"]][["fairnessContainer"]][["collection"]][["fairnessContainer_summaryTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
-    list(5, "jaspColumn2", 6172, 0.00209507283665478, 18.7989675485203
+    list(
+      5, "Ethnicity", 6172, 0.00209507283665478, 18.7989675485203
     ))
 
 })
